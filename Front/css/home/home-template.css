@@ -1,0 +1,29 @@
+/* Grid */
+.home-template {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid:
+    "home-sidenav home-section" 1fr
+    / 1fr 2fr;
+}
+
+/* Áreas de grid */
+.home-section {
+  grid-area: home-section;
+  text-align: center;
+}
+.home-sidenav {
+  grid-area: home-sidenav;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .home-template {
+    grid:
+      "home-sidenav" 1fr
+      "home-section" 11fr
+      / 1fr;
+  }
+}

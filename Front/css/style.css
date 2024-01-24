@@ -1,0 +1,20 @@
+@import "./global/global.css";
+@import "./utilidades/tipografia.css";
+@import "./utilidades/cores.css";
+
+/* Global */
+@import "./global/body-template.css";
+@import "./global/header/header-template.css";
+
+/* Componentes */
+@import "./componentes/componentes.css";
+@import "./componentes/cards.css";
+
+/* Home */
+@import "./home/home-template.css";
+
+/* contatos */
+@import "./contatos/contatos-template.css";
+
+/* eventos */
+@import "./eventos/eventos-template.css";

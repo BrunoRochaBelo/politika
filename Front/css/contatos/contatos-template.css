@@ -1,0 +1,29 @@
+/* Grid */
+.contatos-template {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid:
+    "contatos-sidenav contatos-section" 1fr
+    / 1fr 2fr;
+}
+
+/* Áreas de grid */
+.contatos-section {
+  grid-area: contatos-section;
+  text-align: center;
+}
+.contatos-sidenav {
+  grid-area: contatos-sidenav;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .contatos-template {
+    grid:
+      "contatos-sidenav" 1fr
+      "contatos-section" 11fr
+      / 1fr;
+  }
+}

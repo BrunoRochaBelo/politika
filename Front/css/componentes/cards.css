@@ -1,0 +1,57 @@
+/* Container para os cards */
+.card-container {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 5px;
+  padding: 0px 10px 0px 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  border-radius: 9px;
+  background-color: var(--cor-1);
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Pequeno */
+.small-card {
+  height: 40px;
+}
+
+/* Médio */
+.medium-card {
+  height: 50px;
+}
+
+/* Grande */
+.large-card {
+  height: 170px;
+}
+
+/* Retângulo Pequeno */
+.small-rectangle-card {
+  min-width: 135px;
+  min-height: 100px;
+  display: inline-block;
+}
+
+/* Retângulo Grande */
+.large-rectangle-card {
+  min-width: 100%;
+  min-height: 100px;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .large-rectangle-card {
+    min-width: 48%;
+  }
+}

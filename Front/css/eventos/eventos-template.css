@@ -1,0 +1,29 @@
+/* Grid */
+.eventos-template {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid:
+    "eventos-sidenav eventos-section" 1fr
+    / 1fr 2fr;
+}
+
+/* Áreas de grid */
+.eventos-section {
+  grid-area: eventos-section;
+  text-align: center;
+}
+.eventos-sidenav {
+  grid-area: eventos-sidenav;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .eventos-template {
+    grid:
+      "eventos-sidenav" 1fr
+      "eventos-section" 11fr
+      / 1fr;
+  }
+}
