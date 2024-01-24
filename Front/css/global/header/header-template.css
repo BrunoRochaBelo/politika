@@ -6,7 +6,7 @@
   justify-items: center;
   grid:
     "header-title header-nav header-user" 1fr
-    / 1fr 4fr 1fr;
+    / 1fr 5fr 1fr;
 }
 
 /* Áreas de grid */
@@ -38,8 +38,8 @@
   justify-items: center;
   text-transform: uppercase;
   grid:
-    "dashborad relatorios alunos usuarios" 1fr
-    / 1fr 1fr 1fr 1fr;
+    "dashborad relatorios alunos pleitos despesas" 1fr
+    / 1fr 1fr 1fr 1fr 1fr;
 }
 .dashborad {
   grid-area: dashborad;
@@ -50,8 +50,11 @@
 .alunos {
   grid-area: alunos;
 }
-.usuarios {
-  grid-area: usuarios;
+.pleitos {
+  grid-area: pleitos;
+}
+.despesas {
+  grid-area: despesas;
 }
 
 /* Estilos para a lista de navegação */
