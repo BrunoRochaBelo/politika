@@ -1,6 +1,7 @@
 /* HEADER TEMPLATE */
 /* Definição do layout usando grid para o cabeçalho */
 .header-template {
+  box-sizing: border-box;
   display: grid;
   align-items: center;
   justify-items: center;

@@ -16,3 +16,25 @@
 .link:hover {
   color: var(--cor-0);
 }
+
+/* Cards */
+.lista-vertical-template {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 5px;
+  padding: 0px 10px 0px 10px;
+  box-sizing: border-box;
+}
+
+.lista-horizontal-template {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: start;
+  justify-items: center;
+  gap: 5px;
+}
+.card {
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
+}

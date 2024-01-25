@@ -3,7 +3,7 @@
   grid:
     "header header header" 45px
     " . main ." 1fr
-    /1fr minmax(200px, 1100px) 1fr;
+    /1fr minmax(375px, 1100px) 1fr;
 }
 /* container-areas */
 .header {
