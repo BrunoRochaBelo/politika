@@ -1,8 +1,6 @@
 .lista-vertical-template {
   display: grid;
   grid-auto-flow: row;
-  align-items: center;
-  justify-items: center;
   gap: 5px;
   padding: 0px 10px 0px 10px;
 }
@@ -10,23 +8,43 @@
 .lista-horizontal-template {
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
+  align-items: start;
   justify-items: center;
   gap: 5px;
 }
 
 /* Cards */
-.card-template {
+.card {
   border-radius: 9px;
+  padding: 5px;
   background-color: var(--cor-1);
-  padding: 15px;
-  box-sizing: border-box;
+  width: 100%;
 }
 
 /* Pequeno */
-.small-card {
+.eventos-small-card {
   display: grid;
   height: 40px;
+  grid:
+    "eventos-small-card-title eventos-small-card-title eventos-small-card-tag eventos-small-card-tag" 2fr
+    "eventos-small-card-inicio eventos-small-card-fim eventos-small-card-tag eventos-small-card-tag" 1fr
+    / 1fr 1fr 2fr 1fr;
+}
+.eventos-small-card-title {
+  grid-area: eventos-small-card-title;
+  font-size: 12px;
+}
+.eventos-small-card-inicio {
+  grid-area: eventos-small-card-inicio;
+  font-size: 11px;
+}
+.eventos-small-card-fim {
+  grid-area: eventos-small-card-fim;
+  font-size: 11px;
+}
+.eventos-small-card-tag {
+  grid-area: eventos-small-card-tag;
+  font-size: 12px;
 }
 
 /* Médio */
