@@ -22,13 +22,3 @@
   margin-top: auto;
   margin-bottom: 60px;
 }
-
-/* RESPONSIVO */
-@media (max-width: 800px) {
-  .home-template {
-    grid:
-      "header" 1fr
-      "main" 11fr
-      / 1fr;
-  }
-}

@@ -5,7 +5,7 @@
   justify-content: center;
   grid:
     "eventos-sidenav eventos-section" 1fr
-    / 1fr 2fr;
+    / 1.1fr 1.9fr;
 }
 
 /* Áreas de grid */
@@ -18,12 +18,19 @@
   text-align: center;
 }
 
+/* Estilo para mostrar o conteúdo quando a barra lateral está recuada */
+.eventos-sidenav.recuar {
+  height: 130px;
+  overflow-x: hidden;
+  transition: width 0.5s ease-out 0.5s;
+}
+
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .eventos-template {
     grid:
-      "eventos-sidenav" 1fr
-      "eventos-section" 11fr
+      "eventos-sidenav" auto
+      "eventos-section" 1fr
       / 1fr;
   }
 }

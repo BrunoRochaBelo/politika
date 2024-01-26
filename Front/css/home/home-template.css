@@ -5,7 +5,7 @@
   justify-content: center;
   grid:
     "home-sidenav home-section" 1fr
-    / 1.2fr 1.8fr;
+    / 1.1fr 1.9fr;
 }
 
 /* Áreas de grid */
@@ -23,15 +23,15 @@
 .home-sidenav.recuar {
   height: 130px;
   overflow-x: hidden;
-  transition: width 0.3s;
+  transition: width 0.5s ease-out 0.5s;
 }
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .home-template {
     grid:
-      "home-sidenav" 1fr
-      "home-section" 11fr
+      "home-sidenav" auto
+      "home-section" 1fr
       / 1fr;
   }
 

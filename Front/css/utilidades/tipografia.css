@@ -6,8 +6,9 @@
   --font-medium-regular: 0.75rem;
   --titulo-xs: 0.75rem;
   --titulo-s: 0.875rem;
-  --titulo-m: 1rem;
-  --titulo-l: 1.125rem;
+  --titulo-m: 0.875rem;
+  --font-l: 1rem;
+  --titulo-xl: 1.125rem;
 }
 
 /* Aplicando as variáveis nas classes */
@@ -23,7 +24,7 @@
 /* 12px */
 .font-medium-light {
   font: var(--font-medium-light);
-  font-weight: normal;
+  font-weight: lighter;
 }
 /* 12px */
 .font-medium-regular {
@@ -37,15 +38,25 @@
 /* 14px */
 .titulo-s {
   font-size: var(--titulo-s);
-  font-weight: bold;
+  font-weight: normal;
 }
-/* 16px */
+/* 14px */
 .titulo-m {
   font-size: var(--titulo-m);
   font-weight: bold;
 }
-/* 18px */
+/* 16px */
 .titulo-l {
   font-size: var(--titulo-l);
   font-weight: bold;
+}
+/* 18px */
+.titulo-xl {
+  font-size: var(--titulo-xl);
+  font-weight: bold;
+}
+.titulo-area {
+  font-size: var(--titulo-l);
+  text-align: left;
+  margin: 10px 0 10px 10px;
 }

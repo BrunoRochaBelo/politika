@@ -22,21 +22,30 @@
     <h1 class="header-title">DICA CD</h1>
     <nav class="header-nav">
       <menu class="header-nav-template">
-        <li class="home"><a href="#">
+        <li class="home"><a href="index.html"><img src="imagens/icones/home-select.png" alt="Home Icon">
             <p class="indicador">home</p>
           </a></li>
-        <li class="eventos"><a href="eventos.html">eventos</a></li>
-        <li class="contatos"><a href="contatos.html">contatos</a></li>
-        <li class="pleitos"><a href="#">Pleitos</a></li>
-        <li class="despesas"><a href="#">Despesas</a></li>
+        <li class="eventos"><a href="eventos.html"><img src="imagens/icones/eventos.png" alt="Eventos Icon">
+            <p>Eventos</p>
+          </a></li>
+        <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos.png" alt="Contatos Icon">
+            <p>Contatos</p>
+          </a></li>
+        <li class="pleitos"><a href="#"><img src="imagens/icones/pleitos.png" alt="Pleitos Icon">
+            <p>Pleitos</p>
+          </a></li>
+        <li class="despesas"><a href="#"><img src="imagens/icones/despesas.png" alt="Despesas Icon">
+            <p>Despesas</p>
+          </a></li>
+
       </menu>
     </nav>
-    <div class="header-user">Admin</div>
+    <div class="header-menu">menu</div>
   </header>
 
   <main class="main  home-template">
     <section class="home-section">
-      <h2>Defina um destino,</h2>
+      <h2 class="titulo-area">Defina um destino,</h2>
       <div class="lista-vertical-template">
         <select class="card eventos-medium-card" name="cidade" id="cidade">
           <!-- Opções do menu suspenso -->
@@ -47,7 +56,7 @@
 
     <section>
       <div class="home-sidenav">
-        <h2>Seus compromissos para hoje</h2>
+        <h2 class="titulo-area">Seus compromissos para hoje</h2>
         <ul class="lista-vertical-template">
           <li>
             <a class="card eventos-small-card" href="#">
@@ -91,7 +100,7 @@
           </li>
         </ul>
       </div>
-      <button class="recuar-sidenav" onclick="toggleSidenav()">recuar/expandir</button>
+      <button class="recuar-sidenav" onclick="toggleHomeSidenav()">recuar/expandir</button>
     </section>
 
   </main>

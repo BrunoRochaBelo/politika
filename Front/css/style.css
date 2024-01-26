@@ -2,6 +2,7 @@
 @import "./global/global.css";
 @import "./global/body-template.css";
 @import "./global/header/header-template.css";
+@import "./global/header/header-nav-tempalte.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";
@@ -9,7 +10,7 @@
 
 /* Componentes */
 @import "./componentes/componentes.css";
-@import "./componentes/cards.css";
+@import "./componentes/cards-eventos.css";
 
 /* Home */
 @import "./home/home-template.css";

@@ -27,7 +27,7 @@
 }
 .eventos-small-card-tag {
   grid-area: eventos-small-card-tag;
-  font-size: var(--font-padrao);
+  font-size: var(--font-medium-regular);
 }
 
 /* Médio */
@@ -65,31 +65,38 @@
 .eventos-large-card {
   display: grid;
   align-items: center;
-  justify-items: center;
+  justify-items: start;
   min-height: 170px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   grid:
-    "eventos-large-card-title eventos-large-card-title eventos-large-card-tag eventos-large-card-tag" 1fr
-    "eventos-large-card-inicio eventos-large-card-fim eventos-large-card-tag eventos-large-card-tag" 0.5fr
-    / 1fr 1fr 2fr 1fr;
+    "eventos-large-card-tag" 1fr
+    "eventos-large-card-title" 1fr
+    "eventos-large-card-local" 1fr
+    "eventos-large-card-partcipantes" 1fr
+    "eventos-large-card-duracao" 1fr
+    / 1fr;
 }
 .eventos-large-card-title {
   grid-area: eventos-large-card-title;
-  font-size: 400 0.875rem/1.43 "Oxygen", sans-serif;
+  font-size: var(--titulo-m);
 }
-.eventos-large-card-inicio {
-  grid-area: eventos-large-card-inicio;
-  font-size: var(--titulo-s);
+.eventos-large-card-local {
+  grid-area: eventos-large-card-local;
+  font-size: var(--font-medium-light);
 }
-.eventos-large-card-fim {
-  grid-area: eventos-large-card-fim;
-  font-size: var(--titulo-xs);
+.eventos-large-card-partcipantes {
+  grid-area: eventos-large-card-partcipantes;
+  font-size: var(--font-medium-light);
+}
+.eventos-large-card-duracao {
+  grid-area: eventos-large-card-duracao;
+  font-size: var(--font-medium-light);
 }
 .eventos-large-card-tag {
   grid-area: eventos-large-card-tag;
-  font-size: var(--titulo-xs);
+  font-size: var(--font-padrao);
 }
 
 /* Retângulo Pequeno */
