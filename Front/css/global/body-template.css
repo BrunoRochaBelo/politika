@@ -1,9 +1,11 @@
 .body-template {
   display: grid;
+  align-content: center;
+  justify-content: center;
   grid:
     "header header header" 45px
     " . main ." 1fr
-    /1fr minmax(375px, 1100px) 1fr;
+    /1fr minmax(350px, 1100px) 1fr;
 }
 /* container-areas */
 .header {
@@ -19,4 +21,14 @@
   grid-area: main;
   margin-top: auto;
   margin-bottom: 60px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .home-template {
+    grid:
+      "header" 1fr
+      "main" 11fr
+      / 1fr;
+  }
 }

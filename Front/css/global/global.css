@@ -4,6 +4,7 @@ body {
   font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--cor-12);
+  transition: width 0.3s;
 }
 
 h1,
@@ -13,6 +14,7 @@ h4,
 ul,
 menu,
 p,
+button,
 blockquote,
 dd {
   margin: 0px;

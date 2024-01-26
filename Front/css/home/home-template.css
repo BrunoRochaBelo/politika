@@ -5,7 +5,7 @@
   justify-content: center;
   grid:
     "home-sidenav home-section" 1fr
-    / 1fr 2fr;
+    / 1.2fr 1.8fr;
 }
 
 /* Áreas de grid */
@@ -13,9 +13,17 @@
   grid-area: home-section;
   text-align: center;
 }
+
 .home-sidenav {
   grid-area: home-sidenav;
   text-align: center;
+}
+
+/* Estilo para mostrar o conteúdo quando a barra lateral está recuada */
+.home-sidenav.recuar {
+  height: 130px;
+  overflow-x: hidden;
+  transition: width 0.3s;
 }
 
 /* RESPONSIVO */
@@ -25,5 +33,30 @@
       "home-sidenav" 1fr
       "home-section" 11fr
       / 1fr;
+  }
+
+  /* Remova a transição da largura no modo responsivo */
+  .home-sidenav,
+  .home-sidenav.recuar {
+    transition: none;
+  }
+}
+
+/* Estilo do botão */
+.recuar-sidenav {
+  display: none;
+  font-size: var(--font-light);
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  margin: 5px auto;
+  border: none;
+}
+
+/* Exibir o botão apenas no modo responsivo */
+@media (max-width: 800px) {
+  .recuar-sidenav {
+    display: block;
   }
 }
