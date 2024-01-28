@@ -1,0 +1,38 @@
+.eventos-section-template {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid:
+    "eventos-section-title eventos-section-title eventos-section-day eventos-section-view" 25px
+    "eventos-section-nav eventos-section-nav eventos-section-nav eventos-section-nav" 35px
+    "eventos-section-hora eventos-section-evento eventos-section-evento eventos-section-evento" 1fr
+    / 12px 1fr 34fr 34px;
+}
+
+/* Áreas de grid */
+.eventos-section-title {
+  grid-area: eventos-section-title;
+}
+.eventos-section-day {
+  grid-area: eventos-section-day;
+  justify-self: end;
+}
+.eventos-section-view {
+  grid-area: eventos-section-view;
+  justify-self: end;
+}
+.eventos-section-nav {
+  grid-area: eventos-section-nav;
+  text-align: center;
+}
+.eventos-section-hora {
+  grid-area: eventos-section-hora;
+}
+.eventos-section-evento {
+  grid-area: eventos-section-evento;
+}
+
+/* Estilos */
+.eventos-section-template img {
+  width: 16px;
+}

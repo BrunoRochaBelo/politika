@@ -4,7 +4,7 @@
   align-content: center;
   justify-content: center;
   grid:
-    "home-sidenav home-section" 1fr
+    "home-sidenav home-section"
     / 1.1fr 1.9fr;
 }
 

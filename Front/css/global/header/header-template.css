@@ -6,9 +6,7 @@
   align-items: center;
   justify-items: center;
   text-transform: uppercase;
-  grid:
-    "header-title header-nav header-menu" 1fr
-    / 1fr 1fr 1fr;
+  grid: "header-title header-nav header-menu" 45px;
 }
 
 /* Áreas de grid */
@@ -16,7 +14,7 @@
   grid-area: header-title;
   justify-self: start;
   margin-left: 2rem;
-  font-size: 1rem;
+  width: 30px;
   color: var(--cor-2);
 }
 .header-nav {
@@ -39,7 +37,6 @@
       / 1fr 1fr 1fr;
   }
   .header-title {
-    font-size: 0.8rem;
     margin-left: 0.625rem;
   }
   .header-menu {

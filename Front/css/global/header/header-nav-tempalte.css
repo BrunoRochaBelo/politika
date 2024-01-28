@@ -2,11 +2,11 @@
 .header-nav-template {
   display: grid;
   grid:
-    "dashborad relatorios alunos pleitos despesas" 1fr
+    "home eventos contatos pleitos despesas" 1fr
     / 1fr 1fr 1fr 1fr 1fr;
 }
 .dashborad {
-  grid-area: dashborad;
+  grid-area: home;
 }
 .relatorios {
   grid-area: relatorios;
@@ -27,17 +27,22 @@
   justify-self: center;
 }
 .header-nav-template a {
-  font-size: 1rem;
+  size: 1rem;
   padding: 10px;
   color: var(--cor-0);
-  border-radius: 4px;
-  display: block;
+  border-radius: 9px;
+  display: flex;
   transition: 0.15s;
 }
 .header-nav-template a:hover {
   background-color: var(--cor-9);
   padding: 10px;
   color: var(--cor-3);
+}
+.header-nav-template a:active {
+  background-color: var(--cor-0);
+  color: var(--cor-12);
+  transition: 1s;
 }
 .header-nav-template img {
   width: 1em;
