@@ -1,0 +1,12 @@
+/* Botões */
+.btn-filled {
+  padding: 12px;
+  background-color: var(--cor-12);
+  color: var(--cor-0);
+  border: 2px solid var(--cor-8);
+  border-radius: 9px;
+  display: flex;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+}

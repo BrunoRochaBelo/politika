@@ -4,6 +4,7 @@
   --font-light: 0.6875rem;
   --font-medium-light: 0.75rem;
   --font-medium-regular: 0.75rem;
+  --font-medium-bold: 0.75rem;
   --titulo-xs: 0.75rem;
   --titulo-s: 0.875rem;
   --titulo-m: 0.875rem;
@@ -29,6 +30,11 @@
 /* 12px */
 .font-medium-regular {
   font: var(--font-medium-regular);
+}
+/* 12px */
+.font-medium-bold {
+  font: var(--font-medium-bold);
+  font-weight: bold;
 }
 /* 12px */
 .titulo-xs {

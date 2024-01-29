@@ -2,7 +2,7 @@
 .header-nav-template {
   display: grid;
   grid:
-    "home eventos contatos pleitos despesas" 1fr
+    "home eventos contatos pleitos despesas"
     / 1fr 1fr 1fr 1fr 1fr;
 }
 .dashborad {
@@ -46,6 +46,7 @@
 }
 .header-nav-template img {
   width: 1em;
+  height: 1em;
   margin-right: 0.625em;
 }
 
@@ -64,6 +65,7 @@
   }
   .header-nav-template img {
     width: 32px;
+    height: 27px;
     margin: 0 auto;
   }
 }

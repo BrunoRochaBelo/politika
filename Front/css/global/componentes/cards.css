@@ -1,0 +1,33 @@
+/* Cards */
+.lista-vertical-template {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 5px;
+  box-sizing: border-box;
+}
+
+.lista-horizontal-template {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: start;
+  justify-items: center;
+  gap: 5px;
+}
+.card {
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
+  margin: 0px 10px 0px 10px;
+}
+
+.scroll-container {
+  width: 300px; /* Defina a largura desejada para o contêiner */
+  white-space: nowrap; /* Impede a quebra de linha */
+  overflow-x: auto; /* Adiciona scroll horizontal quando o conteúdo ultrapassar a largura do contêiner */
+  border: 1px solid #ccc; /* Apenas para visualização */
+}
+
+.scroll-content {
+  width: 600px; /* Largura do conteúdo (pode ser maior que a do contêiner para criar scroll) */
+  padding: 10px;
+}

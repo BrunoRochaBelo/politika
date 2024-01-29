@@ -19,13 +19,6 @@
   text-align: center;
 }
 
-/* Estilo para mostrar o conteúdo quando a barra lateral está recuada */
-.home-sidenav.recuar {
-  height: 130px;
-  overflow-x: hidden;
-  transition: width 0.5s ease-out 0.5s;
-}
-
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .home-template {
@@ -33,30 +26,5 @@
       "home-sidenav" auto
       "home-section" 1fr
       / 1fr;
-  }
-
-  /* Remova a transição da largura no modo responsivo */
-  .home-sidenav,
-  .home-sidenav.recuar {
-    transition: none;
-  }
-}
-
-/* Estilo do botão */
-.recuar-sidenav {
-  display: none;
-  font-size: var(--font-light);
-  background-color: rgba(0, 0, 0, 0);
-  padding: 10px;
-  cursor: pointer;
-  z-index: 2;
-  margin: 5px auto;
-  border: none;
-}
-
-/* Exibir o botão apenas no modo responsivo */
-@media (max-width: 800px) {
-  .recuar-sidenav {
-    display: block;
   }
 }

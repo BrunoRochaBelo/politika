@@ -19,8 +19,9 @@
 <body class="body-template">
 
   <header class="header header-template">
-    <h1 class="header-title"><a href="index.html"><img src="imagens/logo/logo.png" alt="Logo Icon">
+    <h1 class="header-icon"><a href="index.html"><img src="imagens/logo/logo.png" alt="Logo Icon">
       </a></h1>
+    <h1 class="header-title">HOME</h1>
     <nav class="header-nav">
       <menu class="header-nav-template">
         <li class="home"><a href="index.html"><img src="imagens/icones/home-select.png" alt="Home Icon">
@@ -40,10 +41,10 @@
           </a></li>
       </menu>
     </nav>
-    <div class="header-menu">menu</div>
+    <menu class="header-menu">menu</menu>
   </header>
 
-  <main class="main  home-template">
+  <main class="main home-template">
     <section class="home-section">
       <h2 class="titulo-area">Defina um destino,</h2>
       <div class="lista-vertical-template">
@@ -55,7 +56,7 @@
     </section>
 
     <section>
-      <div class="home-sidenav">
+      <div class="home-sidenav recuara-expandir">
         <h2 class="titulo-area">Seus compromissos para hoje</h2>
         <ul class="lista-vertical-template">
           <li>
@@ -100,12 +101,12 @@
           </li>
         </ul>
       </div>
-      <button class="recuar-sidenav" onclick="toggleHomeSidenav()">recuar/expandir</button>
+      <button class="btn-recuara-expandir" onclick="toggleRecuarExpandir()">recuar/expandir</button>
     </section>
 
   </main>
 
-  <script src="./js/script.js"></script>
+  <script src="./js/RecuarExpandir.js"></script>
 
 </body>
 

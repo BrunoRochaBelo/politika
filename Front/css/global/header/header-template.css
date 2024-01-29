@@ -1,43 +1,54 @@
 /* HEADER TEMPLATE */
 /* Definição do layout usando grid para o cabeçalho */
 .header-template {
-  box-sizing: border-box;
   display: grid;
   align-items: center;
   justify-items: center;
   text-transform: uppercase;
-  grid: "header-title header-nav header-menu" 45px;
+  grid: "header-icon header-title header-nav header-menu" 40px;
 }
 
 /* Áreas de grid */
+.header-icon {
+  grid-area: header-icon;
+  justify-self: start;
+  margin-left: 1.25rem;
+  width: 32px;
+}
 .header-title {
   grid-area: header-title;
-  justify-self: start;
-  margin-left: 2rem;
-  width: 30px;
+  width: 22px;
   color: var(--cor-2);
 }
 .header-nav {
   grid-area: header-nav;
-  justify-self: auto;
   color: var(--cor-2);
 }
 .header-menu {
   grid-area: header-menu;
   justify-self: end;
-  margin-right: 2rem;
+  margin-right: 1.25rem;
   color: var(--cor-8);
 }
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .header-template {
+    align-items: center;
+    justify-content: space-between;
     grid:
-      "header-title header-nav header-menu" 35px
-      / 1fr 1fr 1fr;
+      "header-icon header-title header-menu" 35px
+      / 24px auto 24px;
+  }
+  .header-icon {
+    margin-left: 0.625rem;
   }
   .header-title {
-    margin-left: 0.625rem;
+    font-size: var(--titulo-xl);
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
   }
   .header-menu {
     margin-right: 0.625rem;
@@ -47,7 +58,7 @@
     /* Fixa a navegação no rodapé da tela em telas pequenas */
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 100vh;
     z-index: 1000;
   }
 }

@@ -114,10 +114,6 @@
 
 /* Responsividade */
 @media (max-width: 800px) {
-  .card-container {
-    grid-template-columns: 1fr;
-  }
-
   .large-rectangle-card {
     min-width: 48%;
   }

@@ -18,13 +18,6 @@
   text-align: center;
 }
 
-/* Estilo para mostrar o conteúdo quando a barra lateral está recuada */
-.eventos-sidenav.recuar {
-  height: 130px;
-  overflow-x: hidden;
-  transition: width 0.5s ease-out 0.5s;
-}
-
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .eventos-template {

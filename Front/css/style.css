@@ -1,16 +1,18 @@
 /* Global */
 @import "./global/global.css";
 @import "./global/body-template.css";
+/* Global/Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
+/* Global/Componentes */
+@import "./global/componentes/cards.css";
+@import "./global/componentes/cards-eventos.css";
+@import "./global/componentes/recuar-sidenav.css";
+@import "./global/componentes/botoes.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";
 @import "./utilidades/cores.css";
-
-/* Componentes */
-@import "./componentes/componentes.css";
-@import "./componentes/cards-eventos.css";
 
 /* Home */
 @import "./home/home-template.css";
