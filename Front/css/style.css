@@ -4,15 +4,18 @@
 /* Global/Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
-/* Global/Componentes */
-@import "./global/componentes/cards.css";
-@import "./global/componentes/cards-eventos.css";
-@import "./global/componentes/recuar-sidenav.css";
-@import "./global/componentes/botoes.css";
+/* Global/Marcadores */
+@import "./global/marcadores/marcadores-template.css";
+@import "./global/marcadores/marcadores-listas-tamanhos.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";
 @import "./utilidades/cores.css";
+/* Utilidades/Componentes */
+@import "./utilidades/componentes/botoes.css";
+@import "./utilidades/componentes/recuar-sidenav.css";
+@import "./utilidades/componentes/cards/cards.css";
+@import "./utilidades/componentes/cards/cards-eventos.css";
 
 /* Home */
 @import "./home/home-template.css";

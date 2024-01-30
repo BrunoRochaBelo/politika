@@ -54,7 +54,7 @@
   align-content: center;
   justify-content: center;
   box-sizing: border-box;
-  gap: 20px;
+  gap: 14px;
   grid:
     "eventos-section-nav-template-anterior eventos-section-nav-template-calendario eventos-section-nav-template-avancar" 34px
     / 10px auto 10px;

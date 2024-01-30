@@ -6,7 +6,7 @@
 }
 
 /* Estilo do botão */
-.btn-recuara-expandir {
+.btn-recuar-expandir {
   display: none;
   font-size: var(--font-light);
   background-color: rgb(0, 0, 0, 0);
@@ -15,11 +15,12 @@
   z-index: 2;
   margin: auto;
   border: none;
+  display: block;
 }
 
 /* Exibir o botão apenas no modo responsivo */
-@media (max-width: 800px) {
-  .btn-recuara-expandir {
+/*@media (max-width: 800px) {
+  .btn-recuar-expandir {
     display: block;
   }
-}
+}*/
