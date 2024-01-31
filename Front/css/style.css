@@ -1,6 +1,8 @@
 /* Global */
 @import "./global/global.css";
 @import "./global/body-template.css";
+@import "./global/modal.css";
+@import "./global/modal-calendario.css";
 /* Global/Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
@@ -11,11 +13,12 @@
 /* Utilidades */
 @import "./utilidades/tipografia.css";
 @import "./utilidades/cores.css";
-/* Utilidades/Componentes */
-@import "./utilidades/componentes/botoes.css";
-@import "./utilidades/componentes/recuar-sidenav.css";
-@import "./utilidades/componentes/cards/cards.css";
-@import "./utilidades/componentes/cards/cards-eventos.css";
+
+/* Componentes */
+@import "./componentes/botoes.css";
+@import "./componentes/recuar-expandir.css";
+@import "./componentes/cards/cards.css";
+@import "./componentes/cards/cards-eventos.css";
 
 /* Home */
 @import "./home/home-template.css";

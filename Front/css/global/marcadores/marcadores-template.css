@@ -16,7 +16,6 @@
 
 .marcador-recuara-expandir.recuar {
   display: flex;
-
   overflow-x: auto;
   white-space: nowrap;
   transition: width 0.5s ease-out 0.5s;

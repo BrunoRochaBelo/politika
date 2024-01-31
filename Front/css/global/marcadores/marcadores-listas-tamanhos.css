@@ -54,5 +54,5 @@
   height: 45px;
   gap: 30px;
   font-size: var(--font-medium-bold);
-  white-space: wrap;
+  white-space: nowrap;
 }
