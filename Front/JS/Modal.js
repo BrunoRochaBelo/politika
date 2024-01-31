@@ -3,7 +3,7 @@ function mostrarModal() {
   var modalContent = document.getElementById("modalContent");
 
   modalOverlay.style.display = "flex";
-  modalContent.style.display = "block";
+  modalContent.style.display = "grid";
 }
 
 function fecharModal() {

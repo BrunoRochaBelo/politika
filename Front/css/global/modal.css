@@ -26,9 +26,9 @@
   right: 85px;
   background: #fff;
   padding: 20px;
-  gap: 25px;
   border-radius: 9px;
   text-align: center;
+  gap: 25px;
 }
 
 #floatingButton {
