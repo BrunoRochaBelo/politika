@@ -10,15 +10,20 @@ function verificarModoEscuro() {
       document.body.style.color = "#fff";
 
       // Mudar cor dos cards
-      const cards = document.querySelectorAll(".card");
+      const cards = document.querySelectorAll(
+        ".card-s, .card-m, .card-l, .card-tmf-s, .card-tmf-m, .card-tmf-l"
+      );
+
       cards.forEach((card) => {
         card.style.backgroundColor = "#262626"; // Exemplo: fundo cinza escuro para os cards
-        card.style.color = "#fff"; // Exemplo: texto branco para os cards
+        card.style.color = "#DADADA"; // Exemplo: texto branco para os cards
       });
-      const marcador = document.querySelectorAll(".marcador-l");
-      marcador.forEach((marcador) => {
-        marcador.style.backgroundColor = "#262626"; // Exemplo: fundo cinza escuro para os marcador
-        marcador.style.color = "#fff"; // Exemplo: texto branco para os marcador
+
+      const marcadores = document.querySelectorAll(
+        ".marcador-s, .marcador-m, .marcador-l"
+      );
+      marcadores.forEach((marcadores) => {
+        marcadores.style.color = "#222"; // Exemplo: texto branco para os marcador
       });
       // Mudar cor btn-recuar-expandir
       const btnrecuarexpandir = document.querySelectorAll(

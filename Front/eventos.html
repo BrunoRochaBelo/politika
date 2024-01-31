@@ -45,7 +45,6 @@
   </header>
 
   <main class="main eventos-template">
-
     <div id="floatingButton" onclick="mostrarModal()">+</div>
     <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
       <div id="modalContent">
@@ -84,7 +83,7 @@
             <h4 class="eventos-section-list-template-moment">08:00h</h4>
             <ul class="eventos-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card eventos-large-card" href="#">
+                <a class="card-l eventos-large-card" href="#">
                   <p class="eventos-large-card-tag">eventos-large-card-tag</p>
                   <p class="eventos-large-card-title"><strong>eventos-large-card-title</strong></p>
                   <p class="eventos-large-card-local">eventos-large-card-local</p>
@@ -93,7 +92,7 @@
                 </a>
               </li>
               <li>
-                <a class="card eventos-large-card" href="#">
+                <a class="card-l eventos-large-card" href="#">
                   <p class="eventos-large-card-tag">eventos-large-card-tag</p>
                   <p class="eventos-large-card-title"><strong>eventos-large-card-title</strong></p>
                   <p class="eventos-large-card-local">eventos-large-card-local</p>
@@ -107,7 +106,7 @@
             <h4 class="eventos-section-list-template-moment">09:00h</h4>
             <ul class="eventos-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card eventos-large-card" href="#">
+                <a class="card-l eventos-large-card" href="#">
                   <p class="eventos-large-card-tag">eventos-large-card-tag</p>
                   <p class="eventos-large-card-title"><strong>eventos-large-card-title</strong></p>
                   <p class="eventos-large-card-local">eventos-large-card-local</p>
@@ -121,7 +120,7 @@
             <h4 class="eventos-section-list-template-moment">10:00h</h4>
             <ul class="eventos-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card eventos-large-card" href="#">
+                <a class="card-l eventos-large-card" href="#">
                   <p class="eventos-large-card-tag">eventos-large-card-tag</p>
                   <p class="eventos-large-card-title"><strong>eventos-large-card-title</strong></p>
                   <p class="eventos-large-card-local">eventos-large-card-local</p>
@@ -135,7 +134,7 @@
             <h4 class="eventos-section-list-template-moment">11:00h</h4>
             <ul class="eventos-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card eventos-large-card" href="#">
+                <a class="card-l eventos-large-card" href="#">
                   <p class="eventos-large-card-tag">eventos-large-card-tag</p>
                   <p class="eventos-large-card-title"><strong>eventos-large-card-title</strong></p>
                   <p class="eventos-large-card-local">eventos-large-card-local</p>
@@ -149,7 +148,7 @@
             <h4 class="eventos-section-list-template-moment">12:00h</h4>
             <ul class="eventos-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card eventos-large-card" href="#">
+                <a class="card-l eventos-large-card" href="#">
                   <p class="eventos-large-card-tag">eventos-large-card-tag</p>
                   <p class="eventos-large-card-title"><strong>eventos-large-card-title</strong></p>
                   <p class="eventos-large-card-local">eventos-large-card-local</p>
@@ -163,7 +162,7 @@
             <h4 class="eventos-section-list-template-moment">13:00h</h4>
             <ul class="eventos-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card eventos-large-card" href="#">
+                <a class="card-l eventos-large-card" href="#">
                   <p class="eventos-large-card-tag">eventos-large-card-tag</p>
                   <p class="eventos-large-card-title"><strong>eventos-large-card-title</strong></p>
                   <p class="eventos-large-card-local">eventos-large-card-local</p>
@@ -175,14 +174,13 @@
           </li>
         </ul>
       </div>
-
     </section>
 
     <section id="eventos-sidenav" class="eventos-sidenav">
-      <div class="marcadores-template" id="container-marcadores">
-        <h2 class="marcadores-template-header titulo-area">Marcadores</h2>
-        <div class="marcadores-template-content">
-          <ul class="lista-marcador-vertical-template marcador-recuara-expandir">
+      <div class="area-template" id="container-marcadores">
+        <h2 class="area-template-header">Marcadores</h2>
+        <div class="area-template-content">
+          <ul class="lista-vertical-2-template recuar-expandir-horizontal">
             <li>
               <a class="marcador-l cor-marc1" href="#">
                 <p>icon</p>
@@ -215,14 +213,13 @@
             </li>
           </ul>
         </div>
-
       </div>
-      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandir()">recuar/expandir</button>
+      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
     </section>
 
   </main>
 
-  <script src="./js/RecuarExpandirMarcadores.js"></script>
+  <script src="./js/RecuarExpandirHorizontal.js"></script>
   <script src="./js/Modal.js"></script>
   <script src="./js/ModalCalendario.js"></script>
 

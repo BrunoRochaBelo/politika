@@ -1,7 +1,13 @@
-/* Estilo para mostrar o conteúdo quando a barra lateral está recuada */
-.recuara-expandir.recuar {
+/* Estilo para mostrar o conteúdo quando a área está recuada */
+.recuar-expandir-vertical.recuar {
   height: 130px;
   overflow-x: hidden;
+  transition: width 0.5s ease-out 0.5s;
+}
+.recuar-expandir-horizontal.recuar {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
   transition: width 0.5s ease-out 0.5s;
 }
 

@@ -98,23 +98,3 @@
   grid-area: eventos-large-card-tag;
   font-size: var(--font-padrao);
 }
-
-/* Retângulo Pequeno */
-.small-rectangle-card {
-  min-width: 135px;
-  min-height: 100px;
-  display: inline-block;
-}
-
-/* Retângulo Grande */
-.large-rectangle-card {
-  min-width: 100%;
-  min-height: 100px;
-}
-
-/* Responsividade */
-@media (max-width: 800px) {
-  .large-rectangle-card {
-    min-width: 48%;
-  }
-}

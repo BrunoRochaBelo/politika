@@ -1,23 +1,63 @@
-/* Cards */
-.card {
+/* Cards padrão, que se ajustam ao conteúdo*/
+/* Pequeno altura 35px*/
+.card-s {
+  height: 35px;
   border-radius: 9px;
   padding: 0px 10px 0px 10px;
-  background-color: var(--cor-1);
   margin: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
+}
+/* Médio altura 50px*/
+.card-m {
+  height: 50px;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
+}
+/* Grande altura 170px*/
+.card-l {
+  min-height: 170px;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
 }
 
-/* Listas Cards */
-.lista-vertical-template {
-  display: grid;
-  grid-auto-flow: row;
-  gap: 5px;
-  box-sizing: border-box;
+/* Cards tamanhos fixos (tmf)*/
+/* Pequeno */
+.card-tmf-s {
+  width: 135px;
+  height: 100px;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
+}
+/* Médio */
+.card-tmf-m {
+  width: 155px;
+  height: 100px;
+  height: 50px;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
+}
+/* Grande */
+.card-tmf-l {
+  width: 184px;
+  height: 190px;
+  min-height: 170px;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
+  background-color: var(--cor-1);
 }
 
-.lista-horizontal-template {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: start;
-  justify-items: center;
-  gap: 5px;
+/* Responsividade */
+@media (max-width: 800px) {
+  .card-tmf-l {
+    min-width: 48%;
+  }
 }

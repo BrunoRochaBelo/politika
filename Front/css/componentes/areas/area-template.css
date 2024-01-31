@@ -1,0 +1,18 @@
+/* area Template*/
+.area-template {
+  display: grid;
+  gap: 10px;
+  grid:
+    "area-template-header" 24px
+    "area-template-content" 1fr
+    / 1fr;
+}
+.area-template-header {
+  grid-area: area-template-header;
+  font-size: var(--titulo-l);
+  text-align: left;
+  margin: 10px;
+}
+.area-template-content {
+  grid-area: area-template-content;
+}

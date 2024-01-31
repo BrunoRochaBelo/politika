@@ -1,46 +1,44 @@
 var tamanhoTelaAnterior = 0; // Armazena o tamanho da tela anterior
 var larguraReal = window.screen.width;
-var larguraElemento = document.getElementById("eventos-sidenav").offsetWidth; // Largura real do elemento com o ID "eventos-sidenav"
+/*var larguraElemento = document.getElementById("eventos-sidenav").offsetWidth; // Largura real do elemento com o ID "eventos-sidenav"*/
 
-function toggleRecuarExpandir() {
+function toggleRecuarExpandirHorizontal() {
   // Seleciona o elemento marcador-recuar-expandir
-  var marcadorRecuarExpandir = document.querySelector(
-    ".marcador-recuara-expandir"
+  var RecuarExpandirHorizontal = document.querySelector(
+    ".recuar-expandir-horizontal"
   );
   // Verifica se a classe "recuar" está presente no elemento antes de realizar a ação de toggle
-  var recuarAtualmente = marcadorRecuarExpandir.classList.contains("recuar");
+  var recuarAtualmente = RecuarExpandirHorizontal.classList.contains("recuar");
   // Adiciona ou remove a classe "recuar" no elemento
-  marcadorRecuarExpandir.classList.toggle("recuar");
+  RecuarExpandirHorizontal.classList.toggle("recuar");
   // Seleciona a lista de marcadores
-  var listaMarcadores = document.querySelector(
-    ".lista-marcador-vertical-template"
-  );
-  // Verifica se a classe "marcador-recuara-expandir.recuar" está presente no elemento
+  var listaMarcadores = document.querySelector(".lista-vertical-2-template");
+  // Verifica se a classe "recuar-expandir-horizontal.recuar" está presente no elemento
   if (
-    marcadorRecuarExpandir.classList.contains(
-      "marcador-recuara-expandir.recuar"
+    RecuarExpandirHorizontal.classList.contains(
+      "recuar-expandir-horizontal.recuar"
     )
   ) {
     // Muda a classe da lista para horizontal
     listaMarcadores.classList.replace(
-      "lista-marcador-vertical-template",
-      "lista-marcador-horizontal-template"
+      "lista-vertical-2-template",
+      "lista-horizontal-template"
     );
   } else {
     // Muda a classe da lista para vertical
     listaMarcadores.classList.replace(
-      "lista-marcador-horizontal-template",
-      "lista-marcador-vertical-template"
+      "lista-horizontal-template",
+      "lista-vertical-2-template"
     );
   }
-  // Remove explicitamente as classes "recuar" e "lista-marcador-horizontal-template" caso estejam presentes
-  if (!marcadorRecuarExpandir.classList.contains("recuar")) {
-    listaMarcadores.classList.remove("lista-marcador-horizontal-template");
-    listaMarcadores.classList.add("lista-marcador-vertical-template");
+  // Remove explicitamente as classes "recuar" e "lista-horizontal-template" caso estejam presentes
+  if (!RecuarExpandirHorizontal.classList.contains("recuar")) {
+    listaMarcadores.classList.remove("lista-horizontal-template");
+    listaMarcadores.classList.add("lista-vertical-2-template");
     // Se a classe "recuar" foi removida, remova o max-width
     if (recuarAtualmente) {
       var elementosRecuar = document.querySelectorAll(
-        ".marcador-recuara-expandir.recuar"
+        ".recuar-expandir-horizontal.recuar"
       );
       elementosRecuar.forEach(function (elemento) {
         elemento.style.maxWidth = "none";
@@ -51,9 +49,7 @@ function toggleRecuarExpandir() {
 }
 
 function ajustarMaxWidth() {
-  var elementosRecuar = document.querySelectorAll(
-    ".marcadores-template-content"
-  );
+  var elementosRecuar = document.querySelectorAll(".area-template-content");
   elementosRecuar.forEach(function (elemento) {
     var larguraElementoAtual =
       document.getElementById("eventos-sidenav").offsetWidth;

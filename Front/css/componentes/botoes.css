@@ -11,3 +11,15 @@
   justify-content: center;
   cursor: pointer;
 }
+.btn-leaked {
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--cor-0);
+  border: 2px solid var(--cor-0);
+  border-radius: 9px;
+  display: flex;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

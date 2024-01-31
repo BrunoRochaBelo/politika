@@ -1,21 +1,4 @@
-/* Marcadores Listas e Tamahos */
-.lista-marcador-vertical-template {
-  display: grid;
-  gap: 5px;
-  margin: 10px;
-  box-sizing: border-box;
-  grid-template: 1fr 1fr /1fr 1fr;
-}
-.lista-marcador-horizontal-template {
-  display: grid;
-  max-width: 100%;
-  overflow-x: hidden;
-  gap: 5px;
-  margin: 10px;
-  white-space: nowrap;
-  box-sizing: border-box;
-}
-
+/* Marcadores Tamahos */
 /* Pequeno */
 .marcador-s {
   display: flex;
@@ -50,7 +33,6 @@
   justify-items: start;
   border-radius: 9px;
   padding: 0px 10px 0px 10px;
-  background-color: var(--cor-1);
   height: 45px;
   gap: 30px;
   font-size: var(--font-medium-bold);

@@ -1,0 +1,32 @@
+/* Listas Cards */
+.lista-vertical-template {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 5px;
+  box-sizing: border-box;
+}
+.lista-vertical-2-template {
+  display: grid;
+  gap: 5px;
+  margin: 10px;
+  box-sizing: border-box;
+  grid-template: 1fr 1fr /1fr 1fr;
+}
+
+.lista-horizontal-template {
+  display: grid;
+  max-width: 100%;
+  overflow-x: hidden;
+  gap: 5px;
+  margin: 10px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/*.lista-horizontal-template {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: start;
+  justify-items: center;
+  gap: 5px;
+}*/

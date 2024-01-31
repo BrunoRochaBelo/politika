@@ -47,28 +47,29 @@
 
   <main class="main home-template">
     <section class="home-section">
-      <h2 class="titulo-area">Defina um destino,</h2>
-      <div class="lista-vertical-template">
-
-        <select class="card eventos-medium-card" id="estado" onchange="carregarCidades()">
-          <option value="" selected disabled>Selecione um estado</option>
-          <option value="PE">Pernambuco</option>
-          <option value="SP">São Paulo</option>
-          <option value="RJ">Rio de Janeiro</option>
-          <option value="MG">Minas Gerais</option>
-        </select>
-        <select class="card eventos-medium-card" id="cidade">
-          <option value="" selected disabled>Selecione um estado primeiro</option>
-        </select>
+      <div class="area-template">
+        <h2 class="area-template-header">Defina um destino,</h2>
+        <div class="area-template-content lista-vertical-template">
+          <select class="card-s" id="estado" onchange="carregarCidades()">
+            <option value="" selected disabled>Selecione um estado</option>
+            <option value="PE">Pernambuco</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+          </select>
+          <select class="card-s" id="cidade">
+            <option value="" selected disabled>Selecione um estado primeiro</option>
+          </select>
+        </div>
       </div>
     </section>
 
-    <section>
-      <div class="home-sidenav recuara-expandir">
-        <h2 class="titulo-area">Seus compromissos para hoje</h2>
-        <ul class="lista-vertical-template">
+    <section class="home-sidenav ">
+      <div class="area-template recuar-expandir-vertical">
+        <h2 class="area-template-header">Seus compromissos para hoje</h2>
+        <ul class="area-template-content lista-vertical-template">
           <li>
-            <a class="card eventos-small-card" href="#">
+            <a class="card-m eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -76,7 +77,7 @@
             </a>
           </li>
           <li>
-            <a class="card eventos-small-card" href="#">
+            <a class="card-m eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -84,7 +85,7 @@
             </a>
           </li>
           <li>
-            <a class="card eventos-small-card" href="#">
+            <a class="card-m eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -92,7 +93,7 @@
             </a>
           </li>
           <li>
-            <a class="card eventos-small-card" href="#">
+            <a class="card-m eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -100,7 +101,7 @@
             </a>
           </li>
           <li>
-            <a class="card eventos-small-card" href="#">
+            <a class="card-m eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -109,12 +110,12 @@
           </li>
         </ul>
       </div>
-      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandir()">recuar/expandir</button>
+      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirVertical()">recuar/expandir</button>
     </section>
 
   </main>
 
-  <script src="./js/RecuarExpandir.js"></script>
+  <script src="./js/RecuarExpandirVertical.js"></script>
   <script src="./js/FiltroEstadoCidade.js"></script>
 
 </body>

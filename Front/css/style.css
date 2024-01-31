@@ -1,24 +1,23 @@
 /* Global */
 @import "./global/global.css";
 @import "./global/body-template.css";
-@import "./global/modal.css";
-@import "./global/modal-calendario.css";
 /* Global/Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
-/* Global/Marcadores */
-@import "./global/marcadores/marcadores-template.css";
-@import "./global/marcadores/marcadores-listas-tamanhos.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";
 @import "./utilidades/cores.css";
 
 /* Componentes */
+@import "./componentes/listas.css";
 @import "./componentes/botoes.css";
+@import "./componentes/marcadores.css";
+@import "./componentes/modal.css";
 @import "./componentes/recuar-expandir.css";
 @import "./componentes/cards/cards.css";
 @import "./componentes/cards/cards-eventos.css";
+@import "./componentes/areas/area-template.css";
 
 /* Home */
 @import "./home/home-template.css";
@@ -29,3 +28,4 @@
 /* eventos */
 @import "./eventos/eventos-template.css";
 @import "./eventos/eventos-section-template.css";
+@import "./eventos/modal-calendario.css";
