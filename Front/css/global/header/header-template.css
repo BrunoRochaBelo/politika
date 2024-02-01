@@ -32,7 +32,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 800px) {
+@media (max-width: 767px) {
   .header-template {
     align-items: center;
     justify-content: space-between;

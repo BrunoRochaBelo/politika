@@ -51,7 +51,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 800px) {
+@media (max-width: 767px) {
   .header-nav-template {
     display: grid;
     max-width: 400px;
