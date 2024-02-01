@@ -4,7 +4,6 @@
   display: grid;
   align-items: center;
   justify-items: start;
-  height: 45px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -27,7 +26,7 @@
 }
 .eventos-small-card-tag {
   grid-area: eventos-small-card-tag;
-  font-size: var(--font-medium-regular);
+  justify-self: end;
 }
 
 /* Médio */
@@ -35,7 +34,6 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  min-height: 50px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -66,17 +64,15 @@
   display: grid;
   align-items: center;
   justify-items: start;
-  min-height: 170px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   grid:
-    "eventos-large-card-tag" 1fr
+    "eventos-large-card-tag" 32px
     "eventos-large-card-title" 1fr
     "eventos-large-card-local" 1fr
     "eventos-large-card-partcipantes" 1fr
-    "eventos-large-card-duracao" 1fr
-    / 1fr;
+    "eventos-large-card-duracao" 1fr;
 }
 .eventos-large-card-title {
   grid-area: eventos-large-card-title;
@@ -96,5 +92,19 @@
 }
 .eventos-large-card-tag {
   grid-area: eventos-large-card-tag;
-  font-size: var(--font-padrao);
+}
+
+/* Vazio */
+.eventos-empty-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  grid: "eventos-empty-card-title" 32px;
+}
+.eventos-empty-card-title {
+  grid-area: eventos-empty-card-title;
+  font-size: var(--titulo-m);
 }

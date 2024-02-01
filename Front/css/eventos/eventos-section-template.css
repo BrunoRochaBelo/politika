@@ -84,6 +84,7 @@
 .eventos-section-list-template {
   display: grid;
   margin-left: 10px;
+  gap: 10px;
   grid:
     "eventos-section-list-template-moment eventos-section-list-template-event" 1fr
     / 34px 1fr;

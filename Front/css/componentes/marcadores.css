@@ -3,38 +3,49 @@
 .marcador-s {
   display: flex;
   align-items: center;
-  justify-items: start;
-  width: 90px;
-  height: 45px;
+  justify-items: center;
+  box-sizing: border-box;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  height: 27px;
   gap: 20px;
-  font-size: var(--titulo-xs);
+  font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  scrollbar-width: thin;
 }
 
 /* Médio */
 .marcador-m {
   display: flex;
   align-items: center;
-  justify-items: start;
-  width: 130px;
-  height: 45px;
-  font-size: var(--titulo-xs);
+  justify-items: center;
+  box-sizing: border-box;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  height: 35px;
+  gap: 25px;
+  font-size: var(--font-medium-bold);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  scrollbar-width: thin;
 }
 
 /* Grande */
 .marcador-l {
   display: flex;
   align-items: center;
-  justify-items: start;
+  justify-items: center;
+  box-sizing: border-box;
   border-radius: 9px;
   padding: 0px 10px 0px 10px;
-  height: 45px;
+  height: 43px;
   gap: 30px;
-  font-size: var(--font-medium-bold);
+  font-size: var(--font-medium-regular);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  scrollbar-width: thin;
 }

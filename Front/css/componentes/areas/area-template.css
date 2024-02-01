@@ -1,7 +1,9 @@
-/* area Template*/
+/* Area Template*/
 .area-template {
   display: grid;
+  box-sizing: border-box;
   gap: 10px;
+  margin: 40px 10px 10px 10px;
   grid:
     "area-template-header" 24px
     "area-template-content" 1fr
@@ -11,8 +13,18 @@
   grid-area: area-template-header;
   font-size: var(--titulo-l);
   text-align: left;
-  margin: 10px;
 }
 .area-template-content {
   grid-area: area-template-content;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* Estilos */
+.area-template:first-child {
+  margin: 20px 10px 10px 10px;
+}
+.area-template-content::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }

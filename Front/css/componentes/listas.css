@@ -4,29 +4,28 @@
   grid-auto-flow: row;
   gap: 5px;
   box-sizing: border-box;
+  scrollbar-width: thin;
 }
 .lista-vertical-2-template {
   display: grid;
   gap: 5px;
-  margin: 10px;
   box-sizing: border-box;
   grid-template: 1fr 1fr /1fr 1fr;
+  scrollbar-width: thin;
 }
 
 .lista-horizontal-template {
   display: grid;
-  max-width: 100%;
-  overflow-x: hidden;
+  grid-auto-flow: column;
   gap: 5px;
-  margin: 10px;
   white-space: nowrap;
   box-sizing: border-box;
+  scrollbar-width: thin;
 }
 
-/*.lista-horizontal-template {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: start;
-  justify-items: center;
-  gap: 5px;
-}*/
+/* Estilos */
+.lista-vertical::-webkit-scrollbar,
+.lista-vertical-2-template::-webkit-scrollbar,
+.lista-horizontal-template::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+}

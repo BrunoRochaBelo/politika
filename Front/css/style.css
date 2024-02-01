@@ -15,9 +15,10 @@
 @import "./componentes/marcadores.css";
 @import "./componentes/modal.css";
 @import "./componentes/recuar-expandir.css";
-@import "./componentes/cards/cards.css";
-@import "./componentes/cards/cards-eventos.css";
 @import "./componentes/areas/area-template.css";
+@import "./componentes/cards/cards.css";
+@import "./componentes/cards/template-cards-eventos.css";
+@import "./componentes/cards/template-cards-quantitativos.css";
 
 /* Home */
 @import "./home/home-template.css";

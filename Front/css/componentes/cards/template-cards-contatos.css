@@ -1,0 +1,110 @@
+/* CARDS Contatos */
+/* Pequeno */
+.contatos-small-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "contatos-small-card-title contatos-small-card-title . contatos-small-card-tag " 1fr
+    "contatos-small-card-inicio contatos-small-card-fim . contatos-small-card-tag" 0.5fr
+    / 50px 50px 1fr 1fr;
+}
+.contatos-small-card-title {
+  grid-area: contatos-small-card-title;
+  font-size: var(--titulo-xs);
+}
+.contatos-small-card-inicio {
+  grid-area: contatos-small-card-inicio;
+  font-size: var(--font-light);
+}
+.contatos-small-card-fim {
+  grid-area: contatos-small-card-fim;
+  font-size: var(--font-light);
+}
+.contatos-small-card-tag {
+  grid-area: contatos-small-card-tag;
+  justify-self: end;
+}
+
+/* Médio */
+.contatos-medium-card {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "contatos-medium-card-title contatos-medium-card-title contatos-medium-card-tag contatos-medium-card-tag" 1fr
+    "contatos-medium-card-inicio contatos-medium-card-fim contatos-medium-card-tag contatos-medium-card-tag" 0.5fr
+    / 1fr 1fr 2fr 1fr;
+}
+.contatos-medium-card-title {
+  grid-area: contatos-medium-card-title;
+  font-size: var(--font-medium-regular);
+}
+.contatos-medium-card-inicio {
+  grid-area: contatos-medium-card-inicio;
+  font-size: var(--font-medium-regular);
+}
+.contatos-medium-card-fim {
+  grid-area: contatos-medium-card-fim;
+  font-size: var(--font-medium-regular);
+}
+.contatos-medium-card-tag {
+  grid-area: contatos-medium-card-tag;
+  font-size: var(--font-medium-regular);
+}
+
+/* Grande */
+.contatos-large-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  grid:
+    "contatos-large-card-tag" 32px
+    "contatos-large-card-title" 1fr
+    "contatos-large-card-local" 1fr
+    "contatos-large-card-partcipantes" 1fr
+    "contatos-large-card-duracao" 1fr;
+}
+.contatos-large-card-title {
+  grid-area: contatos-large-card-title;
+  font-size: var(--titulo-m);
+}
+.contatos-large-card-local {
+  grid-area: contatos-large-card-local;
+  font-size: var(--font-medium-light);
+}
+.contatos-large-card-partcipantes {
+  grid-area: contatos-large-card-partcipantes;
+  font-size: var(--font-medium-light);
+}
+.contatos-large-card-duracao {
+  grid-area: contatos-large-card-duracao;
+  font-size: var(--font-medium-light);
+}
+.contatos-large-card-tag {
+  grid-area: contatos-large-card-tag;
+}
+
+/* Vazio */
+.contatos-empty-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  grid: "contatos-empty-card-title" 32px;
+}
+.contatos-empty-card-title {
+  grid-area: contatos-empty-card-title;
+  font-size: var(--titulo-m);
+}

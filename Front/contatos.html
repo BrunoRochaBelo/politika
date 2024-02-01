@@ -18,7 +18,6 @@
 </head>
 
 <body class="body-template">
-
   <header class="header header-template">
     <h1 class="header-icon" style="width: 18px; height: 14px;"><a href="index.html"><img src="imagens/icones/voltar.png" alt="Back Icon">
       </a></h1>
@@ -47,10 +46,110 @@
   </header>
 
   <main class="main contatos-template">
-    <section class="contatos-section">Conteúdo</section>
-    <section class="contatos-sidenav">Navegação</section>
+    <div id="floatingButton" onclick="mostrarModal()">+</div>
+    <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
+      <div id="modalContent">
+        <!-- Conteúdo do Modal -->
+        <p>Opção 1</p>
+        <p>Opção 2</p>
+        <p>Opção 3</p>
+      </div>
+    </div>
+
+    <section class="contatos-section">
+      <div class="area-template">
+        <h2 class="area-template-header">Contatos listados - 4.321</h2>
+        <ul class="area-template-content lista-vertical-template">
+          <li>
+            <a class="card-m" href="#">
+              <p>Contato</p>
+              <div class="marcador-s cor-marc3" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="card-m eventos-small-card" href="#">
+              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
+              <p class="eventos-small-card-inicio">inicio</p>
+              <p class="eventos-small-card-fim">fim</p>
+              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
+            </a>
+          </li>
+          <li>
+            <a class="card-m eventos-small-card" href="#">
+              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
+              <p class="eventos-small-card-inicio">inicio</p>
+              <p class="eventos-small-card-fim">fim</p>
+              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
+            </a>
+          </li>
+          <li>
+            <a class="card-m eventos-small-card" href="#">
+              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
+              <p class="eventos-small-card-inicio">inicio</p>
+              <p class="eventos-small-card-fim">fim</p>
+              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
+            </a>
+          </li>
+          <li>
+            <a class="card-m eventos-small-card" href="#">
+              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
+              <p class="eventos-small-card-inicio">inicio</p>
+              <p class="eventos-small-card-fim">fim</p>
+              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="contatos-sidenav">
+      <div class="area-template" id="container-marcadores">
+        <h2 class="area-template-header">Marcadores</h2>
+        <div class="area-template-content">
+          <ul class="lista-vertical-2-template recuar-expandir-horizontal">
+            <li>
+              <a class="marcador-l cor-marc1" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-l cor-marc2" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-l cor-marc3" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-l cor-marc4" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-l cor-marc5" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+    </section>
   </main>
 
+  <script src="./js/RecuarExpandirHorizontal.js"></script>
+  <script src="./js/Modal.js"></script>
 
 </body>
 

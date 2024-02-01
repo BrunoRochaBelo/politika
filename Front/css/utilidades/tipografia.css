@@ -4,7 +4,7 @@
   --font-light: 0.6875rem;
   --font-medium-light: 0.75rem;
   --font-medium-regular: 0.75rem;
-  --font-medium-bold: 0.75rem;
+  --font-medium-bolder: 0.75rem;
   --titulo-xs: 0.75rem;
   --titulo-s: 0.875rem;
   --titulo-m: 0.875rem;
@@ -32,9 +32,9 @@
   font: var(--font-medium-regular);
 }
 /* 12px */
-.font-medium-bold {
-  font: var(--font-medium-bold);
-  font-weight: bold;
+.font-medium-bolder {
+  font: var(--font-medium-bolder);
+  font-weight: bolder;
 }
 /* 12px */
 .titulo-xs {
@@ -49,17 +49,17 @@
 /* 14px */
 .titulo-m {
   font-size: var(--titulo-m);
-  font-weight: bold;
+  font-weight: bolder;
 }
 /* 16px */
 .titulo-l {
   font-size: var(--titulo-l);
-  font-weight: bold;
+  font-weight: bolder;
 }
 /* 18px */
 .titulo-xl {
   font-size: var(--titulo-xl);
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .titulo-area {

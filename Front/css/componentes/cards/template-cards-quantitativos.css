@@ -1,0 +1,25 @@
+/* Pequeno */
+.quant-small-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "quant-small-card-title" 0.5fr
+    "quant-small-card-desc" 1fr
+    "quant-small-card-result" 1fr;
+}
+.quant-small-card-title {
+  grid-area: quant-small-card-title;
+  font-size: var(--titulo-s);
+}
+.quant-small-card-desc {
+  grid-area: quant-small-card-desc;
+  font-size: var(--font-light);
+}
+.quant-small-card-result {
+  grid-area: quant-small-card-result;
+  font-size: var(--font-medium-regular);
+}
