@@ -30,3 +30,6 @@
 @import "./eventos/eventos-template.css";
 @import "./eventos/eventos-section-template.css";
 @import "./eventos/modal-calendario.css";
+
+/* pleitos */
+@import "./pleitos/pleitos-template.css";

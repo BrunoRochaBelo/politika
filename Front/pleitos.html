@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
   <script src="./js/EsquemaDeCores.js" defer></script>
-  <title>contatos</title>
-  <meta name="description" content="Seus contatos">
+  <title>pleitos</title>
+  <meta name="description" content="Lista de pleitos">
 
   <link rel="preload" href="./css/style.css" as="style">
   <link rel="stylesheet" href="./css/style.css">
@@ -21,31 +21,30 @@
   <header class="header header-template">
     <h1 class="header-icon" style="width: 18px; height: 14px;"><a href="index.html"><img src="imagens/icones/voltar.png" alt="Back Icon">
       </a></h1>
-    </a></h1>
-    <h1 class="header-title">CONTATOS</h1>
+    <h1 class="header-title">PLEITOS</h1>
     <nav class="header-nav">
-      <menu class="header-nav-template">
+      <ul class="header-nav-template">
         <li class="home"><a href="index.html"><img src="imagens/icones/home.png" alt="Home Icon">
             <p>home</p>
           </a></li>
         <li class="eventos"><a href="eventos.html"><img src="imagens/icones/eventos.png" alt="Eventos Icon">
             <p>Eventos</p>
           </a></li>
-        <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos-select.png" alt="Contatos Icon">
-            <p class="indicador">Contatos</p>
+        <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos.png" alt="Contatos Icon">
+            <p>Contatos</p>
           </a></li>
-        <li class="pleitos"><a href="pleitos.html"><img src="imagens/icones/pleitos.png" alt="Pleitos Icon">
-            <p>Pleitos</p>
+        <li class="pleitos"><a href="pleitos.html"><img src="imagens/icones/pleitos-select.png" alt="Pleitos Icon">
+            <p class="indicador">Pleitos</p>
           </a></li>
         <li class="despesas"><a href="#"><img src="imagens/icones/despesas.png" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
-      </menu>
+      </ul>
     </nav>
     <menu class="header-menu" style="width: 60px; height: 23px;"><img src="imagens/icones/pesquisar.png" alt="Menu Icon"></menu>
   </header>
 
-  <main class="main contatos-template">
+  <main class="main pleitos-template">
     <div id="floatingButton" onclick="mostrarModal()">+</div>
     <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
       <div id="modalContent">
@@ -56,7 +55,7 @@
       </div>
     </div>
 
-    <section class="contatos-section">
+    <section class="pleitos-section">
       <div class="area-template">
         <h2 class="area-template-header">Contatos listados - 4.321</h2>
         <ul class="area-template-content lista-vertical-template">
@@ -106,7 +105,7 @@
 
     </section>
 
-    <section class="contatos-sidenav">
+    <section class="pleitos-sidenav">
       <div class="area-template" id="container-marcadores">
         <h2 class="area-template-header">Marcadores</h2>
         <div class="area-template-content">

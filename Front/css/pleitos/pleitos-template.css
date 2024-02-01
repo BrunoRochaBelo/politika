@@ -1,0 +1,29 @@
+/* Grid */
+.pleitos-template {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid:
+    "pleitos-sidenav pleitos-section" 1fr
+    / 1.1fr 1.9fr;
+}
+
+/* Áreas de grid */
+.pleitos-section {
+  grid-area: pleitos-section;
+  text-align: center;
+}
+.pleitos-sidenav {
+  grid-area: pleitos-sidenav;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .pleitos-template {
+    grid:
+      "pleitos-sidenav" auto
+      "pleitos-section" 1fr
+      / 1fr;
+  }
+}
