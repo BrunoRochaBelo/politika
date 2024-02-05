@@ -15,9 +15,10 @@
 @import "./componentes/marcadores.css";
 @import "./componentes/modal.css";
 @import "./componentes/recuar-expandir.css";
-@import "./componentes/areas/area-template.css";
+@import "./componentes/area-template.css";
 @import "./componentes/cards/cards.css";
 @import "./componentes/cards/template-cards-eventos.css";
+@import "./componentes/cards/template-cards-contatos.css";
 @import "./componentes/cards/template-cards-quantitativos.css";
 
 /* Home */
@@ -25,6 +26,7 @@
 
 /* contatos */
 @import "./contatos/contatos-template.css";
+@import "./contatos/form-contato.css";
 
 /* eventos */
 @import "./eventos/eventos-template.css";

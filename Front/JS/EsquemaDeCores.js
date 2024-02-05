@@ -6,8 +6,8 @@ function verificarModoEscuro() {
 
     if (isDarkMode) {
       // Modo escuro
-      document.body.style.backgroundColor = "#131313";
-      document.body.style.color = "#fff";
+      document.body.style.backgroundColor = "#fff"; //f5f5f5
+      document.body.style.color = "#131313"; //fff
 
       // Mudar cor dos cards
       const cards = document.querySelectorAll(
@@ -15,22 +15,31 @@ function verificarModoEscuro() {
       );
 
       cards.forEach((card) => {
-        card.style.backgroundColor = "#262626"; // Exemplo: fundo cinza escuro para os cards
-        card.style.color = "#DADADA"; // Exemplo: texto branco para os cards
+        card.style.backgroundColor = "#fff"; // 262626
+        card.style.color = "#131313"; // DADADA
+      });
+      // Mudar cor dos card-select
+      const selectCards = document.querySelectorAll(
+        ".card-select-xs, .card-select-s, .card-select-m"
+      );
+
+      selectCards.forEach((selectCard) => {
+        selectCard.style.backgroundColor = "#fff";
+        selectCard.style.color = "#131313";
       });
 
       const marcadores = document.querySelectorAll(
         ".marcador-s, .marcador-m, .marcador-l"
       );
       marcadores.forEach((marcadores) => {
-        marcadores.style.color = "#222"; // Exemplo: texto branco para os marcador
+        marcadores.style.color = "#222"; // 222
       });
       // Mudar cor btn-recuar-expandir
       const btnrecuarexpandir = document.querySelectorAll(
         ".btn-recuar-expandir"
       );
       btnrecuarexpandir.forEach((recuarexpandir) => {
-        recuarexpandir.style.color = "#fff";
+        recuarexpandir.style.color = "#131313"; //fff
       });
       // Mudar cor modalContent
       const modalContent = document.querySelectorAll("#modalContent");
@@ -51,9 +60,11 @@ function verificarModoEscuro() {
       document.body.style.color = "#131313";
 
       // Resetar a cor dos cards para o modo claro
-      const cards = document.querySelectorAll(".card");
+      const cards = document.querySelectorAll(
+        ".card-s, .card-m, .card-l, .card-tmf-s, .card-tmf-m, .card-tmf-l, .card-select-xs"
+      );
       cards.forEach((card) => {
-        card.style.backgroundColor = "var(--cor-1)"; // Resetar para a cor original usando variável CSS
+        card.style.backgroundColor = "var(--cor-0)"; // Resetar para a cor original usando variável CSS
         card.style.color = ""; // Resetar para a cor original do texto
       });
 

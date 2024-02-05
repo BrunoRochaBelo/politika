@@ -2,12 +2,14 @@
 .lista-vertical-template {
   display: grid;
   grid-auto-flow: row;
+  padding: 5px;
   gap: 5px;
   box-sizing: border-box;
   scrollbar-width: thin;
 }
 .lista-vertical-2-template {
   display: grid;
+  padding: 5px;
   gap: 5px;
   box-sizing: border-box;
   grid-template: 1fr 1fr /1fr 1fr;
@@ -17,6 +19,7 @@
 .lista-horizontal-template {
   display: grid;
   grid-auto-flow: column;
+  padding: 5px;
   gap: 5px;
   white-space: nowrap;
   box-sizing: border-box;

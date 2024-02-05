@@ -32,6 +32,29 @@
   color: var(--cor-8);
 }
 
+/* Definição do layout usando grid para o cabeçalho dos formularios */
+.header-template-form {
+  display: grid;
+  align-items: center;
+  justify-items: auto;
+  text-transform: uppercase;
+  grid: "header-template-form-icon header-template-form-title" 45px;
+}
+
+/* Áreas de grid */
+.header-template-form-icon {
+  grid-area: header-template-form-icon;
+  justify-self: start;
+  margin-left: 1.25rem;
+  width: 32px;
+}
+.header-template-form-title {
+  grid-area: header-template-form-title;
+  justify-self: auto;
+  font-size: var(--titulo-xl);
+  color: var(--cor-2);
+}
+
 /* RESPONSIVO */
 @media (max-width: 767px) {
   .header-template {
@@ -61,5 +84,15 @@
     bottom: 0;
     width: 100vh;
     z-index: 1000;
+  }
+
+  .header-template-form {
+    grid: "header-template-form-icon header-template-form-title" 35px;
+  }
+
+  /* Áreas de grid */
+  .header-template-form-icon {
+    grid-area: header-template-form-icon;
+    margin-left: 0.625rem;
   }
 }

@@ -4,6 +4,8 @@ body {
   font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--cor-12);
+  background-color: var(--cor-2);
+  /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);*/
 }
 
 h1,
@@ -61,4 +63,7 @@ img {
 
 .link:hover {
   color: var(--cor-0);
+}
+fieldset {
+  border: none;
 }

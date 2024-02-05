@@ -1,0 +1,118 @@
+/* Estilos CSS para o formulário */
+form {
+  background: white;
+  margin-top: 10px;
+  border-radius: 9px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Evita sombra fora do formulário */
+}
+
+h2 {
+  text-align: center;
+}
+
+.aba {
+  display: none;
+  border-radius: 9px;
+}
+
+.aba:first-of-type {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 10px;
+  border-radius: 9px;
+  background: var(--cor-11);
+  border-radius: 10px 10px 0 0;
+}
+
+.nav li {
+  flex: 1;
+}
+
+.nav li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 9px;
+  color: white;
+}
+
+.nav li a:hover,
+.nav li a:active,
+.nav li a:focus {
+  background-color: #ddd;
+}
+
+.nav li a.active {
+  font-weight: bold;
+  background-color: var(--cor-9);
+}
+
+.campo {
+  margin: 20px;
+}
+
+.campo label {
+  display: inline-block;
+  margin: 0 0 5px 10px;
+  font-weight: bold;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 9px;
+}
+
+.campo input[type="checkbox"] {
+  width: auto;
+}
+
+.campo input[type="radio"] {
+  margin-right: 5px;
+}
+.campo-radio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.campo-radio label {
+  margin-left: 5px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.botoes button:hover {
+  background-color: #444;
+}
+
+.botoes button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mensagem-orientacao {
+  background-color: #ffcccc;
+  padding: 10px;
+  margin: 7px 10px 20px 10px;
+}
+.mensagem-texto {
+  text-align: center;
+  font-size: var(--titulo-m);
+  color: #cc0000;
+}

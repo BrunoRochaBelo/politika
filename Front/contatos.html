@@ -19,9 +19,11 @@
 
 <body class="body-template">
   <header class="header header-template">
-    <h1 class="header-icon" style="width: 18px; height: 14px;"><a href="index.html"><img src="imagens/icones/voltar.svg" alt="Back Icon">
-      </a></h1>
-    </a></h1>
+    <h1 class="header-icon" style="width: 18px; height: 14px;">
+      <a href="index.html">
+        <img src="imagens/icones/voltar.svg" alt="Back Icon">
+      </a>
+    </h1>
     <h1 class="header-title">CONTATOS</h1>
     <nav class="header-nav">
       <menu class="header-nav-template">
@@ -46,67 +48,111 @@
   </header>
 
   <main class="main contatos-template">
-    <div id="floatingButton" onclick="mostrarModal()">+</div>
-    <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
-      <div id="modalContent">
-        <!-- Conteúdo do Modal -->
-        <p>Opção 1</p>
-        <p>Opção 2</p>
-        <p>Opção 3</p>
-      </div>
-    </div>
+    <div id="floatingButton"><a href="cadastro-contato.html">+</div>
 
     <section class="contatos-section">
       <div class="area-template">
         <h2 class="area-template-header">Contatos listados - 4.321</h2>
         <ul class="area-template-content lista-vertical-template">
           <li>
-            <a class="card-m" href="#">
-              <p>Contato</p>
-              <div class="marcador-s cor-marc3" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
+            <a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
               </div>
             </a>
           </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc1" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc2" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc4" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc2" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc21" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
         </ul>
       </div>
 
     </section>
 
     <section class="contatos-sidenav">
+            <div class="area-template">
+        <h2 class="area-template-header">Filtros</h2>
+        <div class="area-template-content lista-horizontal-template">
+          <select class="card-select-xs" id="estado" onchange="carregarCidades()">
+            <option value="" selected disabled>Selecione um estado</option>
+            <option value="PE">Pernambuco</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+          </select>
+          <select class="card-select-xs" id="cidade">
+            <option value="" selected disabled>Selecione um estado primeiro</option>
+          </select>
+          <select class="card-select-xs" id="cidade2">
+            <option value="" selected disabled>Selecione um estado primeiro</option>
+          </select>
+        </div>
+      </div>
+
       <div class="area-template" id="container-marcadores">
         <h2 class="area-template-header">Marcadores</h2>
         <div class="area-template-content">
@@ -145,6 +191,9 @@
         </div>
       </div>
       <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+
+
+
     </section>
   </main>
 

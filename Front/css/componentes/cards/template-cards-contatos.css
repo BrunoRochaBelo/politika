@@ -8,25 +8,21 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "contatos-small-card-title contatos-small-card-title . contatos-small-card-tag " 1fr
-    "contatos-small-card-inicio contatos-small-card-fim . contatos-small-card-tag" 0.5fr
-    / 50px 50px 1fr 1fr;
+    "contatos-small-card-title contatos-small-card-tag" 1fr
+    "contatos-small-card-num contatos-small-card-tag" 1fr
+    / 1fr 1fr;
 }
 .contatos-small-card-title {
   grid-area: contatos-small-card-title;
-  font-size: var(--titulo-xs);
+  font-size: var(--titulo-m);
 }
-.contatos-small-card-inicio {
-  grid-area: contatos-small-card-inicio;
-  font-size: var(--font-light);
-}
-.contatos-small-card-fim {
-  grid-area: contatos-small-card-fim;
+.contatos-small-card-num {
+  grid-area: contatos-small-card-num;
   font-size: var(--font-light);
 }
 .contatos-small-card-tag {
   grid-area: contatos-small-card-tag;
-  justify-self: end;
+  justify-self: center;
 }
 
 /* Médio */

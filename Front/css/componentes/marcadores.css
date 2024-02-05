@@ -8,7 +8,7 @@
   border-radius: 9px;
   padding: 0px 10px 0px 10px;
   height: 27px;
-  gap: 20px;
+  gap: 15px;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
@@ -25,7 +25,7 @@
   border-radius: 9px;
   padding: 0px 10px 0px 10px;
   height: 35px;
-  gap: 25px;
+  gap: 20px;
   font-size: var(--font-medium-bold);
   white-space: nowrap;
   overflow: hidden;
@@ -42,7 +42,24 @@
   border-radius: 9px;
   padding: 0px 10px 0px 10px;
   height: 43px;
-  gap: 30px;
+  gap: 24px;
+  font-size: var(--font-medium-regular);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  scrollbar-width: thin;
+}
+/* Quando o marcador for item de um elemento e precisar de tamaho fixo */
+.marcador-item {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  box-sizing: border-box;
+  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  width: 175px;
+  height: 27px;
+  gap: 15px;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
