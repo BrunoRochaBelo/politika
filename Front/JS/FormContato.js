@@ -155,6 +155,93 @@ function atualizarBotoesNavegacao(abaAtual) {
   });
 }
 
+function mostrarCampoWhatsapp() {
+  var whatsappSim = document.getElementById("whatsapp_sim").checked;
+  var campoWhatsapp = document.getElementById("campoWhatsapp");
+
+  if (whatsappSim) {
+    campoWhatsapp.style.display = "none";
+    document.getElementById("whatsapp").value =
+      document.getElementById("celular").value;
+  } else {
+    campoWhatsapp.style.display = "block";
+    document.getElementById("whatsapp").value = ""; // Limpa o campo WhatsApp, se estiver preenchido
+  }
+}
+
+function mostrarCamposFilhos() {
+  var camposFilhos = document.getElementById("camposFilhos");
+  if (camposFilhos) {
+    camposFilhos.style.display = "block";
+  }
+}
+
+function ocultarCamposFilhos() {
+  var camposFilhos = document.getElementById("camposFilhos");
+  if (camposFilhos) {
+    camposFilhos.style.display = "none";
+  }
+}
+function adicionarFilho() {
+  var maisFilhosContainer = document.getElementById("maisFilhosContainer");
+
+  var novoFilhoDiv = document.createElement("div");
+  novoFilhoDiv.classList.add("campo");
+
+  var labelNomeFilho = document.createElement("label");
+  labelNomeFilho.textContent = "Nome do Filho";
+  var inputNomeFilho = document.createElement("input");
+  inputNomeFilho.type = "text";
+  inputNomeFilho.name = "nome_filho";
+
+  var labelDataNascimentoFilho = document.createElement("label");
+  labelDataNascimentoFilho.textContent = "Data de Nascimento do Filho";
+  var inputDataNascimentoFilho = document.createElement("input");
+  inputDataNascimentoFilho.type = "date";
+  inputDataNascimentoFilho.name = "data_nascimento_filho";
+
+  novoFilhoDiv.appendChild(labelNomeFilho);
+  novoFilhoDiv.appendChild(inputNomeFilho);
+  novoFilhoDiv.appendChild(labelDataNascimentoFilho);
+  novoFilhoDiv.appendChild(inputDataNascimentoFilho);
+
+  maisFilhosContainer.appendChild(novoFilhoDiv);
+}
+
+function mostrarCamposConjuge() {
+  var estadoCivil = document.getElementById("estado_civil").value;
+  var camposConjuge = document.getElementById("camposConjuge");
+
+  if (estadoCivil === "Casado(a)" || estadoCivil === "União Estável") {
+    camposConjuge.style.display = "block";
+  } else {
+    camposConjuge.style.display = "none";
+  }
+}
+
+function ocultarCamposConjuge() {
+  var camposConjuge = document.getElementById("camposConjuge");
+  camposConjuge.style.display = "none";
+}
+
+function mostrarCamposCargoComissionado() {
+  var camposCargoComissionado = document.getElementById(
+    "camposCargoComissionado"
+  );
+  if (camposCargoComissionado) {
+    camposCargoComissionado.style.display = "block";
+  }
+}
+
+function ocultarCamposCargoComissionado() {
+  var camposCargoComissionado = document.getElementById(
+    "camposCargoComissionado"
+  );
+  if (camposCargoComissionado) {
+    camposCargoComissionado.style.display = "none";
+  }
+}
+
 // Eventos para os botões de navegação entre as abas
 proximo1.addEventListener("click", function () {
   if (validarCampos(aba1)) {

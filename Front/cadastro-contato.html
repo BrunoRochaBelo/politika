@@ -4,30 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap">
   <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
+  <link rel="preload" href="./css/style.css" as="style">
+  <link rel="stylesheet" href="./css/style.css">
   <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
   <title>Cadastro de contato</title>
   <meta name="description" content="Cadastrar novo contato">
-  <link rel="preload" href="./css/style.css" as="style">
-  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="body-template">
   <header class="header header-template-form">
-    <h1 class="header-template-form-icon" style="width: 18px; height: 14px;"><a href="contatos.html"><img src="imagens/icones/voltar.svg" alt="Back Icon">
-      </a></h1>
+    <h1 class="header-template-form-icon" style="width: 18px; height: 14px;">
+      <a href="contatos.html"><img src="imagens/icones/voltar.svg" alt="Back Icon"></a>
+    </h1>
     <h1 class="header-template-form-title">CADASTRO CONTATOS</h1>
   </header>
 
   <main class="main">
-
-
-
-    <form id="form" onsubmit="validarFormulario()">
+    <form id="form" onsubmit="validarFormulario()" enctype="multipart/form-data">
 
       <ul class="nav">
         <li><a data-target="#aba1" id="link1" onclick="mudarAba('aba1')" class="active">Identificação</a></li>
@@ -51,17 +46,34 @@
           <label for="nome_contato">Nome do contato *</label>
           <input type="text" id="nome_contato" name="nome_contato" required>
         </div>
+        <!-- Campo Celular -->
         <div class="campo">
-          <label for="celular">Celular</label>
+          <label for="celular">Celular *</label>
           <input type="tel" id="celular" name="celular" class="contato" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999" required>
+        </div>
+
+        <!-- Opção para indicar se é WhatsApp -->
+        <div class="campo">
+          <label>Este número é WhatsApp? *</label>
+          <div class="radios">
+            <input type="radio" id="whatsapp_sim" name="whatsapp" value="Sim" onchange="mostrarCampoWhatsapp()">
+            <label for="whatsapp_sim">Sim</label>
+
+            <input type="radio" id="whatsapp_nao" name="whatsapp" value="Não" onchange="mostrarCampoWhatsapp()">
+            <label for="whatsapp_nao">Não</label>
+          </div>
+        </div>
+
+        <!-- Campo WhatsApp (inicialmente oculto) -->
+        <div id="campoWhatsapp" style="display: none;">
+          <div class="campo">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" class="contato" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999">
+          </div>
         </div>
         <div class="campo">
           <label for="email">E-mail</label>
           <input type="email" id="email" name="email" class="contato" placeholder="email@email.com" required>
-        </div>
-        <div class="campo">
-          <label for="whatsapp">Whatsapp</label>
-          <input type="tel" id="whatsapp" name="whatsapp" class="contato" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999" required>
         </div>
         <div class="campo">
           <label for="telefone">Telefone</label>
@@ -108,14 +120,14 @@
           <input type="text" id="local_votacao" name="local_votacao">
         </div>
         <div class="campo">
-          <label for="indicacao">Indicação</label>
-          <input type="text" id="indicacao" name="indicacao">
+          <label for="perfil_influencia">Perfil de Influência</label>
+          <select id="perfil_influencia" name="perfil_influencia">
+            <option value="">Selecione</option>
+            <option value="Baixo">Baixo</option>
+            <option value="Médio">Médio</option>
+            <option value="Alto">Alto</option>
+          </select>
         </div>
-        <div class="campo">
-          <label for="nome_indicacao">Nome da indicação</label>
-          <input type="text" id="nome_indicacao" name="nome_indicacao">
-        </div>
-
         <fieldset>
           <legend>Tipo do contato</legend>
           <div class="campo">
@@ -137,6 +149,7 @@
             <label for="favorito">Favorito</label>
           </div>
         </fieldset>
+
         <div class="botoes">
           <button type="button" id="anterior1" class="btn-leaked">Anterior</button>
           <button type="button" id="proximo1" class="btn-filled">Próximo</button>
@@ -220,6 +233,13 @@
           <input type="number" id="longitude" name="longitude" step="0.000001">
         </div>
         <div class="campo">
+          <label for="residencia_apoio">Residência de apoio</label>
+          <input type="radio" id="residencia_apoio_sim" name="residencia_apoio" value="Sim">
+          <label for="residencia_apoio_sim">Sim</label>
+          <input type="radio" id="residencia_apoio_nao" name="residencia_apoio" value="Não">
+          <label for="residencia_apoio_nao">Não</label>
+        </div>
+        <div class="campo">
           <label for="eleitores_residentes">Eleitores residentes</label>
           <input type="text" id="eleitores_residentes" name="eleitores_residentes">
           <!-- Possibilidade de abrir mais campos para eleitores residentes -->
@@ -230,29 +250,22 @@
           <button type="submit" id="salvar2" disabled class="btn-filled">Salvar</button>
         </div>
       </div>
+
       <div id="aba3" class="aba">
         <div class="mensagem-orientacao">
           <p class="mensagem-texto">(*) Campos obrigatórios para continuar</p>
         </div>
         <div class="campo">
-          <label for="perfil_influencia">Perfil de Influência</label>
-          <select id="perfil_influencia" name="perfil_influencia">
-            <option value="">Selecione</option>
-            <option value="Baixo">Baixo</option>
-            <option value="Médio">Médio</option>
-            <option value="Alto">Alto</option>
-          </select>
+          <label for="indicacao">Indicação</label>
+          <input type="text" id="indicacao" name="indicacao">
         </div>
         <div class="campo">
-          <div class="campo">
-            <label for="residencia_apoio">Residência de apoio</label>
-            <input type="radio" id="residencia_apoio_sim" name="residencia_apoio" value="Sim">
-            <label for="residencia_apoio_sim">Sim</label>
-            <input type="radio" id="residencia_apoio_nao" name="residencia_apoio" value="Não">
-            <label for="residencia_apoio_nao">Não</label>
-          </div>
-          <label for="estado_civil">Estado Civil</label>
-          <select id="estado_civil" name="estado_civil">
+          <label for="nome_indicacao">Nome da indicação</label>
+          <input type="text" id="nome_indicacao" name="nome_indicacao">
+        </div>
+        <div class="campo">
+          <label for="estado_civil">Estado Civil *</label>
+          <select id="estado_civil" name="estado_civil" onchange="mostrarCamposConjuge()">
             <option value="">Selecione</option>
             <option value="Solteiro(a)">Solteiro(a)</option>
             <option value="Casado(a)">Casado(a)</option>
@@ -261,21 +274,35 @@
             <option value="União Estável">União Estável</option>
           </select>
         </div>
+        <div id="camposConjuge" style="display: none;">
+          <div class="campo">
+            <label for="nome_conjuge">Nome do Cônjuge</label>
+            <input type="text" id="nome_conjuge" name="nome_conjuge">
+          </div>
+          <div class="campo">
+            <label for="data_nascimento_conjuge">Data de Nascimento do Cônjuge</label>
+            <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
+          </div>
+        </div>
         <div class="campo">
           <label for="filhos">Filhos</label>
-          <input type="radio" id="filhos_sim" name="filhos" value="Sim">
+          <input type="radio" id="filhos_sim" name="filhos" value="Sim" onclick="mostrarCamposFilhos()">
           <label for="filhos_sim">Sim</label>
-          <input type="radio" id="filhos_nao" name="filhos" value="Não">
+          <input type="radio" id="filhos_nao" name="filhos" value="Não" onclick="ocultarCamposFilhos()">
           <label for="filhos_nao">Não</label>
           <!-- Se sim, texto e possibilidade de abrir mais campos para filhos -->
-        </div>
-        <div class="campo">
-          <label for="nome_conjuge">Nome do cônjuge</label>
-          <input type="text" id="nome_conjuge" name="nome_conjuge">
-        </div>
-        <div class="campo">
-          <label for="data_nascimento_conjuge">Data Nasc. do cônjuge</label>
-          <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
+          <div id="camposFilhos" style="display: none;">
+            <div class="campo">
+              <label for="nome_filho">Nome do Filho</label>
+              <input type="text" id="nome_filho" name="nome_filho">
+            </div>
+            <div class="campo">
+              <label for="data_nascimento_filho">Data de Nascimento do Filho</label>
+              <input type="date" id="data_nascimento_filho" name="data_nascimento_filho">
+            </div>
+            <div id="maisFilhosContainer" class="centralizar-botao"></div>
+            <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn">Adicionar mais um filho</button>
+          </div>
         </div>
         <div class="campo">
           <label for="religiao">Religião</label>
@@ -287,18 +314,25 @@
         </div>
         <div class="campo">
           <label for="cargo_comissionado">Cargo Comissionado</label>
-          <input type="radio" id="cargo_comissionado_sim" name="cargo_comissionado" value="Sim">
+          <input type="radio" id="cargo_comissionado_sim" name="cargo_comissionado" value="Sim" onclick="mostrarCamposCargoComissionado()">
           <label for="cargo_comissionado_sim">Sim</label>
-          <input type="radio" id="cargo_comissionado_nao" name="cargo_comissionado" value="Não">
+          <input type="radio" id="cargo_comissionado_nao" name="cargo_comissionado" value="Não" onclick="ocultarCamposCargoComissionado()">
           <label for="cargo_comissionado_nao">Não</label>
-          <!-- Se sim, abrir mais campos: Órgão de Lotação / texto -->
         </div>
+        <div id="camposCargoComissionado" style="display: none;">
+          <div class="campo">
+            <label for="orgao_lotacao">Órgão de Lotação</label>
+            <input type="text" id="orgao_lotacao" name="orgao_lotacao">
+          </div>
+        </div>
+
         <div class="botoes">
           <button type="button" id="anterior3" class="btn-leaked">Anterior</button>
           <button type="button" id="proximo3" disabled class="btn-filled">Próximo</button>
           <button type="submit" id="salvar3" class="btn-filled">Salvar</button>
         </div>
       </div>
+
     </form>
   </main>
   <script src="./js/FormContato.js"></script>

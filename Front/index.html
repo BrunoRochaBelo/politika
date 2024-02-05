@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
-  <script src="./js/EsquemaDeCores.js" defer></script>
+  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
   <title>home</title>
   <meta name="description" content="Seu home">
 
@@ -42,7 +42,9 @@
           </a></li>
       </menu>
     </nav>
-    <menu class="header-menu" style="width: 21px; height: 18px;"><img src="imagens/icones/menu.svg" alt="Menu Icon"></menu>
+    <div class="header-menu">
+      <img src="imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
+    </div>
   </header>
 
   <main class="main home-template">
@@ -117,46 +119,79 @@
         <h2 class="area-template-header">Contatos importantes</h2>
         <ul class="area-template-content lista-vertical-template">
           <li>
-            <a class="card-m" href="#">
-              <p><strong>Contato</strong></p>
-              <div class="marcador-s cor-marc3" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
+            <a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
               </div>
             </a>
           </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
-          <li>
-            <a class="card-m eventos-small-card" href="#">
-              <p class="eventos-small-card-title"><strong>eventos-small-card-title</strong></p>
-              <p class="eventos-small-card-inicio">inicio</p>
-              <p class="eventos-small-card-fim">fim</p>
-              <p class="eventos-small-card-tag">eventos-small-card-tag</p>
-            </a>
-          </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc1" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc2" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc4" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc2" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
+          <li><a class="card-s contatos-small-card" href="#">
+              <p class="contatos-small-card-title">{{Contato}}</p>
+              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-tag marcador-item cor-marc21" href="#">
+                <p>{{icon}}</p>
+                <p>{{title marcador}}</p>
+              </div>
+            </a> </li>
         </ul>
       </div>
     </section>
@@ -237,8 +272,21 @@
 
   </main>
 
+  <!-- Modal -->
+  <div class="modal" id="userModal">
+    <div class="modal-content">
+      <div class="user-info">
+        <img src="" alt="Foto do Usuário" id="modalUserPhoto">
+        <p id="username">Nome do Usuário</p>
+        <p id="type">Tipo do Usuário</p>
+      </div>
+      <button class="btn-recuar-expandir" onclick="logout()">Sair</button>
+    </div>
+  </div>
+
   <script src="./js/RecuarExpandirVertical.js"></script>
   <script src="./js/FiltroEstadoCidade.js"></script>
+  <script src="./js/ModalMenu.js"></script>
 
 </body>
 

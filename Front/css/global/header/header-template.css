@@ -30,6 +30,7 @@
   justify-self: end;
   margin-right: 1.25rem;
   color: var(--cor-8);
+  width: 32px;
 }
 
 /* Definição do layout usando grid para o cabeçalho dos formularios */

@@ -6,9 +6,8 @@
   padding: 10px;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--cor-3);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 /* Pequeno altura 35px*/
 .card-s {
@@ -16,9 +15,8 @@
   border-radius: 9px;
   padding: 10px;
   background-color: var(--cor-0);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--cor-3);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 /* Médio altura 50px*/
 .card-m {
@@ -27,9 +25,8 @@
   border-radius: 9px;
   padding: 10px;
   background-color: var(--cor-0);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--cor-3);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 /* Grande altura 150px*/
 .card-l {
@@ -37,9 +34,8 @@
   border-radius: 9px;
   padding: 10px;
   background-color: var(--cor-0);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--cor-3);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Cards tamanhos fixos (tmf)*/
@@ -50,9 +46,8 @@
   border-radius: 9px;
   padding: 10px;
   background-color: var(--cor-0);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--cor-3);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Médio */
@@ -63,9 +58,8 @@
   border-radius: 9px;
   padding: 10px;
   background-color: var(--cor-0);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--cor-3);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 /* Grande */
 .card-tmf-l {
@@ -75,9 +69,8 @@
   border-radius: 9px;
   padding: 10px;
   background-color: var(--cor-0);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--cor-3);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Responsividade */
@@ -95,6 +88,7 @@
   padding: auto;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .card-select-s {
   height: 35px;
@@ -102,6 +96,7 @@
   padding: auto;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .card-select-m {
   height: 50px;
@@ -109,4 +104,5 @@
   padding: auto;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

@@ -1,6 +1,7 @@
 /* Global */
 @import "./global/global.css";
 @import "./global/body-template.css";
+@import "./global/login.css";
 /* Global/Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
@@ -23,6 +24,7 @@
 
 /* Home */
 @import "./home/home-template.css";
+@import "./home/modal-menu.css";
 
 /* contatos */
 @import "./contatos/contatos-template.css";
