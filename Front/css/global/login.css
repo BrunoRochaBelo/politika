@@ -3,8 +3,8 @@
   display: flex;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
   overflow: hidden;
@@ -13,7 +13,6 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade conforme necessário */
@@ -21,9 +20,9 @@
 }
 
 .logo-image {
-  width: 32%;
+  width: 7em;
   height: auto;
-  margin: 20px 0 0 20px;
+  margin: auto;
   z-index: 1;
 }
 .form-login {
@@ -52,19 +51,21 @@
   padding: 0.75em;
   border-radius: 5px;
   margin-bottom: 1.5em;
-  border: 1px solid #bbb;
   font-size: 1em;
+}
+.form-login input:focus {
+  outline: 2px solid lightblue;
 }
 
 .form-login fieldset {
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .form-login legend {
   padding: 1em;
   margin: 0;
-  display: block;
+  display: inline;
   text-align: center;
   margin: 1em 0 0.5em;
   width: 100%;
@@ -77,4 +78,14 @@
 .btn-form-submit {
   background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
   color: rgb(255, 255, 255);
+}
+.forgot-password {
+  font-size: var(--font-light);
+  color: var(--cor-4);
+  background-color: rgb(0, 0, 0, 0);
+  padding: 10px;
+  cursor: pointer;
+  margin: auto;
+  border: none;
+  display: block;
 }

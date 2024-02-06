@@ -274,13 +274,15 @@
 
   <!-- Modal -->
   <div class="modal" id="userModal">
-    <div class="modal-content">
-      <div class="user-info">
+    <div class="modal-content-template">
+      <div class="modal-content-template-img">
         <img src="" alt="Foto do Usuário" id="modalUserPhoto">
-        <p id="username">Nome do Usuário</p>
-        <p id="type">Tipo do Usuário</p>
       </div>
-      <button class="btn-recuar-expandir" onclick="logout()">Sair</button>
+      <div class="modal-content-template-candidato" id="candidato">Nome do candidato</div>
+      <div class="modal-content-template-partido" id="partido">Partido do candidato</div>
+      <div class="modal-content-template-username" id="username">Nome do Usuário</div>
+      <div class="modal-content-template-cargo" id="cargo">Cargo do Usuário</div>
+      <button class="modal-content-template-sair btn-recuar-expandir" onclick="logout()">Sair</button>
     </div>
   </div>
 

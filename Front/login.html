@@ -21,7 +21,7 @@
   <form class="form-login" action="#" method="get" onsubmit="return redirectToIndex()">
     <img src="./imagens/logo/logo.png" alt="Logo" class="logo-image">
     <fieldset>
-      <legend>Entre com seus dados de acesso</legend>
+      <legend>Seja bem vindo!</legend>
 
       <label for="user">Usuário</label>
       <input type="text" id="user" required autofocus>
@@ -30,6 +30,7 @@
       <input type="password" id="pass" required>
 
       <input class="btn-form-submit" type="submit" value="Entrar">
+      <button class="forgot-password" type="button" onclick="recoverPassword()">Esqueceu sua senha?</button>
     </fieldset>
   </form>
 
@@ -37,11 +38,16 @@
     function redirectToIndex() {
       // Adicione aqui qualquer lógica de validação do formulário se necessário
 
-      // Redireciona para a página "index.html"
       window.location.href = "index.html";
 
       // Retorna false para evitar que o formulário seja enviado normalmente
       return false;
+    }
+  </script>
+  <script>
+    function recoverPassword() {
+      // Adicione aqui a lógica para recuperar a senha
+      alert("Um e-mail foi enviado para redefinir sua senha");
     }
   </script>
 </body>

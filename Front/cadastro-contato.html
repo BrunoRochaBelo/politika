@@ -30,9 +30,12 @@
         <li><a data-target="#aba3" id="link3" onclick="mudarAba('aba3')">Detalhes</a></li>
       </ul>
 
-      <div id="aba1" class="aba">
+      <div id="aba1" class="aba aba-template">
         <div class="mensagem-orientacao">
           <p class="mensagem-texto">(*) Campos obrigatórios para continuar</p>
+        </div>
+        <div class="user-info">
+          <img src="imagens/foto-do-usuario.png" alt="">
         </div>
         <div class="campo">
           <label for="tipo_pessoa">Tipo Pessoa *</label>
@@ -84,8 +87,8 @@
           <input type="date" id="data_nascimento" name="data_nascimento">
         </div>
         <div class="campo">
-          <label for="sexo">Sexo *</label>
-          <select id="sexo" name="sexo" required>
+          <label for="sexo">Sexo</label>
+          <select id="sexo" name="sexo">
             <option value="">Selecione</option>
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
@@ -128,9 +131,9 @@
             <option value="Alto">Alto</option>
           </select>
         </div>
-        <fieldset>
-          <legend>Tipo do contato</legend>
-          <div class="campo">
+        <div class="campo">
+          <label for="tipo_contato">Tipo do contato</label>
+          <div id="tipo_contato">
             <input type="checkbox" id="eleitor" name="eleitor" value="Eleitor">
             <label for="eleitor">Eleitor</label>
             <input type="checkbox" id="staff" name="staff" value="Staff">
@@ -148,8 +151,7 @@
             <input type="checkbox" id="favorito" name="favorito" value="Favorito">
             <label for="favorito">Favorito</label>
           </div>
-        </fieldset>
-
+        </div>
         <div class="botoes">
           <button type="button" id="anterior1" class="btn-leaked">Anterior</button>
           <button type="button" id="proximo1" class="btn-filled">Próximo</button>
@@ -264,7 +266,7 @@
           <input type="text" id="nome_indicacao" name="nome_indicacao">
         </div>
         <div class="campo">
-          <label for="estado_civil">Estado Civil *</label>
+          <label for="estado_civil">Estado Civil</label>
           <select id="estado_civil" name="estado_civil" onchange="mostrarCamposConjuge()">
             <option value="">Selecione</option>
             <option value="Solteiro(a)">Solteiro(a)</option>

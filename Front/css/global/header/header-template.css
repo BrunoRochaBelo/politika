@@ -6,6 +6,7 @@
   justify-items: center;
   text-transform: uppercase;
   grid: "header-icon header-nav header-menu" 40px;
+  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.1);
 }
 
 /* Áreas de grid */
@@ -62,7 +63,7 @@
     align-items: center;
     justify-content: space-between;
     grid:
-      "header-icon header-title header-menu" 35px
+      "header-icon header-title header-menu" 39px
       / 24px auto 24px;
   }
   .header-icon {
@@ -80,7 +81,7 @@
   }
   .header-nav {
     background: var(--cor-12);
-    /* Fixa a navegação no rodapé da tela em telas pequenas */
+    box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.15);
     position: fixed;
     bottom: 0;
     width: 100vh;

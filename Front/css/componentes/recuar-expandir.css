@@ -1,9 +1,20 @@
 /* Estilo para mostrar o conteúdo quando a área está recuada */
 .recuar-expandir-vertical.recuar {
+  position: relative; /* Adiciona posição relativa ao contêiner */
   height: 130px;
   overflow-x: hidden;
+  border-radius: 9px;
   transition: width 0.5s ease-out 0.5s;
 }
+.recuar-expandir-vertical.recuar::before {
+  content: ""; /* Adiciona um conteúdo vazio para o pseudo-elemento */
+  position: absolute; /* Torna o pseudo-elemento posicionado absolutamente em relação ao contêiner */
+  width: 100%;
+  height: 5px; /* Altura da sombra */
+  bottom: 0; /* Posiciona o pseudo-elemento na parte inferior */
+  box-shadow: inset 0px -5px 5px -6px rgba(0, 0, 0, 0.5); /* Sombra interna na parte inferior */
+}
+
 .recuar-expandir-horizontal.recuar {
   display: flex;
   overflow-x: auto;
