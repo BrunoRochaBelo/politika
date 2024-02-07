@@ -85,7 +85,6 @@
 .card-select-xs {
   height: 30px;
   border-radius: 9px;
-  padding: auto;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -93,15 +92,14 @@
 .card-select-s {
   height: 35px;
   border-radius: 9px;
-  padding: auto;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .card-select-m {
   height: 50px;
+  width: auto;
   border-radius: 9px;
-  padding: auto;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);

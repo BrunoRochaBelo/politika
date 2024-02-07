@@ -14,8 +14,7 @@
   position: fixed;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid var(--cor-6);
-  background-color: var(--cor-12);
+  background-color: var(--cor-0);
 }
 .main {
   grid-area: main;

@@ -3,17 +3,18 @@
   display: grid;
   grid-auto-flow: row;
   padding: 5px;
-  gap: 5px;
   box-sizing: border-box;
   scrollbar-width: thin;
+  transition: 1s;
 }
 .lista-vertical-2-template {
   display: grid;
   padding: 5px;
   gap: 5px;
   box-sizing: border-box;
-  grid-template: 1fr 1fr /1fr 1fr;
+  grid-template: auto auto / 1fr 1fr;
   scrollbar-width: thin;
+  transition: 1s;
 }
 
 .lista-horizontal-template {
@@ -25,6 +26,7 @@
   overflow-x: auto;
   box-sizing: border-box;
   scrollbar-width: thin;
+  transition: 1s;
 }
 
 /* Estilos */
@@ -32,4 +34,38 @@
 .lista-vertical-2-template::-webkit-scrollbar,
 .lista-horizontal-template::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+}
+
+/* Estilos para cards dentro da lista */
+/* Reset de borda para todos os cards dentro da lista */
+.lista-vertical-template .card-xs,
+.lista-vertical-template .card-s,
+.lista-vertical-template .card-l,
+.lista-vertical-template .card-m {
+  border-radius: 0;
+  border-bottom: 1px solid var(--cor-4);
+}
+
+/* Adiciona borda arredondada nos cantos esquerdos e direitos do primeiro e último cards dentro da lista */
+.lista-vertical-template li:first-child .card-xs,
+.lista-vertical-template li:first-child .card-s,
+.lista-vertical-template li:first-child .card-l,
+.lista-vertical-template li:first-child .card-m {
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+.lista-vertical-template li:last-child .card-xs,
+.lista-vertical-template li:last-child .card-s,
+.lista-vertical-template li:last-child .card-l,
+.lista-vertical-template li:last-child .card-m {
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom: none;
+}
+.lista-vertical-template .card-xs,
+.lista-vertical-template .card-s,
+.lista-vertical-template .card-m,
+.lista-vertical-template .card-l {
+  box-shadow: none;
 }

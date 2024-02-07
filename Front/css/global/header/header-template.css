@@ -5,13 +5,13 @@
   align-items: center;
   justify-items: center;
   text-transform: uppercase;
-  grid: "header-icon header-nav header-menu" 40px;
-  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.1);
+  grid: "header-menu header-nav header-search" 40px;
+  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.4);
 }
 
 /* Áreas de grid */
-.header-icon {
-  grid-area: header-icon;
+.header-menu {
+  grid-area: header-menu;
   justify-self: start;
   margin-left: 1.25rem;
   width: 32px;
@@ -20,18 +20,17 @@
   display: none;
   grid-area: header-title;
   width: 22px;
-  color: var(--cor-2);
+  color: var(--cor-12);
 }
 .header-nav {
   grid-area: header-nav;
-  color: var(--cor-2);
 }
-.header-menu {
-  grid-area: header-menu;
+.header-search {
+  grid-area: header-search;
   justify-self: end;
   margin-right: 1.25rem;
-  color: var(--cor-8);
-  width: 32px;
+  width: 60px;
+  height: auto;
 }
 
 /* Definição do layout usando grid para o cabeçalho dos formularios */
@@ -40,12 +39,13 @@
   align-items: center;
   justify-items: auto;
   text-transform: uppercase;
-  grid: "header-template-form-icon header-template-form-title" 45px;
+  grid: "header-template-form-menu header-template-form-title" 45px;
+  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.4);
 }
 
 /* Áreas de grid */
-.header-template-form-icon {
-  grid-area: header-template-form-icon;
+.header-template-form-menu {
+  grid-area: header-template-form-menu;
   justify-self: start;
   margin-left: 1.25rem;
   width: 32px;
@@ -54,7 +54,7 @@
   grid-area: header-template-form-title;
   justify-self: auto;
   font-size: var(--titulo-xl);
-  color: var(--cor-2);
+  color: var(--cor-12);
 }
 
 /* RESPONSIVO */
@@ -63,10 +63,10 @@
     align-items: center;
     justify-content: space-between;
     grid:
-      "header-icon header-title header-menu" 39px
-      / 24px auto 24px;
+      "header-menu header-title header-search" 39px
+      / auto auto auto;
   }
-  .header-icon {
+  .header-menu {
     margin-left: 0.625rem;
   }
   .header-title {
@@ -76,11 +76,11 @@
     align-items: center;
     justify-content: center;
   }
-  .header-menu {
+  .header-search {
     margin-right: 0.625rem;
   }
   .header-nav {
-    background: var(--cor-12);
+    background: var(--cor-0);
     box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.15);
     position: fixed;
     bottom: 0;
@@ -89,12 +89,12 @@
   }
 
   .header-template-form {
-    grid: "header-template-form-icon header-template-form-title" 35px;
+    grid:
+      "header-template-form-menu header-template-form-title" 35px
+      / auto auto auto;
   }
-
-  /* Áreas de grid */
-  .header-template-form-icon {
-    grid-area: header-template-form-icon;
+  .header-template-form-menu {
+    grid-area: header-template-form-menu;
     margin-left: 0.625rem;
   }
 }

@@ -4,7 +4,7 @@
   height: 130px;
   overflow-x: hidden;
   border-radius: 9px;
-  transition: width 0.5s ease-out 0.5s;
+  transition: 1s;
 }
 .recuar-expandir-vertical.recuar::before {
   content: ""; /* Adiciona um conteúdo vazio para o pseudo-elemento */
@@ -13,13 +13,14 @@
   height: 5px; /* Altura da sombra */
   bottom: 0; /* Posiciona o pseudo-elemento na parte inferior */
   box-shadow: inset 0px -5px 5px -6px rgba(0, 0, 0, 0.5); /* Sombra interna na parte inferior */
+  transition: 1s;
 }
 
 .recuar-expandir-horizontal.recuar {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  transition: width 0.5s ease-out 0.5s;
+  transition: 1s;
 }
 
 /* Estilo do botão */
@@ -34,6 +35,7 @@
   margin: auto;
   border: none;
   display: block;
+  transition: 1s;
 }
 
 /* Exibir o botão apenas no modo responsivo */

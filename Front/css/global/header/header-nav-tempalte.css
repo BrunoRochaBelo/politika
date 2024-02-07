@@ -5,7 +5,7 @@
     "home eventos contatos pleitos despesas"
     / 1fr 1fr 1fr 1fr 1fr;
 }
-.dashborad {
+.home {
   grid-area: home;
 }
 .relatorios {
@@ -29,19 +29,21 @@
 .header-nav-template a {
   size: 1rem;
   padding: 10px;
-  color: var(--cor-0);
-  border-radius: 9px;
+  color: var(--cor-12);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
   display: flex;
   transition: 0.15s;
 }
 .header-nav-template a:hover {
-  background-color: var(--cor-9);
-  padding: 10px;
-  color: var(--cor-3);
+  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  padding: auto;
+  font-weight: bold;
+  transition: 1s;
 }
 .header-nav-template a:active {
-  background-color: var(--cor-0);
-  color: var(--cor-12);
+  background-color: var(--cor-12);
+  color: var(--cor-0);
   transition: 1s;
 }
 .header-nav-template img {
@@ -60,12 +62,18 @@
     margin: 0 auto;
   }
   .header-nav-template p {
-    /* Remove os textos quando o tamanho da tela for menor */
     display: none;
   }
   .header-nav-template img {
     width: 32px;
     height: 27px;
     margin: 0 auto;
+  }
+  .indicador {
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  .header-nav-template a {
+    border-radius: 50%;
   }
 }

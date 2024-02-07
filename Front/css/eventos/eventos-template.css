@@ -22,8 +22,21 @@
 @media (max-width: 800px) {
   .eventos-template {
     grid:
-      "eventos-sidenav" auto
-      "eventos-section" 1fr
-      / 1fr;
+      "eventos-sidenav"
+      "eventos-section"
+      /1fr;
+  }
+  .eventos-section {
+    padding-top: 10px;
+    border-radius: 15px;
+    background-color: var(--cor-0);
+  }
+  .eventos-section .area-template {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .eventos-section .area-template .lista-vertical-template {
+    background-color: transparent;
+    box-shadow: none;
   }
 }

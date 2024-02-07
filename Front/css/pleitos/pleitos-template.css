@@ -22,8 +22,21 @@
 @media (max-width: 800px) {
   .pleitos-template {
     grid:
-      "pleitos-sidenav" auto
-      "pleitos-section" 1fr
-      / 1fr;
+      "pleitos-sidenav"
+      "pleitos-section"
+      /1fr;
+  }
+  .pleitos-section {
+    padding-top: 10px;
+    border-radius: 15px;
+    background-color: var(--cor-0);
+  }
+  .pleitos-section .area-template {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .pleitos-section .area-template .lista-vertical-template {
+    background-color: transparent;
+    box-shadow: none;
   }
 }

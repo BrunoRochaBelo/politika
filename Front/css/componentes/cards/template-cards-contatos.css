@@ -22,7 +22,7 @@
 }
 .contatos-small-card-tag {
   grid-area: contatos-small-card-tag;
-  justify-self: center;
+  justify-self: end;
 }
 
 /* Médio */

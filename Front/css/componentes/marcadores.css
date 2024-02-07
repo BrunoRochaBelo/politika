@@ -6,9 +6,7 @@
   justify-items: center;
   box-sizing: border-box;
   border-radius: 9px;
-  padding: 0px 10px 0px 10px;
-  height: 27px;
-  gap: 15px;
+  padding: 10px;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
@@ -23,9 +21,7 @@
   justify-items: center;
   box-sizing: border-box;
   border-radius: 9px;
-  padding: 0px 10px 0px 10px;
-  height: 35px;
-  gap: 20px;
+  padding: 14px;
   font-size: var(--font-medium-bold);
   white-space: nowrap;
   overflow: hidden;
@@ -40,9 +36,7 @@
   justify-items: center;
   box-sizing: border-box;
   border-radius: 9px;
-  padding: 0px 10px 0px 10px;
-  height: 43px;
-  gap: 24px;
+  padding: 18px;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
@@ -53,13 +47,12 @@
 .marcador-item {
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-items: start;
   box-sizing: border-box;
   border-radius: 9px;
-  padding: 0px 10px 0px 10px;
-  width: 175px;
-  height: 27px;
-  gap: 15px;
+  padding: 5px 10px 5px 10px;
+  width: 135px;
+  height: auto;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;

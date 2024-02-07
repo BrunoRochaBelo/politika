@@ -20,13 +20,12 @@
 <body class="body-template">
 
   <header class="header header-template">
-    <h1 class="header-icon"><a href="index.html"><img src="imagens/logo/logo.png" alt="Logo Icon">
-      </a></h1>
+    <h1 class="header-menu"><img src="imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto"></h1>
     <h1 class="header-title">HOME</h1>
     <nav class="header-nav">
       <menu class="header-nav-template">
-        <li class="home"><a href="index.html"><img src="imagens/icones/home-select.svg" alt="Home Icon">
-            <p class="indicador">home</p>
+        <li class="home indicador"><a href="index.html"><img src="imagens/icones/home-select.svg" alt="Home Icon">
+            <p>home</p>
           </a></li>
         <li class="eventos"><a href="eventos.html"><img src="imagens/icones/eventos.svg" alt="Eventos Icon">
             <p>Eventos</p>
@@ -42,8 +41,8 @@
           </a></li>
       </menu>
     </nav>
-    <div class="header-menu">
-      <img src="imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
+    <div class="header-search">
+      <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
     </div>
   </header>
 
@@ -52,7 +51,7 @@
     <section class="home-section">
       <div class="area-template">
         <h2 class="area-template-header">Destino</h2>
-        <div class="area-template-content lista-vertical-template">
+        <div class="area-template-content lista-vertical-2-template">
           <select class="card-select-m" id="estado" onchange="carregarCidades()">
             <option value="" selected disabled>Selecione um estado</option>
             <option value="PE">Pernambuco</option>
@@ -195,20 +194,19 @@
         </ul>
       </div>
     </section>
-
     <section class="home-sidenav">
-      <div class="area-template recuar-expandir-vertical">
+      <div class="area-template ">
         <h2 class="area-template-header">Compromissos para hoje</h2>
-        <ul class="area-template-content lista-vertical-template">
+        <ul class="area-template-content lista-vertical-template recuar-expandir-vertical">
           <li>
             <a class="card-s eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>Title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
               <div class="eventos-small-card-tag">
-                <div class="marcador-s cor-marc1" href="#">
+                <div class="marcador-item cor-marc1" href="#">
                   <p>icon</p>
-                  <p><strong>title marcador</strong></p>
+                  <p>title marcador</p>
                 </div>
               </div>
             </a>
@@ -219,9 +217,9 @@
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
               <div class="eventos-small-card-tag">
-                <div class="marcador-s cor-marc1" href="#">
+                <div class="marcador-item cor-marc1" href="#">
                   <p>icon</p>
-                  <p><strong>title marcador</strong></p>
+                  <p>title marcador</p>
                 </div>
               </div>
             </a>
@@ -232,9 +230,9 @@
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
               <div class="eventos-small-card-tag">
-                <div class="marcador-s cor-marc5" href="#">
+                <div class="marcador-item cor-marc5" href="#">
                   <p>icon</p>
-                  <p><strong>title marcador</strong></p>
+                  <p>title marcador</p>
                 </div>
               </div>
             </a>
@@ -245,9 +243,9 @@
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
               <div class="eventos-small-card-tag">
-                <div class="marcador-s cor-marc3" href="#">
+                <div class="marcador-item cor-marc3" href="#">
                   <p>icon</p>
-                  <p><strong>title marcador</strong></p>
+                  <p>title marcador</p>
                 </div>
               </div>
             </a>
@@ -258,18 +256,17 @@
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
               <div class="eventos-small-card-tag">
-                <div class="marcador-s cor-marc2" href="#">
+                <div class="marcador-item cor-marc2" href="#">
                   <p>icon</p>
-                  <p><strong>title marcador</strong></p>
+                  <p>title marcador</p>
                 </div>
               </div>
             </a>
           </li>
         </ul>
+        <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirVertical()">recuar/expandir</button>
       </div>
-      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirVertical()">recuar/expandir</button>
     </section>
-
   </main>
 
   <!-- Modal -->
@@ -278,11 +275,13 @@
       <div class="modal-content-template-img">
         <img src="" alt="Foto do Usuário" id="modalUserPhoto">
       </div>
-      <div class="modal-content-template-candidato" id="candidato">Nome do candidato</div>
-      <div class="modal-content-template-partido" id="partido">Partido do candidato</div>
-      <div class="modal-content-template-username" id="username">Nome do Usuário</div>
-      <div class="modal-content-template-cargo" id="cargo">Cargo do Usuário</div>
-      <button class="modal-content-template-sair btn-recuar-expandir" onclick="logout()">Sair</button>
+      <p class="modal-content-template-candidato" id="candidato">Nome do candidato</p>
+      <p class="modal-content-template-partido" id="partido">Partido do candidato</p>
+      <div class="modal-content-template-sessao">
+        <div class="modal-content-template-username" id="username">Nome do Usuário</div>
+        <div class="modal-content-template-cargo" id="cargo">Cargo do Usuário</div>
+      </div>
+      <button class="modal-content-template-sair " onclick="logout()">Sair</button>
     </div>
   </div>
 

@@ -1,15 +1,15 @@
 /* Estilos CSS para o formulário */
 form {
-  background: white;
-  margin: 10px;
+  background: var(--cor-0);
+  margin: auto;
   border-radius: 9px;
+  margin: 0px 10px 0px 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Evita sombra fora do formulário */
 }
 
 .aba {
   display: none;
-  border-radius: 9px;
 }
 
 .aba:first-of-type {
@@ -17,16 +17,14 @@ form {
 }
 .aba-template {
   display: grid;
-  border-radius: 9px;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  padding: 10px;
-  background: var(--cor-8);
-  border-radius: 9px;
+  padding: 0px 10px 0px 10px;
+  background: var(--cor-3);
 }
 
 .nav li {
@@ -35,22 +33,24 @@ form {
 
 .nav li a {
   display: block;
+  justify-content: start;
   text-align: center;
   text-decoration: none;
-  padding: 5px;
-  border-radius: 9px;
-  color: white;
+  padding: 10px;
+
+  color: var(--cor-12);
 }
 
 .nav li a:hover,
-.nav li a:active,
 .nav li a:focus {
   background-color: #ddd;
 }
 
 .nav li a.active {
   font-weight: bold;
-  background-color: var(--cor-9);
+  background-color: var(--cor-0);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
 .campo {

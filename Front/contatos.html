@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
-  <script src="./js/EsquemaDeCores.js" defer></script>
+  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
   <title>contatos</title>
   <meta name="description" content="Seus contatos">
 
@@ -19,11 +19,9 @@
 
 <body class="body-template">
   <header class="header header-template">
-    <h1 class="header-icon" style="width: 18px; height: 14px;">
-      <a href="index.html">
-        <img src="imagens/icones/voltar.svg" alt="Back Icon">
-      </a>
-    </h1>
+    <a href="index.html" class="header-menu">
+      <img src="imagens/icones/voltar.svg" alt="Back Icon">
+    </a>
     <h1 class="header-title">CONTATOS</h1>
     <nav class="header-nav">
       <menu class="header-nav-template">
@@ -33,8 +31,8 @@
         <li class="eventos"><a href="eventos.html"><img src="imagens/icones/eventos.svg" alt="Eventos Icon">
             <p>Eventos</p>
           </a></li>
-        <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos-select.svg" alt="Contatos Icon">
-            <p class="indicador">Contatos</p>
+        <li class="contatos indicador"><a href="contatos.html"><img src="imagens/icones/contatos-select.svg" alt="Contatos Icon">
+            <p>Contatos</p>
           </a></li>
         <li class="pleitos"><a href="pleitos.html"><img src="imagens/icones/pleitos.svg" alt="Pleitos Icon">
             <p>Pleitos</p>
@@ -44,12 +42,13 @@
           </a></li>
       </menu>
     </nav>
-    <menu class="header-menu" style="width: 60px; height: 23px;"><img src="imagens/icones/pesquisar.svg" alt="Menu Icon"></menu>
+    <a href="#.html" class="header-search">
+      <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
+    </a>
   </header>
 
   <main class="main contatos-template">
-    <div id="floatingButton"><a href="cadastro-contato.html">+</div>
-
+    <div id="floatingButton"><a href="cadastro-contato.html">+</a></div>
     <section class="contatos-section">
       <div class="area-template">
         <h2 class="area-template-header">Contatos listados - 4.321</h2>
@@ -130,11 +129,10 @@
             </a> </li>
         </ul>
       </div>
-
     </section>
 
     <section class="contatos-sidenav">
-            <div class="area-template">
+      <div class="area-template">
         <h2 class="area-template-header">Filtros</h2>
         <div class="area-template-content lista-horizontal-template">
           <select class="card-select-xs" id="estado" onchange="carregarCidades()">
@@ -158,41 +156,39 @@
         <div class="area-template-content">
           <ul class="lista-vertical-2-template recuar-expandir-horizontal">
             <li>
-              <a class="marcador-l cor-marc1" href="#">
+              <a class="marcador-s cor-marc1" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc2" href="#">
+              <a class="marcador-s cor-marc2" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc3" href="#">
+              <a class="marcador-s cor-marc3" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc4" href="#">
+              <a class="marcador-s cor-marc4" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc5" href="#">
+              <a class="marcador-s cor-marc5" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
           </ul>
         </div>
+        <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
       </div>
-      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
-
-
 
     </section>
   </main>

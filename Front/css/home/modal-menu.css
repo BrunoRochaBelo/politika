@@ -16,20 +16,21 @@
 .modal-content-template {
   display: grid;
   position: fixed;
-  top: 45px; /* Ajuste para posicionar acima do cabeçalho */
-  right: 1.2rem;
-  background-color: #fff;
-  padding: 20px;
+  width: 285px;
+  top: 45px;
+  left: 1rem;
+  background-color: var(--cor-0);
+  padding: 10px;
+  gap: 5px;
   border-radius: 9px;
-  gap: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  grid:
-    "modal-content-template-candidato modal-content-template-candidato modal-content-template-img" 16px
-    "modal-content-template-partido modal-content-template-partido modal-content-template-img"
-    "modal-content-template-username . modal-content-template-img"
-    " modal-content-template-cargo . modal-content-template-sair"
-    / 1fr 0.5fr 0.5fr;
   z-index: 1002;
+  grid:
+    "modal-content-template-img modal-content-template-candidato"
+    "modal-content-template-img modal-content-template-partido"
+    "modal-content-template-sessao modal-content-template-sessao"
+    ". modal-content-template-sair" 25px
+    / 1fr 2fr;
 }
 
 /* Áreas de grid */
@@ -38,32 +39,56 @@
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  margin-right: -20px;
-  justify-self: end;
-  margin-top: -60px;
+  justify-self: center;
 }
 
 .modal-content-template-candidato {
   grid-area: modal-content-template-candidato;
-  justify-self: end;
+  justify-self: start;
+  align-self: end;
+  font-size: var(--titulo-m);
 }
 
 .modal-content-template-partido {
   grid-area: modal-content-template-partido;
-  justify-self: end;
+  justify-self: start;
+  align-self: start;
+  font-size: var(--font-medium-regular);
+}
+
+.modal-content-template-sessao {
+  grid-area: modal-content-template-sessao;
+  display: grid;
+  background-color: var(--cor-3);
+  padding: 20px;
+  border-radius: 9px;
+  grid:
+    "modal-content-template-username"
+    "modal-content-template-cargo"
+    / 1fr;
 }
 
 .modal-content-template-username {
   grid-area: modal-content-template-username;
   justify-self: center;
+  font-size: var(--titulo-s);
 }
 
 .modal-content-template-cargo {
   grid-area: modal-content-template-cargo;
   justify-self: center;
+  font-size: var(--font-medium-regular);
 }
 
 .modal-content-template-sair {
   grid-area: modal-content-template-sair;
   justify-self: end;
+  align-self: end;
+  text-align: end;
+}
+/* RESPONSIVO */
+@media (max-width: 767px) {
+  .modal-content-template {
+    right: 0.85rem;
+  }
 }

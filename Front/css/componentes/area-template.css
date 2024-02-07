@@ -2,11 +2,15 @@
 .area-template {
   display: grid;
   box-sizing: border-box;
-  gap: 10px;
-  margin: 40px 10px 10px 10px;
+  background-color: var(--cor-1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 9px;
+  padding: 10px;
+  margin: 10px;
   grid:
     "area-template-header" 24px
-    "area-template-content" 1fr
+    "area-template-content" auto
     / 1fr;
 }
 .area-template-header {
@@ -22,9 +26,6 @@
 }
 
 /* Estilos */
-.area-template:first-child {
-  margin: 20px 10px 10px 10px;
-}
 .area-template-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }

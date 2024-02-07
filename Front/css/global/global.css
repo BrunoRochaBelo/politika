@@ -4,7 +4,7 @@ body {
   font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--cor-12);
-  background-color: var(--cor-1);
+  background-color: var(--cor-4);
   /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);*/
 }
 
@@ -42,8 +42,12 @@ img {
 }
 
 .indicador {
-  color: var(--cor-8);
-  margin: 0;
+  background-color: var(--cor-5);
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  padding: auto;
+  font-weight: bold;
+  transition: 1s;
 }
 
 .link {

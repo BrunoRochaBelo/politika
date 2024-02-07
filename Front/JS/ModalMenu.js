@@ -5,20 +5,25 @@ function showModal() {
   var username = "Nome do Usuário";
 
   // Define o nome do usuário no modal
-  document.getElementById("candidato").innerText = username;
+  document.getElementById("username").innerText = username;
 
   // Define a foto do usuário no modal
   document.getElementById("modalUserPhoto").src = userPhoto.src;
 
   modal.style.display = "flex";
 
-  // Event listener para fechar o modal ao clicar fora do modal-content
+  // Event listener para fechar o modal
   document.addEventListener("click", outsideClickListener);
 }
 
 // Função para ocultar o modal
 function hideModal() {
   var modal = document.getElementById("userModal");
+  var userPhoto = document.getElementById("userPhoto");
+
+  // Exibe a foto do usuário no corpo da página
+  userPhoto.style.display = "block";
+
   modal.style.display = "none";
 
   // Remove o event listener ao ocultar o modal

@@ -19,16 +19,17 @@
 
 <body class="body-template">
   <header class="header header-template">
-    <h1 class="header-icon" style="width: 18px; height: 14px;"><a href="index.html"><img src="imagens/icones/voltar.svg" alt="Back Icon">
-      </a></h1>
+    <a href="index.html" class="header-menu">
+      <img src="imagens/icones/voltar.svg" alt="Back Icon">
+    </a>
     <h1 class="header-title">EVENTOS</h1>
     <nav class="header-nav">
-      <ul class="header-nav-template">
+      <menu class="header-nav-template">
         <li class="home"><a href="index.html"><img src="imagens/icones/home.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
-        <li class="eventos"><a href="eventos.html"><img src="imagens/icones/eventos-select.svg" alt="Eventos Icon">
-            <p class="indicador">Eventos</p>
+        <li class="eventos indicador"><a href="eventos.html"><img src="imagens/icones/eventos-select.svg" alt="Eventos Icon">
+            <p>Eventos</p>
           </a></li>
         <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos.svg" alt="Contatos Icon">
             <p>Contatos</p>
@@ -39,13 +40,15 @@
         <li class="despesas"><a href="#"><img src="imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
-      </ul>
+      </menu>
     </nav>
-    <menu class="header-menu" style="width: 60px; height: 23px;"><img src="imagens/icones/pesquisar.svg" alt="Menu Icon"></menu>
+    <a href="#.html" class="header-search">
+      <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
+    </a>
   </header>
 
   <main class="main eventos-template">
-    <div id="floatingButton" onclick="mostrarModal()">+</div>
+    <div id="floatingButton" onclick="mostrarModal()"><a href="#">+</a></div>
     <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
       <div id="modalContent">
         <!-- Conteúdo do Modal -->
@@ -199,39 +202,39 @@
         <div class="area-template-content">
           <ul class="lista-vertical-2-template recuar-expandir-horizontal">
             <li>
-              <a class="marcador-l cor-marc1" href="#">
+              <a class="marcador-s cor-marc1" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc2" href="#">
+              <a class="marcador-s cor-marc2" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc3" href="#">
+              <a class="marcador-s cor-marc3" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc4" href="#">
+              <a class="marcador-s cor-marc4" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
             <li>
-              <a class="marcador-l cor-marc5" href="#">
+              <a class="marcador-s cor-marc5" href="#">
                 <p>icon</p>
                 <p><strong>title marcador</strong></p>
               </a>
             </li>
           </ul>
         </div>
+        <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
       </div>
-      <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
     </section>
 
   </main>
