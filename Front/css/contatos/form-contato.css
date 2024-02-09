@@ -68,7 +68,9 @@ legend img {
 #camposCargoComissionado {
   margin: 10px 10px 30px 10px;
 }
-
+.campo-invalido {
+  border: 1px solid red;
+}
 .campo label {
   display: inline-block;
   margin: 10px 20px 5px 0px;

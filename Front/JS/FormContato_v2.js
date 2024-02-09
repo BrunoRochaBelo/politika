@@ -5,41 +5,43 @@ function validarFormulario() {
   let camposNaoPreenchidos = [];
 
   function validarCampo(campoId, mensagem) {
-    let valorCampo = document.getElementById(campoId).value.trim();
+    let campo = document.getElementById(campoId);
+    let valorCampo = campo.value.trim();
+
     if (valorCampo === "") {
       camposNaoPreenchidos.push(mensagem);
+      campo.style.border = "2px solid red"; // Adiciona a borda vermelha
       formValido = false;
       return false;
+    } else {
+      campo.style.border = ""; // Remove a borda vermelha se o campo for preenchido
     }
-    return isValid;
+
+    return true;
   }
 
-  // Validar aba1
-  if (document.getElementById("aba1").style.display !== "none") {
-    let tipoPessoaValido = validarCampo("tipo_pessoa", "Tipo de Pessoa");
-    let nomeContatoValido = validarCampo("nome_contato", "Nome do Contato");
-    let celularValido = validarCampo("celular", "Celular");
-    let whatsappSim = document.getElementById("whatsapp_sim").checked;
-    let whatsappValido = whatsappSim || validarCampo("whatsapp", "WhatsApp");
-    let emailValido = validarCampo("email", "E-mail");
-    let telefoneValido = validarCampo("telefone", "Telefone");
-  }
-  // Validar aba2
-  if (document.getElementById("aba2").style.display !== "none") {
-    let cepValido = validarCampo("cep", "CEP");
-    let ufValido = validarCampo("uf", "UF");
-    let cidadeValido = validarCampo("cidade", "Cidade");
-    let bairroValido = validarCampo("bairro", "Bairro");
-  }
-  // Validar aba3
-  if (document.getElementById("aba3").style.display !== "none") {
-    let perfilInfluenciaValido = validarCampo(
-      "perfil_influencia",
-      "Perfil de Influência"
-    );
+  // Defina uma lista de objetos representando os campos requeridos
+  const camposRequeridos = [
+    { id: "tipo_pessoa", mensagem: "Tipo de Pessoa" },
+    { id: "nome_contato", mensagem: "Nome do Contato" },
+    { id: "celular", mensagem: "Celular" },
+    { id: "whatsapp", mensagem: "WhatsApp" },
+    { id: "email", mensagem: "E-mail" },
+    { id: "telefone", mensagem: "Telefone" },
+    { id: "cep", mensagem: "CEP" },
+    { id: "uf", mensagem: "UF" },
+    { id: "cidade", mensagem: "Cidade" },
+    { id: "bairro", mensagem: "Bairro" },
+    { id: "perfil_influencia", mensagem: "Perfil de Influência" },
+    // Adicione mais campos conforme necessário
+  ];
 
-    // Validação adicional para os campos específicos da aba3
-    if (perfilInfluenciaValido) {
+  // Iterar sobre os campos requeridos e validar cada um
+  for (const campo of camposRequeridos) {
+    let campoValido = validarCampo(campo.id, campo.mensagem);
+
+    // Adicione lógica de validação adicional conforme necessário
+    if (campo.id === "perfil_influencia" && campoValido) {
       let tipoContatoSelecionado = Array.from(
         document.querySelectorAll("#tipo_contato input[type='checkbox']")
       ).some((checkbox) => checkbox.checked);
@@ -48,12 +50,9 @@ function validarFormulario() {
         camposNaoPreenchidos.push("Selecione pelo menos um Tipo de Contato");
         formValido = false;
       }
-
-      // Adicione mais validações conforme necessário para os campos da aba3
-    } else {
-      formValido = false;
     }
   }
+
   // Verificar se há campos não preenchidos e exibir alerta único
   if (camposNaoPreenchidos.length > 0) {
     alert(
@@ -65,6 +64,7 @@ function validarFormulario() {
 
   return formValido;
 }
+
 // Função para Validação dos campos
 function validarEmail(email) {
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -247,20 +247,14 @@ function ocultarCamposCargoComissionado() {
   }
 }
 
-// Botoões
-// Função para avançar para a próxima aba
-function avancar() {
-  var abas = document.querySelectorAll(".aba-template");
-  var abaAtual = Array.from(abas).findIndex(
-    (aba) => getComputedStyle(aba).display !== "none"
-  );
-
-  if (abaAtual < abas.length - 1) {
-    abas[abaAtual].style.display = "none";
-    abas[abaAtual + 1].style.display = "block";
-  }
+// Navegar entre abas
+// Navegar entre abas pelos botões
+function ativarAba(aba) {
+  aba.classList.add("active");
 }
-// Função para voltar para a aba anterior
+function desativarTodasAbas(abas) {
+  abas.forEach((aba) => aba.classList.remove("active"));
+}
 function voltar() {
   var abas = document.querySelectorAll(".aba-template");
   var abaAtual = Array.from(abas).findIndex(
@@ -268,27 +262,42 @@ function voltar() {
   );
 
   if (abaAtual > 0) {
+    desativarTodasAbas(abas);
     abas[abaAtual].style.display = "none";
     abas[abaAtual - 1].style.display = "block";
+    ativarAba(abas[abaAtual - 1]);
   }
 }
-// Evento de clique para os links de navegação
-document.getElementById("navAba").addEventListener("click", function (event) {
-  if (event.target.tagName === "A") {
-    event.preventDefault();
-    var targetAba = document.querySelector(
-      event.target.getAttribute("data-target")
-    );
+function avancar() {
+  var abas = document.querySelectorAll(".aba-template");
+  var abaAtual = Array.from(abas).findIndex(
+    (aba) => getComputedStyle(aba).display !== "none"
+  );
 
-    if (targetAba) {
-      document.querySelectorAll(".aba-template").forEach(function (aba) {
-        aba.style.display = "none";
-      });
-
-      targetAba.style.display = "block";
-    }
+  if (abaAtual < abas.length - 1) {
+    desativarTodasAbas(abas);
+    abas[abaAtual].style.display = "none";
+    abas[abaAtual + 1].style.display = "block";
+    ativarAba(abas[abaAtual + 1]);
   }
-});
+}
+// Navegar entre abas pelas
+function mostrarAba(id) {
+  // Remove a classe 'active' de todas as abas
+  var abas = document.querySelectorAll(".aba-template");
+  abas.forEach(function (aba) {
+    aba.classList.remove("active");
+    aba.style.display = "none"; // Oculta todas as abas
+  });
+
+  // Adiciona a classe 'active' à aba alvo
+  var abaAlvo = document.getElementById(id);
+  if (abaAlvo) {
+    abaAlvo.classList.add("active");
+    abaAlvo.style.display = "block"; // Exibe a aba alvo
+  }
+}
+
 function submitForm() {
   // Adicione validações adicionais conforme necessário
   if (!validarFormulario()) {
@@ -320,16 +329,3 @@ function submitForm() {
 // Redireciona para a página "contatos.html"
 // window.location.href = "contatos.html";
 //});
-
-// Navegar entre abas
-// Função para navegar entre abas
-function mostrarAba(id) {
-  // Remove a classe 'active' de todas as abas
-  var abas = document.querySelectorAll(".aba-template");
-  abas.forEach(function (aba) {
-    aba.classList.remove("active");
-  });
-
-  // Adiciona a classe 'active' à aba alvo
-  document.getElementById(id).classList.add("active");
-}
