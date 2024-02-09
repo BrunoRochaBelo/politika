@@ -16,6 +16,12 @@
   grid-area: home-sidenav;
   text-align: center;
 }
+.home-section .area-template {
+  padding: 0%;
+}
+.home-section .area-template .lista-vertical-template {
+  padding: 3px;
+}
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
@@ -24,18 +30,5 @@
       "home-sidenav"
       "home-section"
       /1fr;
-  }
-  .home-section {
-    padding-top: 10px;
-    border-radius: 15px;
-    background-color: var(--cor-0);
-  }
-  .home-section .area-template {
-    background-color: transparent;
-    box-shadow: none;
-  }
-  .home-section .area-template .lista-vertical-template {
-    background-color: transparent;
-    box-shadow: none;
   }
 }

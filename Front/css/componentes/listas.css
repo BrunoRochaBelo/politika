@@ -43,7 +43,7 @@
 .lista-vertical-template .card-l,
 .lista-vertical-template .card-m {
   border-radius: 0;
-  border-bottom: 1px solid var(--cor-4);
+  border-bottom: 1px solid var(--cor-5);
 }
 
 /* Adiciona borda arredondada nos cantos esquerdos e direitos do primeiro e último cards dentro da lista */

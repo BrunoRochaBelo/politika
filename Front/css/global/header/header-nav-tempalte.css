@@ -30,20 +30,13 @@
   size: 1rem;
   padding: 10px;
   color: var(--cor-12);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
+  border-radius: 50px;
   display: flex;
   transition: 0.15s;
 }
 .header-nav-template a:hover {
-  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  background-color: rgba(157, 157, 157, 0.7);
   padding: auto;
-  font-weight: bold;
-  transition: 1s;
-}
-.header-nav-template a:active {
-  background-color: var(--cor-12);
-  color: var(--cor-0);
   transition: 1s;
 }
 .header-nav-template img {

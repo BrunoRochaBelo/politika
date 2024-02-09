@@ -1,35 +1,18 @@
 // Script JavaScript para o formulário
-var form = document.getElementById("form");
-var cep = document.getElementById("cep");
-var uf = document.getElementById("uf");
-var cidade = document.getElementById("cidade");
-var rua = document.getElementById("rua");
-var numero = document.getElementById("numero");
-var complemento = document.getElementById("complemento");
-var bairro = document.getElementById("bairro");
-var nav_links = document.querySelectorAll(".nav li a");
-var abas = document.querySelectorAll(".aba");
-var proximos = document.querySelectorAll("[id^=proximo]");
-var anteriores = document.querySelectorAll("[id^=anterior]");
-var salvar = document.querySelectorAll("[id^=salvar]");
-var links = document.querySelectorAll(".nav li a");
-
-// Função para validar os campos obrigatórios de cada aba
-function validarCampos(aba) {
-  var campos = aba.querySelectorAll("input, select");
-  var valido = true;
-
-  campos.forEach(function (campo) {
-    if (campo.required && campo.value.trim() === "") {
-      valido = false;
-      campo.style.borderColor = "red";
-    } else {
-      campo.style.borderColor = "#ccc";
-    }
-  });
-
-  return valido;
-}
+let form = document.getElementById("form");
+let cep = document.getElementById("cep");
+let uf = document.getElementById("uf");
+let cidade = document.getElementById("cidade");
+let rua = document.getElementById("rua");
+let numero = document.getElementById("numero");
+let complemento = document.getElementById("complemento");
+let bairro = document.getElementById("bairro");
+let nav_links = document.querySelectorAll(".nav li a");
+let abas = document.querySelectorAll(".aba");
+let proximos = document.querySelectorAll("[id^=proximo]");
+let anteriores = document.querySelectorAll("[id^=anterior]");
+let salvar = document.querySelectorAll("[id^=salvar]");
+let links = document.querySelectorAll(".nav li a");
 
 // Função para mudar a aba ativa
 function mudarAba(abaId) {
@@ -37,20 +20,20 @@ function mudarAba(abaId) {
     aba.style.display = "none";
   });
 
-  var abaSelecionada = document.getElementById(abaId);
+  let abaSelecionada = document.getElementById(abaId);
   abaSelecionada.style.display = "block";
   atualizarBotoesNavegacao(abaId);
 }
 
 // Função para buscar o endereço pelo CEP
 function buscarEndereco(cep) {
-  var url = "https://viacep.com.br/ws/" + cep + "/json/";
-  var xhr = new XMLHttpRequest();
+  let url = "https://viacep.com.br/ws/" + cep + "/json/";
+  let xhr = new XMLHttpRequest();
 
   xhr.open("GET", url, true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      var resposta = JSON.parse(xhr.responseText);
+      let resposta = JSON.parse(xhr.responseText);
 
       if (resposta.erro) {
         alert("CEP não encontrado!");
@@ -168,14 +151,12 @@ function mostrarCampoWhatsapp() {
     document.getElementById("whatsapp").value = ""; // Limpa o campo WhatsApp, se estiver preenchido
   }
 }
-
 function mostrarCamposFilhos() {
   var camposFilhos = document.getElementById("camposFilhos");
   if (camposFilhos) {
     camposFilhos.style.display = "block";
   }
 }
-
 function ocultarCamposFilhos() {
   var camposFilhos = document.getElementById("camposFilhos");
   if (camposFilhos) {
@@ -207,7 +188,6 @@ function adicionarFilho() {
 
   maisFilhosContainer.appendChild(novoFilhoDiv);
 }
-
 function mostrarCamposConjuge() {
   var estadoCivil = document.getElementById("estado_civil").value;
   var camposConjuge = document.getElementById("camposConjuge");
@@ -218,12 +198,10 @@ function mostrarCamposConjuge() {
     camposConjuge.style.display = "none";
   }
 }
-
 function ocultarCamposConjuge() {
   var camposConjuge = document.getElementById("camposConjuge");
   camposConjuge.style.display = "none";
 }
-
 function mostrarCamposCargoComissionado() {
   var camposCargoComissionado = document.getElementById(
     "camposCargoComissionado"
@@ -232,7 +210,6 @@ function mostrarCamposCargoComissionado() {
     camposCargoComissionado.style.display = "block";
   }
 }
-
 function ocultarCamposCargoComissionado() {
   var camposCargoComissionado = document.getElementById(
     "camposCargoComissionado"

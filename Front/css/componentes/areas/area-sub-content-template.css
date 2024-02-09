@@ -1,0 +1,28 @@
+/* area-abas Template*/
+.area-sub-content-template {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  border-radius: 9px;
+  padding: 10px;
+
+  grid:
+    "area-sub-content-template-header" auto
+    "area-sub-content-template-content" auto
+    / 1fr;
+}
+.area-sub-content-template-header {
+  grid-area: area-sub-content-template-header;
+  font-size: var(--titulo-xl);
+}
+.area-sub-content-template-content {
+  grid-area: area-sub-content-template-content;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* Estilos */
+.area-sub-content-template-content::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+}

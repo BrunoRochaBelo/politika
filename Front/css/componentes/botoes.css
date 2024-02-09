@@ -15,9 +15,9 @@
 .btn-leaked {
   padding: 12px;
   background-color: rgba(0, 0, 0, 0);
-  color: var(--cor-0);
+  color: var(--cor-12);
   font-size: small;
-  border: 1px solid var(--cor-0);
+  border: 1px solid var(--cor-12);
   border-radius: 9px;
   display: flex;
   text-align: justify;

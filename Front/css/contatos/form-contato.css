@@ -1,59 +1,71 @@
 /* Estilos CSS para o formulário */
 form {
+  padding: 5px;
   background: var(--cor-0);
-  margin: auto;
-  border-radius: 9px;
-  margin: 0px 10px 0px 10px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  margin-top: 2px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Evita sombra fora do formulário */
+  font-size: var(--titulo-s);
+}
+fieldset {
+  border-radius: 9px;
+  margin-top: 10px;
+}
+
+legend img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .aba {
   display: none;
 }
-
+.aba.active {
+  display: block;
+}
 .aba:first-of-type {
   display: block;
 }
 .aba-template {
-  display: grid;
+  display: none;
+}
+
+.aba-template.active {
+  display: block;
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0px 10px 0px 10px;
-  background: var(--cor-3);
-}
-
-.nav li {
-  flex: 1;
-}
-
-.nav li a {
-  display: block;
-  justify-content: start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  text-decoration: none;
-  padding: 10px;
-
-  color: var(--cor-12);
-}
-
-.nav li a:hover,
-.nav li a:focus {
-  background-color: #ddd;
-}
-
-.nav li a.active {
-  font-weight: bold;
-  background-color: var(--cor-0);
+  background: var(--cor-0);
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
 }
-
-.campo {
+.nav li {
+  align-self: center;
+  justify-self: center;
+}
+.nav a {
+  font-size: 1rem;
+  padding: 10px;
+  color: var(--cor-12);
+  border-radius: 50px;
+  display: flex;
+  transition: 0.15s;
+}
+.nav a:hover {
+  background-color: rgba(157, 157, 157, 0.7);
+  padding: auto;
+  transition: 1s;
+}
+.campo,
+#campoWhatsapp,
+#camposFilhos,
+#camposConjuge,
+#camposCargoComissionado {
   margin: 10px 10px 30px 10px;
 }
 
@@ -127,21 +139,25 @@ form {
   justify-content: center;
 }
 
-.mensagem-orientacao {
-  background-color: #ffcccc;
-  padding: 10px;
-  border-radius: 9px;
-  margin: 7px 10px 20px 10px;
-}
-.mensagem-texto {
-  text-align: center;
-  font-size: var(--titulo-m);
-  color: #cc0000;
-}
+/* Responsivo */
+@media only screen and (max-width: 767px) {
+  .nav {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* Altera para uma coluna em dispositivos móveis */
+  }
 
-.user-info img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
+  .nav a {
+    padding: 10px 20px; /* Aumenta o espaço de toque em dispositivos móveis */
+  }
+
+  .botoes {
+    flex-direction: column; /* Empilha os botões verticalmente em dispositivos móveis */
+    margin: 20px 10px; /* Ajusta as margens */
+  }
+
+  .botoes button {
+    width: 100%; /* Ocupa a largura total */
+  }
 }

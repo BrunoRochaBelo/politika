@@ -42,12 +42,15 @@ img {
 }
 
 .indicador {
-  background-color: var(--cor-5);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  padding: auto;
   font-weight: bold;
   transition: 1s;
+  border-bottom: 5px solid var(--cor-12);
+}
+/* RESPONSIVO */
+@media (max-width: 767px) {
+  .indicador {
+    border-bottom: none;
+  }
 }
 
 .link {
@@ -67,7 +70,4 @@ img {
 
 .link:hover {
   color: var(--cor-0);
-}
-fieldset {
-  border: none;
 }

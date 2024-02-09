@@ -63,7 +63,7 @@
 }
 
 .titulo-area {
-  font-size: var(--titulo-l);
+  font-size: var(--titulo-xl);
   text-align: left;
   margin: 10px;
 }

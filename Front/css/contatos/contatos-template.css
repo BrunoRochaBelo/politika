@@ -26,17 +26,4 @@
       "contatos-section"
       /1fr;
   }
-  .contatos-section {
-    padding-top: 10px;
-    border-radius: 15px;
-    background-color: var(--cor-0);
-  }
-  .contatos-section .area-template {
-    background-color: transparent;
-    box-shadow: none;
-  }
-  .contatos-section .area-template .lista-vertical-template {
-    background-color: transparent;
-    box-shadow: none;
-  }
 }

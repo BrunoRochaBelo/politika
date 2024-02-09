@@ -2,20 +2,21 @@
 .area-template {
   display: grid;
   box-sizing: border-box;
-  background-color: var(--cor-1);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   border-radius: 9px;
-  padding: 10px;
+  padding: 2px;
   margin: 10px;
+  background-color: var(--cor-1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   grid:
-    "area-template-header" 24px
+    "area-template-header" auto
     "area-template-content" auto
     / 1fr;
 }
 .area-template-header {
   grid-area: area-template-header;
-  font-size: var(--titulo-l);
+  font-size: var(--titulo-xl);
+  padding: 10px;
   text-align: left;
 }
 .area-template-content {
