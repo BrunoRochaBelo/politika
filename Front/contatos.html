@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -48,7 +47,7 @@
   </header>
 
   <main class="main contatos-template">
-    <div id="floatingButton"><a href="cadastro-contato.html">+</a></div>
+    <div id="floatingButton" onclick="mostrarModal()"><a href="cadastro-contato.html">+</a></div>
     <section class="contatos-section">
       <div class="area-template">
         <h2 class="area-template-header">Contatos listados - 4.321</h2>
@@ -187,7 +186,8 @@
             </li>
           </ul>
         </div>
-        <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+        <button type="button" class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+
       </div>
 
     </section>

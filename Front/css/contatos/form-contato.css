@@ -22,16 +22,12 @@ legend img {
 .aba {
   display: none;
 }
-.aba.active {
-  display: block;
-}
 .aba:first-of-type {
   display: block;
 }
 .aba-template {
   display: none;
 }
-
 .aba-template.active {
   display: block;
 }
@@ -43,24 +39,23 @@ legend img {
   background: var(--cor-0);
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
+  justify-content: center;
 }
-.nav li {
-  align-self: center;
-  justify-self: center;
-}
+
 .nav a {
   font-size: 1rem;
   padding: 10px;
   color: var(--cor-12);
   border-radius: 50px;
   display: flex;
-  transition: 0.15s;
+  justify-content: center;
+  align-items: center;
 }
+
 .nav a:hover {
   background-color: rgba(157, 157, 157, 0.7);
-  padding: auto;
-  transition: 1s;
 }
+
 .campo,
 #campoWhatsapp,
 #camposFilhos,
@@ -76,33 +71,18 @@ legend img {
   margin: 10px 20px 5px 0px;
   font-weight: bold;
 }
-
 .campo input,
 .campo select {
   width: 100%;
   box-sizing: border-box;
   padding: 9px;
-  margin: 0px 20px 0px 20x;
+  margin: 0px 10px 0px 0px;
   border: 1px solid #ccc;
   border-radius: 9px;
 }
-
-.campo input[type="checkbox"] {
-  width: auto;
-}
-
+.campo input[type="checkbox"],
 .campo input[type="radio"] {
   width: auto;
-}
-.campo-radio {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 10px;
-}
-
-.campo-radio label {
-  margin-left: 5px;
 }
 
 .botoes {
@@ -110,16 +90,13 @@ legend img {
   justify-content: space-between;
   margin: 50px;
 }
-
+.botoes button {
+  width: 30%; /* Ocupa a largura total */
+}
 .botoes button:hover {
-  background-color: #444;
+  background-color: rgba(157, 157, 157, 0.7);
+  color: var(--cor-12);
 }
-
-.botoes button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 /* Estilo para o botão de adicionar filho */
 #adicionarFilhoBtn {
   padding: 8px 16px;
@@ -129,37 +106,36 @@ legend img {
   border-radius: 9px;
   cursor: pointer;
 }
-
 /* Estilo para dar espaço entre os campos de filhos e centralizar o botão */
 .campo:not(#camposFilhosContainer) {
-  margin-bottom: 10px;
-}
-
-/* Estilo para centralizar o botão dentro do contêiner */
-.centralizar-botao {
-  display: flex;
-  justify-content: center;
+  margin: 10px;
 }
 
 /* Responsivo */
 @media only screen and (max-width: 767px) {
-  .nav {
-    grid-template-columns: repeat(
-      1,
-      1fr
-    ); /* Altera para uma coluna em dispositivos móveis */
+  .form {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .nav a {
-    padding: 10px 20px; /* Aumenta o espaço de toque em dispositivos móveis */
+    padding: 10px 20px;
   }
 
   .botoes {
-    flex-direction: column; /* Empilha os botões verticalmente em dispositivos móveis */
-    margin: 20px 10px; /* Ajusta as margens */
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px 10px;
   }
-
   .botoes button {
     width: 100%; /* Ocupa a largura total */
+  }
+  #nav1.indicador,
+  #nav2.indicador,
+  #nav3.indicador {
+    font-weight: bold;
+    border-bottom: 5px solid var(--cor-12);
+  }
+  .nav li {
+    border-radius: 0px;
   }
 }

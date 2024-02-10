@@ -25,9 +25,9 @@
     <section class="area-sub-content-template">
       <nav class="area-sub-content-template-header">
         <ul id="navAba" class="nav">
-          <li class="indicador"><a href="#" onclick="mostrarAba('aba1')">Identificação</a></li>
-          <li><a href="#" onclick="mostrarAba('aba2')">Endereço</a></li>
-          <li><a href="#" onclick="mostrarAba('aba3')">Detalhes</a></li>
+          <li id="nav1" class="indicador"><a href="#" onclick="mostrarAba('aba1')">Identificação</a></li>
+          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Endereço</a></li>
+          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Detalhes</a></li>
         </ul>
       </nav>
       <div class="area-sub-content-template-content">
@@ -294,43 +294,45 @@
                 <div class="campo">
                   <label for="data_nascimento_filho">Data de Nascimento do Filho</label>
                   <input type="date" id="data_nascimento_filho" name="data_nascimento_filho">
+                  <div id="maisFilhosContainer"></div>
+                  <div>
+
+                    <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn">Adicionar mais um filho</button>
+                  </div>
                 </div>
-                <div id="maisFilhosContainer" class="centralizar-botao"></div>
-                <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn">Adicionar mais um filho</button>
               </div>
-            </div>
-            <div class="campo">
-              <label for="religiao">Religião</label>
-              <input type="text" id="religiao" name="religiao">
-            </div>
-            <div class="campo">
-              <label for="profissao">Profissão</label>
-              <input type="text" id="profissao" name="profissao">
-            </div>
-            <div class="campo">
-              <label for="cargo_comissionado">Cargo Comissionado</label>
-              <input type="radio" id="cargo_comissionado_sim" name="cargo_comissionado" value="Sim" onclick="mostrarCamposCargoComissionado()">
-              <label for="cargo_comissionado_sim">Sim</label>
-              <input type="radio" id="cargo_comissionado_nao" name="cargo_comissionado" value="Não" onclick="ocultarCamposCargoComissionado()">
-              <label for="cargo_comissionado_nao">Não</label>
-            </div>
-            <div id="camposCargoComissionado" style="display: none;">
               <div class="campo">
-                <label for="orgao_lotacao">Órgão de Lotação</label>
-                <input type="text" id="orgao_lotacao" name="orgao_lotacao">
+                <label for="religiao">Religião</label>
+                <input type="text" id="religiao" name="religiao">
+              </div>
+              <div class="campo">
+                <label for="profissao">Profissão</label>
+                <input type="text" id="profissao" name="profissao">
+              </div>
+              <div class="campo">
+                <label for="cargo_comissionado">Cargo Comissionado</label>
+                <input type="radio" id="cargo_comissionado_sim" name="cargo_comissionado" value="Sim" onclick="mostrarCamposCargoComissionado()">
+                <label for="cargo_comissionado_sim">Sim</label>
+                <input type="radio" id="cargo_comissionado_nao" name="cargo_comissionado" value="Não" onclick="ocultarCamposCargoComissionado()">
+                <label for="cargo_comissionado_nao">Não</label>
+              </div>
+              <div id="camposCargoComissionado" style="display: none;">
+                <div class="campo">
+                  <label for="orgao_lotacao">Órgão de Lotação</label>
+                  <input type="text" id="orgao_lotacao" name="orgao_lotacao">
+                </div>
+              </div>
+              <div class="botoes">
+                <button type="button" class="btn-leaked" onclick="voltar()">Voltar</button>
+                <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
               </div>
             </div>
-            <div class="botoes">
-              <button type="button" class="btn-leaked" onclick="voltar()">Voltar</button>
-              <button type="submit" class="btn-filled" onclick="submitForm()">Cadastrar</button>
-            </div>
-          </div>
         </form>
       </div>
     </section>
   </main>
 
-  <script src="./js/FormContato_v2.js"></script>
+  <script src="./js/FormContato.js"></script>
 </body>
 
 </html>

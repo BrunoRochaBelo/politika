@@ -31,4 +31,12 @@
       "home-section"
       /1fr;
   }
+  .home-section {
+    padding-top: 10px;
+    border-radius: 15px;
+    background-color: var(--cor-4);
+  }
+  .home-section .area-template {
+    box-shadow: none;
+  }
 }

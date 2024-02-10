@@ -4,9 +4,11 @@
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 9px;
-  padding: 2px;
+  padding: 3px;
   margin: 10px;
-  background-color: var(--cor-1);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.7); /* Cor de fundo com transparência */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   grid:
     "area-template-header" auto

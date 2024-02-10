@@ -26,4 +26,12 @@
       "contatos-section"
       /1fr;
   }
+  .contatos-section {
+    padding-top: 10px;
+    border-radius: 15px;
+    background-color: var(--cor-4);
+  }
+  .contatos-section .area-template {
+    box-shadow: none;
+  }
 }

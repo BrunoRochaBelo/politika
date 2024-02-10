@@ -1,143 +1,208 @@
-// Script JavaScript para o formulário
-let form = document.getElementById("form");
-let cep = document.getElementById("cep");
-let uf = document.getElementById("uf");
-let cidade = document.getElementById("cidade");
-let rua = document.getElementById("rua");
-let numero = document.getElementById("numero");
-let complemento = document.getElementById("complemento");
-let bairro = document.getElementById("bairro");
-let nav_links = document.querySelectorAll(".nav li a");
-let abas = document.querySelectorAll(".aba");
-let proximos = document.querySelectorAll("[id^=proximo]");
-let anteriores = document.querySelectorAll("[id^=anterior]");
-let salvar = document.querySelectorAll("[id^=salvar]");
-let links = document.querySelectorAll(".nav li a");
+// Validações e formatação
+// Função para validação do formulário
+function validarFormulario() {
+  let formValido = true;
+  let camposNaoPreenchidos = [];
 
-// Função para mudar a aba ativa
-function mudarAba(abaId) {
-  abas.forEach(function (aba) {
-    aba.style.display = "none";
-  });
+  function validarCampo(campoId, mensagem) {
+    let campo = document.getElementById(campoId);
+    let valorCampo = campo.value.trim();
 
-  let abaSelecionada = document.getElementById(abaId);
-  abaSelecionada.style.display = "block";
-  atualizarBotoesNavegacao(abaId);
+    if (valorCampo === "") {
+      camposNaoPreenchidos.push(mensagem);
+      campo.style.border = "2px solid red"; // Adiciona a borda vermelha
+      formValido = false;
+      return false;
+    } else {
+      campo.style.border = ""; // Remove a borda vermelha se o campo for preenchido
+    }
+
+    return true;
+  }
+
+  // Defina uma lista de objetos representando os campos requeridos
+  const camposRequeridos = [
+    { id: "tipo_pessoa", mensagem: "Tipo de Pessoa" },
+    { id: "nome_contato", mensagem: "Nome do Contato" },
+    { id: "celular", mensagem: "Celular" },
+    { id: "whatsapp", mensagem: "WhatsApp" },
+    { id: "email", mensagem: "E-mail" },
+    { id: "telefone", mensagem: "Telefone" },
+    { id: "cep", mensagem: "CEP" },
+    { id: "uf", mensagem: "UF" },
+    { id: "cidade", mensagem: "Cidade" },
+    { id: "bairro", mensagem: "Bairro" },
+    { id: "perfil_influencia", mensagem: "Perfil de Influência" },
+    // Adicione mais campos conforme necessário
+  ];
+
+  // Iterar sobre os campos requeridos e validar cada um
+  for (const campo of camposRequeridos) {
+    let campoValido = validarCampo(campo.id, campo.mensagem);
+
+    // Adicione lógica de validação adicional conforme necessário
+    if (campo.id === "perfil_influencia" && campoValido) {
+      let tipoContatoSelecionado = Array.from(
+        document.querySelectorAll("#tipo_contato input[type='checkbox']")
+      ).some((checkbox) => checkbox.checked);
+
+      if (!tipoContatoSelecionado) {
+        camposNaoPreenchidos.push("Selecione pelo menos um Tipo de Contato");
+        formValido = false;
+      }
+    }
+  }
+
+  // Verificar se há campos não preenchidos e exibir alerta único
+  if (camposNaoPreenchidos.length > 0) {
+    alert(
+      `Por favor, preencha os seguintes campos obrigatórios:\n${camposNaoPreenchidos.join(
+        "\n"
+      )}`
+    );
+
+    formValido = false;
+  }
+
+  return formValido;
 }
+// Função para validar um campo específico
+function validarCampo(campo) {
+  const valorCampo = campo.value.trim();
 
+  if (campo.hasAttribute("required") && valorCampo === "") {
+    alert("Campo obrigatório não preenchido");
+    campo.style.border = "2px solid red"; // Adiciona a borda vermelha
+    return false;
+  } else {
+    campo.style.border = ""; // Remove a borda vermelha se o campo for preenchido
+    return true;
+  }
+}
+// Função para Validação do preenchimento correto do campo
+function validarEmail(email) {
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!regexEmail.test(email)) {
+    alert("E-mail inválido");
+    return false;
+  } else {
+    return true;
+  }
+}
+function validarCelular(celular) {
+  const regexCelular = /^\(\d{2}\) 9\d{4}-\d{4}$/;
+
+  if (!regexCelular.test(celular)) {
+    alert("Celular inválido");
+    return false;
+  } else {
+    return true;
+  }
+}
+function validarTelefone(telefone) {
+  const regexTelefone = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+
+  if (!regexTelefone.test(telefone)) {
+    alert("Telefone inválido");
+    return false;
+  } else {
+    return true;
+  }
+}
+function validarCEP(cep) {
+  const regexCEP = /^\d{5}-?\d{3}$/;
+
+  if (!regexCEP.test(cep)) {
+    alert("CEP inválido");
+    return false;
+  } else {
+    return true;
+  }
+}
+// Função para formatação  dos campos
+function formatarCelular(input) {
+  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+  if (value.length > 10) {
+    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 3)}${value.slice(
+      3,
+      7
+    )}-${value.slice(7)}`;
+  } else {
+    input.value = value;
+  }
+}
+function formatarTelefone(input) {
+  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+  if (value.length > 9) {
+    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(
+      6
+    )}`;
+  } else {
+    input.value = value;
+  }
+}
+function formatarCEP(input) {
+  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+  if (value.length > 5) {
+    input.value = `${value.slice(0, 5)}-${value.slice(5)}`;
+  } else {
+    input.value = value;
+  }
+}
+// Função para verificar a tecla "Enter" e evitar o envio do formulário
+function checkEnter(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+    // Obtenha o campo atual em foco
+    const campoAtual = event.target;
+
+    // Adicione aqui a lógica para validar o campo atual
+    const campoValido = validarCampo(campoAtual);
+
+    if (campoValido) {
+      // O campo é válido, continue com a lógica para avançar para o próximo campo
+      const form = event.target.form;
+      const camposDeFormulario = Array.from(
+        form.querySelectorAll("input, select, textarea")
+      );
+      const indiceCampoAtual = camposDeFormulario.indexOf(campoAtual);
+      const proximoCampo =
+        camposDeFormulario[indiceCampoAtual + 1] || camposDeFormulario[0];
+      proximoCampo.focus();
+    }
+  }
+}
+// Ouvinte de eventos 'keydown' a todos os campos de entrada do formulário
+const camposDoFormulario = document.querySelectorAll("input, select, textarea");
+camposDoFormulario.forEach((campo) => {
+  campo.addEventListener("keydown", checkEnter);
+});
+
+// Busca do endereço
 // Função para buscar o endereço pelo CEP
-function buscarEndereco(cep) {
-  let url = "https://viacep.com.br/ws/" + cep + "/json/";
-  let xhr = new XMLHttpRequest();
+async function buscarEndereco(cep) {
+  try {
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await response.json();
 
-  xhr.open("GET", url, true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      let resposta = JSON.parse(xhr.responseText);
-
-      if (resposta.erro) {
-        alert("CEP não encontrado!");
-      } else {
-        uf.value = resposta.uf;
-
-        carregarCidades(uf.value, function () {
-          cidade.value = resposta.localidade;
-
-          carregarBairros(cidade.value, function () {
-            bairro.value = resposta.bairro;
-          });
-        });
-
-        rua.value = resposta.logradouro;
-        complemento.value = resposta.complemento;
-      }
+    if (data.erro) {
+      console.log("CEP não encontrado");
+      return;
     }
-  };
-  xhr.send();
+
+    document.getElementById("uf").value = data.uf;
+    document.getElementById("cidade").value = data.localidade;
+    document.getElementById("bairro").value = data.bairro;
+    document.getElementById("rua").value = data.logradouro;
+  } catch (error) {
+    console.error("Erro na busca de endereço:", error);
+  }
 }
 
-// Função carregarBairros para buscar bairros diretamente da API do IBGE
-function carregarBairros(cidade, callback) {
-  var url =
-    "https://servicodados.ibge.gov.br/api/v1/localidades/municipios/" +
-    cidade +
-    "/distritos";
-  var xhr = new XMLHttpRequest();
-
-  xhr.open("GET", url, true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      var resposta = JSON.parse(xhr.responseText);
-      bairro.innerHTML = "<option value=''>Selecione</option>";
-
-      resposta.forEach(function (distrito) {
-        var option = document.createElement("option");
-        option.value = distrito.nome;
-        option.textContent = distrito.nome;
-        bairro.appendChild(option);
-      });
-
-      if (callback) {
-        callback();
-      }
-    }
-  };
-  xhr.send();
-}
-
-// Função para carregar as opções de cidade de acordo com o estado
-function carregarCidades(estado, callback) {
-  var url =
-    "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" +
-    estado +
-    "/municipios";
-  var xhr = new XMLHttpRequest();
-
-  xhr.open("GET", url, true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      var resposta = JSON.parse(xhr.responseText);
-      cidade.innerHTML = "<option value=''>Selecione</option>";
-
-      resposta.forEach(function (municipio) {
-        var option = document.createElement("option");
-        option.value = municipio.nome;
-        option.textContent = municipio.nome;
-        cidade.appendChild(option);
-      });
-
-      if (callback) {
-        callback();
-      }
-    }
-  };
-  xhr.send();
-}
-
-// Função para ativar ou desativar os botões de navegação com base na aba atual
-function atualizarBotoesNavegacao(abaAtual) {
-  var indexAbaAtual = parseInt(abaAtual.charAt(3)) - 1;
-
-  anteriores.forEach(function (anterior, index) {
-    anterior.disabled = index === 0 || index > indexAbaAtual;
-  });
-
-  proximos.forEach(function (proximo, index) {
-    proximo.disabled = index === proximos.length - 1 || index < indexAbaAtual;
-  });
-
-  salvar.forEach(function (botao) {
-    botao.disabled = indexAbaAtual !== salvar.length - 1;
-  });
-
-  links.forEach(function (link) {
-    link.classList.remove("active");
-    if (link.getAttribute("data-target") === "#" + abaAtual) {
-      link.classList.add("active");
-    }
-  });
-}
-
+// Exibir campos de acordo com a resposta
+// Função para mostrar campo de Whatsapp
 function mostrarCampoWhatsapp() {
   var whatsappSim = document.getElementById("whatsapp_sim").checked;
   var campoWhatsapp = document.getElementById("campoWhatsapp");
@@ -219,135 +284,121 @@ function ocultarCamposCargoComissionado() {
   }
 }
 
-// Eventos para os botões de navegação entre as abas
-proximo1.addEventListener("click", function () {
-  if (validarCampos(aba1)) {
-    location.hash = "aba2";
-    mudarAba("aba2");
-  } else {
-    alert("Preencha todos os campos obrigatórios da aba Identificação!");
-  }
-});
+// Navegar entre abas
+// Navegar entre abas pelos botões
+function ativarAba(aba) {
+  aba.classList.add("active");
+}
+function desativarTodasAbas(abas) {
+  var navAba = document.querySelector("#navAba");
 
-anterior2.addEventListener("click", function () {
-  location.hash = "aba1";
-  mudarAba("aba1");
-});
-
-proximo2.addEventListener("click", function () {
-  if (validarCampos(aba2)) {
-    location.hash = "aba3";
-    mudarAba("aba3");
-  } else {
-    alert("Preencha todos os campos obrigatórios da aba Endereço!");
-  }
-});
-
-anterior3.addEventListener("click", function () {
-  location.hash = "aba2";
-  mudarAba("aba2");
-});
-
-// Evento para o botão de salvar o formulário
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  if (validarCampos(aba3)) {
-    alert("Formulário salvo com sucesso!");
-    // Aqui você pode enviar os dados do formulário para um servidor ou banco de dados
-  } else {
-    alert("Preencha todos os campos obrigatórios da aba Detalhes!");
-  }
-});
-
-// Evento para o campo CEP
-cep.addEventListener("blur", function () {
-  var valor = cep.value.replace(/\D/g, ""); // Remove todos os não dígitos (pontos e traço)
-
-  if (valor.length === 8) {
-    // Se o CEP for válido
-    buscarEndereco(valor);
-  } else {
-    alert("Digite um CEP válido!");
-  }
-});
-
-// Evento para o campo UF
-uf.addEventListener("change", function () {
-  var valor = uf.value;
-  if (valor != "") {
-    carregarCidades(valor);
-  }
-});
-
-// Evento para o campo Cidade
-cidade.addEventListener("change", function () {
-  var valor = cidade.value;
-  if (valor != "") {
-    carregarBairros(valor);
-  }
-});
-cidade.addEventListener("change", function () {
-  var valor = cidade.value;
-  if (valor != "") {
-    carregarBairros(valor);
-  }
-});
-
-// Eventos para a mudança de aba
-nav_links.forEach(function (link) {
-  link.addEventListener("click", function (event) {
-    event.preventDefault();
-    var abaAtual = link.getAttribute("data-target").substring(1);
-    mudarAba(abaAtual);
-  });
-});
-
-// Adiciona a classe 'contato' aos campos de telefone e e-mail
-var contatos = document.querySelectorAll(
-  ".campo #celular, .campo #email, .campo #whatsapp, .campo #telefone"
-);
-
-contatos.forEach(function (contato) {
-  contato.classList.add("contato");
-});
-
-// Função para validar os campos obrigatórios de cada aba
-function validarCampos(aba) {
-  var campos = aba.querySelectorAll("input, select");
-  var valido = true;
-
-  campos.forEach(function (campo) {
-    if (campo.required && campo.value.trim() === "") {
-      valido = false;
-      campo.style.borderColor = "red";
-    } else {
-      campo.style.borderColor = "#ccc";
+  abas.forEach((aba) => {
+    aba.classList.remove("active");
+    var idAba = aba.id.slice(3);
+    var liCorrespondente = navAba.querySelector("#nav" + idAba);
+    if (liCorrespondente) {
+      liCorrespondente.classList.remove("indicador");
     }
   });
+}
+// Navegar entre abas pelas
+function mostrarAba(id) {
+  var abas = document.querySelectorAll(".aba-template");
+  var navAba = document.querySelector("#navAba");
 
-  // Adiciona validação para pelo menos um campo de contato preenchido
-  if (!validarContato(aba)) {
-    valido = false;
-  }
+  abas.forEach(function (aba) {
+    if (aba.id === id) {
+      aba.classList.add("active");
 
-  return valido;
+      // Adiciona a classe 'indicador' à <li> correspondente na navegação
+      var liCorrespondente = navAba.querySelector("#nav" + id.slice(3));
+      if (liCorrespondente) {
+        liCorrespondente.classList.add("indicador");
+      }
+
+      aba.style.display = "block";
+    } else {
+      aba.classList.remove("active");
+
+      // Remove a classe 'indicador' da <li> correspondente na navegação
+      var idAba = aba.id.slice(3);
+      var liCorrespondente = navAba.querySelector("#nav" + idAba);
+      if (liCorrespondente) {
+        liCorrespondente.classList.remove("indicador");
+      }
+
+      aba.style.display = "none";
+    }
+  });
+  window.scrollTo(0, 0);
 }
 
-// Função para validar pelo menos um campo de contato preenchido
-function validarContato(aba) {
-  var contatos = aba.querySelectorAll(".campo .contato");
-  var peloMenosUmPreenchido = false;
+function navegar(offset) {
+  var abas = document.querySelectorAll(".aba-template");
+  var abaAtual = Array.from(abas).findIndex(
+    (aba) => getComputedStyle(aba).display !== "none"
+  );
 
-  contatos.forEach(function (contato) {
-    if (contato.value.trim() !== "") {
-      peloMenosUmPreenchido = true;
-    }
-  });
+  var novaAba = abas[abaAtual + offset];
 
-  if (!peloMenosUmPreenchido) {
-    alert("Preencha pelo menos um campo de contato (telefone ou e-mail)!");
+  if (novaAba) {
+    desativarTodasAbas(abas);
+    abas[abaAtual].style.display = "none";
+    novaAba.style.display = "block";
+    ativarAba(novaAba);
+
+    // Adicionar ou remover a classe "indicador" na navegação
+    var navAba = document.querySelector("#navAba");
+    var idAba = novaAba.id.slice(3);
+
+    Array.from(navAba.children).forEach((li, index) => {
+      if (index === abaAtual + offset) {
+        li.classList.add("indicador");
+      } else {
+        li.classList.remove("indicador");
+      }
+    });
+  }
+  window.scrollTo(0, 0);
+}
+function voltar() {
+  navegar(-1);
+  window.scrollTo(0, 0);
+}
+function avancar() {
+  navegar(1);
+  window.scrollTo(0, 0);
+}
+
+function submitForm() {
+  // Adicione validações adicionais conforme necessário
+  if (!validarFormulario()) {
+    // Se a validação falhar, retorne false para evitar o envio do formulário
     return false;
   }
 
-  return true;
+  var form = document.getElementById("form");
+  var formData = new FormData(form);
+
+  fetch("/process_form", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      console.log(data);
+      // Faça algo com a resposta do servidor, se necessário
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+    });
+
+  // Retorne false para evitar o envio padrão do formulário
+  return false;
 }
+// Adiciona um evento de clique ao botão Fechar
+//document.getElementById("btnFechar").addEventListener("click", function () {
+// Redireciona para a página "contatos.html"
+// window.location.href = "contatos.html";
+//});
+// Função para exibir mensagem de erro
