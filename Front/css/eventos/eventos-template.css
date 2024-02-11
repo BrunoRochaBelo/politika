@@ -28,11 +28,14 @@
   }
   .eventos-section {
     padding-top: 10px;
-    border-radius: 15px;
+    border-radius: 30px;
     background-color: var(--cor-0);
   }
-  .eventos-section .area-template {
-    background-color: transparent;
-    box-shadow: none;
+  .eventos-section {
+    padding: 10px 0px 30px 0px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.4);
   }
 }

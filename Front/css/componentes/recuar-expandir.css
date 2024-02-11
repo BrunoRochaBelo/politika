@@ -3,7 +3,7 @@
   position: relative; /* Adiciona posição relativa ao contêiner */
   height: 130px;
   overflow-x: hidden;
-  border-radius: 9px;
+  border-radius: 15px;
   transition: 1s;
 }
 .recuar-expandir-vertical.recuar::before {
@@ -31,7 +31,6 @@
   background-color: rgb(0, 0, 0, 0);
   padding: 10px;
   cursor: pointer;
-  z-index: 2;
   margin: auto;
   border: none;
   display: block;

@@ -2,30 +2,26 @@
 .lista-vertical-template {
   display: grid;
   grid-auto-flow: row;
-  padding: 5px;
+  gap: 3px;
   box-sizing: border-box;
-  scrollbar-width: thin;
-  transition: 1s;
+  scrollbar-width: thick;
 }
-.lista-vertical-2-template {
+.lista-vertical-3-template {
   display: grid;
-  padding: 5px;
   gap: 5px;
   box-sizing: border-box;
-  grid-template: auto auto / 1fr 1fr;
-  scrollbar-width: thin;
-  transition: 1s;
+  grid-template: 1fr / 1fr;
+  scrollbar-width: thick;
 }
 
 .lista-horizontal-template {
   display: grid;
   grid-auto-flow: column;
-  padding: 5px;
   gap: 5px;
   white-space: nowrap;
   overflow-x: auto;
   box-sizing: border-box;
-  scrollbar-width: thin;
+  scrollbar-width: thick;
   transition: 1s;
 }
 
@@ -68,4 +64,17 @@
 .lista-vertical-template .card-m,
 .lista-vertical-template .card-l {
   box-shadow: none;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .lista-vertical-template {
+    scrollbar-width: none;
+  }
+  .lista-vertical-3-template {
+    scrollbar-width: none;
+  }
+  .lista-horizontal-template {
+    scrollbar-width: none;
+  }
 }

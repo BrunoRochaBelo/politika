@@ -2,7 +2,7 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   height: 30px;
-  border-radius: 9px;
+  border-radius: 15px;
   padding: 10px;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
@@ -12,7 +12,7 @@
 /* Pequeno altura 35px*/
 .card-s {
   height: 35px;
-  border-radius: 9px;
+  border-radius: 15px;
   padding: 10px;
   background-color: var(--cor-0);
   box-shadow: 2px 2px 4px var(--cor-3);
@@ -22,7 +22,7 @@
 .card-m {
   display: flex;
   height: 50px;
-  border-radius: 9px;
+  border-radius: 15px;
   padding: 10px;
   background-color: var(--cor-0);
   box-shadow: 2px 2px 4px var(--cor-3);
@@ -31,7 +31,7 @@
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  border-radius: 9px;
+  border-radius: 15px;
   padding: 10px;
   background-color: var(--cor-0);
   box-shadow: 2px 2px 4px var(--cor-3);
@@ -43,7 +43,7 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  border-radius: 9px;
+  border-radius: 15px;
   padding: 10px;
   background-color: var(--cor-0);
   box-shadow: 2px 2px 4px var(--cor-3);
@@ -52,10 +52,9 @@
 
 /* Médio */
 .card-tmf-m {
-  width: 155px;
-  height: 100px;
-  height: 50px;
-  border-radius: 9px;
+  width: 150px;
+  height: 160px;
+  border-radius: 15px;
   padding: 10px;
   background-color: var(--cor-0);
   box-shadow: 2px 2px 4px var(--cor-3);
@@ -66,7 +65,7 @@
   width: 184px;
   height: 190px;
   min-height: 170px;
-  border-radius: 9px;
+  border-radius: 15px;
   padding: 10px;
   background-color: var(--cor-0);
   box-shadow: 2px 2px 4px var(--cor-3);
@@ -84,14 +83,14 @@
 /* Muito Pequeno altura 35px */
 .card-select-xs {
   height: 30px;
-  border-radius: 9px;
+  border-radius: 15px;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .card-select-s {
   height: 35px;
-  border-radius: 9px;
+  border-radius: 15px;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -99,7 +98,7 @@
 .card-select-m {
   height: 50px;
   width: auto;
-  border-radius: 9px;
+  border-radius: 15px;
   background-color: var(--cor-0);
   font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);

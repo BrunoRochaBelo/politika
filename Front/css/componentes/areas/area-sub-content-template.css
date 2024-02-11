@@ -3,7 +3,7 @@
   display: grid;
   align-content: center;
   justify-content: center;
-  border-radius: 9px;
+  border-radius: 15px;
   padding: 10px;
 
   grid:
@@ -19,7 +19,7 @@
   grid-area: area-sub-content-template-content;
   width: 100%;
   overflow-x: auto;
-  scrollbar-width: thin;
+  scrollbar-width: thick;
 }
 
 /* Estilos */

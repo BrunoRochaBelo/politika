@@ -5,13 +5,13 @@
   align-items: center;
   justify-items: center;
   box-sizing: border-box;
-  border-radius: 9px;
+  border-radius: 20px;
   padding: 10px;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  scrollbar-width: thin;
+  scrollbar-width: thick;
 }
 
 /* Médio */
@@ -20,13 +20,13 @@
   align-items: center;
   justify-items: center;
   box-sizing: border-box;
-  border-radius: 9px;
+  border-radius: 20px;
   padding: 14px;
   font-size: var(--font-medium-bold);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  scrollbar-width: thin;
+  scrollbar-width: thick;
 }
 
 /* Grande */
@@ -35,13 +35,13 @@
   align-items: center;
   justify-items: center;
   box-sizing: border-box;
-  border-radius: 9px;
+  border-radius: 20px;
   padding: 18px;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  scrollbar-width: thin;
+  scrollbar-width: thick;
 }
 /* Quando o marcador for item de um elemento e precisar de tamaho fixo */
 .marcador-item {
@@ -49,13 +49,13 @@
   align-items: center;
   justify-items: start;
   box-sizing: border-box;
-  border-radius: 9px;
+  border-radius: 20px;
   padding: 5px 10px 5px 10px;
-  width: 135px;
+  width: 105px;
   height: auto;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  scrollbar-width: thin;
+  scrollbar-width: thick;
 }

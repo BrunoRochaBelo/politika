@@ -8,9 +8,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "eventos-small-card-title eventos-small-card-title . eventos-small-card-tag " 1fr
-    "eventos-small-card-inicio eventos-small-card-fim . eventos-small-card-tag" 0.5fr
-    / 50px 50px 1fr 1fr;
+    "eventos-small-card-tag eventos-small-card-title eventos-small-card-title ." 1fr
+    "eventos-small-card-tag eventos-small-card-inicio eventos-small-card-fim ." 0.5fr
+    / 1fr 50px 50px 1fr;
 }
 .eventos-small-card-title {
   grid-area: eventos-small-card-title;
@@ -26,7 +26,6 @@
 }
 .eventos-small-card-tag {
   grid-area: eventos-small-card-tag;
-  justify-self: end;
 }
 
 /* Médio */

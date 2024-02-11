@@ -49,12 +49,6 @@ img {
   font-weight: bold;
   border-bottom: 5px solid var(--cor-12);
 }
-/* RESPONSIVO */
-@media (max-width: 767px) {
-  .indicador {
-    border-bottom: none;
-  }
-}
 
 .link {
   display: inline-block;
@@ -73,4 +67,14 @@ img {
 
 .link:hover {
   color: var(--cor-0);
+}
+
+/* RESPONSIVO */
+@media (max-width: 767px) {
+  body {
+    background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  }
+  .indicador {
+    border-bottom: none;
+  }
 }

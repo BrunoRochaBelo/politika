@@ -20,31 +20,31 @@
   --cor-p6: #c3dabf;
   --cor-p7: #7fffd4;
   --cor-p8: #02413b;
-  --cor-marc1: #abdee6;
-  --cor-marc2: #cbaacb;
-  --cor-marc3: #ffffb5;
-  --cor-marc4: #ffccb6;
-  --cor-marc5: #f3b0c3;
-  --cor-marc6: #c6dbda;
-  --cor-marc7: #fee1e8;
-  --cor-marc8: #fed7c3;
-  --cor-marc9: #f6eac2;
-  --cor-marc10: #ecd5e3;
-  --cor-marc11: #ffc5bf;
-  --cor-marc12: #ff968a;
-  --cor-marc13: #ffaea5;
-  --cor-marc14: #ffdbbe;
-  --cor-marc15: #ffc8a2;
-  --cor-marc16: #04f0f0;
-  --cor-marc17: #8fcaca;
-  --cor-marc18: #cce2cb;
-  --cor-marc19: #b6cfb6;
-  --cor-marc20: #97c1a9;
-  --cor-marc21: #fcb9aa;
-  --cor-marc22: #ffdbcc;
-  --cor-marc23: #eceae4;
-  --cor-marc24: #a2e1db;
-  --cor-marc25: #55cbcd;
+  --cor-marc1: #e57373;
+  --cor-marc2: #ff8a65;
+  --cor-marc3: #ffb74d;
+  --cor-marc4: #ffd54f;
+  --cor-marc5: #fff176;
+  --cor-marc6: #dce775;
+  --cor-marc7: #aed581;
+  --cor-marc8: #81c784;
+  --cor-marc9: #4db6ac;
+  --cor-marc10: #4dd0e1;
+  --cor-marc11: #4fc3f7;
+  --cor-marc12: #64b5f6;
+  --cor-marc13: #7986cb;
+  --cor-marc14: #9575cd;
+  --cor-marc15: #f06292;
+  --cor-marc16: #ba68c8;
+  --cor-marc17: #a1887f;
+  --cor-marc18: #90a4ae;
+  --cor-marc19: #b0bec5;
+  --cor-marc20: #78909c;
+  --cor-marc21: #607d8b;
+  --cor-marc22: #455a64;
+  --cor-marc23: #333333;
+  --cor-marc24: #666666;
+  --cor-marc25: #999999;
 }
 
 .cor-0 {
@@ -111,101 +111,101 @@
   color: var(--cor-p8);
 }
 .cor-marc1 {
-  background-color: var(--cor-marc1);
+  background: var(--cor-marc1);
 }
 
 .cor-marc2 {
-  background-color: var(--cor-marc2);
+  background: var(--cor-marc2);
 }
 
 .cor-marc3 {
-  background-color: var(--cor-marc3);
+  background: var(--cor-marc3);
 }
 
 .cor-marc4 {
-  background-color: var(--cor-marc4);
+  background: var(--cor-marc4);
 }
 
 .cor-marc5 {
-  background-color: var(--cor-marc5);
+  background: var(--cor-marc5);
 }
 
 .cor-marc6 {
-  background-color: var(--cor-marc6);
+  background: var(--cor-marc6);
 }
 
 .cor-marc7 {
-  background-color: var(--cor-marc7);
+  background: var(--cor-marc7);
 }
 
 .cor-marc8 {
-  background-color: var(--cor-marc8);
+  background: var(--cor-marc8);
 }
 
 .cor-marc9 {
-  background-color: var(--cor-marc9);
+  background: var(--cor-marc9);
 }
 
 .cor-marc10 {
-  background-color: var(--cor-marc10);
+  background: var(--cor-marc10);
 }
 
 .cor-marc11 {
-  background-color: var(--cor-marc11);
+  background: var(--cor-marc11);
 }
 
 .cor-marc12 {
-  background-color: var(--cor-marc12);
+  background: var(--cor-marc12);
 }
 
 .cor-marc13 {
-  background-color: var(--cor-marc13);
+  background: var(--cor-marc13);
 }
 
 .cor-marc14 {
-  background-color: var(--cor-marc14);
+  background: var(--cor-marc14);
 }
 
 .cor-marc15 {
-  background-color: var(--cor-marc15);
+  background: var(--cor-marc15);
 }
 
 .cor-marc16 {
-  background-color: var(--cor-marc16);
+  background: var(--cor-marc16);
 }
 
 .cor-marc17 {
-  background-color: var(--cor-marc17);
+  background: var(--cor-marc17);
 }
 
 .cor-marc18 {
-  background-color: var(--cor-marc18);
+  background: var(--cor-marc18);
 }
 
 .cor-marc19 {
-  background-color: var(--cor-marc19);
+  background: var(--cor-marc19);
 }
 
 .cor-marc20 {
-  background-color: var(--cor-marc20);
+  background: var(--cor-marc20);
 }
 
 .cor-marc21 {
-  background-color: var(--cor-marc21);
+  background: var(--cor-marc21);
 }
 
 .cor-marc22 {
-  background-color: var(--cor-marc22);
+  background: var(--cor-marc22);
 }
 
 .cor-marc23 {
-  background-color: var(--cor-marc23);
+  background: var(--cor-marc23);
 }
 
 .cor-marc24 {
-  background-color: var(--cor-marc24);
+  background: var(--cor-marc24);
 }
 
 .cor-marc25 {
-  background-color: var(--cor-marc25);
+  background: var(--cor-marc25);
 }

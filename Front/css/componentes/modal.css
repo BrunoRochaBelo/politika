@@ -26,7 +26,7 @@
   right: 115px;
   background: #fff;
   padding: 20px;
-  border-radius: 9px;
+  border-radius: 15px;
   text-align: center;
   gap: 25px;
 }
@@ -38,7 +38,7 @@
     right: 85px;
     background: #fff;
     padding: 20px;
-    border-radius: 9px;
+    border-radius: 15px;
     text-align: center;
     gap: 25px;
   }

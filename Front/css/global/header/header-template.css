@@ -2,8 +2,9 @@
 /* Definição do layout usando grid para o cabeçalho */
 .header-template {
   display: grid;
+  align-content: center;
+  justify-content: space-between;
   align-items: center;
-  justify-items: center;
   text-transform: uppercase;
   grid: "header-menu header-nav header-search" 40px;
   box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.4);
@@ -12,7 +13,7 @@
 /* Áreas de grid */
 .header-menu {
   grid-area: header-menu;
-  justify-self: start;
+
   margin-left: 1.25rem;
   width: 32px;
 }
@@ -27,7 +28,7 @@
 }
 .header-search {
   grid-area: header-search;
-  justify-self: end;
+
   margin-right: 1.25rem;
   width: 60px;
   height: auto;
@@ -42,7 +43,6 @@
   grid: "header-template-form-menu header-template-form-title" 45px;
   box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.4);
 }
-
 /* Áreas de grid */
 .header-template-form-menu {
   grid-area: header-template-form-menu;
@@ -60,32 +60,40 @@
 /* RESPONSIVO */
 @media (max-width: 767px) {
   .header-template {
-    align-items: center;
+    align-content: center;
     justify-content: space-between;
-    grid:
-      "header-menu header-title header-search" 39px
-      / auto auto auto;
+    align-items: center;
+    grid: "header-menu header-title header-search" 39px;
+    background: linear-gradient(to right top, #7a44e7, #5ce1e6);
+    box-shadow: none;
   }
+  .header-template.box-shadow-active {
+    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.35);
+    background: var(--cor-0);
+  }
+
   .header-menu {
     margin-left: 0.625rem;
   }
   .header-title {
     font-size: var(--titulo-xl);
     display: flex;
-    text-align: justify;
-    align-items: center;
-    justify-content: center;
   }
   .header-search {
     margin-right: 0.625rem;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 3px;
   }
   .header-nav {
-    background: var(--cor-0);
-    box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.4);
     position: fixed;
     bottom: 0;
-    width: 100vh;
-    z-index: 1000;
+    width: 100%;
+    z-index: 10000000;
   }
 
   .header-template-form {
