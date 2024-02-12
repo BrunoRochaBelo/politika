@@ -13,13 +13,17 @@
 .contatos-section {
   grid-area: contatos-section;
   text-align: center;
-  padding: 0.625rem;
+  display: grid;
+  grid-auto-flow: row;
+  align-items: start;
+  gap: 0.625rem;
 }
 .contatos-sidenav {
   grid-area: contatos-sidenav;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-content: start;
+  grid-auto-flow: row;
   gap: 0.625rem;
 }
 
@@ -39,11 +43,5 @@
   }
   .contatos-sidenav .area-template-content {
     padding: 0.652rem;
-  }
-  .contatos-sidenav .card-s {
-    background: #ffffffb7;
-  }
-  .contatos-sidenav .area-template-fil {
-    padding: 0.32rem 0.652rem;
   }
 }

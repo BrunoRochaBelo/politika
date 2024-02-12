@@ -1,4 +1,4 @@
-/* Area Template*/
+/* Area Template padrão*/
 .area-template {
   display: grid;
   box-sizing: border-box;
@@ -14,7 +14,11 @@
 }
 .area-template-header {
   grid-area: area-template-header;
-  font-size: var(--font-medium-regular);
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-content: space-between;
+  font-size: var(--titulo-l);
   padding: 0.625rem;
   text-align: left;
   color: var(--cor-9);
@@ -25,7 +29,7 @@
   overflow-x: auto;
 }
 
-/* Area Template*/
+/* Area Template alternativa*/
 .area-template-alt {
   display: grid;
   box-sizing: border-box;
@@ -40,7 +44,7 @@
 }
 .area-template-alt-header {
   grid-area: area-template-alt-header;
-  font-size: var(--font-medium-regular);
+  font-size: var(--titulo-l);
   padding: 0.625rem;
   text-align: left;
   color: var(--cor-9);
@@ -49,10 +53,15 @@
   grid-area: area-template-alt-content;
 }
 
+/* Area Template dos filtros*/
 .area-template-fil {
   display: grid;
   box-sizing: border-box;
+  overflow: hidden;
   border-radius: 0.9375rem;
+  padding: 0.625rem;
+  gap: 0.625rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos */
@@ -61,14 +70,37 @@
 }
 /* RESPONSIVO */
 @media (max-width: 800px) {
+  /* Area Template padrão*/
+  .area-template {
+    padding: 0rem 0.625rem 0.625rem 0.625rem;
+    gap: 0rem;
+    box-shadow: none;
+  }
   .area-template-header {
     grid-area: area-template-header;
     color: var(--cor-1);
-    font-size: var(--titulo-xl);
+    font-size: var(--titulo-l);
+    margin-left: 0.625rem;
   }
+  .area-template-content {
+    grid-area: area-template-content;
+    overflow-x: hidden;
+    scrollbar-width: thick;
+    height: 120px;
+  }
+
+  /* Area Template alternativa*/
   .area-template-alt {
     background: transparent !important;
     backdrop-filter: none !important;
     box-shadow: none !important;
+  }
+
+  /* Area Template dos filtros*/
+  .area-template-fil {
+    padding: 0rem 0.625rem;
+    gap: 0.3rem;
+    box-shadow: none;
+    scrollbar-width: thick;
   }
 }

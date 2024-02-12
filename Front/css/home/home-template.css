@@ -21,7 +21,7 @@
   grid-area: home-sidenav;
   text-align: center;
   display: grid;
-  align-items: start;
+  align-content: start;
   grid-auto-flow: row;
   gap: 0.625rem;
 }
@@ -32,7 +32,7 @@
     grid:
       "home-sidenav"
       "home-section"
-      /1fr;
+      / 1fr;
   }
   .home-section {
     grid-area: home-section;
@@ -40,10 +40,8 @@
     border-radius: 0.9375rem;
     background: var(--cor-1);
   }
-  .home-sidenav .area-template-content {
-    padding: 0.652rem;
-  }
   .home-sidenav .card-s {
-    background: #ffffffb7;
+    border-radius: 2rem;
+    background: linear-gradient(to right bottom, var(--cor-1), var(--cor-6));
   }
 }

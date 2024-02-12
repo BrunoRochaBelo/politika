@@ -79,7 +79,13 @@ img {
 /* RESPONSIVO */
 @media (max-width: 767px) {
   body {
-    background: var(--cor-10);
+    background: radial-gradient(
+      closest-side,
+      #1683c6 0%,
+      #2196f3 10%,
+      #001323 50%,
+      #000000 100%
+    );
   }
   .indicador {
     border-bottom: none;

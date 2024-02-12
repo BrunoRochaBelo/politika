@@ -131,8 +131,9 @@
     </section>
 
     <section class="contatos-sidenav">
+
       <div class="area-template-fil">
-        <div class="area-template-fil lista-horizontal-template">
+        <div class="lista-horizontal-template">
           <select class="card-select-xs" id="estado" onchange="carregarCidades()">
             <option value="" selected disabled>Selecione um estado</option>
             <option value="PE">Pernambuco</option>
@@ -148,9 +149,11 @@
           </select>
         </div>
       </div>
-
       <div class="area-template-fil">
-        <ul class="area-template-fil lista-vertical-3-template recuar-expandir-horizontal">
+        <ul class="lista-horizontal-template recuar-expandir-horizontal">
+          <li>
+            <button type="button" class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+          </li>
           <li>
             <a class="marcador-s cor-marc1" href="#">
               <p>icon</p>
@@ -182,7 +185,7 @@
             </a>
           </li>
         </ul>
-        <button type="button" class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+
       </div>
 
     </section>

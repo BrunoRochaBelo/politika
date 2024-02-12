@@ -1,8 +1,8 @@
 /* Estilo para mostrar o conteúdo quando a área está recuada */
 .recuar-expandir-vertical.recuar {
-  position: relative; /* Adiciona posição relativa ao contêiner */
-  height: 117px;
-  overflow-x: hidden;
+  position: relative;
+  height: auto;
+  overflow-x: auto;
   border-radius: 0.9375rem;
   transition: 1s;
 }
@@ -18,14 +18,26 @@
 .btn-recuar-expandir {
   display: none;
   font-size: var(--font-light);
-  color: var(--cor-7);
-  background-color: rgb(0, 0, 0, 0);
-  padding: 0.625rem 0rem 0.3rem 0rem;
+  color: var(--cor-6);
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0rem 0.625rem;
   cursor: pointer;
-  margin: auto;
   border: none;
-  display: block;
-  transition: 1s;
+  display: inline-block;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+.btn-recuar-expandir:hover {
+  /* Altera a cor do texto e adiciona uma borda ao passar o mouse */
+  color: var(--cor-6);
+  border-color: var(--cor-6);
+}
+.btn-recuar-expandir:active {
+  /* Adiciona um efeito "acessado" ao clicar no botão */
+  background-color: darken(var(--cor-6), 10%);
+  color: var(--cor-9);
+  border-color: var(--cor-9);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Exibir o botão apenas no modo responsivo */

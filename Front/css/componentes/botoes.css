@@ -46,8 +46,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 1s;
+  transition: background 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
 }
+
+#floatingButton:hover {
+  /* Altera a cor da borda ao passar o mouse */
+  border-color: var(--cor-p7);
+}
+
+#floatingButton:active {
+  /* Adiciona um efeito "acessado" ao clicar no botão */
+  background: darken(
+    var(--cor-12),
+    10%
+  ); /* Pode ajustar a intensidade do escurecimento conforme necessário */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* RESPONSIVO */
 @media (max-width: 767px) {
   #floatingButton {

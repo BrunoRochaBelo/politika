@@ -64,7 +64,7 @@
     justify-content: space-between;
     align-items: center;
     grid: "header-menu header-title header-search" 2.4375rem;
-    background: transparent;
+    background: none;
     box-shadow: none;
   }
   .header-template.box-shadow-active {

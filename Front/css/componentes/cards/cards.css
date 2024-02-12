@@ -76,8 +76,9 @@
 /* Muito Pequeno altura 35px */
 .card-select-xs {
   border-radius: 0.9375rem;
+  padding: 0.3rem;
   background: var(--cor-0);
-  font-weight: var(--font-medium-regular);
+  font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .card-select-s {

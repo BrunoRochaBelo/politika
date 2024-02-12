@@ -1,14 +1,13 @@
 .body-login {
   background: radial-gradient(
-    circle at bottom right,
-    #6a4dff 0%,
-    #5bc5f3 50%,
-    #194471 100%
+    closest-side,
+    #1683c6 0%,
+    #2196f3 10%,
+    #001323 50%,
+    #000000 100%
   );
   /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);*/
-  display: flex;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -66,7 +65,7 @@
 
 .form-login fieldset {
   padding: 0.625rem;
-  background: rgba(25, 25, 25, 0.425);
+  background: none;
   border: none;
 }
 
