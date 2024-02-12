@@ -2,18 +2,22 @@
 .area-sub-content-template {
   background: transparent;
 }
+.body-form {
+  background: linear-gradient(to right, var(--cor-6), var(--cor-5));
+}
 form {
   padding: 5px;
   background: transparent;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 0.9375rem;
+  border-bottom-right-radius: 0.9375rem;
+
   margin-top: 2px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   font-size: var(--titulo-s);
 }
 fieldset {
-  border-radius: 15px;
-  margin-top: 10px;
+  border-radius: 0.9375rem;
+  margin-top: 0.625rem;
   background: var(--cor-0);
 }
 
@@ -41,14 +45,14 @@ legend img {
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   background: var(--cor-0);
-  border-radius: 15px;
+  border-radius: 0.9375rem;
 
   justify-content: center;
 }
 
 .nav a {
   font-size: 1rem;
-  padding: 10px;
+  padding: 0.625rem;
   color: var(--cor-12);
   border-radius: 50px;
   display: flex;
@@ -65,24 +69,25 @@ legend img {
 #camposFilhos,
 #camposConjuge,
 #camposCargoComissionado {
-  margin: 10px 10px 30px 10px;
+  margin: 0.625rem 0.625rem 1.875rem 0.625rem;
 }
 .campo-invalido {
   border: 1px solid red;
 }
 .campo label {
   display: inline-block;
-  margin: 10px 20px 5px 0px;
+  margin: 0.625rem 1.25rem 0.3125rem 0rem;
   font-weight: bold;
 }
 .campo input,
 .campo select {
   width: 100%;
   box-sizing: border-box;
-  padding: 9px;
-  margin: 0px 10px 0px 0px;
+  padding: 0.9375rem;
+
+  margin: 0rem 0.625rem 0rem 0rem;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
 }
 .campo input[type="checkbox"],
 .campo input[type="radio"] {
@@ -92,7 +97,7 @@ legend img {
 .botoes {
   display: flex;
   justify-content: space-between;
-  margin: 50px;
+  margin: 3.125rem;
 }
 .botoes button {
   width: 30%; /* Ocupa a largura total */
@@ -107,12 +112,13 @@ legend img {
   background-color: var(--cor-11);
   color: var(--cor-0);
   border: none;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
+
   cursor: pointer;
 }
 /* Estilo para dar espaço entre os campos de filhos e centralizar o botão */
 .campo:not(#camposFilhosContainer) {
-  margin: 10px;
+  margin: 0.625rem;
 }
 
 /* Responsivo */
@@ -122,13 +128,13 @@ legend img {
   }
 
   .nav a {
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
   }
 
   .botoes {
     flex-direction: column;
-    gap: 10px;
-    margin: 30px 10px;
+    gap: 0.625rem;
+    margin: 1.875rem 0.625rem;
   }
   .botoes button {
     width: 100%; /* Ocupa a largura total */

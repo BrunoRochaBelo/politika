@@ -25,8 +25,9 @@
   bottom: 130px;
   right: 115px;
   background: #fff;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
+
   text-align: center;
   gap: 25px;
 }
@@ -37,8 +38,9 @@
     bottom: 110px;
     right: 85px;
     background: #fff;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 1.25rem;
+    border-radius: 0.9375rem;
+
     text-align: center;
     gap: 25px;
   }

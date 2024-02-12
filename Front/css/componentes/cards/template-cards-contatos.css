@@ -8,35 +8,37 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "contatos-small-card-title contatos-small-card-tag" 1fr
-    "contatos-small-card-num contatos-small-card-tag" 1fr
-    / 1fr 1fr;
+    "contatos-small-card-tag contatos-small-card-title"
+    "contatos-small-card-tag contatos-small-card-num"
+    / 105px 1fr;
 }
 .contatos-small-card-title {
   grid-area: contatos-small-card-title;
   font-size: var(--titulo-m);
+  margin-left: 0.625rem;
 }
 .contatos-small-card-num {
   grid-area: contatos-small-card-num;
   font-size: var(--font-light);
+  margin-left: 0.625rem;
 }
 .contatos-small-card-tag {
   grid-area: contatos-small-card-tag;
-  justify-self: end;
 }
 
 /* Médio */
 .contatos-medium-card {
   display: grid;
-  align-items: center;
-  justify-items: center;
+  gap: 0.625rem;
+  align-content: center;
+  justify-items: start;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "contatos-medium-card-title contatos-medium-card-title contatos-medium-card-tag contatos-medium-card-tag" 1fr
-    "contatos-medium-card-inicio contatos-medium-card-fim contatos-medium-card-tag contatos-medium-card-tag" 0.5fr
-    / 1fr 1fr 2fr 1fr;
+    "contatos-medium-card-tag contatos-medium-card-title contatos-medium-card-title "
+    "contatos-medium-card-tag contatos-medium-card-inicio contatos-medium-card-fim "
+    / 105px auto auto;
 }
 .contatos-medium-card-title {
   grid-area: contatos-medium-card-title;

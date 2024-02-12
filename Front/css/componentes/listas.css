@@ -2,79 +2,78 @@
 .lista-vertical-template {
   display: grid;
   grid-auto-flow: row;
-  gap: 3px;
-  box-sizing: border-box;
+  gap: 5px;
+  padding: 0.625rem;
   scrollbar-width: thick;
+  border-radius: 0.9375rem;
 }
 .lista-vertical-3-template {
   display: grid;
   gap: 5px;
-  box-sizing: border-box;
-  grid-template: 1fr / 1fr;
+  grid-template: auto / 1fr 1fr 1fr;
   scrollbar-width: thick;
+  border-radius: 0.9375rem;
 }
 
 .lista-horizontal-template {
   display: grid;
   grid-auto-flow: column;
   gap: 5px;
+  padding: 3px;
   white-space: nowrap;
   overflow-x: auto;
-  box-sizing: border-box;
   scrollbar-width: thick;
   transition: 1s;
+  border-radius: 0.9375rem;
 }
 
+.lista-vertical-template-alt {
+  display: grid;
+  grid-auto-flow: row;
+  background: transparent;
+  gap: 3px;
+  scrollbar-width: thick;
+  border-radius: 0.9375rem;
+}
 /* Estilos */
 .lista-vertical::-webkit-scrollbar,
 .lista-vertical-2-template::-webkit-scrollbar,
-.lista-horizontal-template::-webkit-scrollbar {
+.lista-horizontal-template::-webkit-scrollbar,
+.lista-vertical-template-alt::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
 
 /* Estilos para cards dentro da lista */
 /* Reset de borda para todos os cards dentro da lista */
-.lista-vertical-template .card-xs,
-.lista-vertical-template .card-s,
-.lista-vertical-template .card-l,
-.lista-vertical-template .card-m {
+
+.lista-vertical-template-alt .card-select-m {
   border-radius: 0;
-  border-bottom: 1px solid var(--cor-5);
 }
 
 /* Adiciona borda arredondada nos cantos esquerdos e direitos do primeiro e último cards dentro da lista */
-.lista-vertical-template li:first-child .card-xs,
-.lista-vertical-template li:first-child .card-s,
-.lista-vertical-template li:first-child .card-l,
-.lista-vertical-template li:first-child .card-m {
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
+
+.lista-vertical-template-alt li:first-child .card-select-m {
+  border-top-left-radius: 0.9375rem;
+  border-top-right-radius: 0.9375rem;
 }
 
-.lista-vertical-template li:last-child .card-xs,
-.lista-vertical-template li:last-child .card-s,
-.lista-vertical-template li:last-child .card-l,
-.lista-vertical-template li:last-child .card-m {
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
-  border-bottom: none;
-}
-.lista-vertical-template .card-xs,
-.lista-vertical-template .card-s,
-.lista-vertical-template .card-m,
-.lista-vertical-template .card-l {
-  box-shadow: none;
+.lista-vertical-template-alt li:last-child .card-select-m {
+  border-bottom-left-radius: 0.9375rem;
+  border-bottom-right-radius: 0.9375rem;
 }
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
-  .lista-vertical-template {
+  .lista-vertical-template-template {
     scrollbar-width: none;
   }
-  .lista-vertical-3-template {
+  .lista-vertical-template-3-template {
     scrollbar-width: none;
   }
   .lista-horizontal-template {
+    scrollbar-width: none;
+  }
+  .lista-vertical-template-alt {
     scrollbar-width: none;
   }
 }

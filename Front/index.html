@@ -50,27 +50,28 @@
 
     <section class="home-section">
 
-      <div class="area-template">
-        <h2 class="area-template-header">Destino</h2>
-        <div class="area-template-content lista-vertical-3-template">
-          <select class="card-select-m" id="estado" onchange="carregarCidades()">
-            <option value="" selected disabled>Selecione um estado</option>
-            <option value="PE">Pernambuco</option>
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="MG">Minas Gerais</option>
-          </select>
-          <select class="card-select-m" id="cidade">
-            <option value="" selected disabled>Selecione um estado primeiro</option>
-          </select>
-          <select class="card-select-m" id="bairro">
-            <option value="" selected disabled>Selecione um estado primeiro</option>
-          </select>
-        </div>
+      <div class="area-template-alt">
+        <h2 class="area-template-alt-header">Destino</h2>
+
+        <ul class="area-template-alt-content lista-vertical-template-alt">
+          <li><select class="card-select-m" id="estado" onchange="carregarCidades()">
+              <option value="" selected disabled>Selecione um estado</option>
+              <option value="PE">Pernambuco</option>
+              <option value="SP">São Paulo</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="MG">Minas Gerais</option>
+            </select></li>
+          <li><select class="card-select-m" id="cidade">
+              <option value="" selected disabled>Selecione um estado primeiro</option>
+            </select></li>
+          <li><select class="card-select-m" id="bairro">
+              <option value="" selected disabled>Selecione um estado primeiro</option>
+            </select></li>
+        </ul>
       </div>
-      <div id="quantitativos" class="area-template">
-        <h2 class="area-template-header">Quantitativos</h2>
-        <div class="area-template-content">
+      <div id="quantitativos" class="area-template-alt">
+        <h2 class="area-template-alt-header">Quantitativos</h2>
+        <div class="area-template-alt-content">
           <ul class="lista-horizontal-template">
             <li>
               <a class="card-tmf-m quant-small-card" href="#">
@@ -118,9 +119,9 @@
           </ul>
         </div>
       </div>
-      <div class="area-template">
-        <h2 class="area-template-header">Contatos importantes</h2>
-        <ul class="area-template-content lista-vertical-template">
+      <div class="area-template-alt">
+        <h2 class="area-template-alt-header">Contatos importantes</h2>
+        <ul class="area-template-alt-content lista-vertical-template-alt">
           <li>
             <a class="card-s contatos-small-card" href="#">
               <p class="contatos-small-card-title">{{Contato}}</p>

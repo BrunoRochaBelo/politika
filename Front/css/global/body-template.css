@@ -18,13 +18,13 @@
 }
 .main {
   grid-area: main;
-  margin-top: 10px;
+  margin-top: 1.25rem;
   margin-bottom: 80px;
 }
 
 /* RESPONSIVO */
 @media (max-width: 767px) {
   .main {
-    margin-top: auto;
+    margin-top: 0.625rem;
   }
 }

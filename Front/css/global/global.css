@@ -7,10 +7,17 @@ body {
   display: grid;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, var(--cor-6), var(--cor-5));
+  background: linear-gradient(to right bottom, var(--cor-6), var(--cor-5));
   overflow: auto;
-  /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);*/
 }
+/*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+    background: radial-gradient(
+    circle at bottom right,
+    #6a4dff 0%,
+    #5bc5f3 50%,
+    #194471 100%
+  );
+  */
 
 h1,
 h2,
@@ -22,12 +29,12 @@ p,
 button,
 blockquote,
 dd {
-  margin: 0px;
+  margin: 0rem;
 }
 
 ul,
 menu {
-  padding: 0px;
+  padding: 0rem;
   list-style: none;
 }
 li {
@@ -72,7 +79,7 @@ img {
 /* RESPONSIVO */
 @media (max-width: 767px) {
   body {
-    background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+    background: var(--cor-10);
   }
   .indicador {
     border-bottom: none;

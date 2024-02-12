@@ -1,6 +1,7 @@
 /* Grid */
 .pleitos-template {
   display: grid;
+  gap: 0.625rem;
   align-content: center;
   justify-content: center;
   grid:
@@ -27,10 +28,16 @@
       /1fr;
   }
   .pleitos-section {
-    padding: 10px 0px 30px 0px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.4);
+    grid-area: pleitos-section;
+    padding: 0;
+    border-radius: 0.9375rem;
+    backdrop-filter: blur(5px);
+    background: radial-gradient(
+      circle at bottom right,
+      #6a4dff 0%,
+      #5bc5f3 50%,
+      #194471 100%
+    );
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   }
 }

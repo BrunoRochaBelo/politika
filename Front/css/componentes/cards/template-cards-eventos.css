@@ -8,17 +8,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "eventos-small-card-tag eventos-small-card-title eventos-small-card-title ." 1fr
-    "eventos-small-card-tag eventos-small-card-inicio eventos-small-card-fim ." 0.5fr
-    / 1fr 50px 50px 1fr;
+    "eventos-small-card-tag eventos-small-card-title eventos-small-card-title ."
+    "eventos-small-card-tag eventos-small-card-inicio eventos-small-card-fim ."/ 105px auto auto auto;
 }
 .eventos-small-card-title {
   grid-area: eventos-small-card-title;
   font-size: var(--titulo-xs);
+  margin-left: 0.625rem;
 }
 .eventos-small-card-inicio {
   grid-area: eventos-small-card-inicio;
   font-size: var(--font-light);
+  margin-left: 0.625rem;
 }
 .eventos-small-card-fim {
   grid-area: eventos-small-card-fim;

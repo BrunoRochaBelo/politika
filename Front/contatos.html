@@ -49,9 +49,9 @@
   <main class="main contatos-template">
     <div id="floatingButton" onclick="mostrarModal()"><a href="cadastro-contato.html">+</a></div>
     <section class="contatos-section">
-      <div class="area-template">
-        <h2 class="area-template-header">Contatos listados - 4.321</h2>
-        <ul class="area-template-content lista-vertical-template">
+      <div class="area-template-alt">
+        <h2 class="area-template-alt-header">Contatos listados - 4.321</h2>
+        <ul class="area-template-alt-content lista-vertical-template-alt">
           <li>
             <a class="card-s contatos-small-card" href="#">
               <p class="contatos-small-card-title">{{Contato}}</p>
@@ -131,9 +131,8 @@
     </section>
 
     <section class="contatos-sidenav">
-      <div class="area-template">
-        <h2 class="area-template-header">Filtros</h2>
-        <div class="area-template-content lista-horizontal-template">
+      <div class="area-template-fil">
+        <div class="area-template-fil lista-horizontal-template">
           <select class="card-select-xs" id="estado" onchange="carregarCidades()">
             <option value="" selected disabled>Selecione um estado</option>
             <option value="PE">Pernambuco</option>
@@ -150,44 +149,40 @@
         </div>
       </div>
 
-      <div class="area-template" id="container-marcadores">
-        <h2 class="area-template-header">Marcadores</h2>
-        <div class="area-template-content">
-          <ul class="lista-vertical-3-template recuar-expandir-horizontal">
-            <li>
-              <a class="marcador-s cor-marc1" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc7" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc3" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc9" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc5" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div class="area-template-fil">
+        <ul class="area-template-fil lista-vertical-3-template recuar-expandir-horizontal">
+          <li>
+            <a class="marcador-s cor-marc1" href="#">
+              <p>icon</p>
+              <p><strong>title marcador</strong></p>
+            </a>
+          </li>
+          <li>
+            <a class="marcador-s cor-marc7" href="#">
+              <p>icon</p>
+              <p><strong>title marcador</strong></p>
+            </a>
+          </li>
+          <li>
+            <a class="marcador-s cor-marc3" href="#">
+              <p>icon</p>
+              <p><strong>title marcador</strong></p>
+            </a>
+          </li>
+          <li>
+            <a class="marcador-s cor-marc9" href="#">
+              <p>icon</p>
+              <p><strong>title marcador</strong></p>
+            </a>
+          </li>
+          <li>
+            <a class="marcador-s cor-marc5" href="#">
+              <p>icon</p>
+              <p><strong>title marcador</strong></p>
+            </a>
+          </li>
+        </ul>
         <button type="button" class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
-
       </div>
 
     </section>

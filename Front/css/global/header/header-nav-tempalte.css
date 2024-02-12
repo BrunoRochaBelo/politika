@@ -28,7 +28,7 @@
 }
 .header-nav-template a {
   size: 1rem;
-  padding: 10px;
+  padding: 0.625rem;
   color: var(--cor-12);
   border-radius: 50px;
   display: flex;

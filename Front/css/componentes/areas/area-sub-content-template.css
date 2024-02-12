@@ -3,8 +3,9 @@
   display: grid;
   align-content: center;
   justify-content: center;
-  border-radius: 15px;
-  padding: 10px;
+  border-radius: 0.9375rem;
+
+  padding: 0.625rem;
 
   grid:
     "area-sub-content-template-header" auto

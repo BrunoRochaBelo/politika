@@ -3,13 +3,18 @@
   display: grid;
   align-items: center;
   justify-items: start;
-  white-space: nowrap;
+  white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "quant-small-card-title" 0.5fr
-    "quant-small-card-desc" 1fr
-    "quant-small-card-result" 1fr;
+    "quant-small-card-img" 2.1fr
+    "quant-small-card-title" 0.3fr
+    "quant-small-card-desc" 1.7fr
+    "quant-small-card-result" 0.7fr;
+}
+.quant-small-card-img {
+  grid-area: quant-small-card-img;
+  font-size: var(--font-medium-regular);
 }
 .quant-small-card-title {
   grid-area: quant-small-card-title;

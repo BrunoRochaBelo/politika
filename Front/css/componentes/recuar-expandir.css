@@ -1,18 +1,9 @@
 /* Estilo para mostrar o conteúdo quando a área está recuada */
 .recuar-expandir-vertical.recuar {
   position: relative; /* Adiciona posição relativa ao contêiner */
-  height: 130px;
+  height: 117px;
   overflow-x: hidden;
-  border-radius: 15px;
-  transition: 1s;
-}
-.recuar-expandir-vertical.recuar::before {
-  content: ""; /* Adiciona um conteúdo vazio para o pseudo-elemento */
-  position: absolute; /* Torna o pseudo-elemento posicionado absolutamente em relação ao contêiner */
-  width: 100%;
-  height: 5px; /* Altura da sombra */
-  bottom: 0; /* Posiciona o pseudo-elemento na parte inferior */
-  box-shadow: inset 0px -5px 5px -6px rgba(0, 0, 0, 0.5); /* Sombra interna na parte inferior */
+  border-radius: 0.9375rem;
   transition: 1s;
 }
 
@@ -27,9 +18,9 @@
 .btn-recuar-expandir {
   display: none;
   font-size: var(--font-light);
-  color: var(--cor-12);
+  color: var(--cor-7);
   background-color: rgb(0, 0, 0, 0);
-  padding: 10px;
+  padding: 0.625rem 0rem 0.3rem 0rem;
   cursor: pointer;
   margin: auto;
   border: none;
