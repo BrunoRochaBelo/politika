@@ -44,7 +44,7 @@
 /* 14px */
 .titulo-s {
   font-size: var(--titulo-s);
-  font-weight: normal;
+  font-weight: 300;
 }
 /* 14px */
 .titulo-m {

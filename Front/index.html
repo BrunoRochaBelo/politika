@@ -20,7 +20,7 @@
 <body class="body-template">
 
   <header class="header header-template">
-    <h1 class="header-menu"><img src="imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto"></h1>
+    <div id="logo" class="header-back"><img src="imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
     <h1 class="header-title">HOME</h1>
     <nav class="header-nav">
       <menu class="header-nav-template">
@@ -41,18 +41,14 @@
           </a></li>
       </menu>
     </nav>
-    <div class="header-search">
-      <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
+    <div id="moldura" class="header-search"><img src="imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
     </div>
   </header>
 
   <main class="main home-template">
-
     <section class="home-section">
-
       <div class="area-template-alt">
         <h2 class="area-template-alt-header">Destino</h2>
-
         <ul class="area-template-alt-content lista-vertical-template-alt">
           <li><select class="card-select-m" id="estado" onchange="carregarCidades()">
               <option value="" selected disabled>Selecione um estado</option>
@@ -207,7 +203,7 @@
         </h2>
         <ul id="compromissosHoje" class="area-template-content lista-vertical-template recuar-expandir-vertical">
           <li>
-            <a class="card-s eventos-small-card" href="#">
+            <a class="card-xs eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>Title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -220,7 +216,7 @@
             </a>
           </li>
           <li>
-            <a class="card-s eventos-small-card" href="#">
+            <a class="card-xs eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>Title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -233,7 +229,7 @@
             </a>
           </li>
           <li>
-            <a class="card-s eventos-small-card" href="#">
+            <a class="card-xs eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>Title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -246,7 +242,7 @@
             </a>
           </li>
           <li>
-            <a class="card-s eventos-small-card" href="#">
+            <a class="card-xs eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>Title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>
@@ -259,7 +255,7 @@
             </a>
           </li>
           <li>
-            <a class="card-s eventos-small-card" href="#">
+            <a class="card-xs eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>Title</strong></p>
               <p class="eventos-small-card-inicio">inicio</p>
               <p class="eventos-small-card-fim">fim</p>

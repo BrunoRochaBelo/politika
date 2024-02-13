@@ -49,8 +49,8 @@
   align-items: center;
   justify-items: start;
   box-sizing: border-box;
-  border-radius: 20px;
-  padding: 5px 10px;
+  border-radius: 0.9375rem 1.2rem 1.2rem 0.9375rem;
+  padding: 5px 12px;
   width: 105px;
   height: auto;
   font-size: var(--font-medium-regular);

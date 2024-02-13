@@ -26,6 +26,17 @@
   gap: 0.625rem;
 }
 
+#logo {
+  width: 35px;
+}
+#moldura {
+  width: 35px;
+  height: auto;
+  padding: 0rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 0.9375rem;
+}
+
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .home-template {
@@ -40,8 +51,15 @@
     border-radius: 0.9375rem;
     background: var(--cor-1);
   }
-  .home-sidenav .card-s {
-    border-radius: 2rem;
+  .home-sidenav .card-xs {
     background: linear-gradient(to right bottom, var(--cor-1), var(--cor-6));
+  }
+
+  #moldura,
+  #logo {
+    width: 32px;
+    padding: 0rem;
+    background: none;
+    border-radius: 50%;
   }
 }

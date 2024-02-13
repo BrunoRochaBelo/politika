@@ -18,7 +18,7 @@
 
 <body class="body-template">
   <header class="header header-template">
-    <a href="index.html" class="header-menu">
+    <a href="index.html" class="header-back">
       <img src="imagens/icones/voltar.svg" alt="Back Icon">
     </a>
     <h1 class="header-title">CONTATOS</h1>
@@ -131,63 +131,59 @@
     </section>
 
     <section class="contatos-sidenav">
-
-      <div class="area-template-fil">
-        <div class="lista-horizontal-template">
-          <select class="card-select-xs" id="estado" onchange="carregarCidades()">
-            <option value="" selected disabled>Selecione um estado</option>
-            <option value="PE">Pernambuco</option>
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="MG">Minas Gerais</option>
-          </select>
-          <select class="card-select-xs" id="cidade">
-            <option value="" selected disabled>Selecione um estado primeiro</option>
-          </select>
-          <select class="card-select-xs" id="cidade2">
-            <option value="" selected disabled>Selecione um estado primeiro</option>
-          </select>
+      <div class="area-template-fil ">
+        <h2 class="area-template-fil-header">Pesquisa rápida
+          <button type="button" class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+        </h2>
+        <div class="area-template-fil-content lista-vertical-template recuar-expandir-vertical">
+          <div class="lista-horizontal-template">
+            <select class="card-select-xs" id="estado" onchange="carregarCidades()">
+              <option value="" selected disabled>Selecione um estado</option>
+              <option value="PE">Pernambuco</option>
+              <option value="SP">São Paulo</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="MG">Minas Gerais</option>
+            </select>
+            <select class="card-select-xs" id="cidade">
+              <option value="" selected disabled>Selecione um estado primeiro</option>
+            </select>
+            <select class="card-select-xs" id="cidade2">
+              <option value="" selected disabled>Selecione um estado primeiro</option>
+            </select>
+          </div>
+          <ul class="lista-horizontal-template recuar-expandir-horizontal">
+            <li>
+              <a class="marcador-s cor-marc1" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc7" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc3" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc9" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc5" href="#">
+                <p>icon</p>
+                <p><strong>title marcador</strong></p>
+              </a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="area-template-fil">
-        <ul class="lista-horizontal-template recuar-expandir-horizontal">
-          <li>
-            <button type="button" class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
-          </li>
-          <li>
-            <a class="marcador-s cor-marc1" href="#">
-              <p>icon</p>
-              <p><strong>title marcador</strong></p>
-            </a>
-          </li>
-          <li>
-            <a class="marcador-s cor-marc7" href="#">
-              <p>icon</p>
-              <p><strong>title marcador</strong></p>
-            </a>
-          </li>
-          <li>
-            <a class="marcador-s cor-marc3" href="#">
-              <p>icon</p>
-              <p><strong>title marcador</strong></p>
-            </a>
-          </li>
-          <li>
-            <a class="marcador-s cor-marc9" href="#">
-              <p>icon</p>
-              <p><strong>title marcador</strong></p>
-            </a>
-          </li>
-          <li>
-            <a class="marcador-s cor-marc5" href="#">
-              <p>icon</p>
-              <p><strong>title marcador</strong></p>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
     </section>
   </main>
 

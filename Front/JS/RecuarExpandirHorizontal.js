@@ -12,4 +12,5 @@ function toggleRecuarExpandirHorizontal() {
     elemento.classList.remove("lista-vertical-3-template");
     elemento.classList.add("lista-horizontal-template");
   }
+  window.scrollTo(0, 0);
 }

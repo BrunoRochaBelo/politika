@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function toggleBoxShadow() {
     var scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    if (scrollTop > 0) {
+    if (scrollTop > 15) {
       headerTemplate.classList.add("box-shadow-active");
       headerTitle.style.transition = "color 0.3s ease";
       headerTitle.style.color = "var(--cor-12)";
     } else {
       headerTemplate.classList.remove("box-shadow-active");
       headerTitle.style.transition = "color 0.3s ease";
-      headerTitle.style.color = "var(--cor-0)";
+      headerTitle.style.color = "var(--cor-6)";
     }
   }
 
