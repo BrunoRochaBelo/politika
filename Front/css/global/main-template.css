@@ -1,24 +1,24 @@
 /* Grid */
-.home-template {
+.main-template {
   display: grid;
   align-content: center;
   justify-content: center;
   gap: 0rem 0.625rem;
   grid:
-    "home-sidenav home-section"
+    "main-sidenav main-section"
     / 1.1fr 1.9fr;
 }
 /* Áreas de grid */
-.home-section {
-  grid-area: home-section;
+.main-section {
+  grid-area: main-section;
   text-align: center;
   display: grid;
   grid-auto-flow: row;
   align-items: start;
   gap: 0.625rem;
 }
-.home-sidenav {
-  grid-area: home-sidenav;
+.main-sidenav {
+  grid-area: main-sidenav;
   text-align: center;
   display: grid;
   align-content: start;
@@ -26,40 +26,25 @@
   gap: 0.625rem;
 }
 
-#logo {
-  width: 35px;
-}
-#moldura {
-  width: 35px;
-  height: auto;
-  padding: 0rem;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 0.9375rem;
+.main-sidenav .card-xs {
+  border-radius: 0.625rem 1.3rem 0.625rem 1.3rem;
 }
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
-  .home-template {
+  .main-template {
     grid:
-      "home-sidenav"
-      "home-section"
+      "main-sidenav"
+      "main-section"
       / 1fr;
   }
-  .home-section {
-    grid-area: home-section;
-    padding: 0;
+  .main-section {
+    grid-area: main-section;
+    padding: 0rem 0rem 4.3rem 0rem;
     border-radius: 0.9375rem;
     background: var(--cor-1);
   }
-  .home-sidenav .card-xs {
+  .main-sidenav .card-xs {
     background: linear-gradient(to right bottom, var(--cor-1), var(--cor-6));
-  }
-
-  #moldura,
-  #logo {
-    width: 32px;
-    padding: 0rem;
-    background: none;
-    border-radius: 50%;
   }
 }

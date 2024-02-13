@@ -1,0 +1,8 @@
+/* Estilos */
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .contatos-sidenav .area-template-content {
+    padding: 0.652rem;
+  }
+}

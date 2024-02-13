@@ -5,14 +5,17 @@
   gap: 5px;
   padding: 0.625rem;
   scrollbar-width: thick;
+  box-sizing: border-box;
   border-radius: 0.9375rem;
   transition: 1s;
 }
+
 .lista-vertical-3-template {
   display: grid;
   gap: 5px;
   grid-template: auto / 1fr 1fr 1fr;
   scrollbar-width: thick;
+  box-sizing: border-box;
   border-radius: 0.9375rem;
   transition: 1s;
 }
@@ -21,7 +24,8 @@
   display: grid;
   grid-auto-flow: column;
   gap: 5px;
-  padding: 3px 0px;
+  padding: 3px;
+  box-sizing: border-box;
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
@@ -34,30 +38,40 @@
   background: transparent;
   gap: 3px;
   scrollbar-width: thick;
+  box-sizing: border-box;
   border-radius: 0.9375rem;
-}
-/* Estilos */
-.lista-vertical::-webkit-scrollbar,
-.lista-vertical-2-template::-webkit-scrollbar,
-.lista-horizontal-template::-webkit-scrollbar,
-.lista-vertical-template-alt::-webkit-scrollbar {
-  display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+  transition: 1s;
 }
 
+.lista-estrelas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: transparent;
+  gap: 5px;
+  scrollbar-width: thick;
+  box-sizing: border-box;
+  border-radius: 0.9375rem;
+  transition: 1s;
+}
+
+/* Estilos */
+.lista-vertical-template,
+.lista-vertical-3-template,
+.lista-horizontal-template,
+.lista-vertical-template-alt,
+.lista-estrelas {
+  scrollbar-width: thin;
+}
 /* Estilos para cards dentro da lista */
 /* Reset de borda para todos os cards dentro da lista */
-
 .lista-vertical-template-alt .card-select-m {
   border-radius: 0;
 }
-
 /* Adiciona borda arredondada nos cantos esquerdos e direitos do primeiro e último cards dentro da lista */
-
 .lista-vertical-template-alt li:first-child .card-select-m {
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
 }
-
 .lista-vertical-template-alt li:last-child .card-select-m {
   border-bottom-left-radius: 0.9375rem;
   border-bottom-right-radius: 0.9375rem;
@@ -65,16 +79,32 @@
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
-  .lista-vertical-template-template {
-    scrollbar-width: none;
+  .lista-estrelas {
+    display: grid;
+    grid-template-columns: 100px 50px 75px 90px 104px 118px;
+    justify-items: stretch;
+    align-items: start;
+    gap: 7px;
+    padding: 3px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thick;
+    transition: 1s;
   }
-  .lista-vertical-template-3-template {
-    scrollbar-width: none;
+  .lista-vertical-template::-webkit-scrollbar,
+  .lista-vertical-3-template::-webkit-scrollbar,
+  .lista-horizontal-template::-webkit-scrollbar,
+  .lista-vertical-template-alt::-webkit-scrollbar,
+  .lista-estrelas::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
   }
-  .lista-horizontal-template {
-    scrollbar-width: none;
-  }
-  .lista-vertical-template-alt {
+
+  .lista-vertical-template,
+  .lista-vertical-3-template,
+  .lista-horizontal-template,
+  .lista-vertical-template-alt,
+  .lista-estrelas {
     scrollbar-width: none;
   }
 }

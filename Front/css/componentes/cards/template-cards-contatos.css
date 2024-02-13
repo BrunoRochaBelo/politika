@@ -2,28 +2,33 @@
 /* Pequeno */
 .contatos-small-card {
   display: grid;
-  align-items: center;
-  justify-items: start;
+  gap: 5px;
+  align-content: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "contatos-small-card-tag contatos-small-card-title"
-    "contatos-small-card-tag contatos-small-card-num"
-    / 105px 1fr;
+    "contatos-small-card-title contatos-small-card-title contatos-small-card-num contatos-small-card-phone"
+    "contatos-small-card-star . contatos-small-card-num  contatos-small-card-phone"
+    /0.5fr 0.5fr 1fr auto;
 }
 .contatos-small-card-title {
   grid-area: contatos-small-card-title;
+  justify-self: start;
   font-size: var(--titulo-m);
-  margin-left: 0.625rem;
 }
 .contatos-small-card-num {
   grid-area: contatos-small-card-num;
-  font-size: var(--font-light);
-  margin-left: 0.625rem;
+  justify-self: center;
+  align-self: center;
 }
-.contatos-small-card-tag {
-  grid-area: contatos-small-card-tag;
+.contatos-small-card-star {
+  grid-area: contatos-small-card-star;
+  justify-self: start;
+}
+.contatos-small-card-phone {
+  grid-area: contatos-small-card-phone;
+  align-self: center;
 }
 
 /* Médio */

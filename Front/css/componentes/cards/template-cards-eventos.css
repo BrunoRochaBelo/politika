@@ -8,8 +8,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "eventos-small-card-tag eventos-small-card-title eventos-small-card-title ."
-    "eventos-small-card-tag eventos-small-card-inicio eventos-small-card-fim ."/ 105px auto auto auto;
+    " eventos-small-card-title eventos-small-card-title eventos-small-card-tag"
+    " eventos-small-card-inicio eventos-small-card-fim eventos-small-card-tag";
 }
 .eventos-small-card-title {
   grid-area: eventos-small-card-title;
@@ -27,6 +27,7 @@
 }
 .eventos-small-card-tag {
   grid-area: eventos-small-card-tag;
+  justify-self: end;
 }
 
 /* Médio */

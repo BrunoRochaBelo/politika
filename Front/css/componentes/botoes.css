@@ -5,7 +5,6 @@
   color: var(--cor-0);
   font-size: small;
   border-radius: 0.9375rem;
-
   display: flex;
   text-align: justify;
   align-items: center;
@@ -20,7 +19,6 @@
   font-size: small;
   border: 1px solid var(--cor-12);
   border-radius: 0.9375rem;
-
   display: flex;
   text-align: justify;
   align-items: center;

@@ -23,10 +23,10 @@
   text-align: left;
   color: var(--cor-9);
 }
-
 .area-template-content {
   grid-area: area-template-content;
   overflow-x: auto;
+  transition: 1s;
 }
 
 /* Area Template alternativa*/
@@ -52,6 +52,33 @@
 .area-template-alt-content {
   grid-area: area-template-alt-content;
   overflow-x: auto;
+  transition: 1s;
+}
+/* Area Template alternativa Tamanho fixo*/
+.area-template-alt-tmf {
+  display: grid;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 0.9375rem;
+  padding: 0.625rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  grid:
+    "area-template-alt-tmf-header" auto
+    "area-template-alt-tmf-content" auto
+    / 1fr;
+}
+.area-template-alt-tmf-header {
+  grid-area: area-template-alt-tmf-header;
+  font-size: var(--titulo-l);
+  padding: 0.625rem;
+  text-align: left;
+  color: var(--cor-9);
+}
+.area-template-alt-tmf-content {
+  grid-area: area-template-alt-tmf-content;
+  overflow-x: auto;
+  transition: 1s;
+  height: 350px;
 }
 
 /* Area Template dos filtros*/
@@ -79,17 +106,18 @@
   text-align: left;
   color: var(--cor-9);
 }
-
 .area-template-fil-content {
   grid-area: area-template-fil-content;
-  gap: 0.625rem;
+  gap: 1.875rem;
   overflow-x: auto;
+  transition: 1s;
 }
 
 /* Estilos */
 .area-template-alt-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
+
 /* RESPONSIVO */
 @media (max-width: 800px) {
   /* Area Template padrão*/
@@ -121,6 +149,15 @@
     color: var(--cor-8);
     font-size: var(--titulo-s);
   }
+  .area-template-alt-tmf {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+  .area-template-alt-tmf-header {
+    color: var(--cor-8);
+    font-size: var(--titulo-s);
+  }
 
   /* Area Template dos filtros*/
   .area-template-fil {
@@ -133,5 +170,11 @@
     color: var(--cor-1);
     font-size: var(--titulo-l);
     margin-left: 0.625rem;
+  }
+  .area-template-fil-content {
+    grid-area: area-template-fil-content;
+    gap: 0.625rem;
+    overflow-x: auto;
+    transition: 1s;
   }
 }
