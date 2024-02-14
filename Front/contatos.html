@@ -19,9 +19,8 @@
 <body class="body-template">
   <header class="header header-template">
     <a href="index.html" class="header-back">
-      <img src="imagens/icones/voltar.svg" alt="Back Icon">
+      <img class="back-icon" src="imagens/icones/voltar.svg" alt="Back Icon">
     </a>
-    <h1 class="header-title">CONTATOS</h1>
     <nav class="header-nav">
       <menu class="header-nav-template">
         <li class="home"><a href="index.html"><img src="imagens/icones/home.svg" alt="Home Icon">
@@ -41,17 +40,22 @@
           </a></li>
       </menu>
     </nav>
-    <a href="#.html" class="header-search">
-      <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
-    </a>
+    <div class="header-search">
+      <div class="search-input-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
+        <button class="search-button" onclick="search()">
+          <img class="search-icon" src="imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+        </button>
+      </div>
+    </div>
   </header>
 
   <main class="main main-template">
     <div id="floatingButton" onclick="mostrarModal()"><a href="cadastro-contato.html">+</a></div>
     <section class="main-section">
-      <div class="area-template-alt">
-        <h2 class="area-template-alt-header">Contatos listados - 4.321</h2>
-        <ul class="area-template-alt-content lista-vertical-template-alt">
+      <div id="resultsContainer" class="area-template-alt">
+        <h2 class="area-template-alt-header">Contatos listados - <span id="totalResults">{{total}}</span></h2>
+        <ul id="contatosList" class="area-template-alt-content lista-vertical-template-alt">
           <li>
             <a class="card-s contatos-small-card" href="#">
               <p class="contatos-small-card-title">{{Contato}}</p>
@@ -146,9 +150,7 @@
     </section>
     <section class="main-sidenav">
       <div class="area-template-fil ">
-        <h2 class="area-template-fil-header">Pesquisa rápida
-          <button type="button" class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
-        </h2>
+
         <div class="area-template-fil-content lista-vertical-template recuar-expandir-vertical">
           <div class="lista-horizontal-template recuar-expandir-horizontal">
             <select class="card-select-xs" id="estado" onchange="carregarCidades()">
@@ -169,32 +171,32 @@
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="todas">
                 <strong>Todas</strong>
-                </a>
+              </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="1estrela">
-                <img src="imagens/icones/uma-estrela-dourada.svg" alt="Perfil influencia Icon">
-                </a>
+                <img class="star-img" src="imagens/icones/uma-estrela-dourada.svg" alt="Perfil influencia Icon">
+              </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="2estrelas">
-                <img src="imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
-                </a>
+                <img class="star-img" src="imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="3estrelas">
-                <img src="imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
-                </a>
+                <img class="star-img" src="imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="4estrelas">
-                <img src="imagens/icones/quatro-estrelas-douradas.svg" alt="Perfil influencia Icon">
-                </a>
+                <img class="star-img" src="imagens/icones/quatro-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="5estrelas">
-                <img src="imagens/icones/cinco-estrelas-douradas.svg" alt="Perfil influencia Icon">
-                </a>
+                <img class="star-img" src="imagens/icones/cinco-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              </button>
             </li>
           </ul>
         </div>
@@ -204,6 +206,7 @@
   <script src="./js/SombraHeaderScroll.js"></script>
   <script src="./js/RecuarExpandirHorizontal.js"></script>
   <script src="./js/Modal.js"></script>
+  <script src="./js/Pesquisar.js"></script>
 
 </body>
 

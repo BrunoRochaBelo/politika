@@ -1,5 +1,8 @@
 /* Estilos */
-
+.star-img {
+  width: auto;
+  height: 1.2rem;
+}
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .contatos-sidenav .area-template-content {

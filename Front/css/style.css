@@ -27,6 +27,7 @@
 
 /* Home */
 @import "./home/home-style.css";
+@import "./home/home-header-template.css";
 @import "./home/modal-menu.css";
 
 /* contatos */

@@ -7,7 +7,12 @@ body {
   display: grid;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right bottom, var(--cor-6), var(--cor-5));
+  background: linear-gradient(
+    to right bottom,
+    var(--cor-3),
+    var(--cor-6),
+    var(--cor-5)
+  );
   overflow: auto;
 }
 /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);

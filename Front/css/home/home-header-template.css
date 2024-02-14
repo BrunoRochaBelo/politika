@@ -1,0 +1,78 @@
+/* home-header TEMPLATE */
+/* Definição do layout usando grid para o cabeçalho */
+.home-header-template {
+  display: grid;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  grid: "home-header-logo home-header-nav home-header-user" 45px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Áreas de grid */
+.home-header-logo {
+  grid-area: home-header-logo;
+  margin-left: 1.25rem;
+  width: 2rem;
+}
+.home-header-title {
+  display: none;
+  grid-area: home-header-title;
+  width: 1.375rem;
+  color: var(--cor-12);
+}
+.home-header-nav {
+  grid-area: home-header-nav;
+}
+.home-header-user {
+  grid-area: home-header-user;
+  margin-right: 1.25rem;
+  width: 3.75rem;
+  height: auto;
+}
+
+/* RESPONSIVO */
+@media (max-width: 767px) {
+  .home-header-template {
+    display: grid;
+    align-content: center;
+    justify-content: space-between;
+    grid: "home-header-logo home-header-title home-header-user" 45px;
+    background: none;
+    box-shadow: none;
+  }
+  .home-header-template.box-shadow-active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--cor-0);
+  }
+
+  .home-header-logo {
+    margin-left: 0.625rem;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 0.9375rem;
+    padding: 3px;
+  }
+  .home-header-title {
+    font-size: var(--titulo-xl);
+    display: inline-block;
+    color: var(--cor-6);
+  }
+  .home-header-user {
+    margin-right: 0.625rem;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 0.9375rem;
+    padding: 3px;
+  }
+  .home-header-nav {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10000000;
+  }
+}

@@ -43,8 +43,15 @@
     padding: 0rem 0rem 4.3rem 0rem;
     border-radius: 0.9375rem;
     background: var(--cor-1);
+    box-shadow: 0 -2px 4px rgba(156, 156, 156, 0.4);
   }
   .main-sidenav .card-xs {
     background: linear-gradient(to right bottom, var(--cor-1), var(--cor-6));
+  }
+  .main-sidenav .card-select-xs {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--cor-8);
+    color: var(--cor-1);
   }
 }
