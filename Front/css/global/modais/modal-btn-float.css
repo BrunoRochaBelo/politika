@@ -43,3 +43,59 @@
     gap: 25px;
   }
 }
+/* Botão do modal */
+#floatingButton {
+  position: fixed;
+  bottom: 75px;
+  right: 30px;
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(to right bottom, #713bdc, #52d4d8);
+  color: var(--cor-0);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--cor-9);
+  border-radius: 30%;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+#floatingButton:hover {
+  /* Altera a cor da borda ao passar o mouse */
+  border-color: var(--cor-p1);
+}
+
+#floatingButton:active {
+  /* Adiciona um efeito "acessado" ao clicar no botão */
+  background: darken(
+    var(--cor-12),
+    10%
+  ); /* Pode ajustar a intensidade do escurecimento conforme necessário */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVO */
+@media (max-width: 767px) {
+  #floatingButton {
+    position: fixed;
+    bottom: 75px;
+    right: 15px;
+    width: 61px;
+    height: 61px;
+    background: linear-gradient(to right bottom, #713bdc, #52d4d8);
+    color: var(--cor-0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--cor-9);
+    border-radius: 30%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    z-index: 10000;
+  }
+}

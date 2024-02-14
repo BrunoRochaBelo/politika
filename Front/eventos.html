@@ -23,7 +23,7 @@
       <img src="imagens/icones/voltar.svg" alt="Back Icon">
     </a>
     <nav class="header-nav">
-      <menu class="header-nav-template">
+      <ul class="header-nav-template">
         <li class="home"><a href="index.html"><img src="imagens/icones/home.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
@@ -39,23 +39,14 @@
         <li class="despesas"><a href="#"><img src="imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
-      </menu>
+      </ul>
     </nav>
     <a href="#.html" class="header-search">
       <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
     </a>
   </header>
-
   <main class="main eventos-template">
-    <div id="floatingButton" onclick="mostrarModal()"><a href="#">+</a></div>
-    <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
-      <div id="modalContent">
-        <!-- Conteúdo do Modal -->
-        <p>Opção 1</p>
-        <p>Opção 2</p>
-        <p>Opção 3</p>
-      </div>
-    </div>
+
 
     <section class="eventos-section">
       <div class="eventos-section-template">
@@ -237,6 +228,18 @@
     </section>
 
   </main>
+
+  <!-- Modal -->
+  <div id="floatingButton" onclick="mostrarModal()"><a href="#">+</a></div>
+  <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
+    <div id="modalContent">
+      <!-- Conteúdo do Modal -->
+      <p>Opção 1</p>
+      <p>Opção 2</p>
+      <p>Opção 3</p>
+    </div>
+  </div>
+
 
   <script src="./js/SombraHeaderScroll.js"></script>
   <script src="./js/RecuarExpandirHorizontal.js"></script>

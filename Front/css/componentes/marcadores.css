@@ -81,10 +81,8 @@
 
 @media (max-width: 800px) {
   .btn-filter-leaked {
-    width: 100%;
-    height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;
     padding: 0.625rem;
     background: rgba(255, 255, 255, 0.1);

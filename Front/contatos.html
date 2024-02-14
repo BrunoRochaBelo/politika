@@ -22,7 +22,7 @@
       <img class="back-icon" src="imagens/icones/voltar.svg" alt="Back Icon">
     </a>
     <nav class="header-nav">
-      <menu class="header-nav-template">
+      <ul class="header-nav-template">
         <li class="home"><a href="index.html"><img src="imagens/icones/home.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
@@ -38,7 +38,7 @@
         <li class="despesas"><a href="#"><img src="imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
-      </menu>
+      </ul>
     </nav>
     <div class="header-search">
       <div class="search-input-container">
@@ -51,7 +51,9 @@
   </header>
 
   <main class="main main-template">
+
     <div id="floatingButton" onclick="mostrarModal()"><a href="cadastro-contato.html">+</a></div>
+
     <section class="main-section">
       <div id="resultsContainer" class="area-template-alt">
         <h2 class="area-template-alt-header">Contatos listados - <span id="totalResults">{{total}}</span></h2>
@@ -60,8 +62,8 @@
             <a class="card-s contatos-small-card" href="#">
               <p class="contatos-small-card-title">{{Contato}}</p>
               <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star" data-filter="marcador3"><img src="imagens/icones/tres-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone" data-filter="marcador3"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
+              <div class="contatos-small-card-star"><img src="imagens/icones/tres-estrelas.svg" alt="Perfil influencia Icon"></div>
+              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
             </a>
           </li>
           <li>
@@ -148,6 +150,7 @@
         </ul>
       </div>
     </section>
+
     <section class="main-sidenav">
       <div class="area-template-fil ">
         <h2 class="area-template-fil-header">Pesquisa rápida</h2>
@@ -201,12 +204,36 @@
           </ul>
         </div>
     </section>
+
   </main>
+
+
+  <!-- Modal -->
+  <div id="modal-info-contato" class="modal-info-contato">
+    <div class="modal-info-contato-content">
+      <span class="close">&times;</span>
+      <div class="modal-header">
+        <img id="modalImage" src="" alt="Imagem do Contato">
+      </div>
+      <div class="modal-body">
+        <p><strong>Influência:</strong> <span id="modalInfluence"></span></p>
+        <p><strong>Número:</strong> <span id="modalNumber"></span></p>
+        <a id="modalCallButton" class="btn btn-primary">Ligar</a>
+        <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>
+        <p><strong>Nome:</strong> <span id="modalName"></span></p>
+        <p><strong>Tipo de Pessoa:</strong> <span id="modalPersonType"></span></p>
+        <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+        <a id="modalEditButton" href="#" class="btn btn-primary">Editar</a>
+        <button id="modalDeleteButton" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
 
   <script src="./js/SombraHeaderScroll.js"></script>
   <script src="./js/RecuarExpandirHorizontal.js"></script>
   <script src="./js/ModalBTNFloating.js"></script>
   <script src="./js/BarraDePesquisa.js"></script>
+  <script src="./js/ModalInfoContato.js"></script>
 
 </body>
 

@@ -7,8 +7,9 @@
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
 /* Global/Modais */
-@import "./global/modais/modal-btn-floating.css";
+@import "./global/modais/modal-btn-float.css";
 @import "./global/modais/modal-menu.css";
+@import "./global/modais/modal-info-contato.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";

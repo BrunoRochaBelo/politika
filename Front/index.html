@@ -23,7 +23,7 @@
     <div id="logo" class="home-header-logo"><img src="imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
     <h1 class="home-header-title">HOME</h1>
     <nav class="home-header-nav">
-      <menu class="header-nav-template">
+      <ul class="header-nav-template">
         <li class="home indicador"><a href="index.html"><img src="imagens/icones/home-select.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
@@ -39,7 +39,7 @@
         <li class="despesas"><a href="#"><img src="imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
-      </menu>
+      </ul>
     </nav>
     <div id="moldura" class="home-header-user"><img src="imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
     </div>
@@ -283,7 +283,7 @@
     </section>
   </main>
 
-  <!-- Modal -->
+  <!-- Modal Conta Usuario -->
   <div class="modal" id="userModal">
     <div class="modal-content-template">
       <div class="modal-content-template-img">
@@ -299,10 +299,31 @@
     </div>
   </div>
 
+  <!-- Modal Contato -->
+  <div id="modal-info-contato" class="modal-info-contato">
+    <div class="modal-info-contato-content">
+      <span class="close">&times;</span>
+      <div class="modal-header">
+        <img id="modalImage" src="" alt="Imagem do Contato">
+      </div>
+      <div class="modal-body">
+        <p><strong>Influência:</strong> <span id="modalInfluence"></span></p>
+        <p><strong>Número:</strong> <span id="modalNumber"></span></p>
+        <a id="modalCallButton" class="btn btn-primary">Ligar</a>
+        <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>
+        <p><strong>Nome:</strong> <span id="modalName"></span></p>
+        <p><strong>Tipo de Pessoa:</strong> <span id="modalPersonType"></span></p>
+        <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+        <a id="modalEditButton" href="#" class="btn btn-primary">Editar</a>
+        <button id="modalDeleteButton" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
   <script src="./js/SombraHeaderScroll.js"></script>
   <script src="./js/RecuarExpandirVertical.js"></script>
   <script src="./js/FiltroEstadoCidade.js"></script>
   <script src="./js/ModalMenu.js"></script>
+  <script src="./js/ModalInfoContato.js"></script>
 
 </body>
 
