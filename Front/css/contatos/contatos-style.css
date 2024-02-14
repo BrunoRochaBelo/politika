@@ -3,9 +3,31 @@
   width: auto;
   height: 1.2rem;
 }
+.lista-vertical-horizontal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  background: transparent;
+  gap: 5px;
+  scrollbar-width: thick;
+  box-sizing: border-box;
+  transition: 1s;
+}
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .contatos-sidenav .area-template-content {
     padding: 0.652rem;
+  }
+  .area-template-fil-header {
+    display: none;
+  }
+  .lista-vertical-horizontal {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 3px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thick;
+    transition: 1s;
   }
 }

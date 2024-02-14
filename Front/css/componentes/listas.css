@@ -43,10 +43,9 @@
   transition: 1s;
 }
 
-.lista-estrelas {
+.lista-vertical-horizontal {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: transparent;
+  grid-auto-flow: row;
   gap: 5px;
   scrollbar-width: thick;
   box-sizing: border-box;
@@ -58,7 +57,7 @@
 .lista-vertical-3-template,
 .lista-horizontal-template,
 .lista-vertical-template-alt,
-.lista-estrelas {
+.lista-vertical-horizontal {
   scrollbar-width: thin;
 }
 /* Estilos para cards dentro da lista */
@@ -78,12 +77,10 @@
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
-  .lista-estrelas {
+  .lista-vertical-horizontal {
     display: grid;
-    grid-template-columns: 100px 50px 75px 90px 104px 118px;
-    justify-items: stretch;
-    align-items: start;
-    gap: 7px;
+    grid-auto-flow: column;
+    gap: 5px;
     padding: 3px;
     box-sizing: border-box;
     white-space: nowrap;
@@ -95,7 +92,7 @@
   .lista-vertical-3-template::-webkit-scrollbar,
   .lista-horizontal-template::-webkit-scrollbar,
   .lista-vertical-template-alt::-webkit-scrollbar,
-  .lista-estrelas::-webkit-scrollbar {
+  .lista-vertical-horizontal::-webkit-scrollbar {
     display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
   }
 
@@ -103,7 +100,7 @@
   .lista-vertical-3-template,
   .lista-horizontal-template,
   .lista-vertical-template-alt,
-  .lista-estrelas {
+  .lista-vertical-horizontal {
     scrollbar-width: none;
   }
 }

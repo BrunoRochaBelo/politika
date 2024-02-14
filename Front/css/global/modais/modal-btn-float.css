@@ -1,4 +1,4 @@
-/* Adicione estilos conforme necessário #5CE1E6*/
+/* Estilos */
 #modalOverlay {
   display: none;
   position: fixed;
@@ -27,7 +27,6 @@
   background: #fff;
   padding: 1.25rem;
   border-radius: 0.9375rem;
-
   text-align: center;
   gap: 25px;
 }
@@ -40,7 +39,6 @@
     background: #fff;
     padding: 1.25rem;
     border-radius: 0.9375rem;
-
     text-align: center;
     gap: 25px;
   }

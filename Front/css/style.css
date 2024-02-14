@@ -6,6 +6,9 @@
 /* Global/Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
+/* Global/Modais */
+@import "./global/modais/modal-btn-floating.css";
+@import "./global/modais/modal-menu.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";
@@ -15,7 +18,6 @@
 @import "./componentes/listas.css";
 @import "./componentes/botoes.css";
 @import "./componentes/marcadores.css";
-@import "./componentes/modal.css";
 @import "./componentes/recuar-expandir.css";
 @import "./componentes/cards/cards.css";
 @import "./componentes/cards/template-cards-eventos.css";
@@ -28,7 +30,6 @@
 /* Home */
 @import "./home/home-style.css";
 @import "./home/home-header-template.css";
-@import "./home/modal-menu.css";
 
 /* contatos */
 @import "./contatos/contatos-style.css";

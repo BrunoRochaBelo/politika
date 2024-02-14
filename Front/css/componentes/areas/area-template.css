@@ -171,6 +171,7 @@
     font-size: var(--titulo-l);
     margin-left: 0.625rem;
   }
+
   .area-template-fil-content {
     grid-area: area-template-fil-content;
     gap: 0.625rem;

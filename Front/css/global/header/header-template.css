@@ -33,14 +33,13 @@
 }
 .search-input {
   padding: 0.625rem;
-  border: none;
   border-radius: 0.312rem 0rem 0rem 0.312rem;
-  margin-right: 0;
   cursor: pointer;
   width: 100%;
-  background: var(--cor-6);
+  backdrop-filter: blur(5px);
+  background: var(--cor-1);
   color: var(--cor-12);
-  box-sizing: border-box;
+  border: 1px solid var(--cor-7);
 }
 .search-button {
   padding: 8px;
@@ -55,8 +54,8 @@
   margin-right: 8px;
 }
 .back-icon {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   margin-left: 8px;
 }
 
@@ -137,6 +136,12 @@
   .header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background: var(--cor-0);
+  }
+
+  .back-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
   }
 
   .header-template-form {
