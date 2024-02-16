@@ -37,16 +37,17 @@
   cursor: pointer;
   width: 100%;
   backdrop-filter: blur(5px);
-  background: var(--cor-1);
+  background: var(--cor-5);
   color: var(--cor-12);
-  border: 1px solid var(--cor-7);
+  border: 1px solid var(--cor-4);
 }
 .search-button {
   padding: 8px;
-  background: var(--cor-7);
+  background: var(--cor-p5);
   border: none;
   border-radius: 0rem 0.312rem 0.312rem 0rem;
   cursor: pointer;
+  border-bottom: 2px solid var(--cor-6);
 }
 .search-icon {
   width: 20px;
@@ -56,10 +57,9 @@
 .back-icon {
   width: 18px;
   height: 18px;
-  margin-left: 8px;
 }
 
-/* Definição do layout usando grid para o cabeçalho dos formularios */
+/*  /* Cabeçalho do form */
 .header-template-form {
   display: grid;
   align-items: center;
@@ -68,7 +68,6 @@
   grid: "header-template-form-menu header-template-form-title" 45px;
   box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.4);
 }
-/* Áreas de grid */
 .header-template-form-menu {
   grid-area: header-template-form-menu;
   justify-self: start;
@@ -94,10 +93,6 @@
   }
   .header-back {
     margin-left: 0.625rem;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
-    border-radius: 0.312rem;
     cursor: pointer;
     padding: 8px;
   }
@@ -121,29 +116,27 @@
     cursor: pointer;
     width: 100%;
     color: var(--cor-1);
-    background: var(--cor-11);
+    background: var(--cor-2);
   }
-
   .search-input.scroll-active {
     padding: 0.625rem;
     cursor: pointer;
     width: 100%;
     backdrop-filter: blur(5px);
-    background: var(--cor-1);
+    background: var(--cor-5);
     color: var(--cor-12);
-    border: 1px solid var(--cor-7);
   }
   .header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background: var(--cor-0);
   }
 
-  .back-icon {
-    width: 14px;
-    height: 14px;
-    margin-left: 8px;
+  .search-button {
+    background: var(--cor-4);
+    border-bottom: 2px solid var(--cor-p3);
   }
 
+  /* Cabeçalho do form */
   .header-template-form {
     grid: "header-template-form-menu header-template-form-title" 35px;
   }

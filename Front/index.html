@@ -47,9 +47,9 @@
 
   <main class="main main-template">
     <section class="main-section">
-      <div class="area-template-alt">
-        <h2 class="area-template-alt-header">Destino</h2>
-        <ul class="area-template-alt-content lista-vertical-template-alt">
+      <div class="area-template">
+        <h2 class="area-template-header">Destino</h2>
+        <ul class="area-template-content lista-vertical-template-alt">
           <li><select class="card-select-m" id="estado" onchange="carregarCidades()">
               <option value="" selected disabled>Selecione um estado</option>
               <option value="PE">Pernambuco</option>
@@ -115,107 +115,28 @@
           </ul>
         </div>
       </div>
-      <div class="area-template-alt-tmf">
-        <h2 class="area-template-alt-tmf-header">Contatos importantes</h2>
-        <ul class="area-template-alt-tmf-content lista-vertical-template-alt">
+      <div class="area-template-tmf">
+        <h2 class="area-template-tmf-header">Contatos importantes</h2>
+        <ul class="area-template-tmf-content lista-vertical-template-alt">
           <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star" data-filter="marcador3"><img src="imagens/icones/tres-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone" data-filter="marcador3"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star" data-filter="marcador3"><img src="imagens/icones/cinco-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone" data-filter="marcador3"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/cinco-estrelas.svg" alt="Perfil influencia Icon"></div>
+            <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
+              <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato}}</p>
+              <div class="contatos-small-card-num" data-filter="numero">{{(81) 99999-9999}}</div>
+              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="imagens/icones/tres-estrelas.svg" alt="Perfil influencia Icon"></div>
               <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
             </a>
           </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/cinco-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/uma-estrela.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/quatro-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/cinco-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/duas-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/cinco-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/tres-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star"><img src="imagens/icones/quatro-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-            </a>
-          </li>
+
 
         </ul>
       </div>
     </section>
     <section class="main-sidenav">
-      <div class="area-template ">
-        <h2 class="area-template-header">Compromissos para hoje
+      <div class="area-template-tmf-alt ">
+        <h2 class="area-template-tmf-alt-header">Compromissos para hoje
           <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirVertical()">recuar/expandir</button>
         </h2>
-        <ul id="compromissosHoje" class="area-template-content lista-vertical-template recuar-expandir-vertical">
+        <ul id="compromissosHoje" class="area-template-tmf-alt-content lista-vertical-template recuar-expandir-vertical">
           <li>
             <a class="card-xs eventos-small-card" href="#">
               <p class="eventos-small-card-title"><strong>Title</strong></p>
@@ -300,7 +221,7 @@
   </div>
 
   <!-- Modal Contato -->
-  <div id="modal-info-contato" class="modal-info-contato">
+  <div id="modal-info-contato" class="modal-info-contato" data-contato-id="">
     <div class="modal-info-contato-content">
       <span class="close">&times;</span>
       <div class="modal-header">
@@ -309,16 +230,19 @@
       <div class="modal-body">
         <p><strong>Influência:</strong> <span id="modalInfluence"></span></p>
         <p><strong>Número:</strong> <span id="modalNumber"></span></p>
-        <a id="modalCallButton" class="btn btn-primary">Ligar</a>
+        <button id="modalCallButton" class="btn btn-primary" aria-label="Ligar para o contato">Ligar</button>
         <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>
         <p><strong>Nome:</strong> <span id="modalName"></span></p>
         <p><strong>Tipo de Pessoa:</strong> <span id="modalPersonType"></span></p>
         <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+        <p id="modalError" style="color: red;"></p> <!-- Adicione esta linha -->
         <a id="modalEditButton" href="#" class="btn btn-primary">Editar</a>
         <button id="modalDeleteButton" class="btn btn-danger">Excluir</button>
       </div>
     </div>
   </div>
+
+
   <script src="./js/SombraHeaderScroll.js"></script>
   <script src="./js/RecuarExpandirVertical.js"></script>
   <script src="./js/FiltroEstadoCidade.js"></script>

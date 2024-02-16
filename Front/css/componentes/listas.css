@@ -14,6 +14,7 @@
   display: grid;
   gap: 5px;
   grid-template: auto / 1fr 1fr 1fr;
+  padding: 0.625rem;
   scrollbar-width: thick;
   box-sizing: border-box;
   border-radius: 0.9375rem;
@@ -36,7 +37,6 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  gap: 3px;
   scrollbar-width: thick;
   box-sizing: border-box;
   border-radius: 0.9375rem;
@@ -50,6 +50,7 @@
   scrollbar-width: thick;
   box-sizing: border-box;
   transition: 1s;
+  border-radius: 0.9375rem;
 }
 
 /* Estilos */
@@ -80,7 +81,7 @@
   .lista-vertical-horizontal {
     display: grid;
     grid-auto-flow: column;
-    gap: 5px;
+
     padding: 3px;
     box-sizing: border-box;
     white-space: nowrap;

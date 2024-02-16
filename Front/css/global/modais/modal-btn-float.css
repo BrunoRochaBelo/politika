@@ -50,7 +50,7 @@
   right: 30px;
   width: 75px;
   height: 75px;
-  background: linear-gradient(to right bottom, #713bdc, #52d4d8);
+  background: linear-gradient(to right bottom, var(--cor-11), var(--cor-p6));
   color: var(--cor-0);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   border: 1px solid var(--cor-9);
@@ -85,7 +85,7 @@
     right: 15px;
     width: 61px;
     height: 61px;
-    background: linear-gradient(to right bottom, #713bdc, #52d4d8);
+    background: linear-gradient(to right bottom, var(--cor-11), var(--cor-p6));
     color: var(--cor-0);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
     border: 1px solid var(--cor-9);

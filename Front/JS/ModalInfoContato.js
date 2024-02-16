@@ -1,55 +1,36 @@
-// Seletores de elementos DOM
-const modal = document.getElementById("modal-info-contato");
-const closeBtn = document.getElementsByClassName("close")[0];
-const modalImage = document.getElementById("modalImage");
-const modalInfluence = document.getElementById("modalInfluence");
-const modalNumber = document.getElementById("modalNumber");
-const modalContactType = document.getElementById("modalContactType");
-const modalName = document.getElementById("modalName");
-const modalPersonType = document.getElementById("modalPersonType");
-const modalEmail = document.getElementById("modalEmail");
-const modalCallButton = document.getElementById("modalCallButton"); // Novo botão de ligar no modal
+// Função para alimentar o modal
+async function fillModalFields(contactId) {
+  // Primeiro, pegamos os elementos do DOM que precisamos atualizar
+  var modalImage = document.getElementById("modalImage");
+  var modalInfluence = document.getElementById("modalInfluence");
+  var modalNumber = document.getElementById("modalNumber");
+  var modalContactType = document.getElementById("modalContactType");
+  var modalName = document.getElementById("modalName");
+  var modalPersonType = document.getElementById("modalPersonType");
+  var modalEmail = document.getElementById("modalEmail");
+  var modalError = document.getElementById("modalError"); // Novo elemento para exibir a mensagem de erro
 
-// Função para preencher os campos do modal com os dados do backend
-function fillModalFields(contactData) {
-  modalImage.src = contactData.image;
-  modalInfluence.innerHTML = contactData.influence;
-  modalNumber.innerHTML = contactData.number;
-  modalContactType.innerHTML = contactData.contactType;
-  modalName.innerHTML = contactData.name;
-  modalPersonType.innerHTML = contactData.personType;
-  modalEmail.innerHTML = contactData.email;
-  modalCallButton.href = `tel:${contactData.number}`; // Adicione o número de telefone ao botão de ligar
-}
-
-// Função para buscar os dados do contato no backend
-async function fetchContactData(contactId) {
+  // Em seguida, fazemos uma solicitação ao back-end para obter os dados do contato
   try {
     const response = await fetch(`/api/contacts/${contactId}`);
+    if (!response.ok) {
+      throw new Error("Erro na resposta da rede");
+    }
     const data = await response.json();
-    return data;
+    // Atualizamos os elementos do DOM com os dados recebidos
+    modalImage.src = data.image;
+    modalInfluence.textContent = data.influence;
+    modalNumber.textContent = data.number;
+    modalContactType.textContent = data.contactType;
+    modalName.textContent = data.name;
+    modalPersonType.textContent = data.personType;
+    modalEmail.textContent = data.email;
+    modalError.textContent = ""; // Limpa a mensagem de erro
   } catch (error) {
-    console.error(error);
-    // Retorne um objeto com valores padrão em caso de erro
-    return {
-      image: "caminho/para/imagem/padrao.jpg",
-      influence: "Influência não disponível",
-      number: "Número não disponível",
-      contactType: "Tipo de contato não disponível",
-      name: "Nome não disponível",
-      personType: "Tipo de pessoa não disponível",
-      email: "Email não disponível",
-    };
+    console.error("Erro:", error);
+    modalError.textContent =
+      "Houve um erro ao carregar os dados. Por favor, tente novamente mais tarde."; // Exibe a mensagem de erro
   }
-}
-
-// Função para abrir o modal
-function openModal() {
-  modal.classList.add("show");
-}
-// Função para fechar o modal
-function closeModal() {
-  modal.classList.remove("show");
 }
 
 // Event listener para abrir o modal quando clicar no card, mas não no ícone do telefone
@@ -58,18 +39,39 @@ document.querySelectorAll(".contatos-small-card").forEach(function (card) {
     // Verifique se o clique não foi no ícone do telefone
     if (!event.target.classList.contains("contatos-small-card-phone")) {
       // Obtenha o ID do contato do atributo de dados do card
-      const contactId = card.dataset.contactId;
-
-      // Busque os dados do contato do backend
-      const contactData = await fetchContactData(contactId);
+      const contactId = card.querySelector(
+        ".contatos-small-card-id"
+      ).textContent;
 
       // Preencha os campos do modal com os dados do contato
-      fillModalFields(contactData);
+      await fillModalFields(contactId);
 
       // Abra o modal
-      openModal();
+      document.getElementById("modal-info-contato").classList.add("show");
     }
   });
+});
+
+// Função para fechar o modal
+function closeModal() {
+  document.getElementById("modal-info-contato").classList.remove("show");
+}
+
+// Event listener para fechar o modal ao clicar no botão de fechar
+document.querySelector(".close").addEventListener("click", closeModal);
+
+// Event listener para fechar o modal ao clicar fora da área do modal
+window.addEventListener("click", function (event) {
+  if (event.target === document.getElementById("modal-info-contato")) {
+    closeModal();
+  }
+});
+
+// Event listener para fechar o modal ao pressionar a tecla ESC
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
 });
 
 // Event listener para fazer uma ligação telefônica quando clicar no ícone do telefone
@@ -90,60 +92,43 @@ document
     });
   });
 
-// Event listener para fechar o modal ao clicar no botão de fechar
-closeBtn.addEventListener("click", closeModal);
-
-// Event listener para fechar o modal ao clicar fora da área do modal
-window.addEventListener("click", function (event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-// Event listener para fechar o modal ao pressionar a tecla ESC
-window.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
-
-// Seletores de elementos DOM
-const modalEditButton = document.getElementById("modalEditButton");
-const modalDeleteButton = document.getElementById("modalDeleteButton");
-
 // Função para editar o contato
 function editContact(contactId) {
-  // Redirecione para a página de edição com o ID do contato como parâmetro
-  window.location.href = `/edit-contact/${contactId}`;
+  // Redireciona o usuário para a página de edição do contato
+  window.location.href = `/contato/put/${contactId}`;
 }
 
 // Função para excluir o contato
 async function deleteContact(contactId) {
-  // Mostre uma caixa de confirmação antes de excluir
-  if (confirm("Tem certeza que deseja excluir este contato?")) {
-    try {
-      // Faça uma requisição DELETE para a API de contatos
-      const response = await fetch(`/api/contacts/${contactId}`, {
-        method: "DELETE",
-      });
-
-      // Verifique se a requisição foi bem sucedida
-      if (response.ok) {
-        alert("Contato excluído com sucesso!");
-        closeModal();
-      } else {
-        alert("Erro ao excluir o contato. Por favor, tente novamente.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Erro ao excluir o contato. Por favor, tente novamente.");
+  try {
+    const response = await fetch(`/api/contacts/${contactId}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      throw new Error("Erro na resposta da rede");
     }
+    // Se a resposta for bem-sucedida, redirecione para a página de contatos
+    window.location.href = "/contatos";
+  } catch (error) {
+    console.error("Erro:", error);
+    alert(
+      "Houve um erro ao excluir o contato. Por favor, tente novamente mais tarde."
+    );
   }
 }
 
 // Adicione event listeners para os botões de editar e excluir
-modalEditButton.addEventListener("click", function () {
-  editContact(modal.dataset.contactId);
+document.querySelector(".edit-button").addEventListener("click", function () {
+  // Obtenha o ID do contato do atributo de dados do botão de edição
+  const contactId = this.dataset.contactId;
+
+  // Chame a função editContact com o ID do contato
+  editContact(contactId);
 });
-modalDeleteButton.addEventListener("click", function () {
-  deleteContact(modal.dataset.contactId);
+document.querySelector(".delete-button").addEventListener("click", function () {
+  // Obtenha o ID do contato do atributo de dados do botão de exclusão
+  const contactId = this.dataset.contactId;
+
+  // Chame a função deleteContact com o ID do contato
+  deleteContact(contactId);
 });

@@ -24,37 +24,29 @@
   <main class="main">
     <section class="area-sub-content-template">
       <nav class="area-sub-content-template-header">
+        <img src="imagens/foto-do-usuario.png" alt="">
         <ul id="navAba" class="nav">
           <li id="nav1" class="indicador"><a href="#" onclick="mostrarAba('aba1')">Identificação</a></li>
           <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Endereço</a></li>
-          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Detalhes</a></li>
+          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Info. Complementar</a></li>
         </ul>
       </nav>
       <div class="area-sub-content-template-content">
         <form id="form" enctype="multipart/form-data">
           <div id="aba1" class="aba-template active">
             <fieldset>
-              <legend>
-                <img src="imagens/foto-do-usuario.png" alt="">
-              </legend>
+              <legend class="titulo-xl">Campos obrigatórios</legend>
+
               <div class="campo">
-                <label for="tipo_pessoa">Tipo Pessoa *</label>
-                <select id="tipo_pessoa" name="tipo_pessoa" required>
-                  <option value="">Selecione</option>
-                  <option value="Física">Física</option>
-                  <option value="Jurídica">Jurídica</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="nome_contato">Nome do contato *</label>
+                <label for="nome_contato">Nome do contato <span>*</span></label>
                 <input type="text" id="nome_contato" name="nome_contato" required>
               </div>
               <div class="campo">
-                <label for="celular">Celular *</label>
+                <label for="celular">Celular <span>*</span></label>
                 <input type="tel" id="celular" name="celular" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
               </div>
               <div class="campo">
-                <label>Este número é WhatsApp? *</label>
+                <label>Este número é WhatsApp? <span>*</span></label>
                 <div class="radios">
                   <input type="radio" id="whatsapp_sim" name="whatsapp" value="Sim" onchange="mostrarCampoWhatsapp()">
                   <label for="whatsapp_sim">Sim</label>
@@ -75,6 +67,44 @@
               <div class="campo">
                 <label for="telefone">Telefone</label>
                 <input type="tel" id="telefone" name="telefone" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
+              </div>
+              <div class="campo">
+                <label for="perfil_influencia">Perfil de Influência</label>
+                <select id="perfil_influencia" name="perfil_influencia">
+                  <option value="">Selecione</option>
+                  <option value="Baixo">Baixo</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Alto">Alto</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="tipo_contato">Tipo do contato</label>
+                <div id="tipo_contato">
+                  <input type="checkbox" id="eleitor" name="eleitor" value="Eleitor">
+                  <label for="eleitor">Eleitor</label>
+                  <input type="checkbox" id="staff" name="staff" value="Staff">
+                  <label for="staff">Staff</label>
+                  <input type="checkbox" id="fornecedor" name="fornecedor" value="Fornecedor">
+                  <label for="fornecedor">Fornecedor</label>
+                  <input type="checkbox" id="comissionado" name="comissionado" value="Comissionado">
+                  <label for="comissionado">Comissionado</label>
+                  <input type="checkbox" id="lideranca" name="lideranca" value="Liderança">
+                  <label for="lideranca">Liderança</label>
+                  <input type="checkbox" id="familia" name="familia" value="Família">
+                  <label for="familia">Família</label>
+                  <input type="checkbox" id="politico" name="politico" value="Político">
+                  <label for="politico">Político</label>
+                  <input type="checkbox" id="favorito" name="favorito" value="Favorito">
+                  <label for="favorito">Favorito</label>
+                </div>
+              </div>
+              <div class="campo">
+                <label for="tipo_pessoa">Tipo Pessoa <span>*</span></label>
+                <select id="tipo_pessoa" name="tipo_pessoa" required>
+                  <option value="">Selecione</option>
+                  <option value="Física">Física</option>
+                  <option value="Jurídica">Jurídica</option>
+                </select>
               </div>
             </fieldset>
             <fieldset>
@@ -133,11 +163,11 @@
             <fieldset>
               <legend class="titulo-xl">Campos obrigatórios</legend>
               <div class="campo">
-                <label for="cep">CEP *</label>
+                <label for="cep">CEP <span>*</span></label>
                 <input type="text" id="cep" name="cep" placeholder="99999999" required oninput="buscarEndereco(this.value)">
               </div>
               <div class="campo">
-                <label for="uf">UF *</label>
+                <label for="uf">UF <span>*</span></label>
                 <select id="uf" name="uf" required>
                   <option value="">Selecione</option>
                   <option value="AC">AC</option>
@@ -170,12 +200,12 @@
                 </select>
               </div>
               <div class="campo">
-                <label for="cidade">Cidade *</label>
+                <label for="cidade">Cidade <span>*</span></label>
                 <input type="text" id="cidade" name="cidade" required>
               </div>
 
               <div class="campo">
-                <label for="bairro">Bairro *</label>
+                <label for="bairro">Bairro <span>*</span></label>
                 <input type="text" id="bairro" name="bairro" required>
               </div>
               <div class="campo">
@@ -191,17 +221,17 @@
                 <input type="text" id="complemento" name="complemento">
               </div>
             </fieldset>
-            <div class="campo">
+            <div class="campo ocultar">
               <label for="latitude">Latitude</label>
               <input type="number" id="latitude" name="latitude" step="0.000001">
             </div>
-            <div class="campo">
+            <div class="campo ocultar">
               <label for="longitude">Longitude</label>
               <input type="number" id="longitude" name="longitude" step="0.000001">
             </div>
             <div class="campo">
-              <label for="eleitores_residentes">Eleitores residentes</label>
-              <input type="text" id="eleitores_residentes" name="eleitores_residentes">
+              <label for="eleitores_residentes">Quantidade de Eleitores residentes</label>
+              <input type="number" id="eleitores_residentes" name="eleitores_residentes" min="0" step="1" title="Apenas números são permitidos">
               <!-- Possibilidade de abrir mais campos para eleitores residentes -->
             </div>
             <div class="campo">
@@ -219,36 +249,7 @@
           <div id="aba3" class="aba-template">
             <fieldset>
               <legend class="titulo-xl">Campos obrigatórios</legend>
-              <div class="campo">
-                <label for="perfil_influencia">Perfil de Influência</label>
-                <select id="perfil_influencia" name="perfil_influencia">
-                  <option value="">Selecione</option>
-                  <option value="Baixo">Baixo</option>
-                  <option value="Médio">Médio</option>
-                  <option value="Alto">Alto</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="tipo_contato">Tipo do contato</label>
-                <div id="tipo_contato">
-                  <input type="checkbox" id="eleitor" name="eleitor" value="Eleitor">
-                  <label for="eleitor">Eleitor</label>
-                  <input type="checkbox" id="staff" name="staff" value="Staff">
-                  <label for="staff">Staff</label>
-                  <input type="checkbox" id="fornecedor" name="fornecedor" value="Fornecedor">
-                  <label for="fornecedor">Fornecedor</label>
-                  <input type="checkbox" id="comissionado" name="comissionado" value="Comissionado">
-                  <label for="comissionado">Comissionado</label>
-                  <input type="checkbox" id="lideranca" name="lideranca" value="Liderança">
-                  <label for="lideranca">Liderança</label>
-                  <input type="checkbox" id="familia" name="familia" value="Família">
-                  <label for="familia">Família</label>
-                  <input type="checkbox" id="politico" name="politico" value="Político">
-                  <label for="politico">Político</label>
-                  <input type="checkbox" id="favorito" name="favorito" value="Favorito">
-                  <label for="favorito">Favorito</label>
-                </div>
-              </div>
+
             </fieldset>
             <div class="campo">
               <label for="indicacao">Indicação</label>

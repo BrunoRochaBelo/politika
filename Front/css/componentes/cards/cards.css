@@ -2,40 +2,36 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   height: 30px;
-  border-radius: 0.9375rem;
+  border-bottom: 2px solid var(--cor-6);
   padding: 0.6rem;
   background: var(--cor-0);
   color: var(--cor-12);
   font-weight: var(--font-medium-regular);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 /* Pequeno altura 35px*/
 .card-s {
   height: 35px;
-  border-radius: 0.9375rem;
-  padding: 0.625rem 0.9375rem;
+  border-bottom: 2px solid var(--cor-6);
+  padding: 0.9375rem;
   background: var(--cor-0);
   color: var(--cor-12);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 /* Médio altura 50px*/
 .card-m {
   display: grid;
   height: 50px;
-  border-radius: 0.9375rem;
+  border-bottom: 2px solid var(--cor-6);
   padding: 0.625rem;
   background: var(--cor-0);
   color: var(--cor-12);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  border-radius: 0.9375rem;
+  border-bottom: 2px solid var(--cor-6);
   padding: 0.625rem;
   background: var(--cor-0);
   color: var(--cor-12);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Cards tamanhos fixos (tmf)*/
@@ -43,7 +39,7 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  border-radius: 2rem 0.9375rem 2rem 0.9375rem;
+  border-radius: 0.9375rem;
   padding: 0.625rem;
   background: var(--cor-0);
   color: var(--cor-12);
@@ -54,7 +50,7 @@
 .card-tmf-m {
   width: 150px;
   height: 160px;
-  border-radius: 2rem 0.9375rem 2rem 0.9375rem;
+  border-radius: 0.9375rem;
   padding: 0.625rem;
   background: var(--cor-0);
   color: var(--cor-12);
@@ -65,7 +61,7 @@
   width: 184px;
   height: 190px;
   min-height: 170px;
-  border-radius: 2rem 0.9375rem 2rem 0.9375rem;
+  border-radius: 0.9375rem;
   padding: 0.625rem;
   background: var(--cor-0);
   color: var(--cor-12);

@@ -14,7 +14,7 @@
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-color: var(--cor-0);
+  background-color: var(--cor-p3);
 }
 .main {
   grid-area: main;
