@@ -1,58 +1,61 @@
+// Função de pesquisa
 function search() {
-  const searchInput = document.getElementById("searchInput");
-  const searchValue = searchInput.value.trim();
+  // Obter o valor do campo de entrada
+  var searchInput = document.getElementById("searchInput").value.trim();
 
-  if (!searchValue) {
-    alert("Por favor, insira um termo de pesquisa.");
+  // Verificar se o valor está vazio
+  if (searchInput === "") {
+    document.getElementById("searcherrorMessage").textContent =
+      "Por favor, insira um termo de pesquisa.";
     return;
   }
 
-  fetch(`/api/search?query=${encodeURIComponent(searchValue)}`)
+  // Fazer a solicitação GET para a API de pesquisa do servidor
+  fetch(
+    "https://api.doseuservidor.com/search?query=" +
+      encodeURIComponent(searchInput)
+  )
     .then((response) => {
+      // Verificar se a resposta foi bem-sucedida
       if (!response.ok) {
-        throw new Error(`Erro na resposta do servidor: ${response.statusText}`);
+        throw new Error("Erro: " + response.status);
       }
+
+      // Converter a resposta em JSON
       return response.json();
     })
     .then((data) => {
-      const resultsContainer = document.getElementById("resultsContainer");
-      const contatosList = document.getElementById("contatosList");
-      const totalResults = document.getElementById("totalResults");
+      // Atualizar o total de resultados
+      document.getElementById("totalResults").textContent = data.length;
 
-      // Limpa a lista de contatos existente
-      contatosList.innerHTML = "";
+      // Limpar a lista de contatos
+      while (contatosList.firstChild) {
+        contatosList.removeChild(contatosList.firstChild);
+      }
 
-      // Atualiza o total de resultados
-      totalResults.textContent = data.length;
-
-      // Cria e adiciona novos itens de contato à lista
+      // Criar novos itens de lista para cada contato
       data.forEach((contact) => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-          <a class="card-s contatos-small-card" href="#">
-            <p class="contatos-small-card-title">${contact.name}</p>
-            <div class="contatos-small-card-num">${contact.phone}</div>
-            <div class="contatos-small-card-star"><img src="imagens/icones/tres-estrelas.svg" alt="Perfil influencia Icon"></div>
-            <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
-          </a>
-        `;
-        contatosList.appendChild(listItem);
+        var li = document.createElement("li");
+        li.textContent = contact.name;
+        contatosList.appendChild(li);
       });
 
-      // Mostra o contêiner de resultados
-      resultsContainer.style.display = "block";
+      // Limpar a mensagem de erro
+      document.getElementById("searcherrorMessage").textContent = "";
     })
     .catch((error) => {
-      console.error("Erro na pesquisa:", error);
-      alert(
-        "Ocorreu um erro ao realizar a pesquisa. Por favor, tente novamente mais tarde."
-      );
+      // Exibir a mensagem de erro
+      document.getElementById("searcherrorMessage").textContent =
+        "Ocorreu um erro: " + error.message;
     });
 }
 
-const searchInput = document.getElementById("searchInput");
-searchInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    search();
-  }
-});
+// Adicionar um evento de escuta ao campo de entrada
+document
+  .getElementById("searchInput")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Impede a ação padrão do Enter
+      search();
+    }
+  });
