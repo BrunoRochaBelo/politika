@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
   <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
-  <title>eventos</title>
-  <meta name="description" content="Lista de eventos">
+  <title>calendario</title>
+  <meta name="description" content="Lista de calendario">
 
   <link rel="preload" href="./css/style.css" as="style">
   <link rel="stylesheet" href="./css/style.css">
@@ -27,8 +27,8 @@
         <li class="home"><a href="index.html"><img src="imagens/icones/home.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
-        <li class="eventos indicador"><a href="eventos.html"><img src="imagens/icones/eventos-select.svg" alt="Eventos Icon">
-            <p>Eventos</p>
+        <li class="calendario indicador"><a href="calendario.html"><img src="imagens/icones/calendario-select.svg" alt="calendario Icon">
+            <p>calendario</p>
           </a></li>
         <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos.svg" alt="Contatos Icon">
             <p>Contatos</p>
@@ -45,22 +45,22 @@
       <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
     </a>
   </header>
-  <main class="main eventos-template">
+  <main class="main calendario-template">
 
 
-    <section class="eventos-section">
-      <div class="eventos-section-template">
-        <div class="eventos-section-header">
-          <div class="eventos-section-header-template">
-            <h2 class="titulo-area eventos-section-header-template-title">Dia</h2>
-            <button class="eventos-section-header-template-day"><img src="imagens/icones/hoje.svg" alt="Day Icon"></button>
-            <button class="eeventos-section-header-template-view"><img src="imagens/icones/visualização em lista.svg" alt="View Icon"></button>
+    <section class="calendario-section">
+      <div class="calendario-section-template">
+        <div class="calendario-section-header">
+          <div class="calendario-section-header-template">
+            <h2 class="titulo-area calendario-section-header-template-title">Dia</h2>
+            <button class="calendario-section-header-template-day"><img src="imagens/icones/hoje.svg" alt="Day Icon"></button>
+            <button class="ecalendario-section-header-template-view"><img src="imagens/icones/visualização em lista.svg" alt="View Icon"></button>
           </div>
         </div>
-        <div class="eventos-section-nav ">
-          <div class="eventos-section-nav-template">
-            <button class="eventos-section-nav-template-anterior"><img src="imagens/icones/anterior.svg" alt="Anterior Icon"></button>
-            <button class="eventos-section-nav-template-calendario btn-filled" id="mostrarCalendario">terc, 09, jan, 2024</button>
+        <div class="calendario-section-nav ">
+          <div class="calendario-section-nav-template">
+            <button class="calendario-section-nav-template-anterior"><img src="imagens/icones/anterior.svg" alt="Anterior Icon"></button>
+            <button class="calendario-section-nav-template-calendario btn-filled" id="mostrarCalendario">terc, 09, jan, 2024</button>
             <div id="modalOverlayCalendario" class="esconderModal">
               <div id="modalcalendario">
                 <!-- Conteúdo do Calendário -->
@@ -68,116 +68,116 @@
                 <button id="fecharModal">Fechar</button>
               </div>
             </div>
-            <button class="eventos-section-nav-template-avancar"><img src="imagens/icones/avançar.svg" alt="Avançar Icon"></button>
+            <button class="calendario-section-nav-template-avancar"><img src="imagens/icones/avançar.svg" alt="Avançar Icon"></button>
           </div>
         </div>
-        <ul class="eventos-section-list lista-vertical-template">
-          <li class="eventos-section-list-template">
-            <h4 class="eventos-section-list-template-moment">08:00h</h4>
-            <ul class="eventos-section-list-template-event lista-vertical-template">
+        <ul class="calendario-section-list lista-vertical-template">
+          <li class="calendario-section-list-template">
+            <h4 class="calendario-section-list-template-moment">08:00h</h4>
+            <ul class="calendario-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card-l eventos-large-card" href="#">
-                  <div class="eventos-large-card-tag">
+                <a class="card-l calendario-large-card" href="#">
+                  <div class="calendario-large-card-tag">
                     <div class="marcador-s cor-marc1" href="#">
                       <p>icon</p>
                       <p><strong>title marcador</strong></p>
                     </div>
                   </div>
-                  <p class="eventos-large-card-title">Titulo evento</p>
-                  <p class="eventos-large-card-local">Local evento</p>
-                  <p class="eventos-large-card-partcipantes">Partcipantes</p>
-                  <p class="eventos-large-card-duracao">eventos-large-card-duracao</p>
+                  <p class="calendario-large-card-title">Titulo evento</p>
+                  <p class="calendario-large-card-local">Local evento</p>
+                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
                 </a>
               </li>
               <li>
-                <a class="card-l eventos-large-card" href="#">
-                  <div class="eventos-large-card-tag">
+                <a class="card-l calendario-large-card" href="#">
+                  <div class="calendario-large-card-tag">
                     <div class="marcador-s cor-marc3" href="#">
                       <p>icon</p>
                       <p><strong>title marcador</strong></p>
                     </div>
                   </div>
-                  <p class="eventos-large-card-title">Titulo evento</p>
-                  <p class="eventos-large-card-local">Local evento</p>
-                  <p class="eventos-large-card-partcipantes">Partcipantes</p>
-                  <p class="eventos-large-card-duracao">eventos-large-card-duracao</p>
+                  <p class="calendario-large-card-title">Titulo evento</p>
+                  <p class="calendario-large-card-local">Local evento</p>
+                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="eventos-section-list-template">
-            <h4 class="eventos-section-list-template-moment">09:00h</h4>
-            <ul class="eventos-section-list-template-event lista-vertical-template">
+          <li class="calendario-section-list-template">
+            <h4 class="calendario-section-list-template-moment">09:00h</h4>
+            <ul class="calendario-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card-l eventos-large-card" href="#">
-                  <div class="eventos-large-card-tag">
+                <a class="card-l calendario-large-card" href="#">
+                  <div class="calendario-large-card-tag">
                     <div class="marcador-s cor-marc2" href="#">
                       <p>icon</p>
                       <p><strong>title marcador</strong></p>
                     </div>
                   </div>
-                  <p class="eventos-large-card-title">Titulo evento</p>
-                  <p class="eventos-large-card-local">Local evento</p>
-                  <p class="eventos-large-card-partcipantes">Partcipantes</p>
-                  <p class="eventos-large-card-duracao">eventos-large-card-duracao</p>
+                  <p class="calendario-large-card-title">Titulo evento</p>
+                  <p class="calendario-large-card-local">Local evento</p>
+                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="eventos-section-list-template">
-            <h4 class="eventos-section-list-template-moment">10:00h</h4>
-            <ul class="eventos-section-list-template-event lista-vertical-template">
+          <li class="calendario-section-list-template">
+            <h4 class="calendario-section-list-template-moment">10:00h</h4>
+            <ul class="calendario-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card-m eventos-empty-card" href="#">
-                  <p class="eventos-large-empty-title">1h</p>
+                <a class="card-m calendario-empty-card" href="#">
+                  <p class="calendario-large-empty-title">1h</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="eventos-section-list-template">
-            <h4 class="eventos-section-list-template-moment">11:00h</h4>
-            <ul class="eventos-section-list-template-event lista-vertical-template">
+          <li class="calendario-section-list-template">
+            <h4 class="calendario-section-list-template-moment">11:00h</h4>
+            <ul class="calendario-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card-l eventos-large-card" href="#">
-                  <div class="eventos-large-card-tag">
+                <a class="card-l calendario-large-card" href="#">
+                  <div class="calendario-large-card-tag">
                     <div class="marcador-s cor-marc3" href="#">
                       <p>icon</p>
                       <p><strong>title marcador</strong></p>
                     </div>
                   </div>
-                  <p class="eventos-large-card-title">Titulo evento</p>
-                  <p class="eventos-large-card-local">Local evento</p>
-                  <p class="eventos-large-card-partcipantes">Partcipantes</p>
-                  <p class="eventos-large-card-duracao">eventos-large-card-duracao</p>
+                  <p class="calendario-large-card-title">Titulo evento</p>
+                  <p class="calendario-large-card-local">Local evento</p>
+                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="eventos-section-list-template">
-            <h4 class="eventos-section-list-template-moment">12:00h</h4>
-            <ul class="eventos-section-list-template-event lista-vertical-template">
+          <li class="calendario-section-list-template">
+            <h4 class="calendario-section-list-template-moment">12:00h</h4>
+            <ul class="calendario-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card-l eventos-large-card" href="#">
-                  <div class="eventos-large-card-tag">
+                <a class="card-l calendario-large-card" href="#">
+                  <div class="calendario-large-card-tag">
                     <div class="marcador-s cor-marc5" href="#">
                       <p>icon</p>
                       <p><strong>title marcador</strong></p>
                     </div>
                   </div>
-                  <p class="eventos-large-card-title">Titulo evento</p>
-                  <p class="eventos-large-card-local">Local evento</p>
-                  <p class="eventos-large-card-partcipantes">Partcipantes</p>
-                  <p class="eventos-large-card-duracao">eventos-large-card-duracao</p>
+                  <p class="calendario-large-card-title">Titulo evento</p>
+                  <p class="calendario-large-card-local">Local evento</p>
+                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="eventos-section-list-template">
-            <h4 class="eventos-section-list-template-moment">13:00h</h4>
-            <ul class="eventos-section-list-template-event lista-vertical-template">
+          <li class="calendario-section-list-template">
+            <h4 class="calendario-section-list-template-moment">13:00h</h4>
+            <ul class="calendario-section-list-template-event lista-vertical-template">
               <li>
-                <a class="card-m eventos-empty-card" href="#">
-                  <p class="eventos-large-empty-title">11h</p>
+                <a class="card-m calendario-empty-card" href="#">
+                  <p class="calendario-large-empty-title">11h</p>
                 </a>
               </li>
             </ul>
@@ -186,7 +186,7 @@
       </div>
     </section>
 
-    <section id="eventos-sidenav" class="eventos-sidenav">
+    <section id="calendario-sidenav" class="calendario-sidenav">
       <div class="area-template" id="container-marcadores">
         <h2 class="area-template-header">Marcadores</h2>
         <div class="area-template-content">

@@ -1,0 +1,111 @@
+/* CARDS calendario */
+/* Pequeno */
+.calendario-small-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    " calendario-small-card-title calendario-small-card-title calendario-small-card-tag"
+    " calendario-small-card-inicio calendario-small-card-fim calendario-small-card-tag";
+}
+.calendario-small-card-title {
+  grid-area: calendario-small-card-title;
+  font-size: var(--titulo-xs);
+  margin-left: 0.625rem;
+}
+.calendario-small-card-inicio {
+  grid-area: calendario-small-card-inicio;
+  font-size: var(--font-light);
+  margin-left: 0.625rem;
+}
+.calendario-small-card-fim {
+  grid-area: calendario-small-card-fim;
+  font-size: var(--font-light);
+}
+.calendario-small-card-tag {
+  grid-area: calendario-small-card-tag;
+  justify-self: end;
+}
+
+/* Médio */
+.calendario-medium-card {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "calendario-medium-card-title calendario-medium-card-title calendario-medium-card-tag calendario-medium-card-tag" 1fr
+    "calendario-medium-card-inicio calendario-medium-card-fim calendario-medium-card-tag calendario-medium-card-tag" 0.5fr
+    / 1fr 1fr 2fr 1fr;
+}
+.calendario-medium-card-title {
+  grid-area: calendario-medium-card-title;
+  font-size: var(--font-medium-regular);
+}
+.calendario-medium-card-inicio {
+  grid-area: calendario-medium-card-inicio;
+  font-size: var(--font-medium-regular);
+}
+.calendario-medium-card-fim {
+  grid-area: calendario-medium-card-fim;
+  font-size: var(--font-medium-regular);
+}
+.calendario-medium-card-tag {
+  grid-area: calendario-medium-card-tag;
+  font-size: var(--font-medium-regular);
+}
+
+/* Grande */
+.calendario-large-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  grid:
+    "calendario-large-card-tag" 32px
+    "calendario-large-card-title" 1fr
+    "calendario-large-card-local" 1fr
+    "calendario-large-card-partcipantes" 1fr
+    "calendario-large-card-duracao" 1fr;
+}
+.calendario-large-card-title {
+  grid-area: calendario-large-card-title;
+  font-size: var(--titulo-m);
+}
+.calendario-large-card-local {
+  grid-area: calendario-large-card-local;
+  font-size: var(--font-medium-light);
+}
+.calendario-large-card-partcipantes {
+  grid-area: calendario-large-card-partcipantes;
+  font-size: var(--font-medium-light);
+}
+.calendario-large-card-duracao {
+  grid-area: calendario-large-card-duracao;
+  font-size: var(--font-medium-light);
+}
+.calendario-large-card-tag {
+  grid-area: calendario-large-card-tag;
+}
+
+/* Vazio */
+.calendario-empty-card {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  grid: "calendario-empty-card-title" 32px;
+}
+.calendario-empty-card-title {
+  grid-area: calendario-empty-card-title;
+  font-size: var(--titulo-m);
+}

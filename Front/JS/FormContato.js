@@ -174,7 +174,7 @@ function checkEnter(event) {
     }
   }
 }
-// Ouvinte de eventos 'keydown' a todos os campos de entrada do formulário
+// Ouvinte de calendario 'keydown' a todos os campos de entrada do formulário
 const camposDoFormulario = document.querySelectorAll("input, select, textarea");
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("keydown", checkEnter);

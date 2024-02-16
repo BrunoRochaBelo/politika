@@ -21,7 +21,7 @@
 @import "./componentes/marcadores.css";
 @import "./componentes/recuar-expandir.css";
 @import "./componentes/cards/cards.css";
-@import "./componentes/cards/template-cards-eventos.css";
+@import "./componentes/cards/template-cards-calendario.css";
 @import "./componentes/cards/template-cards-contatos.css";
 @import "./componentes/cards/template-cards-quantitativos.css";
 /* Componentes/areas */
@@ -36,10 +36,10 @@
 @import "./contatos/contatos-style.css";
 @import "./contatos/form-contato.css";
 
-/* eventos */
-@import "./eventos/eventos-template.css";
-@import "./eventos/eventos-section-template.css";
-@import "./eventos/modal-calendario.css";
+/* calendario */
+@import "./calendario/calendario-template.css";
+@import "./calendario/calendario-section-template.css";
+@import "./calendario/modal-calendario.css";
 
 /* pleitos */
 @import "./pleitos/pleitos-template.css";

@@ -2,7 +2,7 @@
 .header-nav-template {
   display: grid;
   grid:
-    "home eventos contatos pleitos despesas"
+    "home calendario contatos pleitos despesas"
     / 1fr 1fr 1fr 1fr 1fr;
 }
 .home {

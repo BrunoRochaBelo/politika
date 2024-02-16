@@ -82,13 +82,13 @@ document
     window.location.href = `tel:${phoneNumber}`;
   });
 
-// Adiciona um evento de clique ao botão "Ligar" que faz uma ligação telefônica
+// Adiciona um evento de clique ao botão "Editar" que redireciona para a URL de edição
 document
-  .querySelector("#modalCallButton")
+  .querySelector("#modalEditButton")
   .addEventListener("click", (event) => {
     event.preventDefault();
-    let phoneNumber = document.querySelector(
-      ".contatos-small-card-num"
-    ).textContent;
-    window.location.href = `tel:${phoneNumber}`;
+    let contatoId = document
+      .querySelector("#modal-info-contato")
+      .getAttribute("data-contato-id");
+    window.location.href = `/contato/put/${contatoId}`;
   });
