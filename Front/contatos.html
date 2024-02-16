@@ -7,35 +7,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
-  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <!-- <script src="./static/js/EsquemaDeCores.js" defer></script> -->
   <title>contatos</title>
   <meta name="description" content="Seus contatos">
 
-  <link rel="preload" href="./css/style.css" as="style">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body class="body-template">
   <header class="header header-template">
     <a href="index.html" class="header-back">
-      <img class="back-icon" src="imagens/icones/voltar.svg" alt="Back Icon">
+      <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
     </a>
     <nav class="header-nav">
       <ul class="header-nav-template">
-        <li class="home"><a href="index.html"><img src="imagens/icones/home.svg" alt="Home Icon">
+        <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
-        <li class="calendario"><a href="calendario.html"><img src="imagens/icones/calendario.svg" alt="calendario Icon">
+        <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
             <p>calendario</p>
           </a></li>
-        <li class="contatos indicador"><a href="contatos.html"><img src="imagens/icones/contatos-select.svg" alt="Contatos Icon">
+        <li class="contatos indicador"><a href="contatos.html"><img src="./static/imagens/icones/contatos-select.svg" alt="Contatos Icon">
             <p>Contatos</p>
           </a></li>
-        <li class="pleitos"><a href="pleitos.html"><img src="imagens/icones/pleitos.svg" alt="Pleitos Icon">
+        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
             <p>Pleitos</p>
           </a></li>
-        <li class="despesas"><a href="#"><img src="imagens/icones/despesas.svg" alt="Despesas Icon">
+        <li class="despesas"><a href="#"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
       </ul>
@@ -44,7 +44,7 @@
       <div class="search-input-container">
         <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
         <button class="search-button" onclick="search()">
-          <img class="search-icon" src="imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+          <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
         </button>
       </div>
     </div>
@@ -64,16 +64,16 @@
             <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
               <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato}}</p>
               <div class="contatos-small-card-num" data-filter="numero">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
+              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
+              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
             </a>
           </li>
           <li>
             <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
               <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato 2}}</p>
               <div class="contatos-small-card-num" data-filter="numero">{{(81) 88888-8888}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
+              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
+              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
             </a>
           </li>
 
@@ -110,27 +110,27 @@
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="1estrela">
-                <img class="star-img" src="imagens/icones/uma-estrela-dourada.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/uma-estrela-dourada.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="2estrelas">
-                <img class="star-img" src="imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="3estrelas">
-                <img class="star-img" src="imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="4estrelas">
-                <img class="star-img" src="imagens/icones/quatro-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/quatro-estrelas-douradas.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="5estrelas">
-                <img class="star-img" src="imagens/icones/cinco-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/cinco-estrelas-douradas.svg" alt="Perfil influencia Icon">
               </button>
             </li>
           </ul>
@@ -161,11 +161,11 @@
     </div>
   </div>
 
-  <script src="./js/SombraHeaderScroll.js"></script>
-  <script src="./js/RecuarExpandirHorizontal.js"></script>
-  <script src="./js/ModalBTNFloating.js"></script>
-  <script src="JS/BarraDePesquisa.js"></script>
-  <script src="./js/ModalInfoContato.js"></script>
+  <script src="./static/js/SombraHeaderScroll.js"></script>
+  <script src="./static/js/RecuarExpandirHorizontal.js"></script>
+  <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/BarraDePesquisa.js"></script>
+  <script src="./static/js/ModalInfoContato.js"></script>
 
 </body>
 

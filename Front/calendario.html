@@ -8,41 +8,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
-  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <!-- <script src="./static/js/EsquemaDeCores.js" defer></script> -->
   <title>calendario</title>
   <meta name="description" content="Lista de calendario">
 
-  <link rel="preload" href="./css/style.css" as="style">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body class="body-template">
   <header class="header header-template">
     <a href="index.html" class="header-back">
-      <img src="imagens/icones/voltar.svg" alt="Back Icon">
+      <img src="./static/imagens/icones/voltar.svg" alt="Back Icon">
     </a>
     <nav class="header-nav">
       <ul class="header-nav-template">
-        <li class="home"><a href="index.html"><img src="imagens/icones/home.svg" alt="Home Icon">
+        <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
-        <li class="calendario indicador"><a href="calendario.html"><img src="imagens/icones/calendario-select.svg" alt="calendario Icon">
+        <li class="calendario indicador"><a href="calendario.html"><img src="./static/imagens/icones/calendario-select.svg" alt="calendario Icon">
             <p>calendario</p>
           </a></li>
-        <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos.svg" alt="Contatos Icon">
+        <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
             <p>Contatos</p>
           </a></li>
-        <li class="pleitos"><a href="pleitos.html"><img src="imagens/icones/pleitos.svg" alt="Pleitos Icon">
+        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
             <p>Pleitos</p>
           </a></li>
-        <li class="despesas"><a href="#"><img src="imagens/icones/despesas.svg" alt="Despesas Icon">
+        <li class="despesas"><a href="#"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
       </ul>
     </nav>
     <a href="#.html" class="header-search">
-      <img src="imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
+      <img src="./static/imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
     </a>
   </header>
   <main class="main calendario-template">
@@ -53,13 +53,13 @@
         <div class="calendario-section-header">
           <div class="calendario-section-header-template">
             <h2 class="titulo-area calendario-section-header-template-title">Dia</h2>
-            <button class="calendario-section-header-template-day"><img src="imagens/icones/hoje.svg" alt="Day Icon"></button>
-            <button class="ecalendario-section-header-template-view"><img src="imagens/icones/visualização em lista.svg" alt="View Icon"></button>
+            <button class="calendario-section-header-template-day"><img src="./static/imagens/icones/hoje.svg" alt="Day Icon"></button>
+            <button class="ecalendario-section-header-template-view"><img src="./static/imagens/icones/visualização em lista.svg" alt="View Icon"></button>
           </div>
         </div>
         <div class="calendario-section-nav ">
           <div class="calendario-section-nav-template">
-            <button class="calendario-section-nav-template-anterior"><img src="imagens/icones/anterior.svg" alt="Anterior Icon"></button>
+            <button class="calendario-section-nav-template-anterior"><img src="./static/imagens/icones/anterior.svg" alt="Anterior Icon"></button>
             <button class="calendario-section-nav-template-calendario btn-filled" id="mostrarCalendario">terc, 09, jan, 2024</button>
             <div id="modalOverlayCalendario" class="esconderModal">
               <div id="modalcalendario">
@@ -68,7 +68,7 @@
                 <button id="fecharModal">Fechar</button>
               </div>
             </div>
-            <button class="calendario-section-nav-template-avancar"><img src="imagens/icones/avançar.svg" alt="Avançar Icon"></button>
+            <button class="calendario-section-nav-template-avancar"><img src="./static/imagens/icones/avançar.svg" alt="Avançar Icon"></button>
           </div>
         </div>
         <ul class="calendario-section-list lista-vertical-template">
@@ -241,10 +241,10 @@
   </div>
 
 
-  <script src="./js/SombraHeaderScroll.js"></script>
-  <script src="./js/RecuarExpandirHorizontal.js"></script>
-  <script src="./js/ModalBTNFloating.js"></script>
-  <script src="./js/ModalCalendario.js"></script>
+  <script src="./static/js/SombraHeaderScroll.js"></script>
+  <script src="./static/js/RecuarExpandirHorizontal.js"></script>
+  <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/ModalCalendario.js"></script>
 
 </body>
 

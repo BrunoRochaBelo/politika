@@ -8,40 +8,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/imagens/logo/logo.png" type="image/png">
-  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <!-- <script src="./static/js/EsquemaDeCores.js" defer></script> -->
   <title>home</title>
   <meta name="description" content="Seu home">
 
-  <link rel="preload" href="./css/style.css" as="style">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body class="body-template">
 
   <header class="header home-header-template">
-    <div id="logo" class="home-header-logo"><img src="imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
+    <div id="logo" class="home-header-logo"><img src="./static/imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
     <h1 class="home-header-title">HOME</h1>
     <nav class="home-header-nav">
       <ul class="header-nav-template">
-        <li class="home indicador"><a href="index.html"><img src="imagens/icones/home-select.svg" alt="Home Icon">
+        <li class="home indicador"><a href="index.html"><img src="./static/imagens/icones/home-select.svg" alt="Home Icon">
             <p>home</p>
           </a></li>
-        <li class="calendario"><a href="calendario.html"><img src="imagens/icones/calendario.svg" alt="calendario Icon">
+        <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
             <p>calendario</p>
           </a></li>
-        <li class="contatos"><a href="contatos.html"><img src="imagens/icones/contatos.svg" alt="Contatos Icon">
+        <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
             <p>Contatos</p>
           </a></li>
-        <li class="pleitos"><a href="pleitos.html"><img src="imagens/icones/pleitos.svg" alt="Pleitos Icon">
+        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
             <p>Pleitos</p>
           </a></li>
-        <li class="despesas"><a href="#"><img src="imagens/icones/despesas.svg" alt="Despesas Icon">
+        <li class="despesas"><a href="#"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
       </ul>
     </nav>
-    <div id="moldura" class="home-header-user"><img src="imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
+    <div id="moldura" class="home-header-user"><img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
     </div>
   </header>
 
@@ -122,16 +122,16 @@
             <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
               <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato}}</p>
               <div class="contatos-small-card-num" data-filter="numero">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
+              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
+              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
             </a>
           </li>
           <li>
             <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
               <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato 2}}</p>
               <div class="contatos-small-card-num" data-filter="numero">{{(81) 88888-8888}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
+              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
+              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
             </a>
           </li>
 
@@ -249,11 +249,11 @@
     </div>
   </div>
 
-  <script src="./js/SombraHeaderScroll.js"></script>
-  <script src="./js/RecuarExpandirVertical.js"></script>
-  <script src="./js/FiltroEstadoCidade.js"></script>
-  <script src="./js/ModalMenu.js"></script>
-  <script src="./js/ModalInfoContato.js"></script>
+  <script src="./static/js/SombraHeaderScroll.js"></script>
+  <script src="./static/js/RecuarExpandirVertical.js"></script>
+  <script src="./static/js/FiltroEstadoCidade.js"></script>
+  <script src="./static/js/ModalMenu.js"></script>
+  <script src="./static/js/ModalInfoContato.js"></script>
 
 </body>
 
