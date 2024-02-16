@@ -1,134 +1,94 @@
-// Função para alimentar o modal
-async function fillModalFields(contactId) {
-  // Primeiro, pegamos os elementos do DOM que precisamos atualizar
-  var modalImage = document.getElementById("modalImage");
-  var modalInfluence = document.getElementById("modalInfluence");
-  var modalNumber = document.getElementById("modalNumber");
-  var modalContactType = document.getElementById("modalContactType");
-  var modalName = document.getElementById("modalName");
-  var modalPersonType = document.getElementById("modalPersonType");
-  var modalEmail = document.getElementById("modalEmail");
-  var modalError = document.getElementById("modalError"); // Novo elemento para exibir a mensagem de erro
+// Seleciona todos os cards
+let cards = document.querySelectorAll(".card-s");
 
-  // Em seguida, fazemos uma solicitação ao back-end para obter os dados do contato
-  try {
-    const response = await fetch(`/api/contacts/${contactId}`);
-    if (!response.ok) {
-      throw new Error("Erro na resposta da rede");
-    }
-    const data = await response.json();
-    // Atualizamos os elementos do DOM com os dados recebidos
-    modalImage.src = data.image;
-    modalInfluence.textContent = data.influence;
-    modalNumber.textContent = data.number;
-    modalContactType.textContent = data.contactType;
-    modalName.textContent = data.name;
-    modalPersonType.textContent = data.personType;
-    modalEmail.textContent = data.email;
-    modalError.textContent = ""; // Limpa a mensagem de erro
-  } catch (error) {
-    console.error("Erro:", error);
-    modalError.textContent =
-      "Houve um erro ao carregar os dados. Por favor, tente novamente mais tarde."; // Exibe a mensagem de erro
-  }
-}
+// Adiciona um evento de clique a cada card
+cards.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    event.preventDefault();
 
-// Event listener para abrir o modal quando clicar no card, mas não no ícone do telefone
-document.querySelectorAll(".contatos-small-card").forEach(function (card) {
-  card.addEventListener("click", async function (event) {
-    // Verifique se o clique não foi no ícone do telefone
-    if (!event.target.classList.contains("contatos-small-card-phone")) {
-      // Obtenha o ID do contato do atributo de dados do card
-      const contactId = card.querySelector(
-        ".contatos-small-card-id"
+    // Verifica se o clique foi no ícone de telefone
+    if (event.target.closest(".contatos-small-card-phone")) {
+      // Faz uma ligação telefônica
+      window.location.href = `tel:${
+        card.querySelector(".contatos-small-card-num").textContent
+      }`;
+    } else {
+      // Abre o modal
+      let modal = document.querySelector("#modal-info-contato");
+      modal.classList.add("show");
+
+      // Preenche os campos do modal com os dados do card
+      document.querySelector("#modalName").textContent = card.querySelector(
+        ".contatos-small-card-title"
       ).textContent;
-
-      // Preencha os campos do modal com os dados do contato
-      await fillModalFields(contactId);
-
-      // Abra o modal
-      document.getElementById("modal-info-contato").classList.add("show");
-    }
-  });
-});
-
-// Função para fechar o modal
-function closeModal() {
-  document.getElementById("modal-info-contato").classList.remove("show");
-}
-
-// Event listener para fechar o modal ao clicar no botão de fechar
-document.querySelector(".close").addEventListener("click", closeModal);
-
-// Event listener para fechar o modal ao clicar fora da área do modal
-window.addEventListener("click", function (event) {
-  if (event.target === document.getElementById("modal-info-contato")) {
-    closeModal();
-  }
-});
-
-// Event listener para fechar o modal ao pressionar a tecla ESC
-window.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
-
-// Event listener para fazer uma ligação telefônica quando clicar no ícone do telefone
-document
-  .querySelectorAll(".contatos-small-card-phone")
-  .forEach(function (phoneIcon) {
-    phoneIcon.addEventListener("click", function (event) {
-      // Obtenha o número de telefone do texto do elemento contatos-small-card-num
-      const phoneNumber = phoneIcon.parentElement.querySelector(
+      document.querySelector("#modalNumber").textContent = card.querySelector(
         ".contatos-small-card-num"
       ).textContent;
+      document.querySelector("#modalInfluence").textContent =
+        card.querySelector(".contatos-small-card-star").textContent;
 
-      // Faça uma ligação telefônica
-      window.location.href = `tel:${phoneNumber}`;
+      // Faz uma solicitação ao backend para obter os dados restantes
+      let contatoId = card.getAttribute("data-contato-id");
+      fetch(`https://backend-url.com/contatos/${contatoId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // Preenche os campos restantes do modal com os dados obtidos
+          document.querySelector("#modalContactType").textContent =
+            data.contactType;
+          document.querySelector("#modalPersonType").textContent =
+            data.personType;
+          document.querySelector("#modalEmail").textContent = data.email;
+        })
+        .catch((error) => {
+          // Exibe um erro no modal se a solicitação falhar
+          document.querySelector("#modalError").textContent =
+            "Erro ao obter restante dos dados do contato";
+        });
+    }
+  });
+});
 
-      // Pare a propagação do evento para evitar que o modal seja aberto
-      event.stopPropagation();
-    });
+// Adiciona um evento de clique ao botão de fechar do modal
+document
+  .querySelector("#modal-info-contato .close")
+  .addEventListener("click", () => {
+    document.querySelector("#modal-info-contato").classList.remove("show");
   });
 
-// Função para editar o contato
-function editContact(contactId) {
-  // Redireciona o usuário para a página de edição do contato
-  window.location.href = `/contato/put/${contactId}`;
-}
-
-// Função para excluir o contato
-async function deleteContact(contactId) {
-  try {
-    const response = await fetch(`/api/contacts/${contactId}`, {
-      method: "DELETE",
-    });
-    if (!response.ok) {
-      throw new Error("Erro na resposta da rede");
+// Adiciona um evento de clique ao fundo do modal para fechá-lo
+document
+  .querySelector("#modal-info-contato")
+  .addEventListener("click", (event) => {
+    if (event.target === event.currentTarget) {
+      document.querySelector("#modal-info-contato").classList.remove("show");
     }
-    // Se a resposta for bem-sucedida, redirecione para a página de contatos
-    window.location.href = "/contatos";
-  } catch (error) {
-    console.error("Erro:", error);
-    alert(
-      "Houve um erro ao excluir o contato. Por favor, tente novamente mais tarde."
-    );
+  });
+
+// Adiciona um evento de tecla ao document para fechar o modal ao pressionar ESC
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    document.querySelector("#modal-info-contato").classList.remove("show");
   }
-}
-
-// Adicione event listeners para os botões de editar e excluir
-document.querySelector(".edit-button").addEventListener("click", function () {
-  // Obtenha o ID do contato do atributo de dados do botão de edição
-  const contactId = this.dataset.contactId;
-
-  // Chame a função editContact com o ID do contato
-  editContact(contactId);
 });
-document.querySelector(".delete-button").addEventListener("click", function () {
-  // Obtenha o ID do contato do atributo de dados do botão de exclusão
-  const contactId = this.dataset.contactId;
 
-  // Chame a função deleteContact com o ID do contato
-  deleteContact(contactId);
-});
+// Adiciona um evento de clique ao botão "Ligar" que faz uma ligação telefônica
+document
+  .querySelector("#modalCallButton")
+  .addEventListener("click", (event) => {
+    event.preventDefault();
+    let phoneNumber = document
+      .querySelector("#modal-info-contato")
+      .getAttribute("data-phone-number");
+    window.location.href = `tel:${phoneNumber}`;
+  });
+
+// Adiciona um evento de clique ao botão "Ligar" que faz uma ligação telefônica
+document
+  .querySelector("#modalCallButton")
+  .addEventListener("click", (event) => {
+    event.preventDefault();
+    let phoneNumber = document.querySelector(
+      ".contatos-small-card-num"
+    ).textContent;
+    window.location.href = `tel:${phoneNumber}`;
+  });

@@ -126,6 +126,14 @@
               <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
             </a>
           </li>
+          <li>
+            <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
+              <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato 2}}</p>
+              <div class="contatos-small-card-num" data-filter="numero">{{(81) 88888-8888}}</div>
+              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="imagens/icones/tres-estrelas.svg" alt="Perfil influencia Icon"></div>
+              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
+            </a>
+          </li>
 
 
         </ul>
@@ -226,22 +234,20 @@
       <span class="close">&times;</span>
       <div class="modal-header">
         <img id="modalImage" src="" alt="Imagem do Contato">
+        <h1><span id="modalName"></span></h1>
       </div>
       <div class="modal-body">
         <p><strong>Influência:</strong> <span id="modalInfluence"></span></p>
         <p><strong>Número:</strong> <span id="modalNumber"></span></p>
         <button id="modalCallButton" class="btn btn-primary" aria-label="Ligar para o contato">Ligar</button>
         <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>
-        <p><strong>Nome:</strong> <span id="modalName"></span></p>
         <p><strong>Tipo de Pessoa:</strong> <span id="modalPersonType"></span></p>
         <p><strong>Email:</strong> <span id="modalEmail"></span></p>
-        <p id="modalError" style="color: red;"></p> <!-- Adicione esta linha -->
+        <p id="modalError" style="color: red;"></p>
         <a id="modalEditButton" href="#" class="btn btn-primary">Editar</a>
-        <button id="modalDeleteButton" class="btn btn-danger">Excluir</button>
       </div>
     </div>
   </div>
-
 
   <script src="./js/SombraHeaderScroll.js"></script>
   <script src="./js/RecuarExpandirVertical.js"></script>
