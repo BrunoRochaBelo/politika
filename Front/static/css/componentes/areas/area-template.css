@@ -5,7 +5,6 @@
   overflow: hidden;
   border-radius: 0.9375rem;
   padding: 0.625rem;
-
   grid:
     "area-template-header" auto
     "area-template-content" auto
@@ -81,9 +80,7 @@
 .area-template-fil-content {
   grid-area: area-template-fil-content;
   gap: 1.875rem;
-  overflow-x: auto;
   transition: 1s;
-  border-radius: 0.9375rem;
 }
 
 /* Area Template alternativa Tamanho fixo*/
@@ -195,8 +192,8 @@
   }
   .area-template-fil-header {
     grid-area: area-template-fil-header;
-    color: var(--cor-1);
-    font-size: var(--titulo-l);
+    color: transparent;
+    font-size: 0px;
     margin-left: 0.625rem;
   }
   .area-template-fil-content {
@@ -207,6 +204,7 @@
     border-radius: 0.9375rem;
     background: transparent;
     box-shadow: none;
+    border-radius: 0;
   }
 
   /* Area Template dos compromissos para hoje*/

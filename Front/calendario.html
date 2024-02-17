@@ -20,7 +20,7 @@
 <body class="body-template">
   <header class="header header-template">
     <a href="index.html" class="header-back">
-      <img src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+      <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
     </a>
     <nav class="header-nav">
       <ul class="header-nav-template">
@@ -41,156 +41,161 @@
           </a></li>
       </ul>
     </nav>
-    <a href="#.html" class="header-search">
-      <img src="./static/imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
-    </a>
+    <div class="header-search">
+      <div class="search-input-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
+        <button class="search-button" onclick="search()">
+          <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+        </button>
+      </div>
+    </div>
   </header>
-  <main class="main calendario-template">
 
+  <main class="main main-template">
 
-    <section class="calendario-section">
-      <div class="calendario-section-template">
-        <div class="calendario-section-header">
-          <div class="calendario-section-header-template">
-            <h2 class="titulo-area calendario-section-header-template-title">Dia</h2>
-            <button class="calendario-section-header-template-day"><img src="./static/imagens/icones/hoje.svg" alt="Day Icon"></button>
-            <button class="ecalendario-section-header-template-view"><img src="./static/imagens/icones/visualização em lista.svg" alt="View Icon"></button>
-          </div>
-        </div>
-        <div class="calendario-section-nav ">
-          <div class="calendario-section-nav-template">
-            <button class="calendario-section-nav-template-anterior"><img src="./static/imagens/icones/anterior.svg" alt="Anterior Icon"></button>
-            <button class="calendario-section-nav-template-calendario btn-filled" id="mostrarCalendario">terc, 09, jan, 2024</button>
-            <div id="modalOverlayCalendario" class="esconderModal">
-              <div id="modalcalendario">
-                <!-- Conteúdo do Calendário -->
-                <iframe src="seucalendario.html" width="300" height="300"></iframe>
-                <button id="fecharModal">Fechar</button>
-              </div>
-            </div>
-            <button class="calendario-section-nav-template-avancar"><img src="./static/imagens/icones/avançar.svg" alt="Avançar Icon"></button>
-          </div>
-        </div>
-        <ul class="calendario-section-list lista-vertical-template">
-          <li class="calendario-section-list-template">
-            <h4 class="calendario-section-list-template-moment">08:00h</h4>
-            <ul class="calendario-section-list-template-event lista-vertical-template">
-              <li>
-                <a class="card-l calendario-large-card" href="#">
-                  <div class="calendario-large-card-tag">
-                    <div class="marcador-s cor-marc1" href="#">
-                      <p>icon</p>
-                      <p><strong>title marcador</strong></p>
-                    </div>
-                  </div>
-                  <p class="calendario-large-card-title">Titulo evento</p>
-                  <p class="calendario-large-card-local">Local evento</p>
-                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
-                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
-                </a>
-              </li>
-              <li>
-                <a class="card-l calendario-large-card" href="#">
-                  <div class="calendario-large-card-tag">
-                    <div class="marcador-s cor-marc3" href="#">
-                      <p>icon</p>
-                      <p><strong>title marcador</strong></p>
-                    </div>
-                  </div>
-                  <p class="calendario-large-card-title">Titulo evento</p>
-                  <p class="calendario-large-card-local">Local evento</p>
-                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
-                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="calendario-section-list-template">
-            <h4 class="calendario-section-list-template-moment">09:00h</h4>
-            <ul class="calendario-section-list-template-event lista-vertical-template">
-              <li>
-                <a class="card-l calendario-large-card" href="#">
-                  <div class="calendario-large-card-tag">
-                    <div class="marcador-s cor-marc2" href="#">
-                      <p>icon</p>
-                      <p><strong>title marcador</strong></p>
-                    </div>
-                  </div>
-                  <p class="calendario-large-card-title">Titulo evento</p>
-                  <p class="calendario-large-card-local">Local evento</p>
-                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
-                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="calendario-section-list-template">
-            <h4 class="calendario-section-list-template-moment">10:00h</h4>
-            <ul class="calendario-section-list-template-event lista-vertical-template">
-              <li>
-                <a class="card-m calendario-empty-card" href="#">
-                  <p class="calendario-large-empty-title">1h</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="calendario-section-list-template">
-            <h4 class="calendario-section-list-template-moment">11:00h</h4>
-            <ul class="calendario-section-list-template-event lista-vertical-template">
-              <li>
-                <a class="card-l calendario-large-card" href="#">
-                  <div class="calendario-large-card-tag">
-                    <div class="marcador-s cor-marc3" href="#">
-                      <p>icon</p>
-                      <p><strong>title marcador</strong></p>
-                    </div>
-                  </div>
-                  <p class="calendario-large-card-title">Titulo evento</p>
-                  <p class="calendario-large-card-local">Local evento</p>
-                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
-                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="calendario-section-list-template">
-            <h4 class="calendario-section-list-template-moment">12:00h</h4>
-            <ul class="calendario-section-list-template-event lista-vertical-template">
-              <li>
-                <a class="card-l calendario-large-card" href="#">
-                  <div class="calendario-large-card-tag">
-                    <div class="marcador-s cor-marc5" href="#">
-                      <p>icon</p>
-                      <p><strong>title marcador</strong></p>
-                    </div>
-                  </div>
-                  <p class="calendario-large-card-title">Titulo evento</p>
-                  <p class="calendario-large-card-local">Local evento</p>
-                  <p class="calendario-large-card-partcipantes">Partcipantes</p>
-                  <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="calendario-section-list-template">
-            <h4 class="calendario-section-list-template-moment">13:00h</h4>
-            <ul class="calendario-section-list-template-event lista-vertical-template">
-              <li>
-                <a class="card-m calendario-empty-card" href="#">
-                  <p class="calendario-large-empty-title">11h</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+    <section class="main-section area-sub-content-template">
+      <nav class="area-sub-content-template-header">
+        <ul id="navAba" class="nav">
+          <li id="nav1" class="indicador"><a href="#" onclick="mostrarAba('aba1')">Agenda</a></li>
+          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Eventos</a></li>
+          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Calendario</a></li>
         </ul>
+      </nav>
+      <div class="area-sub-content-template-content">
+
+        <div id="aba1" class="aba-template active">
+          <ul class="calendario-section-list lista-vertical-template">
+            <li class="calendario-section-list-template">
+              <h4 class="calendario-section-list-template-moment">08:00h</h4>
+              <ul class="calendario-section-list-template-event lista-vertical-template">
+                <li>
+                  <a class="card-l calendario-large-card" href="#">
+                    <div class="calendario-large-card-tag">
+                      <div class="marcador-s cor-marc1" href="#">
+                        <p>icon</p>
+                        <p><strong>title marcador</strong></p>
+                      </div>
+                    </div>
+                    <p class="calendario-large-card-title">Titulo evento</p>
+                    <p class="calendario-large-card-local">Local evento</p>
+                    <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                    <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="card-l calendario-large-card" href="#">
+                    <div class="calendario-large-card-tag">
+                      <div class="marcador-s cor-marc3" href="#">
+                        <p>icon</p>
+                        <p><strong>title marcador</strong></p>
+                      </div>
+                    </div>
+                    <p class="calendario-large-card-title">Titulo evento</p>
+                    <p class="calendario-large-card-local">Local evento</p>
+                    <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                    <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="calendario-section-list-template">
+              <h4 class="calendario-section-list-template-moment">09:00h</h4>
+              <ul class="calendario-section-list-template-event lista-vertical-template">
+                <li>
+                  <a class="card-l calendario-large-card" href="#">
+                    <div class="calendario-large-card-tag">
+                      <div class="marcador-s cor-marc2" href="#">
+                        <p>icon</p>
+                        <p><strong>title marcador</strong></p>
+                      </div>
+                    </div>
+                    <p class="calendario-large-card-title">Titulo evento</p>
+                    <p class="calendario-large-card-local">Local evento</p>
+                    <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                    <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="calendario-section-list-template">
+              <h4 class="calendario-section-list-template-moment">10:00h</h4>
+              <ul class="calendario-section-list-template-event lista-vertical-template">
+                <li>
+                  <a class="card-m calendario-empty-card" href="#">
+                    <p class="calendario-large-empty-title">1h</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="calendario-section-list-template">
+              <h4 class="calendario-section-list-template-moment">11:00h</h4>
+              <ul class="calendario-section-list-template-event lista-vertical-template">
+                <li>
+                  <a class="card-l calendario-large-card" href="#">
+                    <div class="calendario-large-card-tag">
+                      <div class="marcador-s cor-marc3" href="#">
+                        <p>icon</p>
+                        <p><strong>title marcador</strong></p>
+                      </div>
+                    </div>
+                    <p class="calendario-large-card-title">Titulo evento</p>
+                    <p class="calendario-large-card-local">Local evento</p>
+                    <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                    <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="calendario-section-list-template">
+              <h4 class="calendario-section-list-template-moment">12:00h</h4>
+              <ul class="calendario-section-list-template-event lista-vertical-template">
+                <li>
+                  <a class="card-l calendario-large-card" href="#">
+                    <div class="calendario-large-card-tag">
+                      <div class="marcador-s cor-marc5" href="#">
+                        <p>icon</p>
+                        <p><strong>title marcador</strong></p>
+                      </div>
+                    </div>
+                    <p class="calendario-large-card-title">Titulo evento</p>
+                    <p class="calendario-large-card-local">Local evento</p>
+                    <p class="calendario-large-card-partcipantes">Partcipantes</p>
+                    <p class="calendario-large-card-duracao">calendario-large-card-duracao</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="calendario-section-list-template">
+              <h4 class="calendario-section-list-template-moment">13:00h</h4>
+              <ul class="calendario-section-list-template-event lista-vertical-template">
+                <li>
+                  <a class="card-m calendario-empty-card" href="#">
+                    <p class="calendario-large-empty-title">11h</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div id="aba2" class="aba-template">
+          eventos
+        </div>
+
+        <div id="aba3" class="aba-template">
+          calendario inteiro
+        </div>
+
       </div>
     </section>
 
-    <section id="calendario-sidenav" class="calendario-sidenav">
-      <div class="area-template" id="container-marcadores">
-        <h2 class="area-template-header">Marcadores</h2>
-        <div class="area-template-content">
-          <ul class="lista-vertical-3-template recuar-expandir-horizontal">
+    <section id="calendario-sidenav" class="main-sidenav">
+      <div class="area-template-fil ">
+        <h2 class="area-template-fil-header">Pesquisa rápida
+          <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
+        </h2>
+        <div class="area-template-fil-content">
+          <ul class="lista-vertical-horizontal recuar-expandir-vertical">
             <li>
               <a class="marcador-s cor-marc1" href="#">
                 <p>icon</p>
@@ -223,7 +228,6 @@
             </li>
           </ul>
         </div>
-        <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
       </div>
     </section>
 
@@ -234,17 +238,21 @@
   <div id="modalOverlay" class="esconderModal" onclick="fecharModal()">
     <div id="modalContent">
       <!-- Conteúdo do Modal -->
-      <p>Opção 1</p>
-      <p>Opção 2</p>
-      <p>Opção 3</p>
+      <p>Evento</p>
+      <p>Reunião</p>
+      <p>Live</p>
+      <p>Tarefa</p>
+      <p>Lembrete</p>
     </div>
   </div>
 
 
-  <script src="./static/js/SombraHeaderScroll.js"></script>
-  <script src="./static/js/RecuarExpandirHorizontal.js"></script>
   <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/SombraHeaderScroll.js"></script>
+  <script src="./static/js/BarraDePesquisa.js"></script>
+  <script src="./static/js/RecuarExpandirHorizontal.js"></script>
   <script src="./static/js/ModalCalendario.js"></script>
+  <script src="./static/js/FormContato.js"></script>
 
 </body>
 

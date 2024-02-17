@@ -45,12 +45,11 @@
 
 .lista-vertical-horizontal {
   display: grid;
-  grid-auto-flow: row;
+  grid-template: auto / auto auto;
   gap: 5px;
   scrollbar-width: thick;
   box-sizing: border-box;
   transition: 1s;
-  border-radius: 0.9375rem;
 }
 
 /* Estilos */
@@ -80,15 +79,25 @@
 @media (max-width: 800px) {
   .lista-vertical-horizontal {
     display: grid;
+    width: 100%;
     grid-auto-flow: column;
-
-    padding: 3px;
+    padding: 3px 0px;
     box-sizing: border-box;
     white-space: nowrap;
     overflow-x: auto;
     scrollbar-width: thick;
     transition: 1s;
   }
+  .lista-vertical-horizontal.desativar-responsivo {
+    display: grid;
+    gap: 5px;
+    grid-template: 1fr 1fr / auto;
+    scrollbar-width: thick;
+    box-sizing: border-box;
+    border-radius: 0.9375rem;
+    transition: 1s;
+  }
+
   .lista-vertical-template::-webkit-scrollbar,
   .lista-vertical-3-template::-webkit-scrollbar,
   .lista-horizontal-template::-webkit-scrollbar,

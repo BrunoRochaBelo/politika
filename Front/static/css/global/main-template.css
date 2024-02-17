@@ -34,6 +34,10 @@
   border: 1px solid var(--cor-7);
 }
 
+.btn-recuar-expandir {
+  display: none;
+}
+
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .main-template {
@@ -49,6 +53,7 @@
     background: var(--cor-p3);
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
   }
+
   .main-sidenav .card-xs {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -63,5 +68,10 @@
     backdrop-filter: blur(10px);
     border: 1px solid var(--cor-8);
     color: var(--cor-1);
+  }
+
+  .btn-recuar-expandir {
+    display: block;
+    justify-self: end;
   }
 }
