@@ -1,7 +1,8 @@
-nav ul {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
+.nav-semana {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+
   padding: 0;
 }
 .dia-semana {

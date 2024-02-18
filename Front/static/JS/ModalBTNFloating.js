@@ -5,7 +5,7 @@ var modal = document.querySelector(".modal-btn-floating-Overlay");
 // Função para abrir o modal
 function abrirModalBtnFloating() {
   modal.style.display = "flex";
-  botao.textContent = "x"; // Altera o conteúdo do botão para "X"
+  botao.innerHTML = "&times;"; // Altera o conteúdo do botão para "×"
 }
 
 // Função para fechar o modal
