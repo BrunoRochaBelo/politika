@@ -52,8 +52,6 @@
 
   <main class="main main-template">
 
-    <button id="floatingButton" onclick="mostrarModal()"><a href="cadastro-contato.html">+</a></button>
-
     <section class="main-section">
       <div id="resultsContainer" class="area-template">
         <h2 class="area-template-header">Contatos listados - <span id="totalResults">{{total}}</span></h2>
@@ -61,23 +59,21 @@
           <p id="listLoading" style="color:black;"></p>
           <div id="searcherrorMessage" style="color: red;"></div>
           <li>
-            <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
-              <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato}}</p>
-              <div class="contatos-small-card-num" data-filter="numero">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
+            <a class="card-s contatos-small-card contato contato" href="#" data-idContato="{{ID_DO_CONTATO 1}}">
+              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
             </a>
           </li>
           <li>
-            <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
-              <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato 2}}</p>
-              <div class="contatos-small-card-num" data-filter="numero">{{(81) 88888-8888}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
+            <a class="card-s contatos-small-card contato contato" href="#" data-idContato="{{ID_DO_CONTATO 2}}">
+              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato 2}}</p>
+              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
             </a>
           </li>
-
-
         </ul>
       </div>
     </section>
@@ -139,17 +135,23 @@
 
   </main>
 
+  <!-- Modal Botão Flutuante -->
+  <button class="floatingButton"><a href="cadastro-contato.html">+</a></button>
 
-  <!-- Modal Contato -->
-  <div id="modal-info-contato" class="modal-info-contato" data-contato-id="">
+
+
+
+
+  <!-- Modal Info Contato -->
+  <div id="modal-info-contato" class="modal-info-contato" id="contatoId">
     <div class="modal-info-contato-content">
-      <span class="close">&times;</span>
+      <span class="close_contato_modal">&times;</span>
       <div class="modal-header">
         <img id="modalImage" src="" alt="Imagem do Contato">
         <h1><span id="modalName"></span></h1>
       </div>
       <div class="modal-body">
-        <p><strong>Influência:</strong> <span id="modalInfluence"></span></p>
+        <p><strong>Influência:</strong> <img id="modalInfluence" src="" alt="Perfil influencia Icon"></p>
         <p><strong>Número:</strong> <span id="modalNumber"></span></p>
         <button id="modalCallButton" class="btn btn-primary" aria-label="Ligar para o contato">Ligar</button>
         <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>

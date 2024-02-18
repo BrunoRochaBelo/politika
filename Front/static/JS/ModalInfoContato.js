@@ -1,94 +1,90 @@
-// Seleciona todos os cards
-let cards = document.querySelectorAll(".card-s");
+// Variável global para armazenar o contatoId do card clicado
+let currentContatoId;
 
-// Adiciona um evento de clique a cada card
-cards.forEach((card) => {
+let cardsContato = document.querySelectorAll(".contato");
+
+function fillModal(card) {
+  document.querySelector("#modalName").textContent = card.querySelector(
+    '[data-filter="nomeContato"]'
+  ).innerText;
+  document.querySelector("#modalNumber").textContent = card.querySelector(
+    '[data-filter="numeroContato"]'
+  ).innerText;
+  document.querySelector("#modalInfluence").src = card.querySelector(
+    '[data-filter="perfilInfluencia"]'
+  ).src;
+}
+
+function fetchContactData(contatoId) {
+  fetch(`https://backend-url.com/contatos/${contatoId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      document.querySelector("#modalContactType").textContent =
+        data.contactType;
+      document.querySelector("#modalPersonType").textContent = data.personType;
+      document.querySelector("#modalEmail").textContent = data.email;
+    })
+    .catch((error) => {
+      document.querySelector("#modalError").textContent =
+        "Erro ao obter restante dos dados do contato";
+    });
+}
+
+cardsContato.forEach((card) => {
   card.addEventListener("click", (event) => {
     event.preventDefault();
 
-    // Verifica se o clique foi no ícone de telefone
     if (event.target.closest(".contatos-small-card-phone")) {
-      // Faz uma ligação telefônica
       window.location.href = `tel:${
         card.querySelector(".contatos-small-card-num").textContent
       }`;
     } else {
-      // Abre o modal
       let modal = document.querySelector("#modal-info-contato");
-      modal.classList.add("show");
+      modal.classList.add("show_contato_modal");
 
-      // Preenche os campos do modal com os dados do card
-      document.querySelector("#modalName").textContent = card.querySelector(
-        ".contatos-small-card-title"
-      ).textContent;
-      document.querySelector("#modalNumber").textContent = card.querySelector(
-        ".contatos-small-card-num"
-      ).textContent;
-      document.querySelector("#modalInfluence").textContent =
-        card.querySelector(".contatos-small-card-star").textContent;
+      fillModal(card);
 
-      // Faz uma solicitação ao backend para obter os dados restantes
-      let contatoId = card.getAttribute("data-contato-id");
-      fetch(`https://backend-url.com/contatos/${contatoId}`)
-        .then((response) => response.json())
-        .then((data) => {
-          // Preenche os campos restantes do modal com os dados obtidos
-          document.querySelector("#modalContactType").textContent =
-            data.contactType;
-          document.querySelector("#modalPersonType").textContent =
-            data.personType;
-          document.querySelector("#modalEmail").textContent = data.email;
-        })
-        .catch((error) => {
-          // Exibe um erro no modal se a solicitação falhar
-          document.querySelector("#modalError").textContent =
-            "Erro ao obter restante dos dados do contato";
-        });
+      currentContatoId = card.getAttribute("data-idContato");
+      fetchContactData(currentContatoId);
     }
   });
 });
 
-// Adiciona um evento de clique ao botão de fechar do modal
-document
-  .querySelector("#modal-info-contato .close")
-  .addEventListener("click", () => {
-    document.querySelector("#modal-info-contato").classList.remove("show");
-  });
+function closeModal() {
+  document
+    .querySelector("#modal-info-contato")
+    .classList.remove("show_contato_modal");
+}
 
-// Adiciona um evento de clique ao fundo do modal para fechá-lo
+document
+  .querySelector("#modal-info-contato .close_contato_modal")
+  .addEventListener("click", closeModal);
+
 document
   .querySelector("#modal-info-contato")
   .addEventListener("click", (event) => {
     if (event.target === event.currentTarget) {
-      document.querySelector("#modal-info-contato").classList.remove("show");
+      closeModal();
     }
   });
 
-// Adiciona um evento de tecla ao document para fechar o modal ao pressionar ESC
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
-    document.querySelector("#modal-info-contato").classList.remove("show");
+    closeModal();
   }
 });
 
-// Adiciona um evento de clique ao botão "Ligar" que faz uma ligação telefônica
 document
   .querySelector("#modalCallButton")
   .addEventListener("click", (event) => {
     event.preventDefault();
-    let phoneNumber = document
-      .querySelector("#modal-info-contato")
-      .getAttribute("data-phone-number");
+    let phoneNumber = document.querySelector("#modalNumber").textContent;
     window.location.href = `tel:${phoneNumber}`;
   });
 
-// Adiciona um evento de clique ao botão "Editar" que redireciona para a URL de edição
 document
   .querySelector("#modalEditButton")
   .addEventListener("click", (event) => {
     event.preventDefault();
-    let contatoId = document
-      .querySelector("#modal-info-contato")
-      .getAttribute("data-contato-id");
-    window.location.href = `/contato/put/${contatoId}`;
+    window.location.href = `/contato/put/${currentContatoId}`;
   });

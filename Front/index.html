@@ -117,25 +117,23 @@
       </div>
       <div class="area-template-tmf">
         <h2 class="area-template-tmf-header">Contatos importantes</h2>
-        <ul class="area-template-tmf-content lista-vertical-template-alt">
+        <ul id="contatosList" class="area-template-tmf-content lista-vertical-template-alt">
           <li>
-            <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
-              <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato}}</p>
-              <div class="contatos-small-card-num" data-filter="numero">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
+            <a class="card-s contatos-small-card contato contato" href="#" data-idContato="{{ID_DO_CONTATO 1}}">
+              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
             </a>
           </li>
           <li>
-            <a class="card-s contatos-small-card" href="#" data-contato-id="{{ID_DO_CONTATO}}">
-              <p class="contatos-small-card-title" data-filter="nome">{{Nome Contato 2}}</p>
-              <div class="contatos-small-card-num" data-filter="numero">{{(81) 88888-8888}}</div>
-              <div class="contatos-small-card-star" data-filter="perfilInfluencia"><img src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="./static/imagens/icones/phone.svg" alt="Ligar Icon"></div>
+            <a class="card-s contatos-small-card contato contato" href="#" data-idContato="{{ID_DO_CONTATO 2}}">
+              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato 2}}</p>
+              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
             </a>
           </li>
-
-
         </ul>
       </div>
     </section>
@@ -146,61 +144,61 @@
         </h2>
         <ul id="compromissosHoje" class="area-template-tmf-alt-content lista-vertical-template recuar-expandir-vertical">
           <li>
-            <a class="card-xs calendario-small-card" href="#">
-              <p class="calendario-small-card-title"><strong>Title</strong></p>
-              <p class="calendario-small-card-inicio">inicio</p>
-              <p class="calendario-small-card-fim">fim</p>
-              <div class="calendario-small-card-tag">
-                <div class="marcador-item cor-marc1" href="#">
-                  <p>title marcador</p>
+            <a class="card-xs calendario-small-card evento" href="#" data-idEvento="1">
+              <p class="calendario-small-card-title" data-filter="tituloEvento"><strong>Title</strong></p>
+              <p class="calendario-small-card-inicio" data-filter="participantesEvento">inicio</p>
+              <p class="calendario-small-card-fim" data-filter="duracaoEvento">fim</p>
+              <div class="calendario-small-card-tag" data-filter="tagEvento">
+                <div class="marcador-item cor-marc1">
+                  <p><strong>marcador 1</strong></p>
                 </div>
               </div>
             </a>
           </li>
           <li>
-            <a class="card-xs calendario-small-card" href="#">
-              <p class="calendario-small-card-title"><strong>Title</strong></p>
-              <p class="calendario-small-card-inicio">inicio</p>
-              <p class="calendario-small-card-fim">fim</p>
-              <div class="calendario-small-card-tag">
-                <div class="marcador-item cor-marc1" href="#">
-                  <p>title marcador</p>
+            <a class="card-xs calendario-small-card evento" href="#" data-idEvento="2">
+              <p class="calendario-small-card-title" data-filter="tituloEvento"><strong>Title</strong></p>
+              <p class="calendario-small-card-inicio" data-filter="participantesEvento">inicio</p>
+              <p class="calendario-small-card-fim" data-filter="duracaoEvento">fim</p>
+              <div class="calendario-small-card-tag" data-filter="tagEvento">
+                <div class="marcador-item cor-marc1">
+                  <p><strong>marcador 1</strong></p>
                 </div>
               </div>
             </a>
           </li>
           <li>
-            <a class="card-xs calendario-small-card" href="#">
-              <p class="calendario-small-card-title"><strong>Title</strong></p>
-              <p class="calendario-small-card-inicio">inicio</p>
-              <p class="calendario-small-card-fim">fim</p>
-              <div class="calendario-small-card-tag">
-                <div class="marcador-item cor-marc5" href="#">
-                  <p>title marcador</p>
+            <a class="card-xs calendario-small-card evento" href="#" data-idEvento="3">
+              <p class="calendario-small-card-title" data-filter="tituloEvento"><strong>Title</strong></p>
+              <p class="calendario-small-card-inicio" data-filter="participantesEvento">inicio</p>
+              <p class="calendario-small-card-fim" data-filter="duracaoEvento">fim</p>
+              <div class="calendario-small-card-tag" data-filter="tagEvento">
+                <div class="marcador-item cor-marc2">
+                  <p><strong>marcador 2</strong></p>
                 </div>
               </div>
             </a>
           </li>
           <li>
-            <a class="card-xs calendario-small-card" href="#">
-              <p class="calendario-small-card-title"><strong>Title</strong></p>
-              <p class="calendario-small-card-inicio">inicio</p>
-              <p class="calendario-small-card-fim">fim</p>
-              <div class="calendario-small-card-tag">
-                <div class="marcador-item cor-marc3" href="#">
-                  <p>title marcador</p>
+            <a class="card-xs calendario-small-card evento" href="#" data-idEvento="4">
+              <p class="calendario-small-card-title" data-filter="tituloEvento"><strong>Title</strong></p>
+              <p class="calendario-small-card-inicio" data-filter="participantesEvento">inicio</p>
+              <p class="calendario-small-card-fim" data-filter="duracaoEvento">fim</p>
+              <div class="calendario-small-card-tag" data-filter="tagEvento">
+                <div class="marcador-item cor-marc4">
+                  <p><strong>marcador 4</strong></p>
                 </div>
               </div>
             </a>
           </li>
           <li>
-            <a class="card-xs calendario-small-card" href="#">
-              <p class="calendario-small-card-title"><strong>Title</strong></p>
-              <p class="calendario-small-card-inicio">inicio</p>
-              <p class="calendario-small-card-fim">fim</p>
-              <div class="calendario-small-card-tag">
-                <div class="marcador-item cor-marc7" href="#">
-                  <p>title marcador</p>
+            <a class="card-xs calendario-small-card evento" href="#" data-idEvento="5">
+              <p class="calendario-small-card-title" data-filter="tituloEvento"><strong>Title</strong></p>
+              <p class="calendario-small-card-inicio" data-filter="participantesEvento">inicio</p>
+              <p class="calendario-small-card-fim" data-filter="duracaoEvento">fim</p>
+              <div class="calendario-small-card-tag" data-filter="tagEvento">
+                <div class="marcador-item cor-marc7">
+                  <p><strong>marcador 7</strong></p>
                 </div>
               </div>
             </a>
@@ -228,16 +226,41 @@
     </div>
   </div>
 
-  <!-- Modal Contato -->
-  <div id="modal-info-contato" class="modal-info-contato" data-contato-id="">
+  <!-- Modal Info Evento -->
+  <div id="modal-info-evento" class="modal-info-evento" itemid="eventoId">
+    <div class="modal-info-evento-content">
+      <span class="close_evento_modal">&times;</span>
+      <div class="modal-evento-header">
+        <p><strong>Categoria (Marcador):</strong> <span id="modalEventoCategoria"></span></p>
+        <p><strong>Tipo:</strong> <span id="modalEventoTipo"></span></p>
+        <h1><span id="modalEventoName"></span></h1>
+      </div>
+      <div class="modal-evento-body">
+        <p><strong>Data Início - Hora Início:</strong> <span id="modalEventoDataInicio"></span></p>
+        <p><strong>Data Fim - Hora Fim:</strong> <span id="modalEventoDataFim"></span></p>
+        <p><strong>Responsável:</strong> <span id="modalEventoResponsavel"></span></p>
+        <p><strong>Assunto:</strong> <span id="modalEventoAssunto"></span></p>
+        <p><strong>Endereço:</strong> <span id="modalEventoEndereco"></span></p>
+        <p><strong>Sala:</strong> <span id="modalEventoSala"></span></p>
+        <p><strong>Recursos:</strong> <span id="modalEventoRecursos"></span></p>
+        <p><strong>Participantes:</strong> <span id="modalEventoParticipantes"></span></p>
+        <p><strong>Anotações:</strong> <span id="modalEventoAnotacoes"></span></p>
+        <p id="modalEventoError" style="color: red;"></p>
+        <a id="modalEventoEditButton" href="#" class="btn btn-primary">Editar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Info Contato -->
+  <div id="modal-info-contato" class="modal-info-contato" id="contatoId">
     <div class="modal-info-contato-content">
-      <span class="close">&times;</span>
+      <span class="close_contato_modal">&times;</span>
       <div class="modal-header">
         <img id="modalImage" src="" alt="Imagem do Contato">
         <h1><span id="modalName"></span></h1>
       </div>
       <div class="modal-body">
-        <p><strong>Influência:</strong> <span id="modalInfluence"></span></p>
+        <p><strong>Influência:</strong> <img id="modalInfluence" src="" alt="Perfil influencia Icon"></p>
         <p><strong>Número:</strong> <span id="modalNumber"></span></p>
         <button id="modalCallButton" class="btn btn-primary" aria-label="Ligar para o contato">Ligar</button>
         <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>
@@ -253,6 +276,7 @@
   <script src="./static/js/RecuarExpandirVertical.js"></script>
   <script src="./static/js/FiltroEstadoCidade.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
+  <script src="./static/js/ModalInfoEvento.js"></script>
   <script src="./static/js/ModalInfoContato.js"></script>
 
 </body>

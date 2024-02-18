@@ -1,0 +1,21 @@
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+}
+.dia-semana {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.dia-semana h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.dia-semana p {
+  margin: 0;
+  font-size: 16px;
+}

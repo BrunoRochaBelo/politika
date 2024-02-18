@@ -26,3 +26,34 @@
   cursor: pointer;
   transition: 1s;
 }
+
+.btn-filter-leaked {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625rem;
+  color: var(--cor-1);
+  backdrop-filter: blur(5px);
+  background: var(--cor-11);
+  border-radius: 0.625rem;
+  border: 1px solid var(--cor-8);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .btn-filter-leaked {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    padding: 0.625rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: var(--cor-1);
+    border-radius: 0.625rem;
+    border: 1px solid var(--cor-8);
+    box-shadow: none;
+  }
+}

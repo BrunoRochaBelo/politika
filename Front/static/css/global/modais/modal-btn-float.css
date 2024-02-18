@@ -1,14 +1,5 @@
 /* Estilos */
-#modalOverlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-.esconderModal {
+.modal-btn-floating-Overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -20,31 +11,35 @@
   align-items: center;
 }
 
-#modalContent {
+.modalContent-btn-floating {
   position: absolute;
+  display: grid;
   bottom: 130px;
   right: 115px;
   background: #fff;
   padding: 1.25rem;
   border-radius: 0.9375rem;
-  text-align: center;
-  gap: 25px;
+  grid:
+    "modal-btn-floating-header"
+    "modal-btn-floating-body"
+    / auto;
 }
-/* RESPONSIVO */
-@media (max-width: 767px) {
-  #modalContent {
-    position: absolute;
-    bottom: 110px;
-    right: 85px;
-    background: #fff;
-    padding: 1.25rem;
-    border-radius: 0.9375rem;
-    text-align: center;
-    gap: 25px;
-  }
+
+.modal-btn-floating-header {
+  grid-area: modal-btn-floating-header;
+  text-align: start;
+}
+.modal-btn-floating-body {
+  grid-area: modal-btn-floating-body;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0.965rem;
+}
+.esconderModal {
+  display: none;
 }
 /* Botão do modal */
-#floatingButton {
+.floatingButton {
   position: fixed;
   bottom: 75px;
   right: 30px;
@@ -63,12 +58,12 @@
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-#floatingButton:hover {
+.floatingButton:hover {
   /* Altera a cor da borda ao passar o mouse */
   border-color: var(--cor-p1);
 }
 
-#floatingButton:active {
+.floatingButton:active {
   /* Adiciona um efeito "acessado" ao clicar no botão */
   background: darken(
     var(--cor-12),
@@ -79,7 +74,19 @@
 
 /* RESPONSIVO */
 @media (max-width: 767px) {
-  #floatingButton {
+  .modalContent-btn-floating {
+    position: absolute;
+    bottom: 110px;
+    right: 85px;
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 0.9375rem;
+    text-align: center;
+    gap: 25px;
+  }
+
+  /* Botão do modal */
+  .floatingButton {
     position: fixed;
     bottom: 75px;
     right: 15px;

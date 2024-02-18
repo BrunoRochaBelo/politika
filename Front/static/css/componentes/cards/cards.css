@@ -32,6 +32,7 @@
   padding: 0.625rem;
   background: var(--cor-0);
   color: var(--cor-12);
+  border-radius: 0.625rem;
 }
 
 /* Cards tamanhos fixos (tmf)*/
