@@ -3,7 +3,7 @@
   background: linear-gradient(to right, var(--cor-6), var(--cor-5));
 }
 
-form {
+.form-contato {
   padding: 5px;
   border-bottom-left-radius: 0.9375rem;
   border-bottom-right-radius: 0.9375rem;

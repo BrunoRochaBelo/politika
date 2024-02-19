@@ -42,10 +42,12 @@
     </nav>
     <div class="header-search">
       <div class="search-input-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
-        <button class="search-button" onclick="search()">
-          <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
-        </button>
+        <form id="searchForm">
+          <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
+          <button type="submit" class="search-button">
+            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+          </button>
+        </form>
       </div>
     </div>
   </header>
@@ -56,8 +58,6 @@
       <div id="resultsContainer" class="area-template">
         <h2 class="area-template-header">Contatos listados - <span id="totalResults">{{total}}</span></h2>
         <ul id="contatosList" class="area-template-content lista-vertical-template-alt">
-          <p id="listLoading" style="color:black;"></p>
-          <div id="searcherrorMessage" style="color: red;"></div>
           <li>
             <a class="card-s contatos-small-card contato contato" href="#" data-idContato="{{ID_DO_CONTATO 1}}">
               <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -75,6 +75,8 @@
             </a>
           </li>
         </ul>
+        <div id="loadingMessage" style="display: none;">Carregando...</div>
+        <div id="searcherrorMessage" style="color: red;"></div>
       </div>
     </section>
 
@@ -138,10 +140,6 @@
   <!-- Modal Botão Flutuante -->
   <button class="floatingButton"><a href="cadastro-contato.html">+</a></button>
 
-
-
-
-
   <!-- Modal Info Contato -->
   <div id="modal-info-contato" class="modal-info-contato" id="contatoId">
     <div class="modal-info-contato-content">
@@ -165,7 +163,8 @@
 
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
-  <script src="./static/js/BarraDePesquisa.js"></script>
+  <script src="./static/js/BarraPesquisaContato.js"></script>
+  <script src="./static/js/FiltroBtnPerfilInfluencia.js"></script>
   <script src="./static/js/ModalInfoContato.js"></script>
 
 </body>
