@@ -1,18 +1,26 @@
+// Adiciona um ouvinte de evento para o carregamento do documento
 document.addEventListener("DOMContentLoaded", function () {
-  var headerTemplate = document.querySelector(".header-template");
-  var headerBack = document.querySelector(".header-back");
-  var headerSearch = document.querySelector(".search-input");
-  var headerSearchElement = document.querySelector(".header-search");
+  // Seleciona elementos específicos do DOM
+  let headerTemplate = document.querySelector(".header-template");
+  let headerSearch = document.querySelector(".search-input");
+  let headerSearchElement = document.querySelector(".header-search");
 
+  // Função para alternar a sombra e a cor do texto de um elemento
   function toggleBoxShadow(headerElement, shadowClass, textColorVar) {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    // Obtém a posição de rolagem atual
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    if (scrollTop > 15) {
+    // Se a posição de rolagem for maior que 15
+    if (headerElement && scrollTop > 15) {
+      // Adiciona a classe de sombra ao elemento
       headerElement.classList.add(shadowClass);
+      // Altera a transição e a cor do elemento de pesquisa
       headerSearchElement.style.transition = "color 0.3s ease";
       headerSearchElement.style.color = textColorVar;
-    } else {
+    } else if (headerElement) {
+      // Remove a classe de sombra do elemento
       headerElement.classList.remove(shadowClass);
+      // Altera a transição e a cor do elemento de pesquisa
       headerSearchElement.style.transition = "color 0.3s ease";
       headerSearchElement.style.color = textColorVar;
     }
@@ -22,34 +30,47 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-12)");
   toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-12)");
 
+  // Adiciona um ouvinte de evento para a rolagem da janela
   window.addEventListener("scroll", function () {
+    // Chama a função toggleBoxShadow quando a janela é rolada
     toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-6)");
     toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-6)");
   });
 });
 
+// Adiciona um ouvinte de evento para o carregamento do documento
 document.addEventListener("DOMContentLoaded", function () {
-  var homeHeaderTemplate = document.querySelector(".home-header-template");
-  var homeHeaderTitle = document.querySelector(".home-header-title");
+  // Seleciona elementos específicos do DOM
+  let homeHeaderTemplate = document.querySelector(".home-header-template");
+  let homeHeaderTitle = document.querySelector(".home-header-title");
 
+  // Função para alternar a sombra e a cor do texto de um elemento
   function toggleBoxShadow() {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    // Obtém a posição de rolagem atual
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    if (scrollTop > 15) {
+    // Se a posição de rolagem for maior que 0
+    if (homeHeaderTemplate && homeHeaderTitle && scrollTop > 15) {
+      // Adiciona a classe de sombra ao elemento
       homeHeaderTemplate.classList.add("box-shadow-active");
+      // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
       homeHeaderTitle.style.color = "var(--cor-12)";
-    } else {
+    } else if (homeHeaderTemplate && homeHeaderTitle) {
+      // Remove a classe de sombra do elemento
       homeHeaderTemplate.classList.remove("box-shadow-active");
+      // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
       homeHeaderTitle.style.color = "var(--cor-0)";
     }
   }
 
-  // Chama função toggleBoxShadow no carregamento inicial da página
+  // Chama a função toggleBoxShadow no carregamento inicial da página
   toggleBoxShadow();
 
+  // Adiciona um ouvinte de evento para a rolagem da janela
   window.addEventListener("scroll", function () {
+    // Chama a função toggleBoxShadow quando a janela é rolada
     toggleBoxShadow();
   });
 });

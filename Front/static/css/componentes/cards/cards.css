@@ -28,7 +28,7 @@
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  border-bottom: 2px solid var(--cor-6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0.625rem;
   background: var(--cor-0);
   color: var(--cor-12);
@@ -69,13 +69,6 @@
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsividade */
-/*@media (max-width: 800px) {
-  .card-tmf-l {
-    min-width: 48%;
-  }
-}*/
-
 /* Cards dos selects */
 /* Muito Pequeno altura 35px */
 .card-select-xs {
@@ -104,3 +97,10 @@
   font-weight: var(--font-medium-regular);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+/* Responsividade */
+/*@media (max-width: 800px) {
+  .card-tmf-l {
+    min-width: 48%;
+  }
+}*/

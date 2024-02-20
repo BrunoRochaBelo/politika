@@ -8,8 +8,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "contatos-small-card-title contatos-small-card-title contatos-small-card-num contatos-small-card-phone"
-    "contatos-small-card-star . contatos-small-card-num  contatos-small-card-phone"
+    "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
+    "contatos-small-card-star contatos-small-card-num contatos-small-card-num  contatos-small-card-phone"
     /0.5fr 0.5fr 1fr auto;
 }
 .contatos-small-card-id {

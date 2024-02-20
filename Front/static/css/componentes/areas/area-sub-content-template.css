@@ -4,7 +4,7 @@
   align-content: center;
   justify-content: center;
   border-radius: 0.9375rem;
-  border: 1px solid var(--cor-3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: var(--cor-p3);
   grid:
     "area-sub-content-template-header" auto

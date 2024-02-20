@@ -2,21 +2,46 @@
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
-
+  gap: 0.625rem;
   padding: 0;
 }
 .dia-semana {
   text-align: center;
-  margin: 10px;
   padding: 10px;
+  border-radius: 9px;
+  color: var(--cor-11);
+  backdrop-filter: blur(5px);
+  background: var(--cor-p5);
+  border-radius: 0.625rem;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  cursor: pointer;
+  font-size: var(--font-medium-light);
 }
-.dia-semana h2 {
-  margin: 0;
-  font-size: 20px;
+
+.change-semana {
+  text-align: center;
+  position: relative;
+  padding: 10px;
+  border-radius: 9px;
+  color: var(--cor-11);
+  backdrop-filter: blur(5px);
+  border-radius: 0.625rem;
+  cursor: pointer;
+  font-size: var(--font-medium-regular);
 }
-.dia-semana p {
-  margin: 0;
-  font-size: 16px;
+.avancar {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+}
+.anterior {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
 }

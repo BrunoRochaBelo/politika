@@ -59,19 +59,21 @@
         <h2 class="area-template-header">Contatos listados - <span id="totalResults">{{total}}</span></h2>
         <ul id="contatosList" class="area-template-content lista-vertical-template-alt">
           <li>
-            <a class="card-s contatos-small-card contato contato" href="#" data-idContato="{{ID_DO_CONTATO 1}}">
+            <a class="card-s contatos-small-card contato contato" href="#">
               <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
               <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon">
               <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+              <div data-filter="idContato">{{idContato}}</div>
             </a>
           </li>
           <li>
-            <a class="card-s contatos-small-card contato contato" href="#" data-idContato="{{ID_DO_CONTATO 2}}">
+            <a class="card-s contatos-small-card contato contato" href="#">
               <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato 2}}</p>
               <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
+              <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/2-estrela.svg" alt="Perfil influencia Icon">
               <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+              <div data-filter="idContato">{{idContato 2}}</div>
             </a>
           </li>
         </ul>
@@ -107,27 +109,27 @@
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="1estrela">
-                <img class="star-img" src="./static/imagens/icones/uma-estrela-dourada.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/1-estrela.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="2estrelas">
-                <img class="star-img" src="./static/imagens/icones/duas-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/2-estrela.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="3estrelas">
-                <img class="star-img" src="./static/imagens/icones/tres-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="4estrelas">
-                <img class="star-img" src="./static/imagens/icones/quatro-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon">
               </button>
             </li>
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="5estrelas">
-                <img class="star-img" src="./static/imagens/icones/cinco-estrelas-douradas.svg" alt="Perfil influencia Icon">
+                <img class="star-img" src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon">
               </button>
             </li>
           </ul>
@@ -137,8 +139,20 @@
 
   </main>
 
+
   <!-- Modal Botão Flutuante -->
-  <button class="floatingButton"><a href="cadastro-contato.html">+</a></button>
+  <button class="floatingButton">+</button>
+  <div class="modal-btn-floating-Overlay esconderModal">
+    <div class="modalContent-btn-floating">
+      <div class="modal-btn-floating-header">
+        <h1>Criar</h1>
+      </div>
+      <div class="modal-btn-floating-body">
+        <a href="cadastro-contato.html">Contato</a>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Modal Info Contato -->
   <div id="modal-info-contato" class="modal-info-contato" id="contatoId">
