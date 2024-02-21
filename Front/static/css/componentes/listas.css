@@ -3,7 +3,6 @@
   display: grid;
   grid-auto-flow: row;
   gap: 5px;
-  padding: 0.625rem;
   scrollbar-width: thick;
   box-sizing: border-box;
   border-radius: 0.9375rem;
@@ -14,7 +13,6 @@
   display: grid;
   gap: 5px;
   grid-template: auto / 1fr 1fr 1fr;
-  padding: 0.625rem;
   scrollbar-width: thick;
   box-sizing: border-box;
   border-radius: 0.9375rem;
@@ -25,7 +23,6 @@
   display: grid;
   grid-auto-flow: column;
   gap: 5px;
-  padding: 3px;
   box-sizing: border-box;
   white-space: nowrap;
   overflow-x: auto;
@@ -52,25 +49,49 @@
   transition: 1s;
 }
 
+.lista-select {
+  display: grid;
+  background: transparent;
+  scrollbar-width: thick;
+  box-sizing: border-box;
+  border-radius: 0.9375rem;
+  transition: 1s;
+  grid:
+    "item1 item2" auto
+    "item3 item3" auto;
+}
+.lista-select .item1 {
+  grid-area: item1;
+}
+.lista-select .item2 {
+  grid-area: item2;
+}
+.lista-select .item3 {
+  grid-area: item3;
+}
+
 /* Estilos */
 .lista-vertical-template,
 .lista-vertical-3-template,
 .lista-horizontal-template,
 .lista-vertical-template-alt,
-.lista-vertical-horizontal {
+.lista-vertical-horizontal,
+.lista-select {
   scrollbar-width: thin;
 }
 /* Estilos para cards dentro da lista */
 /* Reset de borda para todos os cards dentro da lista */
-.lista-vertical-template-alt .card-select-m {
+.lista-select .card-select-m {
   border-radius: 0;
 }
 /* Adiciona borda arredondada nos cantos esquerdos e direitos do primeiro e último cards dentro da lista */
-.lista-vertical-template-alt li:first-child .card-select-m {
+.lista-select li:first-child .card-select-m {
   border-top-left-radius: 0.9375rem;
+}
+.lista-select li:nth-child(2) .card-select-m {
   border-top-right-radius: 0.9375rem;
 }
-.lista-vertical-template-alt li:last-child .card-select-m {
+.lista-select li:last-child .card-select-m {
   border-bottom-left-radius: 0.9375rem;
   border-bottom-right-radius: 0.9375rem;
 }
@@ -81,7 +102,6 @@
     display: grid;
     width: 100%;
     grid-auto-flow: column;
-    padding: 3px 0px;
     box-sizing: border-box;
     white-space: nowrap;
     overflow-x: auto;

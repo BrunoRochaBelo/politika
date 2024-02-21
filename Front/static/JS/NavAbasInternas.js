@@ -1,44 +1,41 @@
 // Navegar entre abas
-// Navegar entre abas pelos botões
 function ativarAba(aba) {
   aba.classList.add("active");
 }
-function desativarTodasAbas(abas) {
-  var navAba = document.querySelector("#navAba");
 
+function desativarTodasAbas(abas) {
   abas.forEach((aba) => {
     aba.classList.remove("active");
     var idAba = aba.id.slice(3);
-    var liCorrespondente = navAba.querySelector("#nav" + idAba);
-    if (liCorrespondente) {
-      liCorrespondente.classList.remove("indicador");
+    var aCorrespondente = document.querySelector("#nav" + idAba + " a");
+    if (aCorrespondente) {
+      aCorrespondente.classList.remove("indicador-2");
     }
   });
 }
-// Navegar entre abas pelas
+
 function mostrarAba(id) {
   var abas = document.querySelectorAll(".aba-template");
-  var navAba = document.querySelector("#navAba");
 
   abas.forEach(function (aba) {
     if (aba.id === id) {
       aba.classList.add("active");
 
-      // Adiciona a classe 'indicador' à <li> correspondente na navegação
-      var liCorrespondente = navAba.querySelector("#nav" + id.slice(3));
-      if (liCorrespondente) {
-        liCorrespondente.classList.add("indicador");
+      // Adiciona a classe 'indicador-2' à <a> correspondente na navegação
+      var aCorrespondente = document.querySelector("#nav" + id.slice(3) + " a");
+      if (aCorrespondente) {
+        aCorrespondente.classList.add("indicador-2");
       }
 
       aba.style.display = "block";
     } else {
       aba.classList.remove("active");
 
-      // Remove a classe 'indicador' da <li> correspondente na navegação
+      // Remove a classe 'indicador-2' da <a> correspondente na navegação
       var idAba = aba.id.slice(3);
-      var liCorrespondente = navAba.querySelector("#nav" + idAba);
-      if (liCorrespondente) {
-        liCorrespondente.classList.remove("indicador");
+      var aCorrespondente = document.querySelector("#nav" + idAba + " a");
+      if (aCorrespondente) {
+        aCorrespondente.classList.remove("indicador-2");
       }
 
       aba.style.display = "none";
@@ -61,24 +58,26 @@ function navegar(offset) {
     novaAba.style.display = "block";
     ativarAba(novaAba);
 
-    // Adicionar ou remover a classe "indicador" na navegação
-    var navAba = document.querySelector("#navAba");
+    // Adicionar ou remover a classe "indicador-2" na navegação
     var idAba = novaAba.id.slice(3);
 
-    Array.from(navAba.children).forEach((li, index) => {
+    Array.from(document.querySelectorAll("#navAba li")).forEach((li, index) => {
+      var aCorrespondente = li.querySelector("a");
       if (index === abaAtual + offset) {
-        li.classList.add("indicador");
+        aCorrespondente.classList.add("indicador-2");
       } else {
-        li.classList.remove("indicador");
+        aCorrespondente.classList.remove("indicador-2");
       }
     });
   }
   window.scrollTo(0, 0);
 }
+
 function voltar() {
   navegar(-1);
   window.scrollTo(0, 0);
 }
+
 function avancar() {
   navegar(1);
   window.scrollTo(0, 0);

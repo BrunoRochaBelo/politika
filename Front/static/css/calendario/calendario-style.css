@@ -1,3 +1,29 @@
+.calendario-template {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: 0.625rem;
+  grid:
+    "calendario-sidenav calendario-section"
+    / 1.1fr 1.9fr;
+}
+.calendario-section {
+  grid-area: calendario-section;
+  text-align: center;
+  display: grid;
+  grid-auto-flow: row;
+  align-items: start;
+  padding: 0.625rem;
+}
+.calendario-sidenav {
+  grid-area: calendario-sidenav;
+  text-align: center;
+  display: grid;
+  align-content: start;
+  grid-auto-flow: row;
+  padding: 0.625rem;
+}
+
 .nav-semana {
   display: grid;
   grid-auto-flow: column;
@@ -11,13 +37,12 @@
   border-radius: 9px;
   color: var(--cor-11);
   backdrop-filter: blur(5px);
-  background: var(--cor-p5);
+  background: var(--cor-0);
   border-radius: 0.625rem;
   border: 1px solid #ddd;
   cursor: pointer;
   font-size: var(--font-medium-light);
 }
-
 .change-semana {
   text-align: center;
   position: relative;
@@ -44,4 +69,48 @@
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .calendario-template {
+    gap: 0.925rem;
+    grid:
+      "calendario-sidenav"
+      "calendario-section"
+      / 1fr;
+  }
+  .calendario-section {
+    grid-area: calendario-section;
+    padding: 0rem;
+  }
+  .calendario-sidenav {
+    grid-area: calendario-sidenav;
+    padding: 0.375rem;
+  }
+
+  .calendario-template .area-sub-content-template {
+    border-radius: 0rem;
+  }
+  .calendario-template .area-sub-content-template-header {
+    background: var(--cor-10);
+    width: auto;
+    padding: 0rem;
+  }
+  .calendario-template .area-sub-content-template-content {
+    border-bottom-left-radius: 0.9375rem;
+    border-bottom-right-radius: 0.9375rem;
+    background: var(--cor-9);
+    width: auto;
+    padding: 0rem 0.375rem;
+  }
+  .btn-recuar-expandir {
+    display: block;
+    justify-self: end;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .change-semana p {
+    display: none;
+  }
 }

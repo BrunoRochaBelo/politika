@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body class="body-template">
+<body class="body-template home-body">
 
   <header class="header home-header-template">
     <div id="logo" class="home-header-logo"><img src="./static/imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
@@ -49,19 +49,19 @@
     <section class="main-section">
       <div class="area-template">
         <h2 class="area-template-header">Destino</h2>
-        <ul class="area-template-content lista-vertical-template-alt">
-          <li><select class="card-select-m" id="estado" onchange="carregarCidades()">
+        <ul class="area-template-content lista-select">
+          <li class="item1"><select class="card-select-m" id="estado" onchange="carregarCidades()">
               <option value="" selected disabled>Selecione um estado</option>
               <option value="PE">Pernambuco</option>
               <option value="SP">São Paulo</option>
               <option value="RJ">Rio de Janeiro</option>
               <option value="MG">Minas Gerais</option>
             </select></li>
-          <li><select class="card-select-m" id="cidade">
+          <li class="item2"><select class="card-select-m" id="cidade">
               <option value="" selected disabled>Selecione um estado primeiro</option>
             </select></li>
-          <li><select class="card-select-m" id="bairro">
-              <option value="" selected disabled>Selecione um estado primeiro</option>
+          <li class="item3"><select class="card-select-m" id="bairro">
+              <option value="" selected disabled>Selecione uma cidade e defina o bairro</option>
             </select></li>
         </ul>
       </div>
@@ -137,7 +137,7 @@
         </ul>
       </div>
     </section>
-    <section class="main-sidenav">
+    <section class="main-sidenav home-sidenav">
       <div class="area-template-tmf-alt ">
         <h2 class="area-template-tmf-alt-header">Compromissos para hoje
           <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirVertical()">recuar/expandir</button>

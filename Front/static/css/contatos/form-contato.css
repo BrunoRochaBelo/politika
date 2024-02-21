@@ -1,8 +1,19 @@
 /* Estilos CSS para o formulário */
-.body-form {
-  background: linear-gradient(to right, var(--cor-6), var(--cor-5));
+.content-form {
+  padding: 0rem 0rem 4.3rem 0rem;
+  border-radius: 0.9375rem;
+  background: var(--cor-p3);
 }
-
+.header-form {
+  align-items: center;
+  justify-items: center;
+  padding: 0.625rem;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  border-radius: 0.9375rem;
+  background: var(--cor-1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .form-contato {
   padding: 5px;
   border-bottom-left-radius: 0.9375rem;
@@ -17,6 +28,9 @@ form span {
   font-size: var(--titulo-s);
   margin: 0.3125rem 0.625rem 0.3125rem 0rem;
 }
+legend {
+  text-align: center;
+}
 
 fieldset {
   border-radius: 0.9375rem;
@@ -29,45 +43,6 @@ label {
   font-weight: bold;
   color: var(--cor-p6);
   margin: 0.625rem 0.625rem 0.3125rem 0rem;
-}
-
-.aba,
-.aba-template {
-  display: none;
-}
-
-.aba:first-of-type,
-.aba-template.active {
-  display: block;
-}
-
-.nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-  justify-content: center;
-}
-
-.area-sub-content-template-header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  align-self: center;
-  justify-self: center;
-}
-
-.nav a {
-  font-size: 1rem;
-  padding: 0.625rem;
-  color: var(--cor-12);
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav a:hover {
-  background-color: rgba(157, 157, 157, 0.7);
 }
 
 .campo,
@@ -94,7 +69,8 @@ label {
   box-sizing: border-box;
   padding: 0.9375rem;
   margin: 0rem 0.625rem 0rem 0rem;
-  border: 1px solid #ccc;
+  color: var(--cor-12);
+  border: 1px solid var(--cor-7);
   border-radius: 0.9375rem;
 }
 
@@ -134,14 +110,34 @@ label {
   display: none;
 }
 
+.header-form .nav {
+  gap: 0.625rem;
+}
+
+.header-form .nav a {
+  font-size: 1rem;
+  padding: 0.625rem;
+  color: var(--cor-12);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-form .nav a:hover {
+  background-color: rgba(157, 157, 157, 0.3);
+}
+
+.header-form .nav a.indicador-2 {
+  font-weight: bold;
+  color: var(--cor-1);
+  background: var(--cor-p6);
+}
+
 /* Responsivo */
 @media only screen and (max-width: 767px) {
   .form {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .nav a {
-    padding: 0.625rem 1.25rem;
   }
 
   .botoes {
@@ -152,16 +148,5 @@ label {
 
   .botoes button {
     width: 100%; /* Ocupa a largura total */
-  }
-
-  #nav1.indicador,
-  #nav2.indicador,
-  #nav3.indicador {
-    font-weight: bold;
-    border-bottom: 5px solid var(--cor-12);
-  }
-
-  .nav li {
-    border-radius: 0px;
   }
 }

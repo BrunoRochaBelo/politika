@@ -3,8 +3,8 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0rem;
   grid:
     "area-template-header" auto
     "area-template-content" auto
@@ -17,16 +17,16 @@
   justify-content: space-between;
   align-content: space-between;
   font-size: var(--titulo-l);
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   text-align: left;
   color: var(--cor-11);
+  border-radius: 0.625rem;
 }
 .area-template-content {
   grid-area: area-template-content;
   overflow-x: auto;
   transition: 1s;
-  border-radius: 0.9375rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 
 /* Area Template alternativa*/
@@ -34,8 +34,8 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0rem;
   grid:
     "area-template-alt-header" auto
     "area-template-alt-content" auto
@@ -44,14 +44,16 @@
 .area-template-alt-header {
   grid-area: area-template-alt-header;
   font-size: var(--titulo-l);
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   text-align: left;
   color: var(--cor-11);
+  border-radius: 0.625rem;
 }
 .area-template-alt-content {
   grid-area: area-template-alt-content;
   overflow-x: auto;
   transition: 1s;
+  border-radius: 0.625rem;
 }
 
 /* Area Template dos filtros*/
@@ -59,8 +61,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   grid:
     "area-template-fil-header" auto
     "area-template-fil-content" auto
@@ -73,7 +74,7 @@
   justify-content: space-between;
   align-content: space-between;
   font-size: var(--titulo-l);
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   text-align: left;
   color: var(--cor-11);
 }
@@ -88,8 +89,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   grid:
     "area-template-tmf-header" auto
     "area-template-tmf-content" auto
@@ -98,7 +98,7 @@
 .area-template-tmf-header {
   grid-area: area-template-tmf-header;
   font-size: var(--titulo-l);
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   text-align: left;
   color: var(--cor-11);
 }
@@ -107,7 +107,6 @@
   overflow-x: auto;
   transition: 1s;
   max-height: 350px;
-  border-radius: 0.9375rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -116,8 +115,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   grid:
     "area-template-tmf-alt-header" auto
     "area-template-tmf-alt-content" auto
@@ -130,7 +128,7 @@
   justify-content: space-between;
   align-content: space-between;
   font-size: var(--titulo-l);
-  padding: 0.625rem;
+  padding: 0.625rem 0rem;
   text-align: left;
   color: var(--cor-11);
 }
@@ -138,7 +136,6 @@
   grid-area: area-template-tmf-alt-content;
   overflow-x: auto;
   transition: 1s;
-  border-radius: 0.9375rem;
 }
 
 /* Estilos */
@@ -150,7 +147,6 @@
 @media (max-width: 800px) {
   /* Area Template padrão*/
   .area-template {
-    padding: 0rem 0.625rem 0.625rem 0.625rem;
     gap: 0rem;
     box-shadow: none;
   }
@@ -175,6 +171,7 @@
     font-size: var(--titulo-s);
   }
 
+  /* Area Template alternativa Tamanho fixo*/
   .area-template-tmf {
     background: transparent !important;
     backdrop-filter: none !important;
@@ -186,7 +183,7 @@
 
   /* Area Template dos filtros*/
   .area-template-fil {
-    padding: 0rem 0.625rem 0.625rem 0.625rem;
+    padding: 0rem;
     gap: 0rem;
     box-shadow: none;
   }
@@ -201,7 +198,6 @@
     gap: 0.625rem;
     overflow-x: auto;
     transition: 1s;
-    border-radius: 0.9375rem;
     background: transparent;
     box-shadow: none;
     border-radius: 0;

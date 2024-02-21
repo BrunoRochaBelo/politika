@@ -104,7 +104,7 @@
   .header-nav {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--cor-6);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -121,7 +121,7 @@
     cursor: pointer;
     width: 100%;
     color: var(--cor-1);
-    background: var(--cor-2);
+    background: var(--cor-11);
   }
   .search-input.scroll-active {
     padding: 0.625rem;
@@ -133,6 +133,7 @@
   }
   .header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--cor-6);
     background: var(--cor-0);
   }
 

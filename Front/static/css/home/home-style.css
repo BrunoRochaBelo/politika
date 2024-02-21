@@ -12,6 +12,28 @@
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
+  .home-body {
+    background: var(--cor-10);
+  }
+  .home-body .btn-recuar-expandir {
+    color: var(--cor-p3);
+  }
+  .home-sidenav .card-xs {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--cor-8);
+    color: var(--cor-p3);
+  }
+  .home-sidenav .card-xs .marcador-item {
+    color: var(--cor-12);
+  }
+  .home-sidenav .card-select-xs {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--cor-8);
+    color: var(--cor-1);
+  }
+
   #moldura,
   #logo {
     width: 32px;

@@ -1,9 +1,9 @@
 /* Grid */
 .main-template {
   display: grid;
+  gap: 0.625rem;
   align-content: center;
   justify-content: center;
-  gap: 0.625rem;
   grid:
     "main-sidenav main-section"
     / 1.1fr 1.9fr;
@@ -15,7 +15,7 @@
   display: grid;
   grid-auto-flow: row;
   align-items: start;
-  gap: 0.625rem;
+  padding: 0.625rem;
 }
 .main-sidenav {
   grid-area: main-sidenav;
@@ -23,7 +23,7 @@
   display: grid;
   align-content: start;
   grid-auto-flow: row;
-  gap: 0.625rem;
+  padding: 0.625rem;
 }
 
 .main-sidenav .card-xs {
@@ -41,6 +41,7 @@
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .main-template {
+    gap: 0rem;
     grid:
       "main-sidenav"
       "main-section"
@@ -48,28 +49,14 @@
   }
   .main-section {
     grid-area: main-section;
-    padding: 0rem 0rem 4.3rem 0rem;
-    border-radius: 0.9375rem;
-    background: var(--cor-p3);
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 0.625rem;
+    background: var(--cor-9);
+    padding: 0rem 0.375rem;
   }
-
-  .main-sidenav .card-xs {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--cor-8);
-    color: var(--cor-1);
+  .main-sidenav {
+    grid-area: main-sidenav;
+    padding: 0.375rem;
   }
-  .main-sidenav .card-xs .marcador-item {
-    color: var(--cor-12);
-  }
-  .main-sidenav .card-select-xs {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--cor-8);
-    color: var(--cor-1);
-  }
-
   .btn-recuar-expandir {
     display: block;
     justify-self: end;

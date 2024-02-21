@@ -28,11 +28,10 @@
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.625rem;
+  border-bottom: 2px solid var(--cor-6);
+  padding: 0.9375rem;
   background: var(--cor-0);
   color: var(--cor-12);
-  border-radius: 0.625rem;
 }
 
 /* Cards tamanhos fixos (tmf)*/
@@ -95,7 +94,7 @@
   background: var(--cor-0);
   color: var(--cor-12);
   font-weight: var(--font-medium-regular);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--cor-6);
 }
 
 /* Responsividade */

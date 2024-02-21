@@ -7,7 +7,7 @@ body {
   display: grid;
   align-items: center;
   justify-content: center;
-  background: var(--cor-p3);
+  background: var(--cor-9);
   overflow: auto;
 }
 /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
@@ -59,7 +59,7 @@ img {
 
 .link {
   display: inline-block;
-  color: var(--cor-p1);
+  color: var(--cor-2);
   font: 500 1.5rem/1.5 "Poppins", sans-serif;
   text-transform: uppercase;
 }
@@ -73,7 +73,7 @@ img {
 }
 
 .link:hover {
-  color: var(--cor-0);
+  color: var(--cor-10);
 }
 
 /* RESPONSIVO */
