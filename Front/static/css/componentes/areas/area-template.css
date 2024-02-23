@@ -15,11 +15,11 @@
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  align-content: space-between;
+  align-content: center;
   font-size: var(--titulo-l);
   padding: 0.625rem 0rem;
   text-align: left;
-  color: var(--cor-11);
+  color: var(--cor-12);
   border-radius: 0.625rem;
 }
 .area-template-content {
@@ -46,7 +46,7 @@
   font-size: var(--titulo-l);
   padding: 0.625rem 0rem;
   text-align: left;
-  color: var(--cor-11);
+  color: var(--cor-12);
   border-radius: 0.625rem;
 }
 .area-template-alt-content {
@@ -76,11 +76,11 @@
   font-size: var(--titulo-l);
   padding: 0.625rem 0rem;
   text-align: left;
-  color: var(--cor-11);
+  color: var(--cor-12);
 }
 .area-template-fil-content {
   grid-area: area-template-fil-content;
-  gap: 1.875rem;
+  gap: 1rem;
   transition: 1s;
 }
 
@@ -100,7 +100,7 @@
   font-size: var(--titulo-l);
   padding: 0.625rem 0rem;
   text-align: left;
-  color: var(--cor-11);
+  color: var(--cor-12);
 }
 .area-template-tmf-content {
   grid-area: area-template-tmf-content;
@@ -130,7 +130,7 @@
   font-size: var(--titulo-l);
   padding: 0.625rem 0rem;
   text-align: left;
-  color: var(--cor-11);
+  color: var(--cor-12);
 }
 .area-template-tmf-alt-content {
   grid-area: area-template-tmf-alt-content;
@@ -152,7 +152,7 @@
   }
   .area-template-header {
     grid-area: area-template-header;
-    color: var(--cor-11);
+    color: var(--cor-12);
     font-size: var(--titulo-s);
   }
   .area-template-content {
@@ -167,7 +167,7 @@
     backdrop-filter: none !important;
   }
   .area-template-alt-header {
-    color: var(--cor-11);
+    color: var(--cor-12);
     font-size: var(--titulo-s);
   }
 
@@ -177,7 +177,7 @@
     backdrop-filter: none !important;
   }
   .area-template-tmf-header {
-    color: var(--cor-11);
+    color: var(--cor-12);
     font-size: var(--titulo-s);
   }
 
@@ -206,7 +206,7 @@
   /* Area Template dos compromissos para hoje*/
   .area-template-tmf-alt-header {
     grid-area: area-template-tmf-alt-header;
-    color: var(--cor-p3);
+    color: var(--cor-12);
   }
   .area-template-tmf-alt-content {
     grid-area: area-template-tmf-alt-content;

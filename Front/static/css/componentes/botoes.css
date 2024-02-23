@@ -34,11 +34,11 @@
   justify-content: center;
   align-items: center;
   padding: 0.625rem;
-  color: var(--cor-1);
+  color: var(--cor-12);
   backdrop-filter: blur(5px);
-  background: var(--cor-11);
+  background: var(--cor-0);
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-1);
   box-shadow: none;
   cursor: pointer;
 }
@@ -46,7 +46,7 @@
 @media (max-width: 800px) {
   .btn-filter-leaked {
     display: flex;
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
     padding: 0.625rem;
     background: rgba(255, 255, 255, 0.1);

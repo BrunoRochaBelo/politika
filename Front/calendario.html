@@ -58,15 +58,17 @@
         <ul id="navAba" class="nav">
           <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Agenda</a></li>
           <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Eventos</a></li>
-          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Calendario</a></li>
+          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">TO-DO</a></li>
         </ul>
       </nav>
 
       <div class="area-sub-content-template-content">
 
         <div id="aba1" class="aba-template area-template active">
-          <nav class="area-template-header">
-            <ul class="lista-horizontal-template">
+          <nav class="area-template-header lista-select">
+            <div class="item1">Mes ano</div> <!-- Aqui vai o mês e o ano -->
+            <div class="item2">dia</div>
+            <ul class="lista-horizontal-template item3">
               <li class="change-semana">
                 <p>Semana</p>
                 <p>anterior</p>
@@ -163,11 +165,11 @@
         </div>
 
         <div id="aba2" class="aba-template">
-          eventos
+          Todos os Eventos
         </div>
 
         <div id="aba3" class="aba-template">
-          calendario inteiro
+          Lembretes e Tarefas
         </div>
 
       </div>

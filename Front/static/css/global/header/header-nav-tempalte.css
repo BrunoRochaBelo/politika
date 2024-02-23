@@ -25,6 +25,10 @@
 .header-nav-template li {
   align-self: center;
   justify-self: center;
+  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .header-nav-template a {
   size: 1rem;
@@ -35,7 +39,7 @@
   transition: 0.15s;
 }
 .header-nav-template a:hover {
-  background-color: rgba(157, 157, 157, 0.7);
+  background-color: rgba(200, 204, 255, 0.2);
   padding: auto;
   transition: 1s;
 }

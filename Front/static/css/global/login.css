@@ -1,16 +1,17 @@
 .body-login {
-  background: radial-gradient(
+  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+
+  /* background: radial-gradient(
     closest-side,
     #1683c6 0%,
     #2196f3 10%,
     #001323 50%,
-    #000000 100%
-  );
-  /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);*/
+    #000000 100%*/
+
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   overflow: hidden;
 }

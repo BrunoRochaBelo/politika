@@ -4,6 +4,7 @@
   align-content: center;
   justify-content: center;
   border-radius: 0.625rem;
+  padding: 0.625rem 0.375rem;
   grid:
     "area-sub-content-template-header" auto
     "area-sub-content-template-content" auto
@@ -65,8 +66,8 @@
   color: var(--cor-7);
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
-  border: 1px solid var(--cor-6);
   background: var(--cor-6);
+  border: 1px solid var(--cor-6);
   border-bottom: none;
   display: flex;
   justify-content: center;
@@ -80,9 +81,9 @@
 .nav a.indicador-2 {
   font-weight: bold;
   color: var(--cor-11);
-  background: var(--cor-9);
+  background: none;
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
-  border: 1px solid var(--cor-7);
+  border: 1px solid var(--cor-6);
   border-bottom: none;
 }

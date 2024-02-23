@@ -17,9 +17,9 @@
 /* Estilo do botão */
 .btn-recuar-expandir {
   font-size: var(--font-light);
-  color: var(--cor-3);
+  color: var(--cor-12);
   background-color: transparent;
-  padding: 0rem 0.625rem;
+  padding: 0.2rem 0.625rem;
   cursor: pointer;
   border: none;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
@@ -28,11 +28,11 @@
 .btn-recuar-expandir:hover {
   /* Altera a cor do texto e adiciona uma borda ao passar o mouse */
   color: var(--cor-8);
-  border-color: var(--cor-7);
+  border-color: var(--cor-12);
 }
 .btn-recuar-expandir:active {
   /* Adiciona um efeito "acessado" ao clicar no botão */
-  background-color: darken(var(--cor-7), 10%);
+  background-color: darken(var(--cor-12), 10%);
   color: var(--cor-9);
   border-color: var(--cor-9);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);

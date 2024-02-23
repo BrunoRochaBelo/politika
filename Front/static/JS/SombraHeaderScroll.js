@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Adiciona um ouvinte de evento para a rolagem da janela
   window.addEventListener("scroll", function () {
     // Chama a função toggleBoxShadow quando a janela é rolada
-    toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-6)");
-    toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-6)");
+    toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-12)");
+    toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-12)");
   });
 });
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       homeHeaderTemplate.classList.remove("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
-      homeHeaderTitle.style.color = "var(--cor-0)";
+      homeHeaderTitle.style.color = "var(--cor-12)";
     }
   }
 

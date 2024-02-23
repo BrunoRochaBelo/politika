@@ -93,7 +93,6 @@
     border-radius: 0rem;
   }
   .calendario-template .area-sub-content-template-header {
-    background: var(--cor-10);
     width: auto;
     padding: 0rem;
   }
@@ -112,5 +111,14 @@
 @media only screen and (max-width: 767px) {
   .change-semana p {
     display: none;
+  }
+  .calendario-template .nav a.indicador-2 {
+    font-weight: bold;
+    color: var(--cor-11);
+    background: var(--cor-9);
+    border-top-left-radius: 0.9375rem;
+    border-top-right-radius: 0.9375rem;
+    border: 1px solid var(--cor-9);
+    border-bottom: none;
   }
 }

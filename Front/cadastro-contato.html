@@ -249,83 +249,83 @@
           <div id="aba3" class="aba-template">
             <fieldset>
               <legend class="titulo-xl">Campos obrigatórios</legend>
-            </fieldset>
-            <div class="campo">
-              <label for="indicacao">Indicação</label>
-              <input type="text" id="indicacao" name="indicacao">
-            </div>
-            <div class="campo">
-              <label for="nome_indicacao">Nome da indicação</label>
-              <input type="text" id="nome_indicacao" name="nome_indicacao">
-            </div>
-            <div class="campo">
-              <label for="estado_civil">Estado Civil</label>
-              <select id="estado_civil" name="estado_civil" onchange="mostrarCamposConjuge()">
-                <option value="">Selecione</option>
-                <option value="Solteiro(a)">Solteiro(a)</option>
-                <option value="Casado(a)">Casado(a)</option>
-                <option value="Divorciado(a)">Divorciado(a)</option>
-                <option value="Viúvo(a)">Viúvo(a)</option>
-                <option value="União Estável">União Estável</option>
-              </select>
-            </div>
-            <div id="camposConjuge" style="display: none;">
               <div class="campo">
-                <label for="nome_conjuge">Nome do Cônjuge</label>
-                <input type="text" id="nome_conjuge" name="nome_conjuge">
+                <label for="indicacao">Indicação</label>
+                <input type="text" id="indicacao" name="indicacao">
               </div>
               <div class="campo">
-                <label for="data_nascimento_conjuge">Data de Nascimento do Cônjuge</label>
-                <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
+                <label for="nome_indicacao">Nome da indicação</label>
+                <input type="text" id="nome_indicacao" name="nome_indicacao">
               </div>
-            </div>
-            <div class="campo">
-              <label for="filhos">Filhos</label>
-              <input type="radio" id="filhos_sim" name="filhos" value="Sim" onclick="mostrarCamposFilhos()">
-              <label for="filhos_sim">Sim</label>
-              <input type="radio" id="filhos_nao" name="filhos" value="Não" onclick="ocultarCamposFilhos()">
-              <label for="filhos_nao">Não</label>
-              <!-- Se sim, texto e possibilidade de abrir mais campos para filhos -->
-              <div id="camposFilhos" style="display: none;">
+              <div class="campo">
+                <label for="estado_civil">Estado Civil</label>
+                <select id="estado_civil" name="estado_civil" onchange="mostrarCamposConjuge()">
+                  <option value="">Selecione</option>
+                  <option value="Solteiro(a)">Solteiro(a)</option>
+                  <option value="Casado(a)">Casado(a)</option>
+                  <option value="Divorciado(a)">Divorciado(a)</option>
+                  <option value="Viúvo(a)">Viúvo(a)</option>
+                  <option value="União Estável">União Estável</option>
+                </select>
+              </div>
+              <div id="camposConjuge" style="display: none;">
                 <div class="campo">
-                  <label for="nome_filho">Nome do Filho</label>
-                  <input type="text" id="nome_filho" name="nome_filho">
+                  <label for="nome_conjuge">Nome do Cônjuge</label>
+                  <input type="text" id="nome_conjuge" name="nome_conjuge">
                 </div>
                 <div class="campo">
-                  <label for="data_nascimento_filho">Data de Nascimento do Filho</label>
-                  <input type="date" id="data_nascimento_filho" name="data_nascimento_filho">
-                  <div id="maisFilhosContainer"></div>
-                  <div>
+                  <label for="data_nascimento_conjuge">Data de Nascimento do Cônjuge</label>
+                  <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
+                </div>
+              </div>
+              <div class="campo">
+                <label for="filhos">Filhos</label>
+                <input type="radio" id="filhos_sim" name="filhos" value="Sim" onclick="mostrarCamposFilhos()">
+                <label for="filhos_sim">Sim</label>
+                <input type="radio" id="filhos_nao" name="filhos" value="Não" onclick="ocultarCamposFilhos()">
+                <label for="filhos_nao">Não</label>
+                <!-- Se sim, texto e possibilidade de abrir mais campos para filhos -->
+                <div id="camposFilhos" style="display: none;">
+                  <div class="campo">
+                    <label for="nome_filho">Nome do Filho</label>
+                    <input type="text" id="nome_filho" name="nome_filho">
+                  </div>
+                  <div class="campo">
+                    <label for="data_nascimento_filho">Data de Nascimento do Filho</label>
+                    <input type="date" id="data_nascimento_filho" name="data_nascimento_filho">
+                    <div id="maisFilhosContainer"></div>
+                    <div>
 
-                    <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn">Adicionar mais um filho</button>
+                      <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn">Adicionar mais um filho</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="religiao">Religião</label>
+                  <input type="text" id="religiao" name="religiao">
+                </div>
+                <div class="campo">
+                  <label for="profissao">Profissão</label>
+                  <input type="text" id="profissao" name="profissao">
+                </div>
+                <div class="campo">
+                  <label for="cargo_comissionado">Cargo Comissionado</label>
+                  <input type="radio" id="cargo_comissionado_sim" name="cargo_comissionado" value="Sim" onclick="mostrarCamposCargoComissionado()">
+                  <label for="cargo_comissionado_sim">Sim</label>
+                  <input type="radio" id="cargo_comissionado_nao" name="cargo_comissionado" value="Não" onclick="ocultarCamposCargoComissionado()">
+                  <label for="cargo_comissionado_nao">Não</label>
+                </div>
+                <div id="camposCargoComissionado" style="display: none;">
+                  <div class="campo">
+                    <label for="orgao_lotacao">Órgão de Lotação</label>
+                    <input type="text" id="orgao_lotacao" name="orgao_lotacao">
                   </div>
                 </div>
               </div>
-              <div class="campo">
-                <label for="religiao">Religião</label>
-                <input type="text" id="religiao" name="religiao">
-              </div>
-              <div class="campo">
-                <label for="profissao">Profissão</label>
-                <input type="text" id="profissao" name="profissao">
-              </div>
-              <div class="campo">
-                <label for="cargo_comissionado">Cargo Comissionado</label>
-                <input type="radio" id="cargo_comissionado_sim" name="cargo_comissionado" value="Sim" onclick="mostrarCamposCargoComissionado()">
-                <label for="cargo_comissionado_sim">Sim</label>
-                <input type="radio" id="cargo_comissionado_nao" name="cargo_comissionado" value="Não" onclick="ocultarCamposCargoComissionado()">
-                <label for="cargo_comissionado_nao">Não</label>
-              </div>
-              <div id="camposCargoComissionado" style="display: none;">
-                <div class="campo">
-                  <label for="orgao_lotacao">Órgão de Lotação</label>
-                  <input type="text" id="orgao_lotacao" name="orgao_lotacao">
-                </div>
-              </div>
-              <div class="botoes">
-                <button type="button" class="btn-leaked" onclick="voltar()">Voltar</button>
-                <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
-              </div>
+            </fieldset>
+            <div class="botoes">
+              <button type="button" class="btn-leaked" onclick="voltar()">Voltar</button>
+              <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
             </div>
           </div>
         </form>

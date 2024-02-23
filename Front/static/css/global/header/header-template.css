@@ -42,17 +42,17 @@
   cursor: pointer;
   width: 100%;
   backdrop-filter: blur(5px);
-  background: var(--cor-5);
+  background: var(--cor-12);
   color: var(--cor-12);
   border: 1px solid var(--cor-4);
 }
 .search-button {
   padding: 8px;
-  background: var(--cor-p5);
+  background: linear-gradient(var(--cor-6), var(--cor-7));
   border: none;
   border-radius: 0rem 0.312rem 0.312rem 0rem;
   cursor: pointer;
-  border-bottom: 2px solid var(--cor-6);
+  border-bottom: 2px solid var(--cor-p3);
 }
 .search-icon {
   width: 20px;
@@ -103,8 +103,8 @@
   }
   .header-nav {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.85);
-    border-top: 1px solid var(--cor-6);
+    background: var(--cor-12);
+    border-top: 1px solid var(--cor-7);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -121,7 +121,7 @@
     cursor: pointer;
     width: 100%;
     color: var(--cor-1);
-    background: var(--cor-11);
+    background: var(--cor-2);
   }
   .search-input.scroll-active {
     padding: 0.625rem;

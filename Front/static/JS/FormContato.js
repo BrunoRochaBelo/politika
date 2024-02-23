@@ -121,7 +121,7 @@ function validarCEP(cep) {
   }
 }
 // Função para formatação  dos campos
-function formatarCelular(input) {
+function formatarCelularParaExibicao(input) {
   let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
   if (value.length > 10) {
     input.value = `(${value.slice(0, 2)}) ${value.slice(2, 3)}${value.slice(
@@ -132,7 +132,8 @@ function formatarCelular(input) {
     input.value = value;
   }
 }
-function formatarTelefone(input) {
+
+function formatarTelefoneParaExibicao(input) {
   let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
   if (value.length > 9) {
     input.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(
@@ -142,6 +143,17 @@ function formatarTelefone(input) {
     input.value = value;
   }
 }
+
+function formatarCelularParaBanco(input) {
+  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+  input.value = value;
+}
+
+function formatarTelefoneParaBanco(input) {
+  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+  input.value = value;
+}
+
 function formatarCEP(input) {
   let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
   if (value.length > 5) {
@@ -185,14 +197,15 @@ camposDoFormulario.forEach((campo) => {
 function mostrarCampoWhatsapp() {
   var whatsappSim = document.getElementById("whatsapp_sim").checked;
   var campoWhatsapp = document.getElementById("campoWhatsapp");
+  var celularInput = document.getElementById("celular");
+  var whatsappInput = document.getElementById("whatsapp");
 
   if (whatsappSim) {
     campoWhatsapp.style.display = "none";
-    document.getElementById("whatsapp").value =
-      document.getElementById("celular").value;
+    whatsappInput.value = celularInput.value;
   } else {
     campoWhatsapp.style.display = "block";
-    document.getElementById("whatsapp").value = ""; // Limpa o campo WhatsApp, se estiver preenchido
+    whatsappInput.value = ""; // Limpa o campo WhatsApp, se estiver preenchido
   }
 }
 function mostrarCamposFilhos() {

@@ -2,28 +2,23 @@
 .lista-vertical-template {
   display: grid;
   grid-auto-flow: row;
-  gap: 5px;
+  gap: 3px;
   scrollbar-width: thick;
-  box-sizing: border-box;
-  border-radius: 0.9375rem;
   transition: 1s;
 }
 
 .lista-vertical-3-template {
   display: grid;
-  gap: 5px;
+  gap: 3px;
   grid-template: auto / 1fr 1fr 1fr;
   scrollbar-width: thick;
-  box-sizing: border-box;
-  border-radius: 0.9375rem;
   transition: 1s;
 }
 
 .lista-horizontal-template {
   display: grid;
   grid-auto-flow: column;
-  gap: 5px;
-  box-sizing: border-box;
+  gap: 3px;
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
@@ -35,17 +30,15 @@
   grid-auto-flow: row;
   background: transparent;
   scrollbar-width: thick;
-  box-sizing: border-box;
-  border-radius: 0.9375rem;
   transition: 1s;
+  gap: 3px;
 }
 
 .lista-vertical-horizontal {
   display: grid;
   grid-template: auto / auto auto;
-  gap: 5px;
+  gap: 3px;
   scrollbar-width: thick;
-  box-sizing: border-box;
   transition: 1s;
 }
 
@@ -53,8 +46,6 @@
   display: grid;
   background: transparent;
   scrollbar-width: thick;
-  box-sizing: border-box;
-  border-radius: 0.9375rem;
   transition: 1s;
   grid:
     "item1 item2" auto
@@ -102,7 +93,6 @@
     display: grid;
     width: 100%;
     grid-auto-flow: column;
-    box-sizing: border-box;
     white-space: nowrap;
     overflow-x: auto;
     scrollbar-width: thick;
@@ -110,11 +100,9 @@
   }
   .lista-vertical-horizontal.desativar-responsivo {
     display: grid;
-    gap: 5px;
+    gap: 3px;
     grid-template: 1fr 1fr / auto;
     scrollbar-width: thick;
-    box-sizing: border-box;
-    border-radius: 0.9375rem;
     transition: 1s;
   }
 

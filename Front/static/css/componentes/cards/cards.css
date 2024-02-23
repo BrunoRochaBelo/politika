@@ -2,36 +2,47 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   height: 30px;
-  border-bottom: 2px solid var(--cor-6);
-  padding: 0.6rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
-  font-weight: var(--font-medium-regular);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 /* Pequeno altura 35px*/
 .card-s {
   height: 35px;
-  border-bottom: 2px solid var(--cor-6);
-  padding: 0.9375rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 /* Médio altura 50px*/
 .card-m {
   display: grid;
   height: 50px;
-  border-bottom: 2px solid var(--cor-6);
-  padding: 0.625rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  border-bottom: 2px solid var(--cor-6);
-  padding: 0.9375rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 
 /* Cards tamanhos fixos (tmf)*/
@@ -39,33 +50,39 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 
 /* Médio */
 .card-tmf-m {
   width: 150px;
   height: 160px;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 /* Grande */
 .card-tmf-l {
   width: 184px;
   height: 190px;
   min-height: 170px;
-  border-radius: 0.9375rem;
-  padding: 0.625rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 
 /* Cards dos selects */
@@ -74,7 +91,7 @@
   border-radius: 0.625rem;
   width: 100%;
   padding: 0.3rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
   color: var(--cor-12);
   font-weight: var(--font-light);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -82,7 +99,7 @@
 .card-select-s {
   border-radius: 0.625rem;
   width: 100%;
-  background: var(--cor-0);
+  background: var(--cor-1);
   color: var(--cor-12);
   font-weight: var(--font-medium-regular);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -90,11 +107,13 @@
 .card-select-m {
   padding: 0.625rem;
   width: 100%;
-  border-radius: 0.625rem;
-  background: var(--cor-0);
+  background: var(--cor-1);
+  backdrop-filter: blur(10px);
   color: var(--cor-12);
-  font-weight: var(--font-medium-regular);
-  border: 1px solid var(--cor-6);
+  border: 1px solid var(--cor-7);
+  padding: 0.625rem;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 
 /* Responsividade */
