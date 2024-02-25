@@ -5,7 +5,12 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  background: var(--cor-3);
+  background: linear-gradient(
+    to right bottom,
+    rgba(177, 199, 205, 0.8),
+    rgba(180, 170, 196, 0.8)
+  );
+
   min-height: 100vh;
   overflow: auto;
 }
@@ -91,6 +96,9 @@ img {
 
 /* RESPONSIVO */
 @media (max-width: 767px) {
+  .body {
+    background: var(--cor-4);
+  }
   .indicador {
     border-bottom: none;
   }

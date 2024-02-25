@@ -12,23 +12,8 @@
 
 /* RESPONSIVO */
 @media (max-width: 800px) {
-  .home-body .btn-recuar-expandir {
-    color: var(--cor-12);
-  }
-  .home-sidenav .card-xs {
-    background: rgba(25, 25, 25, 0.425);
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--cor-8);
-    color: var(--cor-p3);
-  }
   .home-sidenav .card-xs .marcador-item {
     color: var(--cor-12);
-  }
-  .home-sidenav .card-select-xs {
-    background: rgba(25, 25, 25, 0.425);
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--cor-8);
-    color: var(--cor-1);
   }
 
   #moldura,

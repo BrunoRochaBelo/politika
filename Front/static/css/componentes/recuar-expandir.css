@@ -1,17 +1,9 @@
 /* Estilo para mostrar o conteúdo quando a área está recuada */
-.recuar-expandir-vertical.recuar {
-  position: relative;
-  height: auto;
-  overflow-x: auto;
-  border-radius: 0.9375rem;
-  transition: 1s;
-}
 
 .recuar-expandir-horizontal.recuar {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  transition: 1s;
 }
 
 /* Estilo do botão */

@@ -1,1 +1,8 @@
+.contato-area-template-header {
+  justify-content: start;
+}
 
+div[data-filter="idContato"] {
+  color: transparent;
+  font-size: 0px;
+}

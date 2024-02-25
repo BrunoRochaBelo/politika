@@ -41,7 +41,6 @@
 .header-nav-template a:hover {
   background-color: rgba(200, 204, 255, 0.2);
   padding: auto;
-  transition: 1s;
 }
 .header-nav-template img {
   width: 1em;

@@ -1,10 +1,8 @@
 /* Area Template padrão*/
 .area-template {
   display: grid;
-  box-sizing: border-box;
   overflow: hidden;
   border-radius: 0.625rem;
-  padding: 0.625rem 0rem;
   grid:
     "area-template-header" auto
     "area-template-content" auto
@@ -16,8 +14,8 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-content: center;
-  font-size: var(--titulo-l);
-  padding: 0.625rem 0rem;
+  font-size: var(--titulo-xl);
+  padding: 0.625rem;
   text-align: left;
   color: var(--cor-12);
   border-radius: 0.625rem;
@@ -25,8 +23,12 @@
 .area-template-content {
   grid-area: area-template-content;
   overflow-x: auto;
-  transition: 1s;
   border-radius: 0.625rem;
+  gap: 0.9375rem;
+  padding: 0.625rem 0.3755rem;
+  background: #f0f0f4aa;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Area Template alternativa*/
@@ -35,7 +37,6 @@
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 0.625rem;
-  padding: 0.625rem 0rem;
   grid:
     "area-template-alt-header" auto
     "area-template-alt-content" auto
@@ -43,8 +44,8 @@
 }
 .area-template-alt-header {
   grid-area: area-template-alt-header;
-  font-size: var(--titulo-l);
-  padding: 0.625rem 0rem;
+  font-size: var(--titulo-m);
+  padding: 0.625rem;
   text-align: left;
   color: var(--cor-12);
   border-radius: 0.625rem;
@@ -52,7 +53,6 @@
 .area-template-alt-content {
   grid-area: area-template-alt-content;
   overflow-x: auto;
-  transition: 1s;
   border-radius: 0.625rem;
 }
 
@@ -61,7 +61,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  padding: 0.625rem 0rem;
+  border-radius: 0.625rem;
   grid:
     "area-template-fil-header" auto
     "area-template-fil-content" auto
@@ -73,15 +73,20 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-content: space-between;
-  font-size: var(--titulo-l);
-  padding: 0.625rem 0rem;
+  font-size: var(--titulo-xl);
+  padding: 0.625rem;
   text-align: left;
   color: var(--cor-12);
 }
 .area-template-fil-content {
   grid-area: area-template-fil-content;
   gap: 1rem;
-  transition: 1s;
+  max-height: auto;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  background: #f0f0f4aa;
+  padding: 0.625rem 0.3755rem;
+  transition: max-height 0.5s ease-in-out;
 }
 
 /* Area Template alternativa Tamanho fixo*/
@@ -89,7 +94,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  padding: 0.625rem 0rem;
+  border-radius: 0.625rem;
   grid:
     "area-template-tmf-header" auto
     "area-template-tmf-content" auto
@@ -97,16 +102,16 @@
 }
 .area-template-tmf-header {
   grid-area: area-template-tmf-header;
-  font-size: var(--titulo-l);
-  padding: 0.625rem 0rem;
+  font-size: var(--titulo-m);
+  padding: 0.625rem;
   text-align: left;
   color: var(--cor-12);
 }
 .area-template-tmf-content {
   grid-area: area-template-tmf-content;
   overflow-x: auto;
-  transition: 1s;
   max-height: 350px;
+  border-radius: 0.625rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -115,7 +120,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  padding: 0.625rem 0rem;
+  border-radius: 0.625rem;
   grid:
     "area-template-tmf-alt-header" auto
     "area-template-tmf-alt-content" auto
@@ -127,15 +132,20 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-content: space-between;
-  font-size: var(--titulo-l);
-  padding: 0.625rem 0rem;
+  font-size: var(--titulo-xl);
+  padding: 0.625rem;
   text-align: left;
   color: var(--cor-12);
 }
 .area-template-tmf-alt-content {
   grid-area: area-template-tmf-alt-content;
   overflow-x: auto;
-  transition: 1s;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.3755rem;
+  background: #f0f0f4aa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: height 1s ease-in-out;
+  height: auto;
 }
 
 /* Estilos */
@@ -144,43 +154,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 800px) {
-  /* Area Template padrão*/
-  .area-template {
-    gap: 0rem;
-    box-shadow: none;
-  }
-  .area-template-header {
-    grid-area: area-template-header;
-    color: var(--cor-12);
-    font-size: var(--titulo-s);
-  }
-  .area-template-content {
-    grid-area: area-template-content;
-    overflow-x: hidden;
-    scrollbar-width: thick;
-  }
-
-  /* Area Template alternativa*/
-  .area-template-alt {
-    background: transparent !important;
-    backdrop-filter: none !important;
-  }
-  .area-template-alt-header {
-    color: var(--cor-12);
-    font-size: var(--titulo-s);
-  }
-
-  /* Area Template alternativa Tamanho fixo*/
-  .area-template-tmf {
-    background: transparent !important;
-    backdrop-filter: none !important;
-  }
-  .area-template-tmf-header {
-    color: var(--cor-12);
-    font-size: var(--titulo-s);
-  }
-
+@media (max-width: 768px) {
   /* Area Template dos filtros*/
   .area-template-fil {
     padding: 0rem;
@@ -196,22 +170,18 @@
   .area-template-fil-content {
     grid-area: area-template-fil-content;
     gap: 0.625rem;
-    overflow-x: auto;
-    transition: 1s;
+    max-height: 0px;
+    padding: 0rem;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
     background: transparent;
     box-shadow: none;
     border-radius: 0;
   }
 
   /* Area Template dos compromissos para hoje*/
-  .area-template-tmf-alt-header {
-    grid-area: area-template-tmf-alt-header;
-    color: var(--cor-12);
-  }
   .area-template-tmf-alt-content {
-    grid-area: area-template-tmf-alt-content;
     height: 100px;
-    background: transparent;
-    box-shadow: none;
+    transition: height 1s ease-in-out;
   }
 }
