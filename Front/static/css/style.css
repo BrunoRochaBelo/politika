@@ -27,7 +27,7 @@
 @import "./componentes/cards/template-cards-quantitativos.css";
 /* Componentes/areas */
 @import "./componentes/areas/area-template.css";
-@import "./componentes/areas/area-sub-content-template.css";
+@import "./componentes/areas/area-abas-template.css";
 
 /* Home */
 @import "./home/home-style.css";

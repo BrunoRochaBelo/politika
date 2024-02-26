@@ -9,6 +9,8 @@
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    visibility 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 1001;
 }
 
@@ -20,11 +22,13 @@
   top: 51px;
   right: 1rem;
   background-color: var(--cor-0);
-  padding: 0.625rem;
-  gap: 5px;
+  padding: 1rem;
+  gap: 10px;
   border-radius: 0.9375rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   z-index: 1002;
+  transition: top 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   grid:
     "modal-content-template-img modal-content-template-candidato"
     "modal-content-template-img modal-content-template-partido"
@@ -87,9 +91,11 @@
   align-self: end;
   text-align: end;
 }
+
 /* RESPONSIVO */
 @media (max-width: 767px) {
   .modal-content-template {
     right: 0.85rem;
+    transition: right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 }

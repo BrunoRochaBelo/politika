@@ -9,28 +9,37 @@
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+    visibility 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .modalContent-btn-floating {
   position: absolute;
   display: grid;
-  bottom: 130px;
+  bottom: 150px;
   right: 115px;
-  background: #fff;
-  padding: 1.25rem;
   border-radius: 0.9375rem;
+  min-width: 135px;
+  padding: 1rem 0rem;
+  gap: 20px;
+  background: var(--cor-p3);
   grid:
     "modal-btn-floating-header"
     "modal-btn-floating-body"
     / auto;
+  transition: bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+    right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .modal-btn-floating-header {
   grid-area: modal-btn-floating-header;
-  text-align: start;
+  text-align: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--cor-7);
 }
 .modal-btn-floating-body {
   grid-area: modal-btn-floating-body;
+  text-align: center;
   display: grid;
   grid-auto-flow: row;
   gap: 0.965rem;
@@ -38,6 +47,14 @@
 .esconderModal {
   display: none;
 }
+
+.modal-btn-floating-body li {
+  padding: 0.5rem 0;
+}
+.modal-btn-floating-body li:hover {
+  background: var(--cor-6);
+}
+
 /* Botão do modal */
 .floatingButton {
   position: fixed;
@@ -55,34 +72,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s, box-shadow 0.3s;
+  transition: bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 10000;
 }
-
-.floatingButton:hover {
-  /* Altera a cor da borda ao passar o mouse */
-  border-color: var(--cor-p1);
-}
-
 .floatingButton:active {
-  /* Adiciona um efeito "acessado" ao clicar no botão */
-  background: darken(
-    var(--cor-12),
-    10%
-  ); /* Pode ajustar a intensidade do escurecimento conforme necessário */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--cor-p3);
 }
-
 /* RESPONSIVO */
 @media (max-width: 767px) {
   .modalContent-btn-floating {
     position: absolute;
-    bottom: 110px;
+    bottom: 140px;
     right: 85px;
-    background: #fff;
-    padding: 1.25rem;
-    border-radius: 0.9375rem;
-    text-align: center;
-    gap: 25px;
+    transition: bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+      right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   /* Botão do modal */
@@ -102,7 +107,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    transition: bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+      right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+      box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 10000;
   }
 }

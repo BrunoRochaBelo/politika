@@ -41,18 +41,17 @@
   border-radius: 0.312rem 0rem 0rem 0.312rem;
   cursor: pointer;
   width: 100%;
-  backdrop-filter: blur(5px);
-  background: var(--cor-12);
+  background: var(--cor-p4);
   color: var(--cor-12);
-  border: 1px solid var(--cor-4);
+  border: 1px solid var(--cor-8);
 }
 .search-button {
   padding: 8px;
-  background: linear-gradient(var(--cor-6), var(--cor-7));
+  background: var(--cor-p5);
   border: none;
   border-radius: 0rem 0.312rem 0.312rem 0rem;
   cursor: pointer;
-  border-bottom: 2px solid var(--cor-p3);
+  border: 1px solid var(--cor-8);
 }
 .search-icon {
   width: 20px;
@@ -102,9 +101,8 @@
     padding: 8px;
   }
   .header-nav {
-    backdrop-filter: blur(10px);
     background: var(--cor-12);
-    border-top: 1px solid var(--cor-7);
+    border-top: 1px solid var(--cor-8);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -121,29 +119,28 @@
     cursor: pointer;
     width: 100%;
     color: var(--cor-1);
-    background: var(--cor-p3);
-    border: 1px solid var(--cor-7);
+    background: var(--cor-p4);
+    border: 1px solid var(--cor-8);
   }
   .search-input.scroll-active {
     padding: 0.625rem;
     cursor: pointer;
     width: 100%;
-    backdrop-filter: blur(5px);
-    background: var(--cor-p3);
+    background: var(--cor-p4);
     color: var(--cor-12);
   }
   .header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid var(--cor-6);
-    background: var(--cor-0);
+    border-bottom: 1px solid var(--cor-8);
+    background: var(--cor-p7);
   }
   .search-button {
     padding: 8px;
-    background: var(--cor-6);
+    background: var(--cor-p5);
     border: none;
     border-radius: 0rem 0.312rem 0.312rem 0rem;
     cursor: pointer;
-    border-bottom: 2px solid var(--cor-7);
+    border: 1px solid var(--cor-8);
   }
 
   /* Cabeçalho do form */

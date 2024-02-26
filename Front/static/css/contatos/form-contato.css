@@ -2,24 +2,23 @@
 .content-form {
   padding: 0rem 0rem 4.3rem 0rem;
   border-radius: 0.9375rem;
-  background: var(--cor-p3);
+  background: #3d4349aa;
 }
 .header-form {
   align-items: center;
   justify-items: center;
   padding: 0.625rem;
   gap: 0.625rem;
-
   border-radius: 0.9375rem;
-  background: var(--cor-1);
+  background: var(--cor-p8);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--cor-8);
 }
 .form-contato {
   padding: 5px;
-
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   font-size: var(--titulo-s);
-  color: var(--cor-12);
+  color: var(--cor-1);
 }
 
 form span {
@@ -33,14 +32,14 @@ legend {
 
 fieldset {
   border-radius: 0.9375rem;
-  border: 1px solid var(--cor-12);
+  border: 1px solid var(--cor-8);
   margin-top: 0.625rem;
-  background: var(--cor-0);
+  background: var(--cor-p8);
 }
 
 label {
   font-weight: bold;
-  color: var(--cor-p6);
+  color: var(--cor-5);
   margin: 0.625rem 0.625rem 0.3125rem 0rem;
 }
 
@@ -68,8 +67,9 @@ label {
   box-sizing: border-box;
   padding: 0.9375rem;
   margin: 0rem 0.625rem 0rem 0rem;
-  color: var(--cor-12);
-  border: 1px solid var(--cor-7);
+  color: var(--cor-p3);
+  background: var(--cor-p7);
+  border: 1px solid var(--cor-8);
   border-radius: 0.9375rem;
 }
 

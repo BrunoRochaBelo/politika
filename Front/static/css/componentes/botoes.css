@@ -32,10 +32,10 @@
   justify-content: center;
   align-items: center;
   padding: 0.625rem;
-  color: var(--cor-p6);
-  background: var(--cor-1);
+  color: var(--cor-1);
+  background: var(--cor-p7);
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-5);
+  border: 1px solid var(--cor-8);
   box-shadow: none;
   cursor: pointer;
 }
@@ -46,10 +46,10 @@
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
-    color: var(--cor-p6);
-    background: var(--cor-1);
+    color: var(--cor-1);
+    background: var(--cor-p7);
     border-radius: 0.625rem;
-    border: 1px solid var(--cor-5);
+    border: 1px solid var(--cor-8);
     box-shadow: none;
   }
 }

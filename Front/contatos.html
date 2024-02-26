@@ -57,12 +57,12 @@
     <section class="main-section">
       <div id="resultsContainer" class="area-template">
         <h2 class="area-template-header contato-area-template-header"><span id="totalResults">{{total}}</span>&nbsp;- Contatos selecionados</h2>
-        <ul id="contatosList" class="area-template-content lista-vertical-template-alt">
+        <ul class="area-template-content lista-vertical-template" id="contatosList">
           <li class="area-template-alt">
             <h2 class="area-template-alt-header">A</h2>
-            <ul class="area-template-alt-content lista-vertical-template">
+            <ul class="area-template-alt-content lista-vertical-template-alt">
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon">
@@ -71,7 +71,7 @@
                 </a>
               </li>
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato 2}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/2-estrela.svg" alt="Perfil influencia Icon">
@@ -83,9 +83,9 @@
           </li>
           <li class="area-template-alt">
             <h2 class="area-template-alt-header">B</h2>
-            <ul class="area-template-alt-content lista-vertical-template">
+            <ul class="area-template-alt-content lista-vertical-template-alt">
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon">
@@ -94,7 +94,7 @@
                 </a>
               </li>
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon">
@@ -103,7 +103,7 @@
                 </a>
               </li>
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato 2}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/2-estrela.svg" alt="Perfil influencia Icon">
@@ -115,9 +115,9 @@
           </li>
           <li class="area-template-alt">
             <h2 class="area-template-alt-header">C</h2>
-            <ul class="area-template-alt-content lista-vertical-template">
+            <ul class="area-template-alt-content lista-vertical-template-alt">
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon">
@@ -126,7 +126,7 @@
                 </a>
               </li>
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon">
@@ -135,7 +135,7 @@
                 </a>
               </li>
               <li>
-                <a class="card-s contatos-small-card contato contato" href="#">
+                <a class="card-s contatos-small-card contato" href="#">
                   <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato 2}}</p>
                   <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
                   <img class="contatos-small-card-star" data-filter="perfilInfluencia" src="./static/imagens/icones/2-estrela.svg" alt="Perfil influencia Icon">
@@ -249,31 +249,35 @@
       <div class="modal-btn-floating-header">
         <h1>Criar</h1>
       </div>
-      <div class="modal-btn-floating-body">
-        <a href="cadastro-contato.html">Contato</a>
-      </div>
+      <ul class="modal-btn-floating-body">
+        <li><a href="cadastro-contato.html">Contato</a></li>
+      </ul>
     </div>
   </div>
 
 
   <!-- Modal Info Contato -->
   <div id="modal-info-contato" class="modal-info-contato" id="contatoId">
-    <div class="modal-info-contato-content">
-      <span class="close_contato_modal">&times;</span>
-      <div class="modal-header">
-        <img id="modalImage" src="" alt="Imagem do Contato">
+    <div class="modal-info-contato-template">
+      <div class="modal-info-contato-modal-header">
+        <span class="close_contato_modal">&times;</span>
         <h1><span id="modalName"></span></h1>
       </div>
-      <div class="modal-body">
-        <p><strong>Influência:</strong> <img id="modalInfluence" src="" alt="Perfil influencia Icon"></p>
-        <p><strong>Número:</strong> <span id="modalNumber"></span></p>
-        <button id="modalCallButton" class="btn btn-primary" aria-label="Ligar para o contato">Ligar</button>
+      <div class="modal-info-contato-modal-body">
+        <div class="influencia-modal">
+          <p><strong>Influência:</strong></p>
+          <img id="modalInfluence" src="" alt="Perfil influencia Icon">
+        </div>
+        <div class="phone-modal">
+          <p><strong>Número:</strong> <span id="modalNumber"></span></p>
+          <button id="modalCallButton" class="btn btn-primary" aria-label="Ligar para o contato">Ligar</button>
+        </div>
         <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>
         <p><strong>Tipo de Pessoa:</strong> <span id="modalPersonType"></span></p>
         <p><strong>Email:</strong> <span id="modalEmail"></span></p>
         <p id="modalError" style="color: red;"></p>
-        <a id="modalEditButton" href="#" class="btn btn-primary">Editar</a>
       </div>
+      <a id="modalEditButton" href="#" class="btn btn-primary">Editar</a>
     </div>
   </div>
 

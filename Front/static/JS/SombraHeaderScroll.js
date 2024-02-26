@@ -55,13 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
       homeHeaderTemplate.classList.add("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
-      homeHeaderTitle.style.color = "var(--cor-12)";
+      homeHeaderTitle.style.color = "var(--cor-5)";
     } else if (homeHeaderTemplate && homeHeaderTitle) {
       // Remove a classe de sombra do elemento
       homeHeaderTemplate.classList.remove("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
-      homeHeaderTitle.style.color = "var(--cor-12)";
+      homeHeaderTitle.style.color = "var(--cor-5)";
     }
   }
 

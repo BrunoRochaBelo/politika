@@ -5,12 +5,18 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  background: linear-gradient(
-    to right bottom,
-    rgba(177, 199, 205, 0.8),
-    rgba(180, 170, 196, 0.8)
-  );
+  background: radial-gradient(
+      circle at right bottom,
+      #000000,
+      #8b5beca7,
+      #002e2e56,
+      #000000
+    ),
+    radial-gradient(circle at right bottom, #5b3d96d5, #0c0024, #000000);
 
+  transition: all 0.3s ease;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   min-height: 100vh;
   overflow: auto;
 }

@@ -19,7 +19,7 @@
 .home-header-title {
   display: none;
   grid-area: home-header-title;
-  color: var(--cor-12);
+  color: var(--cor-1);
 }
 .home-header-nav {
   grid-area: home-header-nav;
@@ -43,12 +43,13 @@
   }
   .home-header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: var(--cor-0);
+    border-bottom: 1px solid var(--cor-8);
+    background: var(--cor-p7);
   }
 
   .home-header-logo {
     margin-left: 0.625rem;
-    backdrop-filter: blur(10px);
+
     background: rgba(255, 255, 255, 0.85);
     border-radius: 0.9375rem;
     padding: 3px;
@@ -56,17 +57,16 @@
   .home-header-title {
     font-size: var(--titulo-xl);
     display: inline-block;
-    color: var(--cor-12);
+    color: var(--cor-1);
   }
   .home-header-user {
     margin-right: 0.625rem;
-    backdrop-filter: blur(10px);
+
     background: rgba(255, 255, 255, 0.85);
     border-radius: 0.9375rem;
     padding: 3px;
   }
   .home-header-nav {
-    backdrop-filter: blur(10px);
     background: var(--cor-12);
     border-top: 1px solid var(--cor-7);
     position: fixed;

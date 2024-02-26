@@ -13,6 +13,7 @@
   text-overflow: ellipsis;
   scrollbar-width: thick;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  color: var(--cor-12);
 }
 
 /* Médio */
@@ -29,6 +30,7 @@
   text-overflow: ellipsis;
   scrollbar-width: thick;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  color: var(--cor-12);
 }
 
 /* Grande */
@@ -45,6 +47,7 @@
   text-overflow: ellipsis;
   scrollbar-width: thick;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  color: var(--cor-12);
 }
 /* Quando o marcador for item de um elemento e precisar de tamaho fixo */
 .marcador-item {
@@ -62,4 +65,5 @@
   text-overflow: ellipsis;
   scrollbar-width: thick;
   box-shadow: inset 0 0 5px rgba(40, 39, 39, 0.5);
+  color: var(--cor-12);
 }

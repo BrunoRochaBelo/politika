@@ -2,6 +2,9 @@ function toggleRecuarExpandirVertical() {
   // Obtenha o elemento
   var element = document.querySelector(".area-template-tmf-alt-content");
 
+  // Seleciona o botão com a classe .btn-recuar-expandir
+  var button = document.querySelector(".btn-recuar-expandir");
+
   // Verifique se a largura da tela é menor ou igual a 768px
   var mediaQuery = window.matchMedia("(max-width: 768px)");
 
@@ -20,8 +23,14 @@ function toggleRecuarExpandirVertical() {
     // Altere a altura do elemento
     if (currentHeight === "100px") {
       element.style.height = "auto";
+
+      // Altera o conteúdo do botão para "Recuar"
+      button.innerHTML = "Recuar";
     } else {
       element.style.height = "100px";
+
+      // Altera o conteúdo do botão para "Expandir"
+      button.innerHTML = "Expandir";
     }
   } else {
     // Se a largura da tela for maior que 768px, defina a altura como auto

@@ -2,7 +2,8 @@
 /* Pequeno */
 .contatos-small-card {
   display: grid;
-  gap: 5px;
+  gap: 7px;
+  padding: 12px;
   align-content: center;
   white-space: nowrap;
   overflow: hidden;
@@ -18,16 +19,18 @@
 .contatos-small-card-title {
   grid-area: contatos-small-card-title;
   justify-self: start;
+  align-self: center;
   font-size: var(--titulo-m);
 }
 .contatos-small-card-num {
   grid-area: contatos-small-card-num;
   justify-self: center;
-  align-self: center;
+  align-self: start;
 }
 .contatos-small-card-star {
   grid-area: contatos-small-card-star;
   justify-self: start;
+  align-self: end;
 }
 .contatos-small-card-phone {
   grid-area: contatos-small-card-phone;

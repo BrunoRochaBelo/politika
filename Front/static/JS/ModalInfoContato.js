@@ -220,3 +220,46 @@ document
 // }
 
 // new ModalInfoContato();
+
+// Adiciona um evento de clique a cada card de contato
+cardsContato.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    // Se o usuário clicou no número de telefone, inicia uma chamada
+    if (event.target.closest(".contatos-small-card-phone")) {
+      window.location.href = `tel:${
+        card.querySelector(".contatos-small-card-num").textContent
+      }`;
+    } else {
+      // Caso contrário, exibe o modal com as informações do contato
+      let modal = document.querySelector("#modal-info-contato");
+
+      // Obtenha o elemento .modal-info-contato-template
+      let modalContent = document.querySelector(".modal-info-contato-template");
+
+      // Obtenha as coordenadas do card
+      var rect = card.getBoundingClientRect();
+      var x = rect.left + window.scrollX + rect.width / 2;
+      var y = rect.top + window.scrollY + rect.height / 2;
+
+      // Verifique se o modal ultrapassará o limite inferior de 75px
+      if (y + modalContent.offsetHeight > window.innerHeight - 70) {
+        y = window.innerHeight - 70 - modalContent.offsetHeight;
+      }
+
+      // Defina a posição do .modal-info-contato-template para o centro do card
+      modalContent.style.left = x + "px";
+      modalContent.style.top = y + "px";
+
+      modal.classList.add("show_contato_modal");
+
+      // Preenche o modal com as informações do card clicado
+      fillModal(card);
+
+      // Armazena o id do contato e busca os dados adicionais do contato
+      contatoId = card.querySelector('[data-filter="idContato"]').textContent;
+      fetchContactData(contatoId);
+    }
+  });
+});

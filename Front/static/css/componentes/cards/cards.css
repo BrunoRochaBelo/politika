@@ -2,10 +2,8 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   height: 30px;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -13,22 +11,18 @@
 /* Pequeno altura 35px*/
 .card-s {
   height: 35px;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 0rem;
 }
 /* Médio altura 50px*/
 .card-m {
   display: grid;
   height: 50px;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -36,10 +30,8 @@
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -50,10 +42,9 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
+  border: 1px solid var(--cor-8);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -63,10 +54,9 @@
 .card-tmf-m {
   width: 150px;
   height: 160px;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
+  border: 1px solid var(--cor-8);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -76,10 +66,9 @@
   width: 184px;
   height: 190px;
   min-height: 170px;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
+  border: 1px solid var(--cor-8);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -91,29 +80,28 @@
   border-radius: 0.625rem;
   width: 100%;
   padding: 0.3rem;
-  background: var(--cor-0);
-  color: var(--cor-12);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
   font-weight: var(--font-light);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--cor-8);
 }
 .card-select-s {
   border-radius: 0.625rem;
   width: 100%;
-  background: var(--cor-0);
-  color: var(--cor-12);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
   font-weight: var(--font-medium-regular);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--cor-8);
 }
 .card-select-m {
   padding: 0.625rem;
   width: 100%;
-  background: var(--cor-0);
-  backdrop-filter: blur(10px);
-  color: var(--cor-12);
-  border: 1px solid var(--cor-6);
+  background: var(--cor-p8);
+  color: var(--cor-p3);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
+  border: 1px solid var(--cor-8);
 }
 
 /* Responsividade */
