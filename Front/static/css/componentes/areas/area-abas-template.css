@@ -16,6 +16,7 @@
   align-items: center;
   justify-items: space-between;
   padding: 0.625rem 0rem;
+  color: var(--cor-1);
 }
 .area-abas-template-content {
   grid-area: area-abas-template-content;
@@ -31,7 +32,7 @@
 .area-abas-template-header h2 {
   font-size: var(--titulo-l);
   text-align: left;
-  color: var(--cor-11);
+  color: var(--cor-1);
 }
 
 .aba,
@@ -67,7 +68,8 @@
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
   background: var(--cor-6);
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-6);
+  border-top: 5px solid var(--cor-6);
   border-bottom: none;
   display: flex;
   justify-content: center;
@@ -80,10 +82,11 @@
 
 .nav a.indicador-2 {
   font-weight: bold;
-  color: var(--cor-11);
+  color: var(--cor-1);
   background: none;
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
-  border: 1px solid var(--cor-8);
+  border: 1px solid #6d88e6;
   border-bottom: none;
+  border-top: 5px solid #6d88e6;
 }

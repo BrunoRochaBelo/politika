@@ -12,8 +12,8 @@
   grid-auto-flow: row;
   background: transparent;
   border-radius: 0.625rem;
-  gap: 1px;
-  border: 1px solid var(--cor-8);
+  gap: 2px;
+  border: 1px solid var(--cor-p7);
   scrollbar-width: thick;
 }
 
@@ -51,7 +51,7 @@
   display: grid;
   background: transparent;
   scrollbar-width: thick;
-
+  gap: 2px;
   grid:
     "item1 item2" auto
     "item3 item3" auto;

@@ -26,5 +26,6 @@
 @media (max-width: 767px) {
   .main {
     margin-top: 0.625rem;
+    margin-bottom: 75px;
   }
 }

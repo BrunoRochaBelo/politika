@@ -12,7 +12,7 @@
   border-radius: 0.9375rem;
   background: var(--cor-p8);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-p7);
 }
 .form-contato {
   padding: 5px;
@@ -32,7 +32,7 @@ legend {
 
 fieldset {
   border-radius: 0.9375rem;
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-p7);
   margin-top: 0.625rem;
   background: var(--cor-p8);
 }
@@ -69,7 +69,7 @@ label {
   margin: 0rem 0.625rem 0rem 0rem;
   color: var(--cor-p3);
   background: var(--cor-p7);
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-p7);
   border-radius: 0.9375rem;
 }
 

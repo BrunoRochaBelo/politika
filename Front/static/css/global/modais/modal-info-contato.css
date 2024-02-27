@@ -38,7 +38,7 @@
 .modal-info-contato-modal-body {
   display: grid;
   background-color: var(--cor-0);
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-p7);
   border-radius: 0.9375rem;
   padding: 10px;
   gap: 10px;

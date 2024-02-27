@@ -6,7 +6,7 @@
   gap: 0rem 1rem;
   grid:
     "main-sidenav main-section"
-    / 1fr 2fr;
+    / 1.1fr 1.9fr;
 }
 /* Áreas de grid */
 .main-section {
@@ -15,6 +15,7 @@
   display: grid;
   grid-auto-flow: row;
   align-items: start;
+  margin-bottom: 75px;
 }
 .main-sidenav {
   grid-area: main-sidenav;
@@ -26,7 +27,7 @@
 
 .main-sidenav .card-xs {
   border-radius: 0.625rem 1.3rem 0.625rem 1.3rem;
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-p7);
 }
 
 .btn-recuar-expandir {

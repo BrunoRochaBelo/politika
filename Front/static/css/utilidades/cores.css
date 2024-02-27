@@ -10,142 +10,42 @@
   --cor-8: #4f4f4f;
   --cor-9: #dee5e8;
   --cor-10: #485f6a;
-  --cor-11: #040c14;
+  --cor-11: #050505;
   --cor-12: #000000;
 
-  --cor-p1: #f5f5f5;
+  --cor-p1: #121212;
   --cor-p2: #ebebeb;
   --cor-p3: #f0f0f4;
   --cor-p4: #393939;
   --cor-p5: #262629;
   --cor-p6: #242424;
   --cor-p7: #202023;
-  --cor-p8: #121212;
-  --cor-marc1: linear-gradient(
-    to right,
-    rgba(229, 115, 115) 10%,
-    rgb(245, 141, 141)
-  );
-  --cor-marc2: linear-gradient(
-    to right,
-    rgba(255, 138, 101) 10%,
-    rgb(255, 183, 77)
-  );
-  --cor-marc3: linear-gradient(
-    to right,
-    rgba(255, 183, 77) 10%,
-    rgb(255, 213, 79)
-  );
-  --cor-marc4: linear-gradient(
-    to right,
-    rgba(255, 213, 79) 10%,
-    rgb(255, 241, 118)
-  );
-  --cor-marc5: linear-gradient(
-    to right,
-    rgba(255, 241, 118) 10%,
-    rgb(220, 231, 117)
-  );
-  --cor-marc6: linear-gradient(
-    to right,
-    rgba(220, 231, 117) 10%,
-    rgb(174, 213, 129)
-  );
-  --cor-marc7: linear-gradient(
-    to right,
-    rgba(174, 213, 129) 10%,
-    rgb(129, 199, 132)
-  );
-  --cor-marc8: linear-gradient(
-    to right,
-    rgba(129, 199, 132) 10%,
-    rgb(77, 182, 172)
-  );
-  --cor-marc9: linear-gradient(
-    to right,
-    rgba(77, 182, 172) 10%,
-    rgb(77, 208, 225)
-  );
-  --cor-marc10: linear-gradient(
-    to right,
-    rgba(77, 208, 225) 10%,
-    rgb(79, 195, 247)
-  );
-  --cor-marc11: linear-gradient(
-    to right,
-    rgba(79, 195, 247) 10%,
-    rgb(100, 181, 246)
-  );
-  --cor-marc12: linear-gradient(
-    to right,
-    rgba(100, 181, 246) 10%,
-    rgb(121, 134, 203)
-  );
-  --cor-marc13: linear-gradient(
-    to right,
-    rgba(121, 134, 203) 10%,
-    rgb(149, 117, 205)
-  );
-  --cor-marc14: linear-gradient(
-    to right,
-    rgba(149, 117, 205) 10%,
-    rgb(240, 98, 146)
-  );
-  --cor-marc15: linear-gradient(
-    to right,
-    rgba(240, 98, 146) 10%,
-    rgb(186, 104, 200)
-  );
-  --cor-marc16: linear-gradient(
-    to right,
-    rgba(186, 104, 200) 10%,
-    rgb(161, 136, 127)
-  );
-  --cor-marc17: linear-gradient(
-    to right,
-    rgba(161, 136, 127) 10%,
-    rgb(144, 164, 174)
-  );
-  --cor-marc18: linear-gradient(
-    to right,
-    rgba(144, 164, 174) 10%,
-    rgb(176, 190, 197)
-  );
-  --cor-marc19: linear-gradient(
-    to right,
-    rgba(176, 190, 197) 10%,
-    rgb(120, 144, 156)
-  );
-  --cor-marc20: linear-gradient(
-    to right,
-    rgba(120, 144, 156) 10%,
-    rgb(96, 125, 139)
-  );
-  --cor-marc21: linear-gradient(
-    to right,
-    rgba(96, 125, 139) 10%,
-    rgb(69, 90, 100)
-  );
-  --cor-marc22: linear-gradient(
-    to right,
-    rgba(69, 90, 100) 10%,
-    rgb(51, 51, 51)
-  );
-  --cor-marc23: linear-gradient(
-    to right,
-    rgba(51, 51, 51) 10%,
-    rgb(102, 102, 102)
-  );
-  --cor-marc24: linear-gradient(
-    to right,
-    rgba(102, 102, 102) 10%,
-    rgb(153, 153, 153)
-  );
-  --cor-marc25: linear-gradient(
-    to right,
-    rgba(153, 153, 153) 10%,
-    rgba(229, 115, 115)
-  );
+  --cor-p8: #202020;
+  --cor-marc1: rgba(229, 115, 115);
+  --cor-marc2: rgba(255, 138, 101);
+  --cor-marc3: rgba(255, 183, 77);
+  --cor-marc4: rgba(255, 213, 79);
+  --cor-marc5: rgba(255, 241, 118);
+  --cor-marc6: rgba(220, 231, 117);
+  --cor-marc7: rgba(174, 213, 129);
+  --cor-marc8: rgba(129, 199, 132);
+  --cor-marc9: rgba(77, 182, 172);
+  --cor-marc10: rgba(77, 208, 225);
+  --cor-marc11: rgba(79, 195, 247);
+  --cor-marc12: rgba(100, 181, 246);
+  --cor-marc13: rgba(121, 134, 203);
+  --cor-marc14: rgba(149, 117, 205);
+  --cor-marc15: rgba(240, 98, 146);
+  --cor-marc16: rgba(186, 104, 200);
+  --cor-marc17: rgba(161, 136, 127);
+  --cor-marc18: rgba(144, 164, 174);
+  --cor-marc19: rgba(176, 190, 197);
+  --cor-marc20: rgba(120, 144, 156);
+  --cor-marc21: rgba(96, 125, 139);
+  --cor-marc22: rgba(69, 90, 100);
+  --cor-marc23: rgba(51, 51, 51);
+  --cor-marc24: rgba(102, 102, 102);
+  --cor-marc25: rgba(153, 153, 153);
 }
 
 .cor-0 {
