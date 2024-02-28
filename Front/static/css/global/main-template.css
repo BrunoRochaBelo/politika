@@ -25,9 +25,9 @@
   grid-auto-flow: row;
 }
 
-.main-sidenav .card-xs {
-  border-radius: 0.625rem 1.3rem 0.625rem 1.3rem;
-  border: 1px solid var(--cor-p7);
+.main-sidenav .marcador-item {
+  padding: 3px;
+  font-size: var(--font-medium-light);
 }
 
 .btn-recuar-expandir {
@@ -37,6 +37,7 @@
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .main-template {
+    gap: 20px 0rem;
     grid:
       "main-sidenav"
       "main-section"
@@ -44,11 +45,11 @@
   }
   .main-section {
     grid-area: main-section;
-    padding: 0.5rem;
+    padding: 0rem;
   }
   .main-sidenav {
     grid-area: main-sidenav;
-    padding: 0.5rem;
+    padding: 0rem;
   }
 
   .btn-recuar-expandir {

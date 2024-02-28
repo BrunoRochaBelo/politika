@@ -126,17 +126,17 @@
     padding: 0.625rem;
     cursor: pointer;
     width: 100%;
-    background: var(--cor-p1);
-    color: var(--cor-12);
+    background: var(--cor-11);
+    color: var(--cor-p3);
   }
   .header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--cor-p6);
-    background: var(--cor-12);
+    background: var(--cor-p1);
   }
   .search-button {
     padding: 8px;
-    background: var(--cor-p1);
+    background: var(--cor-11);
     border: none;
     border-radius: 0rem 0.312rem 0.312rem 0rem;
     cursor: pointer;

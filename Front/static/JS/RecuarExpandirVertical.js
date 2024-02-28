@@ -2,8 +2,8 @@ function toggleRecuarExpandirVertical() {
   // Obtenha o elemento
   var element = document.querySelector(".area-template-tmf-alt-content");
 
-  // Seleciona o botão com a classe .btn-recuar-expandir
-  var button = document.querySelector(".btn-recuar-expandir");
+  // Seleciona o botão pelo ID
+  var button = document.querySelector("#RecuarExpandirVertical");
 
   // Verifique se a largura da tela é menor ou igual a 768px
   var mediaQuery = window.matchMedia("(max-width: 768px)");

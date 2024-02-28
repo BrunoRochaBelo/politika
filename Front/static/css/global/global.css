@@ -6,13 +6,13 @@ body {
   padding: 0;
   display: grid;
   background: radial-gradient(
-      circle at right bottom,
-      #000000,
-      #6a41bca7,
-      #00012456,
-      #000000
-    ),
-    radial-gradient(circle at right bottom, #000000, #000000, #140138, #140a29);
+    circle at right bottom,
+    #000000,
+    #090219,
+    #361d68,
+    #0d0324,
+    #000000
+  );
 
   transition: all 0.3s ease;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);

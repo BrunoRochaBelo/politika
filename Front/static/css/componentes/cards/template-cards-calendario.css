@@ -2,32 +2,86 @@
 /* Pequeno */
 .calendario-small-card {
   display: grid;
-  align-items: center;
-  justify-items: start;
-  white-space: nowrap;
+  gap: 3px;
+  justify-content: stretch;
   overflow: hidden;
-  text-overflow: ellipsis;
   grid:
-    " calendario-small-card-title calendario-small-card-title calendario-small-card-tag"
-    " calendario-small-card-inicio calendario-small-card-fim calendario-small-card-tag";
+    "calendario-small-card-type calendario-small-card-tag"
+    "calendario-small-card-title  calendario-small-card-duracao"
+    "calendario-small-card-local calendario-small-card-local"
+    "calendario-small-card-partcipantes calendario-small-card-partcipantes";
 }
-.calendario-small-card-title {
-  grid-area: calendario-small-card-title;
-  font-size: var(--titulo-xs);
-  margin-left: 0.625rem;
-}
-.calendario-small-card-inicio {
-  grid-area: calendario-small-card-inicio;
-  font-size: var(--font-light);
-  margin-left: 0.625rem;
-}
-.calendario-small-card-fim {
-  grid-area: calendario-small-card-fim;
-  font-size: var(--font-light);
+.calendario-small-card-type {
+  grid-area: calendario-small-card-type;
+  font-size: var(--titulo-s);
+  justify-self: start;
 }
 .calendario-small-card-tag {
   grid-area: calendario-small-card-tag;
   justify-self: end;
+}
+.calendario-small-card-title {
+  grid-area: calendario-small-card-title;
+  border-left: 4px solid var(--cor-p5);
+  padding-left: 10px;
+  font-size: var(--titulo-s);
+  justify-self: start;
+  align-self: center;
+}
+.calendario-small-card-duracao {
+  grid-area: calendario-small-card-duracao;
+  font-size: var(--font-medium-light);
+  justify-self: center;
+  align-self: end;
+  display: grid;
+  margin-top: 5px;
+  grid-auto-flow: column;
+  padding-left: 14px;
+  justify-content: start;
+  align-items: center;
+}
+.idEvento {
+  font-size: 0px;
+  color: transparent;
+}
+
+.calendario-small-card-inicio {
+  font-size: var(--font-medium-light);
+}
+.calendario-small-card-fim {
+  font-size: var(--font-medium-light);
+}
+
+.calendario-small-card-local {
+  grid-area: calendario-small-card-local;
+  font-size: var(--font-medium-light);
+  justify-self: start;
+  padding-left: 14px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.calendario-small-card-partcipantes {
+  grid-area: calendario-small-card-partcipantes;
+  font-size: var(--font-medium-light);
+  justify-self: start;
+  padding-left: 14px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.exibirDetalheEvento {
+  max-height: 500px;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.calendario-small-card-local.exibirDetalheEvento,
+.calendario-small-card-partcipantes.exibirDetalheEvento {
+  display: block;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
 
 /* Médio */
@@ -63,36 +117,72 @@
 /* Grande */
 .calendario-large-card {
   display: grid;
+  gap: 10px;
   align-items: center;
-  justify-items: start;
+  justify-content: stretch;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   grid:
-    "calendario-large-card-tag" 32px
-    "calendario-large-card-title" 1fr
-    "calendario-large-card-local" 1fr
-    "calendario-large-card-partcipantes" 1fr
-    "calendario-large-card-duracao" 1fr;
+    "calendario-large-card-type calendario-large-card-tag" 32px
+    "calendario-large-card-title calendario-large-card-title"
+    "calendario-large-card-local calendario-large-card-local"
+    "calendario-large-card-partcipantes calendario-large-card-partcipantes"
+    "calendario-large-card-duracao calendario-large-card-duracao";
+}
+.calendario-large-card-type {
+  grid-area: calendario-large-card-type;
+  font-size: var(--titulo-m);
+  justify-self: start;
+}
+.calendario-large-card-tag {
+  grid-area: calendario-large-card-tag;
+  justify-self: end;
 }
 .calendario-large-card-title {
   grid-area: calendario-large-card-title;
-  font-size: var(--titulo-m);
+  border-left: 4px solid var(--cor-p5);
+  padding-left: 10px;
+  font-size: var(--titulo-l);
+  justify-self: start;
 }
 .calendario-large-card-local {
   grid-area: calendario-large-card-local;
   font-size: var(--font-medium-light);
+  justify-self: start;
+  padding-left: 14px;
 }
 .calendario-large-card-partcipantes {
   grid-area: calendario-large-card-partcipantes;
   font-size: var(--font-medium-light);
+  justify-self: start;
+  padding-left: 14px;
 }
 .calendario-large-card-duracao {
   grid-area: calendario-large-card-duracao;
   font-size: var(--font-medium-light);
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: grid;
+  grid-auto-flow: column;
+  background: var(--cor-p5);
+  border-radius: 0.625rem;
+
+  justify-content: start;
+  align-items: center;
 }
-.calendario-large-card-tag {
-  grid-area: calendario-large-card-tag;
+.idEvento {
+  font-size: 0px;
+  color: transparent;
+}
+
+.calendario-large-card-inicio {
+  font-size: var(--font-medium-light);
+  justify-self: start;
+}
+.calendario-large-card-fim {
+  font-size: var(--font-medium-light);
+  justify-self: start;
 }
 
 /* Vazio */

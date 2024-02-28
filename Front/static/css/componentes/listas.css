@@ -3,7 +3,7 @@
   display: grid;
   grid-auto-flow: row;
   border-radius: 0.625rem;
-  gap: 3px;
+  gap: 5px;
   scrollbar-width: thick;
 }
 
@@ -12,8 +12,8 @@
   grid-auto-flow: row;
   background: transparent;
   border-radius: 0.625rem;
-  gap: 2px;
-  border: 1px solid var(--cor-p7);
+  gap: 1px;
+  border: 1px solid var(--cor-p1);
   scrollbar-width: thick;
 }
 
@@ -41,7 +41,7 @@
 .lista-horizontal-template {
   display: grid;
   grid-auto-flow: column;
-  gap: 3px;
+  gap: 5px;
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
@@ -111,9 +111,10 @@
     overflow-x: auto;
     scrollbar-width: thick;
   }
-  .lista-vertical-horizontal.desativar-responsivo {
+  .lista-horizontal-template.desativar-responsivo {
     display: grid;
-    gap: 3px;
+    align-items: center;
+    gap: 5px;
     grid-template: 1fr 1fr / auto;
     scrollbar-width: thick;
   }

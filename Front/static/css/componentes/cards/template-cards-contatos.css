@@ -14,7 +14,8 @@
     /0.5fr 0.5fr 1fr auto;
 }
 .contatos-small-card-id {
-  display: none;
+  font-size: 0px;
+  color: transparent;
 }
 .contatos-small-card-title {
   grid-area: contatos-small-card-title;

@@ -22,11 +22,11 @@
   top: 50%;
   display: grid;
   min-width: 350px;
-  background: #f0f0f4f6;
+  background: var(--cor-1);
   padding: 0.625rem;
   gap: 5px;
   border-radius: 0.9375rem;
-  border: 1px solid #888;
+  border: 1px solid var(--cor-p3);
   opacity: 0;
   transition: top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
     opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -37,8 +37,8 @@
 
 .modal-info-contato-modal-body {
   display: grid;
-  background-color: var(--cor-0);
-  border: 1px solid var(--cor-p7);
+  background-color: var(--cor-4);
+  border: 1px solid var(--cor-p3);
   border-radius: 0.9375rem;
   padding: 10px;
   gap: 10px;

@@ -110,12 +110,13 @@
               </li>
             </ul>
           </nav>
-          <ul class="area-template-content lista-vertical-template-alt">
+          <ul class="area-template-content lista-vertical-template">
             <li class="area-template-alt">
               <h2 class="area-template-alt-header">08:00h</h2>
-              <ul class="area-template-alt-content lista-vertical-template-alt">
+              <ul class="area-template-alt-content lista-vertical-template">
                 <li>
                   <a class="card-l calendario-large-card evento" href="#">
+                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
                     <div class="calendario-large-card-tag" data-filter="tagEvento">
                       <div class="marcador-item cor-marc1">
                         <p><strong>marcador 1</strong></p>
@@ -124,21 +125,29 @@
                     <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
                     <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
                     <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
-                    <p class="calendario-large-card-duracao" data-filter="duracaoEvento">calendario-large-card-duracao</p>
-                    <div data-filter="idEvento">{{idEvento}}</div>
+                    <div class="calendario-large-card-duracao">
+                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                    </div>
+                    <div class="idEvento" data-filter="idEvento">{{idEvento}}</div>
                   </a>
                 </li>
                 <li>
-                  <a class="card-l calendario-large-card evento" href="#" data-idEvento="{{ID_DO_EVENTO 2}}">
+                  <a class="card-l calendario-large-card evento" href="#">
+                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
                     <div class="calendario-large-card-tag" data-filter="tagEvento">
-                      <div class="marcador-item cor-marc1">
+                      <div class="marcador-item cor-marc3">
                         <p><strong>marcador 1</strong></p>
                       </div>
                     </div>
                     <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
                     <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
                     <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
-                    <p class="calendario-large-card-duracao" data-filter="duracaoEvento">calendario-large-card-duracao</p>
+                    <div class="calendario-large-card-duracao">
+                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                    </div>
+                    <div class="idEvento" data-filter="idEvento">{{idEvento}}</div>
                   </a>
                 </li>
               </ul>
@@ -147,16 +156,21 @@
               <h2 class="area-template-alt-header">09:00h</h2>
               <ul class="area-template-alt-content lista-vertical-template-alt">
                 <li>
-                  <a class="card-l calendario-large-card evento" href="#" data-idEvento="{{ID_DO_EVENTO 1}}">
+                  <a class="card-l calendario-large-card evento" href="#">
+                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
                     <div class="calendario-large-card-tag" data-filter="tagEvento">
-                      <div class="marcador-item cor-marc5">
-                        <p><strong>marcador 5</strong></p>
+                      <div class="marcador-item cor-marc7">
+                        <p><strong>marcador 1</strong></p>
                       </div>
                     </div>
                     <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
                     <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
-                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Cicrano</p>
-                    <p class="calendario-large-card-duracao" data-filter="duracaoEvento">calendario-large-card-duracao</p>
+                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                    <div class="calendario-large-card-duracao">
+                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                    </div>
+                    <div class="idEvento" data-filter="idEvento">{{idEvento}}</div>
                   </a>
                 </li>
               </ul>

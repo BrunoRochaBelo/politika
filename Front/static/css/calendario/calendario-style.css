@@ -1,45 +1,19 @@
-.calendario-template {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  gap: 0.625rem;
-  grid:
-    "calendario-sidenav calendario-section"
-    / 1.1fr 1.9fr;
-}
-.calendario-section {
-  grid-area: calendario-section;
-  text-align: center;
-  display: grid;
-  grid-auto-flow: row;
-  align-items: start;
-  padding: 0.625rem;
-}
-.calendario-sidenav {
-  grid-area: calendario-sidenav;
-  text-align: center;
-  display: grid;
-  align-content: start;
-  grid-auto-flow: row;
-  padding: 0.625rem;
-}
-
 .nav-semana {
   display: grid;
   grid-auto-flow: column;
-  justify-content: center;
-  gap: 0.625rem;
+  justify-content: stretch;
+  align-items: center;
+  gap: 5px;
   padding: 0;
 }
 .dia-semana {
   text-align: center;
-  padding: 10px;
+  padding: 10px 5px;
   border-radius: 9px;
-  color: var(--cor-11);
-
-  background: var(--cor-0);
+  color: var(--cor-5);
+  background: #3d4349aa;
   border-radius: 0.625rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--cor-p1);
   cursor: pointer;
   font-size: var(--font-medium-light);
 }
@@ -48,8 +22,7 @@
   position: relative;
   padding: 10px;
   border-radius: 9px;
-  color: var(--cor-11);
-
+  color: var(--cor-7);
   border-radius: 0.625rem;
   cursor: pointer;
   font-size: var(--font-medium-regular);
@@ -71,43 +44,6 @@
   height: 18px;
 }
 
-/* Responsivo */
-@media (max-width: 800px) {
-  .calendario-template {
-    gap: 0.925rem;
-    grid:
-      "calendario-sidenav"
-      "calendario-section"
-      / 1fr;
-  }
-  .calendario-section {
-    grid-area: calendario-section;
-    padding: 0rem;
-  }
-  .calendario-sidenav {
-    grid-area: calendario-sidenav;
-    padding: 0.375rem;
-  }
-
-  .calendario-template .area-abas-template {
-    border-radius: 0rem;
-  }
-  .calendario-template .area-abas-template-header {
-    width: auto;
-    padding: 0rem;
-  }
-  .calendario-template .area-abas-template-content {
-    border-bottom-left-radius: 0.9375rem;
-    border-bottom-right-radius: 0.9375rem;
-    background: var(--cor-9);
-    width: auto;
-    padding: 0rem 0.375rem;
-  }
-  .btn-recuar-expandir {
-    display: block;
-    justify-self: end;
-  }
-}
 @media only screen and (max-width: 767px) {
   .change-semana p {
     display: none;
@@ -120,5 +56,9 @@
     border-top-right-radius: 0.9375rem;
     border: 1px solid var(--cor-9);
     border-bottom: none;
+  }
+  .btn-recuar-expandir {
+    display: block;
+    justify-self: end;
   }
 }

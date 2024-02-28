@@ -43,8 +43,8 @@
   }
   .home-header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid var(--cor-8);
-    background: var(--cor-p7);
+    border-bottom: 1px solid var(--cor-p6);
+    background: var(--cor-p1);
   }
 
   .home-header-logo {
@@ -68,7 +68,7 @@
   }
   .home-header-nav {
     background: var(--cor-12);
-    border-top: 1px solid var(--cor-7);
+    border-top: 1px solid var(--cor-p6);
     position: fixed;
     bottom: 0;
     width: 100%;

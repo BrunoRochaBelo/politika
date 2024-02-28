@@ -54,10 +54,9 @@
   align-content: center;
   justify-content: center;
   box-sizing: border-box;
-  border-radius: 0.625rem 1.3rem 1.3rem 0.625rem;
+  border-radius: 1.3rem;
   padding: 5px 12px;
   width: 105px;
-  height: auto;
   font-size: var(--font-medium-regular);
   white-space: nowrap;
   overflow: hidden;
