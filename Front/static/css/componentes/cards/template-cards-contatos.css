@@ -42,8 +42,7 @@
 
 .contatos-small-card-num {
   grid-area: contatos-small-card-num;
-  font-size: 0px;
-  color: transparent;
+  display: none;
   justify-self: start;
   align-self: center;
   opacity: 0;
@@ -51,8 +50,7 @@
 .contatos-small-card-email {
   grid-area: contatos-small-card-email;
   display: none;
-  font-size: 0px;
-  color: transparent;
+
   justify-self: start;
   align-self: center;
   opacity: 0;
@@ -60,8 +58,7 @@
 .contatos-small-card-tipopessoa {
   grid-area: contatos-small-card-tipopessoa;
   display: none;
-  font-size: 0px;
-  color: transparent;
+
   justify-self: start;
   align-self: center;
   opacity: 0;
@@ -69,8 +66,7 @@
 .contatos-small-card-editar {
   grid-area: contatos-small-card-editar;
   display: none;
-  font-size: 0px;
-  color: transparent;
+
   justify-self: end;
   align-self: center;
   display: none;
@@ -86,8 +82,7 @@
 .contatos-small-card-tipopessoa.exibirDetalheContato,
 .contatos-small-card-editar.exibirDetalheContato {
   display: inline-block;
-  font-size: 14px;
-  color: white;
+
   opacity: 1;
 }
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
+  <title>Tarefa</title>
+  <meta name="description" content="Nova Tarefa">
+</head>
+
+
+<body class="body-template body-form">
+  <header class="header header-template-form">
+    <h1 class="header-template-form-menu" style="width: 18px; height: 14px;">
+      <a href="calendario.html"><img src="./static/imagens/icones/voltar.svg" alt="Back Icon"></a>
+    </h1>
+    <h1 class="header-template-form-title">CADASTRO CONTATOS</h1>
+  </header>
+
+  <main class="main">
+    <section class="area-abas-template background-area-form">
+      <form id="form" class="form-content" enctype="multipart/form-data">
+        <fieldset>
+          <legend class="titulo-xl">Tarefa</legend>
+          <div class="campo">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo">
+              <option value="tarefa">Tarefa a fazer</option>
+              <!-- Adicione outras opções aqui -->
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="categoria">Categoria:</label>
+            <select id="categoria">
+              <option value="administracao" selected>Administração</option>
+              <!-- Adicione outras opções aqui -->
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="dataInicio">Data início:</label>
+            <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
+          </div>
+
+          <div class="campo">
+            <label for="horaInicio">Hora início:</label>
+            <input type="text" id="horaInicio" placeholder="--:--">
+          </div>
+
+          <div class="campo">
+            <label for="dataFim">Data fim:</label>
+            <input type="text" id="dataFim" placeholder="dd/mm/aaaa">
+          </div>
+
+          <div class="campo">
+            <label for="horaFim">Hora fim:</label>
+            <input type="text" id="horaFim" placeholder="--:--">
+          </div>
+
+          <div class="campo">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" placeholder="Digite o título aqui">
+          </div>
+
+          <div class="campo">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" placeholder="Endereço local da reunião...">
+          </div>
+
+          <div class="campo">
+            <label for="sala">Sala:</label>
+            <input type="text" id="sala" placeholder="Sala, auditório, etc...">
+          </div>
+
+          <div class="campo">
+            <label for="publicoAlvo">Público alvo:</label>
+            <input type="text" id="publicoAlvo" placeholder="Digite o público alvo aqui">
+          </div>
+
+          <div class="campo">
+            <label for="anotacoes">Anotações:</label>
+            <textarea class="form-textarea" id="anotacoes" placeholder="Digite suas anotações aqui"></textarea>
+          </div>
+
+          <div class="campo">
+            <input class="form-checkbox" type="checkbox" id="acessoPrivado">
+            <label for="acessoPrivado">Acesso privado</label>
+          </div>
+
+          <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

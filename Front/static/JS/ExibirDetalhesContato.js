@@ -1,34 +1,45 @@
-function ExibirDetalhesContato(event) {
-  // Verifica se o clique foi no elemento 'contatos-small-card-phone'
-  if (event.target.classList.contains("contatos-small-card-phone")) {
-    var num = event.currentTarget.querySelector(".contatos-small-card-num");
-    window.location.href = "tel:" + num.textContent.trim(); // Inicia uma chamada telefônica
+// Função para iniciar a chamada telefônica
+function iniciarChamadaTelefonica(card) {
+  const num = card.querySelector(".contatos-small-card-num");
+  window.location.href = "tel:" + num.textContent.trim();
+}
+
+// Função para lidar com o clique nos cards
+function handleCardClick(event) {
+  event.preventDefault();
+
+  // Encontrar os campos ocultos
+  const card = event.currentTarget;
+  const camposOcultos = card.querySelectorAll(
+    ".contatos-small-card-num, .contatos-small-card-email, .contatos-small-card-tipopessoa, .contatos-small-card-editar"
+  );
+
+  // Verificar se os campos estão visíveis
+  const algumCampoVisivel = Array.from(camposOcultos).some((campo) =>
+    campo.classList.contains("exibirDetalheContato")
+  );
+
+  // Se algum campo estiver visível, ocultar todos os campos
+  if (algumCampoVisivel) {
+    camposOcultos.forEach((campo) => {
+      campo.classList.remove("exibirDetalheContato");
+    });
   } else {
-    // Rola a página para o card
-    event.currentTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+    // Se nenhum campo estiver visível, exibir todos os campos e centralizar o card
+    camposOcultos.forEach((campo) => {
+      campo.classList.add("exibirDetalheContato");
+    });
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
 
-    // Encontra os elementos dentro do card clicado
-    var num = event.currentTarget.querySelector(".contatos-small-card-num");
-    var tipoPessoa = event.currentTarget.querySelector(
-      ".contatos-small-card-tipopessoa"
-    );
-    var email = event.currentTarget.querySelector(".contatos-small-card-email");
-    var editar = event.currentTarget.querySelector(
-      ".contatos-small-card-editar"
-    );
-
-    // Alterna a classe 'exibirDetalheContato' nos elementos
-    num.classList.toggle("exibirDetalheContato");
-    tipoPessoa.classList.toggle("exibirDetalheContato");
-    email.classList.toggle("exibirDetalheContato");
-    editar.classList.toggle("exibirDetalheContato");
+  // Verificar se o clique foi no elemento 'contatos-small-card-phone'
+  if (event.target.classList.contains("contatos-small-card-phone")) {
+    iniciarChamadaTelefonica(card);
   }
 }
 
-// Adiciona o evento de clique a todos os cards do evento
-document.addEventListener("DOMContentLoaded", function () {
-  var cards = document.querySelectorAll(".contatos-small-card");
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", ExibirDetalhesContato);
-  }
+// Adiciona um ouvinte de evento de clique para a lista de cards
+const listaDeCards = document.querySelectorAll(".contatos-small-card");
+listaDeCards.forEach((card) => {
+  card.addEventListener("click", handleCardClick);
 });
