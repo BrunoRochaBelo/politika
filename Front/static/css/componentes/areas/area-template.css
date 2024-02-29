@@ -150,7 +150,7 @@
   padding: 0.625rem;
   background: #3d4349aa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: height 1s ease-in-out;
+  transition: all 1s ease-in-out;
   height: auto;
 }
 
@@ -189,7 +189,8 @@
   /* Area Template dos compromissos para hoje*/
   .area-template-tmf-alt-content {
     height: 100px;
-    transition: height 1s ease-in-out;
+
+    transition: all 1s ease-in-out;
     position: relative;
   }
 }

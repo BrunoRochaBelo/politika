@@ -1,6 +1,7 @@
 /* Listas Cards */
 .lista-vertical-template {
   display: grid;
+  transition: all 0.3s ease-in-out;
   grid-auto-flow: row;
   border-radius: 0.625rem;
   gap: 5px;
@@ -9,16 +10,17 @@
 
 .lista-vertical-template-alt {
   display: grid;
+  transition: all 0.3s ease-in-out;
   grid-auto-flow: row;
   background: transparent;
   border-radius: 0.625rem;
-  gap: 1px;
-  border: 1px solid var(--cor-p1);
+  gap: 2px;
   scrollbar-width: thick;
 }
 
 .lista-vertical-2-template {
   display: grid;
+  transition: all 0.3s ease-in-out;
   gap: 3px;
   grid-template: auto / 1fr 1fr;
   scrollbar-width: thick;
@@ -26,6 +28,7 @@
 
 .lista-vertical-3-template {
   display: grid;
+  transition: all 0.3s ease-in-out;
   gap: 3px;
   grid-template: auto / 1fr 1fr 1fr;
   scrollbar-width: thick;
@@ -33,6 +36,7 @@
 
 .lista-vertical-horizontal {
   display: grid;
+  transition: all 0.3s ease-in-out;
   grid-template: auto / auto auto;
   gap: 3px;
   scrollbar-width: thick;
@@ -40,6 +44,7 @@
 
 .lista-horizontal-template {
   display: grid;
+  transition: all 0.3s ease-in-out;
   grid-auto-flow: column;
   gap: 5px;
   white-space: nowrap;
@@ -49,6 +54,7 @@
 
 .lista-select {
   display: grid;
+  transition: all 0.3s ease-in-out;
   background: transparent;
   scrollbar-width: thick;
   gap: 2px;
@@ -58,12 +64,15 @@
 }
 .lista-select .item1 {
   grid-area: item1;
+  transition: all 0.3s ease-in-out;
 }
 .lista-select .item2 {
   grid-area: item2;
+  transition: all 0.3s ease-in-out;
 }
 .lista-select .item3 {
   grid-area: item3;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Estilos */
@@ -105,6 +114,7 @@
 @media (max-width: 800px) {
   .lista-vertical-horizontal {
     display: grid;
+    transition: all 0.3s ease-in-out;
     width: 100%;
     grid-auto-flow: column;
     white-space: nowrap;
@@ -113,6 +123,7 @@
   }
   .lista-horizontal-template.desativar-responsivo {
     display: grid;
+    transition: all 0.3s ease-in-out;
     align-items: center;
     gap: 5px;
     grid-template: 1fr 1fr / auto;

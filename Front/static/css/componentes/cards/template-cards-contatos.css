@@ -2,16 +2,18 @@
 /* Pequeno */
 .contatos-small-card {
   display: grid;
-  gap: 7px;
-  padding: 12px;
+  gap: 3px;
   align-content: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
-    "contatos-small-card-star contatos-small-card-num contatos-small-card-num  contatos-small-card-phone"
-    /0.5fr 0.5fr 1fr auto;
+    " contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
+    "contatos-small-card-num contatos-small-card-num contatos-small-card-num contatos-small-card-num "
+    "contatos-small-card-email contatos-small-card-email contatos-small-card-email contatos-small-card-email "
+    "contatos-small-card-tipopessoa . . contatos-small-card-editar"
+    /0.5fr 0.5fr 1fr 32px;
 }
 .contatos-small-card-id {
   font-size: 0px;
@@ -23,19 +25,70 @@
   align-self: center;
   font-size: var(--titulo-m);
 }
-.contatos-small-card-num {
-  grid-area: contatos-small-card-num;
-  justify-self: center;
-  align-self: start;
-}
-.contatos-small-card-star {
-  grid-area: contatos-small-card-star;
-  justify-self: start;
-  align-self: end;
-}
 .contatos-small-card-phone {
   grid-area: contatos-small-card-phone;
+  justify-self: end;
   align-self: center;
+}
+.contatos-small-card-perfilInfluencia {
+  grid-area: contatos-small-card-perfilInfluencia;
+  justify-self: start;
+}
+.contatos-small-card-tipocontato {
+  grid-area: contatos-small-card-tipocontato;
+  justify-self: start;
+  align-self: start;
+}
+
+.contatos-small-card-num {
+  grid-area: contatos-small-card-num;
+  font-size: 0px;
+  color: transparent;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+}
+.contatos-small-card-email {
+  grid-area: contatos-small-card-email;
+  display: none;
+  font-size: 0px;
+  color: transparent;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+}
+.contatos-small-card-tipopessoa {
+  grid-area: contatos-small-card-tipopessoa;
+  display: none;
+  font-size: 0px;
+  color: transparent;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+}
+.contatos-small-card-editar {
+  grid-area: contatos-small-card-editar;
+  display: none;
+  font-size: 0px;
+  color: transparent;
+  justify-self: end;
+  align-self: center;
+  display: none;
+  opacity: 0;
+}
+
+.exibirDetalheContato {
+  display: inline-block;
+  opacity: 1 !important;
+}
+.contatos-small-card-num.exibirDetalheContato,
+.contatos-small-card-email.exibirDetalheContato,
+.contatos-small-card-tipopessoa.exibirDetalheContato,
+.contatos-small-card-editar.exibirDetalheContato {
+  display: inline-block;
+  font-size: 14px;
+  color: white;
+  opacity: 1;
 }
 
 /* Médio */

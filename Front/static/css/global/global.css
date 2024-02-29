@@ -13,7 +13,6 @@ body {
     #0d0324,
     #000000
   );
-
   transition: all 0.3s ease;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -102,8 +101,8 @@ img {
 
 /* RESPONSIVO */
 @media (max-width: 767px) {
-  .body {
-    background: var(--cor-4);
+  body {
+    background: #110f1a;
   }
   .indicador {
     border-bottom: none;
