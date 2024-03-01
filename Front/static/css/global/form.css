@@ -1,5 +1,5 @@
 /* Estilos CSS para o formulário */
-.background-area-form {
+.area-form {
   padding: 0rem 0rem 4.3rem 0rem;
   border-radius: 9px;
   background: #3d4349aa;
@@ -16,7 +16,6 @@
 }
 .form-content {
   padding: 5px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   font-size: var(--titulo-s);
   color: var(--cor-1);
 }

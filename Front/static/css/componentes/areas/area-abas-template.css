@@ -98,3 +98,16 @@
   border-bottom: none;
   border-top: 5px solid #3f1c80;
 }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  /* Area Template padrão*/
+  .area-abas-template-header {
+    grid-area: area-abas-template-header;
+    padding: 0px;
+  }
+  .area-abas-template-content {
+    grid-area: area-abas-template-content;
+    padding: 0px 5px 10px 5px;
+  }
+}

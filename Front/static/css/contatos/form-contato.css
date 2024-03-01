@@ -13,3 +13,10 @@
 .ocultar {
   display: none;
 }
+
+.area-form .area-abas-template-header {
+  padding: 10px;
+}
+.area-form .area-abas-template-content {
+  background: none;
+}

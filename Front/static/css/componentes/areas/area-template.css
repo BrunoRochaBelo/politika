@@ -161,6 +161,12 @@
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
+  /* Area Template padrão*/
+
+  .area-template-content {
+    grid-area: area-template-content;
+    padding: 5px;
+  }
   /* Area Template dos filtros*/
   .area-template-fil {
     padding: 0rem;
@@ -189,8 +195,8 @@
   /* Area Template dos compromissos para hoje*/
   .area-template-tmf-alt-content {
     height: 100px;
-
     transition: all 1s ease-in-out;
     position: relative;
+    padding: 5px;
   }
 }

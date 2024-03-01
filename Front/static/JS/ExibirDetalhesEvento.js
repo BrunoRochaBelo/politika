@@ -4,6 +4,9 @@ function exibirDetalhesEvento(event) {
   var participantes = event.currentTarget.querySelector(
     ".calendario-small-card-partcipantes"
   );
+  var editar = event.currentTarget.querySelector(
+    ".calendario-small-card-editar"
+  ); // Adicionado
 
   // Verifica a altura da área
   var area = document.querySelector(".area-template-tmf-alt-content");
@@ -23,6 +26,7 @@ function exibirDetalhesEvento(event) {
   // Alterna a classe 'exibirDetalheEvento' nos elementos
   local.classList.toggle("exibirDetalheEvento");
   participantes.classList.toggle("exibirDetalheEvento");
+  editar.classList.toggle("exibirDetalheEvento"); // Adicionado
 }
 
 // Adiciona o evento de clique a todos os cards do evento
