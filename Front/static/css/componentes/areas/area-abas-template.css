@@ -14,13 +14,18 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  padding: 0.625rem 0rem;
+  padding: 0.625rem 0rem 0rem 0rem;
   color: var(--cor-1);
 }
 .area-abas-template-content {
   grid-area: area-abas-template-content;
   overflow-x: auto;
   scrollbar-width: thick;
+  background: #3d4349aa;
+  gap: 0.9375rem;
+  padding: 0.625rem;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
 }
 
 /* Estilos */
@@ -86,10 +91,10 @@
 .nav a.indicador-2 {
   font-weight: bold;
   color: var(--cor-1);
-  background: none;
+  background: #3d4349aa;
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
-  border: 1px solid #322549;
+  border: 1px solid #3f1c80;
   border-bottom: none;
-  border-top: 5px solid #322549;
+  border-top: 5px solid #3f1c80;
 }

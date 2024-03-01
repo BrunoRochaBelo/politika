@@ -76,14 +76,7 @@
 }
 
 /* Estilos */
-.lista-vertical-template,
-.lista-vertical-3-template,
-.lista-horizontal-template,
-.lista-vertical-template-alt,
-.lista-vertical-horizontal,
-.lista-select {
-  scrollbar-width: thin;
-}
+
 /* Estilos para cards dentro da lista */
 /* Reset de borda para todos os cards dentro da lista */
 .lista-select .card-select-m {
@@ -101,13 +94,13 @@
   border-bottom-right-radius: 0.625rem;
 }
 .lista-vertical-template-alt li:first-child .card-s {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
 .lista-vertical-template-alt li:last-child .card-s {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
 }
 
 /* RESPONSIVO */

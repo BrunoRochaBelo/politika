@@ -22,7 +22,7 @@
 }
 .calendario-small-card-title {
   grid-area: calendario-small-card-title;
-  border-left: 4px solid var(--cor-p5);
+  border-left: 4px solid var(--cor-p4);
   padding-left: 10px;
   font-size: var(--titulo-s);
   justify-self: start;
@@ -40,9 +40,8 @@
   justify-content: start;
   align-items: center;
 }
-.idEvento {
-  font-size: 0px;
-  color: transparent;
+.calendario-small-card-id {
+  display: none;
 }
 
 .calendario-small-card-inicio {
@@ -141,7 +140,7 @@
 }
 .calendario-large-card-title {
   grid-area: calendario-large-card-title;
-  border-left: 4px solid var(--cor-p5);
+  border-left: 4px solid var(--cor-p4);
   padding-left: 10px;
   font-size: var(--titulo-l);
   justify-self: start;
@@ -165,13 +164,12 @@
   padding: 10px 14px;
   display: grid;
   grid-auto-flow: column;
-  background: var(--cor-p5);
+  background: var(--cor-p4);
   border-radius: 0.625rem;
-
   justify-content: start;
   align-items: center;
 }
-.idEvento {
+.calendario-small-card-id {
   font-size: 0px;
   color: transparent;
 }

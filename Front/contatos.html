@@ -229,8 +229,10 @@
                 </a>
               </li>
             </ul>
-            <div id="loadingMessage" style="display: none;">Carregando...</div>
-            <div id="searcherrorMessage" style="color: red;"></div>
+          </li>
+          <div id="loadingMessage" style="display: none;">Carregando...</div>
+          <div id="searcherrorMessage" style="color: red;"></div>
+        </ul>
       </div>
     </section>
 
@@ -326,36 +328,13 @@
         <h1>Criar</h1>
       </div>
       <ul class="modal-btn-floating-body">
-        <li><a href="cadastro-contato.html">Contato</a></li>
+        <li><a href="form-contato.html">Contato</a></li>
       </ul>
     </div>
   </div>
 
 
-  <!-- Modal Info Contato -->
-  <div id="modal-info-contato" class="modal-info-contato" id="contatoId">
-    <div class="modal-info-contato-template">
-      <div class="modal-info-contato-modal-header">
-        <span class="close_contato_modal">&times;</span>
-        <h1><span id="modalName"></span></h1>
-      </div>
-      <div class="modal-info-contato-modal-body">
-        <div class="influencia-modal">
-          <p><strong>Influência:</strong></p>
-          <img id="modalInfluence" src="" alt="Perfil influencia Icon">
-        </div>
-        <div class="phone-modal">
-          <p><strong>Número:</strong> <span id="modalNumber"></span></p>
-          <button id="modalCallButton" class="btn btn-primary" aria-label="Ligar para o contato">Ligar</button>
-        </div>
-        <p><strong>Tipo de Contato:</strong> <span id="modalContactType"></span></p>
-        <p><strong>Tipo de Pessoa:</strong> <span id="modalPersonType"></span></p>
-        <p><strong>Email:</strong> <span id="modalEmail"></span></p>
-        <p id="modalError" style="color: red;"></p>
-      </div>
-      <a href="#" class="btn btn-primary">Editar</a>
-    </div>
-  </div>
+
 
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>

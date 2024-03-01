@@ -18,7 +18,69 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   overflow: auto;
+  scrollbar-face-color: #575757;
+
+  scrollbar-track-color: #000000;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #575757;
+  border-radius: 9px;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #606060;
+}
+
+/* Adicione os prefixos para compatibilidade com outros navegadores */
+::-moz-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-moz-scrollbar-track {
+  background: #000000;
+}
+
+::-moz-scrollbar-thumb {
+  background: #575757;
+  border-radius: 9px;
+  border: 2px solid #000000;
+}
+
+::-moz-scrollbar-thumb:hover {
+  background: #606060;
+}
+
+/* Internet Explorer */
+::-ms-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-ms-scrollbar-track {
+  background: #000000;
+}
+
+::-ms-scrollbar-thumb {
+  background: #575757;
+  border-radius: 9px;
+  border: 2px solid #000000;
+}
+
+::-ms-scrollbar-thumb:hover {
+  background: #606060;
+}
+
 /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
     background: radial-gradient(
     circle at bottom right,
@@ -101,9 +163,6 @@ img {
 
 /* RESPONSIVO */
 @media (max-width: 767px) {
-  body {
-    background: #110f1a;
-  }
   .indicador {
     border-bottom: none;
   }

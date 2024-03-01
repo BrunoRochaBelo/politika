@@ -19,11 +19,11 @@
     <h1 class="header-template-form-menu" style="width: 18px; height: 14px;">
       <a href="calendario.html"><img src="./static/imagens/icones/voltar.svg" alt="Back Icon"></a>
     </h1>
-    <h1 class="header-template-form-title">CADASTRO CONTATOS</h1>
+    <h1 class="header-template-form-title">Tarefa</h1>
   </header>
 
   <main class="main">
-    <section class="area-abas-template background-area-form">
+    <section class="area-abas-template">
       <form id="form" class="form-content" enctype="multipart/form-data">
         <fieldset>
           <legend class="titulo-xl">Tarefa</legend>
@@ -44,13 +44,18 @@
           </div>
 
           <div class="campo">
-            <label for="dataInicio">Data início:</label>
-            <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" placeholder="Digite o título aqui">
           </div>
 
           <div class="campo">
-            <label for="horaInicio">Hora início:</label>
-            <input type="text" id="horaInicio" placeholder="--:--">
+            <label for="description">Descrição:</label>
+            <textarea class="form-textarea" id="description" placeholder="Digite aqui os detalhes"></textarea>
+          </div>
+
+          <div class="campo">
+            <label for="dataInicio">Data início:</label>
+            <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
           </div>
 
           <div class="campo">
@@ -59,33 +64,18 @@
           </div>
 
           <div class="campo">
-            <label for="horaFim">Hora fim:</label>
-            <input type="text" id="horaFim" placeholder="--:--">
+            <label for="prioridade">Prioridade:</label>
+            <select id="prioridade">
+              <option value="" selected disabled>Selecione</option>
+              <option value="baixa">Baixa</option>
+              <option value="media">Media</option>
+              <option value="alta">Alta</option>
+            </select>
           </div>
 
           <div class="campo">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" placeholder="Digite o título aqui">
-          </div>
-
-          <div class="campo">
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" placeholder="Endereço local da reunião...">
-          </div>
-
-          <div class="campo">
-            <label for="sala">Sala:</label>
-            <input type="text" id="sala" placeholder="Sala, auditório, etc...">
-          </div>
-
-          <div class="campo">
-            <label for="publicoAlvo">Público alvo:</label>
-            <input type="text" id="publicoAlvo" placeholder="Digite o público alvo aqui">
-          </div>
-
-          <div class="campo">
-            <label for="anotacoes">Anotações:</label>
-            <textarea class="form-textarea" id="anotacoes" placeholder="Digite suas anotações aqui"></textarea>
+            <label for="responsavel">Responsável:</label>
+            <input type="text" id="responsavel" placeholder="Digite o nome do Responsável">
           </div>
 
           <div class="campo">

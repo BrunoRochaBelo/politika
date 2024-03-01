@@ -20,7 +20,7 @@
 <body class="body-template">
   <header class="header header-template">
     <a href="index.html" class="header-back">
-      <img src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+      <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
     </a>
     <nav class="header-nav">
       <ul class="header-nav-template">
@@ -41,62 +41,146 @@
           </a></li>
       </ul>
     </nav>
-    <a href="#.html" class="header-search">
-      <img src="./static/imagens/icones/pesquisar.svg" alt="Pesquisar Icon">
-    </a>
+    <div class="header-search">
+      <div class="search-input-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar evento...">
+        <button class="search-button" onclick="search()">
+          <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+        </button>
+      </div>
+    </div>
   </header>
 
   <main class="main main-template">
-    <section class="main-section">
-      <div class="area-template">
-        <h2 class="area-template-header">Contatos listados - 4.321</h2>
-        <ul class="area-template-content lista-vertical-template">
-          <li>
-            <a class="card-s contatos-small-card" href="#">
-              <p class="contatos-small-card-title">{{Contato}}</p>
-              <div class="contatos-small-card-num">{{(81) 99999-9999}}</div>
-              <div class="contatos-small-card-tag marcador-item cor-marc3" href="#">
-                <p>{{icon}}</p>
-                <p>{{title marcador}}</p>
-              </div>
-            </a>
-          </li>
+
+    <section class="main-section area-abas-template">
+      <nav class="area-abas-template-header">
+        <ul id="navAba" class="nav">
+          <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Novos</a></li>
+          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Andadmento</a></li>
+          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Concluídos</a></li>
         </ul>
+      </nav>
+
+      <div class="area-abas-template-content">
+
+        <div id="aba1" class="aba-template area-template-alt active">
+          <div class="area-template-alt-header">
+            <span>{{total}}</span>&nbsp;- listados para &nbsp; <p id="filtroselect">{{filtro}}</p>
+          </div>
+          <ul class="area-template-alt-content lista-vertical-template">
+            <li class="area-template-alt">
+              <h2 class="area-template-alt-header"></h2>
+              <ul class="area-template-alt-content lista-vertical-template">
+                <li>
+                  <a class="card-l calendario-large-card evento" href="#">
+                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                    <div class="calendario-large-card-tag" data-filter="tagEvento">
+                      <div class="marcador-item cor-marc1">
+                        <p><strong>marcador 1</strong></p>
+                      </div>
+                    </div>
+                    <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                    <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                    <div class="calendario-large-card-duracao">
+                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                    </div>
+                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="card-l calendario-large-card evento" href="#">
+                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                    <div class="calendario-large-card-tag" data-filter="tagEvento">
+                      <div class="marcador-item cor-marc3">
+                        <p><strong>marcador 1</strong></p>
+                      </div>
+                    </div>
+                    <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                    <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                    <div class="calendario-large-card-duracao">
+                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                    </div>
+                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div id="aba2" class="aba-template">
+          Todos os Eventos
+        </div>
+
+        <div id="aba3" class="aba-template">
+          Lembretes e Tarefas
+        </div>
+
       </div>
     </section>
+
     <section class="main-sidenav">
-      <div class="area-template" id="container-marcadores">
-        <h2 class="area-template-header">Marcadores</h2>
-        <div class="area-template-content">
-          <ul class="lista-vertical-3-template recuar-expandir-horizontal">
+      <div class="area-template-fil">
+        <h2 class="area-template-fil-header">Pesquisa rápida
+          <button class="btn-recuar-expandir" onclick="toggleOcultarExibir()">Exibir pesquisa rápida</button>
+        </h2>
+        <div class="area-template-fil-content lista-vertical-template">
+          <ul class="lista-vertical-3-template">
             <li>
-              <a class="marcador-s cor-marc1" href="#">
-                <p>icon</p>
-                <p><strong>title marcador</strong></p>
+              <a class="marcador-s cor-marc1" href=<p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc2" href=<p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc3" href=<p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc4" href=<p><strong>title marcador</strong></p>
+              </a>
+            </li>
+            <li>
+              <a class="marcador-s cor-marc5" href=<p><strong>title marcador</strong></p>
               </a>
             </li>
           </ul>
         </div>
-        <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">recuar/expandir</button>
       </div>
     </section>
+
   </main>
-  <!-- Botão para abrir o modal -->
-  <div id="floatingButton" onclick="mostrarModal()">+</div>
-  <!-- Modal Overlay e Content -->
-  <div id="modalOverlay" onclick="fecharModal()">
-    <div id="modalContent">
-      <!-- Conteúdo do modal -->
-      <p>Opção 1</p>
-      <p>Opção 2</p>
-      <p>Opção 3</p>
+
+  <!-- Modal Botão Flutuante -->
+  <button class="floatingButton">+</button>
+  <div class="modal-btn-floating-Overlay esconderModal">
+    <div class="modalContent-btn-floating">
+      <div class="modal-btn-floating-header">
+        <h1>Criar</h1>
+      </div>
+      <ul class="modal-btn-floating-body">
+        <li><a href="form-pleito.html">Pleito</a></li>
+      </ul>
     </div>
   </div>
 
 
-  <script src="./static/js/SombraHeaderScroll.js"></script>
-  <script src="./static/js/RecuarExpandirHorizontal.js"></script>
+
+
   <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/SombraHeaderScroll.js"></script>
+  <script src="./static/js/BarraDePesquisa.js"></script>
+  <script src="./static/js/OcultarExibir.js"></script>
+  <script src="./static/js/ModalInfoEvento.js"></script>
+  <script src="./static/js/NavAbasInternas.js"></script>
+
 </body>
 
 </html>

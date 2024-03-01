@@ -1,7 +1,7 @@
 /* Estilos CSS para o formulário */
 .background-area-form {
   padding: 0rem 0rem 4.3rem 0rem;
-  border-radius: 0.9375rem;
+  border-radius: 9px;
   background: #3d4349aa;
 }
 .form-header {
@@ -9,8 +9,8 @@
   justify-items: center;
   padding: 0.625rem;
   gap: 0.625rem;
-  border-radius: 0.9375rem;
-  background: var(--cor-p8);
+  border-radius: 9px;
+  background: var(--cor-2);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border: 1px solid var(--cor-p7);
 }
@@ -31,10 +31,10 @@ legend {
 }
 
 fieldset {
-  border-radius: 0.9375rem;
+  border-radius: 9px;
   border: 1px solid var(--cor-p7);
   margin-top: 0.625rem;
-  background: var(--cor-p8);
+  background: var(--cor-2);
 }
 
 label {
@@ -68,9 +68,9 @@ label {
   padding: 0.9375rem;
   margin: 0rem 0.625rem 0rem 0rem;
   color: var(--cor-p3);
-  background: var(--cor-p6);
+  background: var(--cor-p4);
   border: 1px solid var(--cor-p4);
-  border-radius: 0.9375rem;
+  border-radius: 9px;
 }
 
 .campo input[type="checkbox"],

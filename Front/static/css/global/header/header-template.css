@@ -134,7 +134,7 @@
   .header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--cor-p6);
-    background: var(--cor-p1);
+    background: var(--cor-12);
   }
   .search-button {
     padding: 8px;
