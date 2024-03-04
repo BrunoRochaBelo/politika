@@ -1,0 +1,85 @@
+/* CARDS despesas */
+/* Médio */
+.despesas-medium-card {
+  display: grid;
+  gap: 3px;
+  align-content: center;
+  text-overflow: ellipsis;
+  grid:
+    "despesas-medium-card-tiposolici despesas-medium-card-data"
+    "despesas-medium-card-desc despesas-medium-card-desc"
+    "despesas-medium-card-solicitante despesas-medium-card-solicitante"
+    "despesas-medium-card-beneficiario despesas-medium-card-beneficiario"
+    ". despesas-medium-card-editar";
+}
+.despesas-medium-card-id {
+  display: none;
+}
+.despesas-medium-card-tiposolici {
+  grid-area: despesas-medium-card-tiposolici;
+  border-left: 4px solid var(--cor-p4);
+  padding-left: 10px;
+  font-size: var(--titulo-s);
+  justify-self: start;
+  align-self: center;
+}
+.despesas-medium-card-desc {
+  grid-area: despesas-medium-card-desc;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: grid;
+  grid-auto-flow: column;
+  background: var(--cor-p4);
+  border-radius: 0.625rem;
+  justify-content: start;
+  align-items: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-data {
+  grid-area: despesas-medium-card-data;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-solicitante {
+  grid-area: despesas-medium-card-solicitante;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-beneficiario {
+  grid-area: despesas-medium-card-beneficiario;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-editar {
+  grid-area: despesas-medium-card-editar;
+  display: none;
+  justify-self: end;
+  align-self: center;
+  display: none;
+  opacity: 0;
+  border-top: 1px solid var(--cor-p6);
+}
+
+.exibirDetalheContato {
+  display: inline-block;
+  opacity: 1 !important;
+}
+.despesas-medium-card-beneficiario.exibirDetalheContato,
+.despesas-medium-card-editar.exibirDetalheContato,
+.despesas-medium-card-editar.exibirDetalheContato {
+  display: inline-block;
+
+  opacity: 1;
+}

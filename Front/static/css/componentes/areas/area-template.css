@@ -46,7 +46,7 @@
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   font-size: var(--titulo-m);
   padding: 0.625rem;
   text-align: left;
