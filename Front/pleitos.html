@@ -69,56 +69,28 @@
             <span>{{total}}</span>&nbsp;- listados para &nbsp; <p id="filtroselect">{{filtro}}</p>
           </div>
           <ul class="area-template-alt-content lista-vertical-template">
-            <li class="area-template-alt">
-              <h2 class="area-template-alt-header"></h2>
-              <ul class="area-template-alt-content lista-vertical-template">
-                <li>
-                  <a class="card-l calendario-large-card evento" href="#">
-                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
-                    <div class="calendario-large-card-tag" data-filter="tagEvento">
-                      <div class="marcador-item cor-marc1">
-                        <p><strong>marcador 1</strong></p>
-                      </div>
-                    </div>
-                    <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
-                    <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
-                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
-                    <div class="calendario-large-card-duracao">
-                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
-                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
-                    </div>
-                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="card-l calendario-large-card evento" href="#">
-                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
-                    <div class="calendario-large-card-tag" data-filter="tagEvento">
-                      <div class="marcador-item cor-marc3">
-                        <p><strong>marcador 1</strong></p>
-                      </div>
-                    </div>
-                    <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
-                    <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
-                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
-                    <div class="calendario-large-card-duracao">
-                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
-                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
-                    </div>
-                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
-                  </a>
-                </li>
-              </ul>
+            <li>
+              <a class="card-m pleitos-medium-card" href="#">
+                <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
+                <div class="pleitos-medium-card-desc" data-filter="descPleito">
+                  <p><strong>Descrição</strong></p>
+                </div>
+                <p class="pleitos-medium-card-data" data-filter="dataPleito">xx/xx/xxxx</p>
+                <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
+                <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
+                <a class="pleitos-medium-card-editar" href="#">Editar</a>
+                <div class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</div>
+              </a>
             </li>
           </ul>
         </div>
 
         <div id="aba2" class="aba-template">
-          Todos os Eventos
+          Pleitos em andamento
         </div>
 
         <div id="aba3" class="aba-template">
-          Lembretes e Tarefas
+          Pleitos em concluidos
         </div>
 
       </div>

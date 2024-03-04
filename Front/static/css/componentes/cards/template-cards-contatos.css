@@ -71,6 +71,7 @@
   align-self: center;
   display: none;
   opacity: 0;
+  margin: 3px 0 0 10px;
   border-top: 1px solid var(--cor-p6);
 }
 

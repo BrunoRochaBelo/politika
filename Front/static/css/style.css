@@ -4,10 +4,10 @@
 @import "./global/main-template.css";
 @import "./global/login.css";
 @import "./global/form.css";
-/* Global/Header */
+/* Global/ Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
-/* Global/Modais */
+/* Global/ Modais */
 @import "./global/modais/modal-btn-float.css";
 @import "./global/modais/modal-menu.css";
 @import "./global/modais/modal-info-evento.css";
@@ -22,11 +22,13 @@
 @import "./componentes/botoes.css";
 @import "./componentes/marcadores.css";
 @import "./componentes/recuar-expandir.css";
+/* Componentes/ cards */
 @import "./componentes/cards/cards.css";
 @import "./componentes/cards/template-cards-calendario.css";
 @import "./componentes/cards/template-cards-contatos.css";
+@import "./componentes/cards/template-cards-pleitos.css";
 @import "./componentes/cards/template-cards-quantitativos.css";
-/* Componentes/areas */
+/* Componentes/ areas */
 @import "./componentes/areas/area-template.css";
 @import "./componentes/areas/area-abas-template.css";
 

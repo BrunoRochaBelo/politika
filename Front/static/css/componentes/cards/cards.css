@@ -22,7 +22,7 @@
 /* Médio altura 50px*/
 .card-m {
   display: grid;
-  height: 50px;
+  min-height: 50px;
   background: var(--cor-2);
   color: var(--cor-5);
   padding: 15px;
