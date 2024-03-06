@@ -2,18 +2,16 @@
 /* Médio */
 .pleitos-medium-card {
   display: grid;
-  gap: 3px;
-  align-content: center;
-  text-overflow: ellipsis;
+  gap: 10px;
   grid:
-    "pleitos-medium-card-tiposolici pleitos-medium-card-data"
-    "pleitos-medium-card-desc pleitos-medium-card-desc"
-    "pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
-    "pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario"
-    ". pleitos-medium-card-editar";
+    "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
+    "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
+    "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc";
 }
+
 .pleitos-medium-card-id {
   display: none;
+  opacity: 0;
 }
 .pleitos-medium-card-tiposolici {
   grid-area: pleitos-medium-card-tiposolici;
@@ -23,22 +21,8 @@
   justify-self: start;
   align-self: center;
 }
-.pleitos-medium-card-desc {
-  grid-area: pleitos-medium-card-desc;
-  align-self: center;
-  justify-self: stretch;
-  padding: 10px 14px;
-  display: grid;
-  grid-auto-flow: column;
-  background: var(--cor-p4);
-  border-radius: 0.625rem;
-  justify-content: start;
-  align-items: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-}
-.pleitos-medium-card-data {
-  grid-area: pleitos-medium-card-data;
+.pleitos-medium-card-dataSolici {
+  grid-area: pleitos-medium-card-dataSolici;
   justify-self: start;
   align-self: center;
   padding-left: 14px;
@@ -46,40 +30,131 @@
 }
 .pleitos-medium-card-solicitante {
   grid-area: pleitos-medium-card-solicitante;
-  display: none;
   justify-self: start;
   align-self: center;
-  opacity: 0;
   padding-left: 14px;
   margin: 3px 0 0 10px;
 }
+.pleitos-medium-card-desc {
+  grid-area: pleitos-medium-card-desc;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: flex;
+  background: var(--cor-p4);
+  border-radius: 0.625rem;
+  justify-content: start;
+  align-items: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+
 .pleitos-medium-card-beneficiario {
   grid-area: pleitos-medium-card-beneficiario;
   display: none;
+  opacity: 0;
   justify-self: start;
   align-self: center;
-  opacity: 0;
   padding-left: 14px;
   margin: 3px 0 0 10px;
 }
+.pleitos-medium-card-uf {
+  grid-area: pleitos-medium-card-uf;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.pleitos-medium-card-cidade {
+  grid-area: pleitos-medium-card-cidade;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.pleitos-medium-card-bairro {
+  grid-area: pleitos-medium-card-bairro;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.pleitos-medium-card-rua {
+  grid-area: pleitos-medium-card-rua;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.pleitos-medium-card-autor {
+  grid-area: pleitos-medium-card-autor;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.pleitos-medium-card-dataCriacao {
+  grid-area: pleitos-medium-card-dataCriacao;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.pleitos-medium-card-status {
+  grid-area: pleitos-medium-card-status;
+  display: none;
+  opacity: 0;
+}
+
 .pleitos-medium-card-editar {
   grid-area: pleitos-medium-card-editar;
   display: none;
+  opacity: 0;
   justify-self: end;
   align-self: center;
   display: none;
   opacity: 0;
+  opacity: 0;
   border-top: 1px solid var(--cor-p6);
 }
 
-.exibirDetalheContato {
+.exibirDetalhePleito {
   display: inline-block;
   opacity: 1 !important;
 }
-.pleitos-medium-card-beneficiario.exibirDetalheContato,
-.pleitos-medium-card-editar.exibirDetalheContato,
-.pleitos-medium-card-editar.exibirDetalheContato {
+.pleitos-medium-card-expanded {
+  grid:
+    "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
+    "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
+    "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc"
+    "pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario"
+    "pleitos-medium-card-uf pleitos-medium-card-cidade pleitos-medium-card-bairro"
+    "pleitos-medium-card-rua pleitos-medium-card-rua pleitos-medium-card-rua"
+    "pleitos-medium-card-autor pleitos-medium-card-autor pleitos-medium-card-dataCriacao"
+    "pleitos-medium-card-status pleitos-medium-card-status pleitos-medium-card-status"
+    ". . pleitos-medium-card-editar";
+}
+.pleitos-medium-card-beneficiario.exibirDetalhePleito,
+.pleitos-medium-card-uf.exibirDetalhePleito,
+.pleitos-medium-card-cidade.exibirDetalhePleito,
+.pleitos-medium-card-bairro.exibirDetalhePleito,
+.pleitos-medium-card-rua.exibirDetalhePleito,
+.pleitos-medium-card-autor.exibirDetalhePleito,
+.pleitos-medium-card-dataCriacao.exibirDetalhePleito,
+.pleitos-medium-card-editar.exibirDetalhePleito {
   display: inline-block;
-
+  margin: 3px 0 0 10px;
   opacity: 1;
 }

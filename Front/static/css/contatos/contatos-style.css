@@ -2,7 +2,10 @@
   justify-content: start;
 }
 
-div[data-filter="idContato"] {
-  color: transparent;
-  font-size: 0px;
+@media (max-width: 767px) {
+  .list-contato .lista-vertical-template:last-child {
+    border-radius: 0px;
+    border-bottom: 1px solid var(--cor-p7);
+    margin-bottom: 55px;
+  }
 }

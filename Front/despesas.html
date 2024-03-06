@@ -43,7 +43,7 @@
     </nav>
     <div class="header-search">
       <div class="search-input-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar evento...">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar despesa...">
         <button class="search-button" onclick="search()">
           <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
         </button>
@@ -57,28 +57,30 @@
       <div id="resultsContainer" class="area-template">
         <h2 class="area-template-header contato-area-template-header"><span id="totalResults">{{total}}</span>&nbsp;- listadas para &nbsp; <p id="filtroselect">{{filtro}}</p>
         </h2>
-        <ul class="area-template-content lista-vertical-template" id="contatosList">
-          <li class="area-template-alt">
-            <h2 class="area-template-alt-header">mês</h2>
-            <ul class="area-template-alt-content lista-vertical-template-alt">
-              <li>
-                <a class="card-m pleitos-medium-card" href="#">
-                  <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Natureza</p>
-                  <div class="pleitos-medium-card-desc" data-filter="descPleito">
-                    <p><strong>Descrição</strong></p>
-                  </div>
-                  <p class="pleitos-medium-card-data" data-filter="dataPleito">xx/xx/xxxx</p>
-                  <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
-                  <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
-                  <a class="pleitos-medium-card-editar" href="#">Editar</a>
-                  <div class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <div id="loadingMessage" style="display: none;">Carregando...</div>
-          <div id="searcherrorMessage" style="color: red;"></div>
-        </ul>
+        <div class="area-template-content">
+          <ul class="lista-vertical-template" id="despesasList">
+            <li class="area-template-alt">
+              <h2 class="area-template-alt-header">mês</h2>
+              <ul class="area-template-alt-content lista-vertical-template-alt">
+                <li>
+                  <a class="card-m pleitos-medium-card" href="#">
+                    <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Natureza</p>
+                    <div class="pleitos-medium-card-desc" data-filter="descPleito">
+                      <p><strong>Descrição</strong></p>
+                    </div>
+                    <p class="pleitos-medium-card-data" data-filter="dataPleito">xx/xx/xxxx</p>
+                    <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
+                    <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
+                    <a class="pleitos-medium-card-editar" href="#">Editar</a>
+                    <div class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <div id="loadingMessage" style="display: none;">Carregando...</div>
+            <div id="searcherrorMessage" style="color: red;"></div>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -119,12 +121,12 @@
   <!-- Modal Botão Flutuante -->
   <button class="floatingButton">+</button>
   <div class="modal-btn-floating-Overlay esconderModal">
-    <div class="modalContent-btn-floating">
+    <div class="modal-btn-floating-content">
       <div class="modal-btn-floating-header">
-        <h1>Criar</h1>
+        <h1>NOVA</h1>
       </div>
       <ul class="modal-btn-floating-body">
-        <li><a href="form-pleito.html">Pleito</a></li>
+        <li><a href="form-pleito.html">Despesa</a></li>
       </ul>
     </div>
   </div>

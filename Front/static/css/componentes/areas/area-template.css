@@ -1,7 +1,6 @@
 /* Area Template padrão*/
 .area-template {
   display: grid;
-  overflow: hidden;
   border-radius: 0.625rem;
   grid:
     "area-template-header" auto
@@ -22,12 +21,14 @@
 }
 .area-template-content {
   grid-area: area-template-content;
-  overflow-x: auto;
+  overflow-x: hidden;
   border-radius: 0.625rem;
   gap: 0.9375rem;
   padding: 0.625rem;
   background: #3d4349aa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-height: 80vh;
 }
 
 /* Area Template alternativa*/
@@ -46,7 +47,7 @@
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  justify-content: start;
+  justify-content: stretch;
   font-size: var(--titulo-m);
   padding: 0.625rem;
   text-align: left;
@@ -155,6 +156,7 @@
 }
 
 /* Estilos */
+.area-template-content::-webkit-scrollbar,
 .area-template-alt-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
@@ -162,11 +164,13 @@
 /* RESPONSIVO */
 @media (max-width: 768px) {
   /* Area Template padrão*/
-
   .area-template-content {
     grid-area: area-template-content;
     padding: 5px;
+    height: auto;
+    max-height: 72vh;
   }
+
   /* Area Template dos filtros*/
   .area-template-fil {
     padding: 0rem;
@@ -198,5 +202,10 @@
     transition: all 1s ease-in-out;
     position: relative;
     padding: 5px;
+  }
+
+  .area-template::-webkit-scrollbar,
+  .area-template-content::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
   }
 }

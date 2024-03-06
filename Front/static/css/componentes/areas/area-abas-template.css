@@ -1,8 +1,6 @@
 /* area-abas Template*/
 .area-abas-template {
   display: grid;
-  align-content: center;
-  justify-content: center;
   border-radius: 0.625rem;
   grid:
     "area-abas-template-header" auto
@@ -19,13 +17,14 @@
 }
 .area-abas-template-content {
   grid-area: area-abas-template-content;
-  overflow-x: auto;
-  scrollbar-width: thick;
+  overflow-x: hidden;
   background: #3d4349aa;
   gap: 0.9375rem;
   padding: 0.625rem;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
+  height: auto;
+  max-height: 80vh;
 }
 
 /* Estilos */
@@ -109,5 +108,7 @@
   .area-abas-template-content {
     grid-area: area-abas-template-content;
     padding: 0px 5px 10px 5px;
+    height: auto;
+    max-height: 72vh;
   }
 }

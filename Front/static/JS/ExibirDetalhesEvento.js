@@ -6,7 +6,7 @@ function exibirDetalhesEvento(event) {
   );
   var editar = event.currentTarget.querySelector(
     ".calendario-small-card-editar"
-  ); // Adicionado
+  );
 
   // Verifica a altura da área
   var area = document.querySelector(".area-template-tmf-alt-content");
@@ -35,4 +35,32 @@ document.addEventListener("DOMContentLoaded", function () {
   for (var i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", exibirDetalhesEvento);
   }
+});
+
+function exibirEditar(event) {
+  event.preventDefault();
+
+  // Encontrar o campo oculto
+  const card = event.currentTarget;
+  const editar = card.querySelector(".calendario-large-card-editar");
+
+  // Verificar se o campo está visível
+  const campoVisivel = editar.classList.contains("exibirDetalheEvento");
+
+  // Se o campo estiver visível, ocultá-lo
+  if (campoVisivel) {
+    editar.classList.remove("exibirDetalheEvento");
+  } else {
+    // Se o campo não estiver visível, exibi-lo e centralizar o card
+    editar.classList.add("exibirDetalheEvento");
+    card.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+// Adiciona um ouvinte de evento de clique para a lista de cards
+document.addEventListener("DOMContentLoaded", function () {
+  const listaDeCards = document.querySelectorAll(".calendario-large-card");
+  listaDeCards.forEach((card) => {
+    card.addEventListener("click", exibirEditar);
+  });
 });

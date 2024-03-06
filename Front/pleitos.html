@@ -52,7 +52,6 @@
   </header>
 
   <main class="main main-template">
-
     <section class="main-section area-abas-template">
       <nav class="area-abas-template-header">
         <ul id="navAba" class="nav">
@@ -66,20 +65,29 @@
 
         <div id="aba1" class="aba-template area-template-alt active">
           <div class="area-template-alt-header">
-            <span>{{total}}</span>&nbsp;- listados para &nbsp; <p id="filtroselect">{{filtro}}</p>
+            <div class="header-list-pleitos">
+              <span>{{total}}</span>&nbsp;- listados para &nbsp; <p id="filtroselect">{{filtro}}</p>
+            </div>
           </div>
           <ul class="area-template-alt-content lista-vertical-template">
-            <li>
-              <a class="card-m pleitos-medium-card" href="#">
+            <li class="card-m">
+              <a class=" pleitos-medium-card" href="#">
                 <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
+                <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
+                <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
                 <div class="pleitos-medium-card-desc" data-filter="descPleito">
                   <p><strong>Descrição</strong></p>
                 </div>
-                <p class="pleitos-medium-card-data" data-filter="dataPleito">xx/xx/xxxx</p>
-                <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
                 <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
-                <a class="pleitos-medium-card-editar" href="#">Editar</a>
-                <div class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</div>
+                <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
+                <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
+                <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
+                <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
+                <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
+                <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
+                <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
+                <p class="pleitos-medium-card-editar" href="#">Editar</p>
+                <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
               </a>
             </li>
           </ul>
@@ -102,28 +110,42 @@
           <button class="btn-recuar-expandir" onclick="toggleOcultarExibir()">Exibir pesquisa rápida</button>
         </h2>
         <div class="area-template-fil-content lista-vertical-template">
-          <ul class="lista-vertical-3-template">
-            <li>
-              <a class="marcador-s cor-marc1" href=<p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc2" href=<p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc3" href=<p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc4" href=<p><strong>title marcador</strong></p>
-              </a>
-            </li>
-            <li>
-              <a class="marcador-s cor-marc5" href=<p><strong>title marcador</strong></p>
-              </a>
-            </li>
+          <button class="btn-filter-leaked" type="button" data-filter="todos">
+            <strong>Todos</strong>
+          </button>
+          <select class="card-select-xs" id="tipoPleito" name="tipoPleito">
+            <option value="" selected disabled>Tipo de Pleito</option>
+            <option value="apoio juridico">APOIO JURÍDICO</option>
+            <option value="apoio politico">APOIO POLÍTICO</option>
+            <option value="educacao e capacitacao">EDUCAÇÃO E CAPACITAÇÃO</option>
+            <option value="emprego">EMPREGO</option>
+            <option value="infraestrutura">INFRAESTRUTURA</option>
+            <option value="outros">OUTROS</option>
+            <option value="recurso para construcao civil">RECURSO PARA CONSTRUÇÃO CIVIL</option>
+            <option value="saude">SAÚDE</option>
+            <option value="seguranca">SEGURANÇA</option>
+            <option value="servico publico estadual">SERVIÇO PÚBLICO ESTADUAL</option>
+            <option value="servico publico federal">SERVIÇO PÚBLICO FEDERAL</option>
+            <option value="servico publico municipal">SERVIÇO PÚBLICO MUNICIPAL</option>
+            <option value="transferencia de orgao">TRANSFERÊNCIA DE ÓRGÃO</option>
+            <option value="transporte publico">TRANSPORTE PÚBLICO</option>
+          </select>
+          <ul class=" lista-select">
+            <li class="item1"><select class="card-select-m" id="estado" onchange="carregarCidades()">
+                <option value="" selected disabled>Selecione um estado</option>
+                <option value="PE">Pernambuco</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+              </select></li>
+            <li class="item2"><select class="card-select-m" id="cidade">
+                <option value="" selected disabled>Selecione um estado primeiro</option>
+              </select></li>
+            <li class="item3"><select class="card-select-m" id="bairro">
+                <option value="" selected disabled>Selecione uma cidade e defina o bairro</option>
+              </select></li>
           </ul>
+
         </div>
       </div>
     </section>
@@ -133,9 +155,9 @@
   <!-- Modal Botão Flutuante -->
   <button class="floatingButton">+</button>
   <div class="modal-btn-floating-Overlay esconderModal">
-    <div class="modalContent-btn-floating">
+    <div class="modal-btn-floating-content">
       <div class="modal-btn-floating-header">
-        <h1>Criar</h1>
+        <h1>NOVO</h1>
       </div>
       <ul class="modal-btn-floating-body">
         <li><a href="form-pleito.html">Pleito</a></li>
@@ -152,6 +174,7 @@
   <script src="./static/js/OcultarExibir.js"></script>
   <script src="./static/js/ModalInfoEvento.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
+  <script src="./static/js/ExibirDetalhesPleito.js"></script>
 
 </body>
 

@@ -25,6 +25,7 @@ form span {
   font-size: var(--titulo-s);
   margin: 0.3125rem 0.625rem 0.3125rem 0rem;
 }
+
 legend {
   text-align: center;
 }
@@ -49,17 +50,14 @@ label {
 #camposCargoComissionado {
   margin: 0.625rem 0.625rem 1.875rem 0.625rem;
 }
-
 .campo-invalido {
   border: 1px solid red;
 }
-
 .campo label {
   display: inline-block;
   margin: 0.625rem 1.25rem 0.3125rem 0rem;
   font-weight: bold;
 }
-
 .campo input,
 .campo select {
   width: 100%;
@@ -71,7 +69,6 @@ label {
   border: 1px solid var(--cor-p4);
   border-radius: 9px;
 }
-
 .campo input[type="checkbox"],
 .campo input[type="radio"] {
   width: auto;
@@ -82,19 +79,17 @@ label {
   justify-content: space-between;
   margin: 3.125rem;
 }
-
 .botoes button {
   width: 30%; /* Ocupa a largura total */
 }
-
 .botoes button:hover {
   background-color: rgba(157, 157, 157, 0.7);
   color: var(--cor-12);
 }
+
 .form-header .nav {
   gap: 0.625rem;
 }
-
 .form-header .nav a {
   font-size: 1rem;
   padding: 0.625rem;
@@ -113,7 +108,6 @@ label {
   padding: 0.625rem;
   border-radius: 50px;
 }
-
 .form-header .nav a.indicador-2 {
   font-weight: bold;
   color: var(--cor-p3);

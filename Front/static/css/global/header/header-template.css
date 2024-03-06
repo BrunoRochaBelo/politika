@@ -46,6 +46,14 @@
   color: var(--cor-1);
   border: 1px solid var(--cor-p7);
 }
+/* Cor do placeholder */
+.search-input::placeholder {
+  color: var(--cor-7); /* Substitua 'red' pela cor desejada */
+}
+/* Cor do placeholder ao focar */
+.search-input:focus::placeholder {
+  color: var(--cor-6); /* Substitua 'blue' pela cor desejada ao focar */
+}
 .search-button {
   padding: 8px;
   background: var(--cor-p1);
@@ -121,7 +129,7 @@
     cursor: pointer;
     width: 100%;
     color: var(--cor-1);
-    background: var(--cor-12);
+    background: #00000066;
     border: 1px solid var(--cor-p7);
   }
   .search-input.scroll-active {

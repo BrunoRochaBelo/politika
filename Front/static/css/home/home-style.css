@@ -19,6 +19,9 @@
     color: var(--cor-12);
   }
 
+  .home-body .main-template {
+    gap: 20px 0rem;
+  }
   #moldura,
   #logo {
     width: 32px;

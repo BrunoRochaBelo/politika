@@ -49,6 +49,11 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .list-calendario .lista-vertical-template:last-child {
+    border-radius: 0px;
+    border-bottom: 1px solid var(--cor-p7);
+    margin-bottom: 55px;
+  }
   .change-semana p {
     display: none;
   }

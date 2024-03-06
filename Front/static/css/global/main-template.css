@@ -15,7 +15,6 @@
   display: grid;
   grid-auto-flow: row;
   align-items: start;
-  margin-bottom: 75px;
 }
 .main-sidenav {
   grid-area: main-sidenav;
@@ -37,7 +36,6 @@
 /* RESPONSIVO */
 @media (max-width: 800px) {
   .main-template {
-    gap: 20px 0rem;
     grid:
       "main-sidenav"
       "main-section"

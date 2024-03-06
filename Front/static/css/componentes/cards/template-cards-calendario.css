@@ -143,7 +143,8 @@
     "calendario-large-card-title calendario-large-card-title"
     "calendario-large-card-local calendario-large-card-local"
     "calendario-large-card-partcipantes calendario-large-card-partcipantes"
-    "calendario-large-card-duracao calendario-large-card-duracao";
+    "calendario-large-card-duracao calendario-large-card-duracao"
+    ". calendario-large-card-editar";
 }
 .calendario-large-card-type {
   grid-area: calendario-large-card-type;
@@ -197,6 +198,28 @@
 .calendario-large-card-fim {
   font-size: var(--font-medium-light);
   justify-self: start;
+}
+.calendario-large-card-editar {
+  grid-area: calendario-large-card-editar;
+  display: none;
+  justify-self: end;
+  align-self: center;
+  display: none;
+  opacity: 0;
+  border-top: 1px solid var(--cor-p6);
+  margin: 3px 0 0 0px;
+}
+
+.exibirDetalheEvento {
+  max-height: 500px;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.calendario-large-card-editar.exibirDetalheEvento {
+  display: block;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
 
 /* Vazio */
