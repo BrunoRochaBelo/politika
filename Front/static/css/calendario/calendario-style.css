@@ -1,7 +1,6 @@
 .nav-calendar {
   justify-content: space-between;
 }
-
 .nav-semana {
   display: grid;
   grid-auto-flow: column;
