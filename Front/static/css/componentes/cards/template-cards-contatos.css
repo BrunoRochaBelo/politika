@@ -10,10 +10,6 @@
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     " contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
-    "contatos-small-card-num contatos-small-card-num contatos-small-card-num contatos-small-card-phone "
-    "contatos-small-card-email contatos-small-card-email contatos-small-card-email contatos-small-card-phone "
-    "contatos-small-card-tipopessoa .  .  contatos-small-card-phone"
-    ". . contatos-small-card-editar   ."
     /0.5fr 0.5fr 1fr 32px;
 }
 .contatos-small-card-id {
@@ -39,6 +35,7 @@
 .contatos-small-card-perfilInfluencia {
   grid-area: contatos-small-card-perfilInfluencia;
   justify-self: start;
+  margin: 3px 0 0 10px;
 }
 
 .contatos-small-card-num {
@@ -80,13 +77,22 @@
   display: inline-block;
   opacity: 1 !important;
 }
+.contatos-small-card-expanded {
+  grid:
+    "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
+    " contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
+    "contatos-small-card-num contatos-small-card-num contatos-small-card-num contatos-small-card-phone "
+    "contatos-small-card-email contatos-small-card-email contatos-small-card-email contatos-small-card-phone "
+    "contatos-small-card-tipopessoa .  .  contatos-small-card-phone"
+    ". . contatos-small-card-editar   .";
+}
 .contatos-small-card-num.exibirDetalheContato,
 .contatos-small-card-email.exibirDetalheContato,
 .contatos-small-card-tipopessoa.exibirDetalheContato,
 .contatos-small-card-editar.exibirDetalheContato {
   display: inline-block;
-
   opacity: 1;
+  margin: 3px 0 0 10px;
 }
 
 /* Médio */

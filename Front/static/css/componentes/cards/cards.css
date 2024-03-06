@@ -2,9 +2,9 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   min-height: 30px;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
-  padding: 5px 15px;
+  padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
   border: 1px solid var(--cor-p1);
@@ -13,7 +13,7 @@
 /* Pequeno altura 35px*/
 .card-s {
   height: 35px;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,7 @@
 /* Médio altura 50px*/
 .card-m {
   min-height: 50px;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -32,7 +32,7 @@
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   padding: 15px;
   gap: 0.625rem;
@@ -46,7 +46,7 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   border: 1px solid var(--cor-p1);
   padding: 15px;
@@ -57,7 +57,7 @@
 .card-tmf-m {
   width: 150px;
   height: 160px;
-  background: var(--cor-2);
+  background: linear-gradient(to bottom, var(--cor-12), var(--cor-2));
   color: var(--cor-5);
   border: 1px solid var(--cor-p1);
   padding: 15px;
@@ -69,7 +69,7 @@
   width: 184px;
   height: 190px;
   min-height: 170px;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   border: 1px solid var(--cor-p1);
   padding: 15px;
@@ -83,7 +83,7 @@
   border-radius: 0.625rem;
   width: 100%;
   padding: 0.3rem;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   font-weight: var(--font-light);
   border: 1px solid var(--cor-p1);
@@ -91,7 +91,7 @@
 .card-select-s {
   border-radius: 0.625rem;
   width: 100%;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   font-weight: var(--font-medium-regular);
   border: 1px solid var(--cor-p1);
@@ -99,7 +99,7 @@
 .card-select-m {
   padding: 0.625rem;
   width: 100%;
-  background: var(--cor-2);
+  background: radial-gradient(circle, var(--cor-2), var(--cor-12));
   color: var(--cor-5);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);

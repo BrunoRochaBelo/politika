@@ -7,10 +7,7 @@
   overflow: hidden;
   grid:
     "calendario-small-card-type calendario-small-card-tag"
-    "calendario-small-card-title  calendario-small-card-duracao"
-    "calendario-small-card-local calendario-small-card-local"
-    "calendario-small-card-partcipantes calendario-small-card-partcipantes"
-    ". calendario-small-card-editar";
+    "calendario-small-card-title  calendario-small-card-duracao";
 }
 .calendario-small-card-type {
   grid-area: calendario-small-card-type;
@@ -90,13 +87,21 @@
   transition: all 0.5s ease-in-out;
   overflow: hidden;
 }
-
+.calendario-small-card-expanded {
+  grid:
+    "calendario-small-card-type calendario-small-card-tag"
+    "calendario-small-card-title  calendario-small-card-duracao"
+    "calendario-small-card-local calendario-small-card-local"
+    "calendario-small-card-partcipantes calendario-small-card-partcipantes"
+    ". calendario-small-card-editar";
+}
 .calendario-small-card-local.exibirDetalheEvento,
 .calendario-small-card-partcipantes.exibirDetalheEvento,
 .calendario-small-card-editar.exibirDetalheEvento {
   display: block;
   transition: all 0.5s ease-in-out;
   opacity: 1;
+  margin: 3px 0 0 0px;
 }
 
 /* Médio */

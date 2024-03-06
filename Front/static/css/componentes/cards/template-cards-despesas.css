@@ -1,0 +1,138 @@
+/* CARDS despesas */
+/* Médio */
+.despesas-medium-card {
+  display: grid;
+  gap: 3px;
+  align-content: center;
+  text-overflow: ellipsis;
+  grid:
+    "despesas-medium-card-natureza despesas-medium-card-natureza"
+    "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
+    "despesas-medium-card-referencia despesas-medium-card-referencia"
+    "despesas-medium-card-desc despesas-medium-card-desc";
+}
+
+.despesas-medium-card-id {
+  display: none;
+}
+.despesas-medium-card-natureza {
+  grid-area: despesas-medium-card-natureza;
+  border-left: 4px solid var(--cor-p4);
+  padding-left: 10px;
+  font-size: var(--titulo-s);
+  justify-self: start;
+  align-self: center;
+}
+.despesas-medium-card-desc {
+  grid-area: despesas-medium-card-desc;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: flex;
+  background: var(--cor-p4);
+  border-radius: 0.625rem;
+  justify-content: start;
+  align-items: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-referencia {
+  grid-area: despesas-medium-card-referencia;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-dataDespesa {
+  grid-area: despesas-medium-card-dataDespesa;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-valorDespesa {
+  grid-area: despesas-medium-card-valorDespesa;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+
+.despesas-medium-card-cnpj_cpf_for {
+  grid-area: despesas-medium-card-cnpj_cpf_for;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-nome_fornecedor {
+  grid-area: despesas-medium-card-nome_fornecedor;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-ordenador_despesa {
+  grid-area: despesas-medium-card-ordenador_despesa;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-autor {
+  grid-area: despesas-medium-card-autor;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-data_criacao {
+  grid-area: despesas-medium-card-data_criacao;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+}
+.despesas-medium-card-editar {
+  grid-area: despesas-medium-card-editar;
+  display: none;
+  justify-self: end;
+  align-self: center;
+  border-top: 1px solid var(--cor-p6);
+}
+
+.exibirDetalheDespesa {
+  display: inline-block;
+  opacity: 1 !important;
+}
+.despesas-medium-card-expanded {
+  grid:
+    "despesas-medium-card-natureza despesas-medium-card-natureza"
+    "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
+    "despesas-medium-card-referencia despesas-medium-card-referencia"
+    "despesas-medium-card-desc despesas-medium-card-desc"
+    "despesas-medium-card-cnpj_cpf_for despesas-medium-card-ordenador_despesa"
+    "despesas-medium-card-nome_fornecedor despesas-medium-card-nome_fornecedor"
+    "despesas-medium-card-autor despesas-medium-card-data_criacao"
+    ". despesas-medium-card-editar";
+}
+.despesas-medium-card-cnpj_cpf_for.exibirDetalheDespesa,
+.despesas-medium-card-nome_fornecedor.exibirDetalheDespesa,
+.despesas-medium-card-ordenador_despesa.exibirDetalheDespesa,
+.despesas-medium-card-autor.exibirDetalheDespesa,
+.despesas-medium-card-data_criacao.exibirDetalheDespesa,
+.despesas-medium-card-editar.exibirDetalheDespesa {
+  display: inline-block;
+  opacity: 1;
+  margin: 3px 0 0 10px;
+}

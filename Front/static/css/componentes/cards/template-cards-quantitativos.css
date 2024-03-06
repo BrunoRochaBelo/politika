@@ -7,18 +7,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "quant-small-card-img" 2.1fr
-    "quant-small-card-title" 0.3fr
-    "quant-small-card-desc" 1.7fr
-    "quant-small-card-result" 0.7fr;
-}
-.quant-small-card-img {
-  grid-area: quant-small-card-img;
-  font-size: var(--font-medium-regular);
+    "quant-small-card-title"
+    "quant-small-card-desc"
+    "quant-small-card-result";
 }
 .quant-small-card-title {
   grid-area: quant-small-card-title;
-  font-size: var(--titulo-s);
+  font-size: var(--titulo-l);
 }
 .quant-small-card-desc {
   grid-area: quant-small-card-desc;
@@ -27,4 +22,5 @@
 .quant-small-card-result {
   grid-area: quant-small-card-result;
   font-size: var(--font-medium-regular);
+  align-self: end;
 }

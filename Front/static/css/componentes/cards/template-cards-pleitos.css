@@ -2,7 +2,7 @@
 /* Médio */
 .pleitos-medium-card {
   display: grid;
-  gap: 10px;
+  gap: 3px;
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"

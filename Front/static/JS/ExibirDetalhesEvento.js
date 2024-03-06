@@ -26,7 +26,10 @@ function exibirDetalhesEvento(event) {
   // Alterna a classe 'exibirDetalheEvento' nos elementos
   local.classList.toggle("exibirDetalheEvento");
   participantes.classList.toggle("exibirDetalheEvento");
-  editar.classList.toggle("exibirDetalheEvento"); // Adicionado
+  editar.classList.toggle("exibirDetalheEvento");
+
+  // Alterna a classe 'calendario-small-card-expanded' no card clicado
+  event.currentTarget.classList.toggle("calendario-small-card-expanded");
 }
 
 // Adiciona o evento de clique a todos os cards do evento

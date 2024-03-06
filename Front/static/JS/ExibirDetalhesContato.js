@@ -5,7 +5,7 @@ function iniciarChamadaTelefonica(card) {
 }
 
 // Função para lidar com o clique nos cards
-function handleCardClick(event) {
+function exibirDetalhesContato(event) {
   event.preventDefault();
 
   // Encontrar os campos ocultos
@@ -24,11 +24,13 @@ function handleCardClick(event) {
     camposOcultos.forEach((campo) => {
       campo.classList.remove("exibirDetalheContato");
     });
+    card.classList.remove("contatos-small-card-expanded"); // Remover a classe do grid expandido
   } else {
     // Se nenhum campo estiver visível, exibir todos os campos e centralizar o card
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalheContato");
     });
+    card.classList.add("contatos-small-card-expanded"); // Adicionar a classe do grid expandido
     card.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
@@ -41,5 +43,5 @@ function handleCardClick(event) {
 // Adiciona um ouvinte de evento de clique para a lista de cards
 const listaDeCards = document.querySelectorAll(".contatos-small-card");
 listaDeCards.forEach((card) => {
-  card.addEventListener("click", handleCardClick);
+  card.addEventListener("click", exibirDetalhesContato);
 });
