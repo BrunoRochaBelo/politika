@@ -55,8 +55,9 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
       button.style.color = "var(--cor-p3)";
-      mainSidenav.style.height = "auto";
-      area.style.background = "var(--cor-p4)";
+      mainSidenav.style.height = "72vh";
+      area.style.background =
+        "radial-gradient(circle at right bottom, #0c0420, #361d68)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida

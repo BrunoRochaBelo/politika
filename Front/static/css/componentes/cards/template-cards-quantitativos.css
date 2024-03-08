@@ -1,26 +1,32 @@
 /* Pequeno */
 .quant-small-card {
   display: grid;
-  align-items: center;
-  justify-items: start;
-  white-space: wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
   grid:
-    "quant-small-card-title"
-    "quant-small-card-desc"
-    "quant-small-card-result";
+    "quant-small-card-title" 42px
+    "quant-small-card-desc" auto
+    "quant-small-card-result" 24px
+    /1fr;
 }
 .quant-small-card-title {
   grid-area: quant-small-card-title;
-  font-size: var(--titulo-l);
+  font-size: var(--titulo-xl);
+  justify-self: stretch;
+  text-align: start;
 }
 .quant-small-card-desc {
   grid-area: quant-small-card-desc;
   font-size: var(--font-light);
+  width: 100%;
+  justify-self: stretch;
+  text-align: start;
+  white-space: wrap;
+  overflow: hidden;
+  word-break: break-all;
 }
 .quant-small-card-result {
   grid-area: quant-small-card-result;
   font-size: var(--font-medium-regular);
   align-self: end;
+  justify-self: start;
 }

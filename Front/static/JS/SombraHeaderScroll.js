@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let headerTemplate = document.querySelector(".header-template");
   let headerSearch = document.querySelector(".search-input");
   let headerSearchElement = document.querySelector(".header-search");
+  let headerButton = document.querySelector(".search-button"); // Adicionado
 
   // Função para alternar a sombra e a cor do texto de um elemento
   function toggleBoxShadow(headerElement, shadowClass, textColorVar) {
@@ -17,24 +18,30 @@ document.addEventListener("DOMContentLoaded", function () {
       // Altera a transição e a cor do elemento de pesquisa
       headerSearchElement.style.transition = "color 0.3s ease";
       headerSearchElement.style.color = textColorVar;
+      // Adiciona o z-index ao elemento
+      headerElement.style.zIndex = "1005";
     } else if (headerElement) {
       // Remove a classe de sombra do elemento
       headerElement.classList.remove(shadowClass);
       // Altera a transição e a cor do elemento de pesquisa
       headerSearchElement.style.transition = "color 0.3s ease";
       headerSearchElement.style.color = textColorVar;
+      // Remove o z-index do elemento
+      headerElement.style.zIndex = "";
     }
   }
 
   // Chama a função toggleBoxShadow no carregamento inicial da página para cada elemento
   toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-12)");
   toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-12)");
+  toggleBoxShadow(headerButton, "scroll-active", "var(--cor-12)"); // Adicionado
 
   // Adiciona um ouvinte de evento para a rolagem da janela
   window.addEventListener("scroll", function () {
     // Chama a função toggleBoxShadow quando a janela é rolada
     toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-12)");
     toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-12)");
+    toggleBoxShadow(headerButton, "scroll-active", "var(--cor-12)"); // Adicionado
   });
 });
 
@@ -56,12 +63,16 @@ document.addEventListener("DOMContentLoaded", function () {
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
       homeHeaderTitle.style.color = "var(--cor-5)";
+      // Adiciona o z-index ao elemento
+      homeHeaderTemplate.style.zIndex = "1005";
     } else if (homeHeaderTemplate && homeHeaderTitle) {
       // Remove a classe de sombra do elemento
       homeHeaderTemplate.classList.remove("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
       homeHeaderTitle.style.color = "var(--cor-5)";
+      // Remove o z-index do elemento
+      homeHeaderTemplate.style.zIndex = "";
     }
   }
 

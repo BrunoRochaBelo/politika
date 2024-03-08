@@ -18,10 +18,12 @@
 .modal-content-template {
   display: grid;
   position: fixed;
-  width: 285px;
+  min-width: 285px;
   top: 51px;
   right: 1rem;
-  background-color: var(--cor-0);
+  color: var(--cor-1);
+  background: radial-gradient(circle at right bottom, #362063, #2f4e71);
+  border: 1px solid var(--cor-2);
   padding: 1rem;
   gap: 10px;
   border-radius: 0.9375rem;
@@ -54,7 +56,7 @@
 .modal-content-template-cargo-owner {
   grid-area: modal-content-template-cargo-owner;
   justify-self: start;
-  align-self: end;
+  align-self: start;
   font-size: var(--titulo-m);
 }
 .modal-content-template-partido {
@@ -66,7 +68,7 @@
 .modal-content-template-sessao {
   grid-area: modal-content-template-sessao;
   display: grid;
-  background-color: var(--cor-3);
+  background-color: #e6beff1f;
   padding: 20px;
   border-radius: 0.9375rem;
 

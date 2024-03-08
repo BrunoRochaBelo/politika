@@ -138,12 +138,12 @@
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
-    "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc"
     "pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario"
     "pleitos-medium-card-uf pleitos-medium-card-cidade pleitos-medium-card-bairro"
     "pleitos-medium-card-rua pleitos-medium-card-rua pleitos-medium-card-rua"
     "pleitos-medium-card-autor pleitos-medium-card-autor pleitos-medium-card-dataCriacao"
     "pleitos-medium-card-status pleitos-medium-card-status pleitos-medium-card-status"
+    "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc"
     ". . pleitos-medium-card-editar";
 }
 .pleitos-medium-card-beneficiario.exibirDetalhePleito,

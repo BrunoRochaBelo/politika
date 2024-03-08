@@ -18,7 +18,7 @@
 .area-abas-template-content {
   grid-area: area-abas-template-content;
   overflow-x: hidden;
-  background: #3d4349aa;
+  background: #e6beff1f;
   padding: 5px;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
@@ -90,7 +90,7 @@
 .nav a.indicador-2 {
   font-weight: bold;
   color: var(--cor-1);
-  background: #3d4349aa;
+  background: #e6beff1f;
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
   border: 1px solid #3f1c80;

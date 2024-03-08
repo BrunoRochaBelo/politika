@@ -5,7 +5,7 @@
 @media (max-width: 820px) {
   .list-contato .lista-vertical-template:last-child {
     border-radius: 0px;
-    border-bottom: 1px solid #3d4349aa;
+    border-bottom: 1px solid #e6beff1f;
     margin-bottom: 55px;
   }
 }

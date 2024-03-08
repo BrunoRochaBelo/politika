@@ -23,7 +23,7 @@
   grid-area: area-template-content;
   overflow-x: hidden;
   border-radius: 0.625rem;
-  background: #3d4349aa;
+  background: #e6beff1f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 80vh;
@@ -91,7 +91,7 @@
   max-height: auto;
   overflow: hidden;
   border-radius: 0.625rem;
-  background: #3d4349aa;
+  background: #e6beff1f;
   padding: 5px;
   border: 5px solid transparent;
 }
@@ -147,12 +147,12 @@
 }
 .area-template-tmf-alt-content {
   grid-area: area-template-tmf-alt-content;
-  gap: 5px;
-  max-height: auto;
-  overflow: hidden;
+  overflow-x: hidden;
   border-radius: 0.625rem;
-  background: #3d4349aa;
-  padding: 5px;
+  background: #e6beff1f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-height: 80vh;
   border: 5px solid transparent;
 }
 
@@ -173,6 +173,7 @@
     overflow-y: auto;
   }
 
+  /* Area Template alternativa*/
   .area-template-alt-content {
     grid-area: area-template-alt-content;
     padding: 0px;
@@ -199,7 +200,7 @@
     max-height: 0px;
     overflow: auto;
     padding: 20px 0px 20px 0px;
-    background: var(--cor-2);
+    background: #e6beff1f;
   }
 
   /* Area Template alternativa Tamanho fixo*/
@@ -230,7 +231,7 @@
     max-height: 0px;
     overflow: auto;
     padding: 20px 0px 20px 0px;
-    background: var(--cor-2);
+    background: #e6beff1f;
   }
 
   .area-template::-webkit-scrollbar,

@@ -40,6 +40,13 @@
   cursor: pointer;
 }
 
+.area-template-fil-content .btn-filter-leaked {
+  background: linear-gradient(to right bottom, #16043a, #0b021d);
+  color: var(--cor-1);
+  border: 1px solid var(--cor-2);
+  border-radius: 9px;
+}
+
 @media (max-width: 820px) {
   .btn-filter-leaked {
     display: flex;

@@ -1,72 +1,102 @@
-// Função para card LARGE
+// Função para card SMALL
+// Função para lidar com o clique nos cards
 function exibirDetalhesEvento(event) {
-  // Encontra os elementos dentro do card clicado
-  var local = event.currentTarget.querySelector(".calendario-small-card-local");
-  var participantes = event.currentTarget.querySelector(
-    ".calendario-small-card-partcipantes"
-  );
-  var editar = event.currentTarget.querySelector(
-    ".calendario-small-card-editar"
+  event.preventDefault();
+
+  const cardEventoSmall = event.currentTarget;
+  const camposOcultos = cardEventoSmall.querySelectorAll(
+    ".calendario-small-card-local, .calendario-small-card-partcipantes, .calendario-small-card-duracao, .calendario-small-card-editar"
   );
 
-  // Verifica a altura da área
-  var area = document.querySelector(".area-template-tmf-alt-content");
-  var areaHeight = area.offsetHeight;
+  const algumCampoVisivel = Array.from(camposOcultos).some((campo) =>
+    campo.classList.contains("exibirDetalheEvento")
+  );
 
-  // Verifica a altura do card
-  var cardHeight = event.currentTarget.offsetHeight;
+  if (algumCampoVisivel) {
+    camposOcultos.forEach((campo) => {
+      campo.classList.remove("exibirDetalheEvento");
+    });
+    cardEventoSmall.classList.remove("calendario-small-card-expanded");
+  } else {
+    camposOcultos.forEach((campo) => {
+      campo.classList.add("exibirDetalheEvento");
+    });
+    cardEventoSmall.classList.add("calendario-small-card-expanded");
 
-  // Se a altura da área for menor que a altura do card, ajusta a altura da área
-  if (areaHeight < cardHeight) {
-    area.style.height = `${cardHeight}px`;
+    // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
+    ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall);
   }
-
-  // Rola a página até que o card clicado esteja no centro da área visível
-  event.currentTarget.scrollIntoView({ behavior: "smooth", block: "center" });
-
-  // Alterna a classe 'exibirDetalheEvento' nos elementos
-  local.classList.toggle("exibirDetalheEvento");
-  participantes.classList.toggle("exibirDetalheEvento");
-  editar.classList.toggle("exibirDetalheEvento");
-
-  // Alterna a classe 'calendario-small-card-expanded' no card clicado
-  event.currentTarget.classList.toggle("calendario-small-card-expanded");
 }
-// Adiciona o evento de clique a todos os cards do evento
-document.addEventListener("DOMContentLoaded", function () {
-  var cards = document.querySelectorAll(".calendario-small-card");
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", exibirDetalhesEvento);
+
+function ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall) {
+  const areaTemplateContent = document.querySelector(
+    ".area-template-tmf-alt-content"
+  );
+  const cardOffsetTop = cardEventoSmall.offsetTop;
+  const cardHeight = cardEventoSmall.offsetHeight;
+  const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
+  const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
+
+  // Verificar se o card já está totalmente visível
+  const isCardFullyVisible =
+    cardOffsetTop >= areaTemplateContentScrollTop &&
+    cardOffsetTop + cardHeight <=
+      areaTemplateContentScrollTop + areaTemplateContentHeight;
+
+  if (!isCardFullyVisible) {
+    // Calcular a nova posição de scroll para tornar o card totalmente visível
+    let newScrollTop;
+    if (cardOffsetTop < areaTemplateContentScrollTop) {
+      // Se o card está acima da área visível, mover para o topo do card
+      newScrollTop = cardOffsetTop;
+    } else if (
+      cardOffsetTop + cardHeight >
+      areaTemplateContentScrollTop + areaTemplateContentHeight
+    ) {
+      // Se o card está abaixo da área visível, mover para o fundo do card
+      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
+    }
+
+    // Ajustar a posição de scroll do area-template-content, se necessário
+    if (newScrollTop !== undefined) {
+      areaTemplateContent.scrollTop = newScrollTop;
+    }
   }
+}
+// Adiciona um ouvinte de evento de clique para a lista de cards
+const listaDeCardsEventoSmall = document.querySelectorAll(
+  ".calendario-small-card"
+);
+listaDeCardsEventoSmall.forEach((cardEventoSmall) => {
+  cardEventoSmall.addEventListener("click", exibirDetalhesEvento);
 });
 
 // Função para card LARGE
 function exibirEditar(event) {
   event.preventDefault();
 
-  const card = event.currentTarget;
-  const editar = card.querySelector(".calendario-large-card-editar");
+  const cardEventoLarge = event.currentTarget;
+  const editar = cardEventoLarge.querySelector(".calendario-large-card-editar");
 
   const algumCampoVisivel = editar.classList.contains("exibirDetalheEvento");
 
   if (algumCampoVisivel) {
     editar.classList.remove("exibirDetalheEvento");
-    card.classList.remove("calendario-large-card-expanded");
+    cardEventoLarge.classList.remove("calendario-large-card-expanded");
   } else {
     editar.classList.add("exibirDetalheEvento");
-    card.classList.add("calendario-large-card-expanded");
+    cardEventoLarge.classList.add("calendario-large-card-expanded");
 
     // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
-    ajustarScrollParaCentralizarCard(card);
+    ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge);
   }
 }
-
-function ajustarScrollParaCentralizarCard(card) {
+function ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge) {
   const areaTemplateContent = document.querySelector(
     ".area-abas-template-content"
   );
-  const cardOffsetTop = card.offsetTop;
-  const cardHeight = card.offsetHeight;
+  const cardOffsetTop = cardEventoLarge.offsetTop;
+  const cardHeight = cardEventoLarge.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
   const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
 
@@ -91,10 +121,9 @@ function ajustarScrollParaCentralizarCard(card) {
     }
   }
 }
-
 document.addEventListener("DOMContentLoaded", function () {
   const listaDeCards = document.querySelectorAll(".calendario-large-card");
-  listaDeCards.forEach((card) => {
-    card.addEventListener("click", exibirEditar);
+  listaDeCards.forEach((cardEventoLarge) => {
+    cardEventoLarge.addEventListener("click", exibirEditar);
   });
 });
