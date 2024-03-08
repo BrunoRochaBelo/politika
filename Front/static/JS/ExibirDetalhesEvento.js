@@ -31,7 +31,6 @@ function exibirDetalhesEvento(event) {
   // Alterna a classe 'calendario-small-card-expanded' no card clicado
   event.currentTarget.classList.toggle("calendario-small-card-expanded");
 }
-
 // Adiciona o evento de clique a todos os cards do evento
 document.addEventListener("DOMContentLoaded", function () {
   var cards = document.querySelectorAll(".calendario-small-card");
@@ -40,27 +39,58 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Função para card LARGE
 function exibirEditar(event) {
   event.preventDefault();
 
-  // Encontrar o campo oculto
   const card = event.currentTarget;
   const editar = card.querySelector(".calendario-large-card-editar");
 
-  // Verificar se o campo está visível
-  const campoVisivel = editar.classList.contains("exibirDetalheEvento");
+  const algumCampoVisivel = editar.classList.contains("exibirDetalheEvento");
 
-  // Se o campo estiver visível, ocultá-lo
-  if (campoVisivel) {
+  if (algumCampoVisivel) {
     editar.classList.remove("exibirDetalheEvento");
+    card.classList.remove("calendario-large-card-expanded");
   } else {
-    // Se o campo não estiver visível, exibi-lo e centralizar o card
     editar.classList.add("exibirDetalheEvento");
-    card.scrollIntoView({ behavior: "smooth", block: "start" });
+    card.classList.add("calendario-large-card-expanded");
+
+    // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
+    ajustarScrollParaCentralizarCard(card);
   }
 }
 
-// Adiciona um ouvinte de evento de clique para a lista de cards
+function ajustarScrollParaCentralizarCard(card) {
+  const areaTemplateContent = document.querySelector(
+    ".area-abas-template-content"
+  );
+  const cardOffsetTop = card.offsetTop;
+  const cardHeight = card.offsetHeight;
+  const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
+  const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
+
+  const isCardFullyVisible =
+    cardOffsetTop >= areaTemplateContentScrollTop &&
+    cardOffsetTop + cardHeight <=
+      areaTemplateContentScrollTop + areaTemplateContentHeight;
+
+  if (!isCardFullyVisible) {
+    let newScrollTop;
+    if (cardOffsetTop < areaTemplateContentScrollTop) {
+      newScrollTop = cardOffsetTop;
+    } else if (
+      cardOffsetTop + cardHeight >
+      areaTemplateContentScrollTop + areaTemplateContentHeight
+    ) {
+      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
+    }
+
+    if (newScrollTop !== undefined) {
+      areaTemplateContent.scrollTop = newScrollTop;
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const listaDeCards = document.querySelectorAll(".calendario-large-card");
   listaDeCards.forEach((card) => {

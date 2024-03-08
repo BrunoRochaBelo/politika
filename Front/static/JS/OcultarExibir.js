@@ -1,24 +1,62 @@
-function toggleOcultarExibir() {
-  // Seleciona o primeiro elemento HTML com a classe .area-template-fil-content
-  var areaContent = document.querySelector(".area-template-fil-content");
+// Função para selecionar elementos pelo seletor
+function selectElement(selector) {
+  return document.querySelector(selector);
+}
 
-  // Seleciona o botão com a classe .btn-recuar-expandir
-  var button = document.querySelector(".btn-recuar-expandir");
+// Função para criar o overlay
+function createOverlay() {
+  var overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  overlay.style.zIndex = 1000;
+  overlay.style.display = "none";
+  document.body.appendChild(overlay);
 
-  // Verifica se o elemento tem um valor definido para a propriedade maxHeight de seu estilo
+  // Adiciona um evento de clique ao overlay
+  overlay.addEventListener("click", function () {
+    var areaContent = selectElement(".area-template-fil-content");
+    var area = selectElement(".area-template-fil");
+    var button = selectElement(".btn-recuar-expandir");
+    var mainSidenav = selectElement(".main-sidenav");
+
+    // Chama a função toggleVisibility para fechar o overlay
+    toggleVisibility(areaContent, button, area, mainSidenav);
+  });
+
+  return overlay;
+}
+
+var overlay = createOverlay();
+
+// Função para alternar a visibilidade do conteúdo
+function toggleVisibility(areaContent, button, area, mainSidenav) {
   if (areaContent.style.maxHeight) {
-    // Se maxHeight estiver definido, redefine para null, removendo a restrição de altura máxima
     areaContent.style.maxHeight = null;
-
-    // Altera o conteúdo do botão para "Exibir pesquisa rápida"
-    button.innerHTML = "Exibir pesquisa rápida";
+    button.innerHTML = "Pesquisa rápida";
+    area.style.boxShadow = "none";
+    mainSidenav.style.height = "";
+    area.style.background = "none";
+    overlay.style.display = "none";
   } else {
-    // Se maxHeight não estiver definido, define maxHeight para a altura atual do conteúdo do elemento
     areaContent.style.maxHeight = areaContent.scrollHeight + "px";
-
-    // Altera o conteúdo do botão para "Ocultar pesquisa rápida"
-    button.innerHTML = "Ocultar pesquisa rápida";
+    button.innerHTML = "X";
+    mainSidenav.style.height = "auto";
+    area.style.background = "var(--cor-p4)";
+    overlay.style.display = "block";
   }
-  // Faz a janela do navegador rolar para o topo
+}
+
+function toggleOcultarExibir() {
+  var areaContent = selectElement(".area-template-fil-content");
+  var area = selectElement(".area-template-fil");
+  var button = selectElement(".btn-recuar-expandir");
+  var mainSidenav = selectElement(".main-sidenav");
+
+  toggleVisibility(areaContent, button, area, mainSidenav);
+
   window.scrollTo(0, 0);
 }

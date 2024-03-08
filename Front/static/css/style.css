@@ -4,14 +4,13 @@
 @import "./global/main-template.css";
 @import "./global/login.css";
 @import "./global/form.css";
+@import "./global/recuar-expandir.css";
 /* Global/ Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
 /* Global/ Modais */
 @import "./global/modais/modal-btn-float.css";
 @import "./global/modais/modal-menu.css";
-@import "./global/modais/modal-info-evento.css";
-@import "./global/modais/modal-info-contato.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";
@@ -21,7 +20,6 @@
 @import "./componentes/listas.css";
 @import "./componentes/botoes.css";
 @import "./componentes/marcadores.css";
-@import "./componentes/recuar-expandir.css";
 /* Componentes/ cards */
 @import "./componentes/cards/cards.css";
 @import "./componentes/cards/template-cards-calendario.css";
@@ -39,7 +37,6 @@
 
 /* calendario */
 @import "./calendario/calendario-style.css";
-@import "./calendario/calendario-section-template.css";
 
 /* contatos */
 @import "./contatos/contatos-style.css";

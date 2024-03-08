@@ -2,30 +2,57 @@
 function exibirDetalhesDespesa(event) {
   event.preventDefault();
 
-  // Encontrar os campos ocultos
   const card = event.currentTarget;
   const camposOcultos = card.querySelectorAll(
     ".despesas-medium-card-cnpj_cpf_for, .despesas-medium-card-nome_fornecedor, .despesas-medium-card-ordenador_despesa, .despesas-medium-card-autor, .despesas-medium-card-data_criacao, .despesas-medium-card-editar"
   );
 
-  // Verificar se os campos estão visíveis
   const algumCampoVisivel = Array.from(camposOcultos).some((campo) =>
     campo.classList.contains("exibirDetalheDespesa")
   );
 
-  // Se algum campo estiver visível, ocultar todos os campos
   if (algumCampoVisivel) {
     camposOcultos.forEach((campo) => {
       campo.classList.remove("exibirDetalheDespesa");
     });
-    card.classList.remove("despesas-medium-card-expanded"); // Remover a classe do grid expandido
+    card.classList.remove("despesas-medium-card-expanded");
   } else {
-    // Se nenhum campo estiver visível, exibir todos os campos e centralizar o card
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalheDespesa");
     });
-    card.classList.add("despesas-medium-card-expanded"); // Adicionar a classe do grid expandido
-    card.scrollIntoView({ behavior: "smooth", block: "start" });
+    card.classList.add("despesas-medium-card-expanded");
+
+    // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
+    ajustarScrollParaCentralizarCard(card);
+  }
+}
+
+function ajustarScrollParaCentralizarCard(card) {
+  const areaTemplateContent = document.querySelector(".area-template-content");
+  const cardOffsetTop = card.offsetTop;
+  const cardHeight = card.offsetHeight;
+  const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
+  const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
+
+  const isCardFullyVisible =
+    cardOffsetTop >= areaTemplateContentScrollTop &&
+    cardOffsetTop + cardHeight <=
+      areaTemplateContentScrollTop + areaTemplateContentHeight;
+
+  if (!isCardFullyVisible) {
+    let newScrollTop;
+    if (cardOffsetTop < areaTemplateContentScrollTop) {
+      newScrollTop = cardOffsetTop;
+    } else if (
+      cardOffsetTop + cardHeight >
+      areaTemplateContentScrollTop + areaTemplateContentHeight
+    ) {
+      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
+    }
+
+    if (newScrollTop !== undefined) {
+      areaTemplateContent.scrollTop = newScrollTop;
+    }
   }
 }
 

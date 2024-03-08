@@ -96,7 +96,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   .modal-content-template {
     right: 0.85rem;
     transition: right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

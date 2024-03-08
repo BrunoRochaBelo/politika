@@ -22,7 +22,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   .main {
     margin-top: 0.625rem;
     padding-bottom: 75px;

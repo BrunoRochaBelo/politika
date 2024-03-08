@@ -58,7 +58,6 @@
   padding-left: 14px;
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   margin: 3px 0 0 0px;
 }
 .calendario-small-card-partcipantes {
@@ -68,7 +67,6 @@
   padding-left: 14px;
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   margin: 3px 0 0 0px;
 }
 .calendario-small-card-editar {
@@ -84,7 +82,6 @@
 
 .exibirDetalheEvento {
   max-height: 500px;
-  transition: all 0.5s ease-in-out;
   overflow: hidden;
 }
 .calendario-small-card-expanded {
@@ -99,7 +96,6 @@
 .calendario-small-card-partcipantes.exibirDetalheEvento,
 .calendario-small-card-editar.exibirDetalheEvento {
   display: block;
-  transition: all 0.5s ease-in-out;
   opacity: 1;
   margin: 3px 0 0 0px;
 }
@@ -217,13 +213,11 @@
 
 .exibirDetalheEvento {
   max-height: 500px;
-  transition: all 0.5s ease-in-out;
   overflow: hidden;
 }
 
 .calendario-large-card-editar.exibirDetalheEvento {
   display: block;
-  transition: all 0.5s ease-in-out;
   opacity: 1;
 }
 

@@ -1,16 +1,13 @@
 /* Listas Cards */
 .lista-vertical-template {
   display: grid;
-  transition: all 0.3s ease-in-out;
   grid-auto-flow: row;
   border-radius: 0.625rem;
   gap: 18px;
   scrollbar-width: thick;
 }
-
 .lista-vertical-template-alt {
   display: grid;
-  transition: all 0.3s ease-in-out;
   grid-auto-flow: row;
   background: transparent;
   border-radius: 0.625rem;
@@ -19,7 +16,6 @@
 }
 .lista-vertical-template-fil {
   display: grid;
-  transition: all 0.3s ease-in-out;
   grid-auto-flow: row;
   background: transparent;
   border-radius: 0.625rem;
@@ -29,7 +25,6 @@
 
 .lista-vertical-2-template {
   display: grid;
-  transition: all 0.3s ease-in-out;
   gap: 3px;
   grid-template: auto / 1fr 1fr;
   scrollbar-width: thick;
@@ -37,7 +32,6 @@
 
 .lista-vertical-3-template {
   display: grid;
-  transition: all 0.3s ease-in-out;
   gap: 3px;
   grid-template: auto / 1fr 1fr 1fr;
   scrollbar-width: thick;
@@ -45,7 +39,6 @@
 
 .lista-vertical-horizontal {
   display: grid;
-  transition: all 0.3s ease-in-out;
   grid-template: auto / auto auto;
   gap: 3px;
   scrollbar-width: thick;
@@ -53,7 +46,6 @@
 
 .lista-horizontal-template {
   display: grid;
-  transition: all 0.3s ease-in-out;
   grid-auto-flow: column;
   gap: 5px;
   white-space: nowrap;
@@ -63,7 +55,6 @@
 
 .lista-select {
   display: grid;
-  transition: all 0.3s ease-in-out;
   background: transparent;
   scrollbar-width: thick;
   gap: 2px;
@@ -73,19 +64,15 @@
 }
 .lista-select .item1 {
   grid-area: item1;
-  transition: all 0.3s ease-in-out;
 }
 .lista-select .item2 {
   grid-area: item2;
-  transition: all 0.3s ease-in-out;
 }
 .lista-select .item3 {
   grid-area: item3;
-  transition: all 0.3s ease-in-out;
 }
 
 /* Estilos */
-
 /* Estilos para cards dentro da lista */
 /* Reset de borda para todos os cards dentro da lista */
 .lista-select .card-select-m {
@@ -106,26 +93,24 @@
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
 }
-
 .lista-vertical-template-alt li:last-child .card-s {
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
 }
 
 /* RESPONSIVO */
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .lista-vertical-horizontal {
     display: grid;
-    transition: all 0.3s ease-in-out;
     width: 100%;
     grid-auto-flow: column;
     white-space: nowrap;
     overflow-x: auto;
     scrollbar-width: thick;
   }
+
   .lista-horizontal-template.desativar-responsivo {
     display: grid;
-    transition: all 0.3s ease-in-out;
     align-items: center;
     gap: 5px;
     grid-template: 1fr 1fr / auto;

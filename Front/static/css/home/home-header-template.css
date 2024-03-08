@@ -33,7 +33,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   .home-header-template {
     display: grid;
     align-content: center;

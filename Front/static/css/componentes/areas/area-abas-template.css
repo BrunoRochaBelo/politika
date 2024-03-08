@@ -19,12 +19,12 @@
   grid-area: area-abas-template-content;
   overflow-x: hidden;
   background: #3d4349aa;
-  gap: 0.9375rem;
-  padding: 0.625rem;
+  padding: 5px;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   height: auto;
   max-height: 80vh;
+  border: 5px solid transparent;
 }
 
 /* Estilos */
@@ -99,7 +99,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   /* Area Template padrão*/
   .area-abas-template-header {
     grid-area: area-abas-template-header;
@@ -107,7 +107,7 @@
   }
   .area-abas-template-content {
     grid-area: area-abas-template-content;
-    padding: 0px 5px 10px 5px;
+    padding: 0px 0px 5px 0px;
     height: auto;
     max-height: 72vh;
   }

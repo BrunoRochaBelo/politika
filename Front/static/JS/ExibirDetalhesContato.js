@@ -8,35 +8,66 @@ function iniciarChamadaTelefonica(card) {
 function exibirDetalhesContato(event) {
   event.preventDefault();
 
-  // Encontrar os campos ocultos
   const card = event.currentTarget;
   const camposOcultos = card.querySelectorAll(
     ".contatos-small-card-num, .contatos-small-card-email, .contatos-small-card-tipopessoa, .contatos-small-card-editar"
   );
 
-  // Verificar se os campos estão visíveis
   const algumCampoVisivel = Array.from(camposOcultos).some((campo) =>
     campo.classList.contains("exibirDetalheContato")
   );
 
-  // Se algum campo estiver visível, ocultar todos os campos
   if (algumCampoVisivel) {
     camposOcultos.forEach((campo) => {
       campo.classList.remove("exibirDetalheContato");
     });
-    card.classList.remove("contatos-small-card-expanded"); // Remover a classe do grid expandido
+    card.classList.remove("contatos-small-card-expanded");
   } else {
-    // Se nenhum campo estiver visível, exibir todos os campos e centralizar o card
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalheContato");
     });
-    card.classList.add("contatos-small-card-expanded"); // Adicionar a classe do grid expandido
-    card.scrollIntoView({ behavior: "smooth", block: "center" });
+    card.classList.add("contatos-small-card-expanded");
+
+    // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
+    ajustarScrollParaCentralizarCard(card);
   }
 
-  // Verificar se o clique foi no elemento 'contatos-small-card-phone'
   if (event.target.classList.contains("contatos-small-card-phone")) {
     iniciarChamadaTelefonica(card);
+  }
+}
+
+function ajustarScrollParaCentralizarCard(card) {
+  const areaTemplateContent = document.querySelector(".area-template-content");
+  const cardOffsetTop = card.offsetTop;
+  const cardHeight = card.offsetHeight;
+  const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
+  const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
+
+  // Verificar se o card já está totalmente visível
+  const isCardFullyVisible =
+    cardOffsetTop >= areaTemplateContentScrollTop &&
+    cardOffsetTop + cardHeight <=
+      areaTemplateContentScrollTop + areaTemplateContentHeight;
+
+  if (!isCardFullyVisible) {
+    // Calcular a nova posição de scroll para tornar o card totalmente visível
+    let newScrollTop;
+    if (cardOffsetTop < areaTemplateContentScrollTop) {
+      // Se o card está acima da área visível, mover para o topo do card
+      newScrollTop = cardOffsetTop;
+    } else if (
+      cardOffsetTop + cardHeight >
+      areaTemplateContentScrollTop + areaTemplateContentHeight
+    ) {
+      // Se o card está abaixo da área visível, mover para o fundo do card
+      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
+    }
+
+    // Ajustar a posição de scroll do area-template-content, se necessário
+    if (newScrollTop !== undefined) {
+      areaTemplateContent.scrollTop = newScrollTop;
+    }
   }
 }
 

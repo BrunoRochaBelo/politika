@@ -21,13 +21,13 @@ function toggleRecuarExpandirVertical() {
     var currentHeight = window.getComputedStyle(element).height;
 
     // Altere a altura do elemento
-    if (currentHeight === "100px") {
+    if (currentHeight === "130px") {
       element.style.height = "auto";
 
       // Altera o conteúdo do botão para "Recuar"
       button.innerHTML = "Recuar";
     } else {
-      element.style.height = "100px";
+      element.style.height = "130px";
 
       // Altera o conteúdo do botão para "Expandir"
       button.innerHTML = "Expandir";

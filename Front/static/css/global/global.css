@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   min-height: 100vh;
@@ -167,7 +167,7 @@ img {
 }
 
 /* RESPONSIVO */
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   .indicador {
     border-bottom: none;
   }
