@@ -18,11 +18,11 @@ function createOverlay() {
 
   // Adiciona um evento de clique ao overlay
   overlay.addEventListener("click", function () {
-    var areaContent = selectElement(".area-template-fil-content");
-    var area = selectElement(".area-template-fil");
-    var button = selectElement(".btn-recuar-expandir");
+    var areaContent = selectElement(".area-template-tmf-alt-content");
+    var area = selectElement(".area-template-tmf-alt");
+    var button = selectElement(".btn-suaAgenda");
     var mainSidenav = selectElement(".main-sidenav");
-    var areaHeader = selectElement(".area-template-fil-header"); // Seleciona o elemento .area-template-fil-header
+    var areaHeader = selectElement(".area-template-tmf-alt-header"); // Ajustado para corresponder ao seu HTML
 
     // Chama a função toggleVisibility para fechar o overlay
     toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
@@ -38,7 +38,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
   if (window.innerWidth <= 820) {
     if (areaContent.style.maxHeight) {
       areaContent.style.maxHeight = null;
-      button.innerHTML = "Pesquisa rápida";
+      button.innerHTML = "Agenda para hoje";
       area.style.boxShadow = "none";
       mainSidenav.style.height = "";
       area.style.background = "none";
@@ -47,10 +47,14 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área não está exibida
       areaHeader.style.color = "transparent";
       areaHeader.style.fontSize = "0px";
+
+      // Adiciona a classe para mostrar o pseudo-elemento ::after
+      button.classList.add("show-after");
+      button.classList.remove("hide-after");
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--cor-p3)"; // Altera a cor do texto do botão para var(--cor-p3)
+      button.style.color = "var(--cor-p3)";
       mainSidenav.style.height = "auto";
       area.style.background = "var(--cor-p4)";
       overlay.style.display = "block";
@@ -58,6 +62,10 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--cor-p3)";
       areaHeader.style.fontSize = "var(--titulo-m)";
+
+      // Adiciona a classe para ocultar o pseudo-elemento ::after
+      button.classList.add("hide-after");
+      button.classList.remove("show-after");
     }
   }
 }
@@ -70,12 +78,12 @@ window.addEventListener("resize", function () {
   }
 });
 
-function toggleOcultarExibir() {
-  var areaContent = selectElement(".area-template-fil-content");
-  var area = selectElement(".area-template-fil");
-  var button = selectElement(".btn-recuar-expandir");
+function OcultarExibirAgenda() {
+  var areaContent = selectElement(".area-template-tmf-alt-content");
+  var area = selectElement(".area-template-tmf-alt");
+  var button = selectElement(".btn-suaAgenda");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(".area-template-fil-header"); // Seleciona o elemento .area-template-fil-header
+  var areaHeader = selectElement(".area-template-tmf-alt-header"); // Ajustado para corresponder ao seu HTML
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

@@ -23,7 +23,6 @@
   grid-area: area-template-content;
   overflow-x: hidden;
   border-radius: 0.625rem;
-  padding: 5px;
   background: #3d4349aa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
@@ -59,6 +58,7 @@
 }
 .area-template-alt-content {
   grid-area: area-template-alt-content;
+  padding: 5px;
   overflow-x: auto;
   border-radius: 0.625rem;
 }
@@ -120,11 +120,13 @@
   max-height: 350px;
   border-radius: 0.625rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 5px solid transparent;
 }
 
 /* Area Template dos compromissos para hoje*/
 .area-template-tmf-alt {
   display: grid;
+  box-sizing: border-box;
   overflow: hidden;
   border-radius: 0.625rem;
   grid:
@@ -145,13 +147,12 @@
 }
 .area-template-tmf-alt-content {
   grid-area: area-template-tmf-alt-content;
-  overflow-x: auto;
+  gap: 5px;
+  max-height: auto;
+  overflow: hidden;
   border-radius: 0.625rem;
-  padding: 5px;
   background: #3d4349aa;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: auto;
-  max-height: 80vh;
+  padding: 5px;
   border: 5px solid transparent;
 }
 
@@ -172,11 +173,16 @@
     overflow-y: auto;
   }
 
+  .area-template-alt-content {
+    grid-area: area-template-alt-content;
+    padding: 0px;
+  }
+
   /* Area Template dos filtros*/
   .area-template-fil {
     padding: 0rem;
     gap: 0rem;
-    padding: 0px 5px 30px 5px;
+    padding: 0px 5px 40px 5px;
     box-shadow: none;
   }
   .area-template-fil-header {
@@ -191,18 +197,40 @@
     grid-area: area-template-fil-content;
     gap: 0.625rem;
     max-height: 0px;
-    overflow: hidden;
-    border: none;
-    padding: 5px;
+    overflow: auto;
+    padding: 20px 0px 20px 0px;
     background: var(--cor-2);
   }
 
-  /* Area Template dos compromissos para hoje*/
-  .area-template-tmf-alt-content {
-    height: 130px;
-
-    position: relative;
+  /* Area Template alternativa Tamanho fixo*/
+  .area-template-tmf-content {
+    grid-area: area-template-tmf-content;
     padding: 0px;
+    border-width: 5px 0;
+  }
+
+  /* Area Template dos compromissos para hoje*/
+  .area-template-tmf-alt {
+    padding: 0rem;
+    gap: 0rem;
+    padding: 0px 5px 40px 5px;
+    box-shadow: none;
+  }
+  .area-template-tmf-alt-header {
+    grid-area: area-template-tmf-alt-header;
+    color: transparent;
+    font-size: 0px;
+    padding: 10px 0px 10px 0px;
+    margin-left: 0.625rem;
+    box-shadow: none;
+  }
+  .area-template-tmf-alt-content {
+    grid-area: area-template-tmf-alt-content;
+    gap: 3px;
+    max-height: 0px;
+    overflow: auto;
+    padding: 20px 0px 20px 0px;
+    background: var(--cor-2);
   }
 
   .area-template::-webkit-scrollbar,

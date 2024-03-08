@@ -15,18 +15,38 @@
 
 /* RESPONSIVO */
 @media (max-width: 820px) {
+  .home-sidenav {
+    width: 98%;
+  }
+
   .home-sidenav .card-xs .marcador-item {
     color: var(--cor-12);
   }
 
-  .home-body .main-template {
-    gap: 20px 0rem;
-  }
   #moldura,
   #logo {
     width: 32px;
     padding: 0rem;
     background: none;
     border-radius: 50%;
+  }
+
+  .btn-suaAgenda.btn-recuar-expandir::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--cor-1);
+    margin-left: 5px;
+    border-radius: 25%;
+  }
+  .btn-suaAgenda.btn-recuar-expandir.show-after::after {
+    display: inline-block;
+  }
+
+  .btn-suaAgenda.btn-recuar-expandir.hide-after::after {
+    display: none;
   }
 }

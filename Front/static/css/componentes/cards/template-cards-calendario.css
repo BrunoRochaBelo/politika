@@ -30,14 +30,14 @@
 .calendario-small-card-duracao {
   grid-area: calendario-small-card-duracao;
   font-size: var(--font-medium-light);
-  justify-self: center;
+  justify-self: end;
   align-self: end;
   display: grid;
   margin-top: 5px;
   grid-auto-flow: column;
   padding-left: 14px;
   justify-content: start;
-  align-items: center;
+  align-items: end;
   margin: 3px 0 0 0px;
 }
 .calendario-small-card-id {

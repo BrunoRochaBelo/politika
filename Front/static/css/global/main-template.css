@@ -32,6 +32,7 @@
 /* RESPONSIVO */
 @media (max-width: 820px) {
   .main-template {
+    gap: 0rem;
     grid:
       "main-sidenav"
       "main-section"
@@ -52,6 +53,8 @@
     right: 5px;
     top: 42px;
     overflow: hidden;
+    max-width: 97%;
+    min-width: 70%;
     height: 32px;
     z-index: 1001;
   }

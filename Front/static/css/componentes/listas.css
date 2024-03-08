@@ -100,6 +100,17 @@
 
 /* RESPONSIVO */
 @media (max-width: 820px) {
+  .lista-vertical-2-template {
+    display: grid;
+    gap: 3px;
+    grid-template: auto / 1fr;
+    scrollbar-width: thick;
+  }
+
+  .lista-vertical-3-template {
+    grid-template: auto / 1fr 1fr;
+  }
+
   .lista-vertical-horizontal {
     display: grid;
     width: 100%;
