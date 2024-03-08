@@ -74,8 +74,8 @@
   display: none;
   justify-self: end;
   align-self: center;
-  display: none;
   opacity: 0;
+  font-size: var(--font-medium-light);
   border-top: 1px solid var(--cor-p6);
   margin: 3px 0 0 0px;
 }

@@ -1,3 +1,4 @@
+// Função para card LARGE
 function exibirDetalhesEvento(event) {
   // Encontra os elementos dentro do card clicado
   var local = event.currentTarget.querySelector(".calendario-small-card-local");
