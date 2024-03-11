@@ -13,26 +13,28 @@
   <meta name="description" content="Nova Tarefa">
 </head>
 
-
-<body class="body-template body-form">
-  <header class="header header-template-form">
-    <h1 class="header-template-form-menu" style="width: 18px; height: 14px;">
-      <a href="calendario.html"><img src="./static/imagens/icones/voltar.svg" alt="Back Icon"></a>
-    </h1>
-    <h1 class="header-template-form-title">Tarefa</h1>
+<body class="body-form-template">
+  <header class="header-form ">
+    <h1>Nova Tarefa</h1>
+    <h2><a href="calendario.html">&times;</a></h2>
   </header>
 
-  <main class="main">
-    <section class="area-abas-template">
-      <form id="form" class="form-content" enctype="multipart/form-data">
+  <main class="main-form">
+    <section>
+      <form id="form" enctype="multipart/form-data">
         <fieldset>
-          <legend class="titulo-xl">Tarefa</legend>
-          <div class="campo">
+          <legend class="titulo-xl"></legend>
+          <div class="campo form-evento-tipo">
             <label for="tipo">Tipo:</label>
             <select id="tipo">
               <option value="tarefa">Tarefa a fazer</option>
               <!-- Adicione outras opções aqui -->
             </select>
+          </div>
+
+          <div class="campo">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" placeholder="Digite o título aqui">
           </div>
 
           <div class="campo">
@@ -44,23 +46,21 @@
           </div>
 
           <div class="campo">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" placeholder="Digite o título aqui">
-          </div>
-
-          <div class="campo">
             <label for="description">Descrição:</label>
             <textarea class="form-textarea" id="description" placeholder="Digite aqui os detalhes"></textarea>
           </div>
 
-          <div class="campo">
-            <label for="dataInicio">Data início:</label>
-            <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
-          </div>
 
-          <div class="campo">
-            <label for="dataFim">Data fim:</label>
-            <input type="text" id="dataFim" placeholder="dd/mm/aaaa">
+          <div class="form-evento-dataHora">
+            <div class="campo">
+              <label for="dataInicio">Data início:</label>
+              <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
+            </div>
+
+            <div class="campo">
+              <label for="dataFim">Data fim:</label>
+              <input type="text" id="dataFim" placeholder="dd/mm/aaaa">
+            </div>
           </div>
 
           <div class="campo">
@@ -82,8 +82,9 @@
             <input class="form-checkbox" type="checkbox" id="acessoPrivado">
             <label for="acessoPrivado">Acesso privado</label>
           </div>
-
-          <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+          <div class="botoes">
+            <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+          </div>
         </fieldset>
       </form>
     </section>

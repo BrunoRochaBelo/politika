@@ -13,20 +13,18 @@
   <meta name="description" content="Novo Evento">
 </head>
 
-<body class="body-template body-form">
-  <header class="header header-template-form">
-    <h1 class="header-template-form-menu" style="width: 18px; height: 14px;">
-      <a href="calendario.html"><img src="./static/imagens/icones/voltar.svg" alt="Back Icon"></a>
-    </h1>
-    <h1 class="header-template-form-title">Evento</h1>
+<body class="body-form-template">
+  <header class="header-form ">
+    <h1>Novo Evento</h1>
+    <h2><a href="calendario.html">&times;</a></h2>
   </header>
 
-  <main class="main">
-    <section class="area-abas-template">
-      <form id="form" class="form-content" enctype="multipart/form-data">
+  <main class="main-form">
+    <section>
+      <form id="form" enctype="multipart/form-data">
         <fieldset>
-          <legend class="titulo-xl">Evento</legend>
-          <div class="campo">
+          <legend class="titulo-xl"></legend>
+          <div class="campo form-evento-tipo">
             <label for="tipo">Tipo:</label>
             <select id="tipo">
               <option value="lembrete">Evento</option>
@@ -34,7 +32,12 @@
             </select>
           </div>
 
-          <div class="campo">
+          <div class="campo form-evento-titulo">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" placeholder="Digite o título aqui">
+          </div>
+
+          <div class="campo form-evento-categoria">
             <label for="categoria">Categoria:</label>
             <select id="categoria">
               <option value="administracao" selected>Administração</option>
@@ -42,29 +45,26 @@
             </select>
           </div>
 
-          <div class="campo">
-            <label for="dataInicio">Data início:</label>
-            <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
+          <div class="form-evento-dataHora">
+            <div class="campo">
+              <label for="dataInicio">Data início:</label>
+              <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="campo">
+              <label for="horaInicio">Hora início:</label>
+              <input type="text" id="horaInicio" placeholder="--:--">
+            </div>
           </div>
 
-          <div class="campo">
-            <label for="horaInicio">Hora início:</label>
-            <input type="text" id="horaInicio" placeholder="--:--">
-          </div>
-
-          <div class="campo">
-            <label for="dataFim">Data fim:</label>
-            <input type="text" id="dataFim" placeholder="dd/mm/aaaa">
-          </div>
-
-          <div class="campo">
-            <label for="horaFim">Hora fim:</label>
-            <input type="text" id="horaFim" placeholder="--:--">
-          </div>
-
-          <div class="campo">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" placeholder="Digite o título aqui">
+          <div class="form-evento-dataHora">
+            <div class="campo">
+              <label for="dataFim">Data fim:</label>
+              <input type="text" id="dataFim" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="campo">
+              <label for="horaFim">Hora fim:</label>
+              <input type="text" id="horaFim" placeholder="--:--">
+            </div>
           </div>
 
           <div class="campo">
@@ -82,7 +82,7 @@
             <input type="text" id="publicoAlvo" placeholder="Digite o público alvo aqui">
           </div>
 
-          <div class="campo">
+          <div class="campo ">
             <label for="anotacoes">Anotações:</label>
             <textarea class="form-textarea" id="anotacoes" placeholder="Digite suas anotações aqui"></textarea>
           </div>
@@ -91,8 +91,9 @@
             <input class="form-checkbox" type="checkbox" id="acessoPrivado">
             <label for="acessoPrivado">Acesso privado</label>
           </div>
-
-          <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+          <div class="botoes">
+            <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+          </div>
         </fieldset>
       </form>
     </section>

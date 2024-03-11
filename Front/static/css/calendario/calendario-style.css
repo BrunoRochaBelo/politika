@@ -39,16 +39,16 @@
   right: 2px;
   top: 50%;
   transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 .anterior {
   position: absolute;
   left: 2px;
   top: 50%;
   transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .nav-calendar .item1 {
@@ -81,16 +81,12 @@
     right: 50%;
     top: 50%;
     transform: translate(50%, -50%);
-    width: 16px;
-    height: 16px;
   }
   .anterior {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
   }
   .calendario-template .nav a.indicador-2 {
     font-weight: bold;

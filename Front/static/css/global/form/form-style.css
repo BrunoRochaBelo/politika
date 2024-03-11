@@ -15,32 +15,29 @@
   border: 1px solid var(--cor-p7);
 }
 .form-content {
-  padding: 5px;
   font-size: var(--titulo-s);
   color: var(--cor-1);
+}
+
+legend {
+  text-align: center;
+}
+fieldset {
+  border-radius: 9px;
+  padding: 0px;
+  border: none;
+  margin: 0px;
+}
+label {
+  font-weight: bold;
+  color: var(--cor-5);
+  margin: 0.625rem 0.625rem 0.3125rem 0rem;
 }
 
 form span {
   color: red;
   font-size: var(--titulo-s);
   margin: 0.3125rem 0.625rem 0.3125rem 0rem;
-}
-
-legend {
-  text-align: center;
-}
-
-fieldset {
-  border-radius: 9px;
-  border: 1px solid var(--cor-p7);
-  margin-top: 0.625rem;
-  background: var(--cor-2);
-}
-
-label {
-  font-weight: bold;
-  color: var(--cor-5);
-  margin: 0.625rem 0.625rem 0.3125rem 0rem;
 }
 
 .campo,
@@ -59,14 +56,15 @@ label {
   font-weight: bold;
 }
 .campo input,
-.campo select {
+.campo select,
+.campo textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 0.9375rem;
   margin: 0rem 0.625rem 0rem 0rem;
   color: var(--cor-p3);
-  background: var(--cor-p4);
-  border: 1px solid var(--cor-p4);
+  background: #e6beff1f;
+  border: 1px solid #e6beff1f;
   border-radius: 9px;
 }
 .campo input[type="checkbox"],
@@ -81,6 +79,8 @@ label {
 }
 .botoes button {
   width: 30%; /* Ocupa a largura total */
+  border-radius: 9px;
+  border: 1px solid #e6beff1f;
 }
 .botoes button:hover {
   background-color: rgba(157, 157, 157, 0.7);
@@ -118,7 +118,7 @@ label {
 }
 
 /* Responsivo */
-@media only screen and (max-width: 767px) {
+@media (max-width: 820px) {
   .form {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -130,6 +130,8 @@ label {
   }
 
   .botoes button {
-    width: 100%; /* Ocupa a largura total */
+    width: 100%;
+    border-radius: 9px;
+    border: 1px solid #e6beff1f;
   }
 }

@@ -11,6 +11,9 @@
 /* Global/ Modais */
 @import "./global/modais/modal-btn-float.css";
 @import "./global/modais/modal-menu.css";
+/* Global/ Form */
+@import "./global/form/body-form-template.css";
+@import "./global/form/form-style.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";
@@ -37,6 +40,7 @@
 
 /* calendario */
 @import "./calendario/calendario-style.css";
+@import "./calendario/form-evento-style.css";
 
 /* contatos */
 @import "./contatos/contatos-style.css";

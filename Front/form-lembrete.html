@@ -13,25 +13,29 @@
   <meta name="description" content="Novo Lembrete">
 </head>
 
-<body class="body-template body-form">
-  <header class="header header-template-form">
-    <h1 class="header-template-form-menu" style="width: 18px; height: 14px;">
-      <a href="calendario.html"><img src="./static/imagens/icones/voltar.svg" alt="Back Icon"></a>
-    </h1>
-    <h1 class="header-template-form-title">Lembrete</h1>
+<body class="body-form-template">
+  <header class="header-form">
+    <h1>Novo Lembrete</h1>
+    <h2><a href="calendario.html">&times;</a></h2>
   </header>
 
-  <main class="main">
-    <section class="area-abas-template">
-      <form id="form" class="form-content" enctype="multipart/form-data">
+  <main class="main-form">
+    <section>
+      <form id="form" enctype="multipart/form-data">
         <fieldset>
-          <legend class="titulo-xl">Lembrete</legend>
-          <div class="campo">
+          <legend class="titulo-xl"></legend>
+
+          <div class="campo  form-evento-tipo">
             <label for="tipo">Tipo:</label>
             <select id="tipo">
               <option value="lembrete">Lembrete</option>
               <!-- Adicione outras opções aqui -->
             </select>
+          </div>
+
+          <div class="campo">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" placeholder="Digite o título aqui">
           </div>
 
           <div class="campo">
@@ -42,19 +46,16 @@
             </select>
           </div>
 
-          <div class="campo">
-            <label for="data">Data:</label>
-            <input type="text" id="data" placeholder="dd/mm/aaaa">
-          </div>
+          <div class="form-evento-dataHora">
+            <div class="campo">
+              <label for="data">Data:</label>
+              <input type="text" id="data" placeholder="dd/mm/aaaa">
+            </div>
 
-          <div class="campo">
-            <label for="hora">Hora:</label>
-            <input type="text" id="hora" placeholder="--:--">
-          </div>
-
-          <div class="campo">
-            <label for="assunto">Assunto:</label>
-            <textarea class="form-textarea" id="assunto" placeholder="Digite o assunto aqui"></textarea>
+            <div class="campo">
+              <label for="hora">Hora:</label>
+              <input type="text" id="hora" placeholder="--:--">
+            </div>
           </div>
 
           <div class="campo">
@@ -63,11 +64,12 @@
           </div>
 
           <div class="campo">
-            <input class="form-checkbox" type="checkbox" id="acesso-privado">
-            <label for="acesso-privado">Acesso privado</label>
+            <input class="form-checkbox" type="checkbox" id="acessoPrivado">
+            <label for="acessoPrivado">Acesso privado</label>
           </div>
-
-          <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+          <div class="botoes">
+            <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+          </div>
         </fieldset>
       </form>
     </section>
