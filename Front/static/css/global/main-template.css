@@ -53,8 +53,7 @@
     right: 5px;
     top: 42px;
     overflow: hidden;
-    max-width: 97%;
-    min-width: 70%;
+    width: 80%;
     height: 32px;
     z-index: 1001;
   }

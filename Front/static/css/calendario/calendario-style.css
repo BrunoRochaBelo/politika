@@ -1,5 +1,7 @@
 .nav-calendar {
   justify-content: space-between;
+  align-content: center;
+  gap: 15px;
 }
 .nav-semana {
   display: grid;
@@ -11,12 +13,12 @@
 }
 .dia-semana {
   text-align: center;
-  padding: 10px 5px;
+  padding: 10px;
   border-radius: 9px;
   color: var(--cor-5);
   background: #e6beff1f;
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-p1);
+  border: 1px solid #e6beff1f;
   cursor: pointer;
   font-size: var(--font-medium-light);
 }
@@ -29,10 +31,12 @@
   border-radius: 0.625rem;
   cursor: pointer;
   font-size: var(--font-medium-regular);
+  border-radius: 0.625rem;
+  border: 1px solid #e6beff1f;
 }
 .avancar {
   position: absolute;
-  right: 0;
+  right: 2px;
   top: 50%;
   transform: translateY(-50%);
   width: 18px;
@@ -40,11 +44,20 @@
 }
 .anterior {
   position: absolute;
-  left: 0;
+  left: 2px;
   top: 50%;
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
+}
+
+.nav-calendar .item1 {
+  justify-self: start;
+  padding: 0px 10px;
+}
+.nav-calendar .item2 {
+  justify-self: end;
+  padding: 0px 10px;
 }
 
 @media only screen and (max-width: 819px) {
@@ -53,8 +66,31 @@
     border-bottom: 1px solid var(--cor-p7);
     margin-bottom: 55px;
   }
+
+  .dia-semana {
+    padding: 5px 2px;
+  }
+  .change-semana {
+    padding: 5px 10px;
+  }
   .change-semana p {
     display: none;
+  }
+  .avancar {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 16px;
+    height: 16px;
+  }
+  .anterior {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
   }
   .calendario-template .nav a.indicador-2 {
     font-weight: bold;

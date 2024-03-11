@@ -27,6 +27,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--titulo-s);
 }
 .pleitos-medium-card-solicitante {
   grid-area: pleitos-medium-card-solicitante;
@@ -34,6 +35,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-desc {
   grid-area: pleitos-medium-card-desc;
@@ -47,6 +49,7 @@
   align-items: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 
 .pleitos-medium-card-beneficiario {
@@ -57,6 +60,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-uf {
   grid-area: pleitos-medium-card-uf;
@@ -66,6 +70,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-cidade {
   grid-area: pleitos-medium-card-cidade;
@@ -75,6 +80,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-bairro {
   grid-area: pleitos-medium-card-bairro;
@@ -84,6 +90,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-rua {
   grid-area: pleitos-medium-card-rua;
@@ -93,6 +100,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-autor {
   grid-area: pleitos-medium-card-autor;
@@ -102,6 +110,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-dataCriacao {
   grid-area: pleitos-medium-card-dataCriacao;
@@ -111,6 +120,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .pleitos-medium-card-status {
   grid-area: pleitos-medium-card-status;
@@ -128,6 +138,7 @@
   opacity: 0;
   opacity: 0;
   border-top: 1px solid var(--cor-p6);
+  font-size: var(--font-medium-light);
 }
 
 .exibirDetalhePleito {

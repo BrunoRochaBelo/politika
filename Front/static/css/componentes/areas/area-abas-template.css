@@ -4,6 +4,7 @@
   border-radius: 0.625rem;
   grid:
     "area-abas-template-header" auto
+    "area-abas-template-subHeader" auto
     "area-abas-template-content" auto
     / 1fr;
 }
@@ -15,6 +16,15 @@
   padding: 0.625rem 0rem 0rem 0rem;
   color: var(--cor-1);
 }
+.area-abas-template-subHeader {
+  grid-area: area-abas-template-subHeader;
+  display: grid;
+  align-items: center;
+  background: #e6beff1f;
+  justify-items: space-between;
+  padding: 10px 5px;
+  color: var(--cor-1);
+}
 .area-abas-template-content {
   grid-area: area-abas-template-content;
   overflow-x: hidden;
@@ -23,7 +33,7 @@
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   height: auto;
-  max-height: 80vh;
+  max-height: 65vh;
   border: 5px solid transparent;
 }
 
@@ -109,6 +119,6 @@
     grid-area: area-abas-template-content;
     padding: 0px 0px 5px 0px;
     height: auto;
-    max-height: 72vh;
+    max-height: 60vh;
   }
 }

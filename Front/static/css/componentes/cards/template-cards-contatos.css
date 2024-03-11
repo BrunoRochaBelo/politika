@@ -26,6 +26,7 @@
   justify-self: start;
   align-self: center;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-regular);
 }
 .contatos-small-card-phone {
   grid-area: contatos-small-card-phone;
@@ -45,6 +46,7 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
+  font-size: var(--titulo-m);
 }
 .contatos-small-card-email {
   grid-area: contatos-small-card-email;
@@ -53,6 +55,7 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
 }
 .contatos-small-card-tipopessoa {
   grid-area: contatos-small-card-tipopessoa;
@@ -61,6 +64,7 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
+  font-size: var(--font-light);
 }
 .contatos-small-card-editar {
   grid-area: contatos-small-card-editar;
@@ -71,6 +75,7 @@
   opacity: 0;
   margin: 3px 0 0 10px;
   border-top: 1px solid var(--cor-p6);
+  font-size: var(--font-medium-light);
 }
 
 .exibirDetalheContato {
