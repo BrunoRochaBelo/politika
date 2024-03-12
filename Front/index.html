@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <link rel="manifest" href="./manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link rel="stylesheet">
@@ -18,6 +19,20 @@
 </head>
 
 <body class="body-template home-body">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+          console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+        }, function (err) {
+          console.log('Falha ao registrar o ServiceWorker: ', err);
+        });
+      });
+    }
+  </script>
+
+
 
   <header class="header home-header-template">
     <div id="logo" class="home-header-logo"><img src="./static/imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>

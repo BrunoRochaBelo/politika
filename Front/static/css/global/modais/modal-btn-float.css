@@ -53,7 +53,8 @@
   padding: 12px 20px;
 }
 .modal-btn-floating-body li:hover {
-  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  background: #3f1c80;
+  color: var(--cor-0);
 }
 
 /* Botão do modal */

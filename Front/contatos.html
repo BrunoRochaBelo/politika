@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <link rel="manifest" href="./manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +18,21 @@
 </head>
 
 <body class="body-template">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+          console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+        }, function (err) {
+          console.log('Falha ao registrar o ServiceWorker: ', err);
+        });
+      });
+    }
+  </script>
+
+
+
   <header class="header header-template">
     <a href="index.html" class="header-back">
       <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
