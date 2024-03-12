@@ -1,3 +1,25 @@
+/*  /* Cabeçalho do form */
+.header-template-form {
+  display: grid;
+  align-items: center;
+  justify-items: auto;
+  text-transform: uppercase;
+  grid: "header-template-form-menu header-template-form-title" 45px;
+  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.4);
+}
+.header-template-form-menu {
+  grid-area: header-template-form-menu;
+  justify-self: start;
+  margin-left: 1.25rem;
+  width: 32px;
+}
+.header-template-form-title {
+  grid-area: header-template-form-title;
+  justify-self: auto;
+  font-size: var(--titulo-xl);
+  color: var(--cor-12);
+}
+
 #adicionarFilhoBtn {
   padding: 8px 16px;
   background-color: var(--cor-11);
@@ -19,4 +41,66 @@
 }
 .area-form .area-abas-template-content {
   background: none;
+}
+
+.area-form {
+  padding: 0rem 0rem 4.3rem 0rem;
+  border-radius: 9px;
+  background: #e6beff1f;
+}
+.form-header {
+  align-items: center;
+  justify-items: center;
+  padding: 0.625rem;
+  gap: 0.625rem;
+  border-radius: 9px;
+  background: var(--cor-2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--cor-p7);
+}
+.form-content {
+  font-size: var(--titulo-s);
+  color: var(--cor-1);
+}
+
+.form-header .nav {
+  gap: 0.625rem;
+}
+.form-header .nav a {
+  font-size: 1rem;
+  padding: 0.625rem;
+  color: var(--cor-7);
+  background: var(--cor-p4);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.form-header .nav a:hover {
+  background-color: rgba(157, 157, 157, 0.3);
+  border: none;
+  padding: 0.625rem;
+  border-radius: 50px;
+}
+.form-header .nav a.indicador-2 {
+  font-weight: bold;
+  color: var(--cor-p3);
+  background: var(--cor-11);
+  border: none;
+  padding: 0.625rem;
+  border-radius: 50px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 820px) {
+  /* Cabeçalho do form */
+  .header-template-form {
+    grid: "header-template-form-menu header-template-form-title" 35px;
+  }
+  .header-template-form-menu {
+    grid-area: header-template-form-menu;
+    margin-left: 0.625rem;
+  }
 }

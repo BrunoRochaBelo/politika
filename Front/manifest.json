@@ -5,7 +5,7 @@
   "lang": "pt-br",
   "theme_color": "#3f1c80",
   "background_color": "#000000",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "scope": "/",
   "start_url": "/index.html",
   "icons": [
@@ -18,6 +18,116 @@
       "src": "./static/imagens/logo/logo-2.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "./static/imagens/icones/1-estrela.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/2-estrelas.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/3-estrelas.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/4-estrelas.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/5-estrelas.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/anterior.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/avancar.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/calendario.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/calendario-select.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/contatos.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/contatos-select.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/despesas.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/despesas-select.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/home.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/home-select.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/menu.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/pesquisar.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/pesquisar-black.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/phone.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/pleitos.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/pleitos-select.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/voltar.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
     }
   ]
 }
