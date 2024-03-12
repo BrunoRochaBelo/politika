@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <link rel="manifest" href="./manifest.json">
+  <link rel="manifest" href="/static/manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap">
@@ -15,23 +15,23 @@
 </head>
 
 
-<body class="body-template body-form">
-  <header class="header header-template-form">
-    <h1 class="header-template-form-menu" style="width: 18px; height: 14px;">
-      <a href="pleitos.html"><img src="./static/imagens/icones/voltar.svg" alt="Back Icon"></a>
-    </h1>
-    <h1 class="header-template-form-title">Pleito</h1>
+<body class="body-form-template">
+  <header class="header-form ">
+    <h1>Novo Pleito</h1>
+    <h2><a href="pleitos.html">&times;</a></h2>
   </header>
 
-  <main class="main">
-    <section class="area-abas-template">
+  <main class="main-form">
+    <section>
       <form id="form" class="form-content" enctype="multipart/form-data">
         <fieldset>
-          <legend class="titulo-xl">Pleito</legend>
+          <legend class="titulo-xl"></legend>
+
           <div class="campo">
             <label for="nome">Nome do solicitante:</label>
             <input type="text" id="nome" name="nome" required><br>
           </div>
+
           <div class="campo">
             <label for="tipo">Tipo solicitação:</label>
             <select id="tipo" name="tipo" required>
@@ -52,47 +52,61 @@
               <option value="transporte publico">TRANSPORTE PÚBLICO</option>
             </select>
           </div>
+
           <div class="campo">
             <label for="descricao">Descrição:</label>
             <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br>
           </div>
+
           <div class="campo">
             <label for="beneficiario">Beneficiário:</label>
             <input type="text" id="beneficiario" name="beneficiario" required><br>
           </div>
+
           <div class="campo">
             <label for="cep">CEP:</label>
             <input type="text" id="cep" name="cep" required><br>
           </div>
+
           <div class="campo">
             <label for="uf">UF:</label>
             <input type="text" id="uf" name="uf" required><br>
           </div>
+
           <div class="campo">
             <label for="rua">Rua:</label>
             <input type="text" id="rua" name="rua" required><br>
           </div>
+
           <div class="campo">
             <label for="numero">Número:</label>
             <input type="number" id="numero" name="numero" required><br>
           </div>
+
           <div class="campo">
             <label for="complemento">Complemento:</label>
             <input type="text" id="complemento" name="complemento"><br>
           </div>
+
           <div class="campo">
             <label for="bairro">Bairro:</label>
             <input type="text" id="bairro" name="bairro" required><br>
           </div>
+
           <div class="campo">
             <label for="cidade">Cidade:</label>
             <input type="text" id="cidade" name="cidade" required><br>
           </div>
+
           <div class="campo">
             <label for="data">Data da solicitação:</label>
             <input type="date" id="data" name="data" required><br>
           </div>
-          <input type="submit" value="Salvar">
+
+          <div class="botoes">
+            <a href="calendario.html" class="btn-leaked">Cancelar</a>
+            <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
+          </div>
       </form>
 </body>
 

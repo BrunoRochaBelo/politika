@@ -57,4 +57,22 @@
     height: 32px;
     z-index: 1001;
   }
+
+  .btn-pesquisa-rapida.btn-recuar-expandir::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--cor-1);
+    margin-left: 5px;
+    border-radius: 25%;
+  }
+  .btn-pesquisa-rapida.btn-recuar-expandir.show-after::after {
+    display: inline-block;
+  }
+  .btn-pesquisa-rapida.btn-recuar-expandir.hide-after::after {
+    display: none;
+  }
 }

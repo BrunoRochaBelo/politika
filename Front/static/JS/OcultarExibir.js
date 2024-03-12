@@ -47,6 +47,10 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área não está exibida
       areaHeader.style.color = "transparent";
       areaHeader.style.fontSize = "0px";
+
+      // Adiciona a classe para mostrar o pseudo-elemento ::after
+      button.classList.add("show-after");
+      button.classList.remove("hide-after");
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
@@ -59,6 +63,10 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--cor-p3)";
       areaHeader.style.fontSize = "var(--titulo-m)";
+
+      // Adiciona a classe para ocultar o pseudo-elemento ::after
+      button.classList.add("hide-after");
+      button.classList.remove("show-after");
     }
   }
 }
