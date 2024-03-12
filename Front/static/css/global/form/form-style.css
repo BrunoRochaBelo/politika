@@ -1,4 +1,143 @@
 /* Estilos CSS para o formulário */
+fieldset {
+  border-radius: 9px;
+  padding: 0px;
+  border: none;
+  margin: 0px;
+}
+legend {
+  text-align: center;
+}
+label {
+  font-size: 12px;
+  color: var(--cor-4);
+  margin: 0.625rem 0.625rem 0.3125rem 0rem;
+}
+.campo {
+  margin: 0px;
+}
+
+.campo-invalido {
+  border: 1px solid red;
+}
+.campo label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+}
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9375rem;
+  color: var(--cor-0);
+  background: #e6beff1f;
+  border: 1px solid #e6beff1f;
+  border-radius: 9px;
+}
+.campo input[type="checkbox"],
+.campo input[type="radio"] {
+  width: auto;
+  margin: 0 10px 0 0;
+}
+
+label + .form-checkbox {
+  width: 0;
+  height: 0;
+}
+label + input.form-checkbox {
+  position: relative;
+  padding-left: 60px;
+  cursor: pointer;
+  display: inline-block;
+  color: #666;
+}
+
+label + input.form-checkbox:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -16px;
+  width: 52px;
+  height: 26px;
+  border-radius: 13px;
+  background: #e6beff1f;
+  transition: background 0.2s;
+}
+
+label + input.form-checkbox:checked:before {
+  background: #5526ad;
+}
+
+label + input.form-checkbox:after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: -14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: white;
+  transition: left 0.2s;
+}
+
+label + input.form-checkbox:checked:after {
+  left: 28px;
+}
+
+form span {
+  color: red;
+  font-size: var(--titulo-s);
+  margin: 0.3125rem 0.625rem 0.3125rem 0rem;
+}
+.form-tipo {
+  display: none;
+}
+.form-dataHora {
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+  gap: 5px;
+  width: 100%;
+}
+.form-anotacoes {
+  display: flex;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0px 10px 0px;
+}
+.botoes button {
+  width: 30%; /* Ocupa a largura total */
+  border-radius: 9px;
+  border: 1px solid #e6beff1f;
+}
+.botoes button:hover {
+  background-color: rgba(157, 157, 157, 0.7);
+  color: var(--cor-12);
+}
+
+/* Responsivo */
+@media (max-width: 820px) {
+  .form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .botoes {
+    flex-direction: column;
+    gap: 0.625rem;
+    margin: 1.875rem 0.625rem;
+  }
+
+  .botoes button {
+    width: 100%;
+    border-radius: 9px;
+    border: 1px solid #e6beff1f;
+  }
+}
+
 .area-form {
   padding: 0rem 0rem 4.3rem 0rem;
   border-radius: 9px;
@@ -17,74 +156,6 @@
 .form-content {
   font-size: var(--titulo-s);
   color: var(--cor-1);
-}
-
-legend {
-  text-align: center;
-}
-fieldset {
-  border-radius: 9px;
-  padding: 0px;
-  border: none;
-  margin: 0px;
-}
-label {
-  font-weight: bold;
-  color: var(--cor-5);
-  margin: 0.625rem 0.625rem 0.3125rem 0rem;
-}
-
-form span {
-  color: red;
-  font-size: var(--titulo-s);
-  margin: 0.3125rem 0.625rem 0.3125rem 0rem;
-}
-
-.campo,
-#campoWhatsapp,
-#camposFilhos,
-#camposConjuge,
-#camposCargoComissionado {
-  margin: 0.625rem 0.625rem 1.875rem 0.625rem;
-}
-.campo-invalido {
-  border: 1px solid red;
-}
-.campo label {
-  display: inline-block;
-  margin: 0.625rem 1.25rem 0.3125rem 0rem;
-  font-weight: bold;
-}
-.campo input,
-.campo select,
-.campo textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.9375rem;
-  margin: 0rem 0.625rem 0rem 0rem;
-  color: var(--cor-p3);
-  background: #e6beff1f;
-  border: 1px solid #e6beff1f;
-  border-radius: 9px;
-}
-.campo input[type="checkbox"],
-.campo input[type="radio"] {
-  width: auto;
-}
-
-.botoes {
-  display: flex;
-  justify-content: space-between;
-  margin: 3.125rem;
-}
-.botoes button {
-  width: 30%; /* Ocupa a largura total */
-  border-radius: 9px;
-  border: 1px solid #e6beff1f;
-}
-.botoes button:hover {
-  background-color: rgba(157, 157, 157, 0.7);
-  color: var(--cor-12);
 }
 
 .form-header .nav {
@@ -115,23 +186,4 @@ form span {
   border: none;
   padding: 0.625rem;
   border-radius: 50px;
-}
-
-/* Responsivo */
-@media (max-width: 820px) {
-  .form {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .botoes {
-    flex-direction: column;
-    gap: 0.625rem;
-    margin: 1.875rem 0.625rem;
-  }
-
-  .botoes button {
-    width: 100%;
-    border-radius: 9px;
-    border: 1px solid #e6beff1f;
-  }
 }

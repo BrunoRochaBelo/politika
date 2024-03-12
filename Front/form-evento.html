@@ -24,7 +24,7 @@
       <form id="form" enctype="multipart/form-data">
         <fieldset>
           <legend class="titulo-xl"></legend>
-          <div class="campo form-evento-tipo">
+          <div class="campo form-tipo">
             <label for="tipo">Tipo:</label>
             <select id="tipo">
               <option value="lembrete">Evento</option>
@@ -45,25 +45,25 @@
             </select>
           </div>
 
-          <div class="form-evento-dataHora">
+          <div class="form-dataHora">
             <div class="campo">
               <label for="dataInicio">Data início:</label>
-              <input type="text" id="dataInicio" placeholder="dd/mm/aaaa">
+              <input type="date" id="dataInicio" placeholder="dd/mm/aaaa">
             </div>
             <div class="campo">
               <label for="horaInicio">Hora início:</label>
-              <input type="text" id="horaInicio" placeholder="--:--">
+              <input type="time" id="horaInicio" placeholder="--:--">
             </div>
           </div>
 
-          <div class="form-evento-dataHora">
+          <div class="form-dataHora">
             <div class="campo">
               <label for="dataFim">Data fim:</label>
-              <input type="text" id="dataFim" placeholder="dd/mm/aaaa">
+              <input type="date" id="dataFim" placeholder="dd/mm/aaaa">
             </div>
             <div class="campo">
               <label for="horaFim">Hora fim:</label>
-              <input type="text" id="horaFim" placeholder="--:--">
+              <input type="time" id="horaFim" placeholder="--:--">
             </div>
           </div>
 
@@ -88,10 +88,12 @@
           </div>
 
           <div class="campo">
-            <input class="form-checkbox" type="checkbox" id="acessoPrivado">
             <label for="acessoPrivado">Acesso privado</label>
+            <input class="form-checkbox" type="checkbox" id="acessoPrivado">
           </div>
+
           <div class="botoes">
+            <a href="calendario.html" class="btn-leaked">Cancelar</a>
             <button type="submit" class="btn-filled" onclick="submitForm()">Salvar</button>
           </div>
         </fieldset>

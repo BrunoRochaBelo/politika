@@ -40,7 +40,6 @@
 
 /* calendario */
 @import "./calendario/calendario-style.css";
-@import "./calendario/form-evento-style.css";
 
 /* contatos */
 @import "./contatos/contatos-style.css";

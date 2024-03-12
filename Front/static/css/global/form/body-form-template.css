@@ -34,7 +34,7 @@
   background: #e6beff1f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
-  max-height: 85vh;
+  max-height: 89vh;
   border: 5px solid transparent;
   padding: 0px;
   font-size: var(--titulo-s);
@@ -49,7 +49,7 @@
   .main-form {
     padding: 0px;
     height: auto;
-    max-height: 80vh;
+    max-height: 88vh;
     overflow-y: auto;
   }
   .main-form::-webkit-scrollbar {
