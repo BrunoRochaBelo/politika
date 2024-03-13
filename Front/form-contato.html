@@ -13,29 +13,26 @@
   <meta name="description" content="Cadastrar novo contato">
 </head>
 
-<body class="body-template">
-  <header class="header header-template-form">
-    <h1 class="header-template-form-menu" style="width: 18px; height: 14px;">
-      <a href="contatos.html"><img src="./static/imagens/icones/voltar.svg" alt="Back Icon"></a>
-    </h1>
-    <h1 class="header-template-form-title">CADASTRO CONTATOS</h1>
-  </header>
+<body class="body-form-template">
+  <header class="header-form header-form-contato">
+    <h1>Novo Contato</h1>
+    <h2><a href="contatos.html">&times;</a></h2>
 
-  <main class="main">
-    <section class="area-abas-template area-form">
-      <nav class="area-abas-template-header form-header">
-        <img src="./static/imagens/foto-do-usuario.png" alt="">
+  </header>
+  <main class="main-form main-form-contato">
+    <section class="area-abas-template">
+      <nav class="area-abas-template-header">
         <ul id="navAba" class="nav">
           <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Identificação</a></li>
           <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Endereço</a></li>
-          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Info. Complementar</a></li>
+          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Adicional</a></li>
         </ul>
       </nav>
-      <div class="area-abas-template-content ">
+      <div class="area-abas-template-content">
         <form id="form" class="form-content" enctype="multipart/form-data">
           <div id="aba1" class="aba-template active">
             <fieldset>
-              <legend class="titulo-xl">Campos obrigatórios</legend>
+              <legend class="titulo-xl"></legend>
               <div class="campo">
                 <label for="nome_contato">Nome do contato <span>*</span></label>
                 <input type="text" id="nome_contato" name="nome_contato" required>
@@ -46,14 +43,15 @@
               </div>
               <div class="campo">
                 <label>Este número é WhatsApp? <span>*</span></label>
-                <div class="radios">
-                  <input type="radio" id="whatsapp_sim" name="whatsapp" value="Sim" onchange="mostrarCampoWhatsapp()">
-                  <label for="whatsapp_sim">Sim</label>
-                  <input type="radio" id="whatsapp_nao" name="whatsapp" value="Não" onchange="mostrarCampoWhatsapp()">
-                  <label for="whatsapp_nao">Não</label>
+                <div class="switch-container">
+                  <input type="checkbox" id="whatsapp_switch" class="form-checkbox" onchange="mostrarCampoWhatsapp()">
+                  <label for="whatsapp_switch" class="switch-label">
+                    <span class="switch-inner"></span>
+                    <span class="switch-switch"></span>
+                  </label>
                 </div>
               </div>
-              <div id="campoWhatsapp" style="display: none;">
+              <div id="campoWhatsapp">
                 <div class="campo">
                   <label for="whatsapp">WhatsApp</label>
                   <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
@@ -77,24 +75,24 @@
                 </select>
               </div>
               <div class="campo">
-                <label for="tipo_contato">Tipo do contato</label>
-                <div id="tipo_contato">
-                  <input type="checkbox" id="eleitor" name="eleitor" value="Eleitor">
-                  <label for="eleitor">Eleitor</label>
-                  <input type="checkbox" id="staff" name="staff" value="Staff">
-                  <label for="staff">Staff</label>
-                  <input type="checkbox" id="fornecedor" name="fornecedor" value="Fornecedor">
-                  <label for="fornecedor">Fornecedor</label>
-                  <input type="checkbox" id="comissionado" name="comissionado" value="Comissionado">
-                  <label for="comissionado">Comissionado</label>
-                  <input type="checkbox" id="lideranca" name="lideranca" value="Liderança">
-                  <label for="lideranca">Liderança</label>
-                  <input type="checkbox" id="familia" name="familia" value="Família">
-                  <label for="familia">Família</label>
-                  <input type="checkbox" id="politico" name="politico" value="Político">
-                  <label for="politico">Político</label>
-                  <input type="checkbox" id="favorito" name="favorito" value="Favorito">
-                  <label for="favorito">Favorito</label>
+                <label for="tipo_contato">Tipo(s) do contato</label>
+                <div id="tipo_contato" class="tipo-contato">
+                  <input type="checkbox" id="eleitor" name="eleitor" value="Eleitor" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="eleitor">Eleitor</label>
+                  <input type="checkbox" id="staff" name="staff" value="Staff" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="staff">Staff</label>
+                  <input type="checkbox" id="fornecedor" name="fornecedor" value="Fornecedor" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="fornecedor">Fornecedor</label>
+                  <input type="checkbox" id="comissionado" name="comissionado" value="Comissionado" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="comissionado">Comissionado</label>
+                  <input type="checkbox" id="lideranca" name="lideranca" value="Liderança" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="lideranca">Liderança</label>
+                  <input type="checkbox" id="familia" name="familia" value="Família" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="familia">Família</label>
+                  <input type="checkbox" id="politico" name="politico" value="Político" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="politico">Político</label>
+                  <input type="checkbox" id="favorito" name="favorito" value="Favorito" class="form-contato-checkbox">
+                  <label class="checkbox-label" for="favorito">Favorito</label>
                 </div>
               </div>
               <div class="campo">
@@ -107,45 +105,49 @@
               </div>
             </fieldset>
             <fieldset>
-              <legend class="titulo-xl">Informações pessoais</legend>
+              <legend class="titulo-xl"></legend>
               <div class="campo">
                 <label for="data_nascimento">Data Nascimento</label>
                 <input type="date" id="data_nascimento" name="data_nascimento">
               </div>
-              <div class="campo">
-                <label for="sexo">Sexo</label>
-                <select id="sexo" name="sexo">
-                  <option value="">Selecione</option>
-                  <option value="Masculino">Masculino</option>
-                  <option value="Feminino">Feminino</option>
-                  <option value="Outro">Outro</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="cor_pele">Cor da pele</label>
-                <select id="cor_pele" name="cor_pele">
-                  <option value="">Selecione</option>
-                  <option value="Branca">Branca</option>
-                  <option value="Preta">Preta</option>
-                  <option value="Parda">Parda</option>
-                  <option value="Amarela">Amarela</option>
-                  <option value="Indígena">Indígena</option>
-                </select>
+              <div class="form-2-colum">
+                <div class="campo">
+                  <label for="sexo">Sexo</label>
+                  <select id="sexo" name="sexo">
+                    <option value="">Selecione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="cor_pele">Cor da pele</label>
+                  <select id="cor_pele" name="cor_pele">
+                    <option value="">Selecione</option>
+                    <option value="Branca">Branca</option>
+                    <option value="Preta">Preta</option>
+                    <option value="Parda">Parda</option>
+                    <option value="Amarela">Amarela</option>
+                    <option value="Indígena">Indígena</option>
+                  </select>
+                </div>
               </div>
             </fieldset>
             <fieldset>
-              <legend class="titulo-xl">Informações eleitorais</legend>
+              <legend class="titulo-xl"></legend>
               <div class="campo">
                 <label for="titulo_eleitor">Título Eleitor</label>
                 <input type="number" id="titulo_eleitor" name="titulo_eleitor">
               </div>
-              <div class="campo">
-                <label for="zona_eleitoral">Zona Eleitoral</label>
-                <input type="number" id="zona_eleitoral" name="zona_eleitoral">
-              </div>
-              <div class="campo">
-                <label for="secao_eleitoral">Seção Eleitoral</label>
-                <input type="number" id="secao_eleitoral" name="secao_eleitoral">
+              <div class="form-2-colum">
+                <div class="campo">
+                  <label for="zona_eleitoral">Zona Eleitoral</label>
+                  <input type="number" id="zona_eleitoral" name="zona_eleitoral">
+                </div>
+                <div class="campo">
+                  <label for="secao_eleitoral">Seção Eleitoral</label>
+                  <input type="number" id="secao_eleitoral" name="secao_eleitoral">
+                </div>
               </div>
               <div class="campo">
                 <label for="local_votacao">Local Votação</label>
@@ -161,49 +163,51 @@
 
           <div id="aba2" class="aba-template">
             <fieldset>
-              <legend class="titulo-xl">Campos obrigatórios</legend>
+              <legend class="titulo-xl"></legend>
               <div class="campo">
                 <label for="cep">CEP <span>*</span></label>
                 <input type="text" id="cep" name="cep" placeholder="99999999" required oninput="buscarEndereco(this.value)">
               </div>
-              <div class="campo">
-                <label for="uf">UF <span>*</span></label>
-                <select id="uf" name="uf" required>
-                  <option value="">Selecione</option>
-                  <option value="AC">AC</option>
-                  <option value="AL">AL</option>
-                  <option value="AP">AP</option>
-                  <option value="AM">AM</option>
-                  <option value="BA">BA</option>
-                  <option value="CE">CE</option>
-                  <option value="DF">DF</option>
-                  <option value="ES">ES</option>
-                  <option value="GO">GO</option>
-                  <option value="MA">MA</option>
-                  <option value="MT">MT</option>
-                  <option value="MS">MS</option>
-                  <option value="MG">MG</option>
-                  <option value="PA">PA</option>
-                  <option value="PB">PB</option>
-                  <option value="PR">PR</option>
-                  <option value="PE">PE</option>
-                  <option value="PI">PI</option>
-                  <option value="RJ">RJ</option>
-                  <option value="RN">RN</option>
-                  <option value="RS">RS</option>
-                  <option value="RO">RO</option>
-                  <option value="RR">RR</option>
-                  <option value="SC">SC</option>
-                  <option value="SP">SP</option>
-                  <option value="SE">SE</option>
-                  <option value="TO">TO</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="cidade">Cidade <span>*</span></label>
-                <input type="text" id="cidade" name="cidade" required>
-              </div>
 
+              <div class="form-2-colum">
+                <div class="campo">
+                  <label for="uf">UF <span>*</span></label>
+                  <select id="uf" name="uf" required>
+                    <option value="">Selecione</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="cidade">Cidade <span>*</span></label>
+                  <input type="text" id="cidade" name="cidade" required>
+                </div>
+              </div>
               <div class="campo">
                 <label for="bairro">Bairro <span>*</span></label>
                 <input type="text" id="bairro" name="bairro" required>
@@ -212,13 +216,15 @@
                 <label for="rua">Rua</label>
                 <input type="text" id="rua" name="rua">
               </div>
-              <div class="campo">
-                <label for="numero">Número</label>
-                <input type="number" id="numero" name="numero">
-              </div>
-              <div class="campo">
-                <label for="complemento">Complemento</label>
-                <input type="text" id="complemento" name="complemento">
+              <div class="form-2-colum">
+                <div class="campo">
+                  <label for="numero">Número</label>
+                  <input type="number" id="numero" name="numero">
+                </div>
+                <div class="campo">
+                  <label for="complemento">Complemento</label>
+                  <input type="text" id="complemento" name="complemento">
+                </div>
               </div>
             </fieldset>
             <div class="campo ocultar">
@@ -236,10 +242,13 @@
             </div>
             <div class="campo">
               <label for="residencia_apoio">Residência de apoio</label>
-              <input type="radio" id="residencia_apoio_sim" name="residencia_apoio" value="Sim">
-              <label for="residencia_apoio_sim">Sim</label>
-              <input type="radio" id="residencia_apoio_nao" name="residencia_apoio" value="Não">
-              <label for="residencia_apoio_nao">Não</label>
+              <div class="switch-container">
+                <input type="checkbox" id="residencia_apoio_switch" class="form-checkbox" onchange="mostrarCampoResidenciaApoio()">
+                <label for="residencia_apoio_switch" class="switch-label">
+                  <span class="switch-inner"></span>
+                  <span class="switch-switch"></span>
+                </label>
+              </div>
             </div>
             <div class="botoes">
               <button type="button" class="btn-leaked" onclick="voltar()">Voltar</button>
@@ -249,7 +258,7 @@
 
           <div id="aba3" class="aba-template">
             <fieldset>
-              <legend class="titulo-xl">Campos obrigatórios</legend>
+              <legend class="titulo-xl"></legend>
               <div class="campo">
                 <label for="indicacao">Indicação</label>
                 <input type="text" id="indicacao" name="indicacao">
@@ -311,10 +320,13 @@
                 </div>
                 <div class="campo">
                   <label for="cargo_comissionado">Cargo Comissionado</label>
-                  <input type="radio" id="cargo_comissionado_sim" name="cargo_comissionado" value="Sim" onclick="mostrarCamposCargoComissionado()">
-                  <label for="cargo_comissionado_sim">Sim</label>
-                  <input type="radio" id="cargo_comissionado_nao" name="cargo_comissionado" value="Não" onclick="ocultarCamposCargoComissionado()">
-                  <label for="cargo_comissionado_nao">Não</label>
+                  <div class="switch-container">
+                    <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="toggleCamposCargoComissionado()">
+                    <label for="cargo_comissionado_switch" class="switch-label">
+                      <span class="switch-inner"></span>
+                      <span class="switch-switch"></span>
+                    </label>
+                  </div>
                 </div>
                 <div id="camposCargoComissionado" style="display: none;">
                   <div class="campo">

@@ -195,12 +195,12 @@ camposDoFormulario.forEach((campo) => {
 // Exibir campos de acordo com a resposta
 // Função para mostrar campo de Whatsapp
 function mostrarCampoWhatsapp() {
-  var whatsappSim = document.getElementById("whatsapp_sim").checked;
+  var checkbox = document.getElementById("whatsapp_switch");
   var campoWhatsapp = document.getElementById("campoWhatsapp");
   var celularInput = document.getElementById("celular");
   var whatsappInput = document.getElementById("whatsapp");
 
-  if (whatsappSim) {
+  if (checkbox.checked) {
     campoWhatsapp.style.display = "none";
     whatsappInput.value = celularInput.value;
   } else {
@@ -259,19 +259,15 @@ function ocultarCamposConjuge() {
   var camposConjuge = document.getElementById("camposConjuge");
   camposConjuge.style.display = "none";
 }
-function mostrarCamposCargoComissionado() {
+function toggleCamposCargoComissionado() {
+  var checkbox = document.getElementById("cargo_comissionado_switch");
   var camposCargoComissionado = document.getElementById(
     "camposCargoComissionado"
   );
-  if (camposCargoComissionado) {
+
+  if (checkbox.checked) {
     camposCargoComissionado.style.display = "block";
-  }
-}
-function ocultarCamposCargoComissionado() {
-  var camposCargoComissionado = document.getElementById(
-    "camposCargoComissionado"
-  );
-  if (camposCargoComissionado) {
+  } else {
     camposCargoComissionado.style.display = "none";
   }
 }

@@ -96,7 +96,7 @@ form span {
 }
 .form-dataHora {
   display: grid;
-  grid-template: auto / 1fr 1fr;
+  grid-template: auto/auto auto;
   gap: 5px;
   width: 100%;
 }
@@ -130,7 +130,6 @@ form span {
     gap: 0.625rem;
     margin: 1.875rem 0.625rem;
   }
-
   .botoes button {
     width: 100%;
     border-radius: 9px;
