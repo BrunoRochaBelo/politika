@@ -16,9 +16,9 @@
   padding: 10px;
   border-radius: 9px;
   color: var(--cor-5);
-  background: #e6beff1f;
+  background: #ce84ff0a;
   border-radius: 0.625rem;
-  border: 1px solid #e6beff1f;
+  border: 1px solid #ce84ff0a;
   cursor: pointer;
   font-size: var(--font-medium-light);
 }
@@ -32,7 +32,7 @@
   cursor: pointer;
   font-size: var(--font-medium-regular);
   border-radius: 0.625rem;
-  border: 1px solid #e6beff1f;
+  border: 1px solid #ce84ff0a;
 }
 .avancar {
   position: absolute;

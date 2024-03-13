@@ -16,14 +16,14 @@
 
 .main-form-contato {
   background: none;
-  border: 1px solid #e6beff1f;
+  border: 1px solid #ce84ff0a;
   border-top: none;
   padding: 5px;
 }
 
 .header-form-contato {
   background: none;
-  border: 1px solid #e6beff1f;
+  border: 1px solid #ce84ff0a;
   border-bottom: none;
 }
 
@@ -58,7 +58,7 @@
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: #e6beff1f;
+  background: #ce84ff0a;
   transition: background 0.2s;
 }
 .form-checkbox:checked + .switch-label:before {
@@ -94,7 +94,7 @@
 .checkbox-label {
   display: inline-block;
   padding: 10px 20px;
-  border: 2px solid #e6beff1f;
+  border: 2px solid #ce84ff0a;
   border-radius: 9px;
   cursor: pointer;
   text-align: center;

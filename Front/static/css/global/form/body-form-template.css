@@ -21,8 +21,8 @@
   color: var(--cor-5);
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
-  background: #e6beff1f;
-  border-bottom: 1px solid #e6beff1f;
+  background: #ce84ff0a;
+  border-bottom: 1px solid #ce84ff0a;
 }
 .main-form {
   grid-area: main-form;
@@ -31,7 +31,7 @@
   align-content: center;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
-  background: #e6beff1f;
+  background: #ce84ff0a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 89vh;

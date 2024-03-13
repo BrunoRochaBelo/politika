@@ -20,7 +20,7 @@
   grid-area: area-abas-template-subHeader;
   display: grid;
   align-items: center;
-  background: #e6beff1f;
+  background: #ce84ff0a;
   justify-items: space-between;
   padding: 10px 5px;
   color: var(--cor-1);
@@ -28,7 +28,7 @@
 .area-abas-template-content {
   grid-area: area-abas-template-content;
   overflow-x: hidden;
-  background: #e6beff1f;
+  background: #ce84ff0a;
   padding: 5px;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
@@ -100,7 +100,7 @@
 .nav a.indicador-2 {
   font-weight: bold;
   color: var(--cor-1);
-  background: #e6beff1f;
+  background: #ce84ff0a;
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
   border: 1px solid #3f1c80;

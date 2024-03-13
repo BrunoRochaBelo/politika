@@ -32,8 +32,8 @@ label {
   box-sizing: border-box;
   padding: 0.9375rem;
   color: var(--cor-0);
-  background: #e6beff1f;
-  border: 1px solid #e6beff1f;
+  background: #ce84ff0a;
+  border: 1px solid #ce84ff0a;
   border-radius: 9px;
 }
 .campo input[type="checkbox"],
@@ -62,7 +62,7 @@ label + input.form-checkbox:before {
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: #e6beff1f;
+  background: #ce84ff0a;
   transition: background 0.2s;
 }
 
@@ -112,7 +112,7 @@ form span {
 .botoes button {
   width: 30%; /* Ocupa a largura total */
   border-radius: 9px;
-  border: 1px solid #e6beff1f;
+  border: 1px solid #ce84ff0a;
 }
 .botoes button:hover {
   background-color: rgba(157, 157, 157, 0.7);
@@ -133,6 +133,6 @@ form span {
   .botoes button {
     width: 100%;
     border-radius: 9px;
-    border: 1px solid #e6beff1f;
+    border: 1px solid #ce84ff0a;
   }
 }

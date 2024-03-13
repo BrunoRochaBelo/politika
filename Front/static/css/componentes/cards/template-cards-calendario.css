@@ -20,7 +20,7 @@
 }
 .calendario-small-card-title {
   grid-area: calendario-small-card-title;
-  border-left: 4px solid #e6beff1f;
+  border-left: 4px solid #ce84ff0a;
   padding-left: 10px;
   font-size: var(--titulo-s);
   justify-self: start;
