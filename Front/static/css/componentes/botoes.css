@@ -4,7 +4,7 @@
   background-color: var(--cor-12);
   color: var(--cor-6);
   font-size: small;
-  border-radius: 0.9375rem;
+  border-radius: 9px;
   display: flex;
   text-align: justify;
   align-items: center;
@@ -17,7 +17,7 @@
   color: var(--cor-12);
   font-size: small;
   border: 1px solid var(--cor-12);
-  border-radius: 0.9375rem;
+  border-radius: 9px;
   display: flex;
   text-align: justify;
   align-items: center;
@@ -41,7 +41,7 @@
 }
 
 .area-template-fil-content .btn-filter-leaked {
-  background: linear-gradient(to right bottom, #16043a, #0b021d);
+  background: var(--cor-12);
   color: var(--cor-6);
   border: 1px solid var(--cor-2);
   border-radius: 9px;

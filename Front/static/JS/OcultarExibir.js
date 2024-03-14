@@ -57,7 +57,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       button.style.color = "var(--cor-p3)"; // Altera a cor do texto do botão para var(--cor-p3)
       mainSidenav.style.height = "auto";
       area.style.background =
-        "radial-gradient(circle at right bottom, #0c0420, #361d68)";
+        "radial-gradient(circle at right bottom,#090315,#11042d,#361d68,#2b1655,#11042d,#090315)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida

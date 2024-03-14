@@ -12,19 +12,14 @@ body {
   overflow: auto;
   background: radial-gradient(
     circle at right bottom,
-    #000000,
-    #090219,
+    #090315,
+    #11042d,
     #361d68,
-    #0d0324,
-    #000000
+    #2b1655,
+    #11042d,
+    #090315
   );
-  scrollbar-face-color: linear-gradient(
-    to bottom,
-    #000000,
-    #361d68,
-    #361d68,
-    #000000
-  );
+  scrollbar-face-color: #4e2998;
   scrollbar-track-color: #000000;
 }
 ::-webkit-scrollbar {
@@ -37,13 +32,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to right, #060011, #361d68, #361d68, #060011);
+  background: #4e2998;
   border-radius: 9px;
   border: 2px solid #000000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to right, #060011, #42257b, #42257b, #060011);
+  background: #5a2cb4;
 }
 
 /* Adicione os prefixos para compatibilidade com outros navegadores */
@@ -57,13 +52,13 @@ body {
 }
 
 ::-moz-scrollbar-thumb {
-  background: linear-gradient(to right, #060011, #361d68, #361d68, #060011);
+  background: #4e2998;
   border-radius: 9px;
   border: 2px solid #000000;
 }
 
 ::-moz-scrollbar-thumb:hover {
-  background: linear-gradient(to right, #060011, #42257b, #42257b, #060011);
+  background: #5a2cb4;
 }
 
 /* Internet Explorer */
@@ -77,13 +72,13 @@ body {
 }
 
 ::-ms-scrollbar-thumb {
-  background: linear-gradient(to right, #060011, #361d68, #361d68, #060011);
+  background: #4e2998;
   border-radius: 9px;
   border: 2px solid #000000;
 }
 
 ::-ms-scrollbar-thumb:hover {
-  background: linear-gradient(to right, #060011, #42257b, #42257b, #060011);
+  background: #5a2cb4;
 }
 
 /*background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);

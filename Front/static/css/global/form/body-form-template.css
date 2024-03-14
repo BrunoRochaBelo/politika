@@ -15,30 +15,32 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-content: center;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
   font-size: var(--titulo-s);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-5);
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-  background: #ce84ff0a;
-  border-bottom: 1px solid #ce84ff0a;
+  color: var(--cor-p3);
+  border: 1px solid #ce84ff0a;
+  border-bottom: none;
 }
 .main-form {
   grid-area: main-form;
   overflow-x: hidden;
+  padding: 5px;
   justify-content: space-between;
   align-content: center;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
-  background: #ce84ff0a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 89vh;
   border: 5px solid transparent;
-  padding: 0px;
+  padding: 5px;
   font-size: var(--titulo-s);
   color: var(--cor-1);
+  border: 1px solid #ce84ff0a;
+  border-top: none;
 }
 
 /* RESPONSIVO */

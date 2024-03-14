@@ -56,12 +56,7 @@
 .card-tmf-m {
   width: 130px;
   height: 110px;
-  background: linear-gradient(
-    to bottom,
-    #0b021d 10%,
-    var(--cor-12),
-    var(--cor-12) 80%
-  );
+  background: var(--cor-12);
   color: var(--cor-0);
   border: 1px solid var(--cor-p1);
   padding: 15px;
@@ -120,12 +115,7 @@
 .area-template-fil-content .card-tmf-l,
 .area-template-fil-content .card-select-xs,
 .area-template-fil-content .card-select-s,
-.area-template-fil-content .card-select-m {
-  background: linear-gradient(to right bottom, #16043a, #0b021d);
-  color: var(--cor-6);
-  border: 1px solid var(--cor-2);
-  border-radius: 9px;
-}
+.area-template-fil-content .card-select-m,
 .area-template-tmf-alt-content .card-xs,
 .area-template-tmf-alt-content .card-s,
 .area-template-tmf-alt-content .card-m,
@@ -136,7 +126,7 @@
 .area-template-tmf-alt-content .card-select-xs,
 .area-template-tmf-alt-content .card-select-s,
 .area-template-tmf-alt-content .card-select-m {
-  background: linear-gradient(to right bottom, #16043a, #0b021d);
+  background: var(--cor-12);
   color: var(--cor-6);
   border: 1px solid var(--cor-2);
   border-radius: 9px;
@@ -153,10 +143,7 @@
   .area-template-fil-content .card-tmf-l,
   .area-template-fil-content .card-select-xs,
   .area-template-fil-content .card-select-s,
-  .area-template-fil-content .card-select-m {
-    background: var(--cor-12);
-    border: 1px solid var(--cor-p1);
-  }
+  .area-template-fil-content .card-select-m,
   .area-template-tmf-alt-content .card-xs,
   .area-template-tmf-alt-content .card-s,
   .area-template-tmf-alt-content .card-m,

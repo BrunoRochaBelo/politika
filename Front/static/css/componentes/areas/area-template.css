@@ -16,7 +16,7 @@
   font-size: var(--titulo-xl);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-5);
+  color: var(--cor-9);
   border-radius: 0.625rem;
 }
 .area-template-content {
@@ -50,7 +50,7 @@
   font-size: var(--titulo-m);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-5);
+  color: var(--cor-9);
   border-radius: 0.625rem;
 }
 .area-template-alt-header h2 {
@@ -83,7 +83,7 @@
   font-size: var(--titulo-xl);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-5);
+  color: var(--cor-9);
 }
 .area-template-fil-content {
   grid-area: area-template-fil-content;
@@ -112,7 +112,7 @@
   font-size: var(--titulo-m);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-5);
+  color: var(--cor-9);
 }
 .area-template-tmf-content {
   grid-area: area-template-tmf-content;
@@ -143,7 +143,7 @@
   font-size: var(--titulo-xl);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-5);
+  color: var(--cor-9);
 }
 .area-template-tmf-alt-content {
   grid-area: area-template-tmf-alt-content;

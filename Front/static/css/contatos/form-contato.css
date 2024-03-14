@@ -14,19 +14,6 @@
   display: none;
 }
 
-.main-form-contato {
-  background: none;
-  border: 1px solid #ce84ff0a;
-  border-top: none;
-  padding: 5px;
-}
-
-.header-form-contato {
-  background: none;
-  border: 1px solid #ce84ff0a;
-  border-bottom: none;
-}
-
 .form-2-colum {
   display: grid;
   grid-template: auto/auto auto;
@@ -58,7 +45,7 @@
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: #ce84ff0a;
+  background: var(--cor-p4);
   transition: background 0.2s;
 }
 .form-checkbox:checked + .switch-label:before {
@@ -94,7 +81,7 @@
 .checkbox-label {
   display: inline-block;
   padding: 10px 20px;
-  border: 2px solid #ce84ff0a;
+  border: 2px solid var(--cor-p4);
   border-radius: 9px;
   cursor: pointer;
   text-align: center;
