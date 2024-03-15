@@ -76,12 +76,12 @@
 .nav a {
   font-size: 1rem;
   padding: 0.625rem;
-  color: var(--cor-8);
+  color: var(--cor-p4);
   border-top-left-radius: 0.9375rem;
   border-top-right-radius: 0.9375rem;
-  background: var(--cor-p6);
-  border: 1px solid var(--cor-p6);
-  border-top: 5px solid var(--cor-p6);
+  background: var(--cor-10);
+  border: 1px solid var(--cor-10);
+  border-top: 5px solid var(--cor-10);
   border-bottom: none;
   display: flex;
   justify-content: center;

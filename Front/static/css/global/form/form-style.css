@@ -19,7 +19,7 @@ legend {
 }
 label {
   font-size: 12px;
-  color: var(--cor-9);
+  color: var(--cor-6);
   margin: 0.625rem 0.625rem 0.3125rem 0rem;
 }
 .campo {
@@ -42,7 +42,7 @@ label {
   padding: 0.9375rem;
   color: var(--cor-0);
   background: var(--cor-p4);
-  border: 1px solid #ce84ff13;
+  border: 1px solid var(--cor-p5);
   border-radius: 9px;
 }
 .campo input[type="checkbox"],
@@ -116,18 +116,30 @@ form span {
 .botoes {
   display: flex;
   justify-content: space-between;
-  margin: 40px 0px 10px 0px;
-}
-.botoes button {
-  width: 30%; /* Ocupa a largura total */
-  border-radius: 9px;
-  border: 1px solid #ce84ff0a;
-}
-.botoes button:hover {
-  background-color: rgba(157, 157, 157, 0.7);
-  color: var(--cor-12);
+  margin: 50px 0px 10px 0px;
 }
 
+.botoes .btn-leaked {
+  width: 30%;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--cor-1);
+  border: 1px solid var(--cor-5);
+  box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
+}
+.botoes .btn-filled {
+  width: 30%;
+  border-radius: 9px;
+  background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
+  color: #3f1c80;
+  border: 1px solid #3f1c80;
+  box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
+}
+.botoes .btn-leaked:hover,
+.botoes .btn-filled:hover {
+  background: rgba(157, 157, 157, 0.7);
+  color: var(--cor-1);
+}
 /* Responsivo */
 @media (max-width: 820px) {
   .form {
@@ -137,11 +149,9 @@ form span {
   .botoes {
     flex-direction: column;
     gap: 0.625rem;
-    margin: 1.875rem 0.625rem;
   }
-  .botoes button {
-    width: 100%;
-    border-radius: 9px;
-    border: 1px solid #ce84ff0a;
+  .botoes .btn-leaked,
+  .botoes .btn-filled {
+    width: auto;
   }
 }
