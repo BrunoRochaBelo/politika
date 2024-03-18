@@ -3,7 +3,7 @@
 .card-xs {
   min-height: 30px;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -11,18 +11,19 @@
 }
 /* Pequeno altura 35px*/
 .card-s {
-  height: 35px;
+  min-height: 35px;
   background: var(--cor-12);
-  color: var(--cor-p3);
-  padding: 15px;
+  color: var(--cor-5);
+  padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--cor-p1);
 }
 /* Médio altura 50px*/
 .card-m {
   min-height: 50px;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -32,7 +33,7 @@
 .card-l {
   min-height: 150px;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   padding: 15px;
   gap: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -46,7 +47,7 @@
   width: 135px;
   height: 100px;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   border: 1px solid var(--cor-p1);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -54,10 +55,10 @@
 }
 /* Médio */
 .card-tmf-m {
-  width: 130px;
-  height: 110px;
+  width: 115px;
+  height: 95px;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   border: 1px solid var(--cor-p1);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -69,7 +70,7 @@
   height: 190px;
   min-height: 170px;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   border: 1px solid var(--cor-p1);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -83,7 +84,7 @@
   width: 100%;
   padding: 0.3rem;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   font-weight: var(--font-light);
   border: 1px solid var(--cor-p1);
 }
@@ -91,7 +92,7 @@
   border-radius: 0.625rem;
   width: 100%;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   font-weight: var(--font-medium-regular);
   border: 1px solid var(--cor-p1);
 }
@@ -99,7 +100,7 @@
   padding: 0.625rem;
   width: 100%;
   background: var(--cor-12);
-  color: var(--cor-p3);
+  color: var(--cor-5);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -130,6 +131,35 @@
   color: var(--cor-6);
   border: 1px solid var(--cor-2);
   border-radius: 9px;
+}
+
+/* Estilo para o efeito hover em todos os elementos especificados */
+.card-xs:hover,
+.card-s:hover,
+.card-m:hover,
+.card-l:hover,
+.card-tmf-s:hover,
+.card-tmf-m:hover,
+.card-tmf-l:hover,
+.card-select-xs:hover,
+.card-select-s:hover,
+.card-select-m:hover {
+  box-shadow: 0 0 1px #6941fb58, 0 0 2px #6941fb58, 0 0 3px #6941fb58,
+    0 0 4px #6941fb58;
+}
+
+.card-xs:active,
+.card-s:active,
+.card-m:active,
+.card-l:active,
+.card-tmf-s:active,
+.card-tmf-m:active,
+.card-tmf-l:active,
+.card-select-xs:active,
+.card-select-s:active,
+.card-select-m:active {
+  box-shadow: inset 0 0 1px #ffffff, inset 0 0 2px #ffffff,
+    inset 0 0 3px #ffffff, inset 0 0 4px #ffffff;
 }
 
 /* Responsivo */

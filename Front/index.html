@@ -69,19 +69,23 @@
           <ul class="lista-vertical-template">
             <li class="area-template-alt">
               <ul class="area-template-alt-content lista-select">
-                <li class="item1"><select class="card-select-m" id="estado" onchange="carregarCidades()">
+                <li class="item1">
+                  <select class="card-select-m" id="estado" onchange="carregarCidades()">
                     <option value="" selected disabled>Selecione um estado</option>
                     <option value="PE">Pernambuco</option>
                     <option value="SP">São Paulo</option>
                     <option value="RJ">Rio de Janeiro</option>
                     <option value="MG">Minas Gerais</option>
-                  </select></li>
-                <li class="item2"><select class="card-select-m" id="cidade">
+                  </select>
+                </li>
+                <li class="item2">
+                  <select class="card-select-m" id="cidade">
                     <option value="" selected disabled>Selecione um estado primeiro</option>
-                  </select></li>
-                <li class="item3"><select class="card-select-m" id="bairro">
-                    <option value="" selected disabled>Selecione uma cidade e defina o bairro</option>
-                  </select></li>
+                  </select>
+                </li>
+                <li class="item3">
+                  <input class="card-select-m" type="text" id="bairro" placeholder="Selecione uma cidade e defina o bairro">
+                </li>
               </ul>
             </li>
             <li id="quantitativos" class="area-template-alt">
@@ -372,6 +376,7 @@
   <script src="./static/js/ExibirDetalhesEvento.js"></script>
   <script src="./static/js/ExibirDetalhesContato.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
+  <script src="./static/js/CarregarMunicipios.js"></script>
 
 
 </body>

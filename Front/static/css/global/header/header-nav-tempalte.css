@@ -39,7 +39,7 @@
   transition: 0.15s;
 }
 .header-nav-template a:hover {
-  background-color: rgba(200, 204, 255, 0.2);
+  background-color: #6941fb48;
   padding: auto;
 }
 .header-nav-template img {

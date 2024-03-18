@@ -10,18 +10,15 @@
   background-color: transparent;
   padding: 0.2rem 0.625rem;
   cursor: pointer;
-  border: none;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 2px solid transparent;
 }
 .btn-recuar-expandir:hover {
-  /* Altera a cor do texto e adiciona uma borda ao passar o mouse */
   color: var(--cor-5);
   border-color: var(--cor-8);
   border-radius: 0.625rem;
 }
 .btn-recuar-expandir:active {
-  /* Adiciona um efeito "acessado" ao clicar no botão */
   background-color: darken(var(--cor-12), 10%);
   color: var(--cor-9);
   border-color: var(--cor-9);

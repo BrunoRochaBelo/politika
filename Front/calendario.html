@@ -78,47 +78,46 @@
       </nav>
       <nav class="area-abas-template-subHeader">
         <div class="lista-select nav-calendar">
-          <div class="item1">Março, 2024</div>
+          <div class="item1 btn-calendario">Março, 2024</div>
           <div class="item2 hoje">hoje</div>
           <ul class="lista-horizontal-template item3">
             <li class="change-semana">
-              <p>Semana</p>
+              <p id="semanaAnterior">Semana</p>
               <p>anterior</p>
               <img src="./static/imagens/icones/anterior.svg" class="anterior" alt="Anterior Icon">
             </li>
-            <li class="dia-semana">
-              <h3>Seg</h3>
+            <li class="dia-semana dia-visualize" data-dia="segunda" onclick="selecionarDia('segunda')">
+              <h3 id="segunda">Seg</h3>
               <p>03</p>
             </li>
-            <li class="dia-semana">
-              <h3>Ter</h3>
+            <li class="dia-semana" data-dia="terca" onclick="selecionarDia('terca')">
+              <h3 id="terca">Ter</h3>
               <p>04</p>
             </li>
-            <li class="dia-semana">
-              <h3>Qua</h3>
+            <li class="dia-semana" data-dia="quarta" onclick="selecionarDia('quarta')">
+              <h3 id="quarta">Qua</h3>
               <p>05</p>
             </li>
-            <li class="dia-semana">
-              <h3>Qui</h3>
+            <li class="dia-semana" data-dia="quinta" onclick="selecionarDia('quinta')">
+              <h3 id="quinta">Qui</h3>
               <p>06</p>
             </li>
-            <li class="dia-semana">
-              <h3>Sex</h3>
+            <li class="dia-semana" data-dia="sexta" onclick="selecionarDia('sexta')">
+              <h3 id="sexta">Sex</h3>
               <p>07</p>
             </li>
-            <li class="dia-semana">
-              <h3>Sab</h3>
+            <li class="dia-semana" data-dia="sabado" onclick="selecionarDia('sabado')">
+              <h3 id="sabado">Sab</h3>
               <p>08</p>
             </li>
-            <li class="dia-semana">
-              <h3>Dom</h3>
+            <li class="dia-semana" data-dia="domingo" onclick="selecionarDia('domingo')">
+              <h3 id="domingo">Dom</h3>
               <p>09</p>
             </li>
             <li class="change-semana">
-              <p>Prox</p>
+              <p id="proximaSemana">Prox</p>
               <p>Semana</p>
               <img src="./static/imagens/icones/avançar.svg" class="avancar" alt="Avançar Icon">
-            </li>
             </li>
           </ul>
         </div>
@@ -126,7 +125,7 @@
       <div class="area-abas-template-content">
         <div id="aba1" class="aba-template area-template-alt active">
 
-          <div class="area-template-alt-content list-contato">
+          <div class="area-template-alt-content list-contato dia-visible" id="segunda-feira">
             <ul class="lista-vertical-template">
               <li class="area-template-alt">
                 <h2 class="area-template-alt-header">08:00h</h2>
@@ -198,6 +197,465 @@
               <div></div>
             </ul>
           </div>
+
+          <div class="area-template-alt-content list-contato dia-hidden" id="terca-feira">
+            <ul class="lista-vertical-template">
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">07:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc11">
+                          <p><strong>marcador 11</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc5">
+                          <p><strong>marcador 5</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:30h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc10">
+                          <p><strong>marcador 10</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <div></div>
+            </ul>
+          </div>
+
+          <div class="area-template-alt-content list-contato dia-hidden" id="quarta-feira">
+            <ul class="lista-vertical-template">
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc9">
+                          <p><strong>marcador 9</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">09:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc7">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">12:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc12">
+                          <p><strong>marcador 12</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <div></div>
+            </ul>
+          </div>
+
+          <div class="area-template-alt-content list-contato dia-visible" id="quinta-feira">
+            <ul class="lista-vertical-template">
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc1">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc3">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">09:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc7">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <div></div>
+            </ul>
+          </div>
+
+          <div class="area-template-alt-content list-contato dia-hidden" id="sexta-feira">
+            <ul class="lista-vertical-template">
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">07:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc11">
+                          <p><strong>marcador 11</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc5">
+                          <p><strong>marcador 5</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:30h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc10">
+                          <p><strong>marcador 10</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <div></div>
+            </ul>
+          </div>
+
+          <div class="area-template-alt-content list-contato dia-hidden" id="sabado-feira">
+            <ul class="lista-vertical-template">
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc9">
+                          <p><strong>marcador 9</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">09:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc7">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">12:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc12">
+                          <p><strong>marcador 12</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <div></div>
+            </ul>
+          </div>
+
+          <div class="area-template-alt-content list-contato dia-hidden" id="domingo-feira">
+            <ul class="lista-vertical-template">
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">08:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc1">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc3">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="area-template-alt">
+                <h2 class="area-template-alt-header">09:00h</h2>
+                <ul class="area-template-alt-content lista-vertical-template-fil">
+                  <li>
+                    <a class="card-l calendario-large-card evento" href="#">
+                      <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                      <div class="calendario-large-card-tag" data-filter="tagEvento">
+                        <div class="marcador-item cor-marc7">
+                          <p><strong>marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
+                      <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
+                      <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                      <div class="calendario-large-card-duracao">
+                        <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                        <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                      </div>
+                      <p class="calendario-large-card-editar" href="#">Editar</p>
+                      <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <div></div>
+            </ul>
+          </div>
+
         </div>
 
         <div id="aba2" class="aba-template">
@@ -270,6 +728,7 @@
   <script src="./static/js/OcultarExibir.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/ExibirDetalhesEvento.js"></script>
+  <script src="./static/js/NavDia.js"></script>
 
 </body>
 

@@ -3,7 +3,7 @@
   align-content: center;
   gap: 15px;
   padding: 10px 5px;
-  background: #3f1c80;
+  background: #3f1c80c9;
   border-radius: 9px;
 }
 .hoje {
@@ -24,19 +24,30 @@
   text-align: center;
   padding: 10px;
   border-radius: 9px;
-  color: var(--cor-5);
-  background: #ce84ff0a;
+  color: var(--cor-9);
+  background: none;
   border-radius: 0.625rem;
-  border: 1px solid #ce84ff0a;
+  border: 1px solid var(--cor-9);
   cursor: pointer;
   font-size: var(--font-medium-light);
+  min-width: 35px;
+}
+.dia-semana:hover {
+  background: #6135b9;
+  border: 1px solid #4a8385;
+  color: var(--cor-p3);
+  box-shadow: 0 0 1px #b6ecfc, 0 0 2px #b6ecfc;
+}
+.dia-semana:active {
+  box-shadow: inset 0 0 1px #ffffff, inset 0 0 2px #ffffff,
+    inset 0 0 3px #ffffff, inset 0 0 4px #ffffff;
 }
 .change-semana {
   text-align: center;
   position: relative;
   padding: 10px;
   border-radius: 9px;
-  color: var(--cor-7);
+  color: var(--cor-9);
   border-radius: 0.625rem;
   cursor: pointer;
   font-size: var(--font-medium-regular);
@@ -68,7 +79,52 @@
   justify-self: end;
   padding: 0px 10px;
 }
+.nav-calendar .item3 {
+  padding: 5px;
+}
 
+.dia-visualize {
+  color: var(--cor-1);
+  background: linear-gradient(to right bottom, #6135b9, #44abae) !important;
+  border: 1px solid #359ab9;
+  box-shadow: 0 0 1px #b6ecfc, 0 0 2px #b6ecfc;
+}
+.dia-visible {
+  display: block;
+}
+.dia-hidden {
+  display: none;
+}
+
+.btn-calendario {
+  padding: 0.2rem 0.625rem;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+.btn-calendario:hover {
+  /* Altera a cor do texto e adiciona uma borda ao passar o mouse */
+  color: var(--cor-5);
+  border-color: var(--cor-8);
+  border-radius: 0.625rem;
+}
+.btn-calendario:active {
+  /* Adiciona um efeito "acessado" ao clicar no botão */
+  background-color: darken(var(--cor-12), 10%);
+  color: var(--cor-9);
+  border-color: var(--cor-9);
+}
+.btn-calendario::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--cor-1);
+  margin-left: 5px;
+  border-radius: 25%;
+}
 @media only screen and (max-width: 819px) {
   .list-calendario .lista-vertical-template:last-child {
     border-radius: 0px;
@@ -109,5 +165,8 @@
   .btn-recuar-expandir {
     display: block;
     justify-self: end;
+  }
+  .dia-semana:hover {
+    color: inherit;
   }
 }

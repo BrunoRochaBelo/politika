@@ -1,4 +1,179 @@
 /* CARDS pleitos */
+/* Small */
+.pleitos-small-card {
+  display: grid;
+  gap: 3px;
+  grid:
+    "pleitos-small-card-tiposolici pleitos-small-card-tiposolici pleitos-small-card-dataSolici"
+    "pleitos-small-card-solicitante pleitos-small-card-solicitante pleitos-small-card-solicitante";
+}
+
+.pleitos-small-card-id {
+  display: none;
+  opacity: 0;
+}
+.pleitos-small-card-tiposolici {
+  grid-area: pleitos-small-card-tiposolici;
+  border-left: 4px solid var(--cor-p4);
+  padding-left: 10px;
+  font-size: var(--titulo-s);
+  justify-self: start;
+  align-self: center;
+}
+.pleitos-small-card-dataSolici {
+  grid-area: pleitos-small-card-dataSolici;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--titulo-s);
+}
+.pleitos-small-card-solicitante {
+  grid-area: pleitos-small-card-solicitante;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-desc {
+  grid-area: pleitos-small-card-desc;
+  display: none;
+  opacity: 0;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  background: var(--cor-p4);
+  border-radius: 0.625rem;
+  justify-content: start;
+  align-items: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+  justify-self: start;
+  text-align: start;
+  white-space: wrap;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.pleitos-small-card-beneficiario {
+  grid-area: pleitos-small-card-beneficiario;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-uf {
+  grid-area: pleitos-small-card-uf;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-cidade {
+  grid-area: pleitos-small-card-cidade;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-bairro {
+  grid-area: pleitos-small-card-bairro;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-rua {
+  grid-area: pleitos-small-card-rua;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-autor {
+  grid-area: pleitos-small-card-autor;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-dataCriacao {
+  grid-area: pleitos-small-card-dataCriacao;
+  display: none;
+  opacity: 0;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.pleitos-small-card-status {
+  grid-area: pleitos-small-card-status;
+  display: none;
+  opacity: 0;
+}
+
+.pleitos-small-card-editar {
+  grid-area: pleitos-small-card-editar;
+  display: none;
+  opacity: 0;
+  justify-self: end;
+  align-self: center;
+  display: none;
+  opacity: 0;
+  opacity: 0;
+  border-top: 1px solid var(--cor-p6);
+  font-size: var(--font-small-light);
+}
+
+.exibirDetalhePleito {
+  display: inline-block;
+  opacity: 1 !important;
+}
+.pleitos-small-card-expanded {
+  grid:
+    "pleitos-small-card-tiposolici pleitos-small-card-tiposolici pleitos-small-card-dataSolici"
+    "pleitos-small-card-solicitante pleitos-small-card-solicitante pleitos-small-card-solicitante"
+    "pleitos-small-card-beneficiario pleitos-small-card-beneficiario pleitos-small-card-beneficiario"
+    "pleitos-small-card-uf pleitos-small-card-cidade pleitos-small-card-bairro"
+    "pleitos-small-card-rua pleitos-small-card-rua pleitos-small-card-rua"
+    "pleitos-small-card-autor pleitos-small-card-autor pleitos-small-card-dataCriacao"
+    "pleitos-small-card-status pleitos-small-card-status pleitos-small-card-status"
+    "pleitos-small-card-desc pleitos-small-card-desc pleitos-small-card-desc"
+    ". . pleitos-small-card-editar";
+}
+.pleitos-small-card-beneficiario.exibirDetalhePleito,
+.pleitos-small-card-uf.exibirDetalhePleito,
+.pleitos-small-card-cidade.exibirDetalhePleito,
+.pleitos-small-card-bairro.exibirDetalhePleito,
+.pleitos-small-card-rua.exibirDetalhePleito,
+.pleitos-small-card-autor.exibirDetalhePleito,
+.pleitos-small-card-dataCriacao.exibirDetalhePleito,
+.pleitos-small-card-editar.exibirDetalhePleito {
+  display: inline-block;
+  margin: 3px 0 0 10px;
+  opacity: 1;
+}
 /* Médio */
 .pleitos-medium-card {
   display: grid;
