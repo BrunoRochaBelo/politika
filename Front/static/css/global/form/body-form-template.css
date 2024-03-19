@@ -23,6 +23,7 @@
   color: var(--cor-p3);
   border: 1px solid #ce84ff0a;
   border-bottom: none;
+  position: relative;
 }
 .main-form {
   grid-area: main-form;

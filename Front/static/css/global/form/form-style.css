@@ -19,7 +19,7 @@ legend {
 }
 label {
   font-size: 12px;
-  color: var(--cor-6);
+  color: var(--cor-7);
   margin: 0.625rem 0.625rem 0.3125rem 0rem;
 }
 .campo {
@@ -49,6 +49,23 @@ label {
 .campo input[type="radio"] {
   width: auto;
   margin: 0 10px 0 0;
+}
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+}
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+}
+
+.header-form a {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  color: var(--cor-6);
 }
 
 label + .form-checkbox {
@@ -118,7 +135,6 @@ form span {
   justify-content: space-between;
   margin: 50px 0px 10px 0px;
 }
-
 .botoes .btn-leaked {
   width: 30%;
   border-radius: 9px;
@@ -135,10 +151,15 @@ form span {
   border: 1px solid #3f1c80;
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
-.botoes .btn-leaked:hover,
+.botoes .btn-leaked:hover {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
+  border: 1px solid var(--cor-0);
+}
 .botoes .btn-filled:hover {
-  background: rgba(157, 157, 157, 0.7);
-  color: var(--cor-1);
+  box-shadow: 0 0 1px #7852ff94, 0 0 2px #7852ff94, 0 0 3px #7852ff94,
+    0 0 4px #7852ff94, inset 0 0 1px #7852ff94, inset 0 0 2px #7852ff94,
+    inset 0 0 3px #7852ff94, inset 0 0 4px #7852ff94;
+  border: 1px solid #a57ff0;
 }
 /* Responsivo */
 @media (max-width: 820px) {

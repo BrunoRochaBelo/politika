@@ -144,8 +144,10 @@
 .card-select-xs:hover,
 .card-select-s:hover,
 .card-select-m:hover {
-  box-shadow: 0 0 1px #6941fb58, 0 0 2px #6941fb58, 0 0 3px #6941fb58,
-    0 0 4px #6941fb58;
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid #a57ff0;
 }
 
 .card-xs:active,
@@ -158,8 +160,7 @@
 .card-select-xs:active,
 .card-select-s:active,
 .card-select-m:active {
-  box-shadow: inset 0 0 1px #ffffff, inset 0 0 2px #ffffff,
-    inset 0 0 3px #ffffff, inset 0 0 4px #ffffff;
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
 }
 
 /* Responsivo */

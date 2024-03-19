@@ -30,7 +30,6 @@
 .search-input-container {
   position: relative;
   display: flex;
-  fill: var(--cor-0);
 }
 .search-input-container form {
   display: flex;
@@ -54,6 +53,14 @@
 .search-input:focus::placeholder {
   color: var(--cor-6); /* Substitua 'blue' pela cor desejada ao focar */
 }
+.search-input:focus,
+.search-button:focus {
+  outline: none;
+}
+.search-input:focus {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+  border-right: none;
+}
 .search-button {
   padding: 8px;
   background: var(--cor-11);
@@ -71,7 +78,10 @@
   width: 18px;
   height: 18px;
 }
-
+.search-input:focus + .search-button {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+  border-left: none;
+}
 /* RESPONSIVO */
 @media (max-width: 820px) {
   .header-template {

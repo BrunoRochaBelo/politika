@@ -79,6 +79,9 @@
     box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 1000;
 }
+.floatingButton:hover {
+  border: 1px solid #a57ff0;
+}
 .floatingButton:active {
   border: 1px solid var(--cor-p3);
 }

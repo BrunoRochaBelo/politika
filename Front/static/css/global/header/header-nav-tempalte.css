@@ -37,10 +37,13 @@
   border-radius: 50px;
   display: flex;
   transition: 0.15s;
+  border: 1px solid transparent;
 }
 .header-nav-template a:hover {
-  background-color: #6941fb48;
   padding: auto;
+  background: #c6b6fc15;
+  border: 1px solid #8653eb;
+  box-shadow: 0 0 2px #c6b6fc, 0 0 4px #c6b6fc;
 }
 .header-nav-template img {
   width: 1em;

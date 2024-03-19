@@ -1,3 +1,7 @@
+.form-area-abas-template-content {
+  max-height: 80vh;
+}
+
 #adicionarFilhoBtn {
   padding: 8px 16px;
   background-color: var(--cor-11);
