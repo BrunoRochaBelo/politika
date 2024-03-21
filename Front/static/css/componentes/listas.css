@@ -133,6 +133,13 @@
     scrollbar-width: thick;
   }
 
+  .main-sidenav .lista-vertical-2-template {
+    gap: 7px;
+  }
+  .main-sidenav .area-template-fil-content {
+    gap: 10px;
+  }
+
   .lista-vertical-template::-webkit-scrollbar,
   .lista-vertical-3-template::-webkit-scrollbar,
   .lista-horizontal-template::-webkit-scrollbar,

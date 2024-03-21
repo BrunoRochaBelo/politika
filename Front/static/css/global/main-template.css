@@ -62,7 +62,6 @@
   font-size: 16px;
   border: none;
 }
-
 .remover-filtro:hover {
   color: var(--cor-9);
   color: #c61818;
@@ -111,7 +110,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid var(--cor-1);
+    border-top: 5px solid var(--cor-9);
     margin-left: 5px;
     border-radius: 25%;
   }

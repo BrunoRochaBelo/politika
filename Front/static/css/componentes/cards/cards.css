@@ -3,7 +3,7 @@
 .card-xs {
   min-height: 30px;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -13,7 +13,7 @@
 .card-s {
   min-height: 35px;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -23,7 +23,7 @@
 .card-m {
   min-height: 50px;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -33,7 +33,7 @@
 .card-l {
   min-height: 150px;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   padding: 15px;
   gap: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -47,7 +47,7 @@
   width: 135px;
   height: 100px;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   border: 1px solid var(--cor-p1);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -58,7 +58,7 @@
   width: 115px;
   height: 95px;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   border: 1px solid var(--cor-p1);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -70,7 +70,7 @@
   height: 190px;
   min-height: 170px;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   border: 1px solid var(--cor-p1);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
@@ -84,7 +84,7 @@
   width: 100%;
   padding: 0.3rem;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   font-weight: var(--font-light);
   border: 1px solid var(--cor-p1);
 }
@@ -92,7 +92,7 @@
   border-radius: 0.625rem;
   width: 100%;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   font-weight: var(--font-medium-regular);
   border: 1px solid var(--cor-p1);
 }
@@ -100,7 +100,7 @@
   padding: 0.625rem;
   width: 100%;
   background: var(--cor-12);
-  color: var(--cor-5);
+  color: var(--cor-9);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;

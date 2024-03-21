@@ -121,7 +121,7 @@
     cursor: pointer;
     width: 100%;
     background: var(--cor-10);
-    color: var(--cor-p3);
+    color: var(--cor-9);
     border: 1px solid var(--cor-8);
   }
   .header-template.box-shadow-active {

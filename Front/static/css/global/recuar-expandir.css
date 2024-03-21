@@ -6,7 +6,7 @@
 /* Estilo do botão */
 .btn-recuar-expandir {
   font-size: var(--font-light);
-  color: var(--cor-4);
+  color: var(--cor-9);
   background-color: transparent;
   padding: 0.2rem 0.625rem;
   cursor: pointer;
@@ -15,7 +15,7 @@
 }
 .btn-recuar-expandir:hover {
   color: var(--cor-5);
-  border-color: var(--cor-8);
+  border-color: var(--cor-9);
   border-radius: 0.625rem;
 }
 .btn-recuar-expandir:active {
