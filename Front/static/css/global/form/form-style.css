@@ -63,9 +63,14 @@ label {
 
 .header-form a {
   position: absolute;
+  padding: 0px 5px;
   top: 0px;
-  right: 5px;
+  right: 0px;
   color: var(--cor-6);
+  border-radius: 4px;
+}
+.header-form a:hover {
+  background: #c61818;
 }
 
 label + .form-checkbox {

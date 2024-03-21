@@ -78,7 +78,7 @@
       </nav>
       <nav class="area-abas-template-subHeader">
         <div class="lista-select nav-calendar">
-          <div class="item1 btn-calendario">Março, 2024</div>
+          <input type="month" class="item1 btn-calendario" id="mesAno">
           <div class="item2 hoje">31</div>
           <ul class="lista-horizontal-template item3">
             <li class="change-semana">
@@ -672,10 +672,6 @@
     <section class="main-sidenav">
       <div class="area-template-fil">
         <h2 class="area-template-fil-header">Pesquisa rápida
-          <div class="btn-filtro-pesq">
-            <p class="btn-filtro-pesq-title">filtro</p>
-            <a href="calendario.html" class="remover-filtro">&times;</a>
-          </div>
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Pesquisa rápida</button>
         </h2>
         <div class="area-template-fil-content lista-vertical-template-fil">
@@ -725,7 +721,21 @@
   </div>
 
 
+  <script>
+    // Obtém a data atual
+    var dataAtual = new Date();
 
+    // Formata a data para o formato YYYY-MM
+    var mesAnoFormatado = dataAtual.toISOString().slice(0, 7);
+
+    // Define o valor do input month como o mês e ano atual formatado
+    document.getElementById("mesAno").value = mesAnoFormatado;
+
+    // Se quiser ouvir alterações na seleção do mês e ano, pode adicionar um evento de escuta
+    document.getElementById("mesAno").addEventListener("change", function () {
+      console.log("Nova seleção: ", this.value);
+    });
+  </script>
 
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>

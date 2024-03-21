@@ -29,44 +29,48 @@
   font-size: var(--font-medium-light);
 }
 
-/* Estilo para o botão */
+/* Estilo para o botão filtro*/
 .btn-filtro-pesq {
   display: grid;
-  padding: 5px 10px;
+  align-content: start;
+  padding: 3px 15px;
   border-radius: 20px;
-  border: 1px solid var(--cor-9);
-
+  border: 1px solid var(--cor-8);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
+  align-content: start;
 }
 .btn-filtro-pesq-title {
-  font-size: var(--font-medium-light);
+  font-size: 14px;
   color: var(--cor-9);
-  margin-right: 18px;
+  margin-right: 17px;
 }
 /* Estilo para o "x" */
 .remover-filtro {
   position: absolute;
   top: 50%;
-  right: 3px;
+  right: 1px;
   transform: translateY(-50%);
   width: 17px;
   height: 17px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--cor-p3);
-  border: 1px solid var(--cor-p3);
-  font-size: 14px;
-}
-.remover-filtro:hover {
-  border: 1px solid #8653eb;
   color: var(--cor-9);
-  box-shadow: 0 0 2px #c6b6fc, 0 0 4px #c6b6fc;
+  font-size: 16px;
+  border: none;
 }
+
+.remover-filtro:hover {
+  color: var(--cor-9);
+  color: #c61818;
+}
+.remover-filtro:hover + .btn-filtro-pesq {
+  border: 1px solid #c61818;
+}
+
 /* RESPONSIVO */
 @media (max-width: 820px) {
   .main-template {
@@ -94,6 +98,10 @@
     width: 80%;
     height: 32px;
     z-index: 1001;
+  }
+
+  .main-sidenav h1 {
+    display: none;
   }
 
   .btn-pesquisa-rapida.btn-recuar-expandir::after {

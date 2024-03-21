@@ -71,7 +71,11 @@
 
     <section class="main-section">
       <div id="resultsContainer" class="area-template">
-        <h2 class="area-template-header contato-area-template-header"><span id="totalResults">{{total}}</span>&nbsp;- listadas para &nbsp; <p id="filtroselect">{{filtro}}</p>
+        <h2 class="area-template-header contato-area-template-header"><span id="totalResults">{{total}}</span>&nbsp;-&nbsp; <div class="btn-filtro-pesq">
+            <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+              <a href="calendario.html" class="remover-filtro">&times;</a>
+            </p>
+          </div>
         </h2>
         <div class="area-template-content">
           <ul class="lista-vertical-template" id="despesasList">

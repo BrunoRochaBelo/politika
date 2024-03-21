@@ -85,6 +85,9 @@
   text-align: left;
   color: var(--cor-9);
 }
+.area-template-fil-header h1 {
+  font-size: var(--titulo-xl);
+}
 .area-template-fil-content {
   grid-area: area-template-fil-content;
   gap: 1rem;

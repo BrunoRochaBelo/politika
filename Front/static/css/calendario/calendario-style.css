@@ -3,7 +3,7 @@
   align-content: center;
   gap: 15px;
   padding: 10px 5px;
-  background: var(--cor-12);
+  background: #0a0119cd;
   border-radius: 9px;
 }
 .nav-calendar .item1 {
@@ -11,11 +11,12 @@
   align-self: center;
   padding: 5px 10px;
   color: var(--cor-9);
+  background: transparent;
 }
 .nav-calendar .item2 {
   justify-self: end;
   align-self: center;
-  padding: 5px 10px;
+  padding: 5px 7px;
   margin-right: 3px;
 }
 .nav-calendar .item3 {
@@ -33,7 +34,7 @@
 .dia-semana {
   text-align: center;
   padding: 10px;
-  border-radius: 9px;
+  border-radius: 4px;
   color: var(--cor-9);
   background: none;
   border-radius: 0.625rem;
@@ -46,6 +47,8 @@
   border: 1px solid #8653eb;
   color: var(--cor-p3);
   box-shadow: 0 0 2px #c6b6fc, 0 0 4px #c6b6fc;
+  background-color: #6941fb48;
+  border: 1px solid #6941fb48;
 }
 .dia-semana:active {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
@@ -66,7 +69,12 @@
   border-radius: 4px;
   border: 1px solid #6228d7;
   border-top: 5px solid #6228d7;
-  box-shadow: 0 2px 4px rgba(201, 201, 201, 0.2);
+}
+.hoje:hover {
+  border: 1px solid #8653eb;
+  border-top: 5px solid #8653eb;
+  color: var(--cor-p3);
+  box-shadow: 0 0 2px #c6b6fc, 0 0 4px #c6b6fc;
 }
 
 .change-semana {
@@ -115,17 +123,7 @@
   color: var(--cor-9);
   border-color: var(--cor-9);
 }
-.btn-calendario::after {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid var(--cor-9);
-  margin-left: 5px;
-  border-radius: 25%;
-}
+
 @media only screen and (max-width: 819px) {
   .list-calendario .lista-vertical-template:last-child {
     border-radius: 0px;
