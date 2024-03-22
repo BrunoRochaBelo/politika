@@ -31,3 +31,29 @@
     justify-self: end;
   }
 }
+
+.btn-recuar-expandir-alt {
+  display: block;
+  justify-self: end;
+}
+/* Estilo do botão */
+.btn-recuar-expandir-alt {
+  font-size: var(--font-light);
+  color: var(--cor-9);
+  background-color: transparent;
+  padding: 0.2rem 0.625rem;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+.btn-recuar-expandir-alt:hover {
+  color: var(--cor-5);
+  border-color: var(--cor-9);
+  border-radius: 0.625rem;
+}
+.btn-recuar-expandir-alt:active {
+  background-color: darken(var(--cor-12), 10%);
+  color: var(--cor-9);
+  border-color: var(--cor-9);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -3,7 +3,6 @@
 @import "./global/body-template.css";
 @import "./global/main-template.css";
 @import "./global/login.css";
-@import "./global/recuar-expandir.css";
 /* Global/ Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
@@ -20,10 +19,10 @@
 
 /* Componentes */
 @import "./componentes/listas.css";
-@import "./componentes/botoes.css";
 @import "./componentes/marcadores.css";
 /* Componentes/ cards */
 @import "./componentes/cards/cards.css";
+@import "./componentes/cards/template-cards-aniversario.css";
 @import "./componentes/cards/template-cards-calendario.css";
 @import "./componentes/cards/template-cards-contatos.css";
 @import "./componentes/cards/template-cards-pleitos.css";
@@ -32,6 +31,9 @@
 /* Componentes/ areas */
 @import "./componentes/areas/area-template.css";
 @import "./componentes/areas/area-abas-template.css";
+/* Componentes/ botoes */
+@import "./componentes/botoes/botoes.css";
+@import "./componentes/botoes/recuar-expandir.css";
 
 /* Home */
 @import "./home/home-style.css";

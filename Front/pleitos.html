@@ -71,7 +71,7 @@
     <section class="main-section area-abas-template">
       <nav class="area-abas-template-header">
         <ul id="navAba" class="nav">
-          <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Novos</a></li>
+          <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Cx. Entrada</a></li>
           <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Andadmento</a></li>
           <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Concluídos</a></li>
         </ul>
@@ -101,7 +101,11 @@
                 <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
                 <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
                 <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
-                <p class="pleitos-medium-card-editar" href="#">Editar</p>
+                <div class="pleitos-medium-card-editar">
+                  <button class="btn-leaked" onclick="">Ver</button>
+                  <button class="btn-leaked" onclick="">Despachar</button>
+                  <button class="btn-leaked" onclick="">Concluir</button>
+                </div>
                 <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
               </a>
             </li>
@@ -180,7 +184,51 @@
     </div>
   </div>
 
-
+  <!-- Modal -->
+  <div id="modal-pleito-concluir" class="modal-pleito-concluir">
+    <div class="modal-pleito-concluir-content">
+      <span class="close">&times;</span>
+      <form id="modalForm">
+        <label for="tipoSolici">Tipo Solicitação:</label>
+        <input type="text" id="tipoSolici" name="tipoSolici" readonly>
+        <label for="dataSoliciPleito">Data Solicitação:</label>
+        <input type="text" id="dataSoliciPleito" name="dataSoliciPleito" readonly>
+        <label for="solicitante">Solicitante:</label>
+        <input type="text" id="solicitante" name="solicitante" readonly>
+        <label for="descPleito">Descrição:</label>
+        <textarea id="descPleito" name="descPleito" readonly></textarea>
+        <label for="beneficiario">Beneficiário:</label>
+        <input type="text" id="beneficiario" name="beneficiario" readonly>
+        <label for="ufPleito">UF:</label>
+        <input type="text" id="ufPleito" name="ufPleito" readonly>
+        <label for="cidadePleito">Cidade:</label>
+        <input type="text" id="cidadePleito" name="cidadePleito" readonly>
+        <label for="bairroPleito">Bairro:</label>
+        <input type="text" id="bairroPleito" name="bairroPleito" readonly>
+        <label for="ruaPleito">Rua:</label>
+        <input type="text" id="ruaPleito" name="ruaPleito" readonly>
+        <label for="autorPleito">Autor:</label>
+        <input type="text" id="autorPleito" name="autorPleito" readonly>
+        <label for="dataCriacaoPleito">Data Criação:</label>
+        <input type="text" id="dataCriacaoPleito" name="dataCriacaoPleito" readonly>
+        <label for="statusPleito">Status:</label>
+        <select id="statusPleito" name="statusPleito">
+          <option value="atendido">Atendido</option>
+          <option value="atendidoParcialmente">Atendido Parcialmente</option>
+          <option value="naoAtendido">Não Atendido</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+        <label for="situacao">Situação:</label>
+        <select id="situacao" name="situacao">
+          <option value="atendido">Atendido</option>
+          <option value="atendidoParcialmente">Atendido Parcialmente</option>
+          <option value="naoAtendido">Não Atendido</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+        <input type="submit" value="Concluir">
+      </form>
+    </div>
+  </div>
 
 
   <script src="./static/js/ModalBTNFloating.js"></script>
@@ -188,6 +236,7 @@
   <script src="./static/js/OcultarExibir.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/ExibirDetalhesPleito.js"></script>
+  <script src="./static/js/ModalConcluirPleito.js"></script>
 
 </body>
 

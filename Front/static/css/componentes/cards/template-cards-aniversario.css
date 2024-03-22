@@ -1,0 +1,104 @@
+/* CARDS aniversario */
+/* Pequeno */
+.aniversario-small-card {
+  display: grid;
+  gap: 3px;
+  align-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
+    /0.5fr 0.5fr 1fr 32px;
+}
+.aniversario-small-card-id {
+  display: none;
+}
+.aniversario-small-card-title {
+  grid-area: aniversario-small-card-title;
+  justify-self: start;
+  align-self: center;
+  font-size: var(--titulo-m);
+}
+.aniversario-small-card-tipocontato {
+  grid-area: aniversario-small-card-tipocontato;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-medium-regular);
+}
+.aniversario-small-card-phone {
+  grid-area: aniversario-small-card-phone;
+  justify-self: end;
+  align-self: center;
+}
+.aniversario-small-card-perfilInfluencia {
+  grid-area: aniversario-small-card-perfilInfluencia;
+  display: none;
+  justify-self: start;
+  margin: 3px 0 0 10px;
+}
+
+.aniversario-small-card-num {
+  grid-area: aniversario-small-card-num;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  margin: 3px 0 0 10px;
+  font-size: var(--titulo-m);
+}
+.aniversario-small-card-email {
+  grid-area: aniversario-small-card-email;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
+}
+.aniversario-small-card-tipopessoa {
+  grid-area: aniversario-small-card-tipopessoa;
+  display: none;
+  justify-self: start;
+  align-self: center;
+  opacity: 0;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-light);
+}
+.aniversario-small-card-editar {
+  grid-area: aniversario-small-card-editar;
+  display: none;
+  justify-self: end;
+  align-self: center;
+  display: none;
+  opacity: 0;
+  margin: 3px 0 0 10px;
+  border-top: 1px solid var(--cor-p6);
+  font-size: var(--font-medium-light);
+}
+
+.exibirDetalhesAniversariante {
+  display: inline-block;
+  opacity: 1 !important;
+}
+.aniversario-small-card-expanded {
+  grid:
+    "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
+    " aniversario-small-card-tipocontato aniversario-small-card-tipocontato aniversario-small-card-perfilInfluencia aniversario-small-card-phone"
+    "aniversario-small-card-num aniversario-small-card-num aniversario-small-card-num aniversario-small-card-phone "
+    "aniversario-small-card-email aniversario-small-card-email aniversario-small-card-email aniversario-small-card-phone "
+    "aniversario-small-card-tipopessoa .  .  aniversario-small-card-phone"
+    ". . aniversario-small-card-editar   .";
+}
+.aniversario-small-card-tipocontato.exibirDetalhesAniversariante,
+.aniversario-small-card-perfilInfluencia.exibirDetalhesAniversariante,
+.aniversario-small-card-num.exibirDetalhesAniversariante,
+.aniversario-small-card-email.exibirDetalhesAniversariante,
+.aniversario-small-card-tipopessoa.exibirDetalhesAniversariante,
+.aniversario-small-card-editar.exibirDetalhesAniversariante {
+  display: inline-block;
+  opacity: 1;
+  margin: 3px 0 0 10px;
+}

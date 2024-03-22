@@ -5,6 +5,8 @@
   padding: 10px 5px;
   background: #0a0119cd;
   border-radius: 9px;
+  color: var(--cor-9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .nav-calendar .item1 {
   justify-self: start;
@@ -82,13 +84,13 @@
   text-align: center;
   position: relative;
   padding: 10px;
-  border-radius: 9px;
+  border-radius: 4px;
   color: var(--cor-9);
   border-radius: 0.625rem;
   cursor: pointer;
   font-size: var(--font-medium-regular);
   border-radius: 0.625rem;
-  border: 1px solid #ce84ff0a;
+  border: 1px solid #9690a693;
 }
 .avancar {
   position: absolute;
@@ -123,6 +125,18 @@
   background-color: darken(var(--cor-12), 10%);
   color: var(--cor-9);
   border-color: var(--cor-9);
+}
+
+.area-aniversaiantes {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+.area-aniversaiantes.visible {
+  opacity: 1;
+  max-height: 80vh;
 }
 
 @media only screen and (max-width: 819px) {
