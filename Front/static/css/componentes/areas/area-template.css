@@ -165,6 +165,11 @@
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
 
+.title-filtro {
+  justify-content: start;
+  gap: 3px;
+}
+
 /* RESPONSIVO */
 @media (max-width: 820px) {
   /* Area Template padrão*/

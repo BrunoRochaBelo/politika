@@ -42,9 +42,11 @@
   padding: auto;
   background: radial-gradient(
     circle at center,
-    #c6b6fc33,
+    #8653eb43,
+    #8653eb47,
     #8653eb47,
     #8653eb0d,
+    transparent,
     transparent
   );
 }

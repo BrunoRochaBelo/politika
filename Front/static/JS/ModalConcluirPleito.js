@@ -1,52 +1,49 @@
-// Função para abrir o modal e preencher os campos
-function openModalAndFillFields(event) {
-  event.preventDefault(); // Prevent the default action
-  var modal = document.getElementById("modal-pleito-concluir");
-  modal.style.display = "block";
+// Função para preencher o modal com os dados do card clicado
+function preencherModal(card) {
+  // Seleciona o modal
+  var modal = document.getElementById("modal-concluir-pleito");
 
-  // Preencha os campos do modal com os dados do card clicado
-  var card = event.target.closest(".pleitos-medium-card");
-  document.getElementById("tipoSolici").value = card.querySelector(
-    ".pleitos-medium-card-tiposolici"
-  ).textContent;
-  document.getElementById("dataSoliciPleito").value = card.querySelector(
-    ".pleitos-medium-card-dataSolici"
-  ).textContent;
-  document.getElementById("solicitante").value = card.querySelector(
-    ".pleitos-medium-card-solicitante"
-  ).textContent;
-  document.getElementById("descPleito").value = card.querySelector(
-    ".pleitos-medium-card-desc p"
-  ).textContent;
-  document.getElementById("beneficiario").value = card.querySelector(
-    ".pleitos-medium-card-beneficiario"
-  ).textContent;
-  document.getElementById("ufPleito").value = card.querySelector(
-    ".pleitos-medium-card-uf"
-  ).textContent;
-  document.getElementById("cidadePleito").value = card.querySelector(
-    ".pleitos-medium-card-cidade"
-  ).textContent;
-  document.getElementById("bairroPleito").value = card.querySelector(
-    ".pleitos-medium-card-bairro"
-  ).textContent;
-  document.getElementById("ruaPleito").value = card.querySelector(
-    ".pleitos-medium-card-rua"
-  ).textContent;
-  document.getElementById("autorPleito").value = card.querySelector(
-    ".pleitos-medium-card-autor"
-  ).textContent;
-  document.getElementById("dataCriacaoPleito").value = card.querySelector(
-    ".pleitos-medium-card-dataCriacao"
-  ).textContent;
-  document.getElementById("statusPleito").value = card.querySelector(
-    ".pleitos-medium-card-status"
-  ).textContent;
+  // Preenche os campos do modal com os dados do card
+  modal.querySelector(".modal-concluir-pleito-tiposolici").textContent =
+    card.querySelector(".pleitos-medium-card-tiposolici").textContent;
+  modal.querySelector(".modal-concluir-pleito-dataSolici").textContent =
+    card.querySelector(".pleitos-medium-card-dataSolici").textContent;
+  modal.querySelector(".modal-concluir-pleito-solicitante").textContent =
+    card.querySelector(".pleitos-medium-card-solicitante").textContent;
+  modal.querySelector(".modal-concluir-pleito-desc").textContent =
+    card.querySelector(".pleitos-medium-card-desc").textContent;
+  modal.querySelector(".modal-concluir-pleito-beneficiario").textContent =
+    card.querySelector(".pleitos-medium-card-beneficiario").textContent;
+  modal.querySelector(".modal-concluir-pleito-uf").textContent =
+    card.querySelector(".pleitos-medium-card-uf").textContent;
+  modal.querySelector(".modal-concluir-pleito-cidade").textContent =
+    card.querySelector(".pleitos-medium-card-cidade").textContent;
+  modal.querySelector(".modal-concluir-pleito-bairro").textContent =
+    card.querySelector(".pleitos-medium-card-bairro").textContent;
+  modal.querySelector(".modal-concluir-pleito-rua").textContent =
+    card.querySelector(".pleitos-medium-card-rua").textContent;
+  modal.querySelector(".modal-concluir-pleito-autor").textContent =
+    card.querySelector(".pleitos-medium-card-autor").textContent;
+  modal.querySelector(".modal-concluir-pleito-dataCriacao").textContent =
+    card.querySelector(".pleitos-medium-card-dataCriacao").textContent;
+  modal.querySelector(".modal-concluir-pleito-status").textContent =
+    card.querySelector(".pleitos-medium-card-status").textContent;
+
+  // Abre o modal
+  modal.style.display = "grid"; // Exibe o modal
 }
 
-// Adicione o manipulador de eventos ao botão "Concluir"
-document
-  .querySelectorAll(".pleitos-medium-card-editar .btn-leaked")
-  .forEach(function (button) {
-    button.onclick = openModalAndFillFields;
-  });
+// Função para fechar o modal quando o usuário clicar no botão de fechar
+document.querySelector(".close").addEventListener("click", function () {
+  var modal = document.getElementById("modal-concluir-pleito");
+  modal.style.display = "none"; // Esconde o modal
+});
+
+// Função para preencher o modal com os dados do card quando o botão "Concluir" for clicado
+document.getElementById("btnConcluir").addEventListener("click", function () {
+  // Seleciona o card clicado
+  var card = document.querySelector(".pleitos-medium-card");
+
+  // Chama a função para preencher o modal com os dados do card
+  preencherModal(card);
+});

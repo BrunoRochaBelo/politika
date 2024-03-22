@@ -79,9 +79,13 @@
       <div class="area-abas-template-content">
 
         <div id="aba1" class="aba-template area-template-alt active">
-          <div class="area-template-alt-header">
-            <div class="header-list-pleitos">
-              <span>{{total}}</span>&nbsp;- listados para &nbsp; <p id="filtroselect">{{filtro}}</p>
+          <div class="area-template-alt-header  title-filtro">
+
+            <span id="totalResults">{{total}}</span>&nbsp;-&nbsp; <div class="btn-filtro-pesq">
+              <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                <a href="calendario.html" class="remover-filtro">&times;</a>
+              </p>
+
             </div>
           </div>
           <ul class="area-template-alt-content lista-vertical-template">
@@ -102,9 +106,9 @@
                 <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
                 <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
                 <div class="pleitos-medium-card-editar">
-                  <button class="btn-leaked" onclick="">Ver</button>
+                  <button class="btn-leaked" onclick="">Visualizar</button>
                   <button class="btn-leaked" onclick="">Despachar</button>
-                  <button class="btn-leaked" onclick="">Concluir</button>
+                  <button class="btn-leaked" id="btnConcluir" onclick="">Concluir</button>
                 </div>
                 <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
               </a>
@@ -125,8 +129,8 @@
 
     <section class="main-sidenav">
       <div class="area-template-fil">
-        <h2 class="area-template-fil-header">Pesquisa rápida
-          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Pesquisa rápida</button>
+        <h2 class="area-template-fil-header">Filtros
+          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Filtros</button>
         </h2>
         <div class="area-template-fil-content lista-vertical-template-fil">
           <button class="btn-filter-leaked" type="button" data-filter="todos">
@@ -184,49 +188,46 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <div id="modal-pleito-concluir" class="modal-pleito-concluir">
-    <div class="modal-pleito-concluir-content">
+  <!-- Modal Concluir Pleito -->
+  <div id="modal-concluir-pleito" class="modal-concluir-pleito">
+    <div class="modal-concluir-pleito-content card-m">
       <span class="close">&times;</span>
-      <form id="modalForm">
-        <label for="tipoSolici">Tipo Solicitação:</label>
-        <input type="text" id="tipoSolici" name="tipoSolici" readonly>
-        <label for="dataSoliciPleito">Data Solicitação:</label>
-        <input type="text" id="dataSoliciPleito" name="dataSoliciPleito" readonly>
-        <label for="solicitante">Solicitante:</label>
-        <input type="text" id="solicitante" name="solicitante" readonly>
-        <label for="descPleito">Descrição:</label>
-        <textarea id="descPleito" name="descPleito" readonly></textarea>
-        <label for="beneficiario">Beneficiário:</label>
-        <input type="text" id="beneficiario" name="beneficiario" readonly>
-        <label for="ufPleito">UF:</label>
-        <input type="text" id="ufPleito" name="ufPleito" readonly>
-        <label for="cidadePleito">Cidade:</label>
-        <input type="text" id="cidadePleito" name="cidadePleito" readonly>
-        <label for="bairroPleito">Bairro:</label>
-        <input type="text" id="bairroPleito" name="bairroPleito" readonly>
-        <label for="ruaPleito">Rua:</label>
-        <input type="text" id="ruaPleito" name="ruaPleito" readonly>
-        <label for="autorPleito">Autor:</label>
-        <input type="text" id="autorPleito" name="autorPleito" readonly>
-        <label for="dataCriacaoPleito">Data Criação:</label>
-        <input type="text" id="dataCriacaoPleito" name="dataCriacaoPleito" readonly>
-        <label for="statusPleito">Status:</label>
-        <select id="statusPleito" name="statusPleito">
-          <option value="atendido">Atendido</option>
-          <option value="atendidoParcialmente">Atendido Parcialmente</option>
-          <option value="naoAtendido">Não Atendido</option>
-          <option value="cancelado">Cancelado</option>
-        </select>
-        <label for="situacao">Situação:</label>
-        <select id="situacao" name="situacao">
-          <option value="atendido">Atendido</option>
-          <option value="atendidoParcialmente">Atendido Parcialmente</option>
-          <option value="naoAtendido">Não Atendido</option>
-          <option value="cancelado">Cancelado</option>
-        </select>
-        <input type="submit" value="Concluir">
-      </form>
+      <div class="modal-concluir-pleito-template">
+        <p class="modal-concluir-pleito-tiposolici" data-filter="tipoSolici"></p>
+        <p class="modal-concluir-pleito-dataSolici" data-filter="dataSoliciPleito"></p>
+        <p class="modal-concluir-pleito-solicitante" data-filter="solicitante"></p>
+        <div class="modal-concluir-pleito-desc" data-filter="descPleito">
+          <p><strong>Descrição</strong></p>
+        </div>
+        <p class="modal-concluir-pleito-beneficiario" data-filter="beneficiario"></p>
+        <p class="modal-concluir-pleito-uf" data-filter="ufPleito"></p>
+        <p class="modal-concluir-pleito-cidade" data-filter="cidadePleito"></p>
+        <p class="modal-concluir-pleito-bairro" data-filter="bairroPleito"></p>
+        <p class="modal-concluir-pleito-rua" data-filter="ruaPleito"></p>
+        <p class="modal-concluir-pleito-autor" data-filter="autorPleito"></p>
+        <p class="modal-concluir-pleito-dataCriacao" data-filter="dataCriacaoPleito"></p>
+        <p class="modal-concluir-pleito-status" data-filter="statusPleito"></p>
+        <p class="modal-concluir-pleito-desc" data-filter="descPleito"></p>
+        <div class="modal-concluir-pleito-concluir">
+          <div class="modal-concluir-pleito-descConclusao">
+            <label for="descConclusaoPleito">Descrição da Conclusão:</label>
+            <textarea id="descConclusaoPleito" name="descConclusaoPleito"></textarea>
+          </div>
+          <div class="modal-concluir-pleito-situacao">
+            <label for="ConclusaoPleito">Situação:</label>
+            <select id="ConclusaoPleito" name="ConclusaoPleito">
+              <option value="atendido">Atendido</option>
+              <option value="atendidoParcialmente">Atendido Parcialmente</option>
+              <option value="naoAtendido">Não Atendido</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </div>
+          <div class="modal-concluir-pleito-salvar">
+            <input class="btn-filled" type="submit" value="Salvar">
+          </div>
+          <p class="modal-concluir-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
+        </div>
+      </div>
     </div>
   </div>
 

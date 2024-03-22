@@ -42,6 +42,7 @@
   border-radius: 20px;
   cursor: pointer;
   width: 100%;
+  color: var(--cor-9);
   background: var(--cor-11);
   border: 1px solid #ce84ff0a;
   border-right: none;

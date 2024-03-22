@@ -38,7 +38,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
   if (window.innerWidth <= 820) {
     if (areaContent.style.maxHeight) {
       areaContent.style.maxHeight = null;
-      button.innerHTML = "Pesquisa rápida";
+      button.innerHTML = "Filtros";
       area.style.boxShadow = "none";
       mainSidenav.style.height = "";
       area.style.background = "none";
