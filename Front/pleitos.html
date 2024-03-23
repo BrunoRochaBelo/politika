@@ -83,7 +83,7 @@
 
             <span id="totalResults">{{total}}</span>&nbsp;-&nbsp; <div class="btn-filtro-pesq">
               <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                <a href="calendario.html" class="remover-filtro">&times;</a>
+                <a href="pleitos.html" class="remover-filtro">&times;</a>
               </p>
 
             </div>
@@ -106,8 +106,8 @@
                 <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
                 <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
                 <div class="pleitos-medium-card-editar">
-                  <button class="btn-leaked" onclick="">Visualizar</button>
-                  <button class="btn-leaked" onclick="">Despachar</button>
+                  <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
+                  <button class="btn-leaked" id="btnDespachar" onclick="">Despachar</button>
                   <button class="btn-leaked" id="btnConcluir" onclick="">Concluir</button>
                 </div>
                 <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
@@ -223,6 +223,7 @@
             </select>
           </div>
           <div class="modal-concluir-pleito-salvar">
+            <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
             <input class="btn-filled" type="submit" value="Salvar">
           </div>
           <p class="modal-concluir-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>

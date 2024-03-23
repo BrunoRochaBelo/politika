@@ -9,31 +9,32 @@
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
   <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
-  <title>Novo Pleito</title>
-  <meta name="description" content="Novo Pleito">
+  <title>Pleito</title>
+  <meta name="description" content="Pleito">
 </head>
 
 
 <body class="body-form-template">
   <header class="header-form">
-    <h1>Novo Pleito</h1>
-    <h1><a href="pleitos.html">&times;</a></h1>
+    <h1>Pleito XXX-XX</h1>
+    <h1 class="close"><a href="pleitos.html">&times;</a></h1>
   </header>
 
   <main class="main-form">
     <section>
-      <form id="form" class="form" enctype="multipart/form-data">
-        <fieldset>
+      <form id="form" class="form " enctype="multipart/form-data">
+
+        <fieldset class="fieldset-view">
           <legend class="titulo-xl"></legend>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="nome">Nome do solicitante:</label>
-            <input type="text" id="nome" name="nome" required><br>
+            <input type="text" id="nome" name="nome" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="tipo">Tipo solicitação:</label>
-            <select id="tipo" name="tipo" required>
+            <select id="tipo" name="tipo" readonly>
               <option value="" selected disabled>Tipo de Pleito</option>
               <option value="apoio juridico">APOIO JURÍDICO</option>
               <option value="apoio politico">APOIO POLÍTICO</option>
@@ -52,64 +53,82 @@
             </select>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br>
+            <textarea id="descricao" name="descricao" readonly></textarea>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="beneficiario">Beneficiário:</label>
-            <input type="text" id="beneficiario" name="beneficiario" required><br>
+            <input type="text" id="beneficiario" name="beneficiario" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" required><br>
+            <input type="text" id="cep" name="cep" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="uf">UF:</label>
-            <input type="text" id="uf" name="uf" required><br>
+            <input type="text" id="uf" name="uf" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="rua">Rua:</label>
-            <input type="text" id="rua" name="rua" required><br>
+            <input type="text" id="rua" name="rua" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="numero">Número:</label>
-            <input type="number" id="numero" name="numero" required><br>
+            <input type="number" id="numero" name="numero" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="complemento">Complemento:</label>
-            <input type="text" id="complemento" name="complemento"><br>
+            <input type="text" id="complemento" name="complemento" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro" required><br>
+            <input type="text" id="bairro" name="bairro" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" required><br>
+            <input type="text" id="cidade" name="cidade" readonly>
           </div>
 
-          <div class="campo">
+          <div class="campo-view">
             <label for="data">Data da solicitação:</label>
-            <input type="date" id="data" name="data" required><br>
+            <input type="date" id="data" name="data" readonly>
           </div>
 
           <div class="botoes">
-            <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
-            <button type="submit" class="btn-filled" onclick="submitForm()">Criar</button>
+            <div class="btn-leaked"><a href="pleitos.html">Fechar</a></div>
+            <div class="btn-leaked"><a href="pleitos.html">Editar</a></div>
           </div>
-        </fieldset>
       </form>
     </section>
   </main>
+
+  <script>
+    // Seleciona todos os campos de entrada
+    const inputs = document.querySelectorAll('input, select, textarea');
+
+    // Adiciona um ouvinte de eventos para cada campo de entrada
+    inputs.forEach(function (input) {
+      // Desabilita o foco
+      input.addEventListener('focus', function (event) {
+        event.preventDefault();
+      });
+
+      // Previne o clique
+      input.addEventListener('click', function (event) {
+        event.preventDefault();
+      });
+    });
+  </script>
+
 </body>
 
 </html>

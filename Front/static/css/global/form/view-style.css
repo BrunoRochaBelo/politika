@@ -1,0 +1,46 @@
+.fieldset-view {
+  display: grid;
+  gap: 10px;
+}
+
+.campo-view {
+  display: grid;
+
+  background: var(--cor-p4);
+  padding: 10px;
+  border-radius: 9px;
+  gap: 5px;
+}
+
+.campo-view label {
+  display: inline;
+  font-size: 12px;
+  font-weight: regular;
+  color: #a383e1;
+  padding: 0;
+  margin: 0;
+}
+.campo-view input,
+.campo-view select,
+.campo-view textarea {
+  margin: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--cor-0);
+  background: transparent;
+  border: none;
+  font-weight: bold;
+}
+.campo-view select {
+  padding: 0;
+}
+.campo-view input:focus,
+.campo-view select:focus,
+.campo-view textarea:focus {
+  outline: none;
+}
+.campo-view input:focus,
+.campo-view select:focus,
+.campo-view textarea:focus {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+}

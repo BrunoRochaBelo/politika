@@ -12,6 +12,7 @@
 /* Global/ Form */
 @import "./global/form/body-form-template.css";
 @import "./global/form/form-style.css";
+@import "./global/form/view-style.css";
 
 /* Utilidades */
 @import "./utilidades/tipografia.css";

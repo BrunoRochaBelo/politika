@@ -4,8 +4,8 @@
   align-content: start;
   justify-content: center;
   grid:
-    " header-form " 55px
-    "  main-form "
+    "header-form" 55px
+    "main-form" auto
     / minmax(350px, 1100px);
 }
 /* container-areas */
@@ -30,7 +30,7 @@
   overflow-x: hidden;
   padding: 5px;
   justify-content: space-between;
-  align-content: center;
+  align-content: start;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -56,6 +56,6 @@
     overflow-y: auto;
   }
   .main-form::-webkit-scrollbar {
-    display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+    display: none;
   }
 }

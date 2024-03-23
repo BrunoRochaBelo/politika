@@ -28,7 +28,8 @@ function preencherModal(card) {
     card.querySelector(".pleitos-medium-card-dataCriacao").textContent;
   modal.querySelector(".modal-concluir-pleito-status").textContent =
     card.querySelector(".pleitos-medium-card-status").textContent;
-
+  modal.querySelector(".modal-concluir-pleito-id").textContent =
+    card.querySelector(".pleitos-medium-card-id").textContent;
   // Abre o modal
   modal.style.display = "grid"; // Exibe o modal
 }
@@ -46,4 +47,16 @@ document.getElementById("btnConcluir").addEventListener("click", function () {
 
   // Chama a função para preencher o modal com os dados do card
   preencherModal(card);
+});
+
+// Adiciona um ouvinte de eventos de clique ao fundo do modal
+document.addEventListener("DOMContentLoaded", function () {
+  const modalBackground = document.querySelector(".modal-concluir-pleito");
+  const modalContent = document.querySelector(".modal-concluir-pleito-content");
+
+  modalBackground.addEventListener("click", function (event) {
+    if (event.target === modalBackground) {
+      modalBackground.style.display = "none";
+    }
+  });
 });
