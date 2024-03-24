@@ -144,8 +144,8 @@
 }
 .despesas-medium-card-editar.exibirDetalheDespesa {
   display: flex;
-  justify-content: space-around;
-  padding: 20px 0 10px 0;
+  justify-content: end;
+  padding: 10px 10px 1px 10px;
   margin: 15px 0 0 0;
   opacity: 1;
   gap: 15px;

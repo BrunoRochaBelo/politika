@@ -213,6 +213,18 @@
   cursor: pointer;
 }
 
+.modal-concluir-pleito-concluir textarea,
+.modal-concluir-pleito-concluir select,
+.modal-concluir-pleito-concluir input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9375rem;
+  color: var(--cor-0);
+  background: var(--cor-p4);
+  border: 1px solid var(--cor-p5);
+  border-radius: 9px;
+}
+
 .modal-concluir-pleito-salvar .btn-filled {
   width: 100%;
   font-weight: regular;

@@ -107,8 +107,8 @@
                 <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
                 <div class="pleitos-medium-card-editar">
                   <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
-                  <button class="btn-leaked" id="btnDespachar" onclick="">Despachar</button>
-                  <button class="btn-leaked" id="btnConcluir" onclick="">Concluir</button>
+                  <button class="btn-leaked" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
+                  <button class="btn-leaked" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
                 </div>
                 <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
               </a>
@@ -224,7 +224,7 @@
           </div>
           <div class="modal-concluir-pleito-salvar">
             <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
-            <input class="btn-filled" type="submit" value="Salvar">
+            <input class="btn-filled" type="submit" value="Concluir">
           </div>
           <p class="modal-concluir-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
         </div>
@@ -290,7 +290,7 @@
           </div>
           <div class="modal-despachar-pleito-salvar">
             <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
-            <input class="btn-filled" type="submit" value="Salvar">
+            <input class="btn-filled" type="submit" value="Despachar">
           </div>
           <p class="modal-despachar-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
         </div>
@@ -304,7 +304,7 @@
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/ExibirDetalhesPleito.js"></script>
   <script src="./static/js/ModalConcluirPleito.js"></script>
-  <script src="./static/js/ModalDespecharPleito.js"></script>
+  <script src="./static/js/ModalDespacharPleito.js"></script>
 
 </body>
 
