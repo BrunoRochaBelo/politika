@@ -115,14 +115,11 @@
 .despesas-medium-card-editar {
   grid-area: despesas-medium-card-editar;
   display: none;
-  justify-self: end;
-  align-self: center;
-  border-top: 1px solid var(--cor-p6);
-  font-size: var(--font-medium-light);
+  opacity: 0;
+  border-top: 1px solid var(--cor-p1);
 }
 
 .exibirDetalheDespesa {
-  display: inline-block;
   opacity: 1 !important;
 }
 .despesas-medium-card-expanded {
@@ -134,15 +131,22 @@
     "despesas-medium-card-nome_fornecedor despesas-medium-card-nome_fornecedor"
     "despesas-medium-card-autor despesas-medium-card-data_criacao"
     "despesas-medium-card-desc despesas-medium-card-desc"
-    ". despesas-medium-card-editar";
+    "despesas-medium-card-editar despesas-medium-card-editar";
 }
 .despesas-medium-card-cnpj_cpf_for.exibirDetalheDespesa,
 .despesas-medium-card-nome_fornecedor.exibirDetalheDespesa,
 .despesas-medium-card-ordenador_despesa.exibirDetalheDespesa,
 .despesas-medium-card-autor.exibirDetalheDespesa,
-.despesas-medium-card-data_criacao.exibirDetalheDespesa,
-.despesas-medium-card-editar.exibirDetalheDespesa {
+.despesas-medium-card-data_criacao.exibirDetalheDespesa {
   display: inline-block;
   opacity: 1;
   margin: 3px 0 0 10px;
+}
+.despesas-medium-card-editar.exibirDetalheDespesa {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0 10px 0;
+  margin: 15px 0 0 0;
+  opacity: 1;
+  gap: 15px;
 }

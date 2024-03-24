@@ -1,0 +1,10 @@
+.despesas-medium-card-editar .btn-leaked {
+  width: 100%;
+  font-weight: regular;
+  font-size: 11px;
+  border-radius: 20px;
+  border: 1px solid var(--cor-8);
+}
+.despesas-medium-card-editar .btn-leaked:hover {
+  border: 1px solid #a57ff0;
+}

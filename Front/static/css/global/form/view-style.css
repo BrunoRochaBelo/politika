@@ -5,7 +5,6 @@
 
 .campo-view {
   display: grid;
-
   background: var(--cor-p4);
   padding: 10px;
   border-radius: 9px;
@@ -43,4 +42,11 @@
 .campo-view select:focus,
 .campo-view textarea:focus {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+}
+
+.fieldset-view .form-2-colum {
+  display: grid;
+  grid-template: auto/auto auto;
+  width: 100%;
+  gap: 10px;
 }

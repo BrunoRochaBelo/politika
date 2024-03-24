@@ -24,6 +24,7 @@
   border: 1px solid #ce84ff0a;
   border-bottom: none;
   position: relative;
+  background: #ce84ff0a;
 }
 .main-form {
   grid-area: main-form;
@@ -42,6 +43,7 @@
   color: var(--cor-1);
   border: 1px solid #ce84ff0a;
   border-top: none;
+  background: #ce84ff0a;
 }
 
 /* RESPONSIVO */

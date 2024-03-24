@@ -21,93 +21,134 @@
   </header>
 
   <main class="main-form">
-    <section>
-      <form id="form" class="form " enctype="multipart/form-data">
+    <section class="area-abas-template">
+      <nav class="area-abas-template-header">
+        <ul id="navAba" class="nav nav-duas-abas">
+          <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Pleito</a></li>
+          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Movimentação</a></li>
+        </ul>
+      </nav>
+      <div class="area-abas-template-content form-area-abas-template-content content-duas-abas">
+        <div id="aba1" class="aba-template area-template-alt active">
+          <form id="form" class="form" enctype="multipart/form-data">
+            <fieldset class="fieldset-view">
+              <legend class="titulo-xl"></legend>
+              <div class="campo-view">
+                <label for="nome">Nome do solicitante:</label>
+                <input type="text" id="nome" name="nome" readonly>
+              </div>
+              <div class="form-2-colum">
+                <div class="campo-view">
+                  <label for="tipo">Tipo solicitação:</label>
+                  <select id="tipo" name="tipo" readonly>
+                    <option value="" selected disabled>Tipo de Pleito</option>
+                    <option value="apoio juridico">APOIO JURÍDICO</option>
+                    <option value="apoio politico">APOIO POLÍTICO</option>
+                    <option value="educacao e capacitacao">EDUCAÇÃO E CAPACITAÇÃO</option>
+                    <option value="emprego">EMPREGO</option>
+                    <option value="infraestrutura">INFRAESTRUTURA</option>
+                    <option value="outros">OUTROS</option>
+                    <option value="recurso para construcao civil">RECURSO PARA CONSTRUÇÃO CIVIL</option>
+                    <option value="saude">SAÚDE</option>
+                    <option value="seguranca">SEGURANÇA</option>
+                    <option value="servico publico estadual">SERVIÇO PÚBLICO ESTADUAL</option>
+                    <option value="servico publico federal">SERVIÇO PÚBLICO FEDERAL</option>
+                    <option value="servico publico municipal">SERVIÇO PÚBLICO MUNICIPAL</option>
+                    <option value="transferencia de orgao">TRANSFERÊNCIA DE ÓRGÃO</option>
+                    <option value="transporte publico">TRANSPORTE PÚBLICO</option>
+                  </select>
+                </div>
+                <div class="campo-view">
+                  <label for="data">Data da solicitação:</label>
+                  <input type="date" id="data" name="data" readonly>
+                </div>
+              </div>
+              <div class="campo-view">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" readonly></textarea>
+              </div>
+              <div class="campo-view">
+                <label for="beneficiario">Beneficiário:</label>
+                <input type="text" id="beneficiario" name="beneficiario" readonly>
+              </div>
+              <div class="form-2-colum">
+                <div class="campo-view">
+                  <label for="cep">CEP:</label>
+                  <input type="text" id="cep" name="cep" readonly>
+                </div>
+                <div class="campo-view">
+                  <label for="uf">UF:</label>
+                  <input type="text" id="uf" name="uf" readonly>
+                </div>
+              </div>
+              <div class="campo-view">
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" readonly>
+              </div>
+              <div class="form-2-colum">
+                <div class="campo-view">
+                  <label for="numero">Número:</label>
+                  <input type="number" id="numero" name="numero" readonly>
+                </div>
+                <div class="campo-view">
+                  <label for="complemento">Complemento:</label>
+                  <input type="text" id="complemento" name="complemento" readonly>
+                </div>
+              </div>
+              <div class="form-2-colum">
+                <div class="campo-view">
+                  <label for="bairro">Bairro:</label>
+                  <input type="text" id="bairro" name="bairro" readonly>
+                </div>
+                <div class="campo-view">
+                  <label for="cidade">Cidade:</label>
+                  <input type="text" id="cidade" name="cidade" readonly>
+                </div>
+              </div>
+              <div class="botoes">
+                <div class="btn-leaked"><a href="pleitos.html">Fechar</a></div>
+                <div class="btn-leaked"><a href="pleitos.html">Editar</a></div>
+                <div class="btn-leaked" onclick="avancar()">Despachos</div>
+              </div>
+          </form>
+        </div>
 
-        <fieldset class="fieldset-view">
-          <legend class="titulo-xl"></legend>
+        <div id="aba2" class="aba-template">
+          <div class="tabela-historico">
 
-          <div class="campo-view">
-            <label for="nome">Nome do solicitante:</label>
-            <input type="text" id="nome" name="nome" readonly>
+            <table>
+              <tr>
+                <th>Data</th>
+                <th>Por</th>
+                <th>Ação</th>
+                <th>Descrição</th>
+              </tr>
+              <tr>
+                <td>16-03-2024</td>
+                <td>[Nome]</td>
+                <td>TAREFA AGENDADA</td>
+                <td>Tarefa atribuída para [Nome].</td>
+              </tr>
+              <tr>
+                <td>19-03-2024</td>
+                <td>[Nome]</td>
+                <td>TAREFA CONCLUÍDA</td>
+                <td>Tarefa concluída por [Nome].</td>
+              </tr>
+              <tr>
+                <td>19-03-2024</td>
+                <td>[Nome]</td>
+                <td>PLEITO CONCLUÍDO</td>
+                <td>Atendido.</td>
+              </tr>
+            </table>
+            <div class="botoes">
+              <div class="btn-leaked"><a href="pleitos.html">Fechar</a></div>
+              <div class="btn-leaked" onclick="voltar()">Pleito</div>
+            </div>
           </div>
-
-          <div class="campo-view">
-            <label for="tipo">Tipo solicitação:</label>
-            <select id="tipo" name="tipo" readonly>
-              <option value="" selected disabled>Tipo de Pleito</option>
-              <option value="apoio juridico">APOIO JURÍDICO</option>
-              <option value="apoio politico">APOIO POLÍTICO</option>
-              <option value="educacao e capacitacao">EDUCAÇÃO E CAPACITAÇÃO</option>
-              <option value="emprego">EMPREGO</option>
-              <option value="infraestrutura">INFRAESTRUTURA</option>
-              <option value="outros">OUTROS</option>
-              <option value="recurso para construcao civil">RECURSO PARA CONSTRUÇÃO CIVIL</option>
-              <option value="saude">SAÚDE</option>
-              <option value="seguranca">SEGURANÇA</option>
-              <option value="servico publico estadual">SERVIÇO PÚBLICO ESTADUAL</option>
-              <option value="servico publico federal">SERVIÇO PÚBLICO FEDERAL</option>
-              <option value="servico publico municipal">SERVIÇO PÚBLICO MUNICIPAL</option>
-              <option value="transferencia de orgao">TRANSFERÊNCIA DE ÓRGÃO</option>
-              <option value="transporte publico">TRANSPORTE PÚBLICO</option>
-            </select>
-          </div>
-
-          <div class="campo-view">
-            <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao" readonly></textarea>
-          </div>
-
-          <div class="campo-view">
-            <label for="beneficiario">Beneficiário:</label>
-            <input type="text" id="beneficiario" name="beneficiario" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="uf">UF:</label>
-            <input type="text" id="uf" name="uf" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="rua">Rua:</label>
-            <input type="text" id="rua" name="rua" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="numero">Número:</label>
-            <input type="number" id="numero" name="numero" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="complemento">Complemento:</label>
-            <input type="text" id="complemento" name="complemento" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" readonly>
-          </div>
-
-          <div class="campo-view">
-            <label for="data">Data da solicitação:</label>
-            <input type="date" id="data" name="data" readonly>
-          </div>
-
-          <div class="botoes">
-            <div class="btn-leaked"><a href="pleitos.html">Fechar</a></div>
-            <div class="btn-leaked"><a href="pleitos.html">Editar</a></div>
-          </div>
-      </form>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -128,6 +169,8 @@
       });
     });
   </script>
+
+  <script src="./static/js/NavAbasInternas.js"></script>
 
 </body>
 

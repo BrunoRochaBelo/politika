@@ -48,4 +48,9 @@
 @import "./contatos/form-contato.css";
 
 /* pleitos */
-@import "./pleitos/pleitos-template.css";
+@import "./pleitos/pleitos-style.css";
+@import "./pleitos/modal-concluir-pleito.css";
+@import "./pleitos/modal-despachar-pleito.css";
+
+/* despesas */
+@import "./despesas/despesas-style.css";

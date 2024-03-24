@@ -232,6 +232,71 @@
     </div>
   </div>
 
+  <!-- Modal despachar Pleito -->
+  <div id="modal-despachar-pleito" class="modal-despachar-pleito">
+    <div class="modal-despachar-pleito-content card-m">
+      <span class="closeModalDespachar">&times;</span>
+      <div class="modal-despachar-pleito-template">
+        <p class="modal-despachar-pleito-tiposolici" data-filter="tipoSolici"></p>
+        <p class="modal-despachar-pleito-dataSolici" data-filter="dataSoliciPleito"></p>
+        <p class="modal-despachar-pleito-solicitante" data-filter="solicitante"></p>
+        <div class="modal-despachar-pleito-desc" data-filter="descPleito">
+          <p><strong>Descrição</strong></p>
+        </div>
+        <p class="modal-despachar-pleito-beneficiario" data-filter="beneficiario"></p>
+        <p class="modal-despachar-pleito-uf" data-filter="ufPleito"></p>
+        <p class="modal-despachar-pleito-cidade" data-filter="cidadePleito"></p>
+        <p class="modal-despachar-pleito-bairro" data-filter="bairroPleito"></p>
+        <p class="modal-despachar-pleito-rua" data-filter="ruaPleito"></p>
+        <p class="modal-despachar-pleito-autor" data-filter="autorPleito"></p>
+        <p class="modal-despachar-pleito-dataCriacao" data-filter="dataCriacaoPleito"></p>
+        <p class="modal-despachar-pleito-status" data-filter="statusPleito"></p>
+        <p class="modal-despachar-pleito-desc" data-filter="descPleito"></p>
+        <div class="modal-despachar-pleito-despachar">
+          <h2 class="modal-despachar-pleito-despachar-title">Atribuir Tarefa</h2>
+          <div class="modal-despachar-pleito-descDespacho">
+            <label for="descDespachoPleito">Descrição da Conclusão:</label>
+            <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
+          </div>
+          <div class="modal-despachar-pleito-situacao">
+            <label for="DespachoPleito">Situação:</label>
+            <select id="DespachoPleito" name="DespachoPleito">
+              <option value="sobAnalise">Sob Análise</option>
+              <option value="processando">Processando</option>
+              <option value="parado">Parado</option>
+            </select>
+          </div>
+          <div class="modal-despachar-pleito-dataInicio">
+            <label for="dataInicio">Data Início</label>
+            <input type='date' id='dataInicio' name='dataInicio'>
+          </div>
+          <div class="modal-despachar-pleito-prazoFinal">
+            <label for='prazoFinal'>Prazo Final</label>
+            <input type='date' id='prazoFinal' name='prazoFinal'>
+          </div>
+          <div class="modal-despachar-pleito-prioridade">
+            <label for='prioridade'>Prioridade</label>
+            <select id='prioridade' name='prioridade'>
+              <!-- Opções podem ser adicionadas aqui -->
+              <option value='' disabled selected>Selecione a prioridade</option>
+            </select>
+          </div>
+          <div class="modal-despachar-pleito-responsavel">
+            <label for='responsavel'>Responsável</label>
+            <select id='responsavel' name='responsavel'>
+              <!-- Opções podem ser adicionadas aqui -->
+              <option value='' disabled selected>Selecione o responsável</option>
+            </select>
+          </div>
+          <div class="modal-despachar-pleito-salvar">
+            <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
+            <input class="btn-filled" type="submit" value="Salvar">
+          </div>
+          <p class="modal-despachar-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
@@ -239,6 +304,7 @@
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/ExibirDetalhesPleito.js"></script>
   <script src="./static/js/ModalConcluirPleito.js"></script>
+  <script src="./static/js/ModalDespecharPleito.js"></script>
 
 </body>
 

@@ -69,17 +69,11 @@
 .contatos-small-card-editar {
   grid-area: contatos-small-card-editar;
   display: none;
-  justify-self: end;
-  align-self: center;
-  display: none;
   opacity: 0;
-  margin: 3px 0 0 10px;
-  border-top: 1px solid var(--cor-p6);
-  font-size: var(--font-medium-light);
+  border-top: 1px solid var(--cor-p1);
 }
 
 .exibirDetalheContato {
-  display: inline-block;
   opacity: 1 !important;
 }
 .contatos-small-card-expanded {
@@ -89,81 +83,23 @@
     "contatos-small-card-num contatos-small-card-num contatos-small-card-num contatos-small-card-phone "
     "contatos-small-card-email contatos-small-card-email contatos-small-card-email contatos-small-card-phone "
     "contatos-small-card-tipopessoa .  .  contatos-small-card-phone"
-    ". . contatos-small-card-editar   .";
+    "contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar";
 }
 .contatos-small-card-num.exibirDetalheContato,
 .contatos-small-card-email.exibirDetalheContato,
-.contatos-small-card-tipopessoa.exibirDetalheContato,
-.contatos-small-card-editar.exibirDetalheContato {
+.contatos-small-card-tipopessoa.exibirDetalheContato {
   display: inline-block;
   opacity: 1;
   margin: 3px 0 0 10px;
 }
 
-/* Médio */
-.contatos-medium-card {
-  display: grid;
-  gap: 0.625rem;
-  align-content: center;
-  justify-items: start;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  grid:
-    "contatos-medium-card-tag contatos-medium-card-title contatos-medium-card-title "
-    "contatos-medium-card-tag contatos-medium-card-inicio contatos-medium-card-fim "
-    / 105px auto auto;
-}
-.contatos-medium-card-title {
-  grid-area: contatos-medium-card-title;
-  font-size: var(--font-medium-regular);
-}
-.contatos-medium-card-inicio {
-  grid-area: contatos-medium-card-inicio;
-  font-size: var(--font-medium-regular);
-}
-.contatos-medium-card-fim {
-  grid-area: contatos-medium-card-fim;
-  font-size: var(--font-medium-regular);
-}
-.contatos-medium-card-tag {
-  grid-area: contatos-medium-card-tag;
-  font-size: var(--font-medium-regular);
-}
-
-/* Grande */
-.contatos-large-card {
-  display: grid;
-  align-items: center;
-  justify-items: start;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  grid:
-    "contatos-large-card-tag" 32px
-    "contatos-large-card-title" 1fr
-    "contatos-large-card-local" 1fr
-    "contatos-large-card-partcipantes" 1fr
-    "contatos-large-card-duracao" 1fr;
-}
-.contatos-large-card-title {
-  grid-area: contatos-large-card-title;
-  font-size: var(--titulo-m);
-}
-.contatos-large-card-local {
-  grid-area: contatos-large-card-local;
-  font-size: var(--font-medium-light);
-}
-.contatos-large-card-partcipantes {
-  grid-area: contatos-large-card-partcipantes;
-  font-size: var(--font-medium-light);
-}
-.contatos-large-card-duracao {
-  grid-area: contatos-large-card-duracao;
-  font-size: var(--font-medium-light);
-}
-.contatos-large-card-tag {
-  grid-area: contatos-large-card-tag;
+.contatos-small-card-editar.exibirDetalheContato {
+  display: flex;
+  justify-content: end;
+  padding: 5px 10px 1px 10px;
+  margin: 15px 0 0 0;
+  opacity: 1;
+  gap: 15px;
 }
 
 /* Vazio */

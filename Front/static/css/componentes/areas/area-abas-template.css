@@ -22,7 +22,6 @@
   background: #ce84ff0a;
   justify-items: space-between;
   padding: 5px 5px 0px 5px;
-  border-top-right-radius: 9px;
   color: var(--cor-9);
 }
 .area-abas-template-content {
@@ -124,6 +123,9 @@
   text-align: center;
   align-items: center;
   justify-content: end;
+}
+.content-duas-abas {
+  border-top-right-radius: 9px;
 }
 /* RESPONSIVO */
 @media (max-width: 820px) {

@@ -1,0 +1,278 @@
+.modal-despachar-pleito {
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-despachar-pleito-content {
+  position: relative;
+  color: var(--cor-9);
+  margin: auto;
+  margin-top: 15px;
+  padding: 20px;
+  border: 1px solid var(--cor-11);
+  min-width: 50%;
+  max-width: 80%;
+  height: auto;
+  overflow-y: auto;
+  z-index: 1005;
+}
+
+.modal-despachar-pleito-template {
+  display: grid;
+  color: var(--cor-9);
+  gap: 3px;
+  grid:
+    "modal-despachar-pleito-tiposolici modal-despachar-pleito-tiposolici modal-despachar-pleito-dataSolici"
+    "modal-despachar-pleito-solicitante modal-despachar-pleito-solicitante modal-despachar-pleito-solicitante"
+    "modal-despachar-pleito-beneficiario modal-despachar-pleito-beneficiario modal-despachar-pleito-beneficiario"
+    "modal-despachar-pleito-uf modal-despachar-pleito-cidade modal-despachar-pleito-bairro"
+    "modal-despachar-pleito-rua modal-despachar-pleito-rua modal-despachar-pleito-rua"
+    "modal-despachar-pleito-autor modal-despachar-pleito-autor modal-despachar-pleito-dataCriacao"
+    "modal-despachar-pleito-status modal-despachar-pleito-status modal-despachar-pleito-status"
+    "modal-despachar-pleito-desc modal-despachar-pleito-desc modal-despachar-pleito-desc"
+    "modal-despachar-pleito-despachar modal-despachar-pleito-despachar modal-despachar-pleito-despachar";
+}
+.modal-despachar-pleito-id {
+  display: none;
+  opacity: 0;
+}
+.modal-despachar-pleito-tiposolici {
+  grid-area: modal-despachar-pleito-tiposolici;
+  border-left: 4px solid var(--cor-p4);
+  padding-left: 10px;
+  font-size: var(--titulo-s);
+  justify-self: start;
+  align-self: center;
+}
+.modal-despachar-pleito-dataSolici {
+  grid-area: modal-despachar-pleito-dataSolici;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--titulo-s);
+}
+.modal-despachar-pleito-solicitante {
+  grid-area: modal-despachar-pleito-solicitante;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-desc {
+  grid-area: modal-despachar-pleito-desc;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: flex;
+  background: var(--cor-11);
+  border-radius: 0.625rem;
+  justify-content: start;
+  align-items: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-medium-light);
+}
+.modal-despachar-pleito-beneficiario {
+  grid-area: modal-despachar-pleito-beneficiario;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-uf {
+  grid-area: modal-despachar-pleito-uf;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-cidade {
+  grid-area: modal-despachar-pleito-cidade;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-bairro {
+  grid-area: modal-despachar-pleito-bairro;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-rua {
+  grid-area: modal-despachar-pleito-rua;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-autor {
+  grid-area: modal-despachar-pleito-autor;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-dataCriacao {
+  grid-area: modal-despachar-pleito-dataCriacao;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-status {
+  display: none;
+  opacity: 0;
+}
+
+.modal-despachar-pleito-despachar {
+  grid-area: modal-despachar-pleito-despachar;
+  display: grid;
+  justify-items: stretch;
+  gap: 10px;
+  padding: 20px 10px 10px 10px;
+  margin: 15px 0 0 0;
+  align-self: center;
+  border-top: 1px solid var(--cor-p1);
+  font-size: var(--font-small-light);
+  white-space: wrap;
+  word-break: break-all;
+  background: var(--cor-p4);
+  border-radius: 9px;
+  grid:
+    "modal-despachar-pleito-despachar-title modal-despachar-pleito-despachar-title"
+    "modal-despachar-pleito-descDespacho modal-despachar-pleito-descDespacho"
+    "modal-despachar-pleito-situacao modal-despachar-pleito-situacao"
+    "modal-despachar-pleito-dataInicio modal-despachar-pleito-prazoFinal"
+    "modal-despachar-pleito-prioridade modal-despachar-pleito-prioridade"
+    "modal-despachar-pleito-responsavel modal-despachar-pleito-responsavel"
+    "modal-despachar-pleito-salvar modal-despachar-pleito-salvar";
+}
+.modal-despachar-pleito-despachar-title {
+  grid-area: modal-despachar-pleito-despachar-title;
+  font-size: 16px;
+  font-weight: bold;
+}
+.modal-despachar-pleito-descDespacho {
+  grid-area: modal-despachar-pleito-descDespacho;
+  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.modal-despachar-pleito-situacao {
+  grid-area: modal-despachar-pleito-situacao;
+  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small-light);
+}
+.modal-despachar-pleito-dataInicio {
+  grid-area: modal-despachar-pleito-dataInicio;
+  /* Adicione aqui os estilos específicos para a data de início */
+}
+.modal-despachar-pleito-prazoFinal {
+  grid-area: modal-despachar-pleito-prazoFinal;
+  /* Adicione aqui os estilos específicos para o prazo final */
+}
+.modal-despachar-pleito-prioridade {
+  grid-area: modal-despachar-pleito-prioridade;
+  /* Adicione aqui os estilos específicos para a prioridade */
+}
+.modal-despachar-pleito-responsavel {
+  grid-area: modal-despachar-pleito-responsavel;
+  /* Adicione aqui os estilos específicos para o responsável */
+}
+.modal-despachar-pleito-salvar {
+  grid-area: modal-despachar-pleito-salvar;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  font-size: var(--font-small-light);
+  margin-top: 25px;
+}
+
+.modal-despachar-pleito-despachar label {
+  color: #a383e1;
+}
+
+.closeModalDespachar {
+  position: absolute;
+  padding: 0px 6px;
+  top: 0px;
+  right: 0px;
+  color: var(--cor-9);
+  border-radius: 4px;
+  font-size: 28px;
+}
+.closeModalDespachar:hover,
+.closeModalDespachar:focus {
+  background: #c61818;
+  cursor: pointer;
+}
+
+.modal-despachar-pleito-despachar textarea,
+.modal-despachar-pleito-despachar select,
+.modal-despachar-pleito-despachar input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9375rem;
+  color: var(--cor-0);
+  background: var(--cor-p4);
+  border: 1px solid var(--cor-p5);
+  border-radius: 9px;
+}
+
+.modal-despachar-pleito-salvar .btn-filled {
+  width: auto;
+  border-radius: 5px;
+  background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
+  color: #3f1c80;
+  border: 1px solid #3f1c80;
+  box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
+}
+.modal-despachar-pleito-salvar .btn-leaked:hover {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
+  border: 1px solid var(--cor-0);
+}
+.modal-despachar-pleito-salvar .btn-filled:hover {
+  box-shadow: 0 0 1px #7852ff94, 0 0 2px #7852ff94, 0 0 3px #7852ff94,
+    0 0 4px #7852ff94, inset 0 0 1px #7852ff94, inset 0 0 2px #7852ff94,
+    inset 0 0 3px #7852ff94, inset 0 0 4px #7852ff94;
+  border: 1px solid #a57ff0;
+}
+
+/* Responsivo */
+@media (max-width: 820px) {
+  .modal-despachar-pleito-salvar {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .modal-despachar-pleito-content {
+    min-width: 90%;
+    max-width: 90%;
+    margin-top: 10px;
+    padding: 20px 10px;
+    max-height: 85%;
+  }
+
+  .modal-despachar-pleito-content::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+  }
+}

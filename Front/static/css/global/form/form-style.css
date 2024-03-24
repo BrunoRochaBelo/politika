@@ -2,11 +2,10 @@
 .form {
   display: grid;
   margin-top: auto;
-  gap: 0.625rem;
-  padding: 0.625rem;
+  padding: 10px;
   border-radius: 9px;
   border: 1px solid #ce84ff0a;
-  background: #000000;
+  background: var(--cor-12);
 }
 
 fieldset {
@@ -40,7 +39,7 @@ label {
 .campo textarea {
   width: 100%;
   box-sizing: border-box;
-  padding: 0.9375rem;
+  padding: 10px;
   color: var(--cor-0);
   background: var(--cor-p4);
   border: 1px solid var(--cor-p5);
@@ -60,6 +59,12 @@ label {
 .campo select:focus,
 .campo textarea:focus {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+}
+
+.form-2-colum {
+  display: grid;
+  grid-template: auto/auto auto;
+  width: 100%;
 }
 
 .header-form a {
@@ -140,6 +145,9 @@ form span {
   display: flex;
   justify-content: space-between;
   margin: 50px 0px 10px 0px;
+  width: 100%;
+  font-weight: regular;
+  font-size: 12px;
 }
 .botoes .btn-leaked {
   width: 30%;

@@ -1,0 +1,45 @@
+.pleitos-medium-card-editar .btn-leaked {
+  width: 100%;
+  font-weight: regular;
+  font-size: 11px;
+  border-radius: 20px;
+  border: 1px solid var(--cor-8);
+}
+.pleitos-medium-card-editar .btn-leaked:hover {
+  border: 1px solid #a57ff0;
+}
+
+.tabela-historico {
+  background: var(--cor-12);
+  border-radius: 9px;
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  color: var(--cor-9);
+  border-bottom: 1px solid var(--cor-10);
+}
+th {
+  color: #a383e1;
+}
+
+.tabela-historico table tr:nth-child(odd) {
+  background-color: var(--cor-12); /* Cor para linhas ímpares */
+}
+
+.tabela-historico table tr:nth-child(even) {
+  background-color: var(--cor-p4); /* Cor para linhas pares */
+}
+
+/* Responsivo */
+@media (max-width: 820px) {
+  .tabela-historico {
+    padding: 10px;
+  }
+}

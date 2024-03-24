@@ -1,5 +1,6 @@
 .form-area-abas-template-content {
   max-height: 80vh;
+  padding: 0px;
 }
 
 #adicionarFilhoBtn {
@@ -16,12 +17,6 @@
 }
 .ocultar {
   display: none;
-}
-
-.form-2-colum {
-  display: grid;
-  grid-template: auto/auto auto;
-  width: 100%;
 }
 
 .switch-container {
@@ -72,11 +67,14 @@
 
 .tipo-contato {
   display: grid;
-  grid-template-columns: repeat(16, auto);
+  grid-template-columns: repeat(8, auto);
   justify-content: space-between;
   justify-items: center;
   align-content: center;
   align-items: center;
+}
+.tipo-contato li {
+  width: 100%;
 }
 .form-contato-checkbox {
   width: 0;
@@ -112,11 +110,8 @@
 @media (max-width: 820px) {
   .tipo-contato {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
   }
   .checkbox-label:hover {
     background-color: #00000000;
