@@ -8,11 +8,9 @@
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
-  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
   <title>Pleito</title>
   <meta name="description" content="Pleito">
 </head>
-
 
 <body class="body-form-template">
   <header class="header-form">
@@ -40,7 +38,7 @@
               <div class="form-2-colum">
                 <div class="campo-view">
                   <label for="tipo">Tipo solicitação:</label>
-                  <select id="tipo" name="tipo" readonly>
+                  <select id="tipo" name="tipo" disabled>
                     <option value="" selected disabled>Tipo de Pleito</option>
                     <option value="apoio juridico">APOIO JURÍDICO</option>
                     <option value="apoio politico">APOIO POLÍTICO</option>
@@ -151,24 +149,6 @@
       </div>
     </section>
   </main>
-
-  <script>
-    // Seleciona todos os campos de entrada
-    const inputs = document.querySelectorAll('input, select, textarea');
-
-    // Adiciona um ouvinte de eventos para cada campo de entrada
-    inputs.forEach(function (input) {
-      // Desabilita o foco
-      input.addEventListener('focus', function (event) {
-        event.preventDefault();
-      });
-
-      // Previne o clique
-      input.addEventListener('click', function (event) {
-        event.preventDefault();
-      });
-    });
-  </script>
 
   <script src="./static/js/NavAbasInternas.js"></script>
 

@@ -947,19 +947,7 @@
 
 
   <script>
-    // Obtém a data atual
-    var dataAtual = new Date();
-
-    // Formata a data para o formato YYYY-MM
-    var mesAnoFormatado = dataAtual.toISOString().slice(0, 7);
-
-    // Define o valor do input month como o mês e ano atual formatado
-    document.getElementById("mesAno").value = mesAnoFormatado;
-
-    // Se quiser ouvir alterações na seleção do mês e ano, pode adicionar um evento de escuta
-    document.getElementById("mesAno").addEventListener("change", function () {
-      console.log("Nova seleção: ", this.value);
-    });
+    document.getElementById('mesAno').value = data_corrente;
   </script>
 
   <script src="./static/js/ModalBTNFloating.js"></script>

@@ -21,7 +21,7 @@
 
 .switch-container {
   position: relative;
-  display: inline-block;
+  display: inline;
   width: 60px;
   height: 34px;
 }
@@ -33,7 +33,7 @@
   position: relative;
   padding-left: 60px;
   cursor: pointer;
-  display: inline-block;
+  display: inline;
   color: #666;
 }
 .switch-label:before {
@@ -81,7 +81,7 @@
   height: 0;
 }
 .checkbox-label {
-  display: inline-block;
+  display: inline;
   padding: 10px 20px;
   border: 2px solid var(--cor-p4);
   border-radius: 9px;
