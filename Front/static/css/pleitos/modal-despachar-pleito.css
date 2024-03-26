@@ -248,7 +248,8 @@
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
 .modal-despachar-pleito-salvar .btn-leaked {
-  width: 100%;
+  width: auto;
+  min-width: 45%;
   font-weight: regular;
   font-size: 11px;
   border-radius: 9px;
