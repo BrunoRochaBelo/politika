@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
+  <title>Nova Despesa</title>
+  <meta name="description" content="Nova Despesa">
+</head>
+
+<body class="body-form-template">
+  <header class="header-form">
+    <h1>Nova Despesa</h1>
+    <h1><a href="despesas.html">&times;</a></h1>
+  </header>
+
+  <main class="main-form">
+    <section>
+      <form id="form" class="form" enctype="multipart/form-data">
+        <fieldset>
+          <h1>Despesa Detalhada</h1>
+          <div class="campo">
+            <label for="centro-custo">Centro de custo</label>
+            <input type="text" id="centro-custo" name="centro-custo">
+          </div>
+          <div class="campo">
+            <label for="natureza-despesa">Natureza de despesa</label>
+            <select id="natureza-despesa" name="natureza-despesa">
+              <option value="agua">Água</option>
+              <!-- Adicione mais opções aqui -->
+            </select>
+          </div>
+          <div class="campo">
+            <label for="identificacao-despesa">Identificação da despesa</label>
+            <input type="text" id="identificacao-despesa" name="identificacao-despesa">
+          </div>
+          <div class="campo">
+            <label for="data-despesa">Data da despesa</label>
+            <input type="text" id="data-despesa" name="data-despesa" placeholder="dd/mm/aaaa">
+          </div>
+          <div class="campo">
+            <label for="cnpj-cpf">CNPJ / CPF - Fornecedor</label>
+            <input type="text" id="cnpj-cpf" name="cnpj-cpf">
+          </div>
+          <div class="campo">
+            <label for="nome-fornecedor">Nome do fornecedor</label>
+            <input type="text" id="nome-fornecedor" name="nome-fornecedor">
+          </div>
+          <div class="campo">
+            <label for="documento">Espécie documento</label>
+            <input type="text" id="documento" name="documento">
+          </div>
+          <div class="campo">
+            <label for="anexo">Anexar documento comprobatório</label>
+            <input type="file" id="anexo" name="anexo">
+          </div>
+          <div class="botoes">
+            <div class="btn-leaked"><a href="despesas.html">Cancelar</a></div>
+            <button type="submit" class="btn-filled" onclick="submitForm()">Criar</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>
