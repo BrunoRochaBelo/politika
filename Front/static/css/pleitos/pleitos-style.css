@@ -16,18 +16,18 @@
   border-radius: 9px;
   padding: 20px;
 }
-table {
+.tabela-historico table {
   width: 100%;
   border-collapse: collapse;
 }
-th,
-td {
+.tabela-historico th,
+.tabela-historico td {
   padding: 8px;
   text-align: left;
   color: var(--cor-9);
   border-bottom: 1px solid var(--cor-10);
 }
-th {
+.tabela-historico th {
   color: #a383e1;
 }
 
@@ -43,5 +43,49 @@ th {
 @media (max-width: 820px) {
   .tabela-historico {
     padding: 10px;
+  }
+
+  /* Faz com que as linhas se comportem como tabelas e as células como blocos */
+  .tabela-historico table,
+  .tabela-historico thead,
+  .tabela-historico tbody,
+  .tabela-historico th,
+  .tabela-historico td,
+  .tabela-historico tr {
+    display: block;
+  }
+
+  /* Remove a borda inferior das células */
+  .tabela-historico th,
+  .tabela-historico td {
+    border-bottom: none;
+  }
+
+  /* Adiciona uma borda superior para as células */
+  .tabela-historico th,
+  .tabela-historico td {
+    border-top: 1px solid var(--cor-10);
+  }
+
+  /* Alinha o texto à esquerda e adiciona um pouco de padding */
+  .tabela-historico th,
+  .tabela-historico td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  /* Ajusta o layout para telas pequenas */
+  .tabela-historico td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 10px; /* Adiciona espaço no rótulo */
+    color: #a383e1; /* Adiciona a cor ao rótulo */
+  }
+
+  /* Oculta o <tr> no modo responsivo */
+  .tabela-historico th {
+    display: none;
   }
 }
