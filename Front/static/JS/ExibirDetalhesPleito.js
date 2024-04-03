@@ -62,4 +62,14 @@ function ajustarScrollParaCentralizarCard(card) {
 const listaDeCards = document.querySelectorAll(".pleitos-medium-card");
 listaDeCards.forEach((card) => {
   card.addEventListener("click", exibirDetalhesPleito);
+
+  // Adiciona um ouvinte de evento de clique aos botões dentro do div pleitos-medium-card-editar para cada card
+  const botoesEditar = card.querySelectorAll(
+    ".pleitos-medium-card-editar button"
+  );
+  botoesEditar.forEach((botao) => {
+    botao.addEventListener("click", function (event) {
+      event.stopPropagation(); // Impede a propagação do evento de clique
+    });
+  });
 });

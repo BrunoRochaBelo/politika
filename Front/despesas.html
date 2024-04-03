@@ -58,11 +58,13 @@
       </ul>
     </nav>
     <div class="header-search">
-      <div class="search-input-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar despesa...">
-        <button class="search-button" onclick="search()">
-          <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
-        </button>
+      <div>
+        <form action="/despesa/listcard" method="post" class="search-input-container">
+          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar despesa...">
+          <button type="submit" class="search-button">
+            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+          </button>
+        </form>
       </div>
     </div>
   </header>
@@ -157,6 +159,7 @@
 
 
   <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibir.js"></script>
   <script src="./static/js/ExibirDetalhesDespesa.js"></script>

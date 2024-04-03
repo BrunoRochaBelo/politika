@@ -13,6 +13,12 @@ function exibirDetalhesContato(event) {
     ".contatos-small-card-num, .contatos-small-card-email, .contatos-small-card-tipopessoa, .contatos-small-card-editar"
   );
 
+  // Verifica se o clique foi no botão de telefone
+  if (event.target.classList.contains("contatos-small-card-phone")) {
+    iniciarChamadaTelefonica(card);
+    return; // Retorna imediatamente para evitar a execução do código abaixo
+  }
+
   const algumCampoVisivel = Array.from(camposOcultos).some((campo) =>
     campo.classList.contains("exibirDetalheContato")
   );
@@ -30,10 +36,6 @@ function exibirDetalhesContato(event) {
 
     // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
     ajustarScrollParaCentralizarCard(card);
-  }
-
-  if (event.target.classList.contains("contatos-small-card-phone")) {
-    iniciarChamadaTelefonica(card);
   }
 }
 
@@ -75,4 +77,13 @@ function ajustarScrollParaCentralizarCard(card) {
 const listaDeCards = document.querySelectorAll(".contatos-small-card");
 listaDeCards.forEach((card) => {
   card.addEventListener("click", exibirDetalhesContato);
+
+  // Adiciona um ouvinte de evento de clique ao botão btnVisualizar para cada card
+  const btnVisualizar = card.querySelector("#btnVisualizar");
+  if (btnVisualizar) {
+    btnVisualizar.addEventListener("click", function (event) {
+      event.stopPropagation(); // Impede a propagação do evento de clique
+      window.location.href = "view-contato.html"; // Redireciona para a página de visualização
+    });
+  }
 });

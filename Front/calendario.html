@@ -58,11 +58,13 @@
       </ul>
     </nav>
     <div class="header-search">
-      <div class="search-input-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar evento...">
-        <button class="search-button" onclick="search()">
-          <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
-        </button>
+      <div>
+        <form action="/evento/listcard" method="post" class="search-input-container">
+          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar evento...">
+          <button type="submit" class="search-button">
+            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+          </button>
+        </form>
       </div>
     </div>
   </header>
@@ -86,7 +88,7 @@
       <nav class="area-abas-template-subHeader content-duas-abas">
         <div class="lista-select nav-calendar">
           <input type="date" class="item1 btn-calendario" id="mesAno">
-          <div class="item2 hoje">31</div>
+          <div class="item2 hoje" id="hoje"></div>
           <ul class="lista-horizontal-template item3">
             <li class="change-semana">
               <p id="semanaAnterior">Semana</p>
@@ -945,12 +947,23 @@
     </div>
   </div>
 
-
+  <!-- Script para preencher as datas no area-abas-template-subHeader -->
   <script>
-    document.getElementById('mesAno').value = data_corrente;
+    var data_corrente = new Date();
+    var dia = String(data_corrente.getDate()).padStart(2, '0');
+    var mes = String(data_corrente.getMonth() + 1).padStart(2, '0'); // Os meses são indexados a partir de 0
+    var ano = data_corrente.getFullYear();
+    var data_formatada = ano + '-' + mes + '-' + dia;
+
+    // Exibir o dia de hoje no elemento com o ID 'hoje'
+    document.getElementById('hoje').textContent = dia;
+
+    // Preencher o campo de data com a data completa
+    document.getElementById('mesAno').value = data_formatada;
   </script>
 
   <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibir.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
