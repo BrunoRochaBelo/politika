@@ -7,7 +7,7 @@
   padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
 }
 /* Pequeno altura 35px*/
 .card-s {
@@ -17,7 +17,7 @@
   padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
 }
 /* Médio altura 50px*/
 .card-m {
@@ -27,7 +27,7 @@
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
 }
 /* Grande altura 150px*/
 .card-l {
@@ -38,7 +38,7 @@
   gap: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
 }
 
 /* Cards tamanhos fixos (tmf)*/
@@ -48,7 +48,7 @@
   height: 100px;
   background: var(--cor-12);
   color: var(--cor-9);
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -59,7 +59,7 @@
   height: 95px;
   background: var(--cor-12);
   color: var(--cor-9);
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -71,7 +71,7 @@
   min-height: 170px;
   background: var(--cor-12);
   color: var(--cor-9);
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
@@ -86,7 +86,7 @@
   background: var(--cor-12);
   color: var(--cor-9);
   font-weight: var(--font-light);
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
 }
 .card-select-s {
   border-radius: 0.625rem;
@@ -94,7 +94,7 @@
   background: var(--cor-12);
   color: var(--cor-9);
   font-weight: var(--font-medium-regular);
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
 }
 .card-select-m {
   padding: 0.625rem;
@@ -104,7 +104,7 @@
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
-  border: 1px solid var(--cor-p1);
+  border: 1px solid transparent;
 }
 
 .area-template-fil-content .card-xs,
@@ -186,6 +186,6 @@
   .area-template-tmf-alt-content .card-select-s,
   .area-template-tmf-alt-content .card-select-m {
     background: var(--cor-12);
-    border: 1px solid var(--cor-p1);
+    border: 1px solid transparent;
   }
 }

@@ -70,7 +70,7 @@
             <li class="area-template-alt">
               <ul class="area-template-alt-content lista-select">
                 <li class="item1">
-                  <select class="card-select-m" id="estado" onchange="carregarCidades()">
+                  <select class="card-select-m" id="estado"> <!-- onchange="carregarCidades()"-->>
                     <option value="" selected disabled>Selecione um estado</option>
                     <option value="PE">Pernambuco</option>
                     <option value="SP">São Paulo</option>
@@ -507,7 +507,33 @@
     </div>
   </div>
 
+  <script>
+    document.getElementById('estado').addEventListener('change', function () {
+      enviarEstado();
+    });
 
+    document.getElementById('cidade').addEventListener('change', function () {
+      enviarEstado();
+    });
+
+    document.getElementById('bairro').addEventListener('change', function () {
+      enviarEstado();
+    });
+
+    function enviarEstado() {
+      var estadoSelecionado = document.getElementById('estado').value;
+      var cidadeSelecionada = document.getElementById('cidade').value;
+      var bairroSelecionado = document.getElementById('bairro').value;
+
+      if (estadoSelecionado && cidadeSelecionada && bairroSelecionado) {
+        var url = "/?/";
+        url += estadoSelecionado + "/";
+        url += cidadeSelecionada + "/";
+        url += bairroSelecionado;
+        window.location.href = url;
+      }
+    }
+  </script>
 
 
   <script src="./static/js/SombraHeaderScroll.js"></script>
@@ -518,7 +544,7 @@
   <script src="./static/js/ExibirDetalhesAniversariante.js"></script>
   <script src="./static/js/Exibiraniversaiantes.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
-  <script src="./static/js/CarregarMunicipios.js"></script>
+  <script src="./static/js/CarregarDestino.js"></script>
 
 
 </body>

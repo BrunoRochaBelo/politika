@@ -33,12 +33,18 @@
           <div id="aba1" class="aba-template active">
             <fieldset>
               <legend class="titulo-xl"></legend>
-              <div class="campo">
-                <label for="centro_custo">Centro de custo</label>
-                <select id="centro_custo" name="centro_custo">
-                  <option value="">Selecione</option>
-                  <!-- Opções do select -->
-                </select>
+              <div class="form-2-colum">
+                <div class="campo">
+                  <label for="centro_custo">Centro de custo</label>
+                  <select id="centro_custo" name="centro_custo">
+                    <option value="">Selecione</option>
+                    <!-- Opções do select -->
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="referencia_despesa">Referência da despesa</label>
+                  <input type="text" id="referencia_despesa" name="referencia_despesa">
+                </div>
               </div>
               <div class="campo">
                 <label for="natureza_despesa">Natureza da despesa</label>
@@ -48,24 +54,22 @@
                 </select>
               </div>
               <div class="campo">
-                <label for="referencia_despesa">Referência da despesa</label>
-                <input type="text" id="referencia_despesa" name="referencia_despesa">
-              </div>
-              <div class="campo">
-                <label for="data_despesa">Data da despesa</label>
-                <input type="date" id="data_despesa" name="data_despesa" placeholder="dd/mm/aaaa">
+                <label for="descricao_despesa">Descrição</label>
+                <input type="text" id="descricao_despesa" name="descricao_despesa">
               </div>
               <div class="campo">
                 <label for="ordenador_despesa">Ordenador de despesa</label>
                 <input type="text" id="ordenador_despesa" name="ordenador_despesa">
               </div>
-              <div class="campo">
-                <label for="descricao_despesa">Descrição</label>
-                <input type="text" id="descricao_despesa" name="descricao_despesa">
-              </div>
-              <div class="campo">
-                <label for="valor_total">Valor Total</label>
-                <input type="number" id="valor_total" name="valor_total">
+              <div class="form-2-colum">
+                <div class="campo">
+                  <label for="data_despesa">Data da despesa</label>
+                  <input type="date" id="data_despesa" name="data_despesa" placeholder="dd/mm/aaaa">
+                </div>
+                <div class="campo">
+                  <label for="valor_total">Valor Total</label>
+                  <input type="number" id="valor_total" name="valor_total">
+                </div>
               </div>
               <div class="campo">
                 <label for="cnpj_cpf_fornecedor">CNPJ / CPF fornecedor</label>
@@ -75,6 +79,7 @@
                 <label for="nome_fornecedor">Nome do fornecedor</label>
                 <input type="text" id="nome_fornecedor" name="nome_fornecedor">
               </div>
+
             </fieldset>
             <div class="botoes">
               <button type="button" class="btn-leaked" onclick="voltar()">Voltar</button>
@@ -135,22 +140,8 @@
           <div id="aba3" class="aba-template">
             <fieldset>
               <legend class="titulo-xl"></legend>
-              <div class="campo">
-                <label for="especie_documento">Espécie documento</label>
-                <select id="especie_documento_aba3" name="especie_documento">
-                  <option value="">Selecione</option>
-                  <option value="test3">test3</option>
-                  <option value="test4">test4</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="numero_documento">Número documento</label>
-                <input type="number" id="numero_documento" name="numero_documento">
-              </div>
-              <div class="campo">
-                <label for="descricao_documento">Descrição documento</label>
-                <input type="text" id="descricao_documento" name="descricao_documento">
-              </div>
+
+
               <div class="campo">
                 <label for="valor_pagamento">Valor</label>
                 <input type="number" id="valor_pagamento" name="valor_pagamento">
@@ -171,7 +162,23 @@
                 <input type="text" id="comprovante_pagamento" name="comprovante_pagamento">
               </div>
               <div class="campo">
-                <label for="anexar_documento_pagamento" class="file-label">Anexar documento comprobatório</label>
+                <label for="numero_documento">Número documento</label>
+                <input type="number" id="numero_documento" name="numero_documento">
+              </div>
+              <div class="campo">
+                <label for="descricao_documento">Descrição documento</label>
+                <input type="text" id="descricao_documento" name="descricao_documento">
+              </div>
+              <div class="campo">
+                <label for="especie_documento">Espécie documento</label>
+                <select id="especie_documento_aba3" name="especie_documento">
+                  <option value="">Selecione</option>
+                  <option value="test3">test3</option>
+                  <option value="test4">test4</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="anexar_documento_pagamento" class="file-label">Anexar documento</label>
                 <input type="file" id="anexar_documento_pagamento" name="anexar_documento_pagamento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba3', 'especie_documento_aba3')">
               </div>
             </fieldset>

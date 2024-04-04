@@ -60,14 +60,16 @@
   font-size: var(--font-medium-light);
   min-width: 33px;
 }
-.dia-semana:hover {
+.dia-semana:hover,
+.change-semana:hover {
   border: 1px solid #8653eb;
   color: var(--cor-9);
   box-shadow: 0 0 2px #c6b6fc, 0 0 4px #c6b6fc;
   background-color: #6941fb48;
   border: 1px solid #6941fb48;
 }
-.dia-semana:active {
+.dia-semana:active,
+.change-semana:active {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
 }
 .dia-visualize {
@@ -152,6 +154,11 @@
 .area-aniversaiantes.visible {
   opacity: 1;
   max-height: 80vh;
+}
+
+/* Estilizando o ícone do calendário */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 @media only screen and (max-width: 819px) {

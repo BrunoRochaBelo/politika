@@ -962,6 +962,27 @@
     document.getElementById('mesAno').value = data_formatada;
   </script>
 
+  <script>
+    document.getElementById('mesAno').addEventListener('change', function () {
+      enviarData();
+    });
+
+    document.getElementById('mesAno').addEventListener('blur', function () {
+      enviarData();
+    });
+
+    document.getElementById('mesAno').addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        enviarData();
+      }
+    });
+
+    function enviarData() {
+      var dataSelecionada = document.getElementById('mesAno').value;
+      window.location.href = "/calendario_list/" + dataSelecionada;
+    }
+  </script>
+
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>

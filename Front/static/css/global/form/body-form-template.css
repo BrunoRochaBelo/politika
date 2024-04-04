@@ -29,7 +29,7 @@
 .main-form {
   grid-area: main-form;
   overflow-x: hidden;
-  padding: 5px;
+
   justify-content: space-between;
   align-content: start;
   border-bottom-left-radius: 9px;
@@ -38,7 +38,6 @@
   height: auto;
   max-height: 89vh;
   border: 5px solid transparent;
-  padding: 5px;
   font-size: var(--titulo-s);
   color: var(--cor-1);
   border: 1px solid #ce84ff0a;

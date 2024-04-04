@@ -161,7 +161,8 @@
 
 /* Estilos */
 .area-template-content::-webkit-scrollbar,
-.area-template-alt-content::-webkit-scrollbar {
+.area-template-alt-content::-webkit-scrollbar,
+.area-template-tmf-alt-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
 

@@ -3,13 +3,13 @@
   display: grid;
   margin-top: auto;
   padding: 10px;
-  border-radius: 9px;
+  border-radius: 5px;
   border: 1px solid #ce84ff0a;
   background: var(--cor-12);
 }
 
 fieldset {
-  border-radius: 9px;
+  border-radius: 5px;
   padding: 0px;
   border: none;
   margin: 0px;
@@ -43,8 +43,9 @@ label {
   color: var(--cor-0);
   background: var(--cor-p4);
   border: 1px solid transparent;
-  border-radius: 9px;
+  border-radius: 5px;
 }
+
 .campo input[type="file"] {
   display: none;
 }
@@ -55,6 +56,7 @@ label {
   cursor: pointer;
   border-radius: 5px;
 }
+
 .campo input[type="checkbox"],
 .campo input[type="radio"] {
   width: auto;
@@ -161,7 +163,7 @@ form span {
 }
 .botoes .btn-leaked {
   width: 30%;
-  border-radius: 9px;
+  border-radius: 5px;
   background: transparent;
   color: var(--cor-9);
   border: 1px solid var(--cor-8);
@@ -169,7 +171,7 @@ form span {
 }
 .botoes .btn-filled {
   width: 30%;
-  border-radius: 9px;
+  border-radius: 5px;
   background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
   color: #3f1c80;
   border: 1px solid #3f1c80;
