@@ -19,7 +19,7 @@
   gap: 15px;
   padding: 10px 5px;
   background: #0a0119cd;
-  border-radius: 9px;
+  border-radius: 5px;
   color: var(--cor-9);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -54,7 +54,7 @@
   border-radius: 4px;
   color: var(--cor-9);
   background: none;
-  border-radius: 0.625rem;
+  border-radius: 5px;
   border: 1px solid var(--cor-9);
   cursor: pointer;
   font-size: var(--font-medium-light);
@@ -103,10 +103,10 @@
   padding: 10px;
   border-radius: 4px;
   color: var(--cor-9);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   cursor: pointer;
   font-size: var(--font-medium-regular);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   border: 1px solid #9690a693;
 }
 .avancar {
@@ -136,7 +136,7 @@
   /* Altera a cor do texto e adiciona uma borda ao passar o mouse */
   color: var(--cor-5);
   border-color: var(--cor-5);
-  border-radius: 0.625rem;
+  border-radius: 5px;
 }
 .btn-calendario:active {
   background-color: darken(var(--cor-12), 10%);

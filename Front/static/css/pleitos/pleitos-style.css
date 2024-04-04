@@ -13,7 +13,7 @@
 
 .tabela-historico {
   background: var(--cor-12);
-  border-radius: 9px;
+  border-radius: 5px;
   padding: 20px;
 }
 .tabela-historico table {

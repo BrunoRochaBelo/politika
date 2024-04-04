@@ -2,7 +2,7 @@
 .lista-vertical-template {
   display: grid;
   grid-auto-flow: row;
-  border-radius: 0.625rem;
+  border-radius: 5px;
   gap: 18px;
   scrollbar-width: thick;
 }
@@ -10,7 +10,7 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  border-radius: 0.625rem;
+  border-radius: 5px;
   gap: 2px;
   scrollbar-width: thick;
 }
@@ -18,7 +18,7 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  border-radius: 0.625rem;
+  border-radius: 5px;
   gap: 5px;
   scrollbar-width: thick;
 }
@@ -80,22 +80,22 @@
 }
 /* Adiciona borda arredondada nos cantos esquerdos e direitos do primeiro e último cards dentro da lista */
 .lista-select li:first-child .card-select-m {
-  border-top-left-radius: 0.625rem;
+  border-top-left-radius: 5px;
 }
 .lista-select li:nth-child(2) .card-select-m {
-  border-top-right-radius: 0.625rem;
+  border-top-right-radius: 5px;
 }
 .lista-select li:last-child .card-select-m {
-  border-bottom-left-radius: 0.625rem;
-  border-bottom-right-radius: 0.625rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .lista-vertical-template-alt li:first-child .card-s {
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .lista-vertical-template-alt li:last-child .card-s {
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .item3 input {
   width: 100%;

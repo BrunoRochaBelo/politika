@@ -6,7 +6,7 @@
   color: var(--cor-9);
   padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   border: 1px solid transparent;
 }
 /* Pequeno altura 35px*/
@@ -16,7 +16,7 @@
   color: var(--cor-9);
   padding: 10px 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   border: 1px solid transparent;
 }
 /* Médio altura 50px*/
@@ -26,7 +26,7 @@
   color: var(--cor-9);
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   border: 1px solid transparent;
 }
 /* Grande altura 150px*/
@@ -37,7 +37,7 @@
   padding: 15px;
   gap: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   border: 1px solid transparent;
 }
 
@@ -51,7 +51,7 @@
   border: 1px solid transparent;
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
 }
 /* Médio */
 .card-tmf-m {
@@ -62,7 +62,7 @@
   border: 1px solid transparent;
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
 }
 /* Grande */
 .card-tmf-l {
@@ -74,13 +74,13 @@
   border: 1px solid transparent;
   padding: 15px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
 }
 
 /* Cards dos selects */
 /* Muito Pequeno altura 35px */
 .card-select-xs {
-  border-radius: 0.625rem;
+  border-radius: 5px;
   width: 100%;
   padding: 0.3rem;
   background: var(--cor-12);
@@ -89,7 +89,7 @@
   border: 1px solid transparent;
 }
 .card-select-s {
-  border-radius: 0.625rem;
+  border-radius: 5px;
   width: 100%;
   background: var(--cor-12);
   color: var(--cor-9);
@@ -103,7 +103,7 @@
   color: var(--cor-9);
   padding: 0.625rem;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   border: 1px solid transparent;
 }
 
@@ -130,7 +130,7 @@
   background: var(--cor-12);
   color: var(--cor-6);
   border: 1px solid var(--cor-2);
-  border-radius: 9px;
+  border-radius: 5px;
 }
 
 /* Estilo para o efeito hover em todos os elementos especificados */

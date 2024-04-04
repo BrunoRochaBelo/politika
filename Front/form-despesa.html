@@ -92,14 +92,6 @@
             <fieldset>
               <legend class="titulo-xl"></legend>
               <div class="campo">
-                <label for="especie_documento">Espécie documento</label>
-                <select id="especie_documento_aba2" name="especie_documento">
-                  <option value="">Selecione</option>
-                  <option value="test1">test1</option>
-                  <option value="test2">test2</option>
-                </select>
-              </div>
-              <div class="campo">
                 <label for="numero_documento">Número documento</label>
                 <input type="number" id="numero_documento" name="numero_documento">
               </div>
@@ -108,7 +100,15 @@
                 <input type="text" id="descricao_documento" name="descricao_documento">
               </div>
               <div class="campo">
-                <label for="anexar_documento" class="file-label">Anexar documento comprobatório</label>
+                <label for="especie_documento">Espécie documento</label>
+                <select id="especie_documento_aba2" name="especie_documento">
+                  <option value="">Selecione</option>
+                  <option value="test1">test1</option>
+                  <option value="test2">test2</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="anexar_documento" class="file-label">Anexar documento</label>
                 <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba2', 'especie_documento_aba2')">
               </div>
             </fieldset>

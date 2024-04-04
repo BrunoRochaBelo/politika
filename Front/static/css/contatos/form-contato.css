@@ -12,9 +12,6 @@
   cursor: pointer;
 }
 
-.campo:not(#camposFilhosContainer) {
-  margin: 0.625rem;
-}
 .ocultar {
   display: none;
 }
@@ -84,7 +81,7 @@
   display: inline;
   padding: 10px 20px;
   border: 2px solid var(--cor-p4);
-  border-radius: 9px;
+  border-radius: 5px;
   cursor: pointer;
   text-align: center;
   margin-left: 0px;

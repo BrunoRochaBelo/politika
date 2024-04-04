@@ -182,7 +182,7 @@
   display: grid;
   grid-auto-flow: column;
   background: var(--cor-p4);
-  border-radius: 0.625rem;
+  border-radius: 5px;
   justify-content: start;
   align-items: center;
 }

@@ -33,7 +33,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #4e2998;
-  border-radius: 9px;
+  border-radius: 5px;
   border: 2px solid #000000;
 }
 
@@ -53,7 +53,7 @@ body {
 
 ::-moz-scrollbar-thumb {
   background: #4e2998;
-  border-radius: 9px;
+  border-radius: 5px;
   border: 2px solid #000000;
 }
 
@@ -73,7 +73,7 @@ body {
 
 ::-ms-scrollbar-thumb {
   background: #4e2998;
-  border-radius: 9px;
+  border-radius: 5px;
   border: 2px solid #000000;
 }
 

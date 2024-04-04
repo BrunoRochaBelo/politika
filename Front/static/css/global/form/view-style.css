@@ -48,5 +48,4 @@
   display: grid;
   grid-template: auto/auto auto;
   width: 100%;
-  gap: 10px;
 }

@@ -1,7 +1,7 @@
 /* area-abas Template*/
 .area-abas-template {
   display: grid;
-  border-radius: 9px;
+  border-radius: 5px;
   grid:
     "area-abas-template-header" auto
     "area-abas-template-subHeader" auto
@@ -29,8 +29,8 @@
   overflow-x: hidden;
   background: #ce84ff0a;
   padding: 0px 5px 5px 5px;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   height: auto;
   max-height: 62vh;
   border: 5px solid transparent;
@@ -125,7 +125,7 @@
   justify-content: end;
 }
 .content-duas-abas {
-  border-top-right-radius: 9px;
+  border-top-right-radius: 5px;
 }
 /* RESPONSIVO */
 @media (max-width: 820px) {
