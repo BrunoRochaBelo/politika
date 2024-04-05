@@ -11,15 +11,20 @@ function toggleExibiraniversaiantes(diaId) {
 
   // Itera sobre cada elemento
   aniversaiantesElements.forEach(function (element) {
-    // Verifica se o elemento já tem a classe .visible
     if (element.classList.contains("visible")) {
-      // Se tiver, remove a classe .visible e adiciona a classe .hidden
       element.classList.remove("visible");
-      element.classList.add("hidden"); // Adiciona a classe .hidden se necessário
+      element.classList.add("hidden");
+      // Remove a classe item-visible dos elementos <li>
+      element.querySelectorAll("li").forEach(function (li) {
+        li.classList.remove("item-visible");
+      });
     } else {
-      // Se não tiver, remove a classe .hidden e adiciona a classe .visible
-      element.classList.remove("hidden"); // Remove a classe .hidden se necessário
+      element.classList.remove("hidden");
       element.classList.add("visible");
+      // Adiciona a classe item-visible aos elementos <li>
+      element.querySelectorAll("li").forEach(function (li) {
+        li.classList.add("item-visible");
+      });
     }
   });
 

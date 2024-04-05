@@ -1,7 +1,7 @@
 /* Area Template padrão*/
 .area-template {
   display: grid;
-  border-radius: 5px;
+  border-radius: 12px;
   grid:
     "area-template-header" auto
     "area-template-content" auto
@@ -17,12 +17,12 @@
   padding: 0.625rem;
   text-align: left;
   color: var(--cor-9);
-  border-radius: 5px;
+  border-radius: 12px;
 }
 .area-template-content {
   grid-area: area-template-content;
   overflow-x: hidden;
-  border-radius: 5px;
+  border-radius: 12px;
   background: #ce84ff0a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
@@ -35,7 +35,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 12px;
   grid:
     "area-template-alt-header" auto
     "area-template-alt-content" auto
@@ -51,7 +51,7 @@
   padding: 0.625rem;
   text-align: left;
   color: var(--cor-9);
-  border-radius: 5px;
+  border-radius: 12px;
 }
 .area-template-alt-header h2 {
   font-size: var(--titulo-m);
@@ -60,7 +60,7 @@
   grid-area: area-template-alt-content;
   padding: 5px;
   overflow-x: auto;
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 /* Area Template dos filtros*/
@@ -68,7 +68,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 12px;
   grid:
     "area-template-fil-header" auto
     "area-template-fil-content" auto
@@ -93,7 +93,7 @@
   gap: 1rem;
   max-height: auto;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 12px;
   background: #ce84ff0a;
   padding: 5px;
   border: 5px solid transparent;
@@ -104,7 +104,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 12px;
   grid:
     "area-template-tmf-header" auto
     "area-template-tmf-content" auto
@@ -121,7 +121,7 @@
   grid-area: area-template-tmf-content;
   overflow-x: auto;
   max-height: 350px;
-  border-radius: 5px;
+  border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 5px solid transparent;
 }
@@ -131,7 +131,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 12px;
   grid:
     "area-template-tmf-alt-header" auto
     "area-template-tmf-alt-content" auto
@@ -151,7 +151,7 @@
 .area-template-tmf-alt-content {
   grid-area: area-template-tmf-alt-content;
   overflow-x: hidden;
-  border-radius: 5px;
+  border-radius: 12px;
   background: #ce84ff0a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;

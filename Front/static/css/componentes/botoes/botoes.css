@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.625rem;
+  padding: 10px;
   background: linear-gradient(to right bottom, var(--cor-12), var(--cor-2));
   border-radius: 5px;
   border: 1px solid #ce84ff0a;

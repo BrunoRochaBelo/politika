@@ -4,7 +4,7 @@
   font-weight: regular;
   font-size: 10px;
   border-radius: 20px;
-  border: 1px solid var(--cor-9);
+  border: 1px solid var(--cor-p4);
   letter-spacing: 0.5px;
 }
 .calendario-large-card-editar .btn-leaked:hover,
@@ -51,10 +51,9 @@
 .dia-semana {
   text-align: center;
   padding: 10px;
-  border-radius: 4px;
   color: var(--cor-9);
   background: none;
-  border-radius: 5px;
+  border-radius: 7px;
   border: 1px solid var(--cor-9);
   cursor: pointer;
   font-size: var(--font-medium-light);
@@ -66,7 +65,6 @@
   color: var(--cor-9);
   box-shadow: 0 0 2px #c6b6fc, 0 0 4px #c6b6fc;
   background-color: #6941fb48;
-  border: 1px solid #6941fb48;
 }
 .dia-semana:active,
 .change-semana:active {
@@ -101,12 +99,10 @@
   text-align: center;
   position: relative;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 7px;
   color: var(--cor-9);
-  border-radius: 5px;
   cursor: pointer;
   font-size: var(--font-medium-regular);
-  border-radius: 5px;
   border: 1px solid #9690a693;
 }
 .avancar {
@@ -154,6 +150,9 @@
 .area-aniversaiantes.visible {
   opacity: 1;
   max-height: 80vh;
+}
+.lista-vertical-template-alt li.item-visible {
+  margin: 3px 0;
 }
 
 /* Estilizando o ícone do calendário */

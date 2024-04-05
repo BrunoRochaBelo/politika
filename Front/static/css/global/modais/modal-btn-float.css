@@ -18,7 +18,7 @@
   display: grid;
   bottom: 150px;
   right: 115px;
-  border-radius: 0.9375rem;
+  border-radius: 15px;
   min-width: 135px;
   background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
   color: #3f1c80;
@@ -68,7 +68,7 @@
   color: #3f1c80;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   border: 1px solid #3f1c80;
-  border-radius: 30%;
+  border-radius: 15px;
   font-size: 2rem;
   cursor: pointer;
   display: flex;
@@ -107,7 +107,7 @@
     color: #3f1c80;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
     border: 1px solid #3f1c80;
-    border-radius: 30%;
+    border-radius: 15px;
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
