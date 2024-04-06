@@ -22,7 +22,7 @@ function createOverlay() {
     var area = selectElement(".area-template-fil");
     var button = selectElement(".btn-recuar-expandir");
     var mainSidenav = selectElement(".main-sidenav");
-    var areaHeader = selectElement(".area-template-fil-header"); // Seleciona o elemento .area-template-fil-header
+    var areaHeader = selectElement(".area-template-fil-header");
 
     // Chama a função toggleVisibility para fechar o overlay
     toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
@@ -54,14 +54,14 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--cor-p3)"; // Altera a cor do texto do botão para var(--cor-p3)
+      button.style.color = "var(--cor-p3)";
       mainSidenav.style.height = "auto";
-      area.style.background = "#3a187a";
+      area.style.background = "#513598";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--cor-p3)";
-      areaHeader.style.fontSize = "var(--titulo-m)";
+      areaHeader.style.fontSize = "var(--titulo-xl)";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
       button.classList.add("hide-after");

@@ -1,15 +1,15 @@
 :root {
   --cor-0: #ffffff;
   --cor-1: #f8f8fc;
-  --cor-2: #0e0f18;
+  --cor-2: #291950;
   --cor-3: #caced0;
   --cor-4: #dfdfe3;
   --cor-5: #cac6c6;
   --cor-6: #d7d7d7;
   --cor-7: #a1a1a1;
-  --cor-8: rgb(95, 95, 95);
+  --cor-8: #5f5f5f;
   --cor-9: #aba4bd;
-  --cor-10: #090119;
+  --cor-10: #090212;
   --cor-11: #050505;
   --cor-12: #000000;
 
@@ -21,6 +21,7 @@
   --cor-p6: #242424;
   --cor-p7: #202023;
   --cor-p8: #202020;
+
   --cor-marc1: rgba(229, 115, 115);
   --cor-marc2: rgba(255, 138, 101);
   --cor-marc3: rgba(255, 183, 77);

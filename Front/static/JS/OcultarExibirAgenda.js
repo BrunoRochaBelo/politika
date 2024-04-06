@@ -22,7 +22,7 @@ function createOverlay() {
     var area = selectElement(".area-template-tmf-alt");
     var button = selectElement(".btn-suaAgenda");
     var mainSidenav = selectElement(".main-sidenav");
-    var areaHeader = selectElement(".area-template-tmf-alt-header"); // Ajustado para corresponder ao seu HTML
+    var areaHeader = selectElement(".area-template-tmf-alt-header");
 
     // Chama a função toggleVisibility para fechar o overlay
     toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
@@ -56,12 +56,12 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       button.innerHTML = "X";
       button.style.color = "var(--cor-p3)";
       mainSidenav.style.height = "72vh";
-      area.style.background = "#3a187a";
+      area.style.background = "#513598";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--cor-p3)";
-      areaHeader.style.fontSize = "var(--titulo-m)";
+      areaHeader.style.fontSize = "var(--titulo-xl)";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
       button.classList.add("hide-after");
@@ -83,7 +83,7 @@ function OcultarExibirAgenda() {
   var area = selectElement(".area-template-tmf-alt");
   var button = selectElement(".btn-suaAgenda");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(".area-template-tmf-alt-header"); // Ajustado para corresponder ao seu HTML
+  var areaHeader = selectElement(".area-template-tmf-alt-header");
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

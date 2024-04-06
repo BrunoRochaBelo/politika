@@ -1,9 +1,8 @@
 /* Pequeno */
 .quant-small-card {
   display: grid;
-
   grid:
-    "quant-small-card-title" 42px
+    "quant-small-card-title" auto
     "quant-small-card-desc" auto
     "quant-small-card-result" 24px
     /1fr;
@@ -11,8 +10,8 @@
 .quant-small-card-title {
   grid-area: quant-small-card-title;
   font-size: var(--titulo-xl);
-  justify-self: stretch;
   text-align: start;
+  color: #a383e1;
 }
 .quant-small-card-desc {
   grid-area: quant-small-card-desc;
@@ -23,10 +22,13 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
+  color: var(--cor-9);
 }
 .quant-small-card-result {
   grid-area: quant-small-card-result;
   font-size: var(--font-medium-regular);
-  align-self: end;
-  justify-self: start;
+  text-align: start;
+  background: var(--cor-2);
+  border-radius: 5px;
+  padding: 5px;
 }

@@ -2,6 +2,7 @@
 /* Pequeno */
 .aniversario-small-card {
   display: grid;
+  color: var(--cor-9);
   gap: 3px;
   align-content: center;
   white-space: nowrap;
@@ -19,6 +20,7 @@
   justify-self: start;
   align-self: center;
   font-size: var(--titulo-m);
+  color: #a383e1;
 }
 .aniversario-small-card-tipocontato {
   grid-area: aniversario-small-card-tipocontato;

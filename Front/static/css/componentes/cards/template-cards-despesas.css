@@ -2,6 +2,7 @@
 /* Médio */
 .despesas-medium-card {
   display: grid;
+  color: var(--cor-9);
   gap: 3px;
   align-content: center;
   text-overflow: ellipsis;
@@ -17,7 +18,7 @@
 }
 .despesas-medium-card-natureza {
   grid-area: despesas-medium-card-natureza;
-  border-left: 4px solid var(--cor-p4);
+  border-left: 4px solid var(--cor-2);
   padding-left: 10px;
   font-size: var(--titulo-s);
   justify-self: start;
@@ -29,7 +30,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--cor-p4);
+  background: var(--cor-2);
   border-radius: 7px;
   justify-content: start;
   align-items: center;

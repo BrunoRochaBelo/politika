@@ -12,12 +12,12 @@ body {
   overflow: auto;
   background: radial-gradient(
     circle at right bottom,
-    #0f0621,
-    #1d0947,
-    #361d68,
-    #2b1655,
-    #1d0947,
-    #0f0621
+    #37206a,
+    #48219d,
+    #5e3ba4,
+    #3e2374,
+    #48219d,
+    #37206a
   );
   scrollbar-face-color: #4e2998;
   scrollbar-track-color: #000000;

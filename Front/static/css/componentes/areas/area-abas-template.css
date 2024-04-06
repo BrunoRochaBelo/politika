@@ -78,9 +78,9 @@
   color: var(--cor-p4);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  background: var(--cor-10);
-  border: 1px solid var(--cor-10);
-  border-top: 5px solid var(--cor-10);
+  background: var(--cor-11);
+  border: 1px solid var(--cor-11);
+  border-top: 5px solid var(--cor-11);
   border-bottom: none;
   display: flex;
   justify-content: center;
@@ -89,12 +89,12 @@
 #nav1 a:hover,
 #nav2 a:hover,
 #nav3 a:hover {
-  background-color: #6941fb48;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border: 1px solid #6941fb48;
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid #a57ff0;
   border-bottom: none;
-  border-top: 5px solid #6941fb48;
+  border-top: 5px solid #a57ff0;
 }
 #nav1 a.indicador-2,
 #nav2 a.indicador-2,
@@ -104,9 +104,9 @@
   background: #ce84ff0a;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  border: 1px solid #3f1c80;
+  border: 1px solid #6228d7;
   border-bottom: none;
-  border-top: 5px solid #3f1c80;
+  border-top: 5px solid #6228d7;
 }
 
 .nav-duas-abas {
