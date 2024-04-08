@@ -38,14 +38,14 @@
   width: 100%;
 }
 .search-input {
-  padding: 0.625rem;
   border-radius: 20px;
+  padding: 0.625rem;
   cursor: pointer;
   width: 100%;
+  background: var(--cor-10);
   color: var(--cor-9);
-  background: var(--cor-11);
-  border: 1px solid #ce84ff0a;
-  border-right: none;
+  border: 1px solid var(--cor-p6);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 /* Cor do placeholder */
 .search-input::placeholder {
@@ -64,11 +64,13 @@
   border-right: none;
 }
 .search-button {
-  background: var(--cor-11);
+  background: var(--cor-10);
   border-radius: 20px;
+  padding: 8px;
+  border: none;
   cursor: pointer;
-  border: 1px solid #ce84ff0a;
-  border-left: none;
+  border: 1px solid var(--cor-p6);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 .search-icon {
   width: 18px;
@@ -90,9 +92,7 @@
     display: grid;
     align-content: center;
     justify-content: space-between;
-    grid: "header-back  header-search header-search" 55px;
-    background: none;
-    box-shadow: none;
+    grid: "header-back  header-search header-search" 48px;
   }
   .header-back {
     margin-left: 0.625rem;
@@ -114,9 +114,6 @@
     align-self: center;
   }
 
-  .search-input {
-    padding: 0.625rem;
-  }
   .search-input.scroll-active {
     padding: 0.625rem;
     cursor: pointer;
@@ -124,16 +121,16 @@
     background: var(--cor-10);
     color: var(--cor-9);
     border: 1px solid var(--cor-8);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   }
   .header-template.box-shadow-active {
     background: var(--cor-12);
   }
-
   .search-button.scroll-active {
     padding: 8px;
-    background: var(--cor-2);
     border: none;
     cursor: pointer;
     border: 1px solid var(--cor-8);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   }
 }

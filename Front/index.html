@@ -70,18 +70,25 @@
             <li class="area-template-alt">
               <ul class="area-template-alt-content lista-select">
                 <li class="item1">
-                  <select class="card-select-m" id="estado"> <!-- onchange="carregarCidades()"-->>
-                    <option value="" selected disabled>Selecione um estado</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="MG">Minas Gerais</option>
-                  </select>
+                  <form id="formEstado" action="/?uf_destino=" method="post">
+                    <select class="card-select-m" id="estado">
+                      <option value="" selected disabled>Selecione um estado</option>
+                      <option value="PE">Pernambuco</option>
+                      <option value="SP">São Paulo</option>
+                      <option value="RJ">Rio de Janeiro</option>
+                      <option value="MG">Minas Gerais</option>
+                    </select>
+                    <input type="submit" style="display: none;">
+                  </form>
                 </li>
                 <li class="item2">
-                  <select class="card-select-m" id="cidade">
-                    <option value="" selected disabled>Selecione um estado primeiro</option>
-                  </select>
+                  <form id="formCidade" method="post">
+                    <select class="card-select-m" id="cidade">
+                      <option value="" selected disabled>Selecione um estado primeiro</option>
+                      <!-- As opções de cidades serão adicionadas dinamicamente -->
+                    </select>
+                    <input type="submit" style="display: none;">
+                  </form>
                 </li>
                 <li class="item3">
                   <input class="card-select-m" type="text" id="bairro" placeholder="Selecione uma cidade e defina o bairro">
@@ -507,34 +514,72 @@
     </div>
   </div>
 
+
+
   <script>
-    document.getElementById('estado').addEventListener('change', function () {
-      enviarEstado();
-    });
+    // Variáveis globais
+    var estadoSelecionado = "";
+    var cidadeSelecionada = "";
 
-    document.getElementById('cidade').addEventListener('change', function () {
-      enviarEstado();
-    });
-
-    document.getElementById('bairro').addEventListener('change', function () {
-      enviarEstado();
-    });
-
-    function enviarEstado() {
-      var estadoSelecionado = document.getElementById('estado').value;
-      var cidadeSelecionada = document.getElementById('cidade').value;
-      var bairroSelecionado = document.getElementById('bairro').value;
-
-      if (estadoSelecionado && cidadeSelecionada && bairroSelecionado) {
-        var url = "/?/";
-        url += estadoSelecionado + "/";
-        url += cidadeSelecionada + "/";
-        url += bairroSelecionado;
-        window.location.href = url;
-      }
+    // Função para atualizar a variável global com o valor do estado selecionado
+    function atualizarEstadoSelecionado() {
+      estadoSelecionado = this.value;
     }
-  </script>
 
+    // Função para atualizar a variável global com o valor da cidade selecionada
+    function atualizarCidadeSelecionada() {
+      cidadeSelecionada = this.value;
+    }
+
+    // Ouvinte 'change' para o elemento 'select' de estados
+    document.getElementById('estado').addEventListener('change', atualizarEstadoSelecionado);
+
+    // Ouvinte 'change' para o elemento 'select' de cidades
+    document.getElementById('cidade').addEventListener('change', atualizarCidadeSelecionada);
+
+    // Ouvinte 'blur' para o elemento 'select' de estados
+    document.getElementById('estado').addEventListener('blur', function () {
+      document.getElementById('formEstado').dispatchEvent(new Event('submit'));
+    });
+
+    // Ouvinte 'blur' para o elemento 'select' de cidades
+    document.getElementById('cidade').addEventListener('blur', function () {
+      document.getElementById('formCidade').dispatchEvent(new Event('submit'));
+    });
+
+    // Ouvinte 'keypress' para o elemento 'select' de estados
+    document.getElementById('estado').addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        document.getElementById('formEstado').dispatchEvent(new Event('submit'));
+      }
+    });
+
+    // Ouvinte 'keypress' para o elemento 'select' de cidades
+    document.getElementById('cidade').addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        document.getElementById('formCidade').dispatchEvent(new Event('submit'));
+      }
+    });
+
+    // Ouvinte 'submit' para o formulário de estados
+    document.getElementById('formEstado').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Constrói a URL de ação do formulário usando o valor do estado selecionado
+      this.action = "/?uf_destino=" + encodeURIComponent(estadoSelecionado);
+
+      this.submit();
+    });
+
+    // Ouvinte 'submit' para o formulário de cidades
+    document.getElementById('formCidade').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      this.action = "/?uf_destino=" + encodeURIComponent(estadoSelecionado) + "&cid_destino=" + encodeURIComponent(cidadeSelecionada);
+
+      this.submit();
+    });
+  </script>
 
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibirAgenda.js"></script>

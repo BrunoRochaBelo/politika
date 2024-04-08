@@ -1,7 +1,13 @@
-// Função para iniciar a chamada telefônica
+// Função para iniciar a chamada telefônica e registrar a ligação
 function iniciarChamadaTelefonica(card) {
   const num = card.querySelector(".contatos-small-card-num");
-  window.location.href = "tel:" + num.textContent.trim();
+  const numero = num.textContent.trim();
+  const nomeContato = card
+    .querySelector(".contatos-small-card-title")
+    .textContent.trim();
+  const dataHora = new Date().toISOString();
+  window.location.href = "tel:" + numero;
+  registrarLigacao(nomeContato, numero, dataHora);
 }
 
 // Função para lidar com o clique nos cards

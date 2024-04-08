@@ -5,7 +5,7 @@
   background: var(--cor-10);
   color: var(--cor-9);
   padding: 10px 15px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
   border: 1px solid transparent;
 }
@@ -15,7 +15,7 @@
   background: var(--cor-10);
   color: var(--cor-9);
   padding: 10px 15px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
   border: 1px solid transparent;
 }
@@ -25,7 +25,7 @@
   background: var(--cor-10);
   color: var(--cor-9);
   padding: 15px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
   border: 1px solid transparent;
 }
@@ -36,7 +36,7 @@
   color: var(--cor-9);
   padding: 15px;
   gap: 0.625rem;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
   border: 1px solid transparent;
 }
@@ -50,7 +50,7 @@
   color: var(--cor-9);
   border: 1px solid transparent;
   padding: 15px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
 }
 /* Médio */
@@ -61,7 +61,7 @@
   color: var(--cor-9);
   border: 1px solid transparent;
   padding: 15px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
 }
 /* Grande */
@@ -73,7 +73,7 @@
   color: var(--cor-9);
   border: 1px solid transparent;
   padding: 15px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
 }
 
@@ -102,7 +102,7 @@
   background: var(--cor-10);
   color: var(--cor-9);
   padding: 0.625rem;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   border: 1px solid transparent;
 }
@@ -126,7 +126,7 @@
 .area-template-tmf-alt-content .card-tmf-l {
   background: var(--cor-10);
   color: var(--cor-6);
-  border: 1px solid var(--cor-2);
+  border: 1px solid transparent;
   border-radius: 7px;
 }
 .area-template-tmf-alt-content .card-select-xs,
@@ -134,7 +134,7 @@
 .area-template-tmf-alt-content .card-select-m {
   background: var(--cor-10);
   color: var(--cor-6);
-  border: 1px solid var(--cor-2);
+  border: 1px solid transparent;
   border-radius: 5px;
 }
 

@@ -23,7 +23,7 @@
   grid-area: area-template-content;
   overflow-x: hidden;
   border-radius: 12px;
-  background: #ce84ff0a;
+  background: rgba(25, 25, 25, 0.425);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 80vh;
@@ -94,7 +94,7 @@
   max-height: auto;
   overflow: hidden;
   border-radius: 12px;
-  background: #ce84ff0a;
+  background: rgba(25, 25, 25, 0.425);
   padding: 5px;
   border: 5px solid transparent;
 }
@@ -152,7 +152,7 @@
   grid-area: area-template-tmf-alt-content;
   overflow-x: hidden;
   border-radius: 12px;
-  background: #ce84ff0a;
+  background: rgba(25, 25, 25, 0.425);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 80vh;

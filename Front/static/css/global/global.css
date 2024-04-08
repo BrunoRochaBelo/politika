@@ -10,15 +10,7 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   overflow: auto;
-  background: radial-gradient(
-    circle at right bottom,
-    #37206a,
-    #48219d,
-    #5e3ba4,
-    #3e2374,
-    #48219d,
-    #37206a
-  );
+  background: linear-gradient(to right bottom, #452684, #312e77);
   scrollbar-face-color: #4e2998;
   scrollbar-track-color: #000000;
 }

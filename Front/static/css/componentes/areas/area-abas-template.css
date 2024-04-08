@@ -19,7 +19,7 @@
   grid-area: area-abas-template-subHeader;
   display: grid;
   align-items: center;
-  background: #ce84ff0a;
+  background: rgba(25, 25, 25, 0.425);
   justify-items: space-between;
   padding: 5px 5px 0px 5px;
   color: var(--cor-9);
@@ -27,13 +27,18 @@
 .area-abas-template-content {
   grid-area: area-abas-template-content;
   overflow-x: hidden;
-  background: #ce84ff0a;
+  background: rgba(25, 25, 25, 0.425);
   padding: 0px 5px 5px 5px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   height: auto;
   max-height: 62vh;
   border: 5px solid transparent;
+}
+
+.area-abas-template-content-alt {
+  max-height: 80vh;
+  padding: 0px;
 }
 
 /* Estilos */
@@ -75,12 +80,12 @@
 #nav3 a {
   font-size: 1rem;
   padding: 9px;
-  color: var(--cor-p4);
+  color: var(--cor-10);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  background: var(--cor-11);
-  border: 1px solid var(--cor-11);
-  border-top: 5px solid var(--cor-11);
+  background: var(--cor-2);
+  border: 1px solid var(--cor-2);
+  border-top: 5px solid var(--cor-2);
   border-bottom: none;
   display: flex;
   justify-content: center;
@@ -93,15 +98,15 @@
     0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
   border: 1px solid #a57ff0;
-  border-bottom: none;
   border-top: 5px solid #a57ff0;
+  border-bottom: none;
 }
 #nav1 a.indicador-2,
 #nav2 a.indicador-2,
 #nav3 a.indicador-2 {
   font-weight: bold;
   color: var(--cor-9);
-  background: #ce84ff0a;
+  background: rgba(25, 25, 25, 0.425);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   border: 1px solid #6228d7;
@@ -111,7 +116,7 @@
 
 .nav-duas-abas {
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr 1fr;
+  grid-template-columns: 0.6fr 0.6fr 1fr;
   text-align: center;
   justify-content: center;
   gap: 0.1rem;
@@ -142,5 +147,19 @@
     border-style: solid;
     border-width: 5px 3px;
     border-color: transparent;
+  }
+
+  .area-abas-template-content-alt {
+    max-height: 72vh;
+    padding: 0px;
+  }
+
+  #nav1 a:hover,
+  #nav2 a:hover,
+  #nav3 a:hover {
+    box-shadow: none;
+    border: 1px solid #a57ff0;
+    border-top: 5px solid #a57ff0;
+    border-bottom: none;
   }
 }
