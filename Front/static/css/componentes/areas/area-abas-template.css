@@ -19,7 +19,7 @@
   grid-area: area-abas-template-subHeader;
   display: grid;
   align-items: center;
-  background: rgba(25, 25, 25, 0.425);
+  background: rgba(26, 23, 31, 0.25);
   justify-items: space-between;
   padding: 5px 5px 0px 5px;
   color: var(--cor-9);
@@ -27,7 +27,7 @@
 .area-abas-template-content {
   grid-area: area-abas-template-content;
   overflow-x: hidden;
-  background: rgba(25, 25, 25, 0.425);
+  background: rgba(26, 23, 31, 0.25);
   padding: 0px 5px 5px 5px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -84,8 +84,8 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   background: var(--cor-2);
-  border: 1px solid var(--cor-2);
-  border-top: 5px solid var(--cor-2);
+  border: 1px solid var(--cor-11);
+  border-top: 5px solid var(--cor-11);
   border-bottom: none;
   display: flex;
   justify-content: center;
@@ -100,13 +100,14 @@
   border: 1px solid #a57ff0;
   border-top: 5px solid #a57ff0;
   border-bottom: none;
+  color: #a57ff0;
 }
 #nav1 a.indicador-2,
 #nav2 a.indicador-2,
 #nav3 a.indicador-2 {
   font-weight: bold;
   color: var(--cor-9);
-  background: rgba(25, 25, 25, 0.425);
+  background: rgba(26, 23, 31, 0.25);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   border: 1px solid #6228d7;

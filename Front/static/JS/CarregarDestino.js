@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const estadoSelect = document.getElementById("estado");
+
+  // Chama a função carregarCidades quando o valor do estado é alterado e Enter é pressionado
+  estadoSelect.addEventListener("change", carregarCidades);
+
+  // Chama a função carregarCidades quando o elemento perde o foco
+  estadoSelect.addEventListener("blur", carregarCidades);
+});
+
 function carregarCidades() {
   const estadoSelect = document.getElementById("estado");
   const estadoSelecionado = estadoSelect.value;

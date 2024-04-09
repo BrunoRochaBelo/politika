@@ -20,27 +20,27 @@
       "type": "image/png"
     },
     {
-      "src": "./static/imagens/icones/1-estrela.png",
+      "src": "./static/imagens/icones/1-estrela.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/2-estrelas.png",
+      "src": "./static/imagens/icones/2-estrelas.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/3-estrelas.png",
+      "src": "./static/imagens/icones/3-estrelas.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/4-estrelas.png",
+      "src": "./static/imagens/icones/4-estrelas.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/5-estrelas.png",
+      "src": "./static/imagens/icones/5-estrelas.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
