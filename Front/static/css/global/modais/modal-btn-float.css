@@ -66,7 +66,9 @@
   height: 75px;
   background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
   color: #3f1c80;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 1px #3f1c80, 0 0 2px #3f1c80, 0px 4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.35),
+    0 3px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid #3f1c80;
   border-radius: 15px;
   font-size: 2rem;
@@ -78,7 +80,6 @@
     right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
     box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 1000;
-  box-shadow: 0 0 1px #3f1c80, 0 0 2px #3f1c80;
 }
 .floatingButton:hover {
   border: 1px solid #a57ff0;
@@ -106,7 +107,9 @@
     height: 61px;
     background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
     color: #3f1c80;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px #3f1c80, 0 0 2px #3f1c80,
+      0px 4px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid #3f1c80;
     border-radius: 15px;
     font-size: 1.5rem;
@@ -118,6 +121,5 @@
       right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
       box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 1000;
-    box-shadow: 0 0 1px #3f1c80, 0 0 2px #3f1c80;
   }
 }

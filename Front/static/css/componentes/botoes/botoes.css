@@ -10,7 +10,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.35),
+    0 3px 6px rgba(0, 0, 0, 0.05);
 }
 .btn-leaked {
   padding: 0.75rem;
@@ -24,7 +26,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.35),
+    0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
 .btn-filter-leaked {
@@ -40,7 +44,9 @@
   color: var(--cor-0);
   box-shadow: none;
   cursor: pointer;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.35),
+    0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
 .area-template-fil-content .btn-filter-leaked {
@@ -74,7 +80,9 @@
   cursor: pointer;
   position: relative;
   align-content: start;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.35),
+    0 3px 6px rgba(0, 0, 0, 0.05);
 }
 .btn-filtro-pesq-title {
   font-size: 14px;
