@@ -561,6 +561,31 @@
     });
   </script>
 
+  <script>
+    // Variáveis globais
+    var bairroSelecionado = "";
+
+    // Função para atualizar a variável global com o valor do bairro selecionado
+    function atualizarBairroSelecionado() {
+      bairroSelecionado = this.value;
+      var estadoSetado = document.getElementById("estado").value;
+      var cidadeSetada = document.getElementById("cidade").value;
+
+      // Chama a URL com o estado, a cidade e o bairro selecionados
+      window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSetado) + "&wcid_destino=" + encodeURIComponent(cidadeSetada) + "&wbairro_destino=" + encodeURIComponent(bairroSelecionado);
+    }
+
+    // Ouvinte 'blur' para o elemento 'select' de bairros
+    document.getElementById("bairro").addEventListener("blur", atualizarBairroSelecionado);
+
+    // Ouvinte 'keypress' para o elemento 'select' de bairros
+    document.getElementById("bairro").addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        atualizarBairroSelecionado.call(this);
+      }
+    });
+  </script>
+
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibirAgenda.js"></script>
   <script src="./static/js/RecuarExpandirHorizontal.js"></script>

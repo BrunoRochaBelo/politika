@@ -159,10 +159,45 @@
   border: 5px solid transparent;
 }
 
+/* Area Template para cabeçalhos fixos*/
+.area-template-cbf {
+  display: grid;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  border-radius: 5px;
+  gap: 5px;
+  height: 80vh;
+  grid:
+    "area-template-cbf-header"
+    "area-template-cbf-content"
+    / 1fr;
+}
+.area-template-cbf-header {
+  grid-area: area-template-cbf-header;
+  display: grid;
+  align-items: center;
+  background: none;
+  justify-items: space-between;
+  padding: 0px;
+  color: var(--cor-9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.area-template-cbf-content {
+  grid-area: area-template-cbf-content;
+  overflow-x: hidden;
+  padding: 0px;
+  height: auto;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
 /* Estilos */
 .area-template-content::-webkit-scrollbar,
 .area-template-alt-content::-webkit-scrollbar,
-.area-template-tmf-alt-content::-webkit-scrollbar {
+.area-template-tmf-alt-content::-webkit-scrollbar,
+.area-template-cbf-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
 
@@ -244,6 +279,15 @@
     overflow: auto;
     padding: 3px;
     background: none;
+  }
+
+  /* Area Template para cabeçalhos fixos*/
+  .area-template-cbf {
+    height: 72vh;
+  }
+  .area-template-cbf-content {
+    grid-area: area-template-cbf-content;
+    max-height: 58vh;
   }
 
   .area-template::-webkit-scrollbar,

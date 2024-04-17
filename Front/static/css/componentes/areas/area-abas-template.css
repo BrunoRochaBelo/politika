@@ -36,6 +36,7 @@
   border: 5px solid transparent;
 }
 
+/* Para quando não usar o subHeader */
 .area-abas-template-content-alt {
   max-height: 80vh;
   padding: 0px;
