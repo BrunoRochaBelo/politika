@@ -892,8 +892,8 @@
           <div class="area-template-cbf">
             <div class="area-template-cbf-header">
               <div class="lista-select nav-calendar">
-                <input type="date" class="item1 btn-calendario" id="mesAno">
-                <div class="item2 hoje" id="hoje"></div>
+                <input type="date" class="item1 btn-calendario" id="tarefa_mesAno">
+                <div class="item2 hoje" id="tarefa_hoje"></div>
                 <ul class="lista-horizontal-template item3">
                   <li class="filtro-tarefa">
                     <h3>Todas</h3>
@@ -917,7 +917,30 @@
               </div>
             </div>
             <div class="area-template-cbf-content">
-              lista de tarefas
+              <div class="area-template-alt-content list-contato">
+                <ul class="lista-vertical-template">
+                  <li class="area-template-alt">
+                    <a class="card-m tarefa-small-card" href="#">
+                      <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                      <div class="tarefa-small-card-tag" data-filter="tagTarefa">
+                        <div class="marcador-item cor-marc3">
+                          <p><strong>Marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="tarefa-small-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                      <p class="tarefa-small-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                      <p class="tarefa-small-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                      <div class="tarefa-small-card-desc" data-filter="descricaoTarefa">
+                        <p>Descrição da Tarefa</p>
+                      </div>
+                      <div class="tarefa-small-card-editar">
+                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                      </div>
+                      <div class="tarefa-small-card-id" data-filter="tarefa-small-card-id">{{tarefa-small-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -975,7 +998,7 @@
     </div>
   </div>
 
-  <!-- Script para preencher as datas no area-abas-template-subHeader -->
+  <!-- Script para preencher as datas de agenda -->
   <script>
     var data_corrente = new Date();
     var dia = String(data_corrente.getDate()).padStart(2, '0');
@@ -989,28 +1012,21 @@
     // Preencher o campo de data com a data completa
     document.getElementById('mesAno').value = data_formatada;
   </script>
-
+  <!-- Script para preencher as datas de tarefa -->
   <script>
-    document.getElementById('mesAno').addEventListener('change', function () {
-      enviarData();
-    });
+    document.addEventListener('DOMContentLoaded', function () {
+      var data_corrente = new Date();
+      var dia = String(data_corrente.getDate()).padStart(2, '0');
+      var mes = String(data_corrente.getMonth() + 1).padStart(2, '0'); // Os meses são indexados a partir de 0
+      var ano = data_corrente.getFullYear();
+      var data_formatada = ano + '-' + mes + '-' + dia;
 
-    document.getElementById('mesAno').addEventListener('blur', function () {
-      enviarData();
-    });
 
-    document.getElementById('mesAno').addEventListener('keypress', function (event) {
-      if (event.key === 'Enter') {
-        enviarData();
-      }
+      // Atualizar os elementos adicionais
+      document.getElementById('tarefa_hoje').textContent = dia;
+      document.getElementById('tarefa_mesAno').value = data_formatada;
     });
-
-    function enviarData() {
-      var dataSelecionada = document.getElementById('mesAno').value;
-      window.location.href = "/calendario_list/" + dataSelecionada;
-    }
   </script>
-
 
 
 

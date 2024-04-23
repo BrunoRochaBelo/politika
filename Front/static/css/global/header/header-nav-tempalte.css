@@ -40,12 +40,21 @@
 }
 .header-nav-template a:hover {
   padding: auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: #7a44e7;
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid #a57ff0;
+}
+.header-nav-template a:hover img {
   background: radial-gradient(
     circle at center,
-    #8653eb43,
-    #8653eb47,
-    #8653eb47,
-    #8653eb0d,
+    #966fe478,
+    #966fe46d,
+    #7e57cd47,
+    #8d62e20d,
     transparent,
     transparent
   );

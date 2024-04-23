@@ -16,6 +16,8 @@ function selecionarDia(dia) {
   if (conteudoSelecionado) {
     conteudoSelecionado.classList.remove("dia-hidden");
     conteudoSelecionado.classList.add("dia-visible");
+    // Definir o scroll do conteúdo selecionado para o topo
+    conteudoSelecionado.scrollTo(0, 0);
   }
 
   // Hide all other content sections
