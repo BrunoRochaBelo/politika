@@ -28,6 +28,27 @@ function mostrarAba(id) {
       }
 
       aba.style.display = "block";
+
+      // Ativa o filtro correspondente à aba ativa
+      if (id === "aba1") {
+        if (document.getElementById("filtro1")) {
+          document.getElementById("filtro1").classList.remove("inactiveFil");
+          document.getElementById("filtro1").classList.add("activeFil");
+        }
+        if (document.getElementById("filtro2")) {
+          document.getElementById("filtro2").classList.remove("activeFil");
+          document.getElementById("filtro2").classList.add("inactiveFil");
+        }
+      } else if (id === "aba2") {
+        if (document.getElementById("filtro2")) {
+          document.getElementById("filtro2").classList.remove("inactiveFil");
+          document.getElementById("filtro2").classList.add("activeFil");
+        }
+        if (document.getElementById("filtro1")) {
+          document.getElementById("filtro1").classList.remove("activeFil");
+          document.getElementById("filtro1").classList.add("inactiveFil");
+        }
+      }
     } else {
       aba.classList.remove("active");
 

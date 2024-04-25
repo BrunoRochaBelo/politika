@@ -10,7 +10,7 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   overflow: auto;
-  background: linear-gradient(to right bottom, #452684, #312e77);
+  background: linear-gradient(to right bottom, #5631a0, rgb(82, 78, 185));
   scrollbar-face-color: #4e2998;
   scrollbar-track-color: #000000;
 }

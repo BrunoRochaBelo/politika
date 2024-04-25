@@ -134,6 +134,11 @@
 .content-duas-abas {
   border-top-right-radius: 12px;
 }
+
+.inactiveFil {
+  display: none;
+}
+
 /* RESPONSIVO */
 @media (max-width: 820px) {
   /* Area Template padrão*/

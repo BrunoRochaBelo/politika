@@ -74,11 +74,19 @@
       <nav class="area-abas-template-header">
         <ul id="navAba" class="nav nav-duas-abas">
           <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Agenda</a></li>
-          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">To-Do</a></li>
-          <li class="list-title">
-            <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Tarefa</a></li>
+          <li class="list-title activeFil" id="filtro1">
+            <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
             <div class="btn-filtro-pesq">
-              <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+              <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                <a href="calendario.html" class="remover-filtro">&times;</a>
+              </p>
+            </div>
+          </li>
+          <li class="list-title inactiveFil" id="filtro2">
+            <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
+            <div class="btn-filtro-pesq">
+              <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
                 <a href="calendario.html" class="remover-filtro">&times;</a>
               </p>
             </div>
