@@ -21,7 +21,7 @@
   justify-self: start;
   align-self: center;
   font-size: var(--titulo-m);
-  color: #a383e1;
+  color: var(--cor-1);
 }
 .contatos-small-card-tipocontato {
   grid-area: contatos-small-card-tipocontato;

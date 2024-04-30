@@ -184,7 +184,7 @@
   margin-top: 25px;
 }
 .modal-concluir-pleito-concluir label {
-  color: #a383e1;
+  color: var(--cor-1);
 }
 
 .modal-concluir-pleito-concluir label textarea,
@@ -229,7 +229,7 @@
   width: 100%;
   font-weight: regular;
   font-size: 11px;
-  border-radius: 5px;
+  border-radius: 9px;
   background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
   color: #3f1c80;
   border: 1px solid #3f1c80;
@@ -240,7 +240,7 @@
   width: 100%;
   font-weight: regular;
   font-size: 11px;
-  border-radius: 5px;
+  border-radius: 9px;
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
 .modal-concluir-pleito-salvar .btn-leaked:hover {

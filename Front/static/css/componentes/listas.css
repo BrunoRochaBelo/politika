@@ -2,7 +2,7 @@
 .lista-vertical-template {
   display: grid;
   grid-auto-flow: row;
-  border-radius: 5px;
+  border-radius: 9px;
   gap: 18px;
   scrollbar-width: thick;
 }
@@ -10,15 +10,15 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  border-radius: 5px;
-  gap: 2px;
+  border-radius: 9px;
+  gap: 3px;
   scrollbar-width: thick;
 }
 .lista-vertical-template-fil {
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  border-radius: 5px;
+  border-radius: 9px;
   gap: 5px;
   scrollbar-width: thick;
 }

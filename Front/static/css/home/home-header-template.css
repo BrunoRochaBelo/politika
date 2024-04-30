@@ -68,7 +68,7 @@
   }
   .home-header-nav {
     background: var(--cor-12);
-    border-top: 1px solid var(--cor-p6);
+    border-top: 1px solid rgba(0, 0, 0, 0.21);
     position: fixed;
     bottom: 0;
     width: 100%;

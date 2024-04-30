@@ -14,7 +14,7 @@
   grid-area: calendario-small-card-type;
   font-size: var(--titulo-s);
   justify-self: start;
-  color: #a383e1;
+  color: var(--cor-1);
 }
 .calendario-small-card-tag {
   grid-area: calendario-small-card-tag;
@@ -145,7 +145,7 @@
   grid-area: calendario-large-card-type;
   font-size: var(--titulo-m);
   justify-self: start;
-  color: #a383e1;
+  color: var(--cor-1);
 }
 .calendario-large-card-tag {
   grid-area: calendario-large-card-tag;

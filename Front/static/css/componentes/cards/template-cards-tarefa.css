@@ -22,7 +22,7 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
-  color: #a383e1;
+  color: var(--cor-1);
 }
 .tarefa-small-card-tag {
   grid-area: tarefa-small-card-tag;

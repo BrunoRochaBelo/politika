@@ -7,7 +7,6 @@
   align-items: center;
   text-transform: uppercase;
   grid: "header-back header-nav header-search" 45px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Áreas de grid */
@@ -42,11 +41,10 @@
   padding: 0.625rem;
   cursor: pointer;
   width: 100%;
-  background: var(--cor-10);
+  background: var(--cor-p7);
   color: var(--cor-9);
-  border: 1px solid var(--cor-p6);
-  box-shadow: inset 0 5px 5px 0 rgba(0, 0, 0, 0.35),
-    inset 0 1px 3px rgba(78, 78, 78, 0.5);
+  border: 1px solid var(--cor-8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(108, 108, 108, 0.08);
 }
 /* Cor do placeholder */
 .search-input::placeholder {
@@ -64,14 +62,13 @@
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
 }
 .search-button {
-  background: var(--cor-10);
+  background: var(--cor-p7);
   border-radius: 20px;
   padding: 8px;
   border: none;
   cursor: pointer;
-  border: 1px solid var(--cor-p6);
-  box-shadow: 0 2px 4px 0 rgba(20, 20, 20, 0.349),
-    0 3px 6px rgba(20, 20, 20, 0.051);
+  border: 1px solid var(--cor-8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(108, 108, 108, 0.08);
 }
 .search-icon {
   width: 18px;
@@ -101,8 +98,8 @@
     padding: 8px;
   }
   .header-nav {
-    background: var(--cor-10);
-    border-top: 1px solid var(--cor-p6);
+    background: var(--cor-12);
+    border-top: 1px solid rgba(0, 0, 0, 0.21);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -119,12 +116,11 @@
     padding: 0.625rem;
     cursor: pointer;
     width: 100%;
-    background: var(--cor-10);
+    background: var(--cor-p7);
     color: var(--cor-9);
     border: 1px solid var(--cor-8);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.35),
-      0 3px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(108, 108, 108, 0.08);
   }
   .header-template.box-shadow-active {
     background: var(--cor-12);
@@ -134,7 +130,7 @@
     border: none;
     cursor: pointer;
     border: 1px solid var(--cor-8);
-    box-shadow: inset 0 5px 5px 0 rgba(0, 0, 0, 0.35),
-      inset 0 1px 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(108, 108, 108, 0.08);
   }
 }

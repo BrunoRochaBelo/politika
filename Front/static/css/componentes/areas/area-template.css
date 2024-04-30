@@ -23,7 +23,7 @@
   grid-area: area-template-content;
   overflow-x: hidden;
   border-radius: 12px;
-  background: rgba(26, 23, 31, 0.25);
+  background: var(--cor-12);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 80vh;
@@ -94,7 +94,7 @@
   max-height: auto;
   overflow: hidden;
   border-radius: 12px;
-  background: rgba(26, 23, 31, 0.25);
+  background: var(--cor-12);
   padding: 5px;
   border: 5px solid transparent;
 }
@@ -152,7 +152,7 @@
   grid-area: area-template-tmf-alt-content;
   overflow-x: hidden;
   border-radius: 12px;
-  background: rgba(26, 23, 31, 0.25);
+  background: var(--cor-12);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 80vh;
@@ -165,7 +165,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  border-radius: 5px;
+  border-radius: 9px;
   gap: 5px;
   height: 80vh;
   grid:
@@ -219,12 +219,14 @@
     border-style: solid;
     border-width: 5px 3px;
     border-color: transparent;
+    background: transparent;
   }
 
   /* Area Template alternativa*/
   .area-template-alt-content {
     grid-area: area-template-alt-content;
     padding: 3px;
+    background: transparent;
   }
 
   /* Area Template dos filtros*/
@@ -249,6 +251,7 @@
     overflow: auto;
     padding: 10px 12px;
     background: none;
+    background: transparent;
   }
 
   /* Area Template alternativa Tamanho fixo*/
@@ -256,6 +259,7 @@
     grid-area: area-template-tmf-content;
     padding: 3px;
     border-width: 5px 0;
+    background: transparent;
   }
 
   /* Area Template dos compromissos para hoje*/
@@ -280,6 +284,7 @@
     overflow: auto;
     padding: 3px;
     background: none;
+    background: transparent;
   }
 
   /* Area Template para cabeçalhos fixos*/
@@ -289,6 +294,7 @@
   .area-template-cbf-content {
     grid-area: area-template-cbf-content;
     max-height: 58vh;
+    background: transparent;
   }
 
   .area-template::-webkit-scrollbar,

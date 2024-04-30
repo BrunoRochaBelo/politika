@@ -2,42 +2,42 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   min-height: 30px;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   padding: 10px 15px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 7px;
+  border-radius: 12px;
   border: 1px solid transparent;
 }
 /* Pequeno altura 35px*/
 .card-s {
   min-height: 35px;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   padding: 10px 15px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 7px;
+  border-radius: 12px;
   border: 1px solid transparent;
 }
 /* Médio altura 50px*/
 .card-m {
   min-height: 50px;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   padding: 15px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 7px;
+  border-radius: 12px;
   border: 1px solid transparent;
 }
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   padding: 15px;
   gap: 0.625rem;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 7px;
+  border-radius: 12px;
   border: 1px solid transparent;
 }
 
@@ -46,52 +46,52 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   border: 1px solid transparent;
   padding: 15px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 7px;
+  border-radius: 12px;
 }
 /* Médio */
 .card-tmf-m {
   width: 115px;
   height: 95px;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   border: 1px solid transparent;
   padding: 15px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 7px;
+  border-radius: 12px;
 }
 /* Grande */
 .card-tmf-l {
   width: 184px;
   height: 190px;
   min-height: 170px;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   border: 1px solid transparent;
   padding: 15px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 7px;
+  border-radius: 12px;
 }
 
 /* Cards dos selects */
 /* Muito Pequeno altura 35px */
 .card-select-xs {
-  border-radius: 5px;
+  border-radius: 9px;
   width: 100%;
   padding: 0.3rem;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   font-weight: var(--font-light);
   border: 1px solid transparent;
 }
 .card-select-s {
-  border-radius: 5px;
+  border-radius: 9px;
   width: 100%;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   font-weight: var(--font-medium-regular);
   border: 1px solid transparent;
@@ -99,11 +99,11 @@
 .card-select-m {
   padding: 0.625rem;
   width: 100%;
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-9);
   padding: 0.625rem;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
+  border-radius: 9px;
   border: 1px solid transparent;
 }
 
@@ -124,18 +124,18 @@
 .area-template-tmf-alt-content .card-tmf-s,
 .area-template-tmf-alt-content .card-tmf-m,
 .area-template-tmf-alt-content .card-tmf-l {
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-6);
   border: 1px solid transparent;
-  border-radius: 7px;
+  border-radius: 12px;
 }
 .area-template-tmf-alt-content .card-select-xs,
 .area-template-tmf-alt-content .card-select-s,
 .area-template-tmf-alt-content .card-select-m {
-  background: var(--cor-12);
+  background: var(--cor-2);
   color: var(--cor-6);
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 9px;
 }
 
 /* Estilo para o efeito hover em todos os elementos especificados */
@@ -190,7 +190,7 @@
   .area-template-tmf-alt-content .card-select-xs,
   .area-template-tmf-alt-content .card-select-s,
   .area-template-tmf-alt-content .card-select-m {
-    background: var(--cor-12);
+    background: var(--cor-2);
     border: 1px solid transparent;
   }
 }

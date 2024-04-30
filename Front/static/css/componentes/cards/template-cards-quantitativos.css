@@ -11,7 +11,7 @@
   grid-area: quant-small-card-title;
   font-size: var(--titulo-xl);
   text-align: start;
-  color: #a383e1;
+  color: var(--cor-1);
 }
 .quant-small-card-desc {
   grid-area: quant-small-card-desc;
@@ -29,6 +29,6 @@
   font-size: var(--font-medium-regular);
   text-align: start;
   background: var(--cor-2);
-  border-radius: 5px;
+  border-radius: 9px;
   padding: 5px;
 }

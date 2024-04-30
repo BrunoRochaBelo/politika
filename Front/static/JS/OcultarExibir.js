@@ -56,7 +56,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       button.innerHTML = "X";
       button.style.color = "var(--cor-p3)";
       mainSidenav.style.height = "auto";
-      area.style.background = "#513598";
+      area.style.background = "#04050f";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
@@ -83,7 +83,7 @@ function toggleOcultarExibir() {
   var area = selectElement(".area-template-fil");
   var button = selectElement(".btn-recuar-expandir");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(".area-template-fil-header"); // Seleciona o elemento .area-template-fil-header
+  var areaHeader = selectElement(".area-template-fil-header");
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

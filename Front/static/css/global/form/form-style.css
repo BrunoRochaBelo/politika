@@ -3,13 +3,13 @@
   display: grid;
   margin-top: auto;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 9px;
   border: 1px solid #ce84ff0a;
   background: var(--cor-12);
 }
 
 fieldset {
-  border-radius: 5px;
+  border-radius: 9px;
   padding: 0px;
   border: none;
   margin: 0px;
@@ -19,7 +19,7 @@ legend {
 }
 label {
   font-size: 12px;
-  color: #a383e1;
+  color: var(--cor-1);
   margin: 12px 5px;
 }
 .campo {
@@ -44,7 +44,7 @@ label {
   color: var(--cor-0);
   background: var(--cor-p4);
   border: 1px solid var(--cor-8);
-  border-radius: 5px;
+  border-radius: 9px;
 }
 
 .campo input[type="file"] {
@@ -55,7 +55,7 @@ label {
   background-color: #4caf50;
   color: white;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 9px;
 }
 
 .campo input[type="checkbox"],
@@ -165,7 +165,7 @@ form span {
 }
 .botoes .btn-leaked {
   width: 30%;
-  border-radius: 5px;
+  border-radius: 9px;
   background: transparent;
   color: var(--cor-9);
   border: 1px solid var(--cor-9);
@@ -173,7 +173,7 @@ form span {
 }
 .botoes .btn-filled {
   width: 30%;
-  border-radius: 5px;
+  border-radius: 9px;
   background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
   color: #3f1c80;
   border: 1px solid #3f1c80;

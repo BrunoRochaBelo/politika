@@ -5,6 +5,7 @@
   <link rel="manifest" href="./manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -73,23 +74,26 @@
       <div id="resultsContainer " class="area-abas-template">
         <nav class="area-abas-template-header">
           <ul id="navAba" class="nav nav-duas-abas">
-            <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Contatos</a>
+            <li id="nav1">
+              <a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Contatos</a>
             </li>
-            <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Recentes</a>
+            <li id="nav2">
+              <a href="#" onclick="mostrarAba('aba2')">Recentes</a>
             </li>
-            <li class="list-title">
+          </ul>
+        </nav>
+        <div class="area-abas-template-content list-contato content-duas-abas area-abas-template-content-alt">
+          <div id="aba1" class="aba-template area-template-alt active">
+            <div class="area-filtro">
               <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
               <div class="btn-filtro-pesq">
                 <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
                   <a href="calendario.html" class="remover-filtro">&times;</a>
                 </p>
               </div>
-            </li>
-          </ul>
-        </nav>
-        <div class="area-abas-template-content list-contato content-duas-abas area-abas-template-content-alt">
-          <div id="aba1" class="aba-template area-template-alt active">
+            </div>
             <ul class="lista-vertical-template" id="contatosList">
+
               <li class="area-template-alt">
                 <h2 class="area-template-alt-header">A</h2>
                 <ul class="area-template-alt-content lista-vertical-template-alt">

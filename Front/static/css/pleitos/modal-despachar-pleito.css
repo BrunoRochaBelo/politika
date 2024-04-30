@@ -209,7 +209,7 @@
 }
 
 .modal-despachar-pleito-despachar label {
-  color: #a383e1;
+  color: var(--cor-1);
 }
 
 .closeModalDespachar {
@@ -241,7 +241,7 @@
 
 .modal-despachar-pleito-salvar .btn-filled {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 9px;
   background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
   color: #3f1c80;
   border: 1px solid #3f1c80;

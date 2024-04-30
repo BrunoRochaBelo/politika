@@ -139,7 +139,7 @@
   opacity: 0;
   justify-self: end;
   align-self: center;
-  border-top: 1px solid var(--cor-p6);
+  border-top: 1px solid rgba(0, 0, 0, 0.21);
   font-size: var(--font-small-light);
 }
 

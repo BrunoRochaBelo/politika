@@ -5,6 +5,7 @@
   <link rel="manifest" href="./manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,26 +72,10 @@
 
   <main class="main main-template">
     <section class="main-section area-abas-template">
-      <nav class="area-abas-template-header">
+      <nav class="area-abas-template-header ">
         <ul id="navAba" class="nav nav-duas-abas">
           <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Agenda</a></li>
           <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Tarefa</a></li>
-          <li class="list-title activeFil" id="filtro1">
-            <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
-            <div class="btn-filtro-pesq">
-              <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
-                <a href="calendario.html" class="remover-filtro">&times;</a>
-              </p>
-            </div>
-          </li>
-          <li class="list-title inactiveFil" id="filtro2">
-            <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
-            <div class="btn-filtro-pesq">
-              <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
-                <a href="calendario.html" class="remover-filtro">&times;</a>
-              </p>
-            </div>
-          </li>
         </ul>
       </nav>
 
@@ -107,33 +92,37 @@
                     <p>anterior</p>
                     <img src="./static/imagens/icones/anterior.svg" class="anterior" alt="Anterior Icon">
                   </li>
-                  <li class="dia-semana dia-visualize" data-dia="segunda" onclick="selecionarDia('segunda')">
-                    <h3 id="segunda">Seg</h3>
-                    <p>03</p>
-                  </li>
-                  <li class="dia-semana" data-dia="terca" onclick="selecionarDia('terca')">
-                    <h3 id="terca">Ter</h3>
-                    <p>04</p>
-                  </li>
-                  <li class="dia-semana" data-dia="quarta" onclick="selecionarDia('quarta')">
-                    <h3 id="quarta">Qua</h3>
-                    <p>05</p>
-                  </li>
-                  <li class="dia-semana" data-dia="quinta" onclick="selecionarDia('quinta')">
-                    <h3 id="quinta">Qui</h3>
-                    <p>06</p>
-                  </li>
-                  <li class="dia-semana" data-dia="sexta" onclick="selecionarDia('sexta')">
-                    <h3 id="sexta">Sex</h3>
-                    <p>07</p>
-                  </li>
-                  <li class="dia-semana" data-dia="sabado" onclick="selecionarDia('sabado')">
-                    <h3 id="sabado">Sab</h3>
-                    <p>08</p>
-                  </li>
-                  <li class="dia-semana" data-dia="domingo" onclick="selecionarDia('domingo')">
-                    <h3 id="domingo">Dom</h3>
-                    <p>09</p>
+                  <li>
+                    <ul class="nav-semana">
+                      <li class="dia-semana dia-visualize" data-dia="segunda" onclick="selecionarDia('segunda')">
+                        <h3 id="segunda">Seg</h3>
+                        <p>03</p>
+                      </li>
+                      <li class="dia-semana" data-dia="terca" onclick="selecionarDia('terca')">
+                        <h3 id="terca">Ter</h3>
+                        <p>04</p>
+                      </li>
+                      <li class="dia-semana" data-dia="quarta" onclick="selecionarDia('quarta')">
+                        <h3 id="quarta">Qua</h3>
+                        <p>05</p>
+                      </li>
+                      <li class="dia-semana" data-dia="quinta" onclick="selecionarDia('quinta')">
+                        <h3 id="quinta">Qui</h3>
+                        <p>06</p>
+                      </li>
+                      <li class="dia-semana" data-dia="sexta" onclick="selecionarDia('sexta')">
+                        <h3 id="sexta">Sex</h3>
+                        <p>07</p>
+                      </li>
+                      <li class="dia-semana" data-dia="sabado" onclick="selecionarDia('sabado')">
+                        <h3 id="sabado">Sab</h3>
+                        <p>08</p>
+                      </li>
+                      <li class="dia-semana" data-dia="domingo" onclick="selecionarDia('domingo')">
+                        <h3 id="domingo">Dom</h3>
+                        <p>09</p>
+                      </li>
+                    </ul>
                   </li>
                   <li class="change-semana">
                     <p id="proximaSemana">Prox</p>
@@ -146,6 +135,14 @@
             <div class="area-template-cbf-content">
               <div class="area-template-alt-content list-contato dia-visible" id="segunda-feira">
                 <ul class="lista-vertical-template">
+                  <li class="area-filtro activeFil" id="filtro1">
+                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
                   <li class="area-template-alt">
                     <h2 class="area-template-alt-header">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes('segunda-feira')">Exibir aniversaiantes</button></h2>
                     <ul class="area-template-alt-content lista-vertical-template-alt area-aniversaiantes">
@@ -269,6 +266,14 @@
 
               <div class="area-template-alt-content list-contato dia-hidden" id="terca-feira">
                 <ul class="lista-vertical-template">
+                  <li class="area-filtro activeFil" id="filtro1">
+                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
                   <li class="area-template-alt">
                     <h2 class="area-template-alt-header">07h00</h2>
                     <ul class="area-template-alt-content lista-vertical-template-fil">
@@ -353,6 +358,14 @@
 
               <div class="area-template-alt-content list-contato dia-hidden" id="quarta-feira">
                 <ul class="lista-vertical-template">
+                  <li class="area-filtro activeFil" id="filtro1">
+                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
                   <li class="area-template-alt">
                     <h2 class="area-template-alt-header">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes('quarta-feira')">Exibir aniversaiantes</button></h2>
                     <ul class="area-template-alt-content lista-vertical-template-alt area-aniversaiantes">
@@ -468,6 +481,14 @@
 
               <div class="area-template-alt-content list-contato dia-hidden" id="quinta-feira">
                 <ul class="lista-vertical-template">
+                  <li class="area-filtro activeFil" id="filtro1">
+                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
                   <li class="area-template-alt">
                     <h2 class="area-template-alt-header">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes('quinta-feira')">Exibir aniversaiantes</button></h2>
                     <ul class="area-template-alt-content lista-vertical-template-alt area-aniversaiantes">
@@ -591,6 +612,14 @@
 
               <div class="area-template-alt-content list-contato dia-hidden" id="sexta-feira">
                 <ul class="lista-vertical-template">
+                  <li class="area-filtro activeFil" id="filtro1">
+                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
                   <li class="area-template-alt">
                     <h2 class="area-template-alt-header">07h00</h2>
                     <ul class="area-template-alt-content lista-vertical-template-fil">
@@ -675,6 +704,14 @@
 
               <div class="area-template-alt-content list-contato dia-hidden" id="sabado-feira">
                 <ul class="lista-vertical-template">
+                  <li class="area-filtro activeFil" id="filtro1">
+                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
                   <li class="area-template-alt">
                     <h2 class="area-template-alt-header">08h00</h2>
                     <ul class="area-template-alt-content lista-vertical-template-fil">
@@ -759,6 +796,14 @@
 
               <div class="area-template-alt-content list-contato dia-hidden" id="domingo-feira">
                 <ul class="lista-vertical-template">
+                  <li class="area-filtro activeFil" id="filtro1">
+                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
                   <li class="area-template-alt">
                     <h2 class="area-template-alt-header">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes('domingo-feira')">Exibir aniversaiantes</button></h2>
                     <ul class="area-template-alt-content lista-vertical-template-alt area-aniversaiantes">
@@ -927,7 +972,35 @@
             <div class="area-template-cbf-content">
               <div class="area-template-alt-content list-contato">
                 <ul class="lista-vertical-template">
-                  <li class="area-template-alt">
+                  <li class="area-filtro inactiveFil" id="filtro2">
+                    <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
+                        <a href="calendario.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="card-m tarefa-small-card" href="#">
+                      <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                      <div class="tarefa-small-card-tag" data-filter="tagTarefa">
+                        <div class="marcador-item cor-marc3">
+                          <p><strong>Marcador 1</strong></p>
+                        </div>
+                      </div>
+                      <p class="tarefa-small-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                      <p class="tarefa-small-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                      <p class="tarefa-small-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                      <div class="tarefa-small-card-desc" data-filter="descricaoTarefa">
+                        <p>Descrição da Tarefa</p>
+                      </div>
+                      <div class="tarefa-small-card-editar">
+                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                      </div>
+                      <div class="tarefa-small-card-id" data-filter="tarefa-small-card-id">{{tarefa-small-card-id}}</div>
+                    </a>
+                  </li>
+                  <li>
                     <a class="card-m tarefa-small-card" href="#">
                       <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
                       <div class="tarefa-small-card-tag" data-filter="tagTarefa">

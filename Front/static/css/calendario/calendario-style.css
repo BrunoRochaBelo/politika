@@ -18,20 +18,19 @@
   align-content: center;
   overflow-x: auto;
   gap: 15px;
-  padding: 10px 5px;
-  background: linear-gradient(to right bottom, #5631a0, rgb(82, 78, 185));
+  padding: 10px 5px 0px 5px;
+  background: transparent;
   border-radius: 12px;
   color: var(--cor-9);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .nav-calendar .item1 {
   justify-self: start;
   align-self: center;
   padding: 5px 10px;
   color: var(--cor-9);
-  background: transparent;
+  background: var(--cor-2);
   border-radius: 7px;
-  border: 1px solid var(--cor-9);
+  border: 1px solid transparent;
 }
 .nav-calendar .item2 {
   justify-self: end;
@@ -47,22 +46,30 @@
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  gap: 5px;
-  padding: 0px;
+  gap: 2px;
+  padding: 3px;
+  background: var(--cor-2);
+  border-radius: 12px;
+}
+.nav-semana > :first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
+.nav-semana > :last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
 .dia-semana {
   text-align: center;
-  padding: 10px;
+  padding: 7px;
   color: var(--cor-9);
-  background: none;
-  border-radius: 7px;
-  border: 1px solid var(--cor-9);
+  background: transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   font-size: var(--font-medium-light);
   min-width: 33px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 2px 4px 0 rgba(40, 40, 40, 0.35), 0 3px 6px rgba(40, 40, 40, 0.05);
+  transition: background-color 0.5s ease;
 }
 .dia-semana:hover,
 .change-semana:hover,
@@ -72,6 +79,10 @@
     0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
   border: 1px solid #a57ff0;
+  border-radius: 50px !important;
+}
+.change-semana:hover {
+  border-radius: 12px !important;
 }
 .dia-semana:active,
 .change-semana:active {
@@ -81,7 +92,9 @@
   color: var(--cor-4) !important;
   background: linear-gradient(to right bottom, #6228d7, #9560ff) !important;
   border: 1px solid #a57ff0 !important;
+  border-radius: 50px !important;
 }
+
 .dia-visible {
   display: block;
 }
@@ -94,6 +107,7 @@
   border: 1px solid #6228d7;
   border-top: 5px solid #6228d7;
   color: var(--cor-9);
+  background: var(--cor-2);
 }
 .hoje:hover {
   border: 1px solid #8653eb;
@@ -106,29 +120,18 @@
   text-align: center;
   position: relative;
   padding: 10px;
-  border-radius: 7px;
+  border: 1px solid transparent;
+  border-radius: 12px;
   color: var(--cor-9);
   cursor: pointer;
   font-size: var(--font-medium-regular);
-  border: 1px solid #9690a693;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 2px 4px 0 rgba(40, 40, 40, 0.35), 0 3px 6px rgba(40, 40, 40, 0.05);
+  background: var(--cor-2);
 }
 .avancar {
-  position: absolute;
-  right: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  display: none;
 }
 .anterior {
-  position: absolute;
-  left: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  display: none;
 }
 
 .btn-calendario {
@@ -140,7 +143,7 @@
 .btn-calendario:hover {
   color: var(--cor-5);
   border-color: var(--cor-5);
-  border-radius: 5px;
+  border-radius: 9px;
 }
 .btn-calendario:active {
   background-color: darken(var(--cor-12), 10%);
@@ -166,20 +169,18 @@
 .filtro-tarefa {
   text-align: center;
   padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 50px;
   color: var(--cor-9);
-  background: none;
-  border-radius: 7px;
-  border: 1px solid var(--cor-9);
   cursor: pointer;
-  font-size: var(--font-medium-light);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 2px 4px 0 rgba(40, 40, 40, 0.35), 0 3px 6px rgba(40, 40, 40, 0.05);
+  font-size: var(--font-medium-regular);
+  background: var(--cor-2);
 }
 
 @media only screen and (max-width: 819px) {
   .list-calendario .lista-vertical-template:last-child {
     border-radius: 0px;
-    border-bottom: 1px solid var(--cor-p7);
+    border-bottom: 1px solid var(--cor-p8);
     margin-bottom: 55px;
   }
 
@@ -194,7 +195,7 @@
     color: inherit;
     color: var(--cor-9);
     background: none;
-    border: 1px solid var(--cor-9);
+    border: 1px solid transparent;
     box-shadow: none;
   }
 
@@ -205,16 +206,22 @@
     display: none;
   }
   .avancar {
+    display: block;
     position: absolute;
     right: 50%;
     top: 50%;
     transform: translate(50%, -50%);
+    width: 16px;
+    height: 16px;
   }
   .anterior {
+    display: block;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
   }
 
   .calendario-template .nav a.indicador-2 {
@@ -223,7 +230,7 @@
     background: var(--cor-9);
     border-top-left-radius: 0.9375rem;
     border-top-right-radius: 0.9375rem;
-    border: 1px solid var(--cor-9);
+    border: 1px solid transparent;
     border-bottom: none;
   }
 
