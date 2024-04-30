@@ -7,7 +7,6 @@
   align-items: center;
   text-transform: uppercase;
   grid: "home-header-logo home-header-nav home-header-user" 45px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Áreas de grid */

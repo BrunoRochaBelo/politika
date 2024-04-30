@@ -90,14 +90,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.lista-vertical-template-alt li:first-child .card-s {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.lista-vertical-template-alt li:last-child .card-s {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
+
 .item3 input {
   width: 100%;
   box-sizing: border-box;
@@ -155,5 +148,11 @@
   .lista-vertical-template-alt,
   .lista-vertical-horizontal {
     scrollbar-width: none;
+  }
+
+  .list-last-child .lista-vertical-template:last-child {
+    border-radius: 0px;
+    border-bottom: 1px solid #28385396;
+    margin-bottom: 55px;
   }
 }

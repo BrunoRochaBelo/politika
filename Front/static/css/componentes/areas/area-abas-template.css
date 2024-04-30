@@ -144,7 +144,9 @@
   /* Area Template padrão*/
   .area-abas-template-header {
     grid-area: area-abas-template-header;
-    padding: 0px 0px 8px 0px;
+    padding: 0px;
+    justify-items: start;
+    max-width: 300px;
   }
   .area-abas-template-content {
     grid-area: area-abas-template-content;

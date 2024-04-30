@@ -16,7 +16,7 @@
   background-color: rgba(0, 0, 0, 0.21);
   color: var(--cor-9);
   font-size: small;
-  border: 1px solid #ce84ff0a;
+  border: 1px solid #28385396;
   border-radius: 12px;
   display: flex;
   text-align: justify;
@@ -34,7 +34,7 @@
   padding: 10px;
   background: linear-gradient(to right bottom, var(--cor-12), var(--cor-2));
   border-radius: 12px;
-  border: 1px solid #ce84ff0a;
+  border: 1px solid transparent;
   color: var(--cor-0);
   box-shadow: none;
   cursor: pointer;
@@ -68,7 +68,7 @@
   padding: 3px 15px;
   border-radius: 20px;
   border: 1px solid transparent;
-  background: #d5d5e877;
+  background: #7b92b97b;
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;

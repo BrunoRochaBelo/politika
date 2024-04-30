@@ -21,10 +21,10 @@
   padding: 0.625rem;
   text-align: left;
   color: var(--cor-9);
-  border: 1px solid #ce84ff0a;
+  border: 1px solid #28385396;
   border-bottom: none;
   position: relative;
-  background: #ce84ff0a;
+  background: #28385396;
 }
 .main-form {
   grid-area: main-form;
@@ -40,9 +40,9 @@
   border: 5px solid transparent;
   font-size: var(--titulo-s);
   color: var(--cor-1);
-  border: 1px solid #ce84ff0a;
+  border: 1px solid #28385396;
   border-top: none;
-  background: #ce84ff0a;
+  background: #28385396;
 }
 
 /* RESPONSIVO */

@@ -90,7 +90,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "header-back  header-search header-search" 48px;
-    background: #00000027;
+    background: var(--cor-12);
   }
   .header-back {
     margin-left: 0.625rem;

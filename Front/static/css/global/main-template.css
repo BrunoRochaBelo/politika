@@ -33,10 +33,6 @@
 @media (max-width: 820px) {
   .main-template {
     gap: 0rem;
-    grid:
-      "main-sidenav"
-      "main-section"
-      / 1fr;
   }
   .main-section {
     grid-area: main-section;
@@ -44,16 +40,16 @@
     position: absolute;
     right: 0px;
     left: 0px;
-    top: 85px;
+    top: 55px;
   }
   .main-sidenav {
     grid-area: main-sidenav;
     padding: 5px 0px 5px 5px;
     position: absolute;
     right: 5px;
-    top: 42px;
+    top: 55px;
     overflow: hidden;
-    width: 80%;
+    width: 25%;
     height: 32px;
     z-index: 1001;
   }
