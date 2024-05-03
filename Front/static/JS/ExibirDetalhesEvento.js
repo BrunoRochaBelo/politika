@@ -30,7 +30,7 @@ function exibirDetalhesEvento(event) {
 
 function ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall) {
   const areaTemplateContent = document.querySelector(
-    ".area-template-tmf-alt-content"
+    ".area-template-fil-alt-content"
   );
   const cardOffsetTop = cardEventoSmall.offsetTop;
   const cardHeight = cardEventoSmall.offsetHeight;

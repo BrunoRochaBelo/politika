@@ -1,7 +1,11 @@
 /* Area Template padrão*/
 .area-template {
   display: grid;
-  border-radius: 12px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  align-content: start;
+  height: 100%;
+  gap: 10px;
   grid:
     "area-template-header" auto
     "area-template-content" auto
@@ -10,96 +14,65 @@
 .area-template-header {
   grid-area: area-template-header;
   display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-  align-content: center;
-  font-size: var(--titulo-xl);
-  padding: 0.625rem;
-  text-align: left;
-  color: var(--cor-9);
+  align-items: center;
+  justify-items: space-between;
+  color: var(--cor-1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--cor-2);
   border-radius: 12px;
 }
 .area-template-content {
   grid-area: area-template-content;
-  overflow-x: hidden;
-  border-radius: 12px;
-  background: var(--cor-12);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  overflow-y: auto;
+  padding: 0px;
   height: auto;
-  max-height: 80vh;
-  border: 5px solid transparent;
+  background: transparent;
+  border-radius: 12px;
 }
 
-/* Area Template alternativa*/
-.area-template-alt {
+/* Area Template Com Cor de Fundo */
+.area-template-cdf {
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 12px;
   grid:
-    "area-template-alt-header" auto
-    "area-template-alt-content" auto
+    "area-template-cdf-header" auto
+    "area-template-cdf-content" auto
     / 1fr;
 }
-.area-template-alt-header {
-  grid-area: area-template-alt-header;
+.area-template-cdf-header {
+  grid-area: area-template-cdf-header;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
   font-size: var(--titulo-m);
-  padding: 0.625rem;
+  padding: 20px 10px;
   text-align: left;
-  color: var(--cor-9);
-  border-radius: 12px;
+  color: var(--cor-1);
+  border-radius: 0px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  background: var(--cor-12);
 }
-.area-template-alt-header h2 {
+.area-template-cdf-header h2 {
   font-size: var(--titulo-m);
 }
-.area-template-alt-content {
-  grid-area: area-template-alt-content;
-  padding: 5px;
+.area-template-cdf-content {
+  grid-area: area-template-cdf-content;
+  padding: 10px;
   overflow-x: auto;
-  border-radius: 12px;
-}
-
-/* Area Template dos filtros*/
-.area-template-fil {
-  display: grid;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 12px;
-  grid:
-    "area-template-fil-header" auto
-    "area-template-fil-content" auto
-    / 1fr;
-}
-.area-template-fil-header {
-  grid-area: area-template-fil-header;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-  align-content: space-between;
-  font-size: var(--titulo-xl);
-  padding: 0.625rem;
-  text-align: left;
-  color: var(--cor-9);
-}
-.area-template-fil-header h1 {
-  font-size: var(--titulo-xl);
-}
-.area-template-fil-content {
-  grid-area: area-template-fil-content;
-  gap: 1rem;
-  max-height: auto;
-  overflow: hidden;
-  border-radius: 12px;
   background: var(--cor-12);
-  padding: 5px;
-  border: 5px solid transparent;
+  border-radius: 0px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
-/* Area Template alternativa Tamanho fixo*/
+/* Area Template Tamanho fixo*/
 .area-template-tmf {
   display: grid;
   box-sizing: border-box;
@@ -113,50 +86,90 @@
 .area-template-tmf-header {
   grid-area: area-template-tmf-header;
   font-size: var(--titulo-m);
-  padding: 0.625rem;
+  padding: 20px 10px;
   text-align: left;
-  color: var(--cor-9);
+  color: var(--cor-1);
+  border-radius: 0px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  background: var(--cor-12);
 }
 .area-template-tmf-content {
   grid-area: area-template-tmf-content;
   overflow-x: auto;
   max-height: 350px;
-  border-radius: 12px;
+  padding: 10px 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 5px solid transparent;
+  background: var(--cor-12);
+  border-radius: 0px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border: 3px solid transparent;
 }
 
-/* Area Template dos compromissos para hoje*/
-.area-template-tmf-alt {
+/* Area Template dos filtros*/
+.area-template-fil {
   display: grid;
   box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 12px;
+  overflow-x: hidden;
+  align-content: start;
+  height: 100%;
+  gap: 10px;
   grid:
-    "area-template-tmf-alt-header" auto
-    "area-template-tmf-alt-content" auto
+    "area-template-fil-header" auto
+    "area-template-fil-content" auto
     / 1fr;
 }
-.area-template-tmf-alt-header {
-  grid-area: area-template-tmf-alt-header;
+.area-template-fil-header {
+  grid-area: area-template-fil-header;
   display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-  align-content: space-between;
-  font-size: var(--titulo-xl);
-  padding: 0.625rem;
-  text-align: left;
-  color: var(--cor-9);
-}
-.area-template-tmf-alt-content {
-  grid-area: area-template-tmf-alt-content;
-  overflow-x: hidden;
+  align-items: center;
+  justify-items: space-between;
+  color: var(--cor-1);
+  background: var(--cor-2);
   border-radius: 12px;
-  background: var(--cor-12);
+}
+
+.area-template-fil-content {
+  grid-area: area-template-fil-content;
+  overflow-x: hidden;
+  background: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
-  max-height: 80vh;
-  border: 5px solid transparent;
+  border-radius: 12px;
+  background: var(--cor-12);
+  padding: 10px 5px;
+}
+
+/* Area Template Agenda para hoje*/
+.area-template-fil-alt {
+  display: grid;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  align-content: start;
+  height: 100%;
+  gap: 10px;
+  grid:
+    "area-template-fil-alt-header" auto
+    "area-template-fil-alt-content" auto
+    / 1fr;
+}
+.area-template-fil-alt-header {
+  grid-area: area-template-fil-alt-header;
+  display: grid;
+  align-items: center;
+  justify-items: space-between;
+  color: var(--cor-1);
+  background: var(--cor-2);
+  border-radius: 12px;
+}
+.area-template-fil-alt-content {
+  grid-area: area-template-fil-alt-content;
+  overflow-x: hidden;
+  background: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  border-radius: 12px;
 }
 
 /* Area Template para cabeçalhos fixos*/
@@ -165,9 +178,8 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  border-radius: 12px;
-  gap: 5px;
-  height: 80vh;
+  height: 100%;
+  gap: 10px;
   grid:
     "area-template-cbf-header"
     "area-template-cbf-content"
@@ -177,28 +189,28 @@
   grid-area: area-template-cbf-header;
   display: grid;
   align-items: center;
-  background: none;
   justify-items: space-between;
-  padding: 0px 0px 10px 0px;
-  color: var(--cor-9);
+  color: var(--cor-1);
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid #28385396;
+  background: var(--cor-12);
+  border-radius: 12px;
 }
 .area-template-cbf-content {
   grid-area: area-template-cbf-content;
-  overflow-x: hidden;
-  padding: 0px;
-  height: auto;
-  max-height: 70vh;
+  overflow-x: auto;
   overflow-y: auto;
+  padding: 0px;
+  height: 68vh;
+  background: transparent;
+  border-radius: 12px;
 }
 
 /* Estilos */
 .area-template-content::-webkit-scrollbar,
-.area-template-alt-content::-webkit-scrollbar,
-.area-template-tmf-alt-content::-webkit-scrollbar,
+.area-template-cdf-content::-webkit-scrollbar,
+.area-template-fil-alt-content::-webkit-scrollbar,
 .area-template-cbf-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
@@ -211,102 +223,97 @@
 /* RESPONSIVO */
 @media (max-width: 820px) {
   /* Area Template padrão*/
-  .area-template-content {
-    grid-area: area-template-content;
-    padding: 0px;
-    height: auto;
-    padding: 0px 0px 5px 0px;
-    max-height: 72vh;
-    overflow-y: auto;
-    border-style: solid;
-    border-width: 5px 3px;
-    border-color: transparent;
-    background: transparent;
+  .area-template-header {
+    justify-items: stretch;
+    text-align: left;
+    padding: 2px 0px 2px 20px;
   }
 
-  /* Area Template alternativa*/
-  .area-template-alt-content {
-    grid-area: area-template-alt-content;
-    padding: 3px;
-    background: transparent;
-  }
-
-  /* Area Template dos filtros*/
-  .area-template-fil {
-    padding: 0rem;
-    gap: 0rem;
-    padding: 0px 5px 40px 5px;
-    box-shadow: none;
-  }
-  .area-template-fil-header {
-    grid-area: area-template-fil-header;
-    color: transparent;
-    font-size: 0px;
-    padding: 10px 0px 10px 0px;
-    margin-left: 0.625rem;
-    box-shadow: none;
-  }
-  .area-template-fil-content {
-    grid-area: area-template-fil-content;
-    gap: 0.625rem;
-    max-height: 0px;
-    overflow: auto;
-    padding: 10px 12px;
-    background: none;
-    background: transparent;
+  /* Area Template cor de fundo */
+  .area-template-cdf-content {
+    grid-area: area-template-cdf-content;
+    padding: 10px 5px;
   }
 
   /* Area Template alternativa Tamanho fixo*/
   .area-template-tmf-content {
     grid-area: area-template-tmf-content;
-    padding: 3px;
-    border-width: 5px 0;
-    background: transparent;
+    padding: 10px 3px;
   }
 
-  /* Area Template dos compromissos para hoje*/
-  .area-template-tmf-alt {
+  /* Area Template dos filtros*/
+  .area-template-fil {
     padding: 0rem;
-    gap: 0rem;
-    padding: 0px 5px 40px 5px;
-    box-shadow: none;
+    border-radius: 12px;
+    overflow: hidden;
   }
-  .area-template-tmf-alt-header {
-    grid-area: area-template-tmf-alt-header;
+  .area-template-fil-header {
+    grid-area: area-template-fil-header;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-content: space-between;
+    font-size: var(--titulo-xl);
+    text-align: left;
+    color: var(--cor-1);
     color: transparent;
     font-size: 0px;
-    padding: 10px 0px 10px 0px;
-    margin-left: 0.625rem;
+    padding: 5px 5px 0px 11px;
     box-shadow: none;
+    background: none;
   }
-  .area-template-tmf-alt-content {
-    grid-area: area-template-tmf-alt-content;
-    gap: 3px;
+  .area-template-fil-content {
+    grid-area: area-template-fil-content;
     max-height: 0px;
     overflow: auto;
-    padding: 3px;
+    box-shadow: none;
     background: none;
-    background: transparent;
+    padding: 10px 5px;
+  }
+
+  /* Area Template Agenda para hoje*/
+  .area-template-fil-alt {
+    padding: 0rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .area-template-fil-alt-header {
+    grid-area: area-template-fil-alt-header;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-content: space-between;
+    font-size: var(--titulo-xl);
+    text-align: left;
+    color: var(--cor-1);
+    color: transparent;
+    font-size: 0px;
+    padding: 5px 5px 0px 20px;
+    box-shadow: none;
+    background: none;
+  }
+  .area-template-fil-alt-content {
+    grid-area: area-template-fil-alt-content;
+    max-height: 0px;
+    overflow: auto;
+    box-shadow: none;
+    padding: 10px 5px;
   }
 
   /* Area Template para cabeçalhos fixos*/
-  .area-template-cbf {
-    height: 72vh;
-  }
-  .area-template-cbf-header {
-    padding: 0px;
-    border-bottom: 1px solid #28385396;
-  }
   .area-template-cbf-content {
     grid-area: area-template-cbf-content;
-    padding: 0px 0px 5px 0px;
-    max-height: 58vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 0px;
+    height: 60vh;
+    background: transparent;
+    border-radius: 12px;
   }
-
   .area-template::-webkit-scrollbar,
   .area-template-content::-webkit-scrollbar,
-  .area-template-tmf-alt::-webkit-scrollbar,
-  .area-template-tmf-alt-content::-webkit-scrollbar {
+  .area-template-fil-alt::-webkit-scrollbar,
+  .area-template-fil-alt-content::-webkit-scrollbar {
     display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
   }
 }

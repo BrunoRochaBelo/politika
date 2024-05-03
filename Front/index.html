@@ -67,9 +67,9 @@
       <div class=" area-template">
         <h2 class="area-template-header">Destino</h2>
         <div class="area-template-content">
-          <ul class="lista-vertical-template">
-            <li class="area-template-alt">
-              <ul class="area-template-alt-content lista-select">
+          <ul class="lista-vertical">
+            <li class="">
+              <ul class="lista-select">
                 <li class="item1">
                   <form id="formEstado" action="/?uf_destino=" method="post">
                     <select class="card-select-m" id="estado">
@@ -96,13 +96,13 @@
                 </li>
               </ul>
             </li>
-            <li id="quantitativos" class="area-template-alt">
-              <div class="area-template-alt-header">
+            <li id="quantitativos" class="area-template-cdf">
+              <div class="area-template-cdf-header">
                 <h2>Indicadores e estatisticas</h2>
                 <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">Expandir</button>
               </div>
-              <div class="area-template-alt-content">
-                <ul class="lista-horizontal-template">
+              <div class="area-template-cdf-content">
+                <ul class="lista-horizontal">
                   <li>
                     <a class="card-tmf-m quant-small-card" href="#">
                       <p class="quant-small-card-title">Title</p>
@@ -151,7 +151,7 @@
             </li>
             <li class="area-template-tmf">
               <h2 class="area-template-tmf-header">Contatos influentes</h2>
-              <ul id="contatosList" class="area-template-tmf-content lista-vertical-template-alt">
+              <ul id="contatosList" class="area-template-tmf-content lista-vertical-alt">
                 <li>
                   <a class="card-xs contatos-small-card contato" href="#">
                     <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -220,15 +220,15 @@
     </section>
 
     <section class="main-sidenav home-sidenav">
-      <div class="area-template-tmf-alt">
-        <h2 class="area-template-tmf-alt-header">Seu dia
+      <div class="area-template-fil-alt">
+        <h2 class="area-template-fil-alt-header">Seu dia
           <button class="btn-recuar-expandir btn-suaAgenda" onclick="OcultarExibirAgenda()">Agenda para hoje</button>
         </h2>
-        <div class="area-template-tmf-alt-content">
-          <ul id="compromissosHoje" class="lista-vertical-template-fil">
-            <li class="area-template-alt" id="aniversario-hoje">
-              <h2 class="area-template-alt-header">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes('aniversario-hoje')">Exibir aniversaiantes</button></h2>
-              <ul class="area-template-alt-content lista-vertical-template-alt area-aniversaiantes">
+        <div class="area-template-fil-alt-content">
+          <ul id="compromissosHoje" class="lista-vertical-fil">
+            <li class="area-template-cdf" id="aniversario-hoje">
+              <h2 class="area-template-cdf-header">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes('aniversario-hoje')">Exibir aniversaiantes</button></h2>
+              <ul class="area-template-cdf-content lista-vertical-alt area-aniversaiantes">
                 <li>
                   <a class="card-xs aniversario-small-card contato" href="#">
                     <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -270,9 +270,9 @@
                 </li>
               </ul>
             </li>
-            <li class="area-template-alt">
-              <h2 class="area-template-alt-header">✅ Tarefas</h2>
-              <ul class="area-template-alt-content lista-vertical-template-alt">
+            <li class="area-template-cdf">
+              <h2 class="area-template-cdf-header">✅ Tarefas</h2>
+              <ul class="area-template-cdf-content lista-vertical-alt">
                 <li>
                   <a class="card-xs calendario-small-card evento" href="#">
                     <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
@@ -339,9 +339,9 @@
 
               </ul>
             </li>
-            <li class="area-template-alt">
-              <h2 class="area-template-alt-header">📅 Agenda</h2>
-              <ul class="area-template-alt-content lista-vertical-template-alt">
+            <li class="area-template-cdf">
+              <h2 class="area-template-cdf-header">📅 Agenda</h2>
+              <ul class="area-template-cdf-content lista-vertical-alt">
                 <li>
                   <a class="card-xs calendario-small-card evento" href="#">
                     <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>

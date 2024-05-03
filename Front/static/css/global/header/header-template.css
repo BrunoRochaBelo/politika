@@ -42,8 +42,8 @@
   cursor: pointer;
   width: 100%;
   background: var(--cor-p7);
-  color: var(--cor-9);
-  border: 1px solid var(--cor-8);
+  color: var(--cor-1);
+  border: 1px solid var(--cor-p7);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(108, 108, 108, 0.08);
 }
 /* Cor do placeholder */
@@ -67,7 +67,7 @@
   padding: 8px;
   border: none;
   cursor: pointer;
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-p7);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(108, 108, 108, 0.08);
 }
 .search-icon {
@@ -90,7 +90,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "header-back  header-search header-search" 48px;
-    background: var(--cor-12);
+    background: transparent;
   }
   .header-back {
     margin-left: 0.625rem;
@@ -117,19 +117,19 @@
     cursor: pointer;
     width: 100%;
     background: var(--cor-p7);
-    color: var(--cor-9);
-    border: 1px solid var(--cor-8);
+    color: var(--cor-1);
+    border: 1px solid var(--cor-p7);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
       0 1px 3px rgba(108, 108, 108, 0.08);
   }
   .header-template.box-shadow-active {
-    background: var(--cor-12);
+    background: var(--cor-10);
   }
   .search-button.scroll-active {
     padding: 8px;
     border: none;
     cursor: pointer;
-    border: 1px solid var(--cor-8);
+    border: 1px solid var(--cor-p7);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
       0 1px 3px rgba(108, 108, 108, 0.08);
   }

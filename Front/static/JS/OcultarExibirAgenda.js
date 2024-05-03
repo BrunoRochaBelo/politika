@@ -18,11 +18,11 @@ function createOverlay() {
 
   // Adiciona um evento de clique ao overlay
   overlay.addEventListener("click", function () {
-    var areaContent = selectElement(".area-template-tmf-alt-content");
-    var area = selectElement(".area-template-tmf-alt");
+    var areaContent = selectElement(".area-template-fil-alt-content");
+    var area = selectElement(".area-template-fil-alt");
     var button = selectElement(".btn-suaAgenda");
     var mainSidenav = selectElement(".main-sidenav");
-    var areaHeader = selectElement(".area-template-tmf-alt-header");
+    var areaHeader = selectElement(".area-template-fil-alt-header");
 
     // Chama a função toggleVisibility para fechar o overlay
     toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
@@ -54,13 +54,13 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--cor-p3)";
+      button.style.color = "var(--cor-10)";
       mainSidenav.style.height = "72vh";
-      area.style.background = "#04050f";
+      area.style.background = "#1c2f51";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--cor-p3)";
+      areaHeader.style.color = "var(--cor-8)";
       areaHeader.style.fontSize = "var(--titulo-xl)";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
@@ -79,11 +79,11 @@ window.addEventListener("resize", function () {
 });
 
 function OcultarExibirAgenda() {
-  var areaContent = selectElement(".area-template-tmf-alt-content");
-  var area = selectElement(".area-template-tmf-alt");
+  var areaContent = selectElement(".area-template-fil-alt-content");
+  var area = selectElement(".area-template-fil-alt");
   var button = selectElement(".btn-suaAgenda");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(".area-template-tmf-alt-header");
+  var areaHeader = selectElement(".area-template-fil-alt-header");
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

@@ -1,6 +1,6 @@
 function toggleRecuarExpandirVertical() {
   // Obtenha o elemento
-  var element = document.querySelector(".area-template-tmf-alt-content");
+  var element = document.querySelector(".area-template-fil-alt-content");
 
   // Seleciona o botão pelo ID
   var button = document.querySelector("#RecuarExpandirVertical");

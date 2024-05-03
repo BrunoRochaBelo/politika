@@ -18,18 +18,18 @@
   align-content: center;
   overflow-x: auto;
   gap: 15px;
-  padding: 3px 0px 0px 0px;
+  padding: 7px 5px;
   background: transparent;
   border-radius: 12px;
-  color: var(--cor-9);
+  color: var(--cor-1);
 }
 .nav-calendar .item1 {
   justify-self: start;
   align-self: center;
   padding: 5px 10px;
-  color: var(--cor-9);
+  color: var(--cor-1);
   background: var(--cor-2);
-  border-radius: 7px;
+  border-radius: 12px;
   border: 1px solid transparent;
 }
 .nav-calendar .item2 {
@@ -47,24 +47,16 @@
   grid-auto-flow: column;
   align-items: center;
   gap: 2px;
-  padding: 3px;
-  background: var(--cor-2);
+  padding: 0px;
+  background: var(--cor-11);
   border-radius: 12px;
 }
-.nav-semana > :first-child {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
 
-.nav-semana > :last-child {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
 .dia-semana {
   text-align: center;
   padding: 7px;
-  color: var(--cor-9);
-  background: var(--cor-12);
+  color: var(--cor-8);
+  background: var(--cor-p2);
   border: 1px solid transparent;
   cursor: pointer;
   font-size: var(--font-medium-light);
@@ -89,9 +81,9 @@
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
 }
 .dia-visualize {
-  color: var(--cor-4) !important;
-  background: linear-gradient(to right bottom, #6228d7, #9560ff) !important;
-  border: 1px solid #a57ff0 !important;
+  color: var(--cor-0) !important;
+  background: #6b2fe2 !important;
+  border: 1px solid #6b2fe2 !important;
   border-radius: 50px !important;
 }
 
@@ -104,34 +96,56 @@
 
 .hoje {
   border-radius: 4px;
-  border: 1px solid #6228d7;
-  border-top: 5px solid #6228d7;
-  color: var(--cor-9);
+  border: 1px solid #6b2fe2;
+  border-top: 5px solid #6b2fe2;
+  color: var(--cor-1);
   background: var(--cor-2);
 }
 .hoje:hover {
   border: 1px solid #8653eb;
   border-top: 5px solid #8653eb;
-  color: var(--cor-9);
+  color: var(--cor-1);
   box-shadow: 0 0 2px #c6b6fc, 0 0 4px #c6b6fc;
 }
 
 .change-semana {
   text-align: center;
+  justify-items: center;
   position: relative;
-  padding: 10px;
   border: 1px solid transparent;
-  border-radius: 12px;
-  color: var(--cor-9);
+  color: var(--cor-1);
   cursor: pointer;
   font-size: var(--font-medium-regular);
-  background: var(--cor-2);
+  background: var(--cor-p2);
+}
+.change-semana p {
+  display: none;
+}
+.ant {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.prox {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 .avancar {
-  display: none;
+  display: block;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 16px;
+  height: 16px;
 }
 .anterior {
-  display: none;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
 }
 
 .btn-calendario {
@@ -147,51 +161,42 @@
 }
 .btn-calendario:active {
   background-color: darken(var(--cor-12), 10%);
-  color: var(--cor-9);
-  border-color: var(--cor-9);
+  color: var(--cor-1);
+  border-color: var(--cor-1);
 }
 
 .area-aniversaiantes {
-  display: block;
+  display: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 .area-aniversaiantes.visible {
+  display: block;
   opacity: 1;
   max-height: 80vh;
 }
-.lista-vertical-template-alt li.item-visible {
+.lista-vertical-alt li.item-visible {
   margin: 3px 0;
 }
 
 .filtro-tarefa {
   text-align: center;
-  padding: 10px;
+  padding: 10px 15px;
   border: 1px solid transparent;
   border-radius: 50px;
-  color: var(--cor-9);
+  color: var(--cor-1);
   cursor: pointer;
   font-size: var(--font-medium-regular);
   background: var(--cor-2);
 }
 
 @media only screen and (max-width: 819px) {
-  .list-calendario .lista-vertical-template:last-child {
+  .list-calendario .lista-vertical:last-child {
     border-radius: 0px;
     border-bottom: 1px solid var(--cor-p8);
     margin-bottom: 55px;
-  }
-
-  .nav-calendar {
-    padding: 10px 3px;
-  }
-  .nav-calendar .item1 {
-    background: var(--cor-12);
-  }
-  .nav-calendar .item2 {
-    background: var(--cor-12);
   }
 
   .dia-semana {
@@ -199,7 +204,7 @@
   }
   .dia-semana:hover {
     color: inherit;
-    color: var(--cor-9);
+    color: var(--cor-1);
     background: none;
     border: 1px solid transparent;
     box-shadow: none;
@@ -207,27 +212,6 @@
 
   .change-semana {
     padding: 5px 10px;
-  }
-  .change-semana p {
-    display: none;
-  }
-  .avancar {
-    display: block;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    transform: translate(50%, -50%);
-    width: 16px;
-    height: 16px;
-  }
-  .anterior {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
   }
 
   .calendario-template .nav a.indicador-2 {
@@ -242,11 +226,5 @@
 
   .filtro-tarefa {
     margin-right: 2px;
-    background: var(--cor-12);
-  }
-
-  .btn-recuar-expandir {
-    display: block;
-    justify-self: end;
   }
 }

@@ -1,5 +1,5 @@
 function toggleRecuarExpandirHorizontal() {
-  var element = document.querySelector(".lista-horizontal-template");
+  var element = document.querySelector(".lista-horizontal");
   var button = document.querySelector(".btn-recuar-expandir");
   element.classList.toggle("desativar-responsivo");
 

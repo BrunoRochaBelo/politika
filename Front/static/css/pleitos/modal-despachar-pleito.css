@@ -12,7 +12,7 @@
 
 .modal-despachar-pleito-content {
   position: relative;
-  color: var(--cor-9);
+  color: var(--cor-1);
   margin: auto;
   margin-top: 15px;
   padding: 20px;
@@ -26,7 +26,7 @@
 
 .modal-despachar-pleito-template {
   display: grid;
-  color: var(--cor-9);
+  color: var(--cor-1);
   gap: 3px;
   grid:
     "modal-despachar-pleito-tiposolici modal-despachar-pleito-tiposolici modal-despachar-pleito-dataSolici"
@@ -150,7 +150,7 @@
   padding: 20px 10px 10px 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border-top: 1px solid var(--cor-p1);
+  border-top: 1px solid var(--cor-7);
   font-size: var(--font-small-light);
   white-space: wrap;
   word-break: break-all;
@@ -217,7 +217,7 @@
   padding: 0px 6px;
   top: 0px;
   right: 0px;
-  color: var(--cor-9);
+  color: var(--cor-1);
   border-radius: 4px;
   font-size: 28px;
 }

@@ -70,236 +70,240 @@
   </header>
 
   <main class="main main-template">
-    <section class="main-section">
-      <div id="resultsContainer " class="area-abas-template">
-        <nav class="area-abas-template-header">
-          <ul id="navAba" class="nav nav-duas-abas">
-            <li id="nav1">
-              <a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Contatos</a>
-            </li>
-            <li id="nav2">
-              <a href="#" onclick="mostrarAba('aba2')">Recentes</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="area-abas-template-content list-last-child content-duas-abas area-abas-template-content-alt">
-          <div id="aba1" class="aba-template area-template-alt active">
-            <div class="area-filtro">
+    <section class="main-section area-abas-template">
+      <nav class="area-abas-template-header">
+        <ul id="navAba" class="nav nav-duas-abas">
+          <li id="nav1">
+            <a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Contatos</a>
+          </li>
+          <li id="nav2">
+            <a href="#" onclick="mostrarAba('aba2')">Recentes</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="area-abas-template-content  content-duas-abas">
+        <div id="aba1" class="aba-template active">
+
+          <ul class="lista-vertical-alt">
+            <li class="area-filtro">
               <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
               <div class="btn-filtro-pesq">
                 <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
                   <a href="calendario.html" class="remover-filtro">&times;</a>
                 </p>
               </div>
-            </div>
-            <ul class="lista-vertical-template" id="contatosList">
-
-              <li class="area-template-alt">
-                <h2 class="area-template-alt-header">A</h2>
-                <ul class="area-template-alt-content lista-vertical-template-alt">
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="area-template-alt">
-                <h2 class="area-template-alt-header">B</h2>
-                <ul class="area-template-alt-content lista-vertical-template-alt">
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="area-template-alt">
-                <h2 class="area-template-alt-header">C</h2>
-                <ul class="area-template-alt-content lista-vertical-template-alt">
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-xs contatos-small-card contato" href="#">
-                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                      <div class="contatos-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                      </div>
-                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <div></div>
-            </ul>
-          </div>
-
-          <div id="aba2" class="aba-template">
-            <ul id="listaHistorico"></ul>
-          </div>
-
-
+            </li>
+            <li>
+              <ul class="lista-vertical" id="contatosList">
+                <li class="area-template-cdf">
+                  <h2 class="area-template-cdf-header">A</h2>
+                  <ul class="area-template-cdf-content lista-vertical-alt">
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="area-template-cdf">
+                  <h2 class="area-template-cdf-header">B</h2>
+                  <ul class="area-template-cdf-content lista-vertical-alt">
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="area-template-cdf">
+                  <h2 class="area-template-cdf-header">C</h2>
+                  <ul class="area-template-cdf-content lista-vertical-alt">
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs contatos-small-card contato" href="#">
+                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                        <div class="contatos-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                        </div>
+                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
+            </li>
+          </ul>
         </div>
+
+        <div id="aba2" class="aba-template">
+          <ul id="listaHistorico"></ul>
+        </div>
+
+
       </div>
+
     </section>
 
     <section class="main-sidenav">
@@ -307,11 +311,11 @@
         <h2 class="area-template-fil-header">Filtros
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Filtros</button>
         </h2>
-        <div class="area-template-fil-content lista-vertical-template">
+        <div class="area-template-fil-content lista-vertical">
           <button class="btn-filter-leaked" type="button" data-filter="todos">
             <strong>Todos</strong>
           </button>
-          <div class="lista-vertical-2-template">
+          <div class="lista-vertical-2">
             <select class="card-select-m" id="tipoContato" name="tipoContato">
               <option value="" selected disabled>Tipo do Contato</option>
               <option value="eleitor">Eleitor</option>
@@ -342,7 +346,7 @@
               </option>
             </select>
           </div>
-          <ul class="lista-vertical-2-template">
+          <ul class="lista-vertical-2">
             <li>
               <button class="btn-filter-leaked" type="button" data-filter="ResidenciaApoio">
                 <strong>Residência de apoio</strong>

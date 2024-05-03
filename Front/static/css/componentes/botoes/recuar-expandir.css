@@ -1,29 +1,45 @@
 /* Estilo para mostrar o conteúdo quando a área está recuada */
-
 .btn-recuar-expandir {
   display: none;
 }
 /* Estilo do botão */
-.btn-recuar-expandir {
+.btn-recuar-expandir,
+.btn-recuar-expandir:hover,
+.btn-recuar-expandir:active {
   font-size: var(--font-light);
-  color: var(--cor-9);
-  background-color: transparent;
-  padding: 0.2rem 0.625rem;
+  color: var(--cor-10);
+  background-color: var(--cor-1);
+  border-radius: 12px;
+  padding: 6px 10px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.btn-recuar-expandir:hover {
-  color: var(--cor-5);
-  border-color: var(--cor-9);
-  border-radius: 9px;
+
+/* Botão alternativo usado para exibir aniversariantes */
+.btn-pesquisa-rapida.btn-recuar-expandir-alt::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--cor-9);
+  margin-left: 5px;
+  border-radius: 25%;
 }
-.btn-recuar-expandir:active {
-  background-color: darken(var(--cor-12), 10%);
-  color: var(--cor-9);
-  border-color: var(--cor-9);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+.btn-pesquisa-rapida.btn-recuar-expandir-alt.show-after::after {
+  display: inline-block;
 }
+.btn-pesquisa-rapida.btn-recuar-expandir-alt.hide-after::after {
+  display: none;
+}
+.btn-pesquisa-rapida.btn-recuar-expandir-alt.up::after {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid var(--cor-9);
+}
+
 /* RESPONSIVO */
 @media (max-width: 820px) {
   .btn-recuar-expandir {
@@ -39,7 +55,7 @@
 /* Estilo do botão */
 .btn-recuar-expandir-alt {
   font-size: var(--font-light);
-  color: var(--cor-9);
+  color: var(--cor-1);
   background-color: transparent;
   padding: 0.2rem 0.625rem;
   cursor: pointer;
@@ -48,12 +64,12 @@
 }
 .btn-recuar-expandir-alt:hover {
   color: var(--cor-5);
-  border-color: var(--cor-9);
+  border-color: var(--cor-1);
   border-radius: 9px;
 }
 .btn-recuar-expandir-alt:active {
   background-color: darken(var(--cor-12), 10%);
-  color: var(--cor-9);
-  border-color: var(--cor-9);
+  color: var(--cor-1);
+  border-color: var(--cor-1);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }

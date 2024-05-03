@@ -24,7 +24,7 @@
 .tabela-historico td {
   padding: 8px;
   text-align: left;
-  color: var(--cor-9);
+  color: var(--cor-1);
   border-bottom: 1px solid var(--cor-10);
 }
 .tabela-historico th {
