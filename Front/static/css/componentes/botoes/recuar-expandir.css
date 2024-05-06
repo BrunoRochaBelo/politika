@@ -10,7 +10,7 @@
   color: var(--cor-10);
   background-color: var(--cor-1);
   border-radius: 12px;
-  padding: 6px 10px;
+  padding: 5px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 1px solid transparent;
@@ -45,6 +45,7 @@
   .btn-recuar-expandir {
     display: block;
     justify-self: end;
+    padding: 5px 7px;
   }
 }
 

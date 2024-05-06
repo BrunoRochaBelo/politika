@@ -48,6 +48,9 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaHeader.style.color = "transparent";
       areaHeader.style.fontSize = "0px";
 
+      // Altera o tamanho da .main-sidenav para 18%
+      mainSidenav.style.width = "18%";
+
       // Adiciona a classe para mostrar o pseudo-elemento ::after
       button.classList.add("show-after");
       button.classList.remove("hide-after");
@@ -62,6 +65,9 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--cor-8)";
       areaHeader.style.fontSize = "var(--titulo-xl)";
+
+      // Altera o tamanho da .main-sidenav para 98%
+      mainSidenav.style.width = "98%";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
       button.classList.add("hide-after");

@@ -89,7 +89,7 @@
     display: grid;
     align-content: center;
     justify-content: space-between;
-    grid: "header-back  header-search header-search" 48px;
+    grid: "header-back  header-search header-search" 45px;
     background: transparent;
   }
   .header-back {

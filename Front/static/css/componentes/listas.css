@@ -81,10 +81,10 @@
 }
 /* Adiciona borda arredondada nos cantos esquerdos e direitos do primeiro e último cards dentro da lista */
 .lista-select li:first-child .card-select-m {
-  border-top-left-radius: 5px;
+  border-top-left-radius: 12px;
 }
 .lista-select li:nth-child(2) .card-select-m {
-  border-top-right-radius: 5px;
+  border-top-right-radius: 12px;
 }
 .lista-select li:last-child .card-select-m {
   border-bottom-left-radius: 12px;
