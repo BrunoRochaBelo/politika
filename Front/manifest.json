@@ -5,7 +5,7 @@
   "lang": "pt-br",
   "theme_color": "#3f1c80",
   "background_color": "#000000",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/index.html",
   "icons": [

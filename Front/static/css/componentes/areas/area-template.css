@@ -202,9 +202,19 @@
   height: 66vh;
   background: transparent;
   border-radius: 12px;
+  /*border-top-right-radius: 0px;
+  border-top-left-radius: 0px;*/
+}
+
+.area-template-content .area-template-cbf-content {
+  height: 71vh;
 }
 
 /* Estilos */
+.area-template::-webkit-scrollbar,
+.area-template-cdf::-webkit-scrollbar,
+.area-template-fil-alt::-webkit-scrollbar,
+.area-template-cbf::-webkit-scrollbar,
 .area-template-content::-webkit-scrollbar,
 .area-template-cdf-content::-webkit-scrollbar,
 .area-template-fil-alt-content::-webkit-scrollbar,
@@ -307,6 +317,11 @@
     background: transparent;
     border-radius: 12px;
   }
+
+  .area-template-content .area-template-cbf-content {
+    height: 66vh;
+  }
+
   .area-template::-webkit-scrollbar,
   .area-template-content::-webkit-scrollbar,
   .area-template-fil-alt::-webkit-scrollbar,

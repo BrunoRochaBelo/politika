@@ -98,7 +98,7 @@
     padding: 8px;
   }
   .header-nav {
-    background: var(--cor-12);
+    background: var(--cor-2);
     border-top: 1px solid rgba(0, 0, 0, 0.21);
     position: fixed;
     bottom: 0;

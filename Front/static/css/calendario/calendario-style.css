@@ -193,38 +193,49 @@
 }
 
 @media only screen and (max-width: 819px) {
-  .list-calendario .lista-vertical:last-child {
-    border-radius: 0px;
-    border-bottom: 1px solid var(--cor-p8);
-    margin-bottom: 55px;
+  .nav-calendar {
+    padding: 5px;
+  }
+  .nav-calendar .item1 {
+    padding: 5px 10px;
+  }
+  .nav-calendar .item2 {
+    padding: 3px 5px;
+    margin-right: 3px;
+  }
+  .nav-calendar .item3 {
+    padding: 0px;
+  }
+
+  .nav-semana {
+    background: transparent;
   }
 
   .dia-semana {
-    padding: 5px 2px;
+    padding: 3px 2px;
   }
   .dia-semana:hover {
     color: inherit;
     color: var(--cor-1);
-    background: none;
+    background: var(--cor-2);
     border: 1px solid transparent;
     box-shadow: none;
+    border-radius: none;
   }
 
   .change-semana {
     padding: 5px 10px;
   }
-
-  .calendario-template .nav a.indicador-2 {
-    font-weight: bold;
-    color: var(--cor-11);
-    background: var(--cor-9);
-    border-top-left-radius: 0.9375rem;
-    border-top-right-radius: 0.9375rem;
+  .change-semana:hover {
+    color: inherit;
+    color: var(--cor-1);
+    background: var(--cor-2);
     border: 1px solid transparent;
-    border-bottom: none;
+    box-shadow: none;
   }
 
   .filtro-tarefa {
     margin-right: 2px;
+    padding: 6px 10px;
   }
 }
