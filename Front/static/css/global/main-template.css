@@ -42,7 +42,7 @@
   }
   .main-section {
     grid-area: main-section;
-    padding: 0px 7px;
+    padding: 0px 5px;
   }
   .main-sidenav {
     grid-area: main-sidenav;

@@ -54,6 +54,11 @@
 .search-input:focus::placeholder {
   color: var(--cor-6);
 }
+.search-input:hover,
+.search-button:hover {
+  border: 1px solid #a57ff0;
+  box-shadow: 0 0 1px #c6b6fc, 0 0 2px #c6b6fc, 0 0 3px #c6b6fc, 0 0 4px #c6b6fc;
+}
 .search-input:focus,
 .search-button:focus {
   outline: none;

@@ -73,14 +73,14 @@
   cursor: pointer;
   position: relative;
   align-content: start;
-  /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.05),
-    0 1px 2px 0 rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.05);*/
 }
+
 .btn-filtro-pesq-title {
   font-size: 14px;
   color: var(--cor-0);
   margin-right: 17px;
 }
+
 /* Estilo para o "x" */
 .remover-filtro {
   position: absolute;
@@ -97,10 +97,12 @@
   font-size: 16px;
   border: none;
 }
+
 .remover-filtro:hover {
-  color: var(--cor-1);
-  color: #c61818;
+  color: #c61818; /* Cor do texto ao passar o mouse */
 }
+
 .remover-filtro:hover + .btn-filtro-pesq {
-  border: 1px solid #c61818;
+  border: 1px solid #a57ff0;
+  box-shadow: 0 0 1px #c6b6fc, 0 0 2px #c6b6fc, 0 0 3px #c6b6fc, 0 0 4px #c6b6fc;
 }

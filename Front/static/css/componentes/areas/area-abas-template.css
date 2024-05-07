@@ -96,6 +96,7 @@
   color: var(--cor-0);
   background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
   border-color: #3f1c80;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .nav-duas-abas {
@@ -147,13 +148,11 @@
   #nav1 a,
   #nav2 a,
   #nav3 a {
-    box-shadow: none;
     padding: 5px 7px;
   }
   #nav1 a:hover,
   #nav2 a:hover,
   #nav3 a:hover {
-    box-shadow: none;
     padding: 5px 7px;
   }
 }

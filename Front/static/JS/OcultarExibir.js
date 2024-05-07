@@ -11,7 +11,7 @@ function createOverlay() {
   overlay.style.left = 0;
   overlay.style.width = "100%";
   overlay.style.height = "100%";
-  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
   overlay.style.zIndex = 1000;
   overlay.style.display = "none";
   document.body.appendChild(overlay);
