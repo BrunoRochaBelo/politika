@@ -1,5 +1,6 @@
 .calendario-large-card-editar .btn-leaked,
-.calendario-small-card-editar .btn-leaked {
+.calendario-small-card-editar .btn-leaked,
+.tarefa-small-card-editar .btn-leaked {
   width: auto;
   font-weight: regular;
   font-size: 10px;
@@ -8,7 +9,8 @@
   letter-spacing: 0.5px;
 }
 .calendario-large-card-editar .btn-leaked:hover,
-.calendario-small-card-editar .btn-leaked:hover {
+.calendario-small-card-editar .btn-leaked:hover,
+.tarefa-small-card-editar .btn-leaked:hover {
   border: 1px solid #a57ff0;
   color: #a57ff0;
 }
@@ -191,6 +193,12 @@
   font-size: var(--font-medium-regular);
   background: var(--cor-2);
 }
+.filtro-visualize {
+  color: var(--cor-0) !important;
+  background: #6b2fe2 !important;
+  border: 1px solid #6b2fe2 !important;
+  border-radius: 50px !important;
+}
 
 @media only screen and (max-width: 819px) {
   .nav-calendar {
@@ -235,7 +243,7 @@
   }
 
   .filtro-tarefa {
-    margin-right: 2px;
+    margin-right: 0px;
     padding: 6px 10px;
   }
 }

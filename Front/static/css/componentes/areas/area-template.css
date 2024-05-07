@@ -210,6 +210,10 @@
   height: 71vh;
 }
 
+.content-sH {
+  border-radius: 12px;
+}
+
 /* Estilos */
 .area-template::-webkit-scrollbar,
 .area-template-cdf::-webkit-scrollbar,

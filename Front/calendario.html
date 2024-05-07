@@ -78,7 +78,6 @@
           <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Tarefa</a></li>
         </ul>
       </nav>
-
       <div class="area-abas-template-content  content-duas-abas">
         <div id="aba1" class="aba-template  active">
           <div class="area-template-cbf">
@@ -947,14 +946,14 @@
           </div>
         </div>
 
-        <div id="aba2" class="aba-template area-template-cdf">
+        <div id="aba2" class="aba-template ">
           <div class="area-template-cbf">
             <div class="area-template-cbf-header">
               <div class="lista-select nav-calendar">
                 <input type="date" class="item1 btn-calendario" id="tarefa_mesAno">
                 <div class="item2 hoje" id="tarefa_hoje"></div>
                 <ul class="lista-horizontal item3">
-                  <li class="filtro-tarefa">
+                  <li class="filtro-tarefa filtro-visualize">
                     <h3>Todas</h3>
                   </li>
                   <li class="filtro-tarefa">
@@ -976,58 +975,61 @@
               </div>
             </div>
             <div class="area-template-cbf-content">
-              <div class="area-template-cdf-content list-last-child">
-                <ul class="lista-vertical">
-                  <li class="area-filtro inactiveFil" id="filtro2">
-                    <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
-                    <div class="btn-filtro-pesq">
-                      <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
-                        <a href="calendario.html" class="remover-filtro">&times;</a>
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <a class="card-m tarefa-small-card" href="#">
-                      <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                      <div class="tarefa-small-card-tag" data-filter="tagTarefa">
-                        <div class="marcador-item cor-marc3">
-                          <p><strong>Marcador 1</strong></p>
+              <ul class="lista-vertical-alt">
+                <li class="area-filtro inactiveFil" id="filtro2">
+                  <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
+                      <a href="calendario.html" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <ul class="area-template-cdf-content lista-vertical-alt content-sH">
+                    <li>
+                      <a class="card-m tarefa-small-card" href="#">
+                        <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                        <div class="tarefa-small-card-tag" data-filter="tagTarefa">
+                          <div class="marcador-item cor-marc3">
+                            <p><strong>Marcador 1</strong></p>
+                          </div>
                         </div>
-                      </div>
-                      <p class="tarefa-small-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                      <p class="tarefa-small-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                      <p class="tarefa-small-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                      <div class="tarefa-small-card-desc" data-filter="descricaoTarefa">
-                        <p>Descrição da Tarefa</p>
-                      </div>
-                      <div class="tarefa-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                      </div>
-                      <div class="tarefa-small-card-id" data-filter="tarefa-small-card-id">{{tarefa-small-card-id}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-m tarefa-small-card" href="#">
-                      <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                      <div class="tarefa-small-card-tag" data-filter="tagTarefa">
-                        <div class="marcador-item cor-marc3">
-                          <p><strong>Marcador 1</strong></p>
+                        <p class="tarefa-small-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                        <p class="tarefa-small-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                        <p class="tarefa-small-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                        <div class="tarefa-small-card-desc" data-filter="descricaoTarefa">
+                          <p>Descrição da Tarefa</p>
                         </div>
-                      </div>
-                      <p class="tarefa-small-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                      <p class="tarefa-small-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                      <p class="tarefa-small-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                      <div class="tarefa-small-card-desc" data-filter="descricaoTarefa">
-                        <p>Descrição da Tarefa</p>
-                      </div>
-                      <div class="tarefa-small-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                      </div>
-                      <div class="tarefa-small-card-id" data-filter="tarefa-small-card-id">{{tarefa-small-card-id}}</div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                        <div class="tarefa-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                        </div>
+                        <div class="tarefa-small-card-id" data-filter="tarefa-small-card-id">{{tarefa-small-card-id}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-m tarefa-small-card" href="#">
+                        <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                        <div class="tarefa-small-card-tag" data-filter="tagTarefa">
+                          <div class="marcador-item cor-marc3">
+                            <p><strong>Marcador 1</strong></p>
+                          </div>
+                        </div>
+                        <p class="tarefa-small-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                        <p class="tarefa-small-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                        <p class="tarefa-small-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                        <div class="tarefa-small-card-desc" data-filter="descricaoTarefa">
+                          <p>Descrição da Tarefa</p>
+                        </div>
+                        <div class="tarefa-small-card-editar">
+                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                        </div>
+                        <div class="tarefa-small-card-id" data-filter="tarefa-small-card-id">{{tarefa-small-card-id}}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1125,7 +1127,9 @@
   <script src="./static/js/ExibirDetalhesEvento.js"></script>
   <script src="./static/js/ExibirDetalhesAniversariante.js"></script>
   <script src="./static/js/Exibiraniversaiantes.js"></script>
+  <script src="./static/js/ExibirDetalhesTarefa.js"></script>
   <script src="./static/js/NavDia.js"></script>
+  <script src="./static/js/NavFiltroTarefa.js"></script>
 
 </body>
 

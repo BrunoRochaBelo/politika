@@ -76,25 +76,25 @@
   border-top: 1px solid var(--cor-7);
 }
 
-.exibirDetalheEvento {
+.exibirDetalheTarefa {
   opacity: 1 !important;
 }
 .tarefa-small-card-expanded {
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
-    "tarefa-small-card-data tarefa-small-card-status"
+    "tarefa-small-card-status tarefa-small-card-data"
     "tarefa-small-card-desc  tarefa-small-card-desc"
     "tarefa-small-card-resp tarefa-small-card-resp"
     "tarefa-small-card-editar tarefa-small-card-editar";
 }
-.tarefa-small-card-local.exibirDetalheEvento,
-.tarefa-small-card-partcipantes.exibirDetalheEvento {
+.tarefa-small-card-local.exibirDetalheTarefa,
+.tarefa-small-card-partcipantes.exibirDetalheTarefa {
   display: block;
   opacity: 1;
   margin: 3px 0 0 0px;
 }
 
-.tarefa-small-card-editar.exibirDetalheEvento {
+.tarefa-small-card-editar.exibirDetalheTarefa {
   display: flex;
   justify-content: end;
   padding: 10px 10px 1px 10px;
