@@ -5,7 +5,7 @@
   font-weight: regular;
   font-size: 10px;
   border-radius: 20px;
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-p3);
   letter-spacing: 0.5px;
 }
 .calendario-large-card-editar .btn-leaked:hover,
@@ -50,7 +50,7 @@
   align-items: center;
   gap: 2px;
   padding: 0px;
-  background: var(--cor-11);
+  background: transparent;
   border-radius: 12px;
 }
 

@@ -73,20 +73,22 @@
   <main class="main main-template">
 
     <section class="main-section">
-      <div id="resultsContainer" class="area-template">
-        <h2 class="area-template-header title-filtro"><span id="totalResults">{{total}}</span>&nbsp;-&nbsp; <div class="btn-filtro-pesq">
-            <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-              <a href="despesas.html" class="remover-filtro">&times;</a>
-            </p>
-          </div>
-        </h2>
+      <div class=" area-template">
+        <h2 class="area-template-header">Despesas</h2>
         <div class="area-template-content">
-          <ul class="lista-vertical" id="despesasList">
-            <li class="area-template-cdf">
-              <h2 class="area-template-cdf-header">mês</h2>
-              <ul class="area-template-cdf-content lista-vertical-alt">
-                <li>
-                  <a class="card-m despesas-medium-card" href="#">
+          <ul class="lista-vertical-alt">
+            <li class="area-filtro activeFil" id="filtro1">
+              <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+              <div class="btn-filtro-pesq">
+                <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                  <a href="despesas.html" class="remover-filtro">&times;</a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <ul class="area-template-cdf-content lista-vertical-alt content-sH">
+                <li class="card-m">
+                  <a class="despesas-medium-card" href="#">
                     <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
                     <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
                     <p class="despesas-medium-card-valorDespesa" data-filter="valorDespesa">R$ xxxx,xx</p>
@@ -105,12 +107,13 @@
                     <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
                   </a>
                 </li>
-
               </ul>
             </li>
+            <li class="list-last-child"><br></li>
           </ul>
         </div>
       </div>
+
     </section>
 
     <section class="main-sidenav">
