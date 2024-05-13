@@ -29,6 +29,14 @@
   width: 35px;
   height: auto;
   border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.home-header-user:hover {
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid #a57ff0;
 }
 
 /* RESPONSIVO */

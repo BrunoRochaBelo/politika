@@ -1,9 +1,10 @@
 /* Botões */
 .btn-filled {
-  padding: 0.75rem;
-  background: var(--cor-12);
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.21);
   color: var(--cor-1);
   font-size: small;
+  border: 1px solid #28385300;
   border-radius: 12px;
   display: flex;
   text-align: justify;
@@ -53,6 +54,7 @@
   box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
     0 0 4px #7852ff58;
   border: 1px solid #a57ff0;
+  color: #a57ff0;
 }
 .btn-filled:active,
 .btn-leaked:active,

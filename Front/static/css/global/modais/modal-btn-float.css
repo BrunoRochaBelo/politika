@@ -67,7 +67,7 @@
   height: 75px;
   background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
   color: #3f1c80;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   border: 1px solid #3f1c80;
   border-radius: 15px;
   font-size: 2rem;
@@ -106,7 +106,7 @@
     height: 61px;
     background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
     color: #3f1c80;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     border: 1px solid #3f1c80;
     border-radius: 15px;
     font-size: 1.5rem;

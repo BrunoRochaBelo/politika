@@ -22,11 +22,11 @@
   top: 51px;
   right: 1rem;
   color: var(--cor-1);
-  background: radial-gradient(circle at right bottom, #362063, #2f4e71);
+  background: var(--cor-12);
   border: 1px solid var(--cor-2);
   padding: 1rem;
-  gap: 10px;
-  border-radius: 15px;
+  gap: 5px;
+  border-radius: 12px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   z-index: 1002;
   transition: top 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -35,7 +35,7 @@
     "modal-content-template-img modal-content-template-candidato modal-content-template-candidato"
     "modal-content-template-img modal-content-template-cargo-owner modal-content-template-partido"
     "modal-content-template-sessao modal-content-template-sessao modal-content-template-sessao"
-    ". . modal-content-template-sair" 25px
+    "modal-content-template-sair modal-content-template-sair modal-content-template-sair"
     / 1fr 2fr auto;
 }
 
@@ -57,7 +57,7 @@
   grid-area: modal-content-template-cargo-owner;
   justify-self: start;
   align-self: start;
-  font-size: var(--titulo-m);
+  font-size: var(--font-medium-regular);
 }
 .modal-content-template-partido {
   grid-area: modal-content-template-partido;
@@ -68,9 +68,9 @@
 .modal-content-template-sessao {
   grid-area: modal-content-template-sessao;
   display: grid;
-  background-color: #28385396;
+  background: var(--cor-3);
   padding: 20px;
-  border-radius: 0.9375rem;
+  border-radius: 12px;
 
   grid:
     "modal-content-template-username"
@@ -92,9 +92,15 @@
 
 .modal-content-template-sair {
   grid-area: modal-content-template-sair;
-  justify-self: end;
-  align-self: end;
-  text-align: end;
+  display: flex;
+  justify-content: end;
+  padding-top: 5px;
+  opacity: 1;
+  gap: 15px;
+}
+
+#btnGerenciarConta {
+  background: none;
 }
 
 /* RESPONSIVO */

@@ -228,8 +228,8 @@
         </h2>
         <div class="area-template-fil-alt-content">
           <ul id="compromissosHoje" class="lista-vertical-fil">
-            <li class="area-template-cdf" id="aniversario-hoje">
-              <h2 class="area-template-cdf-header">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes('aniversario-hoje')">Exibir aniversaiantes</button></h2>
+            <li class="area-template-cdf">
+              <h2 class="area-template-cdf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
               <ul class="area-template-cdf-content lista-vertical-alt area-aniversaiantes">
                 <li>
                   <a class="card-xs aniversario-small-card contato" href="#">
@@ -513,7 +513,10 @@
         <div class="modal-content-template-username" id="username">Nome do Usuário</div>
         <div class="modal-content-template-cargo" id="cargo">Cargo do Usuário</div>
       </div>
-      <button class="modal-content-template-sair " onclick="logout()">Sair</button>
+      <div class="modal-content-template-sair">
+        <button id="btnGerenciarConta" class="btn-filled" onclick="logout()">Gerenciar conta</button>
+        <button id="btnLogout" class="btn-filled" onclick="logout()">Sair</button>
+      </div>
     </div>
   </div>
 
