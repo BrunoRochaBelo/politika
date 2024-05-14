@@ -1,5 +1,4 @@
 /* HEADER TEMPLATE */
-/* Definição do layout usando grid para o cabeçalho */
 .header-template {
   display: grid;
   align-content: center;

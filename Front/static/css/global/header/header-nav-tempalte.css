@@ -8,11 +8,11 @@
 .home {
   grid-area: home;
 }
-.relatorios {
-  grid-area: relatorios;
+.calendario {
+  grid-area: calendario;
 }
-.alunos {
-  grid-area: alunos;
+.contatos {
+  grid-area: contatos;
 }
 .pleitos {
   grid-area: pleitos;
@@ -43,10 +43,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: #7a44e7;
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid #a57ff0;
+  border: 1px solid #a57ff000;
+  text-decoration: underline;
 }
 .header-nav-template a:hover img {
   background: radial-gradient(

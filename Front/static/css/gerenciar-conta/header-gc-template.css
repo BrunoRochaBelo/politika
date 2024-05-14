@@ -1,0 +1,108 @@
+/* header-gc TEMPLATE */
+.header-gc-template {
+  display: grid;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  grid: "header-gc-back header-gc-nav header-gc-logout" 45px;
+}
+
+/* Áreas de grid */
+.header-gc-back {
+  grid-area: header-gc-back;
+}
+.header-gc-nav {
+  grid-area: header-gc-nav;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.header-gc-logout {
+  grid-area: header-gc-logout;
+}
+
+/*---------------------------------------------*/
+
+/* header-gc-nav TEMPLATE */
+
+/* Nav */
+.header-gc-nav-template {
+  display: grid;
+  grid:
+    "dashboard perfil equipe contas"
+    / 1fr 1fr 1fr 1fr;
+}
+.dashboard {
+  grid-area: dashboard;
+}
+.perfil {
+  grid-area: perfil;
+}
+.equipe {
+  grid-area: equipe;
+}
+.contas {
+  grid-area: contas;
+}
+
+/* Estilos para a lista de navegação */
+.header-gc-nav-template li {
+  align-self: center;
+  justify-self: center;
+  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-gc-nav-template a {
+  size: 1rem;
+  padding: 0.625rem;
+  border-radius: 20px;
+  display: flex;
+  transition: 0.15s;
+  border: 1px solid transparent;
+}
+.header-gc-nav-template a:hover {
+  padding: auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: #7a44e7;
+  border: 1px solid #a57ff000;
+  text-decoration: underline;
+}
+.header-gc-nav-template a:hover img {
+  background: radial-gradient(
+    circle at center,
+    #966fe478,
+    #966fe46d,
+    #7e57cd47,
+    #8d62e20d,
+    transparent,
+    transparent
+  );
+}
+.header-gc-nav-template img {
+  width: auto;
+  height: auto;
+  margin-right: 0.625em;
+}
+
+/* RESPONSIVO */
+@media (max-width: 820px) {
+  .header-gc-nav-template p {
+    display: none;
+  }
+  .header-gc-nav-template img {
+    width: auto;
+    height: 24px;
+    margin: 0 auto;
+  }
+
+  .header-gc-nav-template a {
+    border-radius: 50%;
+  }
+}

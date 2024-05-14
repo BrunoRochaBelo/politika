@@ -1,0 +1,12 @@
+.card-info-user {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-info-user img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  justify-self: center;
+}

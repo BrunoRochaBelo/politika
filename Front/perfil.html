@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="manifest" href="./manifest.json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <!-- <script src="./static/js/EsquemaDeCores.js" defer></script> -->
+  <title>calendario</title>
+  <meta name="description" content="Perfil">
+
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body class="body-template">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+          console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+        }, function (err) {
+          console.log('Falha ao registrar o ServiceWorker: ', err);
+        });
+      });
+    }
+  </script>
+
+  <header class="header header-template">
+
+  </header>
+
+  <main class="main main-template">
+
+  </main>
+
+
+</body>
+
+</html>

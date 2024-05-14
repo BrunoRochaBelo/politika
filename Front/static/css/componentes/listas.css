@@ -2,7 +2,6 @@
 .lista-vertical {
   display: grid;
   grid-auto-flow: row;
-
   gap: 18px;
   scrollbar-width: thick;
 }
@@ -10,7 +9,6 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-
   gap: 4px;
   scrollbar-width: thick;
 }
@@ -18,7 +16,6 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-
   gap: 10px;
   scrollbar-width: thick;
 }

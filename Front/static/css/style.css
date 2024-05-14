@@ -55,3 +55,10 @@
 
 /* despesas */
 @import "./despesas/despesas-style.css";
+
+/* gerenciar-conta */
+@import "./gerenciar-conta/body-gc-template.css";
+@import "./gerenciar-conta/main-gc-template.css";
+@import "./gerenciar-conta/header-gc-template.css";
+/* gerenciar-conta/ home-admin */
+@import "./gerenciar-conta/home-admin/home-admin-style.css";
