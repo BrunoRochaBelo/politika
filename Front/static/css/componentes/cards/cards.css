@@ -2,43 +2,35 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   min-height: 30px;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
   padding: 10px 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
 }
 /* Pequeno altura 35px*/
 .card-s {
   min-height: 35px;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
   padding: 10px 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
 }
 /* Médio altura 50px*/
 .card-m {
   min-height: 50px;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
   padding: 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
 }
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
   padding: 15px;
   gap: 0.625rem;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
 }
 
 /* Cards tamanhos fixos (tmf)*/
@@ -46,35 +38,29 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
   padding: 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
 }
 /* Médio */
 .card-tmf-m {
   width: 115px;
   height: 95px;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
   padding: 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
 }
 /* Grande */
 .card-tmf-l {
   width: 184px;
   height: 190px;
   min-height: 170px;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
   padding: 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
 }
 
 /* Cards dos selects */
@@ -83,28 +69,27 @@
   border-radius: 9px;
   width: 100%;
   padding: 0.3rem;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
   font-weight: var(--font-light);
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
 }
 .card-select-s {
   border-radius: 9px;
   width: 100%;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
   font-weight: var(--font-medium-regular);
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
 }
 .card-select-m {
   padding: 0.625rem;
   width: 100%;
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-1);
   padding: 0.625rem;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 9px;
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
 }
 
 .area-template-fil-content .card-xs,
@@ -124,17 +109,16 @@
 .area-template-fil-alt-content .card-tmf-s,
 .area-template-fil-alt-content .card-tmf-m,
 .area-template-fil-alt-content .card-tmf-l {
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-6);
-  border: 1px solid transparent;
-  border-radius: 12px;
+  border: 1px solid var(--cor-3);
 }
 .area-template-fil-alt-content .card-select-xs,
 .area-template-fil-alt-content .card-select-s,
 .area-template-fil-alt-content .card-select-m {
-  background: var(--cor-3);
+  background: var(--cor-p3);
   color: var(--cor-6);
-  border: 1px solid transparent;
+  border: 1px solid var(--cor-3);
   border-radius: 9px;
 }
 
@@ -170,6 +154,20 @@
 
 /* Responsivo */
 @media (max-width: 820px) {
+  .card-xs,
+  .card-s,
+  .card-m,
+  .card-l,
+  .card-select-xs,
+  .card-select-s,
+  .card-select-m {
+    background: var(--cor-p3);
+  }
+  .card-tmf-s,
+  .card-tmf-m,
+  .card-tmf-l {
+    background: var(--cor-p3);
+  }
   .area-template-fil-content .card-xs,
   .area-template-fil-content .card-s,
   .area-template-fil-content .card-m,
@@ -190,7 +188,7 @@
   .area-template-fil-alt-content .card-select-xs,
   .area-template-fil-alt-content .card-select-s,
   .area-template-fil-alt-content .card-select-m {
-    background: var(--cor-3);
-    border: 1px solid transparent;
+    background: var(--cor-p3);
+    border: 1px solid var(--cor-3);
   }
 }

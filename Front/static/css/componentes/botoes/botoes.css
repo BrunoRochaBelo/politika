@@ -69,8 +69,8 @@
   justify-content: center;
   padding: 3px 15px;
   border-radius: 20px;
-  border: 1px solid var(--cor-p3);
-  background: var(--cor-12);
+  border: 1px solid var(--cor-2);
+  background: var(--cor-p2);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -79,7 +79,7 @@
 
 .btn-filtro-pesq-title {
   font-size: 14px;
-  color: var(--cor-0);
+  color: var(--cor-1);
   margin-right: 17px;
 }
 
@@ -87,7 +87,7 @@
 .remover-filtro {
   position: absolute;
   top: 50%;
-  right: 1px;
+  right: 2px;
   transform: translateY(-50%);
   width: 17px;
   height: 17px;
@@ -95,7 +95,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--cor-0);
+  color: var(--cor-1);
   font-size: 16px;
   border: none;
 }

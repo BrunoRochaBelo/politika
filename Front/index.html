@@ -37,7 +37,7 @@
 
   <header class="header home-header-template">
     <div id="logo" class="home-header-logo"><img src="./static/imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
-    <div class="home-header-title">HOME</div>
+    <div class="home-header-title">Olá, {{Usuário}}!</div>
 
     <nav class="home-header-nav">
       <ul class="header-nav-template">
@@ -66,44 +66,28 @@
     <section class="main-section">
       <div class=" area-template">
         <h2 class="area-template-header">Destino</h2>
-        <div class="area-template-content">
+        <div class="area-template-content content-header-fx-int">
           <div class="area-template-cbf">
             <div class="area-template-cbf-header">
-              <ul class="lista-select destino">
-                <li class="item1">
-                  <form id="formEstado" action="/?uf_destino=" method="post">
-                    <select class="card-select-m" id="estado">
-                      <option value="" selected disabled>Selecione um estado</option>
-                      <option value="PE">Pernambuco</option>
-                      <option value="SP">São Paulo</option>
-                      <option value="RJ">Rio de Janeiro</option>
-                      <option value="MG">Minas Gerais</option>
-                    </select>
-                    <button type="submit" style="display: none;"></button>
-                  </form>
-                </li>
-                <li class="item2">
-                  <form id="formCidade" method="post">
-                    <select class="card-select-m" id="cidade">
-                      <option value="" selected disabled>Selecione um estado primeiro</option>
-                      <!-- As opções de cidades serão adicionadas dinamicamente -->
-                    </select>
-                    <button type="submit" style="display: none;"></button>
-                  </form>
-                </li>
-                <li class="item3">
-                  <input class="card-select-m" type="text" id="bairro" placeholder="Selecione uma cidade e defina o bairro">
-                </li>
-              </ul>
+              <div class="modal-destino">
+                <p><span class="breadcrumb">{{UF}} > {{Cidade}}</span></p>
+                <form action="/evento/listcard" method="post" class="search-input-container-dest" id="searchForm">
+                  <div class="search-wrapper-dest">
+                    <input type="search" name="search" id="searchInput" class="search-input search-input-dest" placeholder="Pesquisar destino...">
+                    <img class="search-icon-alt" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+                  </div>
+                </form>
+              </div>
             </div>
             <div class="area-template-cbf-content">
               <ul class="lista-vertical">
-                <li id="quantitativos" class="area-template-cdf">
-                  <div class="area-template-cdf-header">
+                <li></li>
+                <li id="quantitativos" class="area-template-cf">
+                  <div class="area-template-cf-header">
                     <h2>Indicadores e estatisticas</h2>
                     <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">Expandir</button>
                   </div>
-                  <div class="area-template-cdf-content">
+                  <div class="area-template-cf-content">
                     <ul class="lista-horizontal">
                       <li>
                         <a class="card-tmf-m quant-small-card" href="#">
@@ -219,6 +203,7 @@
               </ul>
             </div>
           </div>
+        </div>
     </section>
 
     <section class="main-sidenav home-sidenav">
@@ -228,9 +213,9 @@
         </h2>
         <div class="area-template-fil-alt-content">
           <ul id="compromissosHoje" class="lista-vertical-fil">
-            <li class="area-template-cdf">
-              <h2 class="area-template-cdf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
-              <ul class="area-template-cdf-content lista-vertical-alt area-aniversaiantes">
+            <li class="area-template-cf aniversariantes">
+              <h2 class="area-template-cf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
+              <ul class="area-template-cf-content lista-vertical-alt area-aniversaiantes">
                 <li>
                   <a class="card-xs aniversario-small-card contato" href="#">
                     <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -272,9 +257,9 @@
                 </li>
               </ul>
             </li>
-            <li class="area-template-cdf">
-              <h2 class="area-template-cdf-header">✅ Tarefas</h2>
-              <ul class="area-template-cdf-content lista-vertical-alt">
+            <li class="area-template-cf">
+              <h2 class="area-template-cf-header">✅ Tarefas</h2>
+              <ul class="area-template-cf-content lista-vertical-alt">
                 <li>
                   <a class="card-xs calendario-small-card evento" href="#">
                     <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
@@ -341,9 +326,9 @@
 
               </ul>
             </li>
-            <li class="area-template-cdf">
-              <h2 class="area-template-cdf-header">📅 Agenda</h2>
-              <ul class="area-template-cdf-content lista-vertical-alt">
+            <li class="area-template-cf">
+              <h2 class="area-template-cf-header">📅 Agenda</h2>
+              <ul class="area-template-cf-content lista-vertical-alt">
                 <li>
                   <a class="card-xs calendario-small-card evento" href="#">
                     <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
@@ -500,6 +485,7 @@
     </section>
   </main>
 
+
   <!-- Modal Conta Usuario -->
   <div class="modal" id="userModal">
     <div class="modal-content-template">
@@ -522,6 +508,36 @@
     </div>
   </div>
 
+  <!-- Modal Destino -->
+  <div id="filterModal" class="modal">
+    <div class="modal-destino-content">
+      <span class="close">&times;</span>
+      <form id="filterForm" method="post" action="/evento/listcard">
+        <div class="form-group">
+          <label for="estado">Estado:</label>
+          <select class="card-select-m" id="estado" name="estado">
+            <option value="" selected disabled>Selecione um estado</option>
+            <option value="PE">Pernambuco</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cidade">Cidade:</label>
+          <select class="card-select-m" id="cidade" name="cidade">
+            <option value="" selected disabled>Selecione um estado primeiro</option>
+            <!-- As opções de cidades serão adicionadas dinamicamente -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bairro">Bairro:</label>
+          <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
+        </div>
+        <button type="submit" class="submit-button">Aplicar Filtros</button>
+      </form>
+    </div>
+  </div>
 
 
   <script>
@@ -602,6 +618,7 @@
   <script src="./static/js/ExibirDetalhesAniversariante.js"></script>
   <script src="./static/js/Exibiraniversaiantes.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
+  <script src="./static/js/ModalDestino.js"></script>
   <script src="./static/js/CarregarDestino.js"></script>
 
 

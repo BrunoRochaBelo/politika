@@ -13,18 +13,6 @@
   border-radius: 50%;
 }
 
-.lista-select.destino {
-  background: #232e4a;
-  border-radius: 12px;
-  padding: 1px;
-  gap: 1px;
-}
-.lista-select.destino .card-select-m {
-  background: #0e1423;
-  box-shadow: none;
-  border: 1px solid transparent;
-}
-
 /* RESPONSIVO */
 @media (max-width: 820px) {
   .home-sidenav {

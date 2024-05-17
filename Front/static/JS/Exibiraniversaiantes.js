@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var aniversaiantesHeaders = document.querySelectorAll(
-    ".area-template-cdf-header.aniversariantes"
+    ".area-template-cf-header.aniversariantes"
   );
   aniversaiantesHeaders.forEach(function (header) {
     header.addEventListener("click", function () {

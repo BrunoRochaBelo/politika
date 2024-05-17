@@ -168,7 +168,7 @@ form span {
   border-radius: 9px;
   background: transparent;
   color: var(--cor-1);
-  border: 1px solid var(--cor-9);
+  border: 1px solid var(--cor-4);
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
 .botoes .btn-filled {

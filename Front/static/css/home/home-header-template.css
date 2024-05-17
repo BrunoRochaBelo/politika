@@ -46,7 +46,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "home-header-logo home-header-title home-header-user" 45px;
-    background: none;
+    background: linear-gradient(to left bottom, var(--cor-12), #141b35);
     box-shadow: none;
   }
   .home-header-template.box-shadow-active {
@@ -57,7 +57,6 @@
 
   .home-header-logo {
     margin-left: 0.625rem;
-
     background: rgba(255, 255, 255, 0.85);
     border-radius: 0.9375rem;
     padding: 3px;
@@ -74,7 +73,7 @@
     padding: 3px;
   }
   .home-header-nav {
-    background: var(--cor-2);
+    background: #020202e4;
     border-top: 1px solid rgba(0, 0, 0, 0.21);
     position: fixed;
     bottom: 0;

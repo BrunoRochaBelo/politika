@@ -78,14 +78,14 @@
           <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Tarefa</a></li>
         </ul>
       </nav>
-      <div class="area-abas-template-content  content-duas-abas">
+      <div class="area-abas-template-content  content-header-fx-int">
         <div id="aba1" class="aba-template  active">
           <div class="area-template-cbf">
             <div class="area-template-cbf-header">
               <div class="lista-select nav-calendar">
                 <input type="date" class="item1 btn-calendario" id="mesAno">
                 <div class="item2 hoje" id="hoje"></div>
-                <ul class="lista-horizontal item3">
+                <ul class="item3 lista-horizontal">
                   <li class="change-semana ant">
                     <p id="semanaAnterior">Semana</p>
                     <p>anterior</p>
@@ -144,10 +144,10 @@
                       </div>
                     </li>
                     <li>
-                      <ul class="lista-vertical-alt ">
-                        <li class="area-template-cdf">
-                          <h2 class="area-template-cdf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
-                          <ul class="area-template-cdf-content lista-vertical-alt area-aniversaiantes">
+                      <ul class="lista-vertical-alt lista-vertical-fil">
+                        <li class="area-template-cf aniversariantes">
+                          <h2 class="area-template-cf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
+                          <ul class="area-template-cf-content lista-vertical-alt area-aniversaiantes">
                             <li>
                               <a class="card-xs aniversario-small-card contato" href="#">
                                 <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -189,9 +189,9 @@
                             </li>
                           </ul>
                         </li>
-                        <li class="area-template-cdf">
-                          <h2 class="area-template-cdf-header">08h00</h2>
-                          <ul class="area-template-cdf-content lista-vertical-fil">
+                        <li class="area-template-cf">
+                          <h2 class="area-template-cf-header">08h00</h2>
+                          <ul class="area-template-cf-content ">
                             <li>
                               <a class="card-l calendario-large-card evento" href="#">
                                 <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -236,9 +236,9 @@
                             </li>
                           </ul>
                         </li>
-                        <li class="area-template-cdf">
-                          <h2 class="area-template-cdf-header">09h00</h2>
-                          <ul class="area-template-cdf-content lista-vertical-fil">
+                        <li class="area-template-cf">
+                          <h2 class="area-template-cf-header">09h00</h2>
+                          <ul class="area-template-cf-content lista-vertical-fil">
                             <li>
                               <a class="card-l calendario-large-card evento" href="#">
                                 <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -268,7 +268,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-cdf-content list-last-child dia-hidden" id="terca-feira">
+                <li class="area-template-cf-content dia-hidden" id="terca-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -278,9 +278,9 @@
                     </div>
                   </div>
                   <ul class="lista-vertical">
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">07h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">07h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -304,9 +304,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -330,9 +330,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h30</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h30</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -360,7 +360,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-cdf-content list-last-child dia-hidden" id="quarta-feira">
+                <li class="area-template-cf-content dia-hidden" id="quarta-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -370,9 +370,9 @@
                     </div>
                   </div>
                   <ul class="lista-vertical">
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
-                      <ul class="area-template-cdf-content lista-vertical-alt area-aniversaiantes">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
+                      <ul class="area-template-cf-content lista-vertical-alt area-aniversaiantes">
                         <li>
                           <a class="card-xs aniversario-small-card contato" href="#">
                             <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -401,9 +401,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -427,9 +427,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">09h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">09h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -453,9 +453,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">12h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">12h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -483,7 +483,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-cdf-content list-last-child dia-hidden" id="quinta-feira">
+                <li class="area-template-cf-content dia-hidden" id="quinta-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -493,9 +493,9 @@
                     </div>
                   </div>
                   <ul class="lista-vertical">
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
-                      <ul class="area-template-cdf-content lista-vertical-alt area-aniversaiantes">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
+                      <ul class="area-template-cf-content lista-vertical-alt area-aniversaiantes">
                         <li>
                           <a class="card-xs aniversario-small-card contato" href="#">
                             <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -537,9 +537,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -584,9 +584,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">09h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">09h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -614,7 +614,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-cdf-content list-last-child dia-hidden" id="sexta-feira">
+                <li class="area-template-cf-content dia-hidden" id="sexta-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -624,9 +624,9 @@
                     </div>
                   </div>
                   <ul class="lista-vertical">
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">07h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">07h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -650,9 +650,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -676,9 +676,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h30</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h30</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -706,7 +706,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-cdf-content list-last-child dia-hidden" id="sabado-feira">
+                <li class="area-template-cf-content dia-hidden" id="sabado-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -716,9 +716,9 @@
                     </div>
                   </div>
                   <ul class="lista-vertical">
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -742,9 +742,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">09h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">09h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -768,9 +768,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">12h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">12h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -798,7 +798,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-cdf-content list-last-child dia-hidden" id="domingo-feira">
+                <li class="area-template-cf-content dia-hidden" id="domingo-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -808,9 +808,9 @@
                     </div>
                   </div>
                   <ul class="lista-vertical">
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
-                      <ul class="area-template-cdf-content lista-vertical-alt area-aniversaiantes">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
+                      <ul class="area-template-cf-content lista-vertical-alt area-aniversaiantes">
                         <li>
                           <a class="card-xs aniversario-small-card contato" href="#">
                             <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -865,9 +865,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">08h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">08h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -912,9 +912,9 @@
                         </li>
                       </ul>
                     </li>
-                    <li class="area-template-cdf">
-                      <h2 class="area-template-cdf-header">09h00</h2>
-                      <ul class="area-template-cdf-content lista-vertical-fil">
+                    <li class="area-template-cf">
+                      <h2 class="area-template-cf-header">09h00</h2>
+                      <ul class="area-template-cf-content lista-vertical-fil">
                         <li>
                           <a class="card-l calendario-large-card evento" href="#">
                             <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -975,7 +975,7 @@
               </div>
             </div>
             <div class="area-template-cbf-content">
-              <ul class="lista-vertical-alt">
+              <ul class="lista-vertical">
                 <li class="area-filtro inactiveFil" id="filtro2">
                   <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
                   <div class="btn-filtro-pesq">
@@ -985,7 +985,7 @@
                   </div>
                 </li>
                 <li>
-                  <ul class="area-template-cdf-content lista-vertical-alt content-sH">
+                  <ul class="area-template-cf-content lista-vertical-alt content-sH">
                     <li>
                       <a class="card-m tarefa-small-card" href="#">
                         <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>

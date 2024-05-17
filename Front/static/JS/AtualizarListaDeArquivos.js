@@ -26,36 +26,21 @@ function atualizarListaArquivos(inputFile, tabelaId, selectId) {
       </td>
     `;
     tbody.appendChild(tr);
-  }
-}
-function editarArquivo(idArquivo) {
-  // Implemente a lógica para editar o arquivo
-  console.log(`Editar arquivo com ID: ${idArquivo}`);
-}
 
-function excluirArquivo(idArquivo, tabelaId) {
-  // Encontra a linha da tabela com o ID do arquivo
-  const linha = document.querySelector(
-    `#${tabelaId} tr[data-id="${idArquivo}"]`
-  );
-  if (linha) {
-    // Remove a linha da tabela
-    linha.remove();
-    console.log(`Arquivo com ID: ${idArquivo} excluído com sucesso.`);
+    // Envio do arquivo para o servidor
+    const formData = new FormData();
+    formData.append("file", arquivo);
 
-    // Redefine o contador de ID para o próximo ID disponível
-    const tabelaArquivos = document.getElementById(tabelaId);
-    const linhas = tabelaArquivos.querySelectorAll("tbody tr");
-    idArquivo = linhas.length + 1;
-
-    // Limpa o campo de input correspondente
-    const inputFile = document.getElementById(
-      tabelaId === "tabelaArquivosAba2"
-        ? "anexar_documento"
-        : "anexar_documento_pagamento"
-    );
-    inputFile.value = "";
-  } else {
-    console.log(`Arquivo com ID: ${idArquivo} não encontrado.`);
+    fetch("/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        // Lidar com a resposta do servidor
+        console.log("Upload realizado com sucesso");
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar o arquivo:", error);
+      });
   }
 }

@@ -21,10 +21,9 @@
   padding: 10px;
   text-align: left;
   color: var(--cor-1);
-  border: 1px solid #28385396;
   border-bottom: none;
   position: relative;
-  background: #28385396;
+  background: var(--cor-12);
 }
 .main-gc {
   grid-area: main-gc;
@@ -39,9 +38,8 @@
   border: 5px solid transparent;
   font-size: var(--titulo-s);
   color: var(--cor-1);
-  border: 1px solid #28385396;
   border-top: none;
-  background: #28385396;
+  background: var(--cor-12);
 }
 
 /* RESPONSIVO */
