@@ -1,3 +1,46 @@
+/* Estilização para o modal e conteúdo */
+.modal-destino-content {
+  background: var(--cor-12);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--cor-2);
+  border-radius: 12px;
+  width: 80%;
+  position: relative; /* Adicionado para posicionar o botão de fechar */
+}
+
+/* Estilização para o header do modal */
+.modal-header {
+  display: flex;
+  color: var(--cor-8);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilização para o título do modal */
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Estilização para o botão de fechar */
+.close {
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos existentes */
 .modal-destino {
   display: grid;
   gap: 7px;
@@ -33,7 +76,6 @@
   border: 1px solid var(--cor-p3);
 }
 
-/* Estilos para o modal */
 .modal {
   display: none;
   position: fixed;
@@ -46,23 +88,14 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.modal-destino-content {
-  background: var(--cor-12);
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid var(--cor-2);
-  border-radius: 12px;
-  width: 80%;
-}
-
 .breadcrumb {
   display: inline-block;
   font-size: 0.875rem;
 }
 
-/*.breadcrumb:hover {
+/* .breadcrumb:hover {
   text-decoration: underline;
-}*/
+} */
 
 /* Estilos para os elementos do formulário dentro do modal */
 .form-group {
