@@ -79,10 +79,11 @@
           <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Concluídos</a></li>
         </ul>
       </nav>
+
       <div class="area-abas-template-content">
         <div id="aba1" class="aba-template active">
-          <div class="area-template-content">
-            <ul class="lista-vertical-alt">
+          <div class="area-template-cbf">
+            <ul class="area-template-cbf-content area-cbf-sem-cb">
               <li class="area-filtro activeFil" id="filtro1">
                 <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                 <div class="btn-filtro-pesq">
@@ -92,9 +93,9 @@
                 </div>
               </li>
               <li>
-                <ul class="area-template-cf-content lista-vertical-alt content-sH">
-                  <li class="card-m">
-                    <a class=" pleitos-medium-card" href="#">
+                <ul class="lista-vertical">
+                  <li class="area-template-cf">
+                    <a class="card-m pleitos-medium-card" href="#">
                       <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
                       <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
                       <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
@@ -123,6 +124,7 @@
             </ul>
           </div>
         </div>
+
         <div id="aba2" class="aba-template">
           Pleitos em andamento
         </div>

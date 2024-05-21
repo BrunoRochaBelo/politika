@@ -95,6 +95,30 @@
   margin: 0;
 }
 
+/* Estilos para os primeiros cards de cada lista */
+.lista-vertical > .card:first-child,
+.lista-vertical-alt > .card:first-child,
+.lista-vertical-fil > .card:first-child,
+.lista-vertical-2 > .card:first-child,
+.lista-vertical-3 > .card:first-child,
+.lista-vertical-horizontal > .card:first-child,
+.lista-horizontal > .card:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Estilos para os últimos cards de cada lista */
+.lista-vertical > .card:last-child,
+.lista-vertical-alt > .card:last-child,
+.lista-vertical-fil > .card:last-child,
+.lista-vertical-2 > .card:last-child,
+.lista-vertical-3 > .card:last-child,
+.lista-vertical-horizontal > .card:last-child,
+.lista-horizontal > .card:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
 /* RESPONSIVO */
 @media (max-width: 820px) {
   .lista-vertical-2 {
