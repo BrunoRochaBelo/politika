@@ -20,11 +20,11 @@
   font-size: var(--titulo-s);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-1);
+  color: var(--cor-8);
   border: 1px solid #28385396;
   border-bottom: none;
   position: relative;
-  background: #28385396;
+  background: var(--cor-p8);
 }
 .main-form {
   grid-area: main-form;
@@ -39,10 +39,10 @@
   max-height: 89vh;
   border: 5px solid transparent;
   font-size: var(--titulo-s);
-  color: var(--cor-1);
+  color: var(--cor-8);
   border: 1px solid #28385396;
   border-top: none;
-  background: #28385396;
+  background: var(--cor-p8);
 }
 
 /* RESPONSIVO */
