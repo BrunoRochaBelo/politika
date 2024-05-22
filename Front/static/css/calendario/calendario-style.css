@@ -7,6 +7,7 @@
   border-radius: 20px;
   border: 1px solid var(--cor-2);
   letter-spacing: 0.5px;
+  background: var(--cor-p8);
 }
 .calendario-large-card-editar .btn-leaked:hover,
 .calendario-small-card-editar .btn-leaked:hover,
@@ -21,7 +22,7 @@
   overflow-x: auto;
   gap: 15px;
   padding: 5px;
-  background: var(--cor-p3);
+  background: var(--cor-p8);
   border: 1px solid transparent;
   border-radius: 12px;
   color: var(--cor-1);
@@ -31,7 +32,7 @@
   align-self: center;
   padding: 5px 10px;
   color: var(--cor-1);
-  background: var(--cor-p5);
+  background: var(--cor-3);
   border-radius: 12px;
   border: 1px solid transparent;
 }
@@ -59,7 +60,7 @@
   text-align: center;
   padding: 7px;
   color: var(--cor-8);
-  background: var(--cor-p5);
+  background: var(--cor-3);
   border: 1px solid transparent;
   cursor: pointer;
   font-size: var(--font-medium-light);
@@ -85,9 +86,10 @@
 }
 .dia-visualize {
   color: var(--cor-0) !important;
-  background: #7a44e7 !important;
-  border: 1px solid #7a44e7 !important;
+  background: #7238e5 !important;
+  border: 1px solid #7238e5 !important;
   border-radius: 5px !important;
+  margin: 0px 2px;
 }
 
 .dia-visible {
@@ -99,10 +101,10 @@
 
 .hoje {
   border-radius: 4px;
-  border: 1px solid #7a44e7;
-  border-top: 5px solid #7a44e7;
+  border: 1px solid #7238e5;
+  border-top: 5px solid #7238e5;
   color: var(--cor-1);
-  background: var(--cor-2);
+  background: var(--cor-3);
 }
 .hoje:hover {
   border: 1px solid #8653eb;
@@ -119,7 +121,7 @@
   color: var(--cor-1);
   cursor: pointer;
   font-size: var(--font-medium-regular);
-  background: var(--cor-p5);
+  background: var(--cor-3);
 }
 .change-semana p {
   display: none;
@@ -160,7 +162,7 @@
 .btn-calendario:hover {
   color: var(--cor-5);
   border-color: var(--cor-5);
-  border-radius: 9px;
+  border-radius: 5px;
 }
 .btn-calendario:active {
   background-color: darken(var(--cor-12), 10%);
@@ -188,24 +190,24 @@
   text-align: center;
   padding: 10px 15px;
   border: 1px solid transparent;
-  border-radius: 9px;
+  border-radius: 5px;
   color: var(--cor-1);
   cursor: pointer;
   font-size: var(--font-medium-regular);
-  background: var(--cor-p5);
+  background: var(--cor-3);
 }
 .filtro-visualize {
   color: var(--cor-0) !important;
-  background: #7a44e7 !important;
-  border: 1px solid #7a44e7 !important;
-  border-radius: 9px !important;
+  background: #7238e5 !important;
+  border: 1px solid #7238e5 !important;
+  border-radius: 5px !important;
 }
 
 .area-template-cf.aniversariantes {
   background: var(--cor-p3);
-  margin: 7px;
+  margin: 5px;
   padding: 12px;
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
 }
 .area-template-cf-content.area-aniversaiantes .card-xs {
   background: var(--cor-3);

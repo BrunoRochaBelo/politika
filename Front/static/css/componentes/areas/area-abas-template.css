@@ -16,7 +16,7 @@
   align-items: center;
   justify-items: center;
   color: var(--cor-1);
-  background: var(--cor-12);
+  background: var(--cor-p8);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 5px;
@@ -98,7 +98,7 @@
 #nav3 a.indicador-2 {
   font-weight: bold;
   color: var(--cor-0);
-  background: var(--cor-p2);
+  background: var(--cor-p8);
   border-color: transparent;
 }
 
@@ -135,36 +135,41 @@
   .area-abas-template-header {
     grid-area: area-abas-template-header;
     justify-content: start;
-    padding: 5px 5px 15px 5px;
+    padding: 5px;
     border-radius: 15px 15px 0 0;
     position: relative;
-    background-color: var(--cor-p8);
+    background-color: var(--cor-12);
   }
   .area-abas-template-content {
     grid-area: area-abas-template-content;
     border-radius: 0 0 15px 15px;
-    background-color: var(--cor-p8);
+    background-color: var(--cor-12);
   }
 
   .nav {
     padding: 0px;
-
     justify-items: stretch;
     width: 300px;
     border: 1px solid transparent;
     box-shadow: none;
+    background-color: var(--cor-p8);
   }
 
   #nav1 a,
   #nav2 a,
   #nav3 a {
     color: var(--cor-9);
-    padding: 3px 7px;
+    padding: 4px 7px;
     font-size: 14px;
   }
   #nav1 a:hover,
   #nav2 a:hover,
   #nav3 a:hover {
-    padding: 3px 7px;
+    padding: 4px 7px;
+  }
+  #nav1 a.indicador-2,
+  #nav2 a.indicador-2,
+  #nav3 a.indicador-2 {
+    background: var(--cor-3);
   }
 }

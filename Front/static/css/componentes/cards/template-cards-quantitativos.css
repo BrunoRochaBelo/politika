@@ -28,7 +28,7 @@
   grid-area: quant-small-card-result;
   font-size: var(--font-medium-regular);
   text-align: start;
-  background: var(--cor-7);
+  background: var(--cor-3);
   border-radius: 9px;
   padding: 5px;
 }

@@ -94,6 +94,8 @@
   opacity: 1 !important;
 }
 .calendario-small-card-expanded {
+  margin: 3px;
+  background: var(--cor-3);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao"
@@ -109,12 +111,12 @@
 }
 
 .calendario-small-card-editar.exibirDetalheEvento {
-  display: flex;
-  justify-content: end;
-  padding: 10px 10px 1px 10px;
+  display: grid;
+  justify-content: stretch;
+  padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 15px;
+  gap: 5px;
 }
 
 @media (max-width: 820px) {
@@ -215,6 +217,8 @@
 }
 
 .calendario-large-card-expanded {
+  margin: 3px;
+  background: var(--cor-3) !important;
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
     "calendario-large-card-title calendario-large-card-title"
@@ -225,12 +229,12 @@
 }
 
 .calendario-large-card-editar.exibirDetalheEvento {
-  display: flex;
-  justify-content: end;
-  padding: 5px 10px 1px 10px;
+  display: grid;
+  justify-content: stretch;
+  padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 15px;
+  gap: 5px;
 }
 
 /* Vazio */

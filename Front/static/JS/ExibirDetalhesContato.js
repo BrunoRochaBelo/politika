@@ -30,11 +30,16 @@ function exibirDetalhesContato(event) {
   );
 
   if (algumCampoVisivel) {
+    // Se algum campo já está visível, recolhe o card
     camposOcultos.forEach((campo) => {
       campo.classList.remove("exibirDetalheContato");
     });
     card.classList.remove("contatos-small-card-expanded");
   } else {
+    // Fecha qualquer card que esteja atualmente expandido
+    fecharTodosOsCards();
+
+    // Expande o card clicado
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalheContato");
     });
@@ -46,7 +51,11 @@ function exibirDetalhesContato(event) {
 }
 
 function ajustarScrollParaCentralizarCard(card) {
-  const areaTemplateContent = document.querySelector(".area-template-content");
+  // Encontra o contêiner pai mais próximo com a classe 'area-template-content'
+  const areaTemplateContent = card.closest(".area-template-content");
+
+  if (!areaTemplateContent) return; // Se não encontrar, retorna sem fazer nada
+
   const cardOffsetTop = card.offsetTop;
   const cardHeight = card.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
@@ -77,6 +86,22 @@ function ajustarScrollParaCentralizarCard(card) {
       areaTemplateContent.scrollTop = newScrollTop;
     }
   }
+}
+
+// Função para fechar todos os cards
+function fecharTodosOsCards() {
+  const cardsExpandidos = document.querySelectorAll(
+    ".contatos-small-card-expanded"
+  );
+  cardsExpandidos.forEach((card) => {
+    const camposOcultos = card.querySelectorAll(
+      ".contatos-small-card-num, .contatos-small-card-email, .contatos-small-card-tipopessoa, .contatos-small-card-editar"
+    );
+    camposOcultos.forEach((campo) => {
+      campo.classList.remove("exibirDetalheContato");
+    });
+    card.classList.remove("contatos-small-card-expanded");
+  });
 }
 
 // Adiciona um ouvinte de evento de clique para a lista de cards

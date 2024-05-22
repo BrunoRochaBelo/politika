@@ -5,7 +5,7 @@
   background: var(--cor-p3);
   color: var(--cor-1);
   padding: 10px 15px;
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 /* Pequeno altura 35px*/
@@ -14,7 +14,7 @@
   background: var(--cor-p3);
   color: var(--cor-1);
   padding: 10px 15px;
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 /* Médio altura 50px*/
@@ -23,7 +23,7 @@
   background: var(--cor-p3);
   color: var(--cor-1);
   padding: 15px;
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 /* Grande altura 150px*/
@@ -33,7 +33,7 @@
   color: var(--cor-1);
   padding: 15px;
   gap: 0.625rem;
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 
@@ -44,17 +44,17 @@
   height: 100px;
   background: var(--cor-p3);
   color: var(--cor-1);
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
   padding: 15px;
 }
 /* Médio */
 .card-tmf-m {
-  width: 115px;
-  height: 95px;
+  min-width: 115px;
+  min-height: 95px;
   background: var(--cor-p3);
   color: var(--cor-1);
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
   padding: 15px;
 }
@@ -65,7 +65,7 @@
   min-height: 170px;
   background: var(--cor-p3);
   color: var(--cor-1);
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
   padding: 15px;
 }
@@ -79,7 +79,7 @@
   background: var(--cor-p3);
   color: var(--cor-1);
   font-weight: var(--font-light);
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 .card-select-s {
@@ -88,7 +88,7 @@
   background: var(--cor-p3);
   color: var(--cor-1);
   font-weight: var(--font-medium-regular);
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 .card-select-m {
@@ -98,7 +98,7 @@
   color: var(--cor-1);
   padding: 0.625rem;
   border-radius: 9px;
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 
@@ -121,7 +121,7 @@
 .area-template-fil-alt-content .card-tmf-l {
   background: var(--cor-p3);
   color: var(--cor-6);
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
 }
 .area-template-fil-alt-content .card-select-xs,
@@ -129,7 +129,7 @@
 .area-template-fil-alt-content .card-select-m {
   background: var(--cor-p3);
   color: var(--cor-6);
-  border: 1px solid var(--cor-3);
+  border: 1px solid transparent;
   box-sizing: border-box;
   border-radius: 9px;
 }
@@ -180,6 +180,21 @@
   .card-tmf-l {
     background: var(--cor-p3);
   }
+
+  .card-xs:hover,
+  .card-s:hover,
+  .card-m:hover,
+  .card-l:hover,
+  .card-tmf-s:hover,
+  .card-tmf-m:hover,
+  .card-tmf-l:hover,
+  .card-select-xs:hover,
+  .card-select-s:hover,
+  .card-select-m:hover {
+    box-shadow: none;
+    border: 1px solid transparent;
+  }
+
   .area-template-fil-content .card-xs,
   .area-template-fil-content .card-s,
   .area-template-fil-content .card-m,
@@ -201,7 +216,7 @@
   .area-template-fil-alt-content .card-select-s,
   .area-template-fil-alt-content .card-select-m {
     background: var(--cor-p3);
-    border: 1px solid var(--cor-3);
+    border: 1px solid transparent;
     box-sizing: border-box;
   }
 }

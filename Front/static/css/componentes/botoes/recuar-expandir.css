@@ -7,18 +7,25 @@
 .btn-recuar-expandir:hover,
 .btn-recuar-expandir:active {
   font-size: var(--font-light);
-  color: var(--cor-p5);
+  color: var(--cor-p8);
   background-color: var(--cor-9);
-  border-radius: 12px;
-  padding: 5px 7px;
+  border-radius: 7px;
+  padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 1px solid var(--cor-9);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Botão alternativo usado para exibir aniversariantes */
-.btn-pesquisa-rapida.btn-recuar-expandir-alt::after {
+/* Botão alternativo usado para expandir "indicadores e estatisticas" */
+.area-template-cf-header .btn-recuar-expandir {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--cor-9);
+  box-shadow: none;
+}
+
+.area-template-cf-header .btn-recuar-expandir::after {
   content: "";
   display: inline-block;
   width: 0;
@@ -29,15 +36,10 @@
   margin-left: 5px;
   border-radius: 25%;
 }
-.btn-pesquisa-rapida.btn-recuar-expandir-alt.show-after::after {
-  display: inline-block;
-}
-.btn-pesquisa-rapida.btn-recuar-expandir-alt.hide-after::after {
-  display: none;
-}
-.btn-pesquisa-rapida.btn-recuar-expandir-alt.up::after {
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid var(--cor-9);
+
+.area-template-cf-header .btn-recuar-expandir.up::after {
+  border-top: none; /* Remover a seta para baixo */
+  border-bottom: 5px solid var(--cor-9); /* Adicionar a seta para cima */
 }
 
 /* RESPONSIVO */

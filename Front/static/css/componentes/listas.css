@@ -9,7 +9,17 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
+  border: 1px solid transparent;
   border-radius: 12px;
+  scrollbar-width: thick;
+}
+.lista-vertical-cards {
+  display: grid;
+  grid-auto-flow: row;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  gap: 1px;
   scrollbar-width: thick;
 }
 .lista-vertical-fil {
@@ -19,14 +29,12 @@
   gap: 10px 0px;
   scrollbar-width: thick;
 }
-
 .lista-vertical-2 {
   display: grid;
   gap: 3px;
   grid-template: auto / 1fr 1fr;
   scrollbar-width: thick;
 }
-
 .lista-vertical-3 {
   display: grid;
   gap: 3px;
@@ -44,7 +52,7 @@
 .lista-horizontal {
   display: grid;
   grid-auto-flow: column;
-  gap: 5px;
+  gap: 3px;
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
@@ -54,7 +62,7 @@
   display: grid;
   background: transparent;
   scrollbar-width: thick;
-  gap: 2px;
+  gap: 3px;
   grid:
     "item1 item2"
     "item3 item3";
@@ -72,6 +80,16 @@
 
 /* Estilos */
 /* Estilos para cards dentro da lista */
+.lista-vertical-cards > li:first-child a {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.lista-vertical-cards > li:last-child a {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
 /* Reset de borda para todos os cards dentro da lista */
 .lista-select .card-select-m {
   border-radius: 0;
@@ -96,28 +114,6 @@
 }
 
 /* Estilos para os primeiros cards de cada lista */
-.lista-vertical > .card:first-child,
-.lista-vertical-alt > .card:first-child,
-.lista-vertical-fil > .card:first-child,
-.lista-vertical-2 > .card:first-child,
-.lista-vertical-3 > .card:first-child,
-.lista-vertical-horizontal > .card:first-child,
-.lista-horizontal > .card:first-child {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-/* Estilos para os últimos cards de cada lista */
-.lista-vertical > .card:last-child,
-.lista-vertical-alt > .card:last-child,
-.lista-vertical-fil > .card:last-child,
-.lista-vertical-2 > .card:last-child,
-.lista-vertical-3 > .card:last-child,
-.lista-vertical-horizontal > .card:last-child,
-.lista-horizontal > .card:last-child {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
 
 /* RESPONSIVO */
 @media (max-width: 820px) {
@@ -141,10 +137,10 @@
     scrollbar-width: thick;
   }
 
-  .lista-horizontal.desativar-responsivo {
+  .lista-horizontal.expandir {
     display: grid;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
     grid-template: 1fr 1fr / auto;
     scrollbar-width: thick;
   }
@@ -161,7 +157,7 @@
   .lista-horizontal::-webkit-scrollbar,
   .lista-vertical-alt::-webkit-scrollbar,
   .lista-vertical-horizontal::-webkit-scrollbar {
-    display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+    display: none;
   }
 
   .lista-vertical,

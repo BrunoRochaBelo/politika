@@ -18,6 +18,8 @@ function exibirDetalhesEvento(event) {
     });
     cardEventoSmall.classList.remove("calendario-small-card-expanded");
   } else {
+    fecharTodosOsCardsEvento();
+
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalheEvento");
     });
@@ -63,7 +65,33 @@ function ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall) {
     }
   }
 }
-// Adiciona um ouvinte de evento de clique para a lista de cards
+
+// Função para fechar todos os cartões de evento SMALL e LARGE
+function fecharTodosOsCardsEvento() {
+  const expandedSmallCards = document.querySelectorAll(
+    ".calendario-small-card-expanded"
+  );
+  expandedSmallCards.forEach((card) => {
+    const camposOcultos = card.querySelectorAll(
+      ".calendario-small-card-local, .calendario-small-card-partcipantes, .calendario-small-card-duracao, .calendario-small-card-editar"
+    );
+    camposOcultos.forEach((campo) => {
+      campo.classList.remove("exibirDetalheEvento");
+    });
+    card.classList.remove("calendario-small-card-expanded");
+  });
+
+  const expandedLargeCards = document.querySelectorAll(
+    ".calendario-large-card-expanded"
+  );
+  expandedLargeCards.forEach((card) => {
+    const editar = card.querySelector(".calendario-large-card-editar");
+    editar.classList.remove("exibirDetalheEvento");
+    card.classList.remove("calendario-large-card-expanded");
+  });
+}
+
+// Adiciona um ouvinte de evento de clique para a lista de cards SMALL
 const listaDeCardsEventoSmall = document.querySelectorAll(
   ".calendario-small-card"
 );
@@ -84,6 +112,8 @@ function exibirEditar(event) {
     editar.classList.remove("exibirDetalheEvento");
     cardEventoLarge.classList.remove("calendario-large-card-expanded");
   } else {
+    fecharTodosOsCardsEvento();
+
     editar.classList.add("exibirDetalheEvento");
     cardEventoLarge.classList.add("calendario-large-card-expanded");
 
@@ -91,6 +121,7 @@ function exibirEditar(event) {
     ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge);
   }
 }
+
 function ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge) {
   const areaTemplateContent = document.querySelector(
     ".area-abas-template-content"
@@ -121,6 +152,8 @@ function ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge) {
     }
   }
 }
+
+// Adiciona um ouvinte de evento de clique para a lista de cards LARGE
 document.addEventListener("DOMContentLoaded", function () {
   const listaDeCards = document.querySelectorAll(".calendario-large-card");
   listaDeCards.forEach((cardEventoLarge) => {

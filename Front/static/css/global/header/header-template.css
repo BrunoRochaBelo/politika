@@ -12,7 +12,7 @@
 .header-back {
   grid-area: header-back;
   margin-left: 1.25rem;
-  width: 2rem;
+  cursor: pointer;
 }
 .header-nav {
   grid-area: header-nav;
@@ -77,12 +77,27 @@
   margin-right: 8px;
   padding: 0px 8px;
 }
+.search-input:focus + .search-button {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+}
+
 .back-icon {
   width: 18px;
   height: 18px;
 }
-.search-input:focus + .search-button {
-  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
+/* Define a transição suave para o efeito de hover */
+.header-back .back-icon {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Efeito de hover: aumenta a escala da imagem e adiciona uma sombra */
+.header-back .back-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+/* Efeito de clique: reduz um pouco a escala e muda a opacidade */
+.header-back .back-icon:active {
+  transform: scale(0.95);
+  opacity: 0.8;
 }
 
 /* RESPONSIVO */
@@ -92,7 +107,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "header-back  header-search header-search" 45px;
-    background: var(--cor-p5);
+    background: none;
   }
   .header-back {
     margin-left: 0.625rem;
@@ -112,7 +127,6 @@
     margin-right: 0.625rem;
     box-sizing: border-box;
     align-self: center;
-
     border-radius: 25px;
   }
 

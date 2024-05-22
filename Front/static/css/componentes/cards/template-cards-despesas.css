@@ -124,6 +124,8 @@
   opacity: 1 !important;
 }
 .despesas-medium-card-expanded {
+  margin: 3px;
+  background: var(--cor-3);
   grid:
     "despesas-medium-card-natureza despesas-medium-card-natureza"
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
@@ -144,10 +146,10 @@
   margin: 3px 0 0 10px;
 }
 .despesas-medium-card-editar.exibirDetalheDespesa {
-  display: flex;
-  justify-content: end;
-  padding: 10px 10px 1px 10px;
+  display: grid;
+  justify-content: stretch;
+  padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 15px;
+  gap: 5px;
 }

@@ -92,7 +92,7 @@
   .modal-btn-floating-content {
     position: absolute;
     bottom: 140px;
-    right: 85px;
+    right: 93px;
     transition: bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
       right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
@@ -101,7 +101,7 @@
   .floatingButton {
     position: fixed;
     bottom: 71px;
-    right: 15px;
+    right: 23px;
     width: 61px;
     height: 61px;
     background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
@@ -118,5 +118,13 @@
       right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
       box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 2001;
+  }
+
+  .floatingButton:hover {
+    border: 1px solid #432281;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6), 0 3px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+  .floatingButton:active {
+    border: 1px solid #432281;
   }
 }

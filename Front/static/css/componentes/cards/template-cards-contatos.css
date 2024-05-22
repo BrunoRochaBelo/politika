@@ -79,6 +79,8 @@
   opacity: 1 !important;
 }
 .contatos-small-card-expanded {
+  margin: 3px;
+  background: var(--cor-3);
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     " contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
@@ -96,12 +98,12 @@
 }
 
 .contatos-small-card-editar.exibirDetalheContato {
-  display: flex;
-  justify-content: end;
-  padding: 10px 10px 1px 10px;
+  display: grid;
+  justify-content: stretch;
+  padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 15px;
+  gap: 5px;
 }
 
 /* Vazio */

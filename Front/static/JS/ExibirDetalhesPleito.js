@@ -17,6 +17,10 @@ function exibirDetalhesPleito(event) {
     });
     card.classList.remove("pleitos-medium-card-expanded");
   } else {
+    // Fecha qualquer card que esteja atualmente expandido
+    fecharTodosOsCardsPleito();
+
+    // Expande o card clicado
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalhePleito");
     });
@@ -56,6 +60,22 @@ function ajustarScrollParaCentralizarCard(card) {
       areaTemplateContent.scrollTop = newScrollTop;
     }
   }
+}
+
+// Função para fechar todos os cards de pleito expandidos
+function fecharTodosOsCardsPleito() {
+  const cardsExpandidos = document.querySelectorAll(
+    ".pleitos-medium-card-expanded"
+  );
+  cardsExpandidos.forEach((card) => {
+    const camposOcultos = card.querySelectorAll(
+      ".pleitos-medium-card-beneficiario, .pleitos-medium-card-uf, .pleitos-medium-card-cidade, .pleitos-medium-card-bairro, .pleitos-medium-card-rua, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
+    );
+    camposOcultos.forEach((campo) => {
+      campo.classList.remove("exibirDetalhePleito");
+    });
+    card.classList.remove("pleitos-medium-card-expanded");
+  });
 }
 
 // Adiciona um ouvinte de evento de clique para a lista de cards

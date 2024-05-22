@@ -17,6 +17,10 @@ function exibirDetalhesDespesa(event) {
     });
     card.classList.remove("despesas-medium-card-expanded");
   } else {
+    // Fecha qualquer card que esteja atualmente expandido
+    fecharTodosOsCardsDespesa();
+
+    // Expande o card clicado
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalheDespesa");
     });
@@ -54,6 +58,22 @@ function ajustarScrollParaCentralizarCard(card) {
       areaTemplateContent.scrollTop = newScrollTop;
     }
   }
+}
+
+// Função para fechar todos os cartões de despesas expandidos
+function fecharTodosOsCardsDespesa() {
+  const cardsExpandidos = document.querySelectorAll(
+    ".despesas-medium-card-expanded"
+  );
+  cardsExpandidos.forEach((card) => {
+    const camposOcultos = card.querySelectorAll(
+      ".despesas-medium-card-cnpj_cpf_for, .despesas-medium-card-nome_fornecedor, .despesas-medium-card-ordenador_despesa, .despesas-medium-card-autor, .despesas-medium-card-data_criacao, .despesas-medium-card-editar"
+    );
+    camposOcultos.forEach((campo) => {
+      campo.classList.remove("exibirDetalheDespesa");
+    });
+    card.classList.remove("despesas-medium-card-expanded");
+  });
 }
 
 // Adiciona um ouvinte de evento de clique para a lista de cartões de despesas

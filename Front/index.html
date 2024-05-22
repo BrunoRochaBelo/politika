@@ -79,131 +79,127 @@
                 </form>
               </div>
             </div>
-            <div class="area-template-cbf-content">
-              <ul class="lista-vertical">
-                <li></li>
-                <li id="quantitativos" class="area-template-cf">
-                  <div class="area-template-cf-header">
-                    <h2>Indicadores e estatisticas</h2>
-                    <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">Expandir</button>
-                  </div>
-                  <div class="area-template-cf-content">
-                    <ul class="lista-horizontal">
-                      <li>
-                        <a class="card-tmf-m quant-small-card" href="#">
-                          <p class="quant-small-card-title">Title</p>
-                          <p class="quant-small-card-desc">Descrição</p>
-                          <p class="quant-small-card-result">Resultado</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="card-tmf-m quant-small-card" href="#">
-                          <p class="quant-small-card-title">Title</p>
-                          <p class="quant-small-card-desc">Descrição</p>
-                          <p class="quant-small-card-result">Resultado</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="card-tmf-m quant-small-card" href="#">
-                          <p class="quant-small-card-title">Title</p>
-                          <p class="quant-small-card-desc">Descrição</p>
-                          <p class="quant-small-card-result">Resultado</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="card-tmf-m quant-small-card" href="#">
-                          <p class="quant-small-card-title">Title</p>
-                          <p class="quant-small-card-desc">Descrição</p>
-                          <p class="quant-small-card-result">Resultado</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="card-tmf-m quant-small-card" href="#">
-                          <p class="quant-small-card-title">Title</p>
-                          <p class="quant-small-card-desc">Descrição</p>
-                          <p class="quant-small-card-result">Resultado</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="card-tmf-m quant-small-card" href="#">
-                          <p class="quant-small-card-title">Title</p>
-                          <p class="quant-small-card-desc">Descrição</p>
-                          <p class="quant-small-card-result">Resultado</p>
-                        </a>
-                      </li>
+            <ul class="area-template-cbf-content area-cbf-sem-cb lista-vertical">
+              <li id="quantitativos" class="area-template-cf">
+                <div class="area-template-cf-header">
+                  <h2>Indicadores e estatisticas</h2>
+                  <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">Expandir</button>
+                </div>
+                <div class="area-template-cf-content">
+                  <ul class="lista-horizontal">
+                    <li>
+                      <a class="card-tmf-m quant-small-card" href="#">
+                        <p class="quant-small-card-title">Title</p>
+                        <p class="quant-small-card-desc">Descrição</p>
+                        <p class="quant-small-card-result">Resultado</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-tmf-m quant-small-card" href="#">
+                        <p class="quant-small-card-title">Title</p>
+                        <p class="quant-small-card-desc">Descrição</p>
+                        <p class="quant-small-card-result">Resultado</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-tmf-m quant-small-card" href="#">
+                        <p class="quant-small-card-title">Title</p>
+                        <p class="quant-small-card-desc">Descrição</p>
+                        <p class="quant-small-card-result">Resultado</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-tmf-m quant-small-card" href="#">
+                        <p class="quant-small-card-title">Title</p>
+                        <p class="quant-small-card-desc">Descrição</p>
+                        <p class="quant-small-card-result">Resultado</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-tmf-m quant-small-card" href="#">
+                        <p class="quant-small-card-title">Title</p>
+                        <p class="quant-small-card-desc">Descrição</p>
+                        <p class="quant-small-card-result">Resultado</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-tmf-m quant-small-card" href="#">
+                        <p class="quant-small-card-title">Title</p>
+                        <p class="quant-small-card-desc">Descrição</p>
+                        <p class="quant-small-card-result">Resultado</p>
+                      </a>
+                    </li>
 
-                    </ul>
-                  </div>
-                </li>
-                <li class="area-template-tmf">
-                  <h2 class="area-template-tmf-header">Contatos influentes</h2>
-                  <ul id="contatosList" class="area-template-tmf-content lista-vertical-alt">
-                    <li>
-                      <a class="card-xs contatos-small-card contato" href="#">
-                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                        <div class="contatos-small-card-editar">
-                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                        </div>
-                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs contatos-small-card contato" href="#">
-                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                        <div class="contatos-small-card-editar">
-                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                        </div>
-                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs contatos-small-card contato" href="#">
-                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                        <div class="contatos-small-card-editar">
-                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                        </div>
-                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs contatos-small-card contato" href="#">
-                        <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                        <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                        <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                        <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                        <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                        <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                        <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                        <div class="contatos-small-card-editar">
-                          <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
-                        </div>
-                        <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                      </a>
-                    </li>
                   </ul>
-                </li>
-              </ul>
-            </div>
+                </div>
+              </li>
+              <li class="area-template-tmf">
+                <h2 class="area-template-tmf-header">Contatos influentes</h2>
+                <ul id="contatosList" class="area-template-tmf-content lista-vertical-cards">
+                  <li>
+                    <a class="card-xs contatos-small-card contato" href="#">
+                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                      <div class="contatos-small-card-editar">
+                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                      </div>
+                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-xs contatos-small-card contato" href="#">
+                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                      <div class="contatos-small-card-editar">
+                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                      </div>
+                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-xs contatos-small-card contato" href="#">
+                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                      <div class="contatos-small-card-editar">
+                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                      </div>
+                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-xs contatos-small-card contato" href="#">
+                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                      <div class="contatos-small-card-editar">
+                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                      </div>
+                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
-        </div>
     </section>
 
     <section class="main-sidenav home-sidenav">
@@ -215,7 +211,7 @@
           <ul id="compromissosHoje" class="lista-vertical-fil">
             <li class="area-template-cf aniversariantes">
               <h2 class="area-template-cf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
-              <ul class="area-template-cf-content lista-vertical-alt area-aniversaiantes">
+              <ul class="area-template-cf-content lista-vertical-cards area-aniversaiantes">
                 <li>
                   <a class="card-xs aniversario-small-card contato" href="#">
                     <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -259,7 +255,7 @@
             </li>
             <li class="area-template-cf">
               <h2 class="area-template-cf-header">✅ Tarefas</h2>
-              <ul class="area-template-cf-content lista-vertical-alt">
+              <ul class="area-template-cf-content lista-vertical-cards">
                 <li>
                   <a class="card-xs calendario-small-card evento" href="#">
                     <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
@@ -328,7 +324,7 @@
             </li>
             <li class="area-template-cf">
               <h2 class="area-template-cf-header">📅 Agenda</h2>
-              <ul class="area-template-cf-content lista-vertical-alt">
+              <ul class="area-template-cf-content lista-vertical-cards">
                 <li>
                   <a class="card-xs calendario-small-card evento" href="#">
                     <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
@@ -516,26 +512,28 @@
         <span class="close">&times;</span>
       </div>
       <form id="filterForm" method="post" action="/evento/listcard">
-        <div class="form-group">
-          <label for="estado">Estado:</label>
-          <select class="card-select-m" id="estado" name="estado">
-            <option value="" selected disabled>Selecione um estado</option>
-            <option value="PE">Pernambuco</option>
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="MG">Minas Gerais</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="cidade">Cidade:</label>
-          <select class="card-select-m" id="cidade" name="cidade">
-            <option value="" selected disabled>Selecione um estado primeiro</option>
-            <!-- As opções de cidades serão adicionadas dinamicamente -->
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="bairro">Bairro:</label>
-          <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
+        <div class="lista-select">
+          <div class="form-group item1">
+            <label for="estado ">Estado:</label>
+            <select class="card-select-m" id="estado" name="estado">
+              <option value="" selected disabled>Selecione um estado</option>
+              <option value="PE">Pernambuco</option>
+              <option value="SP">São Paulo</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="MG">Minas Gerais</option>
+            </select>
+          </div>
+          <div class="form-group item2">
+            <label for="cidade">Cidade:</label>
+            <select class="card-select-m" id="cidade" name="cidade">
+              <option value="" selected disabled>Selecione um estado primeiro</option>
+              <!-- As opções de cidades serão adicionadas dinamicamente -->
+            </select>
+          </div>
+          <div class="form-group item3">
+            <label for="bairro">Bairro ou local:</label>
+            <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
+          </div>
         </div>
         <button type="submit" class="submit-button">Aplicar Filtros</button>
       </form>

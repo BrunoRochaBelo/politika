@@ -1,3 +1,4 @@
+// Função para lidar com o clique nos cards de tarefa
 function exibirDetalhesTarefa(event) {
   event.preventDefault();
 
@@ -16,6 +17,10 @@ function exibirDetalhesTarefa(event) {
     });
     cardTarefaSmall.classList.remove("tarefa-small-card-expanded");
   } else {
+    // Fecha qualquer card que esteja atualmente expandido
+    fecharTodosOsCardsTarefa();
+
+    // Expande o card clicado
     camposOcultos.forEach((campo) => {
       campo.classList.add("exibirDetalheTarefa");
     });
@@ -26,6 +31,7 @@ function exibirDetalhesTarefa(event) {
   }
 }
 
+// Função para ajustar o scroll para centralizar o card de tarefa pequeno
 function ajustarScrollParaCentralizarCardTarefaSmall(cardTarefaSmall) {
   const areaTemplateContent = document.querySelector(
     ".area-template-fil-alt-content"
@@ -62,7 +68,23 @@ function ajustarScrollParaCentralizarCardTarefaSmall(cardTarefaSmall) {
   }
 }
 
-// Adiciona um ouvinte de evento de clique para a lista de cards
+// Função para fechar todos os cards de tarefa expandidos
+function fecharTodosOsCardsTarefa() {
+  const cardsExpandidos = document.querySelectorAll(
+    ".tarefa-small-card-expanded"
+  );
+  cardsExpandidos.forEach((card) => {
+    const camposOcultos = card.querySelectorAll(
+      ".tarefa-small-card-resp, .tarefa-small-card-editar"
+    );
+    camposOcultos.forEach((campo) => {
+      campo.classList.remove("exibirDetalheTarefa");
+    });
+    card.classList.remove("tarefa-small-card-expanded");
+  });
+}
+
+// Adiciona um ouvinte de evento de clique para a lista de cards de tarefa
 const listaDeCardsTarefaSmall = document.querySelectorAll(".tarefa-small-card");
 listaDeCardsTarefaSmall.forEach((cardTarefaSmall) => {
   cardTarefaSmall.addEventListener("click", exibirDetalhesTarefa);

@@ -24,6 +24,10 @@ function exibirDetalhesAniversariante(event) {
     });
     card.classList.remove("aniversario-small-card-expanded");
   } else {
+    // Close any expanded card
+    fecharTodosOsCardsAniversario();
+
+    // Expand the clicked card
     hiddenFields.forEach((field) => {
       field.classList.add("exibirDetalhesAniversariante");
     });
@@ -73,7 +77,23 @@ function ajustarScrollParaCentralizarCard(card) {
   }
 }
 
-// Adds a click event listener to the list of cards
+// Function to close all expanded birthday cards
+function fecharTodosOsCardsAniversario() {
+  const expandedCards = document.querySelectorAll(
+    ".aniversario-small-card-expanded"
+  );
+  expandedCards.forEach((card) => {
+    const hiddenFields = card.querySelectorAll(
+      ".aniversario-small-card-num, .aniversario-small-card-email, .aniversario-small-card-tipopessoa, .aniversario-small-card-editar"
+    );
+    hiddenFields.forEach((field) => {
+      field.classList.remove("exibirDetalhesAniversariante");
+    });
+    card.classList.remove("aniversario-small-card-expanded");
+  });
+}
+
+// Adds a click event listener to the list of birthday cards
 document.addEventListener("DOMContentLoaded", function () {
   const listaDeCards = document.querySelectorAll(".aniversario-small-card");
   listaDeCards.forEach((card) => {

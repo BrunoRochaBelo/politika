@@ -87,4 +87,15 @@
   .header-nav-template a {
     border-radius: 50%;
   }
+  .header-nav-template a:hover {
+    padding: auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+  }
+  .header-nav-template a:hover img {
+    background: transparent;
+  }
 }
