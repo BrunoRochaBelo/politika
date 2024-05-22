@@ -125,7 +125,7 @@
 }
 .despesas-medium-card-expanded {
   margin: 3px;
-  background: var(--cor-p3) !important;
+  background: #3d6096 !important;
   grid:
     "despesas-medium-card-natureza despesas-medium-card-natureza"
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"

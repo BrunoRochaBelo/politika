@@ -95,7 +95,7 @@
 }
 .calendario-small-card-expanded {
   margin: 3px;
-  background: var(--cor-p3) !important;
+  background: #3d6096 !important;
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao"
@@ -220,7 +220,7 @@
 
 .calendario-large-card-expanded {
   margin: 3px;
-  background: var(--cor-p3) !important;
+  background: #3d6096 !important;
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
     "calendario-large-card-title calendario-large-card-title"

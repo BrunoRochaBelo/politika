@@ -81,7 +81,7 @@
 }
 .tarefa-small-card-expanded {
   margin: 3px;
-  background: var(--cor-p3) !important;
+  background: #3d6096 !important;
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data"
