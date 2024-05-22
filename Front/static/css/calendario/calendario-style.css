@@ -22,7 +22,7 @@
   overflow-x: auto;
   gap: 15px;
   padding: 5px;
-  background: var(--cor-p8);
+  background: var(--cor-p3);
   border: 1px solid transparent;
   border-radius: 12px;
   color: var(--cor-1);
@@ -204,14 +204,14 @@
 }
 
 .area-template-cf.aniversariantes {
-  background: var(--cor-p3);
-  margin: 5px;
+  background: var(--cor-3);
+  margin: 0px;
   padding: 12px;
   border: 1px solid transparent;
 }
 .area-template-cf-content.area-aniversaiantes .card-xs {
-  background: var(--cor-3);
-  border: 1px solid var(--cor-p3);
+  background: var(--cor-p3);
+  border: 1px solid var(--cor-3);
 }
 
 @media only screen and (max-width: 819px) {
@@ -262,6 +262,6 @@
   }
 
   .area-template-cf.aniversariantes {
-    margin: 5px;
+    margin: 0px;
   }
 }

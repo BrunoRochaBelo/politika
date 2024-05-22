@@ -117,6 +117,10 @@
 
 /* RESPONSIVO */
 @media (max-width: 820px) {
+  .lista-vertical-fil {
+    gap: 20px 0px;
+  }
+
   .lista-vertical-2 {
     display: grid;
     gap: 3px;

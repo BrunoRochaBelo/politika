@@ -46,7 +46,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "home-header-logo home-header-title home-header-user" 45px;
-    background: none;
+    background: var(--cor-p8);
     box-shadow: none;
   }
   .home-header-template.box-shadow-active {

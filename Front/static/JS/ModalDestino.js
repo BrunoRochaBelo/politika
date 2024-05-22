@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const searchForm = document.getElementById("searchForm");
-  const modal = document.getElementById("filterModal");
+  const searchForm = document.getElementById("searchFormDestino");
+  const modal = document.getElementById("modalDestino");
   const closeModal = document.getElementsByClassName("close")[0];
   const estadoSelect = document.getElementById("estado");
   const cidadeSelect = document.getElementById("cidade");

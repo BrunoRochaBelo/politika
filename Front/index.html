@@ -71,9 +71,9 @@
             <div class="area-template-cbf-header">
               <div class="modal-destino">
                 <p><span class="breadcrumb">{{UF}} > {{Cidade}}</span></p>
-                <form action="/evento/listcard" method="post" class="search-input-container-dest" id="searchForm">
+                <form action="/evento/listcard" method="post" class="search-input-container-dest" id="searchFormDestino">
                   <div class="search-wrapper-dest">
-                    <input type="search" name="search" id="searchInput" class="search-input search-input-dest" placeholder="Pesquisar destino...">
+                    <input type="search" name="searchDestino" id="searchDestino" class="search-input search-input-dest" placeholder="Pesquisar destino...">
                     <img class="search-icon-alt" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
                   </div>
                 </form>
@@ -505,7 +505,7 @@
   </div>
 
   <!-- Modal Destino -->
-  <div id="filterModal" class="modal">
+  <div id="modalDestino" class="modal">
     <div class="modal-destino-content">
       <div class="modal-header">
         <h2>Defina um destino</h2>

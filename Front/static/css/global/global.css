@@ -140,6 +140,9 @@ img {
 
 /* RESPONSIVO */
 @media (max-width: 820px) {
+  body {
+    background: var(--cor-p8);
+  }
   .indicador {
     border-bottom: none;
   }

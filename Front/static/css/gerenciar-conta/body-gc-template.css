@@ -1,4 +1,5 @@
 .body-gc-template {
+  background: var(--cor-10);
   display: grid;
   padding: 10px;
   align-content: start;
@@ -23,7 +24,7 @@
   color: var(--cor-1);
   border-bottom: none;
   position: relative;
-  background: var(--cor-12);
+  background: var(--cor-p8);
 }
 .main-gc {
   grid-area: main-gc;
@@ -39,7 +40,7 @@
   font-size: var(--titulo-s);
   color: var(--cor-1);
   border-top: none;
-  background: var(--cor-12);
+  background: var(--cor-p8);
 }
 
 /* RESPONSIVO */

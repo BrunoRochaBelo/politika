@@ -30,6 +30,7 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   border-top: 1px solid var(--cor-10);
+  background: var(--cor-p8);
 }
 
 /* Estilos */
@@ -136,14 +137,13 @@
     grid-area: area-abas-template-header;
     justify-content: start;
     padding: 5px;
-    border-radius: 15px 15px 0 0;
+    border-radius: 0;
     position: relative;
-    background-color: var(--cor-12);
   }
   .area-abas-template-content {
     grid-area: area-abas-template-content;
-    border-radius: 0 0 15px 15px;
-    background-color: var(--cor-12);
+    border-radius: 20px;
+    background-color: var(--cor-10);
   }
 
   .nav {
@@ -152,7 +152,7 @@
     width: 300px;
     border: 1px solid transparent;
     box-shadow: none;
-    background-color: var(--cor-p8);
+    background-color: var(--cor-p3);
   }
 
   #nav1 a,

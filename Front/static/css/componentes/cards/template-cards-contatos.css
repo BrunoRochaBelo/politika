@@ -72,7 +72,7 @@
   grid-area: contatos-small-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--cor-7);
+  border-top: 1px solid var(--cor-3);
 }
 
 .exibirDetalheContato {
@@ -80,7 +80,7 @@
 }
 .contatos-small-card-expanded {
   margin: 3px;
-  background: var(--cor-3);
+  background: var(--cor-p3) !important;
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     " contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
