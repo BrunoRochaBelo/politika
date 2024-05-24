@@ -7,7 +7,7 @@
   border-radius: 20px;
   border: 1px solid var(--cor-2);
   letter-spacing: 0.5px;
-  background: var(--cor-p8);
+  background: var(--cor-p3);
 }
 .calendario-large-card-editar .btn-leaked:hover,
 .calendario-small-card-editar .btn-leaked:hover,
@@ -20,9 +20,9 @@
   justify-content: space-between;
   align-content: center;
   overflow-x: auto;
-  gap: 15px;
+  gap: 12px;
   padding: 5px;
-  background: var(--cor-p3);
+  background: transparent;
   border: 1px solid transparent;
   border-radius: 12px;
   color: var(--cor-1);
@@ -32,9 +32,9 @@
   align-self: center;
   padding: 5px 10px;
   color: var(--cor-1);
+  border-radius: 5px;
+  border: 2px solid var(--cor-10);
   background: var(--cor-3);
-  border-radius: 12px;
-  border: 1px solid transparent;
 }
 .nav-calendar .item2 {
   justify-self: end;
@@ -43,7 +43,9 @@
   margin-right: 3px;
 }
 .nav-calendar .item3 {
-  padding: 0px;
+  padding: 2px;
+  background: var(--cor-10);
+  border-radius: 12px;
 }
 
 .nav-semana {
@@ -127,12 +129,12 @@
   display: none;
 }
 .ant {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .prox {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .avancar {
   display: block;
@@ -202,6 +204,12 @@
   border: 1px solid #7238e5 !important;
   border-radius: 5px !important;
 }
+.nav-calendar .tarefa {
+  padding: 0px;
+  gap: 6px;
+  border-radius: 0px;
+  background: transparent;
+}
 
 .area-template-cf.aniversariantes {
   background: var(--cor-3);
@@ -217,16 +225,22 @@
 @media only screen and (max-width: 819px) {
   .nav-calendar {
     padding: 5px;
+    background: transparent;
   }
   .nav-calendar .item1 {
     padding: 5px 10px;
+    border: 2px solid var(--cor-11);
+    background: var(--cor-p8);
   }
   .nav-calendar .item2 {
     padding: 3px 5px;
     margin-right: 3px;
+    background: var(--cor-11);
   }
   .nav-calendar .item3 {
-    padding: 0px;
+    padding: 2px;
+    background: var(--cor-11);
+    border-radius: 12px;
   }
 
   .nav-semana {
@@ -235,6 +249,7 @@
 
   .dia-semana {
     padding: 3px 2px;
+    background: var(--cor-p8);
   }
   .dia-semana:hover {
     color: inherit;
@@ -247,6 +262,7 @@
 
   .change-semana {
     padding: 5px 10px;
+    background: var(--cor-p8);
   }
   .change-semana:hover {
     color: inherit;

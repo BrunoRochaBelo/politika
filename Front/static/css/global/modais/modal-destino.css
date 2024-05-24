@@ -85,7 +85,7 @@
 .search-input-dest {
   padding: 10px;
   font-size: 16px;
-  background: var(--cor-p3);
+  background: var(--cor-3);
   border: 1px solid var(--cor-3);
 }
 
@@ -139,5 +139,11 @@
   }
   .search-wrapper-dest {
     width: 90%;
+  }
+  .search-input-dest {
+    padding: 10px;
+    font-size: 16px;
+    background: var(--cor-p3);
+    border: 1px solid var(--cor-p3);
   }
 }

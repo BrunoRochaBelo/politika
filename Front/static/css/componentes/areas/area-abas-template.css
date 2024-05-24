@@ -16,7 +16,7 @@
   align-items: center;
   justify-items: center;
   color: var(--cor-1);
-  background: var(--cor-p8);
+  background: var(--cor-12);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 5px;
@@ -30,7 +30,7 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   border-top: 1px solid var(--cor-10);
-  background: var(--cor-p8);
+  background: var(--cor-12);
 }
 
 /* Estilos */
@@ -62,9 +62,9 @@
   text-align: center;
   justify-content: center;
   align-content: center;
-  padding: 2px;
+  padding: 1px;
   gap: 3px;
-  background: var(--cor-p3);
+  background: var(--cor-10);
   border-radius: 25px;
   width: 500px;
 }
@@ -80,7 +80,7 @@
 #nav3 a {
   font-size: 1rem;
   padding: 7px;
-  color: var(--cor-9);
+  color: var(--cor-1);
   border-radius: 25px;
   border: 1px solid transparent;
   display: flex;
@@ -99,7 +99,7 @@
 #nav3 a.indicador-2 {
   font-weight: bold;
   color: var(--cor-0);
-  background: var(--cor-p8);
+  background: var(--cor-12);
   border-color: transparent;
 }
 
@@ -136,29 +136,40 @@
   .area-abas-template-header {
     grid-area: area-abas-template-header;
     justify-content: start;
-    padding: 5px;
-    border-radius: 0;
+    background: var(--cor-p8);
+    padding: 6px 10px 10px 8px;
+    border-radius: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6), 0 3px 6px 0 rgba(0, 0, 0, 0.5);
   }
   .area-abas-template-content {
     grid-area: area-abas-template-content;
-    border-radius: 20px;
-    background-color: var(--cor-10);
+    border-radius: 0px;
+    background-color: transparent;
+    border-top: none;
+  }
+  .aba-header-header-fx-int {
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
+    padding: 5px;
   }
 
   .nav {
     padding: 0px;
     justify-items: stretch;
     width: 300px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     box-shadow: none;
-    background-color: var(--cor-p3);
+    background: var(--cor-11);
   }
 
   #nav1 a,
   #nav2 a,
   #nav3 a {
-    color: var(--cor-9);
+    color: var(--cor-1);
     padding: 4px 7px;
     font-size: 14px;
   }
@@ -170,6 +181,6 @@
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,
   #nav3 a.indicador-2 {
-    background: var(--cor-3);
+    background: var(--cor-p8);
   }
 }

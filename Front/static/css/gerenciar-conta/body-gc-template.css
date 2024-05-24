@@ -24,7 +24,7 @@
   color: var(--cor-1);
   border-bottom: none;
   position: relative;
-  background: var(--cor-p8);
+  background: var(--cor-12);
 }
 .main-gc {
   grid-area: main-gc;
@@ -40,7 +40,7 @@
   font-size: var(--titulo-s);
   color: var(--cor-1);
   border-top: none;
-  background: var(--cor-p8);
+  background: var(--cor-12);
 }
 
 /* RESPONSIVO */

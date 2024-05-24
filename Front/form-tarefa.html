@@ -21,75 +21,78 @@
   </header>
 
   <main class="main-form">
-    <section>
-      <form id="form" class="form" enctype="multipart/form-data">
-        <fieldset>
-          <legend class="titulo-xl"></legend>
-          <div class="campo form-tipo">
-            <label for="tipo">Tipo:</label>
-            <select id="tipo">
-              <option value="tarefa">Tarefa a fazer</option>
-              <!-- Adicione outras opções aqui -->
-            </select>
-          </div>
-
-          <div class="campo">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" placeholder="Digite o título aqui">
-          </div>
-
-          <div class="campo">
-            <label for="categoria">Categoria:</label>
-            <select id="categoria">
-              <option value="administracao" selected>Administração</option>
-              <!-- Adicione outras opções aqui -->
-            </select>
-          </div>
-
-          <div class="campo">
-            <label for="description">Descrição:</label>
-            <textarea class="form-textarea" id="description" placeholder="Digite aqui os detalhes"></textarea>
-          </div>
-
-
-          <div class="form-dataHora">
-            <div class="campo">
-              <label for="dataInicio">Data início:</label>
-              <input type="date" id="dataInicio" placeholder="dd/mm/aaaa">
+    <section class="area-template">
+      <div class="area-template-header"></div>
+      <div class="area-template-content">
+        <form id="form" class="form" enctype="multipart/form-data">
+          <fieldset>
+            <legend class="titulo-xl"></legend>
+            <div class="campo form-tipo">
+              <label for="tipo">Tipo:</label>
+              <select id="tipo">
+                <option value="tarefa">Tarefa a fazer</option>
+                <!-- Adicione outras opções aqui -->
+              </select>
             </div>
 
             <div class="campo">
-              <label for="dataFim">Data fim:</label>
-              <input type="date" id="dataFim" placeholder="dd/mm/aaaa">
+              <label for="titulo">Título:</label>
+              <input type="text" id="titulo" placeholder="Digite o título aqui">
             </div>
-          </div>
 
-          <div class="campo">
-            <label for="prioridade">Prioridade:</label>
-            <select id="prioridade">
-              <option value="" selected disabled>Selecione</option>
-              <option value="baixa">Baixa</option>
-              <option value="media">Media</option>
-              <option value="alta">Alta</option>
-            </select>
-          </div>
+            <div class="campo">
+              <label for="categoria">Categoria:</label>
+              <select id="categoria">
+                <option value="administracao" selected>Administração</option>
+                <!-- Adicione outras opções aqui -->
+              </select>
+            </div>
 
-          <div class="campo">
-            <label for="responsavel">Responsável:</label>
-            <input type="text" id="responsavel" placeholder="Digite o nome do Responsável">
-          </div>
+            <div class="campo">
+              <label for="description">Descrição:</label>
+              <textarea class="form-textarea" id="description" placeholder="Digite aqui os detalhes"></textarea>
+            </div>
 
-          <div class="campo">
-            <label for="acessoPrivado">Acesso privado</label>
-            <input class="form-checkbox" type="checkbox" id="acessoPrivado">
-          </div>
 
-          <div class="botoes">
-            <div class="btn-leaked"><a href="calendario.html">Cancelar</a></div>
-            <button type="submit" class="btn-filled" onclick="submitForm()">Criar</button>
-          </div>
-        </fieldset>
-      </form>
+            <div class="form-dataHora">
+              <div class="campo">
+                <label for="dataInicio">Data início:</label>
+                <input type="date" id="dataInicio" placeholder="dd/mm/aaaa">
+              </div>
+
+              <div class="campo">
+                <label for="dataFim">Data fim:</label>
+                <input type="date" id="dataFim" placeholder="dd/mm/aaaa">
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="prioridade">Prioridade:</label>
+              <select id="prioridade">
+                <option value="" selected disabled>Selecione</option>
+                <option value="baixa">Baixa</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="responsavel">Responsável:</label>
+              <input type="text" id="responsavel" placeholder="Digite o nome do Responsável">
+            </div>
+
+            <div class="campo">
+              <label for="acessoPrivado">Acesso privado</label>
+              <input class="form-checkbox" type="checkbox" id="acessoPrivado">
+            </div>
+
+            <div class="botoes">
+              <div class="btn-leaked"><a href="calendario.html">Cancelar</a></div>
+              <button type="submit" class="btn-filled" onclick="submitForm()">Criar</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
     </section>
   </main>
 </body>

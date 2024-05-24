@@ -7,7 +7,7 @@
 .btn-recuar-expandir:hover,
 .btn-recuar-expandir:active {
   font-size: var(--font-light);
-  color: var(--cor-p8);
+  color: var(--cor-p3);
   background-color: var(--cor-9);
   border-radius: 7px;
   padding: 3px 7px;

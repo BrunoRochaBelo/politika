@@ -23,7 +23,7 @@
   display: grid;
   justify-content: stretch;
   align-self: center;
-  background: var(--cor-2);
+  background: var(--cor-p3);
   border-radius: 25px;
   border: 1px solid var(--cor-2);
 }
@@ -42,9 +42,9 @@
   padding: 0.625rem;
   cursor: pointer;
   width: 100%;
-  background: var(--cor-2);
+  background: transparent;
   color: var(--cor-1);
-  border: 1px solid var(--cor-2);
+  border: 1px solid transparent;
 }
 /* Cor do placeholder */
 .search-input::placeholder {
@@ -52,7 +52,7 @@
 }
 /* Cor do placeholder ao focar */
 .search-input:focus::placeholder {
-  color: var(--cor-6);
+  color: var(--cor-3);
 }
 .header-search:hover {
   border: 1px solid #a57ff0;
@@ -64,12 +64,12 @@
 }
 
 .search-button {
-  background: var(--cor-p2);
+  background: transparent;
   border-radius: 20px;
   padding: 8px;
   border: none;
   cursor: pointer;
-  border: 1px solid var(--cor-2);
+  border: 1px solid transparent;
 }
 .search-icon {
   width: 18px;
@@ -77,9 +77,9 @@
   margin-right: 8px;
   padding: 0px 8px;
 }
-.search-input:focus + .search-button {
-  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff;
-}
+/*.search-input:focus + .search-button {
+  box-shadow: 0 0 1px #b6d5ff, 0 0 2px #cde2ff;
+}*/
 
 .back-icon {
   width: 18px;
@@ -92,7 +92,6 @@
 /* Efeito de hover: aumenta a escala da imagem e adiciona uma sombra */
 .header-back .back-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 /* Efeito de clique: reduz um pouco a escala e muda a opacidade */
 .header-back .back-icon:active {
@@ -146,5 +145,18 @@
     border: none;
     cursor: pointer;
     border: 1px solid var(--cor-p7);
+  }
+
+  .header-back .back-icon {
+    transition: transform 1s ease;
+  }
+  /* Efeito de hover: aumenta a escala da imagem e adiciona uma sombra */
+  .header-back .back-icon:hover {
+    transform: none;
+  }
+  /* Efeito de clique: reduz um pouco a escala e muda a opacidade */
+  .header-back .back-icon:active {
+    transform: scale(0.7);
+    opacity: 0.5;
   }
 }
