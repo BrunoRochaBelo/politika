@@ -235,7 +235,7 @@
   .area-template-header {
     justify-content: start;
     background: var(--cor-p8);
-    padding: 6px 10px 10px 15px;
+    padding: 6px 10px 10px 25px;
     border-radius: 0px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
