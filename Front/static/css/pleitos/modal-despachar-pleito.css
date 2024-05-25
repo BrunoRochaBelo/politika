@@ -13,6 +13,7 @@
 .modal-despachar-pleito-content.card-m {
   background: var(--cor-11);
   border-radius: 12px;
+  padding: 15px 5px;
 }
 .modal-despachar-pleito-content {
   position: relative;
@@ -82,8 +83,7 @@
   border-radius: 7px;
   justify-content: start;
   align-items: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
+  margin: 3px 10px 0 10px;
   font-size: var(--font-medium-light);
 }
 .modal-despachar-pleito-beneficiario {
@@ -152,7 +152,7 @@
   display: grid;
   justify-items: stretch;
   gap: 10px;
-  padding: 20px 10px 10px 10px;
+  padding: 10px;
   margin: 15px 0 0 0;
   align-self: center;
   border: 1px solid var(--cor-p8);
@@ -278,14 +278,14 @@
     gap: 0.625rem;
   }
   .modal-despachar-pleito-content {
-    min-width: 90%;
-    max-width: 90%;
+    min-width: 95%;
+    max-width: 95%;
     margin-top: 10px;
     padding: 20px 10px;
     max-height: 83%;
   }
 
   .modal-despachar-pleito-content::-webkit-scrollbar {
-    display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+    display: none;
   }
 }

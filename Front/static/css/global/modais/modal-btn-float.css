@@ -38,6 +38,10 @@
   font-size: var(--titulo-xs);
   padding: 0.5rem;
   border-bottom: 1px solid var(--cor-10);
+  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .modal-btn-floating-body {
   grid-area: modal-btn-floating-body;
@@ -54,7 +58,7 @@
   padding: 12px 20px;
 }
 .modal-btn-floating-body li:hover {
-  background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
+  background: linear-gradient(to right bottom, #8e5fed, #6ce4e9);
   color: var(--cor-7);
 }
 

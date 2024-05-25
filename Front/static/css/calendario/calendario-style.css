@@ -228,6 +228,32 @@
   border: 1px solid #a57ff0;
 }
 
+.fade-in {
+  animation: fadeIn 0.2s ease-in;
+}
+
+.fade-out {
+  animation: fadeOut 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media only screen and (max-width: 819px) {
   .nav-calendar {
     padding: 5px;
