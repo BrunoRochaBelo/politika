@@ -87,7 +87,7 @@
 }
 .aniversario-small-card-expanded {
   margin: 3px;
-  background: var(--cor-p8) !important;
+  background: #3d6096 !important;
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
     " aniversario-small-card-tipocontato aniversario-small-card-tipocontato aniversario-small-card-perfilInfluencia aniversario-small-card-phone"

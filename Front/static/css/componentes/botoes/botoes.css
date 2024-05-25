@@ -41,26 +41,30 @@
   cursor: pointer;
 }
 
-.area-template-fil-content .btn-filter-leaked,
-.area-template-fil-content .card-select-m {
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
-  border-radius: 12px;
-}
-
+/* Estilo para o efeito hover e active em todos os botões */
+/*  hover  */
 .btn-filled:hover,
 .btn-leaked:hover,
 .btn-filter-leaked:hover {
   box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58;
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
   border: 1px solid #a57ff0;
-  color: #a57ff0;
 }
+/*  active  */
 .btn-filled:active,
 .btn-leaked:active,
 .btn-filter-leaked:active {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
+}
+
+/* Estilos para os botões da area de filtros */
+/* Filtro  */
+.area-template-fil-content .btn-filter-leaked,
+.area-template-fil-content .card-select-m {
+  background: var(--cor-3);
+  color: var(--cor-1);
+  border-radius: 6px;
 }
 
 /* Estilo para o botão filtro*/
@@ -77,14 +81,12 @@
   position: relative;
   align-content: start;
 }
-
 .btn-filtro-pesq-title {
   font-size: 14px;
   color: var(--cor-1);
   margin-right: 15px;
 }
-
-/* Estilo para o "x" */
+/* Estilo para o "x" do botão filtro */
 .remover-filtro {
   position: absolute;
   top: 50%;
@@ -100,11 +102,9 @@
   font-size: 16px;
   border: none;
 }
-
 .remover-filtro:hover {
   color: #c61818; /* Cor do texto ao passar o mouse */
 }
-
 .remover-filtro:hover + .btn-filtro-pesq {
   border: 1px solid #a57ff0;
   box-shadow: 0 0 1px #c6b6fc, 0 0 2px #c6b6fc, 0 0 3px #c6b6fc, 0 0 4px #c6b6fc;

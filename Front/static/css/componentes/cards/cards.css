@@ -102,6 +102,8 @@
   box-sizing: border-box;
 }
 
+/* Estilos para os cards da area de filtros e compromisso para hoje */
+/* Filtro  */
 .area-template-fil-content .card-xs,
 .area-template-fil-content .card-s,
 .area-template-fil-content .card-m,
@@ -111,7 +113,23 @@
 .area-template-fil-content .card-tmf-l,
 .area-template-fil-content .card-select-xs,
 .area-template-fil-content .card-select-s,
-.area-template-fil-content .card-select-m,
+.area-template-fil-content .card-select-m {
+  background: var(--cor-3);
+  color: var(--cor-1);
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.area-template-fil-content .card-select-xs,
+.area-template-fil-content .card-select-s,
+.area-template-fil-content .card-select-m {
+  background: var(--cor-3);
+  color: var(--cor-1);
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+/* Compromisso para hoje  */
 .area-template-fil-alt-content .card-xs,
 .area-template-fil-alt-content .card-s,
 .area-template-fil-alt-content .card-m,
@@ -120,7 +138,7 @@
 .area-template-fil-alt-content .card-tmf-m,
 .area-template-fil-alt-content .card-tmf-l {
   background: var(--cor-3);
-  color: var(--cor-6);
+  color: var(--cor-1);
   border: 1px solid transparent;
   box-sizing: border-box;
 }
@@ -128,13 +146,14 @@
 .area-template-fil-alt-content .card-select-s,
 .area-template-fil-alt-content .card-select-m {
   background: var(--cor-3);
-  color: var(--cor-6);
+  color: var(--cor-1);
   border: 1px solid transparent;
   box-sizing: border-box;
   border-radius: 9px;
 }
 
-/* Estilo para o efeito hover em todos os elementos especificados */
+/* Estilo para o efeito hover e active em todos os cards */
+/*  hover  */
 .card-xs:hover,
 .card-s:hover,
 .card-m:hover,
@@ -150,7 +169,7 @@
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
   border: 1px solid #a57ff0;
 }
-
+/*  active  */
 .card-xs:active,
 .card-s:active,
 .card-m:active,
@@ -166,21 +185,6 @@
 
 /* Responsivo */
 @media (max-width: 820px) {
-  .card-xs,
-  .card-s,
-  .card-m,
-  .card-l,
-  .card-select-xs,
-  .card-select-s,
-  .card-select-m {
-    background: var(--cor-3);
-  }
-  .card-tmf-s,
-  .card-tmf-m,
-  .card-tmf-l {
-    background: var(--cor-3);
-  }
-
   .card-xs:hover,
   .card-s:hover,
   .card-m:hover,
@@ -193,30 +197,5 @@
   .card-select-m:hover {
     box-shadow: none;
     border: 1px solid transparent;
-  }
-
-  .area-template-fil-content .card-xs,
-  .area-template-fil-content .card-s,
-  .area-template-fil-content .card-m,
-  .area-template-fil-content .card-l,
-  .area-template-fil-content .card-tmf-s,
-  .area-template-fil-content .card-tmf-m,
-  .area-template-fil-content .card-tmf-l,
-  .area-template-fil-content .card-select-xs,
-  .area-template-fil-content .card-select-s,
-  .area-template-fil-content .card-select-m,
-  .area-template-fil-alt-content .card-xs,
-  .area-template-fil-alt-content .card-s,
-  .area-template-fil-alt-content .card-m,
-  .area-template-fil-alt-content .card-l,
-  .area-template-fil-alt-content .card-tmf-s,
-  .area-template-fil-alt-content .card-tmf-m,
-  .area-template-fil-alt-content .card-tmf-l,
-  .area-template-fil-alt-content .card-select-xs,
-  .area-template-fil-alt-content .card-select-s,
-  .area-template-fil-alt-content .card-select-m {
-    background: var(--cor-3);
-    border: 1px solid transparent;
-    box-sizing: border-box;
   }
 }

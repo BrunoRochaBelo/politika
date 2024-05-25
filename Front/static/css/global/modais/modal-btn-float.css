@@ -21,8 +21,8 @@
   right: 115px;
   border-radius: 15px;
   min-width: 135px;
-  background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
-  color: #3f1c80;
+  background: var(--cor-7);
+  color: var(--cor-1);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   grid:
     "modal-btn-floating-header"
@@ -37,7 +37,7 @@
   text-align: center;
   font-size: var(--titulo-xs);
   padding: 0.5rem;
-  border-bottom: 1px solid var(--cor-8);
+  border-bottom: 1px solid var(--cor-10);
 }
 .modal-btn-floating-body {
   grid-area: modal-btn-floating-body;
@@ -54,8 +54,8 @@
   padding: 12px 20px;
 }
 .modal-btn-floating-body li:hover {
-  background: #582ea6;
-  color: var(--cor-0);
+  background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
+  color: var(--cor-7);
 }
 
 /* Botão do modal */
@@ -89,6 +89,9 @@
 }
 /* RESPONSIVO */
 @media (max-width: 820px) {
+  .modal-btn-floating-header {
+    border-bottom: 1px solid var(--cor-11);
+  }
   .modal-btn-floating-content {
     position: absolute;
     bottom: 140px;

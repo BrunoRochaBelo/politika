@@ -10,13 +10,17 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.modal-concluir-pleito-content.card-m {
+  background: var(--cor-11);
+  border-radius: 12px;
+}
 .modal-concluir-pleito-content {
   position: relative;
-  color: var(--cor-1);
+  color: var(--cor-8);
   margin: auto;
   margin-top: 55px;
   padding: 20px;
-  border: 1px solid var(--cor-p4);
+  border: 1px solid var(--cor-p2);
   min-width: 50%;
   max-width: 80%;
   height: auto;
@@ -26,7 +30,7 @@
 
 .modal-concluir-pleito-template {
   display: grid;
-  color: var(--cor-1);
+  color: var(--cor-8);
   gap: 3px;
   grid:
     "modal-concluir-pleito-tiposolici modal-concluir-pleito-tiposolici modal-concluir-pleito-dataSolici"
@@ -46,7 +50,7 @@
 }
 .modal-concluir-pleito-tiposolici {
   grid-area: modal-concluir-pleito-tiposolici;
-  border-left: 4px solid var(--cor-p4);
+  border-left: 4px solid var(--cor-p2);
   padding-left: 10px;
   font-size: var(--titulo-s);
   justify-self: start;
@@ -74,7 +78,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--cor-11);
+  background: var(--cor-p2);
   border-radius: 7px;
   justify-content: start;
   align-items: center;
@@ -151,11 +155,11 @@
   padding: 20px 10px 10px 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border-top: 1px solid var(--cor-7);
+  border: 1px solid var(--cor-p8);
   font-size: var(--font-small-light);
   white-space: wrap;
   word-break: break-all;
-  background: var(--cor-p4);
+  background: var(--cor-12);
   border-radius: 12px;
   grid:
     "modal-concluir-pleito-descConclusao"
@@ -184,7 +188,7 @@
   margin-top: 25px;
 }
 .modal-concluir-pleito-concluir label {
-  color: var(--cor-1);
+  color: var(--cor-0);
 }
 
 .modal-concluir-pleito-concluir label textarea,
@@ -195,7 +199,7 @@
   color: var(--cor-0);
   background: var(--cor-p4);
   border: 1px solid var(--cor-p1);
-  border-radius: 7px;
+  border-radius: 6px;
 }
 
 .close {
@@ -220,8 +224,8 @@
   box-sizing: border-box;
   padding: 0.9375rem;
   color: var(--cor-0);
-  background: var(--cor-p4);
-  border: 1px solid var(--cor-p1);
+  background: var(--cor-7);
+  border: 1px solid var(--cor-p2);
   border-radius: 7px;
 }
 

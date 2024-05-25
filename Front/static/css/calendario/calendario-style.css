@@ -218,8 +218,14 @@
   border: 1px solid transparent;
 }
 .area-template-cf-content.area-aniversaiantes .card-xs {
-  background: var(--cor-p3);
-  border: 1px solid var(--cor-3);
+  background: var(--cor-7);
+  border: 1px solid var(--cor-p3);
+}
+.area-template-cf-content.area-aniversaiantes .card-xs:hover {
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid #a57ff0;
 }
 
 @media only screen and (max-width: 819px) {
@@ -229,21 +235,27 @@
   }
   .nav-calendar .item1 {
     padding: 5px 10px;
-    border: 2px solid var(--cor-11);
+    border: 2px solid var(--cor-7);
     background: var(--cor-p8);
   }
   .nav-calendar .item2 {
     padding: 3px 5px;
     margin-right: 3px;
-    background: var(--cor-11);
+    background: var(--cor-7);
   }
   .nav-calendar .item3 {
     padding: 2px;
-    background: var(--cor-11);
+    background: var(--cor-7);
     border-radius: 12px;
   }
 
   .nav-semana {
+    background: transparent;
+  }
+  .nav-calendar .tarefa {
+    padding: 0px;
+    gap: 6px;
+    border-radius: 0px;
     background: transparent;
   }
 
