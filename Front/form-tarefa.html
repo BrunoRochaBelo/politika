@@ -68,12 +68,14 @@
 
             <div class="campo">
               <label for="prioridade">Prioridade:</label>
-              <select id="prioridade">
-                <option value="" selected disabled>Selecione</option>
-                <option value="baixa">Baixa</option>
-                <option value="media">Media</option>
-                <option value="alta">Alta</option>
-              </select>
+              <div id="prioridade" class="radio-button-group">
+                <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa">
+                <label for="prioridadeBaixa">Baixa</label>
+                <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
+                <label for="prioridadeMedia">Média</label>
+                <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
+                <label for="prioridadeAlta">Alta</label>
+              </div>
             </div>
 
             <div class="campo">

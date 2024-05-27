@@ -224,12 +224,16 @@
           </div>
           <div class="modal-concluir-pleito-situacao">
             <label for="ConclusaoPleito">Situação:</label>
-            <select id="ConclusaoPleito" name="ConclusaoPleito">
-              <option value="atendido">Atendido</option>
-              <option value="atendidoParcialmente">Atendido Parcialmente</option>
-              <option value="naoAtendido">Não Atendido</option>
-              <option value="cancelado">Cancelado</option>
-            </select>
+            <div class="radio-button-group" id="ConclusaoPleito" name="ConclusaoPleito">
+              <input type="radio" id="atendido" name="ConclusaoPleito" value="atendido">
+              <label for="atendido">Atendido</label>
+              <input type="radio" id="atendidoParcialmente" name="ConclusaoPleito" value="atendidoParcialmente">
+              <label for="atendidoParcialmente">Atendido Parcialmente</label>
+              <input type="radio" id="naoAtendido" name="ConclusaoPleito" value="naoAtendido">
+              <label for="naoAtendido">Não Atendido</label>
+              <input type="radio" id="cancelado" name="ConclusaoPleito" value="cancelado">
+              <label for="cancelado">Cancelado</label>
+            </div>
           </div>
           <div class="modal-concluir-pleito-salvar">
             <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
@@ -269,11 +273,14 @@
           </div>
           <div class="modal-despachar-pleito-situacao">
             <label for="DespachoPleito">Situação:</label>
-            <select id="DespachoPleito" name="DespachoPleito">
-              <option value="sobAnalise">Sob Análise</option>
-              <option value="processando">Processando</option>
-              <option value="parado">Parado</option>
-            </select>
+            <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
+              <input type="radio" id="sobAnalise" name="DespachoPleito" value="sobAnalise">
+              <label for="sobAnalise">Sob Análise</label>
+              <input type="radio" id="processando" name="DespachoPleito" value="processando">
+              <label for="processando">Processando</label>
+              <input type="radio" id="parado" name="DespachoPleito" value="parado">
+              <label for="parado">Parado</label>
+            </div>
           </div>
           <div class="modal-despachar-pleito-dataInicio">
             <label for="dataInicio">Data Início</label>
@@ -285,10 +292,14 @@
           </div>
           <div class="modal-despachar-pleito-prioridade">
             <label for='prioridade'>Prioridade</label>
-            <select id='prioridade' name='prioridade'>
-              <!-- Opções podem ser adicionadas aqui -->
-              <option value='' disabled selected>Selecione a prioridade</option>
-            </select>
+            <div id='prioridade' name='prioridade' class="radio-button-group">
+              <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa">
+              <label for="prioridadeBaixa">Baixa</label>
+              <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
+              <label for="prioridadeMedia">Média</label>
+              <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
+              <label for="prioridadeAlta">Alta</label>
+            </div>
           </div>
           <div class="modal-despachar-pleito-responsavel">
             <label for='responsavel'>Responsável</label>

@@ -76,40 +76,34 @@
               </div>
               <div class="campo">
                 <label for="tipo_contato">Tipo(s) do contato</label>
-                <ul id="tipo_contato" class="tipo-contato">
-                  <li>
-                    <input type="checkbox" id="eleitor" name="eleitor" value="Eleitor" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="eleitor">Eleitor</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="staff" name="staff" value="Staff" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="staff">Staff</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="fornecedor" name="fornecedor" value="Fornecedor" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="fornecedor">Fornecedor</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="comissionado" name="comissionado" value="Comissionado" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="comissionado">Comissionado</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="lideranca" name="lideranca" value="Liderança" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="lideranca">Liderança</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="familia" name="familia" value="Família" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="familia">Família</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="politico" name="politico" value="Político" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="politico">Político</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="favorito" name="favorito" value="Favorito" class="form-contato-checkbox">
-                    <label class="checkbox-label" for="favorito">Favorito</label>
-                  </li>
-                </ul>
+
+
+                <div id="tipo_contato" class="checkbox-button-group">
+                  <input type="checkbox" id="eleitor" name="tipo_contato[]" value="Eleitor">
+                  <label for="eleitor">Eleitor</label>
+
+                  <input type="checkbox" id="staff" name="tipo_contato[]" value="Staff">
+                  <label for="staff">Staff</label>
+
+                  <input type="checkbox" id="fornecedor" name="tipo_contato[]" value="Fornecedor">
+                  <label for="fornecedor">Fornecedor</label>
+
+                  <input type="checkbox" id="comissionado" name="tipo_contato[]" value="Comissionado">
+                  <label for="comissionado">Comissionado</label>
+
+                  <input type="checkbox" id="lideranca" name="tipo_contato[]" value="Liderança">
+                  <label for="lideranca">Liderança</label>
+
+                  <input type="checkbox" id="familia" name="tipo_contato[]" value="Família">
+                  <label for="familia">Família</label>
+
+                  <input type="checkbox" id="politico" name="tipo_contato[]" value="Político">
+                  <label for="politico">Político</label>
+
+                  <input type="checkbox" id="favorito" name="tipo_contato[]" value="Favorito">
+                  <label for="favorito">Favorito</label>
+                </div>
+
               </div>
               <div class="campo">
                 <label for="tipo_pessoa">Tipo Pessoa <span>*</span></label>
@@ -304,27 +298,14 @@
                   <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
                 </div>
               </div>
+
               <div class="campo">
                 <label for="filhos">Filhos</label>
-                <input type="radio" id="filhos_sim" name="filhos" value="Sim" onclick="mostrarCamposFilhos()">
-                <label for="filhos_sim">Sim</label>
-                <input type="radio" id="filhos_nao" name="filhos" value="Não" onclick="ocultarCamposFilhos()">
-                <label for="filhos_nao">Não</label>
-                <!-- Se sim, texto e possibilidade de abrir mais campos para filhos -->
-                <div id="camposFilhos" style="display: none;">
-                  <div class="campo">
-                    <label for="nome_filho">Nome do Filho</label>
-                    <input type="text" id="nome_filho" name="nome_filho">
-                  </div>
-                  <div class="campo">
-                    <label for="data_nascimento_filho">Data de Nascimento do Filho</label>
-                    <input type="date" id="data_nascimento_filho" name="data_nascimento_filho">
-                    <div id="maisFilhosContainer"></div>
-                    <div>
-
-                      <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn">Adicionar mais um filho</button>
-                    </div>
-                  </div>
+                <div id="filhos" class="radio-button-group">
+                  <input type="radio" id="sim" name="resposta" value="sim">
+                  <label for="sim">Sim</label>
+                  <input type="radio" id="nao" name="resposta" value="nao">
+                  <label for="nao">Não</label>
                 </div>
                 <div class="campo">
                   <label for="religiao">Religião</label>

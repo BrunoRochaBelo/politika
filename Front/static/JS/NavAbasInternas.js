@@ -103,3 +103,43 @@ function avancar() {
   navegar(1);
   window.scrollTo(0, 0);
 }
+
+// Detectar swipe
+var startX;
+var startY;
+var threshold = 100; // distância mínima para considerar como swipe
+var allowedTime = 300; // tempo máximo permitido para o swipe
+
+document.addEventListener(
+  "touchstart",
+  function (event) {
+    var touch = event.changedTouches[0];
+    startX = touch.pageX;
+    startY = touch.pageY;
+    startTime = new Date().getTime(); // tempo de início do swipe
+  },
+  false
+);
+
+document.addEventListener(
+  "touchend",
+  function (event) {
+    var touch = event.changedTouches[0];
+    var distX = touch.pageX - startX;
+    var distY = touch.pageY - startY;
+    var elapsedTime = new Date().getTime() - startTime;
+
+    if (elapsedTime <= allowedTime) {
+      // verifica o tempo
+      if (Math.abs(distX) >= threshold && Math.abs(distY) <= 100) {
+        // verifique a distância
+        if (distX > 0) {
+          voltar();
+        } else {
+          avancar();
+        }
+      }
+    }
+  },
+  false
+);

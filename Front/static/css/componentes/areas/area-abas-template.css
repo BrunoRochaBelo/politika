@@ -127,7 +127,7 @@
 }
 
 .inactiveFil {
-  display: none;
+  display: flex; /* none */
 }
 
 /* RESPONSIVO */
@@ -177,6 +177,7 @@
   #nav2 a:hover,
   #nav3 a:hover {
     padding: 4px 7px;
+    color: var(--cor-1);
   }
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,

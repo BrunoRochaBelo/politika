@@ -1,0 +1,47 @@
+<div class="campo">
+  <label for="filhos">Filhos</label>
+  <input type="radio" id="filhos_sim" name="filhos" value="Sim" onclick="mostrarCamposFilhos()">
+  <label for="filhos_sim">Sim</label>
+  <input type="radio" id="filhos_nao" name="filhos" value="Não" onclick="ocultarCamposFilhos()">
+  <label for="filhos_nao">Não</label>
+  <!-- Se sim, texto e possibilidade de abrir mais campos para filhos -->
+  <div id="camposFilhos" style="display: none;">
+    <div class="campo">
+      <label for="nome_filho">Nome do Filho</label>
+      <input type="text" id="nome_filho" name="nome_filho">
+    </div>
+    <div class="campo">
+      <label for="data_nascimento_filho">Data de Nascimento do Filho</label>
+      <input type="date" id="data_nascimento_filho" name="data_nascimento_filho">
+      <div id="maisFilhosContainer"></div>
+      <div>
+
+        <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn">Adicionar mais um filho</button>
+      </div>
+    </div>
+  </div>
+  <div class="campo">
+    <label for="religiao">Religião</label>
+    <input type="text" id="religiao" name="religiao">
+  </div>
+  <div class="campo">
+    <label for="profissao">Profissão</label>
+    <input type="text" id="profissao" name="profissao">
+  </div>
+  <div class="campo">
+    <label for="cargo_comissionado">Cargo Comissionado</label>
+    <div class="switch-container">
+      <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="toggleCamposCargoComissionado()">
+      <label for="cargo_comissionado_switch" class="switch-label">
+        <span class="switch-inner"></span>
+        <span class="switch-switch"></span>
+      </label>
+    </div>
+  </div>
+  <div id="camposCargoComissionado" style="display: none;">
+    <div class="campo">
+      <label for="orgao_lotacao">Órgão de Lotação</label>
+      <input type="text" id="orgao_lotacao" name="orgao_lotacao">
+    </div>
+  </div>
+</div>
