@@ -6,8 +6,9 @@
 .btn-recuar-expandir,
 .btn-recuar-expandir:hover,
 .btn-recuar-expandir:active {
-  font-size: var(--font-light);
-  color: var(--cor-p3);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--cor-10);
   background-color: var(--cor-9);
   border-radius: 7px;
   padding: 3px 7px;
@@ -57,7 +58,8 @@
 }
 /* Estilo do botão */
 .btn-recuar-expandir-alt {
-  font-size: var(--font-light);
+  font-size: 11px;
+  font-weight: 400;
   color: var(--cor-1);
   background-color: transparent;
   padding: 3px 7px;
@@ -66,7 +68,7 @@
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-alt:hover {
-  color: var(--cor-5);
+  color: var(--cor-4);
   border-color: var(--cor-1);
   border-radius: 9px;
 }

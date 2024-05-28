@@ -16,7 +16,7 @@ legend {
 }
 label {
   font-size: 12px;
-  color: var(--cor-8);
+  color: var(--cor-4);
   margin: 12px 5px;
 }
 .campo {
@@ -29,7 +29,7 @@ label {
 .campo label {
   display: inline-block;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 310;
   margin-bottom: 2px;
 }
 .campo input,
@@ -39,8 +39,8 @@ label {
   box-sizing: border-box;
   padding: 12px;
   color: var(--cor-0);
-  background: var(--cor-3);
-  border: 1px solid var(--cor-p3);
+  background: var(--cor-7);
+  border: 1px solid var(--cor-2);
   border-radius: 5px;
 }
 
@@ -83,7 +83,7 @@ label {
   padding: 0px 5px;
   top: 0px;
   right: 0px;
-  color: var(--cor-8);
+  color: var(--cor-4);
   border-radius: 4px;
 }
 .header-form a:hover {
@@ -126,7 +126,7 @@ label + input.form-checkbox:after {
   width: 22px;
   height: 22px;
   border-radius: 10px;
-  background: var(--cor-8);
+  background: var(--cor-4);
   transition: left 0.2s;
 }
 
@@ -136,7 +136,6 @@ label + input.form-checkbox:checked:after {
 
 form span {
   color: red;
-  font-size: var(--titulo-s);
   margin: 0.3125rem 0.625rem 0.3125rem 0rem;
 }
 .form-tipo {
@@ -164,7 +163,7 @@ form span {
   width: 30%;
   border-radius: 5px;
   background: transparent;
-  color: var(--cor-8);
+  color: var(--cor-4);
   border: 1px solid var(--cor-4);
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
@@ -226,9 +225,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   }
 }
 
+/* RADIO */
 .radio-button-group {
   display: flex;
-  gap: 10px; /* Espaçamento entre os botões */
+  gap: 0px;
+  align-items: center;
+  flex-wrap: wrap; /* Permitir quebra de linha se necessário */
 }
 
 .radio-button-group input[type="radio"] {
@@ -236,28 +238,48 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .radio-button-group label {
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
-  border: 2px solid #007bff; /* Cor da borda */
+  border: 2px solid var(--cor-p1); /* Cor da borda */
   border-radius: 5px; /* Borda arredondada */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; /* Animação suave */
   user-select: none; /* Prevenir seleção de texto acidental */
+  text-align: center; /* Centraliza o texto */
+  gap: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+.radio-button-group .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+.radio-button-group label img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 .radio-button-group input[type="radio"]:checked + label {
-  background-color: #007bff; /* Cor de fundo quando selecionado */
+  background-color: var(--cor-p1); /* Cor de fundo quando selecionado */
   color: #fff; /* Cor do texto quando selecionado */
 }
 
 .radio-button-group label:hover {
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-  color: #fff; /* Cor do texto ao passar o mouse */
+  background-color: #0056b3;
+  color: #fff;
 }
 
+/* CHECKBOX */
 .checkbox-button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Espaçamento entre os botões */
+  gap: 0px 10px;
   margin-bottom: 20px; /* Espaçamento inferior para separar grupos */
 }
 
@@ -267,7 +289,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .checkbox-button-group label {
   padding: 10px 20px;
-  border: 2px solid #007bff; /* Cor da borda */
+  border: 2px solid var(--cor-p1); /* Cor da borda */
   border-radius: 5px; /* Borda arredondada */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; /* Animação suave */
@@ -275,7 +297,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .checkbox-button-group input[type="checkbox"]:checked + label {
-  background-color: #007bff; /* Cor de fundo quando selecionado */
+  background-color: var(--cor-p1); /* Cor de fundo quando selecionado */
   color: #fff; /* Cor do texto quando selecionado */
 }
 

@@ -35,7 +35,8 @@
 .modal-btn-floating-header {
   grid-area: modal-btn-floating-header;
   text-align: center;
-  font-size: var(--titulo-xs);
+  font-size: 14px;
+  font-weight: 300;
   padding: 0.5rem;
   border-bottom: 1px solid var(--cor-10);
   background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
@@ -89,7 +90,7 @@
   box-shadow: 0 0 1px #c6b6fc, 0 0 2px #c6b6fc, 0 0 3px #c6b6fc, 0 0 4px #c6b6fc;
 }
 .floatingButton:active {
-  border: 1px solid var(--cor-8);
+  border: 1px solid var(--cor-4);
 }
 /* RESPONSIVO */
 @media (max-width: 820px) {

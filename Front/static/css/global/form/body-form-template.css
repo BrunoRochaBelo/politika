@@ -18,10 +18,9 @@
   align-content: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  font-size: var(--titulo-s);
   padding: 0.625rem;
   text-align: left;
-  color: var(--cor-8);
+  color: var(--cor-4);
   border: 1px solid #28385396;
   border-bottom: none;
   position: relative;
@@ -38,8 +37,7 @@
   max-height: 88vh;
   padding: 0.625rem;
   border: 1px solid #28385396;
-  font-size: var(--titulo-s);
-  color: var(--cor-8);
+  color: var(--cor-4);
   border-top: none;
   background: var(--cor-10);
 }
@@ -52,7 +50,7 @@
     background: var(--cor-11);
   }
   .header-form {
-    background: var(--cor-p8);
+    background: var(--cor-12);
     border: 1px solid transparent;
     border-radius: 0px;
   }

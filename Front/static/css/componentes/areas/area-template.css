@@ -50,16 +50,17 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  font-size: var(--titulo-m);
+  font-size: 14px;
+  font-weight: 400;
   padding: 10px;
   text-align: left;
-  color: var(--cor-9);
+  color: var(--cor-4);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
 }
 .area-template-cf-header h2 {
-  font-size: var(--titulo-m);
+  font-size: var(--font-medium-light);
 }
 .area-template-cf-content {
   grid-area: area-template-cf-content;
@@ -86,10 +87,11 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  font-size: var(--titulo-m);
+  font-size: 14px;
+  font-weight: 400;
   padding: 0px 5px 7px 15px;
   text-align: left;
-  color: var(--cor-9);
+  color: var(--cor-4);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -234,13 +236,14 @@
   /* Area Template padrão*/
   .area-template-header {
     justify-content: start;
-    background: var(--cor-p8);
+    background: var(--cor-12);
     padding: 6px 10px 10px 25px;
     border-radius: 0px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     position: relative;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6), 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+    font-weight: 300;
   }
   .area-template-content {
     grid-area: area-template-content;
@@ -256,9 +259,19 @@
   }
 
   /* Area Template cor de fundo */
-
+  .area-template-cf-header {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .area-template-cf-header h2 {
+    font-size: 13px;
+    font-weight: 300;
+  }
   /* Area Template alternativa Tamanho fixo*/
-
+  .area-template-tmf-header {
+    font-size: 14px;
+    font-weight: 300;
+  }
   /* Area Template dos filtros*/
   .area-template-fil {
     padding: 3px;
@@ -271,7 +284,8 @@
     grid-auto-flow: column;
     justify-content: space-between;
     align-content: space-between;
-    font-size: var(--titulo-xl);
+    font-size: 12px;
+    font-weight: 400;
     text-align: left;
     color: var(--cor-1);
     color: transparent;
@@ -279,6 +293,7 @@
     padding: 5px 5px 5px 10px;
     box-shadow: none;
     background: none;
+    font-weight: 300;
   }
   .area-template-fil-content {
     grid-area: area-template-fil-content;
@@ -301,7 +316,8 @@
     grid-auto-flow: column;
     justify-content: space-between;
     align-content: space-between;
-    font-size: var(--titulo-xl);
+    font-size: 12px;
+    font-weight: 400;
     text-align: left;
     color: var(--cor-1);
     color: transparent;
@@ -309,6 +325,7 @@
     padding: 5px 5px 5px 10px;
     box-shadow: none;
     background: none;
+    font-weight: 300;
   }
   .area-template-fil-alt-content {
     grid-area: area-template-fil-alt-content;
@@ -322,12 +339,14 @@
   /* Area Template para cabeçalhos fixos*/
   .area-template-cbf-header {
     grid-area: area-template-cbf-header;
-    background: var(--cor-p8);
+    background: var(--cor-12);
     padding: 5px;
     border-radius: 0px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6), 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    font-weight: 300;
   }
   .area-template-cbf-content {
     grid-area: area-template-cbf-content;

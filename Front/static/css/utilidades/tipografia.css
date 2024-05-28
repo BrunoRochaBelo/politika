@@ -1,69 +1,83 @@
 :root {
   /* Tamanhos em rem para a fonte Roboto */
   --font-padrao: 1rem;
-  --font-light: 0.6875rem;
-  --font-medium-light: 0.75rem;
-  --font-medium-regular: 0.75rem;
-  --font-medium-bolder: 0.75rem;
-  --titulo-xs: 0.75rem;
-  --titulo-s: 0.875rem;
-  --titulo-m: 0.875rem;
+  --font-light: 0.75rem;
+  --font-medium-light: 0.8125rem;
+  --font-medium-regular: 0.8125rem;
+  --font-medium-bolder: 0.8125rem;
+  --titulo-xs: 0.8125rem;
+  --titulo-s: 0.9375rem;
+  --titulo-m: 0.9375rem;
   --font-l: 1rem;
   --titulo-xl: 1.125rem;
+  --letter-spacing: 0.06em;
 }
 
 /* Aplicando as variáveis nas classes */
 /* 16px */
 .font-padrao {
-  font: var(--font-padrao);
+  font-size: var(--font-padrao);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing);
 }
-/* 11px */
+/* 12px */
 .font-light {
-  font: var(--font-light);
-  font-weight: lighter;
+  font-size: var(--font-light);
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
 }
-/* 12px */
+/* 13px */
 .font-medium-light {
-  font: var(--font-medium-light);
-  font-weight: lighter;
+  font-size: var(--font-medium-light);
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
 }
-/* 12px */
+/* 13px */
 .font-medium-regular {
-  font: var(--font-medium-regular);
+  font-size: var(--font-medium-regular);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing);
 }
-/* 12px */
+/* 13px */
 .font-medium-bolder {
-  font: var(--font-medium-bolder);
-  font-weight: bolder;
+  font-size: var(--font-medium-bolder);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing);
 }
-/* 12px */
+/* 13px */
 .titulo-xs {
   font-size: var(--titulo-xs);
-  font-weight: normal;
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing);
 }
-/* 14px */
+/* 15px */
 .titulo-s {
   font-size: var(--titulo-s);
   font-weight: 300;
+  letter-spacing: var(--letter-spacing);
 }
-/* 14px */
+/* 15px */
 .titulo-m {
   font-size: var(--titulo-m);
-  font-weight: bolder;
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing);
 }
 /* 16px */
 .titulo-l {
-  font-size: var(--titulo-l);
-  font-weight: bolder;
+  font-size: var(--font-l);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing);
 }
 /* 18px */
 .titulo-xl {
   font-size: var(--titulo-xl);
-  font-weight: bolder;
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing);
 }
 
 .titulo-area {
   font-size: var(--titulo-xl);
   text-align: left;
   margin: 0.625rem;
+  letter-spacing: var(--letter-spacing);
 }

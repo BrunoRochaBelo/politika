@@ -57,13 +57,13 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--cor-p8)";
+      button.style.color = "var(--cor-12)";
       mainSidenav.style.height = "auto";
       area.style.background = "var(--cor-11)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--cor-8)";
+      areaHeader.style.color = "var(--cor-4)";
       areaHeader.style.fontSize = "22px";
 
       // Altera o tamanho da .main-sidenav para 98%

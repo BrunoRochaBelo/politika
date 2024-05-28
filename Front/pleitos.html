@@ -218,10 +218,7 @@
         <p class="modal-concluir-pleito-status" data-filter="statusPleito"></p>
         <p class="modal-concluir-pleito-desc" data-filter="descPleito"></p>
         <div class="modal-concluir-pleito-concluir">
-          <div class="modal-concluir-pleito-descConclusao">
-            <label for="descConclusaoPleito">Descrição da Conclusão:</label>
-            <textarea id="descConclusaoPleito" name="descConclusaoPleito"></textarea>
-          </div>
+          <h2 class="modal-concluir-pleito-concluir-title">Concluir</h2>
           <div class="modal-concluir-pleito-situacao">
             <label for="ConclusaoPleito">Situação:</label>
             <div class="radio-button-group" id="ConclusaoPleito" name="ConclusaoPleito">
@@ -234,6 +231,10 @@
               <input type="radio" id="cancelado" name="ConclusaoPleito" value="cancelado">
               <label for="cancelado">Cancelado</label>
             </div>
+          </div>
+          <div class="modal-concluir-pleito-descConclusao">
+            <label for="descConclusaoPleito">Descrição da Conclusão:</label>
+            <textarea id="descConclusaoPleito" name="descConclusaoPleito"></textarea>
           </div>
           <div class="modal-concluir-pleito-salvar">
             <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
@@ -267,10 +268,6 @@
         <p class="modal-despachar-pleito-desc" data-filter="descPleito"></p>
         <div class="modal-despachar-pleito-despachar">
           <h2 class="modal-despachar-pleito-despachar-title">Atribuir Tarefa</h2>
-          <div class="modal-despachar-pleito-descDespacho">
-            <label for="descDespachoPleito">Descrição da Conclusão:</label>
-            <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
-          </div>
           <div class="modal-despachar-pleito-situacao">
             <label for="DespachoPleito">Situação:</label>
             <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
@@ -281,6 +278,13 @@
               <input type="radio" id="parado" name="DespachoPleito" value="parado">
               <label for="parado">Parado</label>
             </div>
+          </div>
+          <div class="modal-despachar-pleito-responsavel">
+            <label for='responsavel'>Responsável</label>
+            <select id='responsavel' name='responsavel'>
+              <!-- Opções podem ser adicionadas aqui -->
+              <option value='' disabled selected>Selecione o responsável</option>
+            </select>
           </div>
           <div class="modal-despachar-pleito-dataInicio">
             <label for="dataInicio">Data Início</label>
@@ -301,12 +305,9 @@
               <label for="prioridadeAlta">Alta</label>
             </div>
           </div>
-          <div class="modal-despachar-pleito-responsavel">
-            <label for='responsavel'>Responsável</label>
-            <select id='responsavel' name='responsavel'>
-              <!-- Opções podem ser adicionadas aqui -->
-              <option value='' disabled selected>Selecione o responsável</option>
-            </select>
+          <div class="modal-despachar-pleito-descDespacho">
+            <label for="descDespachoPleito">Descrição da Conclusão:</label>
+            <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
           </div>
           <div class="modal-despachar-pleito-salvar">
             <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>

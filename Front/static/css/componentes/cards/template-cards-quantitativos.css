@@ -9,13 +9,15 @@
 }
 .quant-small-card-title {
   grid-area: quant-small-card-title;
-  font-size: var(--titulo-xl);
+  font-size: 15px;
+  font-weight: 500;
   text-align: start;
   color: var(--cor-1);
 }
 .quant-small-card-desc {
   grid-area: quant-small-card-desc;
-  font-size: var(--font-light);
+  font-size: 12px;
+  font-weight: 300;
   width: 100%;
   justify-self: stretch;
   text-align: start;
@@ -26,7 +28,8 @@
 }
 .quant-small-card-result {
   grid-area: quant-small-card-result;
-  font-size: var(--font-medium-regular);
+  font-size: 14px;
+  font-weight: 400;
   text-align: start;
   background: var(--cor-3);
   border-radius: 9px;

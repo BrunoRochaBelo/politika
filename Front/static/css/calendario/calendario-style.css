@@ -43,8 +43,7 @@
   margin-right: 3px;
 }
 .nav-calendar .item3 {
-  padding: 2px;
-  background: var(--cor-10);
+  padding: 0px;
   border-radius: 12px;
 }
 
@@ -53,39 +52,24 @@
   grid-auto-flow: column;
   align-items: center;
   gap: 0px;
-  padding: 0px;
-  background: transparent;
-  border-radius: 12px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  background: var(--cor-10);
 }
 
 .dia-semana {
   text-align: center;
-  padding: 7px;
-  color: var(--cor-8);
+  padding: 5px;
+  color: var(--cor-4);
   background: var(--cor-3);
   border: 1px solid transparent;
   cursor: pointer;
-  font-size: var(--font-medium-light);
   min-width: 33px;
   transition: background-color 0.5s ease;
+  font-size: 12px;
+  font-weight: 300;
 }
-.dia-semana:hover,
-.change-semana:hover,
-.filtro-tarefa:hover {
-  color: #8653eb;
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid #a57ff0;
-  border-radius: 5px !important;
-}
-.change-semana:hover {
-  border-radius: 12px !important;
-}
-.dia-semana:active,
-.change-semana:active {
-  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
-}
+
 .dia-visualize {
   color: var(--cor-0) !important;
   background: #7238e5 !important;
@@ -122,8 +106,7 @@
   border: 1px solid transparent;
   color: var(--cor-1);
   cursor: pointer;
-  font-size: var(--font-medium-regular);
-  background: var(--cor-3);
+  background: transparent;
 }
 .change-semana p {
   display: none;
@@ -155,6 +138,24 @@
   height: 16px;
 }
 
+.dia-semana:hover,
+.change-semana:hover,
+.filtro-tarefa:hover {
+  color: #8653eb;
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid #a57ff0;
+  border-radius: 5px !important;
+}
+.change-semana:hover {
+  border-radius: 12px !important;
+}
+.dia-semana:active,
+.change-semana:active {
+  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
+}
+
 .btn-calendario {
   padding: 0.2rem 0.625rem;
   cursor: pointer;
@@ -162,8 +163,8 @@
   border: 1px solid transparent;
 }
 .btn-calendario:hover {
-  color: var(--cor-5);
-  border-color: var(--cor-5);
+  color: var(--cor-4);
+  border-color: var(--cor-2);
   border-radius: 5px;
 }
 .btn-calendario:active {
@@ -195,8 +196,9 @@
   border-radius: 5px;
   color: var(--cor-1);
   cursor: pointer;
-  font-size: var(--font-medium-regular);
   background: var(--cor-3);
+  font-size: 12px;
+  font-weight: 300;
 }
 .filtro-visualize {
   color: var(--cor-0) !important;
@@ -259,7 +261,7 @@
   .nav-calendar .item1 {
     padding: 5px 10px;
     border: 2px solid var(--cor-7);
-    background: var(--cor-p8);
+    background: var(--cor-12);
   }
   .nav-calendar .item2 {
     padding: 3px 5px;
@@ -267,13 +269,12 @@
     background: var(--cor-7);
   }
   .nav-calendar .item3 {
-    padding: 2px;
-    background: var(--cor-7);
     border-radius: 12px;
   }
 
   .nav-semana {
-    background: transparent;
+    padding: 2px 5px;
+    background: var(--cor-7);
   }
   .nav-calendar .tarefa {
     padding: 0px;
@@ -284,12 +285,12 @@
 
   .dia-semana {
     padding: 3px 2px;
-    background: var(--cor-p8);
+    background: var(--cor-12);
   }
 
   .change-semana {
     padding: 5px 10px;
-    background: var(--cor-p8);
+    background: var(--cor-12);
   }
 
   .filtro-tarefa {

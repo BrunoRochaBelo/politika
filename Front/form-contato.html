@@ -34,6 +34,21 @@
             <fieldset>
               <legend class="titulo-xl"></legend>
               <div class="campo">
+                <label for="tipo_pessoa">Tipo de Pessoa <span>*</span></label>
+                <div id="tipo_pessoa" class="radio-button-group">
+                  <input type="radio" id="fisica" name="tipo_pessoa" value="Física" required>
+                  <label for="fisica">
+                    <img src="./static/imagens/icones/pessoa-fisica.svg" alt="Pessoa Física" class="radio-icon">
+                    Física
+                  </label>
+                  <input type="radio" id="juridica" name="tipo_pessoa" value="Jurídica" required>
+                  <label for="juridica">
+                    <img src="./static/imagens/icones/pessoa-juridica.svg" alt="Pessoa Jurídica" class="radio-icon">
+                    Jurídica
+                  </label>
+                </div>
+              </div>
+              <div class="campo">
                 <label for="nome_contato">Nome do contato <span>*</span></label>
                 <input type="text" id="nome_contato" name="nome_contato" required>
               </div>
@@ -67,17 +82,41 @@
               </div>
               <div class="campo">
                 <label for="perfil_influencia">Perfil de Influência</label>
-                <select id="perfil_influencia" name="perfil_influencia">
-                  <option value="">Selecione</option>
-                  <option value="Baixo">Baixo</option>
-                  <option value="Médio">Médio</option>
-                  <option value="Alto">Alto</option>
-                </select>
+                <div id="perfil_influencia" name="perfil_influencia" class="radio-button-group">
+                  <input type="radio" id="influencia1" name="perfil_influencia" value="1 estrela" required>
+                  <label for="influencia1">
+                    <div class="icon-container">
+                      <img src="./static/imagens/icones/1-estrela.svg" alt="1 estrela" class="radio-icon">
+                    </div>
+                  </label>
+                  <input type="radio" id="influencia2" name="perfil_influencia" value="2 estrelas" required>
+                  <label for="influencia2">
+                    <div class="icon-container">
+                      <img src="./static/imagens/icones/2-estrela.svg" alt="2 estrelas" class="radio-icon">
+                    </div>
+                  </label>
+                  <input type="radio" id="influencia3" name="perfil_influencia" value="3 estrelas" required>
+                  <label for="influencia3">
+                    <div class="icon-container">
+                      <img src="./static/imagens/icones/3-estrela.svg" alt="3 estrelas" class="radio-icon">
+                    </div>
+                  </label>
+                  <input type="radio" id="influencia4" name="perfil_influencia" value="4 estrelas" required>
+                  <label for="influencia4">
+                    <div class="icon-container">
+                      <img src="./static/imagens/icones/4-estrela.svg" alt="4 estrelas" class="radio-icon">
+                    </div>
+                  </label>
+                  <input type="radio" id="influencia5" name="perfil_influencia" value="5 estrelas" required>
+                  <label for="influencia5">
+                    <div class="icon-container">
+                      <img src="./static/imagens/icones/5-estrela.svg" alt="5 estrelas" class="radio-icon">
+                    </div>
+                  </label>
+                </div>
               </div>
               <div class="campo">
                 <label for="tipo_contato">Tipo(s) do contato</label>
-
-
                 <div id="tipo_contato" class="checkbox-button-group">
                   <input type="checkbox" id="eleitor" name="tipo_contato[]" value="Eleitor">
                   <label for="eleitor">Eleitor</label>
@@ -103,15 +142,6 @@
                   <input type="checkbox" id="favorito" name="tipo_contato[]" value="Favorito">
                   <label for="favorito">Favorito</label>
                 </div>
-
-              </div>
-              <div class="campo">
-                <label for="tipo_pessoa">Tipo Pessoa <span>*</span></label>
-                <select id="tipo_pessoa" name="tipo_pessoa" required>
-                  <option value="">Selecione</option>
-                  <option value="Física">Física</option>
-                  <option value="Jurídica">Jurídica</option>
-                </select>
               </div>
             </fieldset>
             <fieldset>

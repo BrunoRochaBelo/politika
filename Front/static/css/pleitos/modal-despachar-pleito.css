@@ -17,11 +17,11 @@
 }
 .modal-despachar-pleito-content {
   position: relative;
-  color: var(--cor-8);
+  color: var(--cor-4);
   margin: auto;
   margin-top: 15px;
   padding: 20px;
-  border: 1px solid var(--cor-p2);
+  border: 1px solid var(--cor-2);
   min-width: 50%;
   max-width: 80%;
   height: auto;
@@ -32,7 +32,7 @@
 
 .modal-despachar-pleito-template {
   display: grid;
-  color: var(--cor-8);
+  color: var(--cor-4);
   gap: 3px;
   grid:
     "modal-despachar-pleito-tiposolici modal-despachar-pleito-tiposolici modal-despachar-pleito-dataSolici"
@@ -51,9 +51,10 @@
 }
 .modal-despachar-pleito-tiposolici {
   grid-area: modal-despachar-pleito-tiposolici;
-  border-left: 4px solid var(--cor-p2);
+  border-left: 4px solid var(--cor-2);
   padding-left: 10px;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
   justify-self: start;
   align-self: center;
 }
@@ -63,7 +64,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
 }
 .modal-despachar-pleito-solicitante {
   grid-area: modal-despachar-pleito-solicitante;
@@ -71,7 +73,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-desc {
   grid-area: modal-despachar-pleito-desc;
@@ -79,12 +82,13 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--cor-p2);
+  background: var(--cor-2);
   border-radius: 7px;
   justify-content: start;
   align-items: center;
   margin: 3px 10px 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-beneficiario {
   grid-area: modal-despachar-pleito-beneficiario;
@@ -92,7 +96,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-uf {
   grid-area: modal-despachar-pleito-uf;
@@ -100,7 +105,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-cidade {
   grid-area: modal-despachar-pleito-cidade;
@@ -108,7 +114,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-bairro {
   grid-area: modal-despachar-pleito-bairro;
@@ -116,7 +123,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-rua {
   grid-area: modal-despachar-pleito-rua;
@@ -124,7 +132,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-autor {
   grid-area: modal-despachar-pleito-autor;
@@ -132,7 +141,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-dataCriacao {
   grid-area: modal-despachar-pleito-dataCriacao;
@@ -140,7 +150,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-status {
   display: none;
@@ -155,25 +166,24 @@
   padding: 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border: 1px solid var(--cor-p8);
-  font-size: var(--font-small-light);
+  border: 1px solid var(--cor-7);
+  font-size: 13px;
+  font-weight: 350;
   white-space: wrap;
   word-break: break-all;
   background: var(--cor-12);
   border-radius: 12px;
   grid:
     "modal-despachar-pleito-despachar-title modal-despachar-pleito-despachar-title"
-    "modal-despachar-pleito-descDespacho modal-despachar-pleito-descDespacho"
     "modal-despachar-pleito-situacao modal-despachar-pleito-situacao"
+    "modal-despachar-pleito-responsavel modal-despachar-pleito-responsavel"
     "modal-despachar-pleito-dataInicio modal-despachar-pleito-prazoFinal"
     "modal-despachar-pleito-prioridade modal-despachar-pleito-prioridade"
-    "modal-despachar-pleito-responsavel modal-despachar-pleito-responsavel"
+    "modal-despachar-pleito-descDespacho modal-despachar-pleito-descDespacho"
     "modal-despachar-pleito-salvar modal-despachar-pleito-salvar";
 }
 .modal-despachar-pleito-despachar-title {
   grid-area: modal-despachar-pleito-despachar-title;
-  font-size: 16px;
-  font-weight: bold;
 }
 .modal-despachar-pleito-descDespacho {
   grid-area: modal-despachar-pleito-descDespacho;
@@ -186,7 +196,8 @@
   justify-items: stretch;
   display: flex;
   flex-direction: column;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-despachar-pleito-dataInicio {
   grid-area: modal-despachar-pleito-dataInicio;
@@ -209,7 +220,8 @@
   display: flex;
   justify-content: space-around;
   gap: 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
   margin-top: 25px;
 }
 
@@ -240,7 +252,7 @@
   padding: 0.9375rem;
   color: var(--cor-0);
   background: var(--cor-7);
-  border: 1px solid var(--cor-p2);
+  border: 1px solid var(--cor-2);
   border-radius: 6px;
 }
 
@@ -273,6 +285,9 @@
 
 /* Responsivo */
 @media (max-width: 820px) {
+  .modal-despachar-pleito-content.card-m {
+    padding: 15px 0px;
+  }
   .modal-despachar-pleito-salvar {
     flex-direction: column;
     gap: 0.625rem;
@@ -281,8 +296,8 @@
     min-width: 95%;
     max-width: 95%;
     margin-top: 10px;
-    padding: 20px 10px;
-    max-height: 83%;
+    padding: 20px 0px;
+    max-height: auto;
   }
 
   .modal-despachar-pleito-content::-webkit-scrollbar {

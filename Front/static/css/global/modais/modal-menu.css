@@ -23,7 +23,7 @@
   right: 1rem;
   color: var(--cor-1);
   background: var(--cor-7);
-  border: 1px solid var(--cor-p8);
+  border: 1px solid var(--cor-12);
   padding: 1rem;
   gap: 5px;
   border-radius: 12px;
@@ -51,19 +51,22 @@
   grid-area: modal-content-template-candidato;
   justify-self: start;
   align-self: end;
-  font-size: var(--titulo-m);
+  font-size: 15px;
+  font-weight: 400;
 }
 .modal-content-template-cargo-owner {
   grid-area: modal-content-template-cargo-owner;
   justify-self: start;
   align-self: start;
-  font-size: var(--font-medium-regular);
+  font-size: 12px;
+  font-weight: 370;
 }
 .modal-content-template-partido {
   grid-area: modal-content-template-partido;
   justify-self: start;
   align-self: start;
-  font-size: var(--font-medium-regular);
+  font-size: 12px;
+  font-weight: 370;
 }
 .modal-content-template-sessao {
   grid-area: modal-content-template-sessao;
@@ -81,13 +84,15 @@
 .modal-content-template-username {
   grid-area: modal-content-template-username;
   justify-self: center;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .modal-content-template-cargo {
   grid-area: modal-content-template-cargo;
   justify-self: center;
-  font-size: var(--font-medium-regular);
+  font-size: 12px;
+  font-weight: 300;
 }
 
 .modal-content-template-sair {

@@ -46,12 +46,12 @@
     align-content: center;
     justify-content: space-between;
     grid: "home-header-logo home-header-title home-header-user" 45px;
-    background: var(--cor-p8);
+    background: var(--cor-12);
     box-shadow: none;
   }
   .home-header-template.box-shadow-active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid var(--cor-p6);
+    border-bottom: 1px solid var(--cor-p3);
     background: var(--cor-12);
   }
 
@@ -62,7 +62,8 @@
     padding: 3px;
   }
   .home-header-title {
-    font-size: var(--titulo-xl);
+    font-size: 15px;
+    font-weight: 500;
     display: inline-block;
     color: var(--cor-1);
   }

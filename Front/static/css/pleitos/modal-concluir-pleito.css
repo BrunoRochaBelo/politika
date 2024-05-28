@@ -17,11 +17,11 @@
 }
 .modal-concluir-pleito-content {
   position: relative;
-  color: var(--cor-8);
+  color: var(--cor-4);
   margin: auto;
   margin-top: 55px;
   padding: 20px;
-  border: 1px solid var(--cor-p2);
+  border: 1px solid var(--cor-2);
   min-width: 50%;
   max-width: 80%;
   height: auto;
@@ -31,7 +31,7 @@
 
 .modal-concluir-pleito-template {
   display: grid;
-  color: var(--cor-8);
+  color: var(--cor-4);
   gap: 3px;
   grid:
     "modal-concluir-pleito-tiposolici modal-concluir-pleito-tiposolici modal-concluir-pleito-dataSolici"
@@ -51,9 +51,10 @@
 }
 .modal-concluir-pleito-tiposolici {
   grid-area: modal-concluir-pleito-tiposolici;
-  border-left: 4px solid var(--cor-p2);
+  border-left: 4px solid var(--cor-2);
   padding-left: 10px;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
   justify-self: start;
   align-self: center;
 }
@@ -63,7 +64,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
 }
 .modal-concluir-pleito-solicitante {
   grid-area: modal-concluir-pleito-solicitante;
@@ -71,7 +73,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-desc {
   grid-area: modal-concluir-pleito-desc;
@@ -79,12 +82,13 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--cor-p2);
+  background: var(--cor-2);
   border-radius: 7px;
   justify-content: start;
   align-items: center;
   margin: 3px 10px 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-beneficiario {
   grid-area: modal-concluir-pleito-beneficiario;
@@ -92,7 +96,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-uf {
   grid-area: modal-concluir-pleito-uf;
@@ -100,7 +105,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-cidade {
   grid-area: modal-concluir-pleito-cidade;
@@ -108,7 +114,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-bairro {
   grid-area: modal-concluir-pleito-bairro;
@@ -116,7 +123,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-rua {
   grid-area: modal-concluir-pleito-rua;
@@ -124,7 +132,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-autor {
   grid-area: modal-concluir-pleito-autor;
@@ -132,7 +141,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-dataCriacao {
   grid-area: modal-concluir-pleito-dataCriacao;
@@ -140,7 +150,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-status {
   display: none;
@@ -155,15 +166,17 @@
   padding: 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border: 1px solid var(--cor-p8);
-  font-size: var(--font-small-light);
+  border: 1px solid var(--cor-7);
+  font-size: 13px;
+  font-weight: 350;
   white-space: wrap;
   word-break: break-all;
   background: var(--cor-12);
   border-radius: 12px;
   grid:
-    "modal-concluir-pleito-descConclusao"
+    "modal-concluir-pleito-concluir-title"
     "modal-concluir-pleito-situacao"
+    "modal-concluir-pleito-descConclusao"
     "modal-concluir-pleito-salvar";
 }
 .modal-concluir-pleito-descConclusao {
@@ -177,14 +190,16 @@
   justify-items: stretch;
   display: flex;
   flex-direction: column;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .modal-concluir-pleito-salvar {
   grid-area: modal-concluir-pleito-salvar;
   display: flex;
   justify-content: space-around;
   gap: 10px;
-  font-size: var(--font-small-light);
+  font-size: 13px;
+  font-weight: 350;
   margin-top: 25px;
 }
 .modal-concluir-pleito-concluir label {
@@ -197,8 +212,8 @@
   box-sizing: border-box;
   padding: 0.9375rem;
   color: var(--cor-0);
-  background: var(--cor-p4);
-  border: 1px solid var(--cor-p1);
+  background: transparent;
+  border: 1px solid var(--cor-p3);
   border-radius: 6px;
 }
 
@@ -225,7 +240,7 @@
   padding: 0.9375rem;
   color: var(--cor-0);
   background: var(--cor-7);
-  border: 1px solid var(--cor-p2);
+  border: 1px solid var(--cor-2);
   border-radius: 7px;
 }
 
@@ -260,6 +275,9 @@
 
 /* Responsivo */
 @media (max-width: 820px) {
+  .modal-concluir-pleito-content.card-m {
+    padding: 15px 0px;
+  }
   .modal-concluir-pleito-salvar {
     flex-direction: column;
     gap: 0.625rem;
@@ -269,8 +287,9 @@
     max-width: 95%;
     margin-top: 40px;
     padding: 20px 10px;
-    max-height: 83%;
+    max-height: auto;
   }
+
   .modal-concluir-pleito-salvar .btn-leaked {
     width: auto;
   }

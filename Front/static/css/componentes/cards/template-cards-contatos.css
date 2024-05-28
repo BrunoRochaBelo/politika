@@ -20,7 +20,8 @@
   grid-area: contatos-small-card-title;
   justify-self: start;
   align-self: center;
-  font-size: var(--titulo-m);
+  font-size: 14px;
+  font-weight: 400;
   color: var(--cor-0);
 }
 .contatos-small-card-tipocontato {
@@ -28,7 +29,8 @@
   justify-self: start;
   align-self: center;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-regular);
+  font-size: 14px;
+  font-weight: 300;
 }
 .contatos-small-card-phone {
   grid-area: contatos-small-card-phone;
@@ -48,7 +50,8 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
-  font-size: var(--titulo-m);
+  font-size: 14px;
+  font-weight: 400;
 }
 .contatos-small-card-email {
   grid-area: contatos-small-card-email;
@@ -57,7 +60,8 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 400;
 }
 .contatos-small-card-tipopessoa {
   grid-area: contatos-small-card-tipopessoa;
@@ -66,7 +70,8 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
-  font-size: var(--font-light);
+  font-size: 12px;
+  font-weight: 300;
 }
 .contatos-small-card-editar {
   grid-area: contatos-small-card-editar;
@@ -80,7 +85,7 @@
 }
 .contatos-small-card-expanded {
   margin: 3px;
-  background: #3d6096 !important;
+  background: #3868b0 !important;
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     " contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
@@ -118,5 +123,6 @@
 }
 .contatos-empty-card-title {
   grid-area: contatos-empty-card-title;
-  font-size: var(--titulo-m);
+  font-size: 14px;
+  font-weight: 400;
 }

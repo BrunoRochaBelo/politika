@@ -18,7 +18,6 @@
   align-content: center;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  font-size: var(--titulo-s);
   padding: 10px;
   text-align: left;
   color: var(--cor-1);
@@ -37,7 +36,6 @@
   height: auto;
   max-height: 89vh;
   border: 5px solid transparent;
-  font-size: var(--titulo-s);
   color: var(--cor-1);
   border-top: none;
   background: var(--cor-10);

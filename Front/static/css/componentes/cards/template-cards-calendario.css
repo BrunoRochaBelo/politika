@@ -12,7 +12,8 @@
 }
 .calendario-small-card-type {
   grid-area: calendario-small-card-type;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
   justify-self: start;
   color: var(--cor-0);
 }
@@ -24,7 +25,8 @@
   grid-area: calendario-small-card-title;
   border-left: 4px solid var(--cor-7);
   padding-left: 10px;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 300;
   justify-self: start;
   align-self: center;
   margin: 3px 0 0 0px;
@@ -35,7 +37,8 @@
 }
 .calendario-small-card-duracao {
   grid-area: calendario-small-card-duracao;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 400;
   justify-self: end;
   align-self: end;
   display: grid;
@@ -51,15 +54,18 @@
 }
 
 .calendario-small-card-inicio {
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 400;
 }
 .calendario-small-card-fim {
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .calendario-small-card-local {
   grid-area: calendario-small-card-local;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 300;
   justify-self: start;
   padding-left: 14px;
   display: none;
@@ -72,7 +78,8 @@
 }
 .calendario-small-card-partcipantes {
   grid-area: calendario-small-card-partcipantes;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 300;
   justify-self: start;
   padding-left: 14px;
   display: none;
@@ -95,7 +102,7 @@
 }
 .calendario-small-card-expanded {
   margin: 3px;
-  background: #3d6096 !important;
+  background: #3868b0 !important;
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao"
@@ -147,7 +154,8 @@
 }
 .calendario-large-card-type {
   grid-area: calendario-large-card-type;
-  font-size: var(--titulo-m);
+  font-size: 14px;
+  font-weight: 400;
   justify-self: start;
   color: var(--cor-0);
 }
@@ -159,7 +167,8 @@
   grid-area: calendario-large-card-title;
   border-left: 4px solid var(--cor-7);
   padding-left: 10px;
-  font-size: var(--titulo-l);
+  font-size: 14px;
+  font-weight: 400;
   justify-self: start;
   text-align: start;
   white-space: wrap;
@@ -168,13 +177,15 @@
 }
 .calendario-large-card-local {
   grid-area: calendario-large-card-local;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 370;
   justify-self: start;
   padding-left: 14px;
 }
 .calendario-large-card-partcipantes {
   grid-area: calendario-large-card-partcipantes;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 370;
   justify-self: start;
   padding-left: 14px;
   text-align: start;
@@ -184,7 +195,8 @@
 }
 .calendario-large-card-duracao {
   grid-area: calendario-large-card-duracao;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 400;
   justify-self: stretch;
   padding: 10px 14px;
   display: grid;
@@ -200,11 +212,13 @@
 }
 
 .calendario-large-card-inicio {
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 400;
   justify-self: start;
 }
 .calendario-large-card-fim {
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 400;
   justify-self: start;
 }
 .calendario-large-card-editar {
@@ -220,7 +234,7 @@
 
 .calendario-large-card-expanded {
   margin: 3px;
-  background: #3d6096 !important;
+  background: #3868b0 !important;
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
     "calendario-large-card-title calendario-large-card-title"
@@ -256,5 +270,6 @@
 }
 .calendario-empty-card-title {
   grid-area: calendario-empty-card-title;
-  font-size: var(--titulo-m);
+  font-size: 14px;
+  font-weight: 400;
 }

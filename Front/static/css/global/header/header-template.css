@@ -106,7 +106,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "header-back  header-search header-search" 45px;
-    background: var(--cor-p8);
+    background: var(--cor-12);
   }
   .header-back {
     margin-left: 0.625rem;
@@ -136,15 +136,12 @@
     padding: 0.625rem;
     cursor: pointer;
     width: 100%;
-    background: var(--cor-p7);
     color: var(--cor-1);
-    border: 1px solid var(--cor-p7);
   }
   .search-button.scroll-active {
     padding: 8px;
     border: none;
     cursor: pointer;
-    border: 1px solid var(--cor-p7);
   }
 
   .header-back .back-icon {

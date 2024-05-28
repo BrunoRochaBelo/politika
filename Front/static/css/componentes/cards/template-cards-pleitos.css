@@ -1,185 +1,4 @@
 /* CARDS pleitos */
-/* Small */
-.pleitos-small-card {
-  display: grid;
-  color: var(--cor-1);
-  gap: 3px;
-  grid:
-    "pleitos-small-card-tiposolici pleitos-small-card-tiposolici pleitos-small-card-dataSolici"
-    "pleitos-small-card-solicitante pleitos-small-card-solicitante pleitos-small-card-solicitante";
-}
-
-.pleitos-small-card-id {
-  display: none;
-  opacity: 0;
-}
-.pleitos-small-card-tiposolici {
-  grid-area: pleitos-small-card-tiposolici;
-  border-left: 4px solid var(--cor-7);
-  padding-left: 10px;
-  font-size: var(--titulo-s);
-  justify-self: start;
-  align-self: center;
-}
-.pleitos-small-card-dataSolici {
-  grid-area: pleitos-small-card-dataSolici;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--titulo-s);
-}
-.pleitos-small-card-solicitante {
-  grid-area: pleitos-small-card-solicitante;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-desc {
-  grid-area: pleitos-small-card-desc;
-  display: none;
-  opacity: 0;
-  align-self: center;
-  justify-self: stretch;
-  padding: 10px 14px;
-  background: var(--cor-7);
-  border-radius: 7px;
-  justify-content: start;
-  align-items: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-  text-align: start;
-  white-space: wrap;
-  overflow: hidden;
-  word-break: break-all;
-}
-
-.pleitos-small-card-beneficiario {
-  grid-area: pleitos-small-card-beneficiario;
-  display: none;
-  opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-uf {
-  grid-area: pleitos-small-card-uf;
-  display: none;
-  opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-cidade {
-  grid-area: pleitos-small-card-cidade;
-  display: none;
-  opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-bairro {
-  grid-area: pleitos-small-card-bairro;
-  display: none;
-  opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-rua {
-  grid-area: pleitos-small-card-rua;
-  display: none;
-  opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-autor {
-  grid-area: pleitos-small-card-autor;
-  display: none;
-  opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-dataCriacao {
-  grid-area: pleitos-small-card-dataCriacao;
-  display: none;
-  opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-small-light);
-}
-.pleitos-small-card-status {
-  grid-area: pleitos-small-card-status;
-  display: none;
-  opacity: 0;
-}
-
-.pleitos-small-card-editar {
-  grid-area: pleitos-small-card-editar;
-  display: none;
-  opacity: 0;
-  justify-self: end;
-  align-self: center;
-  border-top: 1px solid var(--cor-3);
-  font-size: var(--font-small-light);
-}
-
-.exibirDetalhePleito {
-  display: inline-block;
-  opacity: 1 !important;
-}
-.pleitos-small-card-expanded {
-  margin: 3px;
-  background: #3d6096 !important;
-  grid:
-    "pleitos-small-card-tiposolici pleitos-small-card-tiposolici pleitos-small-card-dataSolici"
-    "pleitos-small-card-solicitante pleitos-small-card-solicitante pleitos-small-card-solicitante"
-    "pleitos-small-card-beneficiario pleitos-small-card-beneficiario pleitos-small-card-beneficiario"
-    "pleitos-small-card-uf pleitos-small-card-cidade pleitos-small-card-bairro"
-    "pleitos-small-card-rua pleitos-small-card-rua pleitos-small-card-rua"
-    "pleitos-small-card-autor pleitos-small-card-autor pleitos-small-card-dataCriacao"
-    "pleitos-small-card-status pleitos-small-card-status pleitos-small-card-status"
-    "pleitos-small-card-desc pleitos-small-card-desc pleitos-small-card-desc"
-    ". . pleitos-small-card-editar";
-}
-.pleitos-small-card-beneficiario.exibirDetalhePleito,
-.pleitos-small-card-uf.exibirDetalhePleito,
-.pleitos-small-card-cidade.exibirDetalhePleito,
-.pleitos-small-card-bairro.exibirDetalhePleito,
-.pleitos-small-card-rua.exibirDetalhePleito,
-.pleitos-small-card-autor.exibirDetalhePleito,
-.pleitos-small-card-dataCriacao.exibirDetalhePleito,
-.pleitos-small-card-editar.exibirDetalhePleito {
-  display: inline-block;
-  margin: 3px 0 0 10px;
-  opacity: 1;
-}
-.pleitos-small-card-expanded .pleitos-small-card-tiposolici {
-  border-left: 4px solid var(--cor-3);
-}
-.pleitos-small-card-expanded .pleitos-small-card-desc {
-  background: var(--cor-3);
-}
-
 /* ------------------------------------ */
 
 /* Médio */
@@ -201,7 +20,8 @@
   grid-area: pleitos-medium-card-tiposolici;
   border-left: 4px solid var(--cor-7);
   padding-left: 10px;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
   justify-self: start;
   align-self: center;
 }
@@ -211,7 +31,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--titulo-s);
+  font-size: 14px;
+  font-weight: 400;
 }
 .pleitos-medium-card-solicitante {
   grid-area: pleitos-medium-card-solicitante;
@@ -219,7 +40,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .pleitos-medium-card-desc {
   grid-area: pleitos-medium-card-desc;
@@ -233,7 +55,8 @@
   align-items: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 300;
 }
 
 .pleitos-medium-card-beneficiario {
@@ -244,7 +67,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 400;
 }
 .pleitos-medium-card-uf {
   grid-area: pleitos-medium-card-uf;
@@ -254,7 +78,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .pleitos-medium-card-cidade {
   grid-area: pleitos-medium-card-cidade;
@@ -264,7 +89,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .pleitos-medium-card-bairro {
   grid-area: pleitos-medium-card-bairro;
@@ -274,7 +100,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 350;
 }
 .pleitos-medium-card-rua {
   grid-area: pleitos-medium-card-rua;
@@ -284,7 +111,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 13px;
+  font-weight: 300;
 }
 .pleitos-medium-card-autor {
   grid-area: pleitos-medium-card-autor;
@@ -294,7 +122,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 300;
 }
 .pleitos-medium-card-dataCriacao {
   grid-area: pleitos-medium-card-dataCriacao;
@@ -304,7 +133,8 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-medium-light);
+  font-size: 12px;
+  font-weight: 300;
 }
 .pleitos-medium-card-status {
   grid-area: pleitos-medium-card-status;
@@ -324,7 +154,7 @@
 }
 .pleitos-medium-card-expanded {
   margin: 3px;
-  background: #3d6096 !important;
+  background: #3868b0 !important;
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"

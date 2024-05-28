@@ -15,7 +15,7 @@
   background: var(--cor-7);
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid var(--cor-p8);
+  border: 1px solid var(--cor-12);
   border-radius: 12px;
   width: 50%;
   position: relative;
@@ -24,10 +24,10 @@
 /* Estilização para o header do modal */
 .modal-header {
   display: flex;
-  color: var(--cor-8);
+  color: var(--cor-4);
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--cor-8);
+  border-bottom: 1px solid var(--cor-4);
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
