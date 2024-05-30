@@ -1,7 +1,7 @@
 #adicionarFilhoBtn {
   padding: 8px 16px;
-  background-color: var(--cor-11);
-  color: var(--cor-0);
+  background-color: var(--btn-principal);
+  color: var(--txt-principal);
   border: none;
   border-radius: 0.9375rem;
   cursor: pointer;
@@ -36,7 +36,7 @@
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: var(--cor-3);
+  background: var(--card-fundo);
   transition: background 0.2s;
 }
 .form-checkbox:checked + .switch-label:before {
@@ -50,7 +50,7 @@
   width: 22px;
   height: 22px;
   border-radius: 10px;
-  background: var(--cor-4);
+  background: var(--btn-alt);
   transition: left 0.2s;
 }
 .form-checkbox:checked + .switch-label:after {
@@ -75,8 +75,8 @@
 .checkbox-label {
   display: inline;
   padding: 10px 20px;
-  color: var(--cor-4);
-  border: 2px solid var(--cor-4);
+  color: var(--txt-alt);
+  border: 2px solid var(--txt-alt);
   border-radius: 9px;
   cursor: pointer;
   text-align: center;
@@ -110,6 +110,6 @@
     background-color: #00000000;
   }
   .switch-label:before {
-    background: var(--cor-3);
+    background: var(--card-fundo);
   }
 }

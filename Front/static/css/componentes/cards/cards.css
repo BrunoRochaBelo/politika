@@ -2,38 +2,34 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   min-height: 30px;
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
   padding: 10px 15px;
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 /* Pequeno altura 35px*/
 .card-s {
   min-height: 35px;
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
   padding: 10px 15px;
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 /* Médio altura 50px*/
 .card-m {
   min-height: 50px;
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
   padding: 15px;
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
   padding: 15px;
   gap: 0.625rem;
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 
@@ -42,9 +38,8 @@
 .card-tmf-s {
   width: 135px;
   height: 100px;
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   padding: 15px;
 }
@@ -52,9 +47,8 @@
 .card-tmf-m {
   min-width: 115px;
   min-height: 95px;
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   padding: 15px;
 }
@@ -63,9 +57,8 @@
   width: 184px;
   height: 190px;
   min-height: 170px;
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   padding: 15px;
 }
@@ -76,29 +69,26 @@
   border-radius: 9px;
   width: 100%;
   padding: 0.3rem;
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
   font-weight: var(--font-light);
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 .card-select-s {
   border-radius: 9px;
   width: 100%;
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
   font-weight: var(--font-medium-regular);
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 .card-select-m {
   padding: 0.625rem;
   width: 100%;
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
   padding: 0.625rem;
   border-radius: 9px;
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 
@@ -114,18 +104,16 @@
 .area-template-fil-content .card-select-xs,
 .area-template-fil-content .card-select-s,
 .area-template-fil-content .card-select-m {
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   border-radius: 5px;
 }
 .area-template-fil-content .card-select-xs,
 .area-template-fil-content .card-select-s,
 .area-template-fil-content .card-select-m {
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -137,17 +125,15 @@
 .area-template-fil-alt-content .card-tmf-s,
 .area-template-fil-alt-content .card-tmf-m,
 .area-template-fil-alt-content .card-tmf-l {
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 .area-template-fil-alt-content .card-select-xs,
 .area-template-fil-alt-content .card-select-s,
 .area-template-fil-alt-content .card-select-m {
-  background: var(--cor-3);
-  color: var(--cor-1);
-  border: 1px solid transparent;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   border-radius: 9px;
 }
@@ -164,10 +150,7 @@
 .card-select-xs:hover,
 .card-select-s:hover,
 .card-select-m:hover {
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid #a57ff0;
+  background: var(--card-hover);
 }
 /*  active  */
 .card-xs:active,
@@ -196,6 +179,19 @@
   .card-select-s:hover,
   .card-select-m:hover {
     box-shadow: none;
-    border: 1px solid transparent;
+    border: 1px solid var(--card-borda);
+    background: var(--card-fundo);
+  }
+  .card-xs,
+  .card-s,
+  .card-m,
+  .card-l,
+  .card-tmf-s,
+  .card-tmf-m,
+  .card-tmf-l,
+  .card-select-xs,
+  .card-select-s,
+  .card-select-m {
+    border: 1px solid var(--card-borda);
   }
 }

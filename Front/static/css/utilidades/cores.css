@@ -1,26 +1,37 @@
 :root {
-  --cor-0: #f5f9ff;
-  --cor-1: #ecf2fb;
-  --cor-2: #131d2e;
-  --cor-3: #243857bb;
-  --cor-4: #d7e2f3;
-  --cor-5: #cac6c6;
-  --cor-6: #d7d7d7;
-  --cor-7: #122036;
-  --cor-8: #c5d4ee;
-  --cor-9: #c4d7f4;
-  --cor-10: #0f1827;
-  --cor-11: #0d1521;
-  --cor-12: #070c16;
-
-  --cor-p1: #2464cd;
-  --cor-p2: #131d2e;
-  --cor-p3: #142239;
-  --cor-p4: #1a1a22;
-  --cor-p5: #0d121c;
-  --cor-p6: #242424;
-  --cor-p7: #343e58;
-  --cor-p8: #070c16;
+  --txt-principal: #dde6ed; /* Texto Principal */
+  --txt-secundario: #9dadbf; /* Texto Secundário */
+  --txt-alt: #b3c6e5; /* Texto Alternativo */
+  --background-principal: #010610; /* Fundo Principal */
+  --background-secundario: #122036; /* Fundo Secundário */
+  --container: #122036; /* Container */
+  --bordas: #0a111e; /* Bordas */
+  --divisores: #6b7f9e; /* Divisores */
+  --card-fundo: #2a4263; /* Fundo de Cards */
+  --card-borda: #192a44; /* Borda de Card */
+  --card-hover: #385987; /* Hover do Card */
+  --modal-background: #17263e; /* Fundo de Modal */
+  --btn-principal: #7a44e7; /* Botão Primário */
+  --btn-principal-hover: #5ce1e6; /* Hover do Botão Primário */
+  --btn-secundario: #5ce1e6; /* Botão Secundário */
+  --btn-secundario-hover: #7a44e7; /* Hover do Botão Secundário */
+  --btn-alt: #c4d7f4; /* Botão Alternativo */
+  --detalhes-1: #1d2c46; /* Detalhes 1 */
+  --detalhes-2: #c3e8ff; /* Detalhes 2 */
+  --destaque-1: #131d2e; /* Destaque 1 */
+  --destaque-2: #378dd3; /* Destaque 2 */
+  --link: #7a44e7; /* Links */
+  --link-hover: #5ce1e6; /* Hover dos Links */
+  --placeholder: #061024; /* Placeholder */
+  --sucesso: #4caf50; /* Mensagem de Sucesso */
+  --erro: #f44336; /* Mensagem de Erro */
+  --aviso: #ff9800; /* Mensagem de Aviso */
+  --informacao: #167fd4; /* Mensagem de Informação */
+  --cor-marca: linear-gradient(
+    to right bottom,
+    #7a44e7,
+    #5ce1e6
+  ); /* Cor de Marca */
 
   --cor-marc1: rgba(229, 115, 115);
   --cor-marc2: rgba(255, 138, 101);
@@ -50,67 +61,67 @@
 }
 
 .cor-0 {
-  color: var(--cor-0);
+  color: var(--txt-principal);
 }
 .cor-1 {
-  color: var(--cor-1);
+  color: var(--txt-secundario);
 }
 .cor-2 {
-  color: var(--cor-2);
+  color: var(--destaque-1);
 }
 .cor-3 {
-  color: var(--cor-3);
+  color: var(--card-fundo);
 }
 .cor-4 {
-  color: var(--cor-4);
+  color: var(--txt-alt);
 }
 .cor-5 {
-  color: var(--cor-5);
+  color: var(--destaque-2);
 }
 .cor-6 {
-  color: var(--cor-6);
+  color: var(--cor-marca);
 }
 .cor-7 {
-  color: var(--cor-7);
+  color: var(--modal-background);
 }
 .cor-8 {
-  color: var(--cor-8);
+  color: var(--container);
 }
 .cor-9 {
-  color: var(--cor-9);
+  color: var(--btn-alt);
 }
 .cor-10 {
-  color: var(--cor-10);
+  color: var(--background-principal);
 }
 .cor-11 {
-  color: var(--cor-11);
+  color: var(--bordas);
 }
 .cor-12 {
-  color: var(--cor-12);
+  color: var(--background-secundario);
 }
 .cor-p1 {
-  color: var(--cor-p1);
+  color: var(--btn-principal);
 }
 .cor-p2 {
-  color: var(--cor-p2);
+  color: var(--btn-secundario);
 }
 .cor-p3 {
-  color: var(--cor-p3);
+  color: var(--card-borda);
 }
 .cor-p4 {
-  color: var(--cor-p4);
+  color: var(--detalhes-1);
 }
 .cor-p5 {
-  color: var(--cor-p5);
+  color: var(--btn-principal-hover);
 }
 .cor-p6 {
-  color: var(--cor-p6);
+  color: var(--btn-secundario-hover);
 }
 .cor-p7 {
-  color: var(--cor-p7);
+  color: var(--divisores);
 }
 .cor-p8 {
-  color: var(--cor-p8);
+  color: var(--placeholder);
 }
 .cor-marc1 {
   background: var(--cor-marc1);

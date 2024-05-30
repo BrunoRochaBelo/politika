@@ -23,9 +23,9 @@
   display: grid;
   justify-content: stretch;
   align-self: center;
-  background: var(--cor-p3);
+  background: var(--card-fundo);
   border-radius: 25px;
-  border: 1px solid var(--cor-2);
+  border: 1px solid var(--destaque-1);
 }
 
 .search-input-container {
@@ -43,24 +43,31 @@
   cursor: pointer;
   width: 100%;
   background: transparent;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
   border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 300;
 }
 /* Cor do placeholder */
 .search-input::placeholder {
-  color: var(--cor-1);
+  color: var(--placeholder);
 }
 /* Cor do placeholder ao focar */
 .search-input:focus::placeholder {
-  color: var(--cor-3);
+  color: var(--card-borda);
 }
 .header-search:hover {
-  border: 1px solid #a57ff0;
-  box-shadow: 0 0 1px #c6b6fc, 0 0 2px #c6b6fc, 0 0 3px #c6b6fc, 0 0 4px #c6b6fc;
+  background: var(--card-hover);
+}
+.header-search:hover .search-input::placeholder {
+  color: var(--txt-secundario);
 }
 .search-input:focus,
 .search-button:focus {
   outline: none;
+  background: var(--card-hover);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .search-button {
@@ -77,9 +84,11 @@
   margin-right: 8px;
   padding: 0px 8px;
 }
-/*.search-input:focus + .search-button {
-  box-shadow: 0 0 1px #b6d5ff, 0 0 2px #cde2ff;
-}*/
+.search-input:focus + .search-button {
+  background: var(--card-hover);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
 .back-icon {
   width: 18px;
@@ -106,7 +115,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "header-back  header-search header-search" 45px;
-    background: var(--cor-12);
+    background: var(--background-secundario);
   }
   .header-back {
     margin-left: 0.625rem;
@@ -130,13 +139,13 @@
   }
 
   .header-template.box-shadow-active {
-    background: var(--cor-10);
+    background: var(--background-secundario);
   }
   .search-input.scroll-active {
     padding: 0.625rem;
     cursor: pointer;
     width: 100%;
-    color: var(--cor-1);
+    color: var(--txt-secundario);
   }
   .search-button.scroll-active {
     padding: 8px;

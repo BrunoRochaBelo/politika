@@ -1,5 +1,5 @@
 .body-form-template {
-  background: var(--cor-10);
+  background: var(--background-principal);
   display: grid;
   padding: 10px;
   align-content: start;
@@ -18,9 +18,8 @@
   align-content: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  padding: 0.625rem;
+  padding: 5px 5px 5px 15px;
   text-align: left;
-  color: var(--cor-4);
   border: 1px solid #28385396;
   border-bottom: none;
   position: relative;
@@ -35,11 +34,22 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 88vh;
-  padding: 0.625rem;
+  padding: 10px;
   border: 1px solid #28385396;
-  color: var(--cor-4);
   border-top: none;
-  background: var(--cor-10);
+}
+
+.body-form-template .area-abas-template {
+  background: var(--container);
+}
+.body-form-template .area-abas-template-header,
+.body-form-template .area-abas-template-content {
+  background: transparent;
+}
+.body-form-template #nav1 a.indicador-2,
+.body-form-template #nav2 a.indicador-2,
+.body-form-template #nav3 a.indicador-2 {
+  background: var(--modal-background);
 }
 
 /* RESPONSIVO */
@@ -47,10 +57,10 @@
   .body-form-template {
     padding: 0px;
     border: none;
-    background: var(--cor-11);
+    background: var(--background-principal);
   }
   .header-form {
-    background: var(--cor-12);
+    background: transparent;
     border: 1px solid transparent;
     border-radius: 0px;
   }
@@ -62,15 +72,26 @@
     border: none;
     background: transparent;
   }
-  .main-form::-webkit-scrollbar {
-    display: none;
+
+  .body-form-template .area-abas-template {
+    background: var(--container);
+  }
+  .body-form-template .area-abas-template-header {
+    background: transparent;
+  }
+  .body-form-template .area-abas-template-content {
+    background: var(--background-secundario);
+  }
+  .body-form-template #nav1 a.indicador-2,
+  .body-form-template #nav2 a.indicador-2,
+  .body-form-template #nav3 a.indicador-2 {
+    background: var(--modal-background);
+  }
+  .body-form-template .nav {
+    background: var(--card-fundo);
   }
 
-  .main-form .nav {
-    display: grid;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: auto;
+  .main-form::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -19,7 +19,7 @@
   background: transparent;
   border: 1px solid transparent;
   border-radius: 12px;
-  gap: 1px;
+  gap: 0px;
   scrollbar-width: thick;
 }
 .lista-vertical-fil {
@@ -81,13 +81,13 @@
 /* Estilos */
 /* Estilos para cards dentro da lista */
 .lista-vertical-cards > li:first-child a {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .lista-vertical-cards > li:last-child a {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 /* Reset de borda para todos os cards dentro da lista */

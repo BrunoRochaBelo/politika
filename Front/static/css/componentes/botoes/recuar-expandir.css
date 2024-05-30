@@ -2,19 +2,30 @@
 .btn-recuar-expandir {
   display: none;
 }
+.btn-recuar-expandir-alt {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--txt-secundario);
+  background-color: transparent;
+  padding: 3px 7px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
 /* Estilo do botão */
 .btn-recuar-expandir,
 .btn-recuar-expandir:hover,
 .btn-recuar-expandir:active {
   font-size: 11px;
   font-weight: 400;
-  color: var(--cor-10);
-  background-color: var(--cor-9);
+  color: var(--background-principal);
+  background-color: var(--btn-alt);
   border-radius: 7px;
   padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 1px solid var(--cor-9);
+  border: 1px solid var(--btn-alt);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -22,8 +33,10 @@
 .area-template-cf-header .btn-recuar-expandir {
   background-color: transparent;
   border: 1px solid transparent;
-  color: var(--cor-9);
+  color: var(--btn-alt);
   box-shadow: none;
+  font-size: 11px;
+  font-weight: 300;
 }
 
 .area-template-cf-header .btn-recuar-expandir::after {
@@ -33,14 +46,14 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--cor-9);
+  border-top: 5px solid var(--btn-alt);
   margin-left: 5px;
   border-radius: 25%;
 }
 
 .area-template-cf-header .btn-recuar-expandir.up::after {
   border-top: none; /* Remover a seta para baixo */
-  border-bottom: 5px solid var(--cor-9); /* Adicionar a seta para cima */
+  border-bottom: 5px solid var(--btn-alt); /* Adicionar a seta para cima */
 }
 
 /* RESPONSIVO */
@@ -59,8 +72,9 @@
 /* Estilo do botão */
 .btn-recuar-expandir-alt {
   font-size: 11px;
-  font-weight: 400;
-  color: var(--cor-1);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--txt-secundario);
   background-color: transparent;
   padding: 3px 7px;
   cursor: pointer;
@@ -68,13 +82,13 @@
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-alt:hover {
-  color: var(--cor-4);
-  border-color: var(--cor-1);
+  color: var(--txt-alt);
+  border-color: var(--txt-secundario);
   border-radius: 9px;
 }
 .btn-recuar-expandir-alt:active {
-  background-color: darken(var(--cor-12), 10%);
-  color: var(--cor-1);
-  border-color: var(--cor-1);
+  background-color: darken(var(--background-secundario), 10%);
+  color: var(--txt-secundario);
+  border-color: var(--txt-secundario);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }

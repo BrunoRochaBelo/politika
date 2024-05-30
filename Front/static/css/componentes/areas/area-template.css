@@ -5,6 +5,9 @@
   overflow-x: hidden;
   align-content: start;
   height: 100%;
+  background: var(--container);
+  border-radius: 25px;
+  padding-bottom: 20px;
   grid:
     "area-template-header" auto
     "area-template-content" auto
@@ -15,8 +18,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--cor-1);
-  background: var(--cor-12);
+  color: var(--destaque-2);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 5px;
@@ -25,12 +27,11 @@
   grid-area: area-template-content;
   overflow-x: auto;
   overflow-y: auto;
-  height: auto;
-  background: var(--cor-12);
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  border-top: 1px solid var(--cor-10);
   padding: 0px;
+  height: auto;
+  border-radius: 0px;
+  background: var(--background-secundario);
+  border-top: 1px solid var(--background-principal);
 }
 
 /* Area Template Com Cor de Fundo */
@@ -38,7 +39,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 20px;
   grid:
     "area-template-cf-header" auto
     "area-template-cf-content" auto
@@ -54,13 +55,14 @@
   font-weight: 400;
   padding: 10px;
   text-align: left;
-  color: var(--cor-4);
+  color: var(--destaque-2);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
 }
 .area-template-cf-header h2 {
-  font-size: var(--font-medium-light);
+  font-size: 14px;
+  font-weight: 350;
 }
 .area-template-cf-content {
   grid-area: area-template-cf-content;
@@ -74,8 +76,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 12px;
-
+  border-radius: 20px;
   grid:
     "area-template-tmf-header" auto
     "area-template-tmf-content" auto
@@ -88,10 +89,10 @@
   align-items: center;
   justify-content: stretch;
   font-size: 14px;
-  font-weight: 400;
-  padding: 0px 5px 7px 15px;
+  font-weight: 350;
+  padding: 10px;
   text-align: left;
-  color: var(--cor-4);
+  color: var(--destaque-2);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -100,6 +101,7 @@
   grid-area: area-template-tmf-content;
   overflow-x: auto;
   border-radius: 12px;
+  padding: 0px;
 }
 
 /* Area Template dos filtros*/
@@ -119,10 +121,10 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--cor-1);
-  background: var(--cor-12);
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  color: var(--destaque-2);
+  background: var(--background-secundario);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   padding: 5px;
 }
 .area-template-fil-content {
@@ -131,11 +133,11 @@
   background: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  background: var(--cor-12);
-  border-top: 1px solid var(--cor-10);
-  padding: 10px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background: var(--background-secundario);
+  border-top: 1px solid var(--background-principal);
+  padding: 20px;
 }
 
 /* Area Template Agenda para hoje*/
@@ -155,22 +157,22 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--cor-1);
-  background: var(--cor-12);
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  color: var(--destaque-2);
+  background: var(--background-secundario);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   padding: 5px;
 }
 .area-template-fil-alt-content {
   grid-area: area-template-fil-alt-content;
   overflow-x: hidden;
-  background: var(--cor-12);
+  background: var(--background-secundario);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  border-top: 1px solid var(--cor-10);
-  padding: 10px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top: 1px solid var(--background-principal);
+  padding: 20px 10px;
 }
 
 /* Area Template para cabeçalhos fixos*/
@@ -190,7 +192,7 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -202,15 +204,15 @@
   overflow-y: auto;
   max-height: 64vh;
   background: transparent;
-  border-radius: 12px;
+  border-radius: 25px;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
-  border-top: 1px solid var(--cor-10);
+  border-top: 1px solid var(--background-principal);
   padding: 10px;
 }
 
-.area-cbf-sem-cb {
-  max-height: 79vh;
+.area-template-cbf-content-sem-cb {
+  max-height: 77vh;
   border-top: none;
 }
 
@@ -234,26 +236,32 @@
 /* RESPONSIVO */
 @media (max-width: 820px) {
   /* Area Template padrão*/
-  .area-template-header {
-    justify-content: start;
-    background: var(--cor-12);
-    padding: 6px 10px 10px 25px;
+  .area-template {
+    background: var(--background-secundario);
     border-radius: 0px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    padding-bottom: 0px;
+  }
+  .area-template-header {
+    padding: 5px 5px 5px 15px;
+    justify-content: start;
     position: relative;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6), 0 3px 6px 0 rgba(0, 0, 0, 0.5);
     font-weight: 300;
+    color: var(--txt-secundario);
+    background: var(--background-secundario);
+    border-radius: 0px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
   .area-template-content {
-    grid-area: area-template-content;
     border-radius: 0px;
-    background-color: transparent;
-    border-top: none;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background: var(--background-principal);
   }
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;
     border-radius: 0px;
+
     box-shadow: none;
     border: none;
   }
@@ -262,20 +270,24 @@
   .area-template-cf-header {
     font-size: 14px;
     font-weight: 300;
+    padding: 7px;
+    color: var(--destaque-2);
   }
   .area-template-cf-header h2 {
     font-size: 13px;
     font-weight: 300;
   }
-  /* Area Template alternativa Tamanho fixo*/
+  /* Area Template Tamanho fixo*/
   .area-template-tmf-header {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 300;
+    padding: 7px;
+    color: var(--destaque-2);
   }
   /* Area Template dos filtros*/
   .area-template-fil {
     padding: 3px;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
   }
   .area-template-fil-header {
@@ -287,7 +299,7 @@
     font-size: 12px;
     font-weight: 400;
     text-align: left;
-    color: var(--cor-1);
+    color: var(--txt-secundario);
     color: transparent;
     font-size: 0px;
     padding: 5px 5px 5px 10px;
@@ -301,13 +313,13 @@
     overflow: auto;
     box-shadow: none;
     background: none;
-    padding: 10px;
+    padding: 20px;
   }
 
   /* Area Template Agenda para hoje*/
   .area-template-fil-alt {
     padding: 3px;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
   }
   .area-template-fil-alt-header {
@@ -319,7 +331,7 @@
     font-size: 12px;
     font-weight: 400;
     text-align: left;
-    color: var(--cor-1);
+    color: var(--txt-secundario);
     color: transparent;
     font-size: 0px;
     padding: 5px 5px 5px 10px;
@@ -339,12 +351,11 @@
   /* Area Template para cabeçalhos fixos*/
   .area-template-cbf-header {
     grid-area: area-template-cbf-header;
-    background: var(--cor-12);
-    padding: 5px;
+    background: transparent;
+    padding: 0px 10px;
     border-radius: 0px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6), 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     font-size: 14px;
     font-weight: 300;
   }
@@ -352,15 +363,14 @@
     grid-area: area-template-cbf-content;
     overflow-x: auto;
     overflow-y: auto;
-    padding: 12px 8px;
-    max-height: 62vh;
-    background: transparent;
+    padding: 12px 10px;
+    max-height: auto;
     border-radius: 0px;
-    border-top: 1px solid transparent;
+    border-top: 1px solid var(--background-secundario);
   }
 
-  .area-cbf-sem-cb {
-    max-height: 76vh;
+  .area-template-cbf-content-sem-cb {
+    max-height: auto; /*76vh*/
     border-top: none;
   }
 

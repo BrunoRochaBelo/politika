@@ -12,7 +12,7 @@
   font-size: 15px;
   font-weight: 500;
   text-align: start;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
 }
 .quant-small-card-desc {
   grid-area: quant-small-card-desc;
@@ -24,14 +24,14 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
 }
 .quant-small-card-result {
   grid-area: quant-small-card-result;
   font-size: 14px;
   font-weight: 400;
   text-align: start;
-  background: var(--cor-3);
+  background: var(--card-fundo);
   border-radius: 9px;
   padding: 5px;
 }

@@ -12,10 +12,10 @@
 }
 
 .modal-destino-content {
-  background: var(--cor-7);
+  background: var(--modal-background);
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid var(--cor-12);
+  border: 1px solid var(--bordas);
   border-radius: 12px;
   width: 50%;
   position: relative;
@@ -24,14 +24,13 @@
 /* Estilização para o header do modal */
 .modal-header {
   display: flex;
-  color: var(--cor-4);
+  color: var(--destaque-2);
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--cor-4);
+  border-bottom: 1px solid var(--divisores);
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
-
 /* Estilização para o título do modal */
 .modal-header h2 {
   margin: 0;
@@ -45,19 +44,12 @@
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: #aaa;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 /* Estilos existentes */
 .modal-destino {
   display: grid;
   gap: 7px;
   padding: 5px;
-  color: #007bff;
+  color: var(--placeholder);
   text-decoration: none;
 }
 
@@ -66,7 +58,6 @@
   width: 80%;
   margin: auto;
 }
-
 .search-icon-alt {
   position: absolute;
   top: 50%;
@@ -76,30 +67,27 @@
   height: auto;
   cursor: pointer;
 }
-
 .search-input-container-dest {
   display: flex;
   align-items: center;
 }
-
 .search-input-dest {
   padding: 10px;
   font-size: 16px;
-  background: var(--cor-3);
-  border: 1px solid var(--cor-3);
+  font-weight: 300;
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
 }
 
 .breadcrumb {
   display: inline-block;
   font-size: 0.875rem;
 }
-
 /* .breadcrumb:hover {
   text-decoration: underline;
 } */
 
 /* Estilos para os elementos do formulário dentro do modal */
-
 .form-group label {
   display: inline-block;
   margin-bottom: 5px;
@@ -112,8 +100,16 @@
   border-radius: 5px;
   margin-bottom: 30px;
 }
+.form-group.item3 input::placeholder {
+  color: var(--placeholder);
+}
+.form-group.item3 input:focus::placeholder {
+  color: var(--card-hover);
+}
 .card-select-m {
   font-size: 16px;
+  font-weight: 350;
+  color: var(--txt-principal);
 }
 
 .submit-button {
@@ -142,8 +138,9 @@
   }
   .search-input-dest {
     padding: 10px;
-    font-size: 16px;
-    background: var(--cor-p3);
-    border: 1px solid var(--cor-p3);
+    font-size: 15px;
+    font-weight: 300;
+    background: var(--card-fundo);
+    border: 1px solid var(--card-borda);
   }
 }

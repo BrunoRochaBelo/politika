@@ -18,7 +18,7 @@
 .home-header-title {
   display: none;
   grid-area: home-header-title;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
 }
 .home-header-nav {
   grid-area: home-header-nav;
@@ -46,13 +46,11 @@
     align-content: center;
     justify-content: space-between;
     grid: "home-header-logo home-header-title home-header-user" 45px;
-    background: var(--cor-12);
+    background: var(--background-secundario);
     box-shadow: none;
   }
   .home-header-template.box-shadow-active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid var(--cor-p3);
-    background: var(--cor-12);
+    background: var(--background-secundario);
   }
 
   .home-header-logo {
@@ -65,7 +63,10 @@
     font-size: 15px;
     font-weight: 500;
     display: inline-block;
-    color: var(--cor-1);
+    background: var(--cor-marca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .home-header-user {
     margin-right: 0.625rem;

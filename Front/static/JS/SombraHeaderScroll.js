@@ -32,16 +32,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Chama a função toggleBoxShadow no carregamento inicial da página para cada elemento
-  toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-12)");
-  toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-12)");
-  toggleBoxShadow(headerButton, "scroll-active", "var(--cor-12)"); // Adicionado
+  toggleBoxShadow(
+    headerTemplate,
+    "box-shadow-active",
+    "var(--background-secundario)"
+  );
+  toggleBoxShadow(
+    headerSearch,
+    "scroll-active",
+    "var(--background-secundario)"
+  );
+  toggleBoxShadow(
+    headerButton,
+    "scroll-active",
+    "var(--background-secundario)"
+  ); // Adicionado
 
   // Adiciona um ouvinte de evento para a rolagem da janela
   window.addEventListener("scroll", function () {
     // Chama a função toggleBoxShadow quando a janela é rolada
-    toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--cor-12)");
-    toggleBoxShadow(headerSearch, "scroll-active", "var(--cor-12)");
-    toggleBoxShadow(headerButton, "scroll-active", "var(--cor-12)"); // Adicionado
+    toggleBoxShadow(
+      headerTemplate,
+      "box-shadow-active",
+      "var(--background-secundario)"
+    );
+    toggleBoxShadow(
+      headerSearch,
+      "scroll-active",
+      "var(--background-secundario)"
+    );
+    toggleBoxShadow(
+      headerButton,
+      "scroll-active",
+      "var(--background-secundario)"
+    ); // Adicionado
   });
 });
 
@@ -62,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       homeHeaderTemplate.classList.add("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
-      homeHeaderTitle.style.color = "var(--cor-4)";
+      homeHeaderTitle.style.color = "var(--txt-alt)";
       // Adiciona o z-index ao elemento
       homeHeaderTemplate.style.zIndex = "1005";
     } else if (homeHeaderTemplate && homeHeaderTitle) {
@@ -70,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       homeHeaderTemplate.classList.remove("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
-      homeHeaderTitle.style.color = "var(--cor-4)";
+      homeHeaderTitle.style.color = "var(--txt-alt)";
       // Remove o z-index do elemento
       homeHeaderTemplate.style.zIndex = "";
     }

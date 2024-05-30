@@ -11,17 +11,17 @@
 }
 
 .modal-despachar-pleito-content.card-m {
-  background: var(--cor-11);
+  background: var(--modal-background);
   border-radius: 12px;
   padding: 15px 5px;
 }
 .modal-despachar-pleito-content {
   position: relative;
-  color: var(--cor-4);
+  color: var(--txt-alt);
   margin: auto;
   margin-top: 15px;
   padding: 20px;
-  border: 1px solid var(--cor-2);
+  border: 1px solid var(--destaque-1);
   min-width: 50%;
   max-width: 80%;
   height: auto;
@@ -32,7 +32,7 @@
 
 .modal-despachar-pleito-template {
   display: grid;
-  color: var(--cor-4);
+  color: var(--txt-alt);
   gap: 3px;
   grid:
     "modal-despachar-pleito-tiposolici modal-despachar-pleito-tiposolici modal-despachar-pleito-dataSolici"
@@ -51,7 +51,7 @@
 }
 .modal-despachar-pleito-tiposolici {
   grid-area: modal-despachar-pleito-tiposolici;
-  border-left: 4px solid var(--cor-2);
+  border-left: 4px solid var(--destaque-1);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -82,7 +82,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--cor-2);
+  background: var(--destaque-1);
   border-radius: 7px;
   justify-content: start;
   align-items: center;
@@ -166,12 +166,12 @@
   padding: 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border: 1px solid var(--cor-7);
+  border: 1px solid var(--modal-background);
   font-size: 13px;
   font-weight: 350;
   white-space: wrap;
   word-break: break-all;
-  background: var(--cor-12);
+  background: var(--background-principal);
   border-radius: 12px;
   grid:
     "modal-despachar-pleito-despachar-title modal-despachar-pleito-despachar-title"
@@ -226,7 +226,7 @@
 }
 
 .modal-despachar-pleito-despachar label {
-  color: var(--cor-0);
+  color: var(--txt-principal);
 }
 
 .closeModalDespachar {
@@ -234,7 +234,7 @@
   padding: 0px 6px;
   top: 0px;
   right: 0px;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
   border-radius: 4px;
   font-size: 28px;
 }
@@ -250,9 +250,9 @@
   width: 100%;
   box-sizing: border-box;
   padding: 0.9375rem;
-  color: var(--cor-0);
-  background: var(--cor-7);
-  border: 1px solid var(--cor-2);
+  color: var(--txt-principal);
+  background: var(--modal-background);
+  border: 1px solid var(--destaque-1);
   border-radius: 6px;
 }
 
@@ -274,7 +274,7 @@
 }
 .modal-despachar-pleito-salvar .btn-leaked:hover {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
-  border: 1px solid var(--cor-0);
+  border: 1px solid var(--txt-principal);
 }
 .modal-despachar-pleito-salvar .btn-filled:hover {
   box-shadow: 0 0 1px #7852ff94, 0 0 2px #7852ff94, 0 0 3px #7852ff94,

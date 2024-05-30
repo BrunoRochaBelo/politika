@@ -73,7 +73,7 @@
                 <p><span class="breadcrumb">{{UF}} > {{Cidade}}</span></p>
                 <form action="" method="post" class="search-input-container-dest" id="searchFormDestino">
                   <div class="search-wrapper-dest">
-                    <input type="search" name="searchDestino" id="searchDestino" class="search-input search-input-dest" placeholder="Pesquisar destino...">
+                    <input type="search" name="searchDestino" id="searchDestino" class="search-input search-input-dest" placeholder="Pesquisar destino..." onfocus="this.blur();">
                     <img class="search-icon-alt" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
                   </div>
                 </form>
@@ -515,7 +515,7 @@
       <form id="filterForm" method="post" action="">
         <div class="lista-select">
           <div class="form-group item1">
-            <label for="estado ">Estado:</label>
+            <label for="estado">Estado:</label>
             <select class="card-select-m" id="estado" name="estado">
               <option value="" selected disabled>Selecione um estado</option>
               <option value="PE">Pernambuco</option>
@@ -544,74 +544,76 @@
 
 
   <script>
-    // Variáveis globais
     var estadoSelecionado = "";
-
-    // Função para atualizar a variável global com o valor do estado selecionado
-    function atualizarEstadoSelecionado() {
-      estadoSelecionado = this.value;
-
-      // Chama a URL com o estado selecionado
-      window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=TODAS";
-    }
-
-    // Ouvinte 'blur' para o elemento 'select' de estados
-    document.getElementById("estado").addEventListener("blur", atualizarEstadoSelecionado);
-
-    // Ouvinte 'keypress' para o elemento 'select' de estados
-    document.getElementById("estado").addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        atualizarEstadoSelecionado.call(this);
-      }
-    });
-
-  </script>
-
-  <script>
-    // Variáveis globais
     var cidadeSelecionada = "";
 
-    // Função para atualizar a variável da cidade selecionada e chamar a URL
+    // Cidades por estado (exemplo, você pode expandir conforme necessário)
+    var cidadesPorEstado = {
+      PE: ["Recife", "Olinda", "Jaboatão dos Guararapes"],
+      SP: ["São Paulo", "Campinas", "Santos"],
+      RJ: ["Rio de Janeiro", "Niterói", "Petrópolis"],
+      MG: ["Belo Horizonte", "Uberlândia", "Ouro Preto"]
+    };
+
+    // Função para atualizar a variável global com o valor do estado selecionado e atualizar as cidades
+    function atualizarEstadoSelecionado() {
+      estadoSelecionado = this.value;
+      var cidadeSelect = document.getElementById("cidade");
+
+      // Limpa as opções anteriores
+      cidadeSelect.innerHTML = '<option value="" selected disabled>Selecione uma cidade</option>';
+
+      if (estadoSelecionado && cidadesPorEstado[estadoSelecionado]) {
+        // Adiciona novas opções de cidades com base no estado selecionado
+        cidadesPorEstado[estadoSelecionado].forEach(function (cidade) {
+          var option = document.createElement("option");
+          option.value = cidade;
+          option.textContent = cidade;
+          cidadeSelect.appendChild(option);
+        });
+
+        // Redireciona para a URL com o estado selecionado
+        window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=TODAS";
+      }
+    }
+
+    // Função para atualizar a variável global com o valor da cidade selecionada
     function atualizarCidadeSelecionada() {
       cidadeSelecionada = this.value;
-      var estadoSetado = document.getElementById("estado").value;
-
-      // Chama a URL com o estado e a cidade selecionados
-      window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSetado) + "&wcid_destino=" + encodeURIComponent(cidadeSelecionada);
-    }
-
-    // Ouvinte 'keypress' para o elemento 'select' de cidades
-    document.getElementById("cidade").addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        atualizarCidadeSelecionada.call(this);
+      if (cidadeSelecionada) {
+        window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=" + encodeURIComponent(cidadeSelecionada);
       }
-    });
-  </script>
-
-  <script>
-    // Variáveis globais
-    var bairroSelecionado = "";
-
-    // Função para atualizar a variável global com o valor do bairro selecionado
-    function atualizarBairroSelecionado() {
-      bairroSelecionado = this.value;
-      var estadoSetado = document.getElementById("estado").value;
-      var cidadeSetada = document.getElementById("cidade").value;
-
-      // Chama a URL com o estado, a cidade e o bairro selecionados
-      window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSetado) + "&wcid_destino=" + encodeURIComponent(cidadeSetada) + "&wbairro_destino=" + encodeURIComponent(bairroSelecionado);
     }
 
-    // Ouvinte 'blur' para o elemento 'select' de bairros
-    document.getElementById("bairro").addEventListener("blur", atualizarBairroSelecionado);
+    // Função para atualizar a variável global com o valor do bairro selecionado e validar a seleção do estado e cidade
+    function atualizarBairroSelecionado() {
+      var bairroSelecionado = this.value;
+      if (!estadoSelecionado) {
+        alert("Por favor, selecione um estado antes de continuar.");
+        return;
+      }
 
-    // Ouvinte 'keypress' para o elemento 'select' de bairros
+      if (!cidadeSelecionada) {
+        alert("Por favor, selecione uma cidade antes de continuar.");
+        return;
+      }
+
+      if (bairroSelecionado) {
+        window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=" + encodeURIComponent(cidadeSelecionada) + "&wbairro_destino=" + encodeURIComponent(bairroSelecionado);
+      }
+    }
+
+    // Ouvintes 'change' para os elementos 'select'
+    document.getElementById("estado").addEventListener("change", atualizarEstadoSelecionado);
+    document.getElementById("cidade").addEventListener("change", atualizarCidadeSelecionada);
+    document.getElementById("bairro").addEventListener("blur", atualizarBairroSelecionado);
     document.getElementById("bairro").addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
         atualizarBairroSelecionado.call(this);
       }
     });
   </script>
+
 
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibirAgenda.js"></script>

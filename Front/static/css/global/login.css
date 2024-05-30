@@ -1,5 +1,5 @@
 .body-login {
-  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  background: var(--cor-marca);
 
   /* background: radial-gradient(
     closest-side,
@@ -79,13 +79,13 @@
 }
 
 .btn-form-submit {
-  background: linear-gradient(to right bottom, #7a44e7, #5ce1e6);
+  background: var(--cor-marca);
   color: rgb(255, 255, 255);
 }
 .forgot-password {
   font-size: 14px;
   font-weight: 300;
-  color: var(--cor-4);
+  color: var(--txt-alt);
   background-color: rgb(0, 0, 0, 0);
   padding: 0.625rem;
   cursor: pointer;

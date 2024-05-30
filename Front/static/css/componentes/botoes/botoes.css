@@ -2,7 +2,7 @@
 .btn-filled {
   padding: 5px 10px;
   background-color: rgba(0, 0, 0, 0.21);
-  color: var(--cor-1);
+  color: var(--txt-secundario);
   font-size: small;
   border: 1px solid #28385300;
   border-radius: 12px;
@@ -15,7 +15,7 @@
 .btn-leaked {
   padding: 0.75rem;
   background-color: rgba(0, 0, 0, 0.21);
-  color: var(--cor-1);
+  color: var(--txt-secundario);
   font-size: small;
   border: 1px solid #28385396;
   border-radius: 12px;
@@ -33,10 +33,14 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(to right bottom, var(--cor-12), var(--cor-2));
+  background: linear-gradient(
+    to right bottom,
+    var(--background-secundario),
+    var(--destaque-1)
+  );
   border-radius: 12px;
   border: 1px solid transparent;
-  color: var(--cor-0);
+  color: var(--txt-principal);
   box-shadow: none;
   cursor: pointer;
 }
@@ -62,30 +66,46 @@
 /* Filtro  */
 .area-template-fil-content .btn-filter-leaked,
 .area-template-fil-content .card-select-m {
-  background: var(--cor-3);
-  color: var(--cor-1);
+  background: var(--card-fundo);
+  color: var(--txt-secundario);
   border-radius: 6px;
 }
 
 /* Estilo para o botão filtro*/
+.area-filtro {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  text-align: center;
+  align-items: center;
+  justify-content: end;
+  color: var(--txt-principal);
+  padding: 16px 10px 14px 0px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
 .btn-filtro-pesq {
   display: grid;
   align-content: center;
   justify-content: center;
   padding: 3px 15px;
   border-radius: 20px;
-  border: 1px solid var(--cor-3);
-  background: var(--cor-3);
+  border: 1px solid var(--card-fundo);
+  background: var(--card-fundo);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
   align-content: start;
+  font-size: 14px;
+  font-weight: 300;
 }
 .btn-filtro-pesq-title {
   font-size: 14px;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
   margin-right: 15px;
 }
+
 /* Estilo para o "x" do botão filtro */
 .remover-filtro {
   position: absolute;
@@ -98,7 +118,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--cor-1);
+  color: var(--txt-secundario);
   font-size: 16px;
   border: none;
 }
