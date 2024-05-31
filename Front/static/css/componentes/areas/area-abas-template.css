@@ -21,7 +21,7 @@
   color: var(--destaque-2);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  padding: 5px;
+  padding: 3px 5px;
 }
 .area-abas-template-content {
   grid-area: area-abas-template-content;
@@ -35,7 +35,7 @@
 }
 
 /* Estilos */
-.content-header-fx-int {
+.area-abas-template-content-com-header-fx-int {
   border-top: none;
 }
 
@@ -87,7 +87,7 @@
   font-size: 16px;
   font-weight: 300;
   padding: 5px;
-  color: var(--txt-secundario);
+  color: var(--background-principal);
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -105,6 +105,8 @@
   font-weight: 400;
   color: var(--destaque-2);
   background: var(--background-secundario);
+  align-items: center;
+  justify-items: center;
 }
 
 .header-duas-abas {
@@ -119,7 +121,7 @@
 @media (max-width: 820px) {
   /* Area Template padrão*/
   .area-abas-template {
-    background: var(--background-secundario);
+    background: var(--background-principal);
     border-radius: 0px;
     padding-bottom: 0px;
   }
@@ -128,16 +130,16 @@
     justify-content: start;
     position: relative;
     font-weight: 300;
-    background: var(--background-secundario);
+    background: var(--background-principal);
     border-radius: 0px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    padding: 4px 5px;
   }
   .area-abas-template-content {
     border-radius: 0px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    background: var(--background-principal);
+    border-radius: 25px;
+    background: var(--background-secundario);
     border: none;
   }
   .aba-header-header-fx-int {
@@ -172,7 +174,7 @@
   #nav3 a.indicador-2 {
     font-size: 15px;
     font-weight: 300;
-    color: var(--txt-secundario);
+    color: var(--txt-alt);
     background: var(--background-secundario);
   }
 }

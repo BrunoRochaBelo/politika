@@ -67,7 +67,7 @@
 .area-template-cf-content {
   grid-area: area-template-cf-content;
   overflow-x: auto;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 0px;
 }
 
@@ -237,7 +237,7 @@
 @media (max-width: 820px) {
   /* Area Template padrão*/
   .area-template {
-    background: var(--background-secundario);
+    background: var(--background-principal);
     border-radius: 0px;
     padding-bottom: 0px;
   }
@@ -247,16 +247,15 @@
     position: relative;
     font-weight: 300;
     color: var(--txt-secundario);
-    background: var(--background-secundario);
+    background: var(--background-principal);
     border-radius: 0px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
   .area-template-content {
     border-radius: 0px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    background: var(--background-principal);
+    border-radius: 25px;
+    background: var(--background-secundario);
   }
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;
@@ -366,7 +365,7 @@
     padding: 12px 10px;
     max-height: auto;
     border-radius: 0px;
-    border-top: 1px solid var(--background-secundario);
+    border-top: 1px solid var(--background-principal);
   }
 
   .area-template-cbf-content-sem-cb {

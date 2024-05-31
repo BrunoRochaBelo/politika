@@ -1,5 +1,4 @@
 .body-form-template {
-  background: var(--background-principal);
   display: grid;
   padding: 10px;
   align-content: start;
@@ -39,17 +38,31 @@
   border-top: none;
 }
 
-.body-form-template .area-abas-template {
-  background: var(--container);
+.main-form .nav {
+  background: var(--background-principal);
 }
-.body-form-template .area-abas-template-header,
-.body-form-template .area-abas-template-content {
+.main-form #nav1 a,
+.main-form #nav2 a,
+.main-form #nav3 a {
+  color: var(--txt-secundario);
+}
+.main-form .area-abas-template {
+  box-shadow: none;
   background: transparent;
 }
-.body-form-template #nav1 a.indicador-2,
-.body-form-template #nav2 a.indicador-2,
-.body-form-template #nav3 a.indicador-2 {
-  background: var(--modal-background);
+.main-form .area-abas-template-header {
+  background: var(--detalhes-1);
+  border-radius: 0px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+.main-form .area-abas-template-content {
+  border-top: 1px solid var(--background-principal);
+  box-shadow: none;
+  background: var(--detalhes-1);
+  border-radius: 0px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 /* RESPONSIVO */
@@ -57,12 +70,10 @@
   .body-form-template {
     padding: 0px;
     border: none;
-    background: var(--background-principal);
   }
   .header-form {
     background: transparent;
     border: 1px solid transparent;
-    border-radius: 0px;
   }
   .main-form {
     padding: 0px;
@@ -70,27 +81,30 @@
     max-height: 90vh;
     overflow-y: auto;
     border: none;
+    border-radius: 0;
     background: transparent;
+    box-shadow: none;
   }
 
-  .body-form-template .area-abas-template {
-    background: var(--container);
-  }
-  .body-form-template .area-abas-template-header {
-    background: transparent;
-  }
-  .body-form-template .area-abas-template-content {
-    background: var(--background-secundario);
-  }
-  .body-form-template #nav1 a.indicador-2,
-  .body-form-template #nav2 a.indicador-2,
-  .body-form-template #nav3 a.indicador-2 {
-    background: var(--modal-background);
-  }
-  .body-form-template .nav {
-    background: var(--card-fundo);
+  .main-form .nav {
+    width: 350px;
   }
 
+  .main-form .area-abas-template-header {
+    padding-left: 15px;
+    border-radius: 0px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+  .main-form .area-abas-template-content {
+    border-radius: 0px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .main-form .area-template-cbf-content {
+    max-height: 85vh;
+  }
   .main-form::-webkit-scrollbar {
     display: none;
   }

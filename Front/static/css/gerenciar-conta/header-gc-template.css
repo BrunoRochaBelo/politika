@@ -71,7 +71,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: #7a44e7;
-  border: 1px solid #a57ff000;
+  border: 1px solid var(--btn-principal-destaque) 00;
   text-decoration: underline;
 }
 .header-gc-nav-template a:hover img {

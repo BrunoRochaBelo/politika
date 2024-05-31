@@ -5,27 +5,28 @@
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  grid: "header-back header-nav header-search" 45px;
+  grid: "home-header-logo header-nav header-search header-user" 45px;
 }
 
-/* Áreas de grid */
-.header-back {
-  grid-area: header-back;
-  margin-left: 1.25rem;
-  cursor: pointer;
-}
 .header-nav {
   grid-area: header-nav;
 }
 .header-search {
   grid-area: header-search;
-  margin-right: 1.25rem;
   display: grid;
-  justify-content: stretch;
   align-self: center;
   background: var(--card-fundo);
   border-radius: 25px;
   border: 1px solid var(--destaque-1);
+}
+.header-user {
+  grid-area: header-user;
+  margin-right: 1.25rem;
+  width: 35px;
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
 .search-input-container {
@@ -48,28 +49,6 @@
   font-size: 14px;
   font-weight: 300;
 }
-/* Cor do placeholder */
-.search-input::placeholder {
-  color: var(--placeholder);
-}
-/* Cor do placeholder ao focar */
-.search-input:focus::placeholder {
-  color: var(--card-borda);
-}
-.header-search:hover {
-  background: var(--card-hover);
-}
-.header-search:hover .search-input::placeholder {
-  color: var(--txt-secundario);
-}
-.search-input:focus,
-.search-button:focus {
-  outline: none;
-  background: var(--card-hover);
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 .search-button {
   background: transparent;
   border-radius: 20px;
@@ -84,28 +63,44 @@
   margin-right: 8px;
   padding: 0px 8px;
 }
+
+/* Cor do placeholder */
+.search-input::placeholder {
+  color: var(--placeholder);
+}
+/* Cor do placeholder ao focar */
+.search-input:focus::placeholder {
+  color: var(--card-borda);
+}
+.header-search:hover {
+  background: var(--card-hover);
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid var(--btn-principal-destaque);
+}
+.header-search:hover .search-input::placeholder {
+  color: var(--txt-secundario);
+}
+.search-input:focus,
+.search-button:focus {
+  outline: none;
+  background: var(--card-hover);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .search-input:focus + .search-button {
   background: var(--card-hover);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.back-icon {
-  width: 18px;
-  height: 18px;
-}
-/* Define a transição suave para o efeito de hover */
-.header-back .back-icon {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-/* Efeito de hover: aumenta a escala da imagem e adiciona uma sombra */
-.header-back .back-icon:hover {
-  transform: scale(1.1);
-}
-/* Efeito de clique: reduz um pouco a escala e muda a opacidade */
-.header-back .back-icon:active {
-  transform: scale(0.95);
-  opacity: 0.8;
+.header-user:hover {
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid var(--btn-principal-destaque);
 }
 
 /* RESPONSIVO */
@@ -114,13 +109,23 @@
     display: grid;
     align-content: center;
     justify-content: space-between;
-    grid: "header-back  header-search header-search" 45px;
-    background: var(--background-secundario);
+    grid: "home-header-logo header-search header-user" 45px;
+    background: var(--background-principal);
   }
-  .header-back {
-    margin-left: 0.625rem;
-    cursor: pointer;
-    padding: 8px;
+
+  .header-search {
+    grid-area: header-search;
+    margin: 0;
+    box-sizing: border-box;
+    align-self: center;
+    justify-self: center;
+    border-radius: 25px;
+  }
+  .header-user {
+    margin-right: 0.625rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    padding: 3px;
   }
   .header-nav {
     background: #020202e4;
@@ -129,13 +134,7 @@
     bottom: 0;
     width: 100%;
     z-index: 10000000;
-  }
-  .header-search {
-    grid-area: header-search;
-    margin-right: 0.625rem;
-    box-sizing: border-box;
-    align-self: center;
-    border-radius: 25px;
+    margin-left: 0;
   }
 
   .header-template.box-shadow-active {
@@ -153,15 +152,15 @@
     cursor: pointer;
   }
 
-  .header-back .back-icon {
+  .header-user .back-icon {
     transition: transform 1s ease;
   }
   /* Efeito de hover: aumenta a escala da imagem e adiciona uma sombra */
-  .header-back .back-icon:hover {
+  .header-user .back-icon:hover {
     transform: none;
   }
   /* Efeito de clique: reduz um pouco a escala e muda a opacidade */
-  .header-back .back-icon:active {
+  .header-user .back-icon:active {
     transform: scale(0.7);
     opacity: 0.5;
   }

@@ -109,14 +109,7 @@
   box-sizing: border-box;
   border-radius: 5px;
 }
-.area-template-fil-content .card-select-xs,
-.area-template-fil-content .card-select-s,
-.area-template-fil-content .card-select-m {
-  background: var(--card-fundo);
-  border: 1px solid var(--card-borda);
-  box-sizing: border-box;
-  border-radius: 5px;
-}
+
 /* Compromisso para hoje  */
 .area-template-fil-alt-content .card-xs,
 .area-template-fil-alt-content .card-s,

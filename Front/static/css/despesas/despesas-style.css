@@ -6,8 +6,10 @@
   border: 1px solid var(--txt-alt);
   letter-spacing: 0.5px;
   background: var(--btn-principal);
+  color: var(--txt-principal);
 }
 .despesas-medium-card-editar .btn-leaked:hover {
-  border: 1px solid #a57ff0;
-  color: #a57ff0;
+  border: 1px solid var(--btn-principal-destaque);
+  background: var(--btn-principal-hover);
+  color: var(--btn-principal-destaque);
 }

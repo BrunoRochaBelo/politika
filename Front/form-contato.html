@@ -4,7 +4,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="color-scheme" content="light dark">
-
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
@@ -28,14 +27,18 @@
           <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Adicional</a></li>
         </ul>
       </nav>
-      <div class="area-abas-template-content ">
-        <form id="form" class="form-content form" enctype="multipart/form-data">
+      <div class="area-abas-template-content area-abas-template-content-com-header-fx-int">
+        <form id="form" class=" form" enctype="multipart/form-data">
 
           <div id="aba1" class="aba-template active">
             <div class="area-template-cbf">
               <div class="area-template-cbf-content area-template-cbf-content-sem-cb">
                 <fieldset>
                   <legend class="titulo-xl"></legend>
+                  <div class="campo">
+                    <label for="nome_contato">Nome do contato <span>*</span></label>
+                    <input type="text" id="nome_contato" name="nome_contato" required>
+                  </div>
                   <div class="campo">
                     <label for="tipo_pessoa">Tipo de Pessoa <span>*</span></label>
                     <div id="tipo_pessoa" class="radio-button-group">
@@ -50,10 +53,6 @@
                         Jurídica
                       </label>
                     </div>
-                  </div>
-                  <div class="campo">
-                    <label for="nome_contato">Nome do contato <span>*</span></label>
-                    <input type="text" id="nome_contato" name="nome_contato" required>
                   </div>
                   <div class="campo">
                     <label for="celular">Celular <span>*</span></label>

@@ -1,6 +1,6 @@
 :root {
   --txt-principal: #dde6ed; /* Texto Principal */
-  --txt-secundario: #9dadbf; /* Texto Secundário */
+  --txt-secundario: #a1b9d1; /* Texto Secundário - mais claro */
   --txt-alt: #b3c6e5; /* Texto Alternativo */
   --background-principal: #010610; /* Fundo Principal */
   --background-secundario: #122036; /* Fundo Secundário */
@@ -12,9 +12,10 @@
   --card-hover: #385987; /* Hover do Card */
   --modal-background: #17263e; /* Fundo de Modal */
   --btn-principal: #7a44e7; /* Botão Primário */
-  --btn-principal-hover: #5ce1e6; /* Hover do Botão Primário */
+  --btn-principal-hover: #6d5dbf; /* Hover do Botão Primário - mais claro */
+  --btn-principal-destaque: #a57ff0; /* Destaque do Botão Primário */
   --btn-secundario: #5ce1e6; /* Botão Secundário */
-  --btn-secundario-hover: #7a44e7; /* Hover do Botão Secundário */
+  --btn-secundario-hover: #45babe; /* Hover do Botão Secundário */
   --btn-alt: #c4d7f4; /* Botão Alternativo */
   --detalhes-1: #1d2c46; /* Detalhes 1 */
   --detalhes-2: #c3e8ff; /* Detalhes 2 */

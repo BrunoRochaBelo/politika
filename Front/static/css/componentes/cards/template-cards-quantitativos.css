@@ -12,7 +12,7 @@
   font-size: 15px;
   font-weight: 500;
   text-align: start;
-  color: var(--txt-secundario);
+  color: var(--txt-primario);
 }
 .quant-small-card-desc {
   grid-area: quant-small-card-desc;
@@ -31,7 +31,8 @@
   font-size: 14px;
   font-weight: 400;
   text-align: start;
-  background: var(--card-fundo);
-  border-radius: 9px;
+  background: var(--detalhes-1);
+  color: var(--txt-alt);
+  border-radius: 5px;
   padding: 5px;
 }

@@ -78,6 +78,16 @@
   background: var(--card-fundo);
   border: 1px solid var(--card-borda);
 }
+.search-input-dest:hover {
+  background: var(--card-hover);
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  border: 1px solid var(--btn-principal-destaque);
+}
+.search-input-dest:hover::placeholder {
+  color: var(--txt-secundario);
+}
 
 .breadcrumb {
   display: inline-block;

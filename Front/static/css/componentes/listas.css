@@ -80,12 +80,14 @@
 
 /* Estilos */
 /* Estilos para cards dentro da lista */
-.lista-vertical-cards > li:first-child a {
+.lista-vertical-cards > li:first-child a,
+.lista-horizontal > .card-tmf-m:first-child a {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-.lista-vertical-cards > li:last-child a {
+.lista-vertical-cards > li:last-child a,
+.lista-horizontal > .card-tmf-m:last-child a {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }

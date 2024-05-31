@@ -36,9 +36,7 @@
 
 
   <header class="header header-template">
-    <a href="index.html" class="header-back">
-      <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
-    </a>
+    <div class="home-header-logo" id="logo"><img src="./static/imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
     <nav class="header-nav">
       <ul class="header-nav-template">
         <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
@@ -67,6 +65,9 @@
           </button>
         </form>
       </div>
+    </div>
+    <div class="header-user" id="moldura">
+      <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
     </div>
   </header>
 
@@ -159,10 +160,31 @@
     </div>
   </div>
 
-
+  <!-- Modal Conta Usuario -->
+  <div class="modal" id="userModal">
+    <div class="modal-content-template">
+      <div class="modal-content-template-img">
+        <img src="" alt="Foto do Usuário" id="modalUserPhoto">
+      </div>
+      <p class="modal-content-template-candidato" id="candidato">Nome do candidato</p>
+      <p class="modal-content-template-cargo-owner" id="cargo">Cargo do candidato</p>
+      <p class="modal-content-template-partido" id="partido">Partido do candidato</p>
+      <div class="modal-content-template-sessao">
+        <div class="modal-content-template-username" id="username">Nome do Usuário</div>
+        <div class="modal-content-template-cargo" id="cargo">Cargo do Usuário</div>
+      </div>
+      <div class="modal-content-template-sair">
+        <a href="home-admin.html">
+          <button id="btnGerenciarConta" class="btn-filled">Gerenciar conta</button>
+        </a>
+        <button id="btnLogout" class="btn-filled" onclick="logout()">Sair</button>
+      </div>
+    </div>
+  </div>
 
 
   <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/ModalMenu.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibir.js"></script>

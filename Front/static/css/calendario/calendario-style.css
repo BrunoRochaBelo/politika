@@ -8,12 +8,14 @@
   border: 1px solid var(--txt-alt);
   letter-spacing: 0.5px;
   background: var(--btn-principal);
+  color: var(--txt-principal);
 }
 .calendario-large-card-editar .btn-leaked:hover,
 .calendario-small-card-editar .btn-leaked:hover,
 .tarefa-small-card-editar .btn-leaked:hover {
-  border: 1px solid #a57ff0;
-  color: #a57ff0;
+  border: 1px solid var(--btn-principal-destaque);
+  background: var(--btn-principal-hover);
+  color: var(--btn-principal-destaque);
 }
 
 .nav-calendar {
@@ -141,11 +143,7 @@
 .dia-semana:hover,
 .change-semana:hover,
 .filtro-tarefa:hover {
-  color: #8653eb;
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid #a57ff0;
+  background: var(--card-hover);
   border-radius: 5px !important;
 }
 .change-semana:hover {
@@ -227,7 +225,7 @@
   box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
     0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid #a57ff0;
+  border: 1px solid var(--btn-principal-destaque);
 }
 
 .fade-in {
@@ -299,18 +297,12 @@
   }
 
   .dia-semana:hover,
-  .change-semana:hover {
+  .change-semana:hover,
+  .filtro-tarefa:hover {
     color: inherit;
     color: var(--txt-secundario);
     background: var(--destaque-1);
     border: 1px solid transparent;
-    box-shadow: none;
-  }
-  .filtro-tarefa:hover {
-    color: inherit;
-    border: 1px solid transparent;
-    color: var(--txt-secundario);
-    background: var(--card-fundo);
     box-shadow: none;
   }
 

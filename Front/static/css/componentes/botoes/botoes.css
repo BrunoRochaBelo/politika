@@ -53,7 +53,7 @@
   box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
     0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid #a57ff0;
+  border: 1px solid var(--btn-principal-destaque);
 }
 /*  active  */
 .btn-filled:active,
@@ -126,6 +126,6 @@
   color: #c61818; /* Cor do texto ao passar o mouse */
 }
 .remover-filtro:hover + .btn-filtro-pesq {
-  border: 1px solid #a57ff0;
+  border: 1px solid var(--btn-principal-destaque);
   box-shadow: 0 0 1px #c6b6fc, 0 0 2px #c6b6fc, 0 0 3px #c6b6fc, 0 0 4px #c6b6fc;
 }

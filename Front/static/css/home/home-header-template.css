@@ -36,7 +36,7 @@
   box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
     0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid #a57ff0;
+  border: 1px solid var(--btn-principal-destaque);
 }
 
 /* RESPONSIVO */
@@ -46,7 +46,7 @@
     align-content: center;
     justify-content: space-between;
     grid: "home-header-logo home-header-title home-header-user" 45px;
-    background: var(--background-secundario);
+    background: var(--background-principal);
     box-shadow: none;
   }
   .home-header-template.box-shadow-active {

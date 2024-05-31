@@ -108,8 +108,8 @@
   background: none;
 }
 #btnGerenciarConta:hover {
-  color: #a57ff0;
-  border: 1px solid #a57ff000;
+  color: var(--btn-principal-destaque);
+  border: 1px solid var(--btn-principal-destaque) 00;
   box-shadow: none;
   text-decoration: underline;
 }

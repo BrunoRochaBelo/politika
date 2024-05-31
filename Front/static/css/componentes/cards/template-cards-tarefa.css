@@ -88,8 +88,12 @@
 }
 .tarefa-small-card-expanded {
   margin: 3px;
-  background: linear-gradient(to bottom, #3b5b8e, #3f6a95) !important;
-  border: 1px solid var(--txt-secundario) !important;
+  background: var(--background-principal) !important;
+  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
+    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
+    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58 !important;
+  border: 1px solid var(--btn-principal-destaque) !important;
+  color: var(--txt-principal);
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data"
@@ -117,11 +121,4 @@
 }
 .tarefa-small-card-expanded .tarefa-small-card-desc {
   background: var(--card-fundo);
-}
-
-@media (max-width: 820px) {
-  .tarefa-small-card-title {
-    grid-area: tarefa-small-card-title;
-    border-left: 4px solid var(--card-fundo);
-  }
 }

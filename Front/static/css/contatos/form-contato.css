@@ -40,7 +40,7 @@
   transition: background 0.2s;
 }
 .form-checkbox:checked + .switch-label:before {
-  background: #5526ad;
+  background: var(--destaque-2);
 }
 .switch-label:after {
   content: "";
@@ -92,11 +92,11 @@
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-label {
-  background-color: #5526ad;
+  background-color: var(--destaque-2);
   color: white;
 }
 .form-contato-checkbox:checked + .checkbox-label {
-  background-color: #5526ad;
+  background-color: var(--destaque-2);
   color: white;
 }
 
