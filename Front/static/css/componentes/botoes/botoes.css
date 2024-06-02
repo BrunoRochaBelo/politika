@@ -1,28 +1,28 @@
 /* Botões */
 .btn-filled {
-  padding: 5px 10px;
-  background-color: rgba(0, 0, 0, 0.21);
-  color: var(--txt-secundario);
-  font-size: small;
-  border: 1px solid #28385300;
-  border-radius: 12px;
   display: flex;
   text-align: justify;
   align-items: center;
   justify-content: center;
+  padding: 10px 20px;
+  background: var(--btn-principal);
+  color: var(--txt-principal);
+  font-size: small;
+  border-radius: 5px;
+  border: 1px solid var(--btn-principal-destaque);
   cursor: pointer;
 }
 .btn-leaked {
-  padding: 0.75rem;
-  background-color: rgba(0, 0, 0, 0.21);
-  color: var(--txt-secundario);
-  font-size: small;
-  border: 1px solid #28385396;
-  border-radius: 12px;
   display: flex;
   text-align: justify;
   align-items: center;
   justify-content: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.21);
+  color: var(--btn-principal-destaque);
+  font-size: small;
+  border-radius: 5px;
+  border: 1px solid var(--btn-principal-destaque);
   cursor: pointer;
 }
 
@@ -38,7 +38,7 @@
     var(--background-secundario),
     var(--destaque-1)
   );
-  border-radius: 12px;
+  border-radius: 5px;
   border: 1px solid transparent;
   color: var(--txt-principal);
   box-shadow: none;
@@ -55,6 +55,10 @@
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
   border: 1px solid var(--btn-principal-destaque);
 }
+.btn-filled:hover {
+  background: var(--btn-principal-hover);
+  color: var(--btn-principal-destaque);
+}
 /*  active  */
 .btn-filled:active,
 .btn-leaked:active,
@@ -68,7 +72,13 @@
 .area-template-fil-content .card-select-m {
   background: var(--card-fundo);
   color: var(--txt-secundario);
-  border-radius: 6px;
+  border: 1px solid var(--card-borda);
+}
+.area-template-fil-content .btn-filter-leaked:hover,
+.area-template-fil-content .card-select-m:hover {
+  background: var(--card-hover);
+  box-shadow: none;
+  border: 1px solid var(--card-borda);
 }
 
 /* Estilo para o botão filtro*/
@@ -78,13 +88,12 @@
   gap: 5px;
   text-align: center;
   align-items: center;
-  justify-content: end;
+  justify-content: start;
   color: var(--txt-principal);
-  padding: 16px 10px 14px 0px;
+  padding: 20px 10px;
   font-size: 14px;
   font-weight: 300;
 }
-
 .btn-filtro-pesq {
   display: grid;
   align-content: center;
@@ -105,7 +114,6 @@
   color: var(--txt-secundario);
   margin-right: 15px;
 }
-
 /* Estilo para o "x" do botão filtro */
 .remover-filtro {
   position: absolute;

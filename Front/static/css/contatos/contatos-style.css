@@ -3,13 +3,14 @@
   font-weight: regular;
   font-size: 10px;
   border-radius: 7px;
-  border: 1px solid var(--txt-alt);
+  border: 1px solid var(--destaque-2);
   letter-spacing: 0.5px;
-  background: var(--btn-principal);
+  background: var(--btn-secundario);
   color: var(--txt-principal);
 }
 .contatos-small-card-editar .btn-leaked:hover {
-  border: 1px solid var(--btn-principal-destaque);
-  background: var(--btn-principal-hover);
-  color: var(--btn-principal-destaque);
+  border: 1px solid var(--btn-secundario-destaque);
+  background: var(--btn-secundario-hover);
+  color: var(--btn-secundario-destaque);
+  box-shadow: none;
 }

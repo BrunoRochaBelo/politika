@@ -5,17 +5,18 @@
   font-weight: regular;
   font-size: 10px;
   border-radius: 7px;
-  border: 1px solid var(--txt-alt);
+  border: 1px solid var(--destaque-2);
   letter-spacing: 0.5px;
-  background: var(--btn-principal);
+  background: var(--btn-secundario);
   color: var(--txt-principal);
 }
 .calendario-large-card-editar .btn-leaked:hover,
 .calendario-small-card-editar .btn-leaked:hover,
 .tarefa-small-card-editar .btn-leaked:hover {
-  border: 1px solid var(--btn-principal-destaque);
-  background: var(--btn-principal-hover);
-  color: var(--btn-principal-destaque);
+  border: 1px solid var(--btn-secundario-destaque);
+  background: var(--btn-secundario-hover);
+  color: var(--btn-secundario-destaque);
+  box-shadow: none;
 }
 
 .nav-calendar {
@@ -221,11 +222,12 @@
   background: var(--modal-background);
   border: 1px solid var(--card-borda);
 }
+.area-template-cf.aniversariantes:hover {
+  background: var(--card-hover);
+}
 .area-template-cf-content.area-aniversaiantes .card-xs:hover {
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid var(--btn-principal-destaque);
+  background: var(--card-fundo);
+  border: 1px solid var(--card-hover);
 }
 
 .fade-in {
@@ -308,5 +310,12 @@
 
   .area-template-cf.aniversariantes {
     margin: 0px;
+  }
+  .area-template-cf.aniversariantes:hover {
+    background: var(--card-fundo);
+  }
+  .area-template-cf-content.area-aniversaiantes .card-xs:hover {
+    background: var(--modal-background);
+    border: 1px solid var(--card-borda);
   }
 }

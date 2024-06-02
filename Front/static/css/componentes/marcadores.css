@@ -84,5 +84,5 @@
   box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
     0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
-  border: 1px solid var(--btn-principal-destaque);
+  filter: brightness(1.1);
 }

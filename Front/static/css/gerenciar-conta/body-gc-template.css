@@ -49,7 +49,7 @@
   .main-gc {
     padding: 0px;
     height: auto;
-    max-height: 88vh;
+    max-height: 90vh;
     overflow-y: auto;
   }
   .main-gc::-webkit-scrollbar {

@@ -12,18 +12,20 @@
   --card-hover: #385987; /* Hover do Card */
   --modal-background: #17263e; /* Fundo de Modal */
   --btn-principal: #7a44e7; /* Botão Primário */
-  --btn-principal-hover: #6d5dbf; /* Hover do Botão Primário - mais claro */
+  --btn-principal-hover: #5429aa; /* Hover do Botão Primário - mais claro */
   --btn-principal-destaque: #a57ff0; /* Destaque do Botão Primário */
-  --btn-secundario: #5ce1e6; /* Botão Secundário */
-  --btn-secundario-hover: #45babe; /* Hover do Botão Secundário */
+  --btn-secundario: #2f75de; /* Botão Secundário */
+  --btn-secundario-hover: #1d5ebf; /* Hover do Botão Secundário */
+  --btn-secundario-destaque: #5ce1e6; /* Destaque do Botão Secundário */
   --btn-alt: #c4d7f4; /* Botão Alternativo */
   --detalhes-1: #1d2c46; /* Detalhes 1 */
   --detalhes-2: #c3e8ff; /* Detalhes 2 */
+  --detalhes-3: #a5d0f5; /* Detalhes 3 */
   --destaque-1: #131d2e; /* Destaque 1 */
   --destaque-2: #378dd3; /* Destaque 2 */
   --link: #7a44e7; /* Links */
   --link-hover: #5ce1e6; /* Hover dos Links */
-  --placeholder: #061024; /* Placeholder */
+  --placeholder: #030a18; /* Placeholder */
   --sucesso: #4caf50; /* Mensagem de Sucesso */
   --erro: #f44336; /* Mensagem de Erro */
   --aviso: #ff9800; /* Mensagem de Aviso */

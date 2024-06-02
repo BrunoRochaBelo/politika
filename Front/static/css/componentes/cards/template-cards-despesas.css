@@ -127,7 +127,7 @@
   grid-area: despesas-medium-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--card-fundo);
+  border-top: 1px solid var(--destaque-2);
 }
 
 .exibirDetalheDespesa {
@@ -135,12 +135,9 @@
 }
 .despesas-medium-card-expanded {
   margin: 3px;
-  background: var(--background-principal) !important;
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58 !important;
-  border: 1px solid var(--btn-principal-destaque) !important;
-  color: var(--txt-principal);
+  background: #84aeea !important;
+  border: 1px solid var(--destaque-2) !important;
+  color: var(--background-principal);
   grid:
     "despesas-medium-card-natureza despesas-medium-card-natureza"
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
@@ -169,8 +166,8 @@
   gap: 5px;
 }
 .despesas-medium-card-expanded .despesas-medium-card-natureza {
-  border-left: 4px solid var(--card-fundo);
+  border-left: 4px solid var(--detalhes-3);
 }
 .despesas-medium-card-expanded .despesas-medium-card-desc {
-  background: var(--card-fundo);
+  background: var(--detalhes-3);
 }

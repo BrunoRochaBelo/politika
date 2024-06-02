@@ -18,7 +18,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--destaque-2);
+  color: var(--btn-secundario);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 3px 5px;
@@ -85,7 +85,7 @@
 #nav2 a,
 #nav3 a {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   padding: 5px;
   color: var(--background-principal);
   border-radius: 25px;
@@ -97,13 +97,14 @@
 #nav2 a:hover,
 #nav3 a:hover {
   background: var(--card-hover);
+  color: var(--card-borda);
 }
 #nav1 a.indicador-2,
 #nav2 a.indicador-2,
 #nav3 a.indicador-2 {
   font-size: 16px;
   font-weight: 400;
-  color: var(--destaque-2);
+  color: var(--btn-secundario);
   background: var(--background-secundario);
   align-items: center;
   justify-items: center;
@@ -134,7 +135,7 @@
     border-radius: 0px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    padding: 4px 5px;
+    padding: 4px 0px;
   }
   .area-abas-template-content {
     border-radius: 0px;
@@ -154,7 +155,7 @@
   .nav {
     padding: 1px;
     justify-items: stretch;
-    width: 300px;
+    width: 305px;
     box-shadow: none;
   }
   #nav1 a,
@@ -163,6 +164,7 @@
     color: var(--placeholder);
     padding: 4px auto;
     font-size: 15px;
+    font-weight: 400;
   }
   #nav1 a:hover,
   #nav2 a:hover,
@@ -173,8 +175,8 @@
   #nav2 a.indicador-2,
   #nav3 a.indicador-2 {
     font-size: 15px;
-    font-weight: 300;
-    color: var(--txt-alt);
+    font-weight: 400;
+    color: var(--btn-secundario);
     background: var(--background-secundario);
   }
 }

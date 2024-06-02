@@ -51,7 +51,7 @@
   background: transparent;
 }
 .main-form .area-abas-template-header {
-  background: var(--detalhes-1);
+  background: var(--background-secundario);
   border-radius: 0px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
@@ -59,7 +59,7 @@
 .main-form .area-abas-template-content {
   border-top: 1px solid var(--background-principal);
   box-shadow: none;
-  background: var(--detalhes-1);
+  background: var(--background-secundario);
   border-radius: 0px;
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;

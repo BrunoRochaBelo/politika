@@ -18,7 +18,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--destaque-2);
+  color: var(--btn-secundario);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 5px;
@@ -53,7 +53,7 @@
   justify-content: stretch;
   font-size: 14px;
   font-weight: 400;
-  padding: 10px;
+  padding: 10px 20px;
   text-align: left;
   color: var(--destaque-2);
   border-radius: 0px;
@@ -90,7 +90,7 @@
   justify-content: stretch;
   font-size: 14px;
   font-weight: 350;
-  padding: 10px;
+  padding: 10px 20px;
   text-align: left;
   color: var(--destaque-2);
   border-radius: 0px;
@@ -121,7 +121,7 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--destaque-2);
+  color: var(--btn-secundario);
   background: var(--background-secundario);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -157,7 +157,7 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--destaque-2);
+  color: var(--btn-secundario);
   background: var(--background-secundario);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -269,7 +269,7 @@
   .area-template-cf-header {
     font-size: 14px;
     font-weight: 300;
-    padding: 7px;
+    padding: 7px 20px;
     color: var(--destaque-2);
   }
   .area-template-cf-header h2 {
@@ -280,7 +280,7 @@
   .area-template-tmf-header {
     font-size: 13px;
     font-weight: 300;
-    padding: 7px;
+    padding: 7px 20px;
     color: var(--destaque-2);
   }
   /* Area Template dos filtros*/

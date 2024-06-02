@@ -259,9 +259,9 @@
 .modal-despachar-pleito-salvar .btn-filled {
   width: 100%;
   border-radius: 9px;
-  background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
-  color: #3f1c80;
-  border: 1px solid #3f1c80;
+  background: var(--btn-principal);
+  color: var(--txt-principal);
+  border: 1px solid var(--btn-principal-destaque);
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
 .modal-despachar-pleito-salvar .btn-leaked {
@@ -277,10 +277,9 @@
   border: 1px solid var(--txt-principal);
 }
 .modal-despachar-pleito-salvar .btn-filled:hover {
-  box-shadow: 0 0 1px #7852ff94, 0 0 2px #7852ff94, 0 0 3px #7852ff94,
-    0 0 4px #7852ff94, inset 0 0 1px #7852ff94, inset 0 0 2px #7852ff94,
-    inset 0 0 3px #7852ff94, inset 0 0 4px #7852ff94;
-  border: 1px solid var(--btn-principal-destaque);
+  border: 1px solid var(--btn-principal-hover);
+  background: var(--btn-principal-hover);
+  color: var(--btn-principal-destaque);
 }
 
 /* Responsivo */

@@ -34,7 +34,7 @@ label {
   font-size: 12px;
   font-weight: 350;
   margin-bottom: 5px;
-  color: var(--destaque-2);
+  color: var(--txt-alt);
 }
 .campo input,
 .campo select,
@@ -43,7 +43,7 @@ label {
   box-sizing: border-box;
   padding: 12px;
   color: var(--txt-principal);
-  background: var(--card-hover);
+  background: #2a4263;
   border: 1px solid var(--card-borda);
   border-radius: 5px;
 }
@@ -67,7 +67,6 @@ label {
 .campo input:hover,
 .campo select:hover,
 .campo textarea:hover {
-  background: var(--card-hover);
   box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
     0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
     inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
@@ -199,8 +198,8 @@ form span {
 .botoes .btn-filled {
   width: 30%;
   border-radius: 5px;
-  background: linear-gradient(to right bottom, #9a6bf8, #7ff9fe);
-  color: #3f1c80;
+  background: var(--btn-principal);
+  color: var(--txt-principal);
   border: 1px solid #3f1c80;
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
@@ -209,10 +208,9 @@ form span {
   border: 1px solid var(--txt-principal);
 }
 .botoes .btn-filled:hover {
-  box-shadow: 0 0 1px #7852ff94, 0 0 2px #7852ff94, 0 0 3px #7852ff94,
-    0 0 4px #7852ff94, inset 0 0 1px #7852ff94, inset 0 0 2px #7852ff94,
-    inset 0 0 3px #7852ff94, inset 0 0 4px #7852ff94;
-  border: 1px solid var(--destaque-2-destaque);
+  border: 1px solid var(--btn-principal-hover);
+  background: var(--btn-principal-hover);
+  color: var(--btn-principal-destaque);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {

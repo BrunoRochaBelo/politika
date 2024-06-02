@@ -146,7 +146,7 @@
   grid-area: pleitos-medium-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--card-fundo);
+  border-top: 1px solid var(--destaque-2);
 }
 
 .exibirDetalhePleito {
@@ -154,12 +154,9 @@
 }
 .pleitos-medium-card-expanded {
   margin: 3px;
-  background: var(--background-principal) !important;
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58 !important;
-  border: 1px solid var(--btn-principal-destaque) !important;
-  color: var(--txt-principal);
+  background: #84aeea !important;
+  border: 1px solid var(--destaque-2) !important;
+  color: var(--background-principal);
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
@@ -191,8 +188,8 @@
   gap: 5px;
 }
 .pleitos-medium-card-expanded .pleitos-medium-card-tiposolici {
-  border-left: 4px solid var(--card-fundo);
+  border-left: 4px solid var(--detalhes-3);
 }
 .pleitos-medium-card-expanded .pleitos-medium-card-desc {
-  background: var(--card-fundo);
+  background: var(--detalhes-3);
 }

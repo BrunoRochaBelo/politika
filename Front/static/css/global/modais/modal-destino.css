@@ -72,7 +72,7 @@
   align-items: center;
 }
 .search-input-dest {
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: 300;
   background: var(--card-fundo);
