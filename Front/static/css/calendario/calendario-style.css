@@ -229,6 +229,9 @@
   background: var(--card-fundo);
   border: 1px solid var(--card-hover);
 }
+.area-template-cf.aniversariantes .btn-recuar-expandir-alt:hover {
+  border-color: transparent;
+}
 
 .fade-in {
   animation: fadeIn 0.1s ease-in;
@@ -253,7 +256,7 @@
   }
 }
 
-@media only screen and (max-width: 819px) {
+@media only screen and (max-width: 900px) {
   .nav-calendar {
     padding: 5px;
     background: transparent;

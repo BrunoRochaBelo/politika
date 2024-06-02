@@ -21,20 +21,6 @@
 
 <body class="body-template">
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
-          console.log('ServiceWorker registrado com sucesso: ', registration.scope);
-        }, function (err) {
-          console.log('Falha ao registrar o ServiceWorker: ', err);
-        });
-      });
-    }
-  </script>
-
-
-
   <header class="header header-template">
     <div class="home-header-logo" id="logo"><img src="./static/imagens/logo/Logo-2.png" alt="Pesquisar Icon"></div>
     <nav class="header-nav">

@@ -118,7 +118,7 @@
 /* Estilos para os primeiros cards de cada lista */
 
 /* RESPONSIVO */
-@media (max-width: 820px) {
+@media only screen and (max-width: 900px) {
   .lista-vertical-fil {
     gap: 20px 0px;
   }

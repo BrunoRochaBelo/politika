@@ -1,7 +1,5 @@
-// service-worker.js
-
 // Define os nomes dos caches
-const CACHE_NAME = "dica-cache";
+const CACHE_NAME = "dica-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
@@ -36,7 +34,7 @@ const urlsToCache = [
   "/static/imagens/icones/voltar.svg",
 ];
 
-// Instala o Service Worker
+// Instala o Service Worker e adiciona os recursos ao cache
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -48,7 +46,7 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Ativa o Service Worker
+// Ativa o Service Worker e limpa caches antigos
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -64,8 +62,31 @@ self.addEventListener("activate", (event) => {
 // Intercepta as solicitações de rede e responde com recursos em cache, se disponíveis
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    caches
+      .match(event.request)
+      .then((response) => {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request).then((networkResponse) => {
+          // Verifica se a resposta é válida
+          if (
+            !networkResponse ||
+            networkResponse.status !== 200 ||
+            networkResponse.type !== "basic"
+          ) {
+            return networkResponse;
+          }
+          // Clona a resposta e armazena no cache
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+          return networkResponse;
+        });
+      })
+      .catch(() => {
+        // Opcional: adicionar um fallback caso a rede falhe e o recurso não esteja em cache
+      })
   );
 });

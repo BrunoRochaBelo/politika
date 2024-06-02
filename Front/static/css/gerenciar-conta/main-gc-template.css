@@ -18,7 +18,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 820px) {
+@media only screen and (max-width: 900px) {
   .main-gc-template {
     display: grid;
     align-content: start;

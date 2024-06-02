@@ -66,7 +66,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 820px) {
+@media only screen and (max-width: 900px) {
   .body-form-template {
     padding: 0px;
     border: none;

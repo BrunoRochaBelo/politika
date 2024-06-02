@@ -93,7 +93,7 @@
   border: 1px solid var(--txt-alt);
 }
 /* RESPONSIVO */
-@media (max-width: 820px) {
+@media only screen and (max-width: 900px) {
   .modal-btn-floating-header {
     border-bottom: 1px solid var(--bordas);
   }

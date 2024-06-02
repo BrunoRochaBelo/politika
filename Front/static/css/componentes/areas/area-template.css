@@ -234,7 +234,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 820px) {
+@media only screen and (max-width: 900px) {
   /* Area Template padrão*/
   .area-template {
     background: var(--background-principal);
