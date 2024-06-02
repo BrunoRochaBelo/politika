@@ -38,14 +38,6 @@
   border-top: none;
 }
 
-.main-form .nav {
-  background: var(--background-principal);
-}
-.main-form #nav1 a,
-.main-form #nav2 a,
-.main-form #nav3 a {
-  color: var(--txt-secundario);
-}
 .main-form .area-abas-template {
   box-shadow: none;
   background: transparent;
@@ -63,6 +55,28 @@
   border-radius: 0px;
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
+}
+.main-form .nav {
+  background: var(--background-principal);
+}
+.main-form #nav1 a,
+.main-form #nav2 a,
+.main-form #nav3 a {
+  color: var(--txt-secundario);
+}
+.main-form #nav1 a:hover,
+.main-form #nav2 a:hover,
+.main-form #nav3 a:hover {
+  background: var(--background-principal);
+  color: var(--txt-secundario);
+}
+.main-form #nav1 a.indicador-2,
+.main-form #nav2 a.indicador-2,
+.main-form #nav3 a.indicador-2 {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--btn-secundario);
+  background: var(--background-secundario);
 }
 
 /* RESPONSIVO */

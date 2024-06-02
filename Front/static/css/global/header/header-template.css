@@ -138,7 +138,7 @@
   }
 
   .header-template.box-shadow-active {
-    background: var(--background-secundario);
+    background: var(--background-principal);
   }
   .search-input.scroll-active {
     padding: 0.625rem;

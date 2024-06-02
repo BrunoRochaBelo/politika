@@ -50,7 +50,7 @@
     box-shadow: none;
   }
   .home-header-template.box-shadow-active {
-    background: var(--background-secundario);
+    background: var(--background-principal);
   }
 
   .home-header-logo {
