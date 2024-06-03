@@ -1,4 +1,3 @@
-// Define os nomes dos caches
 const CACHE_NAME = "dica-cache-v1";
 const urlsToCache = [
   "/",
@@ -10,11 +9,11 @@ const urlsToCache = [
   "/pleitos.html",
   "/static/imagens/logo/logo.png",
   "/static/imagens/logo/logo-2.png",
-  "/static/imagens/icones/1-estrela.png",
-  "/static/imagens/icones/2-estrelas.png",
-  "/static/imagens/icones/3-estrelas.png",
-  "/static/imagens/icones/4-estrelas.png",
-  "/static/imagens/icones/5-estrelas.png",
+  "/static/imagens/icones/1-estrela.svg",
+  "/static/imagens/icones/2-estrelas.svg",
+  "/static/imagens/icones/3-estrelas.svg",
+  "/static/imagens/icones/4-estrelas.svg",
+  "/static/imagens/icones/5-estrelas.svg",
   "/static/imagens/icones/anterior.svg",
   "/static/imagens/icones/avancar.svg",
   "/static/imagens/icones/calendario.svg",
@@ -32,6 +31,8 @@ const urlsToCache = [
   "/static/imagens/icones/pleitos.svg",
   "/static/imagens/icones/pleitos-select.svg",
   "/static/imagens/icones/voltar.svg",
+  "/offline.html",
+  "/styles.css",
 ];
 
 // Instala o Service Worker e adiciona os recursos ao cache
@@ -65,9 +66,11 @@ self.addEventListener("fetch", (event) => {
     caches
       .match(event.request)
       .then((response) => {
+        // Serve recurso do cache se disponível
         if (response) {
           return response;
         }
+        // Tenta buscar o recurso na rede
         return fetch(event.request).then((networkResponse) => {
           // Verifica se a resposta é válida
           if (
@@ -86,7 +89,8 @@ self.addEventListener("fetch", (event) => {
         });
       })
       .catch(() => {
-        // Opcional: adicionar um fallback caso a rede falhe e o recurso não esteja em cache
+        // Se falhar a busca na rede e não tiver no cache, serve a página de fallback
+        return caches.match("/offline.html");
       })
   );
 });

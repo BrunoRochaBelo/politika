@@ -55,7 +55,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
       button.style.color = "var(--background-secundario)";
-      mainSidenav.style.height = "75vh";
+      mainSidenav.style.height = "80vh";
       area.style.background = "var(--modal-background)";
       overlay.style.display = "block";
 

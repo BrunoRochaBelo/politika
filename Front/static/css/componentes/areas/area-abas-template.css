@@ -170,6 +170,7 @@
   #nav2 a:hover,
   #nav3 a:hover {
     background: var(--card-fundo);
+    color: var(--background-principal);
   }
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,

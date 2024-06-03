@@ -104,12 +104,16 @@
   gap: 15px;
 }
 
-#btnGerenciarConta {
+.modal-content-template-sair .btn-filled {
+  padding: 5px 10px;
+}
+#btnGerenciarConta.btn-filled {
   background: none;
+  border: 1px solid transparent;
 }
 #btnGerenciarConta:hover {
   color: var(--btn-principal-destaque);
-  border: 1px solid var(--btn-principal-destaque) 00;
+  border: 1px solid transparent;
   box-shadow: none;
   text-decoration: underline;
 }

@@ -154,6 +154,7 @@
 }
 .pleitos-medium-card-expanded {
   margin: 3px;
+  border-radius: 5px;
   background: #84aeea !important;
   border: 1px solid var(--destaque-2) !important;
   color: var(--background-principal);

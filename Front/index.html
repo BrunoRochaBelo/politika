@@ -22,14 +22,30 @@
 <body class="body-template home-body">
 
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+    window.addEventListener('load', () => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js').then((registration) => {
           console.log('ServiceWorker registrado com sucesso: ', registration.scope);
-        }, function (err) {
+        }, (err) => {
           console.log('Falha ao registrar o ServiceWorker: ', err);
         });
-      });
+      }
+    });
+
+    // Detectar estado offline/online
+    window.addEventListener('online', () => {
+      document.body.classList.remove('offline');
+      console.log('Você está online');
+    });
+
+    window.addEventListener('offline', () => {
+      document.body.classList.add('offline');
+      console.log('Você está offline');
+    });
+
+    // Inicializar o estado na carga da página
+    if (!navigator.onLine) {
+      document.body.classList.add('offline');
     }
   </script>
 
