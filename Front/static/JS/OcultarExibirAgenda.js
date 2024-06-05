@@ -35,7 +35,7 @@ var overlay = createOverlay();
 
 // Função para alternar a visibilidade do conteúdo
 function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
-  if (window.innerWidth <= 820) {
+  if (window.innerWidth <= 900) {
     if (areaContent.style.maxHeight) {
       areaContent.style.maxHeight = null;
       button.innerHTML = "Agenda para hoje";
@@ -72,7 +72,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
 
 // Adiciona um ouvinte de evento 'resize' à janela
 window.addEventListener("resize", function () {
-  if (window.innerWidth > 820) {
+  if (window.innerWidth > 900) {
     // Recarrega a página para garantir que tudo volte ao padrão
     window.location.reload();
   }

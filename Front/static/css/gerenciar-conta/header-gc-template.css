@@ -28,7 +28,6 @@
 /*---------------------------------------------*/
 
 /* header-gc-nav TEMPLATE */
-
 /* Nav */
 .header-gc-nav-template {
   display: grid;
@@ -59,20 +58,21 @@
   -webkit-text-fill-color: transparent;
 }
 .header-gc-nav-template a {
-  size: 1rem;
   padding: 0.625rem;
   border-radius: 20px;
   display: flex;
   transition: 0.15s;
   border: 1px solid transparent;
+  size: 15px;
+  font-weight: 500;
 }
 .header-gc-nav-template a:hover {
   padding: auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: #7a44e7;
-  border: 1px solid var(--btn-principal-destaque) 00;
-  text-decoration: underline;
+  border: 1px solid transparent;
+  background: var(--background-secundario);
 }
 .header-gc-nav-template a:hover img {
   background: radial-gradient(
@@ -91,6 +91,10 @@
   margin-right: 0.625em;
 }
 
+.header-gc-logout .btn-filled {
+  padding: 5px 15px;
+}
+
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .header-gc-nav-template p {
@@ -104,5 +108,9 @@
 
   .header-gc-nav-template a {
     border-radius: 50%;
+  }
+
+  .header-gc-logout .btn-filled {
+    padding: 5px 7px;
   }
 }

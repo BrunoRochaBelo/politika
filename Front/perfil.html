@@ -12,21 +12,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <!-- <script src="./static/js/EsquemaDeCores.js" defer></script> -->
-  <title>calendario</title>
-  <meta name="description" content="Perfil">
+  <title>Gerenciar perfil</title>
+  <meta name="description" content="Gerenciar perfil">
 
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body class="body-template">
+<body class="body-gc-template">
 
-  <header class="header header-template">
-
+  <header class="header-gc">
+    <ul class="header-gc-template">
+      <li class="header-gc-back">
+        <a href="index.html" class="header-gc-back">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+        </a>
+      </li>
+      <li class="header-gc-nav">
+        <nav class="header-gc-nav">
+          <ul class="header-gc-nav-template">
+            <li class="dashboard"><a href="home-admin.html"><img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
+                <p>Dashboard</p>
+            <li class="perfil indicador"><a href="perfil.html"><img src="./static/imagens/icones/perfil-select.svg" alt="perfil Icon">
+                <p>Perfil</p>
+              </a></li>
+            <li class="equipe"><a href="equipe.html"><img src="./static/imagens/icones/equipe.svg" alt="equipe Icon">
+                <p>Equipe</p>
+              </a></li>
+            <li class="contas"><a href="conta-corrente.html"><img src="./static/imagens/icones/contas.svg" alt="contas Icon">
+                <p>Contas</p>
+              </a></li>
+          </ul>
+        </nav>
+      </li>
+      <li class="header-gc-logout">
+        <button id="btnLogout" class="btn-filled" onclick="logout()">Desconectar</button>
+      </li>
+    </ul>
   </header>
 
-  <main class="main main-template">
+  <main class="main-gc main-gc-template">
+    <section class="main-gc-section">
+      <ul class="lista-vertical-alt">
 
+      </ul>
+    </section>
   </main>
 
 

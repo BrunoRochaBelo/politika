@@ -17,6 +17,11 @@
   align-content: start;
 }
 
+.main-gc .lista-vertical-alt,
+.main-gc .lista-vertical-horizontal {
+  gap: 5px;
+}
+
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .main-gc-template {

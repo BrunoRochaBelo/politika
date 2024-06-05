@@ -57,7 +57,8 @@
 }
 .btn-filled:hover {
   background: var(--btn-principal-hover);
-  color: var(--btn-principal-destaque);
+  color: var(--txt-secundario);
+  border: 1px solid var(--btn-principal-destaque);
 }
 /*  active  */
 .btn-filled:active,

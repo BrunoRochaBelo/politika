@@ -4,7 +4,7 @@
   align-content: start;
   justify-content: center;
   grid:
-    "header-form" 55px
+    "header-form"
     "main-form" auto
     / minmax(350px, 1100px);
 }
@@ -13,7 +13,6 @@
   grid-area: header-form;
   display: grid;
   grid-auto-flow: column;
-  justify-content: space-between;
   align-content: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;

@@ -106,16 +106,18 @@ label {
   gap: 7px;
 }
 
-.header-form a {
-  position: absolute;
-  padding: 0px 5px;
-  top: 0px;
-  right: 0px;
+.header-form .editar {
   color: var(--txt-alt);
   border-radius: 4px;
+  padding: 5px;
+  justify-self: end;
+  margin-right: 40px;
 }
-.header-form a:hover {
-  background: #c61818;
+.header-form .editar:hover {
+  background: var(--card-hover);
+}
+.header-form .close {
+  top: 5px;
 }
 
 label + .form-checkbox {

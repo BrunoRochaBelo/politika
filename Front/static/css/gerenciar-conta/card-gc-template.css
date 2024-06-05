@@ -1,0 +1,28 @@
+.main-gc .card-m,
+.main-gc .card-l {
+  border-radius: 10px;
+}
+
+.card-gc-template {
+  display: grid;
+  color: var(--txt-secundario);
+  gap: 15px;
+  align-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "card-gc-template-title"
+    "card-gc-template-list";
+}
+
+.card-gc-template-title {
+  grid-area: card-gc-template-title;
+  color: var(--txt-secundario);
+}
+.card-gc-template-list {
+  grid-area: card-gc-template-list;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--txt-alt);
+}
