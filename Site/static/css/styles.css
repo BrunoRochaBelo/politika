@@ -1,0 +1,665 @@
+:root {
+  --txt-principal: #eff4f8; /* Texto Principal */
+  --txt-secundario: #c9dbef; /* Texto Secundário - mais claro */
+  --txt-alt: #a8c0d8; /* Texto Alternativo */
+  --background-principal: #111e32; /* Fundo Principal */
+  --background-secundario: #010814; /* Fundo Secundário */
+  --container: #010814; /* Container */
+  --bordas: #0a111e; /* Bordas */
+  --divisores: #6b7f9e; /* Divisores */
+  --card-fundo: #2e496d; /* Fundo de Cards */
+  --card-borda: #192a44; /* Borda de Card */
+  --card-hover: #385987; /* Hover do Card */
+  --modal-background: #17263e; /* Fundo de Modal */
+  --btn-principal: #7a44e7; /* Botão Primário */
+  --btn-principal-hover: #844bf7; /* Hover do Botão Primário - mais claro */
+  --btn-principal-destaque: #a57ff0; /* Destaque do Botão Primário */
+  --btn-secundario: #2f75de; /* Botão Secundário */
+  --btn-secundario-hover: #1d5ebf; /* Hover do Botão Secundário */
+  --btn-secundario-destaque: #accbf8; /* Destaque do Botão Secundário */
+  --btn-alt: #c4d7f4; /* Botão Alternativo */
+  --detalhes-1: #1d2c46; /* Detalhes 1 */
+  --detalhes-2: #c3e8ff; /* Detalhes 2 */
+  --detalhes-3: #a5d0f5; /* Detalhes 3 */
+  --destaque-1: #131d2e; /* Destaque 1 */
+  --destaque-2: #378dd3; /* Destaque 2 */
+  --link: #7a44e7; /* Links */
+  --link-hover: #5ce1e6; /* Hover dos Links */
+  --placeholder: #030a18; /* Placeholder */
+  --sucesso: #4caf50; /* Mensagem de Sucesso */
+  --erro: #f44336; /* Mensagem de Erro */
+  --aviso: #ff9800; /* Mensagem de Aviso */
+  --informacao: #167fd4; /* Mensagem de Informação */
+  --cor-marca: linear-gradient(to right, #864aff, #65eef3); /* Cor de Marca */
+  --cor-auxiliar1: #000023; /* Fundo auxiliar 1 */
+  --cor-auxiliar2: #223386; /* Fundo auxiliar 2 */
+  --cor-auxiliar3: #768eff; /* Fundo auxiliar 3 */
+}
+
+/* Estilos Gerais */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: radial-gradient(
+    ellipse at 20% 50%,
+    #221740 15%,
+    #31235c 25%,
+    #423178 35%,
+    #420066 45%,
+    #010814 55%,
+    #010814 100%
+  );
+
+  color: var(--txt-principal);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+h1,
+h2,
+h3,
+h4,
+ul,
+menu,
+p,
+button,
+blockquote,
+dd {
+  margin: 0;
+}
+ul,
+menu {
+  padding: 0;
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  color: var(--link);
+  text-decoration: none;
+  position: relative;
+}
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--link);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+a:hover::after {
+  width: 100%;
+}
+a:hover {
+  color: var(--link-hover);
+}
+.link {
+  display: inline-block;
+  color: var(--destaque-1);
+  font: 500 1.5rem/1.5 "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+.link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: currentColor;
+}
+.link:hover {
+  color: var(--background-principal);
+}
+span {
+  text-align: right;
+  color: var(--btn-principal);
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1000;
+  background: var(--background-secundario);
+  transition: top 0.3s ease;
+}
+.nav-menu.hidden {
+  top: -100px; /* Altura da barra de navegação */
+}
+
+.content {
+  margin-top: 60px;
+}
+
+/* Estilizando a barra de navegação */
+nav {
+  padding: 15px 0;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li:last-child {
+  margin-right: 0;
+}
+nav a {
+  color: var(--txt-secundario);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+nav a:hover {
+  color: var(--txt-principal);
+}
+
+/* Estilizando o "HEADER" */
+header {
+  text-align: center;
+  padding: 50px;
+}
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  background: var(--cor-marca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header p {
+  font-size: 1.1rem;
+  color: var(--txt-secundario);
+  margin-bottom: 1.5em;
+}
+header button {
+  background-color: var(--btn-principal);
+  color: var(--txt-principal);
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+header button:hover {
+  background-color: var(--btn-principal-hover);
+}
+header blockquote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--txt-alt);
+  margin: 20px 0;
+  padding: 10px 20px;
+  border-left: 5px solid var(--link);
+  background: #10203c93;
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+
+/* Estilizando a seção "Benefícios" */
+#beneficios {
+  background: transparent;
+  color: var(--txt-principal);
+  padding: 50px 0;
+}
+#beneficios h2 {
+  text-align: center;
+  color: var(--txt-principal);
+  margin-bottom: 1.5em;
+  font-size: 2rem;
+}
+.beneficio h3 {
+  font-size: 1.3rem;
+  background: var(--cor-marca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.beneficio p {
+  color: var(--txt-secundario);
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.beneficio {
+  background-color: var(--container);
+  border: 1px solid #10203c93;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a seção "Como a DICA Potencializa Sua Gestão Política" */
+#como-potencializa {
+  background: transparent;
+  color: var(--txt-principal);
+  padding: 50px 0;
+}
+#como-potencializa h2 {
+  text-align: center;
+  color: var(--txt-principal);
+  margin-bottom: 1.5em;
+  font-size: 2.2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.grid-item {
+  background: var(--container);
+  border: 1px solid #10203c93;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.num {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: var(--cor-marca);
+  color: var(--background-principal);
+  padding: 10px;
+  border-radius: 10px 50px 50px 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+#como-potencializa h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  background: var(--cor-marca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#como-potencializa ul {
+  list-style-type: none;
+  padding: 0;
+  color: var(--txt-secundario);
+}
+#como-potencializa ul li {
+  padding: 7px;
+  border-radius: 5px;
+  margin-bottom: 7px;
+  margin-left: 80px;
+  border: 1px solid #10203c93;
+  background: #10203c93;
+}
+.detail {
+  display: none;
+  margin-top: 5px;
+  font-weight: 300;
+  color: var(--txt-alt);
+}
+
+/* Estilos para a seção "RECURSOS" */
+#recursos {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+#recursos h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+  color: var(--txt-principal);
+}
+.recurso-item {
+  cursor: pointer;
+  color: var(--link);
+  font-weight: bold;
+  padding: 15px;
+  border: 1px solid #040d1bb1;
+  background: #040d1bb1;
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.recurso-item:hover {
+  background-color: var(--btn-secundario);
+  color: var(--txt-principal);
+}
+.recurso-item.active {
+  background: #040d1bb1;
+  backdrop-filter: blur(15px);
+  color: var(--btn-principal-hover);
+  font-size: 120%;
+}
+.recurso-item .detalhe-recurso {
+  display: none;
+  background-color: var(--background-secundario);
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: left;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--txt-secundario);
+}
+.recurso-item.active .detalhe-recurso {
+  display: block;
+}
+
+/* Estilizando a seção "A DIRETIVA" */
+#sobre-nos {
+  background: transparent;
+  color: var(--txt-principal);
+  padding: 50px 0;
+}
+#sobre-nos h2 {
+  margin-bottom: 0.5em;
+  font-size: 2rem;
+  background: var(--cor-marca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#sobre-nos h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+.detail {
+  display: none;
+  margin-top: 5px;
+}
+.detail.visible {
+  display: block;
+}
+
+/* Estilos para os ícones */
+.icone-missao,
+.icone-visao,
+.icone-valores {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Estilos para os CONTAINERS */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Estilos para os itens de Duas Colunas */
+.row {
+  display: flex;
+}
+.column {
+  flex: 1;
+  padding: 10px;
+}
+.main-content {
+  text-align: left;
+}
+.quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagem-cabecalho {
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  margin: auto;
+}
+
+/* Estilos para os CARDS */
+.card {
+  background-color: var(--card-fundo);
+  border: 1px solid var(--card-borda);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  flex: 1;
+  margin-right: 10px;
+}
+.card h4 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.card h4 img {
+  margin-right: 10px;
+}
+.card p {
+  color: var(--txt-secundario);
+}
+.detail.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Estilizando o "footer" */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--txt-secundario);
+}
+footer a {
+  color: var(--link);
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: var(--link-hover);
+}
+
+/* Media Queries para Responsividade */
+/* Telas Medias */
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  header button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  header blockquote {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+  .column {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .imagem-cabecalho {
+    width: 100%;
+  }
+
+  .beneficios-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .beneficios-grid > * {
+    flex: 0 0 auto; /* Garante que os itens mantenham seu tamanho mínimo */
+    width: 200px;
+  }
+
+  #como-potencializa ul li {
+    margin-left: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    margin-right: 0;
+  }
+
+  #beneficios,
+  #como-potencializa,
+  #recursos,
+  #sobre-nos {
+    padding: 30px 15px;
+  }
+}
+
+/* Telas Pequenas */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  nav a {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header p {
+    font-size: 0.9rem;
+  }
+  header button {
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+  header blockquote {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  #beneficios h2,
+  #como-potencializa h2,
+  #recursos h2,
+  #sobre-nos h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+  }
+
+  .beneficio h3,
+  #como-potencializa h3 {
+    font-size: 1rem;
+  }
+
+  .beneficio p,
+  #como-potencializa ul li,
+  .recurso-item,
+  .recurso-item .detalhe-recurso,
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .num {
+    font-size: 1.4rem;
+    width: 25px;
+    height: 25px;
+  }
+
+  #beneficios,
+  #como-potencializa,
+  #recursos,
+  #sobre-nos {
+    padding: 30px 10px;
+  }
+}
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-list.show-menu {
+  display: block; /* Mostra o menu quando a classe show-menu é adicionada */
+}
+
+.menu-icon img {
+  display: none; /* Esconde o ícone do menu por padrão */
+  cursor: pointer; /* Adiciona cursor de apontador para indicar que é clicável */
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 1000;
+    background: var(--background-secundario);
+    transition: top 0.3s ease;
+  }
+  .content {
+    margin-top: 45px;
+  }
+
+  .menu-icon img {
+    display: block; /* Mostra o ícone do menu quando está no modo responsivo */
+    margin-left: 5px;
+  }
+
+  .menu-list {
+    background: #10203c93;
+    backdrop-filter: blur(7px);
+    border-radius: 10px;
+    width: 80%;
+    height: 250px;
+    margin-left: 12px;
+    margin-top: 7px;
+    z-index: 1000;
+    padding: 10px 0;
+    text-align: center;
+    display: none;
+  }
+
+  .menu-list.show-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .menu-list li {
+    margin-bottom: 10px;
+  }
+}

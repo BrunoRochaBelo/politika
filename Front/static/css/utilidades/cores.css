@@ -35,6 +35,9 @@
     #7a44e7,
     #5ce1e6
   ); /* Cor de Marca */
+  --cor-auxiliar1: #000023; /* Fundo auxiliar 1 */
+  --cor-auxiliar2: #223386; /* Fundo auxiliar 2 */
+  --cor-auxiliar3: #768eff; /* Fundo auxiliar 3 */
 
   --cor-marc1: rgba(229, 115, 115);
   --cor-marc2: rgba(255, 138, 101);
