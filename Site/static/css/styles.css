@@ -4,14 +4,14 @@
   --txt-alt: #a8c0d8; /* Texto Alternativo */
   --background-principal: #111e32; /* Fundo Principal */
   --background-secundario: #010814; /* Fundo Secundário */
-  --container: #010814; /* Container */
+  --container: #010114; /* Container */
   --bordas: #0a111e; /* Bordas */
   --divisores: #6b7f9e; /* Divisores */
-  --card-fundo: #2e496d; /* Fundo de Cards */
+  --card-fundo: #171f3e; /* Fundo de Cards */
   --card-borda: #192a44; /* Borda de Card */
-  --card-hover: #385987; /* Hover do Card */
-  --modal-background: #17263e; /* Fundo de Modal */
-  --btn-principal: #7a44e7; /* Botão Primário */
+  --card-hover: #1b3861; /* Hover do Card */
+  --modal-background: #171d3e; /* Fundo de Modal */
+  --btn-principal: #8146f5; /* Botão Primário */
   --btn-principal-hover: #844bf7; /* Hover do Botão Primário - mais claro */
   --btn-principal-destaque: #a57ff0; /* Destaque do Botão Primário */
   --btn-secundario: #2f75de; /* Botão Secundário */
@@ -23,14 +23,14 @@
   --detalhes-3: #a5d0f5; /* Detalhes 3 */
   --destaque-1: #131d2e; /* Destaque 1 */
   --destaque-2: #378dd3; /* Destaque 2 */
-  --link: #7a44e7; /* Links */
+  --link: #8049ee; /* Links */
   --link-hover: #5ce1e6; /* Hover dos Links */
   --placeholder: #030a18; /* Placeholder */
   --sucesso: #4caf50; /* Mensagem de Sucesso */
   --erro: #f44336; /* Mensagem de Erro */
   --aviso: #ff9800; /* Mensagem de Aviso */
   --informacao: #167fd4; /* Mensagem de Informação */
-  --cor-marca: linear-gradient(to right, #864aff, #65eef3); /* Cor de Marca */
+  --cor-marca: linear-gradient(to right, #8f4aff, #65eef3); /* Cor de Marca */
   --cor-auxiliar1: #000023; /* Fundo auxiliar 1 */
   --cor-auxiliar2: #223386; /* Fundo auxiliar 2 */
   --cor-auxiliar3: #768eff; /* Fundo auxiliar 3 */
@@ -40,15 +40,16 @@
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: radial-gradient(
-    ellipse at 20% 50%,
-    #221740 15%,
-    #31235c 25%,
-    #423178 35%,
+    ellipse at -10% 100%,
+    #1c123a 15%,
+    #2b1d56 25%,
+    #35246a 35%,
     #420066 45%,
     #010814 55%,
     #010814 100%
   );
-
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--txt-principal);
   margin: 0;
   padding: 0;
@@ -127,16 +128,24 @@ span {
   top: 0;
   width: 100%;
   height: 40px;
-  z-index: 1000;
-  background: var(--background-secundario);
-  transition: top 0.3s ease;
+  z-index: 1001;
+  background: transparent;
+  backdrop-filter: blur(4px);
+  transition: top 0.3s ease, background 0.3s ease;
+}
+.nav-menu.scrolled {
+  background: #0d1b3322;
+  backdrop-filter: blur(15px);
 }
 .nav-menu.hidden {
-  top: -100px; /* Altura da barra de navegação */
+  top: -100px;
 }
 
 .content {
-  margin-top: 60px;
+  margin-top: 40px;
+  z-index: 1000;
+  background: #0d1b3322;
+  backdrop-filter: blur(4px);
 }
 
 /* Estilizando a barra de navegação */
@@ -183,13 +192,12 @@ header h1 {
 header p {
   font-size: 1.1rem;
   color: var(--txt-secundario);
-  margin-bottom: 1.5em;
 }
 header button {
   background-color: var(--btn-principal);
   color: var(--txt-principal);
   border: none;
-  padding: 15px 30px;
+  padding: 15px 40px;
   cursor: pointer;
   font-size: 1rem;
   border-radius: 5px;
@@ -203,7 +211,7 @@ header blockquote {
   font-style: italic;
   color: var(--txt-alt);
   margin: 20px 0;
-  padding: 10px 20px;
+  padding: 20px;
   border-left: 5px solid var(--link);
   background: #10203c93;
   backdrop-filter: blur(10px);
@@ -212,15 +220,14 @@ header blockquote {
 
 /* Estilizando a seção "Benefícios" */
 #beneficios {
-  background: transparent;
   color: var(--txt-principal);
-  padding: 50px 0;
+  padding: 70px 0;
 }
 #beneficios h2 {
   text-align: center;
   color: var(--txt-principal);
   margin-bottom: 1.5em;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .beneficio h3 {
   font-size: 1.3rem;
@@ -244,14 +251,13 @@ header blockquote {
   border: 1px solid #10203c93;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
 }
 
 /* Estilos para a seção "Como a DICA Potencializa Sua Gestão Política" */
 #como-potencializa {
-  background: transparent;
   color: var(--txt-principal);
-  padding: 50px 0;
+  padding: 70px 0;
 }
 #como-potencializa h2 {
   text-align: center;
@@ -269,7 +275,7 @@ header blockquote {
   border: 1px solid #10203c93;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
 }
 .header {
   display: flex;
@@ -279,16 +285,17 @@ header blockquote {
 .num {
   font-size: 1.8rem;
   font-weight: bold;
+  background: #10203c93;
   background: var(--cor-marca);
-  color: var(--background-principal);
-  padding: 10px;
-  border-radius: 10px 50px 50px 10px;
-  width: 40px;
-  height: 40px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 20px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
 }
 #como-potencializa h3 {
   font-size: 1.3rem;
@@ -304,57 +311,55 @@ header blockquote {
   color: var(--txt-secundario);
 }
 #como-potencializa ul li {
-  padding: 7px;
+  padding: 7px 7px 7px 15px;
   border-radius: 5px;
   margin-bottom: 7px;
-  margin-left: 80px;
   border: 1px solid #10203c93;
-  background: #10203c93;
+  background: var(--modal-background);
 }
-.detail {
-  display: none;
-  margin-top: 5px;
-  font-weight: 300;
-  color: var(--txt-alt);
+#como-potencializa ul li:hover {
+  border: 1px solid var(--btn-principal-destaque);
 }
 
 /* Estilos para a seção "RECURSOS" */
 #recursos {
+  display: grid;
   padding: 50px 20px;
-  max-width: 800px;
-  margin: 0 auto;
   text-align: center;
+  justify-content: stretch;
+  align-content: center;
 }
 #recursos h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1em;
   color: var(--txt-principal);
 }
 .recurso-item {
+  width: 60%;
+  margin: 0 auto;
   cursor: pointer;
-  color: var(--link);
   font-weight: bold;
   padding: 15px;
-  border: 1px solid #040d1bb1;
-  background: #040d1bb1;
-  backdrop-filter: blur(15px);
+  color: var(--btn-principal-destaque);
+  background: var(--container);
+  border: 1px solid #10203c93;
   border-radius: 5px;
   margin-bottom: 10px;
   transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
 }
 .recurso-item:hover {
-  background-color: var(--btn-secundario);
-  color: var(--txt-principal);
+  border: 1px solid var(--btn-principal-destaque);
 }
 .recurso-item.active {
-  background: #040d1bb1;
+  background: var(--container);
   backdrop-filter: blur(15px);
   color: var(--btn-principal-hover);
   font-size: 120%;
 }
 .recurso-item .detalhe-recurso {
   display: none;
-  background-color: var(--background-secundario);
+  background-color: var(--card-fundo);
   padding: 15px;
   border-radius: 5px;
   margin-top: 10px;
@@ -367,31 +372,166 @@ header blockquote {
   display: block;
 }
 
-/* Estilizando a seção "A DIRETIVA" */
-#sobre-nos {
-  background: transparent;
-  color: var(--txt-principal);
+/* Estilos para a seção "PREÇOS e PLANOS" */
+#planos-precos {
   padding: 50px 0;
+  background-color: var(--background-secundario);
+  color: var(--txt-principal);
+  text-align: center;
+}
+#planos-precos h2 {
+  text-align: center;
+  color: var(--txt-principal);
+  margin-bottom: 1.5em;
+  font-size: 2.5rem;
+}
+#planos-precos h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+#planos-precos p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.pricing-plans {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  margin-top: 30px;
+  justify-content: center;
+  gap: 10px;
+}
+.pricing-plans > * {
+  flex: 0 0 auto;
+}
+.plan {
+  background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  width: 300px;
+  height: auto;
+}
+.plan.destaque {
+  border: 2px solid var(--btn-secundario);
+}
+.plan h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.plan p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--txt-secundario);
+}
+.plan .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.plan button {
+  background-color: var(--btn-secundario);
+  color: var(--txt-principal);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.plan button:hover {
+  background-color: var(--btn-secundario-hover);
+}
+.cta {
+  margin-top: 50px;
+}
+.cta h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.cta .btn-cta {
+  background-color: var(--btn-principal);
+  color: var(--txt-principal);
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid var(--btn-principal-hover);
+  transition: background-color 0.3s;
+}
+.cta .btn-cta:hover {
+  background-color: var(--btn-principal-hover);
+  border: 1px solid var(--btn-principal);
+}
+
+/* Estilizando a seção "SOBRE NÓS" */
+#sobre-nos {
+  color: var(--txt-principal);
+  padding: 70px 0;
 }
 #sobre-nos h2 {
   margin-bottom: 0.5em;
-  font-size: 2rem;
-  background: var(--cor-marca);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  text-align: center;
 }
 #sobre-nos h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5em;
   cursor: pointer;
+  background: var(--cor-marca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+.toggle-details {
+  position: relative;
+  cursor: pointer;
+}
+.toggle-details::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid var(--txt-principal);
+  margin-left: 8px;
+  border-radius: 25%;
+  transition: transform 0.3s;
+}
+.toggle-details.up::after {
+  border-top: none;
+  border-bottom: 7px solid var(--txt-principal);
+}
+
+/* Estilizando o "footer" */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--txt-secundario);
+}
+footer a {
+  color: var(--link);
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: var(--link-hover);
+}
+
+/* Estilos para os textos escondidos */
 .detail {
   display: none;
-  margin-top: 5px;
+  padding: 0px 5px 5px 5px;
+  font-weight: 300;
+  color: var(--txt-alt);
 }
 .detail.visible {
   display: block;
+  padding: 10px;
+  margin: 10px;
+  border-left: 2px solid var(--btn-principal);
 }
 
 /* Estilos para os ícones */
@@ -435,7 +575,7 @@ header blockquote {
 
 /* Estilos para os CARDS */
 .card {
-  background-color: var(--card-fundo);
+  background: var(--card-fundo);
   border: 1px solid var(--card-borda);
   border-radius: 10px;
   padding: 15px;
@@ -459,41 +599,69 @@ header blockquote {
   flex-wrap: wrap;
 }
 
-/* Estilizando o "footer" */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--txt-secundario);
+/* Definindo a animação de pulsar */
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
 }
-footer a {
-  color: var(--link);
-  margin: 0 10px;
-  text-decoration: none;
-  transition: color 0.3s;
+
+/* Aplicando a animação apenas aos botões especificados */
+.btn-cta,
+.btn-adapte-se {
+  animation: pulsar 1.5s infinite;
 }
-footer a:hover {
-  color: var(--link-hover);
+/* Outros estilos para os botões, caso necessário */
+.btn-principal,
+button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-principal {
+  background-color: #007bff;
+  color: white;
+}
+.btn-principal:hover {
+  background-color: #0056b3;
+}
+button {
+  background-color: #28a745;
+  color: white;
+}
+button:hover {
+  background-color: #218838;
 }
 
 /* Media Queries para Responsividade */
 /* Telas Medias */
 @media (max-width: 768px) {
   header {
-    padding: 10px;
+    padding: 20px;
   }
   header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   header p {
     font-size: 1rem;
   }
   header button {
-    padding: 10px 20px;
+    padding: 10px 25px;
     font-size: 1rem;
   }
   header blockquote {
     font-size: 1.1rem;
-    padding: 10px;
+    padding: 20px;
   }
 
   .row {
@@ -509,18 +677,58 @@ footer a:hover {
     width: 100%;
   }
 
+  .beneficio h2 {
+    flex: 0 0 auto;
+  }
+  .beneficio p {
+    color: var(--txt-secundario);
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding: 10px 5px;
+    flex: 0 0 auto;
+  }
   .beneficios-grid {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    gap: 10px;
   }
   .beneficios-grid > * {
     flex: 0 0 auto; /* Garante que os itens mantenham seu tamanho mínimo */
-    width: 200px;
+    width: 175px;
   }
 
-  #como-potencializa ul li {
-    margin-left: 20px;
+  .recurso-item {
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 15px;
+    color: var(--btn-principal-destaque);
+    background: var(--container);
+    border: 1px solid #10203c93;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .recurso-item:hover {
+    background: var(--container);
+    color: var(--link);
+  }
+  .recurso-item.active {
+    background: var(--container);
+    backdrop-filter: blur(15px);
+    color: var(--btn-principal-hover);
+    font-size: 120%;
+  }
+
+  .pricing-plans {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    margin-top: 30px;
+    justify-content: start;
+    gap: 10px;
   }
 
   .grid {
@@ -534,8 +742,9 @@ footer a:hover {
   #beneficios,
   #como-potencializa,
   #recursos,
+  #planos-precos,
   #sobre-nos {
-    padding: 30px 15px;
+    padding: 50px 5px;
   }
 }
 
@@ -555,32 +764,35 @@ footer a:hover {
     padding: 5px 10px;
   }
 
-  header h1 {
-    font-size: 1.8rem;
+  .plan {
+    background: var(--card-fundo);
+    border: 1px solid var(--card-borda);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    width: 250px;
+    height: auto;
   }
-  header p {
-    font-size: 0.9rem;
-  }
-  header button {
-    padding: 8px 20px;
-    font-size: 1rem;
-  }
-  header blockquote {
-    font-size: 1rem;
-    padding: 8px;
+
+  .beneficios-grid::-webkit-scrollbar,
+  .pricing-plans::-webkit-scrollbar {
+    display: none;
   }
 
   #beneficios h2,
   #como-potencializa h2,
   #recursos h2,
+  #planos-precos h2,
   #sobre-nos h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5em;
+    font-size: 2rem;
+    margin-bottom: 0.9em;
   }
 
-  .beneficio h3,
-  #como-potencializa h3 {
-    font-size: 1rem;
+  #como-potencializa h3,
+  #recursos h3,
+  #planos-precos h3,
+  #sobre-nos h3 {
+    font-size: 1.2rem;
   }
 
   .beneficio p,
@@ -591,17 +803,12 @@ footer a:hover {
     font-size: 0.9rem;
   }
 
-  .num {
-    font-size: 1.4rem;
-    width: 25px;
-    height: 25px;
-  }
-
   #beneficios,
   #como-potencializa,
   #recursos,
+  #planos-precos,
   #sobre-nos {
-    padding: 30px 10px;
+    padding: 40px 10px;
   }
 }
 
@@ -626,8 +833,9 @@ footer a:hover {
     top: 0;
     width: 100%;
     height: 20px;
-    z-index: 1000;
-    background: var(--background-secundario);
+    z-index: 1001;
+    background: transparent;
+    backdrop-filter: blur(4px);
     transition: top 0.3s ease;
   }
   .content {
@@ -635,19 +843,20 @@ footer a:hover {
   }
 
   .menu-icon img {
-    display: block; /* Mostra o ícone do menu quando está no modo responsivo */
+    display: block;
     margin-left: 5px;
   }
 
   .menu-list {
-    background: #10203c93;
+    background: #0e042fd3;
     backdrop-filter: blur(7px);
+    color: var(--txt-principal);
     border-radius: 10px;
     width: 80%;
     height: 250px;
     margin-left: 12px;
     margin-top: 7px;
-    z-index: 1000;
+    z-index: 1001;
     padding: 10px 0;
     text-align: center;
     display: none;

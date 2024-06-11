@@ -41,11 +41,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const detailToggle = document.querySelector("#sobre-nos .toggle-details");
-  const detailContent = document.querySelector("#sobre-nos .detail");
+  const toggleDetails = document.querySelectorAll("#sobre-nos .toggle-details");
 
-  detailToggle.addEventListener("click", function () {
-    detailContent.classList.toggle("visible");
+  toggleDetails.forEach((toggle) => {
+    toggle.addEventListener("click", function () {
+      const detailContent = this.nextElementSibling;
+      detailContent.classList.toggle("visible");
+      this.classList.toggle("up");
+
+      if (detailContent.classList.contains("visible")) {
+        detailContent.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
   });
 });
 
@@ -60,6 +70,13 @@ window.addEventListener("scroll", function () {
   } else {
     // Scroll para cima
     document.querySelector(".nav-menu").classList.remove("hidden");
+  }
+
+  // Verifica se o scroll é diferente de zero para mudar a cor
+  if (currentScroll > 0) {
+    document.querySelector(".nav-menu").classList.add("scrolled");
+  } else {
+    document.querySelector(".nav-menu").classList.remove("scrolled");
   }
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para o caso de scroll no topo da página

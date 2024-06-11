@@ -25,26 +25,26 @@
       <img src=".\static\imagens\icones\menu.svg" alt="Menu">
     </div>
     <ul class="menu-list">
-      <li><a href="#beneficios">Benefícios</a></li>
-      <li><a href="#como-potencializa">Potencialize</a></li>
-      <li><a href="#recursos">Recursos</a></li>
-      <li><a href="#sobre-nos">Sobre Nós</a></li>
-      <li><a href="#fale-conosco">Fale Conosco</a></li>
+      <li><a href="#beneficios">benefícios</a></li>
+      <li><a href="#como-potencializa">potencialize</a></li>
+      <li><a href="#recursos">recursos</a></li>
+      <li><a href="#planos-precos">planos</a></li>
+      <li><a href="#sobre-nos">sobre nós</a></li>
     </ul>
   </nav>
 
 
   <!-- Conteudo -->
   <div class="content">
+
     <header>
       <div class="container">
-        <div class="column ">
+        <div class="column">
           <h1>DICA! <br>Seu Gabinete Online</h1>
           <blockquote>
-            "Não é o mais forte que sobrevive, nem o mais inteligente, <br>mas o que melhor se adapta às mudanças." <br>– Charles Darwin
+            <p>"Não é o mais forte que sobrevive, nem o mais inteligente, mas o que melhor se adapta às mudanças." <br> – Charles Darwin</p>
           </blockquote>
-
-          <button>ADAPTE-SE!</button>
+          <button class="btn-adapte-se">ADAPTE-SE!</button>
         </div>
       </div>
     </header>
@@ -225,62 +225,88 @@
     <!-- Planos e Preços -->
     <section id="planos-precos">
       <div class="container">
-        <h2>Transforme sua Gestão Política</h2>
-        <p>Tenha seu Gabinete na Palma da Mão</p>
-        <p>Com a DICA!, seu gabinete está sempre acessível, não importa onde você esteja. É mais do que um aplicativo de gestão, éé seu parceiro estratégico em busca de sucesso político.</p>
-        <h2>Planos e Preços</h2>
-        <p>Planos flexíveis para atender às suas necessidades: Desde planos individuais para candidatos iniciantes até planos para grandes equipes de campanha.</p>
-        <button>Teste Gratuito</button>
+        <h2>Planos e Preços<span>.</span></h2>
+        <h3>Seu Gabinete na Palma da Mão</h3>
+        <p>Com a DICA!, seu gabinete está sempre acessível, onde quer que você esteja.</p>
+        <p>Mais que um simples aplicativo de gestão, somos seu parceiro estratégico para alcançar o sucesso político.</p>
+        <p>Escolha o plano perfeito para suas necessidades: desde opções para candidatos iniciantes até soluções robustas para grandes equipes de campanha.</p>
+
+        <div class="pricing-plans">
+          <div class="plan">
+            <h4>Plano Básico</h4>
+            <p>Ideal para candidatos iniciantes.</p>
+            <p class="price">R$1700/mês</p>
+            <button class="btn-principal">Saiba Mais</button>
+          </div>
+          <div class="plan">
+            <h4>Plano Profissional</h4>
+            <p>Perfeito para equipes de campanha de médio porte.</p>
+            <p class="price">R$2300/mês</p>
+            <button class="btn-principal">Saiba Mais</button>
+          </div>
+          <div class="plan destaque">
+            <h4>Plano Executivo</h4>
+            <p>Para grandes equipes e campanhas complexas.</p>
+            <p class="price">R$3500/mês</p>
+            <button class="btn-principal">Saiba Mais</button>
+          </div>
+        </div>
+        <div class="cta">
+          <h3>Está pronto para transformar sua gestão política?</h3>
+          <button class="btn-principal btn-cta">Solicite um Orçamento</button>
+        </div>
       </div>
     </section>
+
 
     <!-- Sobre Nós -->
     <section id="sobre-nos">
       <div class="container">
-        <div class="column ">
-          <h2>A Diretiva</h2>
-          <h3 class="toggle-details">Compromisso com a Excelência</h3>
+        <div class="column">
+          <h2>sobre nós<span>.</span></h2>
+
+          <h3 class="toggle-details">Compromisso com a excelência</h3>
           <div class="detail">
             <p>A Diretiva está comprometida em oferecer tecnologias acessíveis e eficientes para o setor político. Nossa visão é ser a principal força impulsionadora da modernização da política, e nossa missão é revolucionar a forma como a política é feita.</p>
           </div>
-          <h3>Sobre Nós</h3>
-          <div class="row">
-            <div class="card">
-              <h4><img src="./static/imagens/icones/missao.svg" alt="Ícone Missão"><strong>Missão</strong></h4>
-              <p>Revolucionar a política moderna oferecendo uma solução abrangente que simplifica processos, garante a segurança dos dados e fornece insights estratégicos para o sucesso político.</p>
+
+          <h3 class="toggle-details">A Diretiva</h3>
+          <div class="detail">
+            <div class="row">
+              <div class="card">
+                <h4><img src="./static/imagens/icones/missao.svg" alt="Ícone Missão"><strong>Missão</strong></h4>
+                <p>Revolucionar a política moderna oferecendo uma solução abrangente que simplifica processos, garante a segurança dos dados e fornece insights estratégicos para o sucesso político.</p>
+              </div>
+              <div class="card">
+                <h4><img src="./static/imagens/icones/visao.svg" alt="Ícone Visão"><strong>Visão</strong></h4>
+                <p>Ser a força motriz por trás da modernização da política, fornecendo soluções tecnológicas que capacitam políticos e suas equipes.</p>
+              </div>
+              <div class="card">
+                <h4><img src="./static/imagens/icones/valor.svg" alt="Ícone Valores"><strong>Valores</strong></h4>
+                <p>Compromisso com a excelência, inovação, foco no cliente e integridade.</p>
+              </div>
             </div>
-            <div class="card">
-              <h4><img src="./static/imagens/icones/visao.svg" alt="Ícone Visão"><strong>Visão</strong></h4>
-              <p>Ser a força motriz por trás da modernização da política, fornecendo soluções tecnológicas que capacitam políticos e suas equipes.</p>
-            </div>
-            <div class="card">
-              <h4><img src="./static/imagens/icones/valor.svg" alt="Ícone Valores"><strong>Valores</strong></h4>
-              <p>Compromisso com a excelência, inovação, foco no cliente e integridade.</p>
-            </div>
+          </div>
+
+          <h3 class="toggle-details">Fale conosco</h3>
+          <div class="detail">
+            <p>Email: contato@diretiva.com.br</p>
+            <p>Telefone: (XX) XXXX-XXXX</p>
           </div>
         </div>
       </div>
     </section>
-  </div>
-  <!-- Footer -->
-  <footer>
-    <!-- Fale Conosco -->
-    <section id="fale-conosco">
-      <div class="container">
-        <h2>Fale Conosco</h2>
-        <p>Email: contato@diretiva.com.br</p>
-        <p>Telefone: (XX) XXXX-XXXX</p>
-      </div>
-    </section>
-    <div class="container">
-      <p>Siga-nos nas redes sociais:</p>
-      <a href="https://www.facebook.com/diretiva" target="_blank">Facebook</a>
-      <a href="https://www.twitter.com/diretiva" target="_blank">Twitter</a>
-      <a href="https://www.instagram.com/diretiva" target="_blank">Instagram</a>
-    </div>
-  </footer>
 
-  <script src="./static/js/script.js"></script>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>Diretiva © Alguns direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="./static/js/script.js"></script>
 </body>
 
 </html>
