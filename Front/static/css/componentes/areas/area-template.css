@@ -18,7 +18,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--btn-secundario);
+  color: var(--destaque-3);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 5px;
@@ -30,7 +30,7 @@
   padding: 0px;
   height: auto;
   border-radius: 0px;
-  background: var(--background-secundario);
+  background: var(--container);
   border-top: 1px solid var(--background-principal);
 }
 
@@ -55,7 +55,7 @@
   font-weight: 400;
   padding: 10px 20px;
   text-align: left;
-  color: var(--destaque-2);
+  color: var(--txt-alt);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -92,7 +92,7 @@
   font-weight: 350;
   padding: 10px 20px;
   text-align: left;
-  color: var(--destaque-2);
+  color: var(--txt-alt);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -121,8 +121,8 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--btn-secundario);
-  background: var(--background-secundario);
+  color: var(--destaque-3);
+  background: var(--container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -135,7 +135,7 @@
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  background: var(--background-secundario);
+  background: var(--container);
   border-top: 1px solid var(--background-principal);
   padding: 20px;
 }
@@ -157,8 +157,8 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--btn-secundario);
-  background: var(--background-secundario);
+  color: var(--destaque-3);
+  background: var(--container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -166,7 +166,7 @@
 .area-template-fil-alt-content {
   grid-area: area-template-fil-alt-content;
   overflow-x: hidden;
-  background: var(--background-secundario);
+  background: var(--container);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   border-bottom-left-radius: 25px;
@@ -255,7 +255,7 @@
   .area-template-content {
     border-radius: 0px;
     border-radius: 25px;
-    background: var(--background-secundario);
+    background: var(--container);
   }
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;
@@ -270,7 +270,6 @@
     font-size: 14px;
     font-weight: 300;
     padding: 7px 20px;
-    color: var(--destaque-2);
   }
   .area-template-cf-header h2 {
     font-size: 13px;
@@ -281,7 +280,6 @@
     font-size: 13px;
     font-weight: 300;
     padding: 7px 20px;
-    color: var(--destaque-2);
   }
   /* Area Template dos filtros*/
   .area-template-fil {

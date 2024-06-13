@@ -48,7 +48,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--modal-background);
+  background: var(--detalhes-1);
   border-radius: 7px;
   justify-content: start;
   align-items: center;
@@ -80,7 +80,7 @@
   grid-area: tarefa-small-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--destaque-2);
+  border-top: 1px solid var(--detalhes-1);
 }
 
 .exibirDetalheTarefa {
@@ -89,8 +89,8 @@
 .tarefa-small-card-expanded {
   margin: 3px;
   border-radius: 5px;
-  background: #84aeea !important;
-  border: 1px solid var(--destaque-2) !important;
+  background: var(--card-aberto-fundo) !important;
+  border: 1px solid var(--detalhes-3) !important;
   color: var(--background-principal);
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"

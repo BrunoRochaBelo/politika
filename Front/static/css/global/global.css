@@ -12,7 +12,7 @@ body {
   overflow: auto;
   /*background: linear-gradient(to right bottom, #5631a0, rgb(82, 78, 185));*/
   background: var(--background-principal);
-  scrollbar-face-color: #330579;
+  scrollbar-face-color: #053c7a;
   scrollbar-track-color: #000000;
 }
 body.offline {
@@ -33,12 +33,12 @@ body.offline footer {
   background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #330579;
+  background: #053c7a;
   border-radius: 9px;
   border: 2px solid #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5a2cb4;
+  background: #2c6cb5;
 }
 /* Adicione os prefixos para compatibilidade com outros navegadores */
 ::-moz-scrollbar {
@@ -49,12 +49,12 @@ body.offline footer {
   background: #000000;
 }
 ::-moz-scrollbar-thumb {
-  background: #330579;
+  background: #053c7a;
   border-radius: 9px;
   border: 2px solid #000000;
 }
 ::-moz-scrollbar-thumb:hover {
-  background: #5a2cb4;
+  background: #2c6cb5;
 }
 
 /* Internet Explorer */
@@ -66,12 +66,12 @@ body.offline footer {
   background: #000000;
 }
 ::-ms-scrollbar-thumb {
-  background: #330579;
+  background: #053c7a;
   border-radius: 9px;
   border: 2px solid #000000;
 }
 ::-ms-scrollbar-thumb:hover {
-  background: #5a2cb4;
+  background: #2c6cb5;
 }
 
 /*background: var(--cor-marca);
@@ -116,7 +116,7 @@ img {
 
 .link {
   display: inline-block;
-  color: var(--destaque-1);
+  color: var(--bordas);
   font: 500 1.5rem/1.5 "Poppins", sans-serif;
   text-transform: uppercase;
 }

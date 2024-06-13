@@ -18,7 +18,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--btn-secundario);
+  color: var(--destaque-3);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 3px 5px;
@@ -30,7 +30,7 @@
   padding: 0px;
   height: auto;
   border-radius: 0px;
-  background: var(--background-secundario);
+  background: var(--container);
   border-top: 1px solid var(--background-principal);
 }
 
@@ -104,8 +104,8 @@
 #nav3 a.indicador-2 {
   font-size: 16px;
   font-weight: 400;
-  color: var(--btn-secundario);
-  background: var(--background-secundario);
+  color: var(--destaque-3);
+  background: var(--container);
   align-items: center;
   justify-items: center;
 }
@@ -140,7 +140,7 @@
   .area-abas-template-content {
     border-radius: 0px;
     border-radius: 25px;
-    background: var(--background-secundario);
+    background: var(--container);
     border: none;
   }
   .aba-header-header-fx-int {
@@ -177,7 +177,7 @@
   #nav3 a.indicador-2 {
     font-size: 15px;
     font-weight: 400;
-    color: var(--btn-secundario);
-    background: var(--background-secundario);
+    color: var(--destaque-3);
+    background: var(--container);
   }
 }

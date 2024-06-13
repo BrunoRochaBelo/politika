@@ -85,7 +85,7 @@
 .forgot-password {
   font-size: 14px;
   font-weight: 300;
-  color: var(--txt-alt);
+  color: var(--destaque-4);
   background-color: rgb(0, 0, 0, 0);
   padding: 0.625rem;
   cursor: pointer;

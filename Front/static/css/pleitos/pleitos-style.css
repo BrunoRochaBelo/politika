@@ -3,7 +3,7 @@
   font-weight: regular;
   font-size: 10px;
   border-radius: 7px;
-  border: 1px solid var(--destaque-2);
+  border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
   background: var(--btn-secundario);
   color: var(--txt-principal);
@@ -16,7 +16,7 @@
 }
 
 .tabela-historico {
-  background: var(--background-secundario);
+  background: var(--container);
   border-radius: 9px;
   padding: 20px;
 }
@@ -36,7 +36,7 @@
 }
 
 .tabela-historico table tr:nth-child(odd) {
-  background-color: var(--background-secundario); /* Cor para linhas ímpares */
+  background-color: var(--container); /* Cor para linhas ímpares */
 }
 
 .tabela-historico table tr:nth-child(even) {

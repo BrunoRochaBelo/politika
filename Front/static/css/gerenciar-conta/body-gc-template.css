@@ -1,5 +1,5 @@
 .body-gc-template {
-  background: var(--background-secundario);
+  background: var(--container);
   display: grid;
   padding: 10px;
   align-content: start;

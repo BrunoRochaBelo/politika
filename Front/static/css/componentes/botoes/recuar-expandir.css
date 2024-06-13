@@ -82,12 +82,12 @@
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-alt:hover {
-  color: var(--txt-alt);
+  color: var(--destaque-4);
   border-color: var(--txt-secundario);
   border-radius: 9px;
 }
 .btn-recuar-expandir-alt:active {
-  background-color: darken(var(--background-secundario), 10%);
+  background-color: darken(var(--container), 10%);
   color: var(--txt-secundario);
   border-color: var(--txt-secundario);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);

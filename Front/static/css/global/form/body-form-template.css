@@ -42,7 +42,7 @@
   background: transparent;
 }
 .main-form .area-abas-template-header {
-  background: var(--background-secundario);
+  background: var(--container);
   border-radius: 0px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
@@ -50,7 +50,7 @@
 .main-form .area-abas-template-content {
   border-top: 1px solid var(--background-principal);
   box-shadow: none;
-  background: var(--background-secundario);
+  background: var(--container);
   border-radius: 0px;
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -75,7 +75,7 @@
   font-size: 15px;
   font-weight: 400;
   color: var(--btn-secundario);
-  background: var(--background-secundario);
+  background: var(--container);
 }
 
 /* RESPONSIVO */

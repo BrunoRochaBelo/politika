@@ -33,11 +33,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(
-    to right bottom,
-    var(--background-secundario),
-    var(--destaque-1)
-  );
+  background: linear-gradient(to right bottom, var(--container), var(--bordas));
   border-radius: 5px;
   border: 1px solid transparent;
   color: var(--txt-principal);
@@ -50,9 +46,9 @@
 .btn-filled:hover,
 .btn-leaked:hover,
 .btn-filter-leaked:hover {
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
+    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
+    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
   border: 1px solid var(--btn-principal-destaque);
 }
 .btn-filled:hover {
@@ -86,32 +82,33 @@
 .area-filtro {
   display: grid;
   grid-auto-flow: column;
-  gap: 5px;
+  gap: 10px;
   text-align: center;
   align-items: center;
   justify-content: start;
   color: var(--txt-principal);
-  padding: 20px 10px;
-  font-size: 14px;
+  padding: 12px 15px;
+  font-size: 15px;
   font-weight: 300;
+
+  border-radius: 25px;
 }
 .btn-filtro-pesq {
   display: grid;
   align-content: center;
   justify-content: center;
-  padding: 3px 15px;
+  padding: 5px 15px;
   border-radius: 20px;
-  border: 1px solid var(--card-fundo);
-  background: var(--card-fundo);
+  border: 1px solid var(--destaque-3);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
   align-content: start;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
 }
 .btn-filtro-pesq-title {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--txt-principal);
   margin-right: 15px;
 }
@@ -127,8 +124,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--txt-secundario);
-  font-size: 16px;
+  color: var(--destaque-3);
+  font-size: 18px;
   border: none;
 }
 .remover-filtro:hover {
@@ -136,5 +133,5 @@
 }
 .remover-filtro:hover + .btn-filtro-pesq {
   border: 1px solid var(--btn-principal-destaque);
-  box-shadow: 0 0 1px #c6b6fc, 0 0 2px #c6b6fc, 0 0 3px #c6b6fc, 0 0 4px #c6b6fc;
+  box-shadow: 0 0 1px #edfcb6, 0 0 2px #edfcb6, 0 0 3px #edfcb6, 0 0 4px #edfcb6;
 }

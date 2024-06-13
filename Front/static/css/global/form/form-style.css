@@ -1,4 +1,21 @@
 /* Estilos CSS para o formulário */
+.body-form {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #121212; /* Cor de fundo escura */
+  color: #ffffff; /* Cor do texto em branco */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #1e1e1e; /* Cor de fundo do container mais clara que o fundo */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+}
+
 .form {
   display: grid;
   margin-top: auto;
@@ -72,9 +89,9 @@ label {
 .campo input:hover,
 .campo select:hover,
 .campo textarea:hover {
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
+    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
+    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
   border: 1px solid var(--btn-principal-destaque);
 }
 
@@ -93,9 +110,9 @@ label {
 .campo select:focus,
 .campo textarea:focus {
   background: var(--card-hover);
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
+    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
+    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
   border: 1px solid var(--btn-principal-destaque);
 }
 .campo input:focus::placeholder,
@@ -112,7 +129,7 @@ label {
 }
 
 .header-form .editar {
-  color: var(--txt-alt);
+  color: var(--destaque-4);
   border-radius: 4px;
   padding: 5px;
   justify-self: end;
@@ -198,8 +215,8 @@ form span {
   width: 30%;
   border-radius: 5px;
   background: transparent;
-  color: var(--txt-alt);
-  border: 1px solid var(--txt-alt);
+  color: var(--destaque-4);
+  border: 1px solid var(--destaque-4);
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
 .botoes .btn-filled {

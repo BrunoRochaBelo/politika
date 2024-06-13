@@ -5,7 +5,7 @@
 .pleitos-medium-card {
   display: grid;
   color: var(--txt-secundario);
-  gap: 3px;
+  gap: 5px;
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
@@ -18,7 +18,7 @@
 }
 .pleitos-medium-card-tiposolici {
   grid-area: pleitos-medium-card-tiposolici;
-  border-left: 4px solid var(--modal-background);
+  border-left: 4px solid var(--detalhes-1);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -49,7 +49,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--modal-background);
+  background: var(--detalhes-1);
   border-radius: 7px;
   justify-content: start;
   align-items: center;
@@ -146,7 +146,7 @@
   grid-area: pleitos-medium-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--destaque-2);
+  border-top: 1px solid var(--detalhes-1);
 }
 
 .exibirDetalhePleito {
@@ -155,8 +155,8 @@
 .pleitos-medium-card-expanded {
   margin: 3px;
   border-radius: 5px;
-  background: #84aeea !important;
-  border: 1px solid var(--destaque-2) !important;
+  background: var(--card-aberto-fundo) !important;
+  border: 1px solid var(--detalhes-3) !important;
   color: var(--background-principal);
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"

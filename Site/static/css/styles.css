@@ -134,8 +134,8 @@ span {
   transition: top 0.3s ease, background 0.3s ease;
 }
 .nav-menu.scrolled {
-  background: #0d1b3322;
-  backdrop-filter: blur(15px);
+  background: #080e1922;
+  backdrop-filter: blur(30px);
 }
 .nav-menu.hidden {
   top: -100px;
@@ -144,8 +144,8 @@ span {
 .content {
   margin-top: 40px;
   z-index: 1000;
-  background: #0d1b3322;
-  backdrop-filter: blur(4px);
+  background: #080e1922;
+  backdrop-filter: blur(10px);
 }
 
 /* Estilizando a barra de navegação */

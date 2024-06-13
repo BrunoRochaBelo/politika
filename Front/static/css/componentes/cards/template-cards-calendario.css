@@ -3,7 +3,7 @@
 .calendario-small-card {
   display: grid;
   color: var(--txt-secundario);
-  gap: 3px;
+  gap: 5px;
   justify-content: stretch;
   overflow: hidden;
   grid:
@@ -94,7 +94,7 @@
   grid-area: calendario-small-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--destaque-2);
+  border-top: 1px solid var(--detalhes-1);
 }
 
 .exibirDetalheEvento {
@@ -103,8 +103,8 @@
 .calendario-small-card-expanded {
   margin: 3px;
   border-radius: 5px;
-  background: #84aeea !important;
-  border: 1px solid var(--destaque-2) !important;
+  background: var(--card-aberto-fundo) !important;
+  border: 1px solid var(--detalhes-3) !important;
   color: var(--background-principal);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
@@ -224,7 +224,7 @@
   grid-area: calendario-large-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--destaque-2);
+  border-top: 1px solid var(--detalhes-1);
 }
 
 .exibirDetalheEvento {
@@ -234,8 +234,8 @@
 .calendario-large-card-expanded {
   margin: 3px;
   border-radius: 5px;
-  background: #84aeea !important;
-  border: 1px solid var(--destaque-2) !important;
+  background: var(--card-aberto-fundo) !important;
+  border: 1px solid var(--detalhes-3) !important;
   color: var(--background-principal);
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px

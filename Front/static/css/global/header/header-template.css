@@ -17,7 +17,7 @@
   align-self: center;
   background: var(--card-fundo);
   border-radius: 25px;
-  border: 1px solid var(--destaque-1);
+  border: 1px solid var(--bordas);
 }
 .header-user {
   grid-area: header-user;
@@ -74,9 +74,9 @@
 }
 .header-search:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
+    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
+    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
   border: 1px solid var(--btn-principal-destaque);
 }
 .header-search:hover .search-input::placeholder {
@@ -97,9 +97,9 @@
 }
 
 .header-user:hover {
-  box-shadow: 0 0 1px #7852ff58, 0 0 2px #7852ff58, 0 0 3px #7852ff58,
-    0 0 4px #7852ff58, inset 0 0 1px #7852ff58, inset 0 0 2px #7852ff58,
-    inset 0 0 3px #7852ff58, inset 0 0 4px #7852ff58;
+  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
+    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
+    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
   border: 1px solid var(--btn-principal-destaque);
 }
 
@@ -128,7 +128,8 @@
     padding: 3px;
   }
   .header-nav {
-    background: #020202e4;
+    background: #00070ef5;
+    backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 0, 0, 0.21);
     position: fixed;
     bottom: 0;

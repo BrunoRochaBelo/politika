@@ -3,7 +3,7 @@
 .card-xs {
   min-height: 30px;
   background: var(--card-fundo);
-  padding: 10px 15px;
+  padding: 12px 15px;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
@@ -11,7 +11,7 @@
 .card-s {
   min-height: 35px;
   background: var(--card-fundo);
-  padding: 10px 15px;
+  padding: 12px 15px;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
@@ -19,7 +19,7 @@
 .card-m {
   min-height: 50px;
   background: var(--card-fundo);
-  padding: 15px;
+  padding: 12px 15px;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
@@ -27,7 +27,7 @@
 .card-l {
   min-height: 150px;
   background: var(--card-fundo);
-  padding: 15px;
+  padding: 12px 15px;
   gap: 0.625rem;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
@@ -41,16 +41,16 @@
   background: var(--card-fundo);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
-  padding: 15px;
+  padding: 12px 15px;
 }
 /* Médio */
 .card-tmf-m {
-  min-width: 115px;
+  min-width: 112px 15px;
   min-height: 95px;
   background: var(--card-fundo);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
-  padding: 15px;
+  padding: 12px 15px;
 }
 /* Grande */
 .card-tmf-l {
@@ -60,7 +60,7 @@
   background: var(--card-fundo);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
-  padding: 15px;
+  padding: 12px 15px;
 }
 
 /* Cards dos selects */
@@ -83,10 +83,9 @@
   box-sizing: border-box;
 }
 .card-select-m {
-  padding: 0.625rem;
   width: 100%;
   background: var(--card-fundo);
-  padding: 0.625rem;
+  padding: 12px 15px;
   border-radius: 9px;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;

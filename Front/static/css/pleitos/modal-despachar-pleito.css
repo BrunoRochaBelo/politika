@@ -17,11 +17,11 @@
 }
 .modal-despachar-pleito-content {
   position: relative;
-  color: var(--txt-alt);
+  color: var(--destaque-4);
   margin: auto;
   margin-top: 15px;
   padding: 20px;
-  border: 1px solid var(--destaque-1);
+  border: 1px solid var(--bordas);
   min-width: 50%;
   max-width: 80%;
   height: auto;
@@ -32,7 +32,7 @@
 
 .modal-despachar-pleito-template {
   display: grid;
-  color: var(--txt-alt);
+  color: var(--destaque-4);
   gap: 3px;
   grid:
     "modal-despachar-pleito-tiposolici modal-despachar-pleito-tiposolici modal-despachar-pleito-dataSolici"
@@ -51,7 +51,7 @@
 }
 .modal-despachar-pleito-tiposolici {
   grid-area: modal-despachar-pleito-tiposolici;
-  border-left: 4px solid var(--destaque-1);
+  border-left: 4px solid var(--bordas);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -82,7 +82,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--destaque-1);
+  background: var(--bordas);
   border-radius: 7px;
   justify-content: start;
   align-items: center;
@@ -252,7 +252,7 @@
   padding: 0.9375rem;
   color: var(--txt-principal);
   background: var(--modal-background);
-  border: 1px solid var(--destaque-1);
+  border: 1px solid var(--bordas);
   border-radius: 6px;
 }
 

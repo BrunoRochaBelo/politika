@@ -3,7 +3,7 @@
 .aniversario-small-card {
   display: grid;
   color: var(--txt-secundario);
-  gap: 3px;
+  gap: 5px;
   align-content: center;
   white-space: nowrap;
   overflow: hidden;
@@ -94,8 +94,8 @@
 .aniversario-small-card-expanded {
   margin: 3px;
   border-radius: 5px;
-  background: #84aeea !important;
-  border: 1px solid var(--destaque-2) !important;
+  background: var(--card-aberto-fundo) !important;
+  border: 1px solid var(--detalhes-3) !important;
   color: var(--background-principal);
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"

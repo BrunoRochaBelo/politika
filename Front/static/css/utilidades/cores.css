@@ -1,40 +1,41 @@
 :root {
-  --txt-principal: #dde6ed; /* Texto Principal */
-  --txt-secundario: #a1b9d1; /* Texto Secundário - mais claro */
-  --txt-alt: #b3c6e5; /* Texto Alternativo */
-  --background-principal: #010814; /* Fundo Principal */
-  --background-secundario: #122036; /* Fundo Secundário */
-  --container: #122036; /* Container */
-  --bordas: #0a111e; /* Bordas */
-  --divisores: #6b7f9e; /* Divisores */
-  --card-fundo: #2e496d; /* Fundo de Cards */
-  --card-borda: #192a44; /* Borda de Card */
-  --card-hover: #385987; /* Hover do Card */
-  --modal-background: #17263e; /* Fundo de Modal */
-  --btn-principal: #7a44e7; /* Botão Primário */
-  --btn-principal-hover: #844bf7; /* Hover do Botão Primário - mais claro */
-  --btn-principal-destaque: #a57ff0; /* Destaque do Botão Primário */
-  --btn-secundario: #2f75de; /* Botão Secundário */
-  --btn-secundario-hover: #1d5ebf; /* Hover do Botão Secundário */
-  --btn-secundario-destaque: #accbf8; /* Destaque do Botão Secundário */
-  --btn-alt: #c4d7f4; /* Botão Alternativo */
-  --detalhes-1: #1d2c46; /* Detalhes 1 */
-  --detalhes-2: #c3e8ff; /* Detalhes 2 */
-  --detalhes-3: #a5d0f5; /* Detalhes 3 */
-  --destaque-1: #131d2e; /* Destaque 1 */
-  --destaque-2: #378dd3; /* Destaque 2 */
+  --txt-principal: hsl(0, 0%, 100%); /* Texto Principal */
+  --txt-secundario: hsl(212, 29%, 84%); /* Texto Secundário - mais claro */
+  --txt-alt: hsl(214, 20%, 50%); /* Texto Alternativo */
+  --txt-destaque: hsl(80, 83%, 64%); /* Texto Principal */
+  --background-principal: hsl(216, 42%, 8%); /* Fundo Principal */
+  --container: hsl(216, 42%, 12%); /* Container */
+  --card-fundo: hsl(214, 35%, 25%); /* Fundo de Cards */
+  --card-borda: hsl(214, 35%, 15%); /* Borda de Card */
+  --card-hover: hsl(214, 35%, 60%); /* Hover do Card */
+  --card-aberto-fundo: hsl(214, 35%, 65%); /* Fundo de Cards abertos*/
+  --modal-background: hsl(214, 60%, 20%); /* Fundo de Modal */
+  --bordas: hsl(214, 83%, 13%); /* Bordas */
+  --divisores: hsl(214, 21%, 52%); /* Divisores */
+  --btn-principal: hsl(214, 77%, 59%); /* Botão Primário */
+  --btn-principal-hover: hsl(214, 91%, 63%); /* Hover do Botão Primário */
+  --btn-principal-destaque: hsl(214, 79%, 72%); /* Destaque do Botão Primário */
+  --btn-secundario: hsl(175, 29%, 40%); /* Botão Secundário */
+  --btn-secundario-hover: hsl(175, 29%, 45%); /* Hover do Botão Secundário */
+  --btn-secundario-destaque: hsl(
+    175,
+    60%,
+    80%
+  ); /* Destaque do Botão Secundário */
+  --btn-alt: hsl(214, 23%, 98%); /* Botão Alternativo */
+  --detalhes-1: hsl(214, 35%, 28%); /* Detalhes 1 */
+  --detalhes-3: hsl(214, 35%, 69%); /* Detalhes 3 */
+  --destaque-2: hsl(80, 99%, 59%); /* Destaque 2 */
+  --destaque-3: hsl(214, 93%, 70%); /* Destaque 3 */
+  --destaque-4: hsl(214, 93%, 80%); /* Destaque 4 */
   --link: #7a44e7; /* Links */
-  --link-hover: #5ce1e6; /* Hover dos Links */
-  --placeholder: #030a18; /* Placeholder */
+  --link-hover: hsl(214, 73%, 63%); /* Hover dos Links */
+  --placeholder: hsl(214, 20%, 50%); /* Placeholder */
   --sucesso: #4caf50; /* Mensagem de Sucesso */
   --erro: #f44336; /* Mensagem de Erro */
   --aviso: #ff9800; /* Mensagem de Aviso */
   --informacao: #167fd4; /* Mensagem de Informação */
-  --cor-marca: linear-gradient(
-    to right bottom,
-    #7a44e7,
-    #5ce1e6
-  ); /* Cor de Marca */
+  --cor-marca: hsl(214, 85%, 52%); /* Cor de Marca */
   --cor-auxiliar1: #000023; /* Fundo auxiliar 1 */
   --cor-auxiliar2: #223386; /* Fundo auxiliar 2 */
   --cor-auxiliar3: #768eff; /* Fundo auxiliar 3 */
