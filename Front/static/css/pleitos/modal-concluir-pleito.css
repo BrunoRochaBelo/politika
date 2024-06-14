@@ -17,7 +17,7 @@
 }
 .modal-concluir-pleito-content {
   position: relative;
-  color: var(--destaque-4);
+  color: var(--cor-s1);
   margin: auto;
   margin-top: 55px;
   padding: 20px;
@@ -31,7 +31,7 @@
 
 .modal-concluir-pleito-template {
   display: grid;
-  color: var(--destaque-4);
+  color: var(--cor-s1);
   gap: 3px;
   grid:
     "modal-concluir-pleito-tiposolici modal-concluir-pleito-tiposolici modal-concluir-pleito-dataSolici"
@@ -83,7 +83,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--bordas);
-  border-radius: 7px;
+  border-radius: 5px;
   justify-content: start;
   align-items: center;
   margin: 3px 10px 0 10px;
@@ -241,10 +241,10 @@
   color: var(--txt-principal);
   background: var(--modal-background);
   border: 1px solid var(--bordas);
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
-.modal-concluir-pleito-salvar .btn-filled {
+.modal-concluir-pleito-salvar .btn-principal {
   width: 100%;
   font-weight: regular;
   font-size: 11px;
@@ -255,18 +255,18 @@
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
 
-.modal-concluir-pleito-salvar .btn-leaked {
+.modal-concluir-pleito-salvar .btn-outline-principal {
   width: 100%;
   font-weight: regular;
   font-size: 11px;
   border-radius: 9px;
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
-.modal-concluir-pleito-salvar .btn-leaked:hover {
+.modal-concluir-pleito-salvar .btn-outline-principal:hover {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
   border: 1px solid var(--txt-principal);
 }
-.modal-concluir-pleito-salvar .btn-filled:hover {
+.modal-concluir-pleito-salvar .btn-principal:hover {
   border: 1px solid var(--btn-principal-hover);
   background: var(--btn-principal-hover);
   color: var(--btn-principal-destaque);
@@ -289,7 +289,7 @@
     max-height: auto;
   }
 
-  .modal-concluir-pleito-salvar .btn-leaked {
+  .modal-concluir-pleito-salvar .btn-outline-principal {
     width: auto;
   }
 

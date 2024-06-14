@@ -32,7 +32,7 @@
   font-weight: 400;
   text-align: start;
   background: var(--detalhes-1);
-  color: var(--destaque-4);
+  color: var(--cor-s1);
   border-radius: 5px;
   padding: 5px;
 }

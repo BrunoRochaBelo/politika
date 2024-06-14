@@ -3,6 +3,7 @@
 .card-xs {
   min-height: 30px;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
@@ -11,6 +12,7 @@
 .card-s {
   min-height: 35px;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
@@ -19,6 +21,7 @@
 .card-m {
   min-height: 50px;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
@@ -27,6 +30,7 @@
 .card-l {
   min-height: 150px;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
   gap: 0.625rem;
   border: 1px solid var(--card-borda);
@@ -39,6 +43,7 @@
   width: 135px;
   height: 100px;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
   padding: 12px 15px;
@@ -48,6 +53,7 @@
   min-width: 112px 15px;
   min-height: 95px;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
   padding: 12px 15px;
@@ -58,6 +64,7 @@
   height: 190px;
   min-height: 170px;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
   padding: 12px 15px;
@@ -70,6 +77,7 @@
   width: 100%;
   padding: 0.3rem;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   font-weight: var(--font-light);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
@@ -78,6 +86,7 @@
   border-radius: 9px;
   width: 100%;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   font-weight: var(--font-medium-regular);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
@@ -85,6 +94,7 @@
 .card-select-m {
   width: 100%;
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
   border-radius: 9px;
   border: 1px solid var(--card-borda);
@@ -104,6 +114,7 @@
 .area-template-fil-content .card-select-s,
 .area-template-fil-content .card-select-m {
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
   border-radius: 5px;
@@ -118,6 +129,7 @@
 .area-template-fil-alt-content .card-tmf-m,
 .area-template-fil-alt-content .card-tmf-l {
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
@@ -125,6 +137,7 @@
 .area-template-fil-alt-content .card-select-s,
 .area-template-fil-alt-content .card-select-m {
   background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
   border-radius: 9px;
@@ -173,6 +186,7 @@
     box-shadow: none;
     border: 1px solid var(--card-borda);
     background: var(--card-fundo);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   }
   .card-xs,
   .card-s,

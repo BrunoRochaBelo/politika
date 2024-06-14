@@ -89,7 +89,7 @@
                       <p class="despesas-medium-card-autor" data-filter="autorDespesa">Autor</p>
                       <p class="despesas-medium-card-data_criacao" data-filter="dataCriacaoDespesa">Data de Criação</p>
                       <div class="despesas-medium-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-despesa.html'">Visualizar despesa</button>
+                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-despesa.html'">Visualizar despesa</button>
                       </div>
                       <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
                     </a>
@@ -109,7 +109,7 @@
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Filtros</button>
         </h2>
         <div class="area-template-fil-content lista-vertical-fil">
-          <button class="btn-filter-leaked" type="button" data-filter="todos">
+          <button class="btn-secundario" type="button" data-filter="todos">
             <strong>Todos</strong>
           </button>
           <ul class=" lista-select">
@@ -161,9 +161,9 @@
       </div>
       <div class="modal-content-template-sair">
         <a href="home-admin.html">
-          <button id="btnGerenciarConta" class="btn-filled">Gerenciar conta</button>
+          <button id="btnGerenciarConta" class="btn-principal">Gerenciar conta</button>
         </a>
-        <button id="btnLogout" class="btn-filled" onclick="logout()">Sair</button>
+        <button id="btnLogout" class="btn-principal" onclick="logout()">Sair</button>
       </div>
     </div>
   </div>

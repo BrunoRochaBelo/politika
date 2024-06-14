@@ -84,11 +84,11 @@
   opacity: 1 !important;
 }
 .contatos-small-card-expanded {
-  margin: 3px;
+  margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
   border: 1px solid var(--detalhes-3) !important;
-  color: var(--background-principal);
+  color: var(--txt-principal);
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     " contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
@@ -117,7 +117,7 @@
 .contatos-small-card-expanded .contatos-small-card-title {
   font-size: 14px;
   font-weight: 500;
-  color: var(--background-principal);
+  color: var(--txt-principal);
 }
 .contatos-small-card-expanded .contatos-small-card-tipocontato {
   font-size: 14px;

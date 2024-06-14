@@ -1,77 +1,160 @@
 /* Botões */
-.btn-filled {
-  display: flex;
-  text-align: justify;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
+/* Botões com Cor de Fundo */
+.btn-principal {
   background: var(--btn-principal);
   color: var(--txt-principal);
-  font-size: small;
-  border-radius: 5px;
-  border: 1px solid var(--btn-principal-destaque);
-  cursor: pointer;
-}
-.btn-leaked {
-  display: flex;
-  text-align: justify;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid var(--btn-principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.21);
-  color: var(--btn-principal-destaque);
-  font-size: small;
   border-radius: 5px;
-  border: 1px solid var(--btn-principal-destaque);
+  font-size: 16px;
   cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-filter-leaked {
-  width: 100%;
-  height: auto;
-  display: flex;
+.btn-principal:hover {
+  background: var(--btn-principal-hover);
+  border-color: var(--btn-principal-hover);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-principal-destaque {
+  background: var(--btn-principal-destaque);
+  color: var(--txt-principal);
+  border: 1px solid var(--btn-principal-destaque);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  background: linear-gradient(to right bottom, var(--container), var(--bordas));
-  border-radius: 5px;
-  border: 1px solid transparent;
+}
+
+.btn-secundario {
+  background: var(--btn-secundario);
   color: var(--txt-principal);
-  box-shadow: none;
+  border: 1px solid var(--btn-secundario);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-secundario:hover {
+  background: var(--btn-secundario-hover);
+  border-color: var(--btn-secundario-hover);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secundario-destaque {
+  background: var(--btn-secundario-destaque);
+  color: var(--txt-principal);
+  border: 1px solid var(--btn-secundario-destaque);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-alt {
+  background: var(--btn-alt);
+  color: var(--background-principal);
+  border: 1px solid var(--btn-alt);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-alt:hover {
+  background: lighten(var(--btn-alt), 10%);
+  border-color: lighten(var(--btn-alt), 10%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botões sem Cor de Fundo (Outline) */
+.btn-outline-principal {
+  background: transparent;
+  color: var(--btn-principal);
+  border: 1px solid var(--btn-principal);
+  box-shadow: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline-principal:hover {
+  background: var(--btn-principal);
+  color: var(--txt-principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline-secundario {
+  background: transparent;
+  color: var(--btn-secundario);
+  border: 1px solid var(--btn-secundario);
+  box-shadow: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline-secundario:hover {
+  background: var(--btn-secundario);
+  color: var(--txt-principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para o efeito hover e active em todos os botões */
 /*  hover  */
-.btn-filled:hover,
-.btn-leaked:hover,
-.btn-filter-leaked:hover {
-  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
-    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
-    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
-  border: 1px solid var(--btn-principal-destaque);
-}
-.btn-filled:hover {
-  background: var(--btn-principal-hover);
-  color: var(--txt-secundario);
-  border: 1px solid var(--btn-principal-destaque);
-}
-/*  active  */
-.btn-filled:active,
-.btn-leaked:active,
-.btn-filter-leaked:active {
-  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
-}
 
 /* Estilos para os botões da area de filtros */
 /* Filtro  */
-.area-template-fil-content .btn-filter-leaked,
+.area-template-fil-content .btn-secundario,
 .area-template-fil-content .card-select-m {
   background: var(--card-fundo);
-  color: var(--txt-secundario);
+  color: var(--txt-principal);
   border: 1px solid var(--card-borda);
+  width: 100%;
 }
-.area-template-fil-content .btn-filter-leaked:hover,
+.area-template-fil-content .btn-secundario:hover,
 .area-template-fil-content .card-select-m:hover {
   background: var(--card-hover);
   box-shadow: none;
@@ -88,7 +171,7 @@
   justify-content: start;
   color: var(--txt-principal);
   padding: 12px 15px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
 
   border-radius: 25px;
@@ -99,16 +182,16 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 20px;
-  border: 1px solid var(--destaque-3);
+  border: 1px solid var(--cor-p1);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
   align-content: start;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
 }
 .btn-filtro-pesq-title {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--txt-principal);
   margin-right: 15px;
 }
@@ -124,7 +207,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--destaque-3);
+  color: var(--cor-p1);
   font-size: 18px;
   border: none;
 }

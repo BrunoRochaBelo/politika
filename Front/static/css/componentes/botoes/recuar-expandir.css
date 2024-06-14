@@ -21,7 +21,7 @@
   font-weight: 400;
   color: var(--background-principal);
   background-color: var(--btn-alt);
-  border-radius: 7px;
+  border-radius: 5px;
   padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
@@ -81,11 +81,7 @@
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 2px solid transparent;
 }
-.btn-recuar-expandir-alt:hover {
-  color: var(--destaque-4);
-  border-color: var(--txt-secundario);
-  border-radius: 9px;
-}
+
 .btn-recuar-expandir-alt:active {
   background-color: darken(var(--container), 10%);
   color: var(--txt-secundario);

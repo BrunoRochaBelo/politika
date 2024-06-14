@@ -6,6 +6,7 @@
   align-content: start;
   height: 100%;
   background: var(--container);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 25px;
   padding-bottom: 20px;
   grid:
@@ -18,7 +19,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--destaque-3);
+  color: var(--cor-p1);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 3px 5px;
@@ -104,7 +105,7 @@
 #nav3 a.indicador-2 {
   font-size: 16px;
   font-weight: 400;
-  color: var(--destaque-3);
+  color: var(--cor-p1);
   background: var(--container);
   align-items: center;
   justify-items: center;
@@ -131,7 +132,7 @@
     justify-content: start;
     position: relative;
     font-weight: 300;
-    background: var(--background-principal);
+
     border-radius: 0px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -177,7 +178,7 @@
   #nav3 a.indicador-2 {
     font-size: 15px;
     font-weight: 400;
-    color: var(--destaque-3);
+    color: var(--cor-p1);
     background: var(--container);
   }
 }

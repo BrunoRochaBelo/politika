@@ -104,9 +104,9 @@
                       <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
                       <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
                       <div class="pleitos-medium-card-editar">
-                        <button class="btn-leaked" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
-                        <button class="btn-leaked" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
-                        <button class="btn-leaked" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
+                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
+                        <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
+                        <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
                       </div>
                       <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
                     </a>
@@ -135,7 +135,7 @@
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Filtros</button>
         </h2>
         <div class="area-template-fil-content lista-vertical-fil">
-          <button class="btn-filter-leaked" type="button" data-filter="todos">
+          <button class="btn-secundario" type="button" data-filter="todos">
             <strong>Todos</strong>
           </button>
           <select class="card-select-m" id="tipoPleito" name="tipoPleito">
@@ -205,9 +205,9 @@
       </div>
       <div class="modal-content-template-sair">
         <a href="home-admin.html">
-          <button id="btnGerenciarConta" class="btn-filled">Gerenciar conta</button>
+          <button id="btnGerenciarConta" class="btn-principal">Gerenciar conta</button>
         </a>
-        <button id="btnLogout" class="btn-filled" onclick="logout()">Sair</button>
+        <button id="btnLogout" class="btn-principal" onclick="logout()">Sair</button>
       </div>
     </div>
   </div>
@@ -252,8 +252,8 @@
             <textarea id="descConclusaoPleito" name="descConclusaoPleito"></textarea>
           </div>
           <div class="modal-concluir-pleito-salvar">
-            <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
-            <input class="btn-filled" type="submit" value="Concluir">
+            <div class="btn-outline-principal"><a href="pleitos.html">Cancelar</a></div>
+            <input class="btn-principal" type="submit" value="Concluir">
           </div>
           <p class="modal-concluir-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
         </div>
@@ -325,8 +325,8 @@
             <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
           </div>
           <div class="modal-despachar-pleito-salvar">
-            <div class="btn-leaked"><a href="pleitos.html">Cancelar</a></div>
-            <input class="btn-filled" type="submit" value="Despachar">
+            <div class="btn-outline-principal"><a href="pleitos.html">Cancelar</a></div>
+            <input class="btn-principal" type="submit" value="Despachar">
           </div>
           <p class="modal-despachar-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
         </div>

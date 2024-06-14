@@ -24,6 +24,7 @@
   font-weight: 400;
   justify-self: start;
   align-self: center;
+  color: var(--txt-principal);
 }
 .pleitos-medium-card-dataSolici {
   grid-area: pleitos-medium-card-dataSolici;
@@ -50,7 +51,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--detalhes-1);
-  border-radius: 7px;
+  border-radius: 5px;
   justify-content: start;
   align-items: center;
   padding-left: 14px;
@@ -153,11 +154,11 @@
   opacity: 1 !important;
 }
 .pleitos-medium-card-expanded {
-  margin: 3px;
+  margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
   border: 1px solid var(--detalhes-3) !important;
-  color: var(--background-principal);
+  color: var(--txt-principal);
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"

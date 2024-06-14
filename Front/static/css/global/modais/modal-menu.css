@@ -104,11 +104,13 @@
   gap: 15px;
 }
 
-.modal-content-template-sair .btn-filled {
+.modal-content-template-sair .btn-principal {
   padding: 5px 10px;
+  font-size: 14px;
 }
-#btnGerenciarConta.btn-filled {
+#btnGerenciarConta.btn-principal {
   background: none;
+  box-shadow: none;
   border: 1px solid transparent;
 }
 #btnGerenciarConta:hover {

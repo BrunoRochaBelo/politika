@@ -15,7 +15,8 @@
   grid-area: header-search;
   display: grid;
   align-self: center;
-  background: var(--card-fundo);
+  background: var(--card-alt);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   border: 1px solid var(--bordas);
 }

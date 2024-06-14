@@ -44,15 +44,13 @@
   display: block;
   width: 0;
   height: 2px;
-  background-color: var(--destaque-3);
+  background-color: var(--cor-p1);
   position: absolute;
   bottom: -2px;
   left: 0;
   transition: width 0.3s ease;
 }
-.header-nav-template a:hover {
-  color: var(--destaque-3);
-}
+
 .header-nav-template a:hover::after {
   width: 100%;
 }
@@ -65,7 +63,7 @@
 
 /* Indicador */
 .indicador a {
-  color: var(--destaque-3);
+  color: var(--cor-p1);
 }
 .indicador a::after {
   content: "";
@@ -74,10 +72,10 @@
   left: 0;
   width: 100%;
   height: 5px;
-  background: var(--destaque-3);
+  background: var(--cor-p1);
 }
 .indicador p {
-  color: var(--destaque-3);
+  color: var(--cor-p1);
 }
 
 /* RESPONSIVO */

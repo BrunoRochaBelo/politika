@@ -24,6 +24,7 @@
   font-weight: 400;
   justify-self: start;
   align-self: center;
+  color: var(--txt-principal);
 }
 .despesas-medium-card-desc {
   grid-area: despesas-medium-card-desc;
@@ -32,7 +33,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--detalhes-1);
-  border-radius: 7px;
+  border-radius: 5px;
   justify-content: start;
   align-items: center;
   padding-left: 14px;
@@ -134,11 +135,11 @@
   opacity: 1 !important;
 }
 .despesas-medium-card-expanded {
-  margin: 3px;
+  margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
   border: 1px solid var(--detalhes-3) !important;
-  color: var(--background-principal);
+  color: var(--txt-principal);
   grid:
     "despesas-medium-card-natureza despesas-medium-card-natureza"
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"

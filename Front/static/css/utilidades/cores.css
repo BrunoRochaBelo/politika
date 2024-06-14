@@ -1,44 +1,65 @@
 :root {
-  --txt-principal: hsl(0, 0%, 100%); /* Texto Principal */
-  --txt-secundario: hsl(212, 29%, 84%); /* Texto Secundário - mais claro */
-  --txt-alt: hsl(214, 20%, 50%); /* Texto Alternativo */
-  --txt-destaque: hsl(80, 83%, 64%); /* Texto Principal */
-  --background-principal: hsl(216, 42%, 8%); /* Fundo Principal */
-  --container: hsl(216, 42%, 12%); /* Container */
-  --card-fundo: hsl(214, 35%, 25%); /* Fundo de Cards */
-  --card-borda: hsl(214, 35%, 15%); /* Borda de Card */
-  --card-hover: hsl(214, 35%, 60%); /* Hover do Card */
-  --card-aberto-fundo: hsl(214, 35%, 65%); /* Fundo de Cards abertos*/
-  --modal-background: hsl(214, 60%, 20%); /* Fundo de Modal */
-  --bordas: hsl(214, 83%, 13%); /* Bordas */
-  --divisores: hsl(214, 21%, 52%); /* Divisores */
-  --btn-principal: hsl(214, 77%, 59%); /* Botão Primário */
-  --btn-principal-hover: hsl(214, 91%, 63%); /* Hover do Botão Primário */
-  --btn-principal-destaque: hsl(214, 79%, 72%); /* Destaque do Botão Primário */
-  --btn-secundario: hsl(175, 29%, 40%); /* Botão Secundário */
-  --btn-secundario-hover: hsl(175, 29%, 45%); /* Hover do Botão Secundário */
+  /* Textos */
+  --txt-principal: hsl(0, 0%, 98%); /* Texto Principal */
+  --txt-secundario: hsl(0, 0%, 85%); /* Texto Secundário */
+  --txt-destaque: hsl(0, 0%, 80%); /* Texto de Destaque */
+
+  /* Fundos */
+  --background-principal: hsl(210, 30%, 8%); /* Fundo Principal */
+  --container: hsl(210, 30%, 15%); /* Container */
+  --modal-background: hsl(210, 30%, 25%); /* Fundo de Modal */
+  --bordas: hsl(210, 20%, 35%); /* Bordas */
+  --divisores: hsl(210, 20%, 45%); /* Divisores */
+
+  /* Cards */
+  --card-fundo: hsl(210, 25%, 20%); /* Fundo de Cards */
+  --card-borda: hsl(210, 25%, 23%); /* Borda de Card */
+  --card-hover: hsl(210, 25%, 30%); /* Hover do Card */
+  --card-aberto-fundo: hsl(210, 25%, 15%); /* Fundo de Cards abertos */
+  --card-alt: hsl(210, 25%, 15%); /* Fundo de Cards alternativos */
+
+  /* Cores para detalhes e destaques */
+  --detalhes-1: hsl(210, 25%, 25%); /* Detalhes 1 */
+  --detalhes-3: hsl(210, 25%, 20%); /* Detalhes 3 */
+  --cor-p1: hsl(150, 75%, 45%); /* Cor principal 1 */
+  --cor-p2: hsl(160, 60%, 50%); /* Cor principal 2 */
+  --cor-s1: hsl(150, 40%, 70%); /* Cor secundaria 1 */
+  --cor-s2: hsl(160, 40%, 60%); /* Cor secundaria 2 */
+
+  /* Botão Primário */
+  --btn-principal: hsl(150, 60%, 40%); /* Fundo do Botão Primário */
+  --btn-principal-hover: hsl(150, 60%, 45%); /* Hover do Botão Primário */
+  --btn-principal-destaque: hsl(150, 60%, 50%); /* Destaque do Botão Primário */
+
+  /* Botão Secundário */
+  --btn-secundario: hsl(160, 50%, 45%); /* Fundo do Botão Secundário */
+  --btn-secundario-hover: hsl(160, 50%, 50%); /* Hover do Botão Secundário */
   --btn-secundario-destaque: hsl(
-    175,
-    60%,
-    80%
+    160,
+    50%,
+    55%
   ); /* Destaque do Botão Secundário */
-  --btn-alt: hsl(214, 23%, 98%); /* Botão Alternativo */
-  --detalhes-1: hsl(214, 35%, 28%); /* Detalhes 1 */
-  --detalhes-3: hsl(214, 35%, 69%); /* Detalhes 3 */
-  --destaque-2: hsl(80, 99%, 59%); /* Destaque 2 */
-  --destaque-3: hsl(214, 93%, 70%); /* Destaque 3 */
-  --destaque-4: hsl(214, 93%, 80%); /* Destaque 4 */
-  --link: #7a44e7; /* Links */
-  --link-hover: hsl(214, 73%, 63%); /* Hover dos Links */
-  --placeholder: hsl(214, 20%, 50%); /* Placeholder */
-  --sucesso: #4caf50; /* Mensagem de Sucesso */
-  --erro: #f44336; /* Mensagem de Erro */
-  --aviso: #ff9800; /* Mensagem de Aviso */
-  --informacao: #167fd4; /* Mensagem de Informação */
-  --cor-marca: hsl(214, 85%, 52%); /* Cor de Marca */
-  --cor-auxiliar1: #000023; /* Fundo auxiliar 1 */
-  --cor-auxiliar2: #223386; /* Fundo auxiliar 2 */
-  --cor-auxiliar3: #768eff; /* Fundo auxiliar 3 */
+
+  /* Botão Alternativo */
+  --btn-alt: hsl(0, 0%, 95%); /* Fundo do Botão Alternativo */
+  --btn-alt-text: hsl(210, 20%, 25%); /* Texto do Botão Alternativo */
+
+  /* Cores de comunicação */
+  --link: hsl(150, 50%, 45%); /* Links */
+  --link-hover: hsl(150, 50%, 55%); /* Hover dos Links */
+  --placeholder: hsl(210, 20%, 50%); /* Placeholder */
+  --sucesso: hsl(120, 40%, 50%); /* Mensagem de Sucesso */
+  --erro: hsl(0, 70%, 50%); /* Mensagem de Erro */
+  --aviso: hsl(30, 90%, 50%); /* Mensagem de Aviso */
+  --informacao: hsl(210, 50%, 50%); /* Mensagem de Informação */
+
+  /* Cores da marca */
+  --cor-marca: linear-gradient(
+    to right,
+    hsl(150, 60%, 45%),
+    hsl(160, 60%, 50%),
+    hsl(160, 50%, 50%)
+  ); /* Cor de Marca */
 
   --cor-marc1: rgba(229, 115, 115);
   --cor-marc2: rgba(255, 138, 101);
@@ -49,7 +70,7 @@
   --cor-marc7: rgba(174, 213, 129);
   --cor-marc8: rgba(129, 199, 132);
   --cor-marc9: rgba(77, 182, 172);
-  --cor-marc10: rgba(77, 208, 225);
+  --cor-marc10: rgba(77, 210, 225);
   --cor-marc11: rgba(79, 195, 247);
   --cor-marc12: rgba(100, 181, 246);
   --cor-marc13: rgba(121, 134, 203);
@@ -67,165 +88,181 @@
   --cor-marc25: rgba(153, 153, 153);
 }
 
-.cor-0 {
+.txt-principal {
   color: var(--txt-principal);
 }
-.cor-1 {
+.txt-secundario {
   color: var(--txt-secundario);
 }
-.cor-2 {
-  color: var(--destaque-1);
+.background-principal {
+  background: var(--background-principal);
 }
-.cor-3 {
-  color: var(--card-fundo);
+.container {
+  background: var(--container);
 }
-.cor-4 {
-  color: var(--txt-alt);
+.card-fundo {
+  background: var(--card-fundo);
 }
-.cor-5 {
-  color: var(--destaque-2);
+.card-borda {
+  border-color: var(--card-borda);
 }
-.cor-6 {
-  color: var(--cor-marca);
+.card-hover {
+  background: var(--card-hover);
 }
-.cor-7 {
-  color: var(--modal-background);
+.card-aberto-fundo {
+  background: var(--card-aberto-fundo);
 }
-.cor-8 {
-  color: var(--container);
+.modal-background {
+  background: var(--modal-background);
 }
-.cor-9 {
-  color: var(--btn-alt);
+.card-alt {
+  background: var(--card-alt);
 }
-.cor-10 {
-  color: var(--background-principal);
+.bordas {
+  border-color: var(--bordas);
 }
-.cor-11 {
-  color: var(--bordas);
+.divisores {
+  background: var(--divisores);
 }
-.cor-12 {
-  color: var(--background-secundario);
+.btn-principal {
+  background: var(--btn-principal);
+  color: var(--txt-principal);
+}
+.btn-principal-hover {
+  background: var(--btn-principal-hover);
+}
+.btn-principal-destaque {
+  background: var(--btn-principal-destaque);
+}
+.btn-secundario {
+  background: var(--btn-secundario);
+  color: var(--txt-principal);
+}
+.btn-secundario-hover {
+  background: var(--btn-secundario-hover);
+}
+.btn-secundario-destaque {
+  background: var(--btn-secundario-destaque);
+}
+.btn-alt {
+  background: var(--btn-alt);
+  color: var(--btn-alt-text);
+}
+.detalhes-1 {
+  background: var(--detalhes-1);
+}
+.detalhes-3 {
+  background: var(--detalhes-3);
 }
 .cor-p1 {
-  color: var(--btn-principal);
+  color: var(--cor-p1);
 }
 .cor-p2 {
-  color: var(--btn-secundario);
+  color: var(--cor-p2);
 }
-.cor-p3 {
-  color: var(--card-borda);
+.cor-s1 {
+  color: var(--cor-s1);
 }
-.cor-p4 {
-  color: var(--detalhes-1);
+.cor-s2 {
+  color: var(--cor-s2);
 }
-.cor-p5 {
-  color: var(--btn-principal-hover);
+.link {
+  color: var(--link);
 }
-.cor-p6 {
-  color: var(--btn-secundario-hover);
+.link-hover:hover {
+  color: var(--link-hover);
 }
-.cor-p7 {
-  color: var(--divisores);
-}
-.cor-p8 {
+.placeholder {
   color: var(--placeholder);
 }
+.sucesso {
+  color: var(--sucesso);
+}
+.erro {
+  color: var(--erro);
+}
+.aviso {
+  color: var(--aviso);
+}
+.informacao {
+  color: var(--informacao);
+}
+.cor-marca {
+  background: var(--cor-marca);
+}
+
 .cor-marc1 {
   background: var(--cor-marc1);
 }
-
 .cor-marc2 {
   background: var(--cor-marc2);
 }
-
 .cor-marc3 {
   background: var(--cor-marc3);
 }
-
 .cor-marc4 {
   background: var(--cor-marc4);
 }
-
 .cor-marc5 {
   background: var(--cor-marc5);
 }
-
 .cor-marc6 {
   background: var(--cor-marc6);
 }
-
 .cor-marc7 {
   background: var(--cor-marc7);
 }
-
 .cor-marc8 {
   background: var(--cor-marc8);
 }
-
 .cor-marc9 {
   background: var(--cor-marc9);
 }
-
 .cor-marc10 {
   background: var(--cor-marc10);
 }
-
 .cor-marc11 {
   background: var(--cor-marc11);
 }
-
 .cor-marc12 {
   background: var(--cor-marc12);
 }
-
 .cor-marc13 {
   background: var(--cor-marc13);
 }
-
 .cor-marc14 {
   background: var(--cor-marc14);
 }
-
 .cor-marc15 {
   background: var(--cor-marc15);
 }
-
 .cor-marc16 {
   background: var(--cor-marc16);
 }
-
 .cor-marc17 {
   background: var(--cor-marc17);
 }
-
 .cor-marc18 {
   background: var(--cor-marc18);
 }
-
 .cor-marc19 {
   background: var(--cor-marc19);
 }
-
 .cor-marc20 {
   background: var(--cor-marc20);
 }
-
 .cor-marc21 {
   background: var(--cor-marc21);
 }
-
 .cor-marc22 {
   background: var(--cor-marc22);
 }
-
 .cor-marc23 {
   background: var(--cor-marc23);
 }
-
 .cor-marc24 {
   background: var(--cor-marc24);
 }
-
 .cor-marc25 {
   background: var(--cor-marc25);
 }

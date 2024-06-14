@@ -1,5 +1,5 @@
 // Seleciona todos os botões
-let buttons = document.querySelectorAll(".btn-filter-leaked");
+let buttons = document.querySelectorAll(".btn-secundario");
 
 // Adiciona um evento de clique a cada botão
 buttons.forEach((button) => {

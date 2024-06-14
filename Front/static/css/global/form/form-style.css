@@ -33,7 +33,7 @@ legend {
   text-align: center;
 }
 label {
-  color: var(--destaque-2);
+  color: var(--txt-destaque);
   margin: 0px 5px 12px 5px;
   display: inline;
   font-size: 12px;
@@ -56,7 +56,7 @@ label {
   font-size: 12px;
   font-weight: 350;
   margin-bottom: 5px;
-  color: var(--btn-secundario);
+  color: var(--txt-secundario);
 }
 .campo input,
 .campo select,
@@ -129,7 +129,7 @@ label {
 }
 
 .header-form .editar {
-  color: var(--destaque-4);
+  color: var(--cor-s1);
   border-radius: 4px;
   padding: 5px;
   justify-self: end;
@@ -167,7 +167,7 @@ label + input.form-checkbox:before {
 }
 
 label + input.form-checkbox:checked:before {
-  background: var(--destaque-2);
+  background: var(--cor-p1);
 }
 
 label + input.form-checkbox:after {
@@ -211,15 +211,15 @@ form span {
   font-weight: regular;
   font-size: 12px;
 }
-.botoes .btn-leaked {
+.botoes .btn-outline-principal {
   width: 30%;
   border-radius: 5px;
   background: transparent;
-  color: var(--destaque-4);
-  border: 1px solid var(--destaque-4);
+  color: var(--cor-s1);
+  border: 1px solid var(--cor-s1);
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
-.botoes .btn-filled {
+.botoes .btn-principal {
   width: 30%;
   border-radius: 5px;
   background: var(--btn-principal);
@@ -227,11 +227,11 @@ form span {
   border: 1px solid #3f1c80;
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
-.botoes .btn-leaked:hover {
+.botoes .btn-outline-principal:hover {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
   border: 1px solid var(--txt-principal);
 }
-.botoes .btn-filled:hover {
+.botoes .btn-principal:hover {
   border: 1px solid var(--btn-principal-hover);
   background: var(--btn-principal-hover);
   color: var(--btn-principal-destaque);
@@ -260,8 +260,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     flex-direction: column;
     gap: 0.625rem;
   }
-  .botoes .btn-leaked,
-  .botoes .btn-filled {
+  .botoes .btn-outline-principal,
+  .botoes .btn-principal {
     width: auto;
   }
 }
@@ -282,7 +282,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  border: 2px solid var(--destaque-2); /* Cor da borda */
+  border: 2px solid var(--cor-p1); /* Cor da borda */
   border-radius: 5px; /* Borda arredondada */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; /* Animação suave */
@@ -307,7 +307,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .radio-button-group input[type="radio"]:checked + label {
-  background-color: var(--destaque-2); /* Cor de fundo quando selecionado */
+  background-color: var(--cor-p1); /* Cor de fundo quando selecionado */
   color: #fff; /* Cor do texto quando selecionado */
 }
 
@@ -330,7 +330,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .checkbox-button-group label {
   padding: 10px 20px;
-  border: 2px solid var(--destaque-2); /* Cor da borda */
+  border: 2px solid var(--cor-p1); /* Cor da borda */
   border-radius: 5px; /* Borda arredondada */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; /* Animação suave */
@@ -338,7 +338,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .checkbox-button-group input[type="checkbox"]:checked + label {
-  background-color: var(--destaque-2); /* Cor de fundo quando selecionado */
+  background-color: var(--cor-p1); /* Cor de fundo quando selecionado */
   color: #fff; /* Cor do texto quando selecionado */
 }
 

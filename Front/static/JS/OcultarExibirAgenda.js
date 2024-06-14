@@ -60,7 +60,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--destaque-4)";
+      areaHeader.style.color = "var(--cor-p1)";
       areaHeader.style.fontSize = "22px";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after

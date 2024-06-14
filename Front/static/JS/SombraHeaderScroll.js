@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       homeHeaderTemplate.classList.add("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
-      homeHeaderTitle.style.color = "var(--destaque-4)";
+      homeHeaderTitle.style.color = "var(--cor-s1)";
       // Adiciona o z-index ao elemento
       homeHeaderTemplate.style.zIndex = "1005";
     } else if (homeHeaderTemplate && homeHeaderTitle) {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       homeHeaderTemplate.classList.remove("box-shadow-active");
       // Altera a transição e a cor do título
       homeHeaderTitle.style.transition = "color 0.3s ease";
-      homeHeaderTitle.style.color = "var(--destaque-4)";
+      homeHeaderTitle.style.color = "var(--cor-s1)";
       // Remove o z-index do elemento
       homeHeaderTemplate.style.zIndex = "";
     }

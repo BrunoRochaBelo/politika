@@ -1,5 +1,5 @@
-// Seleciona todos os botões com a classe 'btn-filter-leaked'
-var buttons = document.querySelectorAll(".btn-filter-leaked");
+// Seleciona todos os botões com a classe 'btn-secundario'
+var buttons = document.querySelectorAll(".btn-secundario");
 
 // Adiciona um ouvinte de evento 'click' para cada botão
 buttons.forEach(function (button) {
@@ -12,8 +12,8 @@ buttons.forEach(function (button) {
   });
 });
 
-// Seleciona todos os botões com a classe 'btn-filter-leaked'
-// var buttons = document.querySelectorAll(".btn-filter-leaked");
+// Seleciona todos os botões com a classe 'btn-secundario'
+// var buttons = document.querySelectorAll(".btn-secundario");
 // var searchErrorMessage = document.getElementById("searcherrorMessage");
 // var errorMessageTimeout; // Variável para armazenar o ID do temporizador
 
