@@ -185,7 +185,7 @@
   padding: 10px 15px;
   border: 1px solid transparent;
   border-radius: 5px;
-  color: var(--txt-principal);
+  color: var(--placeholder);
   cursor: pointer;
   background: var(--card-fundo);
   font-size: 12px;

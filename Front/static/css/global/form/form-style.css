@@ -1,63 +1,51 @@
-/* Estilos CSS para o formulário */
-.body-form {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-color: #121212; /* Cor de fundo escura */
-  color: #ffffff; /* Cor do texto em branco */
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: #1e1e1e; /* Cor de fundo do container mais clara que o fundo */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
-}
+/* Estilos para o formulário */
 
 .form {
   display: grid;
-  margin-top: auto;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background-color: var(--modal-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.form .area-template-cbf-content {
-  padding: 0px 12px;
+
+.area-template-cbf-content {
+  padding: 0 12px;
 }
 
 fieldset {
-  border-radius: 5px;
   border: none;
-  margin: 0px;
-}
-legend {
-  text-align: center;
-}
-label {
-  color: var(--txt-destaque);
-  margin: 0px 5px 12px 5px;
-  display: inline;
-  font-size: 12px;
-  font-weight: regular;
+  margin: 0;
   padding: 0;
 }
+
+legend {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--txt-principal);
+}
+
 .campo {
-  margin: 5px 0px 10px 0px;
-  background: var(--card-fundo);
+  margin-bottom: 10px;
+  background: var(--modal-background);
   padding: 10px;
   border-radius: 5px;
   gap: 5px;
 }
 
 .campo-invalido {
-  border: 1px solid red;
+  border: 1px solid var(--erro);
 }
+
 .campo label {
-  display: inline-block;
+  display: block;
   font-size: 12px;
-  font-weight: 350;
+  font-weight: 400;
   margin-bottom: 5px;
-  color: var(--txt-secundario);
+  color: var(--placeholder);
 }
+
 .campo input,
 .campo select,
 .campo textarea {
@@ -65,39 +53,39 @@ label {
   box-sizing: border-box;
   padding: 12px;
   color: var(--txt-principal);
-  background: #2a4263;
-  border: 1px solid transparent;
+  background: var(--input-bg-empty);
+  border: 1px solid var(--input-border);
   border-radius: 5px;
+  transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 .campo input[type="file"] {
   display: none;
 }
+
 .file-label {
   padding: 10px;
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--btn-principal);
+  color: var(--txt-principal);
   cursor: pointer;
   border-radius: 5px;
+  text-align: center;
 }
 
 .campo input[type="checkbox"],
 .campo input[type="radio"] {
   width: auto;
-  margin: 0 10px 0 0;
+  margin-right: 10px;
 }
+
 .campo input:hover,
 .campo select:hover,
 .campo textarea:hover {
-  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
-    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
-    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
+  box-shadow: 0 0 4px var(--btn-principal-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 
-.campo input::placeholder,
-.campo select::placeholder,
-.campo textarea::placeholder {
+.campo ::placeholder {
   color: var(--placeholder);
 }
 
@@ -105,26 +93,26 @@ label {
 .campo select:focus,
 .campo textarea:focus {
   outline: none;
-}
-.campo input:focus,
-.campo select:focus,
-.campo textarea:focus {
-  background: var(--card-hover);
-  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
-    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
-    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
+  background: var(--input-bg-filled);
+  box-shadow: 0 0 4px var(--btn-principal-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
+
 .campo input:focus::placeholder,
 .campo select:focus::placeholder,
 .campo textarea:focus::placeholder {
-  color: var(--card-borda);
+  color: var(--input-placeholder);
+}
+
+.campo input:valid,
+.campo select:valid,
+.campo textarea:valid {
+  background: var(--input-bg-empty);
 }
 
 .form-2-colum {
   display: grid;
-  grid-template: auto/auto auto;
-  width: 100%;
+  grid-template-columns: 1fr 1fr;
   gap: 7px;
 }
 
@@ -135,18 +123,16 @@ label {
   justify-self: end;
   margin-right: 40px;
 }
+
 .header-form .editar:hover {
   background: var(--card-hover);
 }
+
 .header-form .close {
   top: 5px;
 }
 
 label + .form-checkbox {
-  width: 0;
-  height: 0;
-}
-label + input.form-checkbox {
   position: relative;
   padding-left: 60px;
   cursor: pointer;
@@ -154,7 +140,7 @@ label + input.form-checkbox {
   color: #666;
 }
 
-label + input.form-checkbox:before {
+label + .form-checkbox:before {
   content: "";
   position: absolute;
   left: 0;
@@ -162,43 +148,54 @@ label + input.form-checkbox:before {
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: var(--card-fundo);
+  background: var(--container);
   transition: background 0.2s;
 }
 
-label + input.form-checkbox:checked:before {
+label + .form-checkbox:checked:before {
   background: var(--cor-p1);
 }
 
-label + input.form-checkbox:after {
+label + .form-checkbox:after {
   content: "";
   position: absolute;
-  left: 2px;
-  top: -14px;
-  width: 22px;
-  height: 22px;
-  border-radius: 10px;
-  background: var(--btn-alt);
+  left: 1px;
+  top: -15px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--modal-background);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   transition: left 0.2s;
 }
 
-label + input.form-checkbox:checked:after {
-  left: 28px;
+label + .form-checkbox:checked:after {
+  left: 27px;
+  background: var(--card-borda);
+}
+
+.card-header .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 form span {
-  color: red;
-  margin: 0.3125rem 0.625rem 0.3125rem 0rem;
+  color: var(--erro);
+  margin: 0.3125rem 0.625rem 0.3125rem 0;
 }
+
 .form-tipo {
   display: none;
 }
+
 .form-dataHora {
   display: grid;
-  grid-template: auto/auto auto;
+  grid-template-columns: 1fr 1fr;
   gap: 5px;
   width: 100%;
 }
+
 .form-anotacoes {
   display: flex;
 }
@@ -206,40 +203,17 @@ form span {
 .botoes {
   display: flex;
   justify-content: space-between;
-  margin: 50px 0px 10px 0px;
+  margin-top: 50px;
   width: 100%;
-  font-weight: regular;
+  font-weight: 400;
   font-size: 12px;
 }
-.botoes .btn-outline-principal {
-  width: 30%;
-  border-radius: 5px;
-  background: transparent;
-  color: var(--cor-s1);
-  border: 1px solid var(--cor-s1);
-  box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
-}
+.botoes .btn-outline-principal,
 .botoes .btn-principal {
   width: 30%;
-  border-radius: 5px;
-  background: var(--btn-principal);
-  color: var(--txt-principal);
-  border: 1px solid #3f1c80;
-  box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
-}
-.botoes .btn-outline-principal:hover {
-  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
-  border: 1px solid var(--txt-principal);
-}
-.botoes .btn-principal:hover {
-  border: 1px solid var(--btn-principal-hover);
-  background: var(--btn-principal-hover);
-  color: var(--btn-principal-destaque);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-}
+input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
@@ -247,102 +221,94 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 /* Responsivo */
 @media only screen and (max-width: 900px) {
   .form {
-    grid-template-columns: repeat(1, 1fr);
-    background: transparent;
+    background-color: var(--modal-background);
     border: none;
-    padding: 0px;
-  }
-  .form .area-template-cbf-content {
-    padding: 0px;
   }
 
   .botoes {
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 10px;
   }
+
   .botoes .btn-outline-principal,
   .botoes .btn-principal {
     width: auto;
   }
 }
 
-/* RADIO */
+/* Estilos para radio buttons */
 .radio-button-group {
   display: flex;
-  gap: 0px;
+  gap: 10px;
   align-items: center;
-  flex-wrap: wrap; /* Permitir quebra de linha se necessário */
+  flex-wrap: wrap;
 }
 
 .radio-button-group input[type="radio"] {
-  display: none; /* Esconde os botões de rádio originais */
+  display: none;
 }
 
 .radio-button-group label {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px 20px;
-  border: 2px solid var(--cor-p1); /* Cor da borda */
-  border-radius: 5px; /* Borda arredondada */
+  border: 2px solid var(--cor-s2);
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Animação suave */
-  user-select: none; /* Prevenir seleção de texto acidental */
-  text-align: center; /* Centraliza o texto */
-  gap: 10px; /* Espaçamento entre o ícone e o texto */
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+  text-align: center;
+  gap: 10px;
 }
 
 .radio-button-group .icon-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: auto;
-  height: auto;
 }
 
 .radio-button-group label img {
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
 }
 
 .radio-button-group input[type="radio"]:checked + label {
-  background-color: var(--cor-p1); /* Cor de fundo quando selecionado */
-  color: #fff; /* Cor do texto quando selecionado */
+  background-color: var(--cor-p1);
+  color: var(--txt-principal);
 }
 
 .radio-button-group label:hover {
-  background-color: #0056b3;
-  color: #fff;
+  background-color: var(--cor-s2);
+  color: var(--txt-principal);
 }
 
-/* CHECKBOX */
+/* Estilos para checkboxes */
 .checkbox-button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 0px 10px;
-  margin-bottom: 20px; /* Espaçamento inferior para separar grupos */
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .checkbox-button-group input[type="checkbox"] {
-  display: none; /* Esconde os checkboxes originais */
+  display: none;
 }
 
 .checkbox-button-group label {
   padding: 10px 20px;
-  border: 2px solid var(--cor-p1); /* Cor da borda */
-  border-radius: 5px; /* Borda arredondada */
+  border: 2px solid var(--cor-s2);
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Animação suave */
-  user-select: none; /* Prevenir seleção de texto acidental */
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
 }
 
 .checkbox-button-group input[type="checkbox"]:checked + label {
-  background-color: var(--cor-p1); /* Cor de fundo quando selecionado */
-  color: #fff; /* Cor do texto quando selecionado */
+  background-color: var(--cor-p1);
+  color: var(--txt-principal);
 }
 
 .checkbox-button-group label:hover {
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-  color: #fff; /* Cor do texto ao passar o mouse */
+  background-color: var(--cor-s2);
+  color: var(--txt-principal);
 }

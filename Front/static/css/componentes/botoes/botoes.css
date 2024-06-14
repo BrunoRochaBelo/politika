@@ -182,7 +182,7 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 20px;
-  border: 1px solid var(--cor-p1);
+  border: 1px solid var(--cor-p2);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -207,7 +207,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--cor-p1);
+  color: var(--cor-p2);
   font-size: 18px;
   border: none;
 }

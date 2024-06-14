@@ -8,20 +8,24 @@
     "main-form" auto
     / minmax(350px, 1100px);
 }
+
 /* container-areas */
 .header-form {
   grid-area: header-form;
   display: grid;
   grid-auto-flow: column;
   align-content: center;
+  justify-content: space-between;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 5px 5px 5px 15px;
   text-align: left;
   border: 1px solid #28385396;
+  background: var(--background-principal);
   border-bottom: none;
   position: relative;
 }
+
 .main-form {
   grid-area: main-form;
   overflow-x: hidden;
@@ -34,48 +38,36 @@
   max-height: 88vh;
   padding: 10px;
   border: 1px solid #28385396;
+  background: var(--background-principal);
   border-top: none;
 }
 
+.main-form .area-template,
 .main-form .area-abas-template {
   box-shadow: none;
   background: transparent;
 }
+
 .main-form .area-abas-template-header {
-  background: var(--container);
+  background: transparent;
+  border: none;
   border-radius: 0px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 }
+
+.main-form .area-template-content,
 .main-form .area-abas-template-content {
-  border-top: 1px solid var(--background-principal);
+  border-top: 1px solid var(--modal-background);
   box-shadow: none;
-  background: var(--container);
+  background: transparent;
+  border: none;
   border-radius: 0px;
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-radius: 25px;
 }
+
 .main-form .nav {
-  background: var(--background-principal);
-}
-.main-form #nav1 a,
-.main-form #nav2 a,
-.main-form #nav3 a {
-  color: var(--txt-secundario);
-}
-.main-form #nav1 a:hover,
-.main-form #nav2 a:hover,
-.main-form #nav3 a:hover {
-  background: var(--background-principal);
-  color: var(--txt-secundario);
-}
-.main-form #nav1 a.indicador-2,
-.main-form #nav2 a.indicador-2,
-.main-form #nav3 a.indicador-2 {
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--btn-secundario);
-  background: var(--container);
+  background: var(--modal-background);
 }
 
 /* RESPONSIVO */
@@ -84,18 +76,14 @@
     padding: 0px;
     border: none;
   }
-  .header-form {
-    background: transparent;
-    border: 1px solid transparent;
-  }
+
   .main-form {
     padding: 0px;
     height: auto;
-    max-height: 90vh;
+    max-height: 100%;
     overflow-y: auto;
     border: none;
     border-radius: 0;
-    background: transparent;
     box-shadow: none;
   }
 
@@ -104,20 +92,14 @@
   }
 
   .main-form .area-abas-template-header {
-    padding-left: 15px;
-    border-radius: 0px;
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px;
-  }
-  .main-form .area-abas-template-content {
-    border-radius: 0px;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
+    justify-content: center;
   }
 
   .main-form .area-template-cbf-content {
     max-height: 85vh;
+    padding: 10px 3px;
   }
+
   .main-form::-webkit-scrollbar {
     display: none;
   }

@@ -11,7 +11,7 @@
 }
 
 .modal-concluir-pleito-content.card-m {
-  background: var(--modal-background);
+  background: var(--background-principal);
   border-radius: 12px;
   padding: 15px 5px;
 }
@@ -31,7 +31,7 @@
 
 .modal-concluir-pleito-template {
   display: grid;
-  color: var(--cor-s1);
+  color: var(--divisores);
   gap: 3px;
   grid:
     "modal-concluir-pleito-tiposolici modal-concluir-pleito-tiposolici modal-concluir-pleito-dataSolici"
@@ -51,7 +51,7 @@
 }
 .modal-concluir-pleito-tiposolici {
   grid-area: modal-concluir-pleito-tiposolici;
-  border-left: 4px solid var(--bordas);
+  border-left: 4px solid var(--container);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -82,7 +82,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--bordas);
+  background: var(--container);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -171,7 +171,7 @@
   font-weight: 350;
   white-space: wrap;
   word-break: break-all;
-  background: var(--background-principal);
+  background: var(--modal-background);
   border-radius: 12px;
   grid:
     "modal-concluir-pleito-concluir-title"
@@ -202,19 +202,20 @@
   font-weight: 350;
   margin-top: 25px;
 }
-.modal-concluir-pleito-concluir label {
-  color: var(--txt-principal);
-}
 
-.modal-concluir-pleito-concluir label textarea,
-.modal-concluir-pleito-concluir label select {
+.modal-concluir-pleito-concluir label {
+  color: var(--txt-secundario);
+}
+.modal-concluir-pleito-concluir textarea,
+.modal-concluir-pleito-concluir select,
+.modal-concluir-pleito-concluir input {
   width: 100%;
   box-sizing: border-box;
   padding: 0.9375rem;
   color: var(--txt-principal);
-  background: transparent;
-  border: 1px solid var(--card-borda);
-  border-radius: 6px;
+  background: var(--container);
+  border: 1px solid var(--bordas);
+  border-radius: 5px;
 }
 
 .close {
@@ -232,18 +233,6 @@
   cursor: pointer;
 }
 
-.modal-concluir-pleito-concluir textarea,
-.modal-concluir-pleito-concluir select,
-.modal-concluir-pleito-concluir input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.9375rem;
-  color: var(--txt-principal);
-  background: var(--modal-background);
-  border: 1px solid var(--bordas);
-  border-radius: 5px;
-}
-
 .modal-concluir-pleito-salvar .btn-principal {
   width: 100%;
   font-weight: regular;
@@ -254,7 +243,6 @@
   border: 1px solid var(--btn-principal-destaque);
   box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
-
 .modal-concluir-pleito-salvar .btn-outline-principal {
   width: 100%;
   font-weight: regular;

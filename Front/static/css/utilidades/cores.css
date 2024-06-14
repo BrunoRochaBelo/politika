@@ -1,26 +1,26 @@
 :root {
   /* Textos */
   --txt-principal: hsl(0, 0%, 98%); /* Texto Principal */
-  --txt-secundario: hsl(0, 0%, 85%); /* Texto Secundário */
-  --txt-destaque: hsl(0, 0%, 80%); /* Texto de Destaque */
+  --txt-secundario: hsl(210, 12%, 86%); /* Texto Secundário */
+  --txt-destaque: hsl(210, 0%, 80%); /* Texto de Destaque */
 
   /* Fundos */
-  --background-principal: hsl(210, 30%, 8%); /* Fundo Principal */
-  --container: hsl(210, 30%, 15%); /* Container */
-  --modal-background: hsl(210, 30%, 25%); /* Fundo de Modal */
+  --background-principal: hsl(210, 31%, 8%); /* Fundo Principal */
+  --container: hsl(210, 31%, 15%); /* Container */
+  --modal-background: hsl(210, 31%, 25%); /* Fundo de Modal */
   --bordas: hsl(210, 20%, 35%); /* Bordas */
   --divisores: hsl(210, 20%, 45%); /* Divisores */
 
   /* Cards */
-  --card-fundo: hsl(210, 25%, 20%); /* Fundo de Cards */
-  --card-borda: hsl(210, 25%, 23%); /* Borda de Card */
-  --card-hover: hsl(210, 25%, 30%); /* Hover do Card */
-  --card-aberto-fundo: hsl(210, 25%, 15%); /* Fundo de Cards abertos */
-  --card-alt: hsl(210, 25%, 15%); /* Fundo de Cards alternativos */
+  --card-fundo: hsl(210, 26%, 21%); /* Fundo de Cards */
+  --card-borda: hsl(210, 26%, 23%); /* Borda de Card */
+  --card-hover: hsl(210, 26%, 31%); /* Hover do Card */
+  --card-aberto-fundo: hsl(210, 26%, 12%); /* Fundo de Cards abertos */
+  --card-alt: hsl(210, 26%, 15%); /* Fundo de Cards alternativos */
 
   /* Cores para detalhes e destaques */
-  --detalhes-1: hsl(210, 25%, 25%); /* Detalhes 1 */
-  --detalhes-3: hsl(210, 25%, 20%); /* Detalhes 3 */
+  --detalhes-1: hsl(210, 26%, 26%); /* Detalhes 1 */
+  --detalhes-3: hsl(210, 26%, 15%); /* Detalhes 3 */
   --cor-p1: hsl(150, 75%, 45%); /* Cor principal 1 */
   --cor-p2: hsl(160, 60%, 50%); /* Cor principal 2 */
   --cor-s1: hsl(150, 40%, 70%); /* Cor secundaria 1 */
@@ -53,13 +53,17 @@
   --aviso: hsl(30, 90%, 50%); /* Mensagem de Aviso */
   --informacao: hsl(210, 50%, 50%); /* Mensagem de Informação */
 
-  /* Cores da marca */
-  --cor-marca: linear-gradient(
-    to right,
-    hsl(150, 60%, 45%),
-    hsl(160, 60%, 50%),
-    hsl(160, 50%, 50%)
-  ); /* Cor de Marca */
+  /* Campos de formulário */
+  --input-background: hsl(210, 25%, 15%); /* Fundo de input */
+  --input-border: hsl(210, 20%, 35%); /* Borda de input */
+  --input-text: hsl(0, 0%, 98%); /* Texto de input */
+  --input-placeholder: hsl(210, 20%, 50%); /* Placeholder de input */
+  --input-bg-empty: hsl(210, 25%, 18%); /* Cor de fundo para campo vazio */
+  --input-bg-filled: hsl(
+    210,
+    25%,
+    12%
+  ); /* Cor de fundo para campo preenchido */
 
   --cor-marc1: rgba(229, 115, 115);
   --cor-marc2: rgba(255, 138, 101);

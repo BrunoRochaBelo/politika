@@ -8,7 +8,7 @@
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
   <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
-  <title>Cadastro de contato</title>
+  <title>Novo contato</title>
   <meta name="description" content="Cadastrar novo contato">
 </head>
 
@@ -196,11 +196,6 @@
                     <input type="text" id="local_votacao" name="local_votacao">
                   </div>
                 </fieldset>
-                <div class="botoes">
-                  <div class="btn-outline-principal"><a href="contatos.html">Cancelar</a></div>
-                  <!-- <button type="button" class="btn-outline-principal" id="btnFechar">Fechar</button> -->
-                  <button type="button" class="btn-principal" onclick="avancar()">Avançar</button>
-                </div>
               </div>
             </div>
           </div>
@@ -296,10 +291,6 @@
                     </label>
                   </div>
                 </div>
-                <div class="botoes">
-                  <button type="button" class="btn-outline-principal" onclick="voltar()">Voltar</button>
-                  <button type="button" class="btn-principal" onclick="avancar()">Avançar</button>
-                </div>
               </div>
             </div>
           </div>
@@ -347,34 +338,34 @@
                       <input type="radio" id="nao" name="resposta" value="nao">
                       <label for="nao">Não</label>
                     </div>
-                    <div class="campo">
-                      <label for="religiao">Religião</label>
-                      <input type="text" id="religiao" name="religiao">
-                    </div>
-                    <div class="campo">
-                      <label for="profissao">Profissão</label>
-                      <input type="text" id="profissao" name="profissao">
-                    </div>
-                    <div class="campo">
-                      <label for="cargo_comissionado">Cargo Comissionado</label>
-                      <div class="switch-container">
-                        <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="toggleCamposCargoComissionado()">
-                        <label for="cargo_comissionado_switch" class="switch-label">
-                          <span class="switch-inner"></span>
-                          <span class="switch-switch"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div id="camposCargoComissionado" style="display: none;">
-                      <div class="campo">
-                        <label for="orgao_lotacao">Órgão de Lotação</label>
-                        <input type="text" id="orgao_lotacao" name="orgao_lotacao">
-                      </div>
+                  </div>
+                  <div class="campo">
+                    <label for="religiao">Religião</label>
+                    <input type="text" id="religiao" name="religiao">
+                  </div>
+                  <div class="campo">
+                    <label for="profissao">Profissão</label>
+                    <input type="text" id="profissao" name="profissao">
+                  </div>
+                  <div class="campo">
+                    <label for="cargo_comissionado">Cargo Comissionado</label>
+                    <div class="switch-container">
+                      <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="toggleCamposCargoComissionado()">
+                      <label for="cargo_comissionado_switch" class="switch-label">
+                        <span class="switch-inner"></span>
+                        <span class="switch-switch"></span>
+                      </label>
                     </div>
                   </div>
+                  <div id="camposCargoComissionado" style="display: none;">
+                    <div class="campo">
+                      <label for="orgao_lotacao">Órgão de Lotação</label>
+                      <input type="text" id="orgao_lotacao" name="orgao_lotacao">
+                    </div>
+                  </div>
+
                 </fieldset>
                 <div class="botoes">
-                  <button type="button" class="btn-outline-principal" onclick="voltar()">Voltar</button>
                   <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
                 </div>
               </div>

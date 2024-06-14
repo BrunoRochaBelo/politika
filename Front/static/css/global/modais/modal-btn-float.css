@@ -39,7 +39,7 @@
   font-weight: 300;
   padding: 0.5rem;
   border-bottom: 1px solid var(--background-principal);
-  background: var(--cor-p2);
+  background: var(--cor-p1);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -59,7 +59,7 @@
   padding: 12px 20px;
 }
 .modal-btn-floating-body li:hover {
-  background: var(--cor-p2);
+  background: var(--cor-p1);
   color: var(--modal-background);
 }
 
@@ -70,10 +70,10 @@
   right: 30px;
   width: 75px;
   height: 75px;
-  background: var(--cor-p2);
+  background: var(--cor-p1);
   color: hsl(80, 99%, 12%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  border: 1px solid var(--cor-p2);
+  border: 1px solid var(--cor-p1);
   border-radius: 15px;
   font-size: 2rem;
   cursor: pointer;
@@ -86,7 +86,7 @@
   z-index: 2001;
 }
 .floatingButton:hover {
-  border: 1px solid var(--cor-p2);
+  border: 1px solid var(--cor-p1);
   box-shadow: 0 0 1px #edfcb6, 0 0 2px #edfcb6, 0 0 3px #edfcb6, 0 0 4px #edfcb6;
 }
 .floatingButton:active {
@@ -112,10 +112,10 @@
     right: 23px;
     width: 63px;
     height: 63px;
-    background: var(--cor-p2);
+    background: var(--cor-p1);
     color: hsl(80, 99%, 12%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--cor-p2);
+    border: 1px solid var(--cor-p1);
     border-radius: 15px;
     font-size: 1.5rem;
     cursor: pointer;
