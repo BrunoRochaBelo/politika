@@ -28,6 +28,7 @@
   border-radius: 12px;
   color: var(--txt-principal);
 }
+
 .nav-calendar .item1 {
   justify-self: start;
   align-self: center;
@@ -36,12 +37,14 @@
   border-radius: 5px;
   background: var(--card-fundo);
 }
+
 .nav-calendar .item2 {
-  justify-self: center;
+  justify-self: end;
   align-self: center;
   padding: 5px 7px;
   margin-right: 3px;
 }
+
 .nav-calendar .item3 {
   padding: 0px;
 }
@@ -55,18 +58,23 @@
 .dia-semana {
   text-align: center;
   padding: 5px;
-  color: var(--txt-principal);
+  color: var(--placeholder);
   background: var(--card-fundo);
   border: 1px solid transparent;
   cursor: pointer;
-
   transition: background-color 0.5s ease;
   font-size: 12px;
   font-weight: 300;
   border-radius: 50%;
+  width: 40px; /* Largura fixa reduzida */
+  height: 40px; /* Altura fixa reduzida */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .dia-visualize {
-  color: var(--bordas) !important;
+  color: var(--txt-contraste) !important;
   background: var(--cor-p2) !important;
   border: 1px solid var(--cor-p2) !important;
   border-radius: 50% !important;
@@ -135,6 +143,7 @@
   background: var(--card-hover);
   border-radius: 50% !important;
 }
+
 .filtro-tarefa:hover {
   background: var(--card-hover);
   border-radius: 5px !important;
@@ -180,30 +189,6 @@
   margin: 0px;
 }
 
-.filtro-tarefa {
-  text-align: center;
-  padding: 10px 15px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  color: var(--placeholder);
-  cursor: pointer;
-  background: var(--card-fundo);
-  font-size: 12px;
-  font-weight: 300;
-}
-.filtro-visualize {
-  color: var(--bordas) !important;
-  background: var(--cor-p2) !important;
-  border: 1px solid var(--cor-p2) !important;
-  border-radius: 5px !important;
-}
-.nav-calendar .tarefa {
-  padding: 0px;
-  gap: 6px;
-  border-radius: 0px;
-  background: transparent;
-}
-
 .area-template-cf.aniversariantes {
   background: var(--card-fundo);
   margin: 0px;
@@ -223,6 +208,30 @@
 }
 .area-template-cf.aniversariantes .btn-recuar-expandir-alt:hover {
   border-color: transparent;
+}
+
+.filtro-tarefa {
+  text-align: center;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--placeholder);
+  cursor: pointer;
+  background: var(--card-fundo);
+  font-size: 12px;
+  font-weight: 300;
+}
+.filtro-visualize {
+  color: var(--txt-contraste) !important;
+  background: var(--cor-p2) !important;
+  border: 1px solid var(--cor-p2) !important;
+  border-radius: 5px !important;
+}
+.nav-calendar .tarefa {
+  padding: 0px;
+  gap: 6px;
+  border-radius: 0px;
+  background: transparent;
 }
 
 .fade-in {
@@ -251,29 +260,26 @@
 @media only screen and (max-width: 900px) {
   .nav-calendar .item1 {
     padding: 5px 10px;
-    background: var(--container);
   }
+
   .nav-calendar .item2 {
     padding: 3px 5px;
     margin-right: 3px;
     background: var(--modal-background);
   }
+
   .nav-calendar .item3 {
     padding: 3px 0px;
-  }
-
-  .nav-calendar .tarefa {
-    padding: 8px 2px;
-    gap: 6px;
-    border-radius: 0px;
-    background: transparent;
   }
 
   .dia-semana {
     padding: 3px;
     font-size: 11px;
     font-weight: 300;
+    width: 30px;
+    height: 30px;
   }
+
   .dia-semana h3 {
     font-size: 11px;
     font-weight: 400;
@@ -282,6 +288,13 @@
   .change-semana {
     padding: auto 10px;
     background: var(--container);
+  }
+
+  .nav-calendar .tarefa {
+    padding: 8px 2px;
+    gap: 6px;
+    border-radius: 0px;
+    background: transparent;
   }
 
   .filtro-tarefa {

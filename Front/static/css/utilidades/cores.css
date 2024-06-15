@@ -1,69 +1,98 @@
 :root {
   /* Textos */
-  --txt-principal: hsl(0, 0%, 98%); /* Texto Principal */
-  --txt-secundario: hsl(210, 12%, 86%); /* Texto Secundário */
-  --txt-destaque: hsl(210, 0%, 80%); /* Texto de Destaque */
+  --txt-principal: hsl(212, 10%, 95%); /* Texto Principal */
+  --txt-secundario: hsl(212, 10%, 85%); /* Texto Secundário */
+  --txt-destaque: hsl(200, 100%, 65%); /* Texto de Destaque */
+  --txt-contraste: hsl(212, 10%, 15%); /* Texto de Contraste */
 
   /* Fundos */
-  --background-principal: hsl(210, 31%, 8%); /* Fundo Principal */
-  --container: hsl(210, 31%, 15%); /* Container */
-  --modal-background: hsl(210, 31%, 25%); /* Fundo de Modal */
-  --bordas: hsl(210, 20%, 35%); /* Bordas */
-  --divisores: hsl(210, 20%, 45%); /* Divisores */
+  --background-principal: hsl(210, 25%, 2%); /* Fundo Principal */
+  --container: hsl(210, 23%, 7%); /* Container */
+  --modal-background: hsl(210, 10%, 15%); /* Fundo de Modal */
+  --bordas: hsl(210, 10%, 22%); /* Bordas */
+  --divisores: hsl(210, 10%, 27%); /* Divisores */
 
   /* Cards */
-  --card-fundo: hsl(210, 26%, 21%); /* Fundo de Cards */
-  --card-borda: hsl(210, 26%, 23%); /* Borda de Card */
-  --card-hover: hsl(210, 26%, 31%); /* Hover do Card */
-  --card-aberto-fundo: hsl(210, 26%, 12%); /* Fundo de Cards abertos */
-  --card-alt: hsl(210, 26%, 15%); /* Fundo de Cards alternativos */
+  --card-fundo: hsl(210, 22%, 12%); /* Fundo de Cards */
+  --card-borda: hsl(210, 22%, 14%); /* Borda de Card */
+  --card-hover: hsl(210, 22%, 20%); /* Hover do Card */
+  --card-aberto-fundo: hsl(210, 40%, 15%); /* Fundo de Cards Abertos */
+  --card-alt: hsl(210, 22%, 18%); /* Fundo de Cards Alternativos */
 
   /* Cores para detalhes e destaques */
-  --detalhes-1: hsl(210, 26%, 26%); /* Detalhes 1 */
-  --detalhes-3: hsl(210, 26%, 15%); /* Detalhes 3 */
-  --cor-p1: hsl(150, 75%, 45%); /* Cor principal 1 */
-  --cor-p2: hsl(160, 60%, 50%); /* Cor principal 2 */
-  --cor-s1: hsl(150, 40%, 70%); /* Cor secundaria 1 */
-  --cor-s2: hsl(160, 40%, 60%); /* Cor secundaria 2 */
+  --detalhes-1: hsl(210, 22%, 14%); /* Detalhes 1 */
+  --detalhes-3: hsl(210, 40%, 17%); /* Detalhes 3 */
+  --cor-p1: hsl(212, 50%, 50%); /* Cor Principal 1 */
+  --cor-p2: hsl(200, 50%, 55%); /* Cor Principal 2 */
+  --cor-s1: hsl(220, 20%, 60%); /* Cor Secundária 1 */
+  --cor-s2: hsl(212, 20%, 70%); /* Cor Secundária 2 */
 
   /* Botão Primário */
-  --btn-principal: hsl(150, 60%, 40%); /* Fundo do Botão Primário */
-  --btn-principal-hover: hsl(150, 60%, 45%); /* Hover do Botão Primário */
-  --btn-principal-destaque: hsl(150, 60%, 50%); /* Destaque do Botão Primário */
+  --btn-principal: hsl(212, 50%, 50%); /* Fundo do Botão Primário */
+  --btn-principal-hover: hsl(212, 50%, 55%); /* Hover do Botão Primário */
+  --btn-principal-destaque: hsl(200, 50%, 60%); /* Destaque do Botão Primário */
 
   /* Botão Secundário */
-  --btn-secundario: hsl(160, 50%, 45%); /* Fundo do Botão Secundário */
-  --btn-secundario-hover: hsl(160, 50%, 50%); /* Hover do Botão Secundário */
+  --btn-secundario: hsl(220, 50%, 60%); /* Fundo do Botão Secundário */
+  --btn-secundario-hover: hsl(220, 50%, 65%); /* Hover do Botão Secundário */
   --btn-secundario-destaque: hsl(
-    160,
-    50%,
-    55%
+    220,
+    20%,
+    70%
   ); /* Destaque do Botão Secundário */
 
   /* Botão Alternativo */
-  --btn-alt: hsl(0, 0%, 95%); /* Fundo do Botão Alternativo */
-  --btn-alt-text: hsl(210, 20%, 25%); /* Texto do Botão Alternativo */
+  --btn-alt: hsl(210, 10%, 90%); /* Fundo do Botão Alternativo */
+  --btn-alt-text: hsl(210, 10%, 20%); /* Texto do Botão Alternativo */
 
   /* Cores de comunicação */
-  --link: hsl(150, 50%, 45%); /* Links */
-  --link-hover: hsl(150, 50%, 55%); /* Hover dos Links */
-  --placeholder: hsl(210, 20%, 50%); /* Placeholder */
-  --sucesso: hsl(120, 40%, 50%); /* Mensagem de Sucesso */
-  --erro: hsl(0, 70%, 50%); /* Mensagem de Erro */
-  --aviso: hsl(30, 90%, 50%); /* Mensagem de Aviso */
-  --informacao: hsl(210, 50%, 50%); /* Mensagem de Informação */
+  --link: hsl(212, 50%, 55%); /* Links */
+  --link-hover: hsl(212, 50%, 60%); /* Hover dos Links */
+  --placeholder: hsl(200, 10%, 50%); /* Placeholder */
+  --sucesso: hsl(140, 50%, 60%); /* Mensagem de Sucesso */
+  --erro: hsl(0, 70%, 60%); /* Mensagem de Erro */
+  --aviso: hsl(40, 70%, 60%); /* Mensagem de Aviso */
+  --informacao: hsl(212, 50%, 60%); /* Mensagem de Informação */
+
+  /* Outros */
+  --scrollbar-bg: hsl(210, 10%, 10%); /* Fundo da Scrollbar */
+  --scrollbar-thumb: hsl(210, 10%, 20%); /* Thumb da Scrollbar */
+  --scrollbar-thumb-hover: hsl(210, 10%, 25%); /* Hover do Thumb da Scrollbar */
 
   /* Campos de formulário */
-  --input-background: hsl(210, 25%, 15%); /* Fundo de input */
-  --input-border: hsl(210, 20%, 35%); /* Borda de input */
-  --input-text: hsl(0, 0%, 98%); /* Texto de input */
-  --input-placeholder: hsl(210, 20%, 50%); /* Placeholder de input */
-  --input-bg-empty: hsl(210, 25%, 18%); /* Cor de fundo para campo vazio */
-  --input-bg-filled: hsl(
-    210,
-    25%,
-    12%
-  ); /* Cor de fundo para campo preenchido */
+  --input-background: hsl(210, 10%, 15%); /* Fundo de Input */
+  --input-border: hsl(210, 10%, 22%); /* Borda de Input */
+  --input-text: hsl(212, 10%, 95%); /* Texto de Input */
+  --input-placeholder: hsl(210, 10%, 50%); /* Placeholder de Input */
+  --input-bg-empty: hsl(210, 10%, 18%); /* Fundo para Campo Vazio */
+  --input-bg-filled: hsl(210, 10%, 13%); /* Fundo para Campo Preenchido */
+
+  /* Cores adicionais para interação com o formulário */
+  --input-focus-border: hsl(212, 50%, 50%); /* Borda de Input em Foco */
+  --input-focus-background: hsl(210, 10%, 13%); /* Fundo de Input em Foco */
+  --input-error-border: hsl(0, 70%, 60%); /* Borda de Input com Erro */
+  --input-error-background: hsl(0, 30%, 20%); /* Fundo de Input com Erro */
+  --input-success-border: hsl(140, 50%, 60%); /* Borda de Input com Sucesso */
+  --input-success-background: hsl(
+    140,
+    50%,
+    20%
+  ); /* Fundo de Input com Sucesso */
+
+  /* Botões e ícones dentro dos inputs */
+  --input-icon: hsl(212, 10%, 80%); /* Ícone dentro do Input */
+  --button-clear: hsl(212, 10%, 90%); /* Botão para Limpar o Campo */
+  --button-clear-hover: hsl(
+    212,
+    10%,
+    80%
+  ); /* Hover do Botão para Limpar o Campo */
+
+  /* Tooltip e mensagens de erro/sucesso para os inputs */
+  --tooltip-background: hsl(212, 10%, 15%); /* Fundo do Tooltip */
+  --tooltip-text: hsl(212, 10%, 95%); /* Texto do Tooltip */
+  --message-error-text: hsl(0, 70%, 90%); /* Texto da Mensagem de Erro */
+  --message-success-text: hsl(140, 50%, 90%); /* Texto da Mensagem de Sucesso */
 
   --cor-marc1: rgba(229, 115, 115);
   --cor-marc2: rgba(255, 138, 101);
@@ -74,7 +103,7 @@
   --cor-marc7: rgba(174, 213, 129);
   --cor-marc8: rgba(129, 199, 132);
   --cor-marc9: rgba(77, 182, 172);
-  --cor-marc10: rgba(77, 210, 225);
+  --cor-marc10: rgba(77, 232, 225);
   --cor-marc11: rgba(79, 195, 247);
   --cor-marc12: rgba(100, 181, 246);
   --cor-marc13: rgba(121, 134, 203);
