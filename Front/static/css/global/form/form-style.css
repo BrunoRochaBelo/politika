@@ -4,9 +4,10 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  background-color: var(--modal-background);
+  background-color: var(--form-background);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
 }
 
 .area-template-cbf-content {
@@ -28,7 +29,7 @@ legend {
 
 .campo {
   margin-bottom: 10px;
-  background: var(--modal-background);
+  background: var(--form-background);
   padding: 10px;
   border-radius: 5px;
   gap: 5px;
@@ -42,8 +43,8 @@ legend {
   display: block;
   font-size: 12px;
   font-weight: 400;
-  margin-bottom: 5px;
-  color: var(--placeholder);
+  margin-bottom: 7px;
+  color: var(--txt-subtitulo);
 }
 
 .campo input,
@@ -51,12 +52,15 @@ legend {
 .campo textarea {
   width: 100%;
   box-sizing: border-box;
-  padding: 12px;
+  padding: 15px;
   color: var(--txt-principal);
   background: var(--input-bg-empty);
   border: 1px solid var(--input-border);
-  border-radius: 5px;
+  border-radius: 40px;
   transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+.campo textarea {
+  border-radius: 15px;
 }
 
 .campo input[type="file"] {
@@ -86,7 +90,7 @@ legend {
 }
 
 .campo ::placeholder {
-  color: var(--placeholder);
+  color: var(--input-placeholder);
 }
 
 .campo input:focus,
@@ -128,50 +132,45 @@ legend {
   background: var(--card-hover);
 }
 
-.header-form .close {
-  top: 5px;
-}
-
 label + .form-checkbox {
   position: relative;
   padding-left: 60px;
   cursor: pointer;
   display: inline-block;
-  color: #666;
+  color: var(--txt-subtitulo);
 }
 
 label + .form-checkbox:before {
   content: "";
   position: absolute;
   left: 0;
-  top: -16px;
+  top: -2px;
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: var(--container);
+  background: var(--card-fundo);
   transition: background 0.2s;
 }
 
 label + .form-checkbox:checked:before {
-  background: var(--cor-p1);
+  background: var(--cor-p2);
 }
 
 label + .form-checkbox:after {
   content: "";
   position: absolute;
-  left: 1px;
-  top: -15px;
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-  background: var(--modal-background);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  left: 2px;
+  top: 0px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: var(--input-icon);
   transition: left 0.2s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 label + .form-checkbox:checked:after {
   left: 27px;
-  background: var(--card-borda);
 }
 
 .card-header .item {
@@ -202,12 +201,13 @@ form span {
 
 .botoes {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 50px;
   width: 100%;
   font-weight: 400;
   font-size: 12px;
 }
+
 .botoes .btn-outline-principal,
 .botoes .btn-principal {
   width: 30%;
@@ -221,7 +221,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 /* Responsivo */
 @media only screen and (max-width: 900px) {
   .form {
-    background-color: var(--modal-background);
+    background-color: var(--form-background);
     border: none;
   }
 
@@ -253,7 +253,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  border: 2px solid var(--cor-s2);
+  border: 2px solid var(--input-bg-filled);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -274,11 +274,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .radio-button-group input[type="radio"]:checked + label {
   background-color: var(--cor-p1);
+  border: 2px solid var(--cor-p1);
   color: var(--txt-principal);
 }
 
 .radio-button-group label:hover {
-  background-color: var(--cor-s2);
+  background-color: var(--input-bg-empty);
   color: var(--txt-principal);
 }
 
@@ -296,7 +297,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .checkbox-button-group label {
   padding: 10px 20px;
-  border: 2px solid var(--cor-s2);
+  border: 2px solid var(--input-bg-filled);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -305,10 +306,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .checkbox-button-group input[type="checkbox"]:checked + label {
   background-color: var(--cor-p1);
+  border: 2px solid var(--cor-p1);
   color: var(--txt-principal);
 }
 
 .checkbox-button-group label:hover {
-  background-color: var(--cor-s2);
+  background-color: var(--input-bg-empty);
   color: var(--txt-principal);
 }

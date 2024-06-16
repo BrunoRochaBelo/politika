@@ -95,7 +95,7 @@
   margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--detalhes-3) !important;
+  border: 1px solid var(--detalhe-3) !important;
   color: var(--txt-principal);
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"

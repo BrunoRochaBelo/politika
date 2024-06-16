@@ -22,8 +22,8 @@
   top: 51px;
   right: 1rem;
   color: var(--txt-secundario);
-  background: var(--modal-background);
-  border: 1px solid var(--container);
+  background: var(--fundo-modal);
+  border: 1px solid var(--fundo-container);
   padding: 1rem;
   gap: 5px;
   border-radius: 12px;

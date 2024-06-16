@@ -72,7 +72,7 @@
   background-clip: text;
   -webkit-text-fill-color: #7a44e7;
   border: 1px solid transparent;
-  background: var(--container);
+  background: var(--fundo-container);
 }
 .header-gc-nav-template a:hover img {
   background: radial-gradient(

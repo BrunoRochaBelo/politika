@@ -33,9 +33,10 @@
   border: 1px solid transparent;
 }
 .home-header-user:hover {
-  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
-    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
-    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
+  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
+    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3), inset 0 0 1px var(--cor-p3),
+    inset 0 0 2px var(--cor-p3), inset 0 0 3px var(--cor-p3),
+    inset 0 0 4px var(--cor-p3);
   border: 1px solid var(--btn-principal-destaque);
 }
 

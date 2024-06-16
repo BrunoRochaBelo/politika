@@ -182,7 +182,7 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 20px;
-  border: 1px solid var(--cor-p2);
+  border: 1px solid var(--btn-secundario);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -192,7 +192,7 @@
 }
 .btn-filtro-pesq-title {
   font-size: 14px;
-  color: var(--txt-principal);
+  color: var(--btn-secundario-destaque);
   margin-right: 15px;
 }
 /* Estilo para o "x" do botão filtro */
@@ -207,7 +207,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--cor-p2);
+  color: var(--btn-secundario-destaque);
   font-size: 18px;
   border: none;
 }
@@ -215,6 +215,7 @@
   color: #c61818; /* Cor do texto ao passar o mouse */
 }
 .remover-filtro:hover + .btn-filtro-pesq {
-  border: 1px solid var(--btn-principal-destaque);
-  box-shadow: 0 0 1px #edfcb6, 0 0 2px #edfcb6, 0 0 3px #edfcb6, 0 0 4px #edfcb6;
+  border: 1px solid var(--btn-secundario-destaque);
+  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
+    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3);
 }

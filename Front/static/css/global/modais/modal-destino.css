@@ -12,10 +12,10 @@
 }
 
 .modal-destino-content {
-  background: var(--modal-background);
+  background: var(--fundo-modal);
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid var(--bordas);
+  border: 1px solid var(--borda);
   border-radius: 12px;
   width: 50%;
   position: relative;
@@ -27,7 +27,7 @@
   color: var(--cor-s1);
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--divisores);
+  border-bottom: 1px solid var(--divisor);
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -35,13 +35,6 @@
 .modal-header h2 {
   margin: 0;
   font-size: 24px;
-}
-
-/* Estilização para o botão de fechar */
-.close {
-  cursor: pointer;
-  font-size: 28px;
-  font-weight: bold;
 }
 
 /* Estilos existentes */
@@ -80,9 +73,10 @@
 }
 .search-input-dest:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px #d4ff5258, 0 0 2px #d4ff5258, 0 0 3px #d4ff5258,
-    0 0 4px #d4ff5258, inset 0 0 1px #d4ff5258, inset 0 0 2px #d4ff5258,
-    inset 0 0 3px #d4ff5258, inset 0 0 4px #d4ff5258;
+  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
+    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3), inset 0 0 1px var(--cor-p3),
+    inset 0 0 2px var(--cor-p3), inset 0 0 3px var(--cor-p3),
+    inset 0 0 4px var(--cor-p3);
   border: 1px solid var(--btn-principal-destaque);
 }
 .search-input-dest:hover::placeholder {
@@ -104,12 +98,14 @@
 }
 .form-group.item1 .card-select-m,
 .form-group.item2 .card-select-m {
-  border-radius: 5px;
+  border-radius: 40px;
   margin-bottom: 15px;
+  padding: 15px;
 }
 .form-group.item3 .card-select-m {
-  border-radius: 5px;
+  border-radius: 40px;
   margin-bottom: 30px;
+  padding: 15px;
 }
 .form-group.item3 input::placeholder {
   color: var(--placeholder);

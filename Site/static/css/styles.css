@@ -1,31 +1,31 @@
 :root {
   --txt-principal: #eff4f8; /* Texto Principal */
-  --txt-secundario: #c9dbef; /* Texto Secundário - mais claro */
+  --txt-secundario: #c9dbef; /* Texto Secundário */
   --txt-alt: #a8c0d8; /* Texto Alternativo */
   --background-principal: #111e32; /* Fundo Principal */
   --background-secundario: #010814; /* Fundo Secundário */
-  --container: #010114; /* Container */
-  --bordas: #0a111e; /* Bordas */
-  --divisores: #6b7f9e; /* Divisores */
+  --fundo-container: #131d2e; /* Container */
+  --borda: #0a111e; /* Bordas */
+  --divisor: #6b7f9e; /* Divisores */
   --card-fundo: #171f3e; /* Fundo de Cards */
   --card-borda: #192a44; /* Borda de Card */
   --card-hover: #1b3861; /* Hover do Card */
-  --modal-background: #171d3e; /* Fundo de Modal */
+  --fundo-modal: #171d3e; /* Fundo de Modal */
   --btn-principal: #8146f5; /* Botão Primário */
-  --btn-principal-hover: #844bf7; /* Hover do Botão Primário - mais claro */
-  --btn-principal-destaque: #a57ff0; /* Destaque do Botão Primário */
+  --btn-principal-hover: #a57ff0; /* Hover do Botão Primário */
+  --btn-principal-destaque: #be92f8; /* Destaque do Botão Primário */
   --btn-secundario: #2f75de; /* Botão Secundário */
   --btn-secundario-hover: #1d5ebf; /* Hover do Botão Secundário */
   --btn-secundario-destaque: #accbf8; /* Destaque do Botão Secundário */
   --btn-alt: #c4d7f4; /* Botão Alternativo */
-  --detalhes-1: #1d2c46; /* Detalhes 1 */
+  --detalhe-1: #1d2c46; /* Detalhes 1 */
   --detalhes-2: #c3e8ff; /* Detalhes 2 */
-  --detalhes-3: #a5d0f5; /* Detalhes 3 */
+  --detalhe-3: #a5d0f5; /* Detalhes 3 */
   --destaque-1: #131d2e; /* Destaque 1 */
   --cor-p2: #378dd3; /* Destaque 2 */
   --link: #8049ee; /* Links */
   --link-hover: #5ce1e6; /* Hover dos Links */
-  --placeholder: #030a18; /* Placeholder */
+  --placeholder: #1a2437; /* Placeholder */
   --sucesso: #4caf50; /* Mensagem de Sucesso */
   --erro: #f44336; /* Mensagem de Erro */
   --aviso: #ff9800; /* Mensagem de Aviso */
@@ -247,7 +247,7 @@ header blockquote {
   grid-gap: 20px;
 }
 .beneficio {
-  background-color: var(--container);
+  background-color: var(--fundo-container);
   border: 1px solid #10203c93;
   padding: 20px;
   border-radius: 10px;
@@ -271,7 +271,7 @@ header blockquote {
   gap: 20px;
 }
 .grid-item {
-  background: var(--container);
+  background: var(--fundo-container);
   border: 1px solid #10203c93;
   padding: 20px;
   border-radius: 10px;
@@ -315,7 +315,7 @@ header blockquote {
   border-radius: 5px;
   margin-bottom: 7px;
   border: 1px solid #10203c93;
-  background: var(--modal-background);
+  background: var(--fundo-modal);
 }
 #como-potencializa ul li:hover {
   border: 1px solid var(--btn-principal-destaque);
@@ -341,7 +341,7 @@ header blockquote {
   font-weight: bold;
   padding: 15px;
   color: var(--btn-principal-destaque);
-  background: var(--container);
+  background: var(--fundo-container);
   border: 1px solid #10203c93;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -352,7 +352,7 @@ header blockquote {
   border: 1px solid var(--btn-principal-destaque);
 }
 .recurso-item.active {
-  background: var(--container);
+  background: var(--fundo-container);
   backdrop-filter: blur(15px);
   color: var(--btn-principal-hover);
   font-size: 120%;
@@ -705,18 +705,18 @@ button:hover {
     font-weight: bold;
     padding: 15px;
     color: var(--btn-principal-destaque);
-    background: var(--container);
+    background: var(--fundo-container);
     border: 1px solid #10203c93;
     border-radius: 5px;
     margin-bottom: 7px;
     transition: background-color 0.3s, color 0.3s;
   }
   .recurso-item:hover {
-    background: var(--container);
+    background: var(--fundo-container);
     color: var(--link);
   }
   .recurso-item.active {
-    background: var(--container);
+    background: var(--fundo-container);
     backdrop-filter: blur(15px);
     color: var(--btn-principal-hover);
     font-size: 120%;

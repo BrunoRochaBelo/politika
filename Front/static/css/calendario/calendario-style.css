@@ -1,6 +1,7 @@
 .calendario-large-card-editar .btn-outline-principal,
 .calendario-small-card-editar .btn-outline-principal,
-.tarefa-small-card-editar .btn-outline-principal {
+.tarefa-small-card-editar .btn-outline-principal,
+.tarefa-medium-card-editar .btn-outline-principal {
   width: auto;
   font-weight: regular;
   font-size: 12px;
@@ -12,7 +13,8 @@
 }
 .calendario-large-card-editar .btn-outline-principal:hover,
 .calendario-small-card-editar .btn-outline-principal:hover,
-.tarefa-small-card-editar .btn-outline-principal:hover {
+.tarefa-small-card-editar .btn-outline-principal:hover,
+.tarefa-medium-card-editar .btn-outline-principal:hover {
   border: 1px solid var(--btn-secundario-destaque);
   background: var(--btn-secundario-hover);
   color: var(--txt-principal);
@@ -58,7 +60,7 @@
 .dia-semana {
   text-align: center;
   padding: 5px;
-  color: var(--placeholder);
+  color: var(--txt-secundario);
   background: var(--card-fundo);
   border: 1px solid transparent;
   cursor: pointer;
@@ -74,7 +76,7 @@
   align-items: center;
 }
 .dia-visualize {
-  color: var(--txt-contraste) !important;
+  color: var(--txt-contraste-alt) !important;
   background: var(--cor-p2) !important;
   border: 1px solid var(--cor-p2) !important;
   border-radius: 50% !important;
@@ -94,10 +96,10 @@
   background: var(--card-fundo);
 }
 .hoje:hover {
-  border: 1px solid #edfcb6;
-  border-top: 5px solid #edfcb6;
+  border: 1px solid var(--cor-p3);
+  border-top: 5px solid var(--cor-p3);
   color: var(--txt-secundario);
-  box-shadow: 0 0 2px #edfcb6, 0 0 4px #edfcb6;
+  box-shadow: 0 0 2px var(--cor-p3), 0 0 4px var(--cor-p3);
 }
 
 .change-semana {
@@ -164,11 +166,11 @@
 }
 .btn-calendario:hover {
   color: var(--cor-s1);
-  border-color: var(--bordas);
+  border-color: var(--borda);
   border-radius: 5px;
 }
 .btn-calendario:active {
-  background-color: darken(var(--container), 10%);
+  background-color: darken(var(--fundo-container), 10%);
   color: var(--txt-secundario);
   border-color: var(--txt-secundario);
 }
@@ -196,7 +198,7 @@
   border: 1px solid transparent;
 }
 .area-template-cf-content.area-aniversaiantes .card-xs {
-  background: var(--modal-background);
+  background: var(--fundo-modal);
   border: 1px solid var(--card-borda);
 }
 .area-template-cf.aniversariantes:hover {
@@ -215,14 +217,14 @@
   padding: 10px 15px;
   border: 1px solid transparent;
   border-radius: 5px;
-  color: var(--placeholder);
+  color: var(--txt-secundario);
   cursor: pointer;
   background: var(--card-fundo);
   font-size: 12px;
   font-weight: 300;
 }
 .filtro-visualize {
-  color: var(--txt-contraste) !important;
+  color: var(--txt-contraste-alt) !important;
   background: var(--cor-p2) !important;
   border: 1px solid var(--cor-p2) !important;
   border-radius: 5px !important;
@@ -265,7 +267,7 @@
   .nav-calendar .item2 {
     padding: 3px 5px;
     margin-right: 3px;
-    background: var(--modal-background);
+    background: var(--fundo-modal);
   }
 
   .nav-calendar .item3 {
@@ -287,7 +289,7 @@
 
   .change-semana {
     padding: auto 10px;
-    background: var(--container);
+    background: var(--fundo-container);
   }
 
   .nav-calendar .tarefa {
@@ -319,7 +321,7 @@
     background: var(--card-fundo);
   }
   .area-template-cf-content.area-aniversaiantes .card-xs:hover {
-    background: var(--modal-background);
+    background: var(--fundo-modal);
     border: 1px solid var(--card-borda);
   }
 }

@@ -12,8 +12,8 @@ body {
   overflow: auto;
   /*background: linear-gradient(to right bottom, #5631a0, rgb(82, 78, 185));*/
   background: var(--background-principal);
-  scrollbar-face-color: #053c7a;
-  scrollbar-track-color: #000000;
+  scrollbar-face-color: var(--scrollbar-bg);
+  scrollbar-track-color: var(--scrollbar-bg);
 }
 body.offline {
   background-color: #f0f0f0;
@@ -30,15 +30,16 @@ body.offline footer {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--scrollbar-bg);
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #053c7a;
+  background: var(--scrollbar-thumb);
   border-radius: 9px;
-  border: 2px solid #000000;
+  border: 2px solid var(--scrollbar-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2c6cb5;
+  background: var(--scrollbar-thumb-hover);
 }
 /* Adicione os prefixos para compatibilidade com outros navegadores */
 ::-moz-scrollbar {
@@ -46,15 +47,16 @@ body.offline footer {
   height: 10px;
 }
 ::-moz-scrollbar-track {
-  background: #000000;
+  background: var(--scrollbar-bg);
+  border-radius: 5px;
 }
 ::-moz-scrollbar-thumb {
-  background: #053c7a;
+  background: var(--scrollbar-thumb);
   border-radius: 9px;
-  border: 2px solid #000000;
+  border: 2px solid var(--scrollbar-bg);
 }
 ::-moz-scrollbar-thumb:hover {
-  background: #2c6cb5;
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Internet Explorer */
@@ -63,15 +65,16 @@ body.offline footer {
   height: 10px;
 }
 ::-ms-scrollbar-track {
-  background: #000000;
+  background: var(--scrollbar-bg);
+  border-radius: 5px;
 }
 ::-ms-scrollbar-thumb {
-  background: #053c7a;
+  background: var(--scrollbar-thumb);
   border-radius: 9px;
-  border: 2px solid #000000;
+  border: 2px solid var(--scrollbar-bg);
 }
 ::-ms-scrollbar-thumb:hover {
-  background: #2c6cb5;
+  background: var(--scrollbar-thumb-hover);
 }
 
 /*background: var(--cor-marca);
@@ -116,7 +119,7 @@ img {
 
 .link {
   display: inline-block;
-  color: var(--bordas);
+  color: var(--borda);
   font: 500 1.5rem/1.5 "Poppins", sans-serif;
   text-transform: uppercase;
 }

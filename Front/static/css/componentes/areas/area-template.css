@@ -4,8 +4,8 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  height: 100%;
-  background: var(--container);
+  max-height: 100%;
+  background: var(--fundo-container);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 25px;
   padding-bottom: 20px;
@@ -19,7 +19,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--cor-p1);
+  color: var(--txt-titulo);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 5px;
@@ -31,7 +31,7 @@
   padding: 0px;
   height: auto;
   border-radius: 0px;
-  background: var(--container);
+  background: var(--fundo-container);
   border-top: 1px solid var(--background-principal);
 }
 
@@ -56,7 +56,7 @@
   font-weight: 400;
   padding: 10px 20px;
   text-align: left;
-  color: var(--txt-alt);
+  color: var(--txt-subtitulo);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -93,7 +93,7 @@
   font-weight: 350;
   padding: 10px 20px;
   text-align: left;
-  color: var(--txt-alt);
+  color: var(--txt-subtitulo);
   border-radius: 0px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -111,7 +111,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  height: 100%;
+  max-height: 100%;
   grid:
     "area-template-fil-header" auto
     "area-template-fil-content" auto
@@ -122,8 +122,8 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--cor-p1);
-  background: var(--container);
+  color: var(--txt-titulo);
+  background: var(--fundo-container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -136,7 +136,7 @@
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  background: var(--container);
+  background: var(--fundo-container);
   border-top: 1px solid var(--background-principal);
   padding: 20px;
 }
@@ -147,7 +147,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  height: 100%;
+  max-height: 100%;
   grid:
     "area-template-fil-alt-header" auto
     "area-template-fil-alt-content" auto
@@ -158,8 +158,8 @@
   display: grid;
   align-items: center;
   justify-items: space-between;
-  color: var(--cor-p1);
-  background: var(--container);
+  color: var(--txt-titulo);
+  background: var(--fundo-container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -167,7 +167,7 @@
 .area-template-fil-alt-content {
   grid-area: area-template-fil-alt-content;
   overflow-x: hidden;
-  background: var(--container);
+  background: var(--fundo-container);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   border-bottom-left-radius: 25px;
@@ -182,7 +182,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  height: 100%;
+  max-height: 100%;
   grid:
     "area-template-cbf-header" auto
     "area-template-cbf-content" auto
@@ -239,7 +239,7 @@
   /* Area Template padrão*/
   .area-template {
     background: var(--background-principal);
-    border-radius: 0px;
+    border-radius: 25px;
     padding-bottom: 0px;
   }
   .area-template-header {
@@ -256,7 +256,7 @@
   .area-template-content {
     border-radius: 0px;
     border-radius: 25px;
-    background: var(--container);
+    background: var(--fundo-container);
   }
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;
@@ -362,13 +362,13 @@
     overflow-x: auto;
     overflow-y: auto;
     padding: 12px 10px;
-    max-height: auto;
+    max-height: 100%;
     border-radius: 0px;
     border-top: 1px solid var(--background-principal);
   }
 
   .area-template-cbf-content-sem-cb {
-    max-height: auto; /*76vh*/
+    max-height: 100%; /*76vh*/
     border-top: none;
   }
 

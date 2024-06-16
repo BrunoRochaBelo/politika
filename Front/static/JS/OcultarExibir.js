@@ -11,7 +11,7 @@ function createOverlay() {
   overlay.style.left = 0;
   overlay.style.width = "100%";
   overlay.style.height = "100%";
-  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
   overlay.style.zIndex = 1000;
   overlay.style.display = "none";
   document.body.appendChild(overlay);
@@ -57,13 +57,13 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--container)";
+      button.style.color = "var(--fundo-container)";
       mainSidenav.style.height = "auto";
-      area.style.background = "var(--modal-background)";
+      area.style.background = "var(--fundo-modal)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--cor-p1)";
+      areaHeader.style.color = "var(--btn-alt)";
       areaHeader.style.fontSize = "22px";
 
       // Altera o tamanho da .main-sidenav para 98%

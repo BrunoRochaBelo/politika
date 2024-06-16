@@ -87,16 +87,14 @@
 }
 .floatingButton:hover {
   border: 1px solid var(--cor-p1);
-  box-shadow: 0 0 1px #edfcb6, 0 0 2px #edfcb6, 0 0 3px #edfcb6, 0 0 4px #edfcb6;
+  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
+    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3);
 }
 .floatingButton:active {
   border: 1px solid var(--cor-s1);
 }
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
-  .modal-btn-floating-header {
-    border-bottom: 1px solid var(--bordas);
-  }
   .modal-btn-floating-content {
     position: absolute;
     bottom: 140px;

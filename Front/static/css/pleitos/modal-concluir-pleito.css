@@ -11,9 +11,9 @@
 }
 
 .modal-concluir-pleito-content.card-m {
-  background: var(--background-principal);
-  border-radius: 12px;
-  padding: 15px 5px;
+  background: var(--card-aberto-fundo);
+  border-radius: 25px;
+  padding: 20px 5px;
 }
 .modal-concluir-pleito-content {
   position: relative;
@@ -21,7 +21,7 @@
   margin: auto;
   margin-top: 55px;
   padding: 20px;
-  border: 1px solid var(--bordas);
+  border: 1px solid var(--borda);
   min-width: 50%;
   max-width: 80%;
   height: auto;
@@ -31,7 +31,7 @@
 
 .modal-concluir-pleito-template {
   display: grid;
-  color: var(--divisores);
+  color: var(--txt-secundario);
   gap: 3px;
   grid:
     "modal-concluir-pleito-tiposolici modal-concluir-pleito-tiposolici modal-concluir-pleito-dataSolici"
@@ -51,7 +51,7 @@
 }
 .modal-concluir-pleito-tiposolici {
   grid-area: modal-concluir-pleito-tiposolici;
-  border-left: 4px solid var(--container);
+  border-left: 4px solid var(--detalhe-3);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -82,7 +82,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--container);
+  background: var(--detalhe-3);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -162,17 +162,17 @@
   grid-area: modal-concluir-pleito-concluir;
   display: grid;
   justify-items: stretch;
-  gap: 10px;
+  gap: 20px 5px;
   padding: 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border: 1px solid var(--modal-background);
+  border: 1px solid var(--fundo-container);
   font-size: 13px;
   font-weight: 350;
   white-space: wrap;
   word-break: break-all;
-  background: var(--modal-background);
-  border-radius: 12px;
+  background: var(--fundo-container);
+  border-radius: 25px;
   grid:
     "modal-concluir-pleito-concluir-title"
     "modal-concluir-pleito-situacao"
@@ -205,6 +205,7 @@
 
 .modal-concluir-pleito-concluir label {
   color: var(--txt-secundario);
+  margin-bottom: 7px;
 }
 .modal-concluir-pleito-concluir textarea,
 .modal-concluir-pleito-concluir select,
@@ -213,18 +214,18 @@
   box-sizing: border-box;
   padding: 0.9375rem;
   color: var(--txt-principal);
-  background: var(--container);
-  border: 1px solid var(--bordas);
+  background: var(--card-fundo);
+  border: 1px solid var(--input-focus-background);
   border-radius: 5px;
 }
 
 .close {
   position: absolute;
-  padding: 0px 6px;
-  top: 0px;
-  right: 0px;
+  padding: 0 10px;
+  top: 5px;
+  right: 5px;
   color: var(--txt-secundario);
-  border-radius: 4px;
+  border-radius: 50px;
   font-size: 28px;
 }
 .close:hover,
@@ -263,20 +264,20 @@
 /* Responsivo */
 @media only screen and (max-width: 900px) {
   .modal-concluir-pleito-content.card-m {
-    padding: 15px 0px;
-  }
-  .modal-concluir-pleito-salvar {
-    flex-direction: column;
-    gap: 0.625rem;
+    padding: 20px 0px;
   }
   .modal-concluir-pleito-content {
     min-width: 95%;
     max-width: 95%;
     margin-top: 40px;
     padding: 20px 10px;
-    max-height: auto;
+    max-height: 100%;
   }
 
+  .modal-concluir-pleito-salvar {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
   .modal-concluir-pleito-salvar .btn-outline-principal {
     width: auto;
   }

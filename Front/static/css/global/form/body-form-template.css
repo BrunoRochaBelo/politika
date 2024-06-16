@@ -7,6 +7,7 @@
     "header-form"
     "main-form" auto
     / minmax(350px, 1100px);
+  background: var(--input-background);
 }
 
 /* container-areas */
@@ -20,8 +21,8 @@
   border-top-right-radius: 5px;
   padding: 5px 5px 5px 15px;
   text-align: left;
-  border: 1px solid #28385396;
-  background: var(--background-principal);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
   border-bottom: none;
   position: relative;
 }
@@ -37,8 +38,8 @@
   height: auto;
   max-height: 88vh;
   padding: 10px;
-  border: 1px solid #28385396;
-  background: var(--background-principal);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
   border-top: none;
 }
 
@@ -58,7 +59,7 @@
 
 .main-form .area-template-content,
 .main-form .area-abas-template-content {
-  border-top: 1px solid var(--modal-background);
+  border-top: 1px solid var(--fundo-modal);
   box-shadow: none;
   background: transparent;
   border: none;
@@ -67,7 +68,13 @@
 }
 
 .main-form .nav {
-  background: var(--modal-background);
+  background: var(--fundo-container);
+}
+
+.main-form #nav1 a.indicador-2,
+.main-form #nav2 a.indicador-2,
+.main-form #nav3 a.indicador-2 {
+  background: var(--form-background);
 }
 
 /* RESPONSIVO */
@@ -76,7 +83,9 @@
     padding: 0px;
     border: none;
   }
-
+  .header-form {
+    border: none;
+  }
   .main-form {
     padding: 0px;
     height: auto;

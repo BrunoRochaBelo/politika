@@ -12,9 +12,9 @@
 
 .campo-view {
   display: grid;
-  background: var(--modal-background);
+  background: var(--form-background);
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 40px;
   gap: 5px;
 }
 
@@ -37,6 +37,9 @@
   background: transparent;
   border: none;
   font-weight: bold;
+}
+.campo-view textarea {
+  border-radius: 15px;
 }
 
 .campo-view select {

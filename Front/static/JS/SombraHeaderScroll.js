@@ -32,16 +32,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Chama a função toggleBoxShadow no carregamento inicial da página para cada elemento
-  toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--container)");
-  toggleBoxShadow(headerSearch, "scroll-active", "var(--container)");
-  toggleBoxShadow(headerButton, "scroll-active", "var(--container)"); // Adicionado
+  toggleBoxShadow(
+    headerTemplate,
+    "box-shadow-active",
+    "var(--fundo-container)"
+  );
+  toggleBoxShadow(headerSearch, "scroll-active", "var(--fundo-container)");
+  toggleBoxShadow(headerButton, "scroll-active", "var(--fundo-container)"); // Adicionado
 
   // Adiciona um ouvinte de evento para a rolagem da janela
   window.addEventListener("scroll", function () {
     // Chama a função toggleBoxShadow quando a janela é rolada
-    toggleBoxShadow(headerTemplate, "box-shadow-active", "var(--container)");
-    toggleBoxShadow(headerSearch, "scroll-active", "var(--container)");
-    toggleBoxShadow(headerButton, "scroll-active", "var(--container)"); // Adicionado
+    toggleBoxShadow(
+      headerTemplate,
+      "box-shadow-active",
+      "var(--fundo-container)"
+    );
+    toggleBoxShadow(headerSearch, "scroll-active", "var(--fundo-container)");
+    toggleBoxShadow(headerButton, "scroll-active", "var(--fundo-container)"); // Adicionado
   });
 });
 

@@ -4,8 +4,8 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  height: 100%;
-  background: var(--container);
+  max-height: 100%;
+  background: var(--fundo-container);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 25px;
   padding-bottom: 20px;
@@ -19,7 +19,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  color: var(--cor-p1);
+  color: var(--txt-titulo);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 3px 5px;
@@ -31,7 +31,7 @@
   padding: 0px;
   height: auto;
   border-radius: 0px;
-  background: var(--container);
+  background: var(--fundo-container);
   border-top: 1px solid var(--background-principal);
 }
 
@@ -105,8 +105,8 @@
 #nav3 a.indicador-2 {
   font-size: 16px;
   font-weight: 400;
-  color: var(--cor-p1);
-  background: var(--container);
+  color: var(--txt-titulo);
+  background: var(--fundo-container);
   align-items: center;
   justify-items: center;
 }
@@ -124,7 +124,7 @@
   /* Area Template padrão*/
   .area-abas-template {
     background: var(--background-principal);
-    border-radius: 0px;
+    border-radius: 25px;
     padding-bottom: 0px;
   }
   .area-abas-template-header {
@@ -141,7 +141,7 @@
   .area-abas-template-content {
     border-radius: 0px;
     border-radius: 25px;
-    background: var(--container);
+    background: var(--fundo-container);
     border: none;
   }
   .aba-header-header-fx-int {
@@ -178,7 +178,7 @@
   #nav3 a.indicador-2 {
     font-size: 15px;
     font-weight: 400;
-    color: var(--cor-p1);
-    background: var(--container);
+    color: var(--txt-titulo);
+    background: var(--fundo-container);
   }
 }
