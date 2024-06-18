@@ -59,11 +59,11 @@
 
   <main class="main main-template">
     <section class="main-section">
-      <div class=" area-template">
-        <h2 class="area-template-header">Despesas</h2>
-        <div class="area-template-content">
-          <div class="area-template-cbf">
-            <ul class="area-template-cbf-content area-template-cbf-content-sem-cb">
+      <div class=" area-container-template">
+        <h2 class="area-container-template-header">Despesas</h2>
+        <div class="area-container-template-content">
+          <div class="area-interna-containerContent-template">
+            <ul class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
               <li class="area-filtro">
                 <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
                 <div class="btn-filtro-pesq">
@@ -74,7 +74,7 @@
               </li>
               <li>
                 <ul class="lista-vertical-cards">
-                  <li class="area-template-cf">
+                  <li class="area-template-sessao-int">
                     <a class="card-m despesas-medium-card" href="#">
                       <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
                       <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
@@ -104,12 +104,12 @@
     </section>
 
     <section class="main-sidenav">
-      <div class="area-template-fil">
-        <h2 class="area-template-fil-header">Filtros
+      <div class="area-container-filtros-template">
+        <h2 class="area-container-filtros-template-header">Filtros
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Filtros</button>
         </h2>
-        <div class="area-template-fil-content lista-vertical-fil">
-          <button class="btn-secundario" type="button" data-filter="todos">
+        <div class="area-container-filtros-template-content lista-vertical-fil">
+          <button class="btn-principal-alt" type="button" data-filter="todos">
             <strong>Todos</strong>
           </button>
           <ul class=" lista-select">

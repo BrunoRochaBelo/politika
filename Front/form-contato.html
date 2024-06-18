@@ -15,367 +15,386 @@
 <body class="body-form-template">
   <header class="header-form">
     <h1>Novo Contato</h1>
-    <h1><a class="close" href="contatos.html">&times;</a></h1>
+    <h1><a href="contatos.html" class="close">&times;</a></h1>
   </header>
 
   <main class="main-form">
-    <section class="area-abas-template">
-      <nav class="area-abas-template-header">
-        <ul id="navAba" class="nav">
-          <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Identificação</a></li>
-          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Endereço</a></li>
-          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Adicional</a></li>
-        </ul>
-      </nav>
-      <div class="area-abas-template-content area-abas-template-content-com-header-fx-int">
+    <section class="area-container-template">
+      <div class="area-container-template-content area-container-template-content-com-header-fx-int">
         <form id="form" class=" form" enctype="multipart/form-data">
-
-          <div id="aba1" class="aba-template active">
-            <div class="area-template-cbf">
-              <div class="area-template-cbf-content area-template-cbf-content-sem-cb">
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo">
-                    <label for="nome_contato">Nome do contato <span>*</span></label>
-                    <input type="text" id="nome_contato" name="nome_contato" required>
-                  </div>
-                  <div class="campo">
-                    <label for="tipo_pessoa">Tipo de Pessoa <span>*</span></label>
-                    <div id="tipo_pessoa" class="radio-button-group">
-                      <input type="radio" id="fisica" name="tipo_pessoa" value="Física" required>
-                      <label for="fisica">
-                        <img src="./static/imagens/icones/pessoa-fisica.svg" alt="Pessoa Física" class="radio-icon">
-                        Física
-                      </label>
-                      <input type="radio" id="juridica" name="tipo_pessoa" value="Jurídica" required>
-                      <label for="juridica">
-                        <img src="./static/imagens/icones/pessoa-juridica.svg" alt="Pessoa Jurídica" class="radio-icon">
-                        Jurídica
-                      </label>
+          <ul class="lista-vertical-fil">
+            <li class="card area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(1)">Identificação</a></h2>
+              <div class="area-template-sessao-int-content">
+                <div class="session active" id="sessao1">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo">
+                      <label for="nome_contato">Nome do contato <span>*</span></label>
+                      <input type="text" id="nome_contato" name="nome_contato" required>
                     </div>
+                    <div class="campo">
+                      <label for="tipo_pessoa">Tipo de Pessoa <span>*</span></label>
+                      <div id="tipo_pessoa" class="radio-button-group">
+                        <input type="radio" id="fisica" name="tipo_pessoa" value="Física" required>
+                        <label for="fisica">
+                          <img src="./static/imagens/icones/pessoa-fisica.svg" alt="Pessoa Física" class="radio-icon">
+                          Física
+                        </label>
+                        <input type="radio" id="juridica" name="tipo_pessoa" value="Jurídica" required>
+                        <label for="juridica">
+                          <img src="./static/imagens/icones/pessoa-juridica.svg" alt="Pessoa Jurídica" class="radio-icon">
+                          Jurídica
+                        </label>
+                      </div>
+                    </div>
+                    <div class="campo">
+                      <label for="celular">Celular <span>*</span></label>
+                      <input type="tel" id="celular" name="celular" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
+                    </div>
+                    <div class="campo">
+                      <label>Este número é WhatsApp? <span>*</span></label>
+                      <div class="switch-container">
+                        <input type="checkbox" id="whatsapp_switch" class="form-checkbox" onchange="mostrarCampoWhatsapp()">
+                        <label for="whatsapp_switch" class="switch-label">
+                          <span class="switch-inner"></span>
+                          <span class="switch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div id="campoWhatsapp">
+                      <div class="campo">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
+                      </div>
+                    </div>
+                    <div class="campo">
+                      <label for="email">E-mail</label>
+                      <input type="email" id="email" name="email" class="contato" placeholder="email@email.com" onchange="validarEmail(this.value)">
+                    </div>
+                    <div class="campo">
+                      <label for="telefone">Telefone</label>
+                      <input type="tel" id="telefone" name="telefone" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
+                    </div>
+                    <div class="campo">
+                      <label for="perfil_influencia">Perfil de Influência</label>
+                      <div id="perfil_influencia" name="perfil_influencia" class="radio-button-group">
+                        <input type="radio" id="influencia1" name="perfil_influencia" value="1 estrela" required>
+                        <label for="influencia1">
+                          <div class="icon-container">
+                            <img src="./static/imagens/icones/1-estrela.svg" alt="1 estrela" class="radio-icon">
+                          </div>
+                        </label>
+                        <input type="radio" id="influencia2" name="perfil_influencia" value="2 estrelas" required>
+                        <label for="influencia2">
+                          <div class="icon-container">
+                            <img src="./static/imagens/icones/2-estrela.svg" alt="2 estrelas" class="radio-icon">
+                          </div>
+                        </label>
+                        <input type="radio" id="influencia3" name="perfil_influencia" value="3 estrelas" required>
+                        <label for="influencia3">
+                          <div class="icon-container">
+                            <img src="./static/imagens/icones/3-estrela.svg" alt="3 estrelas" class="radio-icon">
+                          </div>
+                        </label>
+                        <input type="radio" id="influencia4" name="perfil_influencia" value="4 estrelas" required>
+                        <label for="influencia4">
+                          <div class="icon-container">
+                            <img src="./static/imagens/icones/4-estrela.svg" alt="4 estrelas" class="radio-icon">
+                          </div>
+                        </label>
+                        <input type="radio" id="influencia5" name="perfil_influencia" value="5 estrelas" required>
+                        <label for="influencia5">
+                          <div class="icon-container">
+                            <img src="./static/imagens/icones/5-estrela.svg" alt="5 estrelas" class="radio-icon">
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="campo">
+                      <label for="tipo_contato">Tipo(s) do contato</label>
+                      <div id="tipo_contato" class="checkbox-button-group">
+                        <input type="checkbox" id="eleitor" name="tipo_contato[]" value="Eleitor">
+                        <label for="eleitor">Eleitor</label>
+
+                        <input type="checkbox" id="staff" name="tipo_contato[]" value="Staff">
+                        <label for="staff">Staff</label>
+
+                        <input type="checkbox" id="fornecedor" name="tipo_contato[]" value="Fornecedor">
+                        <label for="fornecedor">Fornecedor</label>
+
+                        <input type="checkbox" id="comissionado" name="tipo_contato[]" value="Comissionado">
+                        <label for="comissionado">Comissionado</label>
+
+                        <input type="checkbox" id="lideranca" name="tipo_contato[]" value="Liderança">
+                        <label for="lideranca">Liderança</label>
+
+                        <input type="checkbox" id="familia" name="tipo_contato[]" value="Família">
+                        <label for="familia">Família</label>
+
+                        <input type="checkbox" id="politico" name="tipo_contato[]" value="Político">
+                        <label for="politico">Político</label>
+
+                        <input type="checkbox" id="favorito" name="tipo_contato[]" value="Favorito">
+                        <label for="favorito">Favorito</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo">
+                      <label for="data_nascimento">Data Nascimento</label>
+                      <input type="date" id="data_nascimento" name="data_nascimento">
+                    </div>
+                    <div class="form-2-colum">
+                      <div class="campo">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo">
+                          <option value="">Selecione</option>
+                          <option value="Masculino">Masculino</option>
+                          <option value="Feminino">Feminino</option>
+                          <option value="Outro">Outro</option>
+                        </select>
+                      </div>
+                      <div class="campo">
+                        <label for="cor_pele">Cor da pele</label>
+                        <select id="cor_pele" name="cor_pele">
+                          <option value="">Selecione</option>
+                          <option value="Branca">Branca</option>
+                          <option value="Preta">Preta</option>
+                          <option value="Parda">Parda</option>
+                          <option value="Amarela">Amarela</option>
+                          <option value="Indígena">Indígena</option>
+                        </select>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo">
+                      <label for="titulo_eleitor">Título Eleitor</label>
+                      <input type="number" id="titulo_eleitor" name="titulo_eleitor">
+                    </div>
+                    <div class="form-2-colum">
+                      <div class="campo">
+                        <label for="zona_eleitoral">Zona Eleitoral</label>
+                        <input type="number" id="zona_eleitoral" name="zona_eleitoral">
+                      </div>
+                      <div class="campo">
+                        <label for="secao_eleitoral">Seção Eleitoral</label>
+                        <input type="number" id="secao_eleitoral" name="secao_eleitoral">
+                      </div>
+                    </div>
+                    <div class="campo">
+                      <label for="local_votacao">Local Votação</label>
+                      <input type="text" id="local_votacao" name="local_votacao">
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </li>
+            <li class="card area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)">Endereço</a></h2>
+              <div class="area-template-sessao-int-content">
+                <div class="session" id="sessao2">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo">
+                      <label for="cep">CEP <span>*</span></label>
+                      <input type="text" id="cep" name="cep" placeholder="99999999" required oninput="buscarEndereco(this.value)">
+                    </div>
+
+                    <div class="form-2-colum">
+                      <div class="campo">
+                        <label for="uf">UF <span>*</span></label>
+                        <select id="uf" name="uf" required>
+                          <option value="">Selecione</option>
+                          <option value="AC">AC</option>
+                          <option value="AL">AL</option>
+                          <option value="AP">AP</option>
+                          <option value="AM">AM</option>
+                          <option value="BA">BA</option>
+                          <option value="CE">CE</option>
+                          <option value="DF">DF</option>
+                          <option value="ES">ES</option>
+                          <option value="GO">GO</option>
+                          <option value="MA">MA</option>
+                          <option value="MT">MT</option>
+                          <option value="MS">MS</option>
+                          <option value="MG">MG</option>
+                          <option value="PA">PA</option>
+                          <option value="PB">PB</option>
+                          <option value="PR">PR</option>
+                          <option value="PE">PE</option>
+                          <option value="PI">PI</option>
+                          <option value="RJ">RJ</option>
+                          <option value="RN">RN</option>
+                          <option value="RS">RS</option>
+                          <option value="RO">RO</option>
+                          <option value="RR">RR</option>
+                          <option value="SC">SC</option>
+                          <option value="SP">SP</option>
+                          <option value="SE">SE</option>
+                          <option value="TO">TO</option>
+                        </select>
+                      </div>
+                      <div class="campo">
+                        <label for="cidade">Cidade <span>*</span></label>
+                        <input type="text" id="cidade" name="cidade" required>
+                      </div>
+                    </div>
+                    <div class="campo">
+                      <label for="bairro">Bairro <span>*</span></label>
+                      <input type="text" id="bairro" name="bairro" required>
+                    </div>
+                    <div class="campo">
+                      <label for="rua">Rua</label>
+                      <input type="text" id="rua" name="rua">
+                    </div>
+                    <div class="form-2-colum">
+                      <div class="campo">
+                        <label for="numero">Número</label>
+                        <input type="number" id="numero" name="numero">
+                      </div>
+                      <div class="campo">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" id="complemento" name="complemento">
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="campo ocultar">
+                    <label for="latitude">Latitude</label>
+                    <input type="number" id="latitude" name="latitude" step="0.000001">
+                  </div>
+                  <div class="campo ocultar">
+                    <label for="longitude">Longitude</label>
+                    <input type="number" id="longitude" name="longitude" step="0.000001">
                   </div>
                   <div class="campo">
-                    <label for="celular">Celular <span>*</span></label>
-                    <input type="tel" id="celular" name="celular" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
+                    <label for="eleitores_residentes">Quantidade de Eleitores residentes</label>
+                    <input type="number" id="eleitores_residentes" name="eleitores_residentes" min="0" step="1" title="Apenas números são permitidos">
+                    <!-- Possibilidade de abrir mais campos para eleitores residentes -->
                   </div>
                   <div class="campo">
-                    <label>Este número é WhatsApp? <span>*</span></label>
+                    <label for="residencia_apoio">Residência de apoio</label>
                     <div class="switch-container">
-                      <input type="checkbox" id="whatsapp_switch" class="form-checkbox" onchange="mostrarCampoWhatsapp()">
-                      <label for="whatsapp_switch" class="switch-label">
+                      <input type="checkbox" id="residencia_apoio_switch" class="form-checkbox" onchange="mostrarCampoResidenciaApoio()">
+                      <label for="residencia_apoio_switch" class="switch-label">
                         <span class="switch-inner"></span>
                         <span class="switch-switch"></span>
                       </label>
                     </div>
                   </div>
-                  <div id="campoWhatsapp">
-                    <div class="campo">
-                      <label for="whatsapp">WhatsApp</label>
-                      <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
-                    </div>
-                  </div>
-                  <div class="campo">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" class="contato" placeholder="email@email.com" onchange="validarEmail(this.value)">
-                  </div>
-                  <div class="campo">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
-                  </div>
-                  <div class="campo">
-                    <label for="perfil_influencia">Perfil de Influência</label>
-                    <div id="perfil_influencia" name="perfil_influencia" class="radio-button-group">
-                      <input type="radio" id="influencia1" name="perfil_influencia" value="1 estrela" required>
-                      <label for="influencia1">
-                        <div class="icon-container">
-                          <img src="./static/imagens/icones/1-estrela.svg" alt="1 estrela" class="radio-icon">
-                        </div>
-                      </label>
-                      <input type="radio" id="influencia2" name="perfil_influencia" value="2 estrelas" required>
-                      <label for="influencia2">
-                        <div class="icon-container">
-                          <img src="./static/imagens/icones/2-estrela.svg" alt="2 estrelas" class="radio-icon">
-                        </div>
-                      </label>
-                      <input type="radio" id="influencia3" name="perfil_influencia" value="3 estrelas" required>
-                      <label for="influencia3">
-                        <div class="icon-container">
-                          <img src="./static/imagens/icones/3-estrela.svg" alt="3 estrelas" class="radio-icon">
-                        </div>
-                      </label>
-                      <input type="radio" id="influencia4" name="perfil_influencia" value="4 estrelas" required>
-                      <label for="influencia4">
-                        <div class="icon-container">
-                          <img src="./static/imagens/icones/4-estrela.svg" alt="4 estrelas" class="radio-icon">
-                        </div>
-                      </label>
-                      <input type="radio" id="influencia5" name="perfil_influencia" value="5 estrelas" required>
-                      <label for="influencia5">
-                        <div class="icon-container">
-                          <img src="./static/imagens/icones/5-estrela.svg" alt="5 estrelas" class="radio-icon">
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="campo">
-                    <label for="tipo_contato">Tipo(s) do contato</label>
-                    <div id="tipo_contato" class="checkbox-button-group">
-                      <input type="checkbox" id="eleitor" name="tipo_contato[]" value="Eleitor">
-                      <label for="eleitor">Eleitor</label>
-
-                      <input type="checkbox" id="staff" name="tipo_contato[]" value="Staff">
-                      <label for="staff">Staff</label>
-
-                      <input type="checkbox" id="fornecedor" name="tipo_contato[]" value="Fornecedor">
-                      <label for="fornecedor">Fornecedor</label>
-
-                      <input type="checkbox" id="comissionado" name="tipo_contato[]" value="Comissionado">
-                      <label for="comissionado">Comissionado</label>
-
-                      <input type="checkbox" id="lideranca" name="tipo_contato[]" value="Liderança">
-                      <label for="lideranca">Liderança</label>
-
-                      <input type="checkbox" id="familia" name="tipo_contato[]" value="Família">
-                      <label for="familia">Família</label>
-
-                      <input type="checkbox" id="politico" name="tipo_contato[]" value="Político">
-                      <label for="politico">Político</label>
-
-                      <input type="checkbox" id="favorito" name="tipo_contato[]" value="Favorito">
-                      <label for="favorito">Favorito</label>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo">
-                    <label for="data_nascimento">Data Nascimento</label>
-                    <input type="date" id="data_nascimento" name="data_nascimento">
-                  </div>
-                  <div class="form-2-colum">
-                    <div class="campo">
-                      <label for="sexo">Sexo</label>
-                      <select id="sexo" name="sexo">
-                        <option value="">Selecione</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
-                      </select>
-                    </div>
-                    <div class="campo">
-                      <label for="cor_pele">Cor da pele</label>
-                      <select id="cor_pele" name="cor_pele">
-                        <option value="">Selecione</option>
-                        <option value="Branca">Branca</option>
-                        <option value="Preta">Preta</option>
-                        <option value="Parda">Parda</option>
-                        <option value="Amarela">Amarela</option>
-                        <option value="Indígena">Indígena</option>
-                      </select>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo">
-                    <label for="titulo_eleitor">Título Eleitor</label>
-                    <input type="number" id="titulo_eleitor" name="titulo_eleitor">
-                  </div>
-                  <div class="form-2-colum">
-                    <div class="campo">
-                      <label for="zona_eleitoral">Zona Eleitoral</label>
-                      <input type="number" id="zona_eleitoral" name="zona_eleitoral">
-                    </div>
-                    <div class="campo">
-                      <label for="secao_eleitoral">Seção Eleitoral</label>
-                      <input type="number" id="secao_eleitoral" name="secao_eleitoral">
-                    </div>
-                  </div>
-                  <div class="campo">
-                    <label for="local_votacao">Local Votação</label>
-                    <input type="text" id="local_votacao" name="local_votacao">
-                  </div>
-                </fieldset>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div id="aba2" class="aba-template">
-            <div class="area-template-cbf">
-              <div class="area-template-cbf-content area-template-cbf-content-sem-cb">
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo">
-                    <label for="cep">CEP <span>*</span></label>
-                    <input type="text" id="cep" name="cep" placeholder="99999999" required oninput="buscarEndereco(this.value)">
-                  </div>
-
-                  <div class="form-2-colum">
+            </li>
+            <li class="card area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)">Adicional</a></h2>
+              <div class="area-template-sessao-int-content">
+                <div class="session" id="sessao3">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
                     <div class="campo">
-                      <label for="uf">UF <span>*</span></label>
-                      <select id="uf" name="uf" required>
+                      <label for="indicacao">Indicação</label>
+                      <input type="text" id="indicacao" name="indicacao">
+                    </div>
+                    <div class="campo">
+                      <label for="nome_indicacao">Nome da indicação</label>
+                      <input type="text" id="nome_indicacao" name="nome_indicacao">
+                    </div>
+                    <div class="campo">
+                      <label for="estado_civil">Estado Civil</label>
+                      <select id="estado_civil" name="estado_civil" onchange="mostrarCamposConjuge()">
                         <option value="">Selecione</option>
-                        <option value="AC">AC</option>
-                        <option value="AL">AL</option>
-                        <option value="AP">AP</option>
-                        <option value="AM">AM</option>
-                        <option value="BA">BA</option>
-                        <option value="CE">CE</option>
-                        <option value="DF">DF</option>
-                        <option value="ES">ES</option>
-                        <option value="GO">GO</option>
-                        <option value="MA">MA</option>
-                        <option value="MT">MT</option>
-                        <option value="MS">MS</option>
-                        <option value="MG">MG</option>
-                        <option value="PA">PA</option>
-                        <option value="PB">PB</option>
-                        <option value="PR">PR</option>
-                        <option value="PE">PE</option>
-                        <option value="PI">PI</option>
-                        <option value="RJ">RJ</option>
-                        <option value="RN">RN</option>
-                        <option value="RS">RS</option>
-                        <option value="RO">RO</option>
-                        <option value="RR">RR</option>
-                        <option value="SC">SC</option>
-                        <option value="SP">SP</option>
-                        <option value="SE">SE</option>
-                        <option value="TO">TO</option>
+                        <option value="Solteiro(a)">Solteiro(a)</option>
+                        <option value="Casado(a)">Casado(a)</option>
+                        <option value="Divorciado(a)">Divorciado(a)</option>
+                        <option value="Viúvo(a)">Viúvo(a)</option>
+                        <option value="União Estável">União Estável</option>
                       </select>
                     </div>
-                    <div class="campo">
-                      <label for="cidade">Cidade <span>*</span></label>
-                      <input type="text" id="cidade" name="cidade" required>
+                    <div id="camposConjuge" style="display: none;">
+                      <div class="campo">
+                        <label for="nome_conjuge">Nome do Cônjuge</label>
+                        <input type="text" id="nome_conjuge" name="nome_conjuge">
+                      </div>
+                      <div class="campo">
+                        <label for="data_nascimento_conjuge">Data de Nascimento do Cônjuge</label>
+                        <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
+                      </div>
                     </div>
-                  </div>
-                  <div class="campo">
-                    <label for="bairro">Bairro <span>*</span></label>
-                    <input type="text" id="bairro" name="bairro" required>
-                  </div>
-                  <div class="campo">
-                    <label for="rua">Rua</label>
-                    <input type="text" id="rua" name="rua">
-                  </div>
-                  <div class="form-2-colum">
+
                     <div class="campo">
-                      <label for="numero">Número</label>
-                      <input type="number" id="numero" name="numero">
+                      <label for="filhos">Filhos</label>
+                      <div id="filhos" class="radio-button-group">
+                        <input type="radio" id="sim" name="resposta" value="sim">
+                        <label for="sim">Sim</label>
+                        <input type="radio" id="nao" name="resposta" value="nao">
+                        <label for="nao">Não</label>
+                      </div>
                     </div>
                     <div class="campo">
-                      <label for="complemento">Complemento</label>
-                      <input type="text" id="complemento" name="complemento">
+                      <label for="religiao">Religião</label>
+                      <input type="text" id="religiao" name="religiao">
                     </div>
-                  </div>
-                </fieldset>
-                <div class="campo ocultar">
-                  <label for="latitude">Latitude</label>
-                  <input type="number" id="latitude" name="latitude" step="0.000001">
-                </div>
-                <div class="campo ocultar">
-                  <label for="longitude">Longitude</label>
-                  <input type="number" id="longitude" name="longitude" step="0.000001">
-                </div>
-                <div class="campo">
-                  <label for="eleitores_residentes">Quantidade de Eleitores residentes</label>
-                  <input type="number" id="eleitores_residentes" name="eleitores_residentes" min="0" step="1" title="Apenas números são permitidos">
-                  <!-- Possibilidade de abrir mais campos para eleitores residentes -->
-                </div>
-                <div class="campo">
-                  <label for="residencia_apoio">Residência de apoio</label>
-                  <div class="switch-container">
-                    <input type="checkbox" id="residencia_apoio_switch" class="form-checkbox" onchange="mostrarCampoResidenciaApoio()">
-                    <label for="residencia_apoio_switch" class="switch-label">
-                      <span class="switch-inner"></span>
-                      <span class="switch-switch"></span>
-                    </label>
+                    <div class="campo">
+                      <label for="profissao">Profissão</label>
+                      <input type="text" id="profissao" name="profissao">
+                    </div>
+                    <div class="campo">
+                      <label for="cargo_comissionado">Cargo Comissionado</label>
+                      <div class="switch-container">
+                        <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="toggleCamposCargoComissionado()">
+                        <label for="cargo_comissionado_switch" class="switch-label">
+                          <span class="switch-inner"></span>
+                          <span class="switch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div id="camposCargoComissionado" style="display: none;">
+                      <div class="campo">
+                        <label for="orgao_lotacao">Órgão de Lotação</label>
+                        <input type="text" id="orgao_lotacao" name="orgao_lotacao">
+                      </div>
+                    </div>
+
+                  </fieldset>
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div id="aba3" class="aba-template">
-            <div class="area-template-cbf">
-              <div class="area-template-cbf-content area-template-cbf-content-sem-cb">
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo">
-                    <label for="indicacao">Indicação</label>
-                    <input type="text" id="indicacao" name="indicacao">
-                  </div>
-                  <div class="campo">
-                    <label for="nome_indicacao">Nome da indicação</label>
-                    <input type="text" id="nome_indicacao" name="nome_indicacao">
-                  </div>
-                  <div class="campo">
-                    <label for="estado_civil">Estado Civil</label>
-                    <select id="estado_civil" name="estado_civil" onchange="mostrarCamposConjuge()">
-                      <option value="">Selecione</option>
-                      <option value="Solteiro(a)">Solteiro(a)</option>
-                      <option value="Casado(a)">Casado(a)</option>
-                      <option value="Divorciado(a)">Divorciado(a)</option>
-                      <option value="Viúvo(a)">Viúvo(a)</option>
-                      <option value="União Estável">União Estável</option>
-                    </select>
-                  </div>
-                  <div id="camposConjuge" style="display: none;">
-                    <div class="campo">
-                      <label for="nome_conjuge">Nome do Cônjuge</label>
-                      <input type="text" id="nome_conjuge" name="nome_conjuge">
-                    </div>
-                    <div class="campo">
-                      <label for="data_nascimento_conjuge">Data de Nascimento do Cônjuge</label>
-                      <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
-                    </div>
-                  </div>
-
-                  <div class="campo">
-                    <label for="filhos">Filhos</label>
-                    <div id="filhos" class="radio-button-group">
-                      <input type="radio" id="sim" name="resposta" value="sim">
-                      <label for="sim">Sim</label>
-                      <input type="radio" id="nao" name="resposta" value="nao">
-                      <label for="nao">Não</label>
-                    </div>
-                  </div>
-                  <div class="campo">
-                    <label for="religiao">Religião</label>
-                    <input type="text" id="religiao" name="religiao">
-                  </div>
-                  <div class="campo">
-                    <label for="profissao">Profissão</label>
-                    <input type="text" id="profissao" name="profissao">
-                  </div>
-                  <div class="campo">
-                    <label for="cargo_comissionado">Cargo Comissionado</label>
-                    <div class="switch-container">
-                      <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="toggleCamposCargoComissionado()">
-                      <label for="cargo_comissionado_switch" class="switch-label">
-                        <span class="switch-inner"></span>
-                        <span class="switch-switch"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <div id="camposCargoComissionado" style="display: none;">
-                    <div class="campo">
-                      <label for="orgao_lotacao">Órgão de Lotação</label>
-                      <input type="text" id="orgao_lotacao" name="orgao_lotacao">
-                    </div>
-                  </div>
-
-                </fieldset>
-                <div class="botoes">
-                  <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
-                </div>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </form>
       </div>
     </section>
   </main>
 
+  <script>
+    function changeSession(sessionNumber) {
+      var sessions = document.querySelectorAll('.session');
+      var selectedSession = document.getElementById('sessao' + sessionNumber);
+      var areaAbas = document.querySelector('.area-template');
+
+      // Verificar se a sessão clicada já está ativa
+      if (selectedSession.classList.contains('active')) {
+        // Se estiver ativa, remover a classe para fechar a sessão
+        selectedSession.classList.remove('active');
+      } else {
+        // Esconder todas as sessões
+        sessions.forEach(function (session) {
+          session.classList.remove('active');
+        });
+
+        // Mostrar apenas a sessão selecionada
+        selectedSession.classList.add('active');
+      }
+
+      // Zerar o scroll dentro da area-container-template-content
+      areaAbas.scrollTop = 0;
+    }
+  </script>
 
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>

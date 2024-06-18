@@ -32,7 +32,9 @@ function exibirDetalhesDespesa(event) {
 }
 
 function ajustarScrollParaCentralizarCard(card) {
-  const areaTemplateContent = document.querySelector(".area-template-content");
+  const areaTemplateContent = document.querySelector(
+    ".area-container-template-content"
+  );
   const cardOffsetTop = card.offsetTop;
   const cardHeight = card.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;

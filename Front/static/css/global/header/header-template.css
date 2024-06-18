@@ -45,7 +45,7 @@
   cursor: pointer;
   width: 100%;
   background: transparent;
-  color: var(--txt-secundario);
+  color: var(--txt-principal);
   border: 1px solid transparent;
   font-size: 14px;
   font-weight: 300;
@@ -71,7 +71,7 @@
 }
 /* Cor do placeholder ao focar */
 .search-input:focus::placeholder {
-  color: var(--card-borda);
+  color: var(--txt-contraste);
 }
 .header-search:hover {
   background: var(--card-hover);
@@ -82,7 +82,7 @@
   border: 1px solid var(--btn-principal-destaque);
 }
 .header-search:hover .search-input::placeholder {
-  color: var(--txt-secundario);
+  color: var(--cor-p3);
 }
 .search-input:focus,
 .search-button:focus {

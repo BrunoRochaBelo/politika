@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   var aniversaiantesHeaders = document.querySelectorAll(
-    ".area-template-cf-header.aniversariantes"
+    ".area-template-sessao-int-header.aniversariantes"
   );
   aniversaiantesHeaders.forEach(function (header) {
     header.addEventListener("click", function () {
       var aniversaiantesContainer = this.nextElementSibling;
       var button = this.querySelector(".btn-recuar-expandir-alt");
 
+      // Alterna a visibilidade do contêiner
       if (aniversaiantesContainer.classList.contains("visible")) {
         aniversaiantesContainer.classList.remove("visible");
         aniversaiantesContainer.classList.add("hidden");
@@ -18,6 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
         button.textContent = "Ocultar";
         button.classList.add("up");
       }
+
+      // Alterna o background do cabeçalho
+      var headerBackgroundClass = aniversaiantesContainer.classList.contains(
+        "visible"
+      )
+        ? "--card-aberto-fundo"
+        : "--card-fundo";
+      var headerElement = document.querySelector(
+        ".area-template-sessao-int.aniversariantes"
+      );
+      headerElement.style.background = `var(${headerBackgroundClass})`;
 
       var liElements = aniversaiantesContainer.querySelectorAll("li");
       liElements.forEach(function (li) {

@@ -20,50 +20,40 @@
   font-size: 12px;
   font-weight: 400;
   color: var(--txt-contraste);
-  background-color: var(--btn-alt);
+  background-color: var(--btn-secundario-alt);
   border-radius: 40px;
   padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 1px solid var(--btn-alt);
+  border: 1px solid var(--btn-secundario-alt);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Botão alternativo usado para expandir "indicadores e estatisticas" */
-.area-template-cf-header .btn-recuar-expandir {
+.area-template-sessao-int-header .btn-recuar-expandir {
   background-color: transparent;
   border: 1px solid transparent;
-  color: var(--btn-alt);
+  color: var(--btn-secundario-alt);
   box-shadow: none;
   font-size: 11px;
   font-weight: 300;
 }
 
-.area-template-cf-header .btn-recuar-expandir::after {
+.area-template-sessao-int-header .btn-recuar-expandir::after {
   content: "";
   display: inline-block;
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--btn-alt);
+  border-top: 5px solid var(--btn-secundario-alt);
   margin-left: 5px;
   border-radius: 25%;
 }
 
-.area-template-cf-header .btn-recuar-expandir.up::after {
+.area-template-sessao-int-header .btn-recuar-expandir.up::after {
   border-top: none; /* Remover a seta para baixo */
-  border-bottom: 5px solid var(--btn-alt); /* Adicionar a seta para cima */
-}
-
-/* RESPONSIVO */
-@media only screen and (max-width: 900px) {
-  .btn-recuar-expandir {
-    display: block;
-    justify-self: end;
-    padding: 3px 7px;
-    font-size: 12px;
-  }
+  border-bottom: 5px solid var(--btn-secundario-alt); /* Adicionar a seta para cima */
 }
 
 .btn-recuar-expandir-alt {
@@ -88,4 +78,14 @@
   color: var(--txt-secundario);
   border-color: var(--txt-secundario);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVO */
+@media only screen and (max-width: 900px) {
+  .btn-recuar-expandir {
+    display: block;
+    justify-self: end;
+    padding: 3px 7px;
+    font-size: 12px;
+  }
 }

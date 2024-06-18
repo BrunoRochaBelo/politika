@@ -64,7 +64,11 @@
     font-size: 15px;
     font-weight: 500;
     display: inline-block;
-    background: var(--cor-marca);
+    background: linear-gradient(
+      135deg,
+      hsl(220, 85%, 50%),
+      hsl(220, 100%, 45%)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

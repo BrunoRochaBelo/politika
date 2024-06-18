@@ -80,7 +80,10 @@
   border: 1px solid var(--btn-principal-destaque);
 }
 .search-input-dest:hover::placeholder {
-  color: var(--placeholder);
+  color: var(--cor-p3);
+}
+.search-input-dest:focus::placeholder {
+  color: var(--txt-contraste);
 }
 
 .breadcrumb {
@@ -133,6 +136,21 @@
 
 .submit-button:hover {
   background-color: #45a049;
+}
+
+/* Ou especificamente para o input do bairro */
+#bairro {
+  background-color: var(--card-alt-fundo);
+}
+#bairro:hover {
+  background: var(--card-hover);
+  box-shadow: 0 0 1px var(--cor-p3), inset 0 0 1px var(--cor-p3),
+    inset 0 0 2px var(--cor-p3), inset 0 0 3px var(--cor-p3),
+    inset 0 0 4px var(--cor-p3);
+  border: 1px solid var(--btn-principal-destaque);
+}
+#bairro:hover::placeholder {
+  color: var(--cor-p3);
 }
 
 @media only screen and (max-width: 900px) {

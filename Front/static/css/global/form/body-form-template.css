@@ -7,7 +7,6 @@
     "header-form"
     "main-form" auto
     / minmax(350px, 1100px);
-  background: var(--input-background);
 }
 
 /* container-areas */
@@ -22,7 +21,7 @@
   padding: 5px 5px 5px 15px;
   text-align: left;
   border: 1px solid var(--input-border);
-  background: var(--input-background);
+  background: var(--form-background);
   border-bottom: none;
   position: relative;
 }
@@ -39,17 +38,17 @@
   max-height: 88vh;
   padding: 10px;
   border: 1px solid var(--input-border);
-  background: var(--input-background);
+  background: var(--form-background);
   border-top: none;
 }
 
 .main-form .area-template,
-.main-form .area-abas-template {
+.main-form .area-container-abas-template {
   box-shadow: none;
   background: transparent;
 }
 
-.main-form .area-abas-template-header {
+.main-form .area-container-abas-template-header {
   background: transparent;
   border: none;
   border-radius: 0px;
@@ -57,8 +56,8 @@
   border-top-left-radius: 25px;
 }
 
-.main-form .area-template-content,
-.main-form .area-abas-template-content {
+.main-form .area-container-template-content,
+.main-form .area-container-abas-template-content {
   border-top: 1px solid var(--fundo-modal);
   box-shadow: none;
   background: transparent;
@@ -70,11 +69,17 @@
 .main-form .nav {
   background: var(--fundo-container);
 }
+.main-form #nav1 a:hover,
+.main-form #nav2 a:hover,
+.main-form #nav3 a:hover {
+  background: var(--fundo-container);
+  color: var(--txt-subtitulo);
+}
 
 .main-form #nav1 a.indicador-2,
 .main-form #nav2 a.indicador-2,
 .main-form #nav3 a.indicador-2 {
-  background: var(--form-background);
+  background: var(--input-background);
 }
 
 /* RESPONSIVO */
@@ -89,7 +94,7 @@
   .main-form {
     padding: 0px;
     height: auto;
-    max-height: 100%;
+    max-height: 90vh;
     overflow-y: auto;
     border: none;
     border-radius: 0;
@@ -100,11 +105,11 @@
     width: 350px;
   }
 
-  .main-form .area-abas-template-header {
+  .main-form .area-container-abas-template-header {
     justify-content: center;
   }
 
-  .main-form .area-template-cbf-content {
+  .main-form .area-interna-containerContent-template-content {
     max-height: 85vh;
     padding: 10px 3px;
   }

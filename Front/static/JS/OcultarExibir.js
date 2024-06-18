@@ -18,11 +18,11 @@ function createOverlay() {
 
   // Adiciona um evento de clique ao overlay
   overlay.addEventListener("click", function () {
-    var areaContent = selectElement(".area-template-fil-content");
-    var area = selectElement(".area-template-fil");
+    var areaContent = selectElement(".area-container-filtros-template-content");
+    var area = selectElement(".area-container-filtros-template");
     var button = selectElement(".btn-recuar-expandir");
     var mainSidenav = selectElement(".main-sidenav");
-    var areaHeader = selectElement(".area-template-fil-header");
+    var areaHeader = selectElement(".area-container-filtros-template-header");
 
     // Chama a função toggleVisibility para fechar o overlay
     toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
@@ -63,7 +63,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--btn-alt)";
+      areaHeader.style.color = "var(--btn-principal-alt-alt)";
       areaHeader.style.fontSize = "22px";
 
       // Altera o tamanho da .main-sidenav para 98%
@@ -85,11 +85,11 @@ window.addEventListener("resize", function () {
 });
 
 function toggleOcultarExibir() {
-  var areaContent = selectElement(".area-template-fil-content");
-  var area = selectElement(".area-template-fil");
+  var areaContent = selectElement(".area-container-filtros-template-content");
+  var area = selectElement(".area-container-filtros-template");
   var button = selectElement(".btn-recuar-expandir");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(".area-template-fil-header");
+  var areaHeader = selectElement(".area-container-filtros-template-header");
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

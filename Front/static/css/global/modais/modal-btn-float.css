@@ -20,14 +20,13 @@
   bottom: 150px;
   right: 115px;
   border-radius: 15px;
-  min-width: 135px;
-  background: var(--txt-contraste);
-  color: var(--txt-secundario);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-  grid:
+  min-width: 140px;
+  background: var(--card-fundo);
+  color: var(--txt-titulo);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  grid-template-areas:
     "modal-btn-floating-header"
-    "modal-btn-floating-body"
-    / auto;
+    "modal-btn-floating-body";
   transition: bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
     right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -39,11 +38,12 @@
   font-weight: 300;
   padding: 0.5rem;
   border-bottom: 1px solid var(--background-principal);
-  background: var(--cor-p1);
+  background: var(--cor-s1);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .modal-btn-floating-body {
   grid-area: modal-btn-floating-body;
   text-align: center;
@@ -51,6 +51,7 @@
   display: grid;
   grid-auto-flow: row;
 }
+
 .esconderModal {
   display: none;
 }
@@ -58,9 +59,10 @@
 .modal-btn-floating-body li {
   padding: 12px 20px;
 }
+
 .modal-btn-floating-body li:hover {
-  background: var(--cor-p1);
-  color: var(--txt-contraste);
+  background: var(--detalhe-1);
+  color: var(--cor-p3);
 }
 
 /* Botão do modal */
@@ -68,35 +70,32 @@
   position: fixed;
   bottom: 75px;
   right: 30px;
-  width: 75px;
-  height: 75px;
-  background: var(--cor-p1);
-  color: var(--txt-contraste);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  border: 1px solid var(--cor-p1);
-  border-radius: 15px;
-  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
   cursor: pointer;
+  background: linear-gradient(135deg, hsl(220, 85%, 50%), hsl(220, 100%, 45%));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: var(--btn-principal-text);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-    right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 26px;
   z-index: 2001;
 }
+
 .floatingButton:hover {
-  border: 1px solid var(--cor-p1);
-  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
-    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3);
+  background: linear-gradient(135deg, hsl(220, 85%, 60%), hsl(220, 100%, 55%));
 }
+
 .floatingButton:active {
-  border: 1px solid var(--cor-s1);
+  background: linear-gradient(135deg, hsl(220, 85%, 40%), hsl(220, 100%, 35%));
 }
+
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .modal-btn-floating-content {
-    position: absolute;
     bottom: 140px;
     right: 93px;
     transition: bottom 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -105,31 +104,40 @@
 
   /* Botão do modal */
   .floatingButton {
-    position: fixed;
     bottom: 71px;
     right: 23px;
-    width: 63px;
-    height: 63px;
-    background: var(--cor-p1);
-    color: var(--txt-contraste);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--cor-p1);
-    border-radius: 15px;
-    font-size: 1.5rem;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
     cursor: pointer;
+    background: linear-gradient(
+      135deg,
+      hsl(220, 85%, 50%),
+      hsl(220, 100%, 45%)
+    );
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: var(--btn-principal-text);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-      right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-      box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 22px;
     z-index: 2001;
   }
+
   .floatingButton:hover {
-    border: 1px solid #432281;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6), 0 3px 10px 0 rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      135deg,
+      hsl(220, 85%, 60%),
+      hsl(220, 100%, 55%)
+    );
   }
+
   .floatingButton:active {
-    border: 1px solid #432281;
+    background: linear-gradient(
+      135deg,
+      hsl(220, 85%, 40%),
+      hsl(220, 100%, 35%)
+    );
   }
 }

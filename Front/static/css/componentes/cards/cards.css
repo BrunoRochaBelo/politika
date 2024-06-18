@@ -50,7 +50,7 @@
 }
 /* Médio */
 .card-tmf-m {
-  min-width: 112px 15px;
+  min-width: 112px;
   min-height: 95px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -101,18 +101,28 @@
   box-sizing: border-box;
 }
 
+.card {
+  min-height: 50px;
+  border-radius: 25px;
+  background: var(--form-background);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 12px 15px;
+  border: 1px solid var(--card-borda);
+  box-sizing: border-box;
+}
+
 /* Estilos para os cards da area de filtros e compromisso para hoje */
 /* Filtro  */
-.area-template-fil-content .card-xs,
-.area-template-fil-content .card-s,
-.area-template-fil-content .card-m,
-.area-template-fil-content .card-l,
-.area-template-fil-content .card-tmf-s,
-.area-template-fil-content .card-tmf-m,
-.area-template-fil-content .card-tmf-l,
-.area-template-fil-content .card-select-xs,
-.area-template-fil-content .card-select-s,
-.area-template-fil-content .card-select-m {
+.area-container-filtros-template-content .card-xs,
+.area-container-filtros-template-content .card-s,
+.area-container-filtros-template-content .card-m,
+.area-container-filtros-template-content .card-l,
+.area-container-filtros-template-content .card-tmf-s,
+.area-container-filtros-template-content .card-tmf-m,
+.area-container-filtros-template-content .card-tmf-l,
+.area-container-filtros-template-content .card-select-xs,
+.area-container-filtros-template-content .card-select-s,
+.area-container-filtros-template-content .card-select-m {
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
@@ -121,21 +131,21 @@
 }
 
 /* Compromisso para hoje  */
-.area-template-fil-alt-content .card-xs,
-.area-template-fil-alt-content .card-s,
-.area-template-fil-alt-content .card-m,
-.area-template-fil-alt-content .card-l,
-.area-template-fil-alt-content .card-tmf-s,
-.area-template-fil-alt-content .card-tmf-m,
-.area-template-fil-alt-content .card-tmf-l {
+.area-container-compromisso-hoje-template-content .card-xs,
+.area-container-compromisso-hoje-template-content .card-s,
+.area-container-compromisso-hoje-template-content .card-m,
+.area-container-compromisso-hoje-template-content .card-l,
+.area-container-compromisso-hoje-template-content .card-tmf-s,
+.area-container-compromisso-hoje-template-content .card-tmf-m,
+.area-container-compromisso-hoje-template-content .card-tmf-l {
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
-.area-template-fil-alt-content .card-select-xs,
-.area-template-fil-alt-content .card-select-s,
-.area-template-fil-alt-content .card-select-m {
+.area-container-compromisso-hoje-template-content .card-select-xs,
+.area-container-compromisso-hoje-template-content .card-select-s,
+.area-container-compromisso-hoje-template-content .card-select-m {
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--card-borda);
@@ -156,6 +166,8 @@
 .card-select-s:hover,
 .card-select-m:hover {
   background: var(--card-hover);
+  color: var(--txt-contraste-alt);
+  border: 1px solid var(--detalhe-3);
 }
 /*  active  */
 .card-xs:active,

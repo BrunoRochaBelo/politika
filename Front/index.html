@@ -79,11 +79,11 @@
 
   <main class="main main-template">
     <section class="main-section">
-      <div class=" area-template">
-        <h2 class="area-template-header header-header-fx-int">Destino</h2>
-        <div class="area-template-content area-abas-template-content-com-header-fx-int">
-          <div class="area-template-cbf">
-            <div class="area-template-cbf-header">
+      <div class=" area-container-template">
+        <h2 class="area-container-template-header header-header-fx-int">Destino</h2>
+        <div class="area-container-template-content area-container-abas-template-content-com-header-fx-int">
+          <div class="area-interna-containerContent-template">
+            <div class="area-interna-containerContent-template-header">
               <div class="modal-destino">
                 <p><span class="breadcrumb">{{UF}} > {{Cidade}}</span></p>
                 <form action="" method="post" class="search-input-container-dest" id="searchFormDestino">
@@ -94,13 +94,13 @@
                 </form>
               </div>
             </div>
-            <ul class="area-template-cbf-content lista-vertical">
-              <li id="quantitativos" class="area-template-cf">
-                <div class="area-template-cf-header">
+            <ul class="area-interna-containerContent-template-content lista-vertical">
+              <li id="quantitativos" class="area-template-sessao-int">
+                <div class="area-template-sessao-int-header">
                   <h2>Indicadores e estatisticas</h2>
                   <button class="btn-recuar-expandir" onclick="toggleRecuarExpandirHorizontal()">Expandir</button>
                 </div>
-                <div class="area-template-cf-content">
+                <div class="area-template-sessao-int-content">
                   <ul class="lista-horizontal">
                     <li>
                       <a class="card-tmf-m quant-small-card" href="#">
@@ -148,9 +148,9 @@
                   </ul>
                 </div>
               </li>
-              <li class="area-template-tmf">
-                <h2 class="area-template-tmf-header">Contatos influentes</h2>
-                <ul id="contatosList" class="area-template-tmf-content lista-vertical-cards">
+              <li class="area-template-sessao-int">
+                <h2 class="area-template-sessao-int-header">Contatos influentes</h2>
+                <ul id="contatosList" class="area-template-sessao-int-content lista-vertical-cards">
                   <li>
                     <a class="card-xs contatos-small-card contato" href="#">
                       <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -160,6 +160,51 @@
                       <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                       <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
                       <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                      <div class="contatos-small-card-editar">
+                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                      </div>
+                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-xs contatos-small-card contato" href="#">
+                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                      <div class="contatos-small-card-editar">
+                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                      </div>
+                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-xs contatos-small-card contato" href="#">
+                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                      <div class="contatos-small-card-editar">
+                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
+                      </div>
+                      <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-xs contatos-small-card contato" href="#">
+                      <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                      <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                      <img class="contatos-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                      <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                      <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                      <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                      <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
                       <div class="contatos-small-card-editar">
                         <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-contato.html'">Visualizar contato</button>
                       </div>
@@ -219,15 +264,15 @@
     </section>
 
     <section class="main-sidenav home-sidenav">
-      <div class="area-template-fil-alt">
-        <h2 class="area-template-fil-alt-header">Seu dia
+      <div class="area-container-compromisso-hoje-template">
+        <h2 class="area-container-compromisso-hoje-template-header">Seu dia
           <button class="btn-recuar-expandir btn-suaAgenda" onclick="OcultarExibirAgenda()">Agenda para hoje</button>
         </h2>
-        <div class="area-template-fil-alt-content">
+        <div class="area-container-compromisso-hoje-template-content">
           <ul id="compromissosHoje" class="lista-vertical-fil">
-            <li class="area-template-cf aniversariantes">
-              <h2 class="area-template-cf-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversaiantes(event)">Exibir aniversaiantes</button></h2>
-              <ul class="area-template-cf-content lista-vertical-cards area-aniversaiantes">
+            <li class="area-template-sessao-int aniversariantes">
+              <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-alt btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir aniversariantes</button></h2>
+              <ul class="area-template-sessao-int-content lista-vertical-cards area-aniversariantes">
                 <li>
                   <a class="card-xs aniversario-small-card contato" href="#">
                     <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -237,7 +282,9 @@
                     <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                     <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
                     <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                    <p class="aniversario-small-card-editar" href="#">Editar</p>
+                    <div class="aniversario-small-card-editar">
+                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
+                    </div>
                     <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
                   </a>
                 </li>
@@ -250,7 +297,9 @@
                     <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
                     <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
                     <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                    <p class="aniversario-small-card-editar" href="#">Editar</p>
+                    <div class="aniversario-small-card-editar">
+                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
+                    </div>
                     <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
                   </a>
                 </li>
@@ -263,15 +312,17 @@
                     <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
                     <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
                     <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                    <p class="aniversario-small-card-editar" href="#">Editar</p>
+                    <div class="aniversario-small-card-editar">
+                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
+                    </div>
                     <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="area-template-cf">
-              <h2 class="area-template-cf-header">✅ Tarefas</h2>
-              <ul class="area-template-cf-content lista-vertical-cards">
+            <li class="area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header">✅ Tarefas</h2>
+              <ul class="area-template-sessao-int-content lista-vertical-cards">
                 <li>
                   <a class="card-m tarefa-small-card" href="#">
                     <p class="tarefa-small-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
@@ -314,9 +365,9 @@
                 </li>
               </ul>
             </li>
-            <li class="area-template-cf">
-              <h2 class="area-template-cf-header">📅 Agenda</h2>
-              <ul class="area-template-cf-content lista-vertical-cards">
+            <li class="area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header">📅 Agenda</h2>
+              <ul class="area-template-sessao-int-content lista-vertical-cards">
                 <li>
                   <a class="card-xs calendario-small-card evento" href="#">
                     <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
@@ -564,7 +615,7 @@
         });
 
         // Redireciona para a URL com o estado selecionado
-        window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=TODAS";
+        window.location.href = "http://192.168.1.15:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=TODAS";
       }
     }
 
@@ -613,7 +664,7 @@
   <script src="./static/js/ExibirDetalhesEvento.js"></script>
   <script src="./static/js/ExibirDetalhesTarefa.js"></script>
   <script src="./static/js/ExibirDetalhesAniversariante.js"></script>
-  <script src="./static/js/Exibiraniversaiantes.js"></script>
+  <script src="./static/js/Exibiraniversariantes.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
   <script src="./static/js/ModalDestino.js"></script>
   <script src="./static/js/CarregarDestino.js"></script>

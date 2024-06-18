@@ -2,7 +2,7 @@
 /* Botões com Cor de Fundo */
 .btn-principal {
   background: var(--btn-principal);
-  color: var(--txt-principal);
+  color: var(--btn-principal-txt);
   border: 1px solid var(--btn-principal);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
@@ -14,16 +14,14 @@
   justify-content: center;
   align-items: center;
 }
-
 .btn-principal:hover {
   background: var(--btn-principal-hover);
   border-color: var(--btn-principal-hover);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .btn-principal-destaque {
   background: var(--btn-principal-destaque);
-  color: var(--txt-principal);
+  color: var(--btn-principal-txt);
   border: 1px solid var(--btn-principal-destaque);
   padding: 10px 20px;
   border-radius: 5px;
@@ -35,10 +33,10 @@
   align-items: center;
 }
 
-.btn-secundario {
-  background: var(--btn-secundario);
-  color: var(--txt-principal);
-  border: 1px solid var(--btn-secundario);
+.btn-principal-alt {
+  background: var(--btn-principal-alt);
+  color: var(--btn-principal-alt-txt);
+  border: 1px solid var(--btn-principal-alt);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   border-radius: 5px;
@@ -49,17 +47,15 @@
   justify-content: center;
   align-items: center;
 }
-
-.btn-secundario:hover {
-  background: var(--btn-secundario-hover);
-  border-color: var(--btn-secundario-hover);
+.btn-principal-alt:hover {
+  background: var(--btn-principal-alt-hover);
+  border-color: var(--btn-principal-alt-hover);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
-.btn-secundario-destaque {
-  background: var(--btn-secundario-destaque);
-  color: var(--txt-principal);
-  border: 1px solid var(--btn-secundario-destaque);
+.btn-principal-alt-destaque {
+  background: var(--btn-principal-alt-destaque);
+  color: var(--btn-principal-alt-txt);
+  border: 1px solid var(--btn-principal-alt-destaque);
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -68,27 +64,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-}
-
-.btn-alt {
-  background: var(--btn-alt);
-  color: var(--background-principal);
-  border: 1px solid var(--btn-alt);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-alt:hover {
-  background: lighten(var(--btn-alt), 10%);
-  border-color: lighten(var(--btn-alt), 10%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Botões sem Cor de Fundo (Outline) */
@@ -109,7 +84,7 @@
 
 .btn-outline-principal:hover {
   background: var(--btn-principal);
-  color: var(--txt-principal);
+  color: var(--btn-principal-txt);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   border-radius: 5px;
@@ -120,11 +95,10 @@
   justify-content: center;
   align-items: center;
 }
-
 .btn-outline-secundario {
   background: transparent;
-  color: var(--btn-secundario);
-  border: 1px solid var(--btn-secundario);
+  color: var(--btn-secundario-alt);
+  border: 1px solid var(--btn-secundario-alt);
   box-shadow: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -135,27 +109,23 @@
   justify-content: center;
   align-items: center;
 }
-
 .btn-outline-secundario:hover {
-  background: var(--btn-secundario);
-  color: var(--txt-principal);
+  background: var(--btn-secundario-alt);
+  color: var(--btn-secundario-alt-txt);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para o efeito hover e active em todos os botões */
-/*  hover  */
-
 /* Estilos para os botões da area de filtros */
 /* Filtro  */
-.area-template-fil-content .btn-secundario,
-.area-template-fil-content .card-select-m {
+.area-container-filtros-template-content .btn-principal-alt,
+.area-container-filtros-template-content .card-select-m {
   background: var(--card-fundo);
   color: var(--txt-principal);
   border: 1px solid var(--card-borda);
   width: 100%;
 }
-.area-template-fil-content .btn-secundario:hover,
-.area-template-fil-content .card-select-m:hover {
+.area-container-filtros-template-content .btn-principal-alt:hover,
+.area-container-filtros-template-content .card-select-m:hover {
   background: var(--card-hover);
   box-shadow: none;
   border: 1px solid var(--card-borda);
@@ -169,7 +139,7 @@
   text-align: center;
   align-items: center;
   justify-content: start;
-  color: var(--txt-principal);
+  color: var(--btn-secundario-alt-destaque);
   padding: 12px 15px;
   font-size: 14px;
   font-weight: 300;
@@ -182,7 +152,7 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 20px;
-  border: 1px solid var(--btn-secundario);
+  border: 1px solid var(--btn-secundario-alt-text);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -192,7 +162,7 @@
 }
 .btn-filtro-pesq-title {
   font-size: 14px;
-  color: var(--btn-secundario-destaque);
+  color: var(--btn-secundario-alt-destaque);
   margin-right: 15px;
 }
 /* Estilo para o "x" do botão filtro */
@@ -207,7 +177,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--btn-secundario-destaque);
+  color: var(--btn-secundario-alt-text);
   font-size: 18px;
   border: none;
 }
@@ -215,7 +185,22 @@
   color: #c61818; /* Cor do texto ao passar o mouse */
 }
 .remover-filtro:hover + .btn-filtro-pesq {
-  border: 1px solid var(--btn-secundario-destaque);
+  border: 1px solid var(--btn-secundario-alt-text);
   box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
     0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3);
+}
+
+.close {
+  position: absolute;
+  padding: 0 10px;
+  top: 5px;
+  right: 5px;
+  color: var(--txt-secundario);
+  border-radius: 50px;
+  font-size: 28px;
+}
+.close:hover,
+.close:focus {
+  background: #c61818;
+  cursor: pointer;
 }

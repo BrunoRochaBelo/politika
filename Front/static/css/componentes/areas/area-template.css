@@ -1,21 +1,20 @@
 /* Area Template padrão*/
-.area-template {
+.area-container-template {
   display: grid;
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: 100%;
+  max-height: 88vh;
   background: var(--fundo-container);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 25px;
-  padding-bottom: 20px;
-  grid:
-    "area-template-header" auto
-    "area-template-content" auto
-    / 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "area-container-template-header"
+    "area-container-template-content";
 }
-.area-template-header {
-  grid-area: area-template-header;
+.area-container-template-header {
+  grid-area: area-container-template-header;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -24,8 +23,8 @@
   border-top-right-radius: 12px;
   padding: 5px;
 }
-.area-template-content {
-  grid-area: area-template-content;
+.area-container-template-content {
+  grid-area: area-container-template-content;
   overflow-x: auto;
   overflow-y: auto;
   padding: 0px;
@@ -35,90 +34,20 @@
   border-top: 1px solid var(--background-principal);
 }
 
-/* Area Template Com Cor de Fundo */
-.area-template-cf {
-  display: grid;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 20px;
-  grid:
-    "area-template-cf-header" auto
-    "area-template-cf-content" auto
-    / 1fr;
-}
-.area-template-cf-header {
-  grid-area: area-template-cf-header;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: stretch;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 10px 20px;
-  text-align: left;
-  color: var(--txt-subtitulo);
-  border-radius: 0px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-}
-.area-template-cf-header h2 {
-  font-size: 14px;
-  font-weight: 350;
-}
-.area-template-cf-content {
-  grid-area: area-template-cf-content;
-  overflow-x: auto;
-  border-radius: 20px;
-  padding: 0px;
-}
-
-/* Area Template Tamanho fixo*/
-.area-template-tmf {
-  display: grid;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 20px;
-  grid:
-    "area-template-tmf-header" auto
-    "area-template-tmf-content" auto
-    / 1fr;
-}
-.area-template-tmf-header {
-  grid-area: area-template-tmf-header;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: stretch;
-  font-size: 14px;
-  font-weight: 350;
-  padding: 10px 20px;
-  text-align: left;
-  color: var(--txt-subtitulo);
-  border-radius: 0px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-}
-.area-template-tmf-content {
-  grid-area: area-template-tmf-content;
-  overflow-x: auto;
-  border-radius: 12px;
-  padding: 0px;
-}
-
 /* Area Template dos filtros*/
-.area-template-fil {
+.area-container-filtros-template {
   display: grid;
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: 100%;
+  max-height: 88vh;
   grid:
-    "area-template-fil-header" auto
-    "area-template-fil-content" auto
+    "area-container-filtros-template-header" auto
+    "area-container-filtros-template-content" auto
     / 1fr;
 }
-.area-template-fil-header {
-  grid-area: area-template-fil-header;
+.area-container-filtros-template-header {
+  grid-area: area-container-filtros-template-header;
   display: grid;
   align-items: center;
   justify-items: space-between;
@@ -128,8 +57,8 @@
   border-top-right-radius: 25px;
   padding: 5px;
 }
-.area-template-fil-content {
-  grid-area: area-template-fil-content;
+.area-container-filtros-template-content {
+  grid-area: area-container-filtros-template-content;
   overflow-x: hidden;
   background: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -141,20 +70,20 @@
   padding: 20px;
 }
 
-/* Area Template Agenda para hoje*/
-.area-template-fil-alt {
+/* Area Template da Agenda para hoje*/
+.area-container-compromisso-hoje-template {
   display: grid;
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: 100%;
+  max-height: 88vh;
   grid:
-    "area-template-fil-alt-header" auto
-    "area-template-fil-alt-content" auto
+    "area-container-compromisso-hoje-template-header" auto
+    "area-container-compromisso-hoje-template-content" auto
     / 1fr;
 }
-.area-template-fil-alt-header {
-  grid-area: area-template-fil-alt-header;
+.area-container-compromisso-hoje-template-header {
+  grid-area: area-container-compromisso-hoje-template-header;
   display: grid;
   align-items: center;
   justify-items: space-between;
@@ -164,8 +93,8 @@
   border-top-right-radius: 25px;
   padding: 5px;
 }
-.area-template-fil-alt-content {
-  grid-area: area-template-fil-alt-content;
+.area-container-compromisso-hoje-template-content {
+  grid-area: area-container-compromisso-hoje-template-content;
   overflow-x: hidden;
   background: var(--fundo-container);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -176,56 +105,92 @@
   padding: 20px 10px;
 }
 
-/* Area Template para cabeçalhos fixos*/
-.area-template-cbf {
+/* Area Template para areas internas dos content das areas-container */
+.area-interna-containerContent-template {
   display: grid;
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
   max-height: 100%;
-  grid:
-    "area-template-cbf-header" auto
-    "area-template-cbf-content" auto
-    / 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "area-interna-containerContent-template-header"
+    "area-interna-containerContent-template-content";
 }
-.area-template-cbf-header {
-  grid-area: area-template-cbf-header;
+.area-interna-containerContent-template-header {
+  grid-area: area-interna-containerContent-template-header;
   display: grid;
   align-items: center;
-  justify-items: space-between;
   color: var(--txt-secundario);
   position: sticky;
   top: 0;
   z-index: 10;
   padding: 5px;
 }
-.area-template-cbf-content {
-  grid-area: area-template-cbf-content;
+.area-interna-containerContent-template-content {
+  grid-area: area-interna-containerContent-template-content;
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 64vh;
+  max-height: 69vh;
   background: transparent;
   border-radius: 25px;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
   border-top: 1px solid var(--background-principal);
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
 }
 
-.area-template-cbf-content-sem-cb {
-  max-height: 77vh;
+.area-interna-containerContent-template-not-header {
+  max-height: 100%;
   border-top: none;
+}
+
+/* Area Template Sessão Interna */
+.area-template-sessao-int {
+  display: grid;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 25px;
+  grid:
+    "area-template-sessao-int-header" auto
+    "area-template-sessao-int-content" auto
+    / 1fr;
+}
+.area-template-sessao-int-header {
+  grid-area: area-template-sessao-int-header;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: stretch;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+  text-align: left;
+  color: var(--txt-subtitulo);
+  border-radius: 0px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+.area-template-sessao-int-header h2 {
+  font-size: 14px;
+  font-weight: 350;
+}
+.area-template-sessao-int-content {
+  grid-area: area-template-sessao-int-content;
+  overflow-x: auto;
+  border-radius: 20px;
+  padding: 0px;
 }
 
 /* Estilos */
 .area-template::-webkit-scrollbar,
-.area-template-cf::-webkit-scrollbar,
-.area-template-fil-alt::-webkit-scrollbar,
-.area-template-cbf::-webkit-scrollbar,
-.area-template-content::-webkit-scrollbar,
-.area-template-cf-content::-webkit-scrollbar,
-.area-template-fil-alt-content::-webkit-scrollbar,
-.area-template-cbf-content::-webkit-scrollbar {
+.area-template-sessao-int::-webkit-scrollbar,
+.area-container-compromisso-hoje-template::-webkit-scrollbar,
+.area-interna-containerContent-template::-webkit-scrollbar,
+.area-container-template-content::-webkit-scrollbar,
+.area-template-sessao-int-content::-webkit-scrollbar,
+.area-container-compromisso-hoje-template-content::-webkit-scrollbar,
+.area-interna-containerContent-template-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
 
@@ -237,12 +202,12 @@
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   /* Area Template padrão*/
-  .area-template {
+  .area-container-template {
     background: var(--background-principal);
     border-radius: 25px;
-    padding-bottom: 0px;
+    max-height: 85vh;
   }
-  .area-template-header {
+  .area-container-template-header {
     padding: 5px 5px 5px 15px;
     justify-content: start;
     position: relative;
@@ -253,7 +218,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-  .area-template-content {
+  .area-container-template-content {
     border-radius: 0px;
     border-radius: 25px;
     background: var(--fundo-container);
@@ -261,35 +226,18 @@
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;
     border-radius: 0px;
-
     box-shadow: none;
     border: none;
   }
 
-  /* Area Template cor de fundo */
-  .area-template-cf-header {
-    font-size: 14px;
-    font-weight: 300;
-    padding: 7px 20px;
-  }
-  .area-template-cf-header h2 {
-    font-size: 13px;
-    font-weight: 300;
-  }
-  /* Area Template Tamanho fixo*/
-  .area-template-tmf-header {
-    font-size: 13px;
-    font-weight: 300;
-    padding: 7px 20px;
-  }
   /* Area Template dos filtros*/
-  .area-template-fil {
+  .area-container-filtros-template {
     padding: 3px;
     border-radius: 20px;
     overflow: hidden;
   }
-  .area-template-fil-header {
-    grid-area: area-template-fil-header;
+  .area-container-filtros-template-header {
+    grid-area: area-container-filtros-template-header;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
@@ -305,8 +253,8 @@
     background: none;
     font-weight: 300;
   }
-  .area-template-fil-content {
-    grid-area: area-template-fil-content;
+  .area-container-filtros-template-content {
+    grid-area: area-container-filtros-template-content;
     max-height: 0px;
     overflow: auto;
     box-shadow: none;
@@ -314,14 +262,14 @@
     padding: 20px;
   }
 
-  /* Area Template Agenda para hoje*/
-  .area-template-fil-alt {
+  /* Area Template da Agenda para hoje*/
+  .area-container-compromisso-hoje-template {
     padding: 3px;
     border-radius: 20px;
     overflow: hidden;
   }
-  .area-template-fil-alt-header {
-    grid-area: area-template-fil-alt-header;
+  .area-container-compromisso-hoje-template-header {
+    grid-area: area-container-compromisso-hoje-template-header;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
@@ -337,8 +285,8 @@
     background: none;
     font-weight: 300;
   }
-  .area-template-fil-alt-content {
-    grid-area: area-template-fil-alt-content;
+  .area-container-compromisso-hoje-template-content {
+    grid-area: area-container-compromisso-hoje-template-content;
     max-height: 0px;
     overflow: auto;
     box-shadow: none;
@@ -346,9 +294,9 @@
     padding: 10px 5px;
   }
 
-  /* Area Template para cabeçalhos fixos*/
-  .area-template-cbf-header {
-    grid-area: area-template-cbf-header;
+  /* Area Template para areas internas dos content das areas-container */
+  .area-interna-containerContent-template-header {
+    grid-area: area-interna-containerContent-template-header;
     background: transparent;
     padding: 0px 10px;
     border-radius: 0px;
@@ -357,25 +305,36 @@
     font-size: 14px;
     font-weight: 300;
   }
-  .area-template-cbf-content {
-    grid-area: area-template-cbf-content;
+  .area-interna-containerContent-template-content {
+    grid-area: area-interna-containerContent-template-content;
     overflow-x: auto;
     overflow-y: auto;
-    padding: 12px 10px;
-    max-height: 100%;
+    padding: 12px 10px 20px 10px;
+    max-height: 68vh;
     border-radius: 0px;
     border-top: 1px solid var(--background-principal);
   }
 
-  .area-template-cbf-content-sem-cb {
+  .area-interna-containerContent-template-not-header {
     max-height: 100%; /*76vh*/
     border-top: none;
   }
 
+  /* Area Template Sessão Interna */
+  .area-template-sessao-int-header {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 7px 10px;
+  }
+  .area-template-sessao-int-header h2 {
+    font-size: 13px;
+    font-weight: 300;
+  }
+
   .area-template::-webkit-scrollbar,
-  .area-template-content::-webkit-scrollbar,
-  .area-template-fil-alt::-webkit-scrollbar,
-  .area-template-fil-alt-content::-webkit-scrollbar {
+  .area-container-template-content::-webkit-scrollbar,
+  .area-container-compromisso-hoje-template::-webkit-scrollbar,
+  .area-container-compromisso-hoje-template-content::-webkit-scrollbar {
     display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
   }
 }

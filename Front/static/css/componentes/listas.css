@@ -18,7 +18,7 @@
   grid-auto-flow: row;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 25px;
   gap: 0px;
   scrollbar-width: thick;
 }
@@ -154,7 +154,7 @@
   .main-sidenav .lista-vertical-2 {
     gap: 7px;
   }
-  .main-sidenav .area-template-fil-content {
+  .main-sidenav .area-container-filtros-template-content {
     gap: 10px;
   }
 

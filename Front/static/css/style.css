@@ -33,7 +33,7 @@
 @import "./componentes/cards/template-cards-tarefa.css";
 /* Componentes/ areas */
 @import "./componentes/areas/area-template.css";
-@import "./componentes/areas/area-abas-template.css";
+@import "./componentes/areas/area-container-abas-template.css";
 /* Componentes/ botoes */
 @import "./componentes/botoes/botoes.css";
 @import "./componentes/botoes/recuar-expandir.css";

@@ -1,16 +1,36 @@
 .contatos-small-card-editar .btn-outline-principal {
   width: auto;
   font-weight: regular;
-  font-size: 10px;
-  border-radius: 5px;
-  border: 1px solid var(--btn-secundario);
+  font-size: 11px;
+  border-radius: 25px;
+  border: 1px solid var(--btn-principal-alt);
   letter-spacing: 0.5px;
-  background: var(--btn-secundario);
+  background: var(--btn-principal-alt);
   color: var(--txt-principal);
+  justify-self: end;
 }
 .contatos-small-card-editar .btn-outline-principal:hover {
-  border: 1px solid var(--btn-secundario-destaque);
-  background: var(--btn-secundario-hover);
+  border: 1px solid var(--btn-principal-alt-destaque);
+  background: var(--btn-principal-alt-hover);
+  color: var(--txt-principal);
+  box-shadow: none;
+}
+
+/* Estilos para contaos na area de ANIVERSARIANTES */
+.aniversario-small-card-editar .btn-outline-principal {
+  width: auto;
+  font-weight: regular;
+  font-size: 11px;
+  border-radius: 25px;
+  border: 1px solid var(--btn-principal-alt);
+  letter-spacing: 0.5px;
+  background: var(--btn-principal-alt);
+  color: var(--txt-principal);
+  justify-self: end;
+}
+.aniversario-small-card-editar .btn-outline-principal:hover {
+  border: 1px solid var(--btn-principal-alt-destaque);
+  background: var(--btn-principal-alt-hover);
   color: var(--txt-principal);
   box-shadow: none;
 }

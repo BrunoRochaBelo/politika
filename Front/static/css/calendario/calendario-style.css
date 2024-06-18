@@ -4,19 +4,20 @@
 .tarefa-medium-card-editar .btn-outline-principal {
   width: auto;
   font-weight: regular;
-  font-size: 12px;
-  border-radius: 5px;
-  border: 1px solid var(--btn-secundario);
+  font-size: 11px;
+  border-radius: 25px;
+  border: 1px solid var(--btn-principal-alt);
   letter-spacing: 0.5px;
-  background: var(--btn-secundario);
+  background: var(--btn-principal-alt);
   color: var(--txt-principal);
+  justify-self: end;
 }
 .calendario-large-card-editar .btn-outline-principal:hover,
 .calendario-small-card-editar .btn-outline-principal:hover,
 .tarefa-small-card-editar .btn-outline-principal:hover,
 .tarefa-medium-card-editar .btn-outline-principal:hover {
-  border: 1px solid var(--btn-secundario-destaque);
-  background: var(--btn-secundario-hover);
+  border: 1px solid var(--btn-principal-alt-destaque);
+  background: var(--btn-principal-alt-hover);
   color: var(--txt-principal);
   box-shadow: none;
 }
@@ -144,6 +145,7 @@
 .filtro-tarefa:hover {
   background: var(--card-hover);
   border-radius: 50% !important;
+  color: var(--txt-contraste-alt);
 }
 
 .filtro-tarefa:hover {
@@ -175,14 +177,14 @@
   border-color: var(--txt-secundario);
 }
 
-.area-aniversaiantes {
+.area-aniversariantes {
   display: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
-.area-aniversaiantes.visible {
+.area-aniversariantes.visible {
   display: block;
   opacity: 1;
   max-height: 80vh;
@@ -191,24 +193,24 @@
   margin: 0px;
 }
 
-.area-template-cf.aniversariantes {
+.area-template-sessao-int.aniversariantes {
   background: var(--card-fundo);
   margin: 0px;
   padding: 12px;
   border: 1px solid transparent;
 }
-.area-template-cf-content.area-aniversaiantes .card-xs {
+.area-template-sessao-int-content.area-aniversariantes .card-xs {
   background: var(--fundo-modal);
   border: 1px solid var(--card-borda);
 }
-.area-template-cf.aniversariantes:hover {
+.area-template-sessao-int.aniversariantes:hover {
   background: var(--card-hover);
 }
-.area-template-cf-content.area-aniversaiantes .card-xs:hover {
+.area-template-sessao-int-content.area-aniversariantes .card-xs:hover {
   background: var(--card-fundo);
   border: 1px solid var(--card-hover);
 }
-.area-template-cf.aniversariantes .btn-recuar-expandir-alt:hover {
+.area-template-sessao-int.aniversariantes .btn-recuar-expandir-alt:hover {
   border-color: transparent;
 }
 
@@ -314,13 +316,13 @@
     box-shadow: none;
   }
 
-  .area-template-cf.aniversariantes {
+  .area-template-sessao-int.aniversariantes {
     margin: 0px;
   }
-  .area-template-cf.aniversariantes:hover {
+  .area-template-sessao-int.aniversariantes:hover {
     background: var(--card-fundo);
   }
-  .area-template-cf-content.area-aniversaiantes .card-xs:hover {
+  .area-template-sessao-int-content.area-aniversariantes .card-xs:hover {
     background: var(--fundo-modal);
     border: 1px solid var(--card-borda);
   }

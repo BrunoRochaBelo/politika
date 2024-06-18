@@ -18,11 +18,15 @@ function createOverlay() {
 
   // Adiciona um evento de clique ao overlay
   overlay.addEventListener("click", function () {
-    var areaContent = selectElement(".area-template-fil-alt-content");
-    var area = selectElement(".area-template-fil-alt");
+    var areaContent = selectElement(
+      ".area-container-compromisso-hoje-template-content"
+    );
+    var area = selectElement(".area-container-compromisso-hoje-template");
     var button = selectElement(".btn-suaAgenda");
     var mainSidenav = selectElement(".main-sidenav");
-    var areaHeader = selectElement(".area-template-fil-alt-header");
+    var areaHeader = selectElement(
+      ".area-container-compromisso-hoje-template-header"
+    );
 
     // Chama a função toggleVisibility para fechar o overlay
     toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
@@ -60,7 +64,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--btn-alt)";
+      areaHeader.style.color = "var(--btn-principal-alt-alt)";
       areaHeader.style.fontSize = "22px";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
@@ -79,11 +83,15 @@ window.addEventListener("resize", function () {
 });
 
 function OcultarExibirAgenda() {
-  var areaContent = selectElement(".area-template-fil-alt-content");
-  var area = selectElement(".area-template-fil-alt");
+  var areaContent = selectElement(
+    ".area-container-compromisso-hoje-template-content"
+  );
+  var area = selectElement(".area-container-compromisso-hoje-template");
   var button = selectElement(".btn-suaAgenda");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(".area-template-fil-alt-header");
+  var areaHeader = selectElement(
+    ".area-container-compromisso-hoje-template-header"
+  );
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

@@ -10,7 +10,7 @@
   padding-bottom: 15px;
 }
 
-.area-template-cbf-content {
+.area-interna-containerContent-template-content {
   padding: 0 12px;
 }
 
@@ -153,7 +153,7 @@ label + .form-checkbox:before {
 }
 
 label + .form-checkbox:checked:before {
-  background: var(--cor-p2);
+  background: var(--cor-s2);
 }
 
 label + .form-checkbox:after {
@@ -223,6 +223,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .form {
     background-color: var(--form-background);
     border: none;
+    padding-bottom: 20px;
   }
 
   .botoes {
@@ -233,6 +234,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .botoes .btn-outline-principal,
   .botoes .btn-principal {
     width: auto;
+    margin: 0px 10px 10px 10px;
   }
 }
 
@@ -273,8 +275,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .radio-button-group input[type="radio"]:checked + label {
-  background-color: var(--cor-p1);
-  border: 2px solid var(--cor-p1);
+  background-color: var(--cor-s2);
+  border: 2px solid var(--cor-s2);
   color: var(--txt-principal);
 }
 
@@ -305,8 +307,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .checkbox-button-group input[type="checkbox"]:checked + label {
-  background-color: var(--cor-p1);
-  border: 2px solid var(--cor-p1);
+  background-color: var(--cor-s2);
+  border: 2px solid var(--cor-s2);
   color: var(--txt-principal);
 }
 

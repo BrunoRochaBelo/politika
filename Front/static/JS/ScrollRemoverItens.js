@@ -1,7 +1,7 @@
-//Script para Remover itens ao rolar
-
 document.addEventListener("DOMContentLoaded", function () {
-  const contentArea = document.querySelector(".area-template-cbf-content");
+  const contentArea = document.querySelector(
+    ".area-interna-containerContent-template-content"
+  );
   const listaSelect = document.querySelector(".lista-select.nav-calendar");
   let item1 = document.querySelector(".item1");
   let item2 = document.querySelector(".item2");
@@ -10,8 +10,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const item1Original = item1.cloneNode(true);
   const item2Original = item2.cloneNode(true);
 
+  // Função para ajustar o max-height com base na presença de itens e no modo responsivo
+  function adjustMaxHeight() {
+    if (window.innerWidth <= 900) {
+      // Modo responsivo
+      if (item1 || item2) {
+        contentArea.style.maxHeight = "68vh"; // Quando os itens estão presentes
+      } else {
+        contentArea.style.maxHeight = "69vh"; // Quando os itens foram removidos
+      }
+    } else {
+      // Não modo responsivo
+      if (item1 || item2) {
+        contentArea.style.maxHeight = "69vh"; // Quando os itens estão presentes
+      } else {
+        contentArea.style.maxHeight = "71vh"; // Quando os itens foram removidos
+      }
+    }
+  }
+
+  // Ajusta o max-height inicialmente
+  adjustMaxHeight();
+
   contentArea.addEventListener("scroll", function () {
     if (contentArea.scrollTop > 0) {
+      // Verifica se os itens estão presentes e remove-os
       if (item1) {
         item1.classList.add("fade-out");
         item1.addEventListener(
@@ -40,9 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       }
 
+      // Aplica estilos quando os itens são removidos
       listaSelect.style.paddingTop = "0px";
       listaSelect.style.gap = "0";
     } else {
+      // Verifica se os itens não estão presentes e adiciona-os de volta
       if (!item1) {
         const newItem1 = item1Original.cloneNode(true);
         newItem1.classList.add("fade-in");
@@ -57,8 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
         item2 = newItem2;
       }
 
+      // Aplica estilos quando os itens são adicionados de volta
       listaSelect.style.padding = "5px";
       listaSelect.style.gap = "12px";
     }
   });
+
+  // Ajusta o max-height quando a janela é redimensionada
+  window.addEventListener("resize", adjustMaxHeight);
 });

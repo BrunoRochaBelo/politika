@@ -204,7 +204,7 @@
 }
 
 .modal-concluir-pleito-concluir label {
-  color: var(--txt-secundario);
+  color: var(--txt-subtitulo);
   margin-bottom: 7px;
 }
 .modal-concluir-pleito-concluir textarea,
@@ -216,22 +216,8 @@
   color: var(--txt-principal);
   background: var(--card-fundo);
   border: 1px solid var(--input-focus-background);
-  border-radius: 5px;
-}
-
-.close {
-  position: absolute;
-  padding: 0 10px;
-  top: 5px;
-  right: 5px;
-  color: var(--txt-secundario);
-  border-radius: 50px;
-  font-size: 28px;
-}
-.close:hover,
-.close:focus {
-  background: #c61818;
-  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 7px;
 }
 
 .modal-concluir-pleito-salvar .btn-principal {

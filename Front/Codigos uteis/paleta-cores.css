@@ -1,0 +1,99 @@
+:root {
+  /* Texts */
+  --txt-titulo: hsl(220, 15%, 95%);
+  --txt-subtitulo: hsl(220, 10%, 85%);
+  --txt-principal: hsl(220, 12%, 90%);
+  --txt-secundario: hsl(220, 8%, 75%);
+  --txt-destaque: hsl(220, 7%, 55%);
+  --txt-contraste: hsl(220, 15%, 30%);
+  --txt-contraste-alt: hsl(220, 100%, 98%);
+
+  /* Backgrounds */
+  --background-principal: hsl(220, 25%, 15%);
+  --fundo-container: hsl(220, 25%, 18%);
+  --fundo-modal: hsl(220, 20%, 22%);
+  --borda: hsl(220, 25%, 25%);
+  --divisor: hsl(220, 25%, 30%);
+
+  /* Cards */
+  --card-fundo: hsl(220, 25%, 24%);
+  --card-borda: hsl(220, 25%, 26%);
+  --card-hover: hsl(220, 30%, 32%);
+  --card-aberto-fundo: hsl(220, 30%, 38%);
+  --card-alt-fundo: hsl(220, 20%, 20%);
+
+  /* Highlight and Detail Colors */
+  --detalhe-1: hsl(220, 25%, 28%);
+  --detalhe-3: hsl(220, 30%, 43%);
+
+  /* Primary Colors */
+  --cor-p1: hsl(220, 85%, 60%);
+  --cor-p2: hsl(220, 100%, 55%);
+  --cor-p3: hsl(220, 90%, 80%);
+
+  /* Secondary Colors */
+  --cor-s1: hsl(220, 100%, 70%);
+  --cor-s2: hsl(220, 80%, 50%);
+  --cor-s3: hsl(220, 70%, 60%);
+
+  /* Buttons */
+  --btn-principal: hsl(220, 85%, 60%);
+  --btn-principal-hover: hsl(220, 85%, 70%);
+  --btn-principal-destaque: hsl(220, 90%, 65%);
+  --btn-principal-text: hsl(0, 0%, 100%);
+
+  --btn-principal-alt: hsl(220, 65%, 70%);
+  --btn-principal-alt-hover: hsl(220, 65%, 75%);
+  --btn-principal-alt-destaque: hsl(220, 73%, 78%);
+  --btn-principal-alt-txt: hsl(0, 0%, 100%);
+
+  --btn-secundario: hsl(220, 65%, 50%);
+  --btn-secundario-hover: hsl(220, 65%, 60%);
+  --btn-secundario-destaque: hsl(220, 73%, 55%);
+  --btn-secundario-text: hsl(0, 0%, 100%);
+
+  --btn-secundario-alt: hsl(220, 60%, 75%);
+  --btn-secundario-alt-hover: hsl(220, 60%, 80%);
+  --btn-secundario-alt-destaque: hsl(220, 73%, 78%);
+  --btn-secundario-alt-text: hsl(0, 0%, 100%);
+
+  /* Communication Colors */
+  --link: hsl(220, 85%, 65%);
+  --link-hover: hsl(220, 85%, 75%);
+  --placeholder: hsl(220, 10%, 90%);
+  --sucesso: hsl(140, 90%, 70%);
+  --erro: hsl(0, 70%, 55%);
+  --aviso: hsl(300, 90%, 75%);
+  --informacao: hsl(220, 70%, 80%);
+
+  /* Others */
+  --scrollbar-bg: hsl(220, 20%, 20%);
+  --scrollbar-thumb: hsl(220, 20%, 30%);
+  --scrollbar-thumb-hover: hsl(220, 20%, 35%);
+
+  /* Form Fields */
+  --form-background: hsl(220, 25%, 18%);
+  --input-background: hsl(220, 25%, 4%);
+  --input-border: hsl(220, 18%, 18%);
+  --input-text: hsl(220, 15%, 98%);
+  --input-placeholder: hsl(220, 15%, 40%);
+  --input-bg-empty: hsl(220, 25%, 24%);
+  --input-bg-filled: hsl(220, 18%, 20%);
+  --input-focus-border: hsl(220, 85%, 70%);
+  --input-focus-background: hsl(220, 18%, 20%);
+  --input-error-border: hsl(0, 70%, 70%);
+  --input-error-background: hsl(0, 40%, 35%);
+  --input-success-border: hsl(140, 90%, 70%);
+  --input-success-background: hsl(140, 60%, 35%);
+
+  /* Buttons and Icons within Inputs */
+  --input-icon: hsl(220, 20%, 95%);
+  --button-clear: hsl(220, 20%, 100%);
+  --button-clear-hover: hsl(220, 20%, 90%);
+
+  /* Tooltip and Error/Success Messages for Inputs */
+  --tooltip-background: hsl(220, 30%, 25%);
+  --tooltip-text: hsl(220, 20%, 100%);
+  --message-error-text: hsl(0, 80%, 100%);
+  --message-success-text: hsl(140, 90%, 100%);
+}
