@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  background-color: var(--form-background);
+  background: none;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding-bottom: 15px;
@@ -315,4 +315,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .checkbox-button-group label:hover {
   background-color: var(--input-bg-empty);
   color: var(--txt-principal);
+}
+
+.session {
+  display: none;
+}
+.session.active {
+  display: block;
 }

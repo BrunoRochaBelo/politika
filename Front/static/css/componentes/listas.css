@@ -19,7 +19,7 @@
   background: transparent;
   border: 1px solid transparent;
   border-radius: 25px;
-  gap: 0px;
+  gap: 2px;
   scrollbar-width: thick;
 }
 .lista-vertical-fil {

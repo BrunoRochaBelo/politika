@@ -8,7 +8,6 @@
     "main-form" auto
     / minmax(350px, 1100px);
 }
-
 /* container-areas */
 .header-form {
   grid-area: header-form;
@@ -16,38 +15,40 @@
   grid-auto-flow: column;
   align-content: center;
   justify-content: space-between;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding: 5px 5px 5px 15px;
   text-align: left;
   border: 1px solid var(--input-border);
-  background: var(--form-background);
+  background: hsla(218, 31%, 15%, 0.8);
   border-bottom: none;
   position: relative;
 }
-
 .main-form {
   grid-area: main-form;
   overflow-x: hidden;
   justify-content: space-between;
   align-content: start;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   max-height: 88vh;
   padding: 10px;
   border: 1px solid var(--input-border);
-  background: var(--form-background);
+  background: hsla(218, 31%, 15%, 0.8);
   border-top: none;
 }
 
-.main-form .area-template,
+.main-form .area-container-template {
+  box-shadow: none;
+  background: none;
+}
+
 .main-form .area-container-abas-template {
   box-shadow: none;
   background: transparent;
 }
-
 .main-form .area-container-abas-template-header {
   background: transparent;
   border: none;
@@ -82,6 +83,12 @@
   background: var(--input-background);
 }
 
+.main-form .area-template-sessao-int-header {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--txt-destaque);
+}
+
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .body-form-template {
@@ -97,7 +104,6 @@
     max-height: 90vh;
     overflow-y: auto;
     border: none;
-    border-radius: 0;
     box-shadow: none;
   }
 

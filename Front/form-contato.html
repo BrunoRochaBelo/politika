@@ -20,7 +20,7 @@
 
   <main class="main-form">
     <section class="area-container-template">
-      <div class="area-container-template-content area-container-template-content-com-header-fx-int">
+      <div class="area-container-template-content area-container-abas-template-content-com-header-fx-int">
         <form id="form" class=" form" enctype="multipart/form-data">
           <ul class="lista-vertical-fil">
             <li class="card area-template-sessao-int">
@@ -375,7 +375,7 @@
     function changeSession(sessionNumber) {
       var sessions = document.querySelectorAll('.session');
       var selectedSession = document.getElementById('sessao' + sessionNumber);
-      var areaAbas = document.querySelector('.area-template');
+      var areaAbas = document.querySelector('.area-container-template-content');
 
       // Verificar se a sessão clicada já está ativa
       if (selectedSession.classList.contains('active')) {

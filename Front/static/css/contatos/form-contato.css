@@ -101,13 +101,6 @@
   color: white;
 }
 
-.session {
-  display: none;
-}
-.session.active {
-  display: block;
-}
-
 @media only screen and (max-width: 900px) {
   .tipo-contato {
     display: grid;

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   aniversaiantesHeaders.forEach(function (header) {
     header.addEventListener("click", function () {
       var aniversaiantesContainer = this.nextElementSibling;
-      var button = this.querySelector(".btn-recuar-expandir-alt");
+      var button = this.querySelector(".btn-recuar-expandir-aniver");
 
       // Alterna a visibilidade do contêiner
       if (aniversaiantesContainer.classList.contains("visible")) {

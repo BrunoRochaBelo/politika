@@ -58,13 +58,13 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--fundo-container)";
+      button.style.color = "var(--btn-secundario-alt-text)";
       mainSidenav.style.height = "80vh";
       area.style.background = "var(--fundo-modal)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--btn-principal-alt-alt)";
+      areaHeader.style.color = "var(--txt-titulo)";
       areaHeader.style.fontSize = "22px";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after

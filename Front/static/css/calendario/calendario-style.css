@@ -9,8 +9,9 @@
   border: 1px solid var(--btn-principal-alt);
   letter-spacing: 0.5px;
   background: var(--btn-principal-alt);
-  color: var(--txt-principal);
+  color: var(--btn-principal-alt-txt);
   justify-self: end;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 .calendario-large-card-editar .btn-outline-principal:hover,
 .calendario-small-card-editar .btn-outline-principal:hover,
@@ -36,7 +37,7 @@
   justify-self: start;
   align-self: center;
   padding: 5px 10px;
-  color: var(--txt-secundario);
+  color: var(--txt-principal);
   border-radius: 5px;
   background: var(--card-fundo);
 }
@@ -78,8 +79,8 @@
 }
 .dia-visualize {
   color: var(--txt-contraste-alt) !important;
-  background: var(--cor-p2) !important;
-  border: 1px solid var(--cor-p2) !important;
+  background: var(--cor-p1) !important;
+  border: 1px solid var(--cor-p1) !important;
   border-radius: 50% !important;
 }
 .dia-visible {
@@ -210,7 +211,7 @@
   background: var(--card-fundo);
   border: 1px solid var(--card-hover);
 }
-.area-template-sessao-int.aniversariantes .btn-recuar-expandir-alt:hover {
+.area-template-sessao-int.aniversariantes .btn-recuar-expandir-aniver:hover {
   border-color: transparent;
 }
 
@@ -227,8 +228,8 @@
 }
 .filtro-visualize {
   color: var(--txt-contraste-alt) !important;
-  background: var(--cor-p2) !important;
-  border: 1px solid var(--cor-p2) !important;
+  background: var(--cor-p1) !important;
+  border: 1px solid var(--cor-p1) !important;
   border-radius: 5px !important;
 }
 .nav-calendar .tarefa {

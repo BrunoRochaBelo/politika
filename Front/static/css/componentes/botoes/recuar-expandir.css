@@ -1,44 +1,32 @@
-/* Estilo para mostrar o conteúdo quando a área está recuada */
+/* Estilo para mostrar o botão que exibe e oculta conteúdo quando a área está recuada */
 .btn-recuar-expandir {
   display: none;
 }
-.btn-recuar-expandir-alt {
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  color: var(--txt-secundario);
-  background-color: transparent;
-  padding: 3px 7px;
-  cursor: pointer;
-  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 2px solid transparent;
-}
-/* Estilo do botão */
 .btn-recuar-expandir,
 .btn-recuar-expandir:hover,
 .btn-recuar-expandir:active {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--txt-contraste);
-  background-color: var(--btn-secundario-alt);
+  color: var(--btn-secundario-alt-text);
+  background: linear-gradient(135deg, hsl(210, 85%, 50%), hsl(210, 100%, 45%));
   border-radius: 40px;
   padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 1px solid var(--btn-secundario-alt);
+  border: 1px solid var(--btn-secundario);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  justify-self: end;
 }
 
 /* Botão alternativo usado para expandir "indicadores e estatisticas" */
 .area-template-sessao-int-header .btn-recuar-expandir {
-  background-color: transparent;
+  background: transparent;
   border: 1px solid transparent;
-  color: var(--btn-secundario-alt);
+  color: var(--txt-destaque);
   box-shadow: none;
   font-size: 11px;
   font-weight: 300;
 }
-
 .area-template-sessao-int-header .btn-recuar-expandir::after {
   content: "";
   display: inline-block;
@@ -46,37 +34,46 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--btn-secundario-alt);
+  border-top: 5px solid var(--txt-destaque);
   margin-left: 5px;
   border-radius: 25%;
 }
-
 .area-template-sessao-int-header .btn-recuar-expandir.up::after {
   border-top: none; /* Remover a seta para baixo */
-  border-bottom: 5px solid var(--btn-secundario-alt); /* Adicionar a seta para cima */
+  border-bottom: 5px solid var(--txt-destaque); /* Adicionar a seta para cima */
 }
 
-.btn-recuar-expandir-alt {
-  display: block;
-  justify-self: end;
-}
-/* Estilo do botão */
-.btn-recuar-expandir-alt {
+/* Estilo do botão que exibe os aniversariantes */
+.btn-recuar-expandir-aniver {
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.05em;
-  color: var(--txt-secundario);
+  color: var(--txt-destaque);
   background-color: transparent;
   padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 2px solid transparent;
 }
-
-.btn-recuar-expandir-alt:active {
+.btn-recuar-expandir-aniver {
+  display: block;
+  justify-self: end;
+}
+.btn-recuar-expandir-aniver {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--txt-destaque);
+  background-color: transparent;
+  padding: 3px 7px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+.btn-recuar-expandir-aniver:active {
   background-color: darken(var(--fundo-container), 10%);
-  color: var(--txt-secundario);
-  border-color: var(--txt-secundario);
+  color: var(--txt-destaque);
+  border-color: var(--txt-destaque);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -86,6 +83,6 @@
     display: block;
     justify-self: end;
     padding: 3px 7px;
-    font-size: 12px;
+    font-size: 14px;
   }
 }

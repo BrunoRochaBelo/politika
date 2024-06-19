@@ -29,7 +29,7 @@
 }
 .header-nav-template a {
   padding: 0.625rem;
-  border-radius: 20px;
+  border-radius: 25px;
   display: flex;
   transition: 0.15s;
   border: 1px solid transparent;

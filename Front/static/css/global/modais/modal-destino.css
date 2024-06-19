@@ -73,14 +73,18 @@
 }
 .search-input-dest:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
-    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3), inset 0 0 1px var(--cor-p3),
-    inset 0 0 2px var(--cor-p3), inset 0 0 3px var(--cor-p3),
-    inset 0 0 4px var(--cor-p3);
+  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
+    0 0 2px var(--btn-secundario-alt-destaque),
+    0 0 3px var(--btn-secundario-alt-destaque),
+    0 0 4px var(--btn-secundario-alt-destaque),
+    inset 0 0 1px var(--btn-secundario-alt-destaque),
+    inset 0 0 2px var(--btn-secundario-alt-destaque),
+    inset 0 0 3px var(--btn-secundario-alt-destaque),
+    inset 0 0 4px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 .search-input-dest:hover::placeholder {
-  color: var(--cor-p3);
+  color: var(--btn-secundario-alt-destaque);
 }
 .search-input-dest:focus::placeholder {
   color: var(--txt-contraste);
@@ -133,24 +137,25 @@
   border: none;
   cursor: pointer;
 }
-
 .submit-button:hover {
   background-color: #45a049;
 }
 
 /* Ou especificamente para o input do bairro */
 #bairro {
-  background-color: var(--card-alt-fundo);
+  background-color: var(--card-fundo);
 }
 #bairro:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px var(--cor-p3), inset 0 0 1px var(--cor-p3),
-    inset 0 0 2px var(--cor-p3), inset 0 0 3px var(--cor-p3),
-    inset 0 0 4px var(--cor-p3);
+  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
+    inset 0 0 1px var(--btn-secundario-alt-destaque),
+    inset 0 0 2px var(--btn-secundario-alt-destaque),
+    inset 0 0 3px var(--btn-secundario-alt-destaque),
+    inset 0 0 4px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 #bairro:hover::placeholder {
-  color: var(--cor-p3);
+  color: var(--btn-secundario-alt-destaque);
 }
 
 @media only screen and (max-width: 900px) {

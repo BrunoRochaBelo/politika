@@ -139,11 +139,10 @@
   text-align: center;
   align-items: center;
   justify-content: start;
-  color: var(--btn-secundario-alt-destaque);
+  color: var(--btn-secundario-alt-text);
   padding: 12px 15px;
   font-size: 14px;
   font-weight: 300;
-
   border-radius: 25px;
 }
 .btn-filtro-pesq {
@@ -151,8 +150,8 @@
   align-content: center;
   justify-content: center;
   padding: 5px 15px;
-  border-radius: 20px;
-  border: 1px solid var(--btn-secundario-alt-text);
+  border-radius: 25px;
+  border: 1px solid var(--btn-secundario-alt-destaque);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -162,7 +161,7 @@
 }
 .btn-filtro-pesq-title {
   font-size: 14px;
-  color: var(--btn-secundario-alt-destaque);
+  color: var(--btn-secundario-alt-text);
   margin-right: 15px;
 }
 /* Estilo para o "x" do botão filtro */
@@ -177,7 +176,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--btn-secundario-alt-text);
+  color: var(--btn-secundario-alt-destaque);
   font-size: 18px;
   border: none;
 }
@@ -190,6 +189,7 @@
     0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3);
 }
 
+/* Estilo para o botão "X" fechar"*/
 .close {
   position: absolute;
   padding: 0 10px;
@@ -203,4 +203,5 @@
 .close:focus {
   background: #c61818;
   cursor: pointer;
+  color: var(--txt-principal);
 }

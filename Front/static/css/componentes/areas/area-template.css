@@ -233,7 +233,7 @@
   /* Area Template dos filtros*/
   .area-container-filtros-template {
     padding: 3px;
-    border-radius: 20px;
+    border-radius: 25px;
     overflow: hidden;
   }
   .area-container-filtros-template-header {
@@ -265,7 +265,7 @@
   /* Area Template da Agenda para hoje*/
   .area-container-compromisso-hoje-template {
     padding: 3px;
-    border-radius: 20px;
+    border-radius: 25px;
     overflow: hidden;
   }
   .area-container-compromisso-hoje-template-header {

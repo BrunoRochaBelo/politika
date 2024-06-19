@@ -62,7 +62,7 @@
 
 .modal-btn-floating-body li:hover {
   background: var(--detalhe-1);
-  color: var(--cor-p3);
+  color: var(--txt-destaque);
 }
 
 /* Botão do modal */
@@ -75,7 +75,7 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, hsl(220, 85%, 50%), hsl(220, 100%, 45%));
+  background: linear-gradient(135deg, hsl(210, 85%, 50%), hsl(210, 100%, 45%));
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   color: var(--btn-principal-text);
   display: flex;
@@ -86,11 +86,11 @@
 }
 
 .floatingButton:hover {
-  background: linear-gradient(135deg, hsl(220, 85%, 60%), hsl(220, 100%, 55%));
+  background: linear-gradient(135deg, hsl(210, 85%, 60%), hsl(210, 100%, 55%));
 }
 
 .floatingButton:active {
-  background: linear-gradient(135deg, hsl(220, 85%, 40%), hsl(220, 100%, 35%));
+  background: linear-gradient(135deg, hsl(210, 85%, 40%), hsl(210, 100%, 35%));
 }
 
 /* RESPONSIVO */
@@ -113,8 +113,8 @@
     cursor: pointer;
     background: linear-gradient(
       135deg,
-      hsl(220, 85%, 50%),
-      hsl(220, 100%, 45%)
+      hsl(210, 85%, 50%),
+      hsl(210, 100%, 45%)
     );
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     color: var(--btn-principal-text);
@@ -128,16 +128,16 @@
   .floatingButton:hover {
     background: linear-gradient(
       135deg,
-      hsl(220, 85%, 60%),
-      hsl(220, 100%, 55%)
+      hsl(210, 85%, 60%),
+      hsl(210, 100%, 55%)
     );
   }
 
   .floatingButton:active {
     background: linear-gradient(
       135deg,
-      hsl(220, 85%, 40%),
-      hsl(220, 100%, 35%)
+      hsl(210, 85%, 40%),
+      hsl(210, 100%, 35%)
     );
   }
 }

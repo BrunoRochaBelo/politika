@@ -40,7 +40,7 @@
   width: 100%;
 }
 .search-input {
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 0.625rem;
   cursor: pointer;
   width: 100%;
@@ -52,7 +52,7 @@
 }
 .search-button {
   background: transparent;
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 8px;
   border: none;
   cursor: pointer;
@@ -75,14 +75,18 @@
 }
 .header-search:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
-    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3), inset 0 0 1px var(--cor-p3),
-    inset 0 0 2px var(--cor-p3), inset 0 0 3px var(--cor-p3),
-    inset 0 0 4px var(--cor-p3);
+  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
+    0 0 2px var(--btn-secundario-alt-destaque),
+    0 0 3px var(--btn-secundario-alt-destaque),
+    0 0 4px var(--btn-secundario-alt-destaque),
+    inset 0 0 1px var(--btn-secundario-alt-destaque),
+    inset 0 0 2px var(--btn-secundario-alt-destaque),
+    inset 0 0 3px var(--btn-secundario-alt-destaque),
+    inset 0 0 4px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 .header-search:hover .search-input::placeholder {
-  color: var(--cor-p3);
+  color: var(--btn-secundario-alt-destaque);
 }
 .search-input:focus,
 .search-button:focus {
@@ -99,10 +103,14 @@
 }
 
 .header-user:hover {
-  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
-    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3), inset 0 0 1px var(--cor-p3),
-    inset 0 0 2px var(--cor-p3), inset 0 0 3px var(--cor-p3),
-    inset 0 0 4px var(--cor-p3);
+  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
+    0 0 2px var(--btn-secundario-alt-destaque),
+    0 0 3px var(--btn-secundario-alt-destaque),
+    0 0 4px var(--btn-secundario-alt-destaque),
+    inset 0 0 1px var(--btn-secundario-alt-destaque),
+    inset 0 0 2px var(--btn-secundario-alt-destaque),
+    inset 0 0 3px var(--btn-secundario-alt-destaque),
+    inset 0 0 4px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 

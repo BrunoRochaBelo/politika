@@ -94,7 +94,7 @@
 .card-select-m {
   width: 100%;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
   border-radius: 9px;
   border: 1px solid var(--card-borda);
@@ -107,7 +107,7 @@
   background: var(--form-background);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
-  border: 1px solid var(--card-borda);
+  border: 1px solid var(--divisor);
   box-sizing: border-box;
 }
 

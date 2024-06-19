@@ -49,7 +49,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaHeader.style.fontSize = "0px";
 
       // Altera o tamanho da .main-sidenav para 18%
-      mainSidenav.style.width = "18%";
+      mainSidenav.style.width = "19%";
 
       // Adiciona a classe para mostrar o pseudo-elemento ::after
       button.classList.add("show-after");
@@ -57,13 +57,13 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--fundo-container)";
+      button.style.color = "var(--btn-secundario-alt-text)";
       mainSidenav.style.height = "auto";
       area.style.background = "var(--fundo-modal)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
-      areaHeader.style.color = "var(--btn-principal-alt-alt)";
+      areaHeader.style.color = "var(--txt-titulo)";
       areaHeader.style.fontSize = "22px";
 
       // Altera o tamanho da .main-sidenav para 98%
