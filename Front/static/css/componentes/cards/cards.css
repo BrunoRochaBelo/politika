@@ -130,29 +130,6 @@
   border-radius: 5px;
 }
 
-/* Compromisso para hoje  */
-.area-container-compromisso-hoje-template-content .card-xs,
-.area-container-compromisso-hoje-template-content .card-s,
-.area-container-compromisso-hoje-template-content .card-m,
-.area-container-compromisso-hoje-template-content .card-l,
-.area-container-compromisso-hoje-template-content .card-tmf-s,
-.area-container-compromisso-hoje-template-content .card-tmf-m,
-.area-container-compromisso-hoje-template-content .card-tmf-l {
-  background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--card-borda);
-  box-sizing: border-box;
-}
-.area-container-compromisso-hoje-template-content .card-select-xs,
-.area-container-compromisso-hoje-template-content .card-select-s,
-.area-container-compromisso-hoje-template-content .card-select-m {
-  background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--card-borda);
-  box-sizing: border-box;
-  border-radius: 9px;
-}
-
 /* Estilo para o efeito hover e active em todos os cards */
 /*  hover  */
 .card-xs:hover,
@@ -167,7 +144,7 @@
 .card-select-m:hover {
   background: var(--card-hover);
   color: var(--txt-contraste-alt);
-  border: 1px solid var(--detalhe-3);
+  border: 1px solid var(--card-borda);
 }
 /*  active  */
 .card-xs:active,
@@ -195,7 +172,6 @@
   .card-select-xs:hover,
   .card-select-s:hover,
   .card-select-m:hover {
-    box-shadow: none;
     border: 1px solid var(--card-borda);
     background: var(--card-fundo);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);

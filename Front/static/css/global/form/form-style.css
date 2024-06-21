@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   gap: 20px;
   background: none;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding-bottom: 15px;
 }
@@ -18,6 +18,9 @@ fieldset {
   border: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 legend {
@@ -28,7 +31,6 @@ legend {
 }
 
 .campo {
-  margin-bottom: 10px;
   background: var(--form-background);
   padding: 10px;
   border-radius: 5px;
@@ -218,14 +220,80 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
 
+.session {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.session.active {
+  max-height: 5000px;
+  opacity: 1;
+  transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.area-template-sessao-int-header.active-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cor-s1);
+}
+
+.area-template-sessao-int-header a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+}
+
+.arrow {
+  border: solid var(--cor-s1);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+.campo input.error,
+.campo select.error,
+.campo textarea.error {
+  border-color: var(--input-error-border) !important;
+}
+
+.campo input.success,
+.campo select.success,
+.campo textarea.success {
+  border-color: var(--input-success-border) !important;
+}
+
+.card.error {
+  border: 1px solid var(--card-error-border);
+  background-color: var(--card-error-background);
+}
+
 /* Responsivo */
 @media only screen and (max-width: 900px) {
   .form {
-    background-color: var(--form-background);
-    border: none;
+    grid-template-columns: 1fr;
+    gap: 20px;
     padding-bottom: 20px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
-
+  .session.active {
+    display: block;
+    max-height: 5000px;
+    opacity: 1;
+  }
   .botoes {
     flex-direction: column;
     gap: 10px;
@@ -315,11 +383,4 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .checkbox-button-group label:hover {
   background-color: var(--input-bg-empty);
   color: var(--txt-principal);
-}
-
-.session {
-  display: none;
-}
-.session.active {
-  display: block;
 }

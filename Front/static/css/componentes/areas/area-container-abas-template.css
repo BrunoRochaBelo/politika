@@ -30,7 +30,6 @@
   padding: 0px;
   height: auto;
   border-radius: 0px;
-  background: var(--fundo-container);
   border-top: 1px solid var(--background-principal);
 }
 
@@ -125,6 +124,7 @@
     background: var(--background-principal);
     border-radius: 25px;
     max-height: 85vh;
+    padding: 0px 1px;
   }
   .area-container-abas-template-header {
     grid-area: area-container-abas-template-header;
@@ -140,7 +140,7 @@
     border-radius: 0px;
     border-radius: 25px;
     background: var(--fundo-container);
-    border: none;
+    border: 1px solid var(--borda);
   }
 
   .aba-header-header-fx-int {
@@ -149,6 +149,10 @@
     border-top-right-radius: 15px;
     box-shadow: none;
     border: none;
+  }
+
+  .area-container-abas-template::-webkit-scrollbar {
+    display: none;
   }
 
   .nav {

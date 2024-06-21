@@ -4,8 +4,8 @@
   align-content: start;
   justify-content: center;
   grid:
-    "header-form"
-    "main-form" auto
+    "header-form" auto
+    "main-form"
     / minmax(350px, 1100px);
 }
 /* container-areas */
@@ -15,9 +15,9 @@
   grid-auto-flow: column;
   align-content: center;
   justify-content: space-between;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  padding: 5px 5px 5px 15px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 10px 10px 10px 15px;
   text-align: left;
   border: 1px solid var(--input-border);
   background: hsla(218, 31%, 15%, 0.8);
@@ -29,20 +29,23 @@
   overflow-x: hidden;
   justify-content: space-between;
   align-content: start;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: auto;
-  max-height: 88vh;
   padding: 10px;
   border: 1px solid var(--input-border);
   background: hsla(218, 31%, 15%, 0.8);
   border-top: none;
 }
+.main-form::-webkit-scrollbar {
+  display: none;
+}
 
 .main-form .area-container-template {
   box-shadow: none;
   background: none;
+  max-height: 85vh;
+  border-radius: 25px;
 }
 
 .main-form .area-container-abas-template {
@@ -53,8 +56,7 @@
   background: transparent;
   border: none;
   border-radius: 0px;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
+  border-radius: 25px;
 }
 
 .main-form .area-container-template-content,
@@ -87,6 +89,15 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--txt-destaque);
+  padding: 15px;
+}
+.main-form .area-template-sessao-int-content {
+  border-radius: 0px;
+  border-radius: 25px;
+}
+
+.main-form .lista-vertical-alt {
+  padding: 1px;
 }
 
 /* RESPONSIVO */
@@ -99,9 +110,7 @@
     border: none;
   }
   .main-form {
-    padding: 0px;
-    height: auto;
-    max-height: 90vh;
+    padding: 10px 0px;
     overflow-y: auto;
     border: none;
     box-shadow: none;
@@ -116,7 +125,7 @@
   }
 
   .main-form .area-interna-containerContent-template-content {
-    max-height: 85vh;
+    max-height: 90vh;
     padding: 10px 3px;
   }
 

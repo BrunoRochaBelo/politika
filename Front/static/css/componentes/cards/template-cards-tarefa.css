@@ -11,7 +11,7 @@
 }
 .tarefa-small-card-title {
   grid-area: tarefa-small-card-title;
-  border-left: 4px solid var(--detalhe-1);
+  border-left: 4px solid var(--card-detalhe);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -69,7 +69,7 @@
   grid-area: tarefa-small-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--detalhe-1);
+  border-top: 1px solid var(--card-detalhe);
 }
 
 .exibirDetalheTarefa {
@@ -79,7 +79,7 @@
   margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--detalhe-3) !important;
+  border: 1px solid var(--card-aberto-detalhe) !important;
   color: var(--txt-principal);
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
@@ -93,8 +93,8 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--detalhe-1);
-  color: var(--txt-destaque);
+  background: var(--card-detalhe);
+  color: var(--txt-secundario);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -120,11 +120,11 @@
   gap: 5px;
 }
 .tarefa-small-card-expanded .tarefa-small-card-title {
-  border-left: 4px solid var(--detalhe-3);
+  border-left: 4px solid var(--card-aberto-detalhe);
   color: var(--txt-principal);
 }
 .tarefa-small-card-expanded .tarefa-small-card-desc {
-  background: var(--detalhe-3);
+  background: var(--card-aberto-detalhe);
 }
 
 /* Médio */
@@ -141,7 +141,7 @@
 }
 .tarefa-medium-card-title {
   grid-area: tarefa-medium-card-title;
-  border-left: 4px solid var(--detalhe-1);
+  border-left: 4px solid var(--card-detalhe);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -177,8 +177,8 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--detalhe-1);
-  color: var(--txt-destaque);
+  background: var(--card-detalhe);
+  color: var(--txt-secundario);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -210,7 +210,7 @@
   grid-area: tarefa-medium-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--detalhe-1);
+  border-top: 1px solid var(--card-detalhe);
 }
 
 .exibirDetalheTarefa {
@@ -220,7 +220,7 @@
   margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--detalhe-3) !important;
+  border: 1px solid var(--card-aberto-detalhe) !important;
   color: var(--txt-principal);
   grid:
     "tarefa-medium-card-title tarefa-medium-card-tag"
@@ -245,9 +245,9 @@
   gap: 5px;
 }
 .tarefa-medium-card-expanded .tarefa-medium-card-title {
-  border-left: 4px solid var(--detalhe-3);
+  border-left: 4px solid var(--card-aberto-detalhe);
   color: var(--txt-principal);
 }
 .tarefa-medium-card-expanded .tarefa-medium-card-desc {
-  background: var(--detalhe-3);
+  background: var(--card-aberto-detalhe);
 }

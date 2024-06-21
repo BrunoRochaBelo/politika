@@ -8,7 +8,7 @@
   font-size: 14px;
   font-weight: 400;
   color: var(--btn-secundario-alt-text);
-  background: linear-gradient(135deg, hsl(210, 85%, 50%), hsl(210, 100%, 45%));
+  background: linear-gradient(135deg, hsl(220, 85%, 50%), hsl(220, 100%, 45%));
   border-radius: 40px;
   padding: 3px 7px;
   cursor: pointer;

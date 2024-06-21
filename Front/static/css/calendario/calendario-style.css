@@ -40,6 +40,7 @@
   color: var(--txt-principal);
   border-radius: 5px;
   background: var(--card-fundo);
+  border: 1px solid var(--card-borda);
 }
 
 .nav-calendar .item2 {
@@ -64,7 +65,7 @@
   padding: 5px;
   color: var(--txt-secundario);
   background: var(--card-fundo);
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   cursor: pointer;
   transition: background-color 0.5s ease;
   font-size: 12px;
@@ -169,7 +170,7 @@
 }
 .btn-calendario:hover {
   color: var(--cor-s1);
-  border-color: var(--borda);
+  border-color: var(--card-borda);
   border-radius: 5px;
 }
 .btn-calendario:active {
@@ -198,18 +199,7 @@
   background: var(--card-fundo);
   margin: 0px;
   padding: 12px;
-  border: 1px solid transparent;
-}
-.area-template-sessao-int-content.area-aniversariantes .card-xs {
-  background: var(--fundo-modal);
   border: 1px solid var(--card-borda);
-}
-.area-template-sessao-int.aniversariantes:hover {
-  background: var(--card-hover);
-}
-.area-template-sessao-int-content.area-aniversariantes .card-xs:hover {
-  background: var(--card-fundo);
-  border: 1px solid var(--card-hover);
 }
 .area-template-sessao-int.aniversariantes .btn-recuar-expandir-aniver:hover {
   border-color: transparent;
@@ -218,7 +208,7 @@
 .filtro-tarefa {
   text-align: center;
   padding: 10px 15px;
-  border: 1px solid transparent;
+  border: 1px solid var(--card-borda);
   border-radius: 5px;
   color: var(--txt-secundario);
   cursor: pointer;
@@ -234,7 +224,7 @@
 }
 .nav-calendar .tarefa {
   padding: 0px;
-  gap: 6px;
+  gap: 8px;
   border-radius: 0px;
   background: transparent;
 }

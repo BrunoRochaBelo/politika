@@ -1,26 +1,41 @@
-// Validações e formatação
-// Função para validação do formulário
+// Função para validar um campo específico
+function validarCampo(campo) {
+  const valorCampo = campo.value.trim();
+  let campoValido = true;
+
+  if (campo.hasAttribute("required") && valorCampo === "") {
+    campo.classList.add("error");
+    campo.classList.remove("success");
+    campoValido = false;
+  } else {
+    campo.classList.remove("error");
+    campo.classList.add("success");
+  }
+
+  // Condições adicionais de validação
+  if (
+    campo.type === "email" &&
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valorCampo)
+  ) {
+    campo.classList.add("error");
+    campo.classList.remove("success");
+    campoValido = false;
+  }
+
+  if (campo.type === "tel" && !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)) {
+    campo.classList.add("error");
+    campo.classList.remove("success");
+    campoValido = false;
+  }
+
+  return campoValido;
+}
+
+// Função para validar o formulário
 function validarFormulario() {
   let formValido = true;
   let camposNaoPreenchidos = [];
 
-  function validarCampo(campoId, mensagem) {
-    let campo = document.getElementById(campoId);
-    let valorCampo = campo.value.trim();
-
-    if (valorCampo === "") {
-      camposNaoPreenchidos.push(mensagem);
-      campo.style.border = "2px solid red"; // Adiciona a borda vermelha
-      formValido = false;
-      return false;
-    } else {
-      campo.style.border = ""; // Remove a borda vermelha se o campo for preenchido
-    }
-
-    return true;
-  }
-
-  // Defina uma lista de objetos representando os campos requeridos
   const camposRequeridos = [
     { id: "tipo_pessoa", mensagem: "Tipo de Pessoa" },
     { id: "nome_contato", mensagem: "Nome do Contato" },
@@ -33,15 +48,18 @@ function validarFormulario() {
     { id: "cidade", mensagem: "Cidade" },
     { id: "bairro", mensagem: "Bairro" },
     { id: "perfil_influencia", mensagem: "Perfil de Influência" },
-    // Adicione mais campos conforme necessário
   ];
 
-  // Iterar sobre os campos requeridos e validar cada um
-  for (const campo of camposRequeridos) {
-    let campoValido = validarCampo(campo.id, campo.mensagem);
+  camposRequeridos.forEach((campo) => {
+    const elementoCampo = document.getElementById(campo.id);
 
-    // Adicione lógica de validação adicional conforme necessário
-    if (campo.id === "perfil_influencia" && campoValido) {
+    if (!validarCampo(elementoCampo)) {
+      formValido = false;
+      camposNaoPreenchidos.push(campo.mensagem);
+    }
+
+    // Lógica específica para o campo "perfil_influencia"
+    if (campo.id === "perfil_influencia" && formValido) {
       let tipoContatoSelecionado = Array.from(
         document.querySelectorAll("#tipo_contato input[type='checkbox']")
       ).some((checkbox) => checkbox.checked);
@@ -51,130 +69,114 @@ function validarFormulario() {
         formValido = false;
       }
     }
-  }
+  });
 
-  // Verificar se há campos não preenchidos e exibir alerta único
-  if (camposNaoPreenchidos.length > 0) {
+  if (!formValido) {
     alert(
       `Por favor, preencha os seguintes campos obrigatórios:\n${camposNaoPreenchidos.join(
         "\n"
       )}`
     );
-
-    formValido = false;
   }
 
   return formValido;
 }
-// Função para validar um campo específico
-function validarCampo(campo) {
-  const valorCampo = campo.value.trim();
 
-  if (campo.hasAttribute("required") && valorCampo === "") {
-    alert("Campo obrigatório não preenchido");
-    campo.style.border = "2px solid red"; // Adiciona a borda vermelha
-    return false;
-  } else {
-    campo.style.border = ""; // Remove a borda vermelha se o campo for preenchido
-    return true;
-  }
-}
-// Função para Validação do preenchimento correto do campo
-function validarEmail(email) {
-  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Função para enviar o formulário
+function submitForm(event) {
+  event.preventDefault();
 
-  if (!regexEmail.test(email)) {
-    alert("E-mail inválido");
+  // Validar o formulário antes de prosseguir
+  if (!validarFormulario()) {
     return false;
-  } else {
-    return true;
   }
-}
-function validarCelular(celular) {
-  const regexCelular = /^\(\d{2}\) 9\d{4}-\d{4}$/;
 
-  if (!regexCelular.test(celular)) {
-    alert("Celular inválido");
-    return false;
-  } else {
-    return true;
-  }
-}
-function validarTelefone(telefone) {
-  const regexTelefone = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+  // Selecionar o formulário e seus campos
+  const form = document.getElementById("form");
+  const inputs = form.querySelectorAll(
+    ".campo input, .campo select, .campo textarea"
+  );
 
-  if (!regexTelefone.test(telefone)) {
-    alert("Telefone inválido");
-    return false;
-  } else {
-    return true;
-  }
-}
-function validarCEP(cep) {
-  const regexCEP = /^\d{5}-?\d{3}$/;
+  // Iterar sobre os campos para adicionar classes de sucesso
+  inputs.forEach((input) => {
+    input.classList.remove("error");
+    input.classList.add("success");
+  });
 
-  if (!regexCEP.test(cep)) {
-    alert("CEP inválido");
-    return false;
-  } else {
-    return true;
-  }
+  // Enviar os dados do formulário via fetch
+  const formData = new FormData(form);
+
+  fetch("/process_form", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      console.log(data);
+      // Faça algo com a resposta do servidor, se necessário
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+    });
+
+  return false;
 }
-// Função para formatação  dos campos
-function formatarCelularParaExibicao(input) {
-  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  if (value.length > 10) {
-    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 3)}${value.slice(
-      3,
-      7
-    )}-${value.slice(7)}`;
+
+// Função para formatar campos específicos
+function formatarCampoParaExibicao(input, regex, formato) {
+  let value = input.value.replace(/\D/g, "");
+  if (regex.test(value)) {
+    input.value = formato(value);
   } else {
     input.value = value;
   }
+}
+
+function formatarCelularParaExibicao(input) {
+  formatarCampoParaExibicao(
+    input,
+    /^\d{11}$/,
+    (value) =>
+      `(${value.slice(0, 2)}) ${value.slice(2, 3)}${value.slice(
+        3,
+        7
+      )}-${value.slice(7)}`
+  );
 }
 
 function formatarTelefoneParaExibicao(input) {
-  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  if (value.length > 9) {
-    input.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(
-      6
-    )}`;
-  } else {
-    input.value = value;
-  }
+  formatarCampoParaExibicao(
+    input,
+    /^\d{10,11}$/,
+    (value) => `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`
+  );
 }
 
-function formatarCelularParaBanco(input) {
-  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  input.value = value;
-}
-
-function formatarTelefoneParaBanco(input) {
-  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  input.value = value;
+function formatarCampoParaBanco(input) {
+  input.value = input.value.replace(/\D/g, "");
 }
 
 function formatarCEP(input) {
-  let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-  if (value.length > 5) {
-    input.value = `${value.slice(0, 5)}-${value.slice(5)}`;
-  } else {
-    input.value = value;
-  }
+  formatarCampoParaExibicao(
+    input,
+    /^\d{8}$/,
+    (value) => `${value.slice(0, 5)}-${value.slice(5)}`
+  );
 }
+
 // Função para verificar a tecla "Enter" e evitar o envio do formulário
 function checkEnter(event) {
   if (event.key === "Enter") {
     event.preventDefault();
 
-    // Obtenha o campo atual em foco
+    // Obter o campo atual em foco
     const campoAtual = event.target;
 
-    // Adicione aqui a lógica para validar o campo atual
-    const campoValido = validarCampo(campoAtual);
+    // Validar o campo atual
+    validarCampo(campoAtual);
 
-    if (campoValido) {
-      // O campo é válido, continue com a lógica para avançar para o próximo campo
+    // Se o campo for válido, avance para o próximo campo
+    if (!campoAtual.classList.contains("error")) {
       const form = event.target.form;
       const camposDeFormulario = Array.from(
         form.querySelectorAll("input, select, textarea")
@@ -186,14 +188,15 @@ function checkEnter(event) {
     }
   }
 }
-// Ouvinte de calendario 'keydown' a todos os campos de entrada do formulário
+
+// Ouvinte de eventos 'keydown' para todos os campos de entrada do formulário
 const camposDoFormulario = document.querySelectorAll("input, select, textarea");
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("keydown", checkEnter);
+  campo.addEventListener("blur", () => validarCampo(campo)); // Valida o campo ao desfocar
 });
 
-// Exibir campos de acordo com a resposta
-// Função para mostrar campo de Whatsapp
+// Funções para exibir campos de acordo com a resposta
 function mostrarCampoWhatsapp() {
   var checkbox = document.getElementById("whatsapp_switch");
   var campoWhatsapp = document.getElementById("campoWhatsapp");
@@ -208,18 +211,21 @@ function mostrarCampoWhatsapp() {
     whatsappInput.value = ""; // Limpa o campo WhatsApp, se estiver preenchido
   }
 }
+
 function mostrarCamposFilhos() {
   var camposFilhos = document.getElementById("camposFilhos");
   if (camposFilhos) {
     camposFilhos.style.display = "block";
   }
 }
+
 function ocultarCamposFilhos() {
   var camposFilhos = document.getElementById("camposFilhos");
   if (camposFilhos) {
     camposFilhos.style.display = "none";
   }
 }
+
 function adicionarFilho() {
   var maisFilhosContainer = document.getElementById("maisFilhosContainer");
 
@@ -245,6 +251,7 @@ function adicionarFilho() {
 
   maisFilhosContainer.appendChild(novoFilhoDiv);
 }
+
 function mostrarCamposConjuge() {
   var estadoCivil = document.getElementById("estado_civil").value;
   var camposConjuge = document.getElementById("camposConjuge");
@@ -255,10 +262,12 @@ function mostrarCamposConjuge() {
     camposConjuge.style.display = "none";
   }
 }
+
 function ocultarCamposConjuge() {
   var camposConjuge = document.getElementById("camposConjuge");
   camposConjuge.style.display = "none";
 }
+
 function toggleCamposCargoComissionado() {
   var checkbox = document.getElementById("cargo_comissionado_switch");
   var camposCargoComissionado = document.getElementById(
@@ -272,35 +281,5 @@ function toggleCamposCargoComissionado() {
   }
 }
 
-function submitForm() {
-  // Adicione validações adicionais conforme necessário
-  if (!validarFormulario()) {
-    // Se a validação falhar, retorne false para evitar o envio do formulário
-    return false;
-  }
-
-  var form = document.getElementById("form");
-  var formData = new FormData(form);
-
-  fetch("/process_form", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      console.log(data);
-      // Faça algo com a resposta do servidor, se necessário
-    })
-    .catch((error) => {
-      console.error("Erro:", error);
-    });
-
-  // Retorne false para evitar o envio padrão do formulário
-  return false;
-}
-// Adiciona um evento de clique ao botão Fechar
-//document.getElementById("btnFechar").addEventListener("click", function () {
-// Redireciona para a página "contatos.html"
-// window.location.href = "contatos.html";
-//});
-// Função para exibir mensagem de erro
+// Adicionando a chamada da função submitForm ao evento submit do formulário
+document.getElementById("form").addEventListener("submit", submitForm);

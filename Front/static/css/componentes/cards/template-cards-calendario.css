@@ -23,7 +23,7 @@
 }
 .calendario-small-card-title {
   grid-area: calendario-small-card-title;
-  border-left: 4px solid var(--detalhe-1);
+  border-left: 4px solid var(--card-detalhe);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 300;
@@ -94,7 +94,7 @@
   grid-area: calendario-small-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--detalhe-1);
+  border-top: 1px solid var(--card-detalhe);
 }
 
 .exibirDetalheEvento {
@@ -104,7 +104,7 @@
   margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--detalhe-3) !important;
+  border: 1px solid var(--card-aberto-detalhe) !important;
   color: var(--txt-principal);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
@@ -131,7 +131,7 @@
   gap: 5px;
 }
 .calendario-small-card-expanded .calendario-small-card-title {
-  border-left: 4px solid var(--detalhe-3);
+  border-left: 4px solid var(--card-aberto-detalhe);
 }
 
 /* Grande */
@@ -164,7 +164,7 @@
 }
 .calendario-large-card-title {
   grid-area: calendario-large-card-title;
-  border-left: 4px solid var(--detalhe-1);
+  border-left: 4px solid var(--card-detalhe);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -200,8 +200,8 @@
   padding: 10px 14px;
   display: grid;
   grid-auto-flow: column;
-  background: var(--detalhe-1);
-  color: var(--txt-destaque);
+  background: var(--card-detalhe);
+  color: var(--txt-secundario);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -225,7 +225,7 @@
   grid-area: calendario-large-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--detalhe-1);
+  border-top: 1px solid var(--card-detalhe);
 }
 
 .exibirDetalheEvento {
@@ -236,7 +236,7 @@
   margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--detalhe-3) !important;
+  border: 1px solid var(--card-aberto-detalhe) !important;
   color: var(--txt-principal);
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
@@ -258,10 +258,10 @@
   color: var(--txt-principal);
 }
 .calendario-large-card-expanded .calendario-large-card-title {
-  border-left: 4px solid var(--detalhe-3);
+  border-left: 4px solid var(--card-aberto-detalhe);
 }
 .calendario-large-card-expanded .calendario-large-card-duracao {
-  background: var(--detalhe-3);
+  background: var(--card-aberto-detalhe);
 }
 
 /* Vazio */

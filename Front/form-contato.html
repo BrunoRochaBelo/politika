@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <link rel="preload" href="./static/css/style.css" as="style">
@@ -22,9 +22,9 @@
     <section class="area-container-template">
       <div class="area-container-template-content area-container-abas-template-content-com-header-fx-int">
         <form id="form" class=" form" enctype="multipart/form-data">
-          <ul class="lista-vertical-fil">
+          <ul class="lista-vertical-alt">
             <li class="card area-template-sessao-int">
-              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(1)">Identificação</a></h2>
+              <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)">Identificação<span class="arrow up"></a></h2>
               <div class="area-template-sessao-int-content">
                 <div class="session active" id="sessao1">
                   <fieldset>
@@ -194,7 +194,7 @@
               </div>
             </li>
             <li class="card area-template-sessao-int">
-              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)">Endereço</a></h2>
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)">Endereço<span class="arrow down"></a></h2>
               <div class="area-template-sessao-int-content">
                 <div class="session" id="sessao2">
                   <fieldset>
@@ -289,7 +289,7 @@
               </div>
             </li>
             <li class="card area-template-sessao-int">
-              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)">Adicional</a></h2>
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)">Informações complementares<span class="arrow down"></a></h2>
               <div class="area-template-sessao-int-content">
                 <div class="session" id="sessao3">
                   <fieldset>
@@ -372,29 +372,70 @@
   </main>
 
   <script>
+    function scrollToTop(element, duration) {
+      const startingY = element.scrollTop;
+      const startTime = performance.now();
+
+      function scrollStep(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = elapsed / duration;
+
+        element.scrollTop = startingY * (1 - progress);
+
+        if (progress < 1) {
+          requestAnimationFrame(scrollStep);
+        }
+      }
+
+      requestAnimationFrame(scrollStep);
+    }
+
     function changeSession(sessionNumber) {
       var sessions = document.querySelectorAll('.session');
       var selectedSession = document.getElementById('sessao' + sessionNumber);
+      var headers = document.querySelectorAll('.area-template-sessao-int-header');
+      var selectedHeader = headers[sessionNumber - 1]; // Assumindo que a ordem é a mesma
+      var arrows = document.querySelectorAll('.arrow');
+      var selectedArrow = arrows[sessionNumber - 1]; // Assumindo que a ordem é a mesma
+
       var areaAbas = document.querySelector('.area-container-template-content');
 
       // Verificar se a sessão clicada já está ativa
       if (selectedSession.classList.contains('active')) {
-        // Se estiver ativa, remover a classe para fechar a sessão
+        // Se estiver ativa, recolher a sessão e fazer o scroll para o topo
         selectedSession.classList.remove('active');
+        selectedHeader.classList.remove('active-header');
+        selectedArrow.classList.remove('up');
+        selectedArrow.classList.add('down');
+
+        // Fazer o scroll para o topo
+        scrollToTop(areaAbas, 300);
       } else {
-        // Esconder todas as sessões
-        sessions.forEach(function (session) {
-          session.classList.remove('active');
+        // Recolher todas as sessões ativas e fazer o scroll para o topo
+        sessions.forEach(function (session, index) {
+          if (session.classList.contains('active')) {
+            session.classList.remove('active');
+            headers[index].classList.remove('active-header');
+            arrows[index].classList.remove('up');
+            arrows[index].classList.add('down');
+          }
         });
 
-        // Mostrar apenas a sessão selecionada
-        selectedSession.classList.add('active');
-      }
+        // Fazer o scroll para o topo antes de exibir a nova sessão
+        scrollToTop(areaAbas, 300);
 
-      // Zerar o scroll dentro da area-container-template-content
-      areaAbas.scrollTop = 0;
+        // Exibir a nova sessão selecionada após o scroll
+        setTimeout(function () {
+          selectedSession.classList.add('active');
+          selectedHeader.classList.add('active-header');
+          selectedArrow.classList.remove('down');
+          selectedArrow.classList.add('up');
+        }); // Ajuste o tempo de acordo com a duração do scroll
+      }
     }
   </script>
+
+
 
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>

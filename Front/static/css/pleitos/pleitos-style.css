@@ -41,7 +41,7 @@
 }
 
 .tabela-historico table tr:nth-child(even) {
-  background-color: var(--detalhe-1); /* Cor para linhas impares */
+  background-color: var(--card-detalhe); /* Cor para linhas impares */
 }
 
 /* Responsivo */

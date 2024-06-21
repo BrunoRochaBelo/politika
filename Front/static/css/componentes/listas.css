@@ -10,8 +10,9 @@
   grid-auto-flow: row;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 25px;
   scrollbar-width: thick;
+  gap: 15px;
 }
 .lista-vertical-cards {
   display: grid;
@@ -19,7 +20,7 @@
   background: transparent;
   border: 1px solid transparent;
   border-radius: 25px;
-  gap: 2px;
+  gap: 0px;
   scrollbar-width: thick;
 }
 .lista-vertical-fil {
@@ -80,15 +81,21 @@
 
 /* Estilos */
 /* Estilos para cards dentro da lista */
-.lista-vertical-cards > li:first-child a,
-.lista-horizontal > .card-tmf-m:first-child a {
+.lista-vertical-cards > li:first-child a {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-
-.lista-vertical-cards > li:last-child a,
-.lista-horizontal > .card-tmf-m:last-child a {
+.lista-vertical-cards > li:last-child a {
   border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.lista-horizontal > li:first-child a {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.lista-horizontal > li:last-child a {
+  border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
@@ -149,6 +156,14 @@
     gap: 3px;
     grid-template: 1fr 1fr / auto;
     scrollbar-width: thick;
+  }
+  .lista-horizontal.expandir > li:first-child a {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 0;
+  }
+  .lista-horizontal.expandir > li:last-child a {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 20px;
   }
 
   .main-sidenav .lista-vertical-2 {

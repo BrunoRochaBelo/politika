@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var headerBackgroundClass = aniversaiantesContainer.classList.contains(
         "visible"
       )
-        ? "--card-aberto-fundo"
+        ? "--card-alt-fundo"
         : "--card-fundo";
       var headerElement = document.querySelector(
         ".area-template-sessao-int.aniversariantes"

@@ -78,7 +78,7 @@
   grid-area: aniversario-small-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--detalhe-1);
+  border-top: 1px solid var(--card-detalhe);
 }
 
 .exibirDetalhesAniversariante {
@@ -88,7 +88,7 @@
   margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--detalhe-3) !important;
+  border: 1px solid var(--card-aberto-detalhe) !important;
   color: var(--txt-principal);
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"

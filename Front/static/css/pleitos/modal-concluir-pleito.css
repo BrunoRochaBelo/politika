@@ -51,7 +51,7 @@
 }
 .modal-concluir-pleito-tiposolici {
   grid-area: modal-concluir-pleito-tiposolici;
-  border-left: 4px solid var(--detalhe-3);
+  border-left: 4px solid var(--card-aberto-detalhe);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -82,7 +82,7 @@
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--detalhe-3);
+  background: var(--card-aberto-detalhe);
   border-radius: 5px;
   justify-content: start;
   align-items: center;

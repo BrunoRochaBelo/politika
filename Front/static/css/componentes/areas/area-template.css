@@ -30,7 +30,6 @@
   padding: 0px;
   height: auto;
   border-radius: 0px;
-  background: var(--fundo-container);
   border-top: 1px solid var(--background-principal);
 }
 
@@ -150,7 +149,7 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 25px;
+  border-radius: 20px;
   grid:
     "area-template-sessao-int-header" auto
     "area-template-sessao-int-content" auto
@@ -168,8 +167,8 @@
   text-align: left;
   color: var(--txt-subtitulo);
   border-radius: 0px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 .area-template-sessao-int-header h2 {
   font-size: 14px;
@@ -206,6 +205,7 @@
     background: var(--background-principal);
     border-radius: 25px;
     max-height: 85vh;
+    padding: 0px 1px;
   }
   .area-container-template-header {
     padding: 5px 5px 5px 15px;
@@ -222,12 +222,17 @@
     border-radius: 0px;
     border-radius: 25px;
     background: var(--fundo-container);
+    border: 1px solid var(--borda);
   }
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;
     border-radius: 0px;
     box-shadow: none;
     border: none;
+  }
+
+  .area-container-template::-webkit-scrollbar {
+    display: none;
   }
 
   /* Area Template dos filtros*/

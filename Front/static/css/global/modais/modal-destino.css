@@ -142,10 +142,10 @@
 }
 
 /* Ou especificamente para o input do bairro */
-#bairro {
+.modal-destino #bairro {
   background-color: var(--card-fundo);
 }
-#bairro:hover {
+.modal-destino #bairro:hover {
   background: var(--card-hover);
   box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
     inset 0 0 1px var(--btn-secundario-alt-destaque),
@@ -154,7 +154,7 @@
     inset 0 0 4px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
-#bairro:hover::placeholder {
+.modal-destino #bairro:hover::placeholder {
   color: var(--btn-secundario-alt-destaque);
 }
 

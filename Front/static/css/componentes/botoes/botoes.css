@@ -2,7 +2,7 @@
 /* Botões com Cor de Fundo */
 .btn-principal {
   background: var(--btn-principal);
-  color: var(--btn-principal-txt);
+  color: var(--btn-principal-text);
   border: 1px solid var(--btn-principal);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
@@ -21,7 +21,7 @@
 }
 .btn-principal-destaque {
   background: var(--btn-principal-destaque);
-  color: var(--btn-principal-txt);
+  color: var(--btn-principal-text);
   border: 1px solid var(--btn-principal-destaque);
   padding: 10px 20px;
   border-radius: 5px;
@@ -35,7 +35,7 @@
 
 .btn-principal-alt {
   background: var(--btn-principal-alt);
-  color: var(--btn-principal-alt-txt);
+  color: var(--btn-principal-alt-text);
   border: 1px solid var(--btn-principal-alt);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
@@ -54,7 +54,7 @@
 }
 .btn-principal-alt-destaque {
   background: var(--btn-principal-alt-destaque);
-  color: var(--btn-principal-alt-txt);
+  color: var(--btn-principal-alt-text);
   border: 1px solid var(--btn-principal-alt-destaque);
   padding: 10px 20px;
   border-radius: 5px;
@@ -84,7 +84,7 @@
 
 .btn-outline-principal:hover {
   background: var(--btn-principal);
-  color: var(--btn-principal-txt);
+  color: var(--btn-principal-text);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   border-radius: 5px;
@@ -111,7 +111,7 @@
 }
 .btn-outline-secundario:hover {
   background: var(--btn-secundario-alt);
-  color: var(--btn-secundario-alt-txt);
+  color: var(--btn-secundario-alt-text);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
