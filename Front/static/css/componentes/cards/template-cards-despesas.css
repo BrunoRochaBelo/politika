@@ -11,11 +11,15 @@
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
     "despesas-medium-card-referencia despesas-medium-card-referencia"
     "despesas-medium-card-desc despesas-medium-card-desc";
+  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
+    height 0.3s ease-out;
+  max-height: 240px;
 }
 
 .despesas-medium-card-id {
   display: none;
 }
+
 .despesas-medium-card-natureza {
   grid-area: despesas-medium-card-natureza;
   border-left: 4px solid var(--card-detalhe);
@@ -26,6 +30,7 @@
   align-self: center;
   color: var(--txt-principal);
 }
+
 .despesas-medium-card-desc {
   grid-area: despesas-medium-card-desc;
   align-self: center;
@@ -42,6 +47,7 @@
   font-size: 12px;
   font-weight: 300;
 }
+
 .despesas-medium-card-referencia {
   grid-area: despesas-medium-card-referencia;
   justify-self: start;
@@ -51,6 +57,7 @@
   font-size: 14px;
   font-weight: 400;
 }
+
 .despesas-medium-card-dataDespesa {
   grid-area: despesas-medium-card-dataDespesa;
   justify-self: start;
@@ -60,6 +67,7 @@
   font-size: 14px;
   font-weight: 400;
 }
+
 .despesas-medium-card-valorDespesa {
   grid-area: despesas-medium-card-valorDespesa;
   justify-self: start;
@@ -70,73 +78,36 @@
   font-weight: 400;
 }
 
-.despesas-medium-card-cnpj_cpf_for {
-  grid-area: despesas-medium-card-cnpj_cpf_for;
-  display: none;
-  justify-self: start;
-  align-self: center;
-  opacity: 0;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: 14px;
-  font-weight: 300;
-}
-.despesas-medium-card-nome_fornecedor {
-  grid-area: despesas-medium-card-nome_fornecedor;
-  display: none;
-  justify-self: start;
-  align-self: center;
-  opacity: 0;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: 14px;
-  font-weight: 300;
-}
-.despesas-medium-card-ordenador_despesa {
-  grid-area: despesas-medium-card-ordenador_despesa;
-  display: none;
-  justify-self: start;
-  align-self: center;
-  opacity: 0;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: 13px;
-  font-weight: 350;
-}
-.despesas-medium-card-autor {
-  grid-area: despesas-medium-card-autor;
-  display: none;
-  justify-self: start;
-  align-self: center;
-  opacity: 0;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: 12px;
-  font-weight: 300;
-}
+.despesas-medium-card-cnpj_cpf_for,
+.despesas-medium-card-nome_fornecedor,
+.despesas-medium-card-ordenador_despesa,
+.despesas-medium-card-autor,
 .despesas-medium-card-data_criacao {
-  grid-area: despesas-medium-card-data_criacao;
   display: none;
   justify-self: start;
   align-self: center;
   opacity: 0;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 300;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .despesas-medium-card-editar {
   grid-area: despesas-medium-card-editar;
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .exibirDetalheDespesa {
   opacity: 1 !important;
 }
+
 .despesas-medium-card-expanded {
-  margin: 3px 0px;
+  margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
   border: 1px solid var(--card-aberto-detalhe) !important;
@@ -150,7 +121,13 @@
     "despesas-medium-card-autor despesas-medium-card-data_criacao"
     "despesas-medium-card-desc despesas-medium-card-desc"
     "despesas-medium-card-editar despesas-medium-card-editar";
+  transform: scale(1.01);
+  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
+    height 0.3s ease-in;
+  max-height: 300px;
+  height: auto;
 }
+
 .despesas-medium-card-cnpj_cpf_for.exibirDetalheDespesa,
 .despesas-medium-card-nome_fornecedor.exibirDetalheDespesa,
 .despesas-medium-card-ordenador_despesa.exibirDetalheDespesa,
@@ -160,6 +137,7 @@
   opacity: 1;
   margin: 3px 0 0 10px;
 }
+
 .despesas-medium-card-editar.exibirDetalheDespesa {
   display: grid;
   justify-content: stretch;
@@ -168,9 +146,11 @@
   opacity: 1;
   gap: 5px;
 }
+
 .despesas-medium-card-expanded .despesas-medium-card-natureza {
   border-left: 4px solid var(--card-aberto-detalhe);
 }
+
 .despesas-medium-card-expanded .despesas-medium-card-desc {
   background: var(--card-aberto-detalhe);
 }

@@ -157,7 +157,7 @@
 .card-select-xs:active,
 .card-select-s:active,
 .card-select-m:active {
-  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
+  background: var(--card-detalhe);
 }
 
 /* Responsivo */

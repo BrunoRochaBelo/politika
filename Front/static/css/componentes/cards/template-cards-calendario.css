@@ -9,7 +9,11 @@
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao";
+  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
+    height 0.3s ease-out;
+  max-height: 100px;
 }
+
 .calendario-small-card-type {
   grid-area: calendario-small-card-type;
   font-size: 14px;
@@ -17,10 +21,12 @@
   justify-self: start;
   color: var(--txt-principal);
 }
+
 .calendario-small-card-tag {
   grid-area: calendario-small-card-tag;
   justify-self: end;
 }
+
 .calendario-small-card-title {
   grid-area: calendario-small-card-title;
   border-left: 4px solid var(--card-detalhe);
@@ -35,6 +41,7 @@
   overflow: hidden;
   word-break: break-all;
 }
+
 .calendario-small-card-duracao {
   grid-area: calendario-small-card-duracao;
   font-size: 12px;
@@ -49,6 +56,7 @@
   align-items: end;
   margin: 3px 0 0 0px;
 }
+
 .calendario-small-card-id {
   display: none;
 }
@@ -57,6 +65,7 @@
   font-size: 12px;
   font-weight: 400;
 }
+
 .calendario-small-card-fim {
   font-size: 12px;
   font-weight: 400;
@@ -75,7 +84,9 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .calendario-small-card-partcipantes {
   grid-area: calendario-small-card-partcipantes;
   font-size: 12px;
@@ -89,19 +100,23 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .calendario-small-card-editar {
   grid-area: calendario-small-card-editar;
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .exibirDetalheEvento {
   opacity: 1 !important;
 }
+
 .calendario-small-card-expanded {
-  margin: 3px 0px;
+  margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
   border: 1px solid var(--card-aberto-detalhe) !important;
@@ -112,16 +127,19 @@
     "calendario-small-card-local calendario-small-card-local"
     "calendario-small-card-partcipantes calendario-small-card-partcipantes"
     "calendario-small-card-editar calendario-small-card-editar";
+  transform: scale(1.01);
+  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
+    height 0.3s ease-in;
+  max-height: 300px;
 }
+
 .calendario-small-card-local.exibirDetalheEvento,
 .calendario-small-card-partcipantes.exibirDetalheEvento {
   display: block;
   opacity: 1;
   margin: 3px 0 0 0px;
 }
-.calendario-small-card-expanded .calendario-small-card-type {
-  color: var(--txt-principal);
-}
+
 .calendario-small-card-editar.exibirDetalheEvento {
   display: grid;
   justify-content: stretch;
@@ -130,9 +148,16 @@
   opacity: 1;
   gap: 5px;
 }
+
+.calendario-small-card-expanded .calendario-small-card-type {
+  color: var(--txt-principal);
+}
+
 .calendario-small-card-expanded .calendario-small-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);
 }
+
+/* ---------------------------------------------------------------- */
 
 /* Grande */
 .calendario-large-card {
@@ -150,6 +175,9 @@
     "calendario-large-card-local calendario-large-card-local"
     "calendario-large-card-partcipantes calendario-large-card-partcipantes"
     "calendario-large-card-duracao calendario-large-card-duracao";
+  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
+    height 0.3s ease-out;
+  max-height: 250px;
 }
 .calendario-large-card-type {
   grid-area: calendario-large-card-type;
@@ -233,7 +261,7 @@
 }
 
 .calendario-large-card-expanded {
-  margin: 3px 0px;
+  margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
   border: 1px solid var(--card-aberto-detalhe) !important;
@@ -245,6 +273,10 @@
     "calendario-large-card-partcipantes calendario-large-card-partcipantes"
     "calendario-large-card-duracao calendario-large-card-duracao"
     "calendario-large-card-editar calendario-large-card-editar";
+  transform: scale(1.01);
+  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
+    height 0.3s ease-in;
+  max-height: 350px;
 }
 .calendario-large-card-editar.exibirDetalheEvento {
   display: grid;

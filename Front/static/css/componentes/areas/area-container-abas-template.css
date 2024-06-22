@@ -140,7 +140,7 @@
     border-radius: 0px;
     border-radius: 25px;
     background: var(--fundo-container);
-    border: 1px solid var(--borda);
+    border: 1px solid var(--card-borda);
   }
 
   .aba-header-header-fx-int {
@@ -173,7 +173,7 @@
   #nav2 a:hover,
   #nav3 a:hover {
     background: var(--card-fundo);
-    color: var(--background-principal);
+    color: var(--txt-subtitulo);
   }
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,

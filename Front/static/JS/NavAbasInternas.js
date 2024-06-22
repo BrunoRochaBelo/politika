@@ -104,9 +104,9 @@ function avancar() {
   window.scrollTo(0, 0);
 }
 
-// Detectar swipe
 var startX;
 var startY;
+var startTime;
 var threshold = 100; // distância mínima para considerar como swipe
 var allowedTime = 300; // tempo máximo permitido para o swipe
 
@@ -129,14 +129,31 @@ document.addEventListener(
     var distY = touch.pageY - startY;
     var elapsedTime = new Date().getTime() - startTime;
 
-    if (elapsedTime <= allowedTime) {
-      // verifica o tempo
-      if (Math.abs(distX) >= threshold && Math.abs(distY) <= 100) {
-        // verifique a distância
-        if (distX > 0) {
-          voltar();
-        } else {
-          avancar();
+    // Verifica se o tempo e a distância são suficientes para considerar como swipe
+    if (
+      elapsedTime <= allowedTime &&
+      Math.abs(distX) >= threshold &&
+      Math.abs(distY) <= 100
+    ) {
+      // Verifica a direção do swipe
+      if (distX > 0) {
+        voltar();
+      } else {
+        avancar();
+      }
+    } else {
+      // Se o toque não for na área da nav-calendar, realiza o swipe normalmente
+      var targetElement = document.elementFromPoint(
+        touch.clientX,
+        touch.clientY
+      );
+      if (!targetElement.closest(".nav-calendar")) {
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= 100) {
+          if (distX > 0) {
+            voltar();
+          } else {
+            avancar();
+          }
         }
       }
     }

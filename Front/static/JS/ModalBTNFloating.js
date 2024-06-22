@@ -2,22 +2,31 @@ class ModalBtnFloating {
   constructor() {
     this.botao = document.querySelector(".floatingButton");
     this.modal = document.querySelector(".modal-btn-floating-Overlay");
+    this.modalContent = document.querySelector(".modal-btn-floating-content");
     this.init();
   }
 
   abrirModalBtnFloating() {
     this.modal.style.display = "flex";
+    this.modal.style.opacity = "1";
+    this.modal.style.visibility = "visible";
+    this.modalContent.classList.add("open");
     this.botao.innerHTML = "&times;"; // Altera o conteúdo do botão para "×"
   }
 
   fecharModalBtnFloating() {
-    this.modal.style.display = "none";
+    this.modal.style.opacity = "0";
+    this.modal.style.visibility = "hidden";
+    this.modalContent.classList.remove("open");
     this.botao.textContent = "+"; // Altera o conteúdo do botão para "+"
+    setTimeout(() => {
+      this.modal.style.display = "none";
+    }, 300); // Tempo deve coincidir com a duração da transição CSS
   }
 
   init() {
     this.botao.addEventListener("click", (event) => {
-      event.stopPropagation(); // Impede que o evento se propague para o window
+      event.stopPropagation();
       if (
         this.modal.style.display === "none" ||
         this.modal.style.display === ""
@@ -29,7 +38,6 @@ class ModalBtnFloating {
     });
 
     window.addEventListener("click", (event) => {
-      // Verifica se o evento de clique não foi originado no botão antes de fechar o modal
       if (event.target !== this.botao) {
         this.fecharModalBtnFloating();
       }

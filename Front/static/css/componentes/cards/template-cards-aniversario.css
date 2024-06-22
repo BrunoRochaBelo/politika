@@ -11,10 +11,15 @@
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
     /0.5fr 0.5fr 1fr 32px;
+  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
+    height 0.3s ease-out;
+  max-height: 100px; /* Ajuste conforme necessário */
 }
+
 .aniversario-small-card-id {
   display: none;
 }
+
 .aniversario-small-card-title {
   grid-area: aniversario-small-card-title;
   justify-self: start;
@@ -23,6 +28,7 @@
   font-weight: 400;
   color: var(--txt-principal);
 }
+
 .aniversario-small-card-tipocontato {
   grid-area: aniversario-small-card-tipocontato;
   display: none;
@@ -31,17 +37,21 @@
   margin: 3px 0 0 10px;
   font-size: 14px;
   font-weight: 300;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .aniversario-small-card-phone {
   grid-area: aniversario-small-card-phone;
   justify-self: end;
   align-self: center;
 }
+
 .aniversario-small-card-perfilInfluencia {
   grid-area: aniversario-small-card-perfilInfluencia;
   display: none;
   justify-self: start;
   margin: 3px 0 0 10px;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .aniversario-small-card-num {
@@ -53,7 +63,9 @@
   margin: 3px 0 0 10px;
   font-size: 14px;
   font-weight: 300;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .aniversario-small-card-email {
   grid-area: aniversario-small-card-email;
   display: none;
@@ -63,7 +75,9 @@
   margin: 3px 0 0 10px;
   font-size: 13px;
   font-weight: 300;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .aniversario-small-card-tipopessoa {
   grid-area: aniversario-small-card-tipopessoa;
   display: none;
@@ -73,17 +87,21 @@
   margin: 3px 0 0 10px;
   font-size: 12px;
   font-weight: 300;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .aniversario-small-card-editar {
   grid-area: aniversario-small-card-editar;
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .exibirDetalhesAniversariante {
   opacity: 1 !important;
 }
+
 .aniversario-small-card-expanded {
   margin: 3px 0px;
   border-radius: 5px;
@@ -97,7 +115,12 @@
     "aniversario-small-card-email aniversario-small-card-email aniversario-small-card-email aniversario-small-card-phone "
     "aniversario-small-card-tipopessoa .  .  aniversario-small-card-phone"
     "aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar";
+  transform: scale(1.01);
+  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
+    height 0.3s ease-in;
+  max-height: 300px; /* Ajuste conforme necessário */
 }
+
 .aniversario-small-card-tipocontato.exibirDetalhesAniversariante,
 .aniversario-small-card-perfilInfluencia.exibirDetalhesAniversariante,
 .aniversario-small-card-num.exibirDetalhesAniversariante,
@@ -107,6 +130,7 @@
   opacity: 1;
   margin: 3px 0 0 10px;
 }
+
 .aniversario-small-card-editar.exibirDetalhesAniversariante {
   display: grid;
   justify-content: stretch;

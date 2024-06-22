@@ -222,7 +222,7 @@
     border-radius: 0px;
     border-radius: 25px;
     background: var(--fundo-container);
-    border: 1px solid var(--borda);
+    border: 1px solid var(--card-borda);
   }
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;

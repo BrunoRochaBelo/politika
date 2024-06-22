@@ -22,6 +22,7 @@
   border-radius: 25px;
   gap: 0px;
   scrollbar-width: thick;
+  transition: height 0.5s ease-out;
 }
 .lista-vertical-fil {
   display: grid;

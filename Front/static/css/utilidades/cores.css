@@ -45,9 +45,9 @@
   --btn-principal-alt-destaque: hsl(218, 85%, 60%);
   --btn-principal-alt-txt: hsl(0, 0%, 100%);
 
-  --btn-secundario: hsl(218, 75%, 45%);
-  --btn-secundario-hover: hsl(218, 75%, 50%);
-  --btn-secundario-destaque: hsl(218, 75%, 55%);
+  --btn-secundario: hsl(30, 85%, 50%);
+  --btn-secundario-hover: hsl(30, 85%, 55%);
+  --btn-secundario-destaque: hsl(30, 85%, 60%);
   --btn-secundario-text: hsl(0, 0%, 100%);
 
   --btn-secundario-alt: hsl(218, 90%, 55%);

@@ -1,4 +1,4 @@
-// Função para mostrar o modal
+//Função para mostrar o modal
 function showModal() {
   var modal = document.getElementById("userModal");
   var userPhoto = document.getElementById("userPhoto");
@@ -10,7 +10,7 @@ function showModal() {
   // Define a foto do usuário no modal
   document.getElementById("modalUserPhoto").src = userPhoto.src;
 
-  modal.style.display = "flex";
+  modal.classList.add("show");
 
   // Event listener para fechar o modal
   document.addEventListener("click", outsideClickListener);
@@ -24,7 +24,7 @@ function hideModal() {
   // Exibe a foto do usuário no corpo da página
   userPhoto.style.display = "block";
 
-  modal.style.display = "none";
+  modal.classList.remove("show");
 
   // Remove o event listener ao ocultar o modal
   document.removeEventListener("click", outsideClickListener);
