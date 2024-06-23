@@ -18,7 +18,7 @@
   justify-content: space-between;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  padding: 10px 10px 10px 15px;
+  padding: 10px 20px;
   text-align: left;
   border: 1px solid var(--input-border);
   background: hsla(218, 25%, 15%, 0.8);
@@ -109,12 +109,15 @@
   }
   .header-form {
     border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--input-border);
   }
   .main-form {
     padding: 10px 0px;
     overflow-y: auto;
     border: none;
     box-shadow: none;
+    background: transparent;
   }
 
   .main-form .nav {
@@ -126,7 +129,7 @@
   }
 
   .main-form .area-interna-containerContent-template-content {
-    max-height: 90vh;
+    max-height: 98vh;
     padding: 10px 3px;
   }
 

@@ -215,7 +215,7 @@
   padding: 0.9375rem;
   color: var(--txt-principal);
   background: var(--card-fundo);
-  border: 1px solid var(--input-focus-background);
+  border: 1px solid var(--card-fundo-borda);
   border-radius: 20px;
   margin-top: 7px;
 }
@@ -224,18 +224,18 @@
   width: 100%;
   font-weight: regular;
   font-size: 11px;
-  border-radius: 9px;
+  padding: 10px 20px;
+  border-radius: 5px;
   background: var(--btn-principal);
   color: var(--txt-principal);
   border: 1px solid var(--btn-principal-destaque);
-  box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
 }
 .modal-concluir-pleito-salvar .btn-outline-principal {
   width: 100%;
   font-weight: regular;
   font-size: 11px;
-  border-radius: 9px;
-  box-shadow: 0px 4px 8px rgba(99, 31, 150, 0.15);
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 .modal-concluir-pleito-salvar .btn-outline-principal:hover {
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
@@ -250,11 +250,11 @@
 /* Responsivo */
 @media only screen and (max-width: 900px) {
   .modal-concluir-pleito-content.card-m {
-    padding: 20px 0px;
+    padding: 20px 2px 10px 2px;
   }
   .modal-concluir-pleito-content {
-    min-width: 95%;
-    max-width: 95%;
+    min-width: 100%;
+    max-width: 100%;
     margin-top: 40px;
     padding: 20px 10px;
     max-height: 100%;

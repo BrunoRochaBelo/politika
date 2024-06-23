@@ -132,7 +132,7 @@
     <section class="main-sidenav">
       <div class="area-container-filtros-template">
         <h2 class="area-container-filtros-template-header">Filtros
-          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibir()">Filtros</button>
+          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFilro()">Filtros</button>
         </h2>
         <div class="area-container-filtros-template-content lista-vertical-fil">
           <button class="btn-principal-alt" type="button" data-filter="todos">
@@ -215,6 +215,7 @@
   <!-- Modal Concluir Pleito -->
   <div id="modal-concluir-pleito" class="modal-concluir-pleito">
     <div class="modal-concluir-pleito-content card-m">
+
       <span class="close">&times;</span>
       <div class="modal-concluir-pleito-template">
         <p class="modal-concluir-pleito-tiposolici" data-filter="tipoSolici"></p>
@@ -232,6 +233,7 @@
         <p class="modal-concluir-pleito-dataCriacao" data-filter="dataCriacaoPleito"></p>
         <p class="modal-concluir-pleito-status" data-filter="statusPleito"></p>
         <p class="modal-concluir-pleito-desc" data-filter="descPleito"></p>
+
         <div class="modal-concluir-pleito-concluir">
           <h2 class="modal-concluir-pleito-concluir-title">Concluir</h2>
           <div class="modal-concluir-pleito-situacao">
@@ -253,7 +255,7 @@
           </div>
           <div class="modal-concluir-pleito-salvar">
             <div class="btn-outline-principal"><a href="pleitos.html">Cancelar</a></div>
-            <input class="btn-principal" type="submit" value="Concluir">
+            <button type="submit" class="btn-principal" onclick="submitForm()">Concluir</button>
           </div>
           <p class="modal-concluir-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
         </div>
@@ -326,7 +328,7 @@
           </div>
           <div class="modal-despachar-pleito-salvar">
             <div class="btn-outline-principal"><a href="pleitos.html">Cancelar</a></div>
-            <input class="btn-principal" type="submit" value="Despachar">
+            <button type="submit" class="btn-principal" onclick="submitForm()">Despachar</button>
           </div>
           <p class="modal-despachar-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
         </div>
@@ -337,9 +339,8 @@
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>
-  <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
-  <script src="./static/js/OcultarExibir.js"></script>
+  <script src="./static/js/OcultarExibirFilro.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/ExibirDetalhesPleito.js"></script>
   <script src="./static/js/ModalConcluirPleito.js"></script>

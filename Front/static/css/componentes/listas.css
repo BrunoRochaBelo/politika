@@ -185,6 +185,6 @@
   .list-last-child {
     border-radius: 2px;
     border-bottom: 1px solid #28385396;
-    margin-bottom: 65px;
+    margin-bottom: 5em;
   }
 }

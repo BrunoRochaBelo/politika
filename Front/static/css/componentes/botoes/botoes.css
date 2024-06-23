@@ -205,3 +205,33 @@
   cursor: pointer;
   color: var(--txt-principal);
 }
+.close:active {
+  transform: scale(0.95);
+  opacity: 0.5;
+}
+
+/* Estilo para o botão Voltar */
+.voltar {
+  position: absolute;
+  padding: 10px;
+  top: 5px;
+  left: 5px;
+  color: var(--txt-secundario);
+  border-radius: 50px;
+  font-size: 28px;
+}
+.voltar:hover,
+.voltar:focus {
+  background: #c61818;
+  cursor: pointer;
+  color: var(--txt-principal);
+}
+.voltar {
+  transition: transform 1s ease;
+}
+
+/* Efeito de clique: reduz um pouco a escala e muda a opacidade */
+.voltar:active {
+  transform: scale(0.95);
+  opacity: 0.5;
+}

@@ -84,7 +84,7 @@ window.addEventListener("resize", function () {
   }
 });
 
-function toggleOcultarExibir() {
+function toggleOcultarExibirFilro() {
   var areaContent = selectElement(".area-container-filtros-template-content");
   var area = selectElement(".area-container-filtros-template");
   var button = selectElement(".btn-recuar-expandir");

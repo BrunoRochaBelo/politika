@@ -1,8 +1,27 @@
+.body-form-view {
+  padding: 1px;
+  gap: 10px;
+}
+
 .header-form-view {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid var(--background-principal);
+  border-radius: 25px;
+  background: var(--fundo-container);
+  border: 1px solid var(--divisor);
+  padding: 0 20px;
+}
+.main-form-view {
+  border-radius: 25px;
+  border: 1px solid var(--input-border);
+}
+.main-form-view .area-container-template {
+  box-shadow: none;
+  background: none;
+  max-height: 66vh;
+  border-radius: 25px;
 }
 
 .card-info {
@@ -11,13 +30,13 @@
   align-items: center;
   gap: 10px;
   border-radius: 25px;
-  padding: 35px 20px 10px 20px;
+  padding: 15px;
   box-sizing: border-box;
 }
 
 .acoes {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 .acao-item {
   display: flex;
@@ -29,10 +48,10 @@
 }
 
 .card-info .campo-view {
-  background: var(--form-background);
+  background: var(--card-fundo);
 }
 .card-info .campo-view p {
-  color: var(--cor-s2);
+  color: var(--btn-secundario-hover);
 }
 
 .fieldset-view {
@@ -45,7 +64,7 @@
 
 .campo-view {
   display: grid;
-  background: var(--input-bg-empty);
+  background: var(--card-fundo);
   padding: 17px;
   border-radius: 40px;
   gap: 5px;
@@ -55,7 +74,7 @@
   display: inline;
   font-size: 12px;
   font-weight: regular;
-  color: var(--cor-p3);
+  color: var(--txt-destaque);
   padding: 0;
   margin: 0;
 }
@@ -92,4 +111,37 @@
   display: grid;
   grid-template: auto / auto auto;
   width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .body-form-view {
+    padding: 1px;
+    gap: 0;
+  }
+
+  .header-form-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid var(--background-principal);
+    border-radius: 25px;
+    background: var(--fundo-container);
+    border: 1px solid var(--divisor);
+    padding: 10px 10px 0px 10px;
+  }
+  .main-form-view {
+    border: none;
+  }
+  .main-form-view .area-container-template {
+    box-shadow: none;
+    background: none;
+    border: none;
+    max-height: 67vh;
+    border-radius: 25px;
+  }
+
+  .acao-item {
+    width: 25px;
+    height: 25px;
+  }
 }

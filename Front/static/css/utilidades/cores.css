@@ -20,8 +20,8 @@
   --card-detalhe: hsl(218, 20%, 22%);
   --card-borda: hsl(218, 20%, 22%);
   --card-hover: hsl(218, 20%, 27%);
-  --card-aberto-fundo: hsl(218, 23%, 33%);
-  --card-aberto-detalhe: hsl(218, 23%, 38%);
+  --card-aberto-fundo: hsl(218, 40%, 33%);
+  --card-aberto-detalhe: hsl(218, 40%, 38%);
   --card-alt-fundo: hsl(218, 20%, 24%);
 
   /* Cores Primárias */
