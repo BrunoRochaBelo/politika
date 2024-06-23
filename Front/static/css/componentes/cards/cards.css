@@ -143,7 +143,7 @@
 .card-select-s:hover,
 .card-select-m:hover {
   background: var(--card-hover);
-  color: var(--txt-contraste-alt);
+  color: var(--txt-principal);
   border: 1px solid var(--card-borda);
 }
 /*  active  */
@@ -174,7 +174,7 @@
   .card-select-m:hover {
     border: 1px solid var(--card-borda);
     background: var(--card-fundo);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    color: var(--txt-principal);
   }
   .card-xs,
   .card-s,

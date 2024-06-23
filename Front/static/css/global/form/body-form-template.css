@@ -7,6 +7,7 @@
     "header-form" auto
     "main-form"
     / minmax(350px, 1100px);
+  background: var(--background-principal);
 }
 /* container-areas */
 .header-form {
@@ -20,7 +21,7 @@
   padding: 10px 10px 10px 15px;
   text-align: left;
   border: 1px solid var(--input-border);
-  background: hsla(218, 31%, 15%, 0.8);
+  background: hsla(218, 25%, 15%, 0.8);
   border-bottom: none;
   position: relative;
 }
@@ -34,7 +35,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border: 1px solid var(--input-border);
-  background: hsla(218, 31%, 15%, 0.8);
+  background: hsla(218, 25%, 15%, 0.8);
   border-top: none;
 }
 .main-form::-webkit-scrollbar {

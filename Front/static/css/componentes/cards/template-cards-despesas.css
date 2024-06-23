@@ -11,8 +11,8 @@
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
     "despesas-medium-card-referencia despesas-medium-card-referencia"
     "despesas-medium-card-desc despesas-medium-card-desc";
-  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
-    height 0.3s ease-out;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
   max-height: 240px;
 }
 
@@ -91,7 +91,7 @@
   margin: 3px 0 0 10px;
   font-size: 14px;
   font-weight: 300;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .despesas-medium-card-editar {
@@ -99,7 +99,7 @@
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .exibirDetalheDespesa {
@@ -122,8 +122,8 @@
     "despesas-medium-card-desc despesas-medium-card-desc"
     "despesas-medium-card-editar despesas-medium-card-editar";
   transform: scale(1.01);
-  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
-    height 0.3s ease-in;
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
   max-height: 300px;
   height: auto;
 }

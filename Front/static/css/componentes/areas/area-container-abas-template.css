@@ -122,9 +122,10 @@
   /* Area Template padrão*/
   .area-container-abas-template {
     background: var(--background-principal);
-    border-radius: 25px;
-    max-height: 85vh;
+    border-radius: 0;
+    max-height: 88vh;
     padding: 0px 1px;
+    box-shadow: none;
   }
   .area-container-abas-template-header {
     grid-area: area-container-abas-template-header;
@@ -138,9 +139,8 @@
   }
   .area-container-abas-template-content {
     border-radius: 0px;
-    border-radius: 25px;
     background: var(--fundo-container);
-    border: 1px solid var(--card-borda);
+    border-top: 1px solid var(--card-borda);
   }
 
   .aba-header-header-fx-int {

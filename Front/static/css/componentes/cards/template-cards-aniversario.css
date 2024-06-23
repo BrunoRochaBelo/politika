@@ -11,8 +11,8 @@
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
     /0.5fr 0.5fr 1fr 32px;
-  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
-    height 0.3s ease-out;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
   max-height: 100px; /* Ajuste conforme necessário */
 }
 
@@ -37,7 +37,7 @@
   margin: 3px 0 0 10px;
   font-size: 14px;
   font-weight: 300;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .aniversario-small-card-phone {
@@ -51,7 +51,7 @@
   display: none;
   justify-self: start;
   margin: 3px 0 0 10px;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .aniversario-small-card-num {
@@ -63,7 +63,7 @@
   margin: 3px 0 0 10px;
   font-size: 14px;
   font-weight: 300;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .aniversario-small-card-email {
@@ -75,7 +75,7 @@
   margin: 3px 0 0 10px;
   font-size: 13px;
   font-weight: 300;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .aniversario-small-card-tipopessoa {
@@ -87,7 +87,7 @@
   margin: 3px 0 0 10px;
   font-size: 12px;
   font-weight: 300;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .aniversario-small-card-editar {
@@ -95,7 +95,7 @@
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .exibirDetalhesAniversariante {
@@ -116,8 +116,8 @@
     "aniversario-small-card-tipopessoa .  .  aniversario-small-card-phone"
     "aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar";
   transform: scale(1.01);
-  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
-    height 0.3s ease-in;
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
   max-height: 300px; /* Ajuste conforme necessário */
 }
 

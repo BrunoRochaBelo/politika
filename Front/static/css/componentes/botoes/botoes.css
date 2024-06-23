@@ -151,7 +151,7 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 25px;
-  border: 1px solid var(--btn-secundario-alt-destaque);
+  border: 1px solid var(--btn-principal-alt);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -176,7 +176,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--btn-secundario-alt-destaque);
+  color: var(--btn-principal-alt);
   font-size: 18px;
   border: none;
 }

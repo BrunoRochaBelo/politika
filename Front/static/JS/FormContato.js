@@ -3,29 +3,30 @@ function validarCampo(campo) {
   const valorCampo = campo.value.trim();
   let campoValido = true;
 
+  // Remover classes de erro e sucesso antes da validação
+  campo.classList.remove("error");
+  campo.classList.remove("success");
+
+  // Verificar se o campo é obrigatório e está vazio
   if (campo.hasAttribute("required") && valorCampo === "") {
     campo.classList.add("error");
-    campo.classList.remove("success");
     campoValido = false;
-  } else {
-    campo.classList.remove("error");
-    campo.classList.add("success");
-  }
-
-  // Condições adicionais de validação
-  if (
+  } else if (
     campo.type === "email" &&
+    valorCampo !== "" &&
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valorCampo)
   ) {
     campo.classList.add("error");
-    campo.classList.remove("success");
     campoValido = false;
-  }
-
-  if (campo.type === "tel" && !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)) {
+  } else if (
+    campo.type === "tel" &&
+    valorCampo !== "" &&
+    !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)
+  ) {
     campo.classList.add("error");
-    campo.classList.remove("success");
     campoValido = false;
+  } else if (campo.hasAttribute("required")) {
+    campo.classList.add("success");
   }
 
   return campoValido;
@@ -99,8 +100,10 @@ function submitForm(event) {
 
   // Iterar sobre os campos para adicionar classes de sucesso
   inputs.forEach((input) => {
-    input.classList.remove("error");
-    input.classList.add("success");
+    if (input.hasAttribute("required") && input.value.trim() !== "") {
+      input.classList.remove("error");
+      input.classList.add("success");
+    }
   });
 
   // Enviar os dados do formulário via fetch
@@ -256,30 +259,45 @@ function mostrarCamposConjuge() {
   var estadoCivil = document.getElementById("estado_civil").value;
   var camposConjuge = document.getElementById("camposConjuge");
 
-  if (estadoCivil === "Casado(a)" || estadoCivil === "União Estável") {
+  if (estadoCivil === "casado" || estadoCivil === "uniao_estavel") {
     camposConjuge.style.display = "block";
   } else {
     camposConjuge.style.display = "none";
   }
 }
 
-function ocultarCamposConjuge() {
-  var camposConjuge = document.getElementById("camposConjuge");
-  camposConjuge.style.display = "none";
-}
+// Ouvinte de evento para o campo Estado Civil
+document
+  .getElementById("estado_civil")
+  .addEventListener("change", mostrarCamposConjuge);
 
-function toggleCamposCargoComissionado() {
-  var checkbox = document.getElementById("cargo_comissionado_switch");
-  var camposCargoComissionado = document.getElementById(
-    "camposCargoComissionado"
-  );
+// Ouvinte de evento para o campo Celular
+document.getElementById("celular").addEventListener("blur", function () {
+  formatarCelularParaExibicao(this);
+  validarCampo(this); // Validar campo ao desfocar
+});
 
-  if (checkbox.checked) {
-    camposCargoComissionado.style.display = "block";
-  } else {
-    camposCargoComissionado.style.display = "none";
-  }
-}
+// Ouvinte de evento para o campo Telefone
+document.getElementById("telefone").addEventListener("blur", function () {
+  formatarTelefoneParaExibicao(this);
+  validarCampo(this); // Validar campo ao desfocar
+});
 
-// Adicionando a chamada da função submitForm ao evento submit do formulário
+// Ouvinte de evento para o campo CEP
+document.getElementById("cep").addEventListener("blur", function () {
+  formatarCEP(this);
+  validarCampo(this); // Validar campo ao desfocar
+});
+
+// Ouvinte de evento para o campo WhatsApp switch
+document
+  .getElementById("whatsapp_switch")
+  .addEventListener("change", mostrarCampoWhatsapp);
+
+// Ouvinte de evento para adicionar filho
+document
+  .getElementById("adicionarFilho")
+  .addEventListener("click", adicionarFilho);
+
+// Ouvinte de evento para o envio do formulário
 document.getElementById("form").addEventListener("submit", submitForm);

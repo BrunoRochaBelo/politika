@@ -12,8 +12,8 @@
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
     /0.5fr 0.5fr 1fr 32px;
-  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
-    height 0.3s ease-out;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
   max-height: 100px;
 }
 .contatos-small-card-id {
@@ -55,7 +55,7 @@
   margin: 3px 0 0 10px;
   font-size: 14px;
   font-weight: 400;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 .contatos-small-card-email {
   grid-area: contatos-small-card-email;
@@ -66,7 +66,7 @@
   margin: 3px 0 0 10px;
   font-size: 13px;
   font-weight: 400;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 .contatos-small-card-tipopessoa {
   grid-area: contatos-small-card-tipopessoa;
@@ -77,14 +77,14 @@
   margin: 3px 0 0 10px;
   font-size: 12px;
   font-weight: 300;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 .contatos-small-card-editar {
   grid-area: contatos-small-card-editar;
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .exibirDetalheContato {
@@ -104,8 +104,8 @@
     "contatos-small-card-tipopessoa . . contatos-small-card-phone"
     "contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar";
   transform: scale(1.01);
-  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
-    height 0.3s ease-in;
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
   max-height: 300px;
   height: auto;
 }

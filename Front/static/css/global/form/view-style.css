@@ -1,5 +1,38 @@
-.form-view {
-  background: none;
+.header-form-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--background-principal);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 25px;
+  padding: 35px 20px 10px 20px;
+  box-sizing: border-box;
+}
+
+.acoes {
+  display: flex;
+  gap: 10px;
+}
+.acao-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--divisor);
+}
+
+.card-info .campo-view {
+  background: var(--form-background);
+}
+.card-info .campo-view p {
+  color: var(--cor-s2);
 }
 
 .fieldset-view {
@@ -12,32 +45,34 @@
 
 .campo-view {
   display: grid;
-  background: var(--form-background);
-  padding: 15px;
+  background: var(--input-bg-empty);
+  padding: 17px;
   border-radius: 40px;
   gap: 5px;
 }
 
-.campo-view label {
+.campo-view h3 {
   display: inline;
   font-size: 12px;
   font-weight: regular;
-  color: var(--cor-p2);
+  color: var(--cor-p3);
   padding: 0;
   margin: 0;
 }
 
+.campo-view p,
 .campo-view input,
 .campo-view select,
 .campo-view textarea {
   margin: 0px;
   width: 100%;
   box-sizing: border-box;
-  color: var(--txt-principal);
+  color: var(--txt-subtitulo);
   background: transparent;
   border: none;
   font-weight: bold;
 }
+
 .campo-view textarea {
   border-radius: 15px;
 }
@@ -55,6 +90,6 @@
 
 .fieldset-view .form-2-colum {
   display: grid;
-  grid-template: auto/auto auto; /* Corrigi o valor aqui pois o original não era válido */
+  grid-template: auto / auto auto;
   width: 100%;
 }

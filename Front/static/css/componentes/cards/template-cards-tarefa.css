@@ -8,8 +8,8 @@
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data";
-  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
-    height 0.3s ease-out;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
   max-height: 100px;
 }
 
@@ -53,7 +53,7 @@
   grid-area: tarefa-small-card-desc;
   display: none;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .tarefa-small-card-id {
@@ -76,7 +76,7 @@
   font-size: 12px;
   font-weight: 300;
   justify-self: start;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .tarefa-small-card-editar {
@@ -84,7 +84,7 @@
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .exibirDetalheTarefa {
@@ -104,8 +104,8 @@
     "tarefa-small-card-resp tarefa-small-card-resp"
     "tarefa-small-card-editar tarefa-small-card-editar";
   transform: scale(1.01);
-  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
-    height 0.3s ease-in;
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
   max-height: 300px; /* Ajuste conforme necessário */
 }
 
@@ -162,8 +162,8 @@
     "tarefa-medium-card-title tarefa-medium-card-tag"
     "tarefa-medium-card-status tarefa-medium-card-data"
     "tarefa-medium-card-desc  tarefa-medium-card-desc";
-  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
-    height 0.3s ease-out;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
   max-height: 140px;
   height: auto;
 }
@@ -241,7 +241,7 @@
   font-size: 12px;
   font-weight: 300;
   justify-self: start;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .tarefa-medium-card-editar {
@@ -249,7 +249,7 @@
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .exibirDetalheTarefa {
@@ -269,8 +269,8 @@
     "tarefa-medium-card-resp tarefa-medium-card-resp"
     "tarefa-medium-card-editar tarefa-medium-card-editar";
   transform: scale(1.01);
-  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
-    height 0.3s ease-in;
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
   max-height: 300px; /* Ajuste conforme necessário */
 }
 

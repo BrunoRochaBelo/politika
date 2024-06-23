@@ -203,9 +203,10 @@
   /* Area Template padrão*/
   .area-container-template {
     background: var(--background-principal);
-    border-radius: 25px;
-    max-height: 85vh;
+    border-radius: 0;
+    max-height: 88vh;
     padding: 0px 1px;
+    box-shadow: none;
   }
   .area-container-template-header {
     padding: 5px 5px 5px 15px;
@@ -220,9 +221,8 @@
   }
   .area-container-template-content {
     border-radius: 0px;
-    border-radius: 25px;
     background: var(--fundo-container);
-    border: 1px solid var(--card-borda);
+    border-top: 1px solid var(--card-borda);
   }
   .header-header-fx-int {
     padding: 5px 5px 5px 15px;
@@ -315,7 +315,7 @@
     overflow-x: auto;
     overflow-y: auto;
     padding: 12px 10px 20px 10px;
-    max-height: 68vh;
+    max-height: 71vh;
     border-radius: 0px;
     border-top: 1px solid var(--background-principal);
   }

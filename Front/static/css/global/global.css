@@ -133,3 +133,9 @@ img {
 .link:hover {
   color: var(--link-hover);
 }
+
+@media only screen and (max-width: 900px) {
+  body {
+    background: var(--fundo-container);
+  }
+}

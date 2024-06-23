@@ -236,7 +236,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .area-template-sessao-int-header.active-header {
   font-size: 18px;
   font-weight: 600;
-  color: var(--cor-s1);
+  color: var(--cor-p3);
 }
 
 .area-template-sessao-int-header a {
@@ -272,7 +272,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .campo input.success,
 .campo select.success,
 .campo textarea.success {
-  border-color: var(--input-success-border) !important;
+  border: 1px solid var(--input-border) !important;
 }
 
 .card.error {

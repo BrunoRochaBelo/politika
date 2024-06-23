@@ -1,6 +1,6 @@
 <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group">
-<path id="Vector" d="M0 15C0 12.5175 5.33022 11 8 11C10.6702 11 16 12.5175 16 15V18H0V15Z" fill="#B7C9E6"/>
-<path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M8.00011 10C10.4548 10 12.4446 7.7615 12.4446 5C12.4446 2.2385 10.4548 0 8.00011 0C5.54544 0 3.55566 2.2385 3.55566 5C3.55566 7.7615 5.54544 10 8.00011 10Z" fill="#B7C9E6"/>
+<path id="Vector" d="M0 15C0 12.5175 5.33022 11 8 11C10.6702 11 16 12.5175 16 15V18H0V15Z" fill="hsl(218, 50%, 80%)"/>
+<path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M8.00011 10C10.4548 10 12.4446 7.7615 12.4446 5C12.4446 2.2385 10.4548 0 8.00011 0C5.54544 0 3.55566 2.2385 3.55566 5C3.55566 7.7615 5.54544 10 8.00011 10Z" fill="hsl(218, 50%, 80%)"/>
 </g>
 </svg>

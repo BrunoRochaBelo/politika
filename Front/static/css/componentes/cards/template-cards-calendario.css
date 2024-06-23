@@ -9,8 +9,8 @@
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao";
-  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
-    height 0.3s ease-out;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
   max-height: 100px;
 }
 
@@ -84,7 +84,7 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .calendario-small-card-partcipantes {
@@ -100,7 +100,7 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .calendario-small-card-editar {
@@ -108,7 +108,7 @@
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-detalhe);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .exibirDetalheEvento {
@@ -128,8 +128,8 @@
     "calendario-small-card-partcipantes calendario-small-card-partcipantes"
     "calendario-small-card-editar calendario-small-card-editar";
   transform: scale(1.01);
-  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
-    height 0.3s ease-in;
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
   max-height: 300px;
 }
 
@@ -175,8 +175,8 @@
     "calendario-large-card-local calendario-large-card-local"
     "calendario-large-card-partcipantes calendario-large-card-partcipantes"
     "calendario-large-card-duracao calendario-large-card-duracao";
-  transition: max-height 0.3s ease-out, transform 0.3s ease-out,
-    height 0.3s ease-out;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
   max-height: 250px;
 }
 .calendario-large-card-type {
@@ -274,8 +274,8 @@
     "calendario-large-card-duracao calendario-large-card-duracao"
     "calendario-large-card-editar calendario-large-card-editar";
   transform: scale(1.01);
-  transition: max-height 0.3s ease-in, transform 0.3s ease-in,
-    height 0.3s ease-in;
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
   max-height: 350px;
 }
 .calendario-large-card-editar.exibirDetalheEvento {

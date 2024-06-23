@@ -13,279 +13,222 @@
 </head>
 
 <body class="body-form-template">
-  <header class="header-form">
-    <h1>Contato XXX-XX</h1>
+  <header class="header-form header-form-view">
+    <div class="card-info">
+      <div class="campo-view">
+        <p>{{ nome_contato }}</p>
+      </div>
+      <div class="campo-view">
+        <p>{{ celular }}</p>
+      </div>
+      <div class="acoes">
+        <div class="campo-view acao-item">
+          <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+        </div>
+        <div class="campo-view acao-item">
+          <a href=""><img src="./static/imagens/icones/historico.svg" alt="Historico Icon"></a>
+        </div>
+        <div class="campo-view acao-item">
+          <a href=""><img src="./static/imagens/icones/phone.svg" alt="Phone Icon"></a>
+        </div>
+      </div>
+    </div>
     <h1><a href="contatos.html" class="close">&times;</a></h1>
   </header>
 
+
   <main class="main-form">
-    <section class="area-container-abas-template">
-      <nav class="area-container-abas-template-header">
-        <ul id="navAba" class="nav">
-          <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Identificação</a></li>
-          <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Endereço</a></li>
-          <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Adicional</a></li>
-        </ul>
-      </nav>
-      <div class="area-container-abas-template-content area-container-abas-template-content-com-header-fx-int">
-        <form id="form" class="form form-view" enctype="multipart/form-data">
-          <div id="aba1" class="aba-template active">
-            <div class="area-interna-containerContent-template">
-              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                <fieldset class="fieldset-view">
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo-view">
-                    <label for="nome_contato">Nome do contato <span>*</span></label>
-                    <input type="text" id="nome_contato" name="nome_contato" required readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="celular">Celular <span>*</span></label>
-                    <input type="tel" id="celular" name="celular" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)" readonly>
-                  </div>
-                  <div class="campo">
-                    <label>Este número é WhatsApp? <span>*</span></label>
-                    <div class="switch-container">
-                      <input type="checkbox" id="whatsapp_switch" class="form-checkbox" onchange="mostrarcampo-viewWhatsapp()" disabled>
-                      <label for="whatsapp_switch" class="switch-label">
-                        <span class="switch-inner"></span>
-                        <span class="switch-switch"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <div id="campo-viewWhatsapp">
-                    <div class="campo-view">
-                      <label for="whatsapp">WhatsApp</label>
-                      <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)" readonly>
-                    </div>
-                  </div>
-                  <div class="campo-view">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" class="contato" placeholder="email@email.com" onchange="validarEmail(this.value)" readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)" readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="perfil_influencia">Perfil de Influência</label>
-                    <select id="perfil_influencia" name="perfil_influencia" disabled>
-                      <option value="">Selecione</option>
-                      <option value="Baixo">Baixo</option>
-                      <option value="Médio">Médio</option>
-                      <option value="Alto">Alto</option>
-                    </select>
-                  </div>
-                  <div class="campo">
-                    <label for="tipo_contato">Tipo(s) do contato</label>
-                    <ul id="tipo_contato" class="tipo-contato">
-                      <li>
-                        <input type="checkbox" id="eleitor" name="eleitor" value="Eleitor" class="form-contato-checkbox">
-                        <label class="checkbox-label" for="eleitor">Eleitor</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="staff" name="staff" value="Staff" class="form-contato-checkbox">
-                        <label class="checkbox-label" for="staff">Staff</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="fornecedor" name="fornecedor" value="Fornecedor" class="form-contato-checkbox">
-                        <label class="checkbox-label" for="fornecedor">Fornecedor</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="comissionado" name="comissionado" value="Comissionado" class="form-contato-checkbox">
-                        <label class="checkbox-label" for="comissionado">Comissionado</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="lideranca" name="lideranca" value="Liderança" class="form-contato-checkbox">
-                        <label class="checkbox-label" for="lideranca">Liderança</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="familia" name="familia" value="Família" class="form-contato-checkbox">
-                        <label class="checkbox-label" for="familia">Família</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="politico" name="politico" value="Político" class="form-contato-checkbox">
-                        <label class="checkbox-label" for="politico">Político</label>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="campo-view">
-                    <label for="tipo_pessoa">Tipo Pessoa <span>*</span></label>
-                    <select id="tipo_pessoa" name="tipo_pessoa" required disabled>
-                      <option value="">Selecione</option>
-                      <option value="Física">Física</option>
-                      <option value="Jurídica">Jurídica</option>
-                    </select>
-                  </div>
-                  <div class="campo-view">
-                    <label for="titulo_eleitor">Título Eleitor</label>
-                    <input type="number" id="titulo_eleitor" name="titulo_eleitor" readonly>
-                  </div>
-                  <div class="form-2-colum">
-                    <div class="campo-view">
-                      <label for="zona_eleitoral">Zona Eleitoral</label>
-                      <input type="number" id="zona_eleitoral" name="zona_eleitoral" readonly>
-                    </div>
-                    <div class="campo-view">
-                      <label for="secao_eleitoral">Seção Eleitoral</label>
-                      <input type="number" id="secao_eleitoral" name="secao_eleitoral" readonly>
-                    </div>
-                  </div>
-                  <div class="campo-view">
-                    <label for="local_votacao">Local Votação</label>
-                    <input type="text" id="local_votacao" name="local_votacao" readonly>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-          </div>
+    <section class="area-container-template">
+      <div class="area-container-template-content area-container-abas-template-content-com-header-fx-int">
+        <form id="form" class="form" enctype="multipart/form-data">
+          <ul class="lista-vertical-alt">
+            <li class="card area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(1)">👤 Identificação<span class="arrow down"></span></a></h2>
+              <div class="area-template-sessao-int-content">
+                <div class="session" id="sessao1">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
 
-          <div id="aba2" class="aba-template">
-            <div class="area-interna-containerContent-template">
-              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                <fieldset class="fieldset-view">
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo-view">
-                    <label for="cep">CEP <span>*</span></label>
-                    <input type="text" id="cep" name="cep" placeholder="99999999" required oninput="buscarEndereco(this.value)" readonly>
-                  </div>
+                    <div class="campo-view">
+                      <h3>Tipo de Pessoa</h3>
+                      <p>{{ tipo_pessoa }}</p>
+                    </div>
 
-                  <div class="form-2-colum">
                     <div class="campo-view">
-                      <label for="uf">UF <span>*</span></label>
-                      <select id="uf" name="uf" required disabled>
-                        <!-- Opções de UF -->
-                      </select>
+                      <h3>Este número é WhatsApp?</h3>
+                      <p>{{ whatsapp_switch }}</p>
+                    </div>
+                    <div class="campo-view" id="campoWhatsapp">
+                      <h3>WhatsApp</h3>
+                      <p>{{ whatsapp }}</p>
                     </div>
                     <div class="campo-view">
-                      <label for="cidade">Cidade <span>*</span></label>
-                      <input type="text" id="cidade" name="cidade" required readonly>
-                    </div>
-                  </div>
-                  <div class="campo-view">
-                    <label for="bairro">Bairro <span>*</span></label>
-                    <input type="text" id="bairro" name="bairro" required readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="rua">Rua</label>
-                    <input type="text" id="rua" name="rua" readonly>
-                  </div>
-                  <div class="form-2-colum">
-                    <div class="campo-view">
-                      <label for="numero">Número</label>
-                      <input type="number" id="numero" name="numero" readonly>
+                      <h3>E-mail</h3>
+                      <p>{{ email }}</p>
                     </div>
                     <div class="campo-view">
-                      <label for="complemento">Complemento</label>
-                      <input type="text" id="complemento" name="complemento" readonly>
+                      <h3>Telefone</h3>
+                      <p>{{ telefone }}</p>
                     </div>
-                  </div>
+                    <div class="campo-view">
+                      <h3>Perfil de Influência</h3>
+                      <p>{{ perfil_influencia }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Tipo(s) do contato</h3>
+                      <p>{{ tipo_contato }}</p>
+                    </div>
 
-                  <div class="campo-view ocultar">
-                    <label for="latitude">Latitude</label>
-                    <input type="number" id="latitude" name="latitude" step="0.000001" readonly>
-                  </div>
-                  <div class="campo-view ocultar">
-                    <label for="longitude">Longitude</label>
-                    <input type="number" id="longitude" name="longitude" step="0.000001" readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="eleitores_residentes">Quantidade de Eleitores residentes</label>
-                    <input type="number" id="eleitores_residentes" name="eleitores_residentes" min="0" step="1" title="Apenas números são permitidos" readonly>
-                  </div>
-                  <div class="campo campo-view">
-                    <label for="residencia_apoio">Residência de apoio</label>
-                    <div class="switch-container">
-                      <input type="checkbox" id="residencia_apoio_switch" class="form-checkbox" onchange="mostrarcampo-viewResidenciaApoio()" disabled>
-                      <label for="residencia_apoio_switch" class="switch-label">
-                        <span class="switch-inner"></span>
-                        <span class="switch-switch"></span>
-                      </label>
-                    </div>
-                  </div>
 
-              </div>
-            </div>
-          </div>
-
-          <div id="aba3" class="aba-template">
-            <div class="area-interna-containerContent-template">
-              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                <fieldset class="fieldset-view">
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo-view">
-                    <label for="indicacao">Indicação</label>
-                    <input type="text" id="indicacao" name="indicacao" readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="nome_indicacao">Nome da indicação</label>
-                    <input type="text" id="nome_indicacao" name="nome_indicacao" readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="estado_civil">Estado Civil</label>
-                    <select id="estado_civil" name="estado_civil" onchange="mostrarcampo-viewsConjuge()" disabled>
-                      <!-- Opções de estado civil -->
-                    </select>
-                  </div>
-                  <div id="campo-Conjuge" style="display: none;">
+                    <legend class="titulo-xl"></legend>
                     <div class="campo-view">
-                      <label for="nome_conjuge">Nome do Cônjuge</label>
-                      <input type="text" id="nome_conjuge" name="nome_conjuge" readonly>
+                      <h3>Data Nascimento</h3>
+                      <p>{{ data_nascimento }}</p>
                     </div>
-                    <div class="campo-view">
-                      <label for="data_nascimento_conjuge">Data de Nascimento do Cônjuge</label>
-                      <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge" readonly>
-                    </div>
-                  </div>
-                  <div class="campo">
-                    <label for="filhos">Filhos</label>
-                    <input type="radio" id="filhos_sim" name="filhos" value="Sim" onclick="mostrarcampo-viewsFilhos()" disabled>
-                    <label for="filhos_sim">Sim</label>
-                    <input type="radio" id="filhos_nao" name="filhos" value="Não" onclick="ocultarcampo-viewsFilhos()" disabled>
-                    <label for="filhos_nao">Não</label>
-                    <!-- Se sim, texto e possibilidade de abrir mais campo-views para filhos -->
-                    <div id="campo-viewsFilhos" style="display: none;">
+                    <div class="form-2-colum">
                       <div class="campo-view">
-                        <label for="nome_filho">Nome do Filho</label>
-                        <input type="text" id="nome_filho" name="nome_filho" readonly>
+                        <h3>Sexo</h3>
+                        <p>{{ sexo }}</p>
                       </div>
                       <div class="campo-view">
-                        <label for="data_nascimento_filho">Data de Nascimento do Filho</label>
-                        <input type="date" id="data_nascimento_filho" name="data_nascimento_filho" readonly>
-                        <div id="maisFilhosContainer"></div>
-                        <div>
-                          <button type="button" onclick="adicionarFilho()" id="adicionarFilhoBtn" disabled>Adicionar mais um filho</button>
-                        </div>
+                        <h3>Cor da pele</h3>
+                        <p>{{ cor_pele }}</p>
                       </div>
                     </div>
-                  </div>
-                  <div class="campo-view">
-                    <label for="religiao">Religião</label>
-                    <input type="text" id="religiao" name="religiao" readonly>
-                  </div>
-                  <div class="campo-view">
-                    <label for="profissao">Profissão</label>
-                    <input type="text" id="profissao" name="profissao" readonly>
-                  </div>
-                  <div class="campo">
-                    <label for="cargo_comissionado">Cargo Comissionado</label>
-                    <div class="switch-container">
-                      <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="togglecampo-viewsCargoComissionado()" disabled>
-                      <label for="cargo_comissionado_switch" class="switch-label">
-                        <span class="switch-inner"></span>
-                        <span class="switch-switch"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <div id="campo-viewsCargoComissionado" style="display: none;">
+
+                    <legend class="titulo-xl"></legend>
                     <div class="campo-view">
-                      <label for="orgao_lotacao">Órgão de Lotação</label>
-                      <input type="text" id="orgao_lotacao" name="orgao_lotacao" readonly>
+                      <h3>Título Eleitor</h3>
+                      <p>{{ titulo_eleitor }}</p>
                     </div>
-                  </div>
-                </fieldset>
+                    <div class="form-2-colum">
+                      <div class="campo-view">
+                        <h3>Zona Eleitoral</h3>
+                        <p>{{ zona_eleitoral }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Seção Eleitoral</h3>
+                        <p>{{ secao_eleitoral }}</p>
+                      </div>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Local Votação</h3>
+                      <p>{{ local_votacao }}</p>
+                    </div>
+                  </fieldset>
+                </div>
               </div>
-            </div>
-          </div>
+            </li>
+            <li class="card area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)">📍 Endereço<span class="arrow down"></span></a></h2>
+              <div class="area-template-sessao-int-content">
+                <div class="session" id="sessao2">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo-view">
+                      <h3>CEP</h3>
+                      <p>{{ cep }}</p>
+                    </div>
+                    <div class="form-2-colum">
+                      <div class="campo-view">
+                        <h3>UF</h3>
+                        <p>{{ uf }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Cidade</h3>
+                        <p>{{ cidade }}</p>
+                      </div>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Bairro</h3>
+                      <p>{{ bairro }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Rua</h3>
+                      <p>{{ rua }}</p>
+                    </div>
+                    <div class="form-2-colum">
+                      <div class="campo-view">
+                        <h3>Número</h3>
+                        <p>{{ numero }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Complemento</h3>
+                        <p>{{ complemento }}</p>
+                      </div>
+                    </div>
+
+                    <div class="campo-view">
+                      <h3>Latitude</h3>
+                      <p>{{ latitude }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Longitude</h3>
+                      <p>{{ longitude }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Quantidade de Eleitores residentes</h3>
+                      <p>{{ eleitores_residentes }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Residência de apoio</h3>
+                      <p>{{ residencia_apoio }}</p>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </li>
+            <li class="card area-template-sessao-int">
+              <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)">ℹ️ Informações complementares<span class="arrow down"></span></a></h2>
+              <div class="area-template-sessao-int-content">
+                <div class="session" id="sessao3">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo-view">
+                      <h3>Indicação</h3>
+                      <p>{{ indicacao }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Nome da indicação</h3>
+                      <p>{{ nome_indicacao }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Estado Civil</h3>
+                      <p>{{ estado_civil }}</p>
+                    </div>
+                    <div class="campo-view" id="camposConjuge">
+                      <h3>Nome do Cônjuge</h3>
+                      <p>{{ nome_conjuge }}</p>
+                    </div>
+                    <div class="campo-view" id="camposConjuge">
+                      <h3>Data de Nascimento do Cônjuge</h3>
+                      <p>{{ data_nascimento_conjuge }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Filhos</h3>
+                      <p>{{ resposta }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Religião</h3>
+                      <p>{{ religiao }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Profissão</h3>
+                      <p>{{ profissao }}</p>
+                    </div>
+                    <div class="campo-view">
+                      <h3>Cargo Comissionado</h3>
+                      <p>{{ cargo_comissionado }}</p>
+                    </div>
+                    <div class="campo-view" id="camposCargoComissionado">
+                      <h3>Órgão de Lotação</h3>
+                      <p>{{ orgao_lotacao }}</p>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </li>
+          </ul>
         </form>
       </div>
     </section>
@@ -294,7 +237,8 @@
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/FormContato.js"></script>
-
+  <script src="./static/js/NavSessoes.js"></script>
 </body>
+
 
 </html>

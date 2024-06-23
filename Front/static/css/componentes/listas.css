@@ -22,7 +22,6 @@
   border-radius: 25px;
   gap: 0px;
   scrollbar-width: thick;
-  transition: height 0.5s ease-out;
 }
 .lista-vertical-fil {
   display: grid;
@@ -167,13 +166,6 @@
     border-bottom-right-radius: 20px;
   }
 
-  .main-sidenav .lista-vertical-2 {
-    gap: 7px;
-  }
-  .main-sidenav .area-container-filtros-template-content {
-    gap: 10px;
-  }
-
   .lista-vertical::-webkit-scrollbar,
   .lista-vertical-3::-webkit-scrollbar,
   .lista-horizontal::-webkit-scrollbar,
@@ -193,6 +185,6 @@
   .list-last-child {
     border-radius: 2px;
     border-bottom: 1px solid #28385396;
-    margin-bottom: 55px;
+    margin-bottom: 65px;
   }
 }

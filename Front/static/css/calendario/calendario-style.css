@@ -93,8 +93,8 @@
 
 .hoje {
   border-radius: 4px;
-  border: 1px solid var(--cor-p2);
-  border-top: 5px solid var(--cor-p2);
+  border: 1px solid var(--cor-p1);
+  border-top: 5px solid var(--cor-p1);
   color: var(--txt-principal);
   background: var(--card-fundo);
 }

@@ -15,16 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 900) {
       // Modo responsivo
       if (item1 || item2) {
-        contentArea.style.maxHeight = "68vh"; // Quando os itens estão presentes
+        contentArea.style.maxHeight = "71vh"; // Quando os itens estão presentes
       } else {
-        contentArea.style.maxHeight = "69vh"; // Quando os itens foram removidos
+        contentArea.style.maxHeight = "73vh"; // Quando os itens foram removidos
       }
     } else {
       // Não modo responsivo
       if (item1 || item2) {
-        contentArea.style.maxHeight = "69vh"; // Quando os itens estão presentes
+        contentArea.style.maxHeight = "71vh"; // Quando os itens estão presentes
       } else {
-        contentArea.style.maxHeight = "71vh"; // Quando os itens foram removidos
+        contentArea.style.maxHeight = "73vh"; // Quando os itens foram removidos
       }
     }
   }

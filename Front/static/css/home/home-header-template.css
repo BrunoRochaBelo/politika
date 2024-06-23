@@ -60,7 +60,7 @@
 
   .home-header-logo {
     margin-left: 0.625rem;
-    background: rgba(255, 255, 255, 0.85);
+    background: hsla(0, 0%, 100%, 0.85);
     border-radius: 0.9375rem;
     padding: 3px;
   }
