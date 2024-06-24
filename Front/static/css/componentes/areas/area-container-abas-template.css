@@ -73,13 +73,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.area-container-abas-template-header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  align-self: center;
-  justify-self: center;
-}
+
 #nav1 a,
 #nav2 a,
 #nav3 a {
@@ -153,6 +147,10 @@
 
   .area-container-abas-template::-webkit-scrollbar {
     display: none;
+  }
+
+  .area-container-abas-template-content-com-header-fx-int {
+    border-top: 1px solid var(--card-borda);
   }
 
   .nav {

@@ -1,11 +1,11 @@
 {
   "name": "Dica - Chassis Dynamics",
   "short_name": "DICA",
-  "description": "Uma descrição curta do seu app",
+  "description": "Seu gabinete na palma da mão",
   "lang": "pt-br",
   "theme_color": "#3f1c80",
   "background_color": "#000000",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "/",
   "start_url": "/index.html",
   "icons": [
@@ -25,22 +25,22 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/2-estrelas.svg",
+      "src": "./static/imagens/icones/2-estrela.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/3-estrelas.svg",
+      "src": "./static/imagens/icones/3-estrela.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/4-estrelas.svg",
+      "src": "./static/imagens/icones/4-estrela.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/5-estrelas.svg",
+      "src": "./static/imagens/icones/5-estrela.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
@@ -50,7 +50,7 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/avancar.svg",
+      "src": "./static/imagens/icones/avançar.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
@@ -101,11 +101,6 @@
     },
     {
       "src": "./static/imagens/icones/pesquisar.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "./static/imagens/icones/pesquisar-black.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },

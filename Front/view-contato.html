@@ -13,34 +13,35 @@
 </head>
 
 <body class="body-form-template body-form-view">
-  <header class="header-form header-form-view">
-    <div class="card-info">
-      <div><a href="contatos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a></div>
-      <div class="campo-view">
-        <p>{{ nome_contato }}</p>
-      </div>
-      <div class="campo-view">
-        <p>{{ celular }}</p>
-      </div>
-      <div class="acoes">
-        <div class="campo-view acao-item">
-          <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
-        </div>
-        <div class="campo-view acao-item">
-          <a href=""><img src="./static/imagens/icones/historico.svg" alt="Historico Icon"></a>
-        </div>
-        <div class="campo-view acao-item">
-          <a href=""><img src="./static/imagens/icones/phone.svg" alt="Phone Icon"></a>
-        </div>
-      </div>
-    </div>
-
-  </header>
 
 
   <main class="main-form main-form-view">
     <section class="area-container-template">
-      <div class="area-container-template-content area-container-abas-template-content-com-header-fx-int">
+      <div class="area-container-template-header">
+        <div class="card-info">
+          <div>
+            <a href="contatos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
+          </div>
+          <div class="campo-view">
+            <p>{{ nome_contato }}</p>
+          </div>
+          <div class="campo-view">
+            <p>{{ celular }}</p>
+          </div>
+          <div class="acoes">
+            <div class="campo-view acao-item">
+              <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+            </div>
+            <div class="campo-view acao-item">
+              <a href=""><img src="./static/imagens/icones/historico.svg" alt="Historico Icon"></a>
+            </div>
+            <div class="campo-view acao-item">
+              <a href=""><img src="./static/imagens/icones/phone.svg" alt="Phone Icon"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="area-container-template-content">
         <form id="form" class="form" enctype="multipart/form-data">
           <ul class="lista-vertical-alt">
             <li class="card area-template-sessao-int">

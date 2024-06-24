@@ -1,37 +1,46 @@
 .body-form-view {
-  padding: 1px;
-  gap: 10px;
+  padding-top: 20px;
 }
-
 .header-form-view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-bottom: 1px solid var(--background-principal);
-  border-radius: 25px;
-  background: var(--fundo-container);
-  border: 1px solid var(--divisor);
-  padding: 0 20px;
+  background: var(--form-background);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 0px 20px;
+  font-size: 14px;
 }
 .main-form-view {
-  border-radius: 25px;
   border: 1px solid var(--input-border);
-}
-.main-form-view .area-container-template {
-  box-shadow: none;
-  background: none;
-  max-height: 66vh;
+  background: var(--form-background);
+  padding: 0 10px;
   border-radius: 25px;
+}
+
+.main-form-view .area-container-template,
+.main-form-view .area-container-abas-template {
+  max-height: 92vh !important;
+  border-radius: 25px;
+}
+.main-form-view .area-container-template-header,
+.main-form-view .area-container-abas-template-header {
+  width: 100%;
+  justify-content: stretch;
+  gap: 5px;
+}
+
+.main-form-view .nav {
+  margin: 5px 0;
 }
 
 .card-info {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   border-radius: 25px;
-  padding: 15px;
+  padding: 12px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .acoes {
@@ -42,8 +51,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 26px;
+  height: 26px;
   border: 1px solid var(--divisor);
 }
 
@@ -118,30 +127,33 @@
     padding: 1px;
     gap: 0;
   }
-
   .header-form-view {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom: 1px solid var(--background-principal);
     border-radius: 25px;
-    background: var(--fundo-container);
+    background: hsla(218, 25%, 15%, 0.8);
     border: 1px solid var(--divisor);
-    padding: 10px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
   }
   .main-form-view {
     border: none;
+    background: none;
+    padding: 0px;
   }
-  .main-form-view .area-container-template {
+
+  .main-form-view .area-container-template,
+  .main-form-view .area-container-abas-template {
     box-shadow: none;
     background: none;
     border: none;
-    max-height: 67vh;
+    max-height: 92vh !important;
     border-radius: 25px;
   }
 
   .acao-item {
-    width: 25px;
-    height: 25px;
+    width: 21px;
+    height: 21px;
   }
 }

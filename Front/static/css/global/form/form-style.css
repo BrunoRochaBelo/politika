@@ -7,6 +7,7 @@
   background: none;
   border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2px;
   padding-bottom: 15px;
 }
 
@@ -31,7 +32,7 @@ legend {
 }
 
 .campo {
-  background: var(--form-background);
+  background: n;
   padding: 10px;
   border-radius: 5px;
   gap: 5px;
@@ -46,7 +47,7 @@ legend {
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 7px;
-  color: var(--txt-subtitulo);
+  color: var(--txt-secundario);
 }
 
 .campo input,
@@ -228,7 +229,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .session.active {
-  max-height: 5000px;
+  max-height: 50000px;
   opacity: 1;
   transition: max-height 0.8s ease, opacity 0.8s ease;
 }
