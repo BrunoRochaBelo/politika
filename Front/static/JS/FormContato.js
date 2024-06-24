@@ -259,10 +259,24 @@ function mostrarCamposConjuge() {
   var estadoCivil = document.getElementById("estado_civil").value;
   var camposConjuge = document.getElementById("camposConjuge");
 
-  if (estadoCivil === "casado" || estadoCivil === "uniao_estavel") {
+  if (estadoCivil === "Casado(a)" || estadoCivil === "União Estável") {
     camposConjuge.style.display = "block";
   } else {
     camposConjuge.style.display = "none";
+  }
+}
+
+// Função para exibir ou esconder os campos de Cargo Comissionado
+function mostrarCamposCargoComissionado() {
+  var checkbox = document.getElementById("cargo_comissionado_switch");
+  var camposCargoComissionado = document.getElementById(
+    "camposCargoComissionado"
+  );
+
+  if (checkbox.checked) {
+    camposCargoComissionado.style.display = "block";
+  } else {
+    camposCargoComissionado.style.display = "none";
   }
 }
 

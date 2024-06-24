@@ -37,7 +37,7 @@
     grid-area: main-gc-section;
   }
 
-  .main-sidenav .lista-vertical-2 {
+  .main-sidenav .lista-vertical-2-column {
     gap: 7px;
   }
   .main-sidenav .area-container-filtros-template-content {

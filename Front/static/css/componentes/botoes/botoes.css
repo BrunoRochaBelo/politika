@@ -121,14 +121,16 @@
 .area-container-filtros-template-content .card-select-m {
   background: var(--card-fundo);
   color: var(--txt-principal);
-  border: 1px solid var(--card-borda);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   width: 100%;
 }
 .area-container-filtros-template-content .btn-principal-alt:hover,
 .area-container-filtros-template-content .card-select-m:hover {
   background: var(--card-hover);
   box-shadow: none;
-  border: 1px solid var(--card-borda);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* Estilo para o botão filtro*/

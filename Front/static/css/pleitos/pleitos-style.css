@@ -7,7 +7,7 @@
   letter-spacing: 0.5px;
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 .pleitos-medium-card-editar .btn-outline-principal:hover {
   border: 1px solid var(--btn-principal-alt-destaque);

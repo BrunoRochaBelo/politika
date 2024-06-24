@@ -2,15 +2,16 @@
   padding-top: 20px;
 }
 .header-form-view {
-  background: var(--form-background);
+  background: hsl(218, 20%, 12%);
+  border: 1px solid hsl(218, 20%, 14%);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 0px 20px;
   font-size: 14px;
 }
 .main-form-view {
-  border: 1px solid var(--input-border);
-  background: var(--form-background);
+  background: hsl(218, 20%, 12%);
+  border: 1px solid hsl(218, 20%, 14%);
   padding: 0 10px;
   border-radius: 25px;
 }
@@ -24,7 +25,15 @@
 .main-form-view .area-container-abas-template-header {
   width: 100%;
   justify-content: stretch;
-  gap: 5px;
+  gap: 0px;
+}
+.main-form-view .area-container-template-content,
+.main-form-view .area-container-abas-template-content {
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  border-radius: 25px;
 }
 
 .main-form-view .nav {
@@ -42,6 +51,14 @@
   box-sizing: border-box;
   width: 100%;
 }
+.card-info .campo-view {
+  background: var(--input-bg-filled);
+  border: 1px solid transparent;
+}
+.card-info .campo-view p {
+  color: var(--cor-s2);
+  border: 1px solid transparent;
+}
 
 .acoes {
   display: flex;
@@ -53,14 +70,8 @@
   align-items: center;
   width: 26px;
   height: 26px;
-  border: 1px solid var(--divisor);
-}
-
-.card-info .campo-view {
-  background: var(--card-fundo);
-}
-.card-info .campo-view p {
-  color: var(--btn-secundario-hover);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .fieldset-view {
@@ -68,12 +79,13 @@
   gap: 10px;
   border: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 10px 20px 10px;
 }
 
 .campo-view {
   display: grid;
-  background: var(--card-fundo);
+  background: var(--input-bg-filled);
+  border: 1px solid transparent;
   padding: 17px;
   border-radius: 40px;
   gap: 5px;
@@ -83,7 +95,7 @@
   display: inline;
   font-size: 12px;
   font-weight: regular;
-  color: var(--txt-destaque);
+  color: var(--txt-contraste-alt);
   padding: 0;
   margin: 0;
 }
@@ -95,7 +107,7 @@
   margin: 0px;
   width: 100%;
   box-sizing: border-box;
-  color: var(--txt-subtitulo);
+  color: var(--cor-s2);
   background: transparent;
   border: none;
   font-weight: bold;
@@ -124,7 +136,7 @@
 
 @media only screen and (max-width: 900px) {
   .body-form-view {
-    padding: 1px;
+    padding: 0px;
     gap: 0;
   }
   .header-form-view {

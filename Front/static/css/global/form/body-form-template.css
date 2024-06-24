@@ -6,7 +6,7 @@
     "header-form"
     "main-form"
     / minmax(350px, 1100px);
-  background: var(--background-principal);
+  background: hsl(218, 20%, 8%);
   padding-top: 20px;
 }
 /* container-areas */
@@ -20,10 +20,10 @@
   text-align: left;
   font-size: 12px;
   color: var(--txt-secundario);
-  background: var(--form-background);
+  background: hsl(218, 20%, 12%);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  border: 1px solid var(--card-borda);
+  border: 1px solid hsl(218, 20%, 14%);
   border-bottom: none;
 }
 .main-form {
@@ -35,8 +35,8 @@
   overflow-x: hidden;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: var(--form-background);
-  border: 1px solid var(--card-borda);
+  background: hsl(218, 20%, 12%);
+  border: 1px solid hsl(218, 20%, 14%);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border-top: none;
@@ -70,15 +70,25 @@
   border-radius: 25px;
 }
 
+.main-form .area-template-sessao-int {
+  padding: 0px;
+  border-radius: 25px;
+}
 .main-form .area-template-sessao-int-header {
   font-size: 16px;
   font-weight: 500;
   color: var(--txt-destaque);
-  padding: 15px;
+  padding: 30px;
+  border-radius: 25px;
 }
 .main-form .area-template-sessao-int-content {
   border-radius: 0px;
   border-radius: 25px;
+  box-shadow: none;
+}
+
+.main-form .cad-session.active {
+  background: var(--form-background);
 }
 
 /* RESPONSIVO */

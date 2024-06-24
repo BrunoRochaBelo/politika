@@ -23,7 +23,7 @@
       <div class="area-container-template-content">
         <form id="form" class=" form" enctype="multipart/form-data">
           <ul class="lista-vertical-alt">
-            <li class="card area-template-sessao-int">
+            <li class="cad-session area-template-sessao-int active">
               <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)">👤 Identificação<span class="arrow up"></a></h2>
               <div class="area-template-sessao-int-content">
                 <div class="session active" id="sessao1">
@@ -193,7 +193,7 @@
                 </div>
               </div>
             </li>
-            <li class="card area-template-sessao-int">
+            <li class="cad-session area-template-sessao-int">
               <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)">📍 Endereço<span class="arrow down"></a></h2>
               <div class="area-template-sessao-int-content">
                 <div class="session" id="sessao2">
@@ -288,7 +288,7 @@
                 </div>
               </div>
             </li>
-            <li class="card area-template-sessao-int">
+            <li class="cad-session area-template-sessao-int">
               <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)">ℹ️ Informações complementares<span class="arrow down"></a></h2>
               <div class="area-template-sessao-int-content">
                 <div class="session" id="sessao3">
@@ -323,7 +323,6 @@
                         <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
                       </div>
                     </div>
-
                     <div class="campo">
                       <label for="filhos">Filhos</label>
                       <div id="filhos" class="radio-button-group">
@@ -344,7 +343,7 @@
                     <div class="campo">
                       <label for="cargo_comissionado">Cargo Comissionado</label>
                       <div class="switch-container">
-                        <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="toggleCamposCargoComissionado()">
+                        <input type="checkbox" id="cargo_comissionado_switch" class="form-checkbox" onchange="mostrarCamposCargoComissionado()">
                         <label for="cargo_comissionado_switch" class="switch-label">
                           <span class="switch-inner"></span>
                           <span class="switch-switch"></span>
@@ -357,7 +356,6 @@
                         <input type="text" id="orgao_lotacao" name="orgao_lotacao">
                       </div>
                     </div>
-
                   </fieldset>
                   <div class="botoes">
                     <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>

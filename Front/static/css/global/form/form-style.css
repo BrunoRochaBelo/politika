@@ -11,14 +11,10 @@
   padding-bottom: 15px;
 }
 
-.area-interna-containerContent-template-content {
-  padding: 0 12px;
-}
-
 fieldset {
   border: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 10px 20px 10px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -58,7 +54,7 @@ legend {
   padding: 15px;
   color: var(--txt-principal);
   background: var(--input-bg-empty);
-  border: 1px solid var(--input-border);
+  border: 1px solid transparent;
   border-radius: 40px;
   transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
@@ -205,15 +201,17 @@ form span {
 .botoes {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 50px;
+  margin-top: 40px;
   width: 100%;
   font-weight: 400;
   font-size: 12px;
+  padding: 20px 0;
 }
 
 .botoes .btn-outline-principal,
 .botoes .btn-principal {
   width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator,
@@ -221,61 +219,86 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
 
-.session {
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
+/* Estilos para radio buttons */
+.radio-button-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
-.session.active {
-  max-height: 50000px;
-  opacity: 1;
-  transition: max-height 0.8s ease, opacity 0.8s ease;
+.radio-button-group input[type="radio"] {
+  display: none;
 }
-
-.area-template-sessao-int-header.active-header {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--cor-p3);
-}
-
-.area-template-sessao-int-header a {
+.radio-button-group label {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
-  color: inherit;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 2px solid var(--input-bg-filled);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+  text-align: center;
+  gap: 10px;
+}
+.radio-button-group .icon-container {
+  display: flex;
+  align-items: center;
+}
+.radio-button-group label img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.radio-button-group input[type="radio"]:checked + label {
+  background-color: var(--cor-s2);
+  border: 2px solid var(--cor-s2);
+  color: var(--txt-principal);
+}
+.radio-button-group label:hover {
+  background-color: var(--input-bg-empty);
+  color: var(--txt-principal);
 }
 
-.arrow {
-  border: solid var(--cor-s1);
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 5px;
-  transition: transform 0.3s ease;
+/* Estilos para checkboxes */
+.checkbox-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.checkbox-button-group input[type="checkbox"] {
+  display: none;
+}
+.checkbox-button-group label {
+  padding: 10px 20px;
+  border: 2px solid var(--input-bg-filled);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+}
+.checkbox-button-group input[type="checkbox"]:checked + label {
+  background-color: var(--cor-s2);
+  border: 2px solid var(--cor-s2);
+  color: var(--txt-principal);
+}
+.checkbox-button-group label:hover {
+  background-color: var(--input-bg-empty);
+  color: var(--txt-principal);
 }
 
-.arrow.down {
-  transform: rotate(45deg);
-}
-
-.arrow.up {
-  transform: rotate(-135deg);
-}
-
+/* Estilos para Validações */
 .campo input.error,
 .campo select.error,
 .campo textarea.error {
   border-color: var(--input-error-border) !important;
 }
-
 .campo input.success,
 .campo select.success,
 .campo textarea.success {
   border: 1px solid var(--input-border) !important;
 }
-
 .card.error {
   border: 1px solid var(--card-error-border);
   background-color: var(--card-error-background);
@@ -298,90 +321,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .botoes {
     flex-direction: column;
     gap: 10px;
+    margin-top: 20px;
+    padding: 10px 0;
   }
 
   .botoes .btn-outline-principal,
   .botoes .btn-principal {
     width: auto;
     margin: 0px 10px 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
   }
-}
-
-/* Estilos para radio buttons */
-.radio-button-group {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.radio-button-group input[type="radio"] {
-  display: none;
-}
-
-.radio-button-group label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  border: 2px solid var(--input-bg-filled);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  user-select: none;
-  text-align: center;
-  gap: 10px;
-}
-
-.radio-button-group .icon-container {
-  display: flex;
-  align-items: center;
-}
-
-.radio-button-group label img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.radio-button-group input[type="radio"]:checked + label {
-  background-color: var(--cor-s2);
-  border: 2px solid var(--cor-s2);
-  color: var(--txt-principal);
-}
-
-.radio-button-group label:hover {
-  background-color: var(--input-bg-empty);
-  color: var(--txt-principal);
-}
-
-/* Estilos para checkboxes */
-.checkbox-button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.checkbox-button-group input[type="checkbox"] {
-  display: none;
-}
-
-.checkbox-button-group label {
-  padding: 10px 20px;
-  border: 2px solid var(--input-bg-filled);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  user-select: none;
-}
-
-.checkbox-button-group input[type="checkbox"]:checked + label {
-  background-color: var(--cor-s2);
-  border: 2px solid var(--cor-s2);
-  color: var(--txt-principal);
-}
-
-.checkbox-button-group label:hover {
-  background-color: var(--input-bg-empty);
-  color: var(--txt-principal);
 }

@@ -134,7 +134,7 @@
   .area-container-abas-template-content {
     border-radius: 0px;
     background: var(--fundo-container);
-    border-top: 1px solid var(--card-borda);
+    border-top: 1px solid var(--borda);
   }
 
   .aba-header-header-fx-int {
@@ -150,7 +150,7 @@
   }
 
   .area-container-abas-template-content-com-header-fx-int {
-    border-top: 1px solid var(--card-borda);
+    border-top: 1px solid var(--borda);
   }
 
   .nav {

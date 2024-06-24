@@ -119,7 +119,6 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--card-aberto-detalhe) !important;
   color: var(--txt-principal);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
@@ -264,7 +263,6 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  border: 1px solid var(--card-aberto-detalhe) !important;
   color: var(--txt-principal);
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px

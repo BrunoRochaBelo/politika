@@ -25,6 +25,8 @@ function changeSession(sessionNumber) {
   var selectedArrow = arrows[sessionNumber - 1]; // Assumindo que a ordem é a mesma
 
   var areaAbas = document.querySelector(".area-container-template-content");
+  var cards = document.querySelectorAll(".cad-session");
+  var selectedCard = cards[sessionNumber - 1]; // Assumindo que a ordem é a mesma
 
   // Verificar se a sessão clicada já está ativa
   if (selectedSession.classList.contains("active")) {
@@ -33,6 +35,7 @@ function changeSession(sessionNumber) {
     selectedHeader.classList.remove("active-header");
     selectedArrow.classList.remove("up");
     selectedArrow.classList.add("down");
+    selectedCard.classList.remove("active");
 
     // Fazer o scroll para o topo
     scrollToTop(areaAbas, 300);
@@ -44,6 +47,7 @@ function changeSession(sessionNumber) {
         headers[index].classList.remove("active-header");
         arrows[index].classList.remove("up");
         arrows[index].classList.add("down");
+        cards[index].classList.remove("active");
       }
     });
 
@@ -56,6 +60,7 @@ function changeSession(sessionNumber) {
       selectedHeader.classList.add("active-header");
       selectedArrow.classList.remove("down");
       selectedArrow.classList.add("up");
-    }); // Ajuste o tempo de acordo com a duração do scroll
+      selectedCard.classList.add("active");
+    }, 300); // Ajuste o tempo de acordo com a duração do scroll
   }
 }

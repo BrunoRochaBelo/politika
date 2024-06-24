@@ -73,25 +73,23 @@
   right: 30px;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 50px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, hsl(218, 85%, 50%), hsl(218, 100%, 45%));
+  background: hsl(218, 80%, 55%);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  color: var(--btn-principal-text);
+  color: var(--txt-titulo);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 26px;
   z-index: 2001;
 }
-
 .floatingButton:hover {
-  background: linear-gradient(135deg, hsl(218, 85%, 60%), hsl(218, 85%, 50%));
+  background: linear-gradient(135deg, hsl(218, 80%, 60%), hsl(218, 88%, 50%));
 }
-
 .floatingButton:active {
-  background: linear-gradient(135deg, hsl(218, 85%, 40%), hsl(218, 100%, 35%));
+  background: linear-gradient(135deg, hsl(218, 80%, 40%), hsl(218, 88%, 35%));
 }
 
 /* RESPONSIVO */
@@ -109,36 +107,22 @@
     right: 23px;
     width: 65px;
     height: 65px;
-    border-radius: 50%;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: linear-gradient(
-      135deg,
-      hsl(218, 85%, 50%),
-      hsl(218, 100%, 45%)
-    );
+    background: hsl(218, 80%, 55%);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    color: var(--btn-principal-text);
+    color: var(--txt-titulo);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 22px;
     z-index: 2001;
   }
-
   .floatingButton:hover {
-    background: linear-gradient(
-      135deg,
-      hsl(218, 85%, 50%),
-      hsl(218, 100%, 45%)
-    );
+    background: hsl(218, 80%, 55%);
   }
-
   .floatingButton:active {
-    background: linear-gradient(
-      135deg,
-      hsl(218, 85%, 50%),
-      hsl(218, 100%, 45%)
-    );
+    background: hsl(218, 80%, 55%);
   }
 }

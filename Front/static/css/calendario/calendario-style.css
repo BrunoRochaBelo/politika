@@ -11,7 +11,7 @@
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
   justify-self: end;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 .calendario-large-card-editar .btn-outline-principal:hover,
 .calendario-small-card-editar .btn-outline-principal:hover,
@@ -28,74 +28,53 @@
   gap: 12px;
   padding: 5px;
   background: transparent;
-  border: 1px solid transparent;
+  border: none;
   border-radius: 12px;
   color: var(--txt-principal);
 }
-
 .nav-calendar .item1 {
   justify-self: start;
   align-self: center;
   padding: 5px 10px;
-  color: var(--txt-principal);
+  color: var(--btn-secundario-alt-text);
   border-radius: 5px;
   background: var(--card-fundo);
-  border: 1px solid var(--card-borda);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-
 .nav-calendar .item2 {
   justify-self: end;
   align-self: center;
   padding: 5px 7px;
   margin-right: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-
 .nav-calendar .item3 {
-  padding: 0px;
+  padding: 3px 0;
 }
 
-.nav-semana {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 5px;
-}
-
-.dia-semana {
-  text-align: center;
-  padding: 5px;
-  color: var(--txt-secundario);
-  background: var(--card-fundo);
-  border: 1px solid var(--card-borda);
+.btn-calendario {
+  padding: 0.2rem 0.625rem;
   cursor: pointer;
-  transition: background-color 0.5s ease;
-  font-size: 12px;
-  font-weight: 300;
-  border-radius: 50%;
-  width: 40px; /* Largura fixa reduzida */
-  height: 40px; /* Altura fixa reduzida */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  border: none;
 }
-.dia-visualize {
-  color: var(--txt-contraste-alt) !important;
-  background: var(--cor-p1) !important;
-  border: 1px solid var(--cor-p1) !important;
-  border-radius: 50% !important;
+.btn-calendario:hover {
+  color: var(--cor-s1);
+  border-color: transparent;
+  border-radius: 5px;
 }
-.dia-visible {
-  display: block;
-}
-.dia-hidden {
-  display: none;
+.btn-calendario:active {
+  background-color: darken(var(--fundo-container), 10%);
+  color: var(--txt-secundario);
+  border-color: var(--txt-secundario);
 }
 
 .hoje {
   border-radius: 4px;
-  border: 1px solid var(--cor-p1);
-  border-top: 5px solid var(--cor-p1);
-  color: var(--txt-principal);
+  border: 1px solid var(--btn-principal);
+  border-top: 5px solid var(--btn-principal);
+  color: var(--btn-secundario-alt-text);
   background: var(--card-fundo);
 }
 .hoje:hover {
@@ -105,9 +84,46 @@
   box-shadow: 0 0 2px var(--cor-p3), 0 0 4px var(--cor-p3);
 }
 
+.nav-semana {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+}
+.dia-semana {
+  text-align: center;
+  padding: 5px;
+  color: var(--txt-contraste-alt);
+  background: var(--card-fundo);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  font-size: 12px;
+  font-weight: 300;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.dia-visualize {
+  color: var(--btn-secundario-alt-text) !important;
+  background: var(--btn-principal) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.dia-visible {
+  display: block;
+}
+.dia-hidden {
+  display: none;
+}
+
 .change-semana {
   position: relative;
-  border: 1px solid transparent;
+  border: none;
   color: var(--txt-secundario);
   cursor: pointer;
   background: transparent;
@@ -149,11 +165,6 @@
   border-radius: 50% !important;
   color: var(--txt-contraste-alt);
 }
-
-.filtro-tarefa:hover {
-  background: var(--card-hover);
-  border-radius: 5px !important;
-}
 .change-semana:hover {
   border-radius: 12px !important;
 }
@@ -162,21 +173,33 @@
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
 }
 
-.btn-calendario {
-  padding: 0.2rem 0.625rem;
-  cursor: pointer;
-  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 1px solid transparent;
-}
-.btn-calendario:hover {
-  color: var(--cor-s1);
-  border-color: var(--card-borda);
+.filtro-tarefa {
+  text-align: center;
+  padding: 10px 15px;
+  border: none;
   border-radius: 5px;
+  color: var(--txt-contraste-alt);
+  cursor: pointer;
+  background: var(--card-fundo);
+  font-size: 12px;
+  font-weight: 300;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.btn-calendario:active {
-  background-color: darken(var(--fundo-container), 10%);
-  color: var(--txt-secundario);
-  border-color: var(--txt-secundario);
+.filtro-visualize {
+  color: var(--btn-secundario-alt-text) !important;
+  background: var(--btn-principal) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.nav-calendar .tarefa {
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  background: transparent;
+}
+.filtro-tarefa:hover {
+  background: var(--card-hover);
+  border-radius: 5px !important;
 }
 
 .area-aniversariantes {
@@ -194,41 +217,16 @@
 .lista-vertical-alt li.item-visible {
   margin: 0px;
 }
-
 .area-template-sessao-int.aniversariantes {
   background: var(--card-fundo);
-  margin: 0px;
+  margin: 0px 10px;
   padding: 12px;
-  border: 1px solid var(--card-borda);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .area-template-sessao-int.aniversariantes .btn-recuar-expandir-aniver:hover {
   border-color: transparent;
 }
-
-.filtro-tarefa {
-  text-align: center;
-  padding: 10px 15px;
-  border: 1px solid var(--card-borda);
-  border-radius: 5px;
-  color: var(--txt-secundario);
-  cursor: pointer;
-  background: var(--card-fundo);
-  font-size: 12px;
-  font-weight: 300;
-}
-.filtro-visualize {
-  color: var(--txt-contraste-alt) !important;
-  background: var(--cor-p1) !important;
-  border: 1px solid var(--cor-p1) !important;
-  border-radius: 5px !important;
-}
-.nav-calendar .tarefa {
-  padding: 0px;
-  gap: 8px;
-  border-radius: 0px;
-  background: transparent;
-}
-
 .fade-in {
   animation: fadeIn 0.1s ease-in;
 }
@@ -303,18 +301,18 @@
     color: inherit;
     color: var(--txt-secundario);
     background: var(--card-fundo);
-    border: 1px solid transparent;
+    border: none;
     box-shadow: none;
   }
 
   .area-template-sessao-int.aniversariantes {
-    margin: 0px;
+    margin: 0 10px;
   }
   .area-template-sessao-int.aniversariantes:hover {
     background: var(--card-fundo);
   }
   .area-template-sessao-int-content.area-aniversariantes .card-xs:hover {
     background: var(--fundo-modal);
-    border: 1px solid var(--card-borda);
+    border: none;
   }
 }

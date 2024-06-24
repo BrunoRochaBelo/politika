@@ -9,7 +9,6 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  border: 1px solid transparent;
   border-radius: 25px;
   scrollbar-width: thick;
   gap: 15px;
@@ -18,7 +17,6 @@
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  border: 1px solid transparent;
   border-radius: 25px;
   gap: 0px;
   scrollbar-width: thick;
@@ -30,13 +28,13 @@
   gap: 10px 0px;
   scrollbar-width: thick;
 }
-.lista-vertical-2 {
+.lista-vertical-2-column {
   display: grid;
   gap: 3px;
   grid-template: auto / 1fr 1fr;
   scrollbar-width: thick;
 }
-.lista-vertical-3 {
+.lista-vertical-3-column {
   display: grid;
   gap: 3px;
   grid-template: auto / 1fr 1fr 1fr;
@@ -89,6 +87,9 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+.lista-vertical-cards > li:not(:last-child) a {
+  border-bottom: 1px solid var(--card-borda);
+}
 
 .lista-horizontal > li:first-child a {
   border-top-left-radius: 20px;
@@ -130,14 +131,14 @@
     gap: 20px 0px;
   }
 
-  .lista-vertical-2 {
+  .lista-vertical-2-column {
     display: grid;
     gap: 3px;
     grid-template: auto / 1fr;
     scrollbar-width: thick;
   }
 
-  .lista-vertical-3 {
+  .lista-vertical-3-column {
     grid-template: auto / 1fr 1fr;
   }
 
@@ -167,7 +168,7 @@
   }
 
   .lista-vertical::-webkit-scrollbar,
-  .lista-vertical-3::-webkit-scrollbar,
+  .lista-vertical-3-column::-webkit-scrollbar,
   .lista-horizontal::-webkit-scrollbar,
   .lista-vertical-alt::-webkit-scrollbar,
   .lista-vertical-horizontal::-webkit-scrollbar {
@@ -175,7 +176,7 @@
   }
 
   .lista-vertical,
-  .lista-vertical-3,
+  .lista-vertical-3-column,
   .lista-horizontal,
   .lista-vertical-alt,
   .lista-vertical-horizontal {

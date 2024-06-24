@@ -6,13 +6,13 @@
   --txt-secundario: hsl(218, 50%, 80%);
   --txt-destaque: hsl(218, 100%, 85%);
   --txt-contraste: hsl(218, 20%, 60%);
-  --txt-contraste-alt: hsl(218, 5%, 85%);
+  --txt-contraste-alt: hsl(218, 20%, 41%);
 
   /* Backgrounds */
   --background-principal: hsl(218, 20%, 10%);
   --fundo-container: hsl(218, 20%, 15%);
   --fundo-modal: hsl(218, 20%, 25%);
-  --borda: hsl(218, 20%, 30%);
+  --borda: hsl(218, 20%, 23%);
   --divisor: hsl(218, 20%, 40%);
 
   /* Cards */
@@ -76,7 +76,7 @@
   --input-text: hsl(0, 0%, 90%);
   --input-placeholder: hsl(218, 25%, 80%);
   --input-bg-empty: hsl(218, 20%, 25%);
-  --input-bg-filled: hsl(218, 25%, 30%);
+  --input-bg-filled: hsl(218, 25%, 20%);
   --input-focus-border: hsl(218, 100%, 60%);
   --input-focus-background: hsl(0, 100%, 95%);
   --input-error-border: hsl(0, 85%, 55%);
