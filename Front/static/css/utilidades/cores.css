@@ -19,7 +19,7 @@
   --card-fundo: hsl(218, 20%, 20%);
   --card-detalhe: hsl(218, 20%, 25%);
   --card-borda: hsl(218, 20%, 25%);
-  --card-hover: hsl(218, 20%, 30%);
+  --card-hover: hsl(218, 25%, 30%);
   --card-aberto-fundo: hsl(218, 38%, 35%);
   --card-aberto-detalhe: hsl(218, 38%, 40%);
   --card-alt-fundo: hsl(218, 20%, 28%);

@@ -54,9 +54,10 @@
 .card-info .campo-view {
   background: var(--input-bg-filled);
   border: 1px solid transparent;
+  padding: 12px;
 }
 .card-info .campo-view p {
-  color: var(--cor-s2);
+  color: var(--txt-destaque);
   border: 1px solid transparent;
 }
 
@@ -68,8 +69,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border: 1px solid transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -107,7 +108,7 @@
   margin: 0px;
   width: 100%;
   box-sizing: border-box;
-  color: var(--cor-s2);
+  color: var(--txt-destaque);
   background: transparent;
   border: none;
   font-weight: bold;
@@ -165,7 +166,7 @@
   }
 
   .acao-item {
-    width: 21px;
-    height: 21px;
+    width: 25px;
+    height: 25px;
   }
 }

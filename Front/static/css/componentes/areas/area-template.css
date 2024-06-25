@@ -1,4 +1,4 @@
-/* Area Template padrão*/
+/* Area Template padrão */
 .area-container-template {
   display: grid;
   box-sizing: border-box;
@@ -130,7 +130,7 @@
   grid-area: area-interna-containerContent-template-content;
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 69vh;
+  max-height: 70vh;
   background: transparent;
   border-radius: 25px;
   border-top-right-radius: 0px;
@@ -207,8 +207,7 @@
   .area-container-template {
     background: var(--background-principal);
     border-radius: 0;
-    max-height: 88vh;
-    padding: 0px 1px;
+    max-height: 86vh;
     box-shadow: none;
   }
   .area-container-template-header {
@@ -240,7 +239,7 @@
 
   /* Area Template dos filtros*/
   .area-container-filtros-template {
-    padding: 3px;
+    padding: 3px 0;
     border-radius: 25px;
     overflow: hidden;
   }
@@ -272,7 +271,7 @@
 
   /* Area Template da Agenda para hoje*/
   .area-container-compromisso-hoje-template {
-    padding: 3px;
+    padding: 3px 0;
     border-radius: 25px;
     overflow: hidden;
   }

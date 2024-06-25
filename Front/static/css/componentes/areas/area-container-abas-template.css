@@ -117,8 +117,7 @@
   .area-container-abas-template {
     background: var(--background-principal);
     border-radius: 0;
-    max-height: 88vh;
-    padding: 0px 1px;
+    max-height: 86vh;
     box-shadow: none;
   }
   .area-container-abas-template-header {

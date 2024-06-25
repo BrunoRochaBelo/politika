@@ -66,7 +66,7 @@
         </ul>
       </nav>
       <div class="area-container-abas-template-content area-container-abas-template-content-com-header-fx-int">
-        <div id="aba1" class="aba-template active">
+        <div id="aba1" class="agenda aba-template active">
           <div class="area-interna-containerContent-template">
             <div class="area-interna-containerContent-template-header">
               <div class="lista-select nav-calendar">
@@ -130,61 +130,62 @@
                         </p>
                       </div>
                     </li>
-                    <li>
-                      <ul class="lista-vertical-alt lista-vertical-fil">
-                        <li class="area-template-sessao-int aniversariantes">
-                          <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir aniversariantes</button></h2>
-                          <ul class="area-template-sessao-int-content lista-vertical-alt area-aniversariantes">
-                            <li>
-                              <a class="card-xs aniversario-small-card contato" href="#">
-                                <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                                <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                                <img class="aniversario-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                                <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                                <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                                <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                                <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                                <div class="aniversario-small-card-editar">
-                                  <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
-                                </div>
-                                <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card-xs aniversario-small-card contato" href="#">
-                                <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                                <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                                <img class="aniversario-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                                <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                                <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                                <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                                <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                                <div class="aniversario-small-card-editar">
-                                  <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
-                                </div>
-                                <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card-xs aniversario-small-card contato" href="#">
-                                <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                                <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                                <img class="aniversario-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
-                                <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                                <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                                <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                                <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                                <div class="aniversario-small-card-editar">
-                                  <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
-                                </div>
-                                <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
-                              </a>
-                            </li>
-                          </ul>
+                    <li class="area-template-sessao-int aniversariantes">
+                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir aniversariantes</button></h2>
+                      <ul class="area-template-sessao-int-content lista-vertical-alt area-aniversariantes">
+                        <li>
+                          <a class="card-xs aniversario-small-card contato" href="#">
+                            <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                            <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                            <img class="aniversario-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                            <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                            <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                            <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                            <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                            <div class="aniversario-small-card-editar">
+                              <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
+                            </div>
+                            <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                          </a>
                         </li>
-                        <li class="area-template-sessao-int">
-                          <h2 class="area-template-sessao-int-header">08h00</h2>
-                          <ul class="area-template-sessao-int-content lista-vertical-cards">
+                        <li>
+                          <a class="card-xs aniversario-small-card contato" href="#">
+                            <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                            <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                            <img class="aniversario-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                            <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                            <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                            <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                            <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                            <div class="aniversario-small-card-editar">
+                              <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
+                            </div>
+                            <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="card-xs aniversario-small-card contato" href="#">
+                            <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                            <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                            <img class="aniversario-small-card-phone" src="./static/imagens/icones/phone.svg" alt="Ligar Icon">
+                            <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                            <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                            <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                            <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                            <div class="aniversario-small-card-editar">
+                              <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar contato</button>
+                            </div>
+                            <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="cad-session area-template-sessao-int active">
+                      <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)">agora - 08h:00 <span class="arrow up"></span></a></h2>
+                      <div class="area-template-sessao-int-content">
+                        <div class="session active" id="sessao1">
+                          <ul class="lista-vertical-cards">
                             <li>
                               <a class="card-l calendario-large-card evento" href="#">
                                 <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -228,10 +229,14 @@
                               </a>
                             </li>
                           </ul>
-                        </li>
-                        <li class="area-template-sessao-int">
-                          <h2 class="area-template-sessao-int-header">09h00</h2>
-                          <ul class="area-template-sessao-int-content lista-vertical-cards">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="cad-session area-template-sessao-int">
+                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)"><img src="./static/imagens/icones/futuro.svg" alt="Despachar Icon"> Ainda hoje<span class="arrow down"></span></a></h2>
+                      <div class="area-template-sessao-int-content">
+                        <div class="session" id="sessao2">
+                          <ul class="lista-vertical-cards">
                             <li>
                               <a class="card-l calendario-large-card evento" href="#">
                                 <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
@@ -254,14 +259,22 @@
                               </a>
                             </li>
                           </ul>
-                        </li>
-                        <li class="list-last-child"><br></li>
-                      </ul>
+                        </div>
+                      </div>
                     </li>
+                    <li class="cad-session area-template-sessao-int">
+                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)"><img src="./static/imagens/icones/passado.svg" alt="Despachar Icon"> Anteriores<span class="arrow down"></span></a></h2>
+                      <div class="area-template-sessao-int-content">
+                        <div class="session" id="sessao3">
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="list-last-child"><br></li>
                   </ul>
                 </li>
 
-                <li class="area-template-sessao-int-content dia-hidden" id="terca-feira">
+                <li class="dia-hidden" id="terca-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -353,7 +366,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-sessao-int-content dia-hidden" id="quarta-feira">
+                <li class="dia-hidden" id="quarta-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -480,7 +493,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-sessao-int-content dia-hidden" id="quinta-feira">
+                <li class="dia-hidden" id="quinta-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -617,7 +630,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-sessao-int-content dia-hidden" id="sexta-feira">
+                <li class="dia-hidden" id="sexta-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -709,7 +722,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-sessao-int-content dia-hidden" id="sabado-feira">
+                <li class="dia-hidden" id="sabado-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -801,7 +814,7 @@
                   </ul>
                 </li>
 
-                <li class="area-template-sessao-int-content dia-hidden" id="domingo-feira">
+                <li class="dia-hidden" id="domingo-feira">
                   <div class="area-filtro activeFil" id="filtro1">
                     <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                     <div class="btn-filtro-pesq">
@@ -983,63 +996,61 @@
                 </ul>
               </div>
             </div>
-            <div class="area-interna-containerContent-template-content">
-              <ul class="lista-vertical">
-                <li class="area-filtro inactiveFil" id="filtro2">
-                  <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
-                  <div class="btn-filtro-pesq">
-                    <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
-                      <a href="calendario.html" class="remover-filtro">&times;</a>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <ul class="area-template-sessao-int-content lista-vertical-cards">
-                    <li>
-                      <a class="card-m tarefa-medium-card" href="#">
-                        <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                        <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
-                          <div class="marcador-item cor-marc3">
-                            <p><strong>Marcador 1</strong></p>
-                          </div>
+            <ul class="area-interna-containerContent-template-content">
+              <li class="area-filtro inactiveFil" id="filtro2">
+                <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
+                <div class="btn-filtro-pesq">
+                  <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
+                    <a href="calendario.html" class="remover-filtro">&times;</a>
+                  </p>
+                </div>
+              </li>
+              <li class="area-template-sessao-int">
+                <ul class="area-template-sessao-int-content lista-vertical-cards">
+                  <li>
+                    <a class="card-m tarefa-medium-card" href="#">
+                      <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                      <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                        <div class="marcador-item cor-marc3">
+                          <p><strong>Marcador 1</strong></p>
                         </div>
-                        <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                        <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                        <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                        <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
-                          <p>Descrição da Tarefa</p>
+                      </div>
+                      <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                      <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                      <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                      <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                        <p>Descrição da Tarefa</p>
+                      </div>
+                      <div class="tarefa-medium-card-editar">
+                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                      </div>
+                      <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="card-m tarefa-medium-card" href="#">
+                      <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                      <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                        <div class="marcador-item cor-marc3">
+                          <p><strong>Marcador 1</strong></p>
                         </div>
-                        <div class="tarefa-medium-card-editar">
-                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                        </div>
-                        <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-m tarefa-medium-card" href="#">
-                        <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                        <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
-                          <div class="marcador-item cor-marc3">
-                            <p><strong>Marcador 1</strong></p>
-                          </div>
-                        </div>
-                        <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                        <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                        <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                        <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
-                          <p>Descrição da Tarefa</p>
-                        </div>
-                        <div class="tarefa-medium-card-editar">
-                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                        </div>
-                        <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="list-last-child"><br></li>
-              </ul>
-            </div>
+                      </div>
+                      <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                      <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                      <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                      <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                        <p>Descrição da Tarefa</p>
+                      </div>
+                      <div class="tarefa-medium-card-editar">
+                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                      </div>
+                      <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="list-last-child"><br></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1163,6 +1174,7 @@
   <script src="./static/js/NavDia.js"></script>
   <script src="./static/js/NavFiltroTarefa.js"></script>
   <script src="./static/js/ScrollRemoverItens.js"></script>
+  <script src="./static/js/NavSessoes.js"></script>
 
 
 </body>

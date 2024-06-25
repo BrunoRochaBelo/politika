@@ -19,14 +19,23 @@ function scrollToTop(element, duration) {
 function changeSession(sessionNumber) {
   var sessions = document.querySelectorAll(".session");
   var selectedSession = document.getElementById("sessao" + sessionNumber);
-  var headers = document.querySelectorAll(".area-template-sessao-int-header");
-  var selectedHeader = headers[sessionNumber - 1]; // Assumindo que a ordem é a mesma
-  var arrows = document.querySelectorAll(".arrow");
-  var selectedArrow = arrows[sessionNumber - 1]; // Assumindo que a ordem é a mesma
-
-  var areaAbas = document.querySelector(".area-container-template-content");
   var cards = document.querySelectorAll(".cad-session");
   var selectedCard = cards[sessionNumber - 1]; // Assumindo que a ordem é a mesma
+  var areaContent =
+    document.querySelector(".area-container-template-content") ||
+    document.querySelector(".area-container-abas-template-content");
+
+  if (!selectedSession || !selectedCard || !areaContent) {
+    console.error(
+      "Elementos não encontrados. Verifique se todos os elementos necessários estão presentes no DOM."
+    );
+    return;
+  }
+
+  var selectedHeader = selectedCard.querySelector(
+    ".area-template-sessao-int-header"
+  );
+  var selectedArrow = selectedHeader.querySelector(".arrow");
 
   // Verificar se a sessão clicada já está ativa
   if (selectedSession.classList.contains("active")) {
@@ -38,21 +47,26 @@ function changeSession(sessionNumber) {
     selectedCard.classList.remove("active");
 
     // Fazer o scroll para o topo
-    scrollToTop(areaAbas, 300);
+    scrollToTop(areaContent, 300);
   } else {
     // Recolher todas as sessões ativas e fazer o scroll para o topo
     sessions.forEach(function (session, index) {
       if (session.classList.contains("active")) {
         session.classList.remove("active");
-        headers[index].classList.remove("active-header");
-        arrows[index].classList.remove("up");
-        arrows[index].classList.add("down");
-        cards[index].classList.remove("active");
+
+        var card = cards[index];
+        var header = card.querySelector(".area-template-sessao-int-header");
+        var arrow = header.querySelector(".arrow");
+
+        header.classList.remove("active-header");
+        arrow.classList.remove("up");
+        arrow.classList.add("down");
+        card.classList.remove("active");
       }
     });
 
     // Fazer o scroll para o topo antes de exibir a nova sessão
-    scrollToTop(areaAbas, 300);
+    scrollToTop(areaContent, 300);
 
     // Exibir a nova sessão selecionada após o scroll
     setTimeout(function () {

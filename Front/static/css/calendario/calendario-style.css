@@ -250,6 +250,14 @@
   }
 }
 
+.agenda .cad-session {
+  margin: 0 10px;
+}
+.agenda .cad-session.active {
+  background: var(--card-alt-fundo);
+  padding: 5px;
+}
+
 @media only screen and (max-width: 900px) {
   .nav-calendar .item1 {
     padding: 5px 10px;
