@@ -120,7 +120,7 @@ legend {
 }
 
 .header-form .editar {
-  color: var(--cor-s1);
+  color: var(--cor-p1);
   border-radius: 4px;
   padding: 5px;
   justify-self: end;

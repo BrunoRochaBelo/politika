@@ -59,7 +59,7 @@
 /* Estilização para o header do modal */
 .modal-header {
   display: flex;
-  color: var(--cor-s1);
+  color: var(--cor-p1);
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--divisor);

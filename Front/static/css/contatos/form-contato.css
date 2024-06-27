@@ -76,8 +76,8 @@
 .checkbox-label {
   display: inline;
   padding: 10px 20px;
-  color: var(--cor-s1);
-  border: 2px solid var(--cor-s1);
+  color: var(--cor-p1);
+  border: 2px solid var(--cor-p1);
   border-radius: 7px;
   cursor: pointer;
   text-align: center;

@@ -186,8 +186,8 @@
 }
 .remover-filtro:hover + .btn-filtro-pesq {
   border: 1px solid var(--txt-subtitulo);
-  box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
-    0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3);
+  box-shadow: 0 0 1px var(--cor-p2), 0 0 2px var(--cor-p2),
+    0 0 3px var(--cor-p2), 0 0 4px var(--cor-p2);
 }
 
 /* Estilo para o botão "X" fechar"*/

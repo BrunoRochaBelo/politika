@@ -150,7 +150,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-bottom: 10px;
-  color: var(--cor-p3);
+  color: var(--cor-p2);
 }
 .area-template-sessao-int-header a {
   display: flex;
@@ -161,7 +161,7 @@
 }
 .arrow {
   right: 20px;
-  border: solid var(--cor-p3);
+  border: solid var(--cor-p2);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 5px;

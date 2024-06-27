@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var headerBackgroundClass = aniversariantesContainer.classList.contains(
         "visible"
       )
-        ? "--cor-s3"
+        ? "--cor-s4"
         : "--card-fundo";
       var headerElement = this.closest(
         ".area-template-sessao-int.aniversariantes"
