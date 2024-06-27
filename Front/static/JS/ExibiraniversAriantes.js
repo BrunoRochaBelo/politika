@@ -12,12 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (aniversariantesContainer.classList.contains("visible")) {
         aniversariantesContainer.classList.remove("visible");
         aniversariantesContainer.classList.add("hidden");
+        aniversariantesContainer.classList.remove("fade-in");
+        aniversariantesContainer.classList.add("fade-out");
         button.textContent = "Exibir aniversariantes";
         button.classList.remove("up");
         this.classList.remove("visible");
       } else {
         aniversariantesContainer.classList.remove("hidden");
         aniversariantesContainer.classList.add("visible");
+        aniversariantesContainer.classList.remove("fade-out");
+        aniversariantesContainer.classList.add("fade-in");
         button.textContent = "Ocultar";
         button.classList.add("up");
         this.classList.add("visible");
@@ -38,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       )
         ? "--cor-s3"
         : "--card-fundo";
-      var headerElement = document.querySelector(
+      var headerElement = this.closest(
         ".area-template-sessao-int.aniversariantes"
       );
       headerElement.style.background = `var(${headerBackgroundClass})`;

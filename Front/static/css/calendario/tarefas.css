@@ -1,0 +1,81 @@
+.tarefa-small-card-editar .btn-outline-principal,
+.tarefa-medium-card-editar .btn-outline-principal {
+  width: auto;
+  font-weight: regular;
+  font-size: 11px;
+  border-radius: 25px;
+  border: 1px solid var(--btn-principal-alt);
+  letter-spacing: 0.5px;
+  background: var(--btn-principal-alt);
+  color: var(--btn-principal-alt-txt);
+  justify-self: end;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.tarefa-small-card-editar .btn-outline-principal:hover,
+.tarefa-medium-card-editar .btn-outline-principal:hover {
+  border: 1px solid var(--btn-principal-alt-destaque);
+  background: var(--btn-principal-alt-hover);
+  color: var(--btn-principal-alt-txt);
+}
+
+.filtro-tarefa:hover {
+  background: var(--btn-filtro-hover);
+  border-radius: 50% !important;
+  color: var(--btn-filtro-txt);
+}
+.filtro-tarefa {
+  text-align: center;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  color: var(--btn-filtro-txt);
+  cursor: pointer;
+  background: var(--btn-filtro);
+  font-size: 12px;
+  font-weight: 300;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.filtro-visualize {
+  color: var(--btn-filtro-select-text) !important;
+  background: var(--btn-filtro-select) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.nav-calendar .tarefa {
+  padding: 0px;
+  gap: 8px;
+  border-radius: 0px;
+  background: transparent;
+}
+.filtro-tarefa:hover {
+  background: var(--btn-filtro-hover);
+  border-radius: 5px !important;
+}
+.area-tarefas .lista-vertical-cards {
+  gap: 5px;
+}
+.area-tarefas .card-m {
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 900px) {
+  .nav-calendar .tarefa {
+    padding: 8px 2px;
+    gap: 6px;
+    border-radius: 0px;
+    background: transparent;
+  }
+
+  .filtro-tarefa {
+    margin-right: 0px;
+    font-size: 11px;
+    font-weight: 300;
+  }
+  .filtro-tarefa:hover {
+    color: inherit;
+    color: var(--txt-content-card);
+    background: var(--card-fundo);
+    border: none;
+    box-shadow: none;
+  }
+}

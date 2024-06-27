@@ -43,7 +43,9 @@
 @import "./home/home-header-template.css";
 
 /* calendario */
+@import "./calendario/aniversariantes.css";
 @import "./calendario/calendario-style.css";
+@import "./calendario/tarefas.css";
 
 /* contatos */
 @import "./contatos/contatos-style.css";

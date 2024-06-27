@@ -92,8 +92,7 @@
 }
 
 .tarefa-small-card-expanded {
-  margin: 3px 0px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
   color: var(--txt-titulo-card);
   grid:
@@ -102,7 +101,7 @@
     "tarefa-small-card-desc  tarefa-small-card-desc"
     "tarefa-small-card-resp tarefa-small-card-resp"
     "tarefa-small-card-editar tarefa-small-card-editar";
-  transform: scale(1.01);
+  transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
     height 0.25s ease-in;
   max-height: 300px; /* Ajuste conforme necessário */
@@ -256,8 +255,7 @@
 }
 
 .tarefa-medium-card-expanded {
-  margin: 3px 0px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
   color: var(--txt-titulo-card);
   grid:
@@ -266,7 +264,7 @@
     "tarefa-medium-card-desc  tarefa-medium-card-desc"
     "tarefa-medium-card-resp tarefa-medium-card-resp"
     "tarefa-medium-card-editar tarefa-medium-card-editar";
-  transform: scale(1.01);
+  transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
     height 0.25s ease-in;
   max-height: 300px; /* Ajuste conforme necessário */

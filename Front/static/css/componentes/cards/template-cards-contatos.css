@@ -91,8 +91,7 @@
   opacity: 1 !important;
 }
 .contatos-small-card-expanded {
-  margin: 3px 0px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
   color: var(--txt-titulo-card);
   grid:
@@ -102,7 +101,7 @@
     "contatos-small-card-email contatos-small-card-email contatos-small-card-email contatos-small-card-phone"
     "contatos-small-card-tipopessoa . . contatos-small-card-phone"
     "contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar";
-  transform: scale(1.01);
+  transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
     height 0.25s ease-in;
   max-height: 300px;

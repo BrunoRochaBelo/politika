@@ -37,7 +37,7 @@ body.offline footer {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border-radius: 9px;
+  border-radius: 7px;
   border: 2px solid var(--scrollbar-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -54,7 +54,7 @@ body.offline footer {
 }
 ::-moz-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border-radius: 9px;
+  border-radius: 7px;
   border: 2px solid var(--scrollbar-bg);
 }
 ::-moz-scrollbar-thumb:hover {
@@ -72,7 +72,7 @@ body.offline footer {
 }
 ::-ms-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border-radius: 9px;
+  border-radius: 7px;
   border: 2px solid var(--scrollbar-bg);
 }
 ::-ms-scrollbar-thumb:hover {

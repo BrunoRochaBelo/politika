@@ -166,8 +166,7 @@
   opacity: 1 !important;
 }
 .pleitos-medium-card-expanded {
-  margin: 3px 0px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
   color: var(--txt-titulo-card);
   grid:
@@ -180,7 +179,7 @@
     "pleitos-medium-card-status pleitos-medium-card-status pleitos-medium-card-status"
     "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc"
     "pleitos-medium-card-editar pleitos-medium-card-editar pleitos-medium-card-editar";
-  transform: scale(1.01);
+  transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
     height 0.25s ease-in;
   max-height: 300px;

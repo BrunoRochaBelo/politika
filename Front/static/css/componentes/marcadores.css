@@ -64,7 +64,8 @@
   align-content: center;
   justify-content: center;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 25px 10px 10px 25px;
+  border: 3px solid var(--card-detalhe);
   padding: 5px 12px;
   width: 105px;
   font-size: 12px;
@@ -74,6 +75,7 @@
   text-overflow: ellipsis;
   scrollbar-width: thick;
   color: var(--marcador-txt);
+  box-shadow: inset;
 }
 
 .marcador-s:hover,

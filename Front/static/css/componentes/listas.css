@@ -18,7 +18,9 @@
   grid-auto-flow: row;
   background: transparent;
   border-radius: 25px;
-  gap: 0px;
+  gap: 3px;
+  overflow: hidden;
+
   scrollbar-width: thick;
 }
 .lista-vertical-fil {
@@ -80,16 +82,16 @@
 /* Estilos */
 /* Estilos para cards dentro da lista */
 .lista-vertical-cards > li:first-child a {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .lista-vertical-cards > li:last-child a {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
-.lista-vertical-cards > li:not(:last-child) a {
+/*.lista-vertical-cards > li:not(:last-child) a {
   border-bottom: 1px solid var(--card-borda);
-}
+}*/
 
 .lista-horizontal > li:first-child a {
   border-top-left-radius: 20px;
@@ -159,12 +161,12 @@
     scrollbar-width: thick;
   }
   .lista-horizontal.expandir > li:first-child a {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 9px;
   }
   .lista-horizontal.expandir > li:last-child a {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 25px;
   }
 
   .lista-vertical::-webkit-scrollbar,

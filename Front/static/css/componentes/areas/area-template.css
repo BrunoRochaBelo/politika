@@ -149,9 +149,10 @@
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 10px;
   gap: 5px;
+  box-shadow: none;
   grid:
     "area-template-sessao-int-header" auto
     "area-template-sessao-int-content" auto
@@ -169,8 +170,8 @@
   text-align: left;
   color: var(--txt-subtitulo);
   border-radius: 0px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 .area-template-sessao-int-header h2 {
   font-size: 14px;
@@ -179,9 +180,8 @@
 .area-template-sessao-int-content {
   grid-area: area-template-sessao-int-content;
   overflow-x: auto;
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 0px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos */
