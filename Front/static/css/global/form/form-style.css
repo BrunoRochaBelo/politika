@@ -24,7 +24,7 @@ legend {
   text-align: center;
   font-size: 1.2em;
   font-weight: bold;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .campo {
@@ -43,7 +43,7 @@ legend {
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 7px;
-  color: var(--txt-secundario);
+  color: var(--input-label);
 }
 
 .campo input,
@@ -52,7 +52,7 @@ legend {
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   background: var(--input-bg-empty);
   border: 1px solid transparent;
   border-radius: 40px;
@@ -69,7 +69,7 @@ legend {
 .file-label {
   padding: 10px;
   background-color: var(--btn-principal);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
@@ -253,11 +253,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .radio-button-group input[type="radio"]:checked + label {
   background-color: var(--cor-s2);
   border: 2px solid var(--cor-s2);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .radio-button-group label:hover {
   background-color: var(--input-bg-empty);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 /* Estilos para checkboxes */
@@ -281,11 +281,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .checkbox-button-group input[type="checkbox"]:checked + label {
   background-color: var(--cor-s2);
   border: 2px solid var(--cor-s2);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .checkbox-button-group label:hover {
   background-color: var(--input-bg-empty);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 /* Estilos para Validações */

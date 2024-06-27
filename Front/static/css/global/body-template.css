@@ -2,10 +2,11 @@
   display: grid;
   align-content: start;
   justify-content: center;
-  grid:
-    "header header header" 45px
-    " . main ."
-    / auto minmax(350px, 1100px) auto;
+  grid-template-rows: 2.813rem 1fr;
+  grid-template-columns: auto minmax(350px, 1100px) auto;
+  grid-template-areas:
+    "header header header"
+    ". main.";
 }
 /* container-areas */
 .header {
@@ -24,24 +25,24 @@
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .body-template {
-    display: grid;
-    align-content: start;
-    justify-content: center;
-    grid:
-      "header" 45px
-      "main"
-      / 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.813rem 1fr;
+    grid-template-areas:
+      "header"
+      "main";
   }
   .header {
-    grid-area: header;
-    width: 100%;
-    position: relative;
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    background: none;
+    width: 100%;
+    z-index: 1001;
   }
+
   .main {
-    grid-area: main;
-    margin-top: 0px;
+    position: fixed;
+    top: 1.67em;
+    max-height: calc(100vh - 6rem);
+    width: 100%;
+    z-index: 1000;
   }
 }

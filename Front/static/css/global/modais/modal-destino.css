@@ -9,7 +9,6 @@
     transform: translateY(0);
   }
 }
-
 /* Animação para a saída do modal */
 @keyframes modalFadeOut {
   from {
@@ -73,13 +72,12 @@
   margin: 0;
   font-size: 24px;
 }
-
 /* Estilos existentes */
 .modal-destino {
   display: grid;
   gap: 7px;
   padding: 5px;
-  color: var(--placeholder);
+  color: var(--txt-subtitulo);
   text-decoration: none;
 }
 
@@ -88,7 +86,6 @@
   width: 80%;
   margin: auto;
 }
-
 .search-icon-alt {
   position: absolute;
   top: 50%;
@@ -98,12 +95,10 @@
   height: auto;
   cursor: pointer;
 }
-
 .search-input-container-dest {
   display: flex;
   align-items: center;
 }
-
 .search-input-dest {
   padding: 10px 20px;
   font-size: 16px;
@@ -112,7 +107,9 @@
   border: 1px solid transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-
+.search-input-dest::placeholder {
+  color: var(--txt-titulo-card);
+}
 .search-input-dest:hover {
   background: var(--card-hover);
   box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
@@ -125,15 +122,12 @@
     inset 0 0 4px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
-
 .search-input-dest:hover::placeholder {
   color: var(--btn-secundario-alt-destaque);
 }
-
 .search-input-dest:focus::placeholder {
-  color: var(--txt-contraste);
+  color: var(--placeholder);
 }
-
 .breadcrumb {
   display: inline-block;
   font-size: 0.875rem;
@@ -173,7 +167,7 @@
 .card-select-m {
   font-size: 16px;
   font-weight: 350;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .submit-button {

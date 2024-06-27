@@ -2,8 +2,8 @@
   /* Texts */
   --txt-titulo: hsl(220, 15%, 95%);
   --txt-subtitulo: hsl(220, 10%, 85%);
-  --txt-principal: hsl(220, 12%, 90%);
-  --txt-secundario: hsl(220, 8%, 75%);
+  --txt-titulo-card: hsl(220, 12%, 90%);
+  --txt-content-card: hsl(220, 8%, 75%);
   --txt-destaque: hsl(220, 7%, 55%);
   --txt-contraste: hsl(220, 15%, 30%);
   --txt-contraste-alt: hsl(220, 100%, 98%);
@@ -102,8 +102,8 @@
   /* Texts */
   --txt-titulo: hsl(218, 20%, 10%); /* Sobre --background-principal */
   --txt-subtitulo: hsl(218, 20%, 25%); /* Sobre --fundo-container */
-  --txt-principal: hsl(214, 20%, 15%); /* Para textos nos --card-fundo */
-  --txt-secundario: hsl(
+  --txt-titulo-card: hsl(214, 20%, 15%); /* Para textos nos --card-fundo */
+  --txt-content-card: hsl(
     218,
     15%,
     40%

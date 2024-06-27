@@ -22,7 +22,7 @@
   border-radius: 15px;
   min-width: 140px;
   background: var(--card-fundo);
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transform: scale(0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -39,7 +39,7 @@
   font-weight: 300;
   padding: 0.5rem;
   border-bottom: 1px solid var(--background-principal);
-  background: var(--cor-p1);
+  background: var(--btn-principal);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -76,7 +76,7 @@
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  background: hsl(218, 80%, 55%);
+  background: var(--btn-principal);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   color: var(--txt-titulo);
   display: flex;
@@ -110,7 +110,7 @@
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: hsl(218, 80%, 55%);
+    background: var(--btn-principal);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     color: var(--txt-titulo);
     display: flex;
@@ -120,9 +120,9 @@
     z-index: 2001;
   }
   .floatingButton:hover {
-    background: hsl(218, 80%, 55%);
+    background: var(--btn-principal);
   }
   .floatingButton:active {
-    background: hsl(218, 80%, 55%);
+    background: var(--btn-principal);
   }
 }

@@ -2,7 +2,7 @@
 /* Pequeno */
 .aniversario-small-card {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 5px;
   align-content: center;
   white-space: nowrap;
@@ -26,7 +26,7 @@
   align-self: center;
   font-size: 14px;
   font-weight: 400;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .aniversario-small-card-tipocontato {
@@ -106,7 +106,7 @@
   margin: 3px 0px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
     " aniversario-small-card-tipocontato aniversario-small-card-tipocontato aniversario-small-card-perfilInfluencia aniversario-small-card-phone"

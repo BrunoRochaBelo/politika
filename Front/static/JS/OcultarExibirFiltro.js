@@ -12,7 +12,7 @@ function createOverlay() {
   overlay.style.width = "100%";
   overlay.style.height = "100%";
   overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-  overlay.style.zIndex = 1000;
+  overlay.style.zIndex = 2001; // Z-index do overlay
   overlay.style.display = "none";
   document.body.appendChild(overlay);
 
@@ -48,16 +48,19 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaHeader.style.color = "transparent";
       areaHeader.style.fontSize = "0px";
 
-      // Altera o tamanho da .main-sidenav para 18%
+      // Altera o tamanho da .main-sidenav para 19%
       mainSidenav.style.width = "19%";
 
       // Adiciona a classe para mostrar o pseudo-elemento ::after
       button.classList.add("show-after");
       button.classList.remove("hide-after");
+
+      // Remove o z-index quando a área não está exibida
+      area.style.zIndex = null;
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--btn-secundario-alt-text)";
+      button.style.color = "var(--txt-destaque)";
       mainSidenav.style.height = "auto";
       area.style.background = "var(--fundo-modal)";
       overlay.style.display = "block";
@@ -66,12 +69,15 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaHeader.style.color = "var(--txt-titulo)";
       areaHeader.style.fontSize = "22px";
 
-      // Altera o tamanho da .main-sidenav para 98%
+      // Altera o tamanho da .main-sidenav para 88%
       mainSidenav.style.width = "88%";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
       button.classList.add("hide-after");
       button.classList.remove("show-after");
+
+      // Define o z-index para a área exibida
+      area.style.zIndex = 2004; // Z-index do modal para garantir que ele fique acima do overlay
     }
   }
 }
@@ -84,7 +90,7 @@ window.addEventListener("resize", function () {
   }
 });
 
-function toggleOcultarExibirFilro() {
+function toggleOcultarExibirFiltro() {
   var areaContent = selectElement(".area-container-filtros-template-content");
   var area = selectElement(".area-container-filtros-template");
   var button = selectElement(".btn-recuar-expandir");

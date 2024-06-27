@@ -1,6 +1,6 @@
 :root {
   --txt-principal: #eff4f8; /* Texto Principal */
-  --txt-secundario: #c9dbef; /* Texto Secundário */
+  --txt-content-card: #c9dbef; /* Texto Secundário */
   --txt-alt: #a8c0d8; /* Texto Alternativo */
   --background-principal: #111e32; /* Fundo Principal */
   --background-secundario: #010814; /* Fundo Secundário */
@@ -166,7 +166,7 @@ nav ul li:last-child {
   margin-right: 0;
 }
 nav a {
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   text-decoration: none;
   font-size: 1.1rem;
   padding: 10px 20px;
@@ -191,7 +191,7 @@ header h1 {
 }
 header p {
   font-size: 1.1rem;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 header button {
   background-color: var(--btn-principal);
@@ -237,7 +237,7 @@ header blockquote {
   -webkit-text-fill-color: transparent;
 }
 .beneficio p {
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   font-size: 1.1rem;
   margin-top: 10px;
 }
@@ -308,7 +308,7 @@ header blockquote {
 #como-potencializa ul {
   list-style-type: none;
   padding: 0;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 #como-potencializa ul li {
   padding: 7px 7px 7px 15px;
@@ -366,7 +366,7 @@ header blockquote {
   text-align: left;
   font-weight: 300;
   font-size: 1rem;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 .recurso-item.active .detalhe-recurso {
   display: block;
@@ -423,7 +423,7 @@ header blockquote {
 .plan p {
   font-size: 1rem;
   margin-bottom: 15px;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 .plan .price {
   font-size: 1.3rem;
@@ -508,7 +508,7 @@ header blockquote {
 footer {
   text-align: center;
   padding: 20px;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 footer a {
   color: var(--link);
@@ -592,7 +592,7 @@ footer a:hover {
   margin-right: 10px;
 }
 .card p {
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 .detail.row {
   display: flex;
@@ -681,7 +681,7 @@ button:hover {
     flex: 0 0 auto;
   }
   .beneficio p {
-    color: var(--txt-secundario);
+    color: var(--txt-content-card);
     font-size: 1.2rem;
     margin-top: 10px;
     padding: 10px 5px;

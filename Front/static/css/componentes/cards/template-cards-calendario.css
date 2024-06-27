@@ -2,7 +2,7 @@
 /* Pequeno */
 .calendario-small-card {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 5px;
   justify-content: stretch;
   overflow: hidden;
@@ -19,7 +19,7 @@
   font-size: 14px;
   font-weight: 400;
   justify-self: start;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .calendario-small-card-tag {
@@ -119,7 +119,7 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao"
@@ -149,7 +149,7 @@
 }
 
 .calendario-small-card-expanded .calendario-small-card-type {
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .calendario-small-card-expanded .calendario-small-card-title {
@@ -161,7 +161,7 @@
 /* Grande */
 .calendario-large-card {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 10px;
   align-items: center;
   justify-content: stretch;
@@ -183,7 +183,7 @@
   font-size: 14px;
   font-weight: 400;
   justify-self: start;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .calendario-large-card-tag {
   grid-area: calendario-large-card-tag;
@@ -228,7 +228,7 @@
   display: grid;
   grid-auto-flow: column;
   background: var(--card-detalhe);
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -263,7 +263,7 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
     "calendario-large-card-title calendario-large-card-title"
@@ -285,7 +285,7 @@
   gap: 5px;
 }
 .calendario-large-card-expanded .calendario-large-card-type {
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .calendario-large-card-expanded .calendario-large-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);

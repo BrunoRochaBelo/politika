@@ -5,7 +5,7 @@
   <link rel="manifest" href="./manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="dark">
   <link rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -585,76 +585,7 @@
 
 
 
-  <script>
-    var estadoSelecionado = "";
-    var cidadeSelecionada = "";
 
-    // Cidades por estado (exemplo, você pode expandir conforme necessário)
-    var cidadesPorEstado = {
-      PE: ["Recife", "Olinda", "Jaboatão dos Guararapes"],
-      SP: ["São Paulo", "Campinas", "Santos"],
-      RJ: ["Rio de Janeiro", "Niterói", "Petrópolis"],
-      MG: ["Belo Horizonte", "Uberlândia", "Ouro Preto"]
-    };
-
-    // Função para atualizar a variável global com o valor do estado selecionado e atualizar as cidades
-    function atualizarEstadoSelecionado() {
-      estadoSelecionado = this.value;
-      var cidadeSelect = document.getElementById("cidade");
-
-      // Limpa as opções anteriores
-      cidadeSelect.innerHTML = '<option value="" selected disabled>Selecione uma cidade</option>';
-
-      if (estadoSelecionado && cidadesPorEstado[estadoSelecionado]) {
-        // Adiciona novas opções de cidades com base no estado selecionado
-        cidadesPorEstado[estadoSelecionado].forEach(function (cidade) {
-          var option = document.createElement("option");
-          option.value = cidade;
-          option.textContent = cidade;
-          cidadeSelect.appendChild(option);
-        });
-
-        // Redireciona para a URL com o estado selecionado
-        window.location.href = "http://192.168.1.15:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=TODAS";
-      }
-    }
-
-    // Função para atualizar a variável global com o valor da cidade selecionada
-    function atualizarCidadeSelecionada() {
-      cidadeSelecionada = this.value;
-      if (cidadeSelecionada) {
-        window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=" + encodeURIComponent(cidadeSelecionada);
-      }
-    }
-
-    // Função para atualizar a variável global com o valor do bairro selecionado e validar a seleção do estado e cidade
-    function atualizarBairroSelecionado() {
-      var bairroSelecionado = this.value;
-      if (!estadoSelecionado) {
-        alert("Por favor, selecione um estado antes de continuar.");
-        return;
-      }
-
-      if (!cidadeSelecionada) {
-        alert("Por favor, selecione uma cidade antes de continuar.");
-        return;
-      }
-
-      if (bairroSelecionado) {
-        window.location.href = "http://192.168.1.11:5000/?wuf_destino=" + encodeURIComponent(estadoSelecionado) + "&wcid_destino=" + encodeURIComponent(cidadeSelecionada) + "&wbairro_destino=" + encodeURIComponent(bairroSelecionado);
-      }
-    }
-
-    // Ouvintes 'change' para os elementos 'select'
-    document.getElementById("estado").addEventListener("change", atualizarEstadoSelecionado);
-    document.getElementById("cidade").addEventListener("change", atualizarCidadeSelecionada);
-    document.getElementById("bairro").addEventListener("blur", atualizarBairroSelecionado);
-    document.getElementById("bairro").addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        atualizarBairroSelecionado.call(this);
-      }
-    });
-  </script>
 
 
   <script src="./static/js/SombraHeaderScroll.js"></script>

@@ -1,6 +1,5 @@
 .pleitos-medium-card-editar .btn-outline-principal {
   width: 100%;
-  font-weight: regular;
   font-size: 11px;
   border-radius: 25px;
   border: 1px solid var(--btn-principal-alt);
@@ -13,7 +12,6 @@
   border: 1px solid var(--btn-principal-alt-destaque);
   background: var(--btn-principal-alt-hover);
   color: var(--btn-principal-alt-txt);
-  box-shadow: none;
 }
 
 .tabela-historico {
@@ -29,11 +27,11 @@
 .tabela-historico td {
   padding: 8px;
   text-align: left;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-bottom: 1px solid var(--background-principal);
 }
 .tabela-historico th {
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 
 .tabela-historico table tr:nth-child(odd) {
@@ -86,7 +84,7 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-right: 10px; /* Adiciona espaço no rótulo */
-    color: var(--txt-secundario); /* Adiciona a cor ao rótulo */
+    color: var(--txt-content-card); /* Adiciona a cor ao rótulo */
   }
 
   /* Oculta o <tr> no modo responsivo */

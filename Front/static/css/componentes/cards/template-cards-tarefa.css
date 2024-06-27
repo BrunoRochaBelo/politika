@@ -1,7 +1,7 @@
 /* Pequeno */
 .tarefa-small-card {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 5px;
   justify-content: stretch;
   overflow: hidden;
@@ -26,7 +26,7 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .tarefa-small-card-tag {
@@ -95,7 +95,7 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data"
@@ -114,7 +114,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--card-detalhe);
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -143,7 +143,7 @@
 
 .tarefa-small-card-expanded .tarefa-small-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .tarefa-small-card-expanded .tarefa-small-card-desc {
@@ -153,7 +153,7 @@
 /* Médio */
 .tarefa-medium-card {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 5px;
   justify-content: stretch;
   overflow: hidden;
@@ -180,7 +180,7 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .tarefa-medium-card-tag {
@@ -210,7 +210,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--card-detalhe);
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -259,7 +259,7 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   grid:
     "tarefa-medium-card-title tarefa-medium-card-tag"
     "tarefa-medium-card-status tarefa-medium-card-data"
@@ -290,7 +290,7 @@
 
 .tarefa-medium-card-expanded .tarefa-medium-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 
 .tarefa-medium-card-expanded .tarefa-medium-card-desc {

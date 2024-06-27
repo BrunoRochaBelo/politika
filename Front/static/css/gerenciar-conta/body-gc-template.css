@@ -19,7 +19,7 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 10px;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-bottom: none;
   position: relative;
   background: var(--background-principal);
@@ -35,7 +35,7 @@
   height: auto;
   max-height: 89vh;
   border: 5px solid transparent;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-top: none;
   background: var(--background-principal);
 }

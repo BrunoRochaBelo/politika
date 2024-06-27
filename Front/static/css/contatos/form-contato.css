@@ -1,7 +1,7 @@
 #adicionarFilhoBtn {
   padding: 8px 16px;
   background-color: var(--btn-principal);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   border: none;
   border-radius: 0.9375rem;
   cursor: pointer;

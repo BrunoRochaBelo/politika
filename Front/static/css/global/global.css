@@ -4,12 +4,14 @@ body {
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.03em;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
   box-sizing: border-box;
-  height: 100%;
-  overflow: auto;
   /*background: linear-gradient(to right bottom, #5631a0, rgb(82, 78, 185));*/
   background: var(--background-principal);
   scrollbar-face-color: var(--scrollbar-bg);
@@ -134,8 +136,61 @@ img {
   color: var(--link-hover);
 }
 
+/* Estilo do Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  font-size: 12px;
+  background-color: var(--tooltip-background);
+  color: var(--tooltip-text);
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: calc(
+    100% + 8px
+  ); /* Posiciona o tooltip um pouco acima do elemento pai */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none; /* Evita que o tooltip interfira com eventos de mouse */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-8px); /* Move o tooltip para cima */
+}
+
+/* Estilo das Mensagens de Erro */
+.message-error {
+  color: var(--message-error-text);
+  background-color: var(--erro);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Estilo das Mensagens de Sucesso */
+.message-success {
+  color: var(--message-success-text);
+  background-color: var(--sucesso);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
 @media only screen and (max-width: 900px) {
   body {
+    overflow: auto;
+    width: 100%;
     background: var(--fundo-container);
   }
 }

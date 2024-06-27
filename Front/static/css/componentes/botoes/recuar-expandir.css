@@ -7,13 +7,13 @@
 .btn-recuar-expandir:active {
   font-size: 14px;
   font-weight: 400;
-  color: var(--btn-secundario-alt-text);
-  background: var(--btn-principal);
+  color: var(--txt-destaque);
+  background: var(--tooltip-background);
   border-radius: 40px;
   padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 1px solid var(--btn-principal);
+  border: 1px solid var(--tooltip-background);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   justify-self: end;
 }
@@ -22,7 +22,7 @@
 .area-template-sessao-int-header .btn-recuar-expandir {
   background: transparent;
   border: 1px solid transparent;
-  color: var(--txt-destaque);
+  color: var(--cor-p3);
   box-shadow: none;
   font-size: 11px;
   font-weight: 300;
@@ -34,13 +34,13 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--txt-destaque);
+  border-top: 5px solid var(--cor-p3);
   margin-left: 5px;
   border-radius: 25%;
 }
 .area-template-sessao-int-header .btn-recuar-expandir.up::after {
   border-top: none; /* Remover a seta para baixo */
-  border-bottom: 5px solid var(--txt-destaque); /* Adicionar a seta para cima */
+  border-bottom: 5px solid var(--cor-p3); /* Adicionar a seta para cima */
 }
 
 /* Estilo do botão que exibe os aniversariantes */
@@ -48,7 +48,7 @@
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.05em;
-  color: var(--txt-destaque);
+  color: var(--cor-p3);
   background-color: transparent;
   padding: 3px 7px;
   cursor: pointer;
@@ -63,7 +63,7 @@
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.05em;
-  color: var(--txt-destaque);
+  color: var(--cor-p3);
   background-color: transparent;
   padding: 3px 7px;
   cursor: pointer;
@@ -72,8 +72,8 @@
 }
 .btn-recuar-expandir-aniver:active {
   background-color: darken(var(--fundo-container), 10%);
-  color: var(--txt-destaque);
-  border-color: var(--txt-destaque);
+  color: var(--cor-p3);
+  border-color: var(--cor-p3);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 

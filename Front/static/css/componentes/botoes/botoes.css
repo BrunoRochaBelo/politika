@@ -81,7 +81,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .btn-outline-principal:hover {
   background: var(--btn-principal);
   color: var(--btn-principal-text);
@@ -120,7 +119,7 @@
 .area-container-filtros-template-content .btn-principal-alt,
 .area-container-filtros-template-content .card-select-m {
   background: var(--card-fundo);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   border: 1px solid transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   width: 100%;
@@ -141,7 +140,7 @@
   text-align: center;
   align-items: center;
   justify-content: start;
-  color: var(--btn-secundario-alt-text);
+  color: var(--txt-content-card);
   padding: 12px 15px;
   font-size: 14px;
   font-weight: 300;
@@ -153,7 +152,7 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 25px;
-  border: 1px solid var(--btn-principal-alt);
+  border: 1px solid var(--txt-subtitulo);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -163,7 +162,7 @@
 }
 .btn-filtro-pesq-title {
   font-size: 14px;
-  color: var(--btn-secundario-alt-text);
+  color: var(--txt-content-card);
   margin-right: 15px;
 }
 /* Estilo para o "x" do botão filtro */
@@ -178,7 +177,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--btn-principal-alt);
+  color: var(--txt-subtitulo);
   font-size: 18px;
   border: none;
 }
@@ -186,7 +185,7 @@
   color: #c61818; /* Cor do texto ao passar o mouse */
 }
 .remover-filtro:hover + .btn-filtro-pesq {
-  border: 1px solid var(--btn-secundario-alt-text);
+  border: 1px solid var(--txt-subtitulo);
   box-shadow: 0 0 1px var(--cor-p3), 0 0 2px var(--cor-p3),
     0 0 3px var(--cor-p3), 0 0 4px var(--cor-p3);
 }
@@ -197,7 +196,7 @@
   padding: 0 10px;
   top: 5px;
   right: 5px;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-radius: 50px;
   font-size: 28px;
 }
@@ -205,7 +204,7 @@
 .close:focus {
   background: #c61818;
   cursor: pointer;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .close:active {
   transform: scale(0.95);
@@ -218,7 +217,7 @@
   padding: 10px;
   top: 5px;
   left: 5px;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-radius: 50px;
   font-size: 28px;
 }
@@ -226,13 +225,11 @@
 .voltar:focus {
   background: #c61818;
   cursor: pointer;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .voltar {
   transition: transform 1s ease;
 }
-
-/* Efeito de clique: reduz um pouco a escala e muda a opacidade */
 .voltar:active {
   transform: scale(0.95);
   opacity: 0.5;

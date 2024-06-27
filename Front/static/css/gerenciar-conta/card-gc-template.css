@@ -5,7 +5,7 @@
 
 .card-gc-template {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 15px;
   align-content: center;
   white-space: nowrap;
@@ -18,7 +18,7 @@
 
 .card-gc-template-title {
   grid-area: card-gc-template-title;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 .card-gc-template-list {
   grid-area: card-gc-template-list;

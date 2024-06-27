@@ -31,13 +31,10 @@
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .main-template {
-    display: grid;
-    align-content: start;
-    justify-content: center;
-    gap: 0rem;
-    grid:
-      "main-section" 100%
-      / 1fr;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "main-section";
   }
   .main-section {
     grid-area: main-section;
@@ -48,11 +45,11 @@
     position: absolute;
     padding: 0px;
     right: 2px;
-    top: 45px;
+    top: 0;
     overflow: hidden;
     width: 19%;
     height: 35px;
-    z-index: 1001;
+    z-index: 2002;
   }
 
   .main-sidenav h1 {

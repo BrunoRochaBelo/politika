@@ -2,7 +2,7 @@
 /* Pequeno */
 .contatos-small-card {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 5px;
   align-content: center;
   white-space: nowrap;
@@ -25,7 +25,7 @@
   align-self: center;
   font-size: 14px;
   font-weight: 400;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .contatos-small-card-tipocontato {
   grid-area: contatos-small-card-tipocontato;
@@ -94,7 +94,7 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
@@ -128,7 +128,7 @@
 .contatos-small-card-expanded .contatos-small-card-title {
   font-size: 14px;
   font-weight: 500;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .contatos-small-card-expanded .contatos-small-card-tipocontato {
   font-size: 14px;

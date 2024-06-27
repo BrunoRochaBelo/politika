@@ -4,7 +4,7 @@
 /* Médio */
 .pleitos-medium-card {
   display: grid;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   gap: 5px;
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
@@ -27,7 +27,7 @@
   font-weight: 400;
   justify-self: start;
   align-self: center;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .pleitos-medium-card-dataSolici {
   grid-area: pleitos-medium-card-dataSolici;
@@ -54,7 +54,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--card-detalhe);
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -169,7 +169,7 @@
   margin: 5px 3px;
   border-radius: 5px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"

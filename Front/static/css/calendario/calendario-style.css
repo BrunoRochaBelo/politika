@@ -19,8 +19,7 @@
 .tarefa-medium-card-editar .btn-outline-principal:hover {
   border: 1px solid var(--btn-principal-alt-destaque);
   background: var(--btn-principal-alt-hover);
-  color: var(--txt-principal);
-  box-shadow: none;
+  color: var(--btn-principal-alt-txt);
 }
 
 .nav-calendar {
@@ -30,15 +29,15 @@
   background: transparent;
   border: none;
   border-radius: 12px;
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 .nav-calendar .item1 {
   justify-self: start;
   align-self: center;
   padding: 5px 10px;
-  color: var(--btn-secundario-alt-text);
+  color: var(--btn-filtro-select-text);
   border-radius: 5px;
-  background: var(--card-fundo);
+  background: var(--btn-filtro);
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -60,28 +59,28 @@
   border: none;
 }
 .btn-calendario:hover {
-  color: var(--cor-s1);
+  color: var(--btn-filtro-select);
   border-color: transparent;
   border-radius: 5px;
 }
 .btn-calendario:active {
   background-color: darken(var(--fundo-container), 10%);
-  color: var(--txt-secundario);
-  border-color: var(--txt-secundario);
+  color: var(--txt-content-card);
+  border-color: var(--txt-content-card);
 }
 
 .hoje {
   border-radius: 4px;
-  border: 1px solid var(--btn-principal);
-  border-top: 5px solid var(--btn-principal);
-  color: var(--btn-secundario-alt-text);
-  background: var(--card-fundo);
+  border: 1px solid var(--btn-filtro-select);
+  border-top: 5px solid var(--btn-filtro-select);
+  color: var(--btn-filtro-select-text);
+  background: var(--btn-filtro);
 }
 .hoje:hover {
-  border: 1px solid var(--cor-p3);
-  border-top: 5px solid var(--cor-p3);
-  color: var(--txt-secundario);
-  box-shadow: 0 0 2px var(--cor-p3), 0 0 4px var(--cor-p3);
+  border: 1px solid var(--btn-filtro-select);
+  border-top: 5px solid var(--btn-filtro-select);
+  color: var(--btn-filtro-select-text);
+  box-shadow: 0 0 2px var(--btn-filtro-select), 0 0 4px var(--btn-filtro-select);
 }
 
 .nav-semana {
@@ -92,8 +91,8 @@
 .dia-semana {
   text-align: center;
   padding: 5px;
-  color: var(--txt-contraste-alt);
-  background: var(--card-fundo);
+  color: var(--btn-filtro-txt);
+  background: var(--btn-filtro);
   border: none;
   cursor: pointer;
   transition: background-color 0.5s ease;
@@ -109,8 +108,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .dia-visualize {
-  color: var(--btn-secundario-alt-text) !important;
-  background: var(--btn-principal) !important;
+  color: var(--btn-filtro-select-text) !important;
+  background: var(--btn-filtro-select) !important;
   border-radius: 50% !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -124,7 +123,7 @@
 .change-semana {
   position: relative;
   border: none;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   cursor: pointer;
   background: transparent;
 }
@@ -161,9 +160,9 @@
 .dia-semana:hover,
 .change-semana:hover,
 .filtro-tarefa:hover {
-  background: var(--card-hover);
+  background: var(--btn-filtro-hover);
   border-radius: 50% !important;
-  color: var(--txt-contraste-alt);
+  color: var(--btn-filtro-txt);
 }
 .change-semana:hover {
   border-radius: 12px !important;
@@ -178,16 +177,16 @@
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  color: var(--txt-contraste-alt);
+  color: var(--btn-filtro-txt);
   cursor: pointer;
-  background: var(--card-fundo);
+  background: var(--btn-filtro);
   font-size: 12px;
   font-weight: 300;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .filtro-visualize {
-  color: var(--btn-secundario-alt-text) !important;
-  background: var(--btn-principal) !important;
+  color: var(--btn-filtro-select-text) !important;
+  background: var(--btn-filtro-select) !important;
   border-radius: 5px !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -198,7 +197,7 @@
   background: transparent;
 }
 .filtro-tarefa:hover {
-  background: var(--card-hover);
+  background: var(--btn-filtro-hover);
   border-radius: 5px !important;
 }
 
@@ -222,6 +221,7 @@
   margin: 0px 10px;
   padding: 12px;
   border: none;
+  cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .area-template-sessao-int.aniversariantes .btn-recuar-expandir-aniver:hover {
@@ -252,23 +252,34 @@
 
 .agenda .cad-session {
   margin: 0 10px;
+  border: 1px solid transparent;
+}
+.agenda .cad-session .area-template-sessao-int-header {
+  justify-items: center;
 }
 .agenda .cad-session.active {
-  background: var(--card-alt-fundo);
+  background: var(--cor-s3);
+  border: 1px solid var(--card-fundo);
   padding: 5px;
+  margin: 0 5px;
+}
+.agenda .cad-session .area-template-sessao-int-header.active-header {
+  justify-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  color: var(--btn-filtro-select);
 }
 
 @media only screen and (max-width: 900px) {
   .nav-calendar .item1 {
     padding: 5px 10px;
   }
-
   .nav-calendar .item2 {
     padding: 3px 5px;
     margin-right: 3px;
     background: var(--fundo-modal);
   }
-
   .nav-calendar .item3 {
     padding: 3px 0px;
   }
@@ -280,7 +291,6 @@
     width: 30px;
     height: 30px;
   }
-
   .dia-semana h3 {
     font-size: 11px;
     font-weight: 400;
@@ -297,17 +307,17 @@
     border-radius: 0px;
     background: transparent;
   }
-
   .filtro-tarefa {
     margin-right: 0px;
-    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 300;
   }
 
   .dia-semana:hover,
   .change-semana:hover,
   .filtro-tarefa:hover {
     color: inherit;
-    color: var(--txt-secundario);
+    color: var(--txt-content-card);
     background: var(--card-fundo);
     border: none;
     box-shadow: none;

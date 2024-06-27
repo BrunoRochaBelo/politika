@@ -18,7 +18,7 @@
 .home-header-title {
   display: none;
   grid-area: home-header-title;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
 }
 .home-header-nav {
   grid-area: home-header-nav;
@@ -68,7 +68,11 @@
     font-size: 15px;
     font-weight: 500;
     display: inline-block;
-    background: linear-gradient(135deg, hsl(218, 80%, 55%), hsl(218, 90%, 45%));
+    background: linear-gradient(
+      135deg,
+      var(--txt-destaque),
+      var(--btn-principal-alt)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -102,11 +102,12 @@
 }
 
 .cad-session {
+  position: relative;
   min-height: 50px;
   border-radius: 25px;
   background: var(--card-fundo);
   padding: 12px 15px;
-  border: 1px solid var(--borda);
+  border: 1px solid var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   transition: background-color 0.3s ease, padding 0.3s ease;
@@ -114,6 +115,15 @@
 .cad-session.active {
   background: var(--card-alt-fundo);
   padding: 0px;
+}
+.cad-session:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.cad-session.active .tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 .session {
   transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -140,7 +150,9 @@
   color: inherit;
 }
 .arrow {
-  border: solid var(--cor-s1);
+  position: absolute;
+  right: 20px;
+  border: solid var(--cor-p3);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 5px;
@@ -185,7 +197,7 @@
 .card-select-s:hover,
 .card-select-m:hover {
   background: var(--card-hover);
-  color: var(--txt-principal);
+  color: var(--txt-titulo-card);
 }
 /*  active  */
 .card-xs:active,
@@ -214,7 +226,7 @@
   .card-select-s:hover,
   .card-select-m:hover {
     background: var(--card-fundo);
-    color: var(--txt-principal);
+    color: var(--txt-titulo-card);
   }
   .card-xs,
   .card-s,
@@ -227,7 +239,11 @@
   .card-select-s,
   .card-select-m {
     border: none;
-
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .cad-session:hover .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
   }
 }

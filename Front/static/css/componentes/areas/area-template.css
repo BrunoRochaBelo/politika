@@ -4,10 +4,11 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: 88vh;
+  max-height: calc(100vh - 6rem);
   background: var(--fundo-container);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 25px;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "area-container-template-header"
@@ -39,11 +40,12 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: 88vh;
+  max-height: calc(100vh - 6rem);
   grid:
     "area-container-filtros-template-header" auto
     "area-container-filtros-template-content" auto
     / 1fr;
+  z-index: 2003; /* Certifique-se de que o modal tenha um z-index mais alto */
 }
 .area-container-filtros-template-header {
   grid-area: area-container-filtros-template-header;
@@ -75,7 +77,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: 88vh;
+  max-height: calc(100vh - 6rem);
   grid:
     "area-container-compromisso-hoje-template-header" auto
     "area-container-compromisso-hoje-template-content" auto
@@ -101,7 +103,7 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border-top: 1px solid var(--background-principal);
-  padding: 20px 0px;
+  padding: 20px 0px 0px 0px;
 }
 
 /* Area Template para areas internas dos content das areas-container */
@@ -110,7 +112,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: 100%;
+  max-height: calc(100vh - 8.5rem);
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "area-interna-containerContent-template-header"
@@ -120,7 +122,7 @@
   grid-area: area-interna-containerContent-template-header;
   display: grid;
   align-items: center;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -130,7 +132,6 @@
   grid-area: area-interna-containerContent-template-content;
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 70vh;
   background: transparent;
   border-radius: 25px;
   border-top-right-radius: 0px;
@@ -140,7 +141,6 @@
 }
 
 .area-interna-containerContent-template-not-header {
-  max-height: 100%;
   border-top: none;
 }
 
@@ -207,7 +207,8 @@
   .area-container-template {
     background: var(--background-principal);
     border-radius: 0;
-    max-height: 86vh;
+    width: 100%;
+    height: 100%;
     box-shadow: none;
   }
   .area-container-template-header {
@@ -215,7 +216,7 @@
     justify-content: start;
     position: relative;
     font-weight: 300;
-    color: var(--txt-secundario);
+    color: var(--txt-titulo);
     background: var(--background-principal);
     border-radius: 0px;
     border-top-left-radius: 0;
@@ -242,6 +243,7 @@
     padding: 3px 0;
     border-radius: 25px;
     overflow: hidden;
+    z-index: 2004; /* Garante que o modal apareça acima do overlay */
   }
   .area-container-filtros-template-header {
     grid-area: area-container-filtros-template-header;
@@ -252,7 +254,7 @@
     font-size: 12px;
     font-weight: 400;
     text-align: left;
-    color: var(--txt-secundario);
+    color: var(--txt-content-card);
     color: transparent;
     font-size: 0px;
     padding: 5px 5px 5px 10px;
@@ -274,6 +276,7 @@
     padding: 3px 0;
     border-radius: 25px;
     overflow: hidden;
+    z-index: 2003;
   }
   .area-container-compromisso-hoje-template-header {
     grid-area: area-container-compromisso-hoje-template-header;
@@ -284,7 +287,7 @@
     font-size: 12px;
     font-weight: 400;
     text-align: left;
-    color: var(--txt-secundario);
+    color: var(--txt-content-card);
     color: transparent;
     font-size: 0px;
     padding: 5px 5px 5px 10px;
@@ -302,6 +305,14 @@
   }
 
   /* Area Template para areas internas dos content das areas-container */
+  .area-interna-containerContent-template {
+    max-height: calc(100vh - 9rem);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "area-interna-containerContent-template-header"
+      "area-interna-containerContent-template-content";
+  }
   .area-interna-containerContent-template-header {
     grid-area: area-interna-containerContent-template-header;
     background: transparent;
@@ -317,13 +328,11 @@
     overflow-x: auto;
     overflow-y: auto;
     padding: 0px;
-    max-height: 71vh;
     border-radius: 0px;
     border-top: 1px solid var(--background-principal);
   }
 
   .area-interna-containerContent-template-not-header {
-    max-height: 100%; /*76vh*/
     border-top: none;
   }
 

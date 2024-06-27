@@ -25,7 +25,7 @@
 .header-nav-template li {
   align-self: center;
   justify-self: center;
-  color: var(--txt-contraste);
+  color: var(--txt-nav);
 }
 .header-nav-template a {
   padding: 0.625rem;
@@ -37,14 +37,14 @@
   font-weight: 500;
   position: relative;
   text-decoration: none;
-  color: inherit; /* Mantém a cor atual do texto */
+  color: inherit;
 }
 .header-nav-template a::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background-color: var(--btn-secundario-alt);
+  background-color: var(--txt-nav-select);
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -63,7 +63,7 @@
 
 /* Indicador */
 .indicador a {
-  color: hsl(218, 80%, 55%);
+  color: var(--txt-nav-select);
 }
 .indicador a::after {
   content: "";
@@ -72,10 +72,10 @@
   left: 0;
   width: 100%;
   height: 5px;
-  background: hsl(218, 80%, 55%);
+  background: var(--txt-nav-select);
 }
 .indicador p {
-  color: hsl(218, 80%, 55%);
+  color: var(--txt-nav-select);
 }
 
 /* RESPONSIVO */
@@ -84,7 +84,7 @@
     display: grid;
     max-width: 400px;
     width: 100%;
-    height: 60px;
+    height: 3.75rem;
     margin: 0 auto;
   }
   .header-nav-template p {

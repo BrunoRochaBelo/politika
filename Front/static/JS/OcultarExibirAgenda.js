@@ -12,7 +12,7 @@ function createOverlay() {
   overlay.style.width = "100%";
   overlay.style.height = "100%";
   overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-  overlay.style.zIndex = 1000;
+  overlay.style.zIndex = 2001;
   overlay.style.display = "none";
   document.body.appendChild(overlay);
 
@@ -58,7 +58,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--btn-secundario-alt-text)";
+      button.style.color = "var(--txt-destaque)";
       mainSidenav.style.height = "80vh";
       area.style.background = "var(--fundo-modal)";
       overlay.style.display = "block";

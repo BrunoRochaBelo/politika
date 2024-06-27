@@ -21,7 +21,7 @@
   min-width: 285px;
   top: 51px;
   right: 1rem;
-  color: var(--txt-secundario);
+  color: var(--txt-content-card);
   background: var(--fundo-modal);
   border: 1px solid var(--fundo-container);
   padding: 1rem;

@@ -2,16 +2,16 @@
   padding-top: 20px;
 }
 .header-form-view {
-  background: hsl(218, 20%, 12%);
-  border: 1px solid hsl(218, 20%, 14%);
+  background: hsl(214, 10%, 10%);
+  border: 1px solid hsl(214, 10%, 12%);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 0px 20px;
   font-size: 14px;
 }
 .main-form-view {
-  background: hsl(218, 20%, 12%);
-  border: 1px solid hsl(218, 20%, 14%);
+  background: hsl(214, 10%, 10%);
+  border: 1px solid hsl(214, 10%, 12%);
   padding: 0 10px;
   border-radius: 25px;
 }
@@ -96,7 +96,7 @@
   display: inline;
   font-size: 12px;
   font-weight: regular;
-  color: var(--txt-contraste-alt);
+  color: var(--input-label);
   padding: 0;
   margin: 0;
 }

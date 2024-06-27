@@ -64,7 +64,7 @@ function verificarModoEscuro() {
         ".card-s, .card-m, .card-l, .card-tmf-s, .card-tmf-m, .card-tmf-l, .card-select-xs"
       );
       cards.forEach((card) => {
-        card.style.backgroundColor = "var(--txt-principal)"; // Resetar para a cor original usando variável CSS
+        card.style.backgroundColor = "var(--txt-titulo-card)"; // Resetar para a cor original usando variável CSS
         card.style.color = ""; // Resetar para a cor original do texto
       });
 
