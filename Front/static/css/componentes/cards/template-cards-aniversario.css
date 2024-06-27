@@ -117,7 +117,7 @@
   transform: scale(1.01);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
     height 0.25s ease-in;
-  max-height: 300px; /* Ajuste conforme necessário */
+  max-height: 300px;
 }
 
 .aniversario-small-card-tipocontato.exibirDetalhesAniversariante,

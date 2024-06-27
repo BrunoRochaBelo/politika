@@ -1,39 +1,51 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var aniversaiantesHeaders = document.querySelectorAll(
+  var aniversariantesHeaders = document.querySelectorAll(
     ".area-template-sessao-int-header.aniversariantes"
   );
-  aniversaiantesHeaders.forEach(function (header) {
+
+  aniversariantesHeaders.forEach(function (header) {
     header.addEventListener("click", function () {
-      var aniversaiantesContainer = this.nextElementSibling;
+      var aniversariantesContainer = this.nextElementSibling;
       var button = this.querySelector(".btn-recuar-expandir-aniver");
 
       // Alterna a visibilidade do contêiner
-      if (aniversaiantesContainer.classList.contains("visible")) {
-        aniversaiantesContainer.classList.remove("visible");
-        aniversaiantesContainer.classList.add("hidden");
+      if (aniversariantesContainer.classList.contains("visible")) {
+        aniversariantesContainer.classList.remove("visible");
+        aniversariantesContainer.classList.add("hidden");
         button.textContent = "Exibir aniversariantes";
         button.classList.remove("up");
+        this.classList.remove("visible");
       } else {
-        aniversaiantesContainer.classList.remove("hidden");
-        aniversaiantesContainer.classList.add("visible");
+        aniversariantesContainer.classList.remove("hidden");
+        aniversariantesContainer.classList.add("visible");
         button.textContent = "Ocultar";
         button.classList.add("up");
+        this.classList.add("visible");
+
+        // Adiciona a animação de balanço ao ícone
+        var iconElement = this.querySelector(".aniversario-icon");
+        iconElement.classList.add("swing-animation");
+
+        // Remove a animação após um curto período para permitir reativação futura
+        setTimeout(function () {
+          iconElement.classList.remove("swing-animation");
+        }, 500);
       }
 
       // Alterna o background do cabeçalho
-      var headerBackgroundClass = aniversaiantesContainer.classList.contains(
+      var headerBackgroundClass = aniversariantesContainer.classList.contains(
         "visible"
       )
-        ? "--card-alt-fundo"
+        ? "--cor-s3"
         : "--card-fundo";
       var headerElement = document.querySelector(
         ".area-template-sessao-int.aniversariantes"
       );
       headerElement.style.background = `var(${headerBackgroundClass})`;
 
-      var liElements = aniversaiantesContainer.querySelectorAll("li");
+      var liElements = aniversariantesContainer.querySelectorAll("li");
       liElements.forEach(function (li) {
-        if (aniversaiantesContainer.classList.contains("visible")) {
+        if (aniversariantesContainer.classList.contains("visible")) {
           li.classList.add("item-visible");
         } else {
           li.classList.remove("item-visible");

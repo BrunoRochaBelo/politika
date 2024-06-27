@@ -131,8 +131,12 @@
                       </div>
                     </li>
                     <li class="area-template-sessao-int aniversariantes">
-                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir aniversariantes</button></h2>
-                      <ul class="area-template-sessao-int-content lista-vertical-alt area-aniversariantes">
+                      <h2 class="area-template-sessao-int-header aniversariantes">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir aniversariantes</button>
+                      </h2>
+                      <ul class="area-template-sessao-int-content lista-vertical-cards area-aniversariantes">
                         <li>
                           <a class="card-xs aniversario-small-card contato" href="#">
                             <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
@@ -182,7 +186,7 @@
                     </li>
 
                     <li class="cad-session area-template-sessao-int active">
-                      <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)">🕗 agora - 08h:00 <span class="arrow up"></span></a></h2>
+                      <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)"><img src="./static/imagens/icones/agora.svg" alt="Agora Icon"> agora - 08h:00 <span class="arrow up"></span></a></h2>
                       <span class="tooltip">
                         <span class="tooltiptext">Seus compromissos agora</span>
                       </span>
@@ -238,7 +242,7 @@
 
 
                     <li class="cad-session area-template-sessao-int">
-                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)"><img src="./static/imagens/icones/futuro.svg" alt="Despachar Icon"> Ainda hoje<span class="arrow down"></span></a></h2>
+                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)"><img src="./static/imagens/icones/futuro.svg" alt="Futuro Icon"> Ainda hoje<span class="arrow down"></span></a></h2>
                       <div class="area-template-sessao-int-content">
                         <div class="session" id="sessao2">
                           <ul class="lista-vertical-cards">
@@ -268,7 +272,7 @@
                       </div>
                     </li>
                     <li class="cad-session area-template-sessao-int">
-                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)"><img src="./static/imagens/icones/passado.svg" alt="Despachar Icon"> Anteriores<span class="arrow down"></span></a></h2>
+                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)"><img src="./static/imagens/icones/passado.svg" alt="Passado Icon"> Anteriores<span class="arrow down"></span></a></h2>
                       <div class="area-template-sessao-int-content">
                         <div class="session" id="sessao3">
                         </div>

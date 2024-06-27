@@ -44,13 +44,15 @@
   display: block;
   width: 0;
   height: 2px;
-  background-color: var(--txt-nav-select);
+  background-color: var(--txt-nav);
   position: absolute;
   bottom: -2px;
   left: 0;
   transition: width 0.3s ease;
 }
-
+.header-nav-template a:hover {
+  filter: brightness(1.15);
+}
 .header-nav-template a:hover::after {
   width: 100%;
 }
@@ -110,6 +112,7 @@
     border: 1px solid transparent;
     text-decoration: none;
     background: none;
+    filter: none;
   }
   .header-nav-template a:hover img {
     background: transparent;

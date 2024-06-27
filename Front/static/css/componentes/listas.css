@@ -184,8 +184,8 @@
   }
 
   .list-last-child {
-    border-radius: 2px;
-    border-bottom: 1px solid #28385396;
-    margin-bottom: 6em;
+    border-radius: 0px;
+    border-bottom: 1px solid var(--card-borda);
+    margin: 0 10px 6em 10px;
   }
 }

@@ -201,20 +201,22 @@
   border-radius: 5px !important;
 }
 
+/* Area de aniversariantes */
 .area-aniversariantes {
   display: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
 .area-aniversariantes.visible {
   display: block;
   opacity: 1;
   max-height: 80vh;
 }
-.lista-vertical-alt li.item-visible {
-  margin: 0px;
+.lista-vertical-cards li.item-visible {
+  margin: 1px;
+  border-radius: 25px;
 }
 .area-template-sessao-int.aniversariantes {
   background: var(--card-fundo);
@@ -224,14 +226,32 @@
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
+.area-template-sessao-int.aniversariantes .area-template-sessao-int-header {
+  color: var(--txt-titulo-card);
+  justify-content: start;
+  position: relative;
+}
+.area-template-sessao-int.aniversariantes
+  .area-template-sessao-int-header
+  button {
+  position: absolute;
+  right: 10px;
+}
+.area-template-sessao-int.aniversariantes
+  .area-template-sessao-int-header.visible {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  color: var(--btn-filtro-select-text);
+}
 .area-template-sessao-int.aniversariantes .btn-recuar-expandir-aniver:hover {
   border-color: transparent;
 }
 .fade-in {
-  animation: fadeIn 0.1s ease-in;
+  animation: fadeIn 0.5s ease-in;
 }
 .fade-out {
-  animation: fadeOut 0.1s ease-out;
+  animation: fadeOut 0.5s ease-out;
 }
 @keyframes fadeIn {
   from {
@@ -249,26 +269,60 @@
     opacity: 0;
   }
 }
+.aniversario-icon {
+  margin-right: 10px;
+}
+.swing-animation {
+  animation: swing 0.5s ease-in-out;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
+/* Cards de Agenda - Agora, Passado e Futuro */
 .agenda .cad-session {
   margin: 0 10px;
   border: 1px solid transparent;
 }
 .agenda .cad-session .area-template-sessao-int-header {
-  justify-items: center;
+  color: var(--txt-titulo-card);
 }
 .agenda .cad-session.active {
   background: var(--cor-s3);
-  border: 1px solid var(--card-fundo);
-  padding: 5px;
-  margin: 0 5px;
+  border-top: 1px solid var(--card-detalhe);
+  border-bottom: 1px solid var(--card-detalhe);
+  border-radius: 0;
+  padding: 10px;
+  margin: 0px;
 }
 .agenda .cad-session .area-template-sessao-int-header.active-header {
-  justify-items: center;
   font-size: 18px;
   font-weight: 600;
   padding-bottom: 10px;
-  color: var(--btn-filtro-select);
+  color: var(--btn-filtro-select-text);
+}
+.agenda .cad-session.active .area-template-sessao-int-content {
+  box-shadow: none;
+}
+.agenda .cad-session.active .lista-vertical-cards {
+  gap: 10px;
+}
+.agenda .cad-session.active .card-l {
+  border-radius: 25px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -330,7 +384,7 @@
     background: var(--card-fundo);
   }
   .area-template-sessao-int-content.area-aniversariantes .card-xs:hover {
-    background: var(--fundo-modal);
+    background: var(--card-fundo);
     border: none;
   }
 }
