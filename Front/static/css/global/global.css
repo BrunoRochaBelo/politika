@@ -7,12 +7,9 @@ body {
   color: var(--txt-titulo-card);
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  max-height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   box-sizing: border-box;
-  /*background: linear-gradient(to right bottom, #5631a0, rgb(82, 78, 185));*/
   background: var(--background-principal);
   scrollbar-face-color: var(--scrollbar-bg);
   scrollbar-track-color: var(--scrollbar-bg);
@@ -191,6 +188,7 @@ img {
   body {
     overflow: auto;
     width: 100%;
+    max-height: calc(var(--vh, 1vh) * 100 + 2rem);
     background: var(--fundo-container);
   }
 }

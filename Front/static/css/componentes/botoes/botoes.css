@@ -118,18 +118,15 @@
 /* Filtro  */
 .area-container-filtros-template-content .btn-principal-alt,
 .area-container-filtros-template-content .card-select-m {
-  background: var(--card-fundo);
-  color: var(--txt-titulo-card);
+  background: var(--btn-filtro) !important;
+  color: var(--txt-subtitulo) !important;
   border: 1px solid transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   width: 100%;
 }
 .area-container-filtros-template-content .btn-principal-alt:hover,
 .area-container-filtros-template-content .card-select-m:hover {
-  background: var(--card-hover);
-  box-shadow: none;
-  border: 1px solid transparent;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  filter: brightness(1.2);
 }
 
 /* Estilo para o botão filtro*/
@@ -141,7 +138,7 @@
   align-items: center;
   justify-content: start;
   color: var(--txt-content-card);
-  padding: 12px 15px;
+  padding: 15px 15px 5px 15px;
   font-size: 14px;
   font-weight: 300;
   border-radius: 25px;

@@ -2,7 +2,7 @@
 .lista-vertical {
   display: grid;
   grid-auto-flow: row;
-  gap: 30px;
+  gap: 20px;
   scrollbar-width: thick;
 }
 .lista-vertical-alt {
@@ -11,14 +11,14 @@
   background: transparent;
   border-radius: 25px;
   scrollbar-width: thick;
-  gap: 15px;
+  gap: 12px;
 }
 .lista-vertical-cards {
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  border-radius: 25px;
-  gap: 3px;
+  border-radius: 23px;
+  gap: 2px;
   overflow: hidden;
 
   scrollbar-width: thick;
@@ -78,28 +78,34 @@
   grid-area: item3;
   overflow-x: auto;
 }
+.item3 input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 0;
+}
 
 /* Estilos */
 /* Estilos para cards dentro da lista */
 .lista-vertical-cards > li:first-child a {
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
 }
 .lista-vertical-cards > li:last-child a {
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 /*.lista-vertical-cards > li:not(:last-child) a {
   border-bottom: 1px solid var(--card-borda);
 }*/
 
 .lista-horizontal > li:first-child a {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
 }
 .lista-horizontal > li:last-child a {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 
 /* Reset de borda para todos os cards dentro da lista */
@@ -116,13 +122,6 @@
 .lista-select li:last-child .card-select-m {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-}
-
-.item3 input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  margin: 0;
 }
 
 /* Estilos para os primeiros cards de cada lista */
@@ -161,12 +160,12 @@
     scrollbar-width: thick;
   }
   .lista-horizontal.expandir > li:first-child a {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 9px;
+    border-top-left-radius: 23px;
+    border-bottom-left-radius: 6px;
   }
   .lista-horizontal.expandir > li:last-child a {
-    border-top-right-radius: 9px;
-    border-bottom-right-radius: 25px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 23px;
   }
 
   .lista-vertical::-webkit-scrollbar,
@@ -188,6 +187,6 @@
   .list-last-child {
     border-radius: 0px;
     border-bottom: 1px solid var(--card-borda);
-    margin: 0 10px 6em 10px;
+    margin: 0 15px 6em 15px;
   }
 }

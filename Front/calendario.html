@@ -121,7 +121,7 @@
             <div class="area-interna-containerContent-template-content">
               <ul class="lista-vertical">
                 <li class="dia-visible" id="segunda-feira">
-                  <ul class="lista-vertical-alt">
+                  <ul class="lista-vertical">
                     <li class="area-filtro activeFil" id="filtro1">
                       <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
                       <div class="btn-filtro-pesq">
@@ -130,14 +130,13 @@
                         </p>
                       </div>
                     </li>
-                    <li class="area-template-sessao-int aniversariantes">
-                      <h2 class="area-template-sessao-int-header aniversariantes">
+                    <li class="area-template-sessao-int area-aniversariantes">
+                      <h2 class="area-template-sessao-int-header area-aniversariantes">
                         <span class="aniversario-icon">🎂</span>
-                        <p>Aniversários</p>
-                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir aniversariantes</button>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
                       </h2>
-                      <div class="area-template-sessao-int-content  area-aniversariantes">
-
+                      <div class="area-template-sessao-int-content  aniversariantes">
                         <ul class="lista-vertical-cards ">
                           <li>
                             <a class="card-xs aniversario-small-card contato" href="#">
@@ -185,104 +184,268 @@
                             </a>
                           </li>
                         </ul>
-
                       </div>
                     </li>
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <li class="cad-session area-template-sessao-int active">
+                          <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)">
+                              <div class="icon agora">
+                                <img src="./static/imagens/icones/agora.svg" alt="Agora Icon">
+                              </div> agora - 08h:00 <span class="arrow up"></span>
+                            </a></h2>
+                          <span class="tooltip">
+                            <span class="tooltiptext">Seus compromissos agora</span>
+                          </span>
+                          <div class="area-template-sessao-int-content">
+                            <div class="session active" id="sessao1">
+                              <ul class="lista-vertical-cards">
+                                <li>
+                                  <a class="card-l calendario-large-card evento" href="#">
+                                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc1">
+                                        <p><strong>marcador 1</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                    <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                    <div class="calendario-large-card-duracao">
+                                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-large-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="card-l calendario-large-card evento" href="#">
+                                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>marcador 1</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
+                                    <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
+                                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
+                                    <div class="calendario-large-card-duracao">
+                                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-large-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
 
-                    <li class="cad-session area-template-sessao-int active">
-                      <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)"><img src="./static/imagens/icones/agora.svg" alt="Agora Icon"> agora - 08h:00 <span class="arrow up"></span></a></h2>
-                      <span class="tooltip">
-                        <span class="tooltiptext">Seus compromissos agora</span>
-                      </span>
-                      <div class="area-template-sessao-int-content">
-                        <div class="session active" id="sessao1">
-                          <ul class="lista-vertical-cards">
-                            <li>
-                              <a class="card-l calendario-large-card evento" href="#">
-                                <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
-                                <div class="calendario-large-card-tag" data-filter="tagEvento">
-                                  <div class="marcador-item cor-marc1">
-                                    <p><strong>marcador 1</strong></p>
-                                  </div>
-                                </div>
-                                <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
-                                <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
-                                <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
-                                <div class="calendario-large-card-duracao">
-                                  <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
-                                  <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
-                                </div>
-                                <div class="calendario-large-card-editar">
-                                  <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
-                                </div>
-                                <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="card-l calendario-large-card evento" href="#">
-                                <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
-                                <div class="calendario-large-card-tag" data-filter="tagEvento">
-                                  <div class="marcador-item cor-marc3">
-                                    <p><strong>marcador 1</strong></p>
-                                  </div>
-                                </div>
-                                <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 2</p>
-                                <p class="calendario-large-card-local" data-filter="localEvento">Local evento 2</p>
-                                <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Cicrano</p>
-                                <div class="calendario-large-card-duracao">
-                                  <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
-                                  <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
-                                </div>
-                                <div class="calendario-large-card-editar">
-                                  <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
-                                </div>
-                                <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                        <li class="cad-session area-template-sessao-int">
+                          <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)">
+                              <div class="icon futuro">
+                                <img src="./static/imagens/icones/futuro.svg" alt="Futuro Icon">
+                              </div>Ainda hoje<span class="arrow down"></span>
+                            </a></h2>
+                          <div class="area-template-sessao-int-content">
+                            <div class="session" id="sessao2">
+                              <ul class=" lista-vertical-cards">
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc1">
+                                        <p><strong>marcador 1</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 1</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 1</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>marcador 3</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 2</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 2</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc7">
+                                        <p><strong>marcador 7</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 3</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 3</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc1">
+                                        <p><strong>marcador 1</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 4</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 4</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc1">
+                                        <p><strong>marcador 1</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 5</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 5</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc12">
+                                        <p><strong>marcador 12</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 6</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 6</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc18">
+                                        <p><strong>marcador 18</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 7</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 7</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="cad-session area-template-sessao-int">
+                          <h2 class="area-template-sessao-int-header">
+                            <a href="#" onclick="changeSession(3)">
+                              <div class="icon passado">
+                                <img src="./static/imagens/icones/passado.svg" alt="Passado Icon">
+                              </div>Eventos anteriores<span class="arrow down"></span>
+                            </a>
+                          </h2>
+                          <div class="area-template-sessao-int-content">
+                            <div class="session" id="sessao3">
+                              <ul class=" lista-vertical-cards">
+                                <li>
+                                  <a class="card-xs calendario-small-card evento" href="#">
+                                    <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc18">
+                                        <p><strong>marcador 18</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 7</p>
+                                    <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 7</p>
+                                    <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                    <div class="calendario-small-card-duracao">
+                                      <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-small-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
                     </li>
-
-
-                    <li class="cad-session area-template-sessao-int">
-                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)"><img src="./static/imagens/icones/futuro.svg" alt="Futuro Icon"> Ainda hoje<span class="arrow down"></span></a></h2>
-                      <div class="area-template-sessao-int-content">
-                        <div class="session" id="sessao2">
-                          <ul class="lista-vertical-cards">
-                            <li>
-                              <a class="card-l calendario-large-card evento" href="#">
-                                <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
-                                <div class="calendario-large-card-tag" data-filter="tagEvento">
-                                  <div class="marcador-item cor-marc7">
-                                    <p><strong>marcador 1</strong></p>
-                                  </div>
-                                </div>
-                                <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 3</p>
-                                <p class="calendario-large-card-local" data-filter="localEvento">Local evento 3</p>
-                                <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
-                                <div class="calendario-large-card-duracao">
-                                  <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
-                                  <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
-                                </div>
-                                <div class="calendario-large-card-editar">
-                                  <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-evento.html'">Visualizar evento</button>
-                                </div>
-                                <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="cad-session area-template-sessao-int">
-                      <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(3)"><img src="./static/imagens/icones/passado.svg" alt="Passado Icon"> Anteriores<span class="arrow down"></span></a></h2>
-                      <div class="area-template-sessao-int-content">
-                        <div class="session" id="sessao3">
-                        </div>
-                      </div>
-                    </li>
-
                     <li class="list-last-child"><br></li>
                   </ul>
                 </li>
@@ -390,7 +553,7 @@
                   </div>
                   <ul class="lista-vertical">
                     <li class="area-template-sessao-int">
-                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir aniversariantes</button></h2>
+                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários do dia <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir</button></h2>
                       <ul class="area-template-sessao-int-content lista-vertical-alt area-aniversariantes">
                         <li>
                           <a class="card-xs aniversario-small-card contato" href="#">
@@ -517,7 +680,7 @@
                   </div>
                   <ul class="lista-vertical">
                     <li class="area-template-sessao-int">
-                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir aniversariantes</button></h2>
+                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários do dia <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir</button></h2>
                       <ul class="area-template-sessao-int-content lista-vertical-alt area-aniversariantes">
                         <li>
                           <a class="card-xs aniversario-small-card contato" href="#">
@@ -838,7 +1001,7 @@
                   </div>
                   <ul class="lista-vertical">
                     <li class="area-template-sessao-int">
-                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir aniversariantes</button></h2>
+                      <h2 class="area-template-sessao-int-header aniversariantes">🎂 Aniversários do dia <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida" onclick="toggleExibiraniversariantes(event)">Exibir</button></h2>
                       <ul class="area-template-sessao-int-content lista-vertical-alt area-aniversariantes">
                         <li>
                           <a class="card-xs aniversario-small-card contato" href="#">
@@ -1009,61 +1172,63 @@
                 </ul>
               </div>
             </div>
-            <ul class="area-interna-containerContent-template-content">
-              <li class="area-filtro inactiveFil" id="filtro2">
-                <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
-                <div class="btn-filtro-pesq">
-                  <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
-                    <a href="calendario.html" class="remover-filtro">&times;</a>
-                  </p>
-                </div>
-              </li>
-              <li class="area-template-sessao-int area-tarefas">
-                <ul class="area-template-sessao-int-content lista-vertical-cards">
-                  <li>
-                    <a class="card-m tarefa-medium-card" href="#">
-                      <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                      <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
-                        <div class="marcador-item cor-marc3">
-                          <p><strong>Marcador 1</strong></p>
+            <div class="area-interna-containerContent-template-content">
+              <ul class="lista-vertical">
+                <li class="area-filtro inactiveFil" id="filtro2">
+                  <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
+                      <a href="calendario.html" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
+                </li>
+                <li class="area-template-sessao-int area-tarefas">
+                  <ul class="area-template-sessao-int-content lista-vertical-cards">
+                    <li>
+                      <a class="card-m tarefa-medium-card" href="#">
+                        <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                        <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                          <div class="marcador-item cor-marc3">
+                            <p><strong>Marcador 1</strong></p>
+                          </div>
                         </div>
-                      </div>
-                      <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                      <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                      <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                      <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
-                        <p>Descrição da Tarefa</p>
-                      </div>
-                      <div class="tarefa-medium-card-editar">
-                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                      </div>
-                      <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="card-m tarefa-medium-card" href="#">
-                      <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                      <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
-                        <div class="marcador-item cor-marc3">
-                          <p><strong>Marcador 1</strong></p>
+                        <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                        <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                        <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                        <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                          <p>Descrição da Tarefa</p>
                         </div>
-                      </div>
-                      <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                      <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                      <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                      <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
-                        <p>Descrição da Tarefa</p>
-                      </div>
-                      <div class="tarefa-medium-card-editar">
-                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                      </div>
-                      <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="list-last-child"><br></li>
-            </ul>
+                        <div class="tarefa-medium-card-editar">
+                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                        </div>
+                        <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-m tarefa-medium-card" href="#">
+                        <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                        <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                          <div class="marcador-item cor-marc3">
+                            <p><strong>Marcador 1</strong></p>
+                          </div>
+                        </div>
+                        <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                        <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                        <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                        <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                          <p>Descrição da Tarefa</p>
+                        </div>
+                        <div class="tarefa-medium-card-editar">
+                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                        </div>
+                        <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -1186,7 +1351,7 @@
   <script src="./static/js/ExibirDetalhesTarefa.js"></script>
   <script src="./static/js/NavDia.js"></script>
   <script src="./static/js/NavFiltroTarefa.js"></script>
-  <script src="./static/js/ScrollRemoverItens.js"></script>
+  <script src="./static/js/ScrollRemoverItens."></script>
   <script src="./static/js/NavSessoes.js"></script>
 
 

@@ -1,26 +1,28 @@
 :root {
+  --vh: 1vh;
+
   /* Primary Colors */
   --cor-p1: hsl(218, 60%, 60%);
   --cor-p2: hsl(218, 70%, 60%);
   --cor-p3: hsl(218, 80%, 62%);
 
   /* Secondary Colors */
-  --cor-s1: hsl(30, 60%, 60%);
+  --cor-s1: hsl(202, 60%, 50%);
   --cor-s2: hsl(30, 80%, 50%);
-  --cor-s3: hsla(30, 60%, 15%);
-  --cor-s4: hsla(40, 8%, 10%, 0.65);
+  --cor-s3: hsla(202, 30%, 14%);
+  --cor-s4: hsla(218, 6%, 12%);
 
   /* Texts */
   --txt-titulo: hsl(218, 12%, 91%);
   --txt-subtitulo: hsl(218, 12%, 72%);
   --txt-destaque: hsl(218, 100%, 88%);
   --txt-nav: hsl(218, 8%, 32%);
-  --txt-nav-select: hsl(218, 32%, 67%);
+  --txt-nav-select: hsl(218, 50%, 60%);
 
   /* Backgrounds */
   --background-principal: hsl(218, 1%, 8%);
-  --fundo-container: hsl(218, 6%, 12%);
-  --fundo-modal: hsl(218, 8%, 22%);
+  --fundo-container: hsl(218, 6%, 11%);
+  --fundo-modal: hsl(218, 12%, 12%);
   --borda: hsl(218, 8%, 24%);
   --divisor: hsl(218, 8%, 27%);
 

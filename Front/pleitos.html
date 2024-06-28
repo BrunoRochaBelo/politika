@@ -72,49 +72,50 @@
           </li>
         </ul>
       </nav>
-
       <div class="area-container-abas-template-content">
         <div id="aba1" class="aba-template active">
           <div class="area-interna-containerContent-template">
-            <ul class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-              <li class="area-filtro activeFil" id="filtro1">
-                <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
-                <div class="btn-filtro-pesq">
-                  <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
-                    <a href="pleitos.html" class="remover-filtro">&times;</a>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <ul class="lista-vertical-cards">
-                  <li class="area-template-sessao-int">
-                    <a class="card-m pleitos-medium-card" href="#">
-                      <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
-                      <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
-                      <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
-                      <div class="pleitos-medium-card-desc" data-filter="descPleito">
-                        <p><strong>Descrição</strong></p>
-                      </div>
-                      <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
-                      <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
-                      <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
-                      <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
-                      <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
-                      <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
-                      <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
-                      <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
-                      <div class="pleitos-medium-card-editar">
-                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
-                        <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
-                        <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
-                      </div>
-                      <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="list-last-child"><br></li>
-            </ul>
+            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+              <ul class="lista-vertical-alt">
+                <li class="area-filtro activeFil" id="filtro1">
+                  <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                      <a href="pleitos.html" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <ul class="lista-vertical-cards">
+                    <li class="area-template-sessao-int">
+                      <a class="card-m pleitos-medium-card" href="#">
+                        <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
+                        <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
+                        <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
+                        <div class="pleitos-medium-card-desc" data-filter="descPleito">
+                          <p><strong>Descrição</strong></p>
+                        </div>
+                        <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
+                        <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
+                        <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
+                        <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
+                        <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
+                        <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
+                        <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
+                        <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
+                        <div class="pleitos-medium-card-editar">
+                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
+                          <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
+                          <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
+                        </div>
+                        <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
+            </div>
           </div>
         </div>
 

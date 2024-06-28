@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  grid: "home-header-logo header-nav header-search header-user" 2.813rem;
+  grid: "home-header-logo header-nav header-search header-user";
 }
 
 .header-nav {
@@ -121,7 +121,7 @@
     display: grid;
     align-content: center;
     justify-content: space-between;
-    grid: "home-header-logo header-search header-user" 2.813rem;
+    grid: "home-header-logo header-search header-user";
     background: var(--background-principal);
   }
 
@@ -140,13 +140,13 @@
     padding: 3px;
   }
   .header-nav {
-    background: #000000;
+    background: hsl(218, 1%, 3%);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 0, 0, 0.21);
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 5000;
+    z-index: 2000;
     margin-left: 0;
   }
 

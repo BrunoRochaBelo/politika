@@ -4,9 +4,9 @@
   align-content: center;
   justify-content: center;
   gap: 0rem 1rem;
-  grid:
-    "main-sidenav main-section" 100%
-    / 1.1fr 1.9fr;
+  grid-template-columns: 1.1fr 1.9fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "main-sidenav main-section";
 }
 /* Áreas de grid */
 .main-section {
@@ -31,10 +31,11 @@
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .main-template {
-    width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "main-section";
+    overflow: hidden;
+    position: relative;
   }
   .main-section {
     grid-area: main-section;
@@ -45,7 +46,7 @@
     position: absolute;
     padding: 0px;
     right: 2px;
-    top: 0;
+    top: 0px;
     overflow: hidden;
     width: 19%;
     height: 35px;

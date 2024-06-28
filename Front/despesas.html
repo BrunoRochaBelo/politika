@@ -59,45 +59,47 @@
 
   <main class="main main-template">
     <section class="main-section">
-      <div class=" area-container-template">
+      <div class="area-container-template">
         <h2 class="area-container-template-header">Despesas</h2>
         <div class="area-container-template-content">
           <div class="area-interna-containerContent-template">
-            <ul class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-              <li class="area-filtro">
-                <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
-                <div class="btn-filtro-pesq">
-                  <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                    <a href="contatos.html" class="remover-filtro">&times;</a>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <ul class="lista-vertical-cards">
-                  <li class="area-template-sessao-int">
-                    <a class="card-m despesas-medium-card" href="#">
-                      <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
-                      <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
-                      <p class="despesas-medium-card-valorDespesa" data-filter="valorDespesa">R$ xxxx,xx</p>
-                      <p class="despesas-medium-card-dataDespesa" data-filter="dataPleito">xx/xx/xxxx</p>
-                      <div class="despesas-medium-card-desc" data-filter="descPleito">
-                        <p><strong>Descrição</strong></p>
-                      </div>
-                      <p class="despesas-medium-card-cnpj_cpf_for" data-filter="cnpjCpfFornecedor">CNPJ/CPF Fornecedor</p>
-                      <p class="despesas-medium-card-nome_fornecedor" data-filter="nomeFornecedor">Nome Fornecedor</p>
-                      <p class="despesas-medium-card-ordenador_despesa" data-filter="ordenadorDespesa">Ordenador de Despesa</p>
-                      <p class="despesas-medium-card-autor" data-filter="autorDespesa">Autor</p>
-                      <p class="despesas-medium-card-data_criacao" data-filter="dataCriacaoDespesa">Data de Criação</p>
-                      <div class="despesas-medium-card-editar">
-                        <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-despesa.html'">Visualizar despesa</button>
-                      </div>
-                      <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="list-last-child"><br></li>
-            </ul>
+            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+              <ul class="lista-vertical">
+                <li class="area-filtro">
+                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                      <a href="contatos.html" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <ul class="lista-vertical-cards">
+                    <li class="area-template-sessao-int">
+                      <a class="card-m despesas-medium-card" href="#">
+                        <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
+                        <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
+                        <p class="despesas-medium-card-valorDespesa" data-filter="valorDespesa">R$ xxxx,xx</p>
+                        <p class="despesas-medium-card-dataDespesa" data-filter="dataPleito">xx/xx/xxxx</p>
+                        <div class="despesas-medium-card-desc" data-filter="descPleito">
+                          <p><strong>Descrição</strong></p>
+                        </div>
+                        <p class="despesas-medium-card-cnpj_cpf_for" data-filter="cnpjCpfFornecedor">CNPJ/CPF Fornecedor</p>
+                        <p class="despesas-medium-card-nome_fornecedor" data-filter="nomeFornecedor">Nome Fornecedor</p>
+                        <p class="despesas-medium-card-ordenador_despesa" data-filter="ordenadorDespesa">Ordenador de Despesa</p>
+                        <p class="despesas-medium-card-autor" data-filter="autorDespesa">Autor</p>
+                        <p class="despesas-medium-card-data_criacao" data-filter="dataCriacaoDespesa">Data de Criação</p>
+                        <div class="despesas-medium-card-editar">
+                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-despesa.html'">Visualizar despesa</button>
+                        </div>
+                        <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

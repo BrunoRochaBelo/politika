@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var aniversariantesHeaders = document.querySelectorAll(
-    ".area-template-sessao-int-header.aniversariantes"
+    ".area-template-sessao-int-header.area-aniversariantes"
   );
 
   aniversariantesHeaders.forEach(function (header) {
@@ -14,9 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
         aniversariantesContainer.classList.add("hidden");
         aniversariantesContainer.classList.remove("fade-in");
         aniversariantesContainer.classList.add("fade-out");
-        button.textContent = "Exibir aniversariantes";
+        button.textContent = "Exibir";
         button.classList.remove("up");
         this.classList.remove("visible");
+
+        // Remove a borda quando o contêiner estiver oculto
+        var headerElement = this.closest(
+          ".area-template-sessao-int.area-aniversariantes"
+        );
+        headerElement.style.border = "none";
       } else {
         aniversariantesContainer.classList.remove("hidden");
         aniversariantesContainer.classList.add("visible");
@@ -34,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
           iconElement.classList.remove("swing-animation");
         }, 500);
+
+        // Adiciona a borda quando o contêiner estiver visível
+        var headerElement = this.closest(
+          ".area-template-sessao-int.area-aniversariantes"
+        );
+        headerElement.style.border = "1px solid var(--cor-s3)";
       }
 
       // Alterna o background do cabeçalho
@@ -43,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ? "--cor-s4"
         : "--card-fundo";
       var headerElement = this.closest(
-        ".area-template-sessao-int.aniversariantes"
+        ".area-template-sessao-int.area-aniversariantes"
       );
       headerElement.style.background = `var(${headerBackgroundClass})`;
 

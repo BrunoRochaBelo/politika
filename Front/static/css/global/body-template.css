@@ -2,8 +2,9 @@
   display: grid;
   align-content: start;
   justify-content: center;
-  grid-template-rows: 2.813rem 1fr;
+  gap: 1.25rem;
   grid-template-columns: auto minmax(350px, 1100px) auto;
+  grid-template-rows: 2.813rem 1fr;
   grid-template-areas:
     "header header header"
     ". main.";
@@ -12,19 +13,16 @@
 .header {
   grid-area: header;
   width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
   background: none;
 }
 .main {
   grid-area: main;
-  margin-top: 1.25rem;
 }
 
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .body-template {
+    gap: 0;
     grid-template-columns: 1fr;
     grid-template-rows: 2.813rem 1fr;
     grid-template-areas:
@@ -32,17 +30,12 @@
       "main";
   }
   .header {
-    position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1001;
   }
 
   .main {
-    position: fixed;
-    top: 1.67em;
-    max-height: calc(100vh - 6rem);
+    overflow: auto;
     width: 100%;
-    z-index: 1000;
   }
 }

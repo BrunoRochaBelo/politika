@@ -4,7 +4,7 @@
   min-height: 30px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   padding: 12px 15px;
   border: none;
   box-sizing: border-box;
@@ -14,7 +14,7 @@
   min-height: 35px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   padding: 12px 15px;
   border: none;
   box-sizing: border-box;
@@ -24,7 +24,7 @@
   min-height: 50px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   padding: 12px 15px;
   border: none;
   box-sizing: border-box;
@@ -34,7 +34,7 @@
   min-height: 150px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   padding: 12px 15px;
   gap: 0.625rem;
   border: none;
@@ -48,7 +48,7 @@
   height: 100px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   order: none;
   box-sizing: border-box;
   padding: 12px 15px;
@@ -59,7 +59,7 @@
   min-height: 95px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   order: none;
   box-sizing: border-box;
   padding: 12px 15px;
@@ -71,7 +71,7 @@
   min-height: 170px;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   border: none;
   box-sizing: border-box;
   padding: 12px 15px;
@@ -80,22 +80,22 @@
 /* Cards dos selects */
 /* Muito Pequeno altura 35px */
 .card-select-xs {
-  border-radius: 7px;
+  border-radius: 6px;
   width: 100%;
   padding: 0.3rem;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   font-weight: var(--font-light);
   border: none;
   box-sizing: border-box;
 }
 .card-select-s {
-  border-radius: 7px;
+  border-radius: 6px;
   width: 100%;
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   font-weight: var(--font-medium-regular);
   border: none;
   box-sizing: border-box;
@@ -105,7 +105,7 @@
   background: var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 12px 15px;
-  border-radius: 7px;
+  border-radius: 6px;
   border: none;
   box-sizing: border-box;
 }
@@ -118,7 +118,7 @@
   padding: 12px 15px;
   border: 1px solid var(--card-fundo);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   box-sizing: border-box;
   transition: background-color 0.3s ease, padding 0.3s ease;
 }
@@ -155,9 +155,10 @@
 .area-template-sessao-int-header a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 .arrow {
   right: 20px;
@@ -166,6 +167,8 @@
   display: inline-block;
   padding: 5px;
   transition: transform 0.3s ease;
+  position: absolute;
+  right: 10px;
 }
 .arrow.down {
   transform: rotate(45deg);
@@ -186,9 +189,9 @@
 .area-container-filtros-template-content .card-select-xs,
 .area-container-filtros-template-content .card-select-s,
 .area-container-filtros-template-content .card-select-m {
-  background: var(--card-fundo);
+  background: var(--btn-filtro) !important;
+  color: var(--txt-subtitulo) !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
   border: none;
   box-sizing: border-box;
   border-radius: 5px;
@@ -248,7 +251,7 @@
   .card-select-m {
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 7px;
+    border-radius: 6px;
   }
 
   .cad-session:hover .tooltiptext {

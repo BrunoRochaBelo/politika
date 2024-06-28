@@ -8,7 +8,6 @@
   letter-spacing: 0.5px;
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
-  justify-self: end;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 .aniversario-small-card-editar .btn-outline-principal:hover {
@@ -19,39 +18,40 @@
 }
 
 /* Area de aniversariantes */
-.area-aniversariantes {
+.aniversariantes {
   display: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
-.area-aniversariantes.visible {
+.aniversariantes.visible {
   display: block;
   opacity: 1;
   max-height: 80vh;
 }
 
-.area-template-sessao-int.aniversariantes {
+.area-template-sessao-int.area-aniversariantes {
   background: var(--card-fundo);
   margin: 0px 10px;
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.area-template-sessao-int.aniversariantes .area-template-sessao-int-header {
+.area-template-sessao-int.area-aniversariantes
+  .area-template-sessao-int-header {
   color: var(--txt-titulo-card);
   justify-content: start;
   position: relative;
   padding: 12px;
 }
-.area-template-sessao-int.aniversariantes
+.area-template-sessao-int.area-aniversariantes
   .area-template-sessao-int-header
   button {
   position: absolute;
   right: 10px;
 }
-.area-template-sessao-int.aniversariantes
+.area-template-sessao-int.area-aniversariantes
   .area-template-sessao-int-header.visible {
   font-size: 18px;
   font-weight: 600;
@@ -59,7 +59,8 @@
   color: var(--btn-filtro-select-text);
 }
 
-.area-template-sessao-int.aniversariantes .btn-recuar-expandir-aniver:hover {
+.area-template-sessao-int.area-aniversariantes
+  .btn-recuar-expandir-aniver:hover {
   border-color: transparent;
 }
 
@@ -118,13 +119,13 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .area-template-sessao-int.aniversariantes {
+  .area-template-sessao-int.area-aniversariantes {
     margin: 0 10px;
   }
-  .area-template-sessao-int.aniversariantes:hover {
+  .area-template-sessao-int.area-aniversariantes:hover {
     background: var(--card-fundo);
   }
-  .area-template-sessao-int-content.area-aniversariantes .card-xs:hover {
+  .area-template-sessao-int-content.aniversariantes .card-xs:hover {
     background: var(--card-fundo);
     border: none;
   }

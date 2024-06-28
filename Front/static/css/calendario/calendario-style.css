@@ -8,7 +8,6 @@
   letter-spacing: 0.5px;
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
-  justify-self: end;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 .calendario-large-card-editar .btn-outline-principal:hover,
@@ -174,11 +173,12 @@
 }
 .agenda .cad-session .area-template-sessao-int-header {
   color: var(--txt-titulo-card);
+  text-align: start;
 }
 .agenda .cad-session.active {
   background: var(--cor-s4);
-  border: 1px solid var(--cor-s3);
-  border-radius: 25px;
+  border: 1px solid transparent;
+  border-radius: 0;
   margin: 0px;
 }
 .agenda .cad-session .area-template-sessao-int-header.active-header {
@@ -186,14 +186,79 @@
   font-weight: 600;
   padding-bottom: 10px;
   color: var(--cor-s1);
-  margin: 10px;
+  margin: 0px;
 }
 .agenda .cad-session.active .area-template-sessao-int-content {
   box-shadow: none;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 7px;
+  margin: 0 0 10px 10px;
+  border-left: 2px solid var(--cor-s1);
+  border-radius: 0;
 }
 .agenda .cad-session.active .lista-vertical-cards {
   gap: 5px;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 10px;
+}
+.agenda .cad-session.active .icon {
+  display: none;
+}
+
+.agora img,
+.futuro img,
+.passado img {
+  animation: none;
+}
+
+.agora img.animate {
+  animation: bounce 0.5s ease-in-out 0s 2 alternate;
+}
+
+.futuro img.animate {
+  animation: rotateRight 0.5s ease-in-out 0s 2 alternate;
+}
+
+.passado img.animate {
+  animation: rotateLeft 0.5s ease-in-out 0s 2 alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media only screen and (max-width: 900px) {
