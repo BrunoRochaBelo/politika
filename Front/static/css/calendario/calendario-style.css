@@ -166,6 +166,15 @@
   box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
 }
 
+.lista-select.nav-calendar {
+  transition: padding 0.3s ease, gap 0.3s ease;
+}
+
+.lista-select.nav-calendar .item1,
+.lista-select.nav-calendar .item2 {
+  transition: opacity 0.3s ease, transform 0.3s ease, padding 0.3s ease;
+}
+
 /* Cards de Agenda - Agora, Passado e Futuro */
 .agenda .cad-session {
   margin: 0 10px;
@@ -178,7 +187,7 @@
 .agenda .cad-session.active {
   background: var(--cor-s4);
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: 0px;
   margin: 0px;
 }
 .agenda .cad-session .area-template-sessao-int-header.active-header {
@@ -188,10 +197,10 @@
   color: var(--cor-s1);
   margin: 0px;
 }
-.agenda .cad-session.active .area-template-sessao-int-content {
+.agenda .cad-session.active > .area-template-sessao-int-content {
   box-shadow: none;
-  padding: 10px 7px;
-  margin: 0 0 10px 10px;
+  padding: 10px 10px;
+  margin: 0 0 10px 12px;
   border-left: 2px solid var(--cor-s1);
   border-radius: 0;
 }
