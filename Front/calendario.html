@@ -190,7 +190,7 @@
                       <ul class="lista-vertical-alt">
                         <li class="cad-session area-template-sessao-int active">
                           <h2 class="area-template-sessao-int-header active-header"><a href="#" onclick="changeSession(1)">
-                              <div class="icon agora">
+                              <div class="agenda-icon agora">
                                 <img src="./static/imagens/icones/agora.svg" alt="Agora Icon">
                               </div> agora - 08h:00 <span class="arrow up"></span>
                             </a></h2>
@@ -249,7 +249,7 @@
 
                         <li class="cad-session area-template-sessao-int">
                           <h2 class="area-template-sessao-int-header"><a href="#" onclick="changeSession(2)">
-                              <div class="icon futuro">
+                              <div class="agenda-icon futuro">
                                 <img src="./static/imagens/icones/futuro.svg" alt="Futuro Icon">
                               </div>Ainda hoje<span class="arrow down"></span>
                             </a></h2>
@@ -386,8 +386,12 @@
                                   <h2 class="area-template-sessao-int-header">12h:00</h2>
                                   <div class="area-template-sessao-int-content">
                                     <ul class=" lista-vertical-cards">
-
-
+                                      <li>
+                                        <a class=" card-empty-card" href="#">
+                                          <p class="card-empty-card-title">Agenda livre</p>
+                                          <p class="card-empty-card-add">adicionar evento</p>
+                                        </a>
+                                      </li>
                                     </ul>
                                   </div>
                                 </li>
@@ -441,9 +445,6 @@
                                   </div>
                                 </li>
                               </ul>
-
-
-
                             </div>
                           </div>
                         </li>
@@ -451,7 +452,7 @@
                         <li class="cad-session area-template-sessao-int">
                           <h2 class="area-template-sessao-int-header">
                             <a href="#" onclick="changeSession(3)">
-                              <div class="icon passado">
+                              <div class="agenda-icon passado">
                                 <img src="./static/imagens/icones/passado.svg" alt="Passado Icon">
                               </div>Eventos anteriores<span class="arrow down"></span>
                             </a>
@@ -1271,6 +1272,7 @@
                         </div>
                         <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
                       </a>
+
                     </li>
                     <li>
                       <a class="card-m tarefa-medium-card" href="#">
@@ -1307,27 +1309,22 @@
         <h2 class="area-container-filtros-template-header">Filtros
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()">Filtros</button>
         </h2>
-        <div class="area-container-filtros-template-content lista-vertical-fil">
+        <div class="area-container-filtros-template-content">
           <ul class="lista-vertical-3-column">
             <li>
-              <a class="marcador-s cor-marc1" href=<p><strong>title marcador</strong></p>
-              </a>
+              <a class="marcador-s cor-marc1" href="#">Marcador 1</a>
             </li>
             <li>
-              <a class="marcador-s cor-marc2" href=<p><strong>title marcador</strong></p>
-              </a>
+              <a class="marcador-s cor-marc2" href="#">Marcador 2</a>
             </li>
             <li>
-              <a class="marcador-s cor-marc3" href=<p><strong>title marcador</strong></p>
-              </a>
+              <a class="marcador-s cor-marc3" href="#">Marcador 3</a>
             </li>
             <li>
-              <a class="marcador-s cor-marc4" href=<p><strong>title marcador</strong></p>
-              </a>
+              <a class="marcador-s cor-marc4" href="#">Marcador 4</a>
             </li>
             <li>
-              <a class="marcador-s cor-marc5" href=<p><strong>title marcador</strong></p>
-              </a>
+              <a class="marcador-s cor-marc5" href="#">Marcador 5</a>
             </li>
           </ul>
         </div>
@@ -1405,7 +1402,63 @@
     });
   </script>
 
+  <script>
+    function changeSession(sessionNumber) {
+      // Remover a classe de animação de todos os ícones
+      const allIcons = document.querySelectorAll('.agenda-icon img');
+      allIcons.forEach(icon => icon.classList.remove('animate'));
 
+      // Adicionar a classe de animação ao ícone correspondente
+      if (sessionNumber === 1) {
+        document.querySelector('.agora img').classList.add('animate');
+      } else if (sessionNumber === 2) {
+        document.querySelector('.futuro img').classList.add('animate');
+      } else if (sessionNumber === 3) {
+        document.querySelector('.passado img').classList.add('animate');
+      }
+    }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headers = document.querySelectorAll('.area-template-sessao-int-header');
+
+      function addAnimation(header) {
+        const img = header.querySelector('.agenda-icon img');
+        if (img) {
+          img.classList.add('animate');
+        }
+      }
+
+      function removeAnimation(header) {
+        const img = header.querySelector('.agenda-icon img');
+        if (img) {
+          img.classList.remove('animate');
+        }
+      }
+
+      headers.forEach(header => {
+        const observer = new MutationObserver(mutations => {
+          mutations.forEach(mutation => {
+            if (mutation.attributeName === 'class') {
+              if (header.classList.contains('active-header')) {
+                addAnimation(header);
+              } else {
+                removeAnimation(header);
+              }
+            }
+          });
+        });
+
+        observer.observe(header, { attributes: true });
+
+        if (header.classList.contains('active-header')) {
+          addAnimation(header);
+        }
+      });
+    });
+
+  </script>
 
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/ModalMenu.js"></script>

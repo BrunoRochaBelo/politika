@@ -49,7 +49,8 @@
   color: var(--txt-titulo-card);
   border: 1px solid transparent;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
+  caret-color: var(--cor-s2);
 }
 .search-button {
   background: transparent;
@@ -77,13 +78,7 @@
 .header-search:hover {
   background: var(--card-hover);
   box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque),
-    0 0 3px var(--btn-secundario-alt-destaque),
-    0 0 4px var(--btn-secundario-alt-destaque),
-    inset 0 0 1px var(--btn-secundario-alt-destaque),
-    inset 0 0 2px var(--btn-secundario-alt-destaque),
-    inset 0 0 3px var(--btn-secundario-alt-destaque),
-    inset 0 0 4px var(--btn-secundario-alt-destaque);
+    0 0 2px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 .header-search:hover .search-input::placeholder {
@@ -105,13 +100,7 @@
 
 .header-user:hover {
   box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque),
-    0 0 3px var(--btn-secundario-alt-destaque),
-    0 0 4px var(--btn-secundario-alt-destaque),
-    inset 0 0 1px var(--btn-secundario-alt-destaque),
-    inset 0 0 2px var(--btn-secundario-alt-destaque),
-    inset 0 0 3px var(--btn-secundario-alt-destaque),
-    inset 0 0 4px var(--btn-secundario-alt-destaque);
+    0 0 2px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 
@@ -121,17 +110,22 @@
     display: grid;
     align-content: center;
     justify-content: space-between;
-    grid: "home-header-logo header-search header-user";
+    gap: 15px;
+    grid:
+      "home-header-logo header-search header-user"
+      / auto 1fr auto;
     background: var(--background-principal);
   }
 
   .header-search {
     grid-area: header-search;
-    margin: 0;
-    box-sizing: border-box;
+    display: grid;
     align-self: center;
-    justify-self: center;
+    background: var(--card-alt-fundo);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   }
   .header-user {
     margin-right: 0.625rem;
@@ -165,16 +159,7 @@
     cursor: pointer;
   }
 
-  .header-user .back-icon {
-    transition: transform 1s ease;
-  }
-  /* Efeito de hover: aumenta a escala da imagem e adiciona uma sombra */
-  .header-user .back-icon:hover {
-    transform: none;
-  }
-  /* Efeito de clique: reduz um pouco a escala e muda a opacidade */
-  .header-user .back-icon:active {
-    transform: scale(0.7);
-    opacity: 0.5;
+  .header-search:hover .search-input::placeholder {
+    color: var(--txt-nav);
   }
 }

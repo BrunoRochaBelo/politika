@@ -2,22 +2,22 @@
   --vh: 1vh;
 
   /* Primary Colors */
-  --cor-p1: hsl(218, 60%, 60%);
+  --cor-p1: hsl(218, 60%, 55%);
   --cor-p2: hsl(218, 70%, 60%);
-  --cor-p3: hsl(218, 80%, 62%);
+  --cor-p3: hsl(218, 80%, 65%);
 
   /* Secondary Colors */
-  --cor-s1: hsl(202, 60%, 50%);
-  --cor-s2: hsl(30, 80%, 50%);
-  --cor-s3: hsla(202, 30%, 14%);
-  --cor-s4: hsla(218, 12%, 6%);
+  --cor-s1: hsl(202, 60%, 55%);
+  --cor-s2: hsl(30, 80%, 55%);
+  --cor-s3: hsl(202, 30%, 18%);
+  --cor-s4: hsl(218, 12%, 10%);
 
   /* Texts */
-  --txt-titulo: hsl(218, 12%, 91%);
-  --txt-subtitulo: hsl(218, 12%, 72%);
-  --txt-destaque: hsl(218, 100%, 88%);
-  --txt-nav: hsl(218, 8%, 32%);
-  --txt-nav-select: hsl(218, 50%, 60%);
+  --txt-titulo: hsl(218, 12%, 90%);
+  --txt-subtitulo: hsl(218, 12%, 80%);
+  --txt-destaque: hsl(218, 100%, 95%);
+  --txt-nav: hsl(218, 8%, 40%);
+  --txt-nav-select: hsl(218, 50%, 55%);
 
   /* Backgrounds */
   --background-principal: hsl(218, 1%, 8%);
@@ -38,33 +38,33 @@
   --card-aberto-fundo: hsl(218, 15%, 34%);
   --card-aberto-detalhe: hsl(218, 15%, 30%);
 
-  --card-alt-fundo: hsl(218, 16%, 25%);
+  --card-alt-fundo: hsl(218, 12%, 25%);
 
   /* Buttons */
-  --btn-principal: hsl(218, 80%, 52%);
-  --btn-principal-hover: hsl(218, 70%, 62%);
-  --btn-principal-destaque: hsl(218, 70%, 67%);
+  --btn-principal: hsl(218, 80%, 60%);
+  --btn-principal-hover: hsl(218, 70%, 65%);
+  --btn-principal-destaque: hsl(218, 70%, 70%);
   --btn-principal-text: hsl(0, 0%, 100%);
 
-  --btn-principal-alt: hsl(218, 70%, 62%);
-  --btn-principal-alt-hover: hsl(218, 70%, 65%);
-  --btn-principal-alt-destaque: hsl(218, 70%, 67%);
-  --btn-principal-alt-txt: hsl(218, 10%, 16%);
+  --btn-principal-alt: hsl(218, 70%, 65%);
+  --btn-principal-alt-hover: hsl(218, 70%, 68%);
+  --btn-principal-alt-destaque: hsl(218, 70%, 70%);
+  --btn-principal-alt-txt: hsl(218, 10%, 26%);
 
-  --btn-secundario: hsl(195, 70%, 57%);
-  --btn-secundario-hover: hsl(195, 70%, 62%);
-  --btn-secundario-destaque: hsl(195, 70%, 67%);
+  --btn-secundario: hsl(195, 70%, 60%);
+  --btn-secundario-hover: hsl(195, 70%, 65%);
+  --btn-secundario-destaque: hsl(195, 70%, 70%);
   --btn-secundario-text: hsl(0, 0%, 100%);
 
-  --btn-secundario-alt: hsl(218, 80%, 57%);
-  --btn-secundario-alt-hover: hsl(218, 80%, 62%);
-  --btn-secundario-alt-destaque: hsl(218, 91%, 84%);
+  --btn-secundario-alt: hsl(218, 80%, 65%);
+  --btn-secundario-alt-hover: hsl(218, 80%, 70%);
+  --btn-secundario-alt-destaque: hsl(218, 80%, 75%);
   --btn-secundario-alt-text: hsl(0, 0%, 100%);
 
   --btn-filtro: hsl(218, 12%, 22%);
   --btn-filtro-txt: hsl(218, 12%, 46%);
   --btn-filtro-hover: hsl(218, 12%, 26%);
-  --btn-filtro-select: hsl(218, 85%, 37%);
+  --btn-filtro-select: hsl(218, 85%, 47%);
   --btn-filtro-select-text: hsl(218, 85%, 92%);
 
   /* Form Fields */
@@ -90,24 +90,24 @@
   --input-success-background: hsl(140, 50%, 48%);
 
   /* Communication Colors */
-  --link: hsl(218, 60%, 67%);
-  --link-hover: hsl(218, 60%, 72%);
-  --placeholder: hsl(218, 20%, 67%);
-  --sucesso: hsl(140, 60%, 62%);
-  --erro: hsl(0, 70%, 62%);
-  --aviso: hsl(30, 80%, 62%);
-  --informacao: hsl(218, 60%, 82%);
+  --link: hsl(218, 60%, 70%);
+  --link-hover: hsl(218, 60%, 75%);
+  --placeholder: hsl(218, 20%, 70%);
+  --sucesso: hsl(140, 60%, 65%);
+  --erro: hsl(0, 70%, 65%);
+  --aviso: hsl(30, 80%, 65%);
+  --informacao: hsl(218, 60%, 85%);
 
   /* Tooltip and Error/Success Messages for Inputs */
-  --tooltip-background: hsl(218, 80%, 28%);
-  --tooltip-text: hsl(205, 50%, 86%);
+  --tooltip-background: hsl(218, 80%, 38%);
+  --tooltip-text: hsl(205, 50%, 96%);
   --message-error-text: hsl(0, 60%, 100%);
   --message-success-text: hsl(140, 60%, 100%);
 
   /* Others */
-  --scrollbar-bg: hsl(218, 10%, 22%);
-  --scrollbar-thumb: hsl(218, 10%, 37%);
-  --scrollbar-thumb-hover: hsl(218, 10%, 42%);
+  --scrollbar-bg: hsl(218, 10%, 32%);
+  --scrollbar-thumb: hsl(218, 10%, 47%);
+  --scrollbar-thumb-hover: hsl(218, 10%, 52%);
 
   /* Marker Colors */
   --cor-marc1: hsl(0, 70%, 57%); /* Marcador 1 - Vermelho */

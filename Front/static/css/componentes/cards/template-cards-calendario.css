@@ -291,19 +291,3 @@
 .calendario-large-card-expanded .calendario-large-card-duracao {
   background: var(--card-aberto-detalhe);
 }
-
-/* Vazio */
-.calendario-empty-card {
-  display: grid;
-  align-items: center;
-  justify-items: start;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  grid: "calendario-empty-card-title" 32px;
-}
-.calendario-empty-card-title {
-  grid-area: calendario-empty-card-title;
-  font-size: 14px;
-  font-weight: 400;
-}

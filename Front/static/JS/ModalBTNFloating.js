@@ -3,6 +3,7 @@ class ModalBtnFloating {
     this.botao = document.querySelector(".floatingButton");
     this.modal = document.querySelector(".modal-btn-floating-Overlay");
     this.modalContent = document.querySelector(".modal-btn-floating-content");
+    this.adicionarEventoBtn = document.querySelector(".card-empty-card-add");
     this.init();
   }
 
@@ -41,6 +42,12 @@ class ModalBtnFloating {
       if (event.target !== this.botao) {
         this.fecharModalBtnFloating();
       }
+    });
+
+    // Adiciona evento de clique para o botão "adicionar evento"
+    this.adicionarEventoBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      this.abrirModalBtnFloating();
     });
   }
 }

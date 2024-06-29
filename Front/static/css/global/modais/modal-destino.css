@@ -101,8 +101,8 @@
 }
 .search-input-dest {
   padding: 15px 20px;
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 400;
   background: var(--card-fundo);
   border: 1px solid transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -113,13 +113,7 @@
 .search-input-dest:hover {
   background: var(--card-hover);
   box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque),
-    0 0 3px var(--btn-secundario-alt-destaque),
-    0 0 4px var(--btn-secundario-alt-destaque),
-    inset 0 0 1px var(--btn-secundario-alt-destaque),
-    inset 0 0 2px var(--btn-secundario-alt-destaque),
-    inset 0 0 3px var(--btn-secundario-alt-destaque),
-    inset 0 0 4px var(--btn-secundario-alt-destaque);
+    0 0 2px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 .search-input-dest:hover::placeholder {

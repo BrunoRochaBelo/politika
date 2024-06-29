@@ -3,7 +3,7 @@
   width: auto;
   font-weight: regular;
   font-size: 11px;
-  border-radius: 25px;
+  border-radius: 6px;
   border: 1px solid var(--btn-principal-alt);
   letter-spacing: 0.5px;
   background: var(--btn-principal-alt);
@@ -54,7 +54,7 @@
   border: none;
 }
 .btn-calendario:hover {
-  color: var(--btn-filtro-select);
+  filter: brightness(1.2);
   border-color: transparent;
   border-radius: 5px;
 }
@@ -70,12 +70,11 @@
   border-top: 5px solid var(--btn-filtro-select);
   color: var(--btn-filtro-select-text);
   background: var(--btn-filtro);
+  cursor: pointer;
 }
 .hoje:hover {
-  border: 1px solid var(--btn-filtro-select);
-  border-top: 5px solid var(--btn-filtro-select);
-  color: var(--btn-filtro-select-text);
-  box-shadow: 0 0 2px var(--btn-filtro-select), 0 0 4px var(--btn-filtro-select);
+  filter: brightness(1.2);
+  box-shadow: 0 0 1px var(--btn-filtro-select);
 }
 
 .nav-semana {
@@ -154,9 +153,8 @@
 
 .dia-semana:hover,
 .change-semana:hover {
-  background: var(--btn-filtro-hover);
+  filter: brightness(1.2);
   border-radius: 50% !important;
-  color: var(--btn-filtro-txt);
 }
 .change-semana:hover {
   border-radius: 12px !important;
@@ -185,53 +183,49 @@
   text-align: start;
 }
 .agenda .cad-session.active {
-  background: var(--cor-s4);
+  background: var(--fundo-container);
   border: 1px solid transparent;
   border-radius: 0px;
   margin: 0px;
+}
+.agenda .cad-session.active .arrow {
+  right: 30px;
 }
 .agenda .cad-session .area-template-sessao-int-header.active-header {
   font-size: 18px;
   font-weight: 600;
   padding-bottom: 10px;
-  color: var(--cor-s1);
+  color: var(--btn-filtro-select-text);
   margin: 0px;
 }
 .agenda .cad-session.active > .area-template-sessao-int-content {
   box-shadow: none;
-  padding: 10px 10px;
-  margin: 0 0 10px 12px;
+  padding: 10px 10px 0 10px;
+  margin: 0 0 20px 12px;
   border-left: 2px solid var(--cor-s1);
   border-radius: 0;
 }
 .agenda .cad-session.active .lista-vertical-cards {
-  gap: 5px;
+  gap: 4px;
 }
 
-.icon {
+.agenda-icon {
   display: inline-block;
   margin-right: 10px;
 }
-.agenda .cad-session.active .icon {
-  display: none;
-}
-
 .agora img,
 .futuro img,
 .passado img {
   animation: none;
 }
-
 .agora img.animate {
-  animation: bounce 0.5s ease-in-out 0s 2 alternate;
+  animation: bounce 0.4s ease-in-out 0s 2 alternate;
 }
-
 .futuro img.animate {
-  animation: rotateRight 0.5s ease-in-out 0s 2 alternate;
+  animation: rotateRight 0.4s ease-in-out 0s 2 alternate;
 }
-
 .passado img.animate {
-  animation: rotateLeft 0.5s ease-in-out 0s 2 alternate;
+  animation: rotateLeft 0.4s ease-in-out 0s 2 alternate;
 }
 
 @keyframes bounce {
@@ -239,13 +233,12 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-3px);
   }
   100% {
     transform: translateY(0);
   }
 }
-
 @keyframes rotateRight {
   0% {
     transform: rotate(0deg);
@@ -257,7 +250,6 @@
     transform: rotate(0deg);
   }
 }
-
 @keyframes rotateLeft {
   0% {
     transform: rotate(0deg);
@@ -302,10 +294,6 @@
 
   .dia-semana:hover,
   .change-semana:hover {
-    color: inherit;
-    color: var(--txt-content-card);
-    background: var(--card-fundo);
-    border: none;
-    box-shadow: none;
+    filter: none;
   }
 }

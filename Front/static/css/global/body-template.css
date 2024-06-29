@@ -23,6 +23,7 @@
 @media only screen and (max-width: 900px) {
   .body-template {
     gap: 0;
+    width: 100vw;
     grid-template-columns: 1fr;
     grid-template-rows: 2.813rem 1fr;
     grid-template-areas:

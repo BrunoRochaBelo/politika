@@ -110,6 +110,43 @@
   box-sizing: border-box;
 }
 
+/* Cards Vazio */
+.card-empty-card {
+  display: grid;
+  box-sizing: border-box;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  gap: 10px;
+  min-height: 50px;
+  background: var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 20px 15px 10px 15px;
+  border: none;
+  grid:
+    "card-empty-card-title" auto
+    "card-empty-card-add" auto;
+}
+.card-empty-card-title {
+  grid-area: card-empty-card-title;
+  font-size: 14px;
+  font-weight: 400;
+}
+.card-empty-card-add {
+  grid-area: card-empty-card-add;
+  font-size: 12px;
+  font-weight: 300;
+  padding: 10px 20px;
+  color: var(--link);
+}
+.card-empty-card-add:hover {
+  color: var(--link-hover);
+}
+
+/* Cards das Sessões */
 .cad-session {
   position: relative;
   min-height: 50px;

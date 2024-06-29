@@ -34,13 +34,7 @@
 }
 .home-header-user:hover {
   box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque),
-    0 0 3px var(--btn-secundario-alt-destaque),
-    0 0 4px var(--btn-secundario-alt-destaque),
-    inset 0 0 1px var(--btn-secundario-alt-destaque),
-    inset 0 0 2px var(--btn-secundario-alt-destaque),
-    inset 0 0 3px var(--btn-secundario-alt-destaque),
-    inset 0 0 4px var(--btn-secundario-alt-destaque);
+    0 0 2px var(--btn-secundario-alt-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 
