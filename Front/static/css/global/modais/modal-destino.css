@@ -39,7 +39,7 @@
   background: var(--fundo-modal);
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid var(--borda);
+  border: 1px solid var(--fundo-container);
   border-radius: 12px;
   width: 50%;
   position: relative;

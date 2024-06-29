@@ -9,7 +9,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 25px;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     "area-container-template-header"
     "area-container-template-content";

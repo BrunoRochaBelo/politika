@@ -1,9 +1,9 @@
 .body-template {
   display: grid;
-  align-content: start;
-  justify-content: center;
+  align-content: center;
+  justify-content: stretch;
   gap: 1.25rem;
-  grid-template-columns: auto minmax(350px, 1100px) auto;
+  grid-template-columns: auto minmax(899px, 1100px) auto;
   grid-template-rows: 2.813rem 1fr;
   grid-template-areas:
     "header header header"
