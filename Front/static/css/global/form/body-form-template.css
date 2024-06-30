@@ -50,7 +50,7 @@
   box-shadow: none;
   background: none;
   background: transparent;
-  max-height: 85vh;
+  max-height: calc(var(--vh, 1vh) * 100 - 7rem);
   border-radius: 25px;
 }
 .main-form .area-container-template-header,
@@ -117,7 +117,7 @@
     box-shadow: none;
     background: none;
     background: transparent;
-    max-height: 88vh;
+    max-height: calc(var(--vh, 1vh) * 100 - 6rem);
     border-radius: 25px;
   }
   .main-form .area-container-abas-template-header {

@@ -182,29 +182,32 @@
   color: var(--txt-titulo-card);
   text-align: start;
 }
-.agenda .cad-session.active {
-  background: var(--fundo-container);
-  border: 1px solid transparent;
-  border-radius: 0px;
-  margin: 0px;
+.agenda .cad-session:hover {
+  filter: brightness(1.2);
 }
-.agenda .cad-session.active .arrow {
-  right: 30px;
+
+.agenda .cad-session.active {
+  background: var(--cor-s4);
+  border: 1px solid var(--cor-s3);
+  transform: scale(1.01);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 7px;
 }
 .agenda .cad-session .area-template-sessao-int-header.active-header {
   font-size: 18px;
   font-weight: 600;
-  padding-bottom: 10px;
+  padding: 12px 20px;
   color: var(--btn-filtro-select-text);
-  margin: 0px;
 }
 .agenda .cad-session.active > .area-template-sessao-int-content {
   box-shadow: none;
-  padding: 10px 10px 0 10px;
-  margin: 0 0 20px 12px;
-  border-left: 2px solid var(--cor-s1);
+  padding: 10px 10px 20px 10px;
   border-radius: 0;
 }
+.agenda .cad-session.active:hover {
+  filter: none !important;
+}
+
 .agenda .cad-session.active .lista-vertical-cards {
   gap: 4px;
 }
@@ -294,6 +297,10 @@
 
   .dia-semana:hover,
   .change-semana:hover {
+    filter: none;
+  }
+
+  .agenda .cad-session:hover {
     filter: none;
   }
 }

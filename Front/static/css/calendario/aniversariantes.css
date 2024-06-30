@@ -1,4 +1,4 @@
-/* Estilos para contaos na area de ANIVERSARIANTES */
+/* Estilos para contatos na área de ANIVERSARIANTES */
 .aniversario-small-card-editar .btn-outline-principal {
   width: auto;
   font-weight: regular;
@@ -17,7 +17,7 @@
   font-weight: bolder;
 }
 
-/* Area de aniversariantes */
+/* Área de aniversariantes */
 .aniversariantes {
   display: none;
   opacity: 0;
@@ -38,6 +38,13 @@
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
+
+/* Hover efeito padrão */
+.area-template-sessao-int.area-aniversariantes:hover {
+  filter: brightness(1.2);
+}
+
+/* Estilos do cabeçalho */
 .area-template-sessao-int.area-aniversariantes
   .area-template-sessao-int-header {
   color: var(--txt-titulo-card);
@@ -45,12 +52,23 @@
   position: relative;
   padding: 12px;
 }
+
 .area-template-sessao-int.area-aniversariantes
   .area-template-sessao-int-header
   button {
   position: absolute;
   right: 10px;
 }
+
+/* Estilos quando visível */
+.area-template-sessao-int.area-aniversariantes.visible {
+  filter: none; /* Desativa o filtro de hover */
+}
+
+.area-template-sessao-int.area-aniversariantes.visible:hover {
+  filter: none; /* Desativa o filtro de hover quando visível */
+}
+
 .area-template-sessao-int.area-aniversariantes.visible
   .area-template-sessao-int-header {
   font-size: 18px;

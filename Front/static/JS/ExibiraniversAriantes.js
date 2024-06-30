@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     header.addEventListener("click", function () {
       var aniversariantesContainer = this.nextElementSibling;
       var button = this.querySelector(".btn-recuar-expandir-aniver");
+      var headerElement = this.closest(
+        ".area-template-sessao-int.area-aniversariantes"
+      );
 
       // Alterna a visibilidade do contêiner
       if (aniversariantesContainer.classList.contains("visible")) {
@@ -16,12 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
         aniversariantesContainer.classList.add("fade-out");
         button.textContent = "Exibir";
         button.classList.remove("up");
-        this.classList.remove("visible");
+        headerElement.classList.remove("visible");
 
         // Remove a borda quando o contêiner estiver oculto
-        var headerElement = this.closest(
-          ".area-template-sessao-int.area-aniversariantes"
-        );
         headerElement.style.border = "none";
       } else {
         aniversariantesContainer.classList.remove("hidden");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         aniversariantesContainer.classList.add("fade-in");
         button.textContent = "Ocultar";
         button.classList.add("up");
-        this.classList.add("visible");
+        headerElement.classList.add("visible");
 
         // Adiciona a animação de balanço ao ícone
         var iconElement = this.querySelector(".aniversario-icon");
@@ -42,9 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
 
         // Adiciona a borda quando o contêiner estiver visível
-        var headerElement = this.closest(
-          ".area-template-sessao-int.area-aniversariantes"
-        );
         headerElement.style.border = "1px solid var(--cor-s3)";
       }
 
@@ -54,9 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
       )
         ? "--cor-s4"
         : "--card-fundo";
-      var headerElement = this.closest(
-        ".area-template-sessao-int.area-aniversariantes"
-      );
       headerElement.style.background = `var(${headerBackgroundClass})`;
 
       var liElements = aniversariantesContainer.querySelectorAll("li");

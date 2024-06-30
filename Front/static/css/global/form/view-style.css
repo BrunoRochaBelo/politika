@@ -18,7 +18,7 @@
 
 .main-form-view .area-container-template,
 .main-form-view .area-container-abas-template {
-  max-height: 92vh !important;
+  max-height: calc(var(--vh, 1vh) * 100 - 3rem) !important;
   border-radius: 25px;
 }
 .main-form-view .area-container-template-header,
@@ -161,7 +161,7 @@
     box-shadow: none;
     background: none;
     border: none;
-    max-height: 92vh !important;
+    max-height: calc(var(--vh, 1vh) * 100 - 2rem) !important;
     border-radius: 25px;
   }
 
