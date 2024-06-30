@@ -51,8 +51,8 @@
   position: absolute;
   right: 10px;
 }
-.area-template-sessao-int.area-aniversariantes
-  .area-template-sessao-int-header.visible {
+.area-template-sessao-int.area-aniversariantes.visible
+  .area-template-sessao-int-header {
   font-size: 18px;
   font-weight: 600;
   padding-bottom: 10px;
@@ -121,7 +121,7 @@
     margin: 0 10px;
   }
   .area-template-sessao-int.area-aniversariantes:hover {
-    background: var(--card-fundo);
+    filter: none !important;
   }
   .area-template-sessao-int-content.aniversariantes .card-xs:hover {
     background: var(--card-fundo);

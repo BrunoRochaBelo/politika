@@ -68,6 +68,7 @@
   font-size: 12px;
   font-weight: 370;
 }
+
 .modal-content-template-sessao {
   grid-area: modal-content-template-sessao;
   display: grid;
@@ -80,14 +81,12 @@
     "modal-content-template-cargo"
     / 1fr;
 }
-
 .modal-content-template-username {
   grid-area: modal-content-template-username;
   justify-self: center;
   font-size: 14px;
   font-weight: 400;
 }
-
 .modal-content-template-cargo {
   grid-area: modal-content-template-cargo;
   justify-self: center;
@@ -103,7 +102,6 @@
   opacity: 1;
   gap: 15px;
 }
-
 .modal-content-template-sair .btn-principal {
   padding: 5px 10px;
   font-size: 14px;
@@ -112,9 +110,10 @@
   background: none;
   box-shadow: none;
   border: 1px solid transparent;
+  color: var(--btn-principal-destaque);
 }
 #btnGerenciarConta:hover {
-  color: var(--btn-principal-destaque);
+  filter: brightness(1.1);
   border: 1px solid transparent;
   box-shadow: none;
   text-decoration: underline;

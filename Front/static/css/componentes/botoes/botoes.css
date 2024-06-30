@@ -129,7 +129,7 @@
   filter: brightness(1.2);
 }
 
-/* Estilo para o botão filtro*/
+/* Estilo para o BOTÃO FILTRO*/
 .area-filtro {
   display: grid;
   grid-auto-flow: column;
@@ -149,7 +149,7 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 25px;
-  border: 1px solid var(--txt-subtitulo);
+  border: 1px solid var(--btn-filtro);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -162,7 +162,7 @@
   color: var(--txt-content-card);
   margin-right: 15px;
 }
-/* Estilo para o "x" do botão filtro */
+/* Estilo para o "x" do BOTÃO FILTRO */
 .remover-filtro {
   position: absolute;
   top: 50%;

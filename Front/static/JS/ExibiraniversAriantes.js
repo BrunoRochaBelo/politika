@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var aniversariantesHeaders = document.querySelectorAll(
-    ".area-template-sessao-int-header.area-aniversariantes"
+    ".area-template-sessao-int-header"
   );
 
   aniversariantesHeaders.forEach(function (header) {

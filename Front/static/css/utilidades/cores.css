@@ -110,6 +110,7 @@
   --scrollbar-thumb-hover: hsl(218, 10%, 52%);
 
   /* Marker Colors */
+  --cor-marc0: hsl(0, 0%, 100%); /* Marcador 0 - Vermelho */
   --cor-marc1: hsl(0, 70%, 57%); /* Marcador 1 - Vermelho */
   --cor-marc2: hsl(30, 70%, 57%); /* Marcador 2 - Laranja */
   --cor-marc3: hsl(60, 70%, 62%); /* Marcador 3 - Amarelo */
@@ -227,6 +228,9 @@
   background: var(--cor-marca);
 }
 
+.cor-marc0 {
+  background: var(--cor-marc0);
+}
 .cor-marc1 {
   background: var(--cor-marc1);
 }

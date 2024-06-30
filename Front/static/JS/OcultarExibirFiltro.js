@@ -47,6 +47,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área não está exibida
       areaHeader.style.color = "transparent";
       areaHeader.style.fontSize = "0px";
+      areaHeader.style.padding = "5px 5px 5px 10px";
 
       // Altera o tamanho da .main-sidenav para 19%
       mainSidenav.style.width = "19%";
@@ -68,6 +69,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--txt-titulo)";
       areaHeader.style.fontSize = "22px";
+      areaHeader.style.padding = "10px 10px 10px 20px";
 
       // Altera o tamanho da .main-sidenav para 88%
       mainSidenav.style.width = "88%";

@@ -51,6 +51,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área não está exibida
       areaHeader.style.color = "transparent";
       areaHeader.style.fontSize = "0px";
+      areaHeader.style.padding = "5px 5px 5px 10px";
 
       // Adiciona a classe para mostrar o pseudo-elemento ::after
       button.classList.add("show-after");
@@ -66,6 +67,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--txt-titulo)";
       areaHeader.style.fontSize = "22px";
+      areaHeader.style.padding = "10px 10px 10px 20px";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
       button.classList.add("hide-after");

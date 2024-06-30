@@ -35,7 +35,6 @@
     grid-template-rows: 1fr;
     grid-template-areas: "main-section";
     overflow: hidden;
-    position: relative;
   }
   .main-section {
     grid-area: main-section;
@@ -43,10 +42,10 @@
   }
   .main-sidenav {
     grid-area: main-sidenav;
-    position: absolute;
+    position: fixed;
     padding: 0px;
     right: 2px;
-    top: 0px;
+    top: 2.813rem;
     overflow: hidden;
     width: 19%;
     height: 35px;
@@ -55,5 +54,6 @@
 
   .main-sidenav h1 {
     display: none;
+    margin-left: 20px;
   }
 }
