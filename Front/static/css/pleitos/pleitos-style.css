@@ -15,7 +15,7 @@
 }
 
 .tabela-historico {
-  background: var(--fundo-container);
+  background: var(--container-fundo);
   border-radius: 25px;
   padding: 20px;
 }
@@ -35,7 +35,7 @@
 }
 
 .tabela-historico table tr:nth-child(odd) {
-  background-color: var(--fundo-container); /* Cor para linhas ímpares */
+  background-color: var(--container-fundo); /* Cor para linhas ímpares */
 }
 
 .tabela-historico table tr:nth-child(even) {

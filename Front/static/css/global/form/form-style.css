@@ -14,7 +14,7 @@
 fieldset {
   border: none;
   margin: 0;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 15px 20px 15px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -28,8 +28,8 @@ legend {
 }
 
 .campo {
-  background: n;
-  padding: 10px;
+  background: none;
+  padding: 10px 0;
   border-radius: 5px;
   gap: 5px;
 }
@@ -52,9 +52,9 @@ legend {
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
-  color: var(--txt-titulo-card);
-  background: var(--input-bg-empty);
-  border: 1px solid transparent;
+  color: var(--input-txt);
+  background: var(--input-border);
+  border: 1px solid var(--input-border);
   border-radius: 40px;
   transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
@@ -297,7 +297,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .campo input.success,
 .campo select.success,
 .campo textarea.success {
-  border: 1px solid var(--input-border) !important;
+  border: 1px solid transparent !important;
+  filter: brightness(1.5);
 }
 .card.error {
   border: 1px solid var(--card-error-border);
@@ -313,18 +314,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     max-width: 100%;
     overflow-x: hidden;
   }
-  .session.active {
-    display: block;
-    max-height: 5000px;
-    opacity: 1;
+  .fieldset {
+    display: grid;
+    gap: 10px;
+    border: none;
+    margin: 0;
+    padding: 10px 0 20px 0;
   }
+
   .botoes {
     flex-direction: column;
     gap: 10px;
     margin-top: 20px;
     padding: 10px 0;
   }
-
   .botoes .btn-outline-principal,
   .botoes .btn-principal {
     width: auto;

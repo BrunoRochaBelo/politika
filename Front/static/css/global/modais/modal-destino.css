@@ -36,10 +36,10 @@
 
 /* Aplicação das animações no conteúdo do modal */
 .modal-destino-content {
-  background: var(--fundo-modal);
+  background: var(--modal-fundo);
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid var(--fundo-container);
+  border: 1px solid var(--container-fundo);
   border-radius: 12px;
   width: 50%;
   position: relative;
@@ -112,12 +112,11 @@
 }
 .search-input-dest:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque);
+  box-shadow: 0 0 1px var(--shadow-destaque), 0 0 2px var(--shadow-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 .search-input-dest:hover::placeholder {
-  color: var(--btn-secundario-alt-destaque);
+  color: var(--shadow-destaque);
 }
 .search-input-dest:focus::placeholder {
   color: var(--placeholder);
@@ -187,16 +186,14 @@
 
 .modal-destino #bairro:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    inset 0 0 1px var(--btn-secundario-alt-destaque),
-    inset 0 0 2px var(--btn-secundario-alt-destaque),
-    inset 0 0 3px var(--btn-secundario-alt-destaque),
-    inset 0 0 4px var(--btn-secundario-alt-destaque);
+  box-shadow: 0 0 1px var(--shadow-destaque),
+    inset 0 0 1px var(--shadow-destaque), inset 0 0 2px var(--shadow-destaque),
+    inset 0 0 3px var(--shadow-destaque), inset 0 0 4px var(--shadow-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 
 .modal-destino #bairro:hover::placeholder {
-  color: var(--btn-secundario-alt-destaque);
+  color: var(--shadow-destaque);
 }
 
 @media only screen and (max-width: 900px) {

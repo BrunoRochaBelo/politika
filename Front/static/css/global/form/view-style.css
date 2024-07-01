@@ -2,7 +2,7 @@
   padding-top: 20px;
 }
 .header-form-view {
-  background: hsl(214, 10%, 10%);
+  background: var(--form-background);
   border: 1px solid hsl(214, 10%, 12%);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -10,7 +10,7 @@
   font-size: 14px;
 }
 .main-form-view {
-  background: hsl(214, 10%, 10%);
+  background: var(--form-background);
   border: 1px solid hsl(214, 10%, 12%);
   padding: 0 10px;
   border-radius: 25px;
@@ -40,6 +40,11 @@
   margin: 5px 0;
 }
 
+.main-form-view .cad-session {
+  background: var(--input-bg-filled);
+  border: 1px solid var(--input-bg-filled);
+}
+
 .card-info {
   position: relative;
   display: flex;
@@ -60,7 +65,6 @@
   color: var(--txt-destaque);
   border: 1px solid transparent;
 }
-
 .acoes {
   display: flex;
   gap: 20px;
@@ -80,14 +84,14 @@
   gap: 10px;
   border: none;
   margin: 0;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 15px 20px 15px;
 }
 
 .campo-view {
   display: grid;
   background: var(--input-bg-filled);
   border: 1px solid transparent;
-  padding: 17px;
+  padding: 7px 25px;
   border-radius: 40px;
   gap: 5px;
 }
@@ -96,8 +100,8 @@
   display: inline;
   font-size: 12px;
   font-weight: regular;
-  color: var(--input-label);
-  padding: 0;
+  color: var(--input-placeholder);
+  padding: 3px;
   margin: 0;
 }
 
@@ -107,8 +111,9 @@
 .campo-view textarea {
   margin: 0px;
   width: 100%;
+  padding: 7px 5px;
   box-sizing: border-box;
-  color: var(--txt-destaque);
+  color: var(--input-label);
   background: transparent;
   border: none;
   font-weight: bold;
@@ -165,6 +170,13 @@
     border-radius: 25px;
   }
 
+  .fieldset-view {
+    display: grid;
+    gap: 10px;
+    border: none;
+    margin: 0;
+    padding: 10px 0 20px 0;
+  }
   .acao-item {
     width: 25px;
     height: 25px;

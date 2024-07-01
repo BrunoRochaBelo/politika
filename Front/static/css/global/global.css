@@ -144,7 +144,7 @@ img {
   width: 160px;
   font-size: 12px;
   background-color: var(--tooltip-background);
-  color: var(--tooltip-text);
+  color: var(--tooltip-txt);
   text-align: center;
   border-radius: 5px;
   padding: 5px;
@@ -177,7 +177,7 @@ img {
 
 /* Estilo das Mensagens de Sucesso */
 .message-success {
-  color: var(--message-success-text);
+  color: var(--message-success-txt);
   background-color: var(--sucesso);
   padding: 10px;
   border-radius: 5px;
@@ -189,6 +189,6 @@ img {
     overflow: auto;
     width: 100vw;
     max-height: calc(var(--vh, 1vh) * 100 + 2rem);
-    background: var(--fundo-container);
+    background: var(--container-fundo);
   }
 }

@@ -7,13 +7,13 @@
 .btn-recuar-expandir:active {
   font-size: 14px;
   font-weight: 400;
-  color: var(--txt-destaque);
-  background: var(--tooltip-background);
+  color: var(--btn-secundario-txt);
+  background: var(--btn-secundario);
   border-radius: 40px;
   padding: 3px 7px;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
-  border: 1px solid var(--tooltip-background);
+  border: 1px solid var(--btn-secundario);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   justify-self: end;
 }
@@ -71,7 +71,7 @@
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-aniver:active {
-  background-color: darken(var(--fundo-container), 10%);
+  background-color: darken(var(--container-fundo), 10%);
   color: var(--cor-p2);
   border-color: var(--cor-p2);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);

@@ -37,7 +37,7 @@
   height: 26px;
   border-radius: 13px;
   background: var(--card-fundo);
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 .form-checkbox:checked + .switch-label:before {
   background: var(--cor-s2);

@@ -4,60 +4,60 @@ function scrollToTop(element, duration) {
 
   function scrollStep(timestamp) {
     const elapsed = timestamp - startTime;
-    const progress = elapsed / duration;
+    const progress = Math.min(elapsed / duration, 1);
+    const easing =
+      progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2; // EaseInOutQuad
 
-    element.scrollTop = startingY * (1 - progress);
+    element.scrollTop = startingY * (1 - easing);
 
     if (progress < 1) {
       requestAnimationFrame(scrollStep);
     }
   }
 
-  requestAnimationFrame(scrollStep);
+  return new Promise((resolve) => {
+    function animateScroll() {
+      requestAnimationFrame(function step(timestamp) {
+        scrollStep(timestamp);
+        if (element.scrollTop === 0) {
+          resolve();
+        }
+      });
+    }
+
+    animateScroll();
+  });
 }
 
-function changeSession(sessionNumber) {
-  var sessions = document.querySelectorAll(".session");
-  var selectedSession = document.getElementById("sessao" + sessionNumber);
-  var cards = document.querySelectorAll(".cad-session");
-  var selectedCard = cards[sessionNumber - 1]; // Assumindo que a ordem é a mesma
-  var areaContent =
+async function changeSession(sessionNumber) {
+  const sessions = document.querySelectorAll(".session");
+  const selectedSession = document.getElementById("sessao" + sessionNumber);
+  const cards = document.querySelectorAll(".cad-session");
+  const selectedCard = cards[sessionNumber - 1]; // Assumindo que a ordem é a mesma
+  const areaContent =
     document.querySelector(".area-container-template-content") ||
     document.querySelector(".area-container-abas-template-content");
 
-  if (!selectedSession || !selectedCard || !areaContent) {
-    console.error(
-      "Elementos não encontrados. Verifique se todos os elementos necessários estão presentes no DOM."
-    );
-    return;
-  }
-
-  var selectedHeader = selectedCard.querySelector(
+  const selectedHeader = selectedCard.querySelector(
     ".area-template-sessao-int-header"
   );
-  var selectedArrow = selectedHeader.querySelector(".arrow");
+  const selectedArrow = selectedHeader.querySelector(".arrow");
 
-  // Verificar se a sessão clicada já está ativa
   if (selectedSession.classList.contains("active")) {
-    // Se estiver ativa, recolher a sessão e fazer o scroll para o topo
     selectedSession.classList.remove("active");
     selectedHeader.classList.remove("active-header");
     selectedArrow.classList.remove("up");
     selectedArrow.classList.add("down");
     selectedCard.classList.remove("active");
-
-    // Fazer o scroll para o topo
-    scrollToTop(areaContent, 300);
   } else {
-    // Recolher todas as sessões ativas e fazer o scroll para o topo
     sessions.forEach(function (session, index) {
       if (session.classList.contains("active")) {
         session.classList.remove("active");
-
-        var card = cards[index];
-        var header = card.querySelector(".area-template-sessao-int-header");
-        var arrow = header.querySelector(".arrow");
-
+        const card = cards[index];
+        const header = card.querySelector(".area-template-sessao-int-header");
+        const arrow = header.querySelector(".arrow");
         header.classList.remove("active-header");
         arrow.classList.remove("up");
         arrow.classList.add("down");
@@ -65,16 +65,12 @@ function changeSession(sessionNumber) {
       }
     });
 
-    // Fazer o scroll para o topo antes de exibir a nova sessão
-    scrollToTop(areaContent, 300);
+    await scrollToTop(areaContent, 300);
 
-    // Exibir a nova sessão selecionada após o scroll
-    setTimeout(function () {
-      selectedSession.classList.add("active");
-      selectedHeader.classList.add("active-header");
-      selectedArrow.classList.remove("down");
-      selectedArrow.classList.add("up");
-      selectedCard.classList.add("active");
-    }, 300); // Ajuste o tempo de acordo com a duração do scroll
+    selectedSession.classList.add("active");
+    selectedHeader.classList.add("active-header");
+    selectedArrow.classList.remove("down");
+    selectedArrow.classList.add("up");
+    selectedCard.classList.add("active");
   }
 }

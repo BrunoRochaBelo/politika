@@ -146,74 +146,6 @@
   color: var(--link-hover);
 }
 
-/* Cards das Sessões */
-.cad-session {
-  position: relative;
-  min-height: 50px;
-  border-radius: 25px;
-  background: var(--card-fundo);
-  padding: 12px 15px;
-  border: 1px solid var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 6px;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, padding 0.3s ease;
-}
-.cad-session.active {
-  background: var(--card-alt-fundo);
-  padding: 0px;
-}
-.cad-session:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-.cad-session.active .tooltip .tooltiptext {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.session {
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-}
-.session.active {
-  max-height: 500000px;
-  opacity: 1;
-  transition: max-height 0.8s ease, opacity 0.8s ease;
-}
-.area-template-sessao-int-header.active-header {
-  font-size: 18px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  color: var(--cor-p2);
-}
-.area-template-sessao-int-header a {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-}
-.arrow {
-  right: 20px;
-  border: solid var(--cor-p2);
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 5px;
-  transition: transform 0.3s ease;
-  position: absolute;
-  right: 10px;
-}
-.arrow.down {
-  transform: rotate(45deg);
-}
-.arrow.up {
-  transform: rotate(-135deg);
-}
-
 /* Estilos para os cards da area de filtros e compromisso para hoje */
 /* Filtro  */
 .area-container-filtros-template-content .card-xs,
@@ -289,10 +221,5 @@
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     border-radius: 6px;
-  }
-
-  .cad-session:hover .tooltiptext {
-    visibility: hidden;
-    opacity: 0;
   }
 }

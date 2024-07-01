@@ -77,12 +77,11 @@
 }
 .header-search:hover {
   background: var(--card-hover);
-  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque);
+  box-shadow: 0 0 1px var(--shadow-destaque), 0 0 2px var(--shadow-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 .header-search:hover .search-input::placeholder {
-  color: var(--btn-secundario-alt-destaque);
+  color: var(--shadow-destaque);
 }
 .search-input:focus,
 .search-button:focus {
@@ -99,8 +98,7 @@
 }
 
 .header-user:hover {
-  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque);
+  box-shadow: 0 0 1px var(--shadow-destaque), 0 0 2px var(--shadow-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 

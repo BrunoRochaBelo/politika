@@ -32,13 +32,13 @@
 }
 .lista-vertical-2-column {
   display: grid;
-  gap: 3px;
+  gap: 4px;
   grid-template: auto / 1fr 1fr;
   scrollbar-width: thick;
 }
 .lista-vertical-3-column {
   display: grid;
-  gap: 3px;
+  gap: 4px;
   grid-template: auto / 1fr 1fr 1fr;
   scrollbar-width: thick;
 }

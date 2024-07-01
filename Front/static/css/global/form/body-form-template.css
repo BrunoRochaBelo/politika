@@ -6,7 +6,7 @@
     "header-form"
     "main-form"
     / minmax(350px, 1100px);
-  background: hsl(214, 10%, 8%);
+  background: var(--background-principal);
   padding-top: 20px;
 }
 /* container-areas */
@@ -20,7 +20,7 @@
   text-align: left;
   font-size: 12px;
   color: var(--txt-content-card);
-  background: hsl(214, 10%, 10%);
+  background: var(--form-background);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border: 1px solid hsl(214, 10%, 12%);
@@ -33,13 +33,13 @@
   grid-auto-flow: column;
   align-content: center;
   overflow-x: hidden;
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: hsl(214, 10%, 10%);
+  background: var(--form-background);
   border: 1px solid hsl(214, 10%, 12%);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border-top: none;
+  border-top: 1px solid var(--background-principal);
 }
 .main-form::-webkit-scrollbar {
   display: none;
@@ -70,33 +70,12 @@
   border-radius: 25px;
 }
 
-.main-form .area-template-sessao-int {
-  padding: 0px;
-  border-radius: 25px;
-}
-.main-form .area-template-sessao-int-header {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--txt-destaque);
-  padding: 30px;
-  border-radius: 25px;
-}
-.main-form .area-template-sessao-int-content {
-  border-radius: 0px;
-  border-radius: 25px;
-  box-shadow: none;
-}
-
-.main-form .cad-session.active {
-  background: var(--form-background);
-  border: 1px solid var(--card-fundo);
-}
-
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .body-form-template {
     padding: 0px;
     border: none;
+    background: var(--container-fundo);
   }
   .header-form {
     border: none;
@@ -105,11 +84,12 @@
     background: none;
   }
   .main-form {
-    padding: 10px 0px;
+    padding: 5px 0 0 0;
     overflow-y: auto;
     border: none;
     box-shadow: none;
     background: none;
+    border-top: 1px solid var(--background-principal);
   }
 
   .main-form .area-container-template,

@@ -33,8 +33,7 @@
   border: 1px solid transparent;
 }
 .home-header-user:hover {
-  box-shadow: 0 0 1px var(--btn-secundario-alt-destaque),
-    0 0 2px var(--btn-secundario-alt-destaque);
+  box-shadow: 0 0 1px var(--shadow-destaque), 0 0 2px var(--shadow-destaque);
   border: 1px solid var(--btn-principal-destaque);
 }
 

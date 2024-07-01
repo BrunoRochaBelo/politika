@@ -34,6 +34,7 @@
 /* Componentes/ areas */
 @import "./componentes/areas/area-template.css";
 @import "./componentes/areas/area-container-abas-template.css";
+@import "./componentes/areas/card-session.css";
 /* Componentes/ botoes */
 @import "./componentes/botoes/botoes.css";
 @import "./componentes/botoes/recuar-expandir.css";

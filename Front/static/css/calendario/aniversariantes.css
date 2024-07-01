@@ -62,11 +62,11 @@
 
 /* Estilos quando visível */
 .area-template-sessao-int.area-aniversariantes.visible {
-  filter: none; /* Desativa o filtro de hover */
+  filter: none;
 }
 
 .area-template-sessao-int.area-aniversariantes.visible:hover {
-  filter: none; /* Desativa o filtro de hover quando visível */
+  filter: none;
 }
 
 .area-template-sessao-int.area-aniversariantes.visible
@@ -74,7 +74,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-bottom: 10px;
-  color: var(--btn-filtro-select-text);
+  color: var(--btn-filtro-select-txt);
 }
 
 .area-template-sessao-int.area-aniversariantes

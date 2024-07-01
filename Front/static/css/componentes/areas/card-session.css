@@ -1,0 +1,108 @@
+.session {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+.session.active {
+  height: auto;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* Cards das Sessões */
+.cad-session {
+  position: relative;
+  min-height: 60px;
+  border-radius: 23px;
+  background: var(--card-fundo);
+  padding: 12px 15px;
+  border: 1px solid var(--card-fundo);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, padding 0.3s ease,
+    box-shadow 0.3s ease, margin 0.3s ease;
+  margin: 0 10px;
+}
+.cad-session:hover {
+  filter: brightness(1.2);
+}
+.cad-session.active {
+  background: var(--cor-s4);
+  border: 1px solid var(--cor-s3);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.15);
+  padding: 12px 10px;
+  margin: 0 7px;
+}
+.cad-session.active:hover {
+  filter: none !important;
+}
+.cad-session:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+.cad-session.active .tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+/* Estilos complementares - area-template-sessao */
+.cad-session.active .area-template-sessao-int {
+  box-shadow: none;
+  padding: 0 3px;
+  border-radius: 0;
+}
+.area-template-sessao-int-header.active-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--btn-filtro-select-txt);
+  padding: 12px 15px 12px 10px;
+}
+.area-template-sessao-int-header a {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  color: var(--txt-titulo-card);
+  text-align: start;
+}
+.cad-session.active > .area-template-sessao-int-content {
+  box-shadow: none;
+  padding: 10px 0;
+  border-radius: 0;
+}
+
+/* Estilos para a SETA */
+.arrow {
+  border: solid var(--cor-p3);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  transition: transform 0.3s ease;
+  position: absolute;
+  right: 5px;
+}
+.arrow.down {
+  transform: rotate(45deg);
+}
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+/* Responsivo */
+@media only screen and (max-width: 900px) {
+  .cad-session:hover {
+    filter: none;
+  }
+  .cad-session:hover .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

@@ -63,7 +63,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       button.innerHTML = "X";
       button.style.color = "var(--txt-destaque)";
       mainSidenav.style.height = "auto";
-      area.style.background = "var(--fundo-modal)";
+      area.style.background = "var(--modal-fundo)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida

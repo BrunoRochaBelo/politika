@@ -21,7 +21,7 @@
   text-align: center;
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
   color: var(--btn-filtro-txt);
   cursor: pointer;
   background: var(--btn-filtro);
@@ -30,9 +30,9 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .filtro-visualize {
-  color: var(--btn-filtro-select-text) !important;
+  color: var(--btn-filtro-select-txt) !important;
   background: var(--btn-filtro-select) !important;
-  border-radius: 5px !important;
+  border-radius: 7px !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .nav-calendar .tarefa {
@@ -43,7 +43,7 @@
 }
 .filtro-tarefa:hover {
   filter: brightness(1.2);
-  border-radius: 5px !important;
+  border-radius: 7px !important;
 }
 .area-tarefas .lista-vertical-cards {
   gap: 4px;
