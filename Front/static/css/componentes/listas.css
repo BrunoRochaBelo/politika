@@ -2,7 +2,7 @@
 .lista-vertical {
   display: grid;
   grid-auto-flow: row;
-  gap: 20px;
+  gap: 30px;
   scrollbar-width: thick;
 }
 .lista-vertical-alt {
@@ -11,7 +11,7 @@
   background: transparent;
   border-radius: 25px;
   scrollbar-width: thick;
-  gap: 12px;
+  gap: 15px;
 }
 .lista-vertical-cards {
   display: grid;
@@ -20,14 +20,14 @@
   border-radius: 23px;
   gap: 2px;
   overflow: hidden;
-
   scrollbar-width: thick;
+  padding: 5px 10px;
 }
 .lista-vertical-fil {
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  gap: 10px 0px;
+  gap: 30px 0px;
   scrollbar-width: thick;
 }
 .lista-vertical-2-column {
@@ -57,6 +57,7 @@
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
+  padding: 5px 10px;
 }
 
 .lista-select {

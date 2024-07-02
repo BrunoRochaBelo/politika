@@ -6,14 +6,14 @@
 .btn-recuar-expandir:hover,
 .btn-recuar-expandir:active {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 250;
   color: var(--btn-filtro-alt-txt);
   background: var(--btn-filtro-alt);
-  border-radius: 40px;
+  border-radius: 25px;
   padding: 3px 7px;
   cursor: pointer;
   border: 1px solid var(--btn-filtro-alt);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
   justify-self: end;
 }
 
@@ -22,6 +22,7 @@
   background: transparent;
   border: 1px solid transparent;
   color: var(--cor-p3);
+  border-radius: 25px;
   box-shadow: none;
   font-size: 11px;
   font-weight: 300;
@@ -38,32 +39,21 @@
   border-radius: 25%;
 }
 .sessao-interna-template-header .btn-recuar-expandir.up::after {
-  border-top: none; /* Remover a seta para baixo */
-  border-bottom: 5px solid var(--cor-p3); /* Adicionar a seta para cima */
+  border-top: none;
+  border-bottom: 5px solid var(--cor-p3);
 }
 
 /* Estilo do botão que exibe os aniversariantes */
 .btn-recuar-expandir-aniver {
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  color: var(--cor-p3);
-  background-color: transparent;
-  padding: 3px 7px;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-.btn-recuar-expandir-aniver {
   display: block;
   justify-self: end;
-}
-.btn-recuar-expandir-aniver {
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.05em;
   color: var(--cor-p3);
   background-color: transparent;
   padding: 3px 7px;
+  border-radius: 25px;
   cursor: pointer;
   border: 2px solid transparent;
 }
@@ -71,7 +61,7 @@
   background-color: darken(var(--container-fundo), 10%);
   color: var(--cor-p3);
   border-color: var(--cor-p3);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
 }
 
 /* RESPONSIVO */

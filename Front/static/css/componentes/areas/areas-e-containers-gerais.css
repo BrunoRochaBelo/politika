@@ -91,7 +91,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 5px;
+  padding: 0px;
   background: transparent;
 }
 .area-interna-containerContent-template-content {
@@ -119,8 +119,6 @@
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 23px;
-  padding: 10px;
-  gap: 5px;
   box-shadow: none;
   grid:
     "sessao-interna-template-header" auto
@@ -135,7 +133,7 @@
   justify-content: stretch;
   font-size: 14px;
   font-weight: 400;
-  padding: 10px;
+  padding: 10px 20px;
   text-align: left;
   color: var(--txt-subtitulo);
   border-radius: 0px;
@@ -172,7 +170,6 @@
     padding: 3px 0;
     border-radius: 25px;
     overflow: hidden;
-    z-index: 2004; /* Garante que o modal apareça acima do overlay */
   }
   .container-filtros-template-header {
     grid-area: container-filtros-template-header;
@@ -245,7 +242,7 @@
   .area-interna-containerContent-template-header {
     grid-area: area-interna-containerContent-template-header;
     background: transparent;
-    padding: 0px 10px;
+    padding: 0px;
     border-radius: 0px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -269,14 +266,10 @@
   }
 
   /* Area Template Sessão Interna */
-  .sessao-interna-template {
-    padding: 10px;
-    gap: 5px;
-  }
   .sessao-interna-template-header {
     font-size: 14px;
     font-weight: 300;
-    padding: 10px;
+    padding: 10px 20px;
   }
   .sessao-interna-template-header h2 {
     font-size: 13px;

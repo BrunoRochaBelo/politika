@@ -84,7 +84,7 @@ legend {
 .campo input:hover,
 .campo select:hover,
 .campo textarea:hover {
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
   border: 1px solid var(--btn-principal-destaque);
 }
 
@@ -97,7 +97,7 @@ legend {
 .campo textarea:focus {
   outline: none;
   background: var(--input-bg-filled);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
   border: 1px solid var(--btn-principal-destaque);
 }
 
@@ -165,7 +165,7 @@ label + .form-checkbox:after {
   border-radius: 10px;
   background: var(--input-icon);
   transition: left 0.2s;
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
 }
 
 label + .form-checkbox:checked:after {
@@ -211,7 +211,7 @@ form span {
 .botoes .btn-outline-principal,
 .botoes .btn-principal {
   width: 30%;
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator,
@@ -332,6 +332,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .botoes .btn-principal {
     width: auto;
     margin: 0px 10px 10px 10px;
-    box-shadow: var(--sombra-moderada);
+    box-shadow: var(--sombra-leve);
   }
 }

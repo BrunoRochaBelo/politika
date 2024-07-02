@@ -274,7 +274,7 @@
   border-radius: 5px;
 }
 .modal-despachar-pleito-salvar .btn-outline-principal:hover {
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
   border: 1px solid var(--txt-titulo-card);
 }
 .modal-despachar-pleito-salvar .btn-principal:hover {

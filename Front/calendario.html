@@ -257,7 +257,7 @@
                             <div class="session" id="sessao2">
                               <ul class="lista-vertical">
                                 <li class="sessao-interna-template">
-                                  <h2 class="sessao-interna-template-header">09h:00</h2>
+                                  <h2 class="sessao-interna-template-header"><b>09h:00</b></h2>
                                   <div class="sessao-interna-template-content">
                                     <ul class=" lista-vertical-cards">
                                       <li>
@@ -306,7 +306,7 @@
                                   </div>
                                 </li>
                                 <li class="sessao-interna-template">
-                                  <h2 class="sessao-interna-template-header">10h:00</h2>
+                                  <h2 class="sessao-interna-template-header"><b>10h:00</b></h2>
                                   <div class="sessao-interna-template-content">
                                     <ul class=" lista-vertical-cards">
                                       <li>
@@ -334,7 +334,7 @@
                                   </div>
                                 </li>
                                 <li class="sessao-interna-template">
-                                  <h2 class="sessao-interna-template-header">11h:00</h2>
+                                  <h2 class="sessao-interna-template-header"><b>11h:00</b></h2>
                                   <div class="sessao-interna-template-content">
                                     <ul class=" lista-vertical-cards">
                                       <li>
@@ -383,7 +383,7 @@
                                   </div>
                                 </li>
                                 <li class="sessao-interna-template">
-                                  <h2 class="sessao-interna-template-header">12h:00</h2>
+                                  <h2 class="sessao-interna-template-header"><b>12h:00</b></h2>
                                   <div class="sessao-interna-template-content">
                                     <ul class=" lista-vertical-cards">
                                       <li>
@@ -396,7 +396,7 @@
                                   </div>
                                 </li>
                                 <li class="sessao-interna-template">
-                                  <h2 class="sessao-interna-template-header">13h:00</h2>
+                                  <h2 class="sessao-interna-template-header"><b>13h:00</b></h2>
                                   <div class="sessao-interna-template-content">
                                     <ul class=" lista-vertical-cards">
                                       <li>
@@ -461,7 +461,7 @@
                             <div class="session" id="sessao3">
                               <ul class="lista-vertical-alt">
                                 <li class="sessao-interna-template">
-                                  <h2 class="sessao-interna-template-header">07h:00</h2>
+                                  <h2 class="sessao-interna-template-header"><b>07h:00</b></h2>
                                   <div class="sessao-interna-template-content">
                                     <ul class=" lista-vertical-cards">
                                       <li>
@@ -1252,49 +1252,51 @@
                   </div>
                 </li>
                 <li class="sessao-interna-template area-tarefas">
-                  <ul class="sessao-interna-template-content lista-vertical-cards">
-                    <li>
-                      <a class="card-m tarefa-medium-card" href="#">
-                        <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                        <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
-                          <div class="marcador-item cor-marc3">
-                            <p><strong>Marcador 1</strong></p>
+                  <div class="sessao-interna-template-content">
+                    <ul class="lista-vertical-cards">
+                      <li>
+                        <a class="card-m tarefa-medium-card" href="#">
+                          <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                          <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                            <div class="marcador-item cor-marc3">
+                              <p><strong>Marcador 1</strong></p>
+                            </div>
                           </div>
-                        </div>
-                        <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                        <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                        <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                        <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
-                          <p>Descrição da Tarefa</p>
-                        </div>
-                        <div class="tarefa-medium-card-editar">
-                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                        </div>
-                        <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
-                      </a>
+                          <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                          <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                          <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                          <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                            <p>Descrição da Tarefa</p>
+                          </div>
+                          <div class="tarefa-medium-card-editar">
+                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                          </div>
+                          <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
+                        </a>
 
-                    </li>
-                    <li>
-                      <a class="card-m tarefa-medium-card" href="#">
-                        <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                        <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
-                          <div class="marcador-item cor-marc3">
-                            <p><strong>Marcador 1</strong></p>
+                      </li>
+                      <li>
+                        <a class="card-m tarefa-medium-card" href="#">
+                          <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                          <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                            <div class="marcador-item cor-marc3">
+                              <p><strong>Marcador 1</strong></p>
+                            </div>
                           </div>
-                        </div>
-                        <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
-                        <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
-                        <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
-                        <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
-                          <p>Descrição da Tarefa</p>
-                        </div>
-                        <div class="tarefa-medium-card-editar">
-                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
-                        </div>
-                        <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
-                      </a>
-                    </li>
-                  </ul>
+                          <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                          <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                          <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                          <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                            <p>Descrição da Tarefa</p>
+                          </div>
+                          <div class="tarefa-medium-card-editar">
+                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                          </div>
+                          <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li class="list-last-child"><br></li>
               </ul>
