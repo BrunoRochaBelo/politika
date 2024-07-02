@@ -51,7 +51,7 @@
 }
 .modal-concluir-pleito-tiposolici {
   grid-area: modal-concluir-pleito-tiposolici;
-  border-left: 4px solid var(--cor-p3);
+  border-left: 4px solid var(--cor-p2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -238,7 +238,7 @@
   border-radius: 5px;
 }
 .modal-concluir-pleito-salvar .btn-outline-principal:hover {
-  box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff;
+  box-shadow: var(--sombra-moderada);
   border: 1px solid var(--txt-titulo-card);
 }
 .modal-concluir-pleito-salvar .btn-principal:hover {

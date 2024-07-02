@@ -3,7 +3,7 @@
 .card-xs {
   min-height: 30px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 12px 15px;
   border: none;
@@ -13,7 +13,7 @@
 .card-s {
   min-height: 35px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 12px 15px;
   border: none;
@@ -23,7 +23,7 @@
 .card-m {
   min-height: 50px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 12px 15px;
   border: none;
@@ -33,7 +33,7 @@
 .card-l {
   min-height: 150px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 12px 15px;
   gap: 0.625rem;
@@ -47,7 +47,7 @@
   width: 135px;
   height: 100px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   order: none;
   box-sizing: border-box;
@@ -58,7 +58,7 @@
   min-width: 112px;
   min-height: 95px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   order: none;
   box-sizing: border-box;
@@ -70,7 +70,7 @@
   height: 190px;
   min-height: 170px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   border: none;
   box-sizing: border-box;
@@ -84,7 +84,7 @@
   width: 100%;
   padding: 0.3rem;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: var(--font-light);
   border: none;
@@ -94,7 +94,7 @@
   border-radius: 6px;
   width: 100%;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: var(--font-medium-regular);
   border: none;
@@ -103,7 +103,7 @@
 .card-select-m {
   width: 100%;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   padding: 12px 15px;
   border-radius: 6px;
   border: none;
@@ -122,7 +122,7 @@
   gap: 10px;
   min-height: 50px;
   background: var(--card-fundo);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 20px 15px 10px 15px;
   border: none;
@@ -160,7 +160,7 @@
 .container-filtros-template-content .card-select-m {
   background: var(--btn-filtro) !important;
   color: var(--txt-subtitulo) !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   border: none;
   box-sizing: border-box;
   border-radius: 5px;
@@ -219,7 +219,7 @@
   .card-select-s,
   .card-select-m {
     border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--sombra-moderada);
     border-radius: 6px;
   }
 }

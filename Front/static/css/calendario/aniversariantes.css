@@ -8,7 +8,7 @@
   letter-spacing: 0.5px;
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--sombra-moderada);
 }
 .aniversario-small-card-editar .btn-outline-principal:hover {
   border: 1px solid var(--btn-principal-alt-destaque);
@@ -36,7 +36,7 @@
   margin: 0px 10px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
 }
 
 /* Hover efeito padrão */

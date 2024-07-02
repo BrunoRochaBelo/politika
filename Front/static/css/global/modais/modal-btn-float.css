@@ -23,7 +23,7 @@
   min-width: 140px;
   background: var(--card-fundo);
   color: var(--txt-content-card);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--sombra-moderada);
   transform: scale(0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -77,8 +77,8 @@
   border: none;
   cursor: pointer;
   background: var(--btn-principal);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  color: var(--txt-titulo);
+  box-shadow: var(--sombra-moderada);
+  color: var(--btn-principal-txt);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,8 +111,8 @@
     border: none;
     cursor: pointer;
     background: var(--btn-principal);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    color: var(--txt-titulo);
+    box-shadow: var(--sombra-moderada);
+    color: var(--btn-principal-txt);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -34,7 +34,7 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px 10px 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-moderada);
   background: var(--form-background);
   border: 1px solid hsl(214, 10%, 12%);
   border-bottom-left-radius: 25px;

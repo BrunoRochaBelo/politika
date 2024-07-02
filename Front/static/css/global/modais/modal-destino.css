@@ -105,7 +105,7 @@
   font-weight: 400;
   background: var(--card-fundo);
   border: 1px solid transparent;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
 }
 .search-input-dest::placeholder {
   color: var(--txt-titulo-card);
@@ -212,6 +212,6 @@
     font-weight: 300;
     background: var(--card-fundo);
     border: 1px solid transparent;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--sombra-moderada);
   }
 }

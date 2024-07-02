@@ -63,8 +63,8 @@
     display: inline-block;
     background: linear-gradient(
       135deg,
-      var(--txt-destaque),
-      var(--btn-principal-alt)
+      hsl(260, 100%, 66%),
+      hsl(182, 73%, 63%)
     );
     -webkit-background-clip: text;
     background-clip: text;

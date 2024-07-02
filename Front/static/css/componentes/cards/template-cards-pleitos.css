@@ -21,7 +21,7 @@
 }
 .pleitos-medium-card-tiposolici {
   grid-area: pleitos-medium-card-tiposolici;
-  border-left: 4px solid var(--cor-p3);
+  border-left: 4px solid var(--cor-p2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;

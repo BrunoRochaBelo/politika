@@ -15,7 +15,7 @@
 
 .tarefa-small-card-title {
   grid-area: tarefa-small-card-title;
-  border-left: 4px solid var(--cor-p3);
+  border-left: 4px solid var(--cor-p2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -168,7 +168,7 @@
 
 .tarefa-medium-card-title {
   grid-area: tarefa-medium-card-title;
-  border-left: 4px solid var(--cor-p3);
+  border-left: 4px solid var(--cor-p2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;

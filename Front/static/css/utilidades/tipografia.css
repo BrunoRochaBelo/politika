@@ -1,4 +1,6 @@
 :root {
+  --vh: 1vh;
+
   /* Tamanhos em rem para a fonte Roboto */
   --font-padrao: 1rem;
   --font-light: 0.75rem;

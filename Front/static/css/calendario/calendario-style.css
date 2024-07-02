@@ -8,7 +8,7 @@
   letter-spacing: 0.5px;
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--sombra-moderada);
 }
 .calendario-large-card-editar .btn-outline-principal:hover,
 .calendario-small-card-editar .btn-outline-principal:hover {
@@ -34,14 +34,14 @@
   border-radius: 5px;
   background: var(--btn-filtro);
   border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
 }
 .nav-calendar .item2 {
   justify-self: end;
   align-self: center;
   padding: 5px 7px;
   margin-right: 3px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
 }
 .nav-calendar .item3 {
   padding: 3px 0;
@@ -74,7 +74,7 @@
 }
 .hoje:hover {
   filter: brightness(1.2);
-  box-shadow: 0 0 1px var(--btn-filtro-select);
+  box-shadow: var(--sombra-moderada);
 }
 
 .nav-semana {
@@ -99,13 +99,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
 }
 .dia-visualize {
   color: var(--btn-filtro-select-txt) !important;
   background: var(--btn-filtro-select) !important;
   border-radius: 50% !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
 }
 .dia-visible {
   display: block;

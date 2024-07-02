@@ -4,7 +4,7 @@
   background: var(--btn-principal);
   color: var(--btn-principal-txt);
   border: 1px solid var(--btn-principal);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-moderada);
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -17,7 +17,7 @@
 .btn-principal:hover {
   background: var(--btn-principal-hover);
   border-color: var(--btn-principal-hover);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--sombra-moderada);
 }
 .btn-principal-destaque {
   background: var(--btn-principal-destaque);
@@ -37,7 +37,7 @@
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-text);
   border: 1px solid var(--btn-principal-alt);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-moderada);
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -50,7 +50,7 @@
 .btn-principal-alt:hover {
   background: var(--btn-principal-alt-hover);
   border-color: var(--btn-principal-alt-hover);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--sombra-moderada);
 }
 .btn-principal-alt-destaque {
   background: var(--btn-principal-alt-destaque);
@@ -84,7 +84,7 @@
 .btn-outline-principal:hover {
   background: var(--btn-principal);
   color: var(--btn-principal-txt);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-moderada);
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -93,25 +93,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-}
-.btn-outline-secundario {
-  background: transparent;
-  color: var(--btn-secundario-alt);
-  border: 1px solid var(--btn-secundario-alt);
-  box-shadow: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.btn-outline-secundario:hover {
-  background: var(--btn-secundario-alt);
-  color: var(--btn-secundario-alt-txt);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para os botões da area de filtros */
@@ -121,7 +102,7 @@
   background: var(--btn-filtro) !important;
   color: var(--txt-subtitulo) !important;
   border: 1px solid transparent;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--sombra-moderada);
   width: 100%;
 }
 .container-filtros-template-content .btn-principal-alt:hover,

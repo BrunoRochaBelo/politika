@@ -61,7 +61,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     } else {
       areaContent.style.maxHeight = areaContent.scrollHeight + "px";
       button.innerHTML = "X";
-      button.style.color = "var(--txt-destaque)";
+      button.style.color = "var(--btn-filtro-alt-txt)";
       mainSidenav.style.height = "auto";
       area.style.background = "var(--modal-fundo)";
       overlay.style.display = "block";
