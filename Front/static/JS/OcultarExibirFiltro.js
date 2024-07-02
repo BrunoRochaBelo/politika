@@ -18,11 +18,11 @@ function createOverlay() {
 
   // Adiciona um evento de clique ao overlay
   overlay.addEventListener("click", function () {
-    var areaContent = selectElement(".area-container-filtros-template-content");
-    var area = selectElement(".area-container-filtros-template");
+    var areaContent = selectElement(".container-filtros-template-content");
+    var area = selectElement(".container-filtros-template");
     var button = selectElement(".btn-recuar-expandir");
     var mainSidenav = selectElement(".main-sidenav");
-    var areaHeader = selectElement(".area-container-filtros-template-header");
+    var areaHeader = selectElement(".container-filtros-template-header");
 
     // Chama a função toggleVisibility para fechar o overlay
     toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
@@ -93,11 +93,11 @@ window.addEventListener("resize", function () {
 });
 
 function toggleOcultarExibirFiltro() {
-  var areaContent = selectElement(".area-container-filtros-template-content");
-  var area = selectElement(".area-container-filtros-template");
+  var areaContent = selectElement(".container-filtros-template-content");
+  var area = selectElement(".container-filtros-template");
   var button = selectElement(".btn-recuar-expandir");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(".area-container-filtros-template-header");
+  var areaHeader = selectElement(".container-filtros-template-header");
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

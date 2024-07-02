@@ -22,7 +22,7 @@
 
 .despesas-medium-card-natureza {
   grid-area: despesas-medium-card-natureza;
-  border-left: 4px solid var(--card-detalhe);
+  border-left: 4px solid var(--cor-p3);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;

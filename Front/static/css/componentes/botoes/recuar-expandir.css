@@ -12,14 +12,13 @@
   border-radius: 40px;
   padding: 3px 7px;
   cursor: pointer;
-  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 1px solid var(--btn-secundario);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   justify-self: end;
 }
 
 /* Botão alternativo usado para expandir "indicadores e estatisticas" */
-.area-template-sessao-int-header .btn-recuar-expandir {
+.sessao-interna-template-header .btn-recuar-expandir {
   background: transparent;
   border: 1px solid transparent;
   color: var(--cor-p2);
@@ -27,7 +26,7 @@
   font-size: 11px;
   font-weight: 300;
 }
-.area-template-sessao-int-header .btn-recuar-expandir::after {
+.sessao-interna-template-header .btn-recuar-expandir::after {
   content: "";
   display: inline-block;
   width: 0;
@@ -38,7 +37,7 @@
   margin-left: 5px;
   border-radius: 25%;
 }
-.area-template-sessao-int-header .btn-recuar-expandir.up::after {
+.sessao-interna-template-header .btn-recuar-expandir.up::after {
   border-top: none; /* Remover a seta para baixo */
   border-bottom: 5px solid var(--cor-p2); /* Adicionar a seta para cima */
 }
@@ -52,7 +51,6 @@
   background-color: transparent;
   padding: 3px 7px;
   cursor: pointer;
-  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-aniver {
@@ -67,7 +65,6 @@
   background-color: transparent;
   padding: 3px 7px;
   cursor: pointer;
-  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-aniver:active {

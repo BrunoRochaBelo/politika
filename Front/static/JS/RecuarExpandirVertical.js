@@ -1,7 +1,7 @@
 function toggleRecuarExpandirVertical() {
   // Obtenha o elemento
   var element = document.querySelector(
-    ".area-container-compromisso-hoje-template-content"
+    ".container-compromisso-hoje-template-content"
   );
 
   // Seleciona o botão pelo ID

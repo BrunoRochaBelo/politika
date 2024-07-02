@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   contentArea.addEventListener("scroll", function () {
     const scrollTop = contentArea.scrollTop;
-    const maxScroll = 30; // Ajuste este valor conforme necessário
+    const maxScroll = 0;
 
     // Calcula a opacidade baseada na rolagem
     const opacity = Math.max(0, Math.min(1, 1 - scrollTop / maxScroll));

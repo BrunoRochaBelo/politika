@@ -32,7 +32,7 @@ function exibirDetalhesEvento(event) {
 
 function ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall) {
   const areaTemplateContent = document.querySelector(
-    ".area-container-compromisso-hoje-template-content"
+    ".container-compromisso-hoje-template-content"
   );
   const cardOffsetTop = cardEventoSmall.offsetTop;
   const cardHeight = cardEventoSmall.offsetHeight;
@@ -59,7 +59,7 @@ function ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall) {
       newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
     }
 
-    // Ajustar a posição de scroll do area-container-template-content, se necessário
+    // Ajustar a posição de scroll do container-template-content, se necessário
     if (newScrollTop !== undefined) {
       areaTemplateContent.scrollTop = newScrollTop;
     }
@@ -124,7 +124,7 @@ function exibirEditar(event) {
 
 function ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge) {
   const areaTemplateContent = document.querySelector(
-    ".area-container-abas-template-content"
+    ".container-abas-template-content"
   );
   const cardOffsetTop = cardEventoLarge.offsetTop;
   const cardHeight = cardEventoLarge.offsetHeight;

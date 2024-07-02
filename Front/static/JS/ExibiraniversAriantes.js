@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var aniversariantesHeaders = document.querySelectorAll(
-    ".area-template-sessao-int-header"
+    ".sessao-interna-template-header"
   );
 
   aniversariantesHeaders.forEach(function (header) {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var aniversariantesContainer = this.nextElementSibling;
       var button = this.querySelector(".btn-recuar-expandir-aniver");
       var headerElement = this.closest(
-        ".area-template-sessao-int.area-aniversariantes"
+        ".sessao-interna-template.area-aniversariantes"
       );
 
       // Alterna a visibilidade do contêiner

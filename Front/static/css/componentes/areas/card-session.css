@@ -52,18 +52,18 @@
 }
 
 /* Estilos complementares - area-template-sessao */
-.cad-session.active .area-template-sessao-int {
+.cad-session.active .sessao-interna-template {
   box-shadow: none;
   padding: 0 3px;
   border-radius: 0;
 }
-.area-template-sessao-int-header.active-header {
+.sessao-interna-template-header.active-header {
   font-size: 18px;
   font-weight: 600;
   color: var(--btn-filtro-select-txt);
   padding: 12px 15px 12px 10px;
 }
-.area-template-sessao-int-header a {
+.sessao-interna-template-header a {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -73,7 +73,7 @@
   color: var(--txt-titulo-card);
   text-align: start;
 }
-.cad-session.active > .area-template-sessao-int-content {
+.cad-session.active > .sessao-interna-template-content {
   box-shadow: none;
   padding: 10px 0;
   border-radius: 0;

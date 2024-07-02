@@ -34,7 +34,7 @@ function exibirDetalhesTarefaPequena(event) {
 // Função para ajustar o scroll para centralizar o card de tarefa pequeno
 function ajustarScrollParaCentralizarCardTarefaSmall(cardTarefaSmall) {
   const areaTemplateContent = document.querySelector(
-    ".area-container-compromisso-hoje-template-content"
+    ".container-compromisso-hoje-template-content"
   );
   const cardOffsetTop = cardTarefaSmall.offsetTop;
   const cardHeight = cardTarefaSmall.offsetHeight;
@@ -61,7 +61,7 @@ function ajustarScrollParaCentralizarCardTarefaSmall(cardTarefaSmall) {
       newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
     }
 
-    // Ajustar a posição de scroll do area-container-template-content, se necessário
+    // Ajustar a posição de scroll do container-template-content, se necessário
     if (newScrollTop !== undefined) {
       areaTemplateContent.scrollTop = newScrollTop;
     }
@@ -136,7 +136,7 @@ function exibirDetalhesTarefa(event) {
 // Função para ajustar o scroll para centralizar o card de tarefa medio
 function ajustarScrollParaCentralizarCardTarefaMedium(cardTarefaMedium) {
   const areaTemplateContent = document.querySelector(
-    ".area-container-compromisso-hoje-template-content"
+    ".container-compromisso-hoje-template-content"
   );
   const cardOffsetTop = cardTarefaMedium.offsetTop;
   const cardHeight = cardTarefaMedium.offsetHeight;
@@ -163,7 +163,7 @@ function ajustarScrollParaCentralizarCardTarefaMedium(cardTarefaMedium) {
       newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
     }
 
-    // Ajustar a posição de scroll do area-container-template-content, se necessário
+    // Ajustar a posição de scroll do container-template-content, se necessário
     if (newScrollTop !== undefined) {
       areaTemplateContent.scrollTop = newScrollTop;
     }

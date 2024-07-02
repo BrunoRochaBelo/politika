@@ -19,13 +19,13 @@ function createOverlay() {
   // Adiciona um evento de clique ao overlay
   overlay.addEventListener("click", function () {
     var areaContent = selectElement(
-      ".area-container-compromisso-hoje-template-content"
+      ".container-compromisso-hoje-template-content"
     );
-    var area = selectElement(".area-container-compromisso-hoje-template");
+    var area = selectElement(".container-compromisso-hoje-template");
     var button = selectElement(".btn-suaAgenda");
     var mainSidenav = selectElement(".main-sidenav");
     var areaHeader = selectElement(
-      ".area-container-compromisso-hoje-template-header"
+      ".container-compromisso-hoje-template-header"
     );
 
     // Chama a função toggleVisibility para fechar o overlay
@@ -86,14 +86,12 @@ window.addEventListener("resize", function () {
 
 function OcultarExibirAgenda() {
   var areaContent = selectElement(
-    ".area-container-compromisso-hoje-template-content"
+    ".container-compromisso-hoje-template-content"
   );
-  var area = selectElement(".area-container-compromisso-hoje-template");
+  var area = selectElement(".container-compromisso-hoje-template");
   var button = selectElement(".btn-suaAgenda");
   var mainSidenav = selectElement(".main-sidenav");
-  var areaHeader = selectElement(
-    ".area-container-compromisso-hoje-template-header"
-  );
+  var areaHeader = selectElement(".container-compromisso-hoje-template-header");
 
   toggleVisibility(areaContent, button, area, mainSidenav, areaHeader);
 

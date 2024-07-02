@@ -50,7 +50,7 @@
 }
 .modal-despachar-pleito-tiposolici {
   grid-area: modal-despachar-pleito-tiposolici;
-  border-left: 4px solid var(--card-aberto-detalhe);
+  border-left: 4px solid var(--cor-p3);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;

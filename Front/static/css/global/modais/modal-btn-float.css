@@ -96,7 +96,7 @@
 @media only screen and (max-width: 900px) {
   .modal-btn-floating-content {
     bottom: 140px;
-    right: 93px;
+    right: 85px;
     transition: bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
       right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
@@ -104,7 +104,7 @@
   /* Botão do modal */
   .floatingButton {
     bottom: 71px;
-    right: 23px;
+    right: 15px;
     width: 65px;
     height: 65px;
     border-radius: 50px;

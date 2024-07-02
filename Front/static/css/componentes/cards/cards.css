@@ -148,16 +148,16 @@
 
 /* Estilos para os cards da area de filtros e compromisso para hoje */
 /* Filtro  */
-.area-container-filtros-template-content .card-xs,
-.area-container-filtros-template-content .card-s,
-.area-container-filtros-template-content .card-m,
-.area-container-filtros-template-content .card-l,
-.area-container-filtros-template-content .card-tmf-s,
-.area-container-filtros-template-content .card-tmf-m,
-.area-container-filtros-template-content .card-tmf-l,
-.area-container-filtros-template-content .card-select-xs,
-.area-container-filtros-template-content .card-select-s,
-.area-container-filtros-template-content .card-select-m {
+.container-filtros-template-content .card-xs,
+.container-filtros-template-content .card-s,
+.container-filtros-template-content .card-m,
+.container-filtros-template-content .card-l,
+.container-filtros-template-content .card-tmf-s,
+.container-filtros-template-content .card-tmf-m,
+.container-filtros-template-content .card-tmf-l,
+.container-filtros-template-content .card-select-xs,
+.container-filtros-template-content .card-select-s,
+.container-filtros-template-content .card-select-m {
   background: var(--btn-filtro) !important;
   color: var(--txt-subtitulo) !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);

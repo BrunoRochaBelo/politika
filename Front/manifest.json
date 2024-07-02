@@ -10,7 +10,7 @@
   "start_url": "/index.html",
   "icons": [
     {
-      "src": "./static/imagens/logo/logo.png",
+      "src": "./static/imagens/logo/Logo.png",
       "sizes": "192x175",
       "type": "image/png"
     },

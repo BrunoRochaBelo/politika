@@ -13,7 +13,7 @@
     /0.5fr 0.5fr 1fr 32px;
   transition: max-height 0.25s ease-out, transform 0.25s ease-out,
     height 0.25s ease-out;
-  max-height: 100px; /* Ajuste conforme necessário */
+  max-height: 100px;
 }
 
 .aniversario-small-card-id {

@@ -15,7 +15,7 @@
 
 .tarefa-small-card-title {
   grid-area: tarefa-small-card-title;
-  border-left: 4px solid var(--card-detalhe);
+  border-left: 4px solid var(--cor-p3);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -104,7 +104,7 @@
   transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
     height 0.25s ease-in;
-  max-height: 300px; /* Ajuste conforme necessário */
+  max-height: 300px;
 }
 
 .tarefa-small-card-desc.exibirDetalheTarefa {
@@ -168,7 +168,7 @@
 
 .tarefa-medium-card-title {
   grid-area: tarefa-medium-card-title;
-  border-left: 4px solid var(--card-detalhe);
+  border-left: 4px solid var(--cor-p3);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -267,7 +267,7 @@
   transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
     height 0.25s ease-in;
-  max-height: 300px; /* Ajuste conforme necessário */
+  max-height: 300px;
 }
 
 .tarefa-medium-card-local.exibirDetalheTarefa,

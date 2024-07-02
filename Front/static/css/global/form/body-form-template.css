@@ -45,24 +45,24 @@
   display: none;
 }
 
-.main-form .area-container-template,
-.main-form .area-container-abas-template {
+.main-form .container-template,
+.main-form .container-abas-template {
   box-shadow: none;
   background: none;
   background: transparent;
   max-height: calc(var(--vh, 1vh) * 100 - 7rem);
   border-radius: 25px;
 }
-.main-form .area-container-template-header,
-.main-form .area-container-abas-template-header {
+.main-form .container-template-header,
+.main-form .container-abas-template-header {
   background: transparent;
   border: none;
   border-radius: 0px;
   border-radius: 25px;
   padding: 0;
 }
-.main-form .area-container-template-content,
-.main-form .area-container-abas-template-content {
+.main-form .container-template-content,
+.main-form .container-abas-template-content {
   box-shadow: none;
   background: transparent;
   border: none;
@@ -92,15 +92,15 @@
     border-top: 1px solid var(--background-principal);
   }
 
-  .main-form .area-container-template,
-  .main-form .area-container-abas-template {
+  .main-form .container-template,
+  .main-form .container-abas-template {
     box-shadow: none;
     background: none;
     background: transparent;
     max-height: calc(var(--vh, 1vh) * 100 - 6rem);
     border-radius: 25px;
   }
-  .main-form .area-container-abas-template-header {
+  .main-form .container-abas-template-header {
     justify-content: center;
   }
 

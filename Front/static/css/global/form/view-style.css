@@ -16,19 +16,19 @@
   border-radius: 25px;
 }
 
-.main-form-view .area-container-template,
-.main-form-view .area-container-abas-template {
+.main-form-view .container-template,
+.main-form-view .container-abas-template {
   max-height: calc(var(--vh, 1vh) * 100 - 3rem) !important;
   border-radius: 25px;
 }
-.main-form-view .area-container-template-header,
-.main-form-view .area-container-abas-template-header {
+.main-form-view .container-template-header,
+.main-form-view .container-abas-template-header {
   width: 100%;
   justify-content: stretch;
   gap: 0px;
 }
-.main-form-view .area-container-template-content,
-.main-form-view .area-container-abas-template-content {
+.main-form-view .container-template-content,
+.main-form-view .container-abas-template-content {
   box-shadow: none;
   background: transparent;
   border: none;
@@ -161,8 +161,8 @@
     padding: 0px;
   }
 
-  .main-form-view .area-container-template,
-  .main-form-view .area-container-abas-template {
+  .main-form-view .container-template,
+  .main-form-view .container-abas-template {
     box-shadow: none;
     background: none;
     border: none;

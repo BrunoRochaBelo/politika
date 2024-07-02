@@ -23,8 +23,8 @@
   </header>
 
   <main class="main">
-    <section class="area-container-abas-template content-form">
-      <nav class="area-container-abas-template-header header-form">
+    <section class="container-abas-template content-form">
+      <nav class="container-abas-template-header header-form">
         <img src="/static/imagens/foto-do-usuario.png" alt="">
         <ul id="navAba" class="nav">
           <li id="nav1" class="indicador-2"><a href="#" onclick="mostrarAba('aba1')">Campos obrigatórios</a></li>
@@ -32,7 +32,7 @@
           <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Info. Complementar</a></li>
         </ul>
       </nav>
-      <div class="area-container-abas-template-content ">
+      <div class="container-abas-template-content ">
         <form id="form" method="POST" class="form-contato" enctype="multipart/form-data">
           {{ form.csrf_token }}
           <div id="aba1" class="aba-template active">

@@ -37,11 +37,11 @@ async function changeSession(sessionNumber) {
   const cards = document.querySelectorAll(".cad-session");
   const selectedCard = cards[sessionNumber - 1]; // Assumindo que a ordem é a mesma
   const areaContent =
-    document.querySelector(".area-container-template-content") ||
-    document.querySelector(".area-container-abas-template-content");
+    document.querySelector(".container-template-content") ||
+    document.querySelector(".container-abas-template-content");
 
   const selectedHeader = selectedCard.querySelector(
-    ".area-template-sessao-int-header"
+    ".sessao-interna-template-header"
   );
   const selectedArrow = selectedHeader.querySelector(".arrow");
 
@@ -56,7 +56,7 @@ async function changeSession(sessionNumber) {
       if (session.classList.contains("active")) {
         session.classList.remove("active");
         const card = cards[index];
-        const header = card.querySelector(".area-template-sessao-int-header");
+        const header = card.querySelector(".sessao-interna-template-header");
         const arrow = header.querySelector(".arrow");
         header.classList.remove("active-header");
         arrow.classList.remove("up");
