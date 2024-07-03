@@ -63,7 +63,7 @@
     display: inline-block;
     background: linear-gradient(
       135deg,
-      hsl(260, 100%, 66%),
+      hsl(218, 100%, 66%),
       hsl(182, 73%, 63%)
     );
     -webkit-background-clip: text;

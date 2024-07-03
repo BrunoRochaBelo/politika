@@ -6,7 +6,7 @@
 .btn-recuar-expandir:hover,
 .btn-recuar-expandir:active {
   font-size: 14px;
-  font-weight: 250;
+  font-weight: 300;
   color: var(--btn-filtro-alt-txt);
   background: var(--btn-filtro-alt);
   border-radius: 25px;

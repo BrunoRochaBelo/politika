@@ -14,75 +14,77 @@
   <meta name="description" content="Novo Lembrete">
 </head>
 
-<body class="body-form-template">
-  <header class="header-form">
-    <h1>Novo Lembrete</h1>
-    <h1><a href="calendario.html" class="close">&times;</a></h1>
-  </header>
+<body class="body-form">
+  <div class="body-form-template">
+    <header class="header-form">
+      <h1>Novo Lembrete</h1>
+      <h1><a href="calendario.html" class="close">&times;</a></h1>
+    </header>
 
-  <main class="main-form">
-    <section class="container-template">
-      <div class="container-template-content">
-        <form id="form" class="form" enctype="multipart/form-data">
-          <div class="area-interna-containerContent-template">
-            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-              <fieldset>
-                <legend class="titulo-xl"></legend>
+    <main class="main-form">
+      <section class="container-template">
+        <div class="container-template-content">
+          <form id="form" class="form" enctype="multipart/form-data">
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <fieldset>
+                  <legend class="titulo-xl"></legend>
 
-                <div class="campo  form-tipo">
-                  <label for="tipo">Tipo:</label>
-                  <select id="tipo">
-                    <option value="lembrete">Lembrete</option>
-                    <!-- Adicione outras opções aqui -->
-                  </select>
-                </div>
-
-                <div class="campo">
-                  <label for="titulo">Título:</label>
-                  <input type="text" id="titulo" placeholder="Digite o título aqui">
-                </div>
-
-                <div class="campo">
-                  <label for="categoria">Categoria:</label>
-                  <select id="categoria">
-                    <option value="administracao" selected>Administração</option>
-                    <!-- Adicione outras opções aqui -->
-                  </select>
-                </div>
-
-                <div class="form-dataHora">
-                  <div class="campo">
-                    <label for="data">Data:</label>
-                    <input type="date" id="data" placeholder="dd/mm/aaaa">
+                  <div class="campo  form-tipo">
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo">
+                      <option value="lembrete">Lembrete</option>
+                      <!-- Adicione outras opções aqui -->
+                    </select>
                   </div>
 
                   <div class="campo">
-                    <label for="hora">Hora:</label>
-                    <input type="time" id="hora" placeholder="--:--">
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" placeholder="Digite o título aqui">
                   </div>
-                </div>
 
-                <div class="campo">
-                  <label for="anotacoes">Anotações:</label>
-                  <textarea class="form-textarea" id="anotacoes" placeholder="Digite suas anotações aqui"></textarea>
-                </div>
+                  <div class="campo">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria">
+                      <option value="administracao" selected>Administração</option>
+                      <!-- Adicione outras opções aqui -->
+                    </select>
+                  </div>
 
-                <div class="campo">
-                  <label for="acessoPrivado">Acesso privado</label>
-                  <input class="form-checkbox" type="checkbox" id="acessoPrivado">
-                </div>
+                  <div class="form-dataHora">
+                    <div class="campo">
+                      <label for="data">Data:</label>
+                      <input type="date" id="data" placeholder="dd/mm/aaaa">
+                    </div>
 
-                <div class="botoes">
+                    <div class="campo">
+                      <label for="hora">Hora:</label>
+                      <input type="time" id="hora" placeholder="--:--">
+                    </div>
+                  </div>
 
-                  <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
-                </div>
-              </fieldset>
+                  <div class="campo">
+                    <label for="anotacoes">Anotações:</label>
+                    <textarea class="form-textarea" id="anotacoes" placeholder="Digite suas anotações aqui"></textarea>
+                  </div>
+
+                  <div class="campo">
+                    <label for="acessoPrivado">Acesso privado</label>
+                    <input class="form-checkbox" type="checkbox" id="acessoPrivado">
+                  </div>
+
+                  <div class="botoes">
+
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                  </div>
+                </fieldset>
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 
 </html>

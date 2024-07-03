@@ -12,234 +12,235 @@
   <meta name="description" content="Contato">
 </head>
 
-<body class="body-form-template body-form-view">
-
-
-  <main class="main-form main-form-view">
-    <section class="container-template">
-      <div class="container-template-header">
-        <div class="card-info">
-          <div>
-            <a href="contatos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
-          </div>
-          <div class="campo-view">
-            <p>{{ nome_contato }}</p>
-          </div>
-          <div class="campo-view">
-            <p>{{ celular }}</p>
-          </div>
-          <div class="acoes">
-            <div class="campo-view acao-item">
-              <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+<body class="body-form ">
+  <div class="body-form-view-template">
+    <main class="main-form-view">
+      <section class="container-template">
+        <div class="container-template-header">
+          <div class="card-info">
+            <div>
+              <a href="contatos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
             </div>
-            <div class="campo-view acao-item">
-              <a href=""><img src="./static/imagens/icones/historico.svg" alt="Historico Icon"></a>
+            <div class="campo-view">
+              <p>{{ nome_contato }}</p>
             </div>
-            <div class="campo-view acao-item">
-              <a href=""><img src="./static/imagens/icones/phone.svg" alt="Phone Icon"></a>
+            <div class="campo-view">
+              <p>{{ celular }}</p>
+            </div>
+            <div class="acoes">
+              <div class="campo-view acao-item">
+                <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+              </div>
+              <div class="campo-view acao-item">
+                <a href=""><img src="./static/imagens/icones/historico.svg" alt="Historico Icon"></a>
+              </div>
+              <div class="campo-view acao-item">
+                <a href=""><img src="./static/imagens/icones/phone.svg" alt="Phone Icon"></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="container-template-content">
-        <form id="form" class="form" enctype="multipart/form-data">
-          <ul class="lista-vertical-alt">
-            <li class="cad-session sessao-interna-template">
-              <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(1)">👤 Identificação<span class="arrow down"></span></a></h2>
-              <div class="sessao-interna-template-content">
-                <div class="session" id="sessao1">
-                  <fieldset class="fieldset-view">
-                    <legend class="titulo-xl"></legend>
+        <div class="container-template-content">
+          <form id="form" class="form" enctype="multipart/form-data">
+            <ul class="lista-vertical-alt">
+              <li class="cad-session sessao-interna-template">
+                <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(1)">👤 Identificação<span class="arrow down"></span></a></h2>
+                <div class="sessao-interna-template-content">
+                  <div class="session" id="sessao1">
+                    <fieldset class="fieldset-view">
+                      <legend class="titulo-xl"></legend>
 
-                    <div class="campo-view">
-                      <h3>Tipo de Pessoa</h3>
-                      <p>{{ tipo_pessoa }}</p>
-                    </div>
-
-                    <div class="campo-view">
-                      <h3>Este número é WhatsApp?</h3>
-                      <p>{{ whatsapp_switch }}</p>
-                    </div>
-                    <div class="campo-view" id="campoWhatsapp">
-                      <h3>WhatsApp</h3>
-                      <p>{{ whatsapp }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>E-mail</h3>
-                      <p>{{ email }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Telefone</h3>
-                      <p>{{ telefone }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Perfil de Influência</h3>
-                      <p>{{ perfil_influencia }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Tipo(s) do contato</h3>
-                      <p>{{ tipo_contato }}</p>
-                    </div>
-
-
-                    <legend class="titulo-xl"></legend>
-                    <div class="campo-view">
-                      <h3>Data Nascimento</h3>
-                      <p>{{ data_nascimento }}</p>
-                    </div>
-                    <div class="form-2-colum">
                       <div class="campo-view">
-                        <h3>Sexo</h3>
-                        <p>{{ sexo }}</p>
+                        <h3>Tipo de Pessoa</h3>
+                        <p>{{ tipo_pessoa }}</p>
+                      </div>
+
+                      <div class="campo-view">
+                        <h3>Este número é WhatsApp?</h3>
+                        <p>{{ whatsapp_switch }}</p>
+                      </div>
+                      <div class="campo-view" id="campoWhatsapp">
+                        <h3>WhatsApp</h3>
+                        <p>{{ whatsapp }}</p>
                       </div>
                       <div class="campo-view">
-                        <h3>Cor da pele</h3>
-                        <p>{{ cor_pele }}</p>
+                        <h3>E-mail</h3>
+                        <p>{{ email }}</p>
                       </div>
-                    </div>
+                      <div class="campo-view">
+                        <h3>Telefone</h3>
+                        <p>{{ telefone }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Perfil de Influência</h3>
+                        <p>{{ perfil_influencia }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Tipo(s) do contato</h3>
+                        <p>{{ tipo_contato }}</p>
+                      </div>
 
-                    <legend class="titulo-xl"></legend>
-                    <div class="campo-view">
-                      <h3>Título Eleitor</h3>
-                      <p>{{ titulo_eleitor }}</p>
-                    </div>
-                    <div class="form-2-colum">
+
+                      <legend class="titulo-xl"></legend>
                       <div class="campo-view">
-                        <h3>Zona Eleitoral</h3>
-                        <p>{{ zona_eleitoral }}</p>
+                        <h3>Data Nascimento</h3>
+                        <p>{{ data_nascimento }}</p>
+                      </div>
+                      <div class="form-2-colum">
+                        <div class="campo-view">
+                          <h3>Sexo</h3>
+                          <p>{{ sexo }}</p>
+                        </div>
+                        <div class="campo-view">
+                          <h3>Cor da pele</h3>
+                          <p>{{ cor_pele }}</p>
+                        </div>
+                      </div>
+
+                      <legend class="titulo-xl"></legend>
+                      <div class="campo-view">
+                        <h3>Título Eleitor</h3>
+                        <p>{{ titulo_eleitor }}</p>
+                      </div>
+                      <div class="form-2-colum">
+                        <div class="campo-view">
+                          <h3>Zona Eleitoral</h3>
+                          <p>{{ zona_eleitoral }}</p>
+                        </div>
+                        <div class="campo-view">
+                          <h3>Seção Eleitoral</h3>
+                          <p>{{ secao_eleitoral }}</p>
+                        </div>
                       </div>
                       <div class="campo-view">
-                        <h3>Seção Eleitoral</h3>
-                        <p>{{ secao_eleitoral }}</p>
+                        <h3>Local Votação</h3>
+                        <p>{{ local_votacao }}</p>
                       </div>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Local Votação</h3>
-                      <p>{{ local_votacao }}</p>
-                    </div>
-                  </fieldset>
+                    </fieldset>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="cad-session sessao-interna-template">
-              <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(2)">📍 Endereço<span class="arrow down"></span></a></h2>
-              <div class="sessao-interna-template-content">
-                <div class="session" id="sessao2">
-                  <fieldset class="fieldset-view">
-                    <legend class="titulo-xl"></legend>
-                    <div class="campo-view">
-                      <h3>CEP</h3>
-                      <p>{{ cep }}</p>
-                    </div>
-                    <div class="form-2-colum">
+              </li>
+              <li class="cad-session sessao-interna-template">
+                <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(2)">📍 Endereço<span class="arrow down"></span></a></h2>
+                <div class="sessao-interna-template-content">
+                  <div class="session" id="sessao2">
+                    <fieldset class="fieldset-view">
+                      <legend class="titulo-xl"></legend>
                       <div class="campo-view">
-                        <h3>UF</h3>
-                        <p>{{ uf }}</p>
+                        <h3>CEP</h3>
+                        <p>{{ cep }}</p>
+                      </div>
+                      <div class="form-2-colum">
+                        <div class="campo-view">
+                          <h3>UF</h3>
+                          <p>{{ uf }}</p>
+                        </div>
+                        <div class="campo-view">
+                          <h3>Cidade</h3>
+                          <p>{{ cidade }}</p>
+                        </div>
                       </div>
                       <div class="campo-view">
-                        <h3>Cidade</h3>
-                        <p>{{ cidade }}</p>
-                      </div>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Bairro</h3>
-                      <p>{{ bairro }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Rua</h3>
-                      <p>{{ rua }}</p>
-                    </div>
-                    <div class="form-2-colum">
-                      <div class="campo-view">
-                        <h3>Número</h3>
-                        <p>{{ numero }}</p>
+                        <h3>Bairro</h3>
+                        <p>{{ bairro }}</p>
                       </div>
                       <div class="campo-view">
-                        <h3>Complemento</h3>
-                        <p>{{ complemento }}</p>
+                        <h3>Rua</h3>
+                        <p>{{ rua }}</p>
                       </div>
-                    </div>
+                      <div class="form-2-colum">
+                        <div class="campo-view">
+                          <h3>Número</h3>
+                          <p>{{ numero }}</p>
+                        </div>
+                        <div class="campo-view">
+                          <h3>Complemento</h3>
+                          <p>{{ complemento }}</p>
+                        </div>
+                      </div>
 
-                    <div class="campo-view">
-                      <h3>Latitude</h3>
-                      <p>{{ latitude }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Longitude</h3>
-                      <p>{{ longitude }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Quantidade de Eleitores residentes</h3>
-                      <p>{{ eleitores_residentes }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Residência de apoio</h3>
-                      <p>{{ residencia_apoio }}</p>
-                    </div>
-                  </fieldset>
+                      <div class="campo-view">
+                        <h3>Latitude</h3>
+                        <p>{{ latitude }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Longitude</h3>
+                        <p>{{ longitude }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Quantidade de Eleitores residentes</h3>
+                        <p>{{ eleitores_residentes }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Residência de apoio</h3>
+                        <p>{{ residencia_apoio }}</p>
+                      </div>
+                    </fieldset>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="cad-session sessao-interna-template">
-              <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(3)">ℹ️ Informações complementares<span class="arrow down"></span></a></h2>
-              <div class="sessao-interna-template-content">
-                <div class="session" id="sessao3">
-                  <fieldset class="fieldset-view">
-                    <legend class="titulo-xl"></legend>
-                    <div class="campo-view">
-                      <h3>Indicação</h3>
-                      <p>{{ indicacao }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Nome da indicação</h3>
-                      <p>{{ nome_indicacao }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Estado Civil</h3>
-                      <p>{{ estado_civil }}</p>
-                    </div>
-                    <div class="campo-view" id="camposConjuge">
-                      <h3>Nome do Cônjuge</h3>
-                      <p>{{ nome_conjuge }}</p>
-                    </div>
-                    <div class="campo-view" id="camposConjuge">
-                      <h3>Data de Nascimento do Cônjuge</h3>
-                      <p>{{ data_nascimento_conjuge }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Filhos</h3>
-                      <p>{{ resposta }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Religião</h3>
-                      <p>{{ religiao }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Profissão</h3>
-                      <p>{{ profissao }}</p>
-                    </div>
-                    <div class="campo-view">
-                      <h3>Cargo Comissionado</h3>
-                      <p>{{ cargo_comissionado }}</p>
-                    </div>
-                    <div class="campo-view" id="camposCargoComissionado">
-                      <h3>Órgão de Lotação</h3>
-                      <p>{{ orgao_lotacao }}</p>
-                    </div>
-                  </fieldset>
+              </li>
+              <li class="cad-session sessao-interna-template">
+                <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(3)">ℹ️ Informações complementares<span class="arrow down"></span></a></h2>
+                <div class="sessao-interna-template-content">
+                  <div class="session" id="sessao3">
+                    <fieldset class="fieldset-view">
+                      <legend class="titulo-xl"></legend>
+                      <div class="campo-view">
+                        <h3>Indicação</h3>
+                        <p>{{ indicacao }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Nome da indicação</h3>
+                        <p>{{ nome_indicacao }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Estado Civil</h3>
+                        <p>{{ estado_civil }}</p>
+                      </div>
+                      <div class="campo-view" id="camposConjuge">
+                        <h3>Nome do Cônjuge</h3>
+                        <p>{{ nome_conjuge }}</p>
+                      </div>
+                      <div class="campo-view" id="camposConjuge">
+                        <h3>Data de Nascimento do Cônjuge</h3>
+                        <p>{{ data_nascimento_conjuge }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Filhos</h3>
+                        <p>{{ resposta }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Religião</h3>
+                        <p>{{ religiao }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Profissão</h3>
+                        <p>{{ profissao }}</p>
+                      </div>
+                      <div class="campo-view">
+                        <h3>Cargo Comissionado</h3>
+                        <p>{{ cargo_comissionado }}</p>
+                      </div>
+                      <div class="campo-view" id="camposCargoComissionado">
+                        <h3>Órgão de Lotação</h3>
+                        <p>{{ orgao_lotacao }}</p>
+                      </div>
+                    </fieldset>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </form>
-      </div>
-    </section>
-  </main>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/FormContato.js"></script>
   <script src="./static/js/NavSessoes.js"></script>
+
 </body>
 
 

@@ -187,7 +187,7 @@
 
   .list-last-child {
     border-radius: 0px;
-    border-bottom: 1px solid var(--card-borda);
+    border-bottom: 1px solid var(--divisor);
     margin: 0 15px 6.2em 15px;
   }
 }
