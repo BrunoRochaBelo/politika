@@ -174,7 +174,7 @@
 }
 
 /* Estilos da Agenda - Agora, Passado e Futuro */
-.agenda .cad-session.active .lista-vertical-cards {
+.agenda .card-session.active .lista-vertical-cards {
   gap: 4px;
 }
 .agenda-icon {

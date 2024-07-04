@@ -52,7 +52,7 @@
   border-radius: 10px;
   background: var(--input-icon);
   transition: left 0.2s;
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
 }
 .form-checkbox:checked + .switch-label:after {
   left: 27px;

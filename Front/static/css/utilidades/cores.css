@@ -46,25 +46,24 @@
   --modal-borda: hsl(218, 8%, 22%);
   --modal-divisor: hsl(218, 8%, 25%);
 
-  /* Form Fields */
-  --container-form-fundo: hsl(218, 10%, 12%);
-  --form-background: hsl(218, 10%, 8%);
-  --input-background: hsl(218, 10%, 12%);
-  --input-bg-empty: hsl(218, 10%, 10%);
-  --input-bg-filled: hsl(218, 10%, 18%);
-  --input-border: hsl(218, 10%, 24%);
-  --input-label: hsl(218, 14%, 85%);
-  --input-placeholder: hsl(218, 14%, 40%);
-  --input-txt: hsl(218, 14%, 95%);
-  --input-icon: hsl(218, 14%, 85%);
-  --button-clear: hsl(218, 14%, 45%);
-  --button-clear-hover: hsl(218, 14%, 55%);
-  --input-focus-border: hsl(218, 60%, 60%);
-  --input-focus-background: hsl(218, 10%, 18%);
-  --input-error-border: hsl(0, 85%, 55%);
-  --input-error-background: hsl(0, 40%, 52%);
-  --input-success-border: hsl(140, 70%, 62%);
-  --input-success-background: hsl(140, 50%, 48%);
+  /* Form Fields - Dark Theme */
+  --container-form-fundo: hsl(220, 14%, 11%);
+  --form-background: hsl(220, 14%, 18%);
+  --input-bg-empty: hsl(220, 14%, 24%);
+  --input-bg-filled: hsl(220, 14%, 28%);
+  --input-border: hsl(220, 14%, 34%);
+  --input-label: hsl(0, 0%, 90%);
+  --input-placeholder: hsl(0, 0%, 70%);
+  --input-txt: hsl(0, 0%, 100%);
+  --input-icon: hsl(0, 0%, 80%);
+  --button-clear: hsl(0, 0%, 50%);
+  --button-clear-hover: hsl(0, 0%, 60%);
+  --input-focus-border: hsl(0, 0%, 70%);
+  --input-focus-background: hsl(220, 14%, 32%);
+  --input-error-border: hsl(0, 100%, 70%);
+  --input-error-background: hsl(0, 100%, 40%);
+  --input-success-border: hsl(120, 100%, 50%);
+  --input-success-background: hsl(120, 100%, 35%);
 
   /* Buttons */
   --btn-principal: hsl(218, 70%, 50%);

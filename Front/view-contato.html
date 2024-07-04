@@ -12,9 +12,9 @@
   <meta name="description" content="Contato">
 </head>
 
-<body class="body-form ">
-  <div class="body-form-view-template">
-    <main class="main-form-view">
+<body class="body-view">
+  <div class="body-view-template">
+    <main class="main-view">
       <section class="container-template">
         <div class="container-template-header">
           <div class="card-info">
@@ -43,7 +43,7 @@
         <div class="container-template-content">
           <form id="form" class="form" enctype="multipart/form-data">
             <ul class="lista-vertical-alt">
-              <li class="cad-session sessao-interna-template">
+              <li class="card-session sessao-interna-template">
                 <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(1)">👤 Identificação<span class="arrow down"></span></a></h2>
                 <div class="sessao-interna-template-content">
                   <div class="session" id="sessao1">
@@ -120,7 +120,7 @@
                   </div>
                 </div>
               </li>
-              <li class="cad-session sessao-interna-template">
+              <li class="card-session sessao-interna-template">
                 <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(2)">📍 Endereço<span class="arrow down"></span></a></h2>
                 <div class="sessao-interna-template-content">
                   <div class="session" id="sessao2">
@@ -179,7 +179,7 @@
                   </div>
                 </div>
               </li>
-              <li class="cad-session sessao-interna-template">
+              <li class="card-session sessao-interna-template">
                 <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(3)">ℹ️ Informações complementares<span class="arrow down"></span></a></h2>
                 <div class="sessao-interna-template-content">
                   <div class="session" id="sessao3">
@@ -236,6 +236,7 @@
     </main>
   </div>
 
+  <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/FormContato.js"></script>

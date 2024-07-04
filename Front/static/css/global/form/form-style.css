@@ -47,12 +47,15 @@ legend {
 
 .campo input,
 .campo select,
-.campo textarea {
+.campo textarea,
+.campo input[required],
+.campo textarea[required],
+.campo select[required] {
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
   color: var(--input-txt);
-  background: var(--input-border);
+  background: var(--input-bg-empty);
   border: 1px solid var(--input-border);
   border-radius: 40px;
   transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
@@ -82,7 +85,10 @@ legend {
 
 .campo input:hover,
 .campo select:hover,
-.campo textarea:hover {
+.campo textarea:hover,
+.campo input[required]:hover,
+.campo textarea[required]:hover,
+.campo select[required]:hover {
   box-shadow: var(--sombra-leve);
   border: 1px solid var(--btn-principal-destaque);
 }
@@ -93,7 +99,10 @@ legend {
 
 .campo input:focus,
 .campo select:focus,
-.campo textarea:focus {
+.campo textarea:focus,
+.campo input[required]:focus,
+.campo textarea[required]:focus,
+.campo select[required]:focus {
   outline: none;
   background: var(--input-bg-filled);
   box-shadow: var(--sombra-leve);
@@ -288,16 +297,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* Estilos para Validações */
-.campo input.error,
-.campo select.error,
-.campo textarea.error {
+
+.campo input[required].error,
+.campo textarea[required].error,
+.campo select[required].error {
   border-color: var(--input-error-border) !important;
 }
 .campo input.success,
 .campo select.success,
-.campo textarea.success {
+.campo textarea.success,
+.campo input[required].success,
+.campo textarea[required].success,
+.campo select[required].success {
   border: 1px solid transparent !important;
-  filter: brightness(1.5);
+  background: var(--input-bg-filled) !important;
 }
 .card.error {
   border: 1px solid var(--card-error-border);

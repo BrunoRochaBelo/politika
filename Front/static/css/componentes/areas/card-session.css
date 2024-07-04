@@ -13,7 +13,7 @@
 }
 
 /* Cards das Sessões */
-.cad-session {
+.card-session {
   position: relative;
   min-height: 60px;
   border-radius: 23px;
@@ -26,25 +26,25 @@
     box-shadow 0.3s ease, margin 0.3s ease;
   margin: 0 10px;
 }
-.cad-session:hover {
+.card-session:hover {
   filter: brightness(1.2);
 }
-.cad-session.active {
+.card-session.active {
   background: var(--cor-ap2);
   border: 1px solid var(--cor-ap1);
   box-shadow: var(--sombra-moderada);
   padding: 7px 0px;
   margin: 0 7px;
 }
-.cad-session.active:hover {
+.card-session.active:hover {
   filter: none !important;
 }
-.cad-session:hover .tooltiptext {
+.card-session:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
   transition: visibility 0.2s ease, opacity 0.2s ease;
 }
-.cad-session.active .tooltip .tooltiptext {
+.card-session.active .tooltip .tooltiptext {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -52,11 +52,11 @@
 }
 
 /* Estilos complementares - area-template-sessao */
-.cad-session > .sessao-interna-template-header {
+.card-session > .sessao-interna-template-header {
   padding: 15px;
 }
 
-.cad-session.active .sessao-interna-template {
+.card-session.active .sessao-interna-template {
   box-shadow: none;
   padding: 0px;
   border-radius: 0;
@@ -77,7 +77,10 @@
   color: var(--txt-titulo-card);
   text-align: start;
 }
-.cad-session.active > .sessao-interna-template-content {
+.sessao-interna-template-header.active-header a {
+  color: var(--btn-filtro-select-txt);
+}
+.card-session.active > .sessao-interna-template-content {
   box-shadow: none;
   padding: 0px;
   border-radius: 0;
@@ -102,10 +105,10 @@
 
 /* Responsivo */
 @media only screen and (max-width: 900px) {
-  .cad-session:hover {
+  .card-session:hover {
     filter: none;
   }
-  .cad-session:hover .tooltiptext {
+  .card-session:hover .tooltiptext {
     visibility: hidden;
     opacity: 0;
   }

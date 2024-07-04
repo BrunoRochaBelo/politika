@@ -4,19 +4,18 @@
   display: grid;
   align-content: start;
   justify-content: center;
+  max-height: calc(var(--vh, 1vh) * 100);
 }
-
 .body-form-template {
   display: grid;
   grid:
     "header-form"
     "main-form"
     / minmax(350px, 1100px);
-  background: var(--background-principal);
+  background: none;
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;
 }
-/* container-areas */
 .header-form {
   grid-area: header-form;
   position: relative;
@@ -76,12 +75,19 @@
   border-radius: 25px;
 }
 
-.main-form .cad-session.active {
+.main-form .card-session {
+  background: var(--card-fundo);
+  border: 1px solid var(--cor-ap1);
+}
+.main-form .card-session.active {
   background: var(--form-background);
   border: 1px solid var(--cor-ap1);
   box-shadow: var(--sombra-moderada);
   padding: 7px 0px;
-  margin: 0px;
+  margin: 0px 5px;
+}
+.main-form .sessao-interna-template-header.active-header a {
+  color: var(--btn-filtro-select-txt);
 }
 
 /* RESPONSIVO */
@@ -90,16 +96,18 @@
     padding: 0px;
     border: none;
     background: var(--container-form-fundo);
+    max-height: calc(var(--vh, 1vh) * 100);
   }
   .body-form-template {
     display: grid;
     grid:
       "header-form"
       "main-form"
-      / 1fr;
+      / 100vw;
     border: none;
-    background: var(--container-form-fundo);
+    background: none;
     box-shadow: none;
+    justify-content: stretch;
   }
   .header-form {
     border: none;
@@ -120,7 +128,7 @@
     box-shadow: none;
     background: none;
     background: transparent;
-    max-height: calc(var(--vh, 1vh) * 100 - 3rem);
+    max-height: calc(var(--vh, 1vh) * 100 - 5rem);
     border-radius: 25px;
   }
   .main-form .container-abas-template-header {

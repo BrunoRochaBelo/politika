@@ -85,33 +85,35 @@
                     </p>
                   </div>
                 </li>
-                <li>
-                  <ul class="lista-vertical-cards">
-                    <li class="sessao-interna-template">
-                      <a class="card-m pleitos-medium-card" href="#">
-                        <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
-                        <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
-                        <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
-                        <div class="pleitos-medium-card-desc" data-filter="descPleito">
-                          <p><strong>Descrição</strong></p>
-                        </div>
-                        <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
-                        <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
-                        <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
-                        <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
-                        <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
-                        <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
-                        <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
-                        <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
-                        <div class="pleitos-medium-card-editar">
-                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
-                          <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
-                          <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
-                        </div>
-                        <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
-                      </a>
-                    </li>
-                  </ul>
+                <li class="sessao-interna-template">
+                  <div class="sessao-interna-template-content">
+                    <ul class="lista-vertical-cards">
+                      <li>
+                        <a class="card-m pleitos-medium-card" href="#">
+                          <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
+                          <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
+                          <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
+                          <div class="pleitos-medium-card-desc" data-filter="descPleito">
+                            <p><strong>Descrição</strong></p>
+                          </div>
+                          <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
+                          <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
+                          <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
+                          <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
+                          <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
+                          <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
+                          <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
+                          <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
+                          <div class="pleitos-medium-card-editar">
+                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-pleito.html'">Visualizar</button>
+                            <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
+                            <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
+                          </div>
+                          <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li class="list-last-child"><br></li>
               </ul>
