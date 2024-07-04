@@ -832,8 +832,6 @@
             </div>
             <div class="area-interna-containerContent-template-content">
               <ul class="lista-vertical">
-                <!--  lógica do loop cards tarefas -->
-                <!--  inicio do card tarefa -->
                 <li class="area-filtro inactiveFil" id="filtro2">
                   <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
                   <div class="btn-filtro-pesq">
@@ -842,7 +840,35 @@
                     </p>
                   </div>
                 </li>
-                <!--  fim do card tarefa -->
+                <li class="sessao-interna-template area-tarefas">
+                  <div class="sessao-interna-template-content">
+                    <ul class="lista-vertical-cards">
+                      <!-- lógica do loop lista de tarefas -->
+                      <!-- inicio do card tarefa -->
+                      <li>
+                        <a class="card-m tarefa-medium-card" href="#">
+                          <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                          <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                            <div class="marcador-item cor-marc3">
+                              <p><strong>Marcador 1</strong></p>
+                            </div>
+                          </div>
+                          <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                          <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                          <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                          <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                            <p>Descrição da Tarefa</p>
+                          </div>
+                          <div class="tarefa-medium-card-editar">
+                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                          </div>
+                          <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
+                        </a>
+                      </li>
+                      <!-- fim do card tarefa -->
+                    </ul>
+                  </div>
+                </li>
                 <li class="list-last-child"><br></li>
               </ul>
             </div>
