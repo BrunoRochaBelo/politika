@@ -1,5 +1,5 @@
 .body-form {
-  background: var(--background-principal);
+  background: hsl(218, 14%, 3%);
   padding-top: 20px;
   display: grid;
   align-content: start;
@@ -56,14 +56,14 @@
   background: none;
   background: transparent;
   max-height: calc(var(--vh, 1vh) * 100 - 7rem);
-  border-radius: 25px;
+  border-radius: 0px;
+  padding: 0;
 }
 .main-form .container-template-header,
 .main-form .container-abas-template-header {
   background: transparent;
   border: none;
   border-radius: 0px;
-  border-radius: 25px;
   padding: 0;
 }
 .main-form .container-template-content,
@@ -72,22 +72,16 @@
   background: transparent;
   border: none;
   border-radius: 0px;
-  border-radius: 25px;
+  padding: 0;
 }
 
 .main-form .card-session {
-  background: var(--card-fundo);
-  border: 1px solid var(--cor-ap1);
+  background: var(--form-background);
+  border: 1px solid var(--form-background);
 }
 .main-form .card-session.active {
-  background: var(--form-background);
-  border: 1px solid var(--cor-ap1);
-  box-shadow: var(--sombra-moderada);
   padding: 7px 0px;
   margin: 0px 5px;
-}
-.main-form .sessao-interna-template-header.active-header a {
-  color: var(--btn-filtro-select-txt);
 }
 
 /* RESPONSIVO */
@@ -129,7 +123,7 @@
     background: none;
     background: transparent;
     max-height: calc(var(--vh, 1vh) * 100 - 5rem);
-    border-radius: 25px;
+    border-radius: 0px;
   }
   .main-form .container-abas-template-header {
     justify-content: center;

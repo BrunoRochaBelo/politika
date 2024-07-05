@@ -25,7 +25,7 @@ function validarCampo(campo) {
   ) {
     campo.classList.add("error");
     campoValido = false;
-  } else if (campo.hasAttribute("required")) {
+  } else if (valorCampo !== "" || campo.hasAttribute("required")) {
     campo.classList.add("success");
   }
 
@@ -133,6 +133,7 @@ function formatarCampoParaExibicao(input, regex, formato) {
   } else {
     input.value = value;
   }
+  validarCampo(input); // Adiciona a validação após a formatação
 }
 
 function formatarCelularParaExibicao(input) {
@@ -150,13 +151,9 @@ function formatarCelularParaExibicao(input) {
 function formatarTelefoneParaExibicao(input) {
   formatarCampoParaExibicao(
     input,
-    /^\d{10,11}$/,
+    /^\d{10}$/,
     (value) => `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`
   );
-}
-
-function formatarCampoParaBanco(input) {
-  input.value = input.value.replace(/\D/g, "");
 }
 
 function formatarCEP(input) {
@@ -197,6 +194,8 @@ const camposDoFormulario = document.querySelectorAll("input, select, textarea");
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("keydown", checkEnter);
   campo.addEventListener("blur", () => validarCampo(campo)); // Valida o campo ao desfocar
+  campo.addEventListener("input", () => validarCampo(campo)); // Valida o campo ao digitar
+  campo.addEventListener("change", () => validarCampo(campo)); // Valida o campo ao mudar
 });
 
 // Funções para exibir campos de acordo com a resposta
@@ -213,6 +212,7 @@ function mostrarCampoWhatsapp() {
     campoWhatsapp.style.display = "block";
     whatsappInput.value = ""; // Limpa o campo WhatsApp, se estiver preenchido
   }
+  validarCampo(whatsappInput); // Adiciona a validação após a mudança
 }
 
 function mostrarCamposFilhos() {

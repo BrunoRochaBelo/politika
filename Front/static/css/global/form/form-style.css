@@ -5,8 +5,7 @@
   grid-template-columns: 1fr;
   gap: 20px;
   background: none;
-  border-radius: 25px;
-  box-shadow: var(--sombra-moderada);
+
   padding-bottom: 15px;
 }
 
@@ -28,7 +27,7 @@ legend {
 
 .campo {
   background: none;
-  padding: 10px 0;
+  padding: 12px 0;
   border-radius: 5px;
   gap: 5px;
 }
@@ -39,9 +38,10 @@ legend {
 
 .campo label {
   display: block;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
+  margin-left: 5px;
   color: var(--input-label);
 }
 
@@ -53,11 +53,11 @@ legend {
 .campo select[required] {
   width: 100%;
   box-sizing: border-box;
-  padding: 15px;
+  padding: 18px;
   color: var(--input-txt);
   background: var(--input-bg-empty);
   border: 1px solid var(--input-border);
-  border-radius: 40px;
+  border-radius: 45px;
   transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 .campo textarea {
@@ -155,7 +155,7 @@ label + .form-checkbox:before {
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: var(--card-fundo);
+  background: var(--input-bg-empty);
   transition: background-color 0.2s;
 }
 
@@ -297,7 +297,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* Estilos para Validações */
-
 .campo input[required].error,
 .campo textarea[required].error,
 .campo select[required].error {
@@ -315,6 +314,27 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .card.error {
   border: 1px solid var(--card-error-border);
   background-color: var(--card-error-background);
+}
+
+.error-messages {
+  border: 1px solid #e74c3c;
+  background-color: #fbeee6;
+  color: #e74c3c;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.success-message {
+  border: 1px solid #2ecc71;
+  background-color: #eafaf1;
+  color: #2ecc71;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.error-messages p {
+  margin: 0;
+  font-size: 14px;
 }
 
 /* Responsivo */

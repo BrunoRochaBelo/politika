@@ -61,13 +61,10 @@
 }
 
 .main-view .card-session {
-  background: var(--card-fundo);
-  border: 1px solid var(--cor-ap1);
+  background: var(--input-bg-filled);
+  border: 1px solid var(--form-background);
 }
 .main-view .card-session.active {
-  background: var(--form-background);
-  border: 1px solid var(--cor-ap1);
-  box-shadow: var(--sombra-moderada);
   padding: 7px 0px;
   margin: 0px 5px;
 }
@@ -123,7 +120,7 @@
 
 .campo-view {
   display: grid;
-  background: var(--input-bg-empty);
+  background: var(--input-bg-filled);
   border: 1px solid transparent;
   padding: 7px 25px;
   border-radius: 40px;
@@ -135,7 +132,7 @@
   font-size: 12px;
   font-weight: regular;
   color: var(--input-placeholder);
-  padding: 3px;
+  padding: 3px 0;
   margin: 0;
 }
 
@@ -145,7 +142,7 @@
 .campo-view textarea {
   margin: 0px;
   width: 100%;
-  padding: 7px 5px;
+  padding: 3px 0 6px 0;
   box-sizing: border-box;
   color: var(--input-label);
   background: transparent;

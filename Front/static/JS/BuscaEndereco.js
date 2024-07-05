@@ -33,6 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
       this.cidadeElement.value = data.localidade;
       this.bairroElement.value = data.bairro;
       this.ruaElement.value = data.logradouro;
+
+      // Adicionar a classe success após preencher os campos
+      validarCampo(this.ufElement);
+      validarCampo(this.cidadeElement);
+      validarCampo(this.bairroElement);
+      validarCampo(this.ruaElement);
     }
 
     validarCEP(cep) {
