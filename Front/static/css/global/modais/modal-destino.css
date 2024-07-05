@@ -209,6 +209,31 @@
   color: var(--shadow-destaque);
 }
 
+.loading-indicator {
+  display: none;
+  font-size: 14px;
+  color: var(--placeholder);
+}
+.loading-indicator::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid var(--placeholder);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5em;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .modal-destino-content {
     margin: 20% auto;

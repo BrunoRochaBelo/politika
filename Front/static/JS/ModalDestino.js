@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.getElementsByClassName("close")[0];
   const estadoSelect = document.getElementById("estado");
   const cidadeSelect = document.getElementById("cidade");
+  const bairroInput = document.getElementById("bairro");
+  const loadingIndicator = document.getElementById("loadingEstado");
 
   searchForm.addEventListener("click", (event) => {
     event.preventDefault();
@@ -34,11 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const estado = estadoSelect.value;
     cidadeSelect.innerHTML =
       '<option value="" selected disabled>Carregando cidades...</option>';
+    loadingIndicator.style.display = "block";
+    cidadeSelect.disabled = true;
+    bairroInput.value = "";
+    bairroInput.disabled = true;
 
     // Simular carregamento dinâmico das cidades
     setTimeout(() => {
       cidadeSelect.innerHTML =
         '<option value="" selected disabled>Selecione uma cidade</option>';
+      loadingIndicator.style.display = "none";
       if (estado === "PE") {
         cidadeSelect.innerHTML +=
           '<option value="Recife">Recife</option><option value="Olinda">Olinda</option>';
@@ -52,6 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
         cidadeSelect.innerHTML +=
           '<option value="Belo Horizonte">Belo Horizonte</option><option value="Ouro Preto">Ouro Preto</option>';
       }
+      cidadeSelect.disabled = false;
+      bairroInput.disabled = false;
     }, 1000);
   });
 });

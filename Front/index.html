@@ -580,23 +580,25 @@
               <option value="RJ">Rio de Janeiro</option>
               <option value="MG">Minas Gerais</option>
             </select>
+            <div id="loadingEstado" class="loading-indicator">Carregando...</div>
           </div>
           <div class="form-group item2">
             <label for="cidade">Cidade:</label>
-            <select class="card-select-m" id="cidade" name="cidade">
+            <select class="card-select-m" id="cidade" name="cidade" disabled>
               <option value="" selected disabled>Selecione um estado primeiro</option>
               <!-- As opções de cidades serão adicionadas dinamicamente -->
             </select>
           </div>
           <div class="form-group item3">
             <label for="bairro">Bairro ou local:</label>
-            <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
+            <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada" disabled>
           </div>
         </div>
         <button type="submit" class="submit-button">Aplicar Filtros</button>
       </form>
     </div>
   </div>
+
 
 
 
@@ -626,7 +628,7 @@
         }
       }
 
-      const debouncedHandleScroll = debounce(handleScroll, 10);
+      const debouncedHandleScroll = debounce(handleScroll, 1);
 
       contentArea.addEventListener("scroll", debouncedHandleScroll);
     });
