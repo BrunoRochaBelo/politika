@@ -12,9 +12,7 @@
 }
 .tarefa-small-card-editar .btn-outline-principal:hover,
 .tarefa-medium-card-editar .btn-outline-principal:hover {
-  border: 1px solid var(--btn-principal-alt-destaque);
-  background: var(--btn-principal-alt-hover);
-  color: var(--btn-principal-alt-txt);
+  filter: brightness(1.1);
 }
 
 .filtro-tarefa {

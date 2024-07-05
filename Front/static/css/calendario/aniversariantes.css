@@ -11,10 +11,7 @@
   box-shadow: var(--sombra-leve);
 }
 .aniversario-small-card-editar .btn-outline-principal:hover {
-  border: 1px solid var(--btn-principal-alt-destaque);
-  background: var(--btn-principal-alt-hover);
-  color: var(--btn-principal-alt-txt);
-  font-weight: bolder;
+  filter: brightness(1.1);
 }
 
 /* Área de aniversariantes */

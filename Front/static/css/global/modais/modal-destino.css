@@ -126,8 +126,18 @@
 .breadcrumb {
   display: inline-block;
   font-size: 0.75rem;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
+.breadcrumb.hidden {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+.breadcrumb.visible {
+  opacity: 1;
+  visibility: visible;
+  display: inline-block;
+}
 /* .breadcrumb:hover {
   text-decoration: underline;
 } */

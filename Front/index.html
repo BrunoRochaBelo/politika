@@ -600,7 +600,37 @@
 
 
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const contentArea = document.querySelector(".area-interna-containerContent-template-content");
+      const breadcrumb = document.querySelector(".breadcrumb");
 
+      function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+          const context = this;
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+      }
+
+      function handleScroll() {
+        const scrollTop = contentArea.scrollTop;
+
+        if (scrollTop > 0) {
+          breadcrumb.classList.remove('visible');
+          breadcrumb.classList.add('hidden');
+        } else {
+          breadcrumb.classList.remove('hidden');
+          breadcrumb.classList.add('visible');
+        }
+      }
+
+      const debouncedHandleScroll = debounce(handleScroll, 10);
+
+      contentArea.addEventListener("scroll", debouncedHandleScroll);
+    });
+  </script>
 
 
   <script src="./static/js/SombraHeaderScroll.js"></script>
