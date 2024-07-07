@@ -66,9 +66,9 @@
   --input-success-background: hsl(140, 70%, 40%);
 
   /* Buttons */
-  --btn-principal: hsl(218, 70%, 50%);
-  --btn-principal-hover: hsl(218, 70%, 55%);
-  --btn-principal-destaque: hsl(218, 70%, 60%);
+  --btn-principal: hsl(218, 80%, 50%);
+  --btn-principal-hover: hsl(218, 80%, 55%);
+  --btn-principal-destaque: hsl(218, 80%, 60%);
   --btn-principal-txt: hsl(0, 0%, 95%);
 
   --btn-principal-alt: hsl(218, 70%, 55%);

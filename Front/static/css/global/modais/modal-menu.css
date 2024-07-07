@@ -11,7 +11,7 @@
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 2003;
+  z-index: 2004;
   box-shadow: var(--sombra-intensa);
 }
 
@@ -29,7 +29,7 @@
   gap: 5px;
   border-radius: 25px;
   box-shadow: var(--sombra-intensa);
-  z-index: 2004;
+  z-index: 2005;
   transform: translateY(-50px);
   transition: transform 0.3s ease, opacity 0.3s ease;
   grid:

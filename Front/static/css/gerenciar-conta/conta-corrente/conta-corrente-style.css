@@ -1,0 +1,156 @@
+.conta-corrente-container {
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.conta-corrente-create-account {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.conta-corrente-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.conta-corrente-card {
+  background: var(--card-fundo);
+  border-radius: 8px;
+  box-shadow: var(--sombra-moderada);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.conta-corrente-card:hover {
+  transform: scale(1.02);
+}
+
+.conta-corrente-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conta-corrente-card-header h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.conta-corrente-card-body p {
+  margin: 10px 0;
+}
+
+.conta-corrente-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.edit {
+  background-color: #ffc107;
+  color: white;
+}
+
+button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.conta-corrente-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.conta-corrente-modal-content {
+  background-color: var(--modal-fundo);
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid var(--modal-borda);
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.conta-corrente-close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.conta-corrente-close-button:hover,
+.conta-corrente-close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  display: none;
+}
+
+.notification {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.notification.show {
+  display: block;
+}

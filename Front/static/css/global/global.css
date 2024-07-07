@@ -7,7 +7,7 @@ body {
   color: var(--txt-titulo-card);
   margin: 0;
   padding: 0;
-  max-height: calc(var(--vh, 1vh) * 100);
+
   overflow: hidden;
   box-sizing: border-box;
   background: var(--background-principal);
@@ -40,7 +40,7 @@ body.offline footer {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
 }
-/* Adicione os prefixos para compatibilidade com outros navegadores */
+
 ::-moz-scrollbar {
   width: 10px;
   height: 10px;
@@ -188,7 +188,7 @@ img {
   body {
     overflow: auto;
     width: 100vw;
-    max-height: calc(var(--vh, 1vh) * 100 + 2rem);
+
     background: var(--container-fundo);
   }
 }

@@ -44,7 +44,7 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid hsl(214, 10%, 12%);
-  border-top: none;
+  border-top: 1px solid hsl(218, 14%, 3%);
 }
 .main-form::-webkit-scrollbar {
   display: none;
@@ -81,8 +81,10 @@
 }
 .main-form .card-session.active {
   padding: 7px 0px;
-  margin: 0px 5px;
+  margin: 0px;
   background: var(--container-form-fundo);
+  border: 1px solid transparent;
+  box-shadow: none;
 }
 
 /* RESPONSIVO */

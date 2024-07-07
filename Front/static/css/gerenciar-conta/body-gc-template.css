@@ -1,7 +1,8 @@
 .body-gc-template {
   background: var(--container-fundo);
   display: grid;
-  padding: 10px;
+  margin: 10px 0;
+  gap: 1px;
   align-content: start;
   justify-content: center;
   grid:
@@ -33,7 +34,6 @@
   border-bottom-right-radius: 12px;
   box-shadow: var(--sombra-moderada);
   height: auto;
-  max-height: 89vh;
   border: 5px solid transparent;
   color: var(--txt-content-card);
   border-top: none;
@@ -43,12 +43,11 @@
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {
   .body-gc-template {
-    padding: 10px 5px;
+    margin: 0;
+    padding: 4px;
   }
   .main-gc {
     padding: 0px;
-    height: auto;
-    max-height: 90vh;
     overflow-y: auto;
   }
   .main-gc::-webkit-scrollbar {

@@ -260,7 +260,7 @@
 
   .area-interna-containerContent-template-not-header {
     border-top: none;
-    max-height: 100% !important;
+    max-height: calc(var(--vh, 1vh) * 100) !important;
     grid-template-rows: auto !important;
     grid-template-areas: "area-interna-containerContent-template-content" !important;
   }

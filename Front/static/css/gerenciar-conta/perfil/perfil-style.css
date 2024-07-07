@@ -1,0 +1,117 @@
+.profile-container {
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+.profile-container h2,
+.profile-container h3 {
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(211, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: hsl(211, 100%, 35%);
+}
+
+.subscription {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.subscription .card {
+  background-color: #2e2e2e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.subscription .card p {
+  margin: 10px 0;
+}
+
+.subscription .card label,
+.subscription .card select,
+.subscription .card input[type="checkbox"] {
+  display: block;
+  margin: 10px 0;
+}
+
+.subscription button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.subscription button.unsubscribe {
+  background-color: #dc3545;
+}
+
+.subscription button:hover {
+  opacity: 0.8;
+}
+
+.subscribed {
+  color: #28a745;
+}
+
+.not-subscribed {
+  color: #dc3545;
+}
+
+#subscription-details p {
+  margin: 5px 0;
+}
+
+#subscription-edit-fields {
+  text-align: left;
+}
+
+#subscription-edit-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.img-perfil {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  justify-self: center;
+}
+
+.area-interna-containerContent-template-content {
+  padding: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  .profile-container {
+    padding: 0px;
+    border-radius: 25px;
+  }
+
+  .img-perfil {
+    width: 115px;
+    height: 115px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    justify-self: center;
+  }
+}

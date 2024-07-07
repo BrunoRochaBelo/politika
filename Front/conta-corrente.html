@@ -54,12 +54,90 @@
 
   <main class="main-gc main-gc-template">
     <section class="main-gc-section">
-      <ul class="lista-vertical-alt">
+      <div class="conta-corrente-container">
+        <h1>Contas Correntes</h1>
+        <button class="conta-corrente-create-account">Criar Conta Corrente</button>
+        <div class="conta-corrente-cards" id="cards">
+          <!-- Exemplo de card inicial -->
+          <div class="conta-corrente-card" data-id="1">
+            <div class="conta-corrente-card-header">
+              <h2>CAIXA ECONÔMICA FEDERAL</h2>
+              <span>ID: 1</span>
+            </div>
+            <div class="conta-corrente-card-body">
+              <p><strong>Banco:</strong> 100</p>
+              <p><strong>Agência:</strong> 1002 BOA VISTA</p>
+              <p><strong>Conta:</strong> 33556610 FP</p>
+            </div>
+            <div class="conta-corrente-card-footer">
+              <button class="edit">Editar</button>
+              <button class="delete">Excluir</button>
+            </div>
+          </div>
+          <!-- Novos cards serão adicionados aqui -->
+        </div>
+      </div>
 
-      </ul>
+
+
+
     </section>
   </main>
 
+  <!-- Modal de criação de conta -->
+  <div class="conta-corrente-modal" id="modal">
+    <div class="conta-corrente-modal-content">
+      <span class="conta-corrente-close-button" id="close-button">&times;</span>
+      <h2 id="modal-title">Criar Nova Conta Corrente</h2>
+      <form id="account-form">
+        <input type="hidden" id="editing-id">
+        <div class="form-group">
+          <label for="bank-code">Código Banco</label>
+          <input type="text" id="bank-code" name="bank-code" required>
+          <span class="error" id="error-bank-code"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="bank-name">Nome do Banco</label>
+          <input type="text" id="bank-name" name="bank-name" required>
+          <span class="error" id="error-bank-name"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="agency-number">Número da Agência</label>
+          <input type="text" id="agency-number" name="agency-number" required>
+          <span class="error" id="error-agency-number"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="agency-name">Nome da Agência</label>
+          <input type="text" id="agency-name" name="agency-name" required>
+          <span class="error" id="error-agency-name"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="account-number">Número da Conta</label>
+          <input type="text" id="account-number" name="account-number" required>
+          <span class="error" id="error-account-number"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="account-type">Tipo de Conta</label>
+          <input type="text" id="account-type" name="account-type" required>
+          <span class="error" id="error-account-type"></span>
+        </div>
+
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Notificação -->
+  <div class="notification" id="notification"></div>
+
+  <script src="./static/js/SombraHeaderScroll.js"></script>
+  <script src="./static/js/GcContaCorrente.js"></script>
 
 </body>
 

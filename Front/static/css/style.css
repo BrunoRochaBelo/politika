@@ -68,3 +68,7 @@
 @import "./gerenciar-conta/header-gc-template.css";
 /* gerenciar-conta/ home-admin */
 @import "./gerenciar-conta/home-admin/home-admin-style.css";
+/* gerenciar-conta/ Conta Corrente */
+@import "./gerenciar-conta/conta-corrente/conta-corrente-style.css";
+/* gerenciar-conta/ Perfil */
+@import "./gerenciar-conta/perfil/perfil-style.css";
