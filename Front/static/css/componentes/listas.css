@@ -53,7 +53,7 @@
 .lista-horizontal {
   display: grid;
   grid-auto-flow: column;
-  gap: 3px;
+  gap: 8px;
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
@@ -100,14 +100,14 @@
   border-bottom: 1px solid var(--card-borda);
 }*/
 
-.lista-horizontal > li:first-child a {
+/*.lista-horizontal > li:first-child a {
   border-top-left-radius: 23px;
   border-bottom-left-radius: 23px;
 }
 .lista-horizontal > li:last-child a {
   border-top-right-radius: 23px;
   border-bottom-right-radius: 23px;
-}
+}*/
 
 /* Reset de borda para todos os cards dentro da lista */
 .lista-select .card-select-m {
@@ -156,17 +156,9 @@
   .lista-horizontal.expandir {
     display: grid;
     align-items: center;
-    gap: 3px;
+    gap: 8px;
     grid-template: 1fr 1fr / auto;
     scrollbar-width: thick;
-  }
-  .lista-horizontal.expandir > li:first-child a {
-    border-top-left-radius: 23px;
-    border-bottom-left-radius: 6px;
-  }
-  .lista-horizontal.expandir > li:last-child a {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 23px;
   }
 
   .lista-vertical::-webkit-scrollbar,

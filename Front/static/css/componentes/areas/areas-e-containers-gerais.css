@@ -4,7 +4,9 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
+  border-radius: 25px;
   max-height: calc(var(--vh, 1vh) * 100 - 6rem);
+  box-shadow: var(--sombra-moderada);
   grid:
     "container-filtros-template-header" auto
     "container-filtros-template-content" auto
@@ -26,7 +28,6 @@
   grid-area: container-filtros-template-content;
   overflow-x: hidden;
   background: transparent;
-  box-shadow: var(--sombra-moderada);
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -41,7 +42,9 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
+  border-radius: 25px;
   max-height: calc(var(--vh, 1vh) * 100 - 6rem);
+  box-shadow: var(--sombra-moderada);
   grid:
     "container-compromisso-hoje-template-header" auto
     "container-compromisso-hoje-template-content" auto
@@ -62,7 +65,6 @@
   grid-area: container-compromisso-hoje-template-content;
   overflow-x: hidden;
   background: var(--container-fundo);
-  box-shadow: var(--sombra-moderada);
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;

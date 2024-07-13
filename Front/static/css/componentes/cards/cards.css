@@ -5,7 +5,7 @@
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
-  padding: 12px 15px;
+  padding: 15px 15px;
   border: none;
   box-sizing: border-box;
 }
@@ -15,7 +15,7 @@
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
-  padding: 12px 15px;
+  padding: 15px 15px;
   border: none;
   box-sizing: border-box;
 }
@@ -25,7 +25,7 @@
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
-  padding: 12px 15px;
+  padding: 15px 15px;
   border: none;
   box-sizing: border-box;
 }
@@ -35,7 +35,7 @@
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
-  padding: 12px 15px;
+  padding: 15px 15px;
   gap: 0.625rem;
   border: none;
   box-sizing: border-box;
@@ -45,36 +45,35 @@
 /* Pequeno */
 .card-tmf-s {
   width: 135px;
-  height: 100px;
+  height: auto;
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
-  border-radius: 6px;
+  border-radius: 23px;
   order: none;
   box-sizing: border-box;
-  padding: 12px 15px;
+  padding: 15px 20px;
 }
 /* Médio */
 .card-tmf-m {
-  min-width: 112px;
-  min-height: 95px;
+  min-width: 155px;
+  height: auto;
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
-  border-radius: 6px;
+  border-radius: 23px;
   order: none;
   box-sizing: border-box;
-  padding: 12px 15px;
+  padding: 15px 20px;
 }
 /* Grande */
 .card-tmf-l {
   width: 184px;
-  height: 190px;
-  min-height: 170px;
+  height: auto;
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
-  border-radius: 6px;
+  border-radius: 23px;
   border: none;
   box-sizing: border-box;
-  padding: 12px 15px;
+  padding: 15px 20px;
 }
 
 /* Cards dos selects */
@@ -104,7 +103,7 @@
   width: 100%;
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
-  padding: 12px 15px;
+  padding: 15px 15px;
   border-radius: 6px;
   border: none;
   box-sizing: border-box;
@@ -212,14 +211,18 @@
   .card-s,
   .card-m,
   .card-l,
-  .card-tmf-s,
-  .card-tmf-m,
-  .card-tmf-l,
   .card-select-xs,
   .card-select-s,
   .card-select-m {
     border: none;
     box-shadow: var(--sombra-moderada);
     border-radius: 6px;
+  }
+  .card-tmf-s,
+  .card-tmf-m,
+  .card-tmf-l {
+    border: none;
+    box-shadow: var(--sombra-moderada);
+    border-radius: 23px;
   }
 }

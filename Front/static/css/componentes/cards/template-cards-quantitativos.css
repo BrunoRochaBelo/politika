@@ -1,11 +1,12 @@
 /* Pequeno */
 .quant-small-card {
   display: grid;
+  gap: 10px;
   grid:
     "quant-small-card-title" auto
     "quant-small-card-desc" auto
-    "quant-small-card-result" 24px
-    /1fr;
+    "quant-small-card-result" auto
+    / 1fr;
 }
 .quant-small-card-title {
   grid-area: quant-small-card-title;
@@ -33,6 +34,6 @@
   text-align: start;
   background: var(--card-detalhe);
   color: var(--txt-content-card);
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 6px;
+  padding: 8px 10px;
 }
