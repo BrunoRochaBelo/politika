@@ -30,6 +30,7 @@ legend {
   padding: 12px 0;
   border-radius: 5px;
   gap: 5px;
+  text-align: start;
 }
 
 .campo-invalido {

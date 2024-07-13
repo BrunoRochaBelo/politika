@@ -15,14 +15,24 @@
 
 <body class="body-view">
   <div class="body-view-template">
-    <header class="header-view">
-      <h1>Despesa XXX-XX</h1>
-      <h1><a href="despesas.html" class="close">&times;</a></h1>
-    </header>
 
     <main class="main-view">
       <section class="container-abas-template">
         <nav class="container-abas-template-header">
+          <div class="card-info">
+            <div>
+              <a href="despesas.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
+            </div>
+            <div class="campo-view">
+              <p>{{ numero_despesa }}</p>
+            </div>
+            <div class="acoes">
+              <div class="campo-view acao-item">
+                <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+              </div>
+
+            </div>
+          </div>
           <ul id="navAba" class="nav nav-duas-abas">
             <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Dados</a></li>
             <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Histórico</a></li>
@@ -105,11 +115,7 @@
                     <input type="text" id="cidade" name="cidade" readonly>
                   </div>
                 </div>
-                <div class="botoes">
-                  <div class="btn-outline-principal"><a href="despesas.html">Fechar</a></div>
-                  <div class="btn-outline-principal"><a href="despesas.html">Editar</a></div>
-                  <div class="btn-outline-principal" onclick="avancar()">Histórico</div>
-                </div>
+
             </form>
           </div>
 
@@ -142,10 +148,7 @@
                   <td>Atendido.</td>
                 </tr>
               </table>
-              <div class="botoes">
-                <div class="btn-outline-principal"><a href="pleitos.html">Fechar</a></div>
-                <div class="btn-outline-principal" onclick="voltar()">Dados</div>
-              </div>
+
             </div>
           </div>
         </div>

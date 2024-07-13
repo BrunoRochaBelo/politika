@@ -1,7 +1,7 @@
 :root {
   /* Primary Colors */
   --cor-p1: hsl(218, 80%, 50%);
-  --cor-p2: hsl(218, 50%, 55%);
+  --cor-p2: hsl(218, 60%, 55%);
   --cor-p3: hsl(218, 70%, 60%);
 
   /* Secondary Colors */
@@ -9,8 +9,8 @@
   --cor-s2: hsl(35, 70%, 45%);
 
   /* Support Colors */
-  --cor-ap1: hsl(218, 12%, 6%);
-  --cor-ap2: hsl(218, 24%, 10%);
+  --cor-ap1: hsl(218, 36%, 16%);
+  --cor-ap2: hsl(218, 36%, 12%);
 
   /* Texts */
   --txt-titulo: hsl(218, 16%, 95%);
@@ -21,86 +21,80 @@
   --placeholder: hsl(218, 12%, 55%);
 
   /* Backgrounds */
-  --background-principal: hsl(218, 8%, 5%);
-  --container-fundo: hsl(218, 8%, 12%);
-  --borda: hsl(218, 8%, 22%);
-  --divisor: hsl(218, 8%, 20%);
-  --barra-pesquisa-fundo: hsl(218, 8%, 12%);
+  --background-principal: hsl(218, 5%, 7%);
+  --container-fundo: hsl(218, 7%, 12%);
+  --borda: hsl(212, 8%, 20%);
+  --divisor: hsl(212, 8%, 18%);
+  --barra-pesquisa-fundo: hsl(212, 8%, 13%);
 
   /* Cards */
   --txt-titulo-card: hsl(218, 16%, 95%);
   --txt-content-card: hsl(218, 16%, 85%);
-
-  --card-fundo: hsl(218, 12%, 18%);
-  --card-detalhe: hsl(218, 12%, 14%);
-  --card-borda: hsl(218, 12%, 14%);
-  --card-hover: hsl(218, 12%, 22%);
-
-  --card-aberto-fundo: hsl(218, 12%, 26%);
-  --card-aberto-detalhe: hsl(218, 12%, 22%);
+  --card-fundo: hsl(218, 8%, 20%);
+  --card-detalhe: hsl(218, 8%, 16%);
+  --card-borda: hsl(218, 8%, 16%);
+  --card-hover: hsl(218, 8%, 24%);
+  --card-aberto-fundo: hsl(218, 8%, 28%);
+  --card-aberto-detalhe: hsl(218, 8%, 24%);
 
   /* Modal Colors */
-  --modal-fundo: hsl(218, 8%, 12%);
-  --modal-titulo: hsl(218, 8%, 95%);
-  --modal-conteudo: hsl(218, 8%, 85%);
-  --modal-borda: hsl(218, 8%, 22%);
-  --modal-divisor: hsl(218, 8%, 25%);
+  --modal-fundo: hsl(212, 8%, 13%);
+  --modal-titulo: hsl(212, 8%, 95%);
+  --modal-conteudo: hsl(212, 8%, 85%);
+  --modal-borda: hsl(212, 8%, 22%);
+  --modal-divisor: hsl(212, 8%, 20%);
 
   /* Form Fields */
-  --container-form-fundo: hsl(218, 8%, 12%);
-  --form-background: hsl(218, 12%, 18%);
-  --input-bg-empty: hsl(218, 12%, 20%);
-  --input-bg-filled: hsl(218, 25%, 26%);
-  --input-border: hsl(218, 14%, 35%);
-  --input-label: hsl(218, 16%, 95%);
-  --input-placeholder: hsl(218, 8%, 60%);
-  --input-txt: hsl(218, 16%, 95%);
-  --input-icon: hsl(218, 16%, 75%);
-  --button-clear: hsl(218, 12%, 50%);
-  --button-clear-hover: hsl(218, 12%, 60%);
-  --input-focus-border: hsl(218, 70%, 50%);
-  --input-focus-background: hsl(218, 12%, 30%);
-  --input-error-border: hsl(0, 70%, 50%);
-  --input-error-background: hsl(0, 70%, 40%);
-  --input-success-border: hsl(140, 70%, 50%);
-  --input-success-background: hsl(140, 70%, 40%);
+  --container-form-fundo: hsl(218, 8%, 8%);
+  --form-background: hsl(218, 8%, 24%);
+  --input-bg-empty: hsl(218, 8%, 28%);
+  --input-bg-filled: hsl(218, 8%, 32%);
+  --input-border: hsl(218, 8%, 35%);
+  --input-label: hsl(218, 12%, 90%);
+  --input-placeholder: hsl(218, 8%, 45%);
+  --input-txt: hsl(218, 16%, 90%);
+  --input-icon: hsl(218, 12%, 70%);
+  --button-clear: hsl(218, 12%, 60%);
+  --button-clear-hover: hsl(218, 4%, 70%);
+  --input-focus-border: hsl(218, 70%, 55%);
+  --input-focus-background: hsl(218, 4%, 35%);
+  --input-error-border: hsl(0, 70%, 60%);
+  --input-error-background: hsl(0, 70%, 50%);
+  --input-success-border: hsl(140, 70%, 60%);
+  --input-success-background: hsl(140, 70%, 50%);
 
   /* Buttons */
   --btn-principal: hsl(218, 80%, 50%);
   --btn-principal-hover: hsl(218, 80%, 55%);
   --btn-principal-destaque: hsl(218, 80%, 60%);
   --btn-principal-txt: hsl(0, 0%, 95%);
-
   --btn-principal-alt: hsl(218, 70%, 55%);
   --btn-principal-alt-hover: hsl(218, 70%, 50%);
   --btn-principal-alt-destaque: hsl(218, 70%, 60%);
   --btn-principal-alt-txt: hsl(0, 0%, 95%);
-
   --btn-secundario: hsl(35, 70%, 50%);
   --btn-secundario-hover: hsl(35, 70%, 55%);
   --btn-secundario-destaque: hsl(35, 70%, 65%);
   --btn-secundario-txt: hsl(0, 0%, 95%);
-
-  --btn-filtro: hsl(218, 16%, 22%);
-  --btn-filtro-txt: hsl(218, 16%, 48%);
-  --btn-filtro-hover: hsl(218, 16%, 26%);
+  --btn-filtro: hsl(218, 10%, 22%);
+  --btn-filtro-txt: hsl(218, 10%, 48%);
+  --btn-filtro-hover: hsl(218, 10%, 26%);
   --btn-filtro-select: hsl(218, 65%, 45%);
   --btn-filtro-select-txt: hsl(218, 60%, 90%);
-
   --btn-filtro-alt: hsl(218, 70%, 55%);
   --btn-filtro-alt-hover: hsl(218, 70%, 50%);
   --btn-filtro-alt-destaque: hsl(218, 70%, 60%);
   --btn-filtro-alt-txt: hsl(0, 0%, 95%);
 
   /* Shadows */
-  --shadow-destaque: hsl(208, 80%, 60%);
+  --shadow-destaque: hsl(208, 80%, 50%);
   --sombra-leve: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.25);
   --sombra-moderada: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
   --sombra-intensa: 0 10px 20px rgba(0, 0, 0, 0.45),
     0 6px 6px rgba(0, 0, 0, 0.35);
 
   /* Communication Colors */
-  --link: hsl(218, 60%, 75%);
+  --link: hsl(212, 80%, 60%);
   --link-hover: hsl(218, 60%, 80%);
   --sucesso: hsl(140, 60%, 65%);
   --erro: hsl(0, 70%, 55%);
@@ -135,6 +129,7 @@
   --marcador-txt: hsl(218, 5%, 8%);
 }
 
+/* General Classes */
 .txt-principal {
   color: var(--txt-titulo-card);
 }
@@ -173,7 +168,7 @@
 }
 .btn-principal {
   background: var(--btn-principal);
-  color: var(--txt-titulo-card);
+  color: var(--btn-principal-txt);
 }
 .btn-principal-hover {
   background: var(--btn-principal-hover);
@@ -183,7 +178,7 @@
 }
 .btn-secundario {
   background: var(--btn-principal-alt);
-  color: var(--txt-titulo-card);
+  color: var(--btn-principal-alt-txt);
 }
 .btn-secundario-hover {
   background: var(--btn-principal-alt-hover);
@@ -192,8 +187,8 @@
   background: var(--btn-principal-alt-destaque);
 }
 .btn-alt {
-  background: var(--btn-secundario-alt);
-  color: var(--btn-secundario-alt-txt);
+  background: var(--btn-secundario);
+  color: var(--btn-secundario-txt);
 }
 .detalhes-1 {
   background: var(--card-detalhe);
@@ -237,7 +232,6 @@
 .cor-marca {
   background: var(--cor-marca);
 }
-
 .cor-marc0 {
   background: var(--cor-marc0);
 }
@@ -270,49 +264,4 @@
 }
 .cor-marc10 {
   background: var(--cor-marc10);
-}
-.cor-marc11 {
-  background: var(--cor-marc11);
-}
-.cor-marc12 {
-  background: var(--cor-marc12);
-}
-.cor-marc13 {
-  background: var(--cor-marc13);
-}
-.cor-marc14 {
-  background: var(--cor-marc14);
-}
-.cor-marc15 {
-  background: var(--cor-marc15);
-}
-.cor-marc16 {
-  background: var(--cor-marc16);
-}
-.cor-marc17 {
-  background: var(--cor-marc17);
-}
-.cor-marc18 {
-  background: var(--cor-marc18);
-}
-.cor-marc19 {
-  background: var(--cor-marc19);
-}
-.cor-marc20 {
-  background: var(--cor-marc20);
-}
-.cor-marc21 {
-  background: var(--cor-marc21);
-}
-.cor-marc22 {
-  background: var(--cor-marc22);
-}
-.cor-marc23 {
-  background: var(--cor-marc23);
-}
-.cor-marc24 {
-  background: var(--cor-marc24);
-}
-.cor-marc25 {
-  background: var(--cor-marc25);
 }

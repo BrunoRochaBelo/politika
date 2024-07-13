@@ -15,13 +15,13 @@ body {
   scrollbar-track-color: var(--scrollbar-bg);
 }
 body.offline {
-  background-color: #f0f0f0;
+  background-color: var(--background-principal);
   color: #666;
 }
 
 body.offline header,
 body.offline footer {
-  background-color: #ddd;
+  background-color: var(--background-principal);
 }
 
 ::-webkit-scrollbar {

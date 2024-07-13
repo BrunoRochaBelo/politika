@@ -1,5 +1,5 @@
 // Function to initiate a phone call
-function iniciarChamadaTelefonica(card) {
+function iniciarChamadaTelefonicaNiver(card) {
   const phoneElement = card.querySelector(".aniversario-small-card-num");
   const phoneNumber = phoneElement.textContent.trim();
   window.location.href = `tel:${phoneNumber}`;
@@ -38,7 +38,7 @@ function exibirDetalhesAniversariante(event) {
   }
 
   if (event.target.classList.contains("aniversario-small-card-phone")) {
-    iniciarChamadaTelefonica(card);
+    iniciarChamadaTelefonicaNiver(card);
   }
 }
 

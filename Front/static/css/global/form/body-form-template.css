@@ -1,5 +1,5 @@
 .body-form {
-  background: hsl(218, 14%, 3%);
+  background: var(--container-fundo);
   padding-top: 20px;
   display: grid;
   align-content: start;
