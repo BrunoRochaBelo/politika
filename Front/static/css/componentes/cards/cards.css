@@ -3,6 +3,7 @@
 .card-xs {
   min-height: 30px;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -13,6 +14,7 @@
 .card-s {
   min-height: 35px;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -23,6 +25,7 @@
 .card-m {
   min-height: 50px;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -33,6 +36,7 @@
 .card-l {
   min-height: 150px;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -47,6 +51,7 @@
   width: 135px;
   height: auto;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
   order: none;
@@ -58,6 +63,7 @@
   min-width: 155px;
   height: auto;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
   order: none;
@@ -69,6 +75,7 @@
   width: 184px;
   height: auto;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
   border: none;
@@ -83,6 +90,7 @@
   width: 100%;
   padding: 0.3rem;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: var(--font-light);
@@ -93,6 +101,7 @@
   border-radius: 6px;
   width: 100%;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: var(--font-medium-regular);
@@ -102,6 +111,7 @@
 .card-select-m {
   width: 100%;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   padding: 15px 15px;
   border-radius: 6px;
@@ -121,6 +131,7 @@
   gap: 10px;
   min-height: 50px;
   background: var(--card-fundo);
+  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 20px 15px 10px 15px;
