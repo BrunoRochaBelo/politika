@@ -7,7 +7,6 @@ body {
   color: var(--txt-titulo-card);
   margin: 0;
   padding: 0;
-
   overflow: hidden;
   box-sizing: border-box;
   background: var(--background-principal);
@@ -187,8 +186,7 @@ img {
 @media only screen and (max-width: 900px) {
   body {
     overflow: auto;
-    width: 100vw;
-
+    min-width: 100vw;
     background: var(--container-fundo);
   }
 }

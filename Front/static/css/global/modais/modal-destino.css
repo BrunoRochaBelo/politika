@@ -74,6 +74,7 @@
   margin: 0;
   font-size: 24px;
 }
+
 /* Estilos existentes */
 .modal-destino {
   display: grid;
@@ -81,6 +82,13 @@
   padding: 5px;
   color: var(--txt-subtitulo);
   text-decoration: none;
+  transition: gap 0.5s ease;
+}
+.modal-destino.hidden-gap {
+  gap: 0;
+}
+.modal-destino.visible-gap {
+  gap: 7px;
 }
 
 .search-wrapper-dest {
@@ -123,35 +131,48 @@
 .search-input-dest:focus::placeholder {
   color: var(--placeholder);
 }
+
+/* breadcrumb.css */
 .breadcrumb {
-  display: inline-block;
+  display: block;
   font-size: 0.75rem;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+  max-height: 100px;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
 }
+
 .breadcrumb.hidden {
   opacity: 0;
-  visibility: hidden;
-  display: none;
+  max-height: 0;
+  transform: translateY(-20px);
 }
+
 .breadcrumb.visible {
   opacity: 1;
-  visibility: visible;
-  display: inline-block;
+  max-height: 100px;
+  transform: translateY(0);
 }
 /* .breadcrumb:hover {
   text-decoration: underline;
 } */
 
 /* Estilos para os elementos do formulário dentro do modal */
+.form-group {
+  margin-bottom: 15px;
+}
+
 .form-group label {
-  display: inline-block;
+  display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .form-group.item1 .card-select-m,
 .form-group.item2 .card-select-m {
   border-radius: 40px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   padding: 15px;
 }
 

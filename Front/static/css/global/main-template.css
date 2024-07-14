@@ -50,6 +50,7 @@
     width: 19%;
     height: 35px;
     z-index: 2002;
+    border-radius: 25px;
   }
 
   .main-sidenav h1 {

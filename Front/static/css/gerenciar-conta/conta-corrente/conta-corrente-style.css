@@ -61,7 +61,7 @@
   gap: 10px;
 }
 
-button {
+.conta-corrente-container button {
   padding: 7px 15px;
   border: none;
   border-radius: 5px;
@@ -77,7 +77,7 @@ button.delete {
   color: #dc3545;
 }
 
-button:hover {
+.conta-corrente-container button:hover {
   opacity: 0.9;
 }
 
@@ -117,17 +117,7 @@ button:hover {
   cursor: pointer;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input {
+.conta-corrente-modal .form-group input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;

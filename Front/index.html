@@ -574,7 +574,6 @@
           <div class="form-group item1">
             <label for="estado">Estado:</label>
             <select class="card-select-m" id="estado" name="estado">
-              <option value="" selected disabled>Selecione um estado</option>
               <option value="PE">Pernambuco</option>
               <option value="SP">São Paulo</option>
               <option value="RJ">Rio de Janeiro</option>
@@ -606,15 +605,7 @@
     document.addEventListener("DOMContentLoaded", function () {
       const contentArea = document.querySelector(".area-interna-containerContent-template-content");
       const breadcrumb = document.querySelector(".breadcrumb");
-
-      function debounce(func, wait) {
-        let timeout;
-        return function (...args) {
-          const context = this;
-          clearTimeout(timeout);
-          timeout = setTimeout(() => func.apply(context, args), wait);
-        };
-      }
+      const modalDestino = document.querySelector(".modal-destino");
 
       function handleScroll() {
         const scrollTop = contentArea.scrollTop;
@@ -622,16 +613,19 @@
         if (scrollTop > 0) {
           breadcrumb.classList.remove('visible');
           breadcrumb.classList.add('hidden');
+          modalDestino.classList.remove('visible-gap');
+          modalDestino.classList.add('hidden-gap');
         } else {
           breadcrumb.classList.remove('hidden');
           breadcrumb.classList.add('visible');
+          modalDestino.classList.remove('hidden-gap');
+          modalDestino.classList.add('visible-gap');
         }
       }
 
-      const debouncedHandleScroll = debounce(handleScroll, 1);
-
-      contentArea.addEventListener("scroll", debouncedHandleScroll);
+      contentArea.addEventListener("scroll", handleScroll);
     });
+
   </script>
 
 

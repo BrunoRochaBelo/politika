@@ -2,15 +2,15 @@
   /* Primary Colors */
   --cor-p1: hsl(218, 80%, 50%);
   --cor-p2: hsl(218, 60%, 55%);
-  --cor-p3: hsl(218, 70%, 60%);
+  --cor-p3: hsl(218, 75%, 65%);
 
   /* Secondary Colors */
   --cor-s1: hsl(35, 60%, 50%);
   --cor-s2: hsl(35, 70%, 45%);
 
   /* Support Colors */
-  --cor-ap1: hsl(218, 36%, 16%);
-  --cor-ap2: hsl(218, 36%, 12%);
+  --cor-ap1: hsl(218, 36%, 14%);
+  --cor-ap2: hsl(218, 36%, 10%);
 
   /* Texts */
   --txt-titulo: hsl(218, 16%, 95%);
@@ -30,12 +30,15 @@
   /* Cards */
   --txt-titulo-card: hsl(218, 16%, 95%);
   --txt-content-card: hsl(218, 16%, 85%);
-  --card-fundo: hsl(218, 8%, 20%);
-  --card-detalhe: hsl(218, 8%, 16%);
-  --card-borda: hsl(218, 8%, 16%);
-  --card-hover: hsl(218, 8%, 24%);
-  --card-aberto-fundo: hsl(218, 8%, 28%);
-  --card-aberto-detalhe: hsl(218, 8%, 24%);
+
+  --card-fundo: hsl(218, 10%, 20%);
+  --card-detalhe: hsl(218, 10%, 25%);
+  --card-borda: hsl(218, 10%, 16%);
+
+  --card-hover: hsl(218, 10%, 24%);
+
+  --card-aberto-fundo: hsl(218, 10%, 28%);
+  --card-aberto-detalhe: hsl(218, 10%, 24%);
 
   /* Modal Colors */
   --modal-fundo: hsl(212, 8%, 13%);
@@ -68,23 +71,27 @@
   --btn-principal-hover: hsl(218, 80%, 55%);
   --btn-principal-destaque: hsl(218, 80%, 60%);
   --btn-principal-txt: hsl(0, 0%, 95%);
+
   --btn-principal-alt: hsl(218, 70%, 55%);
   --btn-principal-alt-hover: hsl(218, 70%, 50%);
   --btn-principal-alt-destaque: hsl(218, 70%, 60%);
   --btn-principal-alt-txt: hsl(0, 0%, 95%);
+
   --btn-secundario: hsl(35, 70%, 50%);
   --btn-secundario-hover: hsl(35, 70%, 55%);
   --btn-secundario-destaque: hsl(35, 70%, 65%);
   --btn-secundario-txt: hsl(0, 0%, 95%);
-  --btn-filtro: hsl(218, 10%, 22%);
-  --btn-filtro-txt: hsl(218, 10%, 48%);
-  --btn-filtro-hover: hsl(218, 10%, 26%);
-  --btn-filtro-select: hsl(218, 65%, 45%);
-  --btn-filtro-select-txt: hsl(218, 60%, 90%);
-  --btn-filtro-alt: hsl(218, 70%, 55%);
-  --btn-filtro-alt-hover: hsl(218, 70%, 50%);
-  --btn-filtro-alt-destaque: hsl(218, 70%, 60%);
-  --btn-filtro-alt-txt: hsl(0, 0%, 95%);
+
+  --btn-filtro: hsl(218, 12%, 22%);
+  --btn-filtro-txt: hsl(218, 12%, 48%);
+  --btn-filtro-hover: hsl(218, 12%, 26%);
+  --btn-filtro-select: hsl(218, 80%, 45%);
+  --btn-filtro-select-txt: hsl(218, 80%, 90%);
+
+  --btn-filtro-alt: hsl(218, 75%, 45%);
+  --btn-filtro-alt-hover: hsl(218, 75%, 50%);
+  --btn-filtro-alt-destaque: hsl(218, 75%, 60%);
+  --btn-filtro-alt-txt: hsl(218, 75%, 95%);
 
   /* Shadows */
   --shadow-destaque: hsl(208, 80%, 50%);

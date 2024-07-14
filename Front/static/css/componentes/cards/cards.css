@@ -48,7 +48,7 @@
   height: auto;
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
-  border-radius: 23px;
+  border-radius: 15px;
   order: none;
   box-sizing: border-box;
   padding: 15px 20px;
@@ -59,7 +59,7 @@
   height: auto;
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
-  border-radius: 23px;
+  border-radius: 15px;
   order: none;
   box-sizing: border-box;
   padding: 15px 20px;
@@ -70,7 +70,7 @@
   height: auto;
   background: var(--card-fundo);
   box-shadow: var(--sombra-moderada);
-  border-radius: 23px;
+  border-radius: 15px;
   border: none;
   box-sizing: border-box;
   padding: 15px 20px;
@@ -223,6 +223,6 @@
   .card-tmf-l {
     border: none;
     box-shadow: var(--sombra-moderada);
-    border-radius: 23px;
+    border-radius: 15px;
   }
 }
