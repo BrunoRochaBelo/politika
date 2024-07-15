@@ -59,6 +59,7 @@
 @import "./pleitos/modal-despachar-pleito.css";
 
 /* despesas */
+@import "./despesas/dashboard-centro-custo.css";
 @import "./despesas/despesas-style.css";
 
 /* gerenciar-conta */

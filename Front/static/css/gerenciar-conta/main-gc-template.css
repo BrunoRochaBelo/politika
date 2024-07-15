@@ -26,7 +26,7 @@
 .main-gc .container-abas-template {
   background: none;
   box-shadow: none;
-  max-height: calc(var(--vh, 1vh) * 100 - 15.3rem);
+  max-height: 1vh - 15.3rem);
 }
 
 /* RESPONSIVO */
@@ -48,7 +48,7 @@
   .main-gc .container-abas-template {
     background: none;
     box-shadow: none;
-    max-height: calc(var(--vh, 1vh) * 100 - 13.5rem);
+    max-height: 1vh - 13.5rem);
   }
   .main-gc .container-abas-template-header {
     justify-content: center;

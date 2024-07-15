@@ -61,7 +61,7 @@
     <section class="main-section">
       <div class="container-template">
         <h2 class="container-template-header">Despesas</h2>
-        <div class="container-template-content">
+        <div class="container-template-content container-template-content-com-header-fx-int">
           <div class="area-interna-containerContent-template">
 
             <div class="area-interna-containerContent-template-header">
@@ -72,6 +72,7 @@
                     <option value="gabinete">Centro de Custo Gabinete</option>
                     <option value="marketing">Centro de Custo Marketing</option>
                   </select>
+                  <div id="available-value" class="available-value dashboard-hidden">R$ 0,00</div>
                 </div>
                 <div class="dashboard-content">
                   <div class="chart-wrapper">
@@ -82,7 +83,7 @@
                     </div>
                   </div>
                   <div class="accounts-list-container">
-                    <h2>Contas:</h2>
+                    <h2>Meta por conta</h2>
                     <div class="accounts-list" id="accounts-list">
                       <!-- Os itens da conta serão adicionados dinamicamente aqui -->
                     </div>
@@ -202,12 +203,14 @@
   </div>
 
 
+
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibirFiltro.js"></script>
   <script src="./static/js/ExibirDetalhesDespesa.js"></script>
+  <script src="./static/js/ScrollRemoverItensDespesa.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./static/js/DashboardCentroCustoDespesas.js"></script>
 

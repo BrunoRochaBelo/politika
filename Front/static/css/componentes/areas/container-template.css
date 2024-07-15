@@ -4,7 +4,6 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: calc(var(--vh, 1vh) * 100 - 6rem);
   background: var(--container-fundo);
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;

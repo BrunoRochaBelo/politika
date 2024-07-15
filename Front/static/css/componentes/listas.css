@@ -126,6 +126,23 @@
 }
 
 /* Estilos para os primeiros cards de cada lista */
+/* Adiciona margin-top: 15px ao primeiro <li> de lista-vertical e lista-vertical-alt */
+.lista-vertical > li:first-child,
+.lista-vertical-alt > li:first-child {
+  margin-top: 15px;
+}
+
+/* Remove a margin-top se a lista estiver dentro de um <li> de outra lista */
+li > .lista-vertical > li:first-child,
+li > .lista-vertical-alt > li:first-child {
+  margin-top: 0; /* Sobrescreve o estilo aplicado anteriormente */
+}
+
+/* Remove a margin-top se a lista estiver dentro de sessao-interna-template */
+.sessao-interna-template .lista-vertical > li:first-child,
+.sessao-interna-template .lista-vertical-alt > li:first-child {
+  margin-top: 0;
+}
 
 /* RESPONSIVO */
 @media only screen and (max-width: 900px) {

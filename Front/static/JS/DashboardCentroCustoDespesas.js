@@ -87,17 +87,24 @@ document.addEventListener("DOMContentLoaded", () => {
           <span>${name}</span>
         </div>
         <div class="progress-bar-column">
-          <div class="account-label">${spent.toFixed(2)} / ${limit.toFixed(
+          <div class="account-label">${spent.toFixed(2)} de ${limit.toFixed(
         2
       )}</div>
           <div class="progress-bar-wrapper">
-            <div class="progress-bar" style="width: ${percentage}%; background-color: ${getColor(
+            <div class="progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
         percentage
       )}"></div>
           </div>
         </div>
       `;
       accountsList.appendChild(accountItem);
+    });
+
+    // Adiciona a animação às barras de progresso
+    document.querySelectorAll(".progress-bar").forEach((bar) => {
+      const progress = bar.dataset.progress;
+      bar.style.setProperty("--progress-bar-width", `${progress}%`);
+      bar.style.width = `${progress}%`;
     });
   };
 

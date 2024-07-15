@@ -106,6 +106,7 @@
   border-top-left-radius: 0px;
   border-top: 1px solid var(--background-principal);
   padding: 20px 0px 0px 0px;
+  scroll-behavior: smooth;
 }
 
 .area-interna-containerContent-template-not-header {
