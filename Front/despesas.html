@@ -63,7 +63,36 @@
         <h2 class="container-template-header">Despesas</h2>
         <div class="container-template-content">
           <div class="area-interna-containerContent-template">
-            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+
+            <div class="area-interna-containerContent-template-header">
+              <div class="dashboard-container">
+                <div class="dashboard-header">
+                  <select id="cost-center-select" class="cost-center-select">
+                    <option value="campanha">Centro de Custo Campanha</option>
+                    <option value="gabinete">Centro de Custo Gabinete</option>
+                    <option value="marketing">Centro de Custo Marketing</option>
+                  </select>
+                </div>
+                <div class="dashboard-content">
+                  <div class="chart-wrapper">
+                    <canvas id="expense-chart"></canvas>
+                    <div class="chart-center-text">
+                      <div id="center-text">R$ 0,00</div>
+                      <div id="center-label">Disponível</div>
+                    </div>
+                  </div>
+                  <div class="accounts-list-container">
+                    <h2>Contas:</h2>
+                    <div class="accounts-list" id="accounts-list">
+                      <!-- Os itens da conta serão adicionados dinamicamente aqui -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="area-interna-containerContent-template-content">
               <ul class="lista-vertical-alt">
                 <li class="area-filtro">
                   <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
@@ -179,6 +208,8 @@
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/OcultarExibirFiltro.js"></script>
   <script src="./static/js/ExibirDetalhesDespesa.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./static/js/DashboardCentroCustoDespesas.js"></script>
 
 </body>
 

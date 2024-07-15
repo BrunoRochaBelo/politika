@@ -1,5 +1,5 @@
 .body-view {
-  background: hsl(215, 14%, 3%);
+  background: var(--container-fundo);
   padding-top: 20px;
   display: grid;
   align-content: start;
@@ -133,7 +133,7 @@
 .campo-view h3 {
   display: inline;
   font-size: 12px;
-  font-weight: regular;
+  font-weight: 600;
   color: var(--input-placeholder);
   padding: 3px 0;
   margin: 0;

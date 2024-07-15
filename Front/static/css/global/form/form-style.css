@@ -39,8 +39,8 @@ legend {
 
 .campo label {
   display: block;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 600;
   margin-bottom: 10px;
   margin-left: 5px;
   color: var(--input-label);

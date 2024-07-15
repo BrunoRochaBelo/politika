@@ -90,7 +90,7 @@
   filter: brightness(1.1);
 }
 .floatingButton:active {
-  background: linear-gradient(135deg, hsl(215, 80%, 40%), hsl(215, 88%, 35%));
+  background: linear-gradient(135deg, hsl(218, 80%, 40%), hsl(218, 88%, 35%));
 }
 
 /* RESPONSIVO */

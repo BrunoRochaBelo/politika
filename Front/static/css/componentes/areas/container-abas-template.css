@@ -120,7 +120,6 @@
     background: var(--background-principal);
     border-radius: 0;
     box-shadow: none;
-    max-height: calc(var(--vh, 1vh) * 100);
   }
   .container-abas-template-header {
     grid-area: container-abas-template-header;
@@ -150,16 +149,16 @@
   }
 
   .nav {
-    padding: 1px;
+    padding: 0px;
     justify-items: stretch;
-    width: 305px;
+    width: 308px;
     box-shadow: none;
   }
   #nav1 a,
   #nav2 a,
   #nav3 a {
     color: var(--txt-subtitulo);
-    padding: 4px auto;
+    padding: 5px auto;
     font-size: 15px;
     font-weight: 400;
   }

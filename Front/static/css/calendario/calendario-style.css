@@ -208,12 +208,9 @@
 }
 
 /* Estilos da Agenda - Agora, Passado e Futuro */
-/*.agenda .card-session.active {
-  background: none;
-  border: none;
-  box-shadow: none;
-  margin: 0 5px;
-}*/
+.agenda .card-session.active {
+  box-shadow: var(--sombra-leve);
+}
 .agenda .card-session.active .lista-vertical-cards {
   gap: 4px;
 }

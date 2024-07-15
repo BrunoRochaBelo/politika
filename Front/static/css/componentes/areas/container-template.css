@@ -45,7 +45,6 @@
     background: var(--background-principal);
     border-radius: 0;
     box-shadow: none;
-    max-height: calc(var(--vh, 1vh) * 100);
   }
   .container-template-header {
     padding: 5px 5px 5px 15px;

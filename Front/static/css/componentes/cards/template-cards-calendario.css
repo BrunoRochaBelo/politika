@@ -107,7 +107,7 @@
   grid-area: calendario-small-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--card-detalhe);
+  border-top: 1px solid var(--card-aberto-detalhe);
   transition: opacity 0.25s ease-in-out;
 }
 
@@ -251,7 +251,7 @@
   grid-area: calendario-large-card-editar;
   display: none;
   opacity: 0;
-  border-top: 1px solid var(--card-detalhe);
+  border-top: 1px solid var(--card-aberto-detalhe);
 }
 
 .exibirDetalheEvento {
