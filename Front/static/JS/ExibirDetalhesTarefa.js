@@ -61,7 +61,7 @@ function ajustarScrollParaCentralizarCardTarefaSmall(cardTarefaSmall) {
       newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
     }
 
-    // Ajustar a posição de scroll do container-template-content, se necessário
+    // Ajustar a posição de scroll do area-interna-containerContent-template-content, se necessário
     if (newScrollTop !== undefined) {
       areaTemplateContent.scrollTop = newScrollTop;
     }
@@ -163,7 +163,7 @@ function ajustarScrollParaCentralizarCardTarefaMedium(cardTarefaMedium) {
       newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
     }
 
-    // Ajustar a posição de scroll do container-template-content, se necessário
+    // Ajustar a posição de scroll do area-interna-containerContent-template-content, se necessário
     if (newScrollTop !== undefined) {
       areaTemplateContent.scrollTop = newScrollTop;
     }

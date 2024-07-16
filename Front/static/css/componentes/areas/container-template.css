@@ -12,6 +12,7 @@
   grid-template-areas:
     "container-template-header"
     "container-template-content";
+  scroll-behavior: smooth;
 }
 .container-template-header {
   grid-area: container-template-header;
@@ -31,6 +32,7 @@
   height: auto;
   border-radius: 0px;
   border-top: 1px solid var(--background-principal);
+  scroll-behavior: smooth;
 }
 
 .container-template-content-com-header-fx-int {

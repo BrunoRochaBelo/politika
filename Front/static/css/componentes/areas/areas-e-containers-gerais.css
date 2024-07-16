@@ -84,6 +84,7 @@
     "area-interna-containerContent-template-header"
     "area-interna-containerContent-template-content";
   background: transparent;
+  scroll-behavior: smooth;
 }
 .area-interna-containerContent-template-header {
   grid-area: area-interna-containerContent-template-header;
@@ -95,6 +96,7 @@
   z-index: 10;
   padding: 0px;
   background: transparent;
+  scroll-behavior: smooth;
 }
 .area-interna-containerContent-template-content {
   grid-area: area-interna-containerContent-template-content;

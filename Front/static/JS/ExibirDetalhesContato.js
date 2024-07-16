@@ -51,8 +51,10 @@ function exibirDetalhesContato(event) {
 }
 
 function ajustarScrollParaCentralizarCard(card) {
-  // Encontra o contêiner pai mais próximo com a classe 'container-template-content'
-  const areaTemplateContent = card.closest(".container-template-content");
+  // Encontra o contêiner pai mais próximo com a classe 'area-interna-containerContent-template-content'
+  const areaTemplateContent = card.closest(
+    ".area-interna-containerContent-template-content"
+  );
 
   if (!areaTemplateContent) return; // Se não encontrar, retorna sem fazer nada
 
@@ -81,7 +83,7 @@ function ajustarScrollParaCentralizarCard(card) {
       newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
     }
 
-    // Ajustar a posição de scroll do container-template-content, se necessário
+    // Ajustar a posição de scroll do area-interna-containerContent-template-content, se necessário
     if (newScrollTop !== undefined) {
       areaTemplateContent.scrollTop = newScrollTop;
     }

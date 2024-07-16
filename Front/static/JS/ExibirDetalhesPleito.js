@@ -33,7 +33,7 @@ function exibirDetalhesPleito(event) {
 
 function ajustarScrollParaCentralizarCard(card) {
   const areaTemplateContent = document.querySelector(
-    ".container-abas-template-content"
+    ".area-interna-containerContent-template-content"
   );
   const cardOffsetTop = card.offsetTop;
   const cardHeight = card.offsetHeight;

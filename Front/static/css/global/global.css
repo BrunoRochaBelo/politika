@@ -12,6 +12,7 @@ body {
   background: var(--background-principal);
   scrollbar-face-color: var(--scrollbar-bg);
   scrollbar-track-color: var(--scrollbar-bg);
+  user-select: none;
 }
 body.offline {
   background-color: var(--background-principal);

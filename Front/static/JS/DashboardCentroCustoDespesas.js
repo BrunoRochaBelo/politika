@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const costCenterSelect = document.getElementById("cost-center-select");
   const centerText = document.getElementById("center-text");
+  const availableValue = document.getElementById("available-value");
   const accountsList = document.getElementById("accounts-list");
 
   const expenses = {
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           data: [],
           backgroundColor: [],
-          borderColor: "#25282d",
+          borderColor: "#232b39",
           borderWidth: 1,
         },
       ],
@@ -67,10 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const remaining = total - totalSpent;
 
     centerText.textContent = `R$ ${remaining.toFixed(2)}`;
+    availableValue.textContent = `R$ ${remaining.toFixed(2)}`;
 
     const data = [totalSpent, remaining];
     const backgroundColor = data.map((_, index) =>
-      index === 0 ? getColor((totalSpent / total) * 100) : "#16191d"
+      index === 0 ? getColor((totalSpent / total) * 100) : "#0f151f"
     );
 
     chart.data.datasets[0].data = data;
@@ -82,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const percentage = (spent / limit) * 100;
       const accountItem = document.createElement("div");
       accountItem.className = "account-item";
-      accountItem.innerHTML = `
-        <div class="account-label-column">
+      accountItem.innerHTML = `<div class="account-label-column">
           <span>${name}</span>
         </div>
         <div class="progress-bar-column">
@@ -95,8 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         percentage
       )}"></div>
           </div>
-        </div>
-      `;
+        </div>`;
       accountsList.appendChild(accountItem);
     });
 

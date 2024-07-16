@@ -9,6 +9,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const item1Original = item1.cloneNode(true);
   const item2Original = item2.cloneNode(true);
 
+  function handleTransitionEnd(event) {
+    if (
+      event.propertyName === "opacity" &&
+      event.target.classList.contains("hidden")
+    ) {
+      event.target.parentElement.removeChild(event.target);
+      if (event.target.classList.contains("item1")) {
+        item1 = null;
+      } else if (event.target.classList.contains("item2")) {
+        item2 = null;
+      }
+    }
+  }
+
   contentArea.addEventListener("scroll", function () {
     const scrollTop = contentArea.scrollTop;
 
@@ -19,25 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (item1) {
         item1.classList.remove("visible");
         item1.classList.add("hidden");
-        item1.addEventListener("transitionend", function removeItem1() {
-          if (item1 && item1.parentElement) {
-            item1.parentElement.removeChild(item1);
-            item1 = null;
-          }
-          item1.removeEventListener("transitionend", removeItem1);
-        });
+        item1.addEventListener("transitionend", handleTransitionEnd);
       }
 
       if (item2) {
         item2.classList.remove("visible");
         item2.classList.add("hidden");
-        item2.addEventListener("transitionend", function removeItem2() {
-          if (item2 && item2.parentElement) {
-            item2.parentElement.removeChild(item2);
-            item2 = null;
-          }
-          item2.removeEventListener("transitionend", removeItem2);
-        });
+        item2.addEventListener("transitionend", handleTransitionEnd);
       }
     } else {
       listaSelect.classList.remove("hidden-gap");

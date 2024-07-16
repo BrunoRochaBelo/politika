@@ -36,8 +36,9 @@
   border: none;
   box-shadow: var(--sombra-leve);
   transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
-  opacity: 1;
   max-height: 100px;
+  overflow: hidden;
+  opacity: 1;
   transform: translateY(0);
 }
 
@@ -48,8 +49,9 @@
   margin-right: 3px;
   box-shadow: var(--sombra-leve);
   transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
-  opacity: 1;
   max-height: 100px;
+  overflow: hidden;
+  opacity: 1;
   transform: translateY(0);
 }
 
@@ -115,6 +117,7 @@
   display: grid;
   grid-auto-flow: column;
   gap: 5px;
+  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
 }
 .dia-semana {
   text-align: center;

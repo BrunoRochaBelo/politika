@@ -12,6 +12,7 @@
   grid-template-areas:
     "container-abas-template-header"
     "container-abas-template-content";
+  scroll-behavior: smooth;
 }
 .container-abas-template-header {
   grid-area: container-abas-template-header;
@@ -33,6 +34,7 @@
   border-radius: 0px;
   border-top: 1px solid var(--background-principal);
   background: none;
+  scroll-behavior: smooth;
 }
 
 /* Estilos */
@@ -149,15 +151,16 @@
   }
 
   .nav {
-    padding: 0px;
+    padding: 1px;
     justify-items: stretch;
     width: 308px;
     box-shadow: none;
+    background: var(--container-fundo);
   }
   #nav1 a,
   #nav2 a,
   #nav3 a {
-    color: var(--txt-subtitulo);
+    color: var(--txt-nav);
     padding: 5px auto;
     font-size: 15px;
     font-weight: 400;
@@ -173,7 +176,7 @@
   #nav3 a.indicador-2 {
     font-size: 15px;
     font-weight: 400;
-    color: var(--txt-titulo);
-    background: var(--container-fundo);
+    color: var(--txt-nav-select);
+    background: var(--background-principal);
   }
 }

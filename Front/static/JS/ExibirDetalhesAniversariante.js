@@ -45,7 +45,7 @@ function exibirDetalhesAniversariante(event) {
 // Function to adjust the scroll to centralize the card
 function ajustarScrollParaCentralizarCard(card) {
   const areaTemplateContent = document.querySelector(
-    ".container-template-content"
+    ".area-interna-containerContent-template-content"
   );
   const cardOffsetTop = card.offsetTop;
   const cardHeight = card.offsetHeight;
@@ -72,7 +72,7 @@ function ajustarScrollParaCentralizarCard(card) {
       newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
     }
 
-    // Adjust the scroll position of container-template-content if necessary
+    // Adjust the scroll position of area-interna-containerContent-template-content if necessary
     if (newScrollTop !== undefined) {
       areaTemplateContent.scrollTop = newScrollTop;
     }
