@@ -6,7 +6,8 @@
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  grid: "home-header-logo home-header-nav home-header-user" 45px;
+  grid: "home-header-logo home-header-nav home-header-user";
+  margin-top: 3px;
 }
 
 /* Áreas de grid */

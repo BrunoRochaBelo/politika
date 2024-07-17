@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           data: [],
           backgroundColor: [],
-          borderColor: "#232b39",
+          borderColor: "hsl(218, 14%, 15%)",
           borderWidth: 1,
         },
       ],
@@ -71,13 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
     availableValue.textContent = `R$ ${remaining.toFixed(2)}`;
 
     const data = [totalSpent, remaining];
+    const spentPercentage = (totalSpent / total) * 100;
     const backgroundColor = data.map((_, index) =>
-      index === 0 ? getColor((totalSpent / total) * 100) : "#0f151f"
+      index === 0 ? getColor(spentPercentage) : "#101319"
     );
 
     chart.data.datasets[0].data = data;
     chart.data.datasets[0].backgroundColor = backgroundColor;
     chart.update();
+
+    availableValue.style.color = getColor(spentPercentage);
 
     accountsList.innerHTML = "";
     accounts.forEach(({ name, limit, spent }) => {
