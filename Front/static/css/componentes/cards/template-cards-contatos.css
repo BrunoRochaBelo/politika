@@ -93,7 +93,7 @@
 .contatos-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
     "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
@@ -127,7 +127,7 @@
 .contatos-small-card-expanded .contatos-small-card-title {
   font-size: 14px;
   font-weight: 500;
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
 }
 .contatos-small-card-expanded .contatos-small-card-tipocontato {
   font-size: 14px;

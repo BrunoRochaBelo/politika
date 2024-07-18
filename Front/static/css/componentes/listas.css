@@ -21,7 +21,7 @@
   gap: 2px;
   overflow: hidden;
   scrollbar-width: thick;
-  padding: 5px 10px;
+  padding: 10px;
 }
 .lista-vertical-fil {
   display: grid;
@@ -57,7 +57,7 @@
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
-  padding: 5px 10px;
+  padding: 10px;
 }
 
 .lista-select {

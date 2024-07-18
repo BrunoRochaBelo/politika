@@ -109,7 +109,7 @@
 .despesas-medium-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
   grid:
     "despesas-medium-card-natureza despesas-medium-card-natureza"
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
@@ -147,8 +147,10 @@
 
 .despesas-medium-card-expanded .despesas-medium-card-natureza {
   border-left: 4px solid var(--card-aberto-detalhe);
+  color: var(--txt-destaque);
 }
 
 .despesas-medium-card-expanded .despesas-medium-card-desc {
   background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
 }

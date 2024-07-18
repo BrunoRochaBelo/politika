@@ -24,7 +24,7 @@
   right: 1rem;
   color: var(--txt-content-card);
   background: var(--modal-fundo);
-  border: 1px solid var(--container-fundo);
+  border: 1px solid var(--modal-borda);
   padding: 1rem;
   gap: 5px;
   border-radius: 25px;

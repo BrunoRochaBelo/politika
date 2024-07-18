@@ -168,8 +168,8 @@
   #nav1 a:hover,
   #nav2 a:hover,
   #nav3 a:hover {
-    background: var(--card-fundo);
-    color: var(--txt-subtitulo);
+    background: var(--container-fundo);
+    color: var(--txt-nav);
   }
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,
@@ -177,6 +177,6 @@
     font-size: 15px;
     font-weight: 400;
     color: var(--txt-nav-select);
-    background: var(--background-principal);
+    background: var(--cor-ap2);
   }
 }

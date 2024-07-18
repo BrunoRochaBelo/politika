@@ -53,6 +53,7 @@
   overflow: hidden;
   opacity: 1;
   transform: translateY(0);
+  background: var(--btn-filtro);
 }
 
 .nav-calendar .item1.hidden,
@@ -213,6 +214,7 @@
 /* Estilos da Agenda - Agora, Passado e Futuro */
 .agenda .card-session.active {
   box-shadow: var(--sombra-leve);
+  margin: 0 5px;
 }
 .agenda .card-session.active .lista-vertical-cards {
   gap: 4px;
@@ -278,7 +280,6 @@
   .nav-calendar .item2 {
     padding: 3px 5px;
     margin-right: 3px;
-    background: var(--modal-fundo);
   }
   .nav-calendar .item3 {
     padding: 3px 0px;

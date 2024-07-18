@@ -168,7 +168,7 @@
 .pleitos-medium-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
@@ -209,7 +209,9 @@
 
 .pleitos-medium-card-expanded .pleitos-medium-card-tiposolici {
   border-left: 4px solid var(--card-aberto-detalhe);
+  color: var(--txt-destaque);
 }
 .pleitos-medium-card-expanded .pleitos-medium-card-desc {
   background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
 }

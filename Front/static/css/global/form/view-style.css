@@ -66,10 +66,9 @@
 }
 .main-view .card-session.active {
   padding: 7px 0px;
-  margin: 0px;
+  margin: 0 5px;
   background: var(--container-form-fundo);
-  border: 1px solid transparent;
-  box-shadow: none;
+  box-shadow: var(--sombra-leve);
 }
 .main-view .sessao-interna-template-header.active-header a {
   color: var(--btn-filtro-select-txt);

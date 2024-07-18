@@ -94,7 +94,7 @@
 .tarefa-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data"
@@ -142,11 +142,12 @@
 
 .tarefa-small-card-expanded .tarefa-small-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
 }
 
 .tarefa-small-card-expanded .tarefa-small-card-desc {
   background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
 }
 
 /* Médio */
@@ -257,7 +258,7 @@
 .tarefa-medium-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-fundo) !important;
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
   grid:
     "tarefa-medium-card-title tarefa-medium-card-tag"
     "tarefa-medium-card-status tarefa-medium-card-data"
@@ -288,9 +289,10 @@
 
 .tarefa-medium-card-expanded .tarefa-medium-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);
-  color: var(--txt-titulo-card);
+  color: var(--txt-destaque);
 }
 
 .tarefa-medium-card-expanded .tarefa-medium-card-desc {
   background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
 }

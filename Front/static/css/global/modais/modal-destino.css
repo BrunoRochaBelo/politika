@@ -40,7 +40,7 @@
   background: var(--modal-fundo);
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid var(--container-fundo);
+  border: 1px solid var(--modal-borda);
   border-radius: 12px;
   width: 50%;
   position: relative;
@@ -64,7 +64,7 @@
   color: var(--cor-p3);
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--divisor);
+  border-bottom: 1px solid var(--modal-divisor);
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -198,12 +198,13 @@
 
 .submit-button {
   display: block;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--sucesso);
+  color: var(--message-success-txt);
   border: none;
   cursor: pointer;
   box-shadow: var(--sombra-leve);

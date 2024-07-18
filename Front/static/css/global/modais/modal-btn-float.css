@@ -64,7 +64,7 @@
 
 .modal-btn-floating-body li:hover {
   background: var(--card-detalhe);
-  color: var(--txt-destaque);
+  filter: brightness(1.1);
 }
 
 /* Botão do modal */
