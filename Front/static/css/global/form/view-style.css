@@ -23,7 +23,7 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--container-form-fundo);
+  background: var(--background-principal);
   border-radius: 25px;
   border: 1px solid hsl(214, 10%, 12%);
   border-top: none;
@@ -37,7 +37,7 @@
   box-shadow: none;
   background: none;
   background: transparent;
-  max-height: calc(var(--vh, 1vh) * 100 - 7rem);
+  max-height: calc(var(--vh, 1vh) * 100 - 3rem);
   border-radius: 25px;
   justify-content: stretch;
 }
@@ -67,7 +67,7 @@
 .main-view .card-session.active {
   padding: 7px 0px;
   margin: 0 5px;
-  background: var(--container-form-fundo);
+  background: var(--background-principal);
   box-shadow: var(--sombra-leve);
 }
 .main-view .sessao-interna-template-header.active-header a {
@@ -177,8 +177,7 @@
   .body-view {
     padding: 0px;
     border: none;
-    background: var(--container-form-fundo);
-    max-height: calc(var(--vh, 1vh) * 100);
+    background: var(--background-principal);
   }
   .body-view-template {
     display: grid;
@@ -207,7 +206,7 @@
     box-shadow: none;
     background: none;
     background: transparent;
-    max-height: calc(var(--vh, 1vh) * 100 - 5rem);
+    max-height: calc(var(--vh, 1vh) * 100 - 3rem);
     border-radius: 25px;
   }
   .main-view .container-abas-template-header {
