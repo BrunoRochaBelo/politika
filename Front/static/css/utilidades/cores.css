@@ -15,7 +15,7 @@
   /* Texts */
   --txt-titulo: hsl(222, 12%, 88%);
   --txt-subtitulo: hsl(222, 12%, 73%);
-  --txt-destaque: hsl(222, 100%, 93%);
+  --txt-destaque: hsl(222, 100%, 90%);
   --txt-nav: hsl(218, 12%, 60%);
   --txt-nav-select: hsl(218, 80%, 65%);
   --placeholder: hsl(222, 20%, 53%);
@@ -36,8 +36,8 @@
   --card-borda: hsl(222, 12%, 27%);
   --card-hover: hsl(222, 12%, 22%);
 
-  --card-aberto-fundo: hsl(222, 12%, 22%);
-  --card-aberto-detalhe: hsl(222, 12%, 26%);
+  --card-aberto-fundo: hsl(222, 12%, 26%);
+  --card-aberto-detalhe: hsl(222, 12%, 30%);
 
   /* Modal Colors */
   --modal-fundo: hsl(222, 12%, 12%);

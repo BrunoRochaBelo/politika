@@ -70,7 +70,7 @@
   background: var(--form-background);
   box-shadow: var(--sombra-leve);
 }
-.main-view .sessao-interna-template-header.active-header a {
+.main-view .secao-interna-template-header.active-header a {
   color: var(--btn-filtro-select-txt);
 }
 

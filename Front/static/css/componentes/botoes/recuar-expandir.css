@@ -18,7 +18,7 @@
 }
 
 /* Botão alternativo usado para expandir "indicadores e estatisticas" */
-.sessao-interna-template-header .btn-recuar-expandir {
+.secao-interna-template-header .btn-recuar-expandir {
   background: transparent;
   border: 1px solid transparent;
   color: var(--cor-p3);
@@ -27,7 +27,7 @@
   font-size: 11px;
   font-weight: 300;
 }
-.sessao-interna-template-header .btn-recuar-expandir::after {
+.secao-interna-template-header .btn-recuar-expandir::after {
   content: "";
   display: inline-block;
   width: 0;
@@ -38,7 +38,7 @@
   margin-left: 5px;
   border-radius: 25%;
 }
-.sessao-interna-template-header .btn-recuar-expandir.up::after {
+.secao-interna-template-header .btn-recuar-expandir.up::after {
   border-top: none;
   border-bottom: 5px solid var(--cor-p3);
 }

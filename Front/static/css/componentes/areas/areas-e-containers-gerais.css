@@ -119,19 +119,19 @@
 }
 
 /* Area Template Sessão Interna */
-.sessao-interna-template {
+.secao-interna-template {
   display: grid;
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 23px;
   box-shadow: none;
   grid:
-    "sessao-interna-template-header" auto
-    "sessao-interna-template-content" auto
+    "secao-interna-template-header" auto
+    "secao-interna-template-content" auto
     / 1fr;
 }
-.sessao-interna-template-header {
-  grid-area: sessao-interna-template-header;
+.secao-interna-template-header {
+  grid-area: secao-interna-template-header;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -145,12 +145,12 @@
   border-top-right-radius: 23px;
   border-top-left-radius: 23px;
 }
-.sessao-interna-template-header h2 {
+.secao-interna-template-header h2 {
   font-size: 14px;
   font-weight: 350;
 }
-.sessao-interna-template-content {
-  grid-area: sessao-interna-template-content;
+.secao-interna-template-content {
+  grid-area: secao-interna-template-content;
   overflow-x: auto;
   border-radius: 23px;
   padding: 0px;
@@ -158,11 +158,11 @@
 
 /* Estilos */
 .area-template::-webkit-scrollbar,
-.sessao-interna-template::-webkit-scrollbar,
+.secao-interna-template::-webkit-scrollbar,
 .container-compromisso-hoje-template::-webkit-scrollbar,
 .area-interna-containerContent-template::-webkit-scrollbar,
 .container-template-content::-webkit-scrollbar,
-.sessao-interna-template-content::-webkit-scrollbar,
+.secao-interna-template-content::-webkit-scrollbar,
 .container-compromisso-hoje-template-content::-webkit-scrollbar,
 .area-interna-containerContent-template-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
@@ -271,12 +271,12 @@
   }
 
   /* Area Template Sessão Interna */
-  .sessao-interna-template-header {
+  .secao-interna-template-header {
     font-size: 14px;
     font-weight: 300;
     padding: 10px 20px;
   }
-  .sessao-interna-template-header h2 {
+  .secao-interna-template-header h2 {
     font-size: 13px;
     font-weight: 300;
   }

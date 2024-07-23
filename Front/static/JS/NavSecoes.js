@@ -25,7 +25,7 @@ function scrollToTop(element, duration, callback) {
 // Função changeSession ajustada para usar callback
 function changeSession(sessionNumber) {
   const sessions = document.querySelectorAll(".session");
-  const selectedSession = document.getElementById("sessao" + sessionNumber);
+  const selectedSession = document.getElementById("secao" + sessionNumber);
   const cards = document.querySelectorAll(".card-session");
   const selectedCard = cards[sessionNumber - 1]; // Assumindo que a ordem é a mesma
   const areaContent =
@@ -33,7 +33,7 @@ function changeSession(sessionNumber) {
     document.querySelector(".container-abas-template-content");
 
   const selectedHeader = selectedCard.querySelector(
-    ".sessao-interna-template-header"
+    ".secao-interna-template-header"
   );
   const selectedArrow = selectedHeader.querySelector(".arrow");
 
@@ -48,7 +48,7 @@ function changeSession(sessionNumber) {
       if (session.classList.contains("active")) {
         session.classList.remove("active");
         const card = cards[index];
-        const header = card.querySelector(".sessao-interna-template-header");
+        const header = card.querySelector(".secao-interna-template-header");
         const arrow = header.querySelector(".arrow");
         header.classList.remove("active-header");
         arrow.classList.remove("up");

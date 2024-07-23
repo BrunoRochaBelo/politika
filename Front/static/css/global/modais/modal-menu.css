@@ -35,7 +35,7 @@
   grid:
     "modal-content-template-img modal-content-template-candidato modal-content-template-candidato"
     "modal-content-template-img modal-content-template-cargo-owner modal-content-template-partido"
-    "modal-content-template-sessao modal-content-template-sessao modal-content-template-sessao"
+    "modal-content-template-secao modal-content-template-secao modal-content-template-secao"
     "modal-content-template-sair modal-content-template-sair modal-content-template-sair"
     / 1fr 2fr auto;
 }
@@ -70,8 +70,8 @@
   font-weight: 370;
 }
 
-.modal-content-template-sessao {
-  grid-area: modal-content-template-sessao;
+.modal-content-template-secao {
+  grid-area: modal-content-template-secao;
   display: grid;
   background: var(--card-fundo);
   padding: 20px;

@@ -138,9 +138,9 @@ li > .lista-vertical-alt > li:first-child {
   margin-top: 0; /* Sobrescreve o estilo aplicado anteriormente */
 }
 
-/* Remove a margin-top se a lista estiver dentro de sessao-interna-template */
-.sessao-interna-template .lista-vertical > li:first-child,
-.sessao-interna-template .lista-vertical-alt > li:first-child {
+/* Remove a margin-top se a lista estiver dentro de secao-interna-template */
+.secao-interna-template .lista-vertical > li:first-child,
+.secao-interna-template .lista-vertical-alt > li:first-child {
   margin-top: 0;
 }
 

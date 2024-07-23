@@ -24,10 +24,14 @@
         <div class="container-template-content">
           <form id="form" class=" form" enctype="multipart/form-data">
             <ul class="lista-vertical-alt">
-              <li class="card-session sessao-interna-template active">
-                <h2 class="sessao-interna-template-header active-header"><a href="#" onclick="changeSession(1)">👤 Identificação<span class="arrow up"></a></h2>
-                <div class="sessao-interna-template-content">
-                  <div class="session active" id="sessao1">
+              <li class="card-session secao-interna-template active">
+                <h2 class="secao-interna-template-header active-header"><a href="#" onclick="changeSession(1)">
+                    <div class="agenda-icon agora">
+                      <img src="./static/imagens/icones/identificação.svg" alt="Identificação Icon">
+                    </div> Identificação<span class="arrow up">
+                  </a></h2>
+                <div class="secao-interna-template-content">
+                  <div class="session active" id="secao1">
                     <fieldset>
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
@@ -194,10 +198,14 @@
                   </div>
                 </div>
               </li>
-              <li class="card-session sessao-interna-template">
-                <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(2)">📍 Endereço<span class="arrow down"></a></h2>
-                <div class="sessao-interna-template-content">
-                  <div class="session" id="sessao2">
+              <li class="card-session secao-interna-template">
+                <h2 class="secao-interna-template-header"><a href="#" onclick="changeSession(2)">
+                    <div class="agenda-icon agora">
+                      <img src="./static/imagens/icones/endereço.svg" alt="Endereço Icon">
+                    </div> Endereço<span class="arrow down">
+                  </a></h2>
+                <div class="secao-interna-template-content">
+                  <div class="session" id="secao2">
                     <fieldset>
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
@@ -290,20 +298,16 @@
                   </div>
                 </div>
               </li>
-              <li class="card-session sessao-interna-template">
-                <h2 class="sessao-interna-template-header"><a href="#" onclick="changeSession(3)">ℹ️ Informações complementares<span class="arrow down"></a></h2>
-                <div class="sessao-interna-template-content">
-                  <div class="session" id="sessao3">
+              <li class="card-session secao-interna-template">
+                <h2 class="secao-interna-template-header"><a href="#" onclick="changeSession(3)">
+                    <div class="agenda-icon agora">
+                      <img src="./static/imagens/icones/info_complementar.svg" alt="Informações complementare Icon">
+                    </div> Informações complementares<span class="arrow down">
+                  </a></h2>
+                <div class="secao-interna-template-content">
+                  <div class="session" id="secao3">
                     <fieldset>
                       <legend class="titulo-xl"></legend>
-                      <div class="campo">
-                        <label for="indicacao">Indicação</label>
-                        <input type="text" id="indicacao" name="indicacao">
-                      </div>
-                      <div class="campo">
-                        <label for="nome_indicacao">Nome da indicação</label>
-                        <input type="text" id="nome_indicacao" name="nome_indicacao">
-                      </div>
                       <div class="campo">
                         <label for="estado_civil">Estado Civil</label>
                         <select id="estado_civil" name="estado_civil" onchange="mostrarCamposConjuge()">
@@ -359,6 +363,29 @@
                         </div>
                       </div>
                     </fieldset>
+                  </div>
+                </div>
+              </li>
+              <li class="card-session secao-interna-template">
+                <h2 class="secao-interna-template-header"><a href="#" onclick="changeSession(4)">
+                    <div class="agenda-icon agora">
+                      <img src="./static/imagens/icones/referencia_poli.svg" alt="REFERÊNCIA POLÍTICA Icon">
+                    </div> REFERÊNCIA POLÍTICA<span class="arrow down">
+                  </a></h2>
+                <div class="secao-interna-template-content">
+                  <div class="session" id="secao4">
+                    <fieldset>
+                      <legend class="titulo-xl"></legend>
+                      <div class="campo">
+                        <label for="indicacao">Indicação</label>
+                        <input type="text" id="indicacao" name="indicacao">
+                      </div>
+                      <div class="campo">
+                        <label for="nome_indicacao">Nome da indicação</label>
+                        <input type="text" id="nome_indicacao" name="nome_indicacao">
+                      </div>
+
+                    </fieldset>
                     <div class="botoes">
                       <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
                     </div>
@@ -375,7 +402,7 @@
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/FormContato.js"></script>
-  <script src="./static/js/NavSessoes.js"></script>
+  <script src="./static/js/NavSecoes.js"></script>
 
 </body>
 
