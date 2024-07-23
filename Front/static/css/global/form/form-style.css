@@ -5,7 +5,6 @@
   grid-template-columns: 1fr;
   gap: 20px;
   background: none;
-
   padding-bottom: 15px;
 }
 
@@ -312,6 +311,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .campo select[required].success {
   border: 1px solid transparent !important;
   background: var(--input-bg-filled) !important;
+  color: var(--input-txt) !important;
 }
 .card.error {
   border: 1px solid var(--card-error-border);

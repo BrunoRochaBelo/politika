@@ -161,11 +161,12 @@
 /* Estilos para os elementos do formulário dentro do modal */
 .form-group {
   margin-bottom: 15px;
+  padding: 5px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin: 0px 0px 5px 10px;
   font-weight: bold;
 }
 
@@ -174,12 +175,15 @@
   border-radius: 40px;
   margin-bottom: 5px;
   padding: 15px;
+  box-shadow: var(--sombra-leve);
 }
 
 .form-group.item3 .card-select-m {
   border-radius: 40px;
   margin-bottom: 30px;
   padding: 15px;
+  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--card-borda);
 }
 
 .form-group.item3 input::placeholder {
@@ -203,15 +207,15 @@
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  background-color: var(--sucesso);
-  color: var(--message-success-txt);
+  background-color: var(--cor-p3);
+  color: var(--btn-principal-alt-txt);
   border: none;
   cursor: pointer;
   box-shadow: var(--sombra-leve);
 }
 
 .submit-button:hover {
-  background-color: #45a049;
+  filter: brightness(1.1);
 }
 
 /* Ou especificamente para o input do bairro */

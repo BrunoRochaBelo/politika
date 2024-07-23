@@ -1,5 +1,5 @@
 .body-view {
-  background: var(--container-fundo);
+  background: var(--background-principal);
   padding-top: 20px;
   display: grid;
   align-content: start;
@@ -23,7 +23,7 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--background-principal);
+  background: var(--container-form-fundo);
   border-radius: 25px;
   border: 1px solid hsl(214, 10%, 12%);
   border-top: none;
@@ -67,7 +67,7 @@
 .main-view .card-session.active {
   padding: 7px 0px;
   margin: 0 5px;
-  background: var(--background-principal);
+  background: var(--form-background);
   box-shadow: var(--sombra-leve);
 }
 .main-view .sessao-interna-template-header.active-header a {
@@ -95,7 +95,7 @@
   padding: 12px;
 }
 .card-info .campo-view p {
-  color: var(--input-label);
+  color: var(--input-txt);
   border: 1px solid transparent;
 }
 .acoes {
@@ -133,7 +133,7 @@
   display: inline;
   font-size: 12px;
   font-weight: 600;
-  color: var(--input-placeholder);
+  color: var(--input-txt);
   padding: 3px 0;
   margin: 0;
 }
