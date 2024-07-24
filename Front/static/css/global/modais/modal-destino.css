@@ -118,7 +118,7 @@
   box-shadow: var(--sombra-moderada);
 }
 .search-input-dest::placeholder {
-  color: var(--txt-titulo-card);
+  color: var(--btn-filtro-select-txt);
 }
 .search-input-dest:hover {
   background: var(--card-hover);
@@ -197,7 +197,7 @@
 .card-select-m {
   font-size: 16px;
   font-weight: 350;
-  color: var(--txt-titulo-card);
+  color: var(--btn-filtro-select-txt);
 }
 
 .submit-button {

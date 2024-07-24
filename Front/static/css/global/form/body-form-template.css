@@ -25,7 +25,7 @@
   padding: 15px 20px;
   text-align: left;
   font-size: 12px;
-  color: var(--btn-filtro-select-txt);
+  color: var(--txt-titulo);
   background: var(--container-form-fundo);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -76,14 +76,18 @@
 }
 
 .main-form .card-session {
-  background: var(--input-bg-filled);
-  border: 1px solid var(--form-background);
+  background: var(--card-form);
+  border: 1px solid var(--card-form);
+  box-shadow: var(--sombra-leve);
 }
 .main-form .card-session.active {
   padding: 7px 0px;
-  margin: 0 5px;
-  background: var(--form-background);
+  margin: 0px;
+  background: var(--background-form);
   box-shadow: var(--sombra-leve);
+}
+.main-form .secao-interna-template-header a {
+  color: var(--btn-filtro-select-txt);
 }
 
 /* RESPONSIVO */
@@ -91,7 +95,7 @@
   .body-form {
     padding: 0px;
     border: none;
-    background: var(--background-principal);
+    background: var(--container-form-fundo);
   }
   .body-form-template {
     display: grid;

@@ -61,16 +61,17 @@
 }
 
 .main-view .card-session {
-  background: var(--input-bg-filled);
-  border: 1px solid var(--form-background);
+  background: var(--card-form);
+  border: 1px solid var(--card-form);
+  box-shadow: var(--sombra-leve);
 }
 .main-view .card-session.active {
   padding: 7px 0px;
-  margin: 0 5px;
-  background: var(--form-background);
+  margin: 0px;
+  background: var(--background-form);
   box-shadow: var(--sombra-leve);
 }
-.main-view .secao-interna-template-header.active-header a {
+.main-view .secao-interna-template-header a {
   color: var(--btn-filtro-select-txt);
 }
 
@@ -90,7 +91,7 @@
   width: 100%;
 }
 .card-info .campo-view {
-  background: var(--input-bg-filled);
+  background: var(--card-form);
   border: 1px solid transparent;
   padding: 12px;
 }
@@ -122,7 +123,7 @@
 
 .campo-view {
   display: grid;
-  background: var(--input-bg-filled);
+  background: var(--card-form);
   border: 1px solid transparent;
   padding: 7px 25px;
   border-radius: 40px;
@@ -177,7 +178,7 @@
   .body-view {
     padding: 0px;
     border: none;
-    background: var(--background-principal);
+    background: var(--container-form-fundo);
   }
   .body-view-template {
     display: grid;
