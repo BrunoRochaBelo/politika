@@ -4,7 +4,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  background: var(--container-fundo);
+  background: var(--bg-container);
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;
   grid-template-columns: 1fr;
@@ -31,7 +31,7 @@
   padding: 0px;
   height: auto;
   border-radius: 0px;
-  border-top: 1px solid var(--background-principal);
+  border-top: 1px solid var(--bg-principal);
   scroll-behavior: smooth;
 }
 
@@ -43,7 +43,7 @@
 @media only screen and (max-width: 900px) {
   /* Container Template padrão*/
   .container-template {
-    background: var(--background-principal);
+    background: var(--bg-principal);
     border-radius: 0;
     box-shadow: none;
   }
@@ -52,14 +52,14 @@
     justify-content: start;
     font-weight: 300;
     color: var(--txt-titulo);
-    background: var(--background-principal);
+    background: var(--bg-principal);
     border-radius: 0px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
   .container-template-content {
     border-radius: 0px;
-    background: var(--container-fundo);
+    background: var(--bg-container);
     border-top: 1px solid var(--borda);
   }
 

@@ -42,15 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
 
         // Adiciona a borda quando o contêiner estiver visível
-        headerElement.style.border = "1px solid var(--cor-ap1)";
+        headerElement.style.border = "1px solid var(--cor-apoio-1)";
       }
 
       // Alterna o background do cabeçalho
       var headerBackgroundClass = aniversariantesContainer.classList.contains(
         "visible"
       )
-        ? "--cor-ap2"
-        : "--card-fundo";
+        ? "--cor-apoio-2"
+        : "--card-bg";
       headerElement.style.background = `var(${headerBackgroundClass})`;
 
       var liElements = aniversariantesContainer.querySelectorAll("li");

@@ -1,5 +1,5 @@
 .body-gc-template {
-  background: var(--container-fundo);
+  background: var(--bg-container);
   display: grid;
   margin: 10px 0;
   gap: 1px;
@@ -20,10 +20,10 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 10px;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   border-bottom: none;
   position: relative;
-  background: var(--background-principal);
+  background: var(--bg-principal);
 }
 .main-gc {
   grid-area: main-gc;
@@ -35,9 +35,9 @@
   box-shadow: var(--sombra-moderada);
   height: auto;
   border: 5px solid transparent;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   border-top: none;
-  background: var(--background-principal);
+  background: var(--bg-principal);
 }
 
 /* RESPONSIVO */

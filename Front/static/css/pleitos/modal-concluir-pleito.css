@@ -11,13 +11,13 @@
 }
 
 .modal-concluir-pleito-content.card-m {
-  background: var(--card-aberto-fundo);
+  background: var(--card-aberto-bg);
   border-radius: 25px;
   padding: 20px 5px;
 }
 .modal-concluir-pleito-content {
   position: relative;
-  color: var(--cor-p1);
+  color: var(--cor-primaria-1);
   margin: auto;
   margin-top: 55px;
   padding: 20px;
@@ -31,7 +31,7 @@
 
 .modal-concluir-pleito-template {
   display: grid;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   gap: 3px;
   grid:
     "modal-concluir-pleito-tiposolici modal-concluir-pleito-tiposolici modal-concluir-pleito-dataSolici"
@@ -51,7 +51,7 @@
 }
 .modal-concluir-pleito-tiposolici {
   grid-area: modal-concluir-pleito-tiposolici;
-  border-left: 4px solid var(--cor-p2);
+  border-left: 4px solid var(--cor-primaria-2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -166,12 +166,12 @@
   padding: 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border: 1px solid var(--container-fundo);
+  border: 1px solid var(--bg-container);
   font-size: 13px;
   font-weight: 350;
   white-space: wrap;
   word-break: break-all;
-  background: var(--container-fundo);
+  background: var(--bg-container);
   border-radius: 25px;
   grid:
     "modal-concluir-pleito-concluir-title"
@@ -214,8 +214,8 @@
   box-sizing: border-box;
   padding: 0.9375rem;
   color: var(--txt-titulo-card);
-  background: var(--card-fundo);
-  border: 1px solid var(--card-fundo-borda);
+  background: var(--card-bg);
+  border: 1px solid var(--card-bg-borda);
   border-radius: 20px;
   margin-top: 7px;
 }

@@ -65,7 +65,7 @@
 
 /* Indicador */
 .indicador a {
-  color: var(--txt-nav-select);
+  color: var(--txt-nav-selecionado);
 }
 .indicador a::after {
   content: "";
@@ -74,10 +74,10 @@
   left: 0;
   width: 100%;
   height: 5px;
-  background: var(--txt-nav-select);
+  background: var(--txt-nav-selecionado);
 }
 .indicador p {
-  color: var(--txt-nav-select);
+  color: var(--txt-nav-selecionado);
 }
 
 /* RESPONSIVO */

@@ -118,7 +118,7 @@
   text-align: center;
   align-items: center;
   justify-content: start;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   padding: 5px 15px;
   font-size: 14px;
   font-weight: 300;
@@ -130,7 +130,7 @@
   justify-content: center;
   padding: 5px 15px;
   border-radius: 25px;
-  border: 1px solid var(--btn-filtro);
+  border: 1px solid var(--divisor);
   transition: background-color 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -141,7 +141,7 @@
 }
 .btn-filtro-pesq-title {
   font-size: 14px;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   margin-right: 15px;
 }
 /* Estilo para o "x" do BOTÃO FILTRO */
@@ -165,8 +165,8 @@
 }
 .remover-filtro:hover + .btn-filtro-pesq {
   border: 1px solid var(--txt-subtitulo);
-  box-shadow: 0 0 1px var(--cor-p2), 0 0 2px var(--cor-p2),
-    0 0 3px var(--cor-p2), 0 0 4px var(--cor-p2);
+  box-shadow: 0 0 1px var(--cor-primaria-2), 0 0 2px var(--cor-primaria-2),
+    0 0 3px var(--cor-primaria-2), 0 0 4px var(--cor-primaria-2);
 }
 
 /* Estilo para o botão "X" fechar"*/
@@ -175,7 +175,7 @@
   padding: 0 10px;
   top: 5px;
   right: 5px;
-  color: var(--btn-filtro-select-txt);
+  color: var(--btn-filtro-selecionado-txt);
   border-radius: 50px;
   font-size: 28px;
 }
@@ -196,7 +196,7 @@
   padding: 10px;
   top: 5px;
   left: 5px;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   border-radius: 50px;
   font-size: 28px;
 }

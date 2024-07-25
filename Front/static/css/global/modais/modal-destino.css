@@ -37,7 +37,7 @@
 
 /* Aplicação das animações no conteúdo do modal */
 .modal-destino-content {
-  background: var(--modal-fundo);
+  background: var(--modal-bg);
   margin: 10% auto;
   padding: 20px;
   border: 1px solid var(--modal-borda);
@@ -61,7 +61,7 @@
 /* Estilização para o header do modal */
 .modal-header {
   display: flex;
-  color: var(--cor-p3);
+  color: var(--cor-primaria-3);
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--modal-divisor);
@@ -114,11 +114,11 @@
   font-size: 15px;
   font-weight: 400;
   background: var(--btn-filtro);
-  border: 1px solid transparent;
-  box-shadow: var(--sombra-moderada);
+  border: 1px solid var(--card-borda);
+  box-shadow: var(--sombra-leve);
 }
 .search-input-dest::placeholder {
-  color: var(--btn-filtro-select-txt);
+  color: var(--btn-filtro-selecionado-txt);
 }
 .search-input-dest:hover {
   background: var(--card-hover);
@@ -129,7 +129,7 @@
   color: var(--shadow-destaque);
 }
 .search-input-dest:focus::placeholder {
-  color: var(--placeholder);
+  color: var(--txt-placeholder);
 }
 
 /* breadcrumb.css */
@@ -167,7 +167,8 @@
 .form-group label {
   display: block;
   margin: 0px 0px 5px 10px;
-  font-weight: bold;
+  font-size: 14px;
+  color: var(--cor-primaria-3);
 }
 
 .form-group.item1 .card-select-m,
@@ -187,7 +188,7 @@
 }
 
 .form-group.item3 input::placeholder {
-  color: var(--placeholder);
+  color: var(--txt-placeholder);
 }
 
 .form-group.item3 input:focus::placeholder {
@@ -197,7 +198,7 @@
 .card-select-m {
   font-size: 16px;
   font-weight: 350;
-  color: var(--btn-filtro-select-txt);
+  color: var(--btn-filtro-selecionado-txt);
 }
 
 .submit-button {
@@ -207,7 +208,7 @@
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  background-color: var(--cor-p3);
+  background-color: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
   border: none;
   cursor: pointer;
@@ -220,7 +221,7 @@
 
 /* Ou especificamente para o input do bairro */
 .modal-destino #bairro {
-  background-color: var(--card-fundo);
+  background-color: var(--card-bg);
 }
 
 .modal-destino #bairro:hover {
@@ -238,14 +239,14 @@
 .loading-indicator {
   display: none;
   font-size: 14px;
-  color: var(--placeholder);
+  color: var(--txt-placeholder);
 }
 .loading-indicator::before {
   content: "";
   display: inline-block;
   width: 1em;
   height: 1em;
-  border: 2px solid var(--placeholder);
+  border: 2px solid var(--txt-placeholder);
   border-top: 2px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;

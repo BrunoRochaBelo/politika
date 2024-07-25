@@ -1,7 +1,7 @@
 /* Pequeno */
 .tarefa-small-card {
   display: grid;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   gap: 5px;
   justify-content: stretch;
   overflow: hidden;
@@ -15,7 +15,7 @@
 
 .tarefa-small-card-title {
   grid-area: tarefa-small-card-title;
-  border-left: 4px solid var(--cor-p2);
+  border-left: 4px solid var(--cor-primaria-2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -93,8 +93,9 @@
 
 .tarefa-small-card-expanded {
   border-radius: 7px;
-  background: var(--card-aberto-fundo) !important;
+  background: var(--card-aberto-bg) !important;
   color: var(--txt-destaque);
+  box-shadow: var(--sombra-leve);
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data"
@@ -113,7 +114,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--card-detalhe);
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -153,7 +154,7 @@
 /* Médio */
 .tarefa-medium-card {
   display: grid;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   gap: 5px;
   justify-content: stretch;
   overflow: hidden;
@@ -169,7 +170,7 @@
 
 .tarefa-medium-card-title {
   grid-area: tarefa-medium-card-title;
-  border-left: 4px solid var(--cor-p2);
+  border-left: 4px solid var(--cor-primaria-2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -210,7 +211,7 @@
   padding: 10px 14px;
   display: flex;
   background: var(--card-detalhe);
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -257,8 +258,9 @@
 
 .tarefa-medium-card-expanded {
   border-radius: 7px;
-  background: var(--card-aberto-fundo) !important;
+  background: var(--card-aberto-bg) !important;
   color: var(--txt-destaque);
+  box-shadow: var(--sombra-leve);
   grid:
     "tarefa-medium-card-title tarefa-medium-card-tag"
     "tarefa-medium-card-status tarefa-medium-card-data"

@@ -21,7 +21,7 @@
 .secao-interna-template-header .btn-recuar-expandir {
   background: transparent;
   border: 1px solid transparent;
-  color: var(--cor-p3);
+  color: var(--cor-primaria-3);
   border-radius: 25px;
   box-shadow: none;
   font-size: 11px;
@@ -34,13 +34,13 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--cor-p3);
+  border-top: 5px solid var(--cor-primaria-3);
   margin-left: 5px;
   border-radius: 25%;
 }
 .secao-interna-template-header .btn-recuar-expandir.up::after {
   border-top: none;
-  border-bottom: 5px solid var(--cor-p3);
+  border-bottom: 5px solid var(--cor-primaria-3);
 }
 
 /* Estilo do botão que exibe os aniversariantes */
@@ -50,7 +50,7 @@
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.05em;
-  color: var(--cor-p3);
+  color: var(--cor-primaria-3);
   background-color: transparent;
   padding: 3px 7px;
   border-radius: 25px;
@@ -58,9 +58,9 @@
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-aniver:active {
-  background-color: darken(var(--container-fundo), 10%);
-  color: var(--cor-p3);
-  border-color: var(--cor-p3);
+  background-color: darken(var(--bg-container), 10%);
+  color: var(--cor-primaria-3);
+  border-color: var(--cor-primaria-3);
   box-shadow: var(--sombra-leve);
 }
 

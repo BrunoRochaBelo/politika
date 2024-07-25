@@ -2,7 +2,7 @@
 /* Pequeno */
 .calendario-small-card {
   display: grid;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   gap: 5px;
   justify-content: stretch;
   overflow: hidden;
@@ -29,7 +29,7 @@
 
 .calendario-small-card-title {
   grid-area: calendario-small-card-title;
-  border-left: 4px solid var(--cor-p2);
+  border-left: 4px solid var(--cor-primaria-2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 300;
@@ -117,8 +117,9 @@
 
 .calendario-small-card-expanded {
   border-radius: 7px;
-  background: var(--card-aberto-fundo) !important;
+  background: var(--card-aberto-bg) !important;
   color: var(--txt-destaque);
+  box-shadow: var(--sombra-leve);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao"
@@ -161,7 +162,7 @@
 /* Grande */
 .calendario-large-card {
   display: grid;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   gap: 10px;
   align-items: center;
   justify-content: stretch;
@@ -191,7 +192,7 @@
 }
 .calendario-large-card-title {
   grid-area: calendario-large-card-title;
-  border-left: 4px solid var(--cor-p2);
+  border-left: 4px solid var(--cor-primaria-2);
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -228,7 +229,7 @@
   display: grid;
   grid-auto-flow: column;
   background: var(--card-detalhe);
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
@@ -261,8 +262,9 @@
 
 .calendario-large-card-expanded {
   border-radius: 7px;
-  background: var(--card-aberto-fundo) !important;
+  background: var(--card-aberto-bg) !important;
   color: var(--txt-destaque);
+  box-shadow: var(--sombra-leve);
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
     "calendario-large-card-title calendario-large-card-title"

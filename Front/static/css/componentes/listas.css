@@ -196,7 +196,7 @@ li > .lista-vertical-alt > li:first-child {
 
   .list-last-child {
     border-radius: 0px;
-    border-bottom: 1px solid var(--divisor);
+    border-bottom: 1px solid var(--borda);
     margin: 0 15px 6.2em 15px;
   }
 }

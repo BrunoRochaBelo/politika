@@ -30,7 +30,7 @@
   justify-self: start;
   align-self: center;
   padding: 5px 10px;
-  color: var(--btn-filtro-select-txt);
+  color: var(--btn-filtro-selecionado-txt);
   border-radius: 5px;
   background: var(--btn-filtro);
   border: none;
@@ -96,16 +96,16 @@
   border-radius: 5px;
 }
 .btn-calendario:active {
-  background-color: darken(var(--container-fundo), 10%);
-  color: var(--txt-content-card);
-  border-color: var(--txt-content-card);
+  background-color: darken(var(--bg-container), 10%);
+  color: var(--txt-conteudo-card);
+  border-color: var(--txt-conteudo-card);
 }
 
 .hoje {
   border-radius: 4px;
-  border: 1px solid var(--btn-filtro-select);
-  border-top: 5px solid var(--btn-filtro-select);
-  color: var(--btn-filtro-select-txt);
+  border: 1px solid var(--btn-filtro-selecionado);
+  border-top: 5px solid var(--btn-filtro-selecionado);
+  color: var(--btn-filtro-selecionado-txt);
   background: var(--btn-filtro);
   cursor: pointer;
 }
@@ -140,8 +140,8 @@
   box-shadow: var(--sombra-leve);
 }
 .dia-visualize {
-  color: var(--btn-filtro-select-txt) !important;
-  background: var(--btn-filtro-select) !important;
+  color: var(--btn-filtro-selecionado-txt) !important;
+  background: var(--btn-filtro-selecionado) !important;
   border-radius: 50% !important;
   box-shadow: var(--sombra-leve);
 }
@@ -155,7 +155,7 @@
 .change-semana {
   position: relative;
   border: none;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   cursor: pointer;
   background: transparent;
 }
@@ -299,7 +299,7 @@
 
   .change-semana {
     padding: auto 10px;
-    background: var(--container-fundo);
+    background: var(--bg-container);
   }
 
   .dia-semana:hover,

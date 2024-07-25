@@ -20,7 +20,7 @@
   }
 
   .home-sidenav .card-xs .marcador-item {
-    color: var(--container-fundo);
+    color: var(--bg-container);
   }
 
   #moldura,

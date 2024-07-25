@@ -22,8 +22,8 @@
   right: 115px;
   border-radius: 15px;
   min-width: 140px;
-  background: var(--card-fundo);
-  color: var(--txt-content-card);
+  background: var(--card-bg);
+  color: var(--txt-conteudo-card);
   box-shadow: var(--sombra-intensa);
   transform: scale(0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -39,7 +39,7 @@
   font-size: 14px;
   font-weight: 300;
   padding: 0.5rem;
-  border-bottom: 1px solid var(--background-principal);
+  border-bottom: 1px solid var(--bg-principal);
   background: var(--btn-principal);
   -webkit-background-clip: text;
   background-clip: text;
@@ -90,7 +90,7 @@
   filter: brightness(1.1);
 }
 .floatingButton:active {
-  background: linear-gradient(135deg, hsl(218, 80%, 40%), hsl(218, 88%, 35%));
+  background: linear-gradient(135deg, hsl(214, 80%, 40%), hsl(214, 88%, 35%));
 }
 
 /* RESPONSIVO */

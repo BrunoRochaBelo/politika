@@ -9,19 +9,19 @@ body {
   padding: 0;
   overflow: hidden;
   box-sizing: border-box;
-  background: var(--background-principal);
+  background: var(--bg-principal);
   scrollbar-face-color: var(--scrollbar-bg);
   scrollbar-track-color: var(--scrollbar-bg);
   user-select: none;
 }
 body.offline {
-  background-color: var(--background-principal);
+  background-color: var(--bg-principal);
   color: #666;
 }
 
 body.offline header,
 body.offline footer {
-  background-color: var(--background-principal);
+  background-color: var(--bg-principal);
 }
 
 ::-webkit-scrollbar {
@@ -143,7 +143,7 @@ img {
   visibility: hidden;
   width: 160px;
   font-size: 12px;
-  background-color: var(--tooltip-background);
+  background-color: var(--tooltip-bg);
   color: var(--tooltip-txt);
   text-align: center;
   border-radius: 5px;
@@ -168,7 +168,7 @@ img {
 
 /* Estilo das Mensagens de Erro */
 .message-error {
-  color: var(--message-error-text);
+  color: var(--message-error-txt);
   background-color: var(--erro);
   padding: 10px;
   border-radius: 5px;
@@ -177,7 +177,7 @@ img {
 
 /* Estilo das Mensagens de Sucesso */
 .message-success {
-  color: var(--message-success-txt);
+  color: var(--msg-sucesso-txt);
   background-color: var(--sucesso);
   padding: 10px;
   border-radius: 5px;
@@ -188,6 +188,6 @@ img {
   body {
     overflow: auto;
     min-width: 100vw;
-    background: var(--container-fundo);
+    background: var(--bg-container);
   }
 }

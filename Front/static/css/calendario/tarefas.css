@@ -28,8 +28,8 @@
   box-shadow: var(--sombra-leve);
 }
 .filtro-visualize {
-  color: var(--btn-filtro-select-txt) !important;
-  background: var(--btn-filtro-select) !important;
+  color: var(--btn-filtro-selecionado-txt) !important;
+  background: var(--btn-filtro-selecionado) !important;
   border-radius: 7px !important;
   box-shadow: var(--sombra-leve);
 }

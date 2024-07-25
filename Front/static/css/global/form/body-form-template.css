@@ -3,7 +3,7 @@
   display: grid;
   align-content: start;
   justify-content: center;
-  background: var(--background-principal);
+  background: var(--bg-principal);
   max-height: calc(var(--vh, 1vh) * 100);
 }
 .body-form-template {
@@ -26,7 +26,7 @@
   text-align: left;
   font-size: 12px;
   color: var(--txt-titulo);
-  background: var(--container-form-fundo);
+  background: var(--form-bg-container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border: 1px solid hsl(214, 10%, 12%);
@@ -40,11 +40,11 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--container-form-fundo);
+  background: var(--form-bg-container);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid hsl(214, 10%, 12%);
-  border-top: 1px solid hsl(218, 14%, 3%);
+  border-top: 1px solid hsl(214, 14%, 3%);
 }
 .main-form::-webkit-scrollbar {
   display: none;
@@ -76,18 +76,18 @@
 }
 
 .main-form .card-session {
-  background: var(--card-form);
-  border: 1px solid var(--card-form);
+  background: var(--form-card-bg);
+  border: 1px solid var(--form-card-bg);
   box-shadow: var(--sombra-leve);
 }
 .main-form .card-session.active {
   padding: 7px 0px;
   margin: 0px;
-  background: var(--background-form);
+  background: var(--form-bg);
   box-shadow: var(--sombra-leve);
 }
 .main-form .secao-interna-template-header a {
-  color: var(--btn-filtro-select-txt);
+  color: var(--btn-filtro-selecionado-txt);
 }
 
 /* RESPONSIVO */
@@ -95,7 +95,7 @@
   .body-form {
     padding: 0px;
     border: none;
-    background: var(--container-form-fundo);
+    background: var(--form-bg-container);
   }
   .body-form-template {
     display: grid;

@@ -1,13 +1,13 @@
 :root {
   --txt-principal: #eff4f8; /* Texto Principal */
-  --txt-content-card: #c9dbef; /* Texto Secundário */
+  --txt-conteudo-card: #c9dbef; /* Texto Secundário */
   --txt-alt: #a8c0d8; /* Texto Alternativo */
-  --background-principal: #111e32; /* Fundo Principal */
+  --bg-principal: #111e32; /* Fundo Principal */
   --background-secundario: #010814; /* Fundo Secundário */
   --fundo-container: #131d2e; /* Container */
   --borda: #0a111e; /* Bordas */
   --divisor: #6b7f9e; /* Divisores */
-  --card-fundo: #171f3e; /* Fundo de Cards */
+  --card-bg: #171f3e; /* Fundo de Cards */
   --card-borda: #192a44; /* Borda de Card */
   --card-hover: #1b3861; /* Hover do Card */
   --fundo-modal: #171d3e; /* Fundo de Modal */
@@ -116,7 +116,7 @@ a:hover {
   background-color: currentColor;
 }
 .link:hover {
-  color: var(--background-principal);
+  color: var(--bg-principal);
 }
 span {
   text-align: right;
@@ -166,7 +166,7 @@ nav ul li:last-child {
   margin-right: 0;
 }
 nav a {
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   text-decoration: none;
   font-size: 1.1rem;
   padding: 10px 20px;
@@ -191,7 +191,7 @@ header h1 {
 }
 header p {
   font-size: 1.1rem;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 header button {
   background-color: var(--btn-principal);
@@ -237,7 +237,7 @@ header blockquote {
   -webkit-text-fill-color: transparent;
 }
 .beneficio p {
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   font-size: 1.1rem;
   margin-top: 10px;
 }
@@ -308,7 +308,7 @@ header blockquote {
 #como-potencializa ul {
   list-style-type: none;
   padding: 0;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 #como-potencializa ul li {
   padding: 7px 7px 7px 15px;
@@ -359,14 +359,14 @@ header blockquote {
 }
 .recurso-item .detalhe-recurso {
   display: none;
-  background-color: var(--card-fundo);
+  background-color: var(--card-bg);
   padding: 15px;
   border-radius: 5px;
   margin-top: 10px;
   text-align: left;
   font-weight: 300;
   font-size: 1rem;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 .recurso-item.active .detalhe-recurso {
   display: block;
@@ -405,7 +405,7 @@ header blockquote {
   flex: 0 0 auto;
 }
 .plan {
-  background: var(--card-fundo);
+  background: var(--card-bg);
   border: 1px solid var(--card-borda);
   border-radius: 10px;
   padding: 20px;
@@ -423,7 +423,7 @@ header blockquote {
 .plan p {
   font-size: 1rem;
   margin-bottom: 15px;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 .plan .price {
   font-size: 1.3rem;
@@ -508,7 +508,7 @@ header blockquote {
 footer {
   text-align: center;
   padding: 20px;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 footer a {
   color: var(--link);
@@ -575,7 +575,7 @@ footer a:hover {
 
 /* Estilos para os CARDS */
 .card {
-  background: var(--card-fundo);
+  background: var(--card-bg);
   border: 1px solid var(--card-borda);
   border-radius: 10px;
   padding: 15px;
@@ -592,7 +592,7 @@ footer a:hover {
   margin-right: 10px;
 }
 .card p {
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 .detail.row {
   display: flex;
@@ -681,7 +681,7 @@ button:hover {
     flex: 0 0 auto;
   }
   .beneficio p {
-    color: var(--txt-content-card);
+    color: var(--txt-conteudo-card);
     font-size: 1.2rem;
     margin-top: 10px;
     padding: 10px 5px;
@@ -765,7 +765,7 @@ button:hover {
   }
 
   .plan {
-    background: var(--card-fundo);
+    background: var(--card-bg);
     border: 1px solid var(--card-borda);
     border-radius: 10px;
     padding: 20px;

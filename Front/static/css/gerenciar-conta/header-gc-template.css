@@ -91,7 +91,7 @@
 
 /* Indicador */
 .header-gc-template .indicador a {
-  color: var(--txt-nav-select);
+  color: var(--txt-nav-selecionado);
 }
 .header-gc-template .indicador a::after {
   content: "";
@@ -100,10 +100,10 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--txt-nav-select);
+  background: var(--txt-nav-selecionado);
 }
 .header-gc-template .indicador p {
-  color: var(--txt-nav-select);
+  color: var(--txt-nav-selecionado);
 }
 
 /* RESPONSIVO */

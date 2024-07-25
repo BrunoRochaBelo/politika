@@ -1,5 +1,5 @@
 .body-view {
-  background: var(--background-principal);
+  background: var(--bg-principal);
   padding-top: 20px;
   display: grid;
   align-content: start;
@@ -23,7 +23,7 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--container-form-fundo);
+  background: var(--form-bg-container);
   border-radius: 25px;
   border: 1px solid hsl(214, 10%, 12%);
   border-top: none;
@@ -61,18 +61,18 @@
 }
 
 .main-view .card-session {
-  background: var(--card-form);
-  border: 1px solid var(--card-form);
+  background: var(--form-card-bg);
+  border: 1px solid var(--form-card-bg);
   box-shadow: var(--sombra-leve);
 }
 .main-view .card-session.active {
   padding: 7px 0px;
   margin: 0px;
-  background: var(--background-form);
+  background: var(--form-bg);
   box-shadow: var(--sombra-leve);
 }
 .main-view .secao-interna-template-header a {
-  color: var(--btn-filtro-select-txt);
+  color: var(--btn-filtro-selecionado-txt);
 }
 
 .main-view .nav {
@@ -91,7 +91,7 @@
   width: 100%;
 }
 .card-info .campo-view {
-  background: var(--card-form);
+  background: var(--form-card-bg);
   border: 1px solid transparent;
   padding: 12px;
 }
@@ -123,7 +123,7 @@
 
 .campo-view {
   display: grid;
-  background: var(--card-form);
+  background: var(--form-card-bg);
   border: 1px solid transparent;
   padding: 7px 25px;
   border-radius: 40px;
@@ -178,7 +178,7 @@
   .body-view {
     padding: 0px;
     border: none;
-    background: var(--container-form-fundo);
+    background: var(--form-bg-container);
   }
   .body-view-template {
     display: grid;

@@ -2,7 +2,7 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   min-height: 30px;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -13,7 +13,7 @@
 /* Pequeno altura 35px*/
 .card-s {
   min-height: 35px;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -24,7 +24,7 @@
 /* Médio altura 50px*/
 .card-m {
   min-height: 50px;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -35,7 +35,7 @@
 /* Grande altura 150px*/
 .card-l {
   min-height: 150px;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -50,7 +50,7 @@
 .card-tmf-s {
   width: 135px;
   height: auto;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
@@ -62,7 +62,7 @@
 .card-tmf-m {
   min-width: 155px;
   height: auto;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
@@ -74,7 +74,7 @@
 .card-tmf-l {
   width: 184px;
   height: auto;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
@@ -89,7 +89,7 @@
   border-radius: 6px;
   width: 100%;
   padding: 0.3rem;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -100,7 +100,7 @@
 .card-select-s {
   border-radius: 6px;
   width: 100%;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -110,7 +110,7 @@
 }
 .card-select-m {
   width: 100%;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   padding: 15px 15px;
@@ -130,7 +130,7 @@
   white-space: nowrap;
   gap: 10px;
   min-height: 50px;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;

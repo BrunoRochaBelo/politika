@@ -40,7 +40,7 @@
   transition: background-color 0.2s;
 }
 .form-checkbox:checked + .switch-label:before {
-  background: var(--cor-s2);
+  background: var(--cor-secundaria-2);
 }
 .switch-label:after {
   content: "";
@@ -76,8 +76,8 @@
 .checkbox-label {
   display: inline;
   padding: 10px 20px;
-  color: var(--cor-p1);
-  border: 2px solid var(--cor-p1);
+  color: var(--cor-primaria-1);
+  border: 2px solid var(--cor-primaria-1);
   border-radius: 7px;
   cursor: pointer;
   text-align: center;
@@ -93,11 +93,11 @@
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-label {
-  background-color: var(--cor-s2);
+  background-color: var(--cor-secundaria-2);
   color: white;
 }
 .form-contato-checkbox:checked + .checkbox-label {
-  background-color: var(--cor-s2);
+  background-color: var(--cor-secundaria-2);
   color: white;
 }
 

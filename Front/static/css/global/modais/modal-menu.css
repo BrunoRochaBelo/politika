@@ -22,8 +22,8 @@
   min-width: 285px;
   top: 51px;
   right: 1rem;
-  color: var(--txt-content-card);
-  background: var(--modal-fundo);
+  color: var(--txt-conteudo-card);
+  background: var(--modal-bg);
   border: 1px solid var(--modal-borda);
   padding: 1rem;
   gap: 5px;
@@ -73,7 +73,7 @@
 .modal-content-template-secao {
   grid-area: modal-content-template-secao;
   display: grid;
-  background: var(--card-fundo);
+  background: var(--card-bg);
   padding: 20px;
   border-radius: 12px;
 

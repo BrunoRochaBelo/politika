@@ -27,7 +27,7 @@
 }
 
 .conta-corrente-card {
-  background: var(--card-fundo);
+  background: var(--card-bg);
   border-radius: 8px;
   box-shadow: var(--sombra-moderada);
   padding: 20px;
@@ -94,7 +94,7 @@ button.delete {
 }
 
 .conta-corrente-modal-content {
-  background-color: var(--modal-fundo);
+  background-color: var(--modal-bg);
   margin: 10% auto;
   padding: 20px;
   border: 1px solid var(--modal-borda);

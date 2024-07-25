@@ -19,7 +19,7 @@
   align-items: center;
   justify-items: space-between;
   color: var(--txt-titulo);
-  background: var(--container-fundo);
+  background: var(--bg-container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -31,8 +31,8 @@
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  background: var(--container-fundo);
-  border-top: 1px solid var(--background-principal);
+  background: var(--bg-container);
+  border-top: 1px solid var(--bg-principal);
   padding: 20px;
 }
 
@@ -56,7 +56,7 @@
   align-items: center;
   justify-items: space-between;
   color: var(--txt-titulo);
-  background: var(--container-fundo);
+  background: var(--bg-container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -64,11 +64,11 @@
 .container-compromisso-hoje-template-content {
   grid-area: container-compromisso-hoje-template-content;
   overflow-x: hidden;
-  background: var(--container-fundo);
+  background: var(--bg-container);
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border-top: 1px solid var(--background-principal);
+  border-top: 1px solid var(--bg-principal);
   padding: 20px 0px 0px 0px;
 }
 
@@ -90,7 +90,7 @@
   grid-area: area-interna-containerContent-template-header;
   display: grid;
   align-items: center;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -106,7 +106,7 @@
   border-radius: 25px;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
-  border-top: 1px solid var(--background-principal);
+  border-top: 1px solid var(--bg-principal);
   padding: 20px 0px 0px 0px;
   scroll-behavior: smooth;
 }
@@ -185,7 +185,7 @@
     font-size: 12px;
     font-weight: 400;
     text-align: left;
-    color: var(--txt-content-card);
+    color: var(--txt-conteudo-card);
     color: transparent;
     font-size: 0px;
     padding: 5px 5px 5px 10px;
@@ -218,7 +218,7 @@
     font-size: 12px;
     font-weight: 400;
     text-align: left;
-    color: var(--txt-content-card);
+    color: var(--txt-conteudo-card);
     color: transparent;
     font-size: 0px;
     padding: 5px 5px 5px 10px;
@@ -260,7 +260,7 @@
     overflow-y: auto;
     padding: 15px 0px 0px 0px;
     border-radius: 0px;
-    border-top: 1px solid var(--background-principal);
+    border-top: 1px solid var(--bg-principal);
   }
 
   .area-interna-containerContent-template-not-header {

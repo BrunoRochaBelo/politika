@@ -19,7 +19,7 @@
 .home-header-title {
   display: none;
   grid-area: home-header-title;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 .home-header-nav {
   grid-area: home-header-nav;
@@ -45,11 +45,11 @@
     align-content: center;
     justify-content: space-between;
     grid: "home-header-logo home-header-title home-header-user" 45px;
-    background: var(--background-principal);
+    background: var(--bg-principal);
     box-shadow: none;
   }
   .home-header-template.box-shadow-active {
-    background: var(--background-principal);
+    background: var(--bg-principal);
   }
 
   .home-header-logo {
@@ -62,7 +62,7 @@
     font-size: 15px;
     font-weight: 500;
     display: inline-block;
-    background: linear-gradient(55deg, hsl(218, 100%, 66%), hsl(218, 80%, 65%));
+    background: linear-gradient(55deg, hsl(214, 100%, 66%), hsl(220, 30%, 65%));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -74,7 +74,7 @@
     padding: 3px;
   }
   .home-header-nav {
-    background: var(--background-principal);
+    background: var(--bg-principal);
     backdrop-filter: blur(10px);
     border-top: 1px solid var(--borda);
     position: fixed;

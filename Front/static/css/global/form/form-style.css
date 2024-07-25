@@ -129,7 +129,7 @@ legend {
 }
 
 .header-form .editar {
-  color: var(--cor-p1);
+  color: var(--cor-primaria-1);
   border-radius: 4px;
   padding: 5px;
   justify-self: end;
@@ -161,7 +161,7 @@ label + .form-checkbox:before {
 }
 
 label + .form-checkbox:checked:before {
-  background: var(--cor-s2);
+  background: var(--cor-secundaria-2);
 }
 
 label + .form-checkbox:after {
@@ -260,8 +260,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   max-height: 100%;
 }
 .radio-button-group input[type="radio"]:checked + label {
-  background-color: var(--cor-s2);
-  border: 2px solid var(--cor-s2);
+  background-color: var(--cor-secundaria-2);
+  border: 2px solid var(--cor-secundaria-2);
   color: var(--txt-titulo-card);
 }
 .radio-button-group label:hover {
@@ -288,8 +288,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   user-select: none;
 }
 .checkbox-button-group input[type="checkbox"]:checked + label {
-  background-color: var(--cor-s2);
-  border: 2px solid var(--cor-s2);
+  background-color: var(--cor-secundaria-2);
+  border: 2px solid var(--cor-secundaria-2);
   color: var(--txt-titulo-card);
 }
 .checkbox-button-group label:hover {

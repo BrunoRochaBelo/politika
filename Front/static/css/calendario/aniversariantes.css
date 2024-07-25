@@ -29,7 +29,7 @@
 }
 
 .secao-interna-template.area-aniversariantes {
-  background: var(--card-fundo);
+  background: var(--card-bg);
   margin: 0px 10px;
   border: none;
   cursor: pointer;
@@ -72,7 +72,7 @@
   font-size: 18px;
   font-weight: 600;
   padding: 15px 30px 20px 15px;
-  color: var(--btn-filtro-select-txt);
+  color: var(--btn-filtro-selecionado-txt);
 }
 
 .secao-interna-template.area-aniversariantes .btn-recuar-expandir-aniver:hover {
@@ -136,7 +136,7 @@
     filter: none !important;
   }
   .secao-interna-template-content.aniversariantes .card-xs:hover {
-    background: var(--card-fundo);
+    background: var(--card-bg);
     border: none;
   }
 }

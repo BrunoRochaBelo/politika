@@ -25,7 +25,7 @@
   white-space: wrap;
   overflow: hidden;
   word-break: break-all;
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
 }
 .quant-small-card-result {
   grid-area: quant-small-card-result;
@@ -33,7 +33,7 @@
   font-weight: 400;
   text-align: start;
   background: var(--card-detalhe);
-  color: var(--txt-content-card);
+  color: var(--txt-conteudo-card);
   border-radius: 6px;
   padding: 8px 10px;
 }
