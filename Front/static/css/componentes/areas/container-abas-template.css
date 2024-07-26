@@ -155,7 +155,6 @@
     justify-items: stretch;
     width: 308px;
     box-shadow: none;
-    background: var(--bg-container);
   }
   #nav1 a,
   #nav2 a,
@@ -168,7 +167,6 @@
   #nav1 a:hover,
   #nav2 a:hover,
   #nav3 a:hover {
-    background: var(--bg-container);
     color: var(--txt-nav);
   }
   #nav1 a.indicador-2,
@@ -176,7 +174,6 @@
   #nav3 a.indicador-2 {
     font-size: 15px;
     font-weight: 400;
-    color: var(--txt-nav-selecionado);
-    background: var(--cor-apoio-2);
+    background: var(--bg-principal);
   }
 }

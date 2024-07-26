@@ -74,7 +74,7 @@
   text-decoration: none;
   color: inherit;
   position: relative;
-  color: var(--txt-titulo-card);
+  color: var(--btn-filtro-selecionado-txt);
   text-align: start;
 }
 .secao-interna-template-header.active-header a {

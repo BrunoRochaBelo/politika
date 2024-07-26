@@ -96,7 +96,7 @@
   padding: 12px;
 }
 .card-info .campo-view p {
-  color: var(--input-txt);
+  color: var(--btn-filtro-selecionado-txt);
   border: 1px solid transparent;
 }
 .acoes {

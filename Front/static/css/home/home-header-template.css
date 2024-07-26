@@ -62,7 +62,7 @@
     font-size: 15px;
     font-weight: 500;
     display: inline-block;
-    background: linear-gradient(55deg, hsl(214, 100%, 66%), hsl(220, 30%, 65%));
+    background: linear-gradient(55deg, hsl(214, 100%, 66%), hsl(218, 40%, 65%));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
