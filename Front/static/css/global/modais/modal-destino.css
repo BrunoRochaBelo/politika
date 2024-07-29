@@ -61,7 +61,7 @@
 /* Estilização para o header do modal */
 .modal-header {
   display: flex;
-  color: var(--cor-primaria-3);
+  color: var(--label-text);
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--modal-divisor);
@@ -168,7 +168,7 @@
   display: block;
   margin: 0px 0px 5px 10px;
   font-size: 14px;
-  color: var(--cor-primaria-3);
+  color: var(--label-text);
 }
 
 .form-group.item1 .card-select-m,
