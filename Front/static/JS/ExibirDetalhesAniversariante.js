@@ -1,11 +1,11 @@
-// Function to initiate a phone call
+// Função para iniciar uma chamada telefônica
 function iniciarChamadaTelefonicaNiver(card) {
   const phoneElement = card.querySelector(".aniversario-small-card-num");
   const phoneNumber = phoneElement.textContent.trim();
   window.location.href = `tel:${phoneNumber}`;
 }
 
-// Function to handle the click on the cards
+// Função para lidar com o clique nos cartões
 function exibirDetalhesAniversariante(event) {
   event.preventDefault();
 
@@ -24,16 +24,16 @@ function exibirDetalhesAniversariante(event) {
     });
     card.classList.remove("aniversario-small-card-expanded");
   } else {
-    // Close any expanded card
+    // Fecha qualquer cartão expandido
     fecharTodosOsCardsAniversario();
 
-    // Expand the clicked card
+    // Expande o cartão clicado
     hiddenFields.forEach((field) => {
       field.classList.add("exibirDetalhesAniversariante");
     });
     card.classList.add("aniversario-small-card-expanded");
 
-    // Check if the card is outside the visible area and adjust the scroll as necessary
+    // Verificar se o cartão está fora da área visível e ajustar o scroll conforme necessário
     ajustarScrollParaCentralizarCard(card);
   }
 
@@ -42,44 +42,37 @@ function exibirDetalhesAniversariante(event) {
   }
 }
 
-// Function to adjust the scroll to centralize the card
+// Função para ajustar o scroll para centralizar o cartão
 function ajustarScrollParaCentralizarCard(card) {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
+  if (!areaTemplateContent) return;
+
   const cardOffsetTop = card.offsetTop;
   const cardHeight = card.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
   const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
 
-  // Check if the card is fully visible
-  const isCardFullyVisible =
-    cardOffsetTop >= areaTemplateContentScrollTop &&
+  const cardTopVisible = cardOffsetTop >= areaTemplateContentScrollTop;
+  const cardBottomVisible =
     cardOffsetTop + cardHeight <=
-      areaTemplateContentScrollTop + areaTemplateContentHeight;
+    areaTemplateContentScrollTop + areaTemplateContentHeight;
 
-  if (!isCardFullyVisible) {
-    // Calculate the new scroll position to make the card fully visible
-    let newScrollTop;
-    if (cardOffsetTop < areaTemplateContentScrollTop) {
-      // If the card is above the visible area, move to the top of the card
-      newScrollTop = cardOffsetTop;
-    } else if (
-      cardOffsetTop + cardHeight >
-      areaTemplateContentScrollTop + areaTemplateContentHeight
-    ) {
-      // If the card is below the visible area, move to the bottom of the card
-      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
-    }
-
-    // Adjust the scroll position of area-interna-containerContent-template-content if necessary
-    if (newScrollTop !== undefined) {
-      areaTemplateContent.scrollTop = newScrollTop;
-    }
+  if (!cardTopVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop,
+      behavior: "smooth",
+    });
+  } else if (!cardBottomVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop + cardHeight - areaTemplateContentHeight,
+      behavior: "smooth",
+    });
   }
 }
 
-// Function to close all expanded birthday cards
+// Função para fechar todos os cartões de aniversário expandidos
 function fecharTodosOsCardsAniversario() {
   const expandedCards = document.querySelectorAll(
     ".aniversario-small-card-expanded"
@@ -95,7 +88,7 @@ function fecharTodosOsCardsAniversario() {
   });
 }
 
-// Adds a click event listener to the list of birthday cards
+// Adiciona um ouvinte de evento de clique para a lista de cartões de aniversário
 document.addEventListener("DOMContentLoaded", function () {
   const listaDeCards = document.querySelectorAll(".aniversario-small-card");
   listaDeCards.forEach((card) => {

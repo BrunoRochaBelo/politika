@@ -1,4 +1,4 @@
-// Função para lidar com o clique nos cards de tarefa
+// Função para lidar com o clique nos cards de tarefa pequenos
 function exibirDetalhesTarefaPequena(event) {
   event.preventDefault();
 
@@ -36,39 +36,32 @@ function ajustarScrollParaCentralizarCardTarefaSmall(cardTarefaSmall) {
   const areaTemplateContent = document.querySelector(
     ".container-compromisso-hoje-template-content"
   );
+  if (!areaTemplateContent) return;
+
   const cardOffsetTop = cardTarefaSmall.offsetTop;
   const cardHeight = cardTarefaSmall.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
   const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
 
-  // Verificar se o card já está totalmente visível
-  const isCardFullyVisible =
-    cardOffsetTop >= areaTemplateContentScrollTop &&
+  const cardTopVisible = cardOffsetTop >= areaTemplateContentScrollTop;
+  const cardBottomVisible =
     cardOffsetTop + cardHeight <=
-      areaTemplateContentScrollTop + areaTemplateContentHeight;
+    areaTemplateContentScrollTop + areaTemplateContentHeight;
 
-  if (!isCardFullyVisible) {
-    // Calcular a nova posição de scroll para tornar o card totalmente visível
-    let newScrollTop;
-    if (cardOffsetTop < areaTemplateContentScrollTop) {
-      // Se o card está acima da área visível, mover para o topo do card
-      newScrollTop = cardOffsetTop;
-    } else if (
-      cardOffsetTop + cardHeight >
-      areaTemplateContentScrollTop + areaTemplateContentHeight
-    ) {
-      // Se o card está abaixo da área visível, mover para o fundo do card
-      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
-    }
-
-    // Ajustar a posição de scroll do area-interna-containerContent-template-content, se necessário
-    if (newScrollTop !== undefined) {
-      areaTemplateContent.scrollTop = newScrollTop;
-    }
+  if (!cardTopVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop,
+      behavior: "smooth",
+    });
+  } else if (!cardBottomVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop + cardHeight - areaTemplateContentHeight,
+      behavior: "smooth",
+    });
   }
 }
 
-// Função para fechar todos os cards de tarefa expandidos
+// Função para fechar todos os cards de tarefa pequenos expandidos
 function fecharTodosOsCardsTarefaPequena() {
   const cardsExpandidos = document.querySelectorAll(
     ".tarefa-small-card-expanded"
@@ -84,7 +77,7 @@ function fecharTodosOsCardsTarefaPequena() {
   });
 }
 
-// Adiciona um ouvinte de evento de clique para a lista de cards de tarefa
+// Adiciona um ouvinte de evento de clique para a lista de cards de tarefa pequenos
 const listaDeCardsTarefaSmall = document.querySelectorAll(".tarefa-small-card");
 listaDeCardsTarefaSmall.forEach((cardTarefaSmall) => {
   cardTarefaSmall.addEventListener("click", exibirDetalhesTarefaPequena);
@@ -99,8 +92,7 @@ listaDeCardsTarefaSmall.forEach((cardTarefaSmall) => {
   }
 });
 
-// Função para lidar com o clique nos cards de tarefa
-// Média
+// Função para lidar com o clique nos cards de tarefa médios
 function exibirDetalhesTarefa(event) {
   event.preventDefault();
 
@@ -133,44 +125,37 @@ function exibirDetalhesTarefa(event) {
   }
 }
 
-// Função para ajustar o scroll para centralizar o card de tarefa medio
+// Função para ajustar o scroll para centralizar o card de tarefa médio
 function ajustarScrollParaCentralizarCardTarefaMedium(cardTarefaMedium) {
   const areaTemplateContent = document.querySelector(
     ".container-compromisso-hoje-template-content"
   );
+  if (!areaTemplateContent) return;
+
   const cardOffsetTop = cardTarefaMedium.offsetTop;
   const cardHeight = cardTarefaMedium.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
   const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
 
-  // Verificar se o card já está totalmente visível
-  const isCardFullyVisible =
-    cardOffsetTop >= areaTemplateContentScrollTop &&
+  const cardTopVisible = cardOffsetTop >= areaTemplateContentScrollTop;
+  const cardBottomVisible =
     cardOffsetTop + cardHeight <=
-      areaTemplateContentScrollTop + areaTemplateContentHeight;
+    areaTemplateContentScrollTop + areaTemplateContentHeight;
 
-  if (!isCardFullyVisible) {
-    // Calcular a nova posição de scroll para tornar o card totalmente visível
-    let newScrollTop;
-    if (cardOffsetTop < areaTemplateContentScrollTop) {
-      // Se o card está acima da área visível, mover para o topo do card
-      newScrollTop = cardOffsetTop;
-    } else if (
-      cardOffsetTop + cardHeight >
-      areaTemplateContentScrollTop + areaTemplateContentHeight
-    ) {
-      // Se o card está abaixo da área visível, mover para o fundo do card
-      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
-    }
-
-    // Ajustar a posição de scroll do area-interna-containerContent-template-content, se necessário
-    if (newScrollTop !== undefined) {
-      areaTemplateContent.scrollTop = newScrollTop;
-    }
+  if (!cardTopVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop,
+      behavior: "smooth",
+    });
+  } else if (!cardBottomVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop + cardHeight - areaTemplateContentHeight,
+      behavior: "smooth",
+    });
   }
 }
 
-// Função para fechar todos os cards de tarefa expandidos
+// Função para fechar todos os cards de tarefa médios expandidos
 function fecharTodosOsCardsTarefa() {
   const cardsExpandidos = document.querySelectorAll(
     ".tarefa-medium-card-expanded"
@@ -186,7 +171,7 @@ function fecharTodosOsCardsTarefa() {
   });
 }
 
-// Adiciona um ouvinte de evento de clique para a lista de cards de tarefa
+// Adiciona um ouvinte de evento de clique para a lista de cards de tarefa médios
 const listaDeCardsTarefaMedium = document.querySelectorAll(
   ".tarefa-medium-card"
 );

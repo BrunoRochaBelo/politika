@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         headerElement.classList.remove("visible");
 
         // Remove a borda quando o contêiner estiver oculto
-        headerElement.style.border = "none";
+        headerElement.style.border = "1px solid var(--card-borda)";
       } else {
         aniversariantesContainer.classList.remove("hidden");
         aniversariantesContainer.classList.add("visible");

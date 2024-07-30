@@ -136,7 +136,7 @@
   color: var(--label-text);
   padding: 10px;
   border-radius: 15px;
-  border: 1px solid hsl(214, 14%, 15%);
+  border: 1px solid hsl(215, 14%, 15%);
   box-shadow: var(--sombra-leve);
   transition: background-color 0.3s ease;
   flex: 0 0 auto;
@@ -177,7 +177,7 @@
 
 .progress-bar-wrapper {
   height: 16px;
-  background-color: hsl(214, 22%, 8%);
+  background-color: hsl(215, 22%, 8%);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.3s ease, opacity 0.3s ease;
@@ -299,7 +299,7 @@
 
   .progress-bar-wrapper {
     height: 13px;
-    background-color: hsl(214, 20%, 10%);
+    background-color: hsl(215, 20%, 10%);
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.3s ease, opacity 0.3s ease;

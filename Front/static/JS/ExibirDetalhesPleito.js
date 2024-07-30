@@ -35,30 +35,28 @@ function ajustarScrollParaCentralizarCard(card) {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
+  if (!areaTemplateContent) return;
+
   const cardOffsetTop = card.offsetTop;
   const cardHeight = card.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
   const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
 
-  const isCardFullyVisible =
-    cardOffsetTop >= areaTemplateContentScrollTop &&
+  const cardTopVisible = cardOffsetTop >= areaTemplateContentScrollTop;
+  const cardBottomVisible =
     cardOffsetTop + cardHeight <=
-      areaTemplateContentScrollTop + areaTemplateContentHeight;
+    areaTemplateContentScrollTop + areaTemplateContentHeight;
 
-  if (!isCardFullyVisible) {
-    let newScrollTop;
-    if (cardOffsetTop < areaTemplateContentScrollTop) {
-      newScrollTop = cardOffsetTop;
-    } else if (
-      cardOffsetTop + cardHeight >
-      areaTemplateContentScrollTop + areaTemplateContentHeight
-    ) {
-      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
-    }
-
-    if (newScrollTop !== undefined) {
-      areaTemplateContent.scrollTop = newScrollTop;
-    }
+  if (!cardTopVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop,
+      behavior: "smooth",
+    });
+  } else if (!cardBottomVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop + cardHeight - areaTemplateContentHeight,
+      behavior: "smooth",
+    });
   }
 }
 

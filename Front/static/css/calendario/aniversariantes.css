@@ -31,10 +31,11 @@
 .secao-interna-template.area-aniversariantes {
   background: var(--card-bg);
   margin: 0px 10px;
-  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--card-borda);
   cursor: pointer;
   box-shadow: var(--sombra-moderada);
-  padding: 10px 15px;
 }
 
 /* Hover efeito padrão */

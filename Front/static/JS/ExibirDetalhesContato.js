@@ -51,42 +51,32 @@ function exibirDetalhesContato(event) {
 }
 
 function ajustarScrollParaCentralizarCard(card) {
-  // Encontra o contêiner pai mais próximo com a classe 'area-interna-containerContent-template-content'
   const areaTemplateContent = card.closest(
     ".area-interna-containerContent-template-content"
   );
 
-  if (!areaTemplateContent) return; // Se não encontrar, retorna sem fazer nada
+  if (!areaTemplateContent) return;
 
   const cardOffsetTop = card.offsetTop;
   const cardHeight = card.offsetHeight;
   const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
   const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
 
-  // Verificar se o card já está totalmente visível
-  const isCardFullyVisible =
-    cardOffsetTop >= areaTemplateContentScrollTop &&
+  const cardTopVisible = cardOffsetTop >= areaTemplateContentScrollTop;
+  const cardBottomVisible =
     cardOffsetTop + cardHeight <=
-      areaTemplateContentScrollTop + areaTemplateContentHeight;
+    areaTemplateContentScrollTop + areaTemplateContentHeight;
 
-  if (!isCardFullyVisible) {
-    // Calcular a nova posição de scroll para tornar o card totalmente visível
-    let newScrollTop;
-    if (cardOffsetTop < areaTemplateContentScrollTop) {
-      // Se o card está acima da área visível, mover para o topo do card
-      newScrollTop = cardOffsetTop;
-    } else if (
-      cardOffsetTop + cardHeight >
-      areaTemplateContentScrollTop + areaTemplateContentHeight
-    ) {
-      // Se o card está abaixo da área visível, mover para o fundo do card
-      newScrollTop = cardOffsetTop + cardHeight - areaTemplateContentHeight;
-    }
-
-    // Ajustar a posição de scroll do area-interna-containerContent-template-content, se necessário
-    if (newScrollTop !== undefined) {
-      areaTemplateContent.scrollTop = newScrollTop;
-    }
+  if (!cardTopVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop,
+      behavior: "smooth",
+    });
+  } else if (!cardBottomVisible) {
+    areaTemplateContent.scrollTo({
+      top: cardOffsetTop + cardHeight - areaTemplateContentHeight,
+      behavior: "smooth",
+    });
   }
 }
 

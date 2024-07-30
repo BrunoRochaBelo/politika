@@ -25,7 +25,7 @@
   padding: 5px 10px;
   background: var(--form-bg-container);
   border-radius: 25px;
-  border: 1px solid hsl(214, 10%, 12%);
+  border: 1px solid hsl(215, 10%, 12%);
   border-top: none;
 }
 .main-view::-webkit-scrollbar {
@@ -62,14 +62,15 @@
 
 .main-view .card-session {
   background: var(--form-card-bg);
-  border: 1px solid var(--form-card-bg);
+  border: 1px solid var(--card-borda);
   box-shadow: var(--sombra-leve);
 }
 .main-view .card-session.active {
   padding: 7px 0px;
   margin: 0px;
   background: var(--form-bg);
-  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--input-border);
+  box-shadow: var(--sombra-moderada);
 }
 .main-view .secao-interna-template-header a {
   color: var(--btn-filtro-selecionado-txt);

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           data: [],
           backgroundColor: [],
-          borderColor: "hsl(214, 14%, 15%)",
+          borderColor: "hsl(215, 14%, 15%)",
           borderWidth: 1,
         },
       ],

@@ -306,4 +306,9 @@
   .change-semana:hover {
     filter: none;
   }
+
+  .agenda .card-session.active {
+    box-shadow: var(--sombra-leve);
+    margin: 0px;
+  }
 }
