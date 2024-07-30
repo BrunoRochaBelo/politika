@@ -145,7 +145,7 @@ li > .lista-vertical-alt > li:first-child {
 }
 
 /* RESPONSIVO */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .lista-vertical-fil {
     gap: 20px 0px;
   }

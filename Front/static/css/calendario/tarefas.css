@@ -50,7 +50,7 @@
   border-radius: 23px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .nav-calendar .tarefa {
     padding: 8px 2px;
     gap: 6px;

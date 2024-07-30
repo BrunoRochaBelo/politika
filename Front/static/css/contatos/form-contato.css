@@ -101,7 +101,7 @@
   color: white;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .tipo-contato {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

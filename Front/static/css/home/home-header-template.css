@@ -39,7 +39,7 @@
 }
 
 /* RESPONSIVO */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .home-header-template {
     display: grid;
     align-content: center;

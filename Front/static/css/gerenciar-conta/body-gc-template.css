@@ -41,7 +41,7 @@
 }
 
 /* RESPONSIVO */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .body-gc-template {
     margin: 0;
     padding: 4px;

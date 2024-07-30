@@ -67,7 +67,7 @@
 }
 .main-view .card-session.active {
   padding: 7px 0px;
-  margin: 0px;
+  margin: 2px;
   background: var(--form-bg);
   border: 1px solid var(--input-border);
   box-shadow: var(--sombra-moderada);
@@ -175,7 +175,7 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .body-view {
     padding: 0px;
     border: none;

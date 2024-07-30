@@ -340,7 +340,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* Responsivo */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .form {
     grid-template-columns: 1fr;
     gap: 20px;

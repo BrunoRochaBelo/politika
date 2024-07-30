@@ -169,7 +169,7 @@
 }
 
 /* RESPONSIVO */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   /* Container Template dos filtros*/
   .container-filtros-template {
     padding: 3px 0;

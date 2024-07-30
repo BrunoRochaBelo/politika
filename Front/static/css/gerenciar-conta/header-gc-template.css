@@ -107,7 +107,7 @@
 }
 
 /* RESPONSIVO */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .header-gc-template {
     justify-content: stretch;
   }

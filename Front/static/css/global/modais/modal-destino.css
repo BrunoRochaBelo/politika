@@ -61,7 +61,7 @@
 /* Estilização para o header do modal */
 .modal-header {
   display: flex;
-  color: var(--label-text);
+  color: var(--modal-titulo);
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--modal-divisor);
@@ -168,7 +168,7 @@
   display: block;
   margin: 0px 0px 5px 10px;
   font-size: 14px;
-  color: var(--label-text);
+  color: var(--modal-conteudo);
 }
 
 .form-group.item1 .card-select-m,
@@ -261,7 +261,7 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .modal-destino-content {
     margin: 20% auto;
     width: 85%;

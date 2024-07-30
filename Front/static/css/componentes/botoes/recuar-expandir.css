@@ -65,7 +65,7 @@
 }
 
 /* RESPONSIVO */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .btn-recuar-expandir {
     display: block;
     justify-self: end;

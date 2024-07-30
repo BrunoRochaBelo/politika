@@ -29,7 +29,7 @@
 }
 
 /* RESPONSIVO */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   .main-template {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
