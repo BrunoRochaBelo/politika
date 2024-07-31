@@ -54,10 +54,16 @@
   display: grid;
   grid-auto-flow: column;
   gap: 8px;
-  white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: thick;
   padding: 10px;
+  transition: all 0.5s ease;
+}
+
+.lista-horizontal.expandir {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  grid-template-rows: auto;
 }
 
 .lista-select {
@@ -171,11 +177,9 @@ li > .lista-vertical-alt > li:first-child {
   }
 
   .lista-horizontal.expandir {
-    display: grid;
-    align-items: center;
-    gap: 8px;
-    grid-template: 1fr 1fr / auto;
-    scrollbar-width: thick;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    grid-template-rows: auto;
   }
 
   .lista-vertical::-webkit-scrollbar,

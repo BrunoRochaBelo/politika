@@ -132,7 +132,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  background-color: var(--form-card-bg);
+  background-color: var(--input-bg-empty);
   color: var(--label-text);
   padding: 10px;
   border-radius: 15px;

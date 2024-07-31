@@ -63,12 +63,12 @@
   min-width: 155px;
   height: auto;
   background: var(--card-bg);
-  transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
-  order: none;
   box-sizing: border-box;
   padding: 15px 20px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
 }
 /* Grande */
 .card-tmf-l {

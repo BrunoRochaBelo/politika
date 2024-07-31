@@ -10,7 +10,7 @@
 
   /* Cores de Apoio */
   --cor-apoio-1: hsl(215, 23%, 20%);
-  --cor-apoio-2: hsl(215, 23%, 16%);
+  --cor-apoio-2: hsl(215, 23%, 15%);
 
   /* Backgrounds */
   --bg-principal: hsl(215, 23%, 10%);
@@ -33,8 +33,8 @@
   --card-borda: hsl(215, 23%, 26%);
   --card-hover: hsl(215, 23%, 26%);
 
-  --card-aberto-bg: hsl(215, 23%, 52%);
-  --card-aberto-detalhe: hsl(215, 23%, 45%);
+  --card-aberto-bg: hsl(215, 23%, 48%);
+  --card-aberto-detalhe: hsl(215, 23%, 40%);
 
   --txt-titulo-card: hsl(215, 23%, 90%);
   --txt-conteudo-card: hsl(215, 23%, 85%);

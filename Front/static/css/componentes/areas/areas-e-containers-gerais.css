@@ -78,13 +78,14 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  max-height: calc(var(--vh, 1vh) * 100 - 8.4rem);
+  height: calc(var(--vh, 1vh) * 100 - 8.4rem);
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "area-interna-containerContent-template-header"
     "area-interna-containerContent-template-content";
   background: transparent;
   scroll-behavior: smooth;
+  transition: height 0.8s;
 }
 .area-interna-containerContent-template-header {
   grid-area: area-interna-containerContent-template-header;
@@ -113,7 +114,7 @@
 
 .area-interna-containerContent-template-not-header {
   border-top: none;
-  max-height: 100% !important;
+  height: calc(var(--vh, 1vh) * 100) !important;
   grid-template-rows: auto;
   grid-template-areas: "area-interna-containerContent-template-content";
 }
@@ -237,7 +238,7 @@
 
   /* Area Template para areas internas dos content das areas-container */
   .area-interna-containerContent-template {
-    max-height: calc(var(--vh, 1vh) * 100 - 8.7rem);
+    height: calc(var(--vh, 1vh) * 100 - 8.7rem);
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
@@ -265,7 +266,7 @@
 
   .area-interna-containerContent-template-not-header {
     border-top: none;
-    max-height: calc(var(--vh, 1vh) * 100) !important;
+    height: calc(var(--vh, 1vh) * 100) !important;
     grid-template-rows: auto !important;
     grid-template-areas: "area-interna-containerContent-template-content" !important;
   }

@@ -1,33 +1,48 @@
-function scrollToTop(element, duration, callback) {
+// Funções de easing comuns
+const easingFunctions = {
+  linear: function (t) {
+    return t;
+  },
+  easeInQuad: function (t) {
+    return t * t;
+  },
+  easeOutQuad: function (t) {
+    return t * (2 - t);
+  },
+  easeInOutQuad: function (t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  },
+};
+
+// Função scrollToTop com suporte a função de easing personalizada
+function scrollToTop(element, duration, easing, callback) {
   const startingY = element.scrollTop;
   const startTime = performance.now();
+  const easingFunction = easingFunctions[easing] || easingFunctions.linear;
 
   function scrollStep(timestamp) {
     const elapsed = timestamp - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    const easing =
-      progress < 0.5
-        ? 2 * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+    const easing = easingFunction(progress);
 
     element.scrollTop = startingY * (1 - easing);
 
     if (progress < 1) {
       requestAnimationFrame(scrollStep);
     } else if (callback) {
-      callback(); // Chamada do callback ao finalizar a animação
+      callback();
     }
   }
 
   requestAnimationFrame(scrollStep);
 }
 
-// Função changeSession ajustada para usar callback
+// Função changeSession ajustada para usar a nova função scrollToTop com easing
 function changeSession(sessionNumber) {
   const sessions = document.querySelectorAll(".session");
   const selectedSession = document.getElementById("secao" + sessionNumber);
   const cards = document.querySelectorAll(".card-session");
-  const selectedCard = cards[sessionNumber - 1]; // Assumindo que a ordem é a mesma
+  const selectedCard = cards[sessionNumber - 1];
   const areaContent =
     document.querySelector(".container-template-content") ||
     document.querySelector(".container-abas-template-content");
@@ -57,7 +72,7 @@ function changeSession(sessionNumber) {
       }
     });
 
-    scrollToTop(areaContent, 300, function () {
+    scrollToTop(areaContent, 300, "easeInOutQuad", function () {
       selectedSession.classList.add("active");
       selectedHeader.classList.add("active-header");
       selectedArrow.classList.remove("down");

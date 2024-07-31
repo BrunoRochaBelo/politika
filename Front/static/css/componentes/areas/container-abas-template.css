@@ -67,11 +67,12 @@
   text-align: center;
   justify-content: center;
   align-content: center;
-  padding: 1px;
+  padding: 0px;
   gap: 3px;
   background: var(--card-bg);
   border-radius: 25px;
   width: 500px;
+  overflow: hidden;
 }
 .nav-duas-abas {
   display: grid;
@@ -89,12 +90,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid transparent;
 }
 #nav1 a:hover,
 #nav2 a:hover,
 #nav3 a:hover {
   background: var(--card-hover);
   color: var(--txt-titulo);
+  border: 1px solid transparent;
 }
 #nav1 a.indicador-2,
 #nav2 a.indicador-2,
@@ -105,6 +108,8 @@
   background: var(--bg-container);
   align-items: center;
   justify-items: center;
+  box-shadow: var(--sombra-intensa);
+  border: 1px solid var(--card-bg);
 }
 
 .header-duas-abas {
@@ -151,7 +156,7 @@
   }
 
   .nav {
-    padding: 1px;
+    padding: 0px;
     justify-items: stretch;
     width: 308px;
     box-shadow: none;
@@ -171,7 +176,7 @@
     padding: 5px auto;
     font-size: 15px;
     font-weight: 400;
-    background: var(--card-bg);
+    background: none;
   }
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,
@@ -180,5 +185,7 @@
     font-weight: 400;
     color: var(--txt-titulo);
     background: var(--bg-principal);
+    box-shadow: var(--sombra-moderada);
+    border: 1px solid var(--card-bg);
   }
 }
