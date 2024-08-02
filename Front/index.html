@@ -50,7 +50,7 @@
   </script>
 
   <header class="header home-header-template">
-    <div id="logo" class="home-header-logo"><img src="./static/imagens/logo/Logo.png" alt="Pesquisar Icon"></div>
+    <div class="home-header-notification" id="notification"><img src="./static/imagens/icones/notificação.svg" alt="Notification Icon"></div>
     <div class="home-header-title">Olá, {{Usuário}}!</div>
 
     <nav class="home-header-nav">
@@ -60,6 +60,9 @@
           </a></li>
         <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
             <p>calendario</p>
+          </a></li>
+        <li class="tarefas"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas Icon">
+            <p>Tarefas</p>
           </a></li>
         <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
             <p>Contatos</p>
@@ -72,8 +75,10 @@
           </a></li>
       </ul>
     </nav>
-    <div id="moldura" class="home-header-user">
-      <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" class="user-icon" onclick="showModal()" id="userPhoto">
+    <div class="header-menu" onclick="toggleMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
     </div>
   </header>
 
@@ -540,24 +545,67 @@
   </main>
 
 
-  <!-- Modal Conta Usuario -->
-  <div class="modal" id="userModal">
+  <!-- Modal Menu -->
+  <div class="modal" id="modalMenu">
     <div class="modal-content-template">
-      <div class="modal-content-template-img">
-        <img src="" alt="Foto do Usuário" id="modalUserPhoto">
+      <div class="modal-content-template-card-user">
+        <div class="modal-content-template-card-user-img">
+          <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" id="modalUserPhoto">
+        </div>
+        <p class="modal-content-template-card-user-candidato" id="candidato">Nome do candidato</p>
+        <p class="modal-content-template-card-user-cargo-owner" id="cargoOwner">Cargo do candidato</p>
+        <p class="modal-content-template-card-user-partido" id="partido">Partido do candidato</p>
+        <div class="modal-content-template-card-user-secao">
+          <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
+          <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
+        </div>
+        <a class="modal-content-template-card-user-gc" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
       </div>
-      <p class="modal-content-template-candidato" id="candidato">Nome do candidato</p>
-      <p class="modal-content-template-cargo-owner" id="cargo">Cargo do candidato</p>
-      <p class="modal-content-template-partido" id="partido">Partido do candidato</p>
-      <div class="modal-content-template-secao">
-        <div class="modal-content-template-username" id="username">Nome do Usuário</div>
-        <div class="modal-content-template-cargo" id="cargo">Cargo do Usuário</div>
-      </div>
-      <div class="modal-content-template-sair">
-        <a href="home-admin.html">
-          <button id="btnGerenciarConta" class="btn-principal">Gerenciar conta</button>
-        </a>
-        <button id="btnLogout" class="btn-principal" onclick="logout()">Sair</button>
+      <div class="modal-content-template-list-op">
+        <ul class="modalMenu-list">
+          <li class="alterar-tema">
+            Alterar tema para:
+            <button id="toggleTheme">
+              <img id="themeIcon" src="./static/imagens/icones/sun.svg" alt="Ícone de Sol" />
+            </button>
+          </li>
+          <li>
+            <a href="calendario.html">
+              <img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
+              <span>Calendário</span>
+            </a>
+          </li>
+          <li>
+            <a href="tarefas.html">
+              <img src="./static/imagens/icones/tarefas.svg" alt="tarefas Icon">
+              <span>Tarefas</span>
+            </a>
+          </li>
+          <li>
+            <a href="contatos.html">
+              <img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+              <span>Contatos</span>
+            </a>
+          </li>
+          <li>
+            <a href="pleitos.html">
+              <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+              <span>Pleitos</span>
+            </a>
+          </li>
+          <li>
+            <a href="despesas.html">
+              <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
+              <span>Despesas</span>
+            </a>
+          </li>
+          <li class="logout" onclick="logout()">
+            <a id="btnLogout">
+              <img src="./static/imagens/icones/sair.svg" alt="Sair icon">
+              <span>Sair</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -630,6 +678,7 @@
 
 
   <script src="./static/js/SombraHeaderScroll.js"></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js"></script>
   <script src="./static/js/OcultarExibirAgenda.js"></script>
   <script src="./static/js/RecuarExpandirHorizontal.js"></script>
   <script src="./static/js/ExibirDetalhesContato.js"></script>

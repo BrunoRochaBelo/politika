@@ -39,6 +39,7 @@
 /* Componentes/ botoes */
 @import "./componentes/botoes/botoes.css";
 @import "./componentes/botoes/recuar-expandir.css";
+@import "./componentes/botoes/toggle-theme.css";
 
 /* Home */
 @import "./home/home-style.css";
@@ -48,6 +49,9 @@
 @import "./calendario/aniversariantes.css";
 @import "./calendario/calendario-style.css";
 @import "./calendario/tarefas.css";
+
+/* tarefas */
+@import "./tarefas/tarefas-style.css";
 
 /* contatos */
 @import "./contatos/contatos-style.css";

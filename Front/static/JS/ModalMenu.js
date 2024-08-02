@@ -1,32 +1,20 @@
-//Função para mostrar o modal
-function showModal() {
-  var modal = document.getElementById("userModal");
-  var userPhoto = document.getElementById("userPhoto");
-  var username = "Nome do Usuário";
-
-  // Define o nome do usuário no modal
-  document.getElementById("username").innerText = username;
-
-  // Define a foto do usuário no modal
-  document.getElementById("modalUserPhoto").src = userPhoto.src;
-
-  modal.classList.add("show");
-
-  // Event listener para fechar o modal
-  document.addEventListener("click", outsideClickListener);
+function toggleMenu(x) {
+  x.classList.toggle("change");
+  const modal = document.getElementById("modalMenu");
+  modal.classList.toggle("show");
+  if (modal.classList.contains("show")) {
+    document.addEventListener("click", outsideClickListener);
+  } else {
+    document.removeEventListener("click", outsideClickListener);
+  }
 }
 
 // Função para ocultar o modal
 function hideModal() {
-  var modal = document.getElementById("userModal");
-  var userPhoto = document.getElementById("userPhoto");
-
-  // Exibe a foto do usuário no corpo da página
-  userPhoto.style.display = "block";
-
+  const modal = document.getElementById("modalMenu");
+  const headerMenu = document.querySelector(".header-menu");
   modal.classList.remove("show");
-
-  // Remove o event listener ao ocultar o modal
+  headerMenu.classList.remove("change");
   document.removeEventListener("click", outsideClickListener);
 }
 
@@ -34,20 +22,24 @@ function hideModal() {
 function logout() {
   // Adicione aqui o código real para efetuar o logout
   alert("Logout realizado com sucesso!");
-
   window.location.href = "./login.html";
 }
 
 // Função para fechar o modal ao clicar fora do modal-content
 function outsideClickListener(event) {
-  var modalContent = document.querySelector(".modal-content-template");
-  var userPhoto = document.getElementById("userPhoto");
-
-  // Verifica se o clique ocorreu fora do modal-content e do ícone de usuário
-  if (!modalContent.contains(event.target) && event.target !== userPhoto) {
+  const modal = document.getElementById("modalMenu");
+  const modalContent = document.querySelector(".modal-content-template");
+  if (
+    !modalContent.contains(event.target) &&
+    !event.target.closest(".header-menu")
+  ) {
     hideModal();
   }
-
-  // Impede que o evento seja propagado para elementos internos ao modal-content
-  event.stopPropagation();
 }
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  const modalContent = document.querySelector(".modal-content-template");
+  modalContent.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+});

@@ -12,8 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
-  <title>Despesas</title>
-  <meta name="description" content="Lista de despesas">
+  <title>Tarefas</title>
+  <meta name="description" content="Lista de tarefas">
 
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
@@ -22,6 +22,11 @@
 <body class="body-template">
 
   <header class="header header-template">
+    <div class="header-menu" onclick="toggleMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
     <div class="header-notification " id="notification"><img src="./static/imagens/icones/notificação.svg" alt="Notification Icon"></div>
     <nav class="header-nav">
       <ul class="header-nav-template">
@@ -31,7 +36,7 @@
         <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
             <p>calendario</p>
           </a></li>
-        <li class="tarefas"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas Icon">
+        <li class="tarefas indicador"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas-select.svg" alt="tarefas Icon">
             <p>Tarefas</p>
           </a></li>
         <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
@@ -40,96 +45,89 @@
         <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
             <p>Pleitos</p>
           </a></li>
-        <li class="despesas indicador"><a href="despesas.html"><img src="./static/imagens/icones/despesas-select.svg" alt="Despesas Icon">
+        <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
       </ul>
     </nav>
     <div class="header-search">
       <div>
-        <form action="/despesa/listcard" method="post" class="search-input-container">
-          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar despesa...">
+        <form action="/tarefa/listcard" method="post" class="search-input-container">
+          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar tarefa...">
           <button type="submit" class="search-button">
             <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
           </button>
         </form>
       </div>
     </div>
-    <div class="header-menu" onclick="toggleMenu(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
   </header>
 
   <main class="main main-template">
     <section class="main-section">
       <div class="container-template">
-        <h2 class="container-template-header">Despesas</h2>
+        <h2 class="container-template-header">Tarefas</h2>
         <div class="container-template-content container-template-content-com-header-fx-int">
           <div class="area-interna-containerContent-template">
-
             <div class="area-interna-containerContent-template-header">
-              <div class="dashboard-container">
-                <div class="dashboard-header">
-                  <select id="cost-center-select" class="cost-center-select">
-                    <option value="campanha">Centro de Custo Campanha</option>
-                    <option value="gabinete">Centro de Custo Gabinete</option>
-                    <option value="marketing">Centro de Custo Marketing</option>
-                  </select>
-                  <div id="available-value" class="available-value dashboard-hidden">R$ 0,00</div>
-                </div>
-                <div class="dashboard-content">
-                  <div class="chart-wrapper">
-                    <canvas id="expense-chart"></canvas>
-                    <div class="chart-center-text">
-                      <div id="center-text" class="chart-available-value">R$ 0,00</div>
-                      <div id="center-label">Disponível</div>
-                    </div>
-                  </div>
-                  <div class="accounts-list-container">
-                    <h2>Meta por conta</h2>
-                    <div class="accounts-list" id="accounts-list">
-                      <!-- Os itens da conta serão adicionados dinamicamente aqui -->
-                    </div>
-                  </div>
-                </div>
+              <div class="nav-calendar">
+                <ul class="lista-horizontal tarefa">
+                  <li class="filtro-tarefa filtro-visualize">
+                    <h3>Todas</h3>
+                  </li>
+                  <li class="filtro-tarefa">
+                    <h3>Minhas</h3>
+                  </li>
+                  <li class="filtro-tarefa">
+                    <h3>Novas</h3>
+                  </li>
+                  <li class="filtro-tarefa">
+                    <h3>Andamento</h3>
+                  </li>
+                  <li class="filtro-tarefa">
+                    <h3>Atrasadas</h3>
+                  </li>
+                  <li class="filtro-tarefa">
+                    <h3>Concluidas</h3>
+                  </li>
+                </ul>
               </div>
             </div>
-
             <div class="area-interna-containerContent-template-content">
-              <ul class="lista-vertical-alt">
-                <li class="area-filtro">
-                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+              <ul class="lista-vertical">
+                <li class="area-filtro inactiveFil" id="filtro2">
+                  <span id="totalResults2">{{total2}}</span>&nbsp;-&nbsp;
                   <div class="btn-filtro-pesq">
-                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                      <a href="contatos.html" class="remover-filtro">&times;</a>
+                    <p class="btn-filtro-pesq-title" id="filtroselect2">{{filtro2}}
+                      <a href="calendario.html" class="remover-filtro">&times;</a>
                     </p>
                   </div>
                 </li>
-                <li class="secao-interna-template">
+                <li class="secao-interna-template area-tarefas">
                   <div class="secao-interna-template-content">
                     <ul class="lista-vertical-cards">
+                      <!-- lógica do loop lista de tarefas -->
+                      <!-- inicio do card tarefa -->
                       <li>
-                        <a class="card-m despesas-medium-card" href="#">
-                          <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
-                          <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
-                          <p class="despesas-medium-card-valorDespesa" data-filter="valorDespesa">R$ xxxx,xx</p>
-                          <p class="despesas-medium-card-dataDespesa" data-filter="dataPleito">xx/xx/xxxx</p>
-                          <div class="despesas-medium-card-desc" data-filter="descPleito">
-                            <p><strong>Descrição</strong></p>
+                        <a class="card-m tarefa-medium-card" href="#">
+                          <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                          <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
+                            <div class="marcador-item cor-marc3">
+                              <p><strong>Marcador 1</strong></p>
+                            </div>
                           </div>
-                          <p class="despesas-medium-card-cnpj_cpf_for" data-filter="cnpjCpfFornecedor">CNPJ/CPF Fornecedor</p>
-                          <p class="despesas-medium-card-nome_fornecedor" data-filter="nomeFornecedor">Nome Fornecedor</p>
-                          <p class="despesas-medium-card-ordenador_despesa" data-filter="ordenadorDespesa">Ordenador de Despesa</p>
-                          <p class="despesas-medium-card-autor" data-filter="autorDespesa">Autor</p>
-                          <p class="despesas-medium-card-data_criacao" data-filter="dataCriacaoDespesa">Data de Criação</p>
-                          <div class="despesas-medium-card-editar">
-                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-despesa.html'">Visualizar despesa</button>
+                          <p class="tarefa-medium-card-data" data-filter="dataTarefa">Data da Tarefa</p>
+                          <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
+                          <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
+                          <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
+                            <p>Descrição da Tarefa</p>
                           </div>
-                          <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
+                          <div class="tarefa-medium-card-editar">
+                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-tarefa.html'">Visualizar Tarefa</button>
+                          </div>
+                          <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
                         </a>
                       </li>
+                      <!-- fim do card tarefa -->
                     </ul>
                   </div>
                 </li>
@@ -170,6 +168,8 @@
     </section>
 
   </main>
+
+
 
   <!-- Modal Botão Flutuante -->
   <button class="floatingButton">+</button>
@@ -251,16 +251,17 @@
 
 
 
+
+
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/AlterarEsquemaDeCores.js"></script>
   <script src="./static/js/OcultarExibirFiltro.js"></script>
-  <script src="./static/js/ExibirDetalhesDespesa.js"></script>
-  <script src="./static/js/ScrollRemoverItensDespesa.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="./static/js/DashboardCentroCustoDespesas.js"></script>
+  <script src="./static/js/ExibirDetalhesTarefa.js"></script>
+  <script src="./static/js/NavFiltroTarefa.js"></script>
+
 
 </body>
 

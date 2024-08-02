@@ -188,7 +188,7 @@
 .card-select-xs:hover,
 .card-select-s:hover,
 .card-select-m:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 /*  active  */
 .card-xs:active,

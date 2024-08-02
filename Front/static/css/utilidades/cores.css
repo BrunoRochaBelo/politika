@@ -1,25 +1,25 @@
+:root,
+.light-mode {
+  transition: all 0.3s ease-in-out;
+}
 :root {
-  /* Cores Primárias */
+  /* Modo Escuro (default) */
   --cor-primaria-1: hsl(215, 100%, 40%);
   --cor-primaria-2: hsl(215, 60%, 40%);
   --cor-primaria-3: hsl(215, 100%, 75%);
 
-  /* Cores Secundárias */
   --cor-secundaria-1: hsl(35, 100%, 50%);
   --cor-secundaria-2: hsl(35, 90%, 40%);
 
-  /* Cores de Apoio */
   --cor-apoio-1: hsl(215, 23%, 20%);
-  --cor-apoio-2: hsl(215, 23%, 15%);
+  --cor-apoio-2: hsl(215, 23%, 14%);
 
-  /* Backgrounds */
-  --bg-principal: hsl(215, 23%, 10%);
-  --bg-container: hsl(215, 23%, 15%);
-  --bg-barra-pesquisa: hsl(215, 23%, 15%);
-  --borda: hsl(215, 23%, 23%);
-  --divisor: hsl(215, 23%, 25%);
+  --bg-principal: hsl(215, 23%, 9%);
+  --bg-container: hsl(215, 23%, 14%);
+  --bg-barra-pesquisa: hsl(215, 23%, 14%);
+  --borda: hsl(215, 23%, 20%);
+  --divisor: hsl(215, 23%, 12%);
 
-  /* Textos */
   --txt-titulo: hsl(215, 23%, 95%);
   --txt-subtitulo: hsl(215, 23%, 85%);
   --txt-destaque: hsl(215, 100%, 96%);
@@ -27,7 +27,6 @@
   --txt-nav-selecionado: hsl(215, 100%, 75%);
   --txt-placeholder: hsl(215, 23%, 75%);
 
-  /* Cartões */
   --card-bg: hsl(215, 23%, 22%);
   --card-detalhe: hsl(215, 23%, 26%);
   --card-borda: hsl(215, 23%, 26%);
@@ -39,14 +38,12 @@
   --txt-titulo-card: hsl(215, 23%, 90%);
   --txt-conteudo-card: hsl(215, 23%, 85%);
 
-  /* Modais */
-  --modal-bg: hsl(215, 23%, 15%);
+  --modal-bg: hsl(215, 23%, 14%);
   --modal-borda: hsl(215, 23%, 23%);
   --modal-divisor: hsl(215, 23%, 25%);
   --modal-titulo: hsl(215, 100%, 70%);
   --modal-conteudo: hsl(215, 50%, 80%);
 
-  /* Formulários */
   --form-bg-container: hsl(215, 23%, 15%);
   --form-card-bg: hsl(215, 23%, 25%);
   --form-bg: hsl(215, 23%, 16%);
@@ -66,7 +63,6 @@
   --input-success-border: hsl(140, 80%, 50%);
   --input-success-bg: hsl(140, 80%, 45%);
 
-  /* Botões */
   --btn-principal: hsl(215, 100%, 40%);
   --btn-principal-hover: hsl(215, 100%, 45%);
   --btn-principal-destaque: hsl(215, 100%, 50%);
@@ -77,9 +73,9 @@
   --btn-principal-alt-destaque: hsl(215, 100%, 45%);
   --btn-principal-alt-txt: hsl(215, 100%, 95%);
 
-  --btn-secundario: hsl(35, 100%, 50%);
-  --btn-secundario-hover: hsl(35, 100%, 55%);
-  --btn-secundario-destaque: hsl(35, 100%, 60%);
+  --btn-secundario: hsl(35, 75%, 50%);
+  --btn-secundario-hover: hsl(35, 75%, 55%);
+  --btn-secundario-destaque: hsl(35, 75%, 60%);
   --btn-secundario-txt: hsl(215, 40%, 95%);
 
   --btn-filtro: hsl(215, 23%, 22%);
@@ -93,14 +89,12 @@
   --btn-filtro-alt-destaque: hsl(215, 100%, 60%);
   --btn-filtro-alt-txt: hsl(215, 100%, 95%);
 
-  /* Sombras */
   --sombra-destaque: hsl(215, 45%, 70%);
   --sombra-leve: 0 2px 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.15);
   --sombra-moderada: 0 4px 8px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.25);
   --sombra-intensa: 0 8px 16px rgba(0, 0, 0, 0.4),
     0 8px 16px rgba(0, 0, 0, 0.35);
 
-  /* Cores de Comunicação */
   --link: hsl(215, 100%, 55%);
   --link-hover: hsl(215, 100%, 65%);
   --sucesso: hsl(140, 80%, 50%);
@@ -115,19 +109,16 @@
   --warning-color: #ffc107;
   --success-color: #28a745;
 
-  /* Tooltip e Mensagens de Erro/Sucesso para Inputs */
   --tooltip-bg: hsl(215, 100%, 30%);
   --tooltip-txt: hsl(215, 100%, 90%);
   --input-tooltip-bg: hsl(215, 100%, 55%);
   --input-tooltip-txt: hsl(215, 100%, 30%);
   --msg-erro-txt: hsl(0, 100%, 90%);
 
-  /* Outros */
   --scrollbar-bg: hsl(215, 23%, 20%);
   --scrollbar-thumb: hsl(215, 23%, 25%);
   --scrollbar-thumb-hover: hsl(215, 23%, 30%);
 
-  /* Cores dos Marcadores */
   --cor-marcador-0: hsl(215, 23%, 30%);
   --cor-marcador-1: hsl(0, 70%, 50%);
   --cor-marcador-2: hsl(35, 70%, 50%);
@@ -141,6 +132,138 @@
   --cor-marcador-10: hsl(270, 70%, 50%);
 
   --marcador-txt: hsl(215, 10%, 8%);
+}
+
+.light-mode {
+  /* Modo Claro */
+  --cor-primaria-1: hsl(215, 100%, 50%);
+  --cor-primaria-2: hsl(215, 60%, 50%);
+  --cor-primaria-3: hsl(215, 100%, 75%);
+
+  --cor-secundaria-1: hsl(35, 100%, 50%);
+  --cor-secundaria-2: hsl(35, 90%, 45%);
+
+  --cor-apoio-1: hsl(215, 23%, 70%);
+  --cor-apoio-2: hsl(215, 23%, 85%);
+
+  --bg-principal: hsl(0, 0%, 100%);
+  --bg-container: hsl(215, 23%, 95%);
+  --bg-barra-pesquisa: hsl(215, 23%, 92%);
+  --borda: hsl(215, 23%, 80%);
+  --divisor: hsl(215, 23%, 75%);
+
+  --txt-titulo: hsl(215, 23%, 15%);
+  --txt-subtitulo: hsl(215, 23%, 30%);
+  --txt-destaque: hsl(215, 100%, 40%);
+  --txt-nav: hsl(215, 12%, 40%);
+  --txt-nav-selecionado: hsl(215, 100%, 35%);
+  --txt-placeholder: hsl(215, 23%, 60%);
+
+  --card-bg: hsl(215, 23%, 98%);
+  --card-detalhe: hsl(215, 23%, 90%);
+  --card-borda: hsl(215, 23%, 88%);
+  --card-hover: hsl(215, 23%, 85%);
+
+  --card-aberto-bg: hsl(215, 23%, 80%);
+  --card-aberto-detalhe: hsl(215, 23%, 70%);
+
+  --txt-titulo-card: hsl(215, 23%, 20%);
+  --txt-conteudo-card: hsl(215, 23%, 30%);
+
+  --modal-bg: hsl(215, 23%, 95%);
+  --modal-borda: hsl(215, 23%, 90%);
+  --modal-divisor: hsl(215, 23%, 85%);
+  --modal-titulo: hsl(215, 100%, 50%);
+  --modal-conteudo: hsl(215, 50%, 40%);
+
+  --form-bg-container: hsl(215, 23%, 98%);
+  --form-card-bg: hsl(215, 23%, 96%);
+  --form-bg: hsl(215, 23%, 94%);
+  --input-bg-empty: hsl(215, 23%, 92%);
+  --input-border: hsl(215, 23%, 85%);
+  --input-bg-filled: hsl(215, 23%, 88%);
+  --input-label: hsl(215, 40%, 30%);
+  --input-placeholder: hsl(215, 23%, 50%);
+  --input-txt: hsl(215, 23%, 15%);
+  --input-icon: hsl(215, 23%, 40%);
+  --btn-clear: hsl(215, 23%, 45%);
+  --btn-clear-hover: hsl(215, 23%, 55%);
+  --input-focus-border: hsl(215, 100%, 60%);
+  --input-focus-bg: hsl(215, 23%, 85%);
+  --input-error-border: hsl(0, 80%, 60%);
+  --input-error-bg: hsl(0, 80%, 70%);
+  --input-success-border: hsl(140, 80%, 60%);
+  --input-success-bg: hsl(140, 80%, 70%);
+
+  --btn-principal: hsl(215, 100%, 50%);
+  --btn-principal-hover: hsl(215, 100%, 55%);
+  --btn-principal-destaque: hsl(215, 100%, 60%);
+  --btn-principal-txt: hsl(0, 0%, 100%);
+
+  --btn-principal-alt: hsl(215, 100%, 40%);
+  --btn-principal-alt-hover: hsl(215, 100%, 45%);
+  --btn-principal-alt-destaque: hsl(215, 100%, 50%);
+  --btn-principal-alt-txt: hsl(0, 0%, 100%);
+
+  --btn-secundario: hsl(35, 75%, 50%);
+  --btn-secundario-hover: hsl(35, 75%, 55%);
+  --btn-secundario-destaque: hsl(35, 75%, 60%);
+  --btn-secundario-txt: hsl(215, 40%, 10%);
+
+  --btn-filtro: hsl(215, 23%, 88%);
+  --btn-filtro-txt: hsl(215, 23%, 60%);
+  --btn-filtro-hover: hsl(215, 23%, 80%);
+  --btn-filtro-selecionado: hsl(215, 100%, 50%);
+  --btn-filtro-selecionado-txt: hsl(215, 100%, 95%);
+
+  --btn-filtro-alt: hsl(215, 100%, 70%);
+  --btn-filtro-alt-hover: hsl(215, 100%, 75%);
+  --btn-filtro-alt-destaque: hsl(215, 100%, 80%);
+  --btn-filtro-alt-txt: hsl(215, 100%, 95%);
+
+  --sombra-destaque: hsl(215, 45%, 80%);
+  --sombra-leve: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --sombra-moderada: 0 4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+  --sombra-intensa: 0 8px 16px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.25);
+
+  --link: hsl(215, 100%, 35%);
+  --link-hover: hsl(215, 100%, 40%);
+  --sucesso: hsl(140, 80%, 60%);
+  --erro: hsl(0, 80%, 60%);
+  --aviso: hsl(30, 80%, 60%);
+  --informacao: hsl(215, 100%, 50%);
+  --msg-sucesso-txt: hsl(140, 90%, 30%);
+
+  --label-bg: hsl(215, 23%, 78%);
+  --label-text: hsl(215, 40%, 20%);
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --success-color: #28a745;
+
+  --tooltip-bg: hsl(215, 100%, 50%);
+  --tooltip-txt: hsl(215, 100%, 15%);
+  --input-tooltip-bg: hsl(215, 100%, 70%);
+  --input-tooltip-txt: hsl(215, 100%, 50%);
+  --msg-erro-txt: hsl(0, 100%, 10%);
+
+  --scrollbar-bg: hsl(215, 23%, 70%);
+  --scrollbar-thumb: hsl(215, 23%, 65%);
+  --scrollbar-thumb-hover: hsl(215, 23%, 60%);
+
+  --cor-marcador-0: hsl(215, 23%, 80%);
+  --cor-marcador-1: hsl(0, 70%, 60%);
+  --cor-marcador-2: hsl(35, 70%, 60%);
+  --cor-marcador-3: hsl(60, 70%, 60%);
+  --cor-marcador-4: hsl(90, 70%, 60%);
+  --cor-marcador-5: hsl(120, 70%, 60%);
+  --cor-marcador-6: hsl(150, 70%, 60%);
+  --cor-marcador-7: hsl(180, 70%, 60%);
+  --cor-marcador-8: hsl(210, 70%, 60%);
+  --cor-marcador-9: hsl(240, 70%, 60%);
+  --cor-marcador-10: hsl(270, 70%, 60%);
+
+  --marcador-txt: hsl(215, 10%, 10%);
 }
 
 /* General Classes */

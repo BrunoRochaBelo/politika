@@ -141,7 +141,7 @@
 
 .calendario-small-card-editar.exibirDetalheEvento {
   display: grid;
-  justify-content: stretch;
+  justify-content: center;
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
@@ -279,7 +279,7 @@
 }
 .calendario-large-card-editar.exibirDetalheEvento {
   display: grid;
-  justify-content: stretch;
+  justify-content: center;
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;

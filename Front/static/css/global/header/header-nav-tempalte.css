@@ -2,8 +2,8 @@
 .header-nav-template {
   display: grid;
   grid:
-    "home calendario contatos pleitos despesas"
-    / 1fr 1fr 1fr 1fr 1fr;
+    "home calendario tarefas contatos pleitos despesas"
+    / 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .home {
   grid-area: home;
@@ -39,7 +39,7 @@
   text-decoration: none;
   color: inherit;
 }
-.header-nav-template a::after {
+.indicador a::after {
   content: "";
   display: block;
   width: 0;
@@ -88,8 +88,13 @@
     width: 100%;
     height: 3.75rem;
     margin: 0 auto;
+    grid:
+      "home calendario tarefas contatos"
+      / 1fr 1fr 1fr 1fr;
   }
-  .header-nav-template p {
+  .header-nav-template p,
+  .despesas,
+  .pleitos {
     display: none;
   }
   .header-nav-template img {
@@ -97,10 +102,7 @@
     height: 27px;
     margin: 0 auto;
   }
-  .indicador {
-    border-radius: 50%;
-    background-color: transparent;
-  }
+
   .header-nav-template a {
     border-radius: 50%;
   }
@@ -116,6 +118,10 @@
   }
   .header-nav-template a:hover img {
     background: transparent;
+  }
+
+  .indicador a::after {
+    display: none;
   }
 
   .indicador {

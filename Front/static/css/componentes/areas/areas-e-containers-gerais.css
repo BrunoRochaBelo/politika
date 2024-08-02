@@ -238,7 +238,7 @@
 
   /* Area Template para areas internas dos content das areas-container */
   .area-interna-containerContent-template {
-    height: calc(var(--vh, 1vh) * 100 - 8.7rem);
+    height: calc(var(--vh, 1vh) * 100 - 5.5rem);
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
@@ -268,7 +268,6 @@
     border-top: none;
     height: calc(var(--vh, 1vh) * 100) !important;
     grid-template-rows: auto !important;
-    grid-template-areas: "area-interna-containerContent-template-content" !important;
   }
 
   /* Area Template Sessão Interna */

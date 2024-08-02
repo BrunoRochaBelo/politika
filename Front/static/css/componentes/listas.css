@@ -200,7 +200,7 @@ li > .lista-vertical-alt > li:first-child {
 
   .list-last-child {
     border-radius: 0px;
-    border-bottom: 1px solid var(--borda);
-    margin: 0 15px 6.2em 15px;
+    border-bottom: 1px solid var(--divisor);
+    margin: 0 15px 9rem 15px;
   }
 }

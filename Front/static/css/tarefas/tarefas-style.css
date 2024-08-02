@@ -3,12 +3,12 @@
   width: auto;
   font-weight: regular;
   font-size: 11px;
-  border-radius: 6px;
-  border: 1px solid var(--btn-principal-alt);
+  border-radius: 45px;
+  border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
-  background: var(--btn-principal-alt);
-  color: var(--btn-principal-alt-txt);
-  box-shadow: var(--sombra-leve);
+  background: var(--btn-secundario);
+  color: var(--btn-secundario-txt);
+  box-shadow: var(--sombra-moderada);
 }
 .tarefa-small-card-editar .btn-outline-principal:hover,
 .tarefa-medium-card-editar .btn-outline-principal:hover {

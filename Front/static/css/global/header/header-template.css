@@ -4,16 +4,27 @@
   align-content: center;
   justify-content: space-between;
   align-items: center;
+  justify-content: stretch;
+  gap: 25px;
   text-transform: uppercase;
-  grid: "home-header-logo header-nav header-search header-user";
+  grid:
+    "header-menu header-notification header-nav header-search"
+    / auto auto 1fr auto;
   margin-top: 3px;
 }
 
+.header-notification {
+  grid-area: header-notification;
+  justify-self: start;
+  cursor: pointer;
+}
 .header-nav {
   grid-area: header-nav;
+  justify-self: center;
 }
 .header-search {
   grid-area: header-search;
+  justify-self: end;
   display: grid;
   align-self: center;
   background: var(--bg-barra-pesquisa);
@@ -21,15 +32,28 @@
   border-radius: 25px;
   border: 1px solid transparent;
   box-shadow: var(--sombra-leve);
-}
-.header-user {
-  grid-area: header-user;
   margin-right: 1.25rem;
-  width: 35px;
+}
+.header-menu {
+  grid-area: header-menu;
+  justify-self: start;
   height: auto;
   border-radius: 50%;
-  cursor: pointer;
   border: 1px solid transparent;
+  margin-left: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 2005;
+}
+
+.header-notification img {
+  width: 25px;
+  height: 23px;
 }
 
 .search-input-container {
@@ -98,9 +122,8 @@
   border-bottom-left-radius: 0;
 }
 
-.header-user:hover {
-  box-shadow: 0 0 1px var(--shadow-destaque), 0 0 2px var(--shadow-destaque);
-  border: 1px solid var(--btn-principal-destaque);
+.header-menu:hover {
+  filter: brightness(1.1);
 }
 
 /* RESPONSIVO */
@@ -112,13 +135,14 @@
     gap: 15px;
     margin-top: 3px;
     grid:
-      "home-header-logo header-search header-user"
-      / auto 1fr auto;
+      "header-menu header-notification header-search"
+      / auto auto 1fr;
     background: var(--bg-principal);
   }
 
   .header-search {
     grid-area: header-search;
+    justify-self: stretch;
     display: grid;
     align-self: center;
     background: var(--bg-principal);
@@ -126,22 +150,21 @@
     border-radius: 25px;
     border: 1px solid var(--card-borda);
     box-shadow: var(--sombra-leve);
-  }
-  .header-user {
     margin-right: 0.625rem;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 50%;
-    padding: 3px;
+  }
+  .header-menu {
+    margin-left: 0.625rem;
   }
   .header-nav {
-    background: var(--bg-principal);
+    background: var(--bg-container);
     backdrop-filter: blur(10px);
     border-top: 1px solid var(--borda);
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     z-index: 2000;
-    margin-left: 0;
   }
 
   .header-template.box-shadow-active {

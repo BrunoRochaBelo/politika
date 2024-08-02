@@ -1,0 +1,40 @@
+#toggleTheme {
+  grid-area: botao-tema-cores;
+  justify-self: end;
+  background-color: transparent;
+  border: none;
+  border-radius: 45px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#toggleTheme:active {
+  background-color: var(--btn-principal-destaque);
+  transform: scale(0.98);
+}
+
+#themeIcon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#themeIcon.rotating {
+  transform: rotate(180deg);
+}
+
+#toggleTheme button {
+  background: none;
+  border: none;
+}
+
+/* RESPONSIVO */
+@media only screen and (max-width: 56.25rem) {
+  #toggleTheme:hover {
+    background-color: transparent;
+  }
+}
