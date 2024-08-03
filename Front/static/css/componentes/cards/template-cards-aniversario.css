@@ -9,7 +9,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
+    "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-call"
     /0.5fr 0.5fr 1fr 32px;
   transition: max-height 0.25s ease-out, transform 0.25s ease-out,
     height 0.25s ease-out;
@@ -40,8 +40,8 @@
   transition: opacity 0.25s ease-in-out;
 }
 
-.aniversario-small-card-phone {
-  grid-area: aniversario-small-card-phone;
+.aniversario-small-card-call {
+  grid-area: aniversario-small-card-call;
   justify-self: end;
   align-self: center;
 }
@@ -108,11 +108,11 @@
   color: var(--txt-destaque);
   box-shadow: var(--sombra-leve);
   grid:
-    "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-phone"
-    " aniversario-small-card-tipocontato aniversario-small-card-tipocontato aniversario-small-card-perfilInfluencia aniversario-small-card-phone"
-    "aniversario-small-card-num aniversario-small-card-num aniversario-small-card-num aniversario-small-card-phone "
-    "aniversario-small-card-email aniversario-small-card-email aniversario-small-card-email aniversario-small-card-phone "
-    "aniversario-small-card-tipopessoa .  .  aniversario-small-card-phone"
+    "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-call"
+    " aniversario-small-card-tipocontato aniversario-small-card-tipocontato aniversario-small-card-perfilInfluencia aniversario-small-card-call"
+    "aniversario-small-card-num aniversario-small-card-num aniversario-small-card-num aniversario-small-card-call "
+    "aniversario-small-card-email aniversario-small-card-email aniversario-small-card-email aniversario-small-card-call "
+    "aniversario-small-card-tipopessoa .  .  aniversario-small-card-call"
     "aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar";
   transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,

@@ -1,28 +1,48 @@
 function toggleMenu(x) {
   x.classList.toggle("change");
   const modal = document.getElementById("modalMenu");
-  modal.classList.toggle("show");
+  const modalContent = document.querySelector(".modal-content-template");
+
   if (modal.classList.contains("show")) {
-    document.addEventListener("click", outsideClickListener);
-  } else {
+    modalContent.classList.remove("show");
+    modalContent.classList.add("hide");
+    modalContent.addEventListener(
+      "animationend",
+      () => {
+        modal.classList.remove("show");
+        modalContent.classList.remove("hide");
+        modal.style.display = "none";
+      },
+      { once: true }
+    );
     document.removeEventListener("click", outsideClickListener);
+  } else {
+    modal.style.display = "flex";
+    modal.classList.add("show");
+    modalContent.classList.add("show");
+    document.addEventListener("click", outsideClickListener);
   }
 }
 
 // Função para ocultar o modal
 function hideModal() {
   const modal = document.getElementById("modalMenu");
+  const modalContent = document.querySelector(".modal-content-template");
   const headerMenu = document.querySelector(".header-menu");
-  modal.classList.remove("show");
+
+  modalContent.classList.remove("show");
+  modalContent.classList.add("hide");
+  modalContent.addEventListener(
+    "animationend",
+    () => {
+      modal.classList.remove("show");
+      modalContent.classList.remove("hide");
+      modal.style.display = "none";
+    },
+    { once: true }
+  );
   headerMenu.classList.remove("change");
   document.removeEventListener("click", outsideClickListener);
-}
-
-// Função para o logout
-function logout() {
-  // Adicione aqui o código real para efetuar o logout
-  alert("Logout realizado com sucesso!");
-  window.location.href = "./login.html";
 }
 
 // Função para fechar o modal ao clicar fora do modal-content

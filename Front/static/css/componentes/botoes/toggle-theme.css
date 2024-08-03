@@ -1,5 +1,6 @@
 #toggleTheme {
   grid-area: botao-tema-cores;
+  color: var(--txt-titulo-card);
   justify-self: end;
   background-color: transparent;
   border: none;
@@ -13,7 +14,6 @@
 }
 
 #toggleTheme:active {
-  background-color: var(--btn-principal-destaque);
   transform: scale(0.98);
 }
 

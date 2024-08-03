@@ -1,8 +1,8 @@
 // Função para iniciar uma chamada telefônica
 function iniciarChamadaTelefonicaNiver(card) {
-  const phoneElement = card.querySelector(".aniversario-small-card-num");
-  const phoneNumber = phoneElement.textContent.trim();
-  window.location.href = `tel:${phoneNumber}`;
+  const callElement = card.querySelector(".aniversario-small-card-num");
+  const callNumber = callElement.textContent.trim();
+  window.location.href = `tel:${callNumber}`;
 }
 
 // Função para lidar com o clique nos cartões
@@ -37,7 +37,7 @@ function exibirDetalhesAniversariante(event) {
     ajustarScrollParaCentralizarCard(card);
   }
 
-  if (event.target.classList.contains("aniversario-small-card-phone")) {
+  if (event.target.classList.contains("aniversario-small-card-call")) {
     iniciarChamadaTelefonicaNiver(card);
   }
 }

@@ -35,7 +35,7 @@ buttons.forEach((button) => {
               <p class="contatos-small-card-title">${contato.nome}</p>
               <div class="contatos-small-card-num">${contato.telefone}</div>
               <div class="contatos-small-card-star"><img src="imagens/icones/${contato.estrelas}-estrelas.svg" alt="Perfil influencia Icon"></div>
-              <div class="contatos-small-card-phone"><img src="imagens/icones/phone.svg" alt="Ligar Icon"></div>
+              <div class="contatos-small-card-call"><img src="imagens/icones/call.svg" alt="Ligar Icon"></div>
             </a>
           </li>
         `;

@@ -30,7 +30,7 @@ const urlsToCache = [
   "/static/imagens/icones/home-select.svg",
   "/static/imagens/icones/menu.svg",
   "/static/imagens/icones/pesquisar.svg",
-  "/static/imagens/icones/phone.svg",
+  "/static/imagens/icones/call.svg",
   "/static/imagens/icones/pleitos.svg",
   "/static/imagens/icones/pleitos-select.svg",
   "/static/imagens/icones/voltar.svg",

@@ -69,7 +69,7 @@
   cursor: pointer;
 }
 
-.phone-modal,
+.call-modal,
 .influencia-modal {
   display: flex;
   justify-items: space-between;

@@ -32,6 +32,39 @@ function validarCampo(campo) {
   return campoValido;
 }
 
+// Função para verificar se pelo menos um dos campos nome está preenchido
+function validarNomesObrigatorios() {
+  const nomeContato = document.getElementById("nome_contato");
+  const nomeFantasia = document.getElementById("nome_fantasia");
+
+  const nomeContatoPreenchido = nomeContato.value.trim() !== "";
+  const nomeFantasiaPreenchido = nomeFantasia.value.trim() !== "";
+
+  if (nomeContatoPreenchido) {
+    nomeFantasia.removeAttribute("required");
+  } else {
+    nomeFantasia.setAttribute("required", "required");
+  }
+
+  if (nomeFantasiaPreenchido) {
+    nomeContato.removeAttribute("required");
+  } else {
+    nomeContato.setAttribute("required", "required");
+  }
+
+  // Validar os campos individualmente após a atualização dos atributos
+  validarCampo(nomeContato);
+  validarCampo(nomeFantasia);
+}
+
+// Adicionar ouvintes de eventos aos campos nome
+document
+  .getElementById("nome_contato")
+  .addEventListener("input", validarNomesObrigatorios);
+document
+  .getElementById("nome_fantasia")
+  .addEventListener("input", validarNomesObrigatorios);
+
 // Função para validar o formulário
 function validarFormulario() {
   let formValido = true;
@@ -40,16 +73,18 @@ function validarFormulario() {
   const camposRequeridos = [
     { id: "tipo_pessoa", mensagem: "Tipo de Pessoa" },
     { id: "nome_contato", mensagem: "Nome do Contato" },
-    { id: "celular", mensagem: "Celular" },
+    { id: "telefonePrincipal", mensagem: "Telefone Principal" },
     { id: "whatsapp", mensagem: "WhatsApp" },
     { id: "email", mensagem: "E-mail" },
-    { id: "telefone", mensagem: "Telefone" },
+    { id: "telefoneAdicional", mensagem: "Telefone Adicional" },
     { id: "cep", mensagem: "CEP" },
     { id: "uf", mensagem: "UF" },
     { id: "cidade", mensagem: "Cidade" },
     { id: "bairro", mensagem: "Bairro" },
     { id: "perfil_influencia", mensagem: "Perfil de Influência" },
   ];
+
+  validarNomesObrigatorios();
 
   camposRequeridos.forEach((campo) => {
     const elementoCampo = document.getElementById(campo.id);
@@ -136,7 +171,7 @@ function formatarCampoParaExibicao(input, regex, formato) {
   validarCampo(input); // Adiciona a validação após a formatação
 }
 
-function formatarCelularParaExibicao(input) {
+function formatartelefonePrincipalParaExibicao(input) {
   formatarCampoParaExibicao(
     input,
     /^\d{11}$/,
@@ -148,7 +183,7 @@ function formatarCelularParaExibicao(input) {
   );
 }
 
-function formatarTelefoneParaExibicao(input) {
+function formatartelefoneAdicionalParaExibicao(input) {
   formatarCampoParaExibicao(
     input,
     /^\d{10}$/,
@@ -202,12 +237,12 @@ camposDoFormulario.forEach((campo) => {
 function mostrarCampoWhatsapp() {
   var checkbox = document.getElementById("whatsapp_switch");
   var campoWhatsapp = document.getElementById("campoWhatsapp");
-  var celularInput = document.getElementById("celular");
+  var telefonePrincipalInput = document.getElementById("telefonePrincipal");
   var whatsappInput = document.getElementById("whatsapp");
 
   if (checkbox.checked) {
     campoWhatsapp.style.display = "none";
-    whatsappInput.value = celularInput.value;
+    whatsappInput.value = telefonePrincipalInput.value;
   } else {
     campoWhatsapp.style.display = "block";
     whatsappInput.value = ""; // Limpa o campo WhatsApp, se estiver preenchido
@@ -285,17 +320,21 @@ document
   .getElementById("estado_civil")
   .addEventListener("change", mostrarCamposConjuge);
 
-// Ouvinte de evento para o campo Celular
-document.getElementById("celular").addEventListener("blur", function () {
-  formatarCelularParaExibicao(this);
-  validarCampo(this); // Validar campo ao desfocar
-});
+// Ouvinte de evento para o campo telefonePrincipal
+document
+  .getElementById("telefonePrincipal")
+  .addEventListener("blur", function () {
+    formatartelefonePrincipalParaExibicao(this);
+    validarCampo(this); // Validar campo ao desfocar
+  });
 
-// Ouvinte de evento para o campo Telefone
-document.getElementById("telefone").addEventListener("blur", function () {
-  formatarTelefoneParaExibicao(this);
-  validarCampo(this); // Validar campo ao desfocar
-});
+// Ouvinte de evento para o campo telefoneAdicional
+document
+  .getElementById("telefoneAdicional")
+  .addEventListener("blur", function () {
+    formatartelefoneAdicionalParaExibicao(this);
+    validarCampo(this); // Validar campo ao desfocar
+  });
 
 // Ouvinte de evento para o campo CEP
 document.getElementById("cep").addEventListener("blur", function () {

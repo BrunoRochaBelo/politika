@@ -53,7 +53,7 @@ cardsContato.forEach((card) => {
     event.preventDefault();
 
     // Se o usuário clicou no número de telefone, inicia uma chamada
-    if (event.target.closest(".contatos-small-card-phone")) {
+    if (event.target.closest(".contatos-small-card-call")) {
       window.location.href = `tel:${
         card.querySelector(".contatos-small-card-num").textContent
       }`;
@@ -105,8 +105,8 @@ document
   .querySelector("#modalCallButton")
   .addEventListener("click", (event) => {
     event.preventDefault();
-    let phoneNumber = document.querySelector("#modalNumber").textContent;
-    window.location.href = `tel:${phoneNumber}`;
+    let callNumber = document.querySelector("#modalNumber").textContent;
+    window.location.href = `tel:${callNumber}`;
   });
 
 // Adiciona um evento de clique ao botão de edição do modal para redirecionar para a página de edição do contato
@@ -173,7 +173,7 @@ document
 //       card.addEventListener("click", (event) => {
 //         event.preventDefault();
 
-//         if (event.target.closest(".contatos-small-card-phone")) {
+//         if (event.target.closest(".contatos-small-card-call")) {
 //           window.location.href = `tel:${
 //             card.querySelector(".contatos-small-card-num").textContent
 //           }`;
@@ -205,8 +205,8 @@ document
 
 //     this.modalCallButton.addEventListener("click", (event) => {
 //       event.preventDefault();
-//       let phoneNumber = document.querySelector("#modalNumber").textContent;
-//       window.location.href = `tel:${phoneNumber}`;
+//       let callNumber = document.querySelector("#modalNumber").textContent;
+//       window.location.href = `tel:${callNumber}`;
 //     });
 
 //     this.modalEditButton.addEventListener("click", (event) => {
@@ -227,7 +227,7 @@ cardsContato.forEach((card) => {
     event.preventDefault();
 
     // Se o usuário clicou no número de telefone, inicia uma chamada
-    if (event.target.closest(".contatos-small-card-phone")) {
+    if (event.target.closest(".contatos-small-card-call")) {
       window.location.href = `tel:${
         card.querySelector(".contatos-small-card-num").textContent
       }`;

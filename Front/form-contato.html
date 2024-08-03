@@ -34,9 +34,15 @@
                   <div class="session active" id="secao1">
                     <fieldset>
                       <legend class="titulo-xl"></legend>
-                      <div class="campo">
-                        <label for="nome_contato">Nome do contato <span>*</span></label>
-                        <input type="text" id="nome_contato" name="nome_contato" required>
+                      <div class="nomes">
+                        <div class="campo">
+                          <label for="nome_contato">Nome<span>*</span></label>
+                          <input type="text" id="nome_contato" name="nome_contato" required>
+                        </div>
+                        <div class="campo">
+                          <label for="nome_fantasia">Apelido<span>*</span></label>
+                          <input type="text" id="nome_fantasia" name="nome_fantasia" required>
+                        </div>
                       </div>
                       <div class="campo">
                         <label for="tipo_pessoa">Tipo de Pessoa <span>*</span></label>
@@ -54,8 +60,8 @@
                         </div>
                       </div>
                       <div class="campo">
-                        <label for="celular">Celular <span>*</span></label>
-                        <input type="tel" id="celular" name="celular" required class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
+                        <label for="telefonePrincipal">Telefone Principal <span>*</span></label>
+                        <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
                       </div>
                       <div class="campo">
                         <label>Este número é WhatsApp? <span>*</span></label>
@@ -70,7 +76,7 @@
                       <div id="campoWhatsapp">
                         <div class="campo">
                           <label for="whatsapp">WhatsApp</label>
-                          <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="(99) 99999-9999" onchange="formatarCelular(this); validarCelular(this.value)">
+                          <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
                         </div>
                       </div>
                       <div class="campo">
@@ -78,8 +84,8 @@
                         <input type="email" id="email" name="email" class="contato" placeholder="email@email.com" onchange="validarEmail(this.value)">
                       </div>
                       <div class="campo">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
+                        <label for="telefoneAdicional">Telefone Adicional</label>
+                        <input type="tel" id="telefoneAdicional" name="telefoneAdicional" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
                       </div>
                       <div class="campo">
                         <label for="perfil_influencia">Perfil de Influência</label>
@@ -403,6 +409,8 @@
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/FormContato.js"></script>
+  <script src="./static/js/FormContatoFormatarCampos"></script>
+  <script src="./static/js/FormContatoValidarCampos"></script>
   <script src="./static/js/NavSecoes.js"></script>
 
 </body>

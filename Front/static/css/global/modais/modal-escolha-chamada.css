@@ -1,0 +1,89 @@
+/* Estilos para o modal de escolha de chamada */
+.modal-escolha-chamada {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  transform: translateY(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.modal-escolha-chamada.show {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-escolha-chamada-content {
+  color: var(--modal-conteudo);
+  background-color: var(--modal-bg);
+  padding: 20px 20px 50px 20px;
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--borda);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--sombra-intensa);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-escolha-chamada-titulo {
+  margin-bottom: 10px;
+}
+
+.modal-escolha-chamada-close {
+  color: var(--modal-conteudo);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.modal-escolha-chamada-close:hover,
+.modal-escolha-chamada-close:focus {
+  color: var(--erro);
+  text-decoration: none;
+}
+
+.modal-escolha-chamada-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.btn-escolha-chamada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--btn-principal);
+  color: var(--btn-principal-txt);
+  box-shadow: var(--sombra-intensa);
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.btn-escolha-chamada:hover {
+  background-color: var(--btn-principal-hover);
+}
+
+.icone-btn {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 10px;
+}

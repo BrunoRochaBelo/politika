@@ -1,13 +1,68 @@
-// Função para iniciar a chamada telefônica e registrar a ligação
-function iniciarChamadaTelefonica(card) {
-  const num = card.querySelector(".contatos-small-card-num");
-  const numero = num.textContent.trim();
-  const nomeContato = card
-    .querySelector(".contatos-small-card-title")
-    .textContent.trim();
+// Função para iniciar a chamada telefônica nativa e registrar a ligação
+function iniciarChamadaTelefonica(numero, nomeContato) {
   const dataHora = new Date().toISOString();
   window.location.href = "tel:" + numero;
   registrarLigacao(nomeContato, numero, dataHora);
+}
+
+// Função para iniciar uma chamada via WhatsApp e registrar a ligação
+function iniciarChamadaWhatsApp(numero, nomeContato) {
+  const dataHora = new Date().toISOString();
+  window.location.href = "https://wa.me/" + numero.replace(/[^\d]/g, "");
+  registrarLigacao(nomeContato, numero, dataHora);
+}
+
+// Função para exibir o modal e permitir a escolha do tipo de chamada
+function exibirModalEscolhaChamada(card) {
+  const modal = document.getElementById("modalEscolhaChamada");
+  const num = card.querySelector(".contatos-small-card-num").textContent.trim();
+  const nomeContato = card
+    .querySelector(".contatos-small-card-title")
+    .textContent.trim();
+
+  modal.style.display = "flex";
+  setTimeout(() => {
+    modal.classList.add("show");
+  }, 10);
+
+  // Atribuir funções aos botões do modal
+  document.getElementById("btnChamadaNativa").onclick = function () {
+    iniciarChamadaTelefonica(num, nomeContato);
+    fecharModal(modal);
+  };
+
+  document.getElementById("btnChamadaWhatsApp").onclick = function () {
+    iniciarChamadaWhatsApp(num, nomeContato);
+    fecharModal(modal);
+  };
+
+  // Fechar o modal quando o usuário clicar no "X" ou tocar no "X"
+  const closeModal = document.querySelector(".modal-escolha-chamada-close");
+  closeModal.onclick = function () {
+    fecharModal(modal);
+  };
+  closeModal.addEventListener("touchstart", function () {
+    fecharModal(modal);
+  });
+
+  // Fechar o modal quando o usuário clicar ou tocar fora do modal
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      fecharModal(modal);
+    }
+  };
+  window.addEventListener("touchstart", function (event) {
+    if (event.target === modal) {
+      fecharModal(modal);
+    }
+  });
+}
+
+function fecharModal(modal) {
+  modal.classList.remove("show");
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 500); // Tempo igual ao de transição
 }
 
 // Função para lidar com o clique nos cards
@@ -20,8 +75,8 @@ function exibirDetalhesContato(event) {
   );
 
   // Verifica se o clique foi no botão de telefone
-  if (event.target.classList.contains("contatos-small-card-phone")) {
-    iniciarChamadaTelefonica(card);
+  if (event.target.classList.contains("contatos-small-card-call")) {
+    exibirModalEscolhaChamada(card);
     return; // Retorna imediatamente para evitar a execução do código abaixo
   }
 

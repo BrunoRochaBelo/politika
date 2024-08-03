@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   const themeToggleButton = document.getElementById("toggleTheme");
   const themeIcon = document.getElementById("themeIcon");
+  const alterarTema = document.querySelector(".alterar-tema");
 
   // Função para carregar o tema do localStorage ou do servidor
   function loadTheme() {
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Carrega o tema ao carregar a página
   loadTheme();
 
-  themeToggleButton.addEventListener("click", () => {
+  function toggleTheme() {
     document.documentElement.classList.toggle("light-mode");
     const currentTheme = document.documentElement.classList.contains(
       "light-mode"
@@ -71,5 +72,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }).catch(() => {
       console.error("Falha ao salvar a preferência do tema no servidor.");
     });
+  }
+
+  themeToggleButton.addEventListener("click", toggleTheme);
+  themeIcon.addEventListener("click", toggleTheme);
+  alterarTema.addEventListener("click", (event) => {
+    if (event.target !== themeToggleButton && event.target !== themeIcon) {
+      toggleTheme();
+    }
   });
 });

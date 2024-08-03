@@ -9,6 +9,7 @@
 /* Global/ Modais */
 @import "./global/modais/modal-btn-float.css";
 @import "./global/modais/modal-destino.css";
+@import "./global/modais/modal-escolha-chamada.css";
 @import "./global/modais/modal-menu.css";
 /* Global/ Form */
 @import "./global/form/body-form-template.css";

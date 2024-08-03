@@ -9,8 +9,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
-    "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
-    "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
+    "contatos-small-card-title contatos-small-card-title . contatos-small-card-call"
+    "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-call"
     /0.5fr 0.5fr 1fr 32px;
   transition: max-height 0.25s ease-out, transform 0.25s ease-out,
     height 0.25s ease-out;
@@ -35,8 +35,8 @@
   font-size: 14px;
   font-weight: 300;
 }
-.contatos-small-card-phone {
-  grid-area: contatos-small-card-phone;
+.contatos-small-card-call {
+  grid-area: contatos-small-card-call;
   justify-self: end;
   align-self: center;
 }
@@ -96,11 +96,11 @@
   color: var(--txt-destaque);
   box-shadow: var(--sombra-leve);
   grid:
-    "contatos-small-card-title contatos-small-card-title . contatos-small-card-phone"
-    "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-phone"
-    "contatos-small-card-num contatos-small-card-num contatos-small-card-num contatos-small-card-phone"
-    "contatos-small-card-email contatos-small-card-email contatos-small-card-email contatos-small-card-phone"
-    "contatos-small-card-tipopessoa . . contatos-small-card-phone"
+    "contatos-small-card-title contatos-small-card-title . contatos-small-card-call"
+    "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-call"
+    "contatos-small-card-num contatos-small-card-num contatos-small-card-num contatos-small-card-call"
+    "contatos-small-card-email contatos-small-card-email contatos-small-card-email contatos-small-card-call"
+    "contatos-small-card-tipopessoa . . contatos-small-card-call"
     "contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar";
   transform: scale(1);
   transition: max-height 0.25s ease-in, transform 0.25s ease-in,
