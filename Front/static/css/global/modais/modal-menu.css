@@ -1,5 +1,3 @@
-/* CSS: Adicionei apenas para referência, sem alterações */
-
 /* Estilos para o Ícone de Menu Hambúrguer */
 .bar1,
 .bar2,
@@ -10,15 +8,12 @@
   background-color: hsl(215, 50%, 80%);
   transition: 0.3s;
 }
-
 .change .bar1 {
   transform: rotate(-45deg) translate(-4.78px, 4.78px);
 }
-
 .change .bar2 {
   opacity: 0;
 }
-
 .change .bar3 {
   transform: rotate(45deg) translate(-4.78px, -4.78px);
 }
@@ -49,7 +44,6 @@
     opacity: 1;
   }
 }
-
 @keyframes modalCollapse {
   from {
     transform: scale(1);
@@ -60,15 +54,12 @@
     opacity: 0;
   }
 }
-
 .modal.show {
   display: flex;
 }
-
 .modal-content-template.show {
   animation: modalExpand 0.5s forwards;
 }
-
 .modal-content-template.hide {
   animation: modalCollapse 0.5s forwards;
 }
@@ -88,11 +79,12 @@
   grid:
     "modal-content-template-card-user"
     "modal-content-template-list-op";
-  transform-origin: top left; /* Adicionado para definir o ponto de origem da transformação */
+  transform-origin: top left;
 }
 
 /* Áreas de grid */
 .modal-content-template-card-user {
+  grid-area: modal-content-template-card-user;
   display: grid;
   justify-content: stretch;
   min-width: 285px;

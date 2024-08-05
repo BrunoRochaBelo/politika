@@ -29,7 +29,6 @@
     opacity: 1;
   }
 }
-
 @keyframes modalCollapse {
   from {
     transform: scale(1);
@@ -54,7 +53,7 @@
   gap: 5px;
   border-radius: 25px;
   box-shadow: var(--sombra-intensa);
-  transform-origin: top left; /* Define o ponto de origem da transformação */
+  transform-origin: top left;
 }
 
 .modal-content-notificacoes.show {
@@ -65,9 +64,11 @@
   animation: modalCollapse 0.5s forwards;
 }
 
-.close-button {
-  float: right;
-  font-size: 1.5rem;
+.modal-notificacoes-btn-close {
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  font-size: 1.7rem;
   cursor: pointer;
   color: var(--modal-titulo);
 }
@@ -184,10 +185,13 @@
 /* Feedback visual para sem notificações */
 .no-notifications {
   display: none;
+  background: var(--modal-bg);
+  padding: 10px;
+  border-radius: 12px;
   text-align: center;
   color: var(--modal-titulo);
-  margin-top: 20px;
-  font-size: 1.2rem;
+  margin: 20px;
+  font-size: 1.1rem;
 }
 
 /* Estilo do contador de notificações */
