@@ -12,7 +12,7 @@ function createOverlay() {
   overlay.style.width = "100%";
   overlay.style.height = "100%";
   overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-  overlay.style.zIndex = 2001; // Z-index do overlay
+  overlay.style.zIndex = 2003;
   overlay.style.display = "none";
   document.body.appendChild(overlay);
 

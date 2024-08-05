@@ -145,7 +145,7 @@
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 5px;
+  gap: 30px;
 }
 
 .calendario-small-card-expanded .calendario-small-card-type {
@@ -283,7 +283,7 @@
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 5px;
+  gap: 30px;
 }
 .calendario-large-card-expanded .calendario-large-card-type {
   color: var(--txt-destaque);

@@ -50,9 +50,16 @@
   </script>
 
   <header class="header home-header-template">
-    <div class="home-header-notification" id="notification"><img src="./static/imagens/icones/notificação.svg" alt="Notification Icon"></div>
+    <div class="header-menu" onclick="toggleMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="header-notification" id="notification">
+      <img src="./static/imagens/icones/notificação.svg" alt="Notification Icon">
+      <span id="notificationCounter" class="notification-counter">0</span>
+    </div>
     <div class="home-header-title">Olá, {{Usuário}}!</div>
-
     <nav class="home-header-nav">
       <ul class="header-nav-template">
         <li class="home indicador"><a href="index.html"><img src="./static/imagens/icones/home-select.svg" alt="Home Icon">
@@ -75,11 +82,6 @@
           </a></li>
       </ul>
     </nav>
-    <div class="header-menu" onclick="toggleMenu(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
   </header>
 
   <main class="main main-template">
@@ -610,6 +612,21 @@
     </div>
   </div>
 
+  <!-- Modal Notificações -->
+  <div class="modal-notificacoes" id="notificationModal">
+    <div class="modal-content-notificacoes" id="modalContent">
+      <span class="close-button" id="closeButton">&times;</span>
+      <button id="markAllReadButton">Marcar todas como lidas</button>
+      <ul id="notificationsContent" class="notifications-list">
+        <!-- Notifications will be dynamically inserted here -->
+      </ul>
+      <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
+    </div>
+  </div>
+
+  <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
+
+
   <!-- Modal Destino -->
   <div id="modalDestino" class="modal">
     <div class="modal-destino-content">
@@ -703,6 +720,7 @@
   <script src="./static/js/ExibirDetalhesAniversariante.js"></script>
   <script src="./static/js/Exibiraniversariantes.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
+  <script src="./static/js/ModalNotificacoes.js"></script>
   <script src="./static/js/ModalDestino.js"></script>
   <script src="./static/js/CarregarDestino.js"></script>
 

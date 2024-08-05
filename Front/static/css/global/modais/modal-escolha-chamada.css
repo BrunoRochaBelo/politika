@@ -8,15 +8,13 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: flex-end;
-  transform: translateY(100%);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  align-items: end;
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
 }
 
 .modal-escolha-chamada.show {
   display: flex;
-  transform: translateY(0);
   opacity: 1;
 }
 
@@ -34,6 +32,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.modal-escolha-chamada.show .modal-escolha-chamada-content {
+  transform: translateY(0);
 }
 
 .modal-escolha-chamada-titulo {
@@ -83,7 +87,7 @@
 }
 
 .icone-btn {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   margin-bottom: 10px;
 }

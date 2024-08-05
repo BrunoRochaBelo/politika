@@ -1,7 +1,10 @@
+// JavaScript
+
 function toggleMenu(x) {
   x.classList.toggle("change");
   const modal = document.getElementById("modalMenu");
   const modalContent = document.querySelector(".modal-content-template");
+  const headerMenu = document.querySelector(".header-menu");
 
   if (modal.classList.contains("show")) {
     modalContent.classList.remove("show");
@@ -12,6 +15,7 @@ function toggleMenu(x) {
         modal.classList.remove("show");
         modalContent.classList.remove("hide");
         modal.style.display = "none";
+        headerMenu.style.zIndex = 2002; // Voltar z-index ao valor original
       },
       { once: true }
     );
@@ -20,6 +24,7 @@ function toggleMenu(x) {
     modal.style.display = "flex";
     modal.classList.add("show");
     modalContent.classList.add("show");
+    headerMenu.style.zIndex = 2005; // Alterar z-index quando o modal for exibido
     document.addEventListener("click", outsideClickListener);
   }
 }
@@ -38,6 +43,7 @@ function hideModal() {
       modal.classList.remove("show");
       modalContent.classList.remove("hide");
       modal.style.display = "none";
+      headerMenu.style.zIndex = 2002; // Voltar z-index ao valor original
     },
     { once: true }
   );

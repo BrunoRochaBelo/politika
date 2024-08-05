@@ -11,6 +11,7 @@
 @import "./global/modais/modal-destino.css";
 @import "./global/modais/modal-escolha-chamada.css";
 @import "./global/modais/modal-menu.css";
+@import "./global/modais/modal-notificacoes.css";
 /* Global/ Form */
 @import "./global/form/body-form-template.css";
 @import "./global/form/form-style.css";

@@ -1,0 +1,588 @@
+<style>
+  /* styles.css */
+
+  /* Estilos do modal */
+  .modal-notificacoes {
+    display: none;
+    position: fixed;
+    top: 43px;
+    left: 1.7rem;
+    width: 80%;
+    max-width: 500px;
+    background: var(--modal-bg, hsl(215, 23%, 14%));
+    border: 1px solid var(--modal-borda, hsl(215, 23%, 20%));
+    border-radius: 8px;
+    box-shadow: var(--sombra-intensa);
+    overflow: auto;
+    /* Para permitir rolagem se o conteúdo for muito grande */
+    z-index: 2004;
+    opacity: 0;
+    /* Inicialmente invisível */
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .modal-notificacoes.show {
+    display: flex;
+    opacity: 1;
+    /* Tornar visível */
+  }
+
+  /* Animação para o conteúdo do modal */
+  @keyframes modalContentShow {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes modalContentHide {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    to {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+  }
+
+  .modal-content-notificacoes {
+    background: var(--modal-bg, hsl(215, 23%, 14%));
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: var(--sombra-intensa);
+    animation: modalContentShow 0.3s forwards;
+  }
+
+  .modal-content-notificacoes.show {
+    animation: modalContentShow 0.3s forwards;
+  }
+
+  .modal-content-notificacoes.hide {
+    animation: modalContentHide 0.3s forwards;
+  }
+
+  .close-button {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--modal-titulo, hsl(215, 100%, 70%));
+  }
+
+  /* Estilos para o botão "Marcar todas como lidas" */
+  #markAllReadButton {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: transparent;
+    color: var(--link);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #markAllReadButton:hover {
+    filter: brightness(1.1);
+    text-decoration: underline;
+  }
+
+  /* Estilos para o botão "Carregar mais" */
+  .load-more-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: var(--link, hsl(215, 100%, 55%));
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .load-more-button:hover {
+    background-color: var(--link-hover, hsl(215, 100%, 65%));
+  }
+
+  /* Estilos para notificações */
+  .notifications-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .notification {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid;
+  }
+
+  .notification.sucesso {
+    background-color: var(--sucesso, hsl(140, 80%, 50%));
+    color: var(--msg-sucesso-txt, hsl(140, 90%, 90%));
+    border-color: var(--sucesso, hsl(140, 80%, 50%));
+  }
+
+  .notification.erro {
+    background-color: var(--erro, hsl(0, 80%, 50%));
+    color: var(--msg-sucesso-txt, hsl(140, 90%, 90%));
+    border-color: var(--erro, hsl(0, 80%, 50%));
+  }
+
+  .notification.aviso {
+    background-color: var(--aviso, hsl(30, 80%, 50%));
+    color: var(--modal-bg, hsl(215, 23%, 14%));
+    border-color: var(--aviso, hsl(30, 80%, 50%));
+  }
+
+  .notification.informacao {
+    background-color: var(--informacao, hsl(215, 100%, 70%));
+    color: var(--modal-bg, hsl(215, 23%, 14%));
+    border-color: var(--informacao, hsl(215, 100%, 70%));
+  }
+
+  .notification.lida {
+    background-color: var(--modal-borda, hsl(215, 23%, 20%));
+    color: var(--modal-conteudo, hsl(215, 50%, 80%));
+    border-color: var(--modal-divisor, hsl(215, 23%, 25%));
+  }
+
+  .notification .delete-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--modal-bg, hsl(215, 23%, 14%));
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .notification .mark-read-button {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--modal-bg, hsl(215, 23%, 14%));
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  /* Estilo para notificação visual */
+  .header-notification.new-notification img {
+    border: 2px solid var(--informacao, hsl(215, 100%, 70%));
+    border-radius: 50%;
+  }
+
+  /* Feedback visual para sem notificações */
+  .no-notifications {
+    display: none;
+    text-align: center;
+    color: var(--modal-titulo, hsl(215, 100%, 70%));
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  /* Estilo do contador de notificações */
+  .notification-counter {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--erro, hsl(0, 80%, 50%));
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+  }
+
+  /* Animação para destacar novas notificações */
+  @keyframes highlightNewNotification {
+    from {
+      background-color: yellow;
+    }
+
+    to {
+      background-color: transparent;
+    }
+  }
+
+  .notification.new {
+    animation: highlightNewNotification 2s forwards;
+  }
+
+  /* Animação para remover notificações */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    to {
+      opacity: 0;
+      height: 0;
+      margin-bottom: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  .notification.removing {
+    animation: fadeOut 0.5s forwards;
+  }
+
+  /* Estilos para responsividade */
+  @media (max-width: 600px) {
+    .modal-notificacoes {
+      width: 95%;
+      left: 2.5%;
+    }
+
+    .modal-content-notificacoes {
+      width: 100%;
+    }
+
+    #markAllReadButton {
+      margin: 10px 0;
+    }
+
+    .load-more-button {
+      margin: 0 auto;
+    }
+  }
+</style>
+
+
+<!-- Modal Notificações -->
+<div class="modal-notificacoes" id="notificationModal">
+  <div class="modal-content-notificacoes" id="modalContent">
+    <span class="close-button" id="closeButton">&times;</span>
+    <button id="markAllReadButton">Marcar todas como lidas</button>
+    <ul id="notificationsContent" class="notifications-list">
+      <!-- Notifications will be dynamically inserted here -->
+    </ul>
+    <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
+    <button id="loadMoreButton" class="load-more-button">Carregar mais</button>
+  </div>
+</div>
+
+<audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const notificationIcon = document.getElementById("notification");
+    const notificationCounter = document.getElementById("notificationCounter");
+    const modal = document.getElementById("notificationModal");
+    const modalContent = document.getElementById("modalContent");
+    const closeButton = document.getElementById("closeButton");
+    const notificationsContent = document.getElementById("notificationsContent");
+    const markAllReadButton = document.getElementById("markAllReadButton");
+    const loadMoreButton = document.getElementById("loadMoreButton");
+    const previousPageButton = document.createElement("button");
+    const nextPageButton = document.createElement("button");
+    const notificationSound = document.getElementById("notificationSound");
+    const noNotifications = document.getElementById("noNotifications");
+
+    const token = "SEU_TOKEN_DE_AUTENTICACAO"; // Substitua por seu token de autenticação
+    const apiURL = "URL_DA_SUA_API"; // Substitua 'URL_DA_SUA_API' pela URL da sua API
+    let page = 1; // Página inicial
+    const limit = 10; // Limite de notificações por página
+    let lastUpdate = localStorage.getItem("lastUpdate") || new Date(0).toISOString(); // Data da última atualização
+    let newNotificationsCount = 0; // Contador de novas notificações
+    let notificationsCache = []; // Cache de notificações
+
+    const debounce = (func, wait) => {
+      let timeout;
+      return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    };
+
+    const updateNotificationCounter = (count) => {
+      if (count >= 10) {
+        notificationCounter.textContent = "0 a +9";
+      } else {
+        notificationCounter.textContent = count.toString();
+      }
+    };
+
+    const renderNotifications = (notifications) => {
+      notifications.forEach((notification) => {
+        const notificationElement = document.createElement("li");
+        notificationElement.classList.add("notification", notification.type);
+        notificationElement.innerHTML = `
+        ${notification.message}
+        <button class="delete-button" data-id="${notification.id}">&times;</button>
+      `;
+
+        if (new Date(notification.date) > new Date(lastUpdate)) {
+          notificationElement.classList.add("new");
+          newNotificationsCount++;
+        }
+
+        notificationsContent.appendChild(notificationElement);
+      });
+      updateNotificationCounter(newNotificationsCount);
+    };
+
+    const fetchNotifications = async (reset = false) => {
+      if (reset) {
+        page = 1;
+        notificationsContent.innerHTML = "";
+        newNotificationsCount = 0;
+        notificationsCache = [];
+      }
+
+      if (notificationsCache.length >= page * limit && !reset) {
+        renderNotifications(notificationsCache.slice((page - 1) * limit, page * limit));
+        togglePaginationButtons();
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          `${apiURL}?page=${page}&limit=${limit}&since=${lastUpdate}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Erro ao buscar notificações");
+        }
+
+        const { notifications, total } = await response.json();
+
+        if (!notifications || notifications.length === 0) {
+          if (page === 1) {
+            noNotifications.style.display = "block";
+          }
+          togglePaginationButtons(); // Ocultar botões de paginação
+          return;
+        } else {
+          noNotifications.style.display = "none";
+        }
+
+        notificationsCache = [...notificationsCache, ...notifications];
+
+        renderNotifications(notifications);
+
+        togglePaginationButtons(total);
+      } catch (error) {
+        console.error("Erro ao buscar notificações:", error);
+        noNotifications.style.display = "block";
+        togglePaginationButtons(); // Ocultar botões de paginação
+      }
+    };
+
+    const fetchNewNotifications = async () => {
+      try {
+        const response = await fetch(
+          `${apiURL}?since=${lastUpdate}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Erro ao buscar novas notificações");
+        }
+
+        const { notifications } = await response.json();
+
+        if (notifications && notifications.length > 0) {
+          notificationsCache = [...notifications, ...notificationsCache];
+          renderNotifications(notifications);
+          notificationSound.play();
+          notificationIcon.classList.add("new-notification");
+          lastUpdate = new Date().toISOString();
+          localStorage.setItem("lastUpdate", lastUpdate);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar novas notificações:", error);
+      }
+    };
+
+    const debouncedFetchNotifications = debounce(fetchNotifications, 300);
+
+    const markNotificationAsRead = async (id) => {
+      try {
+        const response = await fetch(`${apiURL}/mark-read/${id}`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Erro ao marcar notificação como lida");
+        }
+
+        const notificationElement = document.querySelector(
+          `.delete-button[data-id="${id}"]`
+        ).parentElement;
+        notificationElement.classList.remove("new");
+        notificationElement.classList.add("lida");
+
+        newNotificationsCount--;
+        updateNotificationCounter(newNotificationsCount);
+      } catch (error) {
+        console.error("Erro ao marcar notificação como lida:", error);
+      }
+    };
+
+    const deleteNotification = async (id) => {
+      try {
+        const response = await fetch(`${apiURL}/${id}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Erro ao excluir notificação");
+        }
+
+        const notificationElement = document.querySelector(
+          `.delete-button[data-id="${id}"]`
+        ).parentElement;
+        notificationElement.classList.add("removing");
+
+        setTimeout(() => {
+          notificationElement.remove();
+          fetchNotifications(true);
+        }, 500);
+      } catch (error) {
+        console.error("Erro ao excluir notificação:", error);
+      }
+    };
+
+    const openModal = () => {
+      notificationIcon.querySelector("img").src =
+        "./static/imagens/icones/notificação-select.svg";
+      fetchNotifications(true);
+      modal.classList.add("show");
+      modalContent.classList.add("show");
+      modalContent.classList.remove("hide");
+      notificationIcon.classList.remove("new-notification");
+    };
+
+    const closeModal = () => {
+      modalContent.classList.add("hide");
+      modalContent.classList.remove("show");
+      setTimeout(() => {
+        modal.classList.remove("show");
+        notificationIcon.querySelector("img").src =
+          "./static/imagens/icones/notificação.svg";
+      }, 300);
+    };
+
+    const togglePaginationButtons = (total = 0) => {
+      previousPageButton.style.display = page > 1 ? "block" : "none";
+      nextPageButton.style.display = (page * limit < total) ? "block" : "none";
+    };
+
+    previousPageButton.textContent = "Anterior";
+    previousPageButton.classList.add("pagination-button");
+    previousPageButton.style.display = "none";
+    previousPageButton.addEventListener("click", () => {
+      if (page > 1) {
+        page--;
+        fetchNotifications();
+      }
+    });
+
+    nextPageButton.textContent = "Próximo";
+    nextPageButton.classList.add("pagination-button");
+    nextPageButton.style.display = "none";
+    nextPageButton.addEventListener("click", () => {
+      page++;
+      fetchNotifications();
+    });
+
+    modalContent.appendChild(previousPageButton);
+    modalContent.appendChild(nextPageButton);
+
+    notificationIcon.addEventListener("click", () => {
+      if (modal.classList.contains("show")) {
+        closeModal();
+      } else {
+        openModal();
+      }
+    });
+
+    closeButton.addEventListener("click", closeModal);
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    markAllReadButton.addEventListener("click", async () => {
+      try {
+        const response = await fetch(`${apiURL}/mark-all-read`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Erro ao marcar todas como lidas");
+        }
+
+        fetchNotifications(true);
+      } catch (error) {
+        console.error("Erro ao marcar todas como lidas:", error);
+      }
+    });
+
+    loadMoreButton.addEventListener("click", () => {
+      page++;
+      debouncedFetchNotifications();
+    });
+
+    setInterval(() => debouncedFetchNotifications(true), 300000);
+    setInterval(fetchNewNotifications, 30000); // Checar novas notificações a cada 30 segundos
+
+    notificationsContent.addEventListener("click", (event) => {
+      if (event.target.classList.contains("delete-button")) {
+        const id = event.target.getAttribute("data-id");
+        deleteNotification(id);
+      } else if (event.target.classList.contains("notification")) {
+        const id = event.target
+          .querySelector(".delete-button")
+          .getAttribute("data-id");
+        markNotificationAsRead(id);
+      }
+    });
+  });
+
+</script>

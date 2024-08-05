@@ -27,7 +27,10 @@
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>
-    <div class="header-notification " id="notification"><img src="./static/imagens/icones/notificação.svg" alt="Notification Icon"></div>
+    <div class="header-notification" id="notification">
+      <img src="./static/imagens/icones/notificação.svg" alt="Notification Icon">
+      <span id="notificationCounter" class="notification-counter">0</span>
+    </div>
     <nav class="header-nav">
       <ul class="header-nav-template">
         <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
@@ -249,12 +252,26 @@
     </div>
   </div>
 
+  <!-- Modal Notificações -->
+  <div class="modal-notificacoes" id="notificationModal">
+    <div class="modal-content-notificacoes" id="modalContent">
+      <span class="close-button" id="closeButton">&times;</span>
+      <button id="markAllReadButton">Marcar todas como lidas</button>
+      <ul id="notificationsContent" class="notifications-list">
+        <!-- Notifications will be dynamically inserted here -->
+      </ul>
+      <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
+    </div>
+  </div>
+
+  <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
 
 
 
 
   <script src="./static/js/ModalBTNFloating.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
+  <script src="./static/js/ModalNotificacoes.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/SombraHeaderScroll.js"></script>
   <script src="./static/js/AlterarEsquemaDeCores.js"></script>

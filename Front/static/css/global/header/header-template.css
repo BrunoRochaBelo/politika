@@ -10,13 +10,14 @@
   grid:
     "header-menu header-notification header-nav header-search"
     / auto auto 1fr auto;
-  margin-top: 3px;
 }
 
 .header-notification {
   grid-area: header-notification;
+  position: relative;
   justify-self: start;
   cursor: pointer;
+  z-index: 2002;
 }
 .header-nav {
   grid-area: header-nav;
@@ -41,14 +42,13 @@
   border-radius: 50%;
   border: 1px solid transparent;
   margin-left: 1.25rem;
-
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 21px;
   height: 21px;
   cursor: pointer;
-  z-index: 2005;
+  z-index: 2002;
 }
 
 .header-notification img {
@@ -133,7 +133,6 @@
     align-content: center;
     justify-content: space-between;
     gap: 15px;
-    margin-top: 3px;
     grid:
       "header-menu header-notification header-search"
       / auto auto 1fr;

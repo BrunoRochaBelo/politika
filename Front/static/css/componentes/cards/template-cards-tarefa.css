@@ -138,7 +138,7 @@
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 5px;
+  gap: 30px;
 }
 
 .tarefa-small-card-expanded .tarefa-small-card-title {
@@ -286,7 +286,7 @@
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
-  gap: 5px;
+  gap: 30px;
 }
 
 .tarefa-medium-card-expanded .tarefa-medium-card-title {

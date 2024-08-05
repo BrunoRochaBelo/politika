@@ -1,3 +1,5 @@
+// JavaScript
+
 class ModalBtnFloating {
   constructor() {
     this.botao = document.querySelector(".floatingButton");
@@ -13,6 +15,7 @@ class ModalBtnFloating {
     this.modal.style.visibility = "visible";
     this.modalContent.classList.add("open");
     this.botao.innerHTML = "&times;"; // Altera o conteúdo do botão para "×"
+    this.botao.style.zIndex = 2005; // Alterar z-index quando o modal for exibido
   }
 
   fecharModalBtnFloating() {
@@ -22,6 +25,7 @@ class ModalBtnFloating {
     this.botao.textContent = "+"; // Altera o conteúdo do botão para "+"
     setTimeout(() => {
       this.modal.style.display = "none";
+      this.botao.style.zIndex = 2002; // Voltar z-index ao valor original
     }, 300); // Tempo deve coincidir com a duração da transição CSS
   }
 

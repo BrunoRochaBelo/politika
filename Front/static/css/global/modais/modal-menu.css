@@ -1,3 +1,5 @@
+/* CSS: Adicionei apenas para referência, sem alterações */
+
 /* Estilos para o Ícone de Menu Hambúrguer */
 .bar1,
 .bar2,
@@ -37,9 +39,9 @@
 }
 
 /* Animação para o conteúdo do modal */
-@keyframes modalContentShow {
+@keyframes modalExpand {
   from {
-    transform: scale(0.9);
+    transform: scale(0.1);
     opacity: 0;
   }
   to {
@@ -48,13 +50,13 @@
   }
 }
 
-@keyframes modalContentHide {
+@keyframes modalCollapse {
   from {
     transform: scale(1);
     opacity: 1;
   }
   to {
-    transform: scale(0.9);
+    transform: scale(0.1);
     opacity: 0;
   }
 }
@@ -64,29 +66,29 @@
 }
 
 .modal-content-template.show {
-  animation: modalContentShow 0.3s forwards;
+  animation: modalExpand 0.5s forwards;
 }
 
 .modal-content-template.hide {
-  animation: modalContentHide 0.3s forwards;
+  animation: modalCollapse 0.5s forwards;
 }
 
 .modal-content-template {
   display: grid;
   position: absolute;
-  top: 43px;
-  left: 1.7rem;
+  top: 5px;
+  left: 0.7rem;
   color: var(--txt-conteudo-card);
   background: var(--card-bg);
   border: 1px solid var(--modal-borda);
-  padding: 5px;
+  padding: 40px 5px 5px 5px;
   gap: 5px;
   border-radius: 25px;
   box-shadow: var(--sombra-intensa);
-  z-index: 2005;
   grid:
     "modal-content-template-card-user"
     "modal-content-template-list-op";
+  transform-origin: top left; /* Adicionado para definir o ponto de origem da transformação */
 }
 
 /* Áreas de grid */
@@ -109,10 +111,11 @@
 
 .modal-content-template-card-user-img {
   grid-area: modal-content-template-card-user-img;
-  width: 65px;
-  height: 65px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
 }
+
 .modal-content-template-card-user-candidato {
   grid-area: modal-content-template-card-user-candidato;
   justify-self: start;
@@ -120,6 +123,7 @@
   font-size: 15px;
   font-weight: 400;
 }
+
 .modal-content-template-card-user-cargo-owner {
   grid-area: modal-content-template-card-user-cargo-owner;
   justify-self: start;
@@ -127,6 +131,7 @@
   font-size: 12px;
   font-weight: 370;
 }
+
 .modal-content-template-card-user-partido {
   grid-area: modal-content-template-card-user-partido;
   justify-self: start;
@@ -146,12 +151,14 @@
     "modal-content-template-card-user-username"
     "modal-content-template-card-user-cargo";
 }
+
 .modal-content-template-card-user-username {
   grid-area: modal-content-template-card-user-username;
   justify-self: center;
   font-size: 14px;
   font-weight: 400;
 }
+
 .modal-content-template-card-user-cargo {
   grid-area: modal-content-template-card-user-cargo;
   justify-self: center;
@@ -177,16 +184,19 @@
   opacity: 1;
   gap: 15px;
 }
+
 .modal-content-template-list-op .btn-principal {
   padding: 5px 10px;
   font-size: 14px;
 }
+
 #btnGerenciarConta.btn-principal {
   background: none;
   box-shadow: none;
   border: 1px solid transparent;
   color: var(--btn-principal-destaque);
 }
+
 #btnGerenciarConta:hover {
   filter: brightness(1.1);
   border: 1px solid transparent;
@@ -223,8 +233,8 @@
 
 .modalMenu-list li img {
   margin-right: 15px;
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
 }
 
 .modalMenu-list li span {
@@ -246,15 +256,19 @@ li.alterar-tema {
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .modal-content-template {
-    top: 40px;
-    left: 1.1rem;
+    top: 4px;
+    left: 0;
+    padding: 40px 5px 5px 5px;
   }
+
   .modalMenu-list li:hover {
     background-color: transparent;
   }
+
   .modalMenu-list li a:hover {
     filter: brightness(1.1);
   }
+
   li.alterar-tema:hover {
     filter: brightness(1.1);
   }
