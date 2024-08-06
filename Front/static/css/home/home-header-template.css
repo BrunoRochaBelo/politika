@@ -77,7 +77,7 @@
     font-size: 22px;
     font-weight: 500;
     display: inline-block;
-    background: linear-gradient(55deg, hsl(215, 100%, 66%), hsl(215, 50%, 60%));
+    background: linear-gradient(55deg, hsl(220, 100%, 66%), hsl(220, 50%, 60%));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -29,7 +29,7 @@
   background: var(--form-bg-container);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  border: 1px solid hsl(215, 10%, 12%);
+  border: 1px solid hsl(220, 10%, 12%);
   border-bottom: none;
 }
 .main-form {
@@ -43,8 +43,8 @@
   background: var(--form-bg-container);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 1px solid hsl(215, 10%, 12%);
-  border-top: 1px solid hsl(215, 14%, 3%);
+  border: 1px solid hsl(220, 10%, 12%);
+  border-top: 1px solid hsl(220, 14%, 3%);
 }
 .main-form::-webkit-scrollbar {
   display: none;

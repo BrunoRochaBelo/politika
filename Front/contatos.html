@@ -67,12 +67,15 @@
   <main class="main main-template">
     <section class="main-section container-abas-template">
       <nav class="container-abas-template-header">
-        <ul id="navAba" class="nav nav-duas-abas">
+        <ul id="navAba" class="nav">
           <li id="nav1">
             <a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Contatos</a>
           </li>
           <li id="nav2">
             <a href="#" onclick="mostrarAba('aba2')">Recentes</a>
+          </li>
+          <li id="nav3">
+            <a href="#" onclick="mostrarAba('aba3')">Grupos</a>
           </li>
         </ul>
       </nav>
@@ -704,6 +707,44 @@
 
         <div id="aba2" class="aba-template">
           <ul id="listaHistorico"></ul>
+        </div>
+
+        <div id="aba3" class="aba-template">
+          <div class="area-interna-containerContent-template">
+            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+              <ul class="lista-vertical-alt">
+                <li class="area-filtro">
+                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                      <a href="contatos.html" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <ul class="lista-vertical-cards" id="grupList">
+                    <li>
+                      <a class="card-xs grupo-small-card grupo" href="#">
+                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                        <div class="grupo-small-card-tipogrupo" data-filter="tipoGrupo">{{Tipo}}</div>
+                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                        <div class="grupo-small-card-desc" data-filter="descGrupo">
+                          <p>Descrição do grupo</p>
+                        </div>
+                        <div class="grupo-small-card-editar">
+                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='view-grupo.html'">Visualizar grupo</button>
+                        </div>
+                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div>

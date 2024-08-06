@@ -10,6 +10,8 @@ function desativarTodasAbas(abas) {
     var aCorrespondente = document.querySelector("#nav" + idAba + " a");
     if (aCorrespondente) {
       aCorrespondente.classList.remove("indicador-2");
+      aCorrespondente.setAttribute("aria-selected", "false");
+      aCorrespondente.setAttribute("tabindex", "-1");
     }
   });
 }
@@ -25,9 +27,16 @@ function mostrarAba(id) {
       var aCorrespondente = document.querySelector("#nav" + id.slice(3) + " a");
       if (aCorrespondente) {
         aCorrespondente.classList.add("indicador-2");
+        aCorrespondente.setAttribute("aria-selected", "true");
+        aCorrespondente.setAttribute("tabindex", "0");
       }
 
       aba.style.display = "block";
+      aba.style.opacity = "0";
+      setTimeout(() => {
+        aba.style.opacity = "1";
+        aba.style.transition = "opacity 0.3s ease";
+      }, 10);
 
       // Ativa o filtro correspondente à aba ativa
       if (id === "aba1") {
@@ -57,6 +66,8 @@ function mostrarAba(id) {
       var aCorrespondente = document.querySelector("#nav" + idAba + " a");
       if (aCorrespondente) {
         aCorrespondente.classList.remove("indicador-2");
+        aCorrespondente.setAttribute("aria-selected", "false");
+        aCorrespondente.setAttribute("tabindex", "-1");
       }
 
       aba.style.display = "none";
@@ -86,8 +97,12 @@ function navegar(offset) {
       var aCorrespondente = li.querySelector("a");
       if (index === abaAtual + offset) {
         aCorrespondente.classList.add("indicador-2");
+        aCorrespondente.setAttribute("aria-selected", "true");
+        aCorrespondente.setAttribute("tabindex", "0");
       } else {
         aCorrespondente.classList.remove("indicador-2");
+        aCorrespondente.setAttribute("aria-selected", "false");
+        aCorrespondente.setAttribute("tabindex", "-1");
       }
     });
   }
@@ -160,3 +175,33 @@ document.addEventListener(
   },
   false
 );
+
+// Acessibilidade: Adicionar suporte a teclado para navegação nas abas
+document.addEventListener("keydown", function (event) {
+  var activeElement = document.activeElement;
+  if (activeElement.closest("#navAba")) {
+    if (event.key === "ArrowRight") {
+      avancar();
+    } else if (event.key === "ArrowLeft") {
+      voltar();
+    }
+  }
+});
+
+// Adicionar classe "active" e "indicador-2" ao iniciar a página
+document.addEventListener("DOMContentLoaded", function () {
+  var abas = document.querySelectorAll(".aba-template");
+  if (abas.length > 0) {
+    var primeiraAba = abas[0];
+    primeiraAba.classList.add("active");
+    primeiraAba.style.display = "block";
+    var aCorrespondente = document.querySelector(
+      "#nav" + primeiraAba.id.slice(3) + " a"
+    );
+    if (aCorrespondente) {
+      aCorrespondente.classList.add("indicador-2");
+      aCorrespondente.setAttribute("aria-selected", "true");
+      aCorrespondente.setAttribute("tabindex", "0");
+    }
+  }
+});
