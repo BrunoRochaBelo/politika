@@ -1,5 +1,3 @@
-// JavaScript
-
 document.addEventListener("DOMContentLoaded", (event) => {
   const notificationIcon = document.getElementById("notification");
   const notificationCounter = document.getElementById("notificationCounter");
@@ -108,6 +106,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
       if (reset && notifications.length > 0) {
         notificationSound.play();
         notificationIcon.classList.add("new-notification");
+        notificationIcon.classList.add("shake-animation");
+        setTimeout(
+          () => notificationIcon.classList.remove("shake-animation"),
+          500
+        );
       }
 
       if (notifications.length > 0) {
@@ -141,6 +144,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         renderNotifications(notifications);
         notificationSound.play();
         notificationIcon.classList.add("new-notification");
+        notificationIcon.classList.add("shake-animation");
+        setTimeout(
+          () => notificationIcon.classList.remove("shake-animation"),
+          500
+        );
         lastUpdate = new Date().toISOString();
         localStorage.setItem("lastUpdate", lastUpdate);
       }
@@ -237,6 +245,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
       closeModal();
     } else {
       openModal();
+      notificationIcon.classList.add("shake-animation");
+      setTimeout(
+        () => notificationIcon.classList.remove("shake-animation"),
+        500
+      );
     }
   });
 

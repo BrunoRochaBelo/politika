@@ -25,7 +25,7 @@
   padding: 5px 10px;
   background: var(--form-bg-container);
   border-radius: 25px;
-  border: 1px solid hsl(220, 10%, 12%);
+  border: 1px solid hsl(218, 10%, 12%);
   border-top: none;
 }
 .main-view::-webkit-scrollbar {
@@ -73,7 +73,7 @@
   box-shadow: var(--sombra-moderada);
 }
 .main-view .secao-interna-template-header a {
-  color: var(--btn-filtro-selecionado-txt);
+  color: var(--btn-filtro-alt-txt);
 }
 
 .main-view .nav {
@@ -97,7 +97,7 @@
   padding: 12px;
 }
 .card-info .campo-view p {
-  color: var(--btn-filtro-selecionado-txt);
+  color: var(--btn-filtro-alt-txt);
   border: 1px solid transparent;
 }
 .acoes {

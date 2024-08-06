@@ -30,6 +30,7 @@
 .calendario-small-card-title {
   grid-area: calendario-small-card-title;
   border-left: 4px solid var(--cor-primaria-2);
+  border-radius: 3px;
   padding-left: 10px;
   font-size: 14px;
   font-weight: 300;
@@ -193,6 +194,7 @@
 .calendario-large-card-title {
   grid-area: calendario-large-card-title;
   border-left: 4px solid var(--cor-primaria-2);
+  border-radius: 3px;
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;

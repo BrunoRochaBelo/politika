@@ -64,7 +64,7 @@
 .secao-interna-template-header.active-header {
   font-size: 18px;
   font-weight: 600;
-  color: var(--btn-filtro-selecionado-txt);
+  color: var(--btn-filtro-alt-txt);
   padding: 15px 30px 25px 15px;
 }
 .secao-interna-template-header a {
@@ -74,11 +74,11 @@
   text-decoration: none;
   color: inherit;
   position: relative;
-  color: var(--btn-filtro-selecionado-txt);
+  color: var(--btn-filtro-alt-txt);
   text-align: start;
 }
 .secao-interna-template-header.active-header a {
-  color: var(--btn-filtro-selecionado-txt);
+  color: var(--btn-filtro-alt-txt);
 }
 .card-session.active > .secao-interna-template-content {
   box-shadow: none;

@@ -240,6 +240,24 @@
   animation: fadeOut 0.5s forwards;
 }
 
+/* Animação de balanço para o ícone de notificação */
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.5s;
+}
+
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .modal-content-notificacoes {

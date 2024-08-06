@@ -5,15 +5,25 @@
   width: 100%;
   height: 4px;
   border-radius: 45px;
-  background-color: hsl(220, 50%, 80%);
+  background-color: hsl(218, 50%, 90%);
   transition: 0.3s;
 }
+
+/* Quando o ícone está na classe "change" */
+.change .bar1,
+.change .bar2,
+.change .bar3 {
+  background-color: var(--txt-nav-selecionado);
+}
+
 .change .bar1 {
   transform: rotate(-45deg) translate(-4.78px, 4.78px);
 }
+
 .change .bar2 {
   opacity: 0;
 }
+
 .change .bar3 {
   transform: rotate(45deg) translate(-4.78px, -4.78px);
 }
