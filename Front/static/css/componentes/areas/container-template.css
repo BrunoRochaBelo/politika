@@ -4,7 +4,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  background: var(--bg-container);
+  background: var(--container-bg);
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;
   grid-template-columns: 1fr;
@@ -59,7 +59,7 @@
   }
   .container-template-content {
     border-radius: 0px;
-    background: var(--bg-container);
+    background: var(--container-bg);
     border-top: 1px solid var(--borda);
   }
 

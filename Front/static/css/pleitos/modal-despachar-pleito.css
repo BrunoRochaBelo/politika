@@ -166,12 +166,12 @@
   padding: 10px;
   margin: 15px 0 0 0;
   align-self: center;
-  border: 1px solid var(--bg-container);
+  border: 1px solid var(--container-bg);
   font-size: 13px;
   font-weight: 350;
   white-space: wrap;
   word-break: break-all;
-  background: var(--bg-container);
+  background: var(--container-bg);
   border-radius: 25px;
   grid:
     "modal-despachar-pleito-despachar-title modal-despachar-pleito-despachar-title"

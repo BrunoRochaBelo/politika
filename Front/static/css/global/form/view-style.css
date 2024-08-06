@@ -23,7 +23,7 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--form-bg-container);
+  background: var(--form-container-bg);
   border-radius: 25px;
   border: 1px solid hsl(218, 10%, 12%);
   border-top: none;
@@ -179,7 +179,7 @@
   .body-view {
     padding: 0px;
     border: none;
-    background: var(--form-bg-container);
+    background: var(--form-container-bg);
   }
   .body-view-template {
     display: grid;

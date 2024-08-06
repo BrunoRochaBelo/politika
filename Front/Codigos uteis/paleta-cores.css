@@ -77,8 +77,8 @@
   --input-border: hsl(218, 18%, 18%);
   --input-text: hsl(218, 15%, 98%);
   --input-placeholder: hsl(218, 15%, 40%);
-  --input-bg-empty: hsl(218, 25%, 24%);
-  --input-bg-filled: hsl(218, 18%, 20%);
+  --input-empty-bg: hsl(218, 25%, 24%);
+  --input-filled-bg: hsl(218, 18%, 20%);
   --input-focus-border: hsl(218, 85%, 70%);
   --input-focus-bg: hsl(218, 18%, 20%);
   --input-error-border: hsl(0, 70%, 70%);
@@ -185,8 +185,8 @@
   --input-border: hsl(218, 30%, 88%);
   --input-text: hsl(0, 0%, 10%);
   --input-placeholder: hsl(218, 10%, 60%);
-  --input-bg-empty: hsl(218, 30%, 85%);
-  --input-bg-filled: hsl(218, 30%, 80%);
+  --input-empty-bg: hsl(218, 30%, 85%);
+  --input-filled-bg: hsl(218, 30%, 80%);
   --input-focus-border: hsl(218, 70%, 50%);
   --input-focus-bg: hsl(218, 30%, 70%);
   --input-error-border: hsl(0, 40%, 50%);

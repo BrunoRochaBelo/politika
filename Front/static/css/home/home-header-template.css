@@ -93,7 +93,7 @@
   }
 
   .home-header-nav {
-    background: var(--bg-container);
+    background: var(--container-bg);
     backdrop-filter: blur(10px);
     border-top: 1px solid var(--borda);
     position: fixed;

@@ -96,7 +96,7 @@
   border-radius: 5px;
 }
 .btn-calendario:active {
-  background-color: darken(var(--bg-container), 10%);
+  background-color: darken(var(--container-bg), 10%);
   color: var(--txt-conteudo-card);
   border-color: var(--txt-conteudo-card);
 }
@@ -299,7 +299,7 @@
 
   .change-semana {
     padding: auto 10px;
-    background: var(--bg-container);
+    background: var(--container-bg);
   }
 
   .dia-semana:hover,

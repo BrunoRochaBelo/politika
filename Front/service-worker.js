@@ -1,6 +1,8 @@
 const STATIC_CACHE_NAME = "static-cache-v1";
 const DYNAMIC_CACHE_NAME = "dynamic-cache-v1";
 const API_CACHE_NAME = "api-cache-v1";
+const MAX_CACHE_ITEMS = 50;
+
 const urlsToCache = [
   "/",
   "/index.html",
@@ -11,6 +13,7 @@ const urlsToCache = [
   "/pleitos.html",
   "/offline.html",
   "/styles.css",
+  "/tarefas.html",
   "/static/imagens/logo/logo.png",
   "/static/imagens/logo/logo-2.png",
   "/static/imagens/icones/1-estrela.svg",
@@ -33,8 +36,12 @@ const urlsToCache = [
   "/static/imagens/icones/call.svg",
   "/static/imagens/icones/pleitos.svg",
   "/static/imagens/icones/pleitos-select.svg",
+  "/static/imagens/icones/tarefas.svg",
+  "/static/imagens/icones/tarefas-select.svg",
   "/static/imagens/icones/voltar.svg",
 ];
+
+const API_URLS = ["/api/endpoint1", "/api/endpoint2"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -64,36 +71,35 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Estratégia Cache First
 function cacheFirst(event) {
   return caches.match(event.request).then((cachedResponse) => {
     return (
       cachedResponse ||
       fetch(event.request).then((networkResponse) => {
-        caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+        return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
           cache.put(event.request, networkResponse.clone());
+          limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
+          return networkResponse;
         });
-        return networkResponse;
       })
     );
   });
 }
 
-// Estratégia Network First
 function networkFirst(event) {
   return fetch(event.request)
     .then((networkResponse) => {
       if (networkResponse) {
-        caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+        return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
           cache.put(event.request, networkResponse.clone());
+          limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
+          return networkResponse;
         });
       }
       return networkResponse;
     })
     .catch(() => caches.match(event.request));
 }
-
-const MAX_CACHE_ITEMS = 50;
 
 function limitCacheSize(name, size) {
   caches.open(name).then((cache) => {
@@ -105,12 +111,10 @@ function limitCacheSize(name, size) {
   });
 }
 
-const API_URLS = ["/api/endpoint1", "/api/endpoint2"];
-
 self.addEventListener("fetch", (event) => {
-  if (urlsToCache.includes(event.request.url)) {
+  if (urlsToCache.includes(new URL(event.request.url).pathname)) {
     event.respondWith(cacheFirst(event));
-  } else if (API_URLS.includes(event.request.url)) {
+  } else if (API_URLS.includes(new URL(event.request.url).pathname)) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
@@ -123,42 +127,16 @@ self.addEventListener("fetch", (event) => {
         .catch(() => caches.match(event.request))
     );
   } else {
-    event.respondWith(networkFirst(event));
-  }
-
-  if (!urlsToCache.includes(event.request.url)) {
-    event.waitUntil(limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS));
+    event.respondWith(
+      networkFirst(event).catch(() => {
+        return caches.match("/offline.html");
+      })
+    );
   }
 });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches
-      .match(event.request)
-      .then((response) => {
-        return (
-          response ||
-          fetch(event.request).then((networkResponse) => {
-            // Verifica se a resposta é válida
-            if (
-              !networkResponse ||
-              networkResponse.status !== 200 ||
-              networkResponse.type !== "basic"
-            ) {
-              return networkResponse;
-            }
-            // Clona a resposta e armazena no cache
-            const responseToCache = networkResponse.clone();
-            caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-            return networkResponse;
-          })
-        );
-      })
-      .catch(() => {
-        // Se falhar a busca na rede e não tiver no cache, serve a página de fallback
-        return caches.match("/offline.html");
-      })
-  );
+self.addEventListener("message", (event) => {
+  if (event.data.action === "skipWaiting") {
+    self.skipWaiting();
+  }
 });

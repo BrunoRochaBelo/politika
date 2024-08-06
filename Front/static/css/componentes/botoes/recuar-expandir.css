@@ -58,7 +58,7 @@
   border: 2px solid transparent;
 }
 .btn-recuar-expandir-aniver:active {
-  background-color: darken(var(--bg-container), 10%);
+  background-color: darken(var(--container-bg), 10%);
   color: var(--cor-primaria-3);
   border-color: var(--cor-primaria-3);
   box-shadow: var(--sombra-leve);

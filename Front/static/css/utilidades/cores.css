@@ -21,8 +21,8 @@
 
   /* Backgrounds e Containers */
   --bg-principal: hsl(218, 18%, 9%);
-  --bg-container: hsl(218, 18%, 14%);
-  --bg-barra-pesquisa: hsl(218, 18%, 14%);
+  --container-bg: hsl(218, 18%, 14%);
+  --barra-pesquisa-bg: hsl(218, 18%, 14%);
   --borda: hsl(218, 18%, 20%);
   --divisor: hsl(218, 18%, 12%);
 
@@ -54,12 +54,12 @@
   --modal-conteudo: hsl(218, 50%, 80%);
 
   /* Formulários e Inputs */
-  --form-bg-container: hsl(218, 18%, 15%);
+  --form-container-bg: hsl(218, 18%, 15%);
   --form-card-bg: hsl(218, 18%, 25%);
   --form-bg: hsl(218, 18%, 16%);
-  --input-bg-empty: hsl(218, 18%, 22%);
+  --input-empty-bg: hsl(218, 18%, 22%);
   --input-border: hsl(218, 18%, 30%);
-  --input-bg-filled: hsl(218, 18%, 30%);
+  --input-filled-bg: hsl(218, 18%, 30%);
   --input-label: hsl(218, 40%, 85%);
   --input-placeholder: hsl(218, 18%, 65%);
   --input-txt: hsl(218, 18%, 95%);
@@ -167,8 +167,8 @@
 
   /* Backgrounds e Containers */
   --bg-principal: hsl(210, 20%, 98%);
-  --bg-container: hsl(210, 20%, 95%);
-  --bg-barra-pesquisa: hsl(210, 20%, 93%);
+  --container-bg: hsl(210, 20%, 95%);
+  --barra-pesquisa-bg: hsl(210, 20%, 93%);
   --borda: hsl(210, 15%, 85%);
   --divisor: hsl(210, 10%, 80%);
 
@@ -185,8 +185,10 @@
   --card-detalhe: hsl(210, 15%, 85%);
   --card-borda: hsl(210, 15%, 80%);
   --card-hover: hsl(210, 20%, 90%);
-  --card-aberto-bg: hsl(210, 20%, 88%);
-  --card-aberto-detalhe: hsl(210, 20%, 85%);
+
+  --card-aberto-bg: hsl(210, 60%, 90%);
+  --card-aberto-detalhe: hsl(210, 60%, 85%);
+
   --txt-titulo-card: hsl(210, 10%, 20%);
   --txt-conteudo-card: hsl(210, 10%, 30%);
 
@@ -198,12 +200,12 @@
   --modal-conteudo: hsl(210, 90%, 50%);
 
   /* Formulários e Inputs */
-  --form-bg-container: hsl(210, 20%, 95%);
+  --form-container-bg: hsl(210, 20%, 95%);
   --form-card-bg: hsl(210, 15%, 85%);
   --form-bg: hsl(210, 20%, 97%);
-  --input-bg-empty: hsl(210, 20%, 90%);
+  --input-empty-bg: hsl(210, 20%, 90%);
   --input-border: hsl(210, 15%, 80%);
-  --input-bg-filled: hsl(210, 20%, 85%);
+  --input-filled-bg: hsl(210, 20%, 85%);
   --input-label: hsl(210, 40%, 40%);
   --input-placeholder: hsl(210, 10%, 60%);
   --input-txt: hsl(210, 10%, 20%);
@@ -305,7 +307,7 @@
   background: var(--bg-principal);
 }
 .container {
-  background: var(--bg-container);
+  background: var(--container-bg);
 }
 .card-fundo {
   background: var(--card-bg);
@@ -323,7 +325,7 @@
   background: var(--modal-bg);
 }
 .card-alt {
-  background: var(--bg-barra-pesquisa);
+  background: var(--barra-pesquisa-bg);
 }
 .bordas {
   border-color: var(--borda);

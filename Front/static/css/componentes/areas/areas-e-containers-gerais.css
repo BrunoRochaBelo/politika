@@ -19,7 +19,7 @@
   align-items: center;
   justify-items: space-between;
   color: var(--txt-titulo);
-  background: var(--bg-container);
+  background: var(--container-bg);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -31,7 +31,7 @@
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  background: var(--bg-container);
+  background: var(--container-bg);
   border-top: 1px solid var(--bg-principal);
   padding: 20px;
 }
@@ -56,7 +56,7 @@
   align-items: center;
   justify-items: space-between;
   color: var(--txt-titulo);
-  background: var(--bg-container);
+  background: var(--container-bg);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
@@ -64,7 +64,7 @@
 .container-compromisso-hoje-template-content {
   grid-area: container-compromisso-hoje-template-content;
   overflow-x: hidden;
-  background: var(--bg-container);
+  background: var(--container-bg);
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;

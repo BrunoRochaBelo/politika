@@ -26,7 +26,7 @@
   text-align: left;
   font-size: 12px;
   color: var(--txt-titulo);
-  background: var(--form-bg-container);
+  background: var(--form-container-bg);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border: 1px solid hsl(218, 10%, 12%);
@@ -40,7 +40,7 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--form-bg-container);
+  background: var(--form-container-bg);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid hsl(218, 10%, 12%);
@@ -96,7 +96,7 @@
   .body-form {
     padding: 0px;
     border: none;
-    background: var(--form-bg-container);
+    background: var(--form-container-bg);
   }
   .body-form-template {
     display: grid;

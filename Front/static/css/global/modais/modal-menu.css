@@ -5,7 +5,7 @@
   width: 100%;
   height: 4px;
   border-radius: 45px;
-  background-color: hsl(218, 50%, 90%);
+  background-color: var(--txt-placeholder);
   transition: 0.3s;
 }
 
@@ -145,7 +145,7 @@
 .modal-content-template-card-user-secao {
   grid-area: modal-content-template-card-user-secao;
   display: grid;
-  background: var(--bg-container);
+  background: var(--container-bg);
   padding: 15px 10px;
   gap: 3px;
   border-radius: 12px;

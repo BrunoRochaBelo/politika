@@ -1,5 +1,5 @@
 .body-gc-template {
-  background: var(--bg-container);
+  background: var(--container-bg);
   display: grid;
   margin: 10px 0;
   gap: 1px;

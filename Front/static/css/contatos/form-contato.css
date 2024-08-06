@@ -36,7 +36,7 @@
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: var(--input-bg-empty);
+  background: var(--input-empty-bg);
   transition: background-color 0.2s;
 }
 .form-checkbox:checked + .switch-label:before {
@@ -111,6 +111,6 @@
     background-color: #00000000;
   }
   .switch-label:before {
-    background: var(--input-bg-empty);
+    background: var(--input-empty-bg);
   }
 }

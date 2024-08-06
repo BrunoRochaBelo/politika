@@ -4,7 +4,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  background: var(--bg-container);
+  background: var(--container-bg);
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;
   grid-template-columns: 1fr;
@@ -107,7 +107,7 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--txt-titulo);
-  background-color: var(--bg-container);
+  background-color: var(--container-bg);
   align-items: center;
   justify-items: center;
   box-shadow: var(--sombra-intensa);
@@ -144,7 +144,7 @@
   }
   .container-abas-template-content {
     border-radius: 0px;
-    background: var(--bg-container);
+    background: var(--container-bg);
     border-top: 1px solid var(--borda);
   }
 

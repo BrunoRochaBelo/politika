@@ -188,6 +188,6 @@ img {
   body {
     overflow: auto;
     min-width: 100vw;
-    background: var(--bg-container);
+    background: var(--container-bg);
   }
 }

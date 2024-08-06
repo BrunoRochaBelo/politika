@@ -55,7 +55,7 @@ legend {
   box-sizing: border-box;
   padding: 18px;
   color: var(--input-txt);
-  background: var(--input-bg-empty);
+  background: var(--input-empty-bg);
   border: 1px solid var(--input-border);
   border-radius: 45px;
   transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
@@ -105,7 +105,7 @@ legend {
 .campo textarea[required]:focus,
 .campo select[required]:focus {
   outline: none;
-  background: var(--input-bg-filled);
+  background: var(--input-filled-bg);
   box-shadow: var(--sombra-leve);
   border: 1px solid var(--btn-principal-destaque);
 }
@@ -119,7 +119,7 @@ legend {
 .campo input:valid,
 .campo select:valid,
 .campo textarea:valid {
-  background: var(--input-bg-empty);
+  background: var(--input-empty-bg);
 }
 
 .form-2-colum {
@@ -156,7 +156,7 @@ label + .form-checkbox:before {
   width: 52px;
   height: 26px;
   border-radius: 13px;
-  background: var(--input-bg-empty);
+  background: var(--input-empty-bg);
   transition: background-color 0.2s;
 }
 
@@ -243,7 +243,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  border: 2px solid var(--input-bg-filled);
+  border: 2px solid var(--input-filled-bg);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -265,7 +265,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   color: var(--txt-titulo-card);
 }
 .radio-button-group label:hover {
-  background-color: var(--input-bg-empty);
+  background-color: var(--input-empty-bg);
   color: var(--txt-titulo-card);
 }
 
@@ -281,7 +281,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 .checkbox-button-group label {
   padding: 10px 20px;
-  border: 2px solid var(--input-bg-filled);
+  border: 2px solid var(--input-filled-bg);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -293,7 +293,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   color: var(--txt-titulo-card);
 }
 .checkbox-button-group label:hover {
-  background-color: var(--input-bg-empty);
+  background-color: var(--input-empty-bg);
   color: var(--txt-titulo-card);
 }
 
@@ -310,7 +310,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .campo textarea[required].success,
 .campo select[required].success {
   border: 1px solid transparent !important;
-  background: var(--input-bg-filled) !important;
+  background: var(--input-filled-bg) !important;
   color: var(--input-txt) !important;
 }
 .card.error {

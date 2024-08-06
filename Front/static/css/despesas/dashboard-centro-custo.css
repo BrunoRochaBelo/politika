@@ -33,7 +33,7 @@
 .cost-center-select {
   padding: 10px;
   font-size: 16px;
-  background: var(--bg-container);
+  background: var(--container-bg);
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
@@ -132,7 +132,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  background-color: var(--input-bg-empty);
+  background-color: var(--input-empty-bg);
   color: var(--label-text);
   padding: 10px;
   border-radius: 15px;
