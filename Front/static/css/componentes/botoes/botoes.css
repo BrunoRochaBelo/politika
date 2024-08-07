@@ -176,8 +176,10 @@
   top: 5px;
   right: 5px;
   color: var(--btn-filtro-alt-txt);
-  border-radius: 50px;
+  border-radius: 45px;
   font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 .close:hover,
 .close:focus {

@@ -5,7 +5,7 @@
   width: 100%;
   height: 4px;
   border-radius: 45px;
-  background-color: var(--txt-placeholder);
+  background-color: var(--btn-clear-hover);
   transition: 0.3s;
 }
 
@@ -245,7 +245,7 @@
 
 .logout {
   margin: 15px 0;
-  color: hsl(0, 80%, 60%);
+  color: hsl(0, 80%, 55%);
 }
 
 li.alterar-tema {

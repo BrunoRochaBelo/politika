@@ -45,10 +45,6 @@
 }
 
 .modal-escolha-chamada-close {
-  color: var(--modal-conteudo);
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
   align-self: flex-end;
 }
 

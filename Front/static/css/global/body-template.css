@@ -29,6 +29,7 @@
     grid-template-areas:
       "header"
       "main";
+    transition: grid-template-rows 0.3s ease-in-out;
   }
   .header {
     top: 0;

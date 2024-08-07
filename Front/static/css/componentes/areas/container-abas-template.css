@@ -65,10 +65,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  justify-content: center;
   align-content: center;
   padding: 0px;
-  gap: 3px;
   background-color: var(--card-bg);
   border-radius: 25px;
   width: 500px;
@@ -141,6 +139,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     padding: 5px;
+    transition: padding 0.3s ease-in-out;
   }
   .container-abas-template-content {
     border-radius: 0px;
@@ -165,6 +164,8 @@
     justify-items: stretch;
     width: 308px;
     box-shadow: none;
+    justify-content: start;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   }
   #nav1 a,
   #nav2 a,
