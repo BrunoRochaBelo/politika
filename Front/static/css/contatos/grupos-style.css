@@ -1,0 +1,33 @@
+/* Estilos para o botão do card */
+.grupo-small-card-editar .btn-outline-principal {
+  width: auto;
+  font-weight: regular;
+  font-size: 12px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  letter-spacing: 0.5px;
+  background: transparent;
+  color: var(--btn-secundario);
+  box-shadow: none;
+}
+.grupo-small-card-editar .btn-outline-principal:hover {
+  width: auto;
+  font-weight: regular;
+  font-size: 12px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  letter-spacing: 0.5px;
+  background: transparent;
+  color: var(--btn-secundario);
+  box-shadow: none;
+  filter: brightness(1.1);
+}
+
+.lista-vertical-grup {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  gap: 8px;
+  padding: 10px;
+}

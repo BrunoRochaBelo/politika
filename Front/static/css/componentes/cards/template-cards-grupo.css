@@ -55,7 +55,7 @@
   grid-area: grupo-small-card-editar;
   border-top: 1px solid var(--card-aberto-detalhe);
   display: flex;
-  justify-content: center;
+  justify-content: end;
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
@@ -66,38 +66,4 @@
   grid-area: grupo-small-card-id;
   display: none;
   opacity: 0;
-}
-
-/* Estilos para o botão do card */
-.grupo-small-card-editar .btn-outline-principal {
-  width: auto;
-  font-weight: regular;
-  font-size: 12px;
-  border-radius: 9px;
-  border: 1px solid var(--btn-secundario);
-  letter-spacing: 0.5px;
-  background: transparent;
-  color: var(--btn-secundario);
-  box-shadow: none;
-}
-.grupo-small-card-editar .btn-outline-principal:hover {
-  width: auto;
-  font-weight: regular;
-  font-size: 12px;
-  border-radius: 9px;
-  border: 1px solid var(--btn-secundario);
-  letter-spacing: 0.5px;
-  background: transparent;
-  color: var(--btn-secundario);
-  box-shadow: none;
-  filter: brightness(1.1);
-}
-
-.lista-vertical-grup {
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: auto;
-  gap: 8px;
-  padding: 10px;
 }

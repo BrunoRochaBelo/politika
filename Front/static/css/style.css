@@ -59,6 +59,7 @@
 /* contatos */
 @import "./contatos/contatos-style.css";
 @import "./contatos/form-contato.css";
+@import "./contatos/grupos-style.css";
 
 /* pleitos */
 @import "./pleitos/pleitos-style.css";

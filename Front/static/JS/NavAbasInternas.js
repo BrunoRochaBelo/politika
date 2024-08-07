@@ -1,207 +1,149 @@
-// Navegar entre abas
-function ativarAba(aba) {
-  aba.classList.add("active");
-}
+// NavAbasInternas.js
 
-function desativarTodasAbas(abas) {
-  abas.forEach((aba) => {
-    aba.classList.remove("active");
-    var idAba = aba.id.slice(3);
-    var aCorrespondente = document.querySelector("#nav" + idAba + " a");
-    if (aCorrespondente) {
-      aCorrespondente.classList.remove("indicador-2");
-      aCorrespondente.setAttribute("aria-selected", "false");
-      aCorrespondente.setAttribute("tabindex", "-1");
-    }
-  });
-}
+class Abas {
+  constructor(containerSelector, abaSelector) {
+    this.container = document.querySelector(containerSelector);
+    this.abas = document.querySelectorAll(abaSelector);
 
-function mostrarAba(id) {
-  var abas = document.querySelectorAll(".aba-template");
+    this.init();
+  }
 
-  abas.forEach(function (aba) {
-    if (aba.id === id) {
-      aba.classList.add("active");
+  init() {
+    this.bindEvents();
+    this.loadInitialAba();
+  }
 
-      // Adiciona a classe 'indicador-2' à <a> correspondente na navegação
-      var aCorrespondente = document.querySelector("#nav" + id.slice(3) + " a");
-      if (aCorrespondente) {
-        aCorrespondente.classList.add("indicador-2");
-        aCorrespondente.setAttribute("aria-selected", "true");
-        aCorrespondente.setAttribute("tabindex", "0");
-      }
-
-      aba.style.display = "block";
-      aba.style.opacity = "0";
-      setTimeout(() => {
-        aba.style.opacity = "1";
-        aba.style.transition = "opacity 0.3s ease";
-      }, 10);
-
-      // Ativa o filtro correspondente à aba ativa
-      if (id === "aba1") {
-        if (document.getElementById("filtro1")) {
-          document.getElementById("filtro1").classList.remove("inactiveFil");
-          document.getElementById("filtro1").classList.add("activeFil");
-        }
-        if (document.getElementById("filtro2")) {
-          document.getElementById("filtro2").classList.remove("activeFil");
-          document.getElementById("filtro2").classList.add("inactiveFil");
-        }
-      } else if (id === "aba2") {
-        if (document.getElementById("filtro2")) {
-          document.getElementById("filtro2").classList.remove("inactiveFil");
-          document.getElementById("filtro2").classList.add("activeFil");
-        }
-        if (document.getElementById("filtro1")) {
-          document.getElementById("filtro1").classList.remove("activeFil");
-          document.getElementById("filtro1").classList.add("inactiveFil");
-        }
-      }
-    } else {
-      aba.classList.remove("active");
-
-      // Remove a classe 'indicador-2' da <a> correspondente na navegação
-      var idAba = aba.id.slice(3);
-      var aCorrespondente = document.querySelector("#nav" + idAba + " a");
-      if (aCorrespondente) {
-        aCorrespondente.classList.remove("indicador-2");
-        aCorrespondente.setAttribute("aria-selected", "false");
-        aCorrespondente.setAttribute("tabindex", "-1");
-      }
-
-      aba.style.display = "none";
-    }
-  });
-  window.scrollTo(0, 0);
-}
-
-function navegar(offset) {
-  var abas = document.querySelectorAll(".aba-template");
-  var abaAtual = Array.from(abas).findIndex(
-    (aba) => getComputedStyle(aba).display !== "none"
-  );
-
-  var novaAba = abas[abaAtual + offset];
-
-  if (novaAba) {
-    desativarTodasAbas(abas);
-    abas[abaAtual].style.display = "none";
-    novaAba.style.display = "block";
-    ativarAba(novaAba);
-
-    // Adicionar ou remover a classe "indicador-2" na navegação
-    var idAba = novaAba.id.slice(3);
-
-    Array.from(document.querySelectorAll("#navAba li")).forEach((li, index) => {
-      var aCorrespondente = li.querySelector("a");
-      if (index === abaAtual + offset) {
-        aCorrespondente.classList.add("indicador-2");
-        aCorrespondente.setAttribute("aria-selected", "true");
-        aCorrespondente.setAttribute("tabindex", "0");
-      } else {
-        aCorrespondente.classList.remove("indicador-2");
-        aCorrespondente.setAttribute("aria-selected", "false");
-        aCorrespondente.setAttribute("tabindex", "-1");
+  bindEvents() {
+    this.container.addEventListener("click", (event) => {
+      if (event.target.tagName === "A") {
+        event.preventDefault();
+        const id = event.target.getAttribute("href").substring(1);
+        this.mostrarAba(id);
       }
     });
-  }
-  window.scrollTo(0, 0);
-}
 
-function voltar() {
-  navegar(-1);
-  window.scrollTo(0, 0);
-}
-
-function avancar() {
-  navegar(1);
-  window.scrollTo(0, 0);
-}
-
-var startX;
-var startY;
-var startTime;
-var threshold = 100; // distância mínima para considerar como swipe
-var allowedTime = 300; // tempo máximo permitido para o swipe
-
-document.addEventListener(
-  "touchstart",
-  function (event) {
-    var touch = event.changedTouches[0];
-    startX = touch.pageX;
-    startY = touch.pageY;
-    startTime = new Date().getTime(); // tempo de início do swipe
-  },
-  false
-);
-
-document.addEventListener(
-  "touchend",
-  function (event) {
-    var touch = event.changedTouches[0];
-    var distX = touch.pageX - startX;
-    var distY = touch.pageY - startY;
-    var elapsedTime = new Date().getTime() - startTime;
-
-    // Verifica se o tempo e a distância são suficientes para considerar como swipe
-    if (
-      elapsedTime <= allowedTime &&
-      Math.abs(distX) >= threshold &&
-      Math.abs(distY) <= 100
-    ) {
-      // Verifica a direção do swipe
-      if (distX > 0) {
-        voltar();
-      } else {
-        avancar();
-      }
-    } else {
-      // Se o toque não for na área da nav-calendar, realiza o swipe normalmente
-      var targetElement = document.elementFromPoint(
-        touch.clientX,
-        touch.clientY
-      );
-      if (!targetElement.closest(".nav-calendar")) {
-        if (Math.abs(distX) >= threshold && Math.abs(distY) <= 100) {
-          if (distX > 0) {
-            voltar();
-          } else {
-            avancar();
-          }
+    document.addEventListener("keydown", (event) => {
+      if (document.activeElement.closest("#navAba")) {
+        if (event.key === "ArrowRight") {
+          this.navegar(1);
+        } else if (event.key === "ArrowLeft") {
+          this.navegar(-1);
         }
       }
-    }
-  },
-  false
-);
+    });
 
-// Acessibilidade: Adicionar suporte a teclado para navegação nas abas
-document.addEventListener("keydown", function (event) {
-  var activeElement = document.activeElement;
-  if (activeElement.closest("#navAba")) {
-    if (event.key === "ArrowRight") {
-      avancar();
-    } else if (event.key === "ArrowLeft") {
-      voltar();
+    document.addEventListener(
+      "touchstart",
+      this.handleTouchStart.bind(this),
+      false
+    );
+    document.addEventListener(
+      "touchend",
+      this.handleTouchEnd.bind(this),
+      false
+    );
+  }
+
+  handleTouchStart(event) {
+    const touch = event.changedTouches[0];
+    this.startX = touch.pageX;
+    this.startY = touch.pageY;
+    this.startTime = new Date().getTime();
+  }
+
+  handleTouchEnd(event) {
+    const touch = event.changedTouches[0];
+    const distX = touch.pageX - this.startX;
+    const distY = touch.pageY - this.startY;
+    const elapsedTime = new Date().getTime() - this.startTime;
+
+    if (
+      elapsedTime <= 300 &&
+      Math.abs(distX) >= 100 &&
+      Math.abs(distY) <= 100
+    ) {
+      if (distX > 0) {
+        this.voltar();
+      } else {
+        this.avancar();
+      }
     }
   }
-});
 
-// Adicionar classe "active" e "indicador-2" ao iniciar a página
-document.addEventListener("DOMContentLoaded", function () {
-  var abas = document.querySelectorAll(".aba-template");
-  if (abas.length > 0) {
-    var primeiraAba = abas[0];
-    primeiraAba.classList.add("active");
-    primeiraAba.style.display = "block";
-    var aCorrespondente = document.querySelector(
-      "#nav" + primeiraAba.id.slice(3) + " a"
-    );
+  loadInitialAba() {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      this.mostrarAba(hash);
+    } else if (this.abas.length > 0) {
+      const primeiraAba = this.abas[0];
+      this.mostrarAba(primeiraAba.id);
+    }
+  }
+
+  desativarTodasAbas() {
+    this.abas.forEach((aba) => {
+      aba.classList.remove("active");
+      const idAba = aba.id.slice(3);
+      const aCorrespondente = document.querySelector(`#nav${idAba} a`);
+      if (aCorrespondente) {
+        aCorrespondente.classList.remove("indicador-2");
+        aCorrespondente.setAttribute("aria-selected", "false");
+        aCorrespondente.setAttribute("tabindex", "-1");
+      }
+      aba.style.display = "none";
+    });
+  }
+
+  ativarAba(aba) {
+    aba.classList.add("active");
+    const idAba = aba.id.slice(3);
+    const aCorrespondente = document.querySelector(`#nav${idAba} a`);
     if (aCorrespondente) {
       aCorrespondente.classList.add("indicador-2");
       aCorrespondente.setAttribute("aria-selected", "true");
       aCorrespondente.setAttribute("tabindex", "0");
     }
+    aba.style.display = "block";
+    aba.style.opacity = "0";
+    setTimeout(() => {
+      aba.style.opacity = "1";
+      aba.style.transition = "opacity 0.3s ease";
+    }, 10);
+    window.location.hash = aba.id;
   }
+
+  mostrarAba(id) {
+    const aba = document.getElementById(id);
+    if (aba) {
+      this.desativarTodasAbas();
+      this.ativarAba(aba);
+    }
+  }
+
+  navegar(offset) {
+    const abaAtualIndex = Array.from(this.abas).findIndex(
+      (aba) => getComputedStyle(aba).display !== "none"
+    );
+
+    const novaAbaIndex = abaAtualIndex + offset;
+    if (novaAbaIndex >= 0 && novaAbaIndex < this.abas.length) {
+      const novaAba = this.abas[novaAbaIndex];
+      this.desativarTodasAbas();
+      this.ativarAba(novaAba);
+    }
+  }
+
+  voltar() {
+    this.navegar(-1);
+    window.scrollTo(0, 0);
+  }
+
+  avancar() {
+    this.navegar(1);
+    window.scrollTo(0, 0);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  new Abas("#navAba", ".aba-template");
 });
