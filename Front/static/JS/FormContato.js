@@ -3,9 +3,9 @@ function toggleComissionadoFields() {
   var comissionadoChecked = document.getElementById("comissionado").checked;
   var comissionadoFields = document.getElementById("comissionado-fields");
   if (comissionadoChecked) {
-    comissionadoFields.classList.remove("hidden");
+    comissionadoFields.classList.remove("hiddenCc");
   } else {
-    comissionadoFields.classList.add("hidden");
+    comissionadoFields.classList.add("hiddenCc");
   }
 }
 
