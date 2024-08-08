@@ -114,3 +114,7 @@
     background: var(--input-empty-bg);
   }
 }
+
+.hidden {
+  display: none;
+}

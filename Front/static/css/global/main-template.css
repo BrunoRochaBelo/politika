@@ -42,7 +42,7 @@
   }
   .main-sidenav {
     grid-area: main-sidenav;
-    position: fixed;
+    position: absolute;
     padding: 0px;
     right: 2px;
     top: 2.813rem;

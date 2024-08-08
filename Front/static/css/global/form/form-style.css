@@ -334,7 +334,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin-bottom: 15px;
   border-radius: 5px;
 }
-.error-messages p {
+.error-messages p,
+.success-message p {
   margin: 0;
   font-size: 14px;
 }

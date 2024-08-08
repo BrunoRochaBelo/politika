@@ -1,3 +1,19 @@
+// Função para exibir ou esconder os campos de Cargo Comissionado
+function toggleComissionadoFields() {
+  var comissionadoChecked = document.getElementById("comissionado").checked;
+  var comissionadoFields = document.getElementById("comissionado-fields");
+  if (comissionadoChecked) {
+    comissionadoFields.classList.remove("hidden");
+  } else {
+    comissionadoFields.classList.add("hidden");
+  }
+}
+
+// Ouvinte de evento para o campo Comissionado
+document
+  .getElementById("comissionado")
+  .addEventListener("change", toggleComissionadoFields);
+
 // Função para validar um campo específico
 function validarCampo(campo) {
   const valorCampo = campo.value.trim();
@@ -298,20 +314,6 @@ function mostrarCamposConjuge() {
     camposConjuge.style.display = "block";
   } else {
     camposConjuge.style.display = "none";
-  }
-}
-
-// Função para exibir ou esconder os campos de Cargo Comissionado
-function mostrarCamposCargoComissionado() {
-  var checkbox = document.getElementById("cargo_comissionado_switch");
-  var camposCargoComissionado = document.getElementById(
-    "camposCargoComissionado"
-  );
-
-  if (checkbox.checked) {
-    camposCargoComissionado.style.display = "block";
-  } else {
-    camposCargoComissionado.style.display = "none";
   }
 }
 

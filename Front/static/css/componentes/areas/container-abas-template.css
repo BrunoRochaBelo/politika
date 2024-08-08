@@ -165,6 +165,7 @@
     width: 308px;
     box-shadow: none;
     justify-content: start;
+    overflow: hidden;
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   }
   #nav1 a,

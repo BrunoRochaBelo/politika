@@ -24,13 +24,13 @@
       <section class="container-abas-template">
         <nav class="container-abas-template-header">
           <ul id="navAba" class="nav">
-            <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Dados <br> Despesa</a></li>
-            <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Comprovante <br> Despesa</a></li>
-            <li id="nav3"><a href="#" onclick="mostrarAba('aba3')">Comprovante <br> Pagamento</a></li>
+            <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Dados <br> Despesa</a></li>
+            <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Comprovante <br> Despesa</a></li>
+            <li id="nav3"><a href="#aba3" onclick="mostrarAba('aba3')">Comprovante <br> Pagamento</a></li>
           </ul>
         </nav>
         <div class="container-abas-template-content">
-          <form id="form" class=" form" enctype="multipart/form-data">
+          <form id="form" class="form" enctype="multipart/form-data">
             <!-- Aba 1: Informações -->
             <div id="aba1" class="aba-template active">
               <fieldset>
@@ -81,9 +81,52 @@
                   <label for="nome_fornecedor">Nome do fornecedor</label>
                   <input type="text" id="nome_fornecedor" name="nome_fornecedor">
                 </div>
-
+                <div class="campo">
+                  <label for="email_fornecedor">Email do fornecedor</label>
+                  <input type="email" id="email_fornecedor" name="email_fornecedor">
+                </div>
+                <div class="campo">
+                  <label for="autor">Autor</label>
+                  <input type="text" id="autor" name="autor">
+                </div>
+                <div class="campo">
+                  <label for="data_venc">Data de vencimento</label>
+                  <input type="date" id="data_venc" name="data_venc">
+                </div>
+                <div class="campo">
+                  <label for="qtde_parcelas">Quantidade de parcelas</label>
+                  <input type="number" id="qtde_parcelas" name="qtde_parcelas">
+                </div>
+                <div class="campo">
+                  <label for="status">Status</label>
+                  <select id="status" name="status">
+                    <option value="">Selecione</option>
+                    <!-- Opções do select -->
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="e_parcelado">É parcelado?</label>
+                  <input type="checkbox" id="e_parcelado" class="form-checkbox" name="e_parcelado">
+                </div>
+                <div class="campo">
+                  <label for="valor_1parcela">Valor da 1ª parcela</label>
+                  <input type="number" id="valor_1parcela" name="valor_1parcela">
+                </div>
+                <div class="campo">
+                  <label for="unidade_intervalo">Unidade de intervalo</label>
+                  <input type="text" id="unidade_intervalo" name="unidade_intervalo">
+                </div>
+                <div class="campo">
+                  <label for="qtde_intervalo">Quantidade de intervalos</label>
+                  <input type="number" id="qtde_intervalo" name="qtde_intervalo">
+                </div>
+                <div class="campo">
+                  <label for="val_demais_parc">Valor das demais parcelas</label>
+                  <input type="number" id="val_demais_parc" name="val_demais_parc">
+                </div>
+                <div id="spinner" class="spinner">Carregando...</div>
+                <div id="system-messages"></div>
               </fieldset>
-
             </div>
 
             <!-- Aba 2: Comprovante de Despesa -->
@@ -129,53 +172,116 @@
                   </tbody>
                 </table>
               </div>
-
             </div>
 
             <!-- Aba 3: Comprovante de Pagamento -->
             <div id="aba3" class="aba-template">
               <fieldset>
                 <legend class="titulo-xl"></legend>
-
-
                 <div class="campo">
-                  <label for="valor_pagamento">Valor</label>
-                  <input type="number" id="valor_pagamento" name="valor_pagamento">
+                  <label for="parcela">Parcela</label>
+                  <input type="number" id="parcela" name="parcela">
                 </div>
                 <div class="campo">
-                  <label for="forma_pagamento">Forma</label>
-                  <select id="forma_pagamento" name="forma_pagamento">
+                  <label for="qtde_parcelas_pagamento">Quantidade de parcelas</label>
+                  <input type="number" id="qtde_parcelas_pagamento" name="qtde_parcelas">
+                </div>
+                <div class="campo">
+                  <label for="data_venc_pagamento">Data de vencimento</label>
+                  <input type="date" id="data_venc_pagamento" name="data_venc">
+                </div>
+                <div class="campo">
+                  <label for="valor_principal">Valor principal</label>
+                  <input type="number" id="valor_principal" name="valor_principal">
+                </div>
+                <div class="campo">
+                  <label for="cc_principal">Conta Corrente principal</label>
+                  <input type="text" id="cc_principal" name="cc_principal">
+                </div>
+                <div class="campo">
+                  <label for="forma_principal">Forma principal</label>
+                  <select id="forma_principal" name="forma_principal">
                     <option value="">Selecione</option>
                     <!-- Opções do select -->
                   </select>
                 </div>
                 <div class="campo">
-                  <label for="conta_corrente">Conta Corrente</label>
-                  <input type="text" id="conta_corrente" name="conta_corrente">
+                  <label for="doc_principal">Documento principal</label>
+                  <input type="text" id="doc_principal" name="doc_principal">
                 </div>
                 <div class="campo">
-                  <label for="comprovante_pagamento">Comprovante</label>
-                  <input type="text" id="comprovante_pagamento" name="comprovante_pagamento">
+                  <label for="especiedoc_principal">Espécie documento principal</label>
+                  <input type="text" id="especiedoc_principal" name="especiedoc_principal">
                 </div>
                 <div class="campo">
-                  <label for="numero_documento">Número documento</label>
-                  <input type="number" id="numero_documento" name="numero_documento">
+                  <label for="valor_juros">Valor juros</label>
+                  <input type="number" id="valor_juros" name="valor_juros">
                 </div>
                 <div class="campo">
-                  <label for="descricao_documento">Descrição documento</label>
-                  <input type="text" id="descricao_documento" name="descricao_documento">
+                  <label for="cc_juros">Conta Corrente juros</label>
+                  <input type="text" id="cc_juros" name="cc_juros">
                 </div>
                 <div class="campo">
-                  <label for="especie_documento">Espécie documento</label>
-                  <select id="especie_documento_aba3" name="especie_documento">
+                  <label for="forma_juros">Forma juros</label>
+                  <select id="forma_juros" name="forma_juros">
                     <option value="">Selecione</option>
-                    <option value="test3">test3</option>
-                    <option value="test4">test4</option>
+                    <!-- Opções do select -->
                   </select>
                 </div>
                 <div class="campo">
-                  <label for="anexar_documento_pagamento" class="file-label">Anexar documento</label>
-                  <input type="file" id="anexar_documento_pagamento" name="anexar_documento_pagamento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba3', 'especie_documento_aba3')">
+                  <label for="doc_juros">Documento juros</label>
+                  <input type="text" id="doc_juros" name="doc_juros">
+                </div>
+                <div class="campo">
+                  <label for="especiedoc_juros">Espécie documento juros</label>
+                  <input type="text" id="especiedoc_juros" name="especiedoc_juros">
+                </div>
+                <div class="campo">
+                  <label for="valor_multa">Valor multa</label>
+                  <input type="number" id="valor_multa" name="valor_multa">
+                </div>
+                <div class="campo">
+                  <label for="cc_multa">Conta Corrente multa</label>
+                  <input type="text" id="cc_multa" name="cc_multa">
+                </div>
+                <div class="campo">
+                  <label for="forma_multa">Forma multa</label>
+                  <select id="forma_multa" name="forma_multa">
+                    <option value="">Selecione</option>
+                    <!-- Opções do select -->
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="doc_multa">Documento multa</label>
+                  <input type="text" id="doc_multa" name="doc_multa">
+                </div>
+                <div class="campo">
+                  <label for="especiedoc_multa">Espécie documento multa</label>
+                  <input type="text" id="especiedoc_multa" name="especiedoc_multa">
+                </div>
+                <div class="campo">
+                  <label for="data_pagamento">Data de pagamento</label>
+                  <input type="date" id="data_pagamento" name="data_pagamento">
+                </div>
+                <div class="campo">
+                  <label for="valor_parcela">Valor da parcela</label>
+                  <input type="number" id="valor_parcela" name="valor_parcela">
+                </div>
+                <div class="campo">
+                  <label for="valor_desconto">Valor do desconto</label>
+                  <input type="number" id="valor_desconto" name="valor_desconto">
+                </div>
+                <div class="campo">
+                  <label for="cc_principal_id">ID Conta Corrente principal</label>
+                  <input type="text" id="cc_principal_id" name="cc_principal_id">
+                </div>
+                <div class="campo">
+                  <label for="cc_juros_id">ID Conta Corrente juros</label>
+                  <input type="text" id="cc_juros_id" name="cc_juros_id">
+                </div>
+                <div class="campo">
+                  <label for="cc_multa_id">ID Conta Corrente multa</label>
+                  <input type="text" id="cc_multa_id" name="cc_multa_id">
                 </div>
               </fieldset>
 
@@ -196,19 +302,88 @@
                   </tbody>
                 </table>
               </div>
-
             </div>
-
           </form>
         </div>
       </section>
     </main>
   </div>
 
+  <script>
+    let debounceTimeout;
+
+    function debounce(callback, delay) {
+      return function () {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(callback, delay);
+      };
+    }
+
+    function isValidCNPJCPF(cnpj_cpf) {
+      const regex = /^\d{11}$|^\d{14}$/;
+      return regex.test(cnpj_cpf);
+    }
+
+    function displayMessage(type, message) {
+      const messageDiv = document.getElementById('system-messages');
+      messageDiv.innerHTML = `<div class="${type}"><p>${message}</p></div>`;
+      setTimeout(() => {
+        messageDiv.innerHTML = '';
+      }, 5000);
+    }
+
+    async function fetchContactData() {
+      const term = document.getElementById('cnpj_cpf_fornecedor').value;
+      const spinner = document.getElementById('spinner');
+      const errorDiv = document.getElementById('error');
+
+      errorDiv.textContent = '';
+
+      if (!term) {
+        displayMessage('message-error', 'Por favor, digite um CNPJ/CPF.');
+        return;
+      }
+
+      if (!isValidCNPJCPF(term)) {
+        displayMessage('message-error', 'CNPJ/CPF inválido. Deve conter 11 (CPF) ou 14 (CNPJ) dígitos.');
+        return;
+      }
+
+      const url = `/api/contato/get2/${term}`;
+
+      try {
+        spinner.style.display = 'block';
+        const response = await fetch(url);
+        if (!response.ok) {
+          if (response.status === 404) {
+            throw new Error('CNPJ/CPF não encontrado.');
+          } else {
+            throw new Error('Erro na requisição');
+          }
+        }
+
+        const data = await response.json();
+
+        document.getElementById('nome_fornecedor').value = data.name || '';
+        document.getElementById('cnpj_cpf_fornecedor').value = data.cnpj_cpf || '';
+        document.getElementById('descricao_despesa').value = data.descricao || '';
+        document.getElementById('email_fornecedor').value = data.email || '';
+        displayMessage('message-success', 'Dados carregados com sucesso.');
+      } catch (error) {
+        console.error('Erro:', error);
+        displayMessage('message-error', error.message);
+      } finally {
+        spinner.style.display = 'none';
+      }
+    }
+
+    document.getElementById('cnpj_cpf_fornecedor').addEventListener('blur', fetchContactData);
+    document.getElementById('cnpj_cpf_fornecedor').addEventListener('input', debounce(fetchContactData, 1000));
+
+  </script>
+
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/AtualizarListaDeArquivos.js"></script>
-
-
 </body>
 
 </html>

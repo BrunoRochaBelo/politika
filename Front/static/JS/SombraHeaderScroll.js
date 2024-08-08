@@ -37,10 +37,6 @@ setVhVariable();
 // ------------------------------------------------------------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
-  const mainElement = document.querySelector(
-    ".area-interna-containerContent-template-content"
-  );
-
   const elementsToScale = document.querySelectorAll(
     ".nav, .header-menu, .header-notification, .header-search"
   );
@@ -121,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function adjustScalePaddingTopAndNav() {
-    if (mainElement.scrollTop > 0) {
+    if (this.scrollTop > 0) {
       elementsToScale.forEach((element) => {
         element.style.transform = "scale(0.95, 0.9)";
       });
@@ -140,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (navElement) {
         navElement.style.width = "320px";
-        navElement.style.transform = "scale(0.95, 0.9)"; // Adiciona a transformação de escala para .nav
+        navElement.style.transform = "scale(0.95, 0.9)";
       }
 
       bodyTemplate.style.gridTemplateRows = "2.5rem 1fr";
@@ -149,12 +145,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function handleScroll(event) {
+    requestAnimationFrame(adjustScalePaddingTopAndNav.bind(event.target));
+  }
+
   function handleResponsiveChange(e) {
+    const mainElements = document.querySelectorAll(
+      ".area-interna-containerContent-template-content"
+    );
+
     if (e.matches) {
-      mainElement.addEventListener("scroll", adjustScalePaddingTopAndNav);
-      adjustScalePaddingTopAndNav();
+      mainElements.forEach((mainElement) => {
+        mainElement.addEventListener("scroll", handleScroll);
+      });
     } else {
-      mainElement.removeEventListener("scroll", adjustScalePaddingTopAndNav);
+      mainElements.forEach((mainElement) => {
+        mainElement.removeEventListener("scroll", handleScroll);
+      });
       restoreOriginalStyles();
     }
   }
@@ -165,3 +172,11 @@ document.addEventListener("DOMContentLoaded", function () {
   saveOriginalStyles();
   handleResponsiveChange(mediaQuery);
 });
+
+function mostrarAba(abaId) {
+  const abas = document.querySelectorAll(".aba-template");
+  abas.forEach((aba) => aba.classList.remove("active"));
+
+  const abaAtiva = document.getElementById(abaId);
+  abaAtiva.classList.add("active");
+}

@@ -166,6 +166,10 @@ img {
   transform: translateX(-50%) translateY(-8px); /* Move o tooltip para cima */
 }
 
+.spinner {
+  display: none;
+  margin-top: 10px;
+}
 /* Estilo das Mensagens de Erro */
 .message-error {
   color: var(--message-error-txt);
@@ -189,5 +193,6 @@ img {
     overflow: auto;
     min-width: 100vw;
     background: var(--container-bg);
+    position: relative;
   }
 }
