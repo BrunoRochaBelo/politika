@@ -3,6 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const centerText = document.getElementById("center-text");
   const availableValue = document.getElementById("available-value");
   const accountsList = document.getElementById("accounts-list");
+  const loadingIndicator = document.getElementById("loading-indicator");
+  const errorMessage = document.getElementById("error-message");
+
+  if (
+    !costCenterSelect ||
+    !centerText ||
+    !availableValue ||
+    !accountsList ||
+    !loadingIndicator ||
+    !errorMessage
+  ) {
+    console.error("Um ou mais elementos do DOM não foram encontrados.");
+    return;
+  }
 
   const expenses = {
     campanha: {
@@ -32,6 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const ctx = document.getElementById("expense-chart").getContext("2d");
+  if (!ctx) {
+    console.error("Elemento canvas não encontrado.");
+    return;
+  }
+
   const chart = new Chart(ctx, {
     type: "doughnut",
     data: {
@@ -47,11 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
     options: {
       cutout: "70%",
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true, // Mantenha a proporção do gráfico para evitar expansão vertical
       plugins: {
         legend: {
           display: false,
         },
+      },
+      layout: {
+        padding: 0, // Remove qualquer padding extra
       },
     },
   });
@@ -62,53 +84,82 @@ document.addEventListener("DOMContentLoaded", () => {
     return "#28a745";
   };
 
+  const showLoading = () => {
+    loadingIndicator.classList.remove("dashboard-hidden");
+    loadingIndicator.classList.add("dashboard-visible");
+  };
+
+  const hideLoading = () => {
+    loadingIndicator.classList.remove("dashboard-visible");
+    loadingIndicator.classList.add("dashboard-hidden");
+  };
+
+  const showError = (message) => {
+    errorMessage.textContent = message;
+    errorMessage.classList.add("dashboard-visible");
+    setTimeout(() => {
+      errorMessage.classList.remove("dashboard-visible");
+    }, 3000);
+  };
+
   const updateDashboard = (centerId) => {
-    const { total, accounts } = expenses[centerId];
-    const totalSpent = accounts.reduce((sum, { spent }) => sum + spent, 0);
-    const remaining = total - totalSpent;
+    showLoading();
+    setTimeout(() => {
+      const centerData = expenses[centerId];
+      if (!centerData) {
+        showError("Centro de custo não encontrado.");
+        hideLoading();
+        return;
+      }
 
-    centerText.textContent = `R$ ${remaining.toFixed(2)}`;
-    availableValue.textContent = `R$ ${remaining.toFixed(2)}`;
+      const { total, accounts } = centerData;
+      const totalSpent = accounts.reduce((sum, { spent }) => sum + spent, 0);
+      const remaining = total - totalSpent;
 
-    const data = [totalSpent, remaining];
-    const spentPercentage = (totalSpent / total) * 100;
-    const backgroundColor = data.map((_, index) =>
-      index === 0 ? getColor(spentPercentage) : "#101319"
-    );
+      centerText.textContent = `R$ ${remaining.toFixed(2)}`;
+      availableValue.textContent = `R$ ${remaining.toFixed(2)}`;
 
-    chart.data.datasets[0].data = data;
-    chart.data.datasets[0].backgroundColor = backgroundColor;
-    chart.update();
+      const data = [totalSpent, remaining];
+      const spentPercentage = (totalSpent / total) * 100;
+      const backgroundColor = data.map((_, index) =>
+        index === 0 ? getColor(spentPercentage) : "#101319"
+      );
 
-    availableValue.style.color = getColor(spentPercentage);
+      chart.data.datasets[0].data = data;
+      chart.data.datasets[0].backgroundColor = backgroundColor;
+      chart.update();
 
-    accountsList.innerHTML = "";
-    accounts.forEach(({ name, limit, spent }) => {
-      const percentage = (spent / limit) * 100;
-      const accountItem = document.createElement("div");
-      accountItem.className = "account-item";
-      accountItem.innerHTML = `<div class="account-label-column">
-          <span>${name}</span>
-        </div>
-        <div class="progress-bar-column">
-          <div class="account-label">${spent.toFixed(2)} de ${limit.toFixed(
-        2
-      )}</div>
-          <div class="progress-bar-wrapper">
-            <div class="progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
-        percentage
-      )}"></div>
+      availableValue.style.color = getColor(spentPercentage);
+
+      accountsList.innerHTML = "";
+      accounts.forEach(({ name, limit, spent }) => {
+        const percentage = (spent / limit) * 100;
+        const accountItem = document.createElement("div");
+        accountItem.className = "account-item";
+        accountItem.innerHTML = `<div class="account-label-column">
+            <span>${name}</span>
           </div>
-        </div>`;
-      accountsList.appendChild(accountItem);
-    });
+          <div class="account-progress-bar-column">
+            <div class="account-label">${spent.toFixed(2)} de ${limit.toFixed(
+          2
+        )}</div>
+            <div class="account-progress-bar-wrapper">
+              <div class="account-progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
+          percentage
+        )}"></div>
+            </div>
+          </div>`;
+        accountsList.appendChild(accountItem);
+      });
 
-    // Adiciona a animação às barras de progresso
-    document.querySelectorAll(".progress-bar").forEach((bar) => {
-      const progress = bar.dataset.progress;
-      bar.style.setProperty("--progress-bar-width", `${progress}%`);
-      bar.style.width = `${progress}%`;
-    });
+      document.querySelectorAll(".account-progress-bar").forEach((bar) => {
+        const progress = bar.dataset.progress;
+        bar.style.setProperty("--account-progress-bar-width", `${progress}%`);
+        bar.style.width = `${progress}%`;
+      });
+
+      hideLoading();
+    }, 500); // Simulando atraso no processamento
   };
 
   costCenterSelect.addEventListener("change", (e) =>

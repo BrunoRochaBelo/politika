@@ -51,6 +51,12 @@
         <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
             <p>Despesas</p>
           </a></li>
+        <li class="apps">
+          <a href="#">
+            <img src="./static/imagens/icones/apps.svg" alt="Ícone Apps">
+            <p>Apps</p>
+          </a>
+        </li>
       </ul>
     </nav>
     <div class="header-search">
@@ -266,10 +272,33 @@
 
   <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
 
+  <!-- Modal para exibir mais aplicativos -->
+  <div id="modalMaisApps" class="modal-mais-apps">
+    <div class="modal-mais-apps-content">
+
+      <div class="modal-mais-apps-close"></div>
+      <ul class="modal-mais-apps-icones">
+        <li>
+          <a href="pleitos.html">
+            <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon" class="icone-app">
+            <p>Pleitos</p>
+          </a>
+        </li>
+        <li>
+          <a href="despesas.html">
+            <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon" class="icone-app">
+            <p>Despesas</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
 
 
   <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/ModalMaisApps.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
   <script src="./static/js/ModalNotificacoes.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>

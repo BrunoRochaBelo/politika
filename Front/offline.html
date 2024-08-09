@@ -2,16 +2,279 @@
 <html lang="pt-br">
 
 <head>
+  <link rel="manifest" href="./manifest.json">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>Offline</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Offline">
+
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <style>
+    body.offline {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #ff0000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .progress-bar {
+      display: none;
+      width: 80%;
+      max-width: 600px;
+      margin-top: 20px;
+      height: 10px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-bar-inner {
+      height: 100%;
+      width: 0;
+      background-color: #ff0000;
+      border-radius: 5px;
+      transition: width 1s ease;
+    }
+
+    .progress-message {
+      display: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #ff0000;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-30px);
+      }
+
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .error-details {
+        padding: 10px;
+      }
+
+      .icon {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="offline">
-  <h1>Você está offline</h1>
-  <p>Por favor, verifique sua conexão com a internet.</p>
+  <i id="error-icon" class="fas fa-exclamation-triangle icon"></i>
+  <h1 id="main-title">Você está offline</h1>
+  <p id="main-message">Por favor, verifique sua conexão com a internet.</p>
   <p>Você ainda pode acessar algumas partes do aplicativo que foram salvas em cache.</p>
+
+  <div class="error-details">
+    <!-- Mensagem de erro será inserida aqui pelo JavaScript -->
+  </div>
+
+  <button class="btn" id="retryBtn">Tentar Novamente</button>
+
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-bar-inner" id="progressBarInner"></div>
+  </div>
+  <div class="progress-message" id="progressMessage">Tentando reconectar...</div>
+
+  <script src="./static/js/RegisterSW.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const errorDetails = document.querySelector('.error-details');
+      const errorIcon = document.getElementById('error-icon');
+      const retryBtn = document.getElementById('retryBtn');
+      const progressBar = document.getElementById('progressBar');
+      const progressBarInner = document.getElementById('progressBarInner');
+      const progressMessage = document.getElementById('progressMessage');
+      const mainTitle = document.getElementById('main-title');
+      const mainMessage = document.getElementById('main-message');
+
+      function setErrorMessage(status) {
+        let message;
+        let iconClass;
+        switch (status) {
+          case 404:
+            message = 'Erro 404 - Página não encontrada. A página que você está tentando acessar não existe. Por favor, verifique o URL e tente novamente.';
+            iconClass = 'fas fa-exclamation-circle';
+            break;
+          case 500:
+            message = 'Erro 500 - Erro interno do servidor. Por favor, tente novamente mais tarde.';
+            iconClass = 'fas fa-server';
+            break;
+          case 403:
+            message = 'Erro 403 - Acesso negado. Você não tem permissão para acessar esta página.';
+            iconClass = 'fas fa-ban';
+            break;
+          case 'offline':
+            message = 'Erro - Sem conexão com a internet. Por favor, verifique sua conexão e tente novamente.';
+            iconClass = 'fas fa-wifi';
+            break;
+          case 'timeout':
+            message = 'Erro - Tempo de conexão esgotado. Por favor, tente novamente mais tarde.';
+            iconClass = 'fas fa-hourglass-end';
+            break;
+          default:
+            message = 'Erro - Ocorreu um erro desconhecido. Por favor, tente novamente.';
+            iconClass = 'fas fa-exclamation-triangle';
+        }
+        errorDetails.textContent = message;
+        errorIcon.className = `icon ${iconClass}`;
+        retryBtn.style.display = 'inline-block'; // Garante que o botão sempre aparece em caso de erro
+      }
+
+      // Função para realizar a requisição AJAX e capturar o status do erro
+      function fetchErrorStatus() {
+        if (!navigator.onLine) {
+          setErrorMessage('offline');
+          return;
+        }
+
+        fetch('/api/check-status') // Substitua pelo endpoint correto
+          .then(response => {
+            if (!response.ok) {
+              setErrorMessage(response.status);
+            }
+          })
+          .catch(error => {
+            if (error.message.includes('timeout')) {
+              setErrorMessage('timeout');
+            } else {
+              console.error('Erro ao verificar o status:', error);
+              setErrorMessage(); // Define uma mensagem de erro padrão
+            }
+          });
+      }
+
+      // Chama a função para capturar o status do erro
+      fetchErrorStatus();
+
+      // Adiciona evento de clique ao botão
+      retryBtn.addEventListener('click', function () {
+        progressBar.style.display = 'block';
+        progressMessage.style.display = 'block';
+        progressBarInner.style.width = '0';
+        setTimeout(function () {
+          progressBarInner.style.width = '100%';
+          setTimeout(function () {
+            location.reload();
+          }, 1000); // Espera até a barra de progresso estar completa antes de recarregar
+        }, 100);
+      });
+
+      // Função para atualizar a interface com base no estado de conexão
+      function updateOnlineStatus() {
+        if (navigator.onLine) {
+          mainTitle.textContent = 'Você está online';
+          mainMessage.textContent = 'Sua conexão com a internet foi restabelecida.';
+          errorDetails.textContent = '';
+          errorIcon.className = 'icon fas fa-check-circle';
+          retryBtn.style.display = 'none';
+          progressBar.style.display = 'none';
+          progressMessage.style.display = 'none';
+        } else {
+          mainTitle.textContent = 'Você está offline';
+          mainMessage.textContent = 'Por favor, verifique sua conexão com a internet.';
+          setErrorMessage('offline');
+        }
+      }
+
+      // Atualiza a interface inicialmente
+      updateOnlineStatus();
+
+      // Adiciona listeners para os eventos online e offline
+      window.addEventListener('online', updateOnlineStatus);
+      window.addEventListener('offline', updateOnlineStatus);
+    });
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,103 @@
+/* Estilos para o modal de mais aplicativos */
+.modal-mais-apps {
+  display: none;
+  position: fixed;
+  z-index: 2005;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: end;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.modal-mais-apps.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-mais-apps-content {
+  color: var(--modal-conteudo);
+  background-color: var(--modal-bg);
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--sombra-intensa);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1999; /* Começa com z-index abaixo da header-nav */
+}
+
+.modal-mais-apps.show .modal-mais-apps-content {
+  transform: translateY(0);
+  z-index: 2005; /* Aparece acima da header-nav ao abrir */
+}
+
+.modal-mais-apps.hide .modal-mais-apps-content {
+  transform: translateY(100%);
+  z-index: 1999; /* Move para trás da header-nav ao fechar */
+}
+
+.modal-mais-apps.show .modal-mais-apps-content p {
+  display: inline;
+  color: var(--txt-nav);
+  font-size: 14px;
+}
+
+.modal-mais-apps-content::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  height: 4px;
+  background-color: var(--txt-nav);
+  border-radius: 2px;
+}
+.modal-mais-apps-content:active::before {
+  transform: translateX(-50%) scale(1.2);
+  background-color: var(--txt-nav-selecionado);
+}
+
+.modal-mais-apps-content.dragging {
+  transition: none;
+}
+
+.modal-mais-apps-close {
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 2006;
+}
+
+.modal-mais-apps-icones {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 35px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.icone-app {
+  width: 32px;
+  height: 32px;
+  margin: 10px;
+}
+
+/* Estilo para a header-nav quando o modal está aberto */
+.header-nav.modal-open {
+  background-color: var(--modal-bg);
+  border: none;
+  transition: background-color 0.5s ease;
+}

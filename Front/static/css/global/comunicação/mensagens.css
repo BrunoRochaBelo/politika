@@ -1,0 +1,41 @@
+/* Estilo das Mensagens de Erro */
+.message-error {
+  color: var(--message-error-txt);
+  background-color: var(--erro);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.error-message {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background: #dc3545;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 9999;
+  display: none;
+}
+
+.error-details {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  background-color: #ffe6e6;
+  color: #ff0000;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilo das Mensagens de Sucesso */
+.message-success {
+  color: var(--msg-sucesso-txt);
+  background-color: var(--sucesso);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}

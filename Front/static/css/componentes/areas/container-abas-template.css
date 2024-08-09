@@ -13,7 +13,10 @@
     "container-abas-template-header"
     "container-abas-template-content";
   scroll-behavior: smooth;
+  transition: background 0.3s ease, box-shadow 0.3s ease,
+    border-radius 0.3s ease;
 }
+
 .container-abas-template-header {
   grid-area: container-abas-template-header;
   display: grid;
@@ -24,7 +27,9 @@
   border-top-right-radius: 25px;
   padding: 3px 5px;
   background: none;
+  transition: padding 0.3s ease, background 0.3s ease;
 }
+
 .container-abas-template-content {
   grid-area: container-abas-template-content;
   overflow-x: auto;
@@ -35,6 +40,7 @@
   border-top: 1px solid var(--bg-principal);
   background: none;
   scroll-behavior: smooth;
+  transition: padding 0.3s ease, border-top 0.3s ease;
 }
 
 /* Estilos */
@@ -45,6 +51,7 @@
 .container-abas-template-content::-webkit-scrollbar {
   display: none;
 }
+
 .container-abas-template-header h2 {
   font-size: 14px;
   font-weight: 400;
@@ -71,7 +78,9 @@
   border-radius: 25px;
   width: 500px;
   overflow: hidden;
+  transition: transform 0.3s ease, width 0.3s ease;
 }
+
 .nav-duas-abas {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,6 +100,7 @@
   border: 1px solid transparent;
   transition: color 0.3s ease, background-color 0.5s ease, transform 0.5s ease;
 }
+
 #nav1 a:hover,
 #nav2 a:hover,
 #nav3 a:hover {
@@ -99,6 +109,7 @@
   border: 1px solid transparent;
   transform: scale(1.05);
 }
+
 #nav1 a.indicador-2,
 #nav2 a.indicador-2,
 #nav3 a.indicador-2 {
@@ -125,24 +136,22 @@
 
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
-  /* Area Template padrão */
   .container-abas-template {
     background: var(--bg-principal);
     border-radius: 0;
     box-shadow: none;
   }
+
   .container-abas-template-header {
-    grid-area: container-abas-template-header;
     justify-content: start;
     font-weight: 300;
-    border-radius: 0px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    border-radius: 0;
     padding: 5px;
     transition: padding 0.3s ease-in-out;
   }
+
   .container-abas-template-content {
-    border-radius: 0px;
+    border-radius: 0;
     background: var(--container-bg);
     border-top: 1px solid var(--borda);
   }
@@ -150,6 +159,7 @@
   .container-abas-template-content-com-header-fx-int {
     border-top: 1px solid var(--borda);
   }
+
   .aba-header-header-fx-int {
     box-shadow: none;
     border: none;
@@ -160,7 +170,7 @@
   }
 
   .nav {
-    padding: 0px;
+    padding: 0;
     justify-items: stretch;
     width: 308px;
     box-shadow: none;
@@ -168,6 +178,7 @@
     overflow: hidden;
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   }
+
   #nav1 a,
   #nav2 a,
   #nav3 a {
@@ -176,6 +187,7 @@
     font-size: 15px;
     font-weight: 400;
   }
+
   #nav1 a:hover,
   #nav2 a:hover,
   #nav3 a:hover {
@@ -185,6 +197,7 @@
     font-weight: 500;
     background-color: none;
   }
+
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,
   #nav3 a.indicador-2 {

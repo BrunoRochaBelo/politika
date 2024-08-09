@@ -3,6 +3,9 @@
 @import "./global/body-template.css";
 @import "./global/main-template.css";
 @import "./global/login.css";
+/* Global/ Comunicação */
+@import "./global/comunicação/elementos-indicadores.css";
+@import "./global/comunicação/mensagens.css";
 /* Global/ Header */
 @import "./global/header/header-template.css";
 @import "./global/header/header-nav-tempalte.css";
@@ -10,6 +13,7 @@
 @import "./global/modais/modal-btn-float.css";
 @import "./global/modais/modal-destino.css";
 @import "./global/modais/modal-escolha-chamada.css";
+@import "./global/modais/modal-mais-apps.css";
 @import "./global/modais/modal-menu.css";
 @import "./global/modais/modal-notificacoes.css";
 /* Global/ Form */

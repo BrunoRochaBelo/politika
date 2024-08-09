@@ -133,61 +133,6 @@ img {
   color: var(--link-hover);
 }
 
-/* Estilo do Tooltip */
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 160px;
-  font-size: 12px;
-  background-color: var(--tooltip-bg);
-  color: var(--tooltip-txt);
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: calc(
-    100% + 8px
-  ); /* Posiciona o tooltip um pouco acima do elemento pai */
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-  pointer-events: none; /* Evita que o tooltip interfira com eventos de mouse */
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(-50%) translateY(-8px); /* Move o tooltip para cima */
-}
-
-.spinner {
-  display: none;
-  margin-top: 10px;
-}
-/* Estilo das Mensagens de Erro */
-.message-error {
-  color: var(--message-error-txt);
-  background-color: var(--erro);
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-
-/* Estilo das Mensagens de Sucesso */
-.message-success {
-  color: var(--msg-sucesso-txt);
-  background-color: var(--sucesso);
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-
 @media only screen and (max-width: 56.25rem) {
   body {
     overflow: auto;

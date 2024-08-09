@@ -61,6 +61,16 @@
       "type": "image/svg+xml"
     },
     {
+      "src": "./static/imagens/icones/apps.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./static/imagens/icones/apps-select.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
       "src": "./static/imagens/icones/anterior.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"

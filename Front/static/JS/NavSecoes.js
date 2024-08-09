@@ -37,7 +37,20 @@ function scrollToTop(element, duration, easing, callback) {
   requestAnimationFrame(scrollStep);
 }
 
-// Função changeSession ajustada para usar a nova função scrollToTop com easing
+// Função de throttle para limitar a taxa de execuções
+function throttle(fn, limit) {
+  let inThrottle;
+  return function (...args) {
+    const context = this;
+    if (!inThrottle) {
+      fn.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+}
+
+// Função changeSession ajustada para usar scrollToTop com easing
 function changeSession(sessionNumber) {
   const sessions = document.querySelectorAll(".session");
   const selectedSession = document.getElementById("secao" + sessionNumber);
@@ -46,6 +59,11 @@ function changeSession(sessionNumber) {
   const areaContent =
     document.querySelector(".container-template-content") ||
     document.querySelector(".container-abas-template-content");
+
+  if (!selectedSession || !areaContent) {
+    console.error("Elementos necessários não encontrados.");
+    return;
+  }
 
   const selectedHeader = selectedCard.querySelector(
     ".secao-interna-template-header"
@@ -81,3 +99,6 @@ function changeSession(sessionNumber) {
     });
   }
 }
+
+// Adicionar throttle à função changeSession
+const throttledChangeSession = throttle(changeSession, 100);

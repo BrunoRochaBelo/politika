@@ -1,0 +1,55 @@
+/* Estilo do Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  font-size: 12px;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-txt);
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: calc(
+    100% + 8px
+  ); /* Posiciona o tooltip um pouco acima do elemento pai */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none; /* Evita que o tooltip interfira com eventos de mouse */
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-8px); /* Move o tooltip para cima */
+}
+
+/* Estilo para os spinner */
+.spinner {
+  display: none;
+  margin-top: 10px;
+}
+
+/* Estilo para os elementos de carregamento */
+.loading-indicator {
+  display: none;
+  font-size: 1em;
+  margin: 1em;
+  color: var(--txt-placeholder);
+}
+.loading-indicator::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid var(--txt-placeholder);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5em;
+}

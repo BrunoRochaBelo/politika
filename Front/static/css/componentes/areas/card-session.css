@@ -1,3 +1,4 @@
+/* Transições suaves e responsividade */
 .session {
   height: 0;
   opacity: 0;
@@ -12,7 +13,7 @@
   transform: scaleY(1);
 }
 
-/* Cards das Sessões */
+/* Estilos dos cards de sessão */
 .card-session {
   position: relative;
   min-height: 60px;
@@ -51,11 +52,10 @@
   transition: visibility 0.2s ease, opacity 0.2s ease;
 }
 
-/* Estilos complementares - area-template-secao */
+/* Estilos complementares */
 .card-session > .secao-interna-template-header {
   padding: 15px;
 }
-
 .card-session.active .secao-interna-template {
   box-shadow: none;
   padding: 0px;
@@ -86,7 +86,7 @@
   border-radius: 0;
 }
 
-/* Estilos para a SETA */
+/* Estilos para a seta */
 .arrow {
   border: solid var(--cor-primaria-3);
   border-width: 0 2px 2px 0;
@@ -103,7 +103,7 @@
   transform: rotate(-135deg);
 }
 
-/* Responsivo */
+/* Responsividade */
 @media only screen and (max-width: 56.25rem) {
   .card-session:hover {
     filter: none;
