@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Seletores dos elementos da interface
   const swipeContainer = document.querySelector(
     ".area-interna-containerContent-template"
   );
@@ -25,78 +24,68 @@ document.addEventListener("DOMContentLoaded", function () {
     ".bar-dragging-dashboard-container"
   );
 
-  // Variáveis para controle de arrasto e limiar
   let startY = 0;
   let currentY = 0;
   let isDragging = false;
-  let isThrottled = false;
-  const dragThreshold = 20; // Define a distância mínima de arrasto em pixels
+  let mouseMoved = false;
+  const dragThreshold = 20;
 
-  // Função para lidar com o evento de rolagem
   function handleScroll() {
-    // Evita a execução contínua da função durante a rolagem
-    if (isThrottled) return;
-    isThrottled = true;
+    if (isDragging) return;
 
-    // Usando requestAnimationFrame para otimizar o desempenho da rolagem
     requestAnimationFrame(() => {
       const scrollTop = scrollContainer.scrollTop;
       if (scrollTop > 0) {
-        hideDashboard(); // Oculta o dashboard ao rolar para baixo
+        hideDashboard();
       }
-      isThrottled = false;
     });
   }
 
-  // Função para lidar com o início do toque/arrasto
   function handleStart(event) {
-    // Verifica se o toque/arrasto foi iniciado no barDraggingContainer
-    if (event.target === barDraggingContainer) {
+    if (event.target.closest(".bar-dragging-dashboard-container")) {
       startY = event.touches ? event.touches[0].clientY : event.clientY;
       isDragging = true;
-
-      // Adiciona a classe de arrasto para feedback visual
+      mouseMoved = false;
       barDraggingContainer.classList.add("dragging");
-
-      // Previne o comportamento padrão do navegador durante o arrasto
       event.preventDefault();
+
+      // Adicionar eventos de mouse para toda a janela durante o arrasto
+      window.addEventListener("mousemove", handleMove);
+      window.addEventListener("mouseup", handleEnd);
     }
   }
 
-  // Função para lidar com o movimento do toque/arrasto
   function handleMove(event) {
     if (!isDragging) return;
-    currentY = event.touches ? event.touches[0].clientY : event.clientY;
 
-    // Previne o comportamento padrão durante o arrasto
+    currentY = event.touches ? event.touches[0].clientY : event.clientY;
+    mouseMoved = true;
     event.preventDefault();
   }
 
-  // Função para lidar com o final do toque/arrasto
   function handleEnd(event) {
     if (!isDragging) return;
+
     const delta = currentY - startY;
 
-    // Verifica se o arrasto excedeu o limiar definido
-    if (Math.abs(delta) > dragThreshold) {
+    if (mouseMoved && Math.abs(delta) > dragThreshold) {
       requestAnimationFrame(() => {
-        // Determina a direção do arrasto e chama a função apropriada
-        if (event.target === barDraggingContainer) {
-          if (delta > 0) {
-            showDashboard(); // Mostra o dashboard se o arrasto foi para baixo
-          } else if (delta < 0) {
-            hideDashboard(); // Oculta o dashboard se o arrasto foi para cima
-          }
+        if (delta > 0) {
+          showDashboard();
+        } else if (delta < 0) {
+          hideDashboard();
         }
       });
     }
 
-    // Remove a classe de arrasto ao finalizar o arrasto
     barDraggingContainer.classList.remove("dragging");
     isDragging = false;
+
+    // Remover eventos de mouse da janela após o arrasto
+    window.removeEventListener("mousemove", handleMove);
+    window.removeEventListener("mouseup", handleEnd);
   }
 
-  // Função para ocultar o dashboard com animação
   function hideDashboard() {
     requestAnimationFrame(() => {
       chartWrapper.classList.add("dashboard-fade-out-up");
@@ -118,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Função para mostrar o dashboard com animação
   function showDashboard() {
     requestAnimationFrame(() => {
       availableValue.classList.remove("dashboard-fade-in-up");
@@ -146,45 +134,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Função auxiliar para adicionar múltiplos ouvintes de eventos a um elemento
   function addEventListeners(element, events, handler) {
     events.forEach((event) => {
       element.addEventListener(event, handler);
     });
   }
 
-  // Adiciona o ouvinte de eventos de rolagem ao scrollContainer
   scrollContainer.addEventListener("scroll", handleScroll);
 
-  // Adiciona os ouvintes de eventos de toque e clique para iniciar, mover e finalizar o arrasto
-  addEventListeners(swipeContainer, ["touchstart", "mousedown"], handleStart);
-  addEventListeners(swipeContainer, ["touchmove", "mousemove"], handleMove);
-  addEventListeners(swipeContainer, ["touchend", "mouseup"], handleEnd);
-
-  addEventListeners(headerContainer, ["touchstart", "mousedown"], handleStart);
-  addEventListeners(headerContainer, ["touchmove", "mousemove"], handleMove);
-  addEventListeners(headerContainer, ["touchend", "mouseup"], handleEnd);
-
-  addEventListeners(accountsListContainer, ["touchstart"], handleStart);
-  addEventListeners(accountsListContainer, ["touchmove"], handleMove);
-  addEventListeners(accountsListContainer, ["touchend"], handleEnd);
-  addEventListeners(accountsListContainer, ["mousedown"], handleStart);
-  addEventListeners(accountsListContainer, ["mousemove"], handleMove);
-  addEventListeners(accountsListContainer, ["mouseup"], handleEnd);
-
-  addEventListeners(
+  const draggableElements = [
+    swipeContainer,
+    headerContainer,
+    accountsListContainer,
     dashboardContainer,
-    ["touchstart", "mousedown"],
-    handleStart
-  );
-  addEventListeners(dashboardContainer, ["touchmove", "mousemove"], handleMove);
-  addEventListeners(dashboardContainer, ["touchend", "mouseup"], handleEnd);
+    barDraggingContainer,
+  ];
 
-  // Adiciona os ouvintes de eventos ao barDraggingContainer para o comportamento de arrasto
-  barDraggingContainer.addEventListener("touchstart", handleStart);
-  barDraggingContainer.addEventListener("touchmove", handleMove);
-  barDraggingContainer.addEventListener("touchend", handleEnd);
-  barDraggingContainer.addEventListener("mousedown", handleStart);
-  barDraggingContainer.addEventListener("mousemove", handleMove);
-  barDraggingContainer.addEventListener("mouseup", handleEnd);
+  // Adicionando suporte para eventos de toque e mouse
+  draggableElements.forEach((element) => {
+    addEventListeners(element, ["touchstart", "mousedown"], handleStart);
+  });
+
+  // Eventos de toque continuam nos elementos individuais
+  draggableElements.forEach((element) => {
+    addEventListeners(element, ["touchmove"], handleMove);
+    addEventListeners(element, ["touchend"], handleEnd);
+  });
 });

@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const accountsList = document.getElementById("accounts-list");
   const loadingIndicator = document.getElementById("loading-indicator");
   const errorMessage = document.getElementById("error-message");
+  const chartWrapper = document.querySelector(".chart-wrapper");
+  const accountsListContainer = document.querySelector(
+    ".accounts-list-container"
+  );
 
   if (
     !costCenterSelect ||
@@ -12,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     !availableValue ||
     !accountsList ||
     !loadingIndicator ||
-    !errorMessage
+    !errorMessage ||
+    !chartWrapper ||
+    !accountsListContainer
   ) {
     console.error("Um ou mais elementos do DOM não foram encontrados.");
     return;
@@ -66,14 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
     options: {
       cutout: "70%",
       responsive: true,
-      maintainAspectRatio: true, // Mantenha a proporção do gráfico para evitar expansão vertical
+      maintainAspectRatio: true,
       plugins: {
         legend: {
           display: false,
         },
       },
       layout: {
-        padding: 0, // Remove qualquer padding extra
+        padding: 0,
       },
     },
   });
@@ -87,19 +93,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const showLoading = () => {
     loadingIndicator.classList.remove("dashboard-hidden");
     loadingIndicator.classList.add("dashboard-visible");
+    setOpacity(0);
   };
 
   const hideLoading = () => {
     loadingIndicator.classList.remove("dashboard-visible");
     loadingIndicator.classList.add("dashboard-hidden");
+    setOpacity(1);
   };
 
   const showError = (message) => {
     errorMessage.textContent = message;
     errorMessage.classList.add("dashboard-visible");
+    setOpacity(0);
     setTimeout(() => {
       errorMessage.classList.remove("dashboard-visible");
+      setOpacity(1);
     }, 3000);
+  };
+
+  const setOpacity = (value) => {
+    chartWrapper.style.opacity = value;
+    accountsListContainer.style.opacity = value;
   };
 
   const updateDashboard = (centerId) => {
@@ -137,18 +152,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const accountItem = document.createElement("div");
         accountItem.className = "account-item";
         accountItem.innerHTML = `<div class="account-label-column">
-            <span>${name}</span>
-          </div>
-          <div class="account-progress-bar-column">
-            <div class="account-label">${spent.toFixed(2)} de ${limit.toFixed(
-          2
-        )}</div>
-            <div class="account-progress-bar-wrapper">
-              <div class="account-progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
+                  <span>${name}</span>
+              </div>
+              <div class="account-progress-bar-column">
+                  <div class="account-label">${spent.toFixed(
+                    2
+                  )} de ${limit.toFixed(2)}</div>
+                  <div class="account-progress-bar-wrapper">
+                      <div class="account-progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
           percentage
         )}"></div>
-            </div>
-          </div>`;
+                  </div>
+              </div>`;
         accountsList.appendChild(accountItem);
       });
 
@@ -159,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       hideLoading();
-    }, 500); // Simulando atraso no processamento
+    }, 500);
   };
 
   costCenterSelect.addEventListener("change", (e) =>

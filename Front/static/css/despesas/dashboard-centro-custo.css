@@ -35,10 +35,10 @@
   bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-color: var(--txt-subtitulo);
-  border-radius: 45px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   touch-action: none;
@@ -74,6 +74,7 @@
   border-radius: 5px;
   transition: background-color 0.3s ease;
   outline: none;
+  cursor: pointer;
   color: var(--txt-subtitulo);
 }
 
@@ -233,6 +234,20 @@
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   overflow-x: auto;
+}
+
+.chart-wrapper,
+.accounts-list-container {
+  transition: opacity 0.5s ease;
+}
+
+.dashboard-content .loading-indicator,
+.dashboard-content .error-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
 /* Animações específicas para a dashboard */
