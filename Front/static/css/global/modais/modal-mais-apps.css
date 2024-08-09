@@ -96,7 +96,8 @@
 }
 
 /* Estilo para a header-nav quando o modal está aberto */
-.header-nav.modal-open {
+.header-nav.modal-open,
+.home-header-nav.modal-open {
   background-color: var(--modal-bg);
   border: none;
   transition: background-color 0.5s ease;

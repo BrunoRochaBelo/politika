@@ -14,7 +14,6 @@ class Abas {
   }
 
   bindEvents() {
-    // Adiciona evento de clique para navegação por abas
     this.container.addEventListener("click", (event) => {
       if (event.target.tagName === "A") {
         event.preventDefault();
@@ -23,7 +22,6 @@ class Abas {
       }
     });
 
-    // Adiciona evento de tecla para navegação por teclado
     document.addEventListener("keydown", (event) => {
       if (document.activeElement.closest("#navAba")) {
         if (event.key === "ArrowRight") {
@@ -34,7 +32,6 @@ class Abas {
       }
     });
 
-    // Adiciona eventos de toque para navegação por swipe
     document.addEventListener(
       "touchstart",
       this.handleTouchStart.bind(this),
@@ -49,18 +46,17 @@ class Abas {
 
   handleTouchStart(event) {
     const touch = event.changedTouches[0];
-    this.startX = touch.pageX; // Posição inicial do toque em X
-    this.startY = touch.pageY; // Posição inicial do toque em Y
-    this.startTime = new Date().getTime(); // Tempo inicial do toque
+    this.startX = touch.pageX;
+    this.startY = touch.pageY;
+    this.startTime = new Date().getTime();
   }
 
   handleTouchEnd(event) {
     const touch = event.changedTouches[0];
-    const distX = touch.pageX - this.startX; // Distância do movimento em X
-    const distY = touch.pageY - this.startY; // Distância do movimento em Y
-    const elapsedTime = new Date().getTime() - this.startTime; // Tempo decorrido do toque
+    const distX = touch.pageX - this.startX;
+    const distY = touch.pageY - this.startY;
+    const elapsedTime = new Date().getTime() - this.startTime;
 
-    // Verifica se o movimento é um swipe válido
     if (
       elapsedTime <= 300 &&
       Math.abs(distX) >= 100 &&
@@ -75,7 +71,7 @@ class Abas {
   }
 
   loadInitialAba() {
-    const hash = window.location.hash.substring(1); // Obtém o hash da URL
+    const hash = window.location.hash.substring(1);
     if (hash) {
       this.mostrarAba(hash);
     } else if (this.abas.length > 0) {
@@ -94,7 +90,7 @@ class Abas {
         aCorrespondente.setAttribute("aria-selected", "false");
         aCorrespondente.setAttribute("tabindex", "-1");
       }
-      aba.style.display = "none"; // Esconde a aba
+      aba.style.display = "none";
     });
   }
 
@@ -107,13 +103,14 @@ class Abas {
       aCorrespondente.setAttribute("aria-selected", "true");
       aCorrespondente.setAttribute("tabindex", "0");
     }
-    aba.style.display = "block"; // Mostra a aba
-    aba.style.opacity = "0"; // Define opacidade inicial para animação
-    requestAnimationFrame(() => {
-      aba.style.opacity = "1"; // Anima a opacidade
-      aba.style.transition = "opacity 0.3s ease"; // Define a transição
-    });
-    window.location.hash = aba.id; // Atualiza o hash na URL
+    aba.style.display = "block";
+    // Animações removidas aqui:
+    // aba.style.opacity = "0";
+    // requestAnimationFrame(() => {
+    //   aba.style.opacity = "1";
+    //   aba.style.transition = "opacity 0.3s ease";
+    // });
+    window.location.hash = aba.id;
   }
 
   mostrarAba(id) {
@@ -126,7 +123,7 @@ class Abas {
 
   navegar(offset) {
     const now = Date.now();
-    if (now - this.lastExecution < 100) return; // Throttling: limita a execução a 10 vezes por segundo
+    if (now - this.lastExecution < 100) return;
     this.lastExecution = now;
 
     const abaAtualIndex = Array.from(this.abas).findIndex(
@@ -142,13 +139,13 @@ class Abas {
   }
 
   voltar() {
-    this.navegar(-1); // Navega para a aba anterior
-    window.scrollTo(0, 0); // Rolagem para o topo da página
+    this.navegar(-1);
+    window.scrollTo(0, 0);
   }
 
   avancar() {
-    this.navegar(1); // Navega para a próxima aba
-    window.scrollTo(0, 0); // Rolagem para o topo da página
+    this.navegar(1);
+    window.scrollTo(0, 0);
   }
 }
 

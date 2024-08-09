@@ -13,10 +13,7 @@
     "container-abas-template-header"
     "container-abas-template-content";
   scroll-behavior: smooth;
-  transition: background 0.3s ease, box-shadow 0.3s ease,
-    border-radius 0.3s ease;
 }
-
 .container-abas-template-header {
   grid-area: container-abas-template-header;
   display: grid;
@@ -27,9 +24,7 @@
   border-top-right-radius: 25px;
   padding: 3px 5px;
   background: none;
-  transition: padding 0.3s ease, background 0.3s ease;
 }
-
 .container-abas-template-content {
   grid-area: container-abas-template-content;
   overflow-x: auto;
@@ -40,7 +35,6 @@
   border-top: 1px solid var(--bg-principal);
   background: none;
   scroll-behavior: smooth;
-  transition: padding 0.3s ease, border-top 0.3s ease;
 }
 
 /* Estilos */
@@ -78,7 +72,7 @@
   border-radius: 25px;
   width: 500px;
   overflow: hidden;
-  transition: transform 0.3s ease, width 0.3s ease;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .nav-duas-abas {
@@ -141,7 +135,6 @@
     border-radius: 0;
     box-shadow: none;
   }
-
   .container-abas-template-header {
     justify-content: start;
     font-weight: 300;
@@ -149,7 +142,6 @@
     padding: 5px;
     transition: padding 0.3s ease-in-out;
   }
-
   .container-abas-template-content {
     border-radius: 0;
     background: var(--container-bg);
