@@ -77,7 +77,7 @@
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, hsl(218, 85%, 50%), hsl(218, 80%, 45%));
+  background: linear-gradient(135deg, hsl(218, 85%, 60%), hsl(218, 83%, 55%));
   box-shadow: var(--sombra-intensa);
   color: var(--btn-principal-txt);
   display: flex;
@@ -90,7 +90,7 @@
   filter: brightness(1.1);
 }
 .floatingButton:active {
-  background: linear-gradient(135deg, hsl(218, 90%, 40%), hsl(218, 90%, 35%));
+  background: linear-gradient(135deg, hsl(218, 90%, 50%), hsl(218, 90%, 45%));
 }
 
 /* RESPONSIVO */
@@ -111,7 +111,7 @@
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: linear-gradient(135deg, hsl(218, 85%, 50%), hsl(218, 80%, 45%));
+    background: linear-gradient(135deg, hsl(218, 85%, 60%), hsl(218, 83%, 55%));
     box-shadow: var(--sombra-intensa);
     color: var(--btn-principal-txt);
     display: flex;
@@ -124,6 +124,6 @@
     filter: none;
   }
   .floatingButton:active {
-    background: linear-gradient(135deg, hsl(218, 85%, 50%), hsl(218, 80%, 45%));
+    background: linear-gradient(135deg, hsl(218, 85%, 60%), hsl(218, 83%, 55%));
   }
 }
