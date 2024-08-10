@@ -38,7 +38,7 @@
 
   /* Buttons */
   --btn-principal: hsl(218, 85%, 60%);
-  --btn-principal-hover: hsl(218, 85%, 70%);
+  --btn-principal-hover: hsl(218, 85%, 73%);
   --btn-principal-destaque: hsl(218, 90%, 65%);
   --btn-principal-text: hsl(0, 0%, 100%);
 
@@ -79,7 +79,7 @@
   --input-placeholder: hsl(218, 15%, 40%);
   --input-empty-bg: hsl(218, 25%, 24%);
   --input-filled-bg: hsl(218, 18%, 20%);
-  --input-focus-border: hsl(218, 85%, 70%);
+  --input-focus-border: hsl(218, 85%, 73%);
   --input-focus-bg: hsl(218, 18%, 20%);
   --input-error-border: hsl(0, 70%, 70%);
   --input-error-bg: hsl(0, 40%, 35%);

@@ -59,7 +59,7 @@
   transition: width 0.3s ease;
 }
 .header-nav-template a:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
 .header-nav-template a:hover::after {
   width: 100%;

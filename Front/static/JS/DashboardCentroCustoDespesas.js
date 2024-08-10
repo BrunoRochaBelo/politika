@@ -3,22 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const centerText = document.getElementById("center-text");
   const availableValue = document.getElementById("available-value");
   const accountsList = document.getElementById("accounts-list");
-  const loadingIndicator = document.getElementById("loading-indicator");
+  const loadingIndicatorContent = document.getElementById(
+    "loading-indicator-content"
+  );
+  const loadingIndicatorHeader = document.getElementById(
+    "loading-indicator-header"
+  );
   const errorMessage = document.getElementById("error-message");
   const chartWrapper = document.querySelector(".chart-wrapper");
   const accountsListContainer = document.querySelector(
     ".accounts-list-container"
   );
+  const dashboardContent = document.querySelector(".dashboard-content");
 
   if (
     !costCenterSelect ||
     !centerText ||
     !availableValue ||
     !accountsList ||
-    !loadingIndicator ||
+    !loadingIndicatorContent ||
+    !loadingIndicatorHeader ||
     !errorMessage ||
     !chartWrapper ||
-    !accountsListContainer
+    !accountsListContainer ||
+    !dashboardContent
   ) {
     console.error("Um ou mais elementos do DOM não foram encontrados.");
     return;
@@ -91,14 +99,37 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showLoading = () => {
-    loadingIndicator.classList.remove("dashboard-hidden");
-    loadingIndicator.classList.add("dashboard-visible");
+    loadingIndicatorContent.classList.remove("dashboard-hidden");
+    loadingIndicatorContent.classList.add("dashboard-visible");
+
+    // Se o dashboard estiver oculto, mostrar o loadingIndicatorHeader
+    if (
+      dashboardContent.style.height === "0px" ||
+      dashboardContent.style.height === "0"
+    ) {
+      loadingIndicatorHeader.classList.remove("dashboard-hidden");
+      loadingIndicatorHeader.classList.add("dashboard-visible");
+      availableValue.classList.add("dashboard-hidden");
+    }
+
     setOpacity(0);
   };
 
   const hideLoading = () => {
-    loadingIndicator.classList.remove("dashboard-visible");
-    loadingIndicator.classList.add("dashboard-hidden");
+    loadingIndicatorContent.classList.remove("dashboard-visible");
+    loadingIndicatorContent.classList.add("dashboard-hidden");
+
+    // Esconder o loadingIndicatorHeader e mostrar o availableValue
+    loadingIndicatorHeader.classList.remove("dashboard-visible");
+    loadingIndicatorHeader.classList.add("dashboard-hidden");
+
+    if (
+      dashboardContent.style.height === "0px" ||
+      dashboardContent.style.height === "0"
+    ) {
+      availableValue.classList.remove("dashboard-hidden");
+    }
+
     setOpacity(1);
   };
 

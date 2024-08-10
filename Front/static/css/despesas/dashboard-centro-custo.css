@@ -258,7 +258,13 @@
   transition: opacity 0.5s ease;
 }
 
-.dashboard-content .loading-indicator,
+#loading-indicator-header {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+}
+#loading-indicator-content,
 .dashboard-content .error-message {
   position: absolute;
   top: 50%;
