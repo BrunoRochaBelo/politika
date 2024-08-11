@@ -15,8 +15,6 @@ const urlsToCache = [
   "/styles.css",
   "/tarefas.html",
   "/static/imagens/logo/logo.png",
-  "/static/imagens/logo/logo-1.png",
-  "/static/imagens/logo/logo-2.png",
   "/static/imagens/icones/1-estrela.svg",
   "/static/imagens/icones/2-estrela.svg",
   "/static/imagens/icones/3-estrela.svg",
@@ -155,11 +153,13 @@ function cacheFirst(event) {
     }
     console.log(`Cache miss: ${event.request.url}`);
     return fetch(event.request).then((networkResponse) => {
-      return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
-        cache.put(event.request, networkResponse.clone());
-        limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
-        return networkResponse;
-      });
+      if (networkResponse && networkResponse.status === 200) {
+        return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+          cache.put(event.request, networkResponse.clone());
+          limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
+          return networkResponse;
+        });
+      }
     });
   });
 }
@@ -167,12 +167,14 @@ function cacheFirst(event) {
 function networkFirst(event) {
   return fetch(event.request)
     .then((networkResponse) => {
-      return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
-        cache.put(event.request, networkResponse.clone());
-        limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
-        console.log(`Network success: ${event.request.url}`);
-        return networkResponse;
-      });
+      if (networkResponse && networkResponse.status === 200) {
+        return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+          cache.put(event.request, networkResponse.clone());
+          limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
+          console.log(`Network success: ${event.request.url}`);
+          return networkResponse;
+        });
+      }
     })
     .catch(() => {
       return caches.match(event.request).then((cachedResponse) => {
@@ -209,15 +211,28 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((response) => {
           const clonedResponse = response.clone();
-          caches.open(API_CACHE_NAME).then((cache) => {
-            cache.put(request, clonedResponse);
-          });
+          if (response && response.status === 200) {
+            caches.open(API_CACHE_NAME).then((cache) => {
+              cache.put(request, clonedResponse);
+            });
+          }
           console.log(`API fetch success: ${request.url}`);
           return response;
         })
         .catch(() => {
           console.log(`API fetch failure: ${request.url}`);
-          return caches.match(request);
+          return caches.match(request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            } else {
+              return new Response(
+                JSON.stringify({
+                  error: "API request failed and no cached data available.",
+                }),
+                { headers: { "Content-Type": "application/json" } }
+              );
+            }
+          });
         })
     );
   } else {
@@ -229,5 +244,9 @@ self.addEventListener("message", (event) => {
   if (event.data.action === "skipWaiting") {
     self.skipWaiting();
     console.log("Service Worker: skipWaiting");
+  }
+  if (event.data.action === "claimClients") {
+    self.clients.claim();
+    console.log("Service Worker: claimClients");
   }
 });

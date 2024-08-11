@@ -1,358 +1,294 @@
-// Função para exibir ou esconder os campos de Cargo Comissionado
-function toggleComissionadoFields() {
-  var comissionadoChecked = document.getElementById("comissionado").checked;
-  var comissionadoFields = document.getElementById("comissionado-fields");
-  if (comissionadoChecked) {
-    comissionadoFields.classList.remove("hiddenCc");
-  } else {
-    comissionadoFields.classList.add("hiddenCc");
-  }
-}
+// Módulo de Manipulação de Campos
+const CampoUtils = (() => {
+  function validarCampo(campo) {
+    const valorCampo = campo.value.trim();
+    let campoValido = true;
 
-// Ouvinte de evento para o campo Comissionado
-document
-  .getElementById("comissionado")
-  .addEventListener("change", toggleComissionadoFields);
+    campo.classList.remove("error", "success");
 
-// Função para validar um campo específico
-function validarCampo(campo) {
-  const valorCampo = campo.value.trim();
-  let campoValido = true;
+    const label = document.querySelector(`label[for="${campo.id}"]`);
+    const span = label ? label.querySelector("span") : null;
 
-  // Remover classes de erro e sucesso antes da validação
-  campo.classList.remove("error");
-  campo.classList.remove("success");
-
-  // Verificar se o campo é obrigatório e está vazio
-  if (campo.hasAttribute("required") && valorCampo === "") {
-    campo.classList.add("error");
-    campoValido = false;
-  } else if (
-    campo.type === "email" &&
-    valorCampo !== "" &&
-    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valorCampo)
-  ) {
-    campo.classList.add("error");
-    campoValido = false;
-  } else if (
-    campo.type === "tel" &&
-    valorCampo !== "" &&
-    !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)
-  ) {
-    campo.classList.add("error");
-    campoValido = false;
-  } else if (valorCampo !== "" || campo.hasAttribute("required")) {
-    campo.classList.add("success");
-  }
-
-  return campoValido;
-}
-
-// Função para verificar se pelo menos um dos campos nome está preenchido
-function validarNomesObrigatorios() {
-  const nomeContato = document.getElementById("nome_contato");
-  const nomeFantasia = document.getElementById("nome_fantasia");
-
-  const nomeContatoPreenchido = nomeContato.value.trim() !== "";
-  const nomeFantasiaPreenchido = nomeFantasia.value.trim() !== "";
-
-  if (nomeContatoPreenchido) {
-    nomeFantasia.removeAttribute("required");
-  } else {
-    nomeFantasia.setAttribute("required", "required");
-  }
-
-  if (nomeFantasiaPreenchido) {
-    nomeContato.removeAttribute("required");
-  } else {
-    nomeContato.setAttribute("required", "required");
-  }
-
-  // Validar os campos individualmente após a atualização dos atributos
-  validarCampo(nomeContato);
-  validarCampo(nomeFantasia);
-}
-
-// Adicionar ouvintes de eventos aos campos nome
-document
-  .getElementById("nome_contato")
-  .addEventListener("input", validarNomesObrigatorios);
-document
-  .getElementById("nome_fantasia")
-  .addEventListener("input", validarNomesObrigatorios);
-
-// Função para validar o formulário
-function validarFormulario() {
-  let formValido = true;
-  let camposNaoPreenchidos = [];
-
-  const camposRequeridos = [
-    { id: "tipo_pessoa", mensagem: "Tipo de Pessoa" },
-    { id: "nome_contato", mensagem: "Nome do Contato" },
-    { id: "telefonePrincipal", mensagem: "Telefone Principal" },
-    { id: "whatsapp", mensagem: "WhatsApp" },
-    { id: "email", mensagem: "E-mail" },
-    { id: "telefoneAdicional", mensagem: "Telefone Adicional" },
-    { id: "cep", mensagem: "CEP" },
-    { id: "uf", mensagem: "UF" },
-    { id: "cidade", mensagem: "Cidade" },
-    { id: "bairro", mensagem: "Bairro" },
-    { id: "perfil_influencia", mensagem: "Perfil de Influência" },
-  ];
-
-  validarNomesObrigatorios();
-
-  camposRequeridos.forEach((campo) => {
-    const elementoCampo = document.getElementById(campo.id);
-
-    if (!validarCampo(elementoCampo)) {
-      formValido = false;
-      camposNaoPreenchidos.push(campo.mensagem);
+    if (span) {
+      span.classList.remove("error", "success");
     }
 
-    // Lógica específica para o campo "perfil_influencia"
-    if (campo.id === "perfil_influencia" && formValido) {
-      let tipoContatoSelecionado = Array.from(
-        document.querySelectorAll("#tipo_contato input[type='checkbox']")
-      ).some((checkbox) => checkbox.checked);
-
-      if (!tipoContatoSelecionado) {
-        camposNaoPreenchidos.push("Selecione pelo menos um Tipo de Contato");
-        formValido = false;
-      }
+    if (campo.hasAttribute("required") && valorCampo === "") {
+      campo.classList.add("error");
+      if (span) span.classList.add("error");
+      campoValido = false;
+    } else if (
+      campo.type === "email" &&
+      valorCampo !== "" &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valorCampo)
+    ) {
+      campo.classList.add("error");
+      if (span) span.classList.add("error");
+      campoValido = false;
+    } else if (
+      campo.type === "tel" &&
+      valorCampo !== "" &&
+      !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)
+    ) {
+      campo.classList.add("error");
+      if (span) span.classList.add("error");
+      campoValido = false;
+    } else if (valorCampo !== "" || campo.hasAttribute("required")) {
+      campo.classList.add("success");
+      if (span) span.classList.add("success");
     }
-  });
 
-  if (!formValido) {
-    alert(
-      `Por favor, preencha os seguintes campos obrigatórios:\n${camposNaoPreenchidos.join(
-        "\n"
-      )}`
+    return campoValido;
+  }
+
+  function formatarCampo(input, regex, formato) {
+    let value = input.value.replace(/\D/g, "");
+    input.value = regex.test(value) ? formato(value) : value;
+    validarCampo(input);
+  }
+
+  function validarNomesObrigatorios() {
+    const nomeContato = document.getElementById("nome_contato");
+    const nomeFantasia = document.getElementById("nome_fantasia");
+
+    const nomeContatoPreenchido = nomeContato.value.trim() !== "";
+    const nomeFantasiaPreenchido = nomeFantasia.value.trim() !== "";
+
+    nomeContato.required = !nomeContatoPreenchido;
+    nomeFantasia.required = !nomeFantasiaPreenchido;
+
+    validarCampo(nomeContato);
+    validarCampo(nomeFantasia);
+
+    if (nomeContatoPreenchido || nomeFantasiaPreenchido) {
+      nomeContato.classList.add("success");
+      nomeFantasia.classList.add("success");
+
+      const labelNomeContato = document.querySelector(
+        'label[for="nome_contato"] span'
+      );
+      const labelNomeFantasia = document.querySelector(
+        'label[for="nome_fantasia"] span'
+      );
+
+      if (labelNomeContato) labelNomeContato.classList.add("success");
+      if (labelNomeFantasia) labelNomeFantasia.classList.add("success");
+    }
+  }
+
+  return {
+    validarCampo,
+    formatarCampo,
+    validarNomesObrigatorios,
+  };
+})();
+
+// Módulo de Manipulação de Sessões
+const SessaoUtils = (() => {
+  function toggleComissionadoFields() {
+    const comissionadoFields = document.getElementById("comissionado-fields");
+    comissionadoFields.classList.toggle(
+      "hiddenCc",
+      !document.getElementById("comissionado").checked
     );
   }
 
-  return formValido;
-}
+  function mostrarCampoWhatsapp() {
+    const checkbox = document.getElementById("whatsapp_switch");
+    const campoWhatsapp = document.getElementById("campoWhatsapp");
+    const telefonePrincipalInput = document.getElementById("telefonePrincipal");
+    const whatsappInput = document.getElementById("whatsapp");
 
-// Função para enviar o formulário
-function submitForm(event) {
-  event.preventDefault();
-
-  // Validar o formulário antes de prosseguir
-  if (!validarFormulario()) {
-    return false;
+    campoWhatsapp.style.display = checkbox.checked ? "none" : "block";
+    whatsappInput.value = checkbox.checked ? telefonePrincipalInput.value : "";
+    CampoUtils.validarCampo(whatsappInput);
   }
 
-  // Selecionar o formulário e seus campos
-  const form = document.getElementById("form");
-  const inputs = form.querySelectorAll(
-    ".campo input, .campo select, .campo textarea"
-  );
+  function mostrarCamposConjuge() {
+    const estadoCivil = document.getElementById("estado_civil").value;
+    const camposConjuge = document.getElementById("camposConjuge");
 
-  // Iterar sobre os campos para adicionar classes de sucesso
-  inputs.forEach((input) => {
-    if (input.hasAttribute("required") && input.value.trim() !== "") {
-      input.classList.remove("error");
-      input.classList.add("success");
-    }
-  });
+    camposConjuge.style.display =
+      estadoCivil === "Casado(a)" || estadoCivil === "União Estável"
+        ? "block"
+        : "none";
+  }
 
-  // Enviar os dados do formulário via fetch
-  const formData = new FormData(form);
+  return {
+    toggleComissionadoFields,
+    mostrarCampoWhatsapp,
+    mostrarCamposConjuge,
+  };
+})();
 
-  fetch("/process_form", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      console.log(data);
-      // Faça algo com a resposta do servidor, se necessário
-    })
-    .catch((error) => {
-      console.error("Erro:", error);
+// Módulo de Manipulação do Formulário
+const FormularioUtils = (() => {
+  function validarFormulario() {
+    let formValido = true;
+    const camposNaoPreenchidos = [];
+
+    // Valida campos que têm a flag "required"
+    const camposRequeridos = document.querySelectorAll(
+      "input[required], select[required], textarea[required]"
+    );
+
+    CampoUtils.validarNomesObrigatorios();
+
+    camposRequeridos.forEach((campo) => {
+      if (!CampoUtils.validarCampo(campo)) {
+        formValido = false;
+        // Aqui, estamos adicionando o nome do campo ao array de campos não preenchidos
+        const label = document.querySelector(`label[for="${campo.id}"]`);
+        const campoNome = label
+          ? label.innerText.replace("*", "").trim()
+          : campo.id;
+        camposNaoPreenchidos.push(campoNome);
+      }
     });
 
-  return false;
-}
+    if (!formValido) {
+      mostrarFeedbackErro(camposNaoPreenchidos); // Passa a lista de campos não preenchidos
+    }
 
-// Função para formatar campos específicos
-function formatarCampoParaExibicao(input, regex, formato) {
-  let value = input.value.replace(/\D/g, "");
-  if (regex.test(value)) {
-    input.value = formato(value);
-  } else {
-    input.value = value;
+    return formValido;
   }
-  validarCampo(input); // Adiciona a validação após a formatação
-}
 
-function formatartelefonePrincipalParaExibicao(input) {
-  formatarCampoParaExibicao(
-    input,
-    /^\d{11}$/,
-    (value) =>
-      `(${value.slice(0, 2)}) ${value.slice(2, 3)}${value.slice(
-        3,
-        7
-      )}-${value.slice(7)}`
-  );
-}
-
-function formatartelefoneAdicionalParaExibicao(input) {
-  formatarCampoParaExibicao(
-    input,
-    /^\d{10}$/,
-    (value) => `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`
-  );
-}
-
-function formatarCEP(input) {
-  formatarCampoParaExibicao(
-    input,
-    /^\d{8}$/,
-    (value) => `${value.slice(0, 5)}-${value.slice(5)}`
-  );
-}
-
-// Função para verificar a tecla "Enter" e evitar o envio do formulário
-function checkEnter(event) {
-  if (event.key === "Enter") {
+  function enviarFormulario(event) {
     event.preventDefault();
 
-    // Obter o campo atual em foco
-    const campoAtual = event.target;
-
-    // Validar o campo atual
-    validarCampo(campoAtual);
-
-    // Se o campo for válido, avance para o próximo campo
-    if (!campoAtual.classList.contains("error")) {
-      const form = event.target.form;
-      const camposDeFormulario = Array.from(
-        form.querySelectorAll("input, select, textarea")
-      );
-      const indiceCampoAtual = camposDeFormulario.indexOf(campoAtual);
-      const proximoCampo =
-        camposDeFormulario[indiceCampoAtual + 1] || camposDeFormulario[0];
-      proximoCampo.focus();
+    if (!validarFormulario()) {
+      return;
     }
+
+    const form = document.getElementById("form");
+    const formData = new FormData(form);
+
+    fetch("/process_form", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.text();
+        }
+        throw new Error("Erro ao enviar o formulário");
+      })
+      .then((data) => {
+        console.log(data);
+        mostrarFeedbackSucesso();
+        form.reset();
+        removerClassesDeSucesso();
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+        mostrarFeedbackErro();
+      });
   }
-}
 
-// Ouvinte de eventos 'keydown' para todos os campos de entrada do formulário
-const camposDoFormulario = document.querySelectorAll("input, select, textarea");
-camposDoFormulario.forEach((campo) => {
-  campo.addEventListener("keydown", checkEnter);
-  campo.addEventListener("blur", () => validarCampo(campo)); // Valida o campo ao desfocar
-  campo.addEventListener("input", () => validarCampo(campo)); // Valida o campo ao digitar
-  campo.addEventListener("change", () => validarCampo(campo)); // Valida o campo ao mudar
-});
-
-// Funções para exibir campos de acordo com a resposta
-function mostrarCampoWhatsapp() {
-  var checkbox = document.getElementById("whatsapp_switch");
-  var campoWhatsapp = document.getElementById("campoWhatsapp");
-  var telefonePrincipalInput = document.getElementById("telefonePrincipal");
-  var whatsappInput = document.getElementById("whatsapp");
-
-  if (checkbox.checked) {
-    campoWhatsapp.style.display = "none";
-    whatsappInput.value = telefonePrincipalInput.value;
-  } else {
-    campoWhatsapp.style.display = "block";
-    whatsappInput.value = ""; // Limpa o campo WhatsApp, se estiver preenchido
+  function mostrarFeedbackSucesso() {
+    const feedbackDiv = criarFeedbackDiv(
+      "Formulário enviado com sucesso!",
+      "message-success"
+    );
+    document.body.appendChild(feedbackDiv);
+    feedbackDiv.classList.add("show");
+    removerFeedbackDivAposTempo(feedbackDiv);
   }
-  validarCampo(whatsappInput); // Adiciona a validação após a mudança
-}
 
-function mostrarCamposFilhos() {
-  var camposFilhos = document.getElementById("camposFilhos");
-  if (camposFilhos) {
-    camposFilhos.style.display = "block";
+  function mostrarFeedbackErro(camposNaoPreenchidos = []) {
+    const mensagemErro = camposNaoPreenchidos.length
+      ? `Preencha os campos obrigatórios: ${camposNaoPreenchidos.join(", ")}`
+      : "Ocorreu um erro ao enviar o formulário. Tente novamente.";
+
+    const feedbackDiv = criarFeedbackDiv(mensagemErro, "message-error");
+    document.body.appendChild(feedbackDiv);
+    feedbackDiv.classList.add("show");
+    removerFeedbackDivAposTempo(feedbackDiv);
   }
-}
 
-function ocultarCamposFilhos() {
-  var camposFilhos = document.getElementById("camposFilhos");
-  if (camposFilhos) {
-    camposFilhos.style.display = "none";
+  function criarFeedbackDiv(mensagem, classe) {
+    const feedbackDiv = document.createElement("div");
+    feedbackDiv.classList.add(classe);
+    feedbackDiv.innerText = mensagem;
+    return feedbackDiv;
   }
-}
 
-function adicionarFilho() {
-  var maisFilhosContainer = document.getElementById("maisFilhosContainer");
-
-  var novoFilhoDiv = document.createElement("div");
-  novoFilhoDiv.classList.add("campo");
-
-  var labelNomeFilho = document.createElement("label");
-  labelNomeFilho.textContent = "Nome do Filho";
-  var inputNomeFilho = document.createElement("input");
-  inputNomeFilho.type = "text";
-  inputNomeFilho.name = "nome_filho";
-
-  var labelDataNascimentoFilho = document.createElement("label");
-  labelDataNascimentoFilho.textContent = "Data de Nascimento do Filho";
-  var inputDataNascimentoFilho = document.createElement("input");
-  inputDataNascimentoFilho.type = "date";
-  inputDataNascimentoFilho.name = "data_nascimento_filho";
-
-  novoFilhoDiv.appendChild(labelNomeFilho);
-  novoFilhoDiv.appendChild(inputNomeFilho);
-  novoFilhoDiv.appendChild(labelDataNascimentoFilho);
-  novoFilhoDiv.appendChild(inputDataNascimentoFilho);
-
-  maisFilhosContainer.appendChild(novoFilhoDiv);
-}
-
-function mostrarCamposConjuge() {
-  var estadoCivil = document.getElementById("estado_civil").value;
-  var camposConjuge = document.getElementById("camposConjuge");
-
-  if (estadoCivil === "Casado(a)" || estadoCivil === "União Estável") {
-    camposConjuge.style.display = "block";
-  } else {
-    camposConjuge.style.display = "none";
+  function removerFeedbackDivAposTempo(feedbackDiv, tempo = 5000) {
+    setTimeout(() => {
+      feedbackDiv.classList.add("fade-out");
+      feedbackDiv.addEventListener("transitionend", () => feedbackDiv.remove());
+    }, tempo);
   }
-}
 
-// Ouvinte de evento para o campo Estado Civil
+  function removerClassesDeSucesso() {
+    const camposSucesso = document.querySelectorAll(".success");
+    camposSucesso.forEach((campo) => campo.classList.remove("success"));
+  }
+
+  return {
+    enviarFormulario,
+  };
+})();
+
+// Adicionar ouvintes de eventos
 document
-  .getElementById("estado_civil")
-  .addEventListener("change", mostrarCamposConjuge);
-
-// Ouvinte de evento para o campo telefonePrincipal
+  .getElementById("comissionado")
+  .addEventListener("change", SessaoUtils.toggleComissionadoFields);
+document
+  .getElementById("nome_contato")
+  .addEventListener("input", CampoUtils.validarNomesObrigatorios);
+document
+  .getElementById("nome_fantasia")
+  .addEventListener("input", CampoUtils.validarNomesObrigatorios);
 document
   .getElementById("telefonePrincipal")
   .addEventListener("blur", function () {
-    formatartelefonePrincipalParaExibicao(this);
-    validarCampo(this); // Validar campo ao desfocar
+    CampoUtils.formatarCampo(
+      this,
+      /^\d{11}$/,
+      (value) =>
+        `(${value.slice(0, 2)}) ${value.slice(2, 3)}${value.slice(
+          3,
+          7
+        )}-${value.slice(7)}`
+    );
   });
-
-// Ouvinte de evento para o campo telefoneAdicional
 document
   .getElementById("telefoneAdicional")
   .addEventListener("blur", function () {
-    formatartelefoneAdicionalParaExibicao(this);
-    validarCampo(this); // Validar campo ao desfocar
+    CampoUtils.formatarCampo(
+      this,
+      /^\d{10}$/,
+      (value) => `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`
+    );
   });
-
-// Ouvinte de evento para o campo CEP
 document.getElementById("cep").addEventListener("blur", function () {
-  formatarCEP(this);
-  validarCampo(this); // Validar campo ao desfocar
+  CampoUtils.formatarCampo(
+    this,
+    /^\d{8}$/,
+    (value) => `${value.slice(0, 5)}-${value.slice(5)}`
+  );
 });
-
-// Ouvinte de evento para o campo WhatsApp switch
 document
   .getElementById("whatsapp_switch")
-  .addEventListener("change", mostrarCampoWhatsapp);
-
-// Ouvinte de evento para adicionar filho
+  .addEventListener("change", SessaoUtils.mostrarCampoWhatsapp);
 document
-  .getElementById("adicionarFilho")
-  .addEventListener("click", adicionarFilho);
+  .getElementById("estado_civil")
+  .addEventListener("change", SessaoUtils.mostrarCamposConjuge);
+document
+  .getElementById("form")
+  .addEventListener("submit", FormularioUtils.enviarFormulario);
 
-// Ouvinte de evento para o envio do formulário
-document.getElementById("form").addEventListener("submit", submitForm);
+// Evitar o envio do formulário ao pressionar Enter
+document.querySelectorAll("input, select, textarea").forEach((campo) => {
+  campo.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      CampoUtils.validarCampo(event.target);
+    }
+  });
+
+  campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
+  campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
+  campo.addEventListener("change", () => CampoUtils.validarCampo(campo));
+});

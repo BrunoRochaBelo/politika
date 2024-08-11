@@ -88,7 +88,7 @@
   box-shadow: var(--sombra-moderada);
 }
 .main-form .secao-interna-template-header a {
-  color: var(--btn-filtro-alt-txt);
+  color: var(--txt-destaque);
 }
 
 /* RESPONSIVO */

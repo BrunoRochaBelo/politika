@@ -20,8 +20,8 @@
   position: absolute;
   bottom: 150px;
   right: 115px;
-  border-radius: 15px;
-  min-width: 140px;
+  border-radius: 23px;
+  min-width: 150px;
   background: var(--card-bg);
   color: var(--modal-conteudo);
   box-shadow: var(--sombra-intensa);
@@ -96,6 +96,7 @@
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .modal-btn-floating-content {
+    min-width: 150px;
     bottom: 140px;
     right: 85px;
     transition: bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),

@@ -73,7 +73,7 @@
   font-size: 18px;
   font-weight: 600;
   padding: 15px 30px 20px 15px;
-  color: var(--btn-filtro-alt-txt);
+  color: var(--txt-destaque);
 }
 
 .secao-interna-template.area-aniversariantes .btn-recuar-expandir-aniver:hover {

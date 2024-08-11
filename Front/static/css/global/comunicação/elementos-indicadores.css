@@ -2,7 +2,10 @@
 .tooltip {
   position: relative;
   display: inline-block;
+  padding: 5px; /* Aumenta a área de hover */
+  outline: none; /* Remove a borda de foco padrão */
 }
+
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 160px;
@@ -14,19 +17,52 @@
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: calc(
-    100% + 8px
-  ); /* Posiciona o tooltip um pouco acima do elemento pai */
+  bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-  pointer-events: none; /* Evita que o tooltip interfira com eventos de mouse */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+    scale 0.3s ease-in-out;
+  pointer-events: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
 }
-.tooltip:hover .tooltiptext {
+
+.tooltip:hover .tooltiptext,
+.tooltip:focus .tooltiptext,
+.tooltip:focus-visible .tooltiptext {
   visibility: visible;
   opacity: 1;
-  transform: translateX(-50%) translateY(-8px); /* Move o tooltip para cima */
+  transform: translateX(-50%) translateY(-8px) scale(1.05); /* Efeito de "crescimento" */
+}
+
+/* Triângulo que cria a ponta do balão */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px); /* Aproxima o triângulo do balão */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: var(--tooltip-bg) transparent transparent transparent;
+}
+
+/* Tooltip para mensagens de erro */
+.tooltip.error .tooltiptext {
+  background-color: var(--input-tooltip-bg);
+  color: var(--msg-erro-txt);
+}
+
+.tooltip.error .tooltiptext::after {
+  border-color: var(--input-tooltip-bg) transparent transparent transparent;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .tooltip .tooltiptext {
+    width: 100px;
+    font-size: 10px;
+  }
 }
 
 /* Estilo para os spinner */

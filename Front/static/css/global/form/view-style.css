@@ -73,7 +73,7 @@
   box-shadow: var(--sombra-moderada);
 }
 .main-view .secao-interna-template-header a {
-  color: var(--btn-filtro-alt-txt);
+  color: var(--txt-destaque);
 }
 
 .main-view .nav {
@@ -97,7 +97,7 @@
   padding: 12px;
 }
 .card-info .campo-view p {
-  color: var(--btn-filtro-alt-txt);
+  color: var(--txt-destaque);
   border: 1px solid transparent;
 }
 .acoes {

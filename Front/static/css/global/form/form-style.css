@@ -191,6 +191,10 @@ form span {
   color: var(--erro);
   margin: 0.3125rem 0.625rem 0.3125rem 0;
 }
+form span.success {
+  color: var(--sucesso);
+  margin: 0.3125rem 0.625rem 0.3125rem 0;
+}
 
 .form-tipo {
   display: none;

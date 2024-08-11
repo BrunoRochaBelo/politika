@@ -19,6 +19,7 @@
 
 /* Botão alternativo usado para expandir "indicadores e estatisticas" */
 .secao-interna-template-header .btn-recuar-expandir {
+  display: block;
   background: transparent;
   border: 1px solid transparent;
   color: var(--cor-primaria-3);

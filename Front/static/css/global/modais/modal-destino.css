@@ -41,7 +41,7 @@
   margin: 10% auto;
   padding: 20px;
   border: 1px solid var(--modal-borda);
-  border-radius: 12px;
+  border-radius: 25px;
   width: 50%;
   position: relative;
   opacity: 0;
@@ -118,7 +118,7 @@
   box-shadow: var(--sombra-leve);
 }
 .search-input-dest::placeholder {
-  color: var(--btn-filtro-alt-txt);
+  color: var(--txt-destaque);
 }
 .search-input-dest:hover {
   background: var(--card-hover);
@@ -198,7 +198,7 @@
 .card-select-m {
   font-size: 16px;
   font-weight: 350;
-  color: var(--btn-filtro-alt-txt);
+  color: var(--txt-destaque);
 }
 
 .submit-button {
