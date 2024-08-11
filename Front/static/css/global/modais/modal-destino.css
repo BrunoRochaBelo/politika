@@ -38,7 +38,7 @@
 /* Aplicação das animações no conteúdo do modal */
 .modal-destino-content {
   background: var(--modal-bg);
-  margin: 10% auto;
+  margin: 8% auto;
   padding: 20px;
   border: 1px solid var(--modal-borda);
   border-radius: 25px;

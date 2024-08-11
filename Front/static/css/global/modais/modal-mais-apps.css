@@ -25,7 +25,7 @@
   padding: 20px;
   width: 100%;
   text-align: center;
-  border-radius: 12px 12px 0 0;
+  border-radius: 25px 25px 0 0;
   box-shadow: var(--sombra-intensa);
   display: flex;
   flex-direction: column;
@@ -35,6 +35,7 @@
   margin-bottom: 60px;
   position: relative;
   z-index: 1999; /* Começa com z-index abaixo da header-nav */
+  border-top: 1px solid var(--borda);
 }
 
 .modal-mais-apps.show .modal-mais-apps-content {

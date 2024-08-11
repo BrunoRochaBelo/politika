@@ -27,7 +27,7 @@
   width: 100%;
   max-width: 500px;
   text-align: center;
-  border-radius: 12px 12px 0 0;
+  border-radius: 25px 25px 0 0;
   box-shadow: var(--sombra-intensa);
   display: flex;
   flex-direction: column;
