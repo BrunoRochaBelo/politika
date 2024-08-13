@@ -23,7 +23,7 @@
   background-color: var(--modal-bg);
   padding: 20px 20px 50px 20px;
   border: 1px solid var(--borda);
-  border-top: 3px solid var(--borda);
+  border-top: 2px solid var(--borda);
   width: 100%;
   max-width: 500px;
   text-align: center;

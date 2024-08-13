@@ -22,7 +22,7 @@
   right: 115px;
   border-radius: 23px;
   min-width: 150px;
-  background: var(--card-bg);
+  background: var(--modal-bg);
   color: var(--modal-conteudo);
   box-shadow: var(--sombra-intensa);
   transform: scale(0.8);

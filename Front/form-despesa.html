@@ -73,14 +73,21 @@
                     <input type="number" id="valor_total" name="valor_total">
                   </div>
                 </div>
+
                 <div class="campo">
                   <label for="cnpj_cpf_fornecedor">CNPJ / CPF fornecedor</label>
                   <input type="text" id="cnpj_cpf_fornecedor" name="cnpj_cpf_fornecedor">
+                  <div id="loading-indicator-cnpj" class="loading-indicator">Carregando...</div>
+                  <ul class="suggestions" id="suggestions-cnpj"></ul>
                 </div>
                 <div class="campo">
                   <label for="nome_fornecedor">Nome do fornecedor</label>
                   <input type="text" id="nome_fornecedor" name="nome_fornecedor">
+                  <div id="loading-indicator-nome" class="loading-indicator">Carregando...</div>
+                  <ul class="suggestions" id="suggestions-nome"></ul>
                 </div>
+
+
                 <div class="campo">
                   <label for="email_fornecedor">Email do fornecedor</label>
                   <input type="email" id="email_fornecedor" name="email_fornecedor">
@@ -124,8 +131,7 @@
                   <label for="val_demais_parc">Valor das demais parcelas</label>
                   <input type="number" id="val_demais_parc" name="val_demais_parc">
                 </div>
-                <div id="spinner" class="spinner">Carregando...</div>
-                <div id="system-messages"></div>
+
               </fieldset>
             </div>
 
@@ -303,6 +309,9 @@
                 </table>
               </div>
             </div>
+
+
+
           </form>
         </div>
       </section>
@@ -310,80 +319,90 @@
   </div>
 
   <script>
-    let debounceTimeout;
+    const apiBaseUrl = 'http://192.168.1.15:5000/api/contato/searchall';
 
-    function debounce(callback, delay) {
-      return function () {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(callback, delay);
+    async function fetchSuggestions(query, fieldSearch, tipoPessoa, target) {
+      const url = `${apiBaseUrl}/${query}?tp=${tipoPessoa || ''}&fs=${fieldSearch || ''}`;
+      const loadingIndicator = document.getElementById(`loading-indicator-${target}`);
+      loadingIndicator.style.display = 'inline-block'; // Exibe o indicador de carregamento
+      try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error('Falha na comunicação com a API.');
+        }
+
+        const results = await response.json();
+        return results;
+      } catch (error) {
+        console.error(error.message);
+        return { error: true, message: error.message };
+      } finally {
+        loadingIndicator.style.display = 'none'; // Esconde o indicador de carregamento
+      }
+    }
+
+    function showSuggestions(suggestions, target) {
+      const suggestionsList = document.getElementById(`suggestions-${target}`);
+      suggestionsList.innerHTML = '';
+      if (suggestions.error) {
+        suggestionsList.innerHTML = `<li class="error">${suggestions.message}</li>`;
+        setTimeout(() => {
+          suggestionsList.innerHTML = '';
+        }, 3000);  // Fecha a lista após 3 segundos
+      } else if (suggestions.length === 0) {
+        suggestionsList.innerHTML = '<li>Nenhuma correspondência encontrada</li>';
+        setTimeout(() => {
+          suggestionsList.innerHTML = '';
+        }, 3000);  // Fecha a lista após 3 segundos
+      } else {
+        suggestions.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `${item.nome} - ${item.cpf_cnpj}`;
+          li.addEventListener('click', () => fillForm(item));
+          suggestionsList.appendChild(li);
+        });
+      }
+    }
+
+    function fillForm(item) {
+      document.getElementById('cnpj_cpf_fornecedor').value = item.cpf_cnpj;
+      document.getElementById('nome_fornecedor').value = item.nome;
+      // Limpar sugestões após seleção
+      document.getElementById('suggestions-cnpj').innerHTML = '';
+      document.getElementById('suggestions-nome').innerHTML = '';
+    }
+
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
       };
     }
 
-    function isValidCNPJCPF(cnpj_cpf) {
-      const regex = /^\d{11}$|^\d{14}$/;
-      return regex.test(cnpj_cpf);
-    }
-
-    function displayMessage(type, message) {
-      const messageDiv = document.getElementById('system-messages');
-      messageDiv.innerHTML = `<div class="${type}"><p>${message}</p></div>`;
-      setTimeout(() => {
-        messageDiv.innerHTML = '';
-      }, 5000);
-    }
-
-    async function fetchContactData() {
-      const term = document.getElementById('cnpj_cpf_fornecedor').value;
-      const spinner = document.getElementById('spinner');
-      const errorDiv = document.getElementById('error');
-
-      errorDiv.textContent = '';
-
-      if (!term) {
-        displayMessage('message-error', 'Por favor, digite um CNPJ/CPF.');
-        return;
+    document.getElementById('cnpj_cpf_fornecedor').addEventListener('input', debounce(async function () {
+      const query = this.value;
+      if (query.length >= 3) {
+        const suggestions = await fetchSuggestions(query, 2, null, 'cnpj');
+        showSuggestions(suggestions, 'cnpj');
       }
+    }, 300));
 
-      if (!isValidCNPJCPF(term)) {
-        displayMessage('message-error', 'CNPJ/CPF inválido. Deve conter 11 (CPF) ou 14 (CNPJ) dígitos.');
-        return;
+    document.getElementById('nome_fornecedor').addEventListener('input', debounce(async function () {
+      const query = this.value;
+      if (query.length >= 3) {
+        const suggestions = await fetchSuggestions(query, 1, null, 'nome');
+        showSuggestions(suggestions, 'nome');
       }
-
-      const url = `/api/contato/get2/${term}`;
-
-      try {
-        spinner.style.display = 'block';
-        const response = await fetch(url);
-        if (!response.ok) {
-          if (response.status === 404) {
-            throw new Error('CNPJ/CPF não encontrado.');
-          } else {
-            throw new Error('Erro na requisição');
-          }
-        }
-
-        const data = await response.json();
-
-        document.getElementById('nome_fornecedor').value = data.name || '';
-        document.getElementById('cnpj_cpf_fornecedor').value = data.cnpj_cpf || '';
-        document.getElementById('descricao_despesa').value = data.descricao || '';
-        document.getElementById('email_fornecedor').value = data.email || '';
-        displayMessage('message-success', 'Dados carregados com sucesso.');
-      } catch (error) {
-        console.error('Erro:', error);
-        displayMessage('message-error', error.message);
-      } finally {
-        spinner.style.display = 'none';
-      }
-    }
-
-    document.getElementById('cnpj_cpf_fornecedor').addEventListener('blur', fetchContactData);
-    document.getElementById('cnpj_cpf_fornecedor').addEventListener('input', debounce(fetchContactData, 1000));
-
+    }, 300));
   </script>
 
-  <script src="./static/js/NavAbasInternas.js"></script>
-  <script src="./static/js/AtualizarListaDeArquivos.js"></script>
+</body>
+
+<script src="./static/js/NavAbasInternas.js"></script>
+<script src="./static/js/AtualizarListaDeArquivos.js"></script>
 </body>
 
 </html>
