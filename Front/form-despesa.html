@@ -8,7 +8,6 @@
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
-  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
   <title>Nova Despesa</title>
   <meta name="description" content="Nova Despesa">
 </head>
@@ -76,13 +75,14 @@
 
                 <div class="campo">
                   <label for="cnpj_cpf_fornecedor">CNPJ / CPF fornecedor</label>
-                  <input type="text" id="cnpj_cpf_fornecedor" name="cnpj_cpf_fornecedor">
+                  <input type="text" id="cnpj_cpf_fornecedor" class="form-control">
                   <div id="loading-indicator-cnpj" class="loading-indicator">Carregando...</div>
                   <ul class="suggestions" id="suggestions-cnpj"></ul>
                 </div>
+
                 <div class="campo">
                   <label for="nome_fornecedor">Nome do fornecedor</label>
-                  <input type="text" id="nome_fornecedor" name="nome_fornecedor">
+                  <input type="text" id="nome_fornecedor" class="form-control form-control-md">
                   <div id="loading-indicator-nome" class="loading-indicator">Carregando...</div>
                   <ul class="suggestions" id="suggestions-nome"></ul>
                 </div>
@@ -318,91 +318,11 @@
     </main>
   </div>
 
-  <script>
-    const apiBaseUrl = 'http://192.168.1.15:5000/api/contato/searchall';
-
-    async function fetchSuggestions(query, fieldSearch, tipoPessoa, target) {
-      const url = `${apiBaseUrl}/${query}?tp=${tipoPessoa || ''}&fs=${fieldSearch || ''}`;
-      const loadingIndicator = document.getElementById(`loading-indicator-${target}`);
-      loadingIndicator.style.display = 'inline-block'; // Exibe o indicador de carregamento
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          throw new Error('Falha na comunicação com a API.');
-        }
-
-        const results = await response.json();
-        return results;
-      } catch (error) {
-        console.error(error.message);
-        return { error: true, message: error.message };
-      } finally {
-        loadingIndicator.style.display = 'none'; // Esconde o indicador de carregamento
-      }
-    }
-
-    function showSuggestions(suggestions, target) {
-      const suggestionsList = document.getElementById(`suggestions-${target}`);
-      suggestionsList.innerHTML = '';
-      if (suggestions.error) {
-        suggestionsList.innerHTML = `<li class="error">${suggestions.message}</li>`;
-        setTimeout(() => {
-          suggestionsList.innerHTML = '';
-        }, 3000);  // Fecha a lista após 3 segundos
-      } else if (suggestions.length === 0) {
-        suggestionsList.innerHTML = '<li>Nenhuma correspondência encontrada</li>';
-        setTimeout(() => {
-          suggestionsList.innerHTML = '';
-        }, 3000);  // Fecha a lista após 3 segundos
-      } else {
-        suggestions.forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = `${item.nome} - ${item.cpf_cnpj}`;
-          li.addEventListener('click', () => fillForm(item));
-          suggestionsList.appendChild(li);
-        });
-      }
-    }
-
-    function fillForm(item) {
-      document.getElementById('cnpj_cpf_fornecedor').value = item.cpf_cnpj;
-      document.getElementById('nome_fornecedor').value = item.nome;
-      // Limpar sugestões após seleção
-      document.getElementById('suggestions-cnpj').innerHTML = '';
-      document.getElementById('suggestions-nome').innerHTML = '';
-    }
-
-    function debounce(func, wait) {
-      let timeout;
-      return function (...args) {
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
-      };
-    }
-
-    document.getElementById('cnpj_cpf_fornecedor').addEventListener('input', debounce(async function () {
-      const query = this.value;
-      if (query.length >= 3) {
-        const suggestions = await fetchSuggestions(query, 2, null, 'cnpj');
-        showSuggestions(suggestions, 'cnpj');
-      }
-    }, 300));
-
-    document.getElementById('nome_fornecedor').addEventListener('input', debounce(async function () {
-      const query = this.value;
-      if (query.length >= 3) {
-        const suggestions = await fetchSuggestions(query, 1, null, 'nome');
-        showSuggestions(suggestions, 'nome');
-      }
-    }, 300));
-  </script>
-
 </body>
 
 <script src="./static/js/NavAbasInternas.js"></script>
 <script src="./static/js/AtualizarListaDeArquivos.js"></script>
+<script src="./static/js/DespesaSearchAll.js"></script>
 </body>
 
 </html>

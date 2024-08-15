@@ -105,7 +105,7 @@
 .aniversario-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
   box-shadow: var(--sombra-leve);
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-call"
@@ -140,5 +140,5 @@
 }
 
 .aniversario-small-card-expanded .aniversario-small-card-title {
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
 }

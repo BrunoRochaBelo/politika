@@ -64,7 +64,7 @@
   border-radius: 2px;
 }
 .modal-mais-apps-content:active::before {
-  transform: translateX(-50%) scale(1.2);
+  transform: scale(1.4);
   background-color: var(--txt-nav-selecionado);
 }
 

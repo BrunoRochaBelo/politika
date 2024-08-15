@@ -72,7 +72,7 @@
   --scrollbar-thumb-hover: hsl(218, 20%, 35%);
 
   /* Form Fields */
-  --form-bg: hsl(218, 25%, 18%);
+  --form-card-aberto-bg: hsl(218, 25%, 18%);
   --input-background: hsl(218, 25%, 4%);
   --input-border: hsl(218, 18%, 18%);
   --input-text: hsl(218, 15%, 98%);
@@ -180,7 +180,7 @@
   --scrollbar-thumb-hover: hsl(218, 20%, 78%);
 
   /* Form Fields */
-  --form-bg: hsl(218, 30%, 95%);
+  --form-card-aberto-bg: hsl(218, 30%, 95%);
   --input-background: hsl(218, 30%, 92%);
   --input-border: hsl(218, 30%, 88%);
   --input-text: hsl(0, 0%, 10%);

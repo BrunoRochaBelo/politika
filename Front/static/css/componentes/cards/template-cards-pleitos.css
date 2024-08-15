@@ -169,7 +169,7 @@
 .pleitos-medium-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
   box-shadow: var(--sombra-leve);
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
@@ -211,7 +211,7 @@
 
 .pleitos-medium-card-expanded .pleitos-medium-card-tiposolici {
   border-left: 4px solid var(--card-aberto-detalhe);
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
 }
 .pleitos-medium-card-expanded .pleitos-medium-card-desc {
   background: var(--card-aberto-detalhe);

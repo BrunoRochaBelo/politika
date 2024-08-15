@@ -7,7 +7,6 @@
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
-  <!-- <script src="./js/EsquemaDeCores.js" defer></script> -->
   <title>Novo contato</title>
   <meta name="description" content="Cadastrar novo contato">
 </head>
@@ -36,31 +35,17 @@
                   <div class="session active" id="secao1">
                     <fieldset>
                       <legend class="titulo-xl"></legend>
-                      <div class="campo">
-                        <label for="tipo_pessoa">Tipo de Pessoa <span>*</span></label>
-                        <div id="tipo_pessoa" class="radio-button-group">
-                          <input type="radio" id="fisica" name="tipo_pessoa" value="Física" required checked>
-                          <label for="fisica">
-                            <img src="./static/imagens/icones/pessoa-fisica.svg" alt="Pessoa Física" class="radio-icon">
-                            Física
-                          </label>
-                          <input type="radio" id="juridica" name="tipo_pessoa" value="Jurídica" required>
-                          <label for="juridica">
-                            <img src="./static/imagens/icones/pessoa-juridica.svg" alt="Pessoa Jurídica" class="radio-icon">
-                            Jurídica
-                          </label>
-                        </div>
-                      </div>
                       <div class="nomes">
                         <div class="campo">
                           <label for="nome_contato">Nome<span>*</span></label>
-                          <input type="text" id="nome_contato" name="nome_contato" required>
+                          <input type="text" id="nome_contato" name="nome_contato" required placeholder="Digite o nome completo">
                         </div>
                         <div class="campo">
                           <label for="nome_fantasia">Apelido<span>*</span></label>
-                          <input type="text" id="nome_fantasia" name="nome_fantasia" required>
+                          <input type="text" id="nome_fantasia" name="nome_fantasia" required placeholder="Digite um apelido">
                         </div>
                       </div>
+
                       <div class="campo">
                         <label for="telefonePrincipal">Telefone Principal <span>*</span></label>
                         <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
@@ -78,16 +63,17 @@
                       <div id="campoWhatsapp" class="hidden">
                         <div class="campo">
                           <label for="whatsapp">WhatsApp</label>
-                          <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
+                          <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="Digite o número do WhatsApp">
                         </div>
                       </div>
                       <div class="campo">
                         <label for="telefoneAdicional">Telefone Adicional</label>
                         <input type="tel" id="telefoneAdicional" name="telefoneAdicional" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
                       </div>
+
                       <div class="campo">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" class="contato" placeholder="email@email.com" onchange="validarEmail(this.value)">
+                        <input type="email" id="email" name="email" class="contato" placeholder="exemplo@dominio.com" onchange="validarEmail(this.value)">
                       </div>
                       <div class="campo">
                         <label for="tipo_contato">Tipo(s) do contato</label>
@@ -121,8 +107,8 @@
                     <fieldset>
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
-                        <label for="data_nascimento">Data Nascimento</label>
-                        <input type="date" id="data_nascimento" name="data_nascimento">
+                        <label for="data_nascimento">Data de Nascimento</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" placeholder="dd/mm/aaaa">
                       </div>
                       <div class="form-2-colum">
                         <div class="campo">
@@ -135,7 +121,7 @@
                           </select>
                         </div>
                         <div class="campo">
-                          <label for="cor_pele">Cor da pele</label>
+                          <label for="cor_pele">Cor da Pele</label>
                           <select id="cor_pele" name="cor_pele">
                             <option value="">Selecione</option>
                             <option value="Branca">Branca</option>
@@ -150,22 +136,22 @@
                     <fieldset>
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
-                        <label for="titulo_eleitor">Título Eleitor</label>
-                        <input type="number" id="titulo_eleitor" name="titulo_eleitor">
+                        <label for="titulo_eleitor">Título de Eleitor</label>
+                        <input type="number" id="titulo_eleitor" name="titulo_eleitor" placeholder="Digite o título de eleitor">
                       </div>
                       <div class="form-2-colum">
                         <div class="campo">
                           <label for="zona_eleitoral">Zona Eleitoral</label>
-                          <input type="number" id="zona_eleitoral" name="zona_eleitoral">
+                          <input type="number" id="zona_eleitoral" name="zona_eleitoral" placeholder="Digite a zona eleitoral">
                         </div>
                         <div class="campo">
                           <label for="secao_eleitoral">Seção Eleitoral</label>
-                          <input type="number" id="secao_eleitoral" name="secao_eleitoral">
+                          <input type="number" id="secao_eleitoral" name="secao_eleitoral" placeholder="Digite a seção eleitoral">
                         </div>
                       </div>
                       <div class="campo">
-                        <label for="local_votacao">Local Votação</label>
-                        <input type="text" id="local_votacao" name="local_votacao">
+                        <label for="local_votacao">Local de Votação</label>
+                        <input type="text" id="local_votacao" name="local_votacao" placeholder="Digite o local de votação">
                       </div>
                       <div class="campo">
                         <label for="perfil_influencia">Perfil de Influência</label>
@@ -206,6 +192,7 @@
                   </div>
                 </div>
               </li>
+
               <li class="card-session secao-interna-template hiddenCc" id="comissionado-fields">
                 <h2 class="secao-interna-template-header" onclick="changeSession(2)">
                   <a href="#">Dados do Comissionado <span class="arrow down"></a>
@@ -216,28 +203,29 @@
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
                         <label for="data_inicio">Data de Início do Contrato</label>
-                        <input type="date" id="data_inicio" name="data_inicio">
+                        <input type="date" id="data_inicio" name="data_inicio" placeholder="dd/mm/aaaa">
                       </div>
                       <div class="campo">
                         <label for="data_fim">Data de Fim do Contrato</label>
-                        <input type="date" id="data_fim" name="data_fim">
+                        <input type="date" id="data_fim" name="data_fim" placeholder="dd/mm/aaaa">
                       </div>
                       <div class="campo">
                         <label for="empresa">Empresa</label>
-                        <input type="text" id="empresa" name="empresa">
+                        <input type="text" id="empresa" name="empresa" placeholder="Digite o nome da empresa">
                       </div>
                       <div class="campo">
                         <label for="orgao_lotacao">Órgão de Lotação</label>
-                        <input type="text" id="orgao_lotacao" name="orgao_lotacao">
+                        <input type="text" id="orgao_lotacao" name="orgao_lotacao" placeholder="Digite o órgão de lotação">
                       </div>
                       <div class="campo">
                         <label for="historico_lotacao">Histórico de Lotação</label>
-                        <textarea id="historico_lotacao" name="historico_lotacao"></textarea>
+                        <textarea id="historico_lotacao" name="historico_lotacao" placeholder="Descreva o histórico de lotação"></textarea>
                       </div>
                     </fieldset>
                   </div>
                 </div>
               </li>
+
               <li class="card-session secao-interna-template">
                 <h2 class="secao-interna-template-header" onclick="changeSession(3)"><a href="#">
                     <div class="agenda-icon agora">
@@ -250,7 +238,7 @@
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
                         <label for="cep">CEP <span>*</span></label>
-                        <input type="text" id="cep" name="cep" placeholder="99999999" required oninput="buscarEndereco(this.value)">
+                        <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" required oninput="buscarEndereco(this.value)">
                       </div>
 
                       <div class="form-2-colum">
@@ -289,40 +277,39 @@
                         </div>
                         <div class="campo">
                           <label for="cidade">Cidade <span>*</span></label>
-                          <input type="text" id="cidade" name="cidade" required>
+                          <input type="text" id="cidade" name="cidade" required placeholder="Digite a cidade">
                         </div>
                       </div>
                       <div class="campo">
                         <label for="bairro">Bairro <span>*</span></label>
-                        <input type="text" id="bairro" name="bairro" required>
+                        <input type="text" id="bairro" name="bairro" required placeholder="Digite o bairro">
                       </div>
                       <div class="campo">
                         <label for="rua">Rua</label>
-                        <input type="text" id="rua" name="rua">
+                        <input type="text" id="rua" name="rua" placeholder="Digite a rua">
                       </div>
                       <div class="form-2-colum">
                         <div class="campo">
                           <label for="numero">Número</label>
-                          <input type="number" id="numero" name="numero">
+                          <input type="number" id="numero" name="numero" placeholder="Digite o número">
                         </div>
                         <div class="campo">
                           <label for="complemento">Complemento</label>
-                          <input type="text" id="complemento" name="complemento">
+                          <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
                         </div>
                       </div>
 
                       <div class="campo ocultar">
                         <label for="latitude">Latitude</label>
-                        <input type="number" id="latitude" name="latitude" step="0.000001">
+                        <input type="number" id="latitude" name="latitude" step="0.000001" placeholder="Digite a latitude">
                       </div>
                       <div class="campo ocultar">
                         <label for="longitude">Longitude</label>
-                        <input type="number" id="longitude" name="longitude" step="0.000001">
+                        <input type="number" id="longitude" name="longitude" step="0.000001" placeholder="Digite a longitude">
                       </div>
                       <div class="campo">
                         <label for="eleitores_residentes">Quantidade de Eleitores residentes</label>
-                        <input type="number" id="eleitores_residentes" name="eleitores_residentes" min="0" step="1" title="Apenas números são permitidos">
-                        <!-- Possibilidade de abrir mais campos para eleitores residentes -->
+                        <input type="number" id="eleitores_residentes" name="eleitores_residentes" min="0" step="1" title="Apenas números são permitidos" placeholder="Digite a quantidade de eleitores residentes">
                       </div>
                       <div class="campo">
                         <label for="residencia_apoio">Residência de apoio</label>
@@ -338,6 +325,7 @@
                   </div>
                 </div>
               </li>
+
               <li class="card-session secao-interna-template">
                 <h2 class="secao-interna-template-header" onclick="changeSession(4)"><a href="#">
                     <div class="agenda-icon agora">
@@ -362,11 +350,11 @@
                       <div id="camposConjuge" style="display: none;">
                         <div class="campo">
                           <label for="nome_conjuge">Nome do Cônjuge</label>
-                          <input type="text" id="nome_conjuge" name="nome_conjuge">
+                          <input type="text" id="nome_conjuge" name="nome_conjuge" placeholder="Digite o nome do cônjuge">
                         </div>
                         <div class="campo">
                           <label for="data_nascimento_conjuge">Data de Nascimento do Cônjuge</label>
-                          <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge">
+                          <input type="date" id="data_nascimento_conjuge" name="data_nascimento_conjuge" placeholder="dd/mm/aaaa">
                         </div>
                       </div>
                       <div class="campo">
@@ -380,17 +368,17 @@
                       </div>
                       <div class="campo">
                         <label for="religiao">Religião</label>
-                        <input type="text" id="religiao" name="religiao">
+                        <input type="text" id="religiao" name="religiao" placeholder="Digite a religião">
                       </div>
                       <div class="campo">
                         <label for="profissao">Profissão</label>
-                        <input type="text" id="profissao" name="profissao">
+                        <input type="text" id="profissao" name="profissao" placeholder="Digite a profissão">
                       </div>
-
                     </fieldset>
                   </div>
                 </div>
               </li>
+
               <li class="card-session secao-interna-template">
                 <h2 class="secao-interna-template-header" onclick="changeSession(5)"><a href="#">
                     <div class="agenda-icon agora">
@@ -403,14 +391,13 @@
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
                         <label for="indicacao">Indicação</label>
-                        <input type="text" id="indicacao" name="indicacao">
+                        <input type="text" id="indicacao" name="indicacao" placeholder="Digite a indicação">
                       </div>
-
                     </fieldset>
-
                   </div>
                 </div>
               </li>
+
               <div class="botoes">
                 <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
               </div>
@@ -419,11 +406,11 @@
         </div>
       </section>
     </main>
+
   </div>
 
 
   <script src="./static/js/BuscaEndereco.js"></script>
-  <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/FormContato.js"></script>
   <script src="./static/js/NavSecoes.js"></script>
 

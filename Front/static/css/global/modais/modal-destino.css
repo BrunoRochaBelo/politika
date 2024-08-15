@@ -208,7 +208,7 @@
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  background-color: var(--btn-principal-alt);
+  background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
   border: none;
   cursor: pointer;
@@ -238,7 +238,7 @@
 
 @media only screen and (max-width: 56.25rem) {
   .modal-destino-content {
-    margin: 20% auto;
+    margin: 45px auto;
     width: 85%;
   }
 

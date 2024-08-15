@@ -119,7 +119,7 @@
 .calendario-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
   box-shadow: var(--sombra-leve);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
@@ -150,12 +150,12 @@
 }
 
 .calendario-small-card-expanded .calendario-small-card-type {
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
 }
 
 .calendario-small-card-expanded .calendario-small-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
 }
 
 /* ---------------------------------------------------------------- */
@@ -265,7 +265,7 @@
 .calendario-large-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
   box-shadow: var(--sombra-leve);
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
@@ -288,7 +288,7 @@
   gap: 30px;
 }
 .calendario-large-card-expanded .calendario-large-card-type {
-  color: var(--txt-destaque);
+  color: var(--txt-card-aberto);
 }
 .calendario-large-card-expanded .calendario-large-card-title {
   border-left: 4px solid var(--card-aberto-detalhe);

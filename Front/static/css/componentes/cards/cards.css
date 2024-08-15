@@ -7,7 +7,7 @@
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 /* Pequeno altura 35px*/
@@ -18,7 +18,7 @@
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 /* Médio altura 50px*/
@@ -29,7 +29,7 @@
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 /* Grande altura 150px*/
@@ -41,7 +41,7 @@
   border-radius: 6px;
   padding: 15px 15px;
   gap: 0.625rem;
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 
@@ -78,7 +78,7 @@
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   padding: 15px 20px;
 }
@@ -94,7 +94,7 @@
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: var(--font-light);
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 .card-select-s {
@@ -105,7 +105,7 @@
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: var(--font-medium-regular);
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 .card-select-m {
@@ -115,7 +115,7 @@
   box-shadow: var(--sombra-moderada);
   padding: 15px 15px;
   border-radius: 6px;
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
 }
 
@@ -135,7 +135,7 @@
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 20px 15px 10px 15px;
-  border: none;
+  border: 1px solid var(--card-borda);
   grid:
     "card-empty-card-title" auto
     "card-empty-card-add" auto;
@@ -171,7 +171,7 @@
   background: var(--btn-filtro) !important;
   color: var(--txt-subtitulo) !important;
   box-shadow: var(--sombra-moderada);
-  border: none;
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -225,14 +225,14 @@
   .card-select-xs,
   .card-select-s,
   .card-select-m {
-    border: none;
+    border: 1px solid var(--card-borda);
     box-shadow: var(--sombra-moderada);
     border-radius: 6px;
   }
   .card-tmf-s,
   .card-tmf-m,
   .card-tmf-l {
-    border: none;
+    border: 1px solid var(--card-borda);
     box-shadow: var(--sombra-moderada);
     border-radius: 15px;
   }

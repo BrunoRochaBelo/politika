@@ -1,7 +1,7 @@
 const STATIC_CACHE_NAME = "static-cache-v2";
 const DYNAMIC_CACHE_NAME = "dynamic-cache-v1";
 const API_CACHE_NAME = "api-cache-v1";
-const MAX_CACHE_ITEMS = 50;
+const MAX_CACHE_ITEMS = 100;
 
 const urlsToCache = [
   "/",
@@ -240,13 +240,24 @@ self.addEventListener("fetch", (event) => {
   }
 });
 
-self.addEventListener("message", (event) => {
-  if (event.data.action === "skipWaiting") {
-    self.skipWaiting();
-    console.log("Service Worker: skipWaiting");
-  }
-  if (event.data.action === "claimClients") {
-    self.clients.claim();
-    console.log("Service Worker: claimClients");
+self.addEventListener("fetch", (event) => {
+  const { request } = event;
+  const requestURL = new URL(request.url);
+
+  if (urlsToCache.includes(requestURL.pathname)) {
+    // Verificar se o recurso é crítico para renderização dinâmica
+    if (
+      requestURL.pathname.endsWith(".js") ||
+      requestURL.pathname.endsWith(".css")
+    ) {
+      // Pode-se forçar um network-first para esses recursos para garantir a atualização
+      event.respondWith(networkFirst(event));
+    } else {
+      event.respondWith(cacheFirst(event));
+    }
+  } else if (API_URLS.includes(requestURL.pathname)) {
+    event.respondWith(networkFirst(event));
+  } else {
+    event.respondWith(networkFirst(event));
   }
 });

@@ -148,7 +148,7 @@
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
   }
   .header-nav {
-    background: var(--container-bg);
+    background-color: var(--container-bg);
     backdrop-filter: blur(10px);
     border-top: 1px solid var(--borda);
     position: fixed;
@@ -157,6 +157,7 @@
     transform: translateX(-50%);
     width: 100%;
     z-index: 2000;
+    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out;
   }
   .header-search {
     grid-area: header-search;
