@@ -166,11 +166,6 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/hoje.svg",
-      "sizes": "256x256",
-      "type": "image/svg+xml"
-    },
-    {
       "src": "./static/imagens/icones/home.svg",
       "sizes": "256x256",
       "type": "image/svg+xml"
@@ -207,11 +202,6 @@
     },
     {
       "src": "./static/imagens/icones/notificação-select.svg",
-      "sizes": "256x256",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "./static/imagens/icones/notificado.svg",
       "sizes": "256x256",
       "type": "image/svg+xml"
     },
@@ -282,16 +272,6 @@
     },
     {
       "src": "./static/imagens/icones/tarefas-select.svg",
-      "sizes": "256x256",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "./static/imagens/icones/visualização em card.svg",
-      "sizes": "256x256",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "./static/imagens/icones/visualização em lista.svg",
       "sizes": "256x256",
       "type": "image/svg+xml"
     },

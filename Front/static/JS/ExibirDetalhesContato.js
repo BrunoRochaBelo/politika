@@ -161,7 +161,7 @@ listaDeCards.forEach((card) => {
   if (btnVisualizar) {
     btnVisualizar.addEventListener("click", function (event) {
       event.stopPropagation(); // Impede a propagação do evento de clique
-      window.location.href = "view-contato.html"; // Redireciona para a página de visualização
+      window.location.href = "contato_exibir.html"; // Redireciona para a página de visualização
     });
   }
 });

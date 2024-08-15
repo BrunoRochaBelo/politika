@@ -25,6 +25,7 @@ legend {
 }
 
 .campo {
+  position: relative;
   background: none;
   padding: 12px 0;
   border-radius: 5px;
@@ -301,6 +302,83 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   color: var(--txt-titulo-card);
 }
 
+/* Estilos "switch" para checkboxes */
+
+.switch-container {
+  position: relative;
+  display: inline;
+  width: 60px;
+  height: 34px;
+}
+.form-checkbox {
+  width: 0;
+  height: 0;
+}
+.switch-label {
+  position: relative;
+  padding-left: 60px;
+  cursor: pointer;
+  display: inline;
+  color: var(--txt-subtitulo);
+}
+.switch-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 52px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--input-empty-bg);
+  transition: background-color 0.2s;
+}
+.form-checkbox:checked + .switch-label:before {
+  background: var(--cor-secundaria-2);
+}
+.switch-label:after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: var(--input-icon);
+  transition: left 0.2s;
+  box-shadow: var(--sombra-leve);
+}
+.form-checkbox:checked + .switch-label:after {
+  left: 27px;
+}
+
+.checkbox-label {
+  display: inline;
+  padding: 10px 20px;
+  color: var(--cor-primaria-1);
+  border: 2px solid var(--cor-primaria-1);
+  border-radius: 7px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 0px;
+}
+
+.checkbox-label:hover {
+  background-color: #9d9d9d4d;
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-label {
+  background-color: var(--cor-secundaria-2);
+  color: white;
+}
+.form-contato-checkbox:checked + .checkbox-label {
+  background-color: var(--cor-secundaria-2);
+  color: white;
+}
+
 /* Estilos para Validações */
 .campo input[required].error,
 .campo textarea[required].error,
@@ -373,31 +451,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin: 0px 10px 10px 10px;
     box-shadow: var(--sombra-leve);
   }
-}
 
-.campo {
-  position: relative;
-}
-.suggestions {
-  border: none;
-  border-radius: 0px 0px 12px 12px;
-  max-height: 150px;
-  overflow-y: auto;
-  background-color: hsl(218, 80%, 80%);
-  position: absolute;
-  width: calc(100% - 20px);
-  margin: 0 5px;
-  padding: 0;
-  list-style: none;
-}
-.suggestions li {
-  padding: 8px;
-  cursor: pointer;
-}
-.suggestions li:hover {
-  background-color: hsl(218, 80%, 85%);
-}
-.error {
-  color: red;
-  font-weight: bold;
+  .checkbox-label:hover {
+    background-color: #00000000;
+  }
+  .switch-label:before {
+    background: var(--input-empty-bg);
+  }
 }

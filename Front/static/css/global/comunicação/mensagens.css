@@ -1,4 +1,9 @@
 /* Estilo das Mensagens de Erro */
+.error {
+  color: red;
+  font-weight: bold;
+}
+
 .message-error {
   color: var(--message-error-txt);
   background-color: var(--erro);

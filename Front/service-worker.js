@@ -45,7 +45,6 @@ const urlsToCache = [
   "/static/imagens/icones/futuro.svg",
   "/static/imagens/icones/gerenciar-conta.svg",
   "/static/imagens/icones/historico.svg",
-  "/static/imagens/icones/hoje.svg",
   "/static/imagens/icones/home.svg",
   "/static/imagens/icones/home-select.svg",
   "/static/imagens/icones/identificação.svg",
@@ -54,7 +53,6 @@ const urlsToCache = [
   "/static/imagens/icones/moon.svg",
   "/static/imagens/icones/notificação.svg",
   "/static/imagens/icones/notificação-select.svg",
-  "/static/imagens/icones/notificado.svg",
   "/static/imagens/icones/passado.svg",
   "/static/imagens/icones/perfil.svg",
   "/static/imagens/icones/perfil-select.svg",
@@ -69,8 +67,6 @@ const urlsToCache = [
   "/static/imagens/icones/sun.svg",
   "/static/imagens/icones/tarefas.svg",
   "/static/imagens/icones/tarefas-select.svg",
-  "/static/imagens/icones/visualização em card.svg",
-  "/static/imagens/icones/visualização em lista.svg",
   "/static/imagens/icones/voltar.svg",
   "/static/imagens/icones/whatsapp-icon.svg",
   "/static/scripts/AlterarEsquemaDeCores.js",
@@ -78,6 +74,7 @@ const urlsToCache = [
   "/static/scripts/BarraPesquisaContato.js",
   "/static/scripts/BuscaEndereco.js",
   "/static/scripts/DashboardCentroCustoDespesas.js",
+  "/static/scripts/DespesaSearchAll.js",
   "/static/scripts/ExibirAniversAriantes.js",
   "/static/scripts/ExibirDetalhesAniversariante.js",
   "/static/scripts/ExibirDetalhesContato.js",
@@ -86,17 +83,18 @@ const urlsToCache = [
   "/static/scripts/ExibirDetalhesPleito.js",
   "/static/scripts/ExibirDetalhesTarefa.js",
   "/static/scripts/FiltroBtnPerfilInfluencia.js",
-  "/static/scripts/FormContato.js",
   "/static/scripts/FormContatoFormatarCampos.js",
-  "/static/scripts/FormContatoValidarCampos.js",
   "/static/scripts/GcContaCorrente.js",
   "/static/scripts/GcPerfil.js",
-  "/static/scripts/HistoricoDeligacoes.js",
+  "/static/scripts/HistoricoDeLigacoes.js",
+  "/static/scripts/IncluirContato.js",
+  "/static/scripts/IncluirEmpresa.js",
   "/static/scripts/ManipularHistorico.js",
   "/static/scripts/ModalBTNFloating.js",
   "/static/scripts/ModalConcluirPleito.js",
   "/static/scripts/ModalDespacharPleito.js",
   "/static/scripts/ModalDestino.js",
+  "/static/scripts/ModalMaisApps.js",
   "/static/scripts/ModalMenu.js",
   "/static/scripts/ModalNotificacoes.js",
   "/static/scripts/NavAbasInternas.js",
@@ -107,6 +105,7 @@ const urlsToCache = [
   "/static/scripts/OcultarExibirFiltro.js",
   "/static/scripts/RecuarExpandirHorizontal.js",
   "/static/scripts/RecuarExpandirVertical.js",
+  "/static/scripts/RegisterSW.js",
   "/static/scripts/ScrollRemoverItensCalendario.js",
   "/static/scripts/ScrollRemoverItensDespesa.js",
   "/static/scripts/SombraHeaderScroll.js",
@@ -117,13 +116,13 @@ const API_URLS = ["/api/endpoint1", "/api/endpoint2"];
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE_NAME).then((cache) => {
-      console.log("Static cache aberto");
+      console.log("Static cache opened");
       return cache.addAll(urlsToCache).catch((error) => {
-        console.error("Falha ao adicionar recursos ao cache:", error);
+        console.error("Failed to add resources to cache:", error);
       });
     })
   );
-  console.log("Service Worker instalado");
+  console.log("Service Worker installed");
 });
 
 self.addEventListener("activate", (event) => {
@@ -141,7 +140,7 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-  console.log("Service Worker ativado");
+  console.log("Service Worker activated");
   return self.clients.claim();
 });
 
@@ -199,46 +198,6 @@ function limitCacheSize(name, size) {
     });
   });
 }
-
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
-  const requestURL = new URL(request.url);
-
-  if (urlsToCache.includes(requestURL.pathname)) {
-    event.respondWith(cacheFirst(event));
-  } else if (API_URLS.includes(requestURL.pathname)) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const clonedResponse = response.clone();
-          if (response && response.status === 200) {
-            caches.open(API_CACHE_NAME).then((cache) => {
-              cache.put(request, clonedResponse);
-            });
-          }
-          console.log(`API fetch success: ${request.url}`);
-          return response;
-        })
-        .catch(() => {
-          console.log(`API fetch failure: ${request.url}`);
-          return caches.match(request).then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
-            } else {
-              return new Response(
-                JSON.stringify({
-                  error: "API request failed and no cached data available.",
-                }),
-                { headers: { "Content-Type": "application/json" } }
-              );
-            }
-          });
-        })
-    );
-  } else {
-    event.respondWith(networkFirst(event));
-  }
-});
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;

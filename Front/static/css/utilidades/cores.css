@@ -55,24 +55,24 @@
   --modal-conteudo: hsl(218, 57%, 82%);
 
   /* Formulários e Inputs */
-  --form-container-bg: hsl(218, 20%, 16%);
-  --form-card-bg: hsl(218, 22%, 22%);
-  --form-card-aberto-bg: hsl(218, 24%, 20%);
-  --input-empty-bg: hsl(218, 22%, 24%);
-  --input-border: hsl(218, 24%, 32%);
-  --input-filled-bg: hsl(218, 24%, 26%);
-  --input-label: hsl(218, 52%, 72%);
-  --input-placeholder: hsl(218, 24%, 57%);
-  --input-txt: hsl(218, 24%, 82%);
-  --input-icon: hsl(218, 24%, 77%);
-  --btn-clear: hsl(218, 20%, 62%);
-  --btn-clear-hover: hsl(218, 20%, 67%);
-  --input-focus-border: hsl(218, 72%, 62%);
-  --input-focus-bg: hsl(218, 24%, 26%);
-  --input-error-border: hsl(0, 77%, 57%);
-  --input-error-bg: hsl(0, 72%, 52%);
-  --input-success-border: hsl(140, 77%, 57%);
-  --input-success-bg: hsl(140, 72%, 52%);
+  --form-container-bg: hsl(214, 14%, 16%);
+  --form-card-bg: hsl(214, 16%, 23%);
+  --form-card-aberto-bg: hsl(214, 16%, 16%);
+  --input-empty-bg: hsl(214, 16%, 25%);
+  --input-border: hsl(214, 16%, 33%);
+  --input-filled-bg: hsl(214, 16%, 28%);
+  --input-label: hsl(214, 45%, 75%);
+  --input-placeholder: hsl(214, 20%, 60%);
+  --input-txt: hsl(214, 20%, 85%);
+  --input-icon: hsl(214, 20%, 80%);
+  --btn-clear: hsl(214, 15%, 65%);
+  --btn-clear-hover: hsl(214, 15%, 70%);
+  --input-focus-border: hsl(214, 75%, 65%);
+  --input-focus-bg: hsl(214, 16%, 28%);
+  --input-error-border: hsl(0, 70%, 55%);
+  --input-error-bg: hsl(0, 65%, 50%);
+  --input-success-border: hsl(140, 70%, 55%);
+  --input-success-bg: hsl(140, 65%, 50%);
 
   /* Botões */
   --btn-principal: hsl(220, 72%, 57%);

@@ -98,3 +98,24 @@
     transform: rotate(360deg);
   }
 }
+
+/* Estilos para listas de sugestões */
+.suggestions {
+  border: none;
+  border-radius: 0px 0px 12px 12px;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: hsl(218, 80%, 80%);
+  position: absolute;
+  width: calc(100% - 20px);
+  margin: 0 5px;
+  padding: 0;
+  list-style: none;
+}
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
+.suggestions li:hover {
+  background-color: hsl(218, 80%, 85%);
+}

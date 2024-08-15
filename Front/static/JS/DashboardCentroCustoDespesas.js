@@ -59,38 +59,42 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  const ctx = document.getElementById("expense-chart").getContext("2d");
-  if (!ctx) {
-    console.error("Elemento canvas não encontrado.");
-    return;
-  }
+  let chart;
 
-  const chart = new Chart(ctx, {
-    type: "doughnut",
-    data: {
-      datasets: [
-        {
-          data: [],
-          backgroundColor: [],
-          borderColor: "hsl(210, 14%, 15%)",
-          borderWidth: 1,
+  const createChart = () => {
+    const ctx = document.getElementById("expense-chart").getContext("2d");
+    if (!ctx) {
+      console.error("Elemento canvas não encontrado.");
+      return;
+    }
+
+    chart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        datasets: [
+          {
+            data: [],
+            backgroundColor: [],
+            borderColor: "hsl(210, 14%, 15%)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        cutout: "70%",
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: {
+            display: false,
+          },
         },
-      ],
-    },
-    options: {
-      cutout: "70%",
-      responsive: true,
-      maintainAspectRatio: true,
-      plugins: {
-        legend: {
-          display: false,
+        layout: {
+          padding: 0,
         },
       },
-      layout: {
-        padding: 0,
-      },
-    },
-  });
+    });
+  };
 
   const getColor = (percentage) => {
     if (percentage > 90) return "#dc3545";
@@ -102,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingIndicatorContent.classList.remove("dashboard-hidden");
     loadingIndicatorContent.classList.add("dashboard-visible");
 
-    // Se o dashboard estiver oculto, mostrar o loadingIndicatorHeader
     if (
       dashboardContent.style.height === "0px" ||
       dashboardContent.style.height === "0"
@@ -119,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingIndicatorContent.classList.remove("dashboard-visible");
     loadingIndicatorContent.classList.add("dashboard-hidden");
 
-    // Esconder o loadingIndicatorHeader e mostrar o availableValue
     loadingIndicatorHeader.classList.remove("dashboard-visible");
     loadingIndicatorHeader.classList.add("dashboard-hidden");
 
@@ -171,9 +173,13 @@ document.addEventListener("DOMContentLoaded", () => {
         index === 0 ? getColor(spentPercentage) : "#101319"
       );
 
-      chart.data.datasets[0].data = data;
-      chart.data.datasets[0].backgroundColor = backgroundColor;
-      chart.update();
+      if (chart) {
+        chart.data.datasets[0].data = data;
+        chart.data.datasets[0].backgroundColor = backgroundColor;
+        chart.update();
+      } else {
+        createChart();
+      }
 
       availableValue.style.color = getColor(spentPercentage);
 
@@ -208,8 +214,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   };
 
+  // Evento para redimensionamento da tela
+  window.addEventListener("resize", () => {
+    if (chart) {
+      chart.resize();
+    } else {
+      createChart();
+      updateDashboard(costCenterSelect.value);
+    }
+  });
+
+  // Evento para mudança de aba
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      if (!chart) {
+        createChart();
+      }
+      updateDashboard(costCenterSelect.value);
+    }
+  });
+
+  // Verifica se a página foi carregada parcialmente via AJAX
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!chart) {
+      createChart();
+    }
+    updateDashboard(costCenterSelect.value);
+  });
+
   costCenterSelect.addEventListener("change", (e) =>
     updateDashboard(e.target.value)
   );
+
+  // Inicializar o gráfico ao carregar a página
+  createChart();
   updateDashboard(costCenterSelect.value);
 });
