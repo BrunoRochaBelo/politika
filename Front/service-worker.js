@@ -1,9 +1,13 @@
-const STATIC_CACHE_NAME = "static-cache-v2";
-const DYNAMIC_CACHE_NAME = "dynamic-cache-v1";
+const STATIC_CACHE_NAME = "static-cache-v1"; // Manter nome fixo
+const DYNAMIC_CACHE_NAME = "dynamic-cache-v1"; // Manter nome fixo
 const API_CACHE_NAME = "api-cache-v1";
+const FONT_CACHE_NAME = "font-cache-v1";
+const IMAGE_CACHE_NAME = "image-cache-v1";
+const EXTERNAL_CACHE_NAME = "external-cache-v1";
 const MAX_CACHE_ITEMS = 100;
 
-const urlsToCache = [
+// URLs para o cache estático
+const staticUrlsToCache = [
   "/",
   "/index.html",
   "/login.html",
@@ -14,6 +18,10 @@ const urlsToCache = [
   "/offline.html",
   "/styles.css",
   "/tarefas.html",
+];
+
+// URLs de imagens e ícones para o cache de imagens
+const imageUrlsToCache = [
   "/static/imagens/logo/logo.png",
   "/static/imagens/icones/1-estrela.svg",
   "/static/imagens/icones/2-estrela.svg",
@@ -69,6 +77,16 @@ const urlsToCache = [
   "/static/imagens/icones/tarefas-select.svg",
   "/static/imagens/icones/voltar.svg",
   "/static/imagens/icones/whatsapp-icon.svg",
+];
+
+// URLs de fontes para o cache de fontes
+const fontUrlsToCache = [
+  "/static/fonts/font1.woff2",
+  "/static/fonts/font2.woff2",
+];
+
+// URLs de scripts para o cache dinâmico (se necessário)
+const scriptUrlsToCache = [
   "/static/scripts/AlterarEsquemaDeCores.js",
   "/static/scripts/AtualizarListaDeArquivos.js",
   "/static/scripts/BarraPesquisaContato.js",
@@ -111,18 +129,35 @@ const urlsToCache = [
   "/static/scripts/SombraHeaderScroll.js",
 ];
 
+// URLs de APIs que podem ser cacheadas dinamicamente
 const API_URLS = ["/api/endpoint1", "/api/endpoint2"];
+
+// URLs externas que precisam ser cacheadas
+const EXTERNAL_RESOURCES = [
+  "https://fonts.googleapis.com",
+  "https://cdn.jsdelivr.net",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE_NAME).then((cache) => {
-      console.log("Static cache opened");
-      return cache.addAll(urlsToCache).catch((error) => {
-        console.error("Failed to add resources to cache:", error);
-      });
+    Promise.all([
+      caches
+        .open(STATIC_CACHE_NAME)
+        .then((cache) => cache.addAll(staticUrlsToCache)),
+      caches
+        .open(IMAGE_CACHE_NAME)
+        .then((cache) => cache.addAll(imageUrlsToCache)),
+      caches
+        .open(FONT_CACHE_NAME)
+        .then((cache) => cache.addAll(fontUrlsToCache)),
+      caches
+        .open(DYNAMIC_CACHE_NAME)
+        .then((cache) => cache.addAll(scriptUrlsToCache)),
+    ]).catch((error) => {
+      console.error("Falha ao adicionar recursos ao cache:", error);
     })
   );
-  console.log("Service Worker installed");
+  self.skipWaiting(); // Força a ativação imediata do Service Worker atualizado
 });
 
 self.addEventListener("activate", (event) => {
@@ -130,32 +165,63 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames
-          .filter(
-            (cacheName) =>
-              cacheName !== STATIC_CACHE_NAME &&
-              cacheName !== DYNAMIC_CACHE_NAME &&
-              cacheName !== API_CACHE_NAME
-          )
+          .filter((cacheName) => {
+            return ![
+              STATIC_CACHE_NAME,
+              DYNAMIC_CACHE_NAME,
+              API_CACHE_NAME,
+              FONT_CACHE_NAME,
+              IMAGE_CACHE_NAME,
+              EXTERNAL_CACHE_NAME,
+            ].includes(cacheName);
+          })
           .map((cacheName) => caches.delete(cacheName))
       );
     })
   );
-  console.log("Service Worker activated");
-  return self.clients.claim();
+  return self.clients.claim(); // Garante que o novo Service Worker assume o controle imediatamente
 });
 
-function cacheFirst(event) {
-  return caches.match(event.request).then((cachedResponse) => {
-    if (cachedResponse) {
-      console.log(`Cache hit: ${event.request.url}`);
-      return cachedResponse;
+self.addEventListener("fetch", (event) => {
+  const { request } = event;
+  const requestURL = new URL(request.url);
+
+  if (requestURL.origin === location.origin) {
+    if (staticUrlsToCache.includes(requestURL.pathname)) {
+      event.respondWith(cacheFirst(request, STATIC_CACHE_NAME));
+    } else if (API_URLS.includes(requestURL.pathname)) {
+      event.respondWith(networkFirst(request));
+    } else if (
+      fontUrlsToCache.some((url) => requestURL.pathname.includes(url))
+    ) {
+      event.respondWith(cacheFirst(request, FONT_CACHE_NAME));
+    } else if (
+      imageUrlsToCache.some((url) => requestURL.pathname.includes(url))
+    ) {
+      event.respondWith(cacheFirst(request, IMAGE_CACHE_NAME));
+    } else if (scriptUrlsToCache.includes(requestURL.pathname)) {
+      event.respondWith(networkFirst(request));
+    } else {
+      event.respondWith(networkFirst(request));
     }
-    console.log(`Cache miss: ${event.request.url}`);
-    return fetch(event.request).then((networkResponse) => {
+  } else if (
+    EXTERNAL_RESOURCES.some((resource) => requestURL.href.startsWith(resource))
+  ) {
+    event.respondWith(externalCache(request));
+  } else {
+    event.respondWith(networkFirst(request));
+  }
+});
+
+function cacheFirst(request, cacheName) {
+  return caches.match(request).then((cachedResponse) => {
+    if (cachedResponse) return cachedResponse;
+
+    return fetch(request).then((networkResponse) => {
       if (networkResponse && networkResponse.status === 200) {
-        return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
-          cache.put(event.request, networkResponse.clone());
-          limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
+        return caches.open(cacheName).then((cache) => {
+          cache.put(request, networkResponse.clone());
+          limitCacheSize(cacheName, MAX_CACHE_ITEMS);
           return networkResponse;
         });
       }
@@ -163,60 +229,48 @@ function cacheFirst(event) {
   });
 }
 
-function networkFirst(event) {
-  return fetch(event.request)
+function networkFirst(request) {
+  return fetch(request)
     .then((networkResponse) => {
       if (networkResponse && networkResponse.status === 200) {
         return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
-          cache.put(event.request, networkResponse.clone());
+          cache.put(request, networkResponse.clone());
           limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
-          console.log(`Network success: ${event.request.url}`);
           return networkResponse;
         });
       }
     })
-    .catch(() => {
-      return caches.match(event.request).then((cachedResponse) => {
-        if (cachedResponse) {
-          console.log(`Cache fallback: ${event.request.url}`);
-          return cachedResponse;
-        } else if (event.request.headers.get("accept").includes("text/html")) {
-          console.log(`Offline fallback: ${event.request.url}`);
-          return caches.match("/offline.html");
-        }
-      });
+    .catch(() =>
+      caches
+        .match(request)
+        .then(
+          (cachedResponse) => cachedResponse || caches.match("/offline.html")
+        )
+    );
+}
+
+function externalCache(request) {
+  return caches.match(request).then((cachedResponse) => {
+    if (cachedResponse) return cachedResponse;
+
+    return fetch(request).then((networkResponse) => {
+      if (networkResponse && networkResponse.status === 200) {
+        return caches.open(EXTERNAL_CACHE_NAME).then((cache) => {
+          cache.put(request, networkResponse.clone());
+          limitCacheSize(EXTERNAL_CACHE_NAME, MAX_CACHE_ITEMS);
+          return networkResponse;
+        });
+      }
     });
+  });
 }
 
 function limitCacheSize(name, size) {
   caches.open(name).then((cache) => {
     cache.keys().then((keys) => {
       if (keys.length > size) {
-        console.log(`Cache limit exceeded: deleting ${keys[0].url}`);
         cache.delete(keys[0]).then(() => limitCacheSize(name, size));
       }
     });
   });
 }
-
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
-  const requestURL = new URL(request.url);
-
-  if (urlsToCache.includes(requestURL.pathname)) {
-    // Verificar se o recurso é crítico para renderização dinâmica
-    if (
-      requestURL.pathname.endsWith(".js") ||
-      requestURL.pathname.endsWith(".css")
-    ) {
-      // Pode-se forçar um network-first para esses recursos para garantir a atualização
-      event.respondWith(networkFirst(event));
-    } else {
-      event.respondWith(cacheFirst(event));
-    }
-  } else if (API_URLS.includes(requestURL.pathname)) {
-    event.respondWith(networkFirst(event));
-  } else {
-    event.respondWith(networkFirst(event));
-  }
-});

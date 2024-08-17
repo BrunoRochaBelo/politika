@@ -1,0 +1,172 @@
+/* Estilo para o ícone de exclusão */
+.icone-excluir {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.icone-excluir:hover {
+  transform: scale(1.2);
+}
+
+.icone-excluir:active {
+  opacity: 0.6; /* Feedback visual ao clicar no ícone */
+}
+
+/* Estilo específico para o contador de itens no campo de Bens e Serviços */
+#contadorItens {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--txt-subtitulo);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animação de fade-in para itens adicionados */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animação de fade-out e encolhimento para itens removidos */
+@keyframes fadeOutShrink {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* Aplica a animação de fade-in ao adicionar um item */
+.table-row-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Aplica a animação de fade-out ao remover um item */
+.table-row-fade-out {
+  animation: fadeOutShrink 0.5s forwards;
+}
+
+/* Animação de pulsação para o contador */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Aplica a animação de pulse ao contador de itens */
+.contador-pulse {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Estilo para feedback visual ao adicionar um item */
+.btn-principal-alt.btn-feedback {
+  box-shadow: 0px 0px 8px 2px rgba(0, 123, 255, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo da tabela de histórico */
+.tabela-historico {
+  background: var(--container-bg);
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.tabela-historico table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-historico th,
+.tabela-historico td {
+  padding: 8px;
+  text-align: left;
+  color: var(--txt-conteudo-card);
+  border-bottom: 1px solid var(--bg-principal);
+}
+
+.tabela-historico th {
+  color: var(--txt-conteudo-card);
+}
+
+.tabela-historico tr {
+  margin-bottom: 10px;
+}
+
+.tabela-historico tr:last-child {
+  margin-bottom: 0;
+}
+
+.tabela-historico table tr:nth-child(odd) {
+  background-color: var(--container-bg);
+}
+
+.tabela-historico table tr:nth-child(even) {
+  background-color: var(--card-detalhe);
+}
+
+/* Estilos responsivos */
+@media only screen and (max-width: 56.25rem) {
+  .tabela-historico {
+    background: none;
+    padding: 10px;
+    border-spacing: 0 10px;
+  }
+
+  /* Faz com que as linhas se comportem como tabelas e as células como blocos */
+  .tabela-historico table,
+  .tabela-historico thead,
+  .tabela-historico tbody,
+  .tabela-historico th,
+  .tabela-historico td,
+  .tabela-historico tr {
+    display: block;
+  }
+
+  /* Remove a borda inferior das células */
+  .tabela-historico th,
+  .tabela-historico td {
+    border-bottom: none;
+  }
+
+  /* Adiciona uma borda superior para as células */
+  .tabela-historico th,
+  .tabela-historico td {
+    border-top: 1px solid var(--bg-principal);
+  }
+
+  /* Alinha o texto à esquerda e adiciona um pouco de padding */
+  .tabela-historico th,
+  .tabela-historico td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  /* Ajusta o layout para telas pequenas */
+  .tabela-historico td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 10px; /* Adiciona espaço no rótulo */
+    color: var(--txt-conteudo-card); /* Adiciona a cor ao rótulo */
+  }
+
+  /* Oculta o <tr> no modo responsivo */
+  .tabela-historico th {
+    display: none;
+  }
+}

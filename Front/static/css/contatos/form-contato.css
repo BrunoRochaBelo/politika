@@ -27,15 +27,30 @@
   height: 0;
 }
 
+/* Estilos ocultar seções */
+.hiddenCc {
+  display: none;
+}
+
+/* Estilo específico para as opções desabilitadas no <select> de Bens e Serviços */
+#bem_servico option.bens-servicos-option-disabled {
+  color: #999;
+  background-color: #f2f2f2;
+}
+#buttonAdicionarBensServices {
+  font-size: 12px;
+  padding: 8px 20px;
+  margin: 10px 0px 0px 10px;
+}
+
 @media only screen and (max-width: 56.25rem) {
   .tipo-contato {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-around;
   }
-}
-
-/* Estilos ocultar seções */
-.hiddenCc {
-  display: none;
+  #buttonAdicionarBensServices {
+    margin: 10px 10px 0px 0px;
+    float: right;
+  }
 }

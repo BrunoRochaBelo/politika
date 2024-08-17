@@ -168,16 +168,6 @@
                         <label for="longitude">Longitude</label>
                         <input type="number" id="longitude" name="longitude" step="0.000001" placeholder="Digite a longitude">
                       </div>
-                      <div class="campo">
-                        <label for="residencia_apoio">Residência de apoio</label>
-                        <div class="switch-container">
-                          <input type="checkbox" id="residencia_apoio_switch" class="form-checkbox" onchange="mostrarCampoResidenciaApoio()">
-                          <label for="residencia_apoio_switch" class="switch-label">
-                            <span class="switch-inner"></span>
-                            <span class="switch-switch"></span>
-                          </label>
-                        </div>
-                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -197,15 +187,48 @@
                     <fieldset>
                       <legend class="titulo-xl"></legend>
                       <div class="campo">
-                        <label for="bem_servico">Bens ou Serviço<span>*</span></label>
+                        <label for="bem_servico">Bens e Serviços<span>*</span></label>
                         <select id="bem_servico" name="bem_servico" required>
                           <option value="">Selecione</option>
-                          <!-- Insira aqui as opções de bens ou serviço -->
+                          <option value="mao_obra">Mão de Obra</option>
+                          <option value="grafica">Gráfica</option>
+                          <option value="impostos">Impostos</option>
+                          <option value="logistica">Logística</option>
+                          <option value="eletro_eletronico">Eletro-Eletrônico</option>
+                          <option value="material_expediente">Material de Expediente</option>
+                          <option value="alimentacao">Alimentação</option>
+                          <option value="aluguel_espaco">Aluguel de Espaço</option>
+                          <option value="aluguel_estruturas">Aluguel de Estruturas</option>
+                          <option value="celpe">CELPE</option>
+                          <option value="compesa">COMPESA</option>
+                          <option value="juridico">Jurídico</option>
+                          <option value="contabilidade">Contabilidade</option>
+                          <option value="telefonia_internet">Telefonia e Internet</option>
+                          <option value="hospedagem">Hospedagem</option>
+                          <option value="locucao">Locução</option>
+                          <option value="producao_video">Produção de Vídeo</option>
+                          <option value="producao_conteudo">Produção de Conteúdo</option>
+                          <option value="marketing">Marketing</option>
+                          <option value="redes_sociais">Redes Sociais</option>
                         </select>
+                        <button type="button" id="buttonAdicionarBensServices" class="btn-principal-alt adicionar-servico" onclick="adicionarServico()" disabled>Adicionar</button>
                       </div>
-                      <div class="campo">
-                        <label for="descricao">Descrição<span>*</span></label>
-                        <textarea id="descricao" name="descricao" required></textarea>
+                      <!-- Exibir contador de itens -->
+                      <div id="contadorItens" class="contador-itens">Total de itens adicionados: 0</div>
+                      <!-- Tabela para listar os itens adicionados -->
+                      <div class="tabela-historico">
+                        <table id="tabelaBemServico">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Produto / Serviço</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Linhas da tabela serão adicionadas dinamicamente -->
+                          </tbody>
+                        </table>
                       </div>
                     </fieldset>
                   </div>
@@ -228,6 +251,7 @@
   <script src="./static/js/BuscaEndereco.js"></script>
   <script src="./static/js/IncluirEmpresa.js"></script>
   <script src="./static/js/NavSecoes.js"></script>
+  <script src="./static/js/EmpresaIncluirListaArquivos.js"></script>
 
 </body>
 

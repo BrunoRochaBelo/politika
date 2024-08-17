@@ -45,7 +45,10 @@
                           <input type="text" id="nome_fantasia" name="nome_fantasia" required placeholder="Digite um apelido">
                         </div>
                       </div>
-
+                      <div class="campo">
+                        <label for="cpf">CPF<span>*</span></label>
+                        <input type="text" id="cpf" name="cpf" required placeholder="000.000.000.-00">
+                      </div>
                       <div class="campo">
                         <label for="telefonePrincipal">Telefone Principal <span>*</span></label>
                         <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
@@ -103,9 +106,7 @@
                           <label for="favorito">Favorito</label>
                         </div>
                       </div>
-                    </fieldset>
-                    <fieldset>
-                      <legend class="titulo-xl"></legend>
+
                       <div class="campo">
                         <label for="data_nascimento">Data de Nascimento</label>
                         <input type="date" id="data_nascimento" name="data_nascimento" placeholder="dd/mm/aaaa">
@@ -131,27 +132,6 @@
                             <option value="Indígena">Indígena</option>
                           </select>
                         </div>
-                      </div>
-                    </fieldset>
-                    <fieldset>
-                      <legend class="titulo-xl"></legend>
-                      <div class="campo">
-                        <label for="titulo_eleitor">Título de Eleitor</label>
-                        <input type="number" id="titulo_eleitor" name="titulo_eleitor" placeholder="Digite o título de eleitor">
-                      </div>
-                      <div class="form-2-colum">
-                        <div class="campo">
-                          <label for="zona_eleitoral">Zona Eleitoral</label>
-                          <input type="number" id="zona_eleitoral" name="zona_eleitoral" placeholder="Digite a zona eleitoral">
-                        </div>
-                        <div class="campo">
-                          <label for="secao_eleitoral">Seção Eleitoral</label>
-                          <input type="number" id="secao_eleitoral" name="secao_eleitoral" placeholder="Digite a seção eleitoral">
-                        </div>
-                      </div>
-                      <div class="campo">
-                        <label for="local_votacao">Local de Votação</label>
-                        <input type="text" id="local_votacao" name="local_votacao" placeholder="Digite o local de votação">
                       </div>
                       <div class="campo">
                         <label for="perfil_influencia">Perfil de Influência</label>
@@ -235,7 +215,7 @@
                 <div class="secao-interna-template-content">
                   <div class="session" id="secao3">
                     <fieldset>
-                      <legend class="titulo-xl"></legend>
+                      <legend class="titulo-xl title-legend">Residencial</legend>
                       <div class="campo">
                         <label for="cep">CEP <span>*</span></label>
                         <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" required oninput="buscarEndereco(this.value)">
@@ -320,6 +300,31 @@
                             <span class="switch-switch"></span>
                           </label>
                         </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend class="titulo-xl title-legend">Local de Votação</legend>
+                      <div class="form-2-colum">
+                        <div class="campo">
+                          <label for="estado">Estado:</label>
+                          <select class="card-select-m" id="estado" name="estado">
+                            <option value="PE">Pernambuco</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                          </select>
+                        </div>
+                        <div class="campo">
+                          <label for="cidade">Cidade:</label>
+                          <select class="card-select-m" id="cidade" name="cidade">
+                            <option value="todas" selected>todas</option>
+                            <!-- As opções de cidades serão adicionadas dinamicamente -->
+                          </select>
+                        </div>
+                      </div>
+                      <div class="campo">
+                        <label for="bairro">Bairro ou local:</label>
+                        <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
                       </div>
                     </fieldset>
                   </div>

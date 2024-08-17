@@ -17,11 +17,13 @@ fieldset {
   gap: 10px;
 }
 
-legend {
-  text-align: center;
+.title-legend {
+  text-align: start;
   font-size: 1.2em;
   font-weight: bold;
-  color: var(--txt-titulo-card);
+  color: var(--txt-nav-selecionado);
+  margin: 20px 0px 0px 0px;
+  padding: 20px;
 }
 
 .campo {

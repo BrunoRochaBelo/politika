@@ -28,6 +28,7 @@
 /* Componentes */
 @import "./componentes/listas.css";
 @import "./componentes/marcadores.css";
+@import "./componentes/tabelas.css";
 /* Componentes/ cards */
 @import "./componentes/cards/cards.css";
 @import "./componentes/cards/template-cards-aniversario.css";
