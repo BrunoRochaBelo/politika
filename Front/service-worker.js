@@ -186,6 +186,14 @@ self.addEventListener("fetch", (event) => {
   const { request } = event;
   const requestURL = new URL(request.url);
 
+  // Ignorar requests que não são suportados (como 'chrome-extension' e 'data')
+  if (
+    requestURL.protocol === "chrome-extension:" ||
+    requestURL.protocol === "data:"
+  ) {
+    return;
+  }
+
   if (requestURL.origin === location.origin) {
     if (staticUrlsToCache.includes(requestURL.pathname)) {
       event.respondWith(cacheFirst(request, STATIC_CACHE_NAME));

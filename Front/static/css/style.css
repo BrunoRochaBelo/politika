@@ -56,7 +56,6 @@
 /* calendario */
 @import "./calendario/aniversariantes.css";
 @import "./calendario/calendario-style.css";
-@import "./calendario/tarefas.css";
 
 /* tarefas */
 @import "./tarefas/tarefas-style.css";

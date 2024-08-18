@@ -62,9 +62,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let chart;
 
   const createChart = () => {
+    console.log("Tentando criar o gráfico...");
+
     const ctx = document.getElementById("expense-chart").getContext("2d");
     if (!ctx) {
       console.error("Elemento canvas não encontrado.");
+      return;
+    }
+
+    if (typeof Chart === "undefined") {
+      console.error("Chart.js não carregado. Gráfico não será criado.");
       return;
     }
 
@@ -94,6 +101,26 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     });
+
+    console.log("Gráfico criado com sucesso.");
+  };
+
+  const updateChart = (data, backgroundColor) => {
+    if (!chart) {
+      console.error("Tentativa de atualizar um gráfico inexistente.");
+      return;
+    }
+
+    if (!chart.data) {
+      console.error("O gráfico existe, mas não tem dados. Algo deu errado.");
+      return;
+    }
+
+    console.log("Atualizando gráfico com novos dados.");
+    chart.data.datasets[0].data = data;
+    chart.data.datasets[0].backgroundColor = backgroundColor;
+    chart.update();
+    console.log("Gráfico atualizado.");
   };
 
   const getColor = (percentage) => {
@@ -103,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showLoading = () => {
+    console.log("Exibindo indicador de carregamento.");
     loadingIndicatorContent.classList.remove("dashboard-hidden");
     loadingIndicatorContent.classList.add("dashboard-visible");
 
@@ -119,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const hideLoading = () => {
+    console.log("Ocultando indicador de carregamento.");
     loadingIndicatorContent.classList.remove("dashboard-visible");
     loadingIndicatorContent.classList.add("dashboard-hidden");
 
@@ -136,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showError = (message) => {
+    console.error(`Erro: ${message}`);
     errorMessage.textContent = message;
     errorMessage.classList.add("dashboard-visible");
     setOpacity(0);
@@ -151,6 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateDashboard = (centerId) => {
+    console.log(`Atualizando dashboard para o centro de custo: ${centerId}`);
     showLoading();
     setTimeout(() => {
       const centerData = expenses[centerId];
@@ -173,13 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
         index === 0 ? getColor(spentPercentage) : "#101319"
       );
 
-      if (chart) {
-        chart.data.datasets[0].data = data;
-        chart.data.datasets[0].backgroundColor = backgroundColor;
-        chart.update();
-      } else {
-        createChart();
-      }
+      updateChart(data, backgroundColor);
 
       availableValue.style.color = getColor(spentPercentage);
 
@@ -189,18 +214,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const accountItem = document.createElement("div");
         accountItem.className = "account-item";
         accountItem.innerHTML = `<div class="account-label-column">
-                  <span>${name}</span>
-              </div>
-              <div class="account-progress-bar-column">
-                  <div class="account-label">${spent.toFixed(
-                    2
-                  )} de ${limit.toFixed(2)}</div>
-                  <div class="account-progress-bar-wrapper">
-                      <div class="account-progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
+                    <span>${name}</span>
+                </div>
+                <div class="account-progress-bar-column">
+                    <div class="account-label">${spent.toFixed(
+                      2
+                    )} de ${limit.toFixed(2)}</div>
+                    <div class="account-progress-bar-wrapper">
+                        <div class="account-progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
           percentage
         )}"></div>
-                  </div>
-              </div>`;
+                    </div>
+                </div>`;
         accountsList.appendChild(accountItem);
       });
 
@@ -214,39 +239,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   };
 
-  // Evento para redimensionamento da tela
-  window.addEventListener("resize", () => {
+  const resizeChart = () => {
     if (chart) {
+      console.log("Redimensionando gráfico.");
       chart.resize();
     } else {
-      createChart();
-      updateDashboard(costCenterSelect.value);
+      console.error("Tentativa de redimensionar um gráfico inexistente.");
     }
-  });
+  };
 
-  // Evento para mudança de aba
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") {
-      if (!chart) {
-        createChart();
-      }
-      updateDashboard(costCenterSelect.value);
+  const initializeDashboard = () => {
+    if (chart) {
+      console.log("Destruindo gráfico existente antes de recriar.");
+      chart.destroy();
     }
-  });
-
-  // Verifica se a página foi carregada parcialmente via AJAX
-  document.addEventListener("DOMContentLoaded", () => {
-    if (!chart) {
-      createChart();
-    }
+    createChart();
     updateDashboard(costCenterSelect.value);
-  });
+  };
+
+  const saveState = () => {
+    console.log("Salvando estado atual.");
+    sessionStorage.setItem("selectedCostCenter", costCenterSelect.value);
+  };
+
+  const restoreState = () => {
+    const savedCostCenter = sessionStorage.getItem("selectedCostCenter");
+    if (savedCostCenter) {
+      console.log(
+        `Restaurando estado para o centro de custo: ${savedCostCenter}`
+      );
+      costCenterSelect.value = savedCostCenter;
+    }
+    initializeDashboard();
+  };
+
+  window.addEventListener("resize", initializeDashboard);
+
+  window.addEventListener("pageshow", restoreState);
+
+  window.addEventListener("beforeunload", saveState);
+
+  initializeDashboard();
 
   costCenterSelect.addEventListener("change", (e) =>
     updateDashboard(e.target.value)
   );
-
-  // Inicializar o gráfico ao carregar a página
-  createChart();
-  updateDashboard(costCenterSelect.value);
 });
+
+window.initializeDashboard = initializeDashboard;

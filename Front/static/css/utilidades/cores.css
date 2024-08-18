@@ -14,13 +14,13 @@
   --cor-secundaria-2: hsl(28, 55%, 40%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(214, 22%, 18%);
-  --cor-apoio-2: hsl(214, 20%, 15%);
+  --cor-apoio-1: hsl(214, 20%, 17%);
+  --cor-apoio-2: hsl(214, 20%, 12%);
 
   /* Backgrounds e Containers */
-  --bg-principal: hsl(214, 15%, 10%);
-  --container-bg: hsl(214, 18%, 16%);
-  --barra-pesquisa-bg: hsl(214, 18%, 16%);
+  --bg-principal: hsl(214, 15%, 8%);
+  --container-bg: hsl(214, 18%, 14%);
+  --barra-pesquisa-bg: hsl(214, 18%, 14%);
   --borda: hsl(214, 22%, 25%);
   --divisor: hsl(214, 22%, 18%);
 
@@ -28,22 +28,22 @@
   --txt-titulo: hsl(218, 22%, 88%);
   --txt-subtitulo: hsl(218, 20%, 70%);
   --txt-destaque: hsl(218, 67%, 75%);
-  --txt-nav: hsl(218, 14%, 62%);
-  --txt-nav-selecionado: hsl(218, 75%, 70%);
+  --txt-nav: hsl(218, 10%, 62%);
+  --txt-nav-selecionado: hsl(218, 85%, 73%);
   --txt-placeholder: hsl(214, 18%, 50%);
 
   /* Cartões */
-  --card-bg: hsl(214, 22%, 22%);
-  --card-detalhe: hsl(214, 22%, 26%);
-  --card-borda: hsl(214, 22%, 24%);
+  --card-bg: hsl(214, 22%, 21%);
+  --card-detalhe: hsl(214, 22%, 25%);
+  --card-borda: hsl(214, 22%, 23%);
   --card-hover: hsl(214, 22%, 28%);
 
-  --card-aberto-bg: hsl(218, 28%, 28%);
-  --card-aberto-detalhe: hsl(218, 28%, 26%);
+  --card-aberto-bg: hsl(218, 30%, 28%);
+  --card-aberto-detalhe: hsl(218, 30%, 26%);
 
-  --txt-titulo-card: hsl(218, 26%, 88%);
-  --txt-conteudo-card: hsl(218, 22%, 82%);
-  --txt-card-aberto: hsl(218, 80%, 85%);
+  --txt-titulo-card: hsl(218, 26%, 91%);
+  --txt-conteudo-card: hsl(218, 22%, 85%);
+  --txt-card-aberto: hsl(218, 80%, 88%);
 
   /* Modais */
   --modal-bg: hsl(214, 22%, 12%);
@@ -88,7 +88,7 @@
   --btn-secundario-destaque: hsl(28, 60%, 38%);
   --btn-secundario-txt: hsl(28, 22%, 82%);
 
-  --btn-filtro: hsl(214, 22%, 22%);
+  --btn-filtro: hsl(214, 22%, 21%);
   --btn-filtro-txt: hsl(214, 22%, 70%);
   --btn-filtro-hover: hsl(214, 22%, 65%);
   --btn-filtro-selecionado: linear-gradient(
@@ -123,8 +123,8 @@
   --msg-erro-txt: hsl(0, 94%, 80%);
 
   /* Labels e Tooltips */
-  --label-bg: hsl(218, 24%, 20%);
-  --label-text: hsl(218, 57%, 70%);
+  --label-bg: hsl(214, 44%, 25%);
+  --label-text: hsl(214, 60%, 77%);
 
   --tooltip-bg: hsl(218, 77%, 42%);
   --tooltip-txt: hsl(218, 87%, 88%);

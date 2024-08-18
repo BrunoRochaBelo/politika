@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+  // Variáveis e elementos
   const notificationIcon = document.getElementById("notification");
   const notificationCounter = document.getElementById("notificationCounter");
   const modal = document.getElementById("notificationModal");
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const headerNotification = document.querySelector(".header-notification");
 
   const token = "SEU_TOKEN_DE_AUTENTICACAO"; // Substitua por seu token de autenticação
-  const apiURL = "URL_DA_SUA_API"; // Substitua 'URL_DA_SUA_API' pela URL da sua API
+  const apiURL = "URL_DA_SUA_API"; // Substitua pela URL real da sua API
   let page = 1; // Página inicial
   const limit = 10; // Limite de notificações por página
   let lastUpdate =
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       totalNotifications = 0;
     }
 
+    // Utilize cache se disponível
     if (notificationsCache.length >= page * limit && !reset) {
       renderNotifications(
         notificationsCache.slice((page - 1) * limit, page * limit)
@@ -296,7 +298,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   modalContent.addEventListener("scroll", handleScroll);
 
   setInterval(() => debouncedFetchNotifications(true), 300000);
-  setInterval(fetchNewNotifications, 30000); // Checar novas notificações a cada 30 segundos
+  setInterval(fetchNewNotifications, 60000); // Aumentado o intervalo para reduzir chamadas de rede
 
   notificationsContent.addEventListener("click", (event) => {
     if (event.target.classList.contains("delete-button")) {

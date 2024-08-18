@@ -215,6 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
           accountsListContainer.style.width = "100%";
         }
         isAnimating = false; // Liberar o bloqueio de interação
+        reinitializeChartAfterAnimation(); // Reinitialize the chart after hiding
       },
       { once: true }
     ); // Certifique-se de que o evento seja executado apenas uma vez
@@ -258,9 +259,16 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
         isAnimating = false; // Liberar o bloqueio de interação
+        reinitializeChartAfterAnimation(); // Reinitialize the chart after showing
       },
       { once: true }
     ); // Certifique-se de que o evento seja executado apenas uma vez
+  }
+
+  function reinitializeChartAfterAnimation() {
+    if (!chartWrapper.classList.contains("dashboard-hidden")) {
+      initializeDashboard(); // Certifique-se de que essa função está disponível
+    }
   }
 
   function addEventListeners(element, events, handler) {
