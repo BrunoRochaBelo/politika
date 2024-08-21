@@ -13,21 +13,21 @@
   <meta name="description" content="Despesa">
 </head>
 
-<body class="body-view">
-  <div class="body-view-template">
+<body class="body-exibir">
+  <div class="body-exibir-template">
 
-    <main class="main-view">
+    <main class="main-exibir">
       <section class="container-abas-template">
         <nav class="container-abas-template-header">
           <div class="card-info">
             <div>
               <a href="despesas.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
             </div>
-            <div class="campo-view">
+            <div class="campo-exibir">
               <p>{{ numero_despesa }}</p>
             </div>
             <div class="acoes">
-              <div class="campo-view acao-item">
+              <div class="campo-exibir acao-item">
                 <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
               </div>
 
@@ -41,14 +41,14 @@
         <div class="container-abas-template-content">
           <div id="aba1" class="aba-template secao-interna-template active">
             <form id="form" class="form" enctype="multipart/form-data">
-              <fieldset class="fieldset-view">
+              <fieldset class="fieldset-exibir">
                 <legend class="titulo-xl"></legend>
-                <div class="campo-view">
+                <div class="campo-exibir">
                   <label for="nome">Nome do solicitante:</label>
                   <input type="text" id="nome" name="nome" readonly>
                 </div>
                 <div class="form-2-colum">
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="tipo">Tipo solicitação:</label>
                     <select id="tipo" name="tipo" disabled>
                       <option value="" selected disabled>Tipo de despesa</option>
@@ -68,49 +68,49 @@
                       <option value="transporte publico">TRANSPORTE PÚBLICO</option>
                     </select>
                   </div>
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="data">Data da solicitação:</label>
                     <input type="date" id="data" name="data" readonly>
                   </div>
                 </div>
-                <div class="campo-view">
+                <div class="campo-exibir">
                   <label for="descricao">Descrição:</label>
                   <textarea id="descricao" name="descricao" readonly></textarea>
                 </div>
-                <div class="campo-view">
+                <div class="campo-exibir">
                   <label for="beneficiario">Beneficiário:</label>
                   <input type="text" id="beneficiario" name="beneficiario" readonly>
                 </div>
                 <div class="form-2-colum">
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="cep">CEP:</label>
                     <input type="text" id="cep" name="cep" readonly>
                   </div>
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="uf">UF:</label>
                     <input type="text" id="uf" name="uf" readonly>
                   </div>
                 </div>
-                <div class="campo-view">
+                <div class="campo-exibir">
                   <label for="rua">Rua:</label>
                   <input type="text" id="rua" name="rua" readonly>
                 </div>
                 <div class="form-2-colum">
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="numero">Número:</label>
                     <input type="number" id="numero" name="numero" readonly>
                   </div>
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="complemento">Complemento:</label>
                     <input type="text" id="complemento" name="complemento" readonly>
                   </div>
                 </div>
                 <div class="form-2-colum">
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="bairro">Bairro:</label>
                     <input type="text" id="bairro" name="bairro" readonly>
                   </div>
-                  <div class="campo-view">
+                  <div class="campo-exibir">
                     <label for="cidade">Cidade:</label>
                     <input type="text" id="cidade" name="cidade" readonly>
                   </div>

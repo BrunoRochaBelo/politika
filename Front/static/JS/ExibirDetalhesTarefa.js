@@ -87,7 +87,7 @@ listaDeCardsTarefaSmall.forEach((cardTarefaSmall) => {
   if (btnVisualizar) {
     btnVisualizar.addEventListener("click", function (event) {
       event.stopPropagation(); // Impede a propagação do evento de clique
-      window.location.href = "view-tarefa.html"; // Redireciona para a página de visualização
+      window.location.href = "exibir-tarefa.html"; // Redireciona para a página de visualização
     });
   }
 });
@@ -183,7 +183,7 @@ listaDeCardsTarefaMedium.forEach((cardTarefaMedium) => {
   if (btnVisualizar) {
     btnVisualizar.addEventListener("click", function (event) {
       event.stopPropagation(); // Impede a propagação do evento de clique
-      window.location.href = "view-tarefa.html"; // Redireciona para a página de visualização
+      window.location.href = "exibir-tarefa.html"; // Redireciona para a página de visualização
     });
   }
 });
