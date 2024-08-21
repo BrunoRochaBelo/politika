@@ -122,7 +122,6 @@ const scriptUrlsToCache = [
   "/static/scripts/OcultarExibirAgenda.js",
   "/static/scripts/OcultarExibirFiltro.js",
   "/static/scripts/RecuarExpandirHorizontal.js",
-  "/static/scripts/RecuarExpandirVertical.js",
   "/static/scripts/RegisterSW.js",
   "/static/scripts/ScrollRemoverItensCalendario.js",
   "/static/scripts/ScrollRemoverItensDespesa.js",

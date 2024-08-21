@@ -57,12 +57,12 @@
   overflow-x: auto;
   scrollbar-width: thick;
   padding: 10px;
-  transition: all 0.5s ease;
+  transition: grid-auto-flow 0.5s ease, grid-template-columns 0.5s ease,
+    height 0.5s ease;
 }
-
 .lista-horizontal.expandir {
   grid-auto-flow: row;
-  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
 }
 
@@ -114,6 +114,15 @@
   border-top-right-radius: 23px;
   border-bottom-right-radius: 23px;
 }*/
+
+.lista-horizontal.expandir .card-tmf-m {
+  width: calc(100%);
+}
+.lista-horizontal:not(.expandir) .card-tmf-m {
+  width: auto;
+  transform: translateY(0);
+  opacity: 1;
+}
 
 /* Reset de borda para todos os cards dentro da lista */
 .lista-select .card-select-m {

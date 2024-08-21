@@ -179,12 +179,12 @@
 }
 
 .compact .card-info .campo-exibir {
-  padding: 5px 12px;
+  padding: 4px 10px;
   transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 .compact .card-info .campo-exibir p {
-  font-size: 12px;
+  font-size: 13px;
   padding: 3px;
 }
 
