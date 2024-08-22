@@ -22,8 +22,8 @@
   right: 115px;
   border-radius: 23px;
   min-width: 150px;
-  background: var(--modal-bg);
-  color: var(--modal-conteudo);
+  background: var(--card-bg);
+  color: var(--txt-conteudo-card);
   box-shadow: var(--sombra-intensa);
   transform: scale(0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -40,7 +40,7 @@
   font-weight: 300;
   padding: 0.5rem;
   border-bottom: 1px solid var(--bg-principal);
-  background: var(--modal-titulo);
+  background: var(--cor-primaria-3);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
