@@ -15,7 +15,6 @@
   <meta name="description" content="Gerenciar perfil">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
-
 </head>
 
 <body class="body-gc-template">
@@ -60,18 +59,12 @@
       <div class="container-abas-template">
         <nav class="container-abas-template-header">
           <ul id="navAba" class="nav nav-duas-abas">
-            <li id="nav1">
-              <a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Perfil</a>
-            </li>
-            <li id="nav2">
-              <a href="#" onclick="mostrarAba('aba2')">Assinatura</a>
-            </li>
+            <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Perfil</a></li>
+            <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Assinatura</a></li>
           </ul>
         </nav>
         <div class="container-abas-template-content">
           <div id="aba1" class="aba-template active">
-
-
             <div class="profile-container">
               <div class="campo">
                 <label for="nome-completo">Nome completo</label>
@@ -116,7 +109,6 @@
             </div>
           </div>
           <div id="aba2" class="aba-template">
-
             <div class="profile-container">
               <div class="subscription">
                 <!-- Card de assinatura -->
