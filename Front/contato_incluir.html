@@ -37,16 +37,16 @@
                       <legend class="titulo-xl"></legend>
                       <div class="nomes">
                         <div class="campo">
-                          <label for="nome_contato">Nome<span>*</span></label>
+                          <label for="nome_contato">Nome <span>*</span></label>
                           <input type="text" id="nome_contato" name="nome_contato" required placeholder="Digite o nome completo">
                         </div>
                         <div class="campo">
-                          <label for="nome_fantasia">Apelido<span>*</span></label>
+                          <label for="nome_fantasia">Apelido <span>*</span></label>
                           <input type="text" id="nome_fantasia" name="nome_fantasia" required placeholder="Digite um apelido">
                         </div>
                       </div>
                       <div class="campo">
-                        <label for="cpf">CPF<span>*</span></label>
+                        <label for="cpf">CPF <span>*</span></label>
                         <input type="text" id="cpf" name="cpf" required placeholder="000.000.000.-00">
                       </div>
                       <div class="campo">
@@ -54,7 +54,7 @@
                         <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
                       </div>
                       <div class="campo">
-                        <label>Este número é WhatsApp? <span>*</span></label>
+                        <label>Este número é WhatsApp? </label>
                         <div class="switch-container">
                           <input type="checkbox" id="whatsapp_switch" class="form-checkbox" onchange="mostrarCampoWhatsapp()">
                           <label for="whatsapp_switch" class="switch-label">
@@ -65,8 +65,8 @@
                       </div>
                       <div id="campoWhatsapp" class="hidden">
                         <div class="campo">
-                          <label for="whatsapp">WhatsApp</label>
-                          <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="Digite o número do WhatsApp">
+                          <label for="whatsapp">WhatsApp <span>*</span></label>
+                          <input type="tel" id="whatsapp" name="whatsapp" required class="contato" placeholder="Digite o número do WhatsApp">
                         </div>
                       </div>
                       <div class="campo">

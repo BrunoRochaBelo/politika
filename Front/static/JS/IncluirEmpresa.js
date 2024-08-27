@@ -131,34 +131,18 @@ const FormularioUtils = (() => {
       return;
     }
 
-    const form = document.getElementById("form");
-    const formData = new FormData(form);
+    // Aqui removemos a parte do código que envia o formulário para o servidor
+    // Abaixo, mostramos a mensagem de sucesso, mas não enviamos o formulário.
 
-    fetch("/process_form", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.text();
-        }
-        throw new Error("Erro ao enviar o formulário");
-      })
-      .then((data) => {
-        console.log(data);
-        mostrarFeedbackSucesso();
-        form.reset();
-        removerClassesDeSucesso();
-      })
-      .catch((error) => {
-        console.error("Erro:", error);
-        mostrarFeedbackErro();
-      });
+    mostrarFeedbackSucesso();
+    const form = document.getElementById("form");
+    form.reset();
+    removerClassesDeSucesso();
   }
 
   function mostrarFeedbackSucesso() {
     const feedbackDiv = criarFeedbackDiv(
-      "Formulário enviado com sucesso!",
+      "Formulário validado com sucesso!",
       "message-success"
     );
     document.body.appendChild(feedbackDiv);
@@ -169,7 +153,7 @@ const FormularioUtils = (() => {
   function mostrarFeedbackErro(camposNaoPreenchidos = []) {
     const mensagemErro = camposNaoPreenchidos.length
       ? `Preencha os campos obrigatórios: ${camposNaoPreenchidos.join(", ")}`
-      : "Ocorreu um erro ao enviar o formulário. Tente novamente.";
+      : "O formulário contém erros. Corrija e tente novamente.";
 
     const feedbackDiv = criarFeedbackDiv(mensagemErro, "message-error");
     document.body.appendChild(feedbackDiv);

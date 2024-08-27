@@ -4,20 +4,28 @@
   font-weight: bold;
 }
 
+/* Estilo das Mensagens de Erro */
 .message-error {
-  color: var(--message-error-txt);
-  background-color: var(--erro);
-  padding: 10px;
-  border-radius: 5px;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  color: var(--message-error-txt, #fff); /* Fallback para cores customizadas */
+  background-color: var(--erro, #f44336);
+  padding: 15px 20px;
+  border-radius: 8px;
   margin: 10px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1000;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  transform: translateY(-10px);
 }
 
 .message-error.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 .error-message {
@@ -58,17 +66,24 @@
 
 /* Estilo das Mensagens de Sucesso */
 .message-success {
-  color: var(--msg-sucesso-txt);
-  background-color: var(--sucesso);
-  padding: 10px;
-  border-radius: 5px;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  color: var(--msg-sucesso-txt, #fff); /* Fallback para cores customizadas */
+  background-color: var(--sucesso, #4caf50);
+  padding: 15px 20px;
+  border-radius: 8px;
   margin: 10px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1000;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  transform: translateY(-10px);
 }
 
 .message-success.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }

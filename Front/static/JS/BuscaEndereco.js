@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   class BuscaEndereco {
-    constructor() {
+    constructor(validarCampoCallback) {
       this.ufElement = document.getElementById("uf");
       this.cidadeElement = document.getElementById("cidade");
       this.bairroElement = document.getElementById("bairro");
       this.ruaElement = document.getElementById("rua");
       this.timeout = null;
+      this.validarCampo = validarCampoCallback; // Guardar a função de validação passada
 
       const cepElement = document.getElementById("cep");
       cepElement.addEventListener("input", () => {
@@ -34,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
       this.bairroElement.value = data.bairro;
       this.ruaElement.value = data.logradouro;
 
-      // Adicionar a classe success após preencher os campos
-      validarCampo(this.ufElement);
-      validarCampo(this.cidadeElement);
-      validarCampo(this.bairroElement);
-      validarCampo(this.ruaElement);
+      // Chama a função validarCampo para adicionar a classe success
+      this.validarCampo(this.ufElement);
+      this.validarCampo(this.cidadeElement);
+      this.validarCampo(this.bairroElement);
+      this.validarCampo(this.ruaElement);
     }
 
     validarCEP(cep) {
@@ -85,5 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  const buscaEndereco = new BuscaEndereco();
+  // Passa a função `CampoUtils.validarCampo` para a classe BuscaEndereco
+  const buscaEndereco = new BuscaEndereco(CampoUtils.validarCampo);
 });
