@@ -27,7 +27,9 @@
   box-shadow: none;
   font-size: 11px;
   font-weight: 300;
+  position: relative;
 }
+
 .secao-interna-template-header .btn-recuar-expandir::after {
   content: "";
   display: inline-block;
@@ -38,10 +40,11 @@
   border-top: 5px solid var(--cor-primaria-3);
   margin-left: 5px;
   border-radius: 25%;
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
 }
+
 .secao-interna-template-header .btn-recuar-expandir.up::after {
-  border-top: none;
-  border-bottom: 5px solid var(--cor-primaria-3);
+  transform: rotate(180deg); /* Rotaciona o pseudo-elemento para cima */
 }
 
 /* Estilo do botão que exibe os aniversariantes */

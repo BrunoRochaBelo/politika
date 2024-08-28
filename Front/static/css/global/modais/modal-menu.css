@@ -145,7 +145,7 @@
 .modal-content-template-card-user-secao {
   grid-area: modal-content-template-card-user-secao;
   display: grid;
-  background: var(--cor-apoio-2);
+  background: var(--cor-apoio-1);
   padding: 15px 10px;
   gap: 3px;
   border-radius: 12px;

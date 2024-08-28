@@ -70,7 +70,7 @@
   padding: 0px;
   background-color: var(--card-bg);
   border-radius: 25px;
-  width: 500px;
+  width: 31.25rem;
   overflow: hidden;
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
@@ -164,7 +164,7 @@
   .nav {
     padding: 0;
     justify-items: stretch;
-    width: 308px;
+    width: 19.25rem;
     box-shadow: none;
     justify-content: start;
     overflow: hidden;

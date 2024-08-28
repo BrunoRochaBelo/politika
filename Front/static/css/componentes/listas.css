@@ -21,7 +21,7 @@
   gap: 2px;
   overflow: hidden;
   scrollbar-width: thick;
-  padding: 10px;
+  padding: 12px;
 }
 .lista-vertical-fil {
   display: grid;
