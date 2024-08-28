@@ -9,6 +9,7 @@
   background: transparent;
   color: var(--btn-secundario);
   box-shadow: none;
+  padding: 0px;
 }
 .grupo-small-card-editar .btn-outline-principal:hover {
   width: auto;
@@ -26,10 +27,18 @@
 .lista-vertical-grup {
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: auto;
-  gap: 8px;
-  padding: 10px;
+  gap: 2px;
+  padding: 12px;
+}
+
+.lista-vertical-grup > li:first-child a {
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
+.lista-vertical-grup > li:last-child a {
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 
 /* RESPONSIVO */
@@ -37,9 +46,8 @@
   .lista-vertical-grup {
     display: grid;
     grid-auto-flow: row;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: auto;
-    gap: 15px;
-    padding: 10px;
+    gap: 2px;
+    padding: 12px;
   }
 }

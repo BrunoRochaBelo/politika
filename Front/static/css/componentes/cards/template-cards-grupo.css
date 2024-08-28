@@ -3,16 +3,13 @@
   background: var(--card-aberto-bg);
   color: var(--txt-conteudo-card);
   gap: 10px;
-  border-radius: 23px;
   align-content: center;
   text-overflow: ellipsis;
   grid:
-    "grupo-small-card-title grupo-small-card-title"
-    "grupo-small-card-tipogrupo grupo-small-card-tipogrupo"
-    "grupo-small-card-func grupo-small-card-situacao"
+    "grupo-small-card-title grupo-small-card-situacao"
+    "grupo-small-card-tipogrupo grupo-small-card-func"
     "grupo-small-card-desc grupo-small-card-desc"
-    "grupo-small-card-editar grupo-small-card-editar"
-    "grupo-small-card-id grupo-small-card-id";
+    "grupo-small-card-editar grupo-small-card-editar";
   transition: max-height 0.25s ease-out, transform 0.25s ease-out,
     height 0.25s ease-out;
   max-height: 500px;
@@ -20,18 +17,26 @@
 
 .grupo-small-card-title {
   grid-area: grupo-small-card-title;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .grupo-small-card-tipogrupo {
   grid-area: grupo-small-card-tipogrupo;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .grupo-small-card-func {
   grid-area: grupo-small-card-func;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .grupo-small-card-situacao {
   grid-area: grupo-small-card-situacao;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .grupo-small-card-desc {
@@ -57,7 +62,6 @@
   display: flex;
   justify-content: end;
   padding: 10px 0px 0px 0px;
-  margin: 15px 0 0 0;
   opacity: 1;
   gap: 30px;
 }

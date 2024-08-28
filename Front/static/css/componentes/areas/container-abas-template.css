@@ -53,12 +53,14 @@
 }
 
 .aba,
-.aba-template {
+.aba-template,
+.aba-filtro {
   display: none;
 }
 
 .aba:first-of-type,
-.aba-template.active {
+.aba-template.active,
+.aba-filtro.active {
   display: block;
 }
 

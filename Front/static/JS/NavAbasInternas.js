@@ -1,10 +1,11 @@
 // NavAbasInternas.js
 
 class Abas {
-  constructor(containerSelector, abaSelector) {
+  constructor(containerSelector, abaSelector, abaFiltroSelector) {
     this.container = document.querySelector(containerSelector);
     this.abas = document.querySelectorAll(abaSelector);
-    this.lastExecution = 0; // Timestamp da última execução para throttling
+    this.abasFiltros = document.querySelectorAll(abaFiltroSelector);
+    this.lastExecution = 0;
     this.init();
   }
 
@@ -83,34 +84,37 @@ class Abas {
   desativarTodasAbas() {
     this.abas.forEach((aba) => {
       aba.classList.remove("active");
-      const idAba = aba.id.slice(3);
-      const aCorrespondente = document.querySelector(`#nav${idAba} a`);
-      if (aCorrespondente) {
-        aCorrespondente.classList.remove("indicador-2");
-        aCorrespondente.setAttribute("aria-selected", "false");
-        aCorrespondente.setAttribute("tabindex", "-1");
-      }
       aba.style.display = "none";
+    });
+
+    this.abasFiltros.forEach((abaFiltro) => {
+      abaFiltro.classList.remove("active");
+      abaFiltro.style.display = "none";
+    });
+
+    // Remove a classe 'indicador-2' de todos os links de navegação
+    this.container.querySelectorAll("a").forEach((link) => {
+      link.classList.remove("indicador-2");
+      link.setAttribute("aria-selected", "false");
+      link.setAttribute("tabindex", "-1");
     });
   }
 
   ativarAba(aba) {
     aba.classList.add("active");
-    const idAba = aba.id.slice(3);
-    const aCorrespondente = document.querySelector(`#nav${idAba} a`);
-    if (aCorrespondente) {
-      aCorrespondente.classList.add("indicador-2");
-      aCorrespondente.setAttribute("aria-selected", "true");
-      aCorrespondente.setAttribute("tabindex", "0");
-    }
     aba.style.display = "block";
-    // Animações removidas aqui:
-    // aba.style.opacity = "0";
-    // requestAnimationFrame(() => {
-    //   aba.style.opacity = "1";
-    //   aba.style.transition = "opacity 0.3s ease";
-    // });
     window.location.hash = aba.id;
+
+    const idFiltro = `abaFiltros${aba.id.slice(3)}`;
+    this.mostrarAbaFiltro(idFiltro);
+
+    // Ativa o link de navegação correspondente
+    const navLink = this.container.querySelector(`a[href="#${aba.id}"]`);
+    if (navLink) {
+      navLink.classList.add("indicador-2");
+      navLink.setAttribute("aria-selected", "true");
+      navLink.setAttribute("tabindex", "0");
+    }
   }
 
   mostrarAba(id) {
@@ -118,6 +122,14 @@ class Abas {
     if (aba) {
       this.desativarTodasAbas();
       this.ativarAba(aba);
+    }
+  }
+
+  mostrarAbaFiltro(idFiltro) {
+    const abaFiltro = document.getElementById(idFiltro);
+    if (abaFiltro) {
+      abaFiltro.classList.add("active");
+      abaFiltro.style.display = "block";
     }
   }
 
@@ -151,5 +163,5 @@ class Abas {
 
 // Inicializa a navegação por abas após o carregamento do DOM
 document.addEventListener("DOMContentLoaded", function () {
-  new Abas("#navAba", ".aba-template");
+  new Abas("#navAba", ".aba-template", ".aba-filtro");
 });
