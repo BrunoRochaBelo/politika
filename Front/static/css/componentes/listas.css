@@ -23,13 +23,21 @@
   scrollbar-width: thick;
   padding: 12px;
 }
+.lista-vertical-grup {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: auto;
+  gap: 2px;
+  padding: 12px;
+}
 .lista-vertical-fil {
   display: grid;
   grid-auto-flow: row;
   background: transparent;
-  gap: 30px 0px;
+  gap: 3px 0px;
   scrollbar-width: thick;
 }
+
 .lista-vertical-2-column {
   display: grid;
   gap: 4px;
@@ -94,11 +102,13 @@
 
 /* Estilos */
 /* Estilos para cards dentro da lista */
-.lista-vertical-cards > li:first-child a {
+.lista-vertical-cards > li:first-child a,
+.lista-vertical-grup > li:first-child a {
   border-top-left-radius: 23px;
   border-top-right-radius: 23px;
 }
-.lista-vertical-cards > li:last-child a {
+.lista-vertical-cards > li:last-child a,
+.lista-vertical-grup > li:last-child a {
   border-bottom-left-radius: 23px;
   border-bottom-right-radius: 23px;
 }
@@ -162,7 +172,7 @@ li > .lista-vertical-alt > li:first-child {
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .lista-vertical-fil {
-    gap: 20px 0px;
+    gap: 3px 0px;
   }
 
   .lista-vertical-2-column {

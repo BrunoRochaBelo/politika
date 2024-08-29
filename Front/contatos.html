@@ -723,7 +723,6 @@
                     <li>
                       <a class="card-xs grupo-small-card grupo" href="#">
                         <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-tipogrupo" data-filter="tipoGrupo">{{Tipo}}</div>
                         <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
                         <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
                         <div class="grupo-small-card-desc" data-filter="descGrupo">
@@ -738,7 +737,6 @@
                     <li>
                       <a class="card-xs grupo-small-card grupo" href="#">
                         <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-tipogrupo" data-filter="tipoGrupo">{{Tipo}}</div>
                         <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
                         <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
                         <div class="grupo-small-card-desc" data-filter="descGrupo">
@@ -753,7 +751,6 @@
                     <li>
                       <a class="card-xs grupo-small-card grupo" href="#">
                         <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-tipogrupo" data-filter="tipoGrupo">{{Tipo}}</div>
                         <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
                         <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
                         <div class="grupo-small-card-desc" data-filter="descGrupo">
@@ -768,7 +765,6 @@
                     <li>
                       <a class="card-xs grupo-small-card grupo" href="#">
                         <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-tipogrupo" data-filter="tipoGrupo">{{Tipo}}</div>
                         <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
                         <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
                         <div class="grupo-small-card-desc" data-filter="descGrupo">
@@ -866,12 +862,135 @@
 
           <div id="abaFiltros2" class="aba-filtro">
             <ul class="lista-vertical-fil">
-              <li>
-                <button class="btn-principal-alt" type="button" data-filter="todos">
-                  <strong>Todos</strong>
-                </button>
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="tipo_contato">Tipos do contato <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="tipo_contato" class="checkbox-button-group">
+                    <input type="checkbox" id="eleitor" name="tipo_contato[]" value="Eleitor">
+                    <label for="eleitor">Eleitor</label>
+
+                    <input type="checkbox" id="funcionario" name="tipo_contato[]" value="funcionario">
+                    <label for="funcionario">Funcionário</label>
+
+                    <input type="checkbox" id="fornecedor" name="tipo_contato[]" value="Fornecedor">
+                    <label for="fornecedor">Fornecedor</label>
+
+                    <input type="checkbox" id="comissionado" name="tipo_contato[]" value="Comissionado">
+                    <label for="comissionado">Comissionado</label>
+
+                    <input type="checkbox" id="lideranca" name="tipo_contato[]" value="Liderança">
+                    <label for="lideranca">Liderança</label>
+
+                    <input type="checkbox" id="familia" name="tipo_contato[]" value="Família">
+                    <label for="familia">Família</label>
+
+                    <input type="checkbox" id="politico" name="tipo_contato[]" value="Político">
+                    <label for="politico">Político</label>
+
+                    <input type="checkbox" id="favorito" name="tipo_contato[]" value="Favorito">
+                    <label for="favorito">Favorito</label>
+                  </div>
+                </div>
+              </li>
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="tipo_contato">Perfil de Influência <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="tipo_contato" class="checkbox-button-group">
+                    <input type="checkbox" id="influencia1" name="perfil_influencia" value="1 estrela" required>
+                    <label for="influencia1">
+                      <div class="icon-container">
+                        <img src="./static/imagens/icones/1-estrela.svg" alt="1 estrela" class="radio-icon">
+                      </div>
+                    </label>
+                    <input type="checkbox" id="influencia2" name="perfil_influencia" value="2 estrelas" required>
+                    <label for="influencia2">
+                      <div class="icon-container">
+                        <img src="./static/imagens/icones/2-estrela.svg" alt="2 estrelas" class="radio-icon">
+                      </div>
+                    </label>
+                    <input type="checkbox" id="influencia3" name="perfil_influencia" value="3 estrelas" required>
+                    <label for="influencia3">
+                      <div class="icon-container">
+                        <img src="./static/imagens/icones/3-estrela.svg" alt="3 estrelas" class="radio-icon">
+                      </div>
+                    </label>
+                    <input type="checkbox" id="influencia4" name="perfil_influencia" value="4 estrelas" required>
+                    <label for="influencia4">
+                      <div class="icon-container">
+                        <img src="./static/imagens/icones/4-estrela.svg" alt="4 estrelas" class="radio-icon">
+                      </div>
+                    </label>
+                    <input type="checkbox" id="influencia5" name="perfil_influencia" value="5 estrelas" required>
+                    <label for="influencia5">
+                      <div class="icon-container">
+                        <img src="./static/imagens/icones/5-estrela.svg" alt="5 estrelas" class="radio-icon">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="card-xs filtro-small-card ">
+                <div class="campo-filtro">
+                  <label>Residência de apoio</label>
+                  <div class="switch-container">
+                    <input type="checkbox" id="ResidenciaApoio" class="form-checkbox">
+                    <label for="ResidenciaApoio" class="switch-label">
+                      <span class="switch-inner"></span>
+                      <span class="switch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="card-xs filtro-small-card ">
+                <div class="campo-filtro">
+                  <label>Cargo comissionado</label>
+                  <div class="switch-container">
+                    <input type="checkbox" id="CargoComissionado" class="form-checkbox">
+                    <label for="CargoComissionado" class="switch-label">
+                      <span class="switch-inner"></span>
+                      <span class="switch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="card-xs filtro-small-card ">
+                <div class="campo-filtro">
+                  <label>Pessoa fisica</label>
+                  <div class="switch-container">
+                    <input type="checkbox" id="PessoaFisica" class="form-checkbox">
+                    <label for="PessoaFisica" class="switch-label">
+                      <span class="switch-inner"></span>
+                      <span class="switch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="card-xs filtro-small-card ">
+                <div class="campo-filtro">
+                  <label>Pessoa juridica</label>
+                  <div class="switch-container">
+                    <input type="checkbox" id="PessoaJuridica" class="form-checkbox">
+                    <label for="PessoaJuridica" class="switch-label">
+                      <span class="switch-inner"></span>
+                      <span class="switch-switch"></span>
+                    </label>
+                  </div>
+                </div>
               </li>
             </ul>
+            <div class="botoes">
+              <button class="btn-outline-principal" type="button" data-filter="Limpar">
+                <strong>Limpar</strong>
+              </button>
+
+              <button class="btn-principal" type="button" data-filter="Aplicar">
+                <strong>Aplicar</strong>
+              </button>
+            </div>
           </div>
 
         </div>
@@ -1016,6 +1135,35 @@
   </div>
 
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headers = document.querySelectorAll('.filtro-multi-select-card-header');
+
+      headers.forEach(header => {
+        header.addEventListener('click', function () {
+          const card = header.parentElement;
+          const content = card.querySelector('.filtro-multi-select-card-content');
+          const arrow = header.querySelector('.arrow');
+
+          if (content.classList.contains('exibirMultiSelect')) {
+            // Esconde o conteúdo e reseta o estado visual
+            content.classList.remove('exibirMultiSelect');
+            card.classList.remove('filtro-multi-select-card-expanded');
+            header.classList.remove('exibirMultiSelect');
+            arrow.classList.remove('up');
+            arrow.classList.add('down');
+          } else {
+            // Mostra o conteúdo e aplica os novos estilos
+            content.classList.add('exibirMultiSelect');
+            card.classList.add('filtro-multi-select-card-expanded');
+            header.classList.add('exibirMultiSelect');
+            arrow.classList.remove('down');
+            arrow.classList.add('up');
+          }
+        });
+      });
+    });
+  </script>
 
 
 

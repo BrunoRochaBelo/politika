@@ -40,8 +40,8 @@
   --card-borda: hsl(216, 22%, 23%);
   --card-hover: hsl(216, 22%, 32%);
 
-  --card-aberto-bg: hsl(218, 34%, 25%);
-  --card-aberto-detalhe: hsl(218, 34%, 21%);
+  --card-aberto-bg: hsl(218, 34%, 28%);
+  --card-aberto-detalhe: hsl(218, 34%, 23%);
 
   --txt-titulo-card: hsl(218, 25%, 91%);
   --txt-conteudo-card: hsl(218, 25%, 85%);

@@ -101,16 +101,6 @@ const CampoUtils = (() => {
       EstiloUtils.alterarCorBorda(campo.closest(".card-session"), ""); // Reseta a cor da borda se estiver válido
     }
 
-    // Se o campo era obrigatório e foi preenchido, mas agora está vazio, deve exibir erro
-    if (campo.hasAttribute("required") && valorCampo === "") {
-      exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
-      campoValido = false;
-      EstiloUtils.alterarCorBorda(
-        campo.closest(".card-session"),
-        "var(--erro)"
-      );
-    }
-
     return campoValido;
   }
 
@@ -227,18 +217,15 @@ const FormularioUtils = (() => {
   }
 
   function enviarFormulario(event) {
-    event.preventDefault();
-
     if (feedbackDiv) {
       feedbackDiv.remove();
     }
 
     if (validarFormulario()) {
       mostrarFeedback("success", "Formulário validado com sucesso!");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1500);
+      // Permitir envio normal via Flask
     } else {
+      event.preventDefault(); // Previne envio se houver erros
       mostrarFeedback(
         "error",
         "O formulário contém erros. Corrija e tente novamente."

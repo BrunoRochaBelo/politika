@@ -1,13 +1,12 @@
 .grupo-small-card {
   display: grid;
-  background: var(--card-aberto-bg);
   color: var(--txt-conteudo-card);
   gap: 10px;
   align-content: center;
   text-overflow: ellipsis;
   grid:
-    "grupo-small-card-title grupo-small-card-situacao"
-    "grupo-small-card-tipogrupo grupo-small-card-func"
+    "grupo-small-card-title grupo-small-card-title"
+    "grupo-small-card-func grupo-small-card-situacao"
     "grupo-small-card-desc grupo-small-card-desc"
     "grupo-small-card-editar grupo-small-card-editar";
   transition: max-height 0.25s ease-out, transform 0.25s ease-out,
@@ -17,24 +16,21 @@
 
 .grupo-small-card-title {
   grid-area: grupo-small-card-title;
+  text-align: start;
   font-size: 15px;
-  font-weight: 300;
-}
-
-.grupo-small-card-tipogrupo {
-  grid-area: grupo-small-card-tipogrupo;
-  font-size: 14px;
   font-weight: 300;
 }
 
 .grupo-small-card-func {
   grid-area: grupo-small-card-func;
+  text-align: start;
   font-size: 14px;
   font-weight: 300;
 }
 
 .grupo-small-card-situacao {
   grid-area: grupo-small-card-situacao;
+  text-align: end;
   font-size: 14px;
   font-weight: 300;
 }
@@ -43,22 +39,20 @@
   grid-area: grupo-small-card-desc;
   align-self: center;
   justify-self: stretch;
-  padding: 10px 14px;
+  padding: 12px 14px;
   display: flex;
-  background: var(--card-aberto-detalhe);
-  color: var(--txt-conteudo-card);
+  background: var(--card-detalhe);
+  color: var(--txt-subtitulo);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
   font-size: 12px;
   font-weight: 300;
 }
 
 .grupo-small-card-editar {
   grid-area: grupo-small-card-editar;
-  border-top: 1px solid var(--card-aberto-detalhe);
+  border-top: 1px solid var(--card-detalhe);
   display: flex;
   justify-content: end;
   padding: 10px 0px 0px 0px;

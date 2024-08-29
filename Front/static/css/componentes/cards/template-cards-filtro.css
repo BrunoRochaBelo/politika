@@ -1,0 +1,124 @@
+.filtro-small-card {
+  display: grid;
+  grid-auto-flow: column;
+  color: var(--txt-conteudo-card);
+  align-content: center;
+  text-align: start;
+  text-overflow: ellipsis;
+  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
+    height 0.25s ease-out;
+  max-height: 500px;
+}
+
+.campo-filtro {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+/* Estilos "switch" para checkboxes dos filtros */
+.campo-filtro .switch-container {
+  position: relative;
+  display: inline;
+  width: 60px;
+  height: 2px;
+}
+.campo-filtro .switch-label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline;
+  color: var(--txt-subtitulo);
+}
+.campo-filtro .switch-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 49px;
+  height: 24px;
+  border-radius: 25px;
+  background: var(--bg-principal);
+  transition: background-color 0.2s;
+}
+.form-checkbox:checked + .campo-filtro .switch-label:before {
+  background: var(--cor-primaria-2);
+}
+.campo-filtro .switch-label:after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  background: var(--input-icon);
+  transition: left 0.2s;
+  box-shadow: var(--sombra-leve);
+}
+.form-checkbox:checked + .campo-filtro .switch-label:after {
+  left: 27px;
+}
+
+/* Estilos para filtros com multiplas seleções */
+.filtro-multi-select-card {
+  display: block;
+  color: var(--txt-conteudo-card);
+  transition: max-height 0.4s ease-out, transform 0.4s ease-out,
+    height 0.4s ease-out, border-radius 0.4s ease-out;
+  max-height: 100px;
+  background: none;
+}
+
+.filtro-multi-select-card-header {
+  position: relative;
+  background: var(--card-bg);
+  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
+    border-radius 0.4s ease-in-out;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 15px 15px;
+  text-align: start;
+}
+
+.filtro-multi-select-card-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out,
+    padding 0.6s ease-in-out, border-radius 0.6s ease-in-out;
+  background: var(--bg-principal);
+  padding: 0 15px; /* Adiciona padding lateral */
+}
+
+.filtro-multi-select-card-content.exibirMultiSelect {
+  max-height: 800px;
+  opacity: 1;
+  padding: 15px;
+}
+
+.filtro-multi-select-card-expanded {
+  max-height: 800px;
+  height: auto;
+  background: none;
+}
+
+.filtro-multi-select-card-header.exibirMultiSelect {
+  background: var(--card-bg);
+  border: 1px solid var(--card-bg);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: var(--sombra-moderada);
+}
+
+.filtro-multi-select-card-content.exibirMultiSelect {
+  background: var(--form-card-aberto-bg);
+  border: 1px solid var(--card-bg);
+  border-radius: 6px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.filtro-multi-select-card .arrow {
+  right: 30px;
+}

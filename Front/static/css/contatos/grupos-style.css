@@ -23,31 +23,3 @@
   box-shadow: none;
   filter: brightness(1.1);
 }
-
-.lista-vertical-grup {
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: auto;
-  gap: 2px;
-  padding: 12px;
-}
-
-.lista-vertical-grup > li:first-child a {
-  border-top-left-radius: 23px;
-  border-top-right-radius: 23px;
-}
-.lista-vertical-grup > li:last-child a {
-  border-bottom-left-radius: 23px;
-  border-bottom-right-radius: 23px;
-}
-
-/* RESPONSIVO */
-@media only screen and (max-width: 56.25rem) {
-  .lista-vertical-grup {
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-rows: auto;
-    gap: 2px;
-    padding: 12px;
-  }
-}

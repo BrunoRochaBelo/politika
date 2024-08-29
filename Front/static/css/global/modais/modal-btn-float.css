@@ -78,7 +78,7 @@
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, hsl(218, 85%, 55%), hsl(218, 83%, 50%));
+  background: linear-gradient(135deg, hsl(218, 85%, 58%), hsl(218, 83%, 55%));
   box-shadow: var(--sombra-intensa);
   color: var(--btn-principal-txt);
   display: flex;
@@ -113,7 +113,7 @@
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: linear-gradient(135deg, hsl(218, 85%, 55%), hsl(218, 83%, 50%));
+    background: linear-gradient(135deg, hsl(218, 85%, 58%), hsl(218, 83%, 55%));
     box-shadow: var(--sombra-intensa);
     color: var(--btn-principal-txt);
     display: flex;
@@ -126,6 +126,6 @@
     filter: none;
   }
   .floatingButton:active {
-    background: linear-gradient(135deg, hsl(218, 85%, 55%), hsl(218, 83%, 50%));
+    background: linear-gradient(135deg, hsl(218, 85%, 58%), hsl(218, 83%, 55%));
   }
 }
