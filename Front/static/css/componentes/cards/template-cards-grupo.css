@@ -16,9 +16,11 @@
 
 .grupo-small-card-title {
   grid-area: grupo-small-card-title;
-  text-align: start;
-  font-size: 15px;
-  font-weight: 300;
+  justify-self: start;
+  align-self: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--txt-titulo-card);
 }
 
 .grupo-small-card-func {

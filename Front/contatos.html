@@ -795,73 +795,6 @@
         <div class="container-filtros-template-content">
           <div id="abaFiltros1" class="aba-filtro active">
             <ul class="lista-vertical-fil">
-              <li>
-                <button class="btn-principal-alt" type="button" data-filter="todos">
-                  <strong>Todos</strong>
-                </button>
-              </li>
-              <li>
-                <div class="lista-vertical-2-column">
-                  <select class="card-select-m" id="tipoContato" name="tipoContato">
-                    <option value="" selected disabled>Tipo do Contato</option>
-                    <option value="eleitor">Eleitor</option>
-                    <option value="funcionario">funcionario</option>
-                    <option value="fornecedor">Fornecedor</option>
-                    <option value="comissionado">Comissionado</option>
-                    <option value="lideranca">Liderança</option>
-                    <option value="familia">Família</option>
-                    <option value="politico">Político</option>
-                    <option value="favorito">Favorito</option>
-                  </select>
-                  <select class="card-select-m" id="perfilInfluencia" name="perfilinfluencia">
-                    <option value="" selected disabled>Perfil de influencia</option>
-                    <option value="1">
-                      <img class="star-img" src="./static/imagens/icones/1-estrela.svg" alt="Perfil influencia Icon"> 1 estrela
-                    </option>
-                    <option value="2">
-                      <img class="star-img" src="./static/imagens/icones/2-estrela.svg" alt="Perfil influencia Icon"> 2 estrelas
-                    </option>
-                    <option value="3">
-                      <img class="star-img" src="./static/imagens/icones/3-estrela.svg" alt="Perfil influencia Icon"> 3 estrelas
-                    </option>
-                    <option value="4">
-                      <img class="star-img" src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"> 4 estrelas
-                    </option>
-                    <option value="5">
-                      <img class="star-img" src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"> 5 estrelas
-                    </option>
-                  </select>
-                </div>
-              </li>
-              <li>
-                <ul class="lista-vertical-2-column">
-                  <li>
-                    <button class="btn-principal-alt" type="button" data-filter="ResidenciaApoio">
-                      <strong>Residência de apoio</strong>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="btn-principal-alt" type="button" data-filter="CargoComissionado">
-                      <strong>Cargo comissionado</strong>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="btn-principal-alt" type="button" data-filter="PessoaFisica">
-                      <strong>Pessoa fisica</strong>
-                    </button>
-                  </li>
-                  <li>
-                    <button class="btn-principal-alt" type="button" data-filter="PessoaJuridica">
-                      <strong>Pessoa juridica</strong>
-                    </button>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-          <div id="abaFiltros2" class="aba-filtro">
-            <ul class="lista-vertical-fil">
               <li class="filtro-multi-select-card">
                 <div class="filtro-multi-select-card-header">
                   <label for="tipo_contato">Tipos do contato <span class="arrow down"></span></label>
@@ -978,6 +911,48 @@
                       <span class="switch-inner"></span>
                       <span class="switch-switch"></span>
                     </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="botoes">
+              <button class="btn-outline-principal" type="button" data-filter="Limpar">
+                <strong>Limpar</strong>
+              </button>
+
+              <button class="btn-principal" type="button" data-filter="Aplicar">
+                <strong>Aplicar</strong>
+              </button>
+            </div>
+          </div>
+
+          <div id="abaFiltros2" class="aba-filtro">
+            <ul class="lista-vertical-fil">
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="tipo_grupo">Tipo <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="tipo_grupo" class="checkbox-button-group">
+                    <input type="checkbox" id="mensagem" name="tipo_grupo[]" value="mensagem">
+                    <label for="mensagem">Mensagem</label>
+
+                    <input type="checkbox" id="equipe" name="tipo_grupo[]" value="equipe">
+                    <label for="equipe">Equipe</label>
+                  </div>
+                </div>
+              </li>
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="situacao_grupo">Situação <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="situacao_grupo" class="checkbox-button-group">
+                    <input type="checkbox" id="habilitado" name="situacao_grupo[]" value="habilitado">
+                    <label for="habilitado">Habilitado</label>
+
+                    <input type="checkbox" id="desabilitado" name="situacao_grupo[]" value="desabilitado">
+                    <label for="desabilitado">Desabilitado</label>
                   </div>
                 </div>
               </li>

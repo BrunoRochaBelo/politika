@@ -142,16 +142,16 @@
 
   /* Marcadores */
   --cor-marcador-0: hsl(218, 30%, 45%);
-  --cor-marcador-1: hsl(0, 67%, 50%);
-  --cor-marcador-2: hsl(35, 67%, 50%);
-  --cor-marcador-3: hsl(60, 67%, 50%);
-  --cor-marcador-4: hsl(90, 67%, 50%);
-  --cor-marcador-5: hsl(120, 67%, 50%);
-  --cor-marcador-6: hsl(150, 67%, 50%);
-  --cor-marcador-7: hsl(180, 67%, 50%);
-  --cor-marcador-8: hsl(218, 67%, 50%);
-  --cor-marcador-9: hsl(240, 67%, 50%);
-  --cor-marcador-10: hsl(270, 67%, 50%);
+  --cor-marcador-1: hsl(0, 57%, 50%);
+  --cor-marcador-2: hsl(35, 57%, 50%);
+  --cor-marcador-3: hsl(60, 57%, 50%);
+  --cor-marcador-4: hsl(90, 57%, 50%);
+  --cor-marcador-5: hsl(120, 57%, 50%);
+  --cor-marcador-6: hsl(150, 57%, 50%);
+  --cor-marcador-7: hsl(180, 57%, 50%);
+  --cor-marcador-8: hsl(218, 57%, 50%);
+  --cor-marcador-9: hsl(240, 57%, 50%);
+  --cor-marcador-10: hsl(270, 57%, 50%);
 
   --marcador-txt: hsl(220, 12%, 8%);
 }
