@@ -23,7 +23,9 @@
   transition: max-height 0.4s ease-out, transform 0.4s ease-out,
     height 0.4s ease-out, border-radius 0.4s ease-out;
   max-height: 100px;
+  border-radius: 6px;
   background: none;
+  box-shadow: var(--sombra-moderada);
 }
 
 .filtro-multi-select-card-header {
@@ -41,9 +43,9 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out,
-    padding 0.6s ease-in-out, border-radius 0.6s ease-in-out;
-  background: var(--bg-principal);
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    padding 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  background: var(--container-bg);
   padding: 0 15px; /* Adiciona padding lateral */
 }
 
@@ -68,7 +70,8 @@
 }
 
 .filtro-multi-select-card-content.exibirMultiSelect {
-  background: hsl(216, 22%, 19%);
+  background: var(--container-bg);
+  opacity: 1.2;
   border: 1px solid var(--card-bg);
   border-radius: 6px;
   border-top-right-radius: 0px;

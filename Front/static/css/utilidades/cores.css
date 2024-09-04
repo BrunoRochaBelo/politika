@@ -4,6 +4,8 @@
 }
 
 :root {
+  /* Modo Escuro (Padrão) */
+
   /* Cores Primárias */
   --cor-primaria-1: hsl(218, 70%, 55%);
   --cor-primaria-2: hsl(218, 65%, 50%);
@@ -15,44 +17,44 @@
   --cor-secundaria-3: hsl(28, 50%, 40%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(216, 23%, 20%);
-  --cor-apoio-2: hsl(216, 23%, 12%);
+  --cor-apoio-1: hsl(216, 22%, 20%);
+  --cor-apoio-2: hsl(216, 22%, 12%);
 
   /* Backgrounds e Containers */
-  --bg-principal: hsl(216, 25%, 8%);
-  --container-bg: hsl(216, 22%, 16%);
-  --barra-pesquisa-bg: hsl(216, 19%, 14%);
-  --borda: hsl(216, 22%, 25%);
-  --divisor: hsl(216, 22%, 18%);
-  --bg-overlay: hsla(210, 25%, 5%, 0.5);
+  --bg-principal: hsl(216, 20%, 7%);
+  --container-bg: hsl(216, 18%, 15%);
+  --barra-pesquisa-bg: hsl(216, 18%, 18%);
+  --borda: hsl(216, 18%, 25%);
+  --divisor: hsl(216, 18%, 18%);
+  --bg-overlay: hsla(210, 20%, 5%, 0.5);
 
   /* Texto */
-  --txt-titulo: hsl(218, 40%, 95%);
-  --txt-subtitulo: hsl(218, 40%, 85%);
-  --txt-destaque: hsl(218, 90%, 92%);
-  --txt-nav: hsl(218, 10%, 62%);
+  --txt-titulo: hsl(218, 30%, 95%);
+  --txt-subtitulo: hsl(218, 30%, 85%);
+  --txt-destaque: hsl(218, 88%, 88%);
+  --txt-nav: hsl(218, 18%, 65%);
   --txt-nav-selecionado: hsl(218, 85%, 73%);
-  --txt-placeholder: hsl(216, 25%, 75%);
+  --txt-placeholder: hsl(216, 20%, 75%);
 
   /* Cartões */
-  --card-bg: hsl(216, 22%, 25%);
-  --card-detalhe: hsl(216, 22%, 30%);
-  --card-borda: hsl(216, 22%, 28%);
-  --card-hover: hsl(216, 22%, 34%);
+  --card-bg: hsl(216, 20%, 23%);
+  --card-detalhe: hsl(216, 20%, 28%);
+  --card-borda: hsl(216, 20%, 25%);
+  --card-hover: hsl(216, 20%, 34%);
 
-  --card-aberto-bg: hsl(218, 34%, 30%);
-  --card-aberto-detalhe: hsl(218, 34%, 26%);
+  --card-aberto-bg: hsl(218, 32%, 30%);
+  --card-aberto-detalhe: hsl(218, 32%, 26%);
 
-  --txt-titulo-card: hsl(218, 25%, 93%);
-  --txt-conteudo-card: hsl(218, 25%, 87%);
-  --txt-card-aberto: hsl(218, 85%, 92%);
+  --txt-titulo-card: hsl(218, 8%, 93%);
+  --txt-conteudo-card: hsl(218, 8%, 87%);
+  --txt-card-aberto: hsl(218, 80%, 94%);
 
   /* Modais */
-  --modal-bg: hsl(216, 25%, 14%);
-  --modal-borda: hsl(216, 25%, 18%);
-  --modal-divisor: hsl(216, 25%, 20%);
-  --modal-titulo: hsl(216, 75%, 70%);
-  --modal-conteudo: hsl(216, 55%, 78%);
+  --modal-bg: hsl(216, 20%, 14%);
+  --modal-borda: hsl(216, 20%, 18%);
+  --modal-divisor: hsl(216, 20%, 20%);
+  --modal-titulo: hsl(216, 60%, 70%);
+  --modal-conteudo: hsl(216, 40%, 78%);
 
   /* Formulários e Inputs */
   --form-container-bg: hsl(216, 18%, 14%);
@@ -90,9 +92,9 @@
   --btn-secundario-destaque: hsl(28, 60%, 42%);
   --btn-secundario-txt: hsl(28, 22%, 85%);
 
-  --btn-filtro: hsl(216, 22%, 25%);
-  --btn-filtro-txt: hsl(216, 22%, 60%);
-  --btn-filtro-hover: hsl(216, 22%, 65%);
+  --btn-filtro: hsl(216, 20%, 23%);
+  --btn-filtro-txt: hsl(216, 20%, 60%);
+  --btn-filtro-hover: hsl(216, 20%, 65%);
   --btn-filtro-selecionado: linear-gradient(
     135deg,
     hsl(218, 72%, 57%),

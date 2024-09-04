@@ -7,11 +7,10 @@
   grid:
     "grupo-small-card-title grupo-small-card-title"
     "grupo-small-card-func grupo-small-card-situacao"
-    "grupo-small-card-desc grupo-small-card-desc"
-    "grupo-small-card-editar grupo-small-card-editar";
+    "grupo-small-card-desc grupo-small-card-desc";
   transition: max-height 0.25s ease-out, transform 0.25s ease-out,
     height 0.25s ease-out;
-  max-height: 500px;
+  max-height: 300px;
 }
 
 .grupo-small-card-title {
@@ -25,9 +24,16 @@
 
 .grupo-small-card-func {
   grid-area: grupo-small-card-func;
-  text-align: start;
+  border-left: 4px solid var(--cor-primaria-2);
+  border-radius: 3px;
+  padding-left: 10px;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
+  justify-self: start;
+  text-align: start;
+  white-space: wrap;
+  overflow: hidden;
+  word-break: break-all;
 }
 
 .grupo-small-card-situacao {
@@ -39,31 +45,67 @@
 
 .grupo-small-card-desc {
   grid-area: grupo-small-card-desc;
-  align-self: center;
+  font-size: 12px;
+  font-weight: 400;
   justify-self: stretch;
-  padding: 12px 14px;
-  display: flex;
+  padding: 10px 14px;
+  display: grid;
+  grid-auto-flow: column;
   background: var(--card-detalhe);
-  color: var(--txt-subtitulo);
+  color: var(--txt-conteudo-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
-  font-size: 12px;
-  font-weight: 300;
 }
 
 .grupo-small-card-editar {
   grid-area: grupo-small-card-editar;
-  border-top: 1px solid var(--card-detalhe);
-  display: flex;
-  justify-content: end;
-  padding: 10px 0px 0px 0px;
-  opacity: 1;
-  gap: 30px;
+  display: none;
+  opacity: 0;
+  border-top: 1px solid var(--card-aberto-detalhe);
 }
 
 .grupo-small-card-id {
   grid-area: grupo-small-card-id;
   display: none;
   opacity: 0;
+}
+
+.exibirDetalheGrupo {
+  opacity: 1 !important;
+}
+
+.grupo-small-card-expanded {
+  border-radius: 7px;
+  background: var(--card-aberto-bg) !important;
+  color: var(--txt-card-aberto);
+  box-shadow: var(--sombra-leve);
+  grid:
+    "grupo-small-card-title grupo-small-card-title"
+    "grupo-small-card-func grupo-small-card-situacao"
+    "grupo-small-card-desc grupo-small-card-desc"
+    "grupo-small-card-editar grupo-small-card-editar";
+  transform: scale(1);
+  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
+    height 0.25s ease-in;
+  max-height: 500px;
+}
+
+.grupo-small-card-editar.exibirDetalheGrupo {
+  display: grid;
+  justify-content: center;
+  padding: 10px 0px 0px 0px;
+  margin: 15px 0 0 0;
+  opacity: 1;
+  gap: 30px;
+}
+.grupo-small-card-expanded .grupo-small-card-title {
+  color: var(--txt-card-aberto);
+}
+.grupo-small-card-expanded .grupo-small-card-func {
+  border-left: 4px solid var(--card-aberto-detalhe);
+}
+.grupo-small-card-expanded .grupo-small-card-desc {
+  background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
 }

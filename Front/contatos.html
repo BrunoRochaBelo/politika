@@ -776,6 +776,34 @@
                         <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
                       </a>
                     </li>
+                    <li>
+                      <a class="card-xs grupo-small-card grupo" href="#">
+                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                        <div class="grupo-small-card-desc" data-filter="descGrupo">
+                          <p>Descrição do grupo</p>
+                        </div>
+                        <div class="grupo-small-card-editar">
+                          <button class="btn-outline-principal" id="btnEditar" onclick="window.location.href='form-grupo.html'">Editar</button>
+                        </div>
+                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="card-xs grupo-small-card grupo" href="#">
+                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                        <div class="grupo-small-card-desc" data-filter="descGrupo">
+                          <p>Descrição do grupo</p>
+                        </div>
+                        <div class="grupo-small-card-editar">
+                          <button class="btn-outline-principal" id="btnEditar" onclick="window.location.href='form-grupo.html'">Editar</button>
+                        </div>
+                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                      </a>
+                    </li>
                   </ul>
                 </li>
                 <li class="list-last-child"><br></li>
@@ -930,7 +958,7 @@
             <ul class="lista-vertical-fil">
               <li class="filtro-multi-select-card">
                 <div class="filtro-multi-select-card-header">
-                  <label for="tipo_grupo">Tipo <span class="arrow down"></span></label>
+                  <label for="tipo_grupo">Tipo do grupo<span class="arrow down"></span></label>
                 </div>
                 <div class="filtro-multi-select-card-content">
                   <div id="tipo_grupo" class="checkbox-button-group">
@@ -1110,37 +1138,6 @@
   </div>
 
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const headers = document.querySelectorAll('.filtro-multi-select-card-header');
-
-      headers.forEach(header => {
-        header.addEventListener('click', function () {
-          const card = header.parentElement;
-          const content = card.querySelector('.filtro-multi-select-card-content');
-          const arrow = header.querySelector('.arrow');
-
-          if (content.classList.contains('exibirMultiSelect')) {
-            // Esconde o conteúdo e reseta o estado visual
-            content.classList.remove('exibirMultiSelect');
-            card.classList.remove('filtro-multi-select-card-expanded');
-            header.classList.remove('exibirMultiSelect');
-            arrow.classList.remove('up');
-            arrow.classList.add('down');
-          } else {
-            // Mostra o conteúdo e aplica os novos estilos
-            content.classList.add('exibirMultiSelect');
-            card.classList.add('filtro-multi-select-card-expanded');
-            header.classList.add('exibirMultiSelect');
-            arrow.classList.remove('down');
-            arrow.classList.add('up');
-          }
-        });
-      });
-    });
-  </script>
-
-
 
   <script src="./static/js/AlterarEsquemaDeCores.js"></script>
   <script src="./static/js/AtualizarAlturaPagina.js"></script>
@@ -1152,7 +1149,9 @@
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/OcultarExibirFiltro.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
+  <script src="./static/js/NavAbasInternasFiltros.js"></script>
   <script src="./static/js/ExibirDetalhesContato.js"></script>
+  <script src="./static/js/ExibirDetalhesGrupo.js"></script>
   <script src="./static/js/HistoricoDeLigacoes.js"></script>
   <script src="./static/js/FiltroBtnPerfilInfluencia.js"></script>
 
