@@ -39,6 +39,11 @@
   text-align: start;
 }
 
+/* Transição suave para o arredondamento */
+.filtro-multi-select-card-header {
+  transition: border-radius 0.3s ease-in-out;
+}
+
 .filtro-multi-select-card-content {
   max-height: 0;
   overflow: hidden;
@@ -69,6 +74,43 @@
   box-shadow: var(--sombra-moderada);
 }
 
+/* Arredonda o header do primeiro item, mesmo quando o conteúdo está exibido */
+.container-filtros-template-content
+  .lista-vertical-fil
+  > li:first-child
+  .filtro-multi-select-card-header {
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+  transition: border-radius 0.3s ease-in-out;
+}
+
+/* Remove as bordas inferiores arredondadas do header quando o conteúdo estiver visível */
+.filtro-multi-select-card-header.exibirMultiSelect {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: border-radius 0.3s ease-in-out;
+}
+
+/* Arredonda o header do último item quando o conteúdo não está exibido */
+.container-filtros-template-content
+  .lista-vertical-fil
+  > li:last-child
+  .filtro-multi-select-card-header {
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
+  transition: border-radius 0.3s ease-in-out;
+}
+
+/* Remove o arredondamento inferior do header quando o conteúdo está exibido, mesmo que seja o último item */
+.container-filtros-template-content
+  .lista-vertical-fil
+  > li:last-child
+  .filtro-multi-select-card-header.exibirMultiSelect {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: border-radius 0.3s ease-in-out;
+}
+
 .filtro-multi-select-card-content.exibirMultiSelect {
   background: var(--container-bg);
   opacity: 1.2;
@@ -89,6 +131,7 @@
   width: 60px;
   height: 2px;
 }
+
 .campo-filtro .switch-label {
   position: relative;
   padding-left: 30px;
@@ -96,6 +139,7 @@
   display: inline;
   color: var(--txt-subtitulo);
 }
+
 .campo-filtro .switch-label:before {
   content: "";
   position: absolute;
@@ -107,9 +151,11 @@
   background: var(--bg-principal);
   transition: background-color 0.2s;
 }
+
 .form-checkbox:checked + .campo-filtro .switch-label:before {
   background: var(--cor-primaria-2);
 }
+
 .campo-filtro .switch-label:after {
   content: "";
   position: absolute;
@@ -122,6 +168,7 @@
   transition: left 0.2s;
   box-shadow: var(--sombra-leve);
 }
+
 .form-checkbox:checked + .campo-filtro .switch-label:after {
   left: 27px;
 }
@@ -141,6 +188,7 @@
   width: 30%;
   box-shadow: var(--sombra-intensa);
 }
+
 /* Responsivo */
 @media only screen and (max-width: 56.25rem) {
   .aba-filtro .botoes {
@@ -155,6 +203,6 @@
     width: 70%;
     margin: 0px 10px 10px 10px;
     box-shadow: var(--sombra-intensa);
-    transform: translateX(20%);
+    transform: translate(20%);
   }
 }

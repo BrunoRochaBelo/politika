@@ -1,8 +1,8 @@
 <svg width="32" height="27" viewBox="0 0 32 27" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(135)">
-      <stop offset="0%" stop-color="hsl(218, 85%, 73%)" />
-      <stop offset="100%" stop-color="hsl(218, 83%, 71%)" />
+      <stop offset="0%" stop-color="hsl(218, 85%, 75%)" />
+      <stop offset="100%" stop-color="hsl(218, 85%, 73%)" />
     </linearGradient>
   </defs>
   <g id="contatos-select">

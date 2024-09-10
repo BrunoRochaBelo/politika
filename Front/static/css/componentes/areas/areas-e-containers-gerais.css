@@ -160,6 +160,8 @@
 /* Estilos */
 .area-template::-webkit-scrollbar,
 .secao-interna-template::-webkit-scrollbar,
+.container-filtros-template::-webkit-scrollbar,
+.container-filtros-template-content::-webkit-scrollbar,
 .container-compromisso-hoje-template::-webkit-scrollbar,
 .area-interna-containerContent-template::-webkit-scrollbar,
 .container-template-content::-webkit-scrollbar,
@@ -167,6 +169,26 @@
 .container-compromisso-hoje-template-content::-webkit-scrollbar,
 .area-interna-containerContent-template-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+}
+
+/* Arredonda o primeiro item da lista */
+.container-filtros-template-content .lista-vertical-fil > li:first-child,
+.container-filtros-template-content
+  .lista-vertical-fil
+  > li:first-child
+  .filtro-multi-select-card-header {
+  border-top-left-radius: 23px !important;
+  border-top-right-radius: 23px !important;
+}
+
+/* Arredonda o último item da lista */
+.container-filtros-template-content .lista-vertical-fil > li:last-child,
+.container-filtros-template-content
+  .lista-vertical-fil
+  > li:last-child
+  .filtro-multi-select-card-header {
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 
 /* RESPONSIVO */
@@ -282,6 +304,8 @@
   }
 
   .area-template::-webkit-scrollbar,
+  .container-filtros-template::-webkit-scrollbar,
+  .container-filtros-template-content::-webkit-scrollbar,
   .container-template-content::-webkit-scrollbar,
   .container-compromisso-hoje-template::-webkit-scrollbar,
   .container-compromisso-hoje-template-content::-webkit-scrollbar {
