@@ -2,24 +2,14 @@
 .grupo-small-card-editar .btn-outline-principal {
   width: auto;
   font-weight: regular;
-  font-size: 12px;
+  font-size: 11px;
   border-radius: 9px;
-  border: 1px solid transparent;
+  border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
-  background: transparent;
-  color: var(--btn-secundario);
-  box-shadow: none;
-  padding: 0px;
+  background: var(--btn-secundario);
+  color: var(--btn-secundario-txt);
+  box-shadow: var(--sombra-moderada);
 }
 .grupo-small-card-editar .btn-outline-principal:hover {
-  width: auto;
-  font-weight: regular;
-  font-size: 12px;
-  border-radius: 9px;
-  border: 1px solid transparent;
-  letter-spacing: 0.5px;
-  background: transparent;
-  color: var(--btn-secundario);
-  box-shadow: none;
   filter: brightness(1.1);
 }

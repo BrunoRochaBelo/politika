@@ -59,6 +59,9 @@
   border-radius: 0px;
   padding: 0;
 }
+.main-form .container-abas-template {
+  gap: 3px;
+}
 .main-form .container-template-header,
 .main-form .container-abas-template-header {
   background: transparent;

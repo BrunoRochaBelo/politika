@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <title>Novo grupo</title>
+  <meta name="description" content="Cadastrar novo grupo">
+</head>
+
+<body class="body-form">
+  <div class="body-form-template">
+    <header class="header-form">
+      <h1>Novo Grupo</h1>
+      <h1><a href="contatos.html#aba2" class="close">&times;</a></h1>
+    </header>
+
+    <main class="main-form">
+      <section class="container-abas-template">
+        <nav class="container-abas-template-header">
+          <ul id="navAba" class="nav nav-duas-abas">
+            <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Dados </a></li>
+            <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Membros </a></li>
+          </ul>
+        </nav>
+        <div class="container-abas-template-content">
+          <form id="form" class="form" enctype="multipart/form-data">
+            <div class="card-session secao-interna-template active">
+              <div id="aba1" class="aba-template active">
+                <fieldset>
+                  <legend class="titulo-xl"></legend>
+                  <div class="campo">
+                    <label for="nome_grupo">Nome do Grupo</label>
+                    <input type="text" id="nome_grupo" name="nome_grupo" placeholder="Insira o nome do grupo">
+                  </div>
+
+                  <div class="campo">
+                    <label for="usado_para">Usado para</label>
+                    <div id="usado_para" class="radio-button-group">
+                      <input type="radio" id="mensagens" name="usado_para" value="mensagens">
+                      <label for="mensagens">Mensagens</label>
+
+                      <input type="radio" id="equipe" name="usado_para" value="equipe">
+                      <label for="equipe">Equipe</label>
+
+                      <input type="radio" id="geral" name="usado_para" value="geral">
+                      <label for="geral">Geral</label>
+                    </div>
+                  </div>
+
+                  <div class="campo">
+                    <label for="situacao_grupo">Situação</label>
+                    <div id="situacao_grupo" class="radio-button-group">
+                      <input type="radio" id="habilitado" name="situacao_grupo" value="habilitado">
+                      <label for="habilitado">Habilitado</label>
+
+                      <input type="radio" id="desabilitado" name="situacao_grupo" value="desabilitado">
+                      <label for="desabilitado">Desabilitado</label>
+                    </div>
+                  </div>
+
+                  <div class="campo">
+                    <label for="descricao_grupo">Descrição</label>
+                    <textarea id="descricao_grupo" name="descricao_grupo" placeholder="Insira a descrição do grupo"></textarea>
+                  </div>
+
+                </fieldset>
+              </div>
+
+
+              <div id="aba2" class="aba-template">
+                <fieldset>
+                  <legend class="titulo-xl"></legend>
+                  <div class="campo">
+                    <label for="numero_documento">Número documento</label>
+                    <input type="number" id="numero_documento" name="numero_documento">
+                  </div>
+                  <div class="campo">
+                    <label for="descricao_documento">Descrição documento</label>
+                    <input type="text" id="descricao_documento" name="descricao_documento">
+                  </div>
+                  <div class="campo">
+                    <label for="especie_documento">Espécie documento</label>
+                    <select id="especie_documento_aba2" name="especie_documento">
+                      <option value="">Selecione</option>
+                      <option value="test1">test1</option>
+                      <option value="test2">test2</option>
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="anexar_documento" class="file-label">Anexar documento</label>
+                    <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba2', 'especie_documento_aba2')">
+                  </div>
+                </fieldset>
+
+                <!-- Tabela para listar os arquivos anexados -->
+                <div class="tabela-historico">
+                  <table id="tabelaArquivosAba2">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Espécie Documento</th>
+                        <th>Arquivo</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Linhas da tabela serão adicionadas dinamicamente -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+
+<script src="./static/js/AtualizarAlturaPagina.js"></script>
+<script src="./static/js/NavAbasInternas.js"></script>
+</body>
+
+</html>

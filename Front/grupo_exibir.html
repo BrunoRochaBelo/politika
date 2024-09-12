@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <title>Grupo</title>
+  <meta name="description" content="Grupo">
+</head>
+
+<body class="body-exibir">
+  <div class="body-exibir-template">
+    <main class="main-exibir">
+      <section class="container-template">
+        <div class="container-template-header">
+          <div class="card-info">
+            <div>
+              <a href="contatos.html#aba2" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
+            </div>
+            <div class="campo-exibir">
+              <p>{{ nome_grupo }}</p>
+            </div>
+            <div class="acoes">
+              <div class="campo-exibir acao-item">
+                <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+                <p>EDITAR</p>
+              </div>
+              <div class="campo-exibir acao-item">
+                <a href=""><img src="./static/imagens/icones/incluir-contato.svg" alt="incluir-contato Icon"></a>
+                <p>Adicionar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-template-content">
+          <form id="form" class="form" enctype="multipart/form-data">
+            <ul class="lista-vertical-alt">
+              <li class="card-session secao-interna-template">
+                <h2 class="secao-interna-template-header" onclick="changeSession(1)"><a href="#">ℹ️ Dados do grupo <span class="arrow down"></span></a></h2>
+                <div class="secao-interna-template-content">
+                  <div class="session" id="secao1">
+                    <fieldset class="fieldset-exibir">
+                      <legend class="titulo-xl"></legend>
+
+                      <div class="campo-exibir">
+                        <h3>Usado para</h3>
+                        <p>{{ usado_para }}</p> <!-- Exibirá a opção selecionada: 'Mensagens', 'Equipe' ou 'Geral' -->
+                      </div>
+
+                      <div class="campo-exibir">
+                        <h3>Situação</h3>
+                        <p>{{ situacao_grupo }}</p> <!-- Exibirá 'Habilitado' ou 'Desabilitado' -->
+                      </div>
+
+                      <div class="campo-exibir">
+                        <h3>Descrição</h3>
+                        <p>{{ descricao_grupo }}</p>
+                      </div>
+
+                    </fieldset>
+
+                  </div>
+                </div>
+              </li>
+              <li class="card-session secao-interna-template">
+                <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">👥 Membros <span class="arrow down"></span></a></h2>
+                <div class="secao-interna-template-content">
+                  <div class="session" id="secao2">
+                    <fieldset class="fieldset-exibir">
+                      <legend class="titulo-xl"></legend>
+                      <div class="campo-exibir">
+                        <h3>CEP</h3>
+                        <p>{{ cep }}</p>
+                      </div>
+                      <div class="form-2-colum">
+                        <div class="campo-exibir">
+                          <h3>UF</h3>
+                          <p>{{ uf }}</p>
+                        </div>
+                        <div class="campo-exibir">
+                          <h3>Cidade</h3>
+                          <p>{{ cidade }}</p>
+                        </div>
+                      </div>
+                      <div class="campo-exibir">
+                        <h3>Bairro</h3>
+                        <p>{{ bairro }}</p>
+                      </div>
+                      <div class="campo-exibir">
+                        <h3>Rua</h3>
+                        <p>{{ rua }}</p>
+                      </div>
+                      <div class="form-2-colum">
+                        <div class="campo-exibir">
+                          <h3>Número</h3>
+                          <p>{{ numero }}</p>
+                        </div>
+                        <div class="campo-exibir">
+                          <h3>Complemento</h3>
+                          <p>{{ complemento }}</p>
+                        </div>
+                      </div>
+
+                      <div class="campo-exibir">
+                        <h3>Latitude</h3>
+                        <p>{{ latitude }}</p>
+                      </div>
+                      <div class="campo-exibir">
+                        <h3>Longitude</h3>
+                        <p>{{ longitude }}</p>
+                      </div>
+                      <div class="campo-exibir">
+                        <h3>Quantidade de Eleitores residentes</h3>
+                        <p>{{ eleitores_residentes }}</p>
+                      </div>
+                      <div class="campo-exibir">
+                        <h3>Residência de apoio</h3>
+                        <p>{{ residencia_apoio }}</p>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <script>
+    const containerContent = document.querySelector('.container-template-content');
+    const containerHeader = document.querySelector('.container-template-header');
+
+    containerContent.addEventListener('scroll', () => {
+      const isScrolled = containerContent.scrollTop > 0;
+      containerHeader.classList.toggle('compact', isScrolled);
+    });
+  </script>
+
+  <script src="./static/js/AtualizarAlturaPagina.js"></script>
+  <script src="./static/js/NavSecoes.js"></script>
+
+</body>
+
+
+</html>

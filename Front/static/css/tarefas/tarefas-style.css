@@ -16,7 +16,7 @@
 }
 
 .filtros-tarefas h4 {
-  margin: 10px;
+  margin-bottom: 10px;
 }
 .filtros-tarefas input[type="date"] {
   align-self: center;
