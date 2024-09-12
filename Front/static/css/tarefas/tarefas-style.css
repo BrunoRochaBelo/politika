@@ -15,6 +15,24 @@
   filter: brightness(1.1);
 }
 
+.filtros-tarefas h4 {
+  margin: 10px;
+}
+.filtros-tarefas input[type="date"] {
+  align-self: center;
+  padding: 15px;
+  color: var(--btn-filtro-alt-txt);
+  border-radius: 5px;
+  background: var(--btn-filtro);
+  border: none;
+  box-shadow: var(--sombra-leve);
+  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+  max-height: 100px;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .filtro-tarefa {
   text-align: center;
   padding: 10px 15px;

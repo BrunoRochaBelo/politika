@@ -74,31 +74,7 @@
       <div class="container-template">
         <h2 class="container-template-header">Tarefas</h2>
         <div class="container-template-content container-template-content-com-header-fx-int">
-          <div class="area-interna-containerContent-template">
-            <div class="area-interna-containerContent-template-header">
-              <div class="nav-calendar">
-                <ul class="lista-horizontal tarefa">
-                  <li class="filtro-tarefa filtro-visualize">
-                    <h3>Todas</h3>
-                  </li>
-                  <li class="filtro-tarefa">
-                    <h3>Minhas</h3>
-                  </li>
-                  <li class="filtro-tarefa">
-                    <h3>Novas</h3>
-                  </li>
-                  <li class="filtro-tarefa">
-                    <h3>Andamento</h3>
-                  </li>
-                  <li class="filtro-tarefa">
-                    <h3>Atrasadas</h3>
-                  </li>
-                  <li class="filtro-tarefa">
-                    <h3>Concluidas</h3>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div class="area-interna-containerContent-template ">
             <div class="area-interna-containerContent-template-content">
               <ul class="lista-vertical">
                 <li class="area-filtro inactiveFil" id="filtro2">
@@ -147,32 +123,177 @@
     </section>
 
     <section class="main-sidenav">
-      <div class="container-filtros-template">
+      <div class="container-filtros-template filtros-tarefas">
         <h2 class="container-filtros-template-header">Filtros
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()">Filtros</button>
         </h2>
-        <div class="container-filtros-template-content lista-vertical-fil">
-          <button class="btn-principal-alt" type="button" data-filter="todos">
-            <strong>Todos</strong>
-          </button>
-          <ul class=" lista-select">
-            <li class="item1"><select class="card-select-m" id="estado" onchange="carregarCidades()">
-                <option value="" selected disabled>Natureza</option>
-                <option value="PE">Pernambuco</option>
-                <option value="SP">São Paulo</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="MG">Minas Gerais</option>
-              </select></li>
-            <li class="item2"><select class="card-select-m" id="cidade">
-                <option value="" selected disabled>Centro de custo </option>
-              </select></li>
-            <li class="item3"><select class="card-select-m" id="bairro">
-                <option value="" selected disabled>Ano/mês</option>
-              </select></li>
-          </ul>
+        <div class="container-filtros-template-content">
+          <div id="abaFiltros1" class="aba-filtro active">
+            <ul class="lista-vertical-fil">
+
+              <!-- Filtro de Marcadores -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_marcadores">Marcadores <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_marcadores" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="todos_marcadores" value="todos" checked>
+                    <label for="todos_marcadores" class="marcador-s cor-marc0">Todos</label>
+
+                    <ul class="lista-vertical-2-column">
+                      <li>
+                        <input type="checkbox" id="marcador1" value="marcador1">
+                        <label for="marcador1" class="marcador-s cor-marc1">Marcador 1</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador2" value="marcador2">
+                        <label for="marcador2" class="marcador-s cor-marc2">Marcador 2</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador3" value="marcador3">
+                        <label for="marcador3" class="marcador-s cor-marc3">Marcador 3</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador4" value="marcador4">
+                        <label for="marcador4" class="marcador-s cor-marc4">Marcador 4</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador5" value="marcador5">
+                        <label for="marcador5" class="marcador-s cor-marc5">Marcador 5</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador6" value="marcador6">
+                        <label for="marcador6" class="marcador-s cor-marc6">Marcador 6</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador7" value="marcador7">
+                        <label for="marcador7" class="marcador-s cor-marc7">Marcador 7</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador8" value="marcador8">
+                        <label for="marcador8" class="marcador-s cor-marc8">Marcador 8</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador9" value="marcador9">
+                        <label for="marcador9" class="marcador-s cor-marc9">Marcador 9</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador10" value="marcador10">
+                        <label for="marcador10" class="marcador-s cor-marc10">Marcador 10</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+
+              <!-- Filtro de Status -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_status">Status <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_status" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="todos_status" value="todos" checked>
+                    <label for="todos_status">Todos</label>
+
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="novas" value="novas">
+                      <label for="novas">Novas</label>
+
+                      <input type="checkbox" id="andamento" value="andamento">
+                      <label for="andamento">Andamento</label>
+
+                      <input type="checkbox" id="atrasadas" value="atrasadas">
+                      <label for="atrasadas">Atrasadas</label>
+
+                      <input type="checkbox" id="concluidas" value="concluidas">
+                      <label for="concluidas">Concluídas</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Responsável -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_responsavel">Responsável <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_responsavel" class="radio-button-group">
+                    <input type="radio" id="minhas" name="filtro_responsavel" value="minhas">
+                    <label for="minhas">Minhas</label>
+
+                    <input type="radio" id="todas" name="filtro_responsavel" value="todas">
+                    <label for="todas">Todas</label>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Período de Tempo -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_tempo">Período de Tempo <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_tempo" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="tempo_todos" value="todos" checked>
+                    <label for="tempo_todos">Todos</label>
+
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="hoje" value="hoje">
+                      <label for="hoje">Hoje</label>
+
+                      <input type="checkbox" id="esta_semana" value="esta_semana">
+                      <label for="esta_semana">Esta semana</label>
+
+                      <input type="checkbox" id="este_mes" value="este_mes">
+                      <label for="este_mes">Este mês</label>
+
+                      <input type="checkbox" id="este_ano" value="este_ano">
+                      <label for="este_ano">Este ano</label>
+                    </div>
+
+                    <div class="lista-vertical-alt">
+                      <div class="checkbox-button-group lista-vertical-2-column">
+                        <label for="data_especifica_input">Data específica</label>
+                        <input type="date" id="data_especifica_input" name="data_especifica">
+                      </div>
+
+                      <div>
+                        <h4>Período específico</h4>
+                        <div class="checkbox-button-group lista-vertical-alt">
+                          <div class="lista-vertical-2-column">
+                            <label for="data_inicio">Início:</label>
+                            <input type="date" id="data_inicio" name="data_inicio">
+                          </div>
+                          <div class="lista-vertical-2-column">
+                            <label for="data_fim">Fim:</label>
+                            <input type="date" id="data_fim" name="data_fim">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="botoes">
+              <button class="btn-outline-principal" type="button" data-filter="Limpar">
+                <strong>Limpar</strong>
+              </button>
+
+              <button class="btn-principal" type="button" data-filter="Aplicar">
+                <strong>Aplicar</strong>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
 
   </main>
 
@@ -292,9 +413,6 @@
     </div>
   </div>
 
-
-
-
   <script src="./static/js/AlterarEsquemaDeCores.js"></script>
   <script src="./static/js/AtualizarAlturaPagina.js"></script>
   <script src="./static/js/ScrollAjustarItensContainerHeader.js"></script>
@@ -305,8 +423,8 @@
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/OcultarExibirFiltro.js"></script>
   <script src="./static/js/ExibirDetalhesTarefa.js"></script>
-  <script src="./static/js/NavFiltroTarefa.js"></script>
-
+  <script src="./static/js/FiltrosMultiSelect.js"></script>
+  <script src="./static/js/FiltrosTarefas.js"></script>
 
 </body>
 

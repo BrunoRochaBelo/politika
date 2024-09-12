@@ -49,7 +49,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaHeader.style.fontSize = "0px";
       areaHeader.style.padding = "5px 5px 5px 10px";
 
-      // Altera o tamanho da .main-sidenav para 19%
+      // Altera a largura da .main-sidenav para 19%
       mainSidenav.style.width = "19%";
 
       // Adiciona a classe para mostrar o pseudo-elemento ::after
@@ -59,7 +59,8 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Remove o z-index quando a área não está exibida
       area.style.zIndex = null;
     } else {
-      areaContent.style.maxHeight = areaContent.scrollHeight + "px";
+      // Define max-height responsivo
+      areaContent.style.maxHeight = `calc(var(--vh, 1vh) * 100 - 8.5rem)`;
       button.innerHTML = "X";
       button.style.color = "var(--btn-filtro-alt-txt)";
       mainSidenav.style.height = "auto";
@@ -71,7 +72,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       areaHeader.style.fontSize = "22px";
       areaHeader.style.padding = "10px 10px 10px 20px";
 
-      // Altera o tamanho da .main-sidenav para 88%
+      // Altera a largura da .main-sidenav para 88%
       mainSidenav.style.width = "88%";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
