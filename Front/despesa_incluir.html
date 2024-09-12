@@ -145,6 +145,7 @@
                   <label for="descricao_documento">Descrição documento</label>
                   <input type="text" id="descricao_documento" name="descricao_documento">
                 </div>
+
                 <div class="campo">
                   <label for="especie_documento">Espécie documento</label>
                   <select id="especie_documento_aba2" name="especie_documento">
@@ -153,29 +154,36 @@
                     <option value="test2">test2</option>
                   </select>
                 </div>
-                <div class="campo">
+                <div class="campo btn-file">
+
                   <label for="anexar_documento" class="file-label">Anexar documento</label>
                   <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba2', 'especie_documento_aba2')">
-                </div>
-              </fieldset>
 
-              <!-- Tabela para listar os arquivos anexados -->
-              <div class="tabela-historico">
-                <table id="tabelaArquivosAba2">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Data</th>
-                      <th>Espécie Documento</th>
-                      <th>Arquivo</th>
-                      <th>Ações</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Linhas da tabela serão adicionadas dinamicamente -->
-                  </tbody>
-                </table>
-              </div>
+                </div>
+
+                <p id="contadorArquivos">Total de arquivos adicionados: 0</p>
+                <!-- Tabela para listar os arquivos anexados -->
+                <div class="tabela-historico">
+                  <table id="tabelaArquivosAba2">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Nome</th>
+                        <th>Espécie Documento</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Linhas da tabela serão adicionadas dinamicamente -->
+                    </tbody>
+                  </table>
+                </div>
+
+
+
+
             </div>
 
             <!-- Aba 3: Comprovante de Pagamento -->
@@ -320,7 +328,7 @@
 
 <script src="./static/js/AtualizarAlturaPagina.js"></script>
 <script src="./static/js/NavAbasInternas.js"></script>
-<script src="./static/js/AtualizarListaDeArquivos.js"></script>
+<script src="./static/js/DespesaIncluirListaArquivos.js"></script>
 <script src="./static/js/DespesaSearchAll.js"></script>
 </body>
 

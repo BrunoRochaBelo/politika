@@ -71,14 +71,24 @@ fieldset {
 .campo input[type="file"] {
   display: none;
 }
-
+.btn-file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  padding-bottom: 12px;
+}
 .file-label {
-  padding: 10px;
-  background-color: var(--btn-principal);
-  color: var(--txt-titulo-card);
+  padding: 12px;
+  background: var(--btn-principal);
+  color: var(--txt-titulo) !important;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+  width: 50%;
+}
+.file-input {
+  display: none;
 }
 
 .campo input[type="checkbox"],
@@ -423,6 +433,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border: none;
     margin: 0;
     padding: 10px 0 20px 0;
+  }
+
+  .file-label {
+    width: 70%;
   }
 
   .checkbox-label:hover {
