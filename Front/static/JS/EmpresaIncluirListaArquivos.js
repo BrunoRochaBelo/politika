@@ -46,7 +46,9 @@ function adicionarServico() {
         <td data-label="ID">${idItem}</td>
         <td data-label="Produto / Serviço">${especieDocumento}</td>
         <td>
-            <img src="./static/imagens/icones/excluir.svg" alt="Excluir" class="icone-excluir" onclick="excluirItem(${idItem}, '${tabelaId}', '${valorSelecionado}')">
+            <div class="icone-excluir-container">
+                <img src="./static/imagens/icones/excluir.svg" alt="Excluir" class="icone-excluir" onclick="excluirItem(${idItem}, '${tabelaId}', '${valorSelecionado}')">
+            </div>
         </td>
     `;
   tbody.appendChild(tr);

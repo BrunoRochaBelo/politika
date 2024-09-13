@@ -1,4 +1,10 @@
 /* Estilo para o ícone de exclusão */
+.icone-excluir-container {
+  display: flex;
+  align-items: center; /* Alinhamento vertical ao centro */
+  justify-content: center; /* Alinhamento horizontal ao centro no modo padrão */
+}
+
 .icone-excluir {
   width: 15px;
   height: 15px;
@@ -14,10 +20,37 @@
   opacity: 0.6; /* Feedback visual ao clicar no ícone */
 }
 
+.titulo-area-tabela {
+  margin: 10px 0px;
+  font-weight: 500;
+  color: var(--txt-subtitulo);
+  position: relative;
+  padding-left: 6px;
+}
+
+.titulo-area-tabela::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--card-detalhe);
+  border-radius: 8px;
+}
+
+.contador-itens-tabela {
+  margin: 10px;
+  font-weight: 200;
+  color: var(--txt-subtitulo);
+  transition: transform 0.3s ease-in-out;
+}
+
 /* Estilo específico para o contador de itens no campo de Bens e Serviços */
-#contadorItens {
-  margin-top: 10px;
-  font-weight: bold;
+#contadorItens,
+#contadorArquivos {
+  margin: 0px 10px;
+  font-weight: 200;
   color: var(--txt-subtitulo);
   transition: transform 0.3s ease-in-out;
 }
@@ -80,30 +113,47 @@
 
 /* Estilo da tabela de histórico */
 .tabela-historico {
-  background: var(--container-bg);
+  background: none;
   border-radius: 25px;
-  padding: 20px;
+  padding: 0px 10px;
 }
 
 .tabela-historico table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate; /* Permite aplicar border-radius */
+  border-spacing: 0 5px; /* Espaçamento entre as linhas */
 }
 
 .tabela-historico th,
 .tabela-historico td {
   padding: 8px;
-  text-align: left;
+  text-align: center;
   color: var(--txt-conteudo-card);
-  border-bottom: 1px solid var(--bg-principal);
+  border-bottom: none;
+}
+
+/* Aplique o arredondamento nas primeiras e últimas células de cada linha */
+.tabela-historico tr td:first-child,
+.tabela-historico th:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.tabela-historico tr td:last-child,
+.tabela-historico th:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .tabela-historico th {
+  background: var(--card-aberto-bg);
   color: var(--txt-conteudo-card);
 }
 
 .tabela-historico tr {
   margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra-leve);
 }
 
 .tabela-historico tr:last-child {
@@ -111,22 +161,20 @@
 }
 
 .tabela-historico table tr:nth-child(odd) {
-  background-color: var(--container-bg);
+  background-color: var(--barra-pesquisa-bg);
 }
 
 .tabela-historico table tr:nth-child(even) {
-  background-color: var(--card-detalhe);
+  background-color: var(--container-bg);
 }
 
 /* Estilos responsivos */
 @media only screen and (max-width: 56.25rem) {
   .tabela-historico {
-    background: none;
-    padding: 10px;
-    border-spacing: 0 10px;
+    padding: 0px 10px;
   }
 
-  /* Faz com que as linhas se comportem como tabelas e as células como blocos */
+  /* Ajustes para o modo responsivo */
   .tabela-historico table,
   .tabela-historico thead,
   .tabela-historico tbody,
@@ -136,37 +184,27 @@
     display: block;
   }
 
-  /* Remove a borda inferior das células */
   .tabela-historico th,
   .tabela-historico td {
-    border-bottom: none;
-  }
-
-  /* Adiciona uma borda superior para as células */
-  .tabela-historico th,
-  .tabela-historico td {
-    border-top: 1px solid var(--bg-principal);
-  }
-
-  /* Alinha o texto à esquerda e adiciona um pouco de padding */
-  .tabela-historico th,
-  .tabela-historico td {
+    border-top: 1px solid var(--card-borda);
     text-align: left;
     padding: 8px;
   }
 
-  /* Ajusta o layout para telas pequenas */
   .tabela-historico td:before {
     content: attr(data-label);
     float: left;
     text-transform: uppercase;
     font-weight: bold;
-    margin-right: 10px; /* Adiciona espaço no rótulo */
-    color: var(--txt-conteudo-card); /* Adiciona a cor ao rótulo */
+    margin-right: 10px;
+    color: var(--txt-conteudo-card);
   }
 
-  /* Oculta o <tr> no modo responsivo */
   .tabela-historico th {
     display: none;
+  }
+
+  .icone-excluir-container {
+    justify-content: flex-end; /* Alinhamento ao final no modo responsivo */
   }
 }

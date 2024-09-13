@@ -75,44 +75,54 @@
                 <fieldset>
                   <legend class="titulo-xl"></legend>
                   <div class="campo">
-                    <label for="numero_documento">Número documento</label>
-                    <input type="number" id="numero_documento" name="numero_documento">
+                    <div id="formPesquisaContatos" class="search-input-container" onsubmit="pesquisarContatos(event)">
+                      <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
+                      <button type="submit" class="search-button">
+                        <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+                      </button>
+                    </div>
                   </div>
+
+                  <!-- Resultados da pesquisa de contatos -->
                   <div class="campo">
-                    <label for="descricao_documento">Descrição documento</label>
-                    <input type="text" id="descricao_documento" name="descricao_documento">
+                    <h3 class="titulo-area-tabela">Contatos Encontrados</h3>
+                    <p id="contadorContatosEncontrados" class="contador-itens-tabela">Total de contatos encontrados: 0</p>
+                    <div class="tabela-historico">
+                      <table id="tabelaContatosEncontrados">
+                        <thead>
+                          <tr>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Ação</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Contatos encontrados serão listados aqui dinamicamente -->
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
+
+                  <!-- Lista de Participantes do Grupo -->
                   <div class="campo">
-                    <label for="especie_documento">Espécie documento</label>
-                    <select id="especie_documento_aba2" name="especie_documento">
-                      <option value="">Selecione</option>
-                      <option value="test1">test1</option>
-                      <option value="test2">test2</option>
-                    </select>
-                  </div>
-                  <div class="campo">
-                    <label for="anexar_documento" class="file-label">Anexar documento</label>
-                    <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba2', 'especie_documento_aba2')">
+                    <h3 class="titulo-area-tabela">Participantes do Grupo</h3>
+                    <p id="contadorParticipantes" class="contador-itens-tabela">Total de participantes: 0</p>
+                    <div class="tabela-historico">
+                      <table id="tabelaParticipantesGrupo">
+                        <thead>
+                          <tr>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Ação</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Participantes do grupo serão listados aqui dinamicamente -->
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </fieldset>
-
-                <!-- Tabela para listar os arquivos anexados -->
-                <div class="tabela-historico">
-                  <table id="tabelaArquivosAba2">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Data</th>
-                        <th>Espécie Documento</th>
-                        <th>Arquivo</th>
-                        <th>Ações</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <!-- Linhas da tabela serão adicionadas dinamicamente -->
-                    </tbody>
-                  </table>
-                </div>
               </div>
             </div>
           </form>
@@ -125,6 +135,7 @@
 
 <script src="./static/js/AtualizarAlturaPagina.js"></script>
 <script src="./static/js/NavAbasInternas.js"></script>
+<script src="./static/js/GrupoIncluirListaContatos.js"></script>
 </body>
 
 </html>

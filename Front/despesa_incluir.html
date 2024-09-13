@@ -30,148 +30,274 @@
         </nav>
         <div class="container-abas-template-content">
           <form id="form" class="form" enctype="multipart/form-data">
-            <!-- Aba 1: Informações -->
-            <div id="aba1" class="aba-template active">
-              <fieldset>
-                <legend class="titulo-xl"></legend>
-                <div class="form-2-colum">
+            <div class="card-session secao-interna-template active">
+              <div id="aba1" class="aba-template active">
+                <fieldset>
+                  <legend class="titulo-xl"></legend>
+                  <div class="form-2-colum">
+                    <div class="campo">
+                      <label for="centro_custo">Centro de custo</label>
+                      <select id="centro_custo" name="centro_custo">
+                        <option value="">Selecione</option>
+                        <!-- Opções do select -->
+                      </select>
+                    </div>
+                    <div class="campo">
+                      <label for="referencia_despesa">Referência da despesa</label>
+                      <input type="text" id="referencia_despesa" name="referencia_despesa">
+                    </div>
+                  </div>
                   <div class="campo">
-                    <label for="centro_custo">Centro de custo</label>
-                    <select id="centro_custo" name="centro_custo">
+                    <label for="natureza_despesa">Natureza da despesa</label>
+                    <select id="natureza_despesa" name="natureza_despesa">
                       <option value="">Selecione</option>
                       <!-- Opções do select -->
                     </select>
                   </div>
                   <div class="campo">
-                    <label for="referencia_despesa">Referência da despesa</label>
-                    <input type="text" id="referencia_despesa" name="referencia_despesa">
-                  </div>
-                </div>
-                <div class="campo">
-                  <label for="natureza_despesa">Natureza da despesa</label>
-                  <select id="natureza_despesa" name="natureza_despesa">
-                    <option value="">Selecione</option>
-                    <!-- Opções do select -->
-                  </select>
-                </div>
-                <div class="campo">
-                  <label for="descricao_despesa">Descrição</label>
-                  <input type="text" id="descricao_despesa" name="descricao_despesa">
-                </div>
-                <div class="campo">
-                  <label for="ordenador_despesa">Ordenador de despesa</label>
-                  <input type="text" id="ordenador_despesa" name="ordenador_despesa">
-                </div>
-                <div class="form-2-colum">
-                  <div class="campo">
-                    <label for="data_despesa">Data da despesa</label>
-                    <input type="date" id="data_despesa" name="data_despesa" placeholder="dd/mm/aaaa">
+                    <label for="descricao_despesa">Descrição</label>
+                    <input type="text" id="descricao_despesa" name="descricao_despesa">
                   </div>
                   <div class="campo">
-                    <label for="valor_total">Valor Total</label>
-                    <input type="number" id="valor_total" name="valor_total">
+                    <label for="ordenador_despesa">Ordenador de despesa</label>
+                    <input type="text" id="ordenador_despesa" name="ordenador_despesa">
                   </div>
-                </div>
+                  <div class="form-2-colum">
+                    <div class="campo">
+                      <label for="data_despesa">Data da despesa</label>
+                      <input type="date" id="data_despesa" name="data_despesa" placeholder="dd/mm/aaaa">
+                    </div>
+                    <div class="campo">
+                      <label for="valor_total">Valor Total</label>
+                      <input type="number" id="valor_total" name="valor_total">
+                    </div>
+                  </div>
 
-                <div class="campo">
-                  <label for="cnpj_cpf_fornecedor">CNPJ / CPF fornecedor</label>
-                  <input type="text" id="cnpj_cpf_fornecedor" class="form-control">
-                  <!-- <div id="loading-indicator-cnpj" class="loading-indicator">Carregando...</div> -->
-                  <!-- <ul class="suggestions" id="suggestions-cnpj"></ul> -->
-                </div>
-                <div class="campo">
-                  <label for="nome_fornecedor">Nome do fornecedor</label>
-                  <input type="text" id="nome_fornecedor" class="form-control form-control-md">
-                  <!--  <div id="loading-indicator-nome" class="loading-indicator">Carregando...</div> -->
-                  <!-- <ul class="suggestions" id="suggestions-nome"></ul> -->
-                </div>
-                <div class="campo">
-                  <label for="email_fornecedor">Email do fornecedor</label>
-                  <input type="email" id="email_fornecedor" name="email_fornecedor">
-                </div>
+                  <div class="campo">
+                    <label for="cnpj_cpf_fornecedor">CNPJ / CPF fornecedor</label>
+                    <input type="text" id="cnpj_cpf_fornecedor" class="form-control">
+                    <!-- <div id="loading-indicator-cnpj" class="loading-indicator">Carregando...</div> -->
+                    <!-- <ul class="suggestions" id="suggestions-cnpj"></ul> -->
+                  </div>
+                  <div class="campo">
+                    <label for="nome_fornecedor">Nome do fornecedor</label>
+                    <input type="text" id="nome_fornecedor" class="form-control form-control-md">
+                    <!--  <div id="loading-indicator-nome" class="loading-indicator">Carregando...</div> -->
+                    <!-- <ul class="suggestions" id="suggestions-nome"></ul> -->
+                  </div>
+                  <div class="campo">
+                    <label for="email_fornecedor">Email do fornecedor</label>
+                    <input type="email" id="email_fornecedor" name="email_fornecedor">
+                  </div>
 
-                <div class="campo">
-                  <label for="autor">Autor</label>
-                  <input type="text" id="autor" name="autor">
-                </div>
-                <div class="campo">
-                  <label for="data_venc">Data de vencimento</label>
-                  <input type="date" id="data_venc" name="data_venc">
-                </div>
-                <div class="campo">
-                  <label for="qtde_parcelas">Quantidade de parcelas</label>
-                  <input type="number" id="qtde_parcelas" name="qtde_parcelas">
-                </div>
-                <div class="campo">
-                  <label for="status">Status</label>
-                  <select id="status" name="status">
-                    <option value="">Selecione</option>
-                    <!-- Opções do select -->
-                  </select>
-                </div>
-                <div class="campo">
-                  <label for="e_parcelado">É parcelado?</label>
-                  <input type="checkbox" id="e_parcelado" class="form-checkbox" name="e_parcelado">
-                </div>
-                <div class="campo">
-                  <label for="valor_1parcela">Valor da 1ª parcela</label>
-                  <input type="number" id="valor_1parcela" name="valor_1parcela">
-                </div>
-                <div class="campo">
-                  <label for="unidade_intervalo">Unidade de intervalo</label>
-                  <input type="text" id="unidade_intervalo" name="unidade_intervalo">
-                </div>
-                <div class="campo">
-                  <label for="qtde_intervalo">Quantidade de intervalos</label>
-                  <input type="number" id="qtde_intervalo" name="qtde_intervalo">
-                </div>
-                <div class="campo">
-                  <label for="val_demais_parc">Valor das demais parcelas</label>
-                  <input type="number" id="val_demais_parc" name="val_demais_parc">
-                </div>
+                  <div class="campo">
+                    <label for="autor">Autor</label>
+                    <input type="text" id="autor" name="autor">
+                  </div>
+                  <div class="campo">
+                    <label for="data_venc">Data de vencimento</label>
+                    <input type="date" id="data_venc" name="data_venc">
+                  </div>
+                  <div class="campo">
+                    <label for="qtde_parcelas">Quantidade de parcelas</label>
+                    <input type="number" id="qtde_parcelas" name="qtde_parcelas">
+                  </div>
+                  <div class="campo">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                      <option value="">Selecione</option>
+                      <!-- Opções do select -->
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="e_parcelado">É parcelado?</label>
+                    <input type="checkbox" id="e_parcelado" class="form-checkbox" name="e_parcelado">
+                  </div>
+                  <div class="campo">
+                    <label for="valor_1parcela">Valor da 1ª parcela</label>
+                    <input type="number" id="valor_1parcela" name="valor_1parcela">
+                  </div>
+                  <div class="campo">
+                    <label for="unidade_intervalo">Unidade de intervalo</label>
+                    <input type="text" id="unidade_intervalo" name="unidade_intervalo">
+                  </div>
+                  <div class="campo">
+                    <label for="qtde_intervalo">Quantidade de intervalos</label>
+                    <input type="number" id="qtde_intervalo" name="qtde_intervalo">
+                  </div>
+                  <div class="campo">
+                    <label for="val_demais_parc">Valor das demais parcelas</label>
+                    <input type="number" id="val_demais_parc" name="val_demais_parc">
+                  </div>
 
-              </fieldset>
-            </div>
+                </fieldset>
+              </div>
 
-            <!-- Aba 2: Comprovante de Despesa -->
-            <div id="aba2" class="aba-template">
-              <fieldset>
-                <legend class="titulo-xl"></legend>
-                <div class="campo">
-                  <label for="numero_documento">Número documento</label>
-                  <input type="number" id="numero_documento" name="numero_documento">
-                </div>
-                <div class="campo">
-                  <label for="descricao_documento">Descrição documento</label>
-                  <input type="text" id="descricao_documento" name="descricao_documento">
-                </div>
+              <div id="aba2" class="aba-template">
+                <fieldset>
+                  <legend class="titulo-xl"></legend>
+                  <div class="campo">
+                    <label for="numero_documento">Número documento</label>
+                    <input type="number" id="numero_documento" name="numero_documento">
+                  </div>
+                  <div class="campo">
+                    <label for="descricao_documento">Descrição documento</label>
+                    <input type="text" id="descricao_documento" name="descricao_documento">
+                  </div>
 
-                <div class="campo">
-                  <label for="especie_documento">Espécie documento</label>
-                  <select id="especie_documento_aba2" name="especie_documento">
-                    <option value="">Selecione</option>
-                    <option value="test1">test1</option>
-                    <option value="test2">test2</option>
-                  </select>
-                </div>
-                <div class="campo btn-file">
+                  <div class="campo">
+                    <label for="especie_documento">Espécie documento</label>
+                    <select id="especie_documento_aba2" name="especie_documento">
+                      <option value="">Selecione</option>
+                      <option value="test1">test1</option>
+                      <option value="test2">test2</option>
+                    </select>
+                  </div>
+                  <div class="campo btn-file">
+                    <label for="anexar_documento" class="file-label">Anexar documento</label>
+                    <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba2', 'especie_documento_aba2')">
+                  </div>
 
-                  <label for="anexar_documento" class="file-label">Anexar documento</label>
-                  <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba2', 'especie_documento_aba2')">
+                  <p id="contadorArquivos">Total de arquivos adicionados: 0</p>
+                  <!-- Tabela para listar os arquivos anexados -->
+                  <div class="tabela-historico">
+                    <table id="tabelaArquivosAba2">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Data</th>
+                          <th>Tipo</th>
+                          <th>Nome</th>
+                          <th>Espécie Documento</th>
+                          <th>Ações</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Linhas da tabela serão adicionadas dinamicamente -->
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
 
-                </div>
+              <div id="aba3" class="aba-template">
+                <fieldset>
+                  <legend class="titulo-xl"></legend>
+                  <div class="campo">
+                    <label for="parcela">Parcela</label>
+                    <input type="number" id="parcela" name="parcela">
+                  </div>
+                  <div class="campo">
+                    <label for="qtde_parcelas_pagamento">Quantidade de parcelas</label>
+                    <input type="number" id="qtde_parcelas_pagamento" name="qtde_parcelas">
+                  </div>
+                  <div class="campo">
+                    <label for="data_venc_pagamento">Data de vencimento</label>
+                    <input type="date" id="data_venc_pagamento" name="data_venc">
+                  </div>
+                  <div class="campo">
+                    <label for="valor_principal">Valor principal</label>
+                    <input type="number" id="valor_principal" name="valor_principal">
+                  </div>
+                  <div class="campo">
+                    <label for="cc_principal">Conta Corrente principal</label>
+                    <input type="text" id="cc_principal" name="cc_principal">
+                  </div>
+                  <div class="campo">
+                    <label for="forma_principal">Forma principal</label>
+                    <select id="forma_principal" name="forma_principal">
+                      <option value="">Selecione</option>
+                      <!-- Opções do select -->
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="doc_principal">Documento principal</label>
+                    <input type="text" id="doc_principal" name="doc_principal">
+                  </div>
+                  <div class="campo">
+                    <label for="especiedoc_principal">Espécie documento principal</label>
+                    <input type="text" id="especiedoc_principal" name="especiedoc_principal">
+                  </div>
+                  <div class="campo">
+                    <label for="valor_juros">Valor juros</label>
+                    <input type="number" id="valor_juros" name="valor_juros">
+                  </div>
+                  <div class="campo">
+                    <label for="cc_juros">Conta Corrente juros</label>
+                    <input type="text" id="cc_juros" name="cc_juros">
+                  </div>
+                  <div class="campo">
+                    <label for="forma_juros">Forma juros</label>
+                    <select id="forma_juros" name="forma_juros">
+                      <option value="">Selecione</option>
+                      <!-- Opções do select -->
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="doc_juros">Documento juros</label>
+                    <input type="text" id="doc_juros" name="doc_juros">
+                  </div>
+                  <div class="campo">
+                    <label for="especiedoc_juros">Espécie documento juros</label>
+                    <input type="text" id="especiedoc_juros" name="especiedoc_juros">
+                  </div>
+                  <div class="campo">
+                    <label for="valor_multa">Valor multa</label>
+                    <input type="number" id="valor_multa" name="valor_multa">
+                  </div>
+                  <div class="campo">
+                    <label for="cc_multa">Conta Corrente multa</label>
+                    <input type="text" id="cc_multa" name="cc_multa">
+                  </div>
+                  <div class="campo">
+                    <label for="forma_multa">Forma multa</label>
+                    <select id="forma_multa" name="forma_multa">
+                      <option value="">Selecione</option>
+                      <!-- Opções do select -->
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="doc_multa">Documento multa</label>
+                    <input type="text" id="doc_multa" name="doc_multa">
+                  </div>
+                  <div class="campo">
+                    <label for="especiedoc_multa">Espécie documento multa</label>
+                    <input type="text" id="especiedoc_multa" name="especiedoc_multa">
+                  </div>
+                  <div class="campo">
+                    <label for="data_pagamento">Data de pagamento</label>
+                    <input type="date" id="data_pagamento" name="data_pagamento">
+                  </div>
+                  <div class="campo">
+                    <label for="valor_parcela">Valor da parcela</label>
+                    <input type="number" id="valor_parcela" name="valor_parcela">
+                  </div>
+                  <div class="campo">
+                    <label for="valor_desconto">Valor do desconto</label>
+                    <input type="number" id="valor_desconto" name="valor_desconto">
+                  </div>
+                  <div class="campo">
+                    <label for="cc_principal_id">ID Conta Corrente principal</label>
+                    <input type="text" id="cc_principal_id" name="cc_principal_id">
+                  </div>
+                  <div class="campo">
+                    <label for="cc_juros_id">ID Conta Corrente juros</label>
+                    <input type="text" id="cc_juros_id" name="cc_juros_id">
+                  </div>
+                  <div class="campo">
+                    <label for="cc_multa_id">ID Conta Corrente multa</label>
+                    <input type="text" id="cc_multa_id" name="cc_multa_id">
+                  </div>
+                </fieldset>
 
-                <p id="contadorArquivos">Total de arquivos adicionados: 0</p>
                 <!-- Tabela para listar os arquivos anexados -->
                 <div class="tabela-historico">
-                  <table id="tabelaArquivosAba2">
+                  <table id="tabelaArquivosAba3">
                     <thead>
                       <tr>
                         <th>ID</th>
                         <th>Data</th>
-                        <th>Tipo</th>
-                        <th>Nome</th>
                         <th>Espécie Documento</th>
+                        <th>Arquivo</th>
                         <th>Ações</th>
                       </tr>
                     </thead>
@@ -180,144 +306,8 @@
                     </tbody>
                   </table>
                 </div>
-
-
-
-
-            </div>
-
-            <!-- Aba 3: Comprovante de Pagamento -->
-            <div id="aba3" class="aba-template">
-              <fieldset>
-                <legend class="titulo-xl"></legend>
-                <div class="campo">
-                  <label for="parcela">Parcela</label>
-                  <input type="number" id="parcela" name="parcela">
-                </div>
-                <div class="campo">
-                  <label for="qtde_parcelas_pagamento">Quantidade de parcelas</label>
-                  <input type="number" id="qtde_parcelas_pagamento" name="qtde_parcelas">
-                </div>
-                <div class="campo">
-                  <label for="data_venc_pagamento">Data de vencimento</label>
-                  <input type="date" id="data_venc_pagamento" name="data_venc">
-                </div>
-                <div class="campo">
-                  <label for="valor_principal">Valor principal</label>
-                  <input type="number" id="valor_principal" name="valor_principal">
-                </div>
-                <div class="campo">
-                  <label for="cc_principal">Conta Corrente principal</label>
-                  <input type="text" id="cc_principal" name="cc_principal">
-                </div>
-                <div class="campo">
-                  <label for="forma_principal">Forma principal</label>
-                  <select id="forma_principal" name="forma_principal">
-                    <option value="">Selecione</option>
-                    <!-- Opções do select -->
-                  </select>
-                </div>
-                <div class="campo">
-                  <label for="doc_principal">Documento principal</label>
-                  <input type="text" id="doc_principal" name="doc_principal">
-                </div>
-                <div class="campo">
-                  <label for="especiedoc_principal">Espécie documento principal</label>
-                  <input type="text" id="especiedoc_principal" name="especiedoc_principal">
-                </div>
-                <div class="campo">
-                  <label for="valor_juros">Valor juros</label>
-                  <input type="number" id="valor_juros" name="valor_juros">
-                </div>
-                <div class="campo">
-                  <label for="cc_juros">Conta Corrente juros</label>
-                  <input type="text" id="cc_juros" name="cc_juros">
-                </div>
-                <div class="campo">
-                  <label for="forma_juros">Forma juros</label>
-                  <select id="forma_juros" name="forma_juros">
-                    <option value="">Selecione</option>
-                    <!-- Opções do select -->
-                  </select>
-                </div>
-                <div class="campo">
-                  <label for="doc_juros">Documento juros</label>
-                  <input type="text" id="doc_juros" name="doc_juros">
-                </div>
-                <div class="campo">
-                  <label for="especiedoc_juros">Espécie documento juros</label>
-                  <input type="text" id="especiedoc_juros" name="especiedoc_juros">
-                </div>
-                <div class="campo">
-                  <label for="valor_multa">Valor multa</label>
-                  <input type="number" id="valor_multa" name="valor_multa">
-                </div>
-                <div class="campo">
-                  <label for="cc_multa">Conta Corrente multa</label>
-                  <input type="text" id="cc_multa" name="cc_multa">
-                </div>
-                <div class="campo">
-                  <label for="forma_multa">Forma multa</label>
-                  <select id="forma_multa" name="forma_multa">
-                    <option value="">Selecione</option>
-                    <!-- Opções do select -->
-                  </select>
-                </div>
-                <div class="campo">
-                  <label for="doc_multa">Documento multa</label>
-                  <input type="text" id="doc_multa" name="doc_multa">
-                </div>
-                <div class="campo">
-                  <label for="especiedoc_multa">Espécie documento multa</label>
-                  <input type="text" id="especiedoc_multa" name="especiedoc_multa">
-                </div>
-                <div class="campo">
-                  <label for="data_pagamento">Data de pagamento</label>
-                  <input type="date" id="data_pagamento" name="data_pagamento">
-                </div>
-                <div class="campo">
-                  <label for="valor_parcela">Valor da parcela</label>
-                  <input type="number" id="valor_parcela" name="valor_parcela">
-                </div>
-                <div class="campo">
-                  <label for="valor_desconto">Valor do desconto</label>
-                  <input type="number" id="valor_desconto" name="valor_desconto">
-                </div>
-                <div class="campo">
-                  <label for="cc_principal_id">ID Conta Corrente principal</label>
-                  <input type="text" id="cc_principal_id" name="cc_principal_id">
-                </div>
-                <div class="campo">
-                  <label for="cc_juros_id">ID Conta Corrente juros</label>
-                  <input type="text" id="cc_juros_id" name="cc_juros_id">
-                </div>
-                <div class="campo">
-                  <label for="cc_multa_id">ID Conta Corrente multa</label>
-                  <input type="text" id="cc_multa_id" name="cc_multa_id">
-                </div>
-              </fieldset>
-
-              <!-- Tabela para listar os arquivos anexados -->
-              <div class="tabela-historico">
-                <table id="tabelaArquivosAba3">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Data</th>
-                      <th>Espécie Documento</th>
-                      <th>Arquivo</th>
-                      <th>Ações</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Linhas da tabela serão adicionadas dinamicamente -->
-                  </tbody>
-                </table>
               </div>
             </div>
-
-
-
           </form>
         </div>
       </section>
