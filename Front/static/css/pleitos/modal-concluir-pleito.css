@@ -75,7 +75,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-desc {
   grid-area: modal-concluir-pleito-desc;
@@ -89,7 +89,7 @@
   align-items: center;
   margin: 3px 10px 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-beneficiario {
   grid-area: modal-concluir-pleito-beneficiario;
@@ -98,7 +98,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-uf {
   grid-area: modal-concluir-pleito-uf;
@@ -107,7 +107,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-cidade {
   grid-area: modal-concluir-pleito-cidade;
@@ -116,7 +116,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-bairro {
   grid-area: modal-concluir-pleito-bairro;
@@ -125,7 +125,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-rua {
   grid-area: modal-concluir-pleito-rua;
@@ -134,7 +134,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-autor {
   grid-area: modal-concluir-pleito-autor;
@@ -143,7 +143,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-dataCriacao {
   grid-area: modal-concluir-pleito-dataCriacao;
@@ -152,7 +152,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-status {
   display: none;
@@ -169,7 +169,7 @@
   align-self: center;
   border: 1px solid var(--container-bg);
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
   white-space: wrap;
   word-break: break-all;
   background: var(--container-bg);
@@ -192,7 +192,7 @@
   display: flex;
   flex-direction: column;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-concluir-pleito-salvar {
   grid-area: modal-concluir-pleito-salvar;
@@ -200,7 +200,7 @@
   justify-content: space-around;
   gap: 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
   margin-top: 25px;
 }
 
@@ -223,7 +223,7 @@
 
 .modal-concluir-pleito-salvar .btn-principal {
   width: 100%;
-  font-weight: regular;
+  font-weight: 300;
   font-size: 11px;
   padding: 10px 20px;
   border-radius: 5px;
@@ -233,7 +233,7 @@
 }
 .modal-concluir-pleito-salvar .btn-outline-principal {
   width: 100%;
-  font-weight: regular;
+  font-weight: 300;
   font-size: 11px;
   padding: 10px 20px;
   border-radius: 5px;

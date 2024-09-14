@@ -71,19 +71,20 @@
   margin-top: 10px;
 }
 
-/* Estilo para os elementos de carregamento */
+/* Estilos para o indicador de carregamento */
 .loading-indicator {
   display: none;
   font-size: 1em;
   margin: 1em;
-  color: var(--txt-placeholder);
+  color: var(--txt-placeholder, #999);
+  text-align: center;
 }
 .loading-indicator::before {
   content: "";
   display: inline-block;
   width: 1em;
   height: 1em;
-  border: 2px solid var(--txt-placeholder);
+  border: 2px solid var(--txt-placeholder, #999);
   border-top: 2px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -100,7 +101,7 @@
 }
 
 /* Estilos para listas de sugestões */
-.suggestions {
+/*.suggestions {
   border: none;
   border-radius: 0px 0px 12px 12px;
   max-height: 150px;
@@ -118,4 +119,56 @@
 }
 .suggestions li:hover {
   background-color: hsl(218, 88%, 88%);
+}*/
+
+/* Estilos atualizados para a lista de sugestões */
+#suggestions {
+  margin: 5px 0px;
+  background-color: var(--input-empty-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: var(--sombra-moderada);
+  display: none; /* Oculta o elemento por padrão */
+}
+
+#suggestions.visible {
+  display: block; /* Mostra o elemento quando tiver a classe 'visible' */
+}
+
+#suggestions ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#suggestions li {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--txt-titulo);
+  transition: background-color 0.2s ease-in-out, color 0.2s;
+}
+
+#suggestions li:not(:last-child) {
+  border-bottom: 1px solid var(--input-border);
+}
+
+#suggestions li:hover {
+  background-color: var(--card-aberto-bg);
+}
+
+#suggestions li.selected {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+#suggestions p {
+  padding: 12px 16px;
+  margin: 0;
+  color: var(--input-error-bg);
+  font-style: italic; /* Opcional */
+  text-align: center; /* Centraliza o texto */
 }

@@ -1,7 +1,7 @@
 /* Estilo das Mensagens de Erro */
 .error {
   color: red;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 /* Estilo das Mensagens de Erro */
@@ -10,7 +10,7 @@
   top: 50px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
-  color: var(--message-error-txt, #fff); /* Fallback para cores customizadas */
+  color: var(--message-error-txt, #fff);
   background-color: var(--erro, #f44336);
   padding: 15px 20px;
   border-radius: 8px;
@@ -60,7 +60,7 @@
   border: 1px solid #ff0000;
   background-color: #ffe6e6;
   color: #ff0000;
-  font-weight: bold;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -70,7 +70,7 @@
   top: 50px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
-  color: var(--msg-sucesso-txt, #fff); /* Fallback para cores customizadas */
+  color: var(--msg-sucesso-txt, #fff);
   background-color: var(--sucesso, #4caf50);
   padding: 15px 20px;
   border-radius: 8px;
@@ -86,4 +86,20 @@
 .message-success.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+@media only screen and (max-width: 56.25rem) {
+  .message-error {
+    top: unset;
+    bottom: 10px; /* Exibe na parte inferior em telas menores */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .message-success {
+    top: unset;
+    bottom: 10px; /* Exibe na parte inferior em telas menores */
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

@@ -195,7 +195,7 @@
     content: attr(data-label);
     float: left;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 400;
     margin-right: 10px;
     color: var(--txt-conteudo-card);
   }

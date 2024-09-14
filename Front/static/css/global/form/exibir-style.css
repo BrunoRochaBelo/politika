@@ -246,7 +246,7 @@
   color: var(--input-label);
   background: transparent;
   border: none;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .campo-exibir textarea {

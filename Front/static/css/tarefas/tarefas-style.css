@@ -1,7 +1,7 @@
 .tarefa-small-card-editar .btn-outline-principal,
 .tarefa-medium-card-editar .btn-outline-principal {
   width: auto;
-  font-weight: regular;
+  font-weight: 300;
   font-size: 11px;
   border-radius: 9px;
   border: 1px solid var(--btn-secundario);
@@ -17,6 +17,8 @@
 
 .filtros-tarefas h4 {
   margin-bottom: 10px;
+  font-weight: 300;
+  color: var(--txt-subtitulo);
 }
 .filtros-tarefas input[type="date"] {
   align-self: center;

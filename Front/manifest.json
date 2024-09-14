@@ -2,7 +2,7 @@
   "name": "Dica - Chassis Dynamics",
   "short_name": "DICA",
   "description": "Seu gabinete na palma da mão",
-  "lang": "pt-br",
+  "lang": "pt-BR",
   "theme_color": "#3f1c80",
   "background_color": "#000000",
   "display": "fullscreen",
@@ -11,278 +11,278 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "./static/imagens/logo/logo.png",
-      "sizes": "256x256",
+      "src": "/static/imagens/logo/logo.png",
+      "sizes": "192x175",
       "type": "image/png"
     },
     {
-      "src": "./static/imagens/icones/1-estrela.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/1-estrela.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/2-estrela.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/2-estrela.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/3-estrela.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/3-estrela.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/4-estrela.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/4-estrela.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/5-estrela.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/5-estrela.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/agora.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/agora.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/apps.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/apps.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/apps-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/apps-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/anterior.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/anterior.svg",
+      "sizes": "15x22",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/avançar.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/avançar.svg",
+      "sizes": "15x22",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/calendario.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/calendario.svg",
+      "sizes": "32x28",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/calendario-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/calendario-select.svg",
+      "sizes": "32x28",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/call.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/call.svg",
+      "sizes": "25x24",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/check.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/check.svg",
+      "sizes": "29x23",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/contas.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/contas.svg",
+      "sizes": "16x17",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/contas-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/contas-select.svg",
+      "sizes": "16x17",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/contatos.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/contatos.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/contatos-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/contatos-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/dashboard.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/dashboard.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/dashboard-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/dashboard-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/despesas.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/despesas.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/despesas-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/despesas-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/editar.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/editar.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/endereço.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/endereço.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/equipe.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/equipe.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/equipe-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/equipe-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/eventos.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/eventos.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/futuro.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/futuro.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/gerenciar-conta.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/gerenciar-conta.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/historico.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/historico.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/home.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/home.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/home-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/home-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/identificação.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/identificação.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/info_complementar.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/info_complementar.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/menu.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/menu.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/moon.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/moon.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/notificação.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/notificação.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/notificação-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/notificação-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/passado.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/passado.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/perfil.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/perfil.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/perfil-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/perfil-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/pessoa-fisica.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/pessoa-fisica.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/pessoa-juridica.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/pessoa-juridica.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/phone.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/phone.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/pleitos.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/pleitos.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/pleitos-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/pleitos-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/referencia_poli.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/referencia_poli.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/sair.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/sair.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/send.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/send.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/sun.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/sun.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/tarefas.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/tarefas.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/tarefas-select.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/tarefas-select.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/voltar.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/voltar.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     },
     {
-      "src": "./static/imagens/icones/whatsapp-icon.svg",
-      "sizes": "256x256",
+      "src": "/static/imagens/icones/whatsapp-icon.svg",
+      "sizes": "72x72",
       "type": "image/svg+xml"
     }
   ],

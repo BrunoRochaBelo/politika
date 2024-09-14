@@ -6,8 +6,9 @@
   border: 1px solid var(--btn-principal);
   box-shadow: var(--sombra-leve);
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 300;
   cursor: pointer;
   text-align: center;
   display: inline-flex;
@@ -24,8 +25,9 @@
   color: var(--btn-principal-txt);
   border: 1px solid var(--btn-principal-destaque);
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 300;
   cursor: pointer;
   text-align: center;
   display: inline-flex;
@@ -39,8 +41,9 @@
   border: 1px solid var(--btn-principal-alt);
   box-shadow: var(--sombra-leve);
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 300;
   cursor: pointer;
   text-align: center;
   display: inline-flex;
@@ -57,8 +60,9 @@
   color: var(--btn-principal-alt-text);
   border: 1px solid var(--btn-principal-alt-destaque);
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 300;
   cursor: pointer;
   text-align: center;
   display: inline-flex;
@@ -79,8 +83,9 @@
   border: 1px solid var(--btn-principal);
   box-shadow: none;
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 300;
   cursor: pointer;
   text-align: center;
   display: inline-flex;
@@ -92,8 +97,9 @@
   color: var(--btn-principal-txt);
   box-shadow: var(--sombra-leve);
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 300;
   cursor: pointer;
   text-align: center;
   display: inline-flex;
@@ -184,7 +190,7 @@
   color: var(--txt-destaque);
   border-radius: 45px;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 400;
   cursor: pointer;
 }
 .close:hover,

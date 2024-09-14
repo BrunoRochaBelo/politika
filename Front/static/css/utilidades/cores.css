@@ -21,12 +21,12 @@
   --cor-apoio-2: hsl(219, 22%, 12%);
 
   /* Backgrounds e Containers */
-  --bg-principal: hsl(219, 20%, 7%);
-  --container-bg: hsl(219, 18%, 13%);
-  --barra-pesquisa-bg: hsl(219, 18%, 16%);
-  --borda: hsl(219, 18%, 25%);
-  --divisor: hsl(219, 18%, 20%);
-  --bg-overlay: hsla(219, 20%, 5%, 0.5);
+  --bg-principal: hsl(219, 22%, 7%);
+  --container-bg: hsl(219, 20%, 13%);
+  --barra-pesquisa-bg: hsl(219, 20%, 16%);
+  --borda: hsl(219, 20%, 25%);
+  --divisor: hsl(219, 20%, 23%);
+  --bg-overlay: hsla(219, 22%, 5%, 0.5);
 
   /* Texto */
   --txt-titulo: hsl(219, 30%, 90%);
@@ -37,10 +37,10 @@
   --txt-placeholder: hsl(219, 25%, 80%);
 
   /* Cartões */
-  --card-bg: hsl(219, 20%, 25%);
-  --card-detalhe: hsl(219, 20%, 30%);
-  --card-borda: hsl(219, 20%, 23%);
-  --card-hover: hsl(219, 25%, 34%);
+  --card-bg: hsl(219, 22%, 21%);
+  --card-detalhe: hsl(219, 22%, 24%);
+  --card-borda: hsl(219, 22%, 22%);
+  --card-hover: hsl(219, 25%, 23%);
 
   --card-aberto-bg: hsl(219, 35%, 30%);
   --card-aberto-detalhe: hsl(219, 40%, 25%);
@@ -50,7 +50,7 @@
   --txt-card-aberto: hsl(219, 80%, 95%);
 
   /* Modais */
-  --modal-bg: hsl(219, 20%, 14%);
+  --modal-bg: hsl(219, 20%, 13%);
   --modal-borda: hsl(219, 20%, 20%);
   --modal-divisor: hsl(219, 20%, 22%);
   --modal-titulo: hsl(219, 60%, 75%);
@@ -92,9 +92,9 @@
   --btn-secundario-destaque: hsl(28, 50%, 35%);
   --btn-secundario-txt: hsl(28, 22%, 85%);
 
-  --btn-filtro: hsl(219, 20%, 25%);
-  --btn-filtro-txt: hsl(219, 20%, 70%);
-  --btn-filtro-hover: hsl(219, 20%, 30%);
+  --btn-filtro: hsl(219, 22%, 21%);
+  --btn-filtro-txt: hsl(219, 22%, 70%);
+  --btn-filtro-hover: hsl(219, 22%, 30%);
   --btn-filtro-selecionado: linear-gradient(
     135deg,
     hsl(219, 57%, 48%),

@@ -36,7 +36,7 @@
   color: #aaa;
   float: right;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 400;
 }
 .close_evento_modal:hover,
 .close_evento_modal:focus {
@@ -62,7 +62,7 @@
   color: #aaa;
   float: right;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 400;
 }
 .close_evento_modal:hover,
 .close_evento_modal:focus {

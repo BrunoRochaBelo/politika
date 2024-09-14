@@ -23,6 +23,7 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 5px;
+  font-weight: 400;
 }
 .container-template-content {
   grid-area: container-template-content;

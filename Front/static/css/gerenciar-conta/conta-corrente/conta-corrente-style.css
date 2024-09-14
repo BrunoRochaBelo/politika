@@ -107,7 +107,7 @@ button.delete {
   color: #aaa;
   float: right;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .conta-corrente-close-button:hover,

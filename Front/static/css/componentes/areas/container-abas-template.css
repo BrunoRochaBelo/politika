@@ -24,6 +24,7 @@
   border-top-right-radius: 25px;
   padding: 3px 5px;
   background: none;
+  font-weight: 400;
 }
 .container-abas-template-content {
   grid-area: container-abas-template-content;

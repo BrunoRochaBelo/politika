@@ -46,7 +46,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .pleitos-medium-card-desc {
   grid-area: pleitos-medium-card-desc;
@@ -86,7 +86,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }
 .pleitos-medium-card-cidade {
@@ -98,7 +98,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }
 .pleitos-medium-card-bairro {
@@ -110,7 +110,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }
 .pleitos-medium-card-rua {

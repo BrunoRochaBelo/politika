@@ -74,7 +74,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-desc {
   grid-area: modal-despachar-pleito-desc;
@@ -88,7 +88,7 @@
   align-items: center;
   margin: 3px 10px 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-beneficiario {
   grid-area: modal-despachar-pleito-beneficiario;
@@ -97,7 +97,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-uf {
   grid-area: modal-despachar-pleito-uf;
@@ -106,7 +106,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-cidade {
   grid-area: modal-despachar-pleito-cidade;
@@ -115,7 +115,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-bairro {
   grid-area: modal-despachar-pleito-bairro;
@@ -124,7 +124,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-rua {
   grid-area: modal-despachar-pleito-rua;
@@ -133,7 +133,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-autor {
   grid-area: modal-despachar-pleito-autor;
@@ -142,7 +142,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-dataCriacao {
   grid-area: modal-despachar-pleito-dataCriacao;
@@ -151,7 +151,7 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-status {
   display: none;
@@ -168,7 +168,7 @@
   align-self: center;
   border: 1px solid var(--container-bg);
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
   white-space: wrap;
   word-break: break-all;
   background: var(--container-bg);
@@ -197,7 +197,7 @@
   display: flex;
   flex-direction: column;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .modal-despachar-pleito-dataInicio {
   grid-area: modal-despachar-pleito-dataInicio;
@@ -221,7 +221,7 @@
   justify-content: space-around;
   gap: 10px;
   font-size: 13px;
-  font-weight: 350;
+  font-weight: 300;
   margin-top: 25px;
 }
 
@@ -259,7 +259,7 @@
 
 .modal-despachar-pleito-salvar .btn-principal {
   width: 100%;
-  font-weight: regular;
+  font-weight: 300;
   font-size: 11px;
   padding: 15px 20px;
   border-radius: 5px;
@@ -269,7 +269,7 @@
 }
 .modal-despachar-pleito-salvar .btn-outline-principal {
   width: 100%;
-  font-weight: regular;
+  font-weight: 300;
   font-size: 11px;
   padding: 15px 20px;
   border-radius: 5px;

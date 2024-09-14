@@ -18,12 +18,22 @@ fieldset {
 }
 
 .title-legend {
-  text-align: start;
+  margin: 10px 0px;
   font-size: 1.2em;
-  font-weight: bold;
+  font-weight: 400;
   color: var(--txt-nav-selecionado);
-  margin: 20px 0px 0px 0px;
-  padding: 20px;
+  position: relative;
+  padding-left: 6px;
+}
+.title-legend:before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--txt-nav-selecionado);
+  border-radius: 8px;
 }
 
 .campo {
@@ -418,7 +428,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .campo input[required].success,
 .campo textarea[required].success,
 .campo select[required].success {
-  border: 1px solid transparent !important;
+  border: 1px solid transparent;
   background: var(--input-filled-bg) !important;
   color: var(--input-txt) !important;
 }
@@ -447,6 +457,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .success-message p {
   margin: 0;
   font-size: 14px;
+}
+
+.input-valid {
+  border: 1px solid #2ecc71 !important;
 }
 
 /* Responsivo */

@@ -23,6 +23,7 @@
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
+  font-weight: 400;
 }
 .container-filtros-template-content {
   grid-area: container-filtros-template-content;
@@ -60,6 +61,7 @@
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 5px;
+  font-weight: 400;
 }
 .container-compromisso-hoje-template-content {
   grid-area: container-compromisso-hoje-template-content;
@@ -148,7 +150,7 @@
 }
 .secao-interna-template-header h2 {
   font-size: 14px;
-  font-weight: 350;
+  font-weight: 300;
 }
 .secao-interna-template-content {
   grid-area: secao-interna-template-content;

@@ -1,5 +1,5 @@
-const STATIC_CACHE_NAME = "static-cache-v1"; // Manter nome fixo
-const DYNAMIC_CACHE_NAME = "dynamic-cache-v1"; // Manter nome fixo
+const STATIC_CACHE_NAME = "static-cache-v1";
+const DYNAMIC_CACHE_NAME = "dynamic-cache-v1";
 const API_CACHE_NAME = "api-cache-v1";
 const FONT_CACHE_NAME = "font-cache-v1";
 const IMAGE_CACHE_NAME = "image-cache-v1";
@@ -85,7 +85,7 @@ const fontUrlsToCache = [
   "/static/fonts/font2.woff2",
 ];
 
-// URLs de scripts para o cache dinâmico (se necessário)
+// URLs de scripts para o cache dinâmico
 const scriptUrlsToCache = [
   "/static/scripts/AlterarEsquemaDeCores.js",
   "/static/scripts/AtualizarListaDeArquivos.js",
@@ -129,7 +129,11 @@ const scriptUrlsToCache = [
 ];
 
 // URLs de APIs que podem ser cacheadas dinamicamente
-const API_URLS = ["/api/endpoint1", "/api/endpoint2"];
+const API_URLS = [
+  "/api/endpoint1",
+  "/api/endpoint2",
+  // Adicione outras URLs de API se necessário
+];
 
 // URLs externas que precisam ser cacheadas
 const EXTERNAL_RESOURCES = [
@@ -156,7 +160,7 @@ self.addEventListener("install", (event) => {
       console.error("Falha ao adicionar recursos ao cache:", error);
     })
   );
-  self.skipWaiting(); // Força a ativação imediata do Service Worker atualizado
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
@@ -178,14 +182,14 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-  return self.clients.claim(); // Garante que o novo Service Worker assume o controle imediatamente
+  self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const requestURL = new URL(request.url);
 
-  // Ignorar requests que não são suportados (como 'chrome-extension' e 'data')
+  // Ignorar requests que não são suportados
   if (
     requestURL.protocol === "chrome-extension:" ||
     requestURL.protocol === "data:"
@@ -224,51 +228,74 @@ function cacheFirst(request, cacheName) {
   return caches.match(request).then((cachedResponse) => {
     if (cachedResponse) return cachedResponse;
 
-    return fetch(request).then((networkResponse) => {
-      if (networkResponse && networkResponse.status === 200) {
-        return caches.open(cacheName).then((cache) => {
-          cache.put(request, networkResponse.clone());
-          limitCacheSize(cacheName, MAX_CACHE_ITEMS);
-          return networkResponse;
-        });
-      }
-    });
+    return fetch(request)
+      .then((networkResponse) => {
+        if (networkResponse && networkResponse.ok) {
+          return caches.open(cacheName).then((cache) => {
+            cache.put(request, networkResponse.clone());
+            limitCacheSize(cacheName, MAX_CACHE_ITEMS);
+            return networkResponse;
+          });
+        } else {
+          // Retorna uma resposta de fallback se a resposta da rede não for OK
+          return caches.match("/offline.html");
+        }
+      })
+      .catch(() => {
+        // Retorna uma resposta de fallback em caso de erro de rede
+        return caches.match("/offline.html");
+      });
   });
 }
 
 function networkFirst(request) {
   return fetch(request)
     .then((networkResponse) => {
-      if (networkResponse && networkResponse.status === 200) {
+      if (networkResponse && networkResponse.ok) {
         return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
           cache.put(request, networkResponse.clone());
           limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
           return networkResponse;
         });
+      } else {
+        // Tenta retornar a resposta do cache se a resposta da rede não for OK
+        return caches.match(request).then((cachedResponse) => {
+          return cachedResponse || caches.match("/offline.html");
+        });
       }
     })
-    .catch(() =>
-      caches
-        .match(request)
-        .then(
-          (cachedResponse) => cachedResponse || caches.match("/offline.html")
-        )
-    );
+    .catch(() => {
+      // Retorna a resposta do cache ou uma página de fallback em caso de erro
+      return caches.match(request).then((cachedResponse) => {
+        return cachedResponse || caches.match("/offline.html");
+      });
+    });
 }
 
 function externalCache(request) {
   return caches.match(request).then((cachedResponse) => {
     if (cachedResponse) return cachedResponse;
 
-    return fetch(request).then((networkResponse) => {
-      if (networkResponse && networkResponse.status === 200) {
-        return caches.open(EXTERNAL_CACHE_NAME).then((cache) => {
-          cache.put(request, networkResponse.clone());
-          limitCacheSize(EXTERNAL_CACHE_NAME, MAX_CACHE_ITEMS);
+    return fetch(request)
+      .then((networkResponse) => {
+        if (networkResponse && networkResponse.ok) {
+          return caches.open(EXTERNAL_CACHE_NAME).then((cache) => {
+            cache.put(request, networkResponse.clone());
+            limitCacheSize(EXTERNAL_CACHE_NAME, MAX_CACHE_ITEMS);
+            return networkResponse;
+          });
+        } else {
+          // Retorna a resposta da rede mesmo se não for OK
           return networkResponse;
+        }
+      })
+      .catch(() => {
+        // Retorna uma nova resposta de erro em caso de falha de rede
+        return new Response("Erro na rede", {
+          status: 408,
+          statusText: "Request Timeout",
         });
-      }
-    });
+      });
   });
 }
 
@@ -281,3 +308,10 @@ function limitCacheSize(name, size) {
     });
   });
 }
+
+// Adicionar o manipulador de eventos 'message'
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.action === "skipWaiting") {
+    self.skipWaiting();
+  }
+});
