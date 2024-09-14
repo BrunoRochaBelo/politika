@@ -8,20 +8,20 @@
 
   /* Cores Primárias */
   --cor-primaria-1: hsl(219, 70%, 55%);
-  --cor-primaria-2: hsl(219, 47%, 38%);
+  --cor-primaria-2: hsl(219, 50%, 38%);
   --cor-primaria-3: hsl(219, 65%, 60%);
 
   /* Cores Secundárias */
   --cor-secundaria-1: hsl(28, 65%, 50%);
   --cor-secundaria-2: hsl(28, 60%, 45%);
-  --cor-secundaria-3: hsl(28, 50%, 40%);
+  --cor-secundaria-3: hsl(28, 8%, 6%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(219, 22%, 22%);
-  --cor-apoio-2: hsl(219, 22%, 12%);
+  --cor-apoio-1: hsl(219, 20%, 18%);
+  --cor-apoio-2: hsl(219, 20%, 12%);
 
   /* Backgrounds e Containers */
-  --bg-principal: hsl(219, 22%, 7%);
+  --bg-principal: hsl(219, 22%, 6%);
   --container-bg: hsl(219, 20%, 13%);
   --barra-pesquisa-bg: hsl(219, 20%, 16%);
   --borda: hsl(219, 20%, 25%);
@@ -32,14 +32,14 @@
   --txt-titulo: hsl(219, 30%, 90%);
   --txt-subtitulo: hsl(219, 30%, 80%);
   --txt-destaque: hsl(219, 88%, 90%);
-  --txt-nav: hsl(219, 16%, 75%);
-  --txt-nav-selecionado: hsl(219, 85%, 75%);
+  --txt-nav: hsl(218, 16%, 75%);
+  --txt-nav-selecionado: hsl(218, 90%, 75%);
   --txt-placeholder: hsl(219, 25%, 80%);
 
   /* Cartões */
-  --card-bg: hsl(219, 22%, 21%);
-  --card-detalhe: hsl(219, 22%, 24%);
-  --card-borda: hsl(219, 22%, 22%);
+  --card-bg: hsl(219, 22%, 22%);
+  --card-detalhe: hsl(219, 22%, 26%);
+  --card-borda: hsl(219, 22%, 23%);
   --card-hover: hsl(219, 25%, 23%);
 
   --card-aberto-bg: hsl(219, 35%, 30%);
@@ -92,7 +92,7 @@
   --btn-secundario-destaque: hsl(28, 50%, 35%);
   --btn-secundario-txt: hsl(28, 22%, 85%);
 
-  --btn-filtro: hsl(219, 22%, 21%);
+  --btn-filtro: hsl(219, 22%, 22%);
   --btn-filtro-txt: hsl(219, 22%, 70%);
   --btn-filtro-hover: hsl(219, 22%, 30%);
   --btn-filtro-selecionado: linear-gradient(

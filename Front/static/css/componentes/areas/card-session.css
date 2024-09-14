@@ -95,16 +95,16 @@
   transition: transform 0.3s ease;
   position: absolute;
   right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 48%;
+  transform: translateY(-48%);
 }
 
 .arrow.down {
-  transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-48%) rotate(45deg);
 }
 
 .arrow.up {
-  transform: translateY(-50%) rotate(-135deg);
+  transform: translateY(-48%) rotate(-135deg);
 }
 
 /* Responsividade */
