@@ -1,25 +1,31 @@
-/* Estilo para o ícone de exclusão */
+/* Estilo para o ícone de exclusão e de adição */
 .icone-excluir-container {
   display: flex;
   align-items: center; /* Alinhamento vertical ao centro */
   justify-content: center; /* Alinhamento horizontal ao centro no modo padrão */
 }
 
-.icone-excluir {
-  width: 15px;
-  height: 15px;
+.icone-excluir,
+.icone-adicionar {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.icone-excluir:hover {
+/* Efeito de hover nos ícones de exclusão e adição */
+.icone-excluir:hover,
+.icone-adicionar:hover {
   transform: scale(1.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
 }
 
-.icone-excluir:active {
+.icone-excluir:active,
+.icone-adicionar:active {
   opacity: 0.6; /* Feedback visual ao clicar no ícone */
 }
 
+/* Estilo da tabela */
 .titulo-area-tabela {
   margin: 10px 0px;
   font-weight: 500;
@@ -46,7 +52,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-/* Estilo específico para o contador de itens no campo de Bens e Serviços */
+/* Contadores de itens (para contatos ou participantes) */
 #contadorItens,
 #contadorArquivos {
   margin: 0px 10px;
@@ -65,6 +71,10 @@
   }
 }
 
+.table-row-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 /* Animação de fade-out e encolhimento para itens removidos */
 @keyframes fadeOutShrink {
   0% {
@@ -74,17 +84,25 @@
   100% {
     opacity: 0;
     transform: scale(0.5);
+    height: 0; /* A linha encolhe até desaparecer */
   }
 }
 
-/* Aplica a animação de fade-in ao adicionar um item */
-.table-row-fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Aplica a animação de fade-out ao remover um item */
 .table-row-fade-out {
   animation: fadeOutShrink 0.5s forwards;
+}
+
+/* Efeito de destaque ao adicionar um contato */
+.table-row-highlight {
+  background-color: #e0f7fa; /* Fundo azul claro */
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2); /* Sombra suave */
+  transition: background-color 1s ease-in-out;
+}
+
+/* Efeito de desaparecimento suave do destaque */
+.table-row-fade-out-highlight {
+  background-color: white;
+  box-shadow: none;
 }
 
 /* Animação de pulsação para o contador */
@@ -93,14 +111,14 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Leve aumento de tamanho */
   }
   100% {
     transform: scale(1);
   }
 }
 
-/* Aplica a animação de pulse ao contador de itens */
+/* Aplicando a animação de pulsação ao contador */
 .contador-pulse {
   animation: pulse 0.3s ease-in-out;
 }
@@ -108,7 +126,6 @@
 /* Estilo para feedback visual ao adicionar um item */
 .btn-principal-alt.btn-feedback {
   box-shadow: 0px 0px 8px 2px rgba(0, 123, 255, 0.5);
-  transition: box-shadow 0.3s ease-in-out;
 }
 
 /* Estilo da tabela de histórico */
@@ -116,12 +133,22 @@
   background: none;
   border-radius: 25px;
   padding: 0px 10px;
+  max-height: 300px; /* Limita a altura da tabela */
+  overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
 }
 
 .tabela-historico table {
   width: 100%;
   border-collapse: separate; /* Permite aplicar border-radius */
   border-spacing: 0 5px; /* Espaçamento entre as linhas */
+}
+
+/* Mantém o cabeçalho da tabela fixo durante o scroll */
+.tabela-historico table thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--card-aberto-bg); /* Fundo fixo para o cabeçalho */
+  z-index: 1; /* Garante que o cabeçalho fique acima das linhas */
 }
 
 .tabela-historico th,
@@ -132,7 +159,7 @@
   border-bottom: none;
 }
 
-/* Aplique o arredondamento nas primeiras e últimas células de cada linha */
+/* Arredondamento nas primeiras e últimas células de cada linha */
 .tabela-historico tr td:first-child,
 .tabela-historico th:first-child {
   border-top-left-radius: 5px;
