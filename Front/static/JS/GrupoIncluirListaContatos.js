@@ -1,85 +1,144 @@
-let participantesGrupo = new Map(); // Armazena os participantes do grupo
-const contadorParticipantes = document.getElementById("contadorParticipantes");
-const contadorContatosEncontrados = document.getElementById(
-  "contadorContatosEncontrados"
-);
-
-function pesquisarContatos(event) {
-  event.preventDefault();
-  const searchTerm = document.getElementById("searchInput").value;
-
-  // Simulação de pesquisa - você pode integrar isso com seu backend
-  const resultados = [
-    { id: 1, nome: "João Silva", tipo: "Usuário" },
-    { id: 2, nome: "Maria Oliveira", tipo: "Contato" },
-  ];
-
-  atualizarListaContatos(resultados);
-}
-
-function atualizarListaContatos(contatos) {
-  const tabelaContatos = document
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+  const searchButton = document.getElementById("searchButton");
+  const tabelaContatosEncontrados = document
     .getElementById("tabelaContatosEncontrados")
     .querySelector("tbody");
-  tabelaContatos.innerHTML = ""; // Limpa os resultados anteriores
-
-  contatos.forEach((contato) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${contato.nome}</td>
-      <td>${contato.tipo}</td>
-      <td>
-        <button onclick="adicionarParticipante(${contato.id}, '${contato.nome}', '${contato.tipo}')">
-          Adicionar
-        </button>
-      </td>
-    `;
-    tabelaContatos.appendChild(tr);
-  });
-
-  // Atualizar contador de contatos encontrados
-  contadorContatosEncontrados.textContent = `Total de contatos encontrados: ${contatos.length}`;
-}
-
-function adicionarParticipante(id, nome, tipo) {
-  if (participantesGrupo.has(id)) {
-    alert("Este participante já está no grupo.");
-    return;
-  }
-
-  const tabelaParticipantes = document
+  const tabelaParticipantesGrupo = document
     .getElementById("tabelaParticipantesGrupo")
     .querySelector("tbody");
+  const contadorContatosEncontrados = document.getElementById(
+    "contadorContatosEncontrados"
+  );
+  const contadorParticipantes = document.getElementById(
+    "contadorParticipantes"
+  );
 
-  const tr = document.createElement("tr");
-  tr.setAttribute("data-id", id);
-  tr.innerHTML = `
-    <td>${nome}</td>
-    <td>${tipo}</td>
-    <td>
-      <div class="icone-excluir-container">
-        <button onclick="removerParticipante(${id})">
-          Remover
-        </button>
-      </div>
-    </td>
-  `;
-  tabelaParticipantes.appendChild(tr);
+  let contatosEncontrados = [];
+  let participantes = [];
 
-  participantesGrupo.set(id, { nome, tipo });
-  atualizarContadorParticipantes();
-}
+  const debounce = (func, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), delay);
+    };
+  };
 
-function removerParticipante(id) {
-  const tr = document.querySelector(`tr[data-id="${id}"]`);
-  if (confirm("Tem certeza que deseja remover este participante?")) {
-    tr.remove();
-    participantesGrupo.delete(id);
+  const showError = (message) => {
+    let errorDiv = document.querySelector(".message-error");
+    if (!errorDiv) {
+      errorDiv = document.createElement("div");
+      errorDiv.classList.add("message-error");
+      document.body.appendChild(errorDiv);
+    }
+    errorDiv.textContent = message;
+    errorDiv.classList.add("show");
+
+    setTimeout(() => {
+      errorDiv.classList.remove("show");
+    }, 3000);
+  };
+
+  const fetchContatos = async (query) => {
+    try {
+      const response = await fetch(
+        `http://dev.inforvia.com.br:5000//api/contato/searchall/${encodeURIComponent(
+          query
+        )}`
+      );
+      if (!response.ok) {
+        throw new Error("Erro ao buscar os dados da API");
+      }
+      const data = await response.json();
+      return data.DADOS || [];
+    } catch (error) {
+      showError("Erro ao buscar dados. Tente novamente.");
+      return [];
+    }
+  };
+
+  const atualizarContadorContatos = () => {
+    contadorContatosEncontrados.textContent = `Total de contatos encontrados: ${contatosEncontrados.length}`;
+  };
+
+  const atualizarContadorParticipantes = () => {
+    contadorParticipantes.textContent = `Total de participantes: ${participantes.length}`;
+  };
+
+  const renderizarContatosEncontrados = () => {
+    tabelaContatosEncontrados.innerHTML = "";
+    contatosEncontrados.forEach((contato) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${contato.name}</td>
+        <td>${contato.type}</td>
+        <td><button class="adicionar-participante">Adicionar</button></td>
+      `;
+      tr.querySelector(".adicionar-participante").addEventListener(
+        "click",
+        () => {
+          adicionarParticipante(contato);
+        }
+      );
+      tabelaContatosEncontrados.appendChild(tr);
+    });
+  };
+
+  const renderizarParticipantes = () => {
+    tabelaParticipantesGrupo.innerHTML = "";
+    participantes.forEach((participante, index) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${participante.name}</td>
+        <td>${participante.type}</td>
+        <td><button class="remover-participante">Remover</button></td>
+      `;
+      tr.querySelector(".remover-participante").addEventListener(
+        "click",
+        () => {
+          removerParticipante(index);
+        }
+      );
+      tabelaParticipantesGrupo.appendChild(tr);
+    });
+  };
+
+  const adicionarParticipante = (contato) => {
+    // Verifica se o participante já foi adicionado
+    if (participantes.find((p) => p.id === contato.id)) {
+      showError("Este participante já foi adicionado.");
+      return;
+    }
+    participantes.push(contato);
+    renderizarParticipantes();
     atualizarContadorParticipantes();
-  }
-}
+  };
 
-function atualizarContadorParticipantes() {
-  const numParticipantes = participantesGrupo.size;
-  contadorParticipantes.textContent = `Total de participantes: ${numParticipantes}`;
-}
+  const removerParticipante = (index) => {
+    participantes.splice(index, 1);
+    renderizarParticipantes();
+    atualizarContadorParticipantes();
+  };
+
+  const handleSearch = debounce(async () => {
+    const query = searchInput.value.trim();
+    if (query.length > 0) {
+      contatosEncontrados = await fetchContatos(query);
+      renderizarContatosEncontrados();
+      atualizarContadorContatos();
+    } else {
+      contatosEncontrados = [];
+      tabelaContatosEncontrados.innerHTML = "";
+      atualizarContadorContatos();
+    }
+  }, 300);
+
+  searchInput.addEventListener("input", () => {
+    handleSearch();
+  });
+
+  searchButton.addEventListener("click", () => {
+    handleSearch();
+  });
+});

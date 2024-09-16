@@ -913,6 +913,26 @@
                 </div>
               </li>
 
+              <!-- Filtro Tipo Pessoa -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="tipo_pessoa">Tipo Pessoa <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="tipo_pessoa" class="radio-button-group">
+                    <input type="radio" id="todos_tipo_pessoa" name="tipo_pessoa" value="todos" checked>
+                    <label for="todos_tipo_pessoa">Todos</label>
+
+                    <input type="radio" id="pessoaFisica" name="tipo_pessoa" value="pessoaFisica">
+                    <label for="pessoaFisica">Pessoa Fisica</label>
+
+                    <input type="radio" id="pessoaJuridica" name="tipo_pessoa" value="pessoaJuridica">
+                    <label for="pessoaJuridica">Pessoa Juridica</label>
+                  </div>
+                </div>
+              </li>
+
+
               <!-- Filtro de Residência de Apoio -->
               <li class="card-xs filtro-small-card ">
                 <div class="campo-filtro">
@@ -920,48 +940,6 @@
                   <div class="switch-container">
                     <input type="checkbox" id="ResidenciaApoio" class="form-checkbox">
                     <label for="ResidenciaApoio" class="switch-label">
-                      <span class="switch-inner"></span>
-                      <span class="switch-switch"></span>
-                    </label>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Filtro de Cargo Comissionado -->
-              <li class="card-xs filtro-small-card ">
-                <div class="campo-filtro">
-                  <label>Cargo comissionado</label>
-                  <div class="switch-container">
-                    <input type="checkbox" id="CargoComissionado" class="form-checkbox">
-                    <label for="CargoComissionado" class="switch-label">
-                      <span class="switch-inner"></span>
-                      <span class="switch-switch"></span>
-                    </label>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Filtro de Pessoa Física -->
-              <li class="card-xs filtro-small-card ">
-                <div class="campo-filtro">
-                  <label>Pessoa física</label>
-                  <div class="switch-container">
-                    <input type="checkbox" id="PessoaFisica" class="form-checkbox">
-                    <label for="PessoaFisica" class="switch-label">
-                      <span class="switch-inner"></span>
-                      <span class="switch-switch"></span>
-                    </label>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Filtro de Pessoa Jurídica -->
-              <li class="card-xs filtro-small-card ">
-                <div class="campo-filtro">
-                  <label>Pessoa jurídica</label>
-                  <div class="switch-container">
-                    <input type="checkbox" id="PessoaJuridica" class="form-checkbox">
-                    <label for="PessoaJuridica" class="switch-label">
                       <span class="switch-inner"></span>
                       <span class="switch-switch"></span>
                     </label>

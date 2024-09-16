@@ -4,17 +4,14 @@ const checkboxesTipoContato = document.querySelectorAll(
   '#tipo_contato input[type="checkbox"]:not(#todos_tipo_contato)'
 );
 
-// Função para desmarcar todos os outros tipos de contato quando "Todos" for selecionado
 checkboxTodosTipoContato.addEventListener("change", function () {
   if (this.checked) {
     checkboxesTipoContato.forEach((checkbox) => (checkbox.checked = false));
   } else if (!isAnyOtherChecked(checkboxesTipoContato)) {
-    // Se nenhuma outra opção estiver marcada, mantenha o "Todos" marcado
     checkboxTodosTipoContato.checked = true;
   }
 });
 
-// Função para desmarcar "Todos" quando qualquer outro tipo de contato for selecionado
 checkboxesTipoContato.forEach((checkbox) => {
   checkbox.addEventListener("change", function () {
     if (this.checked) {
@@ -24,7 +21,6 @@ checkboxesTipoContato.forEach((checkbox) => {
   });
 });
 
-// Função para checar se nenhum tipo de contato está selecionado e marcar "Todos" automaticamente
 function checkIfNoneSelectedTipoContato() {
   if (!isAnyOtherChecked(checkboxesTipoContato)) {
     checkboxTodosTipoContato.checked = true;
@@ -39,19 +35,16 @@ const checkboxesPerfilInfluencia = document.querySelectorAll(
   '#perfil_influencia input[type="checkbox"]:not(#todos_perfil_influencia)'
 );
 
-// Função para desmarcar todos os outros perfis de influência quando "Todos" for selecionado
 checkboxTodosPerfilInfluencia.addEventListener("change", function () {
   if (this.checked) {
     checkboxesPerfilInfluencia.forEach(
       (checkbox) => (checkbox.checked = false)
     );
   } else if (!isAnyOtherChecked(checkboxesPerfilInfluencia)) {
-    // Se nenhuma outra opção estiver marcada, mantenha o "Todos" marcado
     checkboxTodosPerfilInfluencia.checked = true;
   }
 });
 
-// Função para desmarcar "Todos" quando qualquer outro perfil de influência for selecionado
 checkboxesPerfilInfluencia.forEach((checkbox) => {
   checkbox.addEventListener("change", function () {
     if (this.checked) {
@@ -61,14 +54,40 @@ checkboxesPerfilInfluencia.forEach((checkbox) => {
   });
 });
 
-// Função para checar se nenhum perfil de influência está selecionado e marcar "Todos" automaticamente
 function checkIfNoneSelectedPerfilInfluencia() {
   if (!isAnyOtherChecked(checkboxesPerfilInfluencia)) {
     checkboxTodosPerfilInfluencia.checked = true;
   }
 }
 
+// Lógica para Tipo Pessoa
+const radioTodosTipoPessoa = document.querySelector(
+  '#tipo_pessoa input[type="radio"][value="todos"]'
+);
+const radioButtonsTipoPessoa = document.querySelectorAll(
+  '#tipo_pessoa input[type="radio"]:not([value="todos"])'
+);
+
+radioTodosTipoPessoa.addEventListener("change", function () {
+  if (this.checked) {
+    radioButtonsTipoPessoa.forEach((radio) => (radio.checked = false));
+  }
+});
+
+radioButtonsTipoPessoa.forEach((radio) => {
+  radio.addEventListener("change", function () {
+    if (this.checked) {
+      radioTodosTipoPessoa.checked = false;
+    }
+  });
+});
+
 // Função auxiliar para verificar se algum checkbox está marcado
 function isAnyOtherChecked(checkboxes) {
   return Array.from(checkboxes).some((checkbox) => checkbox.checked);
+}
+
+// Função auxiliar para verificar se algum radio está selecionado
+function isAnyRadioSelected(radioButtons) {
+  return Array.from(radioButtons).some((radio) => radio.checked);
 }

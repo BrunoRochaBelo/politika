@@ -75,9 +75,9 @@
                 <fieldset>
                   <legend class="titulo-xl"></legend>
                   <div class="campo">
-                    <div id="formPesquisaContatos" class="search-input-container" onsubmit="pesquisarContatos(event)">
+                    <div id="formPesquisaContatos" class="search-input-container">
                       <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
-                      <button type="submit" class="search-button">
+                      <button type="button" id="searchButton" class="search-button">
                         <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
                       </button>
                     </div>
@@ -104,7 +104,6 @@
 
                   <!-- Lista de Participantes do Grupo -->
                   <div class="campo">
-
                     <p id="contadorParticipantes" class="titulo-area-tabela">Total de participantes: 0</p>
                     <div class="tabela-historico">
                       <table id="tabelaParticipantesGrupo">
