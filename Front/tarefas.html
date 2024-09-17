@@ -106,6 +106,7 @@
                           </div>
                           <div class="tarefa-medium-card-editar">
                             <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar Tarefa</button>
+                            <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.tarefa-medium-card'))">Concluir</button>
                           </div>
                           <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
                         </a>
@@ -413,6 +414,50 @@
     </div>
   </div>
 
+  <!-- Modal Concluir Tarefa -->
+  <div id="modal-concluir-tarefa" class="modal-concluir-tarefa">
+    <div class="modal-concluir-tarefa-content card-m">
+
+      <span class="close">&times;</span>
+      <div class="modal-concluir-tarefa-template">
+        <p class="modal-concluir-tarefa-title" data-filter="tituloTarefa"></p>
+        <p class="modal-concluir-tarefa-data" data-filter="dataTarefa"></p>
+        <p class="modal-concluir-tarefa-status" data-filter="statusTarefa"></p>
+        <p class="modal-concluir-tarefa-responsavel" data-filter="responsavelTarefa"></p>
+        <div class="modal-concluir-tarefa-desc" data-filter="descricaoTarefa">
+          <p><strong>Descrição</strong></p>
+        </div>
+
+        <div class="modal-concluir-tarefa-concluir">
+          <h2 class="modal-concluir-tarefa-concluir-title">Concluir Tarefa</h2>
+          <div class="modal-concluir-tarefa-situacao">
+            <label for="ConclusaoTarefa">Situação:</label>
+            <div class="radio-button-group" id="ConclusaoTarefa" name="ConclusaoTarefa">
+              <input type="radio" id="finalizada" name="ConclusaoTarefa" value="finalizada">
+              <label for="finalizada">Finalizada</label>
+              <input type="radio" id="finalizadaParcialmente" name="ConclusaoTarefa" value="finalizadaParcialmente">
+              <label for="finalizadaParcialmente">Finalizada Parcialmente</label>
+              <input type="radio" id="pendente" name="ConclusaoTarefa" value="pendente">
+              <label for="pendente">Pendente</label>
+              <input type="radio" id="cancelada" name="ConclusaoTarefa" value="cancelada">
+              <label for="cancelada">Cancelada</label>
+            </div>
+          </div>
+          <div class="modal-concluir-tarefa-descConclusao">
+            <label for="descConclusaoTarefa">Descrição da Conclusão:</label>
+            <textarea id="descConclusaoTarefa" name="descConclusaoTarefa"></textarea>
+          </div>
+          <div class="modal-concluir-tarefa-salvar">
+            <div class="btn-outline-principal"><a href="tarefas.html">Cancelar</a></div>
+            <button type="submit" class="btn-principal" onclick="submitTarefaForm()">Concluir</button>
+          </div>
+          <p class="modal-concluir-tarefa-id" data-filter="modalTarefaID">{{tarefaID}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <script src="./static/js/AlterarEsquemaDeCores.js"></script>
   <script src="./static/js/AtualizarAlturaPagina.js"></script>
   <script src="./static/js/ScrollAjustarItensContainerHeader.js"></script>
@@ -420,6 +465,7 @@
   <script src="./static/js/ModalMaisApps.js"></script>
   <script src="./static/js/ModalMenu.js"></script>
   <script src="./static/js/ModalNotificacoes.js"></script>
+  <script src="./static/js/ModalConcluirTarefa.js"></script>
   <script src="./static/js/ManipularHistorico.js"></script>
   <script src="./static/js/OcultarExibirFiltro.js"></script>
   <script src="./static/js/ExibirDetalhesTarefa.js"></script>

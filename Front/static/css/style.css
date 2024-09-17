@@ -59,6 +59,7 @@
 @import "./calendario/calendario-style.css";
 
 /* tarefas */
+@import "./tarefas/modal-concluir-tarefa.css";
 @import "./tarefas/tarefas-style.css";
 
 /* contatos */

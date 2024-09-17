@@ -1,0 +1,186 @@
+.modal-concluir-tarefa {
+  display: none;
+  position: fixed;
+  z-index: 2003;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: var(--bg-overlay);
+}
+
+.modal-concluir-tarefa-content.card-m {
+  background: var(--card-aberto-bg);
+  border-radius: 25px;
+  padding: 20px 5px;
+}
+
+.modal-concluir-tarefa-content {
+  position: relative;
+  color: var(--cor-primaria-1);
+  margin: auto;
+  margin-top: 55px;
+  padding: 20px;
+  border: 1px solid var(--borda);
+  min-width: 50%;
+  max-width: 80%;
+  height: auto;
+  overflow-y: auto;
+  z-index: 2004;
+}
+
+.modal-concluir-tarefa-template {
+  display: grid;
+  color: var(--txt-conteudo-card);
+  gap: 3px;
+  grid:
+    "modal-concluir-tarefa-title modal-concluir-tarefa-title modal-concluir-tarefa-data"
+    "modal-concluir-tarefa-responsavel modal-concluir-tarefa-responsavel modal-concluir-tarefa-responsavel"
+    "modal-concluir-tarefa-desc modal-concluir-tarefa-desc modal-concluir-tarefa-desc"
+    "modal-concluir-tarefa-concluir modal-concluir-tarefa-concluir modal-concluir-tarefa-concluir";
+}
+.modal-concluir-tarefa-id {
+  display: none;
+  opacity: 0;
+}
+
+.modal-concluir-tarefa-title {
+  grid-area: modal-concluir-tarefa-title;
+  border-left: 4px solid var(--cor-primaria-2);
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  justify-self: start;
+  align-self: center;
+}
+
+.modal-concluir-tarefa-data {
+  grid-area: modal-concluir-tarefa-data;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.modal-concluir-tarefa-responsavel {
+  grid-area: modal-concluir-tarefa-responsavel;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.modal-concluir-tarefa-desc {
+  grid-area: modal-concluir-tarefa-desc;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: flex;
+  background: var(--card-aberto-detalhe);
+  border-radius: 5px;
+  justify-content: start;
+  align-items: center;
+  margin: 3px 10px 0 10px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.modal-concluir-tarefa-concluir {
+  grid-area: modal-concluir-tarefa-concluir;
+  display: grid;
+  justify-items: stretch;
+  gap: 20px 5px;
+  padding: 10px;
+  margin: 15px 0 0 0;
+  align-self: center;
+  border: 1px solid var(--container-bg);
+  font-size: 13px;
+  font-weight: 300;
+  background: var(--container-bg);
+  border-radius: 25px;
+  grid:
+    "modal-concluir-tarefa-concluir-title"
+    "modal-concluir-tarefa-situacao"
+    "modal-concluir-tarefa-descConclusao"
+    "modal-concluir-tarefa-salvar";
+}
+
+.modal-concluir-tarefa-descConclusao {
+  grid-area: modal-concluir-tarefa-descConclusao;
+  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-concluir-tarefa-situacao {
+  grid-area: modal-concluir-tarefa-situacao;
+  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.modal-concluir-tarefa-salvar {
+  grid-area: modal-concluir-tarefa-salvar;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 300;
+  margin-top: 25px;
+}
+
+.modal-concluir-tarefa-concluir label {
+  color: var(--txt-subtitulo);
+  margin-bottom: 7px;
+}
+
+.modal-concluir-tarefa-concluir textarea,
+.modal-concluir-tarefa-concluir select,
+.modal-concluir-tarefa-concluir input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9375rem;
+  color: var(--txt-titulo-card);
+  background: var(--card-bg);
+  border: 1px solid var(--card-bg-borda);
+  border-radius: 20px;
+  margin-top: 7px;
+}
+
+.modal-concluir-tarefa-salvar .btn-principal {
+  width: 100%;
+  font-weight: 300;
+  font-size: 11px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: var(--btn-principal);
+  color: var(--txt-titulo-card);
+  border: 1px solid var(--btn-principal-destaque);
+}
+
+.modal-concluir-tarefa-salvar .btn-outline-principal {
+  width: 100%;
+  font-weight: 300;
+  font-size: 11px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.modal-concluir-tarefa-salvar .btn-outline-principal:hover {
+  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--txt-titulo-card);
+}
+
+.modal-concluir-tarefa-salvar .btn-principal:hover {
+  border: 1px solid var(--btn-principal-hover);
+  background: var(--btn-principal-hover);
+  color: var(--btn-principal-destaque);
+}
