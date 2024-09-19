@@ -140,7 +140,7 @@
   align-items: center;
   justify-content: stretch;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   padding: 10px 20px;
   text-align: left;
   color: var(--txt-subtitulo);
@@ -191,6 +191,10 @@
   .filtro-multi-select-card-header {
   border-bottom-left-radius: 23px;
   border-bottom-right-radius: 23px;
+}
+
+.container-compromisso-hoje-template .lista-vertical-fil {
+  gap: 15px 0px;
 }
 
 /* RESPONSIVO */

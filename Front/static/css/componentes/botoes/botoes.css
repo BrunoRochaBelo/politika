@@ -132,7 +132,7 @@
   justify-content: start;
   color: var(--txt-conteudo-card);
   padding: 5px 15px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
   border-radius: 25px;
 }
@@ -147,12 +147,12 @@
   cursor: pointer;
   position: relative;
   align-content: start;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
   box-shadow: var(--sombra-leve);
 }
 .btn-filtro-pesq-title {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--txt-conteudo-card);
   margin-right: 15px;
 }
@@ -169,7 +169,7 @@
   align-items: center;
   cursor: pointer;
   color: var(--txt-subtitulo);
-  font-size: 18px;
+  font-size: 21px;
   border: none;
 }
 .remover-filtro:hover {
