@@ -28,7 +28,7 @@
 /* Nav */
 .header-gc-nav-template {
   display: grid;
-  grid: "dashboard perfil equipe contas"/ 1fr 1fr 1fr 1fr;
+  grid: "dashboard perfil equipe contas-corrente"/ 1fr 1fr 1fr 1fr;
 }
 .dashboard {
   grid-area: dashboard;
@@ -39,8 +39,8 @@
 .equipe {
   grid-area: equipe;
 }
-.contas {
-  grid-area: contas;
+.contas-corrente {
+  grid-area: contas-corrente;
 }
 
 /* Estilos para a lista de navegação */
