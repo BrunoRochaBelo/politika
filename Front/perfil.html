@@ -51,13 +51,14 @@
 
   <main class="main-gc main-gc-template">
     <section class="main-gc-section">
-      <div class="img-perfil">
-        <a href="perfil.html" class="">
-          <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário">
-        </a>
-      </div>
+
       <div class="container-abas-template">
         <nav class="container-abas-template-header">
+          <div class="img-perfil">
+            <a href="perfil.html" class="">
+              <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário">
+            </a>
+          </div>
           <ul id="navAba" class="nav nav-duas-abas">
             <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Perfil</a></li>
             <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Assinatura</a></li>
@@ -65,109 +66,117 @@
         </nav>
         <div class="container-abas-template-content">
           <div id="aba1" class="aba-template active">
-            <div class="profile-container">
-              <div class="campo">
-                <label for="nome-completo">Nome completo</label>
-                <input type="text" id="nome-completo" value="LUIZ GONZAGA" disabled>
-              </div>
-              <div class="campo">
-                <label for="nome-comum">Nome comum</label>
-                <input type="text" id="nome-comum" value="REI DO BAIÃO" disabled>
-              </div>
-              <div class="campo">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" value="gonzaga@mail.com" disabled>
-              </div>
-              <div class="campo">
-                <label for="cargo-atual">Cargo atual</label>
-                <input type="text" id="cargo-atual" value="Deputado Estadual" disabled>
-              </div>
-              <div class="campo">
-                <label for="ano-eleito">Ano no qual foi eleito</label>
-                <input type="text" id="ano-eleito" value="2022" disabled>
-              </div>
-              <div class="campo">
-                <label for="data-nascimento">Data Nascimento</label>
-                <input type="text" id="data-nascimento" value="dd/mm/aaaa" disabled>
-              </div>
-              <div class="campo">
-                <label for="sexo">Sexo</label>
-                <select id="sexo" disabled>
-                  <option>Selecione...</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="estado-civil">Estado Civil</label>
-                <select id="estado-civil" disabled>
-                  <option>Selecione...</option>
-                </select>
-              </div>
-              <div class="actions">
-                <button id="edit-save-button" onclick="editOrSaveProfile()">Editar Perfil</button>
-              </div>
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <div class="profile-container">
+                  <div class="campo">
+                    <label for="nome-completo">Nome completo</label>
+                    <input type="text" id="nome-completo" value="LUIZ GONZAGA" disabled>
+                  </div>
+                  <div class="campo">
+                    <label for="nome-comum">Nome comum</label>
+                    <input type="text" id="nome-comum" value="REI DO BAIÃO" disabled>
+                  </div>
+                  <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" value="gonzaga@mail.com" disabled>
+                  </div>
+                  <div class="campo">
+                    <label for="cargo-atual">Cargo atual</label>
+                    <input type="text" id="cargo-atual" value="Deputado Estadual" disabled>
+                  </div>
+                  <div class="campo">
+                    <label for="ano-eleito">Ano no qual foi eleito</label>
+                    <input type="text" id="ano-eleito" value="2022" disabled>
+                  </div>
+                  <div class="campo">
+                    <label for="data-nascimento">Data Nascimento</label>
+                    <input type="text" id="data-nascimento" value="dd/mm/aaaa" disabled>
+                  </div>
+                  <div class="campo">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo" disabled>
+                      <option>Selecione...</option>
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="estado-civil">Estado Civil</label>
+                    <select id="estado-civil" disabled>
+                      <option>Selecione...</option>
+                    </select>
+                  </div>
+                  <div class="actions">
+                    <button id="edit-save-button" onclick="editOrSaveProfile()">Editar Perfil</button>
+                  </div>
 
+                </div>
+              </div>
             </div>
           </div>
           <div id="aba2" class="aba-template">
-            <div class="profile-container">
-              <div class="subscription">
-                <!-- Card de assinatura -->
-                <div id="subscription-card" class="card">
-                  <p id="subscription-status"></p>
-                  <div id="subscription-options" style="display: none;">
-                    <h3>Escolha um plano</h3>
-                    <select id="plan-options">
-                      <option value="basic">Plano Básico</option>
-                      <option value="premium">Plano Premium</option>
-                    </select>
-                    <label>
-                      Renovação Automática:
-                      <input type="radio" name="auto-renew" value="yes"> Sim
-                      <input type="radio" name="auto-renew" value="no"> Não
-                    </label>
-                    <p>Essas configurações podem ser alteradas a qualquer momento após o plano ativo.</p>
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <div class="profile-container">
+                  <div class="subscription">
+                    <!-- Card de assinatura -->
+                    <div id="subscription-card" class="card">
+                      <p id="subscription-status"></p>
+                      <div id="subscription-options" style="display: none;">
+                        <h3>Escolha um plano</h3>
+                        <select id="plan-options">
+                          <option value="basic">Plano Básico</option>
+                          <option value="premium">Plano Premium</option>
+                        </select>
+                        <label>
+                          Renovação Automática:
+                          <input type="radio" name="auto-renew" value="yes"> Sim
+                          <input type="radio" name="auto-renew" value="no"> Não
+                        </label>
+                        <p>Essas configurações podem ser alteradas a qualquer momento após o plano ativo.</p>
+                      </div>
+                      <div id="subscription-details" style="display: none;">
+                        <p><strong>Plano:</strong> <span id="plan"></span></p>
+                        <p><strong>Expira em:</strong> <span id="expires"></span></p>
+                        <p><strong>Tempo restante:</strong> <span id="remaining-time"></span></p>
+                        <p><strong>Renovação automática:</strong> <span id="auto-renew-status"></span></p>
+                      </div>
+                    </div>
+
+                    <div class="actions" id="initial-actions">
+                      <button id="subscribe-button" onclick="showSubscriptionOptions()">Assinar</button>
+                    </div>
+
+                    <div class="actions" id="subscription-actions" style="display: none;">
+                      <button id="confirm-subscription-button" onclick="confirmSubscription()" disabled>Confirmar Assinatura</button>
+                      <button id="cancel-button" onclick="cancelSubscription()">Cancelar</button>
+                    </div>
+
+                    <div class="actions" id="manage-actions" style="display: none;">
+                      <button id="edit-subscription-button" onclick="editSubscription()">Editar Assinatura</button>
+                      <button id="unsubscribe-button" class="unsubscribe" onclick="unsubscribe()">Cancelar Assinatura</button>
+                    </div>
+
+                    <div class="actions" id="edit-actions" style="display: none;">
+                      <button id="confirm-edit-button" onclick="confirmEdit()" disabled>Confirmar Edição</button>
+                      <button id="cancel-edit-button" onclick="cancelEdit()" disabled>Cancelar Edição</button>
+                      <button id="unsubscribe-button-edit" class="unsubscribe" onclick="unsubscribe()">Cancelar Assinatura</button>
+                    </div>
+
+
                   </div>
-                  <div id="subscription-details" style="display: none;">
-                    <p><strong>Plano:</strong> <span id="plan"></span></p>
-                    <p><strong>Expira em:</strong> <span id="expires"></span></p>
-                    <p><strong>Tempo restante:</strong> <span id="remaining-time"></span></p>
-                    <p><strong>Renovação automática:</strong> <span id="auto-renew-status"></span></p>
-                  </div>
                 </div>
-
-                <div class="actions" id="initial-actions">
-                  <button id="subscribe-button" onclick="showSubscriptionOptions()">Assinar</button>
-                </div>
-
-                <div class="actions" id="subscription-actions" style="display: none;">
-                  <button id="confirm-subscription-button" onclick="confirmSubscription()" disabled>Confirmar Assinatura</button>
-                  <button id="cancel-button" onclick="cancelSubscription()">Cancelar</button>
-                </div>
-
-                <div class="actions" id="manage-actions" style="display: none;">
-                  <button id="edit-subscription-button" onclick="editSubscription()">Editar Assinatura</button>
-                  <button id="unsubscribe-button" class="unsubscribe" onclick="unsubscribe()">Cancelar Assinatura</button>
-                </div>
-
-                <div class="actions" id="edit-actions" style="display: none;">
-                  <button id="confirm-edit-button" onclick="confirmEdit()" disabled>Confirmar Edição</button>
-                  <button id="cancel-edit-button" onclick="cancelEdit()" disabled>Cancelar Edição</button>
-                  <button id="unsubscribe-button-edit" class="unsubscribe" onclick="unsubscribe()">Cancelar Assinatura</button>
-                </div>
-
-
               </div>
             </div>
           </div>
+
         </div>
-      </div>
     </section>
   </main>
 
   <script src="./static/js/AtualizarAlturaPagina.js"></script>
   <script src="./static/js/NavAbasInternas.js"></script>
   <script src="./static/js/GcPerfil.js"></script>
-
+  <script src="./static/js/ScrollAjustarItensGCPerfil.js"></script>
 </body>
 
 </html>

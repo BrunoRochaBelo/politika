@@ -61,14 +61,14 @@
 /* Médio */
 .card-tmf-m {
   min-width: 155px;
-  max-width: 100%; /* Permitir que os cards ocupem a largura total disponível */
-  height: auto;
+  max-width: 100%;
+  height: 100%;
   background: var(--card-bg);
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
   box-sizing: border-box;
   padding: 15px 20px;
-  transition: transform 0.5s ease, opacity 0.5s ease, width 0.5s ease; /* Animação suave na largura */
+  transition: transform 0.5s ease, opacity 0.5s ease, width 0.5s ease;
   opacity: 1;
   transform: translateY(0);
 }

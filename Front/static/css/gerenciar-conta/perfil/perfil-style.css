@@ -1,6 +1,5 @@
 .profile-container {
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 20px;
 }
 
 .profile-container h2,
@@ -15,6 +14,7 @@
 }
 
 .actions button {
+  margin: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -95,6 +95,7 @@
   margin-bottom: 10px;
   object-fit: cover;
   justify-self: center;
+  transition: width 0.3s ease, height 0.3s ease, margin-bottom 0.3s ease;
 }
 
 .area-interna-containerContent-template-content {
@@ -103,8 +104,7 @@
 
 @media only screen and (max-width: 56.25rem) {
   .profile-container {
-    padding: 0px;
-    border-radius: 25px;
+    padding: 10px 5px;
   }
 
   .img-perfil {

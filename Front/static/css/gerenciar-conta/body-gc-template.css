@@ -1,7 +1,8 @@
 .body-gc-template {
   background: var(--container-bg);
   display: grid;
-  margin: 10px 0;
+  margin: 0;
+  padding: 10px;
   gap: 1px;
   align-content: start;
   justify-content: center;
@@ -27,13 +28,11 @@
 }
 .main-gc {
   grid-area: main-gc;
-  overflow-x: hidden;
   justify-content: space-between;
   align-content: start;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   box-shadow: var(--sombra-moderada);
-  height: auto;
   border: 5px solid transparent;
   color: var(--txt-conteudo-card);
   border-top: none;
@@ -48,7 +47,6 @@
   }
   .main-gc {
     padding: 0px;
-    overflow-y: auto;
   }
   .main-gc::-webkit-scrollbar {
     display: none;

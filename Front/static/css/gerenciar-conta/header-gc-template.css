@@ -28,7 +28,6 @@
 /* Nav */
 .header-gc-nav-template {
   display: grid;
-
   grid: "dashboard perfil equipe contas"/ 1fr 1fr 1fr 1fr;
 }
 .dashboard {
