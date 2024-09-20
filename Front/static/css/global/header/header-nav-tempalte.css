@@ -4,6 +4,7 @@
   grid-template-areas: "home calendario tarefas contatos pleitos despesas";
   grid-template-columns: repeat(6, 1fr);
 }
+
 .home {
   grid-area: home;
 }
@@ -35,10 +36,13 @@
   justify-self: center;
   color: var(--txt-nav);
 }
+
 .header-nav-template a {
   padding: 0.625rem;
   border-radius: 25px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.15s;
   border: 1px solid transparent;
   font-size: 15px;
@@ -47,6 +51,7 @@
   text-decoration: none;
   color: inherit;
 }
+
 .header-nav-template a::after {
   content: "";
   display: block;
@@ -58,9 +63,11 @@
   left: 0;
   transition: width 0.3s ease;
 }
+
 .header-nav-template a:hover {
   filter: brightness(1.2);
 }
+
 .header-nav-template a:hover::after {
   width: 100%;
 }
@@ -68,6 +75,7 @@
 .header-nav-template .apps a:hover {
   filter: brightness(1.1);
 }
+
 .header-nav-template .apps a:hover::after {
   width: 0;
 }
@@ -76,12 +84,14 @@
   width: 15px;
   height: 15px;
   margin-right: 10px;
+  object-fit: contain;
 }
 
 /* Indicador */
 .indicador a {
   color: var(--txt-nav-selecionado);
 }
+
 .indicador a::after {
   content: "";
   position: absolute;
@@ -91,6 +101,7 @@
   height: 5px;
   background: var(--txt-nav-selecionado);
 }
+
 .indicador p {
   color: var(--txt-nav-selecionado);
 }
@@ -105,6 +116,7 @@
     grid-template-areas: "home calendario tarefas contatos apps";
     grid-template-columns: repeat(4, 1fr);
   }
+
   .apps {
     grid-area: apps;
     display: inline-block;
@@ -116,15 +128,20 @@
   .despesas {
     display: none;
   }
+
   .header-nav-template img {
     width: 32px;
     height: 27px;
     margin: 0 auto;
+    object-fit: contain;
   }
 
   .header-nav-template a {
     border-radius: 50%;
+    align-items: center;
+    justify-content: center;
   }
+
   .header-nav-template a:hover {
     padding: auto;
     -webkit-background-clip: text;
@@ -135,6 +152,7 @@
     background: none;
     filter: none;
   }
+
   .header-nav-template a:hover img {
     background: transparent;
   }

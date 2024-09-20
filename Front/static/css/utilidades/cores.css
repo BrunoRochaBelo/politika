@@ -40,7 +40,7 @@
   --card-bg: hsl(219, 22%, 22%);
   --card-detalhe: hsl(219, 22%, 26%);
   --card-borda: hsl(219, 22%, 23%);
-  --card-hover: hsl(219, 25%, 23%);
+  --card-hover: hsl(219, 25%, 28%);
 
   --card-aberto-bg: hsl(219, 35%, 30%);
   --card-aberto-detalhe: hsl(219, 40%, 25%);
@@ -87,10 +87,10 @@
   --btn-principal-alt-destaque: hsl(219, 50%, 40%);
   --btn-principal-alt-txt: hsl(219, 98%, 92%);
 
-  --btn-secundario: hsl(28, 60%, 45%);
-  --btn-secundario-hover: hsl(28, 55%, 40%);
-  --btn-secundario-destaque: hsl(28, 50%, 35%);
-  --btn-secundario-txt: hsl(28, 22%, 85%);
+  --btn-secundario: hsl(28, 59%, 46%);
+  --btn-secundario-hover: hsl(28, 58%, 40%);
+  --btn-secundario-destaque: hsl(28, 58%, 35%);
+  --btn-secundario-txt: hsl(28, 100%, 93%);
 
   --btn-filtro: hsl(219, 22%, 22%);
   --btn-filtro-txt: hsl(219, 22%, 70%);

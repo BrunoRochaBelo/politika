@@ -108,8 +108,7 @@
 .header-search:hover .search-input::placeholder {
   color: var(--shadow-destaque);
 }
-.search-input:focus,
-.search-button:focus {
+.search-input:focus {
   outline: none;
   background: var(--card-hover);
   border-top-right-radius: 0;
@@ -118,6 +117,7 @@
 
 .search-input:focus + .search-button {
   background: var(--card-hover);
+  border-radius: 45px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }

@@ -1,7 +1,7 @@
 :root {
   --vh: 1vh;
 
-  /* Tamanhos em rem para a fonte Roboto */
+  /* Tamanhos em rem para a fonte Open Sans */
   --font-padrao: 1rem;
   --font-light: 0.75rem;
   --font-medium-light: 0.8125rem;
@@ -16,68 +16,88 @@
 }
 
 /* Aplicando as variáveis nas classes */
-/* 16px */
+/* 16px - Regular (peso 300) */
 .font-padrao {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--font-padrao);
-  font-weight: 300;
+  font-weight: 300; /* Regular */
   letter-spacing: var(--letter-spacing);
 }
-/* 12px */
+
+/* 12px - Extra-Light (peso 200) */
 .font-light {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--font-light);
-  font-weight: 200;
+  font-weight: 200; /* Extra-Light */
   letter-spacing: var(--letter-spacing);
 }
-/* 13px */
+
+/* 13px - Extra-Light (peso 200) */
 .font-medium-light {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--font-medium-light);
-  font-weight: 200;
+  font-weight: 200; /* Extra-Light */
   letter-spacing: var(--letter-spacing);
 }
-/* 13px */
+
+/* 13px - Regular (peso 300) */
 .font-medium-regular {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--font-medium-regular);
-  font-weight: 300;
+  font-weight: 300; /* Regular */
   letter-spacing: var(--letter-spacing);
 }
-/* 13px */
+
+/* 13px - Normal (peso 400) */
 .font-medium-bolder {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--font-medium-bolder);
-  font-weight: 400;
+  font-weight: 400; /* Normal */
   letter-spacing: var(--letter-spacing);
 }
-/* 13px */
+
+/* 13px - Regular (peso 300) */
 .titulo-xs {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--titulo-xs);
-  font-weight: 300;
+  font-weight: 300; /* Regular */
   letter-spacing: var(--letter-spacing);
 }
-/* 15px */
+
+/* 15px - Extra-Light (peso 200) */
 .titulo-s {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--titulo-s);
-  font-weight: 200;
+  font-weight: 200; /* Extra-Light */
   letter-spacing: var(--letter-spacing);
 }
-/* 15px */
+
+/* 15px - Normal (peso 400) */
 .titulo-m {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--titulo-m);
-  font-weight: 400;
+  font-weight: 400; /* Normal */
   letter-spacing: var(--letter-spacing);
 }
-/* 16px */
+
+/* 16px - Normal (peso 400) */
 .titulo-l {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--font-l);
-  font-weight: 400;
+  font-weight: 400; /* Normal */
   letter-spacing: var(--letter-spacing);
 }
-/* 18px */
+
+/* 18px - Medium (peso 500) */
 .titulo-xl {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--titulo-xl);
-  font-weight: 500;
+  font-weight: 500; /* Medium */
   letter-spacing: var(--letter-spacing);
 }
 
 .titulo-area {
+  font-family: "Open Sans", sans-serif;
   font-size: var(--titulo-xl);
   text-align: left;
   margin: 0.625rem;

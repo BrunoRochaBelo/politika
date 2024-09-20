@@ -259,7 +259,7 @@ li.alterar-tema {
 @media only screen and (max-width: 56.25rem) {
   .modal-content-template {
     top: 4px;
-    left: 0;
+    left: 2px;
     padding: 40px 5px 5px 5px;
   }
 

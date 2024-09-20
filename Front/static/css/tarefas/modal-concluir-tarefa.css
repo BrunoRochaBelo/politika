@@ -1,7 +1,7 @@
 .modal-concluir-tarefa {
   display: none;
   position: fixed;
-  z-index: 2003;
+  z-index: 2004;
   left: 0;
   top: 0;
   width: 100%;
@@ -27,7 +27,7 @@
   max-width: 80%;
   height: auto;
   overflow-y: auto;
-  z-index: 2004;
+  z-index: 2005;
 }
 
 .modal-concluir-tarefa-template {
@@ -183,4 +183,18 @@
   border: 1px solid var(--btn-principal-hover);
   background: var(--btn-principal-hover);
   color: var(--btn-principal-destaque);
+}
+
+/* Responsivo */
+@media only screen and (max-width: 56.25rem) {
+  .modal-concluir-tarefa-content.card-m {
+    padding: 20px 2px 10px 2px;
+  }
+  .modal-concluir-tarefa-content {
+    min-width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 20px 10px;
+    max-height: 100%;
+  }
 }
