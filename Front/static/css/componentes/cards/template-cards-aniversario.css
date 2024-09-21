@@ -142,3 +142,7 @@
 .aniversario-small-card-expanded .aniversario-small-card-title {
   color: var(--txt-card-aberto);
 }
+
+.aniversario-small-card-expanded:hover {
+  filter: brightness(1);
+}

@@ -17,138 +17,140 @@
   <div class="body-exibir-template">
 
     <main class="main-exibir">
-      <section class="container-abas-template">
-        <nav class="container-abas-template-header">
-          <div class="card-info">
-            <div>
-              <a href="despesas.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
-            </div>
-            <div class="campo-exibir">
-              <p>{{ numero_despesa }}</p>
-            </div>
-            <div class="acoes">
-              <div class="campo-exibir acao-item">
-                <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+      <section>
+        <div class="container-abas-template">
+          <nav class="container-abas-template-header">
+            <div class="card-info">
+              <div>
+                <a href="despesas.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
               </div>
+              <div class="campo-exibir">
+                <p>{{ numero_despesa }}</p>
+              </div>
+              <div class="acoes">
+                <div class="campo-exibir acao-item">
+                  <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+                </div>
 
+              </div>
             </div>
-          </div>
-          <ul id="navAba" class="nav nav-duas-abas">
-            <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Dados</a></li>
-            <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Histórico</a></li>
-          </ul>
-        </nav>
-        <div class="container-abas-template-content">
-          <div id="aba1" class="aba-template secao-interna-template active">
-            <form id="form" class="form" enctype="multipart/form-data">
-              <fieldset class="fieldset-exibir">
-                <legend class="titulo-xl"></legend>
-                <div class="campo-exibir">
-                  <label for="nome">Nome do solicitante:</label>
-                  <input type="text" id="nome" name="nome" readonly>
-                </div>
-                <div class="form-2-colum">
+            <ul id="navAba" class="nav nav-duas-abas">
+              <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Dados</a></li>
+              <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Histórico</a></li>
+            </ul>
+          </nav>
+          <div class="container-abas-template-content">
+            <div id="aba1" class="aba-template secao-interna-template active">
+              <form id="form" class="form" enctype="multipart/form-data">
+                <fieldset class="fieldset-exibir">
+                  <legend class="titulo-xl"></legend>
                   <div class="campo-exibir">
-                    <label for="tipo">Tipo solicitação:</label>
-                    <select id="tipo" name="tipo" disabled>
-                      <option value="" selected disabled>Tipo de despesa</option>
-                      <option value="apoio juridico">APOIO JURÍDICO</option>
-                      <option value="apoio politico">APOIO POLÍTICO</option>
-                      <option value="educacao e capacitacao">EDUCAÇÃO E CAPACITAÇÃO</option>
-                      <option value="emprego">EMPREGO</option>
-                      <option value="infraestrutura">INFRAESTRUTURA</option>
-                      <option value="outros">OUTROS</option>
-                      <option value="recurso para construcao civil">RECURSO PARA CONSTRUÇÃO CIVIL</option>
-                      <option value="saude">SAÚDE</option>
-                      <option value="seguranca">SEGURANÇA</option>
-                      <option value="servico publico estadual">SERVIÇO PÚBLICO ESTADUAL</option>
-                      <option value="servico publico federal">SERVIÇO PÚBLICO FEDERAL</option>
-                      <option value="servico publico municipal">SERVIÇO PÚBLICO MUNICIPAL</option>
-                      <option value="transferencia de orgao">TRANSFERÊNCIA DE ÓRGÃO</option>
-                      <option value="transporte publico">TRANSPORTE PÚBLICO</option>
-                    </select>
+                    <label for="nome">Nome do solicitante:</label>
+                    <input type="text" id="nome" name="nome" readonly>
+                  </div>
+                  <div class="form-2-colum">
+                    <div class="campo-exibir">
+                      <label for="tipo">Tipo solicitação:</label>
+                      <select id="tipo" name="tipo" disabled>
+                        <option value="" selected disabled>Tipo de despesa</option>
+                        <option value="apoio juridico">APOIO JURÍDICO</option>
+                        <option value="apoio politico">APOIO POLÍTICO</option>
+                        <option value="educacao e capacitacao">EDUCAÇÃO E CAPACITAÇÃO</option>
+                        <option value="emprego">EMPREGO</option>
+                        <option value="infraestrutura">INFRAESTRUTURA</option>
+                        <option value="outros">OUTROS</option>
+                        <option value="recurso para construcao civil">RECURSO PARA CONSTRUÇÃO CIVIL</option>
+                        <option value="saude">SAÚDE</option>
+                        <option value="seguranca">SEGURANÇA</option>
+                        <option value="servico publico estadual">SERVIÇO PÚBLICO ESTADUAL</option>
+                        <option value="servico publico federal">SERVIÇO PÚBLICO FEDERAL</option>
+                        <option value="servico publico municipal">SERVIÇO PÚBLICO MUNICIPAL</option>
+                        <option value="transferencia de orgao">TRANSFERÊNCIA DE ÓRGÃO</option>
+                        <option value="transporte publico">TRANSPORTE PÚBLICO</option>
+                      </select>
+                    </div>
+                    <div class="campo-exibir">
+                      <label for="data">Data da solicitação:</label>
+                      <input type="date" id="data" name="data" readonly>
+                    </div>
                   </div>
                   <div class="campo-exibir">
-                    <label for="data">Data da solicitação:</label>
-                    <input type="date" id="data" name="data" readonly>
-                  </div>
-                </div>
-                <div class="campo-exibir">
-                  <label for="descricao">Descrição:</label>
-                  <textarea id="descricao" name="descricao" readonly></textarea>
-                </div>
-                <div class="campo-exibir">
-                  <label for="beneficiario">Beneficiário:</label>
-                  <input type="text" id="beneficiario" name="beneficiario" readonly>
-                </div>
-                <div class="form-2-colum">
-                  <div class="campo-exibir">
-                    <label for="cep">CEP:</label>
-                    <input type="text" id="cep" name="cep" readonly>
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" readonly></textarea>
                   </div>
                   <div class="campo-exibir">
-                    <label for="uf">UF:</label>
-                    <input type="text" id="uf" name="uf" readonly>
+                    <label for="beneficiario">Beneficiário:</label>
+                    <input type="text" id="beneficiario" name="beneficiario" readonly>
                   </div>
-                </div>
-                <div class="campo-exibir">
-                  <label for="rua">Rua:</label>
-                  <input type="text" id="rua" name="rua" readonly>
-                </div>
-                <div class="form-2-colum">
-                  <div class="campo-exibir">
-                    <label for="numero">Número:</label>
-                    <input type="number" id="numero" name="numero" readonly>
-                  </div>
-                  <div class="campo-exibir">
-                    <label for="complemento">Complemento:</label>
-                    <input type="text" id="complemento" name="complemento" readonly>
-                  </div>
-                </div>
-                <div class="form-2-colum">
-                  <div class="campo-exibir">
-                    <label for="bairro">Bairro:</label>
-                    <input type="text" id="bairro" name="bairro" readonly>
+                  <div class="form-2-colum">
+                    <div class="campo-exibir">
+                      <label for="cep">CEP:</label>
+                      <input type="text" id="cep" name="cep" readonly>
+                    </div>
+                    <div class="campo-exibir">
+                      <label for="uf">UF:</label>
+                      <input type="text" id="uf" name="uf" readonly>
+                    </div>
                   </div>
                   <div class="campo-exibir">
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" readonly>
+                    <label for="rua">Rua:</label>
+                    <input type="text" id="rua" name="rua" readonly>
                   </div>
-                </div>
+                  <div class="form-2-colum">
+                    <div class="campo-exibir">
+                      <label for="numero">Número:</label>
+                      <input type="number" id="numero" name="numero" readonly>
+                    </div>
+                    <div class="campo-exibir">
+                      <label for="complemento">Complemento:</label>
+                      <input type="text" id="complemento" name="complemento" readonly>
+                    </div>
+                  </div>
+                  <div class="form-2-colum">
+                    <div class="campo-exibir">
+                      <label for="bairro">Bairro:</label>
+                      <input type="text" id="bairro" name="bairro" readonly>
+                    </div>
+                    <div class="campo-exibir">
+                      <label for="cidade">Cidade:</label>
+                      <input type="text" id="cidade" name="cidade" readonly>
+                    </div>
+                  </div>
 
-            </form>
-          </div>
+              </form>
+            </div>
 
-          <div id="aba2" class="aba-template">
-            <div class="tabela-historico">
+            <div id="aba2" class="aba-template">
+              <div class="tabela-historico">
 
-              <table>
-                <tr>
-                  <th>Data</th>
-                  <th>Por</th>
-                  <th>Ação</th>
-                  <th>Descrição</th>
-                </tr>
-                <tr>
-                  <td>16-03-2024</td>
-                  <td>[Nome]</td>
-                  <td>TAREFA AGENDADA</td>
-                  <td>Tarefa atribuída para [Nome].</td>
-                </tr>
-                <tr>
-                  <td>19-03-2024</td>
-                  <td>[Nome]</td>
-                  <td>TAREFA CONCLUÍDA</td>
-                  <td>Tarefa concluída por [Nome].</td>
-                </tr>
-                <tr>
-                  <td>19-03-2024</td>
-                  <td>[Nome]</td>
-                  <td>PLEITO CONCLUÍDO</td>
-                  <td>Atendido.</td>
-                </tr>
-              </table>
+                <table>
+                  <tr>
+                    <th>Data</th>
+                    <th>Por</th>
+                    <th>Ação</th>
+                    <th>Descrição</th>
+                  </tr>
+                  <tr>
+                    <td>16-03-2024</td>
+                    <td>[Nome]</td>
+                    <td>TAREFA AGENDADA</td>
+                    <td>Tarefa atribuída para [Nome].</td>
+                  </tr>
+                  <tr>
+                    <td>19-03-2024</td>
+                    <td>[Nome]</td>
+                    <td>TAREFA CONCLUÍDA</td>
+                    <td>Tarefa concluída por [Nome].</td>
+                  </tr>
+                  <tr>
+                    <td>19-03-2024</td>
+                    <td>[Nome]</td>
+                    <td>PLEITO CONCLUÍDO</td>
+                    <td>Atendido.</td>
+                  </tr>
+                </table>
 
+              </div>
             </div>
           </div>
         </div>

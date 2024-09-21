@@ -69,749 +69,750 @@
   </header>
 
   <main class="main main-template">
-    <section class="main-section container-abas-template">
-      <nav class="container-abas-template-header ">
-        <ul id="navAba" class="nav nav-duas-abas">
-          <li id="nav1">
-            <a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Contatos</a>
-          </li>
-          <li id="nav2">
-            <a href="#aba2" onclick="mostrarAba('aba2')">Grupos</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="container-abas-template-content">
-        <div id="aba1" class="aba-template active">
-          <div class="area-interna-containerContent-template">
-            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-              <ul class="lista-vertical-alt">
-                <li class="area-filtro">
-                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
-                  <div class="btn-filtro-pesq">
-                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                      <a href="contatos.html" class="remover-filtro">&times;</a>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <ul class="lista-vertical-alt" id="contatosList">
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>A</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>B</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>C</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>C</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>D</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>E</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>F</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>G</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="secao-interna-template">
-                      <h2 class="secao-interna-template-header"><b>H</b></h2>
-                      <div class="secao-interna-template-content">
-                        <ul class=" lista-vertical-cards">
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
-                            </a>
-                          </li>
-                          <li>
-                            <a class="card-xs contatos-small-card contato" href="#">
-                              <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
-                              <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
-                              <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
-                              <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
-                              <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
-                              <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
-                              <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
-                              <div class="contatos-small-card-editar">
-                                <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
-                              </div>
-                              <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-                <li class="list-last-child"><br></li>
-              </ul>
+    <section class="main-section ">
+      <div class="container-abas-template">
+        <nav class="container-abas-template-header ">
+          <ul id="navAba" class="nav nav-duas-abas">
+            <li id="nav1">
+              <a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Contatos</a>
+            </li>
+            <li id="nav2">
+              <a href="#aba2" onclick="mostrarAba('aba2')">Grupos</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="container-abas-template-content">
+          <div id="aba1" class="aba-template active">
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <ul class="lista-vertical-alt">
+                  <li class="area-filtro">
+                    <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                        <a href="contatos.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <ul class="lista-vertical-alt" id="contatosList">
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>A</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>B</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>C</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>C</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>D</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>E</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>F</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>G</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="secao-interna-template">
+                        <h2 class="secao-interna-template-header"><b>H</b></h2>
+                        <div class="secao-interna-template-content">
+                          <ul class=" lista-vertical-cards">
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato}}</div>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="card-xs contatos-small-card contato" href="#">
+                                <p class="contatos-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                                <div class="contatos-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/4-estrela.svg" alt="Perfil influencia Icon"></div>
+                                <img class="contatos-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                                <div class="contatos-small-card-tipocontato" data-filter="tipoContato">{{fornecedor}}</div>
+                                <div class="contatos-small-card-num" data-filter="numeroContato">{{(81) 88888-8888}}</div>
+                                <div class="contatos-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                                <div class="contatos-small-card-tipopessoa" data-filter="tipoPessoa">{{juridica}}</div>
+                                <div class="contatos-small-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='contato_exibir.html'">Visualizar contato</button>
+                                </div>
+                                <div class="contatos-small-card-id" data-filter="idContato">{{idContato 2}}</div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="list-last-child"><br></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="aba2" class="aba-template">
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <ul class="lista-vertical-alt">
+                  <li class="area-filtro">
+                    <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                        <a href="contatos.html" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <ul class="lista-vertical-grup" id="grupList">
+                      <li>
+                        <a class="card-xs grupo-small-card grupo" href="#">
+                          <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                          <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                          <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                          <div class="grupo-small-card-desc" data-filter="descGrupo">
+                            <p>Descrição do grupo</p>
+                          </div>
+                          <div class="grupo-small-card-editar">
+                            <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
+                          </div>
+                          <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="card-xs grupo-small-card grupo" href="#">
+                          <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                          <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                          <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                          <div class="grupo-small-card-desc" data-filter="descGrupo">
+                            <p>Descrição do grupo</p>
+                          </div>
+                          <div class="grupo-small-card-editar">
+                            <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
+                          </div>
+                          <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="card-xs grupo-small-card grupo" href="#">
+                          <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                          <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                          <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                          <div class="grupo-small-card-desc" data-filter="descGrupo">
+                            <p>Descrição do grupo</p>
+                          </div>
+                          <div class="grupo-small-card-editar">
+                            <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
+                          </div>
+                          <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="card-xs grupo-small-card grupo" href="#">
+                          <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                          <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                          <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                          <div class="grupo-small-card-desc" data-filter="descGrupo">
+                            <p>Descrição do grupo</p>
+                          </div>
+                          <div class="grupo-small-card-editar">
+                            <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
+                          </div>
+                          <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="card-xs grupo-small-card grupo" href="#">
+                          <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                          <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                          <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                          <div class="grupo-small-card-desc" data-filter="descGrupo">
+                            <p>Descrição do grupo</p>
+                          </div>
+                          <div class="grupo-small-card-editar">
+                            <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
+                          </div>
+                          <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="card-xs grupo-small-card grupo" href="#">
+                          <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
+                          <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
+                          <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
+                          <div class="grupo-small-card-desc" data-filter="descGrupo">
+                            <p>Descrição do grupo</p>
+                          </div>
+                          <div class="grupo-small-card-editar">
+                            <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
+                          </div>
+                          <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="list-last-child"><br></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-
-        <div id="aba2" class="aba-template">
-          <div class="area-interna-containerContent-template">
-            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-              <ul class="lista-vertical-alt">
-                <li class="area-filtro">
-                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
-                  <div class="btn-filtro-pesq">
-                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                      <a href="contatos.html" class="remover-filtro">&times;</a>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <ul class="lista-vertical-grup" id="grupList">
-                    <li>
-                      <a class="card-xs grupo-small-card grupo" href="#">
-                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
-                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
-                        <div class="grupo-small-card-desc" data-filter="descGrupo">
-                          <p>Descrição do grupo</p>
-                        </div>
-                        <div class="grupo-small-card-editar">
-                          <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
-                        </div>
-                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs grupo-small-card grupo" href="#">
-                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
-                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
-                        <div class="grupo-small-card-desc" data-filter="descGrupo">
-                          <p>Descrição do grupo</p>
-                        </div>
-                        <div class="grupo-small-card-editar">
-                          <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
-                        </div>
-                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs grupo-small-card grupo" href="#">
-                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
-                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
-                        <div class="grupo-small-card-desc" data-filter="descGrupo">
-                          <p>Descrição do grupo</p>
-                        </div>
-                        <div class="grupo-small-card-editar">
-                          <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
-                        </div>
-                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs grupo-small-card grupo" href="#">
-                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
-                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
-                        <div class="grupo-small-card-desc" data-filter="descGrupo">
-                          <p>Descrição do grupo</p>
-                        </div>
-                        <div class="grupo-small-card-editar">
-                          <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
-                        </div>
-                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs grupo-small-card grupo" href="#">
-                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
-                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
-                        <div class="grupo-small-card-desc" data-filter="descGrupo">
-                          <p>Descrição do grupo</p>
-                        </div>
-                        <div class="grupo-small-card-editar">
-                          <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
-                        </div>
-                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="card-xs grupo-small-card grupo" href="#">
-                        <p class="grupo-small-card-title" data-filter="nomeGrupo">{{Nome grupo}}</p>
-                        <div class="grupo-small-card-func" data-filter="funcaoGrupo">{{Usado para}}</div>
-                        <div class="grupo-small-card-situacao" data-filter="situacaoGrupo">{{Situação}}</div>
-                        <div class="grupo-small-card-desc" data-filter="descGrupo">
-                          <p>Descrição do grupo</p>
-                        </div>
-                        <div class="grupo-small-card-editar">
-                          <button class="btn-outline-principal" onclick="window.location.href='grupo_exibir.html'">Visualizar grupo</button>
-                        </div>
-                        <div class="grupo-small-card-id" data-filter="idgrupo">{{idgrupo}}</div>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="list-last-child"><br></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 

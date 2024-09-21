@@ -13,6 +13,7 @@
 .calendario-large-card-editar .btn-outline-principal:hover,
 .calendario-small-card-editar .btn-outline-principal:hover {
   filter: brightness(1.1);
+  background: var(--btn-principal-hover);
 }
 
 .nav-calendar {
@@ -103,8 +104,8 @@
 
 .hoje {
   border-radius: 4px;
-  border: 1px solid var(--cor-primaria-3);
-  border-top: 5px solid var(--cor-primaria-3);
+  border: 1px solid var(--btn-filtro-selecionado);
+  border-top: 5px solid var(--btn-filtro-selecionado);
   color: var(--btn-filtro-alt-txt);
   background: var(--btn-filtro);
   cursor: pointer;

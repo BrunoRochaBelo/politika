@@ -1,8 +1,6 @@
 /* HEADER TEMPLATE */
 .header-template {
   display: grid;
-  align-content: center;
-  justify-content: space-between;
   align-items: center;
   justify-content: stretch;
   gap: 25px;
@@ -130,8 +128,6 @@
 @media only screen and (max-width: 56.25rem) {
   .header-template {
     display: grid;
-    align-content: center;
-    justify-content: space-between;
     gap: 15px;
     grid:
       "header-menu header-notification header-search"

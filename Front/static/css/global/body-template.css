@@ -1,10 +1,8 @@
 .body-template {
   display: grid;
-  align-content: center;
-  justify-content: stretch;
   gap: 1.25rem;
   grid-template-columns: auto minmax(57rem, 69rem) auto;
-  grid-template-rows: 2.813rem 1fr;
+  grid-template-rows: 2.813rem auto;
   grid-template-areas:
     "header header header"
     ". main.";
@@ -24,19 +22,21 @@
   .body-template {
     gap: 0;
     width: 100vw;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2.813rem 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: 2.813rem auto;
     grid-template-areas:
       "header"
       "main";
     transition: grid-template-rows 0.3s ease-in-out;
+    position: relative;
   }
   .header {
+    grid-area: header;
     top: 0;
     width: 100%;
   }
 
   .main {
-    overflow: auto;
+    grid-area: main;
   }
 }

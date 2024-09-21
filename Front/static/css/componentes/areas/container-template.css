@@ -3,7 +3,6 @@
   display: grid;
   box-sizing: border-box;
   overflow-x: hidden;
-  align-content: start;
   background: var(--container-bg);
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;
@@ -27,10 +26,7 @@
 }
 .container-template-content {
   grid-area: container-template-content;
-  overflow-x: auto;
-  overflow-y: auto;
   padding: 0px;
-  height: auto;
   border-radius: 0px;
   border-top: 1px solid var(--bg-principal);
   scroll-behavior: smooth;

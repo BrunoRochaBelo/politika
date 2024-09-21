@@ -13,6 +13,7 @@
 .tarefa-small-card-editar .btn-outline-principal:hover,
 .tarefa-medium-card-editar .btn-outline-principal:hover {
   filter: brightness(1.1);
+  background: var(--btn-principal-hover);
 }
 
 .filtros-tarefas h4 {

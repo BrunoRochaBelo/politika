@@ -87,8 +87,8 @@
     display: inline-block;
     background: linear-gradient(
       55deg,
-      hsl(218, 100%, 77%),
-      hsl(218, 100%, 82%)
+      hsl(219, 100%, 75%),
+      hsl(219, 100%, 80%)
     );
     -webkit-background-clip: text;
     background-clip: text;

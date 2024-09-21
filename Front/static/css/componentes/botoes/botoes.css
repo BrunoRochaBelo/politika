@@ -17,7 +17,7 @@
 }
 .btn-principal:hover {
   background: var(--btn-principal-hover);
-  border-color: var(--btn-principal-hover);
+  border-color: none;
   box-shadow: var(--sombra-leve);
 }
 .btn-principal-destaque {
@@ -93,7 +93,7 @@
   align-items: center;
 }
 .btn-outline-principal:hover {
-  background: var(--btn-principal);
+  background: var(--btn-principal-hover);
   color: var(--btn-principal-txt);
   box-shadow: var(--sombra-leve);
   padding: 10px 20px;

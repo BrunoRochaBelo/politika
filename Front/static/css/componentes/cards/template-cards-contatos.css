@@ -135,6 +135,10 @@
   font-weight: 400;
 }
 
+.contatos-small-card-expanded:hover {
+  filter: brightness(1);
+}
+
 /* Vazio */
 .contatos-empty-card {
   display: grid;

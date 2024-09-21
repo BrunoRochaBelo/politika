@@ -152,6 +152,12 @@
   color: var(--txt-subtitulo);
 }
 
+.tarefa-small-card-expanded:hover {
+  filter: brightness(1);
+}
+
+/* ---------------------------------------------------------------- */
+
 /* Médio */
 .tarefa-medium-card {
   display: grid;
@@ -299,4 +305,8 @@
 .tarefa-medium-card-expanded .tarefa-medium-card-desc {
   background: var(--card-aberto-detalhe);
   color: var(--txt-subtitulo);
+}
+
+.tarefa-medium-card-expanded:hover {
+  filter: brightness(1);
 }

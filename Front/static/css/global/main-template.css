@@ -1,11 +1,9 @@
 /* Grid */
 .main-template {
   display: grid;
-  align-content: center;
-  justify-content: center;
   gap: 0rem 1rem;
   grid-template-columns: 1.1fr 1.9fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto;
   grid-template-areas: "main-sidenav main-section";
 }
 /* Áreas de grid */
@@ -31,8 +29,8 @@
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .main-template {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     grid-template-areas: "main-section";
     overflow: hidden;
   }
@@ -45,7 +43,7 @@
     position: absolute;
     padding: 0px;
     right: 2px;
-    top: 2.813rem;
+    top: 3.2em;
     overflow: hidden;
     width: 19%;
     height: 35px;

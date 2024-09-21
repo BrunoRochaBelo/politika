@@ -10,6 +10,8 @@ body {
   overflow: hidden;
   box-sizing: border-box;
   background: var(--bg-principal);
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
 
   /* Estilização para a barra de rolagem */
   scrollbar-face-color: var(--scrollbar-bg);
@@ -140,9 +142,9 @@ img {
 
 @media only screen and (max-width: 56.25rem) {
   body {
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
     overflow: auto;
-    min-width: 100vw;
     background: var(--container-bg);
-    position: relative;
   }
 }

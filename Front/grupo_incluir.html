@@ -19,112 +19,114 @@
     </header>
 
     <main class="main-form">
-      <section class="container-abas-template">
-        <nav class="container-abas-template-header">
-          <ul id="navAba" class="nav nav-duas-abas">
-            <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Dados </a></li>
-            <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Membros </a></li>
-          </ul>
-        </nav>
-        <div class="container-abas-template-content">
-          <form id="form" class="form" enctype="multipart/form-data">
-            <div class="card-session secao-interna-template active">
-              <div id="aba1" class="aba-template active">
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo">
-                    <label for="nome_grupo">Nome do Grupo</label>
-                    <input type="text" id="nome_grupo" name="nome_grupo" placeholder="Insira o nome do grupo">
-                  </div>
-
-                  <div class="campo">
-                    <label for="usado_para">Usado para</label>
-                    <div id="usado_para" class="radio-button-group">
-                      <input type="radio" id="mensagens" name="usado_para" value="mensagens">
-                      <label for="mensagens">Mensagens</label>
-
-                      <input type="radio" id="equipe" name="usado_para" value="equipe">
-                      <label for="equipe">Equipe</label>
-
-                      <input type="radio" id="geral" name="usado_para" value="geral">
-                      <label for="geral">Geral</label>
+      <section>
+        <div class="container-abas-template">
+          <nav class="container-abas-template-header">
+            <ul id="navAba" class="nav nav-duas-abas">
+              <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Dados </a></li>
+              <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Membros </a></li>
+            </ul>
+          </nav>
+          <div class="container-abas-template-content">
+            <form id="form" class="form" enctype="multipart/form-data">
+              <div class="card-session secao-interna-template active">
+                <div id="aba1" class="aba-template active">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo">
+                      <label for="nome_grupo">Nome do Grupo</label>
+                      <input type="text" id="nome_grupo" name="nome_grupo" placeholder="Insira o nome do grupo">
                     </div>
-                  </div>
 
-                  <div class="campo">
-                    <label for="situacao_grupo">Situação</label>
-                    <div id="situacao_grupo" class="radio-button-group">
-                      <input type="radio" id="habilitado" name="situacao_grupo" value="habilitado">
-                      <label for="habilitado">Habilitado</label>
+                    <div class="campo">
+                      <label for="usado_para">Usado para</label>
+                      <div id="usado_para" class="radio-button-group">
+                        <input type="radio" id="mensagens" name="usado_para" value="mensagens">
+                        <label for="mensagens">Mensagens</label>
 
-                      <input type="radio" id="desabilitado" name="situacao_grupo" value="desabilitado">
-                      <label for="desabilitado">Desabilitado</label>
+                        <input type="radio" id="equipe" name="usado_para" value="equipe">
+                        <label for="equipe">Equipe</label>
+
+                        <input type="radio" id="geral" name="usado_para" value="geral">
+                        <label for="geral">Geral</label>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="campo">
-                    <label for="descricao_grupo">Descrição</label>
-                    <textarea id="descricao_grupo" name="descricao_grupo" placeholder="Insira a descrição do grupo"></textarea>
-                  </div>
+                    <div class="campo">
+                      <label for="situacao_grupo">Situação</label>
+                      <div id="situacao_grupo" class="radio-button-group">
+                        <input type="radio" id="habilitado" name="situacao_grupo" value="habilitado">
+                        <label for="habilitado">Habilitado</label>
 
-                </fieldset>
+                        <input type="radio" id="desabilitado" name="situacao_grupo" value="desabilitado">
+                        <label for="desabilitado">Desabilitado</label>
+                      </div>
+                    </div>
+
+                    <div class="campo">
+                      <label for="descricao_grupo">Descrição</label>
+                      <textarea id="descricao_grupo" name="descricao_grupo" placeholder="Insira a descrição do grupo"></textarea>
+                    </div>
+
+                  </fieldset>
+                </div>
+
+
+                <div id="aba2" class="aba-template">
+                  <fieldset>
+                    <legend class="titulo-xl"></legend>
+                    <div class="campo">
+                      <div id="formPesquisaContatos" class="search-input-container">
+                        <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
+                        <button type="button" id="searchButton" class="search-button">
+                          <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Resultados da pesquisa de contatos -->
+                    <div class="campo">
+                      <p id="contadorContatosEncontrados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
+                      <div class="tabela-historico">
+                        <table id="tabelaContatosEncontrados">
+                          <thead>
+                            <tr>
+                              <th>Nome</th>
+                              <th>Tipo</th>
+                              <th>Ação</th>
+                            </tr>
+                            <div class="loading-indicator" id="loading-indicator">Carregando...</div>
+                          </thead>
+                          <tbody>
+                            <!-- Contatos encontrados serão listados aqui dinamicamente -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <!-- Lista de Participantes do Grupo -->
+                    <div class="campo">
+                      <p id="contadorParticipantes" class="titulo-area-tabela">Total de participantes: 0</p>
+                      <div class="tabela-historico">
+                        <table id="tabelaParticipantesGrupo">
+                          <thead>
+                            <tr>
+                              <th>Nome</th>
+                              <th>Tipo</th>
+                              <th>Ação</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Participantes do grupo serão listados aqui dinamicamente -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
               </div>
-
-
-              <div id="aba2" class="aba-template">
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo">
-                    <div id="formPesquisaContatos" class="search-input-container">
-                      <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
-                      <button type="button" id="searchButton" class="search-button">
-                        <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Resultados da pesquisa de contatos -->
-                  <div class="campo">
-                    <p id="contadorContatosEncontrados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
-                    <div class="tabela-historico">
-                      <table id="tabelaContatosEncontrados">
-                        <thead>
-                          <tr>
-                            <th>Nome</th>
-                            <th>Tipo</th>
-                            <th>Ação</th>
-                          </tr>
-                          <div class="loading-indicator" id="loading-indicator">Carregando...</div>
-                        </thead>
-                        <tbody>
-                          <!-- Contatos encontrados serão listados aqui dinamicamente -->
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <!-- Lista de Participantes do Grupo -->
-                  <div class="campo">
-                    <p id="contadorParticipantes" class="titulo-area-tabela">Total de participantes: 0</p>
-                    <div class="tabela-historico">
-                      <table id="tabelaParticipantesGrupo">
-                        <thead>
-                          <tr>
-                            <th>Nome</th>
-                            <th>Tipo</th>
-                            <th>Ação</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <!-- Participantes do grupo serão listados aqui dinamicamente -->
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </section>
     </main>

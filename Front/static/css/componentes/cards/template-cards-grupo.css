@@ -109,3 +109,7 @@
   background: var(--card-aberto-detalhe);
   color: var(--txt-subtitulo);
 }
+
+.grupo-small-card-expanded:hover {
+  filter: brightness(1);
+}

@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function adjustLayout() {
     if (window.innerWidth <= 900) {
       // Considerando max-width: 56.25rem
-      maxHeight = 340; // Altura no modo responsivo
+      maxHeight = 345; // Altura no modo responsivo
       dashboardContent.style.flexDirection = "column";
       dashboardContent.style.alignItems = "flex-start";
       dashboardContent.style.padding = "7px";

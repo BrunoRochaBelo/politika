@@ -158,6 +158,10 @@
   color: var(--txt-card-aberto);
 }
 
+.calendario-small-card-expanded:hover {
+  filter: brightness(1);
+}
+
 /* ---------------------------------------------------------------- */
 
 /* Grande */
@@ -296,4 +300,8 @@
 .calendario-large-card-expanded .calendario-large-card-duracao {
   background: var(--card-aberto-detalhe);
   color: var(--txt-subtitulo);
+}
+
+.calendario-large-card-expanded:hover {
+  filter: brightness(1);
 }

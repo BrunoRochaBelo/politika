@@ -137,7 +137,7 @@
 
 .acao-item:hover {
   transform: scale(1.05);
-  background-color: var(--btn-principal-hover);
+  background: var(--btn-principal-hover);
 }
 
 .acao-item img {

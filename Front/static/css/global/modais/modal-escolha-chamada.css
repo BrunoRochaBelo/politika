@@ -69,7 +69,7 @@
   margin: 5px 10px;
   padding: 10px 20px;
   border: none;
-  background-color: var(--btn-principal);
+  background: var(--card-aberto-bg);
   color: var(--btn-principal-txt);
   box-shadow: var(--sombra-intensa);
   font-size: 14px;
@@ -79,7 +79,7 @@
 }
 
 .btn-escolha-chamada:hover {
-  background-color: var(--btn-principal-hover);
+  background: var(--btn-principal-hover);
 }
 
 .icone-btn {

@@ -156,3 +156,7 @@
   background: var(--card-aberto-detalhe);
   color: var(--txt-subtitulo);
 }
+
+.despesas-medium-card-expanded:hover {
+  filter: brightness(1);
+}
