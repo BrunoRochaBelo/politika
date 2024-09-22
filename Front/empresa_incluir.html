@@ -19,227 +19,233 @@
     </header>
 
     <main class="main-form">
-      <section class="container-template">
-        <div class="container-template-content">
-          <form id="form" class="form" enctype="multipart/form-data">
-            <ul class="lista-vertical-alt">
+      <section>
+        <div class="container-template">
+          <div class="container-template-content">
+            <form id="form" class="form" enctype="multipart/form-data">
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <ul class="lista-vertical-alt">
 
-              <!-- Identificação -->
-              <li class="card-session secao-interna-template active">
-                <h2 class="secao-interna-template-header active-header" onclick="changeSession(1)">
-                  <a href="#">
-                    <div class="agenda-icon agora">
-                      <img src="./static/imagens/icones/identificação.svg" alt="Identificação Icon">
-                    </div> Identificação<span class="arrow up"></span>
-                  </a>
-                </h2>
-                <div class="secao-interna-template-content">
-                  <div class="session active" id="secao1">
-                    <fieldset>
-                      <legend class="titulo-xl"></legend>
-                      <div class="nomes">
-                        <div class="campo">
-                          <label for="razao_social">Razão Social<span>*</span></label>
-                          <input type="text" id="razao_social" name="razao_social" required placeholder="Digite o nome da empresa">
-                        </div>
-                        <div class="campo">
-                          <label for="nome_fantasia">Nome Fantasia<span>*</span></label>
-                          <input type="text" id="nome_fantasia" name="nome_fantasia" required placeholder="Digite o nome popular da empresa">
-                        </div>
-                      </div>
-                      <div class="campo">
-                        <label for="cnpj">CNPJ<span>*</span></label>
-                        <input type="text" id="cnpj" name="cnpj" required placeholder="00.000.000/0000-00">
-                      </div>
+                    <!-- Identificação -->
+                    <li class="card-session secao-interna-template active">
+                      <h2 class="secao-interna-template-header active-header" onclick="changeSession(1)">
+                        <a href="#">
+                          <div class="agenda-icon agora">
+                            <img src="./static/imagens/icones/identificação.svg" alt="Identificação Icon">
+                          </div> Identificação<span class="arrow up"></span>
+                        </a>
+                      </h2>
+                      <div class="secao-interna-template-content">
+                        <div class="session active" id="secao1">
+                          <fieldset>
+                            <legend class="titulo-xl"></legend>
+                            <div class="nomes">
+                              <div class="campo">
+                                <label for="razao_social">Razão Social<span>*</span></label>
+                                <input type="text" id="razao_social" name="razao_social" required placeholder="Digite o nome da empresa">
+                              </div>
+                              <div class="campo">
+                                <label for="nome_fantasia">Nome Fantasia<span>*</span></label>
+                                <input type="text" id="nome_fantasia" name="nome_fantasia" required placeholder="Digite o nome popular da empresa">
+                              </div>
+                            </div>
+                            <div class="campo">
+                              <label for="cnpj">CNPJ<span>*</span></label>
+                              <input type="text" id="cnpj" name="cnpj" required placeholder="00.000.000/0000-00">
+                            </div>
 
-                      <div class="campo">
-                        <label for="telefonePrincipal">Telefone Principal <span>*</span></label>
-                        <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
-                      </div>
-                      <div class="campo">
-                        <label>Este número é WhatsApp? <span>*</span></label>
-                        <div class="switch-container">
-                          <input type="checkbox" id="whatsapp_switch" class="form-checkbox" onchange="mostrarCampoWhatsapp()">
-                          <label for="whatsapp_switch" class="switch-label">
-                            <span class="switch-inner"></span>
-                            <span class="switch-switch"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div id="campoWhatsapp" class="hidden">
-                        <div class="campo">
-                          <label for="whatsapp">WhatsApp</label>
-                          <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="Digite o número do WhatsApp">
-                        </div>
-                      </div>
-                      <div class="campo">
-                        <label for="telefoneAdicional">Telefone Adicional</label>
-                        <input type="tel" id="telefoneAdicional" name="telefoneAdicional" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
-                      </div>
+                            <div class="campo">
+                              <label for="telefonePrincipal">Telefone Principal <span>*</span></label>
+                              <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required class="contato" placeholder="(99) 99999-9999" onchange="formatartelefonePrincipal(this); validartelefonePrincipal(this.value)">
+                            </div>
+                            <div class="campo">
+                              <label>Este número é WhatsApp? <span>*</span></label>
+                              <div class="switch-container">
+                                <input type="checkbox" id="whatsapp_switch" class="form-checkbox" onchange="mostrarCampoWhatsapp()">
+                                <label for="whatsapp_switch" class="switch-label">
+                                  <span class="switch-inner"></span>
+                                  <span class="switch-switch"></span>
+                                </label>
+                              </div>
+                            </div>
+                            <div id="campoWhatsapp" class="hidden">
+                              <div class="campo">
+                                <label for="whatsapp">WhatsApp</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="contato" placeholder="Digite o número do WhatsApp">
+                              </div>
+                            </div>
+                            <div class="campo">
+                              <label for="telefoneAdicional">Telefone Adicional</label>
+                              <input type="tel" id="telefoneAdicional" name="telefoneAdicional" class="contato" placeholder="(99) 9999-9999" onchange="formatarTelefone(this); validarTelefone(this.value)">
+                            </div>
 
-                      <div class="campo">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" class="contato" placeholder="exemplo@dominio.com" onchange="validarEmail(this.value)">
+                            <div class="campo">
+                              <label for="email">E-mail</label>
+                              <input type="email" id="email" name="email" class="contato" placeholder="exemplo@dominio.com" onchange="validarEmail(this.value)">
+                            </div>
+                          </fieldset>
+                        </div>
                       </div>
-                    </fieldset>
-                  </div>
+                    </li>
+
+                    <!-- Endereço -->
+                    <li class="card-session secao-interna-template">
+                      <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">
+                          <div class="agenda-icon agora">
+                            <img src="./static/imagens/icones/endereço.svg" alt="Endereço Icon">
+                          </div> Endereço<span class="arrow down">
+                        </a></h2>
+                      <div class="secao-interna-template-content">
+                        <div class="session" id="secao2">
+                          <fieldset>
+                            <legend class="titulo-xl"></legend>
+                            <div class="campo">
+                              <label for="cep">CEP <span>*</span></label>
+                              <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" required oninput="buscarEndereco(this.value)">
+                            </div>
+
+                            <div class="form-2-colum">
+                              <div class="campo">
+                                <label for="uf">UF <span>*</span></label>
+                                <select id="uf" name="uf" required>
+                                  <option value="">Selecione</option>
+                                  <option value="AC">AC</option>
+                                  <option value="AL">AL</option>
+                                  <option value="AP">AP</option>
+                                  <option value="AM">AM</option>
+                                  <option value="BA">BA</option>
+                                  <option value="CE">CE</option>
+                                  <option value="DF">DF</option>
+                                  <option value="ES">ES</option>
+                                  <option value="GO">GO</option>
+                                  <option value="MA">MA</option>
+                                  <option value="MT">MT</option>
+                                  <option value="MS">MS</option>
+                                  <option value="MG">MG</option>
+                                  <option value="PA">PA</option>
+                                  <option value="PB">PB</option>
+                                  <option value="PR">PR</option>
+                                  <option value="PE">PE</option>
+                                  <option value="PI">PI</option>
+                                  <option value="RJ">RJ</option>
+                                  <option value="RN">RN</option>
+                                  <option value="RS">RS</option>
+                                  <option value="RO">RO</option>
+                                  <option value="RR">RR</option>
+                                  <option value="SC">SC</option>
+                                  <option value="SP">SP</option>
+                                  <option value="SE">SE</option>
+                                  <option value="TO">TO</option>
+                                </select>
+                              </div>
+                              <div class="campo">
+                                <label for="cidade">Cidade <span>*</span></label>
+                                <input type="text" id="cidade" name="cidade" required placeholder="Digite a cidade">
+                              </div>
+                            </div>
+                            <div class="campo">
+                              <label for="bairro">Bairro <span>*</span></label>
+                              <input type="text" id="bairro" name="bairro" required placeholder="Digite o bairro">
+                            </div>
+                            <div class="campo">
+                              <label for="rua">Rua</label>
+                              <input type="text" id="rua" name="rua" placeholder="Digite a rua">
+                            </div>
+                            <div class="form-2-colum">
+                              <div class="campo">
+                                <label for="numero">Número</label>
+                                <input type="number" id="numero" name="numero" placeholder="Digite o número">
+                              </div>
+                              <div class="campo">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+                              </div>
+                            </div>
+
+                            <div class="campo ocultar">
+                              <label for="latitude">Latitude</label>
+                              <input type="number" id="latitude" name="latitude" step="0.000001" placeholder="Digite a latitude">
+                            </div>
+                            <div class="campo ocultar">
+                              <label for="longitude">Longitude</label>
+                              <input type="number" id="longitude" name="longitude" step="0.000001" placeholder="Digite a longitude">
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Especificação do Fornecimento -->
+                    <li class="card-session secao-interna-template">
+                      <h2 class="secao-interna-template-header" onclick="changeSession(3)">
+                        <a href="#">
+                          <div class="agenda-icon agora">
+                            <img src="./static/imagens/icones/info_complementar.svg" alt="Especificação do Fornecimento Icon">
+                          </div> Especificação do Fornecimento<span class="arrow down"></span>
+                        </a>
+                      </h2>
+                      <div class="secao-interna-template-content">
+                        <div class="session" id="secao3">
+                          <fieldset>
+                            <legend class="titulo-xl"></legend>
+                            <div class="campo">
+                              <label for="bem_servico">Bens e Serviços<span>*</span></label>
+                              <select id="bem_servico" name="bem_servico" required>
+                                <option value="">Selecione</option>
+                                <option value="mao_obra">Mão de Obra</option>
+                                <option value="grafica">Gráfica</option>
+                                <option value="impostos">Impostos</option>
+                                <option value="logistica">Logística</option>
+                                <option value="eletro_eletronico">Eletro-Eletrônico</option>
+                                <option value="material_expediente">Material de Expediente</option>
+                                <option value="alimentacao">Alimentação</option>
+                                <option value="aluguel_espaco">Aluguel de Espaço</option>
+                                <option value="aluguel_estruturas">Aluguel de Estruturas</option>
+                                <option value="celpe">CELPE</option>
+                                <option value="compesa">COMPESA</option>
+                                <option value="juridico">Jurídico</option>
+                                <option value="contabilidade">Contabilidade</option>
+                                <option value="telefonia_internet">Telefonia e Internet</option>
+                                <option value="hospedagem">Hospedagem</option>
+                                <option value="locucao">Locução</option>
+                                <option value="producao_video">Produção de Vídeo</option>
+                                <option value="producao_conteudo">Produção de Conteúdo</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="redes_sociais">Redes Sociais</option>
+                              </select>
+                              <button type="button" id="buttonAdicionarBensServices" class="btn-principal-alt adicionar-servico" onclick="adicionarServico()" disabled>Adicionar</button>
+                            </div>
+                            <!-- Exibir contador de itens -->
+                            <div id="contadorItens">Total de itens adicionados: 0</div>
+                            <!-- Tabela para listar os itens adicionados -->
+                            <div class="tabela-historico">
+                              <table id="tabelaBemServico">
+                                <thead>
+                                  <tr>
+                                    <th>ID</th>
+                                    <th>Produto / Serviço</th>
+                                    <th>Ações</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <!-- Linhas da tabela serão adicionadas dinamicamente -->
+                                </tbody>
+                              </table>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </li>
+
+                    <div class="botoes">
+                      <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                    </div>
+                  </ul>
                 </div>
-              </li>
-
-              <!-- Endereço -->
-              <li class="card-session secao-interna-template">
-                <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">
-                    <div class="agenda-icon agora">
-                      <img src="./static/imagens/icones/endereço.svg" alt="Endereço Icon">
-                    </div> Endereço<span class="arrow down">
-                  </a></h2>
-                <div class="secao-interna-template-content">
-                  <div class="session" id="secao2">
-                    <fieldset>
-                      <legend class="titulo-xl"></legend>
-                      <div class="campo">
-                        <label for="cep">CEP <span>*</span></label>
-                        <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" required oninput="buscarEndereco(this.value)">
-                      </div>
-
-                      <div class="form-2-colum">
-                        <div class="campo">
-                          <label for="uf">UF <span>*</span></label>
-                          <select id="uf" name="uf" required>
-                            <option value="">Selecione</option>
-                            <option value="AC">AC</option>
-                            <option value="AL">AL</option>
-                            <option value="AP">AP</option>
-                            <option value="AM">AM</option>
-                            <option value="BA">BA</option>
-                            <option value="CE">CE</option>
-                            <option value="DF">DF</option>
-                            <option value="ES">ES</option>
-                            <option value="GO">GO</option>
-                            <option value="MA">MA</option>
-                            <option value="MT">MT</option>
-                            <option value="MS">MS</option>
-                            <option value="MG">MG</option>
-                            <option value="PA">PA</option>
-                            <option value="PB">PB</option>
-                            <option value="PR">PR</option>
-                            <option value="PE">PE</option>
-                            <option value="PI">PI</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RN">RN</option>
-                            <option value="RS">RS</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="SC">SC</option>
-                            <option value="SP">SP</option>
-                            <option value="SE">SE</option>
-                            <option value="TO">TO</option>
-                          </select>
-                        </div>
-                        <div class="campo">
-                          <label for="cidade">Cidade <span>*</span></label>
-                          <input type="text" id="cidade" name="cidade" required placeholder="Digite a cidade">
-                        </div>
-                      </div>
-                      <div class="campo">
-                        <label for="bairro">Bairro <span>*</span></label>
-                        <input type="text" id="bairro" name="bairro" required placeholder="Digite o bairro">
-                      </div>
-                      <div class="campo">
-                        <label for="rua">Rua</label>
-                        <input type="text" id="rua" name="rua" placeholder="Digite a rua">
-                      </div>
-                      <div class="form-2-colum">
-                        <div class="campo">
-                          <label for="numero">Número</label>
-                          <input type="number" id="numero" name="numero" placeholder="Digite o número">
-                        </div>
-                        <div class="campo">
-                          <label for="complemento">Complemento</label>
-                          <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
-                        </div>
-                      </div>
-
-                      <div class="campo ocultar">
-                        <label for="latitude">Latitude</label>
-                        <input type="number" id="latitude" name="latitude" step="0.000001" placeholder="Digite a latitude">
-                      </div>
-                      <div class="campo ocultar">
-                        <label for="longitude">Longitude</label>
-                        <input type="number" id="longitude" name="longitude" step="0.000001" placeholder="Digite a longitude">
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Especificação do Fornecimento -->
-              <li class="card-session secao-interna-template">
-                <h2 class="secao-interna-template-header" onclick="changeSession(3)">
-                  <a href="#">
-                    <div class="agenda-icon agora">
-                      <img src="./static/imagens/icones/info_complementar.svg" alt="Especificação do Fornecimento Icon">
-                    </div> Especificação do Fornecimento<span class="arrow down"></span>
-                  </a>
-                </h2>
-                <div class="secao-interna-template-content">
-                  <div class="session" id="secao3">
-                    <fieldset>
-                      <legend class="titulo-xl"></legend>
-                      <div class="campo">
-                        <label for="bem_servico">Bens e Serviços<span>*</span></label>
-                        <select id="bem_servico" name="bem_servico" required>
-                          <option value="">Selecione</option>
-                          <option value="mao_obra">Mão de Obra</option>
-                          <option value="grafica">Gráfica</option>
-                          <option value="impostos">Impostos</option>
-                          <option value="logistica">Logística</option>
-                          <option value="eletro_eletronico">Eletro-Eletrônico</option>
-                          <option value="material_expediente">Material de Expediente</option>
-                          <option value="alimentacao">Alimentação</option>
-                          <option value="aluguel_espaco">Aluguel de Espaço</option>
-                          <option value="aluguel_estruturas">Aluguel de Estruturas</option>
-                          <option value="celpe">CELPE</option>
-                          <option value="compesa">COMPESA</option>
-                          <option value="juridico">Jurídico</option>
-                          <option value="contabilidade">Contabilidade</option>
-                          <option value="telefonia_internet">Telefonia e Internet</option>
-                          <option value="hospedagem">Hospedagem</option>
-                          <option value="locucao">Locução</option>
-                          <option value="producao_video">Produção de Vídeo</option>
-                          <option value="producao_conteudo">Produção de Conteúdo</option>
-                          <option value="marketing">Marketing</option>
-                          <option value="redes_sociais">Redes Sociais</option>
-                        </select>
-                        <button type="button" id="buttonAdicionarBensServices" class="btn-principal-alt adicionar-servico" onclick="adicionarServico()" disabled>Adicionar</button>
-                      </div>
-                      <!-- Exibir contador de itens -->
-                      <div id="contadorItens">Total de itens adicionados: 0</div>
-                      <!-- Tabela para listar os itens adicionados -->
-                      <div class="tabela-historico">
-                        <table id="tabelaBemServico">
-                          <thead>
-                            <tr>
-                              <th>ID</th>
-                              <th>Produto / Serviço</th>
-                              <th>Ações</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <!-- Linhas da tabela serão adicionadas dinamicamente -->
-                          </tbody>
-                        </table>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-              </li>
-
-              <div class="botoes">
-                <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
               </div>
-            </ul>
-          </form>
+            </form>
+          </div>
         </div>
       </section>
     </main>

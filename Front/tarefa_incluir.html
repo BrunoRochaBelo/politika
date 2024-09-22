@@ -20,84 +20,92 @@
     </header>
 
     <main class="main-form">
-      <section class="container-template">
-        <div class="container-template-content">
-          <form id="form" class="form" enctype="multipart/form-data">
-            <div class="card-session secao-interna-template active">
-              <div class="secao-interna-template-content">
-                <fieldset>
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo form-tipo">
-                    <label for="tipo">Tipo:</label>
-                    <select id="tipo">
-                      <option value="tarefa">Tarefa a fazer</option>
-                      <!-- Adicione outras opções aqui -->
-                    </select>
+      <section>
+        <div class="container-template">
+          <div class="container-template-content">
+            <form id="form" class="form" enctype="multipart/form-data">
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <div class="card-session active">
+                    <fieldset>
+                      <legend class="titulo-xl"></legend>
+                      <div class="campo form-tipo">
+                        <label for="tipo">Tipo:</label>
+                        <select id="tipo">
+                          <option value="tarefa">Tarefa a fazer</option>
+                          <!-- Adicione outras opções aqui -->
+                        </select>
+                      </div>
+
+                      <div class="campo">
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" placeholder="Digite o título aqui">
+                      </div>
+
+                      <div class="campo">
+                        <label for="categoria">Categoria:</label>
+                        <select id="categoria">
+                          <option value="administracao" selected>Administração</option>
+                          <!-- Adicione outras opções aqui -->
+                        </select>
+                      </div>
+
+                      <div class="campo">
+                        <label for="description">Descrição:</label>
+                        <textarea class="form-textarea" id="description" placeholder="Digite aqui os detalhes"></textarea>
+                      </div>
+
+
+                      <div class="form-dataHora">
+                        <div class="campo">
+                          <label for="dataInicio">Data início:</label>
+                          <input type="date" id="dataInicio" placeholder="dd/mm/aaaa">
+                        </div>
+
+                        <div class="campo">
+                          <label for="dataFim">Data fim:</label>
+                          <input type="date" id="dataFim" placeholder="dd/mm/aaaa">
+                        </div>
+                      </div>
+
+                      <div class="campo">
+                        <label for="prioridade">Prioridade:</label>
+                        <div id="prioridade" class="radio-button-group">
+                          <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa">
+                          <label for="prioridadeBaixa">Baixa</label>
+                          <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
+                          <label for="prioridadeMedia">Média</label>
+                          <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
+                          <label for="prioridadeAlta">Alta</label>
+                        </div>
+                      </div>
+
+                      <div class="campo">
+                        <label for="responsavel">Responsável:</label>
+                        <input type="text" id="responsavel" placeholder="Digite o nome do Responsável">
+                      </div>
+
+                      <div class="campo">
+                        <label for="acessoPrivado">Acesso privado</label>
+                        <input class="form-checkbox" type="checkbox" id="acessoPrivado">
+                      </div>
+                    </fieldset>
                   </div>
-
-                  <div class="campo">
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" placeholder="Digite o título aqui">
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
                   </div>
-
-                  <div class="campo">
-                    <label for="categoria">Categoria:</label>
-                    <select id="categoria">
-                      <option value="administracao" selected>Administração</option>
-                      <!-- Adicione outras opções aqui -->
-                    </select>
-                  </div>
-
-                  <div class="campo">
-                    <label for="description">Descrição:</label>
-                    <textarea class="form-textarea" id="description" placeholder="Digite aqui os detalhes"></textarea>
-                  </div>
-
-
-                  <div class="form-dataHora">
-                    <div class="campo">
-                      <label for="dataInicio">Data início:</label>
-                      <input type="date" id="dataInicio" placeholder="dd/mm/aaaa">
-                    </div>
-
-                    <div class="campo">
-                      <label for="dataFim">Data fim:</label>
-                      <input type="date" id="dataFim" placeholder="dd/mm/aaaa">
-                    </div>
-                  </div>
-
-                  <div class="campo">
-                    <label for="prioridade">Prioridade:</label>
-                    <div id="prioridade" class="radio-button-group">
-                      <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa">
-                      <label for="prioridadeBaixa">Baixa</label>
-                      <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
-                      <label for="prioridadeMedia">Média</label>
-                      <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
-                      <label for="prioridadeAlta">Alta</label>
-                    </div>
-                  </div>
-
-                  <div class="campo">
-                    <label for="responsavel">Responsável:</label>
-                    <input type="text" id="responsavel" placeholder="Digite o nome do Responsável">
-                  </div>
-
-                  <div class="campo">
-                    <label for="acessoPrivado">Acesso privado</label>
-                    <input class="form-checkbox" type="checkbox" id="acessoPrivado">
-                  </div>
-                </fieldset>
+                </div>
               </div>
-            </div>
-            <div class="botoes">
-              <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </section>
     </main>
   </div>
+
+  <script src="./static/js/AlterarEsquemaDeCores.js"></script>
+  <script src="./static/js/AtualizarAlturaPagina.js"></script>
+
 </body>
 
 </html>

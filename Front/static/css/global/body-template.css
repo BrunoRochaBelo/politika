@@ -28,7 +28,6 @@
       "header"
       "main";
     transition: grid-template-rows 0.3s ease-in-out;
-    position: relative;
   }
   .header {
     grid-area: header;
