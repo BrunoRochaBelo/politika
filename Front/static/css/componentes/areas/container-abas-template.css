@@ -127,6 +127,10 @@
   display: flex; /* none */
 }
 
+.container-abas-template::-webkit-scrollbar {
+  display: none;
+}
+
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .container-abas-template {
@@ -149,11 +153,6 @@
 
   .container-abas-template-content-com-header-fx-int {
     border-top: 1px solid var(--borda);
-  }
-
-  .aba-header-header-fx-int {
-    box-shadow: none;
-    border: none;
   }
 
   .container-abas-template::-webkit-scrollbar {

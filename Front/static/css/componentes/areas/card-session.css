@@ -94,17 +94,17 @@
   padding: 5px;
   transition: transform 0.3s ease;
   position: absolute;
-  right: 15px;
-  top: 48%;
-  transform: translateY(-48%);
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .arrow.down {
-  transform: translateY(-48%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .arrow.up {
-  transform: translateY(-48%) rotate(-135deg);
+  transform: translateY(-50%) rotate(-135deg);
 }
 
 /* Responsividade */

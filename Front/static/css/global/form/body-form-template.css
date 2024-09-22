@@ -1,10 +1,9 @@
 .body-form {
-  padding-top: 20px;
+  padding-top: 10px;
   display: grid;
   align-content: start;
   justify-content: center;
-  background: var(--bg-principal);
-  max-height: calc(var(--vh, 1vh) * 100);
+  background: var(--form-container-bg);
 }
 .body-form-template {
   display: grid;
@@ -26,10 +25,10 @@
   text-align: left;
   font-size: 12px;
   color: var(--txt-titulo);
-  background: var(--form-container-bg);
+  background: var(--bg-principal);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  border: 1px solid hsl(218, 10%, 12%);
+  border: 1px solid var(--cor-apoio-2);
   border-bottom: none;
 }
 .main-form {
@@ -40,14 +39,29 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--form-container-bg);
+  background: var(--bg-principal);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 1px solid hsl(218, 10%, 12%);
-  border-top: 1px solid hsl(218, 14%, 3%);
+  border: 1px solid var(--cor-apoio-2);
+  border-top: 1px solid var(--form-container-bg);
 }
 .main-form::-webkit-scrollbar {
   display: none;
+}
+
+.main-form .container-template-content .area-interna-containerContent-template {
+  height: calc(var(--vh, 1vh) * 100 - 6.7rem) !important;
+}
+.main-form
+  .container-abas-template-content
+  .area-interna-containerContent-template {
+  height: calc(var(--vh, 1vh) * 100 - 9rem) !important;
+}
+.main-form
+  .container-abas-template-content
+  .novaDespesa
+  .area-interna-containerContent-template {
+  height: calc(var(--vh, 1vh) * 100 - 10.2rem) !important;
 }
 
 .main-form .container-template,
@@ -55,7 +69,6 @@
   box-shadow: none;
   background: none;
   background: transparent;
-  max-height: calc(var(--vh, 1vh) * 100 - 7rem);
   border-radius: 0px;
   padding: 0;
 }
@@ -78,6 +91,12 @@
   padding: 0;
 }
 
+.main-form #nav1 a.indicador-2,
+.main-form #nav2 a.indicador-2,
+.main-form #nav3 a.indicador-2 {
+  background: var(--form-card-aberto-bg);
+}
+
 .main-form .card-session {
   background: var(--form-card-bg);
   border: 1px solid var(--card-borda);
@@ -85,10 +104,15 @@
 }
 .main-form .card-session.active {
   padding: 7px 0px;
-  margin: 2px;
+  margin: 1px;
   background: var(--form-card-aberto-bg);
   border: 1px solid var(--card-borda);
   box-shadow: var(--sombra-moderada);
+}
+.main-form .card-session .arrow,
+.main-form .card-session.active .arrow {
+  right: 0px;
+  top: 35%;
 }
 .main-form .secao-interna-template-header a {
   color: var(--txt-destaque);
@@ -99,7 +123,7 @@
   .body-form {
     padding: 0px;
     border: none;
-    background: var(--form-container-bg);
+    background: var(--bg-principal);
   }
   .body-form-template {
     display: grid;
@@ -124,6 +148,24 @@
     border: none;
     box-shadow: none;
     background: none;
+    border-top: 1px solid var(--form-container-bg);
+  }
+
+  .main-form
+    .container-template-content
+    .area-interna-containerContent-template {
+    height: calc(var(--vh, 1vh) * 100 - 5rem) !important;
+  }
+  .main-form
+    .container-abas-template-content
+    .area-interna-containerContent-template {
+    height: calc(var(--vh, 1vh) * 100 - 7.35rem) !important;
+  }
+  .main-form
+    .container-abas-template-content
+    .novaDespesa
+    .area-interna-containerContent-template {
+    height: calc(var(--vh, 1vh) * 100 - 8.3rem) !important;
   }
 
   .main-form .container-template,
@@ -131,7 +173,6 @@
     box-shadow: none;
     background: none;
     background: transparent;
-    max-height: calc(var(--vh, 1vh) * 100 - 6rem);
     border-radius: 0px;
   }
   .main-form .container-abas-template-header {
@@ -139,7 +180,7 @@
   }
 
   .main-form .area-interna-containerContent-template-content {
-    padding: 10px 3px;
+    padding: 0px;
   }
 
   .main-form::-webkit-scrollbar {
@@ -148,5 +189,20 @@
 
   .main-form .nav {
     width: 350px;
+  }
+
+  .main-form .botoes {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-form .botoes .btn-outline-principal,
+  .main-form .botoes .btn-principal {
+    width: 70%;
+    margin: 0px 10px 10px 10px;
+    box-shadow: var(--sombra-intensa);
   }
 }
