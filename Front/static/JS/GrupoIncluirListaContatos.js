@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadingIndicator.style.display = "block";
 
       const response = await fetch(
-        `http://dev.inforvia.com.br:5000//api/contato/searchall/${encodeURIComponent(
+        `http://dev.inforvia.com.br//api/contato/searchall/${encodeURIComponent(
           query
         )}`
       );

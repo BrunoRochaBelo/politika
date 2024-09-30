@@ -1,13 +1,11 @@
 /* Estilos principais */
 .body-exibir {
-  background: var(--bg-principal);
   padding-top: 10px;
   display: grid;
   align-content: start;
   justify-content: center;
-  max-height: calc(var(--vh, 1vh) * 100);
+  background: var(--bg-principal);
 }
-
 .body-exibir-template {
   display: grid;
   grid:
@@ -17,7 +15,6 @@
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;
 }
-
 .main-exibir {
   grid-area: main-exibir;
   position: relative;
@@ -31,7 +28,6 @@
   border: 1px solid var(--bg-principal);
   border-top: none;
 }
-
 .main-exibir::-webkit-scrollbar {
   display: none;
 }
@@ -39,12 +35,21 @@
 .main-exibir
   .container-template-content
   .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 6.7rem) !important;
+  height: calc(var(--vh, 1vh) * 100 - 17.5rem) !important;
+  transition: height 0.5s ease-in-out;
 }
 .main-exibir
   .container-abas-template-content
   .area-interna-containerContent-template {
   height: calc(var(--vh, 1vh) * 100 - 9rem) !important;
+  transition: height 0.5s ease-in-out;
+}
+.main-exibir
+  .container-abas-template-content
+  .novaDespesa
+  .area-interna-containerContent-template {
+  height: calc(var(--vh, 1vh) * 100 - 10.2rem) !important;
+  transition: height 0.5s ease-in-out;
 }
 
 .main-exibir .container-template,
@@ -80,13 +85,17 @@
   border: 1px solid var(--card-borda);
   box-shadow: var(--sombra-leve);
 }
-
 .main-exibir .card-session.active {
   padding: 7px 0px;
-  margin: 2px;
+  margin: 1px;
   background: var(--form-card-aberto-bg);
-  border: 1px solid var(--input-border);
+  border: 1px solid var(--card-borda);
   box-shadow: var(--sombra-moderada);
+}
+.main-exibir .card-session .arrow,
+.main-exibir .card-session.active .arrow {
+  right: 0px;
+  top: 35%;
 }
 
 .main-exibir .secao-interna-template-header a {
@@ -179,7 +188,7 @@
 /* Estilos para scroll maior que zero */
 .compact .main-exibir .container-template,
 .compact .main-exibir .container-abas-template {
-  max-height: calc(var(--vh, 1vh) * 100);
+  /* max-height: calc(var(--vh, 1vh) * 100);*/
   transition: max-height 0.5s ease-in-out;
 }
 
@@ -312,9 +321,23 @@
     display: none;
   }
 
-  .main-exibir .area-interna-containerContent-template {
-    max-height: calc(var(--vh, 1vh) * 100 - 3rem);
+  .main-exibir
+    .container-template-content
+    .area-interna-containerContent-template {
+    height: calc(var(--vh, 1vh) * 100 - 15.5rem) !important;
   }
+  .main-exibir
+    .container-abas-template-content
+    .area-interna-containerContent-template {
+    height: calc(var(--vh, 1vh) * 100 - 7.35rem) !important;
+  }
+  .main-exibir
+    .container-abas-template-content
+    .novaDespesa
+    .area-interna-containerContent-template {
+    height: calc(var(--vh, 1vh) * 100 - 8.3rem) !important;
+  }
+
   .main-exibir .container-template,
   .main-exibir .container-abas-template {
     box-shadow: none;

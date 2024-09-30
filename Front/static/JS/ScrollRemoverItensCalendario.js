@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  contentArea.addEventListener("scroll", function () {
+  function handleScroll() {
     const scrollTop = contentArea.scrollTop;
 
     if (scrollTop > 0) {
@@ -49,12 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const newItem1 = item1Original.cloneNode(true);
         newItem1.classList.add("hidden");
         listaSelect.insertBefore(newItem1, listaSelect.firstChild);
+
+        // Usando requestAnimationFrame para garantir que a transição seja suavizada
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             newItem1.classList.remove("hidden");
             newItem1.classList.add("visible");
           });
         });
+
         item1 = newItem1;
       }
 
@@ -62,14 +65,22 @@ document.addEventListener("DOMContentLoaded", function () {
         const newItem2 = item2Original.cloneNode(true);
         newItem2.classList.add("hidden");
         listaSelect.insertBefore(newItem2, document.querySelector(".item3"));
+
+        // Usando requestAnimationFrame para garantir que a transição seja suavizada
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             newItem2.classList.remove("hidden");
             newItem2.classList.add("visible");
           });
         });
+
         item2 = newItem2;
       }
     }
+  }
+
+  // Adiciona o event listener com requestAnimationFrame para otimizar o scroll
+  contentArea.addEventListener("scroll", () => {
+    requestAnimationFrame(handleScroll);
   });
 });

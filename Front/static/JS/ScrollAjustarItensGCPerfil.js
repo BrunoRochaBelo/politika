@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : "",
   };
 
+  // Função para restaurar os estilos originais
   function restoreOriginalStyles() {
     if (profileImage) {
       profileImage.style.width = originalStyles.profileImageWidth;
@@ -43,12 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
       headerContainer.style.padding = originalStyles.headerContainerPadding;
   }
 
+  // Função para ajustar a escala e padding ao rolar
   function adjustScaleOnScroll() {
     const screenWidth = window.innerWidth;
 
     if (this.scrollTop > 0) {
       if (screenWidth <= 900) {
-        // 56.25rem em px
+        // Para telas menores (até 56.25rem ou 900px)
         if (profileImage) {
           profileImage.style.width = "60px";
           profileImage.style.height = "60px";
@@ -76,10 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Função de manuseio do evento de scroll
   function handleScroll() {
     requestAnimationFrame(adjustScaleOnScroll.bind(this));
   }
 
+  // Verifica se o conteúdo de sessão existe e aplica o listener de scroll
   if (cardSessionContent) {
     cardSessionContent.addEventListener("scroll", handleScroll);
   }

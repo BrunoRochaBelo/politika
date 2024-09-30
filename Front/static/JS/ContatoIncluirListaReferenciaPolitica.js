@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchSuggestions = async (query) => {
     try {
       const response = await fetch(
-        `http://dev.inforvia.com.br:5000//api/contato/searchall/${encodeURIComponent(
+        `http://dev.inforvia.com.br/api/contato/searchall/${encodeURIComponent(
           query
         )}`
       );
@@ -62,15 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const validateInput = () => {
     const inputValue = inputField.value.trim();
     if (inputValue === "") {
-      inputField.classList.remove("input-valid"); // Remove a classe se o campo estiver vazio
+      inputField.classList.remove("input-valid");
       return false;
     }
 
     if (inputValue === selectedSuggestionName) {
-      inputField.classList.add("input-valid"); // Adiciona a classe CSS para borda verde
+      inputField.classList.add("input-valid");
       return true;
     } else {
-      inputField.classList.remove("input-valid"); // Remove a classe se não for válido
+      inputField.classList.remove("input-valid");
       return false;
     }
   };
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const inputValue = inputField.value.trim();
       if (inputValue === "") {
-        inputField.classList.remove("input-valid"); // Remove a classe se o campo estiver vazio
+        inputField.classList.remove("input-valid");
         return;
       }
 

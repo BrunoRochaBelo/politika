@@ -46,7 +46,7 @@ const CampoUtils = (() => {
     }
     mensagemErro.innerText = mensagem;
     adicionarClasse(campo, "error");
-    alterarCorAsterisco(campo.id, "var(--erro)"); // Altera cor do asterisco para a cor de erro
+    alterarCorAsterisco(campo.id, "var(--erro)");
   }
 
   function removerMensagemErroCampo(campo) {
@@ -55,7 +55,7 @@ const CampoUtils = (() => {
       mensagemErro.remove();
     }
     removerClasses(campo, "error");
-    alterarCorAsterisco(campo.id, ""); // Reseta a cor do asterisco
+    alterarCorAsterisco(campo.id, "");
   }
 
   function validarCampo(campo) {
@@ -98,7 +98,7 @@ const CampoUtils = (() => {
       );
     } else if (valorCampo !== "" || campo.hasAttribute("required")) {
       adicionarClasse(campo, "success");
-      EstiloUtils.alterarCorBorda(campo.closest(".card-session"), ""); // Reseta a cor da borda se estiver válido
+      EstiloUtils.alterarCorBorda(campo.closest(".card-session"), "");
     }
 
     return campoValido;
@@ -133,6 +133,8 @@ const CampoUtils = (() => {
     formatarCampo,
     validarNomesObrigatorios,
     alterarCorAsterisco,
+    exibirMensagemErroCampo,
+    removerMensagemErroCampo,
   };
 })();
 
@@ -162,7 +164,6 @@ const SessaoUtils = (() => {
     whatsappInput.value = checkbox.checked ? telefonePrincipalInput.value : "";
     CampoUtils.validarCampo(whatsappInput);
 
-    // Alterar a cor do "*" no label "Este número é WhatsApp?"
     CampoUtils.alterarCorAsterisco("whatsapp", checkbox.checked ? "red" : "");
   }
 
@@ -192,6 +193,12 @@ const FormularioUtils = (() => {
     const camposRequeridos = document.querySelectorAll(
       "input[required], select[required], textarea[required]"
     );
+
+    const campoIndicacao = document.getElementById("indicacao");
+    if (!CampoUtils.validarCampo(campoIndicacao)) {
+      formValido = false;
+      camposNaoPreenchidos.push("Indicação");
+    }
 
     CampoUtils.validarNomesObrigatorios();
 
@@ -223,9 +230,8 @@ const FormularioUtils = (() => {
 
     if (validarFormulario()) {
       mostrarFeedback("success", "Formulário validado com sucesso!");
-      // Permitir envio normal via Flask
     } else {
-      event.preventDefault(); // Previne envio se houver erros
+      event.preventDefault();
       mostrarFeedback(
         "error",
         "O formulário contém erros. Corrija e tente novamente."
@@ -261,18 +267,40 @@ const FormularioUtils = (() => {
     }, tempo);
   }
 
-  function removerClassesDeSucesso() {
-    document
-      .querySelectorAll(".success")
-      .forEach((campo) => campo.classList.remove("success"));
-  }
-
   return {
     enviarFormulario,
   };
 })();
 
-// Adicionar ouvintes de eventos
+// Função para validar o campo de indicação
+function validarCampoIndicacao() {
+  const campoIndicacao = document.getElementById("indicacao");
+  const valorCampo = campoIndicacao.value.trim();
+
+  if (valorCampo === "" || valorCampo !== selectedSuggestionName) {
+    CampoUtils.exibirMensagemErroCampo(
+      campoIndicacao,
+      "Por favor, selecione uma indicação válida."
+    );
+    return false;
+  }
+
+  return true;
+}
+
+// Modificação na função de envio do formulário para incluir validação da indicação
+function enviarFormulario(event) {
+  if (!validarCampoIndicacao()) {
+    event.preventDefault();
+    FormularioUtils.mostrarFeedback("error", "Selecione uma indicação válida.");
+    return;
+  }
+
+  FormularioUtils.enviarFormulario(event);
+}
+
+document.getElementById("form").addEventListener("submit", enviarFormulario);
+
 document
   .getElementById("comissionado")
   .addEventListener("change", SessaoUtils.toggleComissionadoFields);
@@ -325,9 +353,6 @@ document
 document
   .getElementById("estado_civil")
   .addEventListener("change", SessaoUtils.mostrarCamposConjuge);
-document
-  .getElementById("form")
-  .addEventListener("submit", FormularioUtils.enviarFormulario);
 
 document.querySelectorAll("input, select, textarea").forEach((campo) => {
   campo.addEventListener("keydown", (event) => {

@@ -79,7 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function adjustScalePaddingTopAndNav() {
-    if (this.scrollTop > 0) {
+    const scrollTop = this.scrollTop;
+
+    if (scrollTop > 0) {
       elementsToScale.forEach((element) => {
         element.style.transform = "scale(0.95, 0.9)";
       });
@@ -108,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function handleScroll(event) {
-    requestAnimationFrame(adjustScalePaddingTopAndNav.bind(event.target));
+    requestAnimationFrame(() => adjustScalePaddingTopAndNav.call(event.target));
   }
 
   function handleResponsiveChange(e) {
