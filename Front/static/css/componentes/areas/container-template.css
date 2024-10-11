@@ -60,9 +60,10 @@
     transition: padding 0.3s ease-in-out;
   }
   .container-template-content {
-    border-radius: 0px;
+    border-radius: 25px;
     background: var(--container-bg);
     border-top: 1px solid var(--borda);
+    overflow: hidden;
   }
 
   .container-template-content-com-header-fx-int {

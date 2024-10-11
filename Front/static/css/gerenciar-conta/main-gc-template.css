@@ -53,6 +53,7 @@
   }
   .main-gc .container-template-content,
   .main-gc .container-abas-template-content {
+    border-radius: 0px;
     border-bottom-left-radius: 23px;
     border-bottom-right-radius: 23px;
   }

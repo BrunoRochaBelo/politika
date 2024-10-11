@@ -146,9 +146,10 @@
     transition: padding 0.3s ease-in-out;
   }
   .container-abas-template-content {
-    border-radius: 0;
+    border-radius: 25px;
     background: var(--container-bg);
     border-top: 1px solid var(--borda);
+    overflow: hidden;
   }
 
   .container-abas-template-content-com-header-fx-int {
@@ -173,7 +174,7 @@
   #nav2 a,
   #nav3 a {
     color: var(--txt-nav);
-    padding: 5px auto;
+    padding: 5px 10px;
     font-size: 15px;
     font-weight: 400;
   }
@@ -182,10 +183,11 @@
   #nav2 a:hover,
   #nav3 a:hover {
     color: var(--txt-nav);
-    padding: 5px auto;
+    padding: 5px 10px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
     background-color: none;
+    transform: none;
   }
 
   #nav1 a.indicador-2,
@@ -199,6 +201,6 @@
     border: 1px solid var(--card-bg);
     transition: background-color 0.5s ease, box-shadow 0.5s ease,
       transform 0.5s ease;
-    transform: scale(1);
+    transform: none;
   }
 }

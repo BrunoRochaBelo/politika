@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const themeToggleButton = document.getElementById("toggleTheme");
   const themeIcon = document.getElementById("themeIcon");
   const alterarTema = document.querySelector(".alterar-tema");
+  const headerElement = document.querySelector("header.header");
+  const secaoInternaHeaders = document.querySelectorAll(
+    ".secao-interna-template-header"
+  );
+  const areaInternaHeaders = document.querySelectorAll(
+    ".area-interna-containerContent-template-header"
+  );
 
   // Função para carregar o tema do localStorage ou do servidor
   function loadTheme() {
@@ -26,10 +33,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   // Função para aplicar o tema
   function applyTheme(theme) {
-    if (theme) {
-      document.documentElement.classList.add(theme);
+    if (theme === "light-mode") {
+      document.documentElement.classList.add("light-mode");
+      headerElement && headerElement.classList.add("invert-filter");
+
+      // Adiciona a classe 'invert-filter' a todos os elementos 'secao-interna-template-header'
+      secaoInternaHeaders.forEach((header) => {
+        header.classList.add("invert-filter");
+      });
+
+      // Adiciona a classe 'invert-filter' a todos os elementos 'area-interna-containerContent-template-header'
+      areaInternaHeaders.forEach((header) => {
+        header.classList.add("invert-filter");
+      });
     } else {
       document.documentElement.classList.remove("light-mode");
+      headerElement && headerElement.classList.remove("invert-filter");
+
+      // Remove a classe 'invert-filter' de todos os elementos 'secao-interna-template-header'
+      secaoInternaHeaders.forEach((header) => {
+        header.classList.remove("invert-filter");
+      });
+
+      // Remove a classe 'invert-filter' de todos os elementos 'area-interna-containerContent-template-header'
+      areaInternaHeaders.forEach((header) => {
+        header.classList.remove("invert-filter");
+      });
     }
     updateButtonContent(theme);
   }
@@ -53,13 +82,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
   loadTheme();
 
   function toggleTheme() {
-    document.documentElement.classList.toggle("light-mode");
-    const currentTheme = document.documentElement.classList.contains(
-      "light-mode"
-    )
-      ? "light-mode"
-      : "";
-    updateButtonContent(currentTheme);
+    const isLightMode = document.documentElement.classList.toggle("light-mode");
+    const currentTheme = isLightMode ? "light-mode" : "";
+    applyTheme(currentTheme);
     localStorage.setItem("theme", currentTheme);
 
     // Envia a nova preferência do tema para o back-end
