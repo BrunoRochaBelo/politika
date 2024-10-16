@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 .conta-corrente-create-account:hover {
-  filter: brightness(1.1);
+  filter: var(--hover);
   box-shadow: none;
   text-decoration: underline;
 }

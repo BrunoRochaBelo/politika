@@ -65,7 +65,6 @@
 
 .modal-btn-floating-body li:hover {
   background: var(--card-detalhe);
-  filter: brightness(1.1);
 }
 
 /* Botão do modal */
@@ -88,10 +87,10 @@
   z-index: 2002;
 }
 .floatingButton:hover {
-  filter: brightness(1.1);
+  filter: var(--hover);
 }
 .floatingButton:active {
-  background: linear-gradient(135deg, hsl(219, 90%, 50%), hsl(219, 90%, 45%));
+  filter: brightness(0.9);
 }
 
 /* RESPONSIVO */
@@ -126,11 +125,6 @@
     filter: none;
   }
   .floatingButton:active {
-    background: linear-gradient(
-      300deg,
-      hsl(219, 85%, 50%),
-      hsl(217, 90%, 55%),
-      hsl(215, 70%, 50%)
-    );
+    filter: none;
   }
 }

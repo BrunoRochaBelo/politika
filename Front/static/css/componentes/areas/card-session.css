@@ -28,7 +28,7 @@
   margin: 0 10px;
 }
 .card-session:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
 }
 .card-session.active {
   background: var(--cor-apoio-2);

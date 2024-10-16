@@ -78,5 +78,5 @@
 .marcador-s:hover,
 .marcador-m:hover,
 .marcador-l:hover {
-  filter: brightness(1.1);
+  filter: var(--hover);
 }

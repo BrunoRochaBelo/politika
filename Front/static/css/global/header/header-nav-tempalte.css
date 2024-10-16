@@ -65,7 +65,7 @@
 }
 
 .header-nav-template a:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
 }
 
 .header-nav-template a:hover::after {
@@ -73,7 +73,7 @@
 }
 
 .header-nav-template .apps a:hover {
-  filter: brightness(1.1);
+  filter: var(--hover);
 }
 
 .header-nav-template .apps a:hover::after {

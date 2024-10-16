@@ -11,6 +11,6 @@
   box-shadow: var(--sombra-moderada);
 }
 .contatos-small-card-editar .btn-outline-principal:hover {
-  filter: brightness(1.1);
-  background: var(--btn-principal-hover);
+  filter: var(--hover);
+  background: var(--btn-secundario-hover);
 }

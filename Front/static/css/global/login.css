@@ -72,7 +72,7 @@
   cursor: pointer;
 }
 .btn-form-submit:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
 }
 .forgot-password {
   font-size: 14px;

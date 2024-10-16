@@ -47,7 +47,7 @@
 }
 
 .header-menu:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
 }
 
 .header-notification img {

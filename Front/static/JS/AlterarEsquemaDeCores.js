@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const areaInternaHeaders = document.querySelectorAll(
     ".area-interna-containerContent-template-header"
   );
+  const modalMaisAppsContent = document.querySelectorAll(
+    ".modal-mais-apps-content"
+  );
+  const modalMenuList = document.querySelectorAll(".modalMenu-list");
 
   // Função para carregar o tema do localStorage ou do servidor
   function loadTheme() {
@@ -37,27 +41,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
       document.documentElement.classList.add("light-mode");
       headerElement && headerElement.classList.add("invert-filter");
 
-      // Adiciona a classe 'invert-filter' a todos os elementos 'secao-interna-template-header'
+      // Adiciona a classe 'invert-filter' aos elementos necessários
       secaoInternaHeaders.forEach((header) => {
         header.classList.add("invert-filter");
       });
-
-      // Adiciona a classe 'invert-filter' a todos os elementos 'area-interna-containerContent-template-header'
       areaInternaHeaders.forEach((header) => {
         header.classList.add("invert-filter");
+      });
+      modalMaisAppsContent.forEach((element) => {
+        element.classList.add("invert-filter");
+      });
+      modalMenuList.forEach((element) => {
+        element.classList.add("invert-filter");
       });
     } else {
       document.documentElement.classList.remove("light-mode");
       headerElement && headerElement.classList.remove("invert-filter");
 
-      // Remove a classe 'invert-filter' de todos os elementos 'secao-interna-template-header'
+      // Remove a classe 'invert-filter' dos elementos necessários
       secaoInternaHeaders.forEach((header) => {
         header.classList.remove("invert-filter");
       });
-
-      // Remove a classe 'invert-filter' de todos os elementos 'area-interna-containerContent-template-header'
       areaInternaHeaders.forEach((header) => {
         header.classList.remove("invert-filter");
+      });
+      modalMaisAppsContent.forEach((element) => {
+        element.classList.remove("invert-filter");
+      });
+      modalMenuList.forEach((element) => {
+        element.classList.remove("invert-filter");
       });
     }
     updateButtonContent(theme);

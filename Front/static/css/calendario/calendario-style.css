@@ -12,10 +12,9 @@
 }
 .calendario-large-card-editar .btn-outline-principal:hover,
 .calendario-small-card-editar .btn-outline-principal:hover {
-  filter: brightness(1.1);
-  background: var(--btn-principal-hover);
+  filter: var(--hover);
+  background: var(--btn-secundario-hover);
 }
-
 .nav-calendar {
   overflow-x: auto;
   gap: 12px;
@@ -92,7 +91,7 @@
   border: none;
 }
 .btn-calendario:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
   border-color: transparent;
   border-radius: 5px;
 }
@@ -111,7 +110,7 @@
   cursor: pointer;
 }
 .hoje:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
   box-shadow: var(--sombra-leve);
 }
 
@@ -192,7 +191,7 @@
 
 .dia-semana:hover,
 .change-semana:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
   border-radius: 50% !important;
 }
 .change-semana:hover {

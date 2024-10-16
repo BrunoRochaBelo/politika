@@ -11,10 +11,9 @@
   box-shadow: var(--sombra-moderada);
 }
 .aniversario-small-card-editar .btn-outline-principal:hover {
-  filter: brightness(1.1);
-  background: var(--btn-principal-hover);
+  filter: var(--hover);
+  background: var(--btn-secundario-hover);
 }
-
 /* Área de aniversariantes */
 .aniversariantes {
   display: none;
@@ -41,7 +40,7 @@
 
 /* Hover efeito padrão */
 .secao-interna-template.area-aniversariantes:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
 }
 
 /* Estilos do cabeçalho */

@@ -3,7 +3,7 @@
   display: grid;
   align-content: start;
   justify-content: center;
-  background: var(--form-container-bg);
+  background: var(--bg-principal);
 }
 .body-form-template {
   display: grid;
@@ -25,7 +25,7 @@
   text-align: left;
   font-size: 12px;
   color: var(--txt-titulo);
-  background: var(--bg-principal);
+  background: var(--form-container-bg);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border: 1px solid var(--cor-apoio-2);
@@ -39,11 +39,11 @@
   align-content: center;
   overflow-x: hidden;
   padding: 5px 10px;
-  background: var(--bg-principal);
+  background: var(--form-container-bg);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid var(--cor-apoio-2);
-  border-top: 1px solid var(--form-container-bg);
+  border-top: 1px solid var(--bg-principal);
 }
 .main-form::-webkit-scrollbar {
   display: none;

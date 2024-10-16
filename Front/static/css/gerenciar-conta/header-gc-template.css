@@ -73,7 +73,7 @@
   transition: width 0.3s ease;
 }
 .header-gc-nav-template a:hover {
-  filter: brightness(1.15);
+  filter: var(--hover);
 }
 .header-gc-nav-template a:hover::after {
   width: 100%;

@@ -12,10 +12,9 @@
 }
 .tarefa-small-card-editar .btn-outline-principal:hover,
 .tarefa-medium-card-editar .btn-outline-principal:hover {
-  filter: brightness(1.1);
-  background: var(--btn-principal-hover);
+  filter: var(--hover);
+  background: var(--btn-secundario-hover);
 }
-
 .filtros-tarefas h4 {
   margin-bottom: 10px;
   font-weight: 300;
@@ -61,7 +60,7 @@
   background: transparent;
 }
 .filtro-tarefa:hover {
-  filter: brightness(1.2);
+  filter: var(--hover);
   border-radius: 7px !important;
 }
 .area-tarefas .lista-vertical-cards {
