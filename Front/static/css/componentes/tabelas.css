@@ -195,6 +195,10 @@
   background-color: var(--container-bg);
 }
 
+.hidden-column {
+  display: none;
+}
+
 /* Estilos responsivos */
 @media only screen and (max-width: 56.25rem) {
   .tabela-historico {

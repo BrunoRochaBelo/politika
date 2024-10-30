@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadingIndicator.style.display = "block";
 
       const response = await fetch(
-        `http://dev.inforvia.com.br//api/contato/searchall/${encodeURIComponent(
+        `http://dev.inforvia.com.br/api/contato/searchall/${encodeURIComponent(
           query
         )}`
       );
@@ -101,18 +101,41 @@ document.addEventListener("DOMContentLoaded", () => {
     tabelaContatosEncontrados.innerHTML = "";
     contatosEncontrados.forEach((contato) => {
       const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${contato.name}</td>
-        <td>${contato.type}</td>
-        <td>
-          <div class="icone-excluir-container">
-            <img src="./static/imagens/icones/add.svg" alt="Adicionar" class="icone-adicionar" onclick="adicionarParticipante(${contato.id})">
-          </div>
-        </td>
-      `;
-      tr.querySelector(".icone-adicionar").addEventListener("click", () =>
-        adicionarParticipante(contato)
-      );
+
+      // Coluna Oculta para ID
+      const tdId = document.createElement("td");
+      tdId.classList.add("hidden-column");
+      const inputId = document.createElement("input");
+      inputId.type = "hidden";
+      inputId.name = "contatos_encontrados_ids[]"; // Nome do campo para envio
+      inputId.value = contato.id;
+      tdId.appendChild(inputId);
+      tr.appendChild(tdId);
+
+      // Coluna Nome
+      const tdNome = document.createElement("td");
+      tdNome.textContent = contato.name;
+      tr.appendChild(tdNome);
+
+      // Coluna Tipo
+      const tdTipo = document.createElement("td");
+      tdTipo.textContent = contato.type;
+      tr.appendChild(tdTipo);
+
+      // Coluna Ação
+      const tdAcao = document.createElement("td");
+      const divAcao = document.createElement("div");
+      divAcao.classList.add("icone-excluir-container");
+      const imgAdd = document.createElement("img");
+      imgAdd.src = "./static/imagens/icones/add.svg";
+      imgAdd.alt = "Adicionar";
+      imgAdd.classList.add("icone-adicionar");
+      imgAdd.style.cursor = "pointer";
+      imgAdd.addEventListener("click", () => adicionarParticipante(contato));
+      divAcao.appendChild(imgAdd);
+      tdAcao.appendChild(divAcao);
+      tr.appendChild(tdAcao);
+
       tabelaContatosEncontrados.appendChild(tr);
     });
   };
@@ -122,18 +145,41 @@ document.addEventListener("DOMContentLoaded", () => {
     participantes.forEach((participante, index) => {
       const tr = document.createElement("tr");
       tr.classList.add("table-row-fade-in");
-      tr.innerHTML = `
-        <td>${participante.name}</td>
-        <td>${participante.type}</td>
-        <td>
-          <div class="icone-excluir-container">
-            <img src="./static/imagens/icones/excluir.svg" alt="Remover" class="icone-excluir" onclick="removerParticipante(${index})">
-          </div>
-        </td>
-      `;
-      tr.querySelector(".icone-excluir").addEventListener("click", () =>
-        removerParticipante(index)
-      );
+
+      // Coluna Oculta para ID
+      const tdId = document.createElement("td");
+      tdId.classList.add("hidden-column");
+      const inputId = document.createElement("input");
+      inputId.type = "hidden";
+      inputId.name = "participantes_ids[]"; // Nome do campo para envio
+      inputId.value = participante.id;
+      tdId.appendChild(inputId);
+      tr.appendChild(tdId);
+
+      // Coluna Nome
+      const tdNome = document.createElement("td");
+      tdNome.textContent = participante.name;
+      tr.appendChild(tdNome);
+
+      // Coluna Tipo
+      const tdTipo = document.createElement("td");
+      tdTipo.textContent = participante.type;
+      tr.appendChild(tdTipo);
+
+      // Coluna Ação
+      const tdAcao = document.createElement("td");
+      const divAcao = document.createElement("div");
+      divAcao.classList.add("icone-excluir-container");
+      const imgExcluir = document.createElement("img");
+      imgExcluir.src = "./static/imagens/icones/excluir.svg";
+      imgExcluir.alt = "Remover";
+      imgExcluir.classList.add("icone-excluir");
+      imgExcluir.style.cursor = "pointer";
+      imgExcluir.addEventListener("click", () => removerParticipante(index));
+      divAcao.appendChild(imgExcluir);
+      tdAcao.appendChild(divAcao);
+      tr.appendChild(tdAcao);
+
       tabelaParticipantesGrupo.appendChild(tr);
     });
   };
@@ -159,17 +205,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const rows = tabelaParticipantesGrupo.querySelectorAll("tr");
     const lastRow = rows[rows.length - 1];
-    lastRow.classList.add("table-row-highlight");
+    if (lastRow) {
+      lastRow.classList.add("table-row-highlight");
 
-    setTimeout(() => {
-      lastRow.classList.add("table-row-fade-out-highlight");
-    }, 1000);
+      setTimeout(() => {
+        lastRow.classList.add("table-row-fade-out-highlight");
+      }, 1000);
+    }
   };
 
   const removerParticipante = (index) => {
     const participanteRemovido = participantes[index];
     const tr = tabelaParticipantesGrupo.querySelectorAll("tr")[index];
-    tr.classList.add("table-row-fade-out");
+    if (tr) {
+      tr.classList.add("table-row-fade-out");
+    }
 
     setTimeout(() => {
       participantes.splice(index, 1);
@@ -208,5 +258,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   searchButton.addEventListener("click", () => {
     handleSearch();
+  });
+
+  // Atualizar campos ocultos antes do envio do formulário
+  const formulario = document.getElementById("form");
+  formulario.addEventListener("submit", (event) => {
+    // Opcional: Verificar se há participantes antes de enviar
+    if (participantes.length === 0) {
+      event.preventDefault();
+      showError(
+        "Adicione pelo menos um participante antes de enviar o formulário."
+      );
+    }
   });
 });
