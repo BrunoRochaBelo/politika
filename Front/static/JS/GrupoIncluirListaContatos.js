@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tdId.classList.add("hidden-column");
       const inputId = document.createElement("input");
       inputId.type = "hidden";
-      inputId.name = "participantes_ids[]"; // Nome do campo para envio
+      inputId.name = "participantes_ids[]"; // Nome do campo para envio ao backend
       inputId.value = participante.id;
       tdId.appendChild(inputId);
       tr.appendChild(tdId);
