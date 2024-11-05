@@ -1,7 +1,7 @@
 .filtro-small-card {
   display: grid;
   grid-auto-flow: column;
-  color: var(--txt-conteudo-card);
+  color: var(--txt-titulo-card);
   align-content: center;
   text-align: start;
   text-overflow: ellipsis;
@@ -19,7 +19,7 @@
 /* Estilos para filtros com multiplas seleções */
 .filtro-multi-select-card {
   display: block;
-  color: var(--txt-conteudo-card);
+  color: var(--txt-titulo-card);
   transition: max-height 0.4s ease-out, transform 0.4s ease-out,
     height 0.4s ease-out, border-radius 0.4s ease-out;
   max-height: 100px;
@@ -124,6 +124,10 @@
   right: 30px;
 }
 
+.campo-filtro label {
+  color: var(--txt-titulo-card);
+}
+
 /* Estilos "switch" para checkboxes dos filtros */
 .campo-filtro .switch-container {
   position: relative;
@@ -137,7 +141,7 @@
   padding-left: 30px;
   cursor: pointer;
   display: inline;
-  color: var(--txt-subtitulo);
+  color: var(--txt-titulo-card);
 }
 
 .campo-filtro .switch-label:before {

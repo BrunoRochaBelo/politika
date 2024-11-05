@@ -119,8 +119,9 @@
 .calendario-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
   color: var(--txt-card-aberto);
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-card-aberto);
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao"
@@ -269,8 +270,9 @@
 .calendario-large-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
   color: var(--txt-card-aberto);
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-card-aberto);
   grid:
     "calendario-large-card-type calendario-large-card-tag" 32px
     "calendario-large-card-title calendario-large-card-title"

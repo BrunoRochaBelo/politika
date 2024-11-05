@@ -93,8 +93,9 @@
 .contatos-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
   color: var(--txt-card-aberto);
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-card-aberto);
   grid:
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-call"
     "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-call"

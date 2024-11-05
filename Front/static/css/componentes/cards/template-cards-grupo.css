@@ -78,8 +78,9 @@
 .grupo-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
   color: var(--txt-card-aberto);
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-card-aberto);
   grid:
     "grupo-small-card-title grupo-small-card-title"
     "grupo-small-card-func grupo-small-card-situacao"

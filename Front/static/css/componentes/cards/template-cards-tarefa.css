@@ -95,8 +95,9 @@
 .tarefa-small-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
   color: var(--txt-card-aberto);
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-card-aberto);
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data"
@@ -267,8 +268,9 @@
 .tarefa-medium-card-expanded {
   border-radius: 7px;
   background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
   color: var(--txt-card-aberto);
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-card-aberto);
   grid:
     "tarefa-medium-card-title tarefa-medium-card-tag"
     "tarefa-medium-card-status tarefa-medium-card-data"

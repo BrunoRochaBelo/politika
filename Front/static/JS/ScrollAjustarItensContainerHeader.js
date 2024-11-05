@@ -1,37 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const elementsToScale = document.querySelectorAll(
+  var elementsToScale = document.querySelectorAll(
     ".nav, .header-menu, .header-notification, .header-search"
   );
-  const headerContainers1 = document.querySelectorAll(
+  var headerContainers1 = document.querySelectorAll(
     ".container-abas-template-header"
   );
-  const headerContainers2 = document.querySelectorAll(
+  var headerContainers2 = document.querySelectorAll(
     ".container-template-header"
   );
-  const sidenavElement = document.querySelector(".main-sidenav");
-  const navElement = document.querySelector(".nav");
-  const bodyTemplate = document.querySelector(".body-template");
+  var sidenavElement = document.querySelector(".main-sidenav");
+  var navElement = document.querySelector(".nav");
+  var bodyTemplate = document.querySelector(".body-template");
 
-  const originalStyles = {};
+  var originalStyles = {};
 
   function saveOriginalStyles() {
-    elementsToScale.forEach((element, index) => {
-      originalStyles[`elementsToScale_${index}`] = {
+    for (var i = 0; i < elementsToScale.length; i++) {
+      var element = elementsToScale[i];
+      originalStyles["elementsToScale_" + i] = {
         transform: element.style.transform || "",
       };
-    });
+    }
 
-    headerContainers1.forEach((container, index) => {
-      originalStyles[`headerContainers1_${index}`] = {
+    for (var i = 0; i < headerContainers1.length; i++) {
+      var container = headerContainers1[i];
+      originalStyles["headerContainers1_" + i] = {
         padding: container.style.padding || "",
       };
-    });
+    }
 
-    headerContainers2.forEach((container, index) => {
-      originalStyles[`headerContainers2_${index}`] = {
+    for (var i = 0; i < headerContainers2.length; i++) {
+      var container = headerContainers2[i];
+      originalStyles["headerContainers2_" + i] = {
         padding: container.style.padding || "",
       };
-    });
+    }
 
     if (sidenavElement) {
       originalStyles.sidenavElement = {
@@ -51,20 +54,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function restoreOriginalStyles() {
-    elementsToScale.forEach((element, index) => {
+    for (var i = 0; i < elementsToScale.length; i++) {
+      var element = elementsToScale[i];
       element.style.transform =
-        originalStyles[`elementsToScale_${index}`].transform;
-    });
+        originalStyles["elementsToScale_" + i].transform;
+    }
 
-    headerContainers1.forEach((container, index) => {
+    for (var i = 0; i < headerContainers1.length; i++) {
+      var container = headerContainers1[i];
       container.style.padding =
-        originalStyles[`headerContainers1_${index}`].padding;
-    });
+        originalStyles["headerContainers1_" + i].padding;
+    }
 
-    headerContainers2.forEach((container, index) => {
+    for (var i = 0; i < headerContainers2.length; i++) {
+      var container = headerContainers2[i];
       container.style.padding =
-        originalStyles[`headerContainers2_${index}`].padding;
-    });
+        originalStyles["headerContainers2_" + i].padding;
+    }
 
     if (sidenavElement) {
       sidenavElement.style.top = originalStyles.sidenavElement.top;
@@ -79,20 +85,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function adjustScalePaddingTopAndNav() {
-    const scrollTop = this.scrollTop;
+    var scrollTop = this.scrollTop;
 
     if (scrollTop > 0) {
-      elementsToScale.forEach((element) => {
+      for (var i = 0; i < elementsToScale.length; i++) {
+        var element = elementsToScale[i];
         element.style.transform = "scale(0.95, 0.9)";
-      });
+      }
 
-      headerContainers1.forEach((container) => {
+      for (var i = 0; i < headerContainers1.length; i++) {
+        var container = headerContainers1[i];
         container.style.padding = "0";
-      });
+      }
 
-      headerContainers2.forEach((container) => {
+      for (var i = 0; i < headerContainers2.length; i++) {
+        var container = headerContainers2[i];
         container.style.padding = "0";
-      });
+      }
 
       if (sidenavElement) {
         sidenavElement.style.top = "2.23rem";
@@ -109,38 +118,63 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Função de debounce
+  function debounce(fn, delay) {
+    var timer;
+    return function () {
+      var context = this,
+        args = arguments;
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        fn.apply(context, args);
+      }, delay);
+    };
+  }
+
+  // Versão com debounce da função adjustScalePaddingTopAndNav
+  var adjustScalePaddingTopAndNavDebounced = debounce(
+    adjustScalePaddingTopAndNav,
+    10
+  );
+
   function handleScroll(event) {
-    requestAnimationFrame(() => adjustScalePaddingTopAndNav.call(event.target));
+    adjustScalePaddingTopAndNavDebounced.call(event.target);
   }
 
   function handleResponsiveChange(e) {
-    const mainElements = document.querySelectorAll(
+    var mainElements = document.querySelectorAll(
       ".area-interna-containerContent-template-content"
     );
 
     if (e.matches) {
-      mainElements.forEach((mainElement) => {
-        mainElement.addEventListener("scroll", handleScroll);
-      });
+      for (var i = 0; i < mainElements.length; i++) {
+        var mainElement = mainElements[i];
+        if (mainElement.addEventListener) {
+          mainElement.addEventListener("scroll", handleScroll);
+        } else if (mainElement.attachEvent) {
+          mainElement.attachEvent("onscroll", handleScroll);
+        }
+      }
     } else {
-      mainElements.forEach((mainElement) => {
-        mainElement.removeEventListener("scroll", handleScroll);
-      });
+      for (var i = 0; i < mainElements.length; i++) {
+        var mainElement = mainElements[i];
+        if (mainElement.removeEventListener) {
+          mainElement.removeEventListener("scroll", handleScroll);
+        } else if (mainElement.detachEvent) {
+          mainElement.detachEvent("onscroll", handleScroll);
+        }
+      }
       restoreOriginalStyles();
     }
   }
 
-  const mediaQuery = window.matchMedia("(max-width: 56.25rem)");
-  mediaQuery.addEventListener("change", handleResponsiveChange);
+  var mediaQuery = window.matchMedia("(max-width: 56.25rem)");
+  if (mediaQuery.addEventListener) {
+    mediaQuery.addEventListener("change", handleResponsiveChange);
+  } else if (mediaQuery.addListener) {
+    mediaQuery.addListener(handleResponsiveChange);
+  }
 
   saveOriginalStyles();
   handleResponsiveChange(mediaQuery);
 });
-
-function mostrarAba(abaId) {
-  const abas = document.querySelectorAll(".aba-template");
-  abas.forEach((aba) => aba.classList.remove("active"));
-
-  const abaAtiva = document.getElementById(abaId);
-  abaAtiva.classList.add("active");
-}
