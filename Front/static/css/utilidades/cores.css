@@ -33,8 +33,8 @@
   --txt-titulo: hsl(210, 15%, 98%);
   --txt-subtitulo: hsl(210, 15%, 88%);
   --txt-destaque: hsl(210, 100%, 98%);
-  --txt-nav: hsl(218, 8%, 72%);
-  --txt-nav-selecionado: hsl(218, 100%, 80%);
+  --txt-nav: hsl(210, 8%, 72%);
+  --txt-nav-selecionado: hsl(210, 100%, 80%);
   --txt-placeholder: hsl(210, 20%, 70%);
 
   /* Cartões */

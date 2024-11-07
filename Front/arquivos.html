@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="manifest" href="./manifest.json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./static/imagens/icones/arquivos-select.svg" type="image/png">
+  <title>Arquivos</title>
+  <meta name="description" content="Lista de arquivos">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body class="body-template">
+
+  <header class="header header-template">
+    <div class="header-menu" onclick="toggleMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="header-notification" id="notification">
+      <img src="./static/imagens/icones/notificação.svg" alt="Notification Icon">
+      <span id="notificationCounter" class="notification-counter">0</span>
+    </div>
+    <nav class="header-nav">
+      <ul class="header-nav-template">
+        <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
+            <p>home</p>
+          </a></li>
+        <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
+            <p>calendario</p>
+          </a></li>
+        <li class="tarefas"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="tarefas Icon">
+            <p>Tarefas</p>
+          </a></li>
+        <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+            <p>Contatos</p>
+          </a></li>
+        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+            <p>Pleitos</p>
+          </a></li>
+        <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
+            <p>Despesas</p>
+          </a></li>
+        <li class="apps indicador">
+          <a href="#">
+            <img src="./static/imagens/icones/apps.svg" alt="Ícone Apps">
+            <p>Apps</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-search">
+      <div>
+        <form action="/tarefa/listcard" method="post" class="search-input-container">
+          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar na biblioteca...">
+          <button type="submit" class="search-button">
+            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main main-template">
+    <section class="main-section">
+      <div class="container-template">
+        <h2 class="container-template-header">Arquivos</h2>
+        <div class="container-template-content ">
+          <div class="area-interna-containerContent-template">
+            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+              <ul class="lista-vertical-alt">
+                <li class="area-filtro">
+                  <nav aria-label="Breadcrumb">
+                    <div class="breadcrumbs">
+                      <!-- Breadcrumbs dinâmicos serão inseridos aqui pelo JavaScript -->
+                    </div>
+                  </nav>
+                </li>
+                <li>
+                  <div class="conteudo-dinamico">
+                    <div class="grid-container">
+                      <!-- Itens do grid serão inseridos aqui -->
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-sidenav">
+      <div class="container-filtros-template filtros-tarefas">
+        <h2 class="container-filtros-template-header">Navegar
+          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()">Navegar</button>
+        </h2>
+        <div class="container-filtros-template-content" style="display: block;">
+          <div id="abaFiltros1" class="aba-filtro active">
+            <ul class="lista-vertical-fil">
+              <!-- Navegação em árvore será inserida aqui -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script>
+    /* --- JavaScript Atualizado com Limpeza de Estado e Indicação Visual --- */
+
+    // Dados Mock
+    const data = [
+      {
+        id: 1,
+        type: 'library',
+        name: 'Biblioteca A',
+        children: [
+          {
+            id: 11,
+            type: 'folder',
+            name: 'Pasta A1',
+            children: [
+              { id: 111, type: 'document', name: 'Documento A1-1' },
+              { id: 112, type: 'document', name: 'Documento A1-2' },
+            ],
+          },
+          {
+            id: 12,
+            type: 'folder',
+            name: 'Pasta A2',
+            children: [
+              { id: 121, type: 'document', name: 'Documento A2-1' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 2,
+        type: 'library',
+        name: 'Biblioteca B',
+        children: [
+          {
+            id: 21,
+            type: 'folder',
+            name: 'Pasta B1',
+            children: [
+              { id: 211, type: 'document', name: 'Documento B1-1' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 3,
+        type: 'library',
+        name: 'Biblioteca C',
+        children: [], // Biblioteca sem pastas
+      },
+    ];
+
+    // Estado atual de navegação
+    let currentPath = [];
+    const breadcrumbContainer = document.querySelector('.breadcrumbs');
+    const gridContainer = document.querySelector('.grid-container');
+
+    // Timer de inatividade (em milissegundos, ex.: 10 minutos)
+    const INACTIVITY_TIMEOUT = 10 * 60 * 1000; // 10 minutos
+    let inactivityTimer;
+
+    // Função para encontrar o caminho até um nó específico
+    function findPath(nodes, targetId, path = []) {
+      for (const node of nodes) {
+        const newPath = [...path, node];
+        if (node.id === targetId) {
+          return newPath;
+        }
+        if (node.children) {
+          const result = findPath(node.children, targetId, newPath);
+          if (result) {
+            return result;
+          }
+        }
+      }
+      return null;
+    }
+
+    // Função auxiliar para encontrar um nó pelo ID
+    function findNodeById(nodes, id) {
+      for (const node of nodes) {
+        if (node.id === id) {
+          return node;
+        }
+        if (node.children) {
+          const found = findNodeById(node.children, id);
+          if (found) {
+            return found;
+          }
+        }
+      }
+      return null;
+    }
+
+    // Função para salvar o estado no LocalStorage
+    function saveState() {
+      const expandedElements = Array.from(document.querySelectorAll('.tree-item.expanded')).map(el => el.getAttribute('data-id'));
+      const state = {
+        currentPath: currentPath.map(node => node.id),
+        expandedItems: expandedElements
+      };
+      localStorage.setItem('fileExplorerState', JSON.stringify(state));
+    }
+
+    // Função para carregar o estado do LocalStorage
+    function loadState() {
+      const state = JSON.parse(localStorage.getItem('fileExplorerState'));
+      if (state) {
+        // Restaurar itens expandidos
+        state.expandedItems.forEach(id => {
+          const treeItem = document.querySelector(`.tree-item[data-id='${id}']`);
+          if (treeItem) {
+            treeItem.classList.add('expanded');
+          }
+        });
+
+        // Restaurar currentPath e seleção
+        if (state.currentPath && state.currentPath.length > 0) {
+          const pathNodes = state.currentPath.map(id => findNodeById(data, id)).filter(node => node);
+          if (pathNodes.length > 0) {
+            currentPath = pathNodes;
+            renderBreadcrumbs();
+            displayContent(pathNodes[pathNodes.length - 1]);
+
+            // Selecionar o último item no path
+            const selectedId = pathNodes[pathNodes.length - 1].id;
+            const selectedItem = document.querySelector(`.tree-item[data-id='${selectedId}']`);
+            if (selectedItem) {
+              document.querySelectorAll('.tree-item').forEach(item => item.classList.remove('selected'));
+              selectedItem.classList.add('selected');
+            }
+          }
+        }
+      }
+    }
+
+    // Função para limpar o estado no LocalStorage e resetar a interface
+    function clearState() {
+      localStorage.removeItem('fileExplorerState');
+      currentPath = [];
+      renderBreadcrumbs();
+      // Remover todas as expansões
+      document.querySelectorAll('.tree-item.expanded').forEach(item => item.classList.remove('expanded'));
+      // Remover todas as seleções
+      document.querySelectorAll('.tree-item.selected').forEach(item => item.classList.remove('selected'));
+      // Limpar e mostrar todas as bibliotecas
+      gridContainer.innerHTML = '';
+      renderGrid(data, 'library');
+    }
+
+    // Função para iniciar/reiniciar o timer de inatividade
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(() => {
+        clearState();
+      }, INACTIVITY_TIMEOUT);
+    }
+
+    // Função para renderizar a navegação em árvore
+    function renderTree(container, nodes) {
+      const ul = document.createElement('ul');
+      ul.classList.add('tree-container');
+
+      nodes.forEach(node => {
+        const li = document.createElement('li');
+        li.classList.add('tree-item', node.type);
+        li.setAttribute('data-id', node.id);
+        li.setAttribute('data-type', node.type);
+        li.setAttribute('tabindex', '0'); // Para acessibilidade via teclado
+
+        // Conteúdo do item
+        const span = document.createElement('span');
+        span.textContent = node.name;
+        span.classList.add('node-name');
+        li.appendChild(span);
+
+        // Se o nó tiver filhos e não for um documento, adicionar o toggle
+        if (node.children && node.children.length > 0 && node.type !== 'document') {
+          const toggle = document.createElement('span');
+          toggle.classList.add('toggle-icon');
+          li.appendChild(toggle);
+
+          // Preparar container para filhos
+          const childrenUl = document.createElement('ul');
+          childrenUl.classList.add('tree-children');
+          li.appendChild(childrenUl);
+
+          // Renderizar filhos recursivamente
+          renderTree(childrenUl, node.children);
+        }
+
+        // Evento de clique único
+        li.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevenir propagação para elementos pais
+          resetInactivityTimer(); // Resetar o timer de inatividade
+
+          const itemType = node.type;
+
+          if (itemType === 'library' || itemType === 'folder') {
+            // Para library e folder, clicar para expandir/recolher
+            if (node.children && node.children.length > 0) {
+              li.classList.toggle('expanded');
+              saveState(); // Salvar estado após expandir/recolher
+            }
+          } else if (itemType === 'document') {
+            // Para documentos, selecionar e exibir conteúdo
+            document.querySelectorAll('.tree-item').forEach(item => item.classList.remove('selected'));
+            li.classList.add('selected');
+
+            // Atualizar o caminho atual
+            const path = findPath(data, node.id);
+            if (path) {
+              currentPath = path;
+              renderBreadcrumbs();
+              displayContent(node);
+              saveState(); // Salvar estado após seleção
+            }
+          }
+        });
+
+        // Evento de clique duplo para library e folder
+        if (node.type === 'library' || node.type === 'folder') {
+          li.addEventListener('dblclick', (e) => {
+            e.stopPropagation(); // Prevenir propagação para elementos pais
+            resetInactivityTimer(); // Resetar o timer de inatividade
+
+            // Selecionar o item
+            document.querySelectorAll('.tree-item').forEach(item => item.classList.remove('selected'));
+            li.classList.add('selected');
+
+            // Atualizar o caminho atual
+            const path = findPath(data, node.id);
+            if (path) {
+              currentPath = path;
+              renderBreadcrumbs();
+              displayContent(node);
+              saveState(); // Salvar estado após seleção
+            }
+          });
+        }
+
+        // Acessibilidade: teclado
+        li.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            if (node.type === 'library' || node.type === 'folder') {
+              if (e.detail === 2) { // Duplo Enter para dblclick
+                li.dispatchEvent(new Event('dblclick'));
+              } else { // Simular clique único
+                li.click();
+              }
+            } else if (node.type === 'document') {
+              li.click();
+            }
+          }
+        });
+
+        ul.appendChild(li);
+      });
+
+      container.appendChild(ul);
+    }
+
+    // Função para renderizar a main-section
+    function displayContent(node) {
+      // Limpar conteúdo atual
+      gridContainer.innerHTML = '';
+
+      if (node.type === 'library') {
+        // Mostrar pastas
+        const folders = node.children || [];
+        if (folders.length > 0) {
+          renderGrid(folders, 'folder');
+        } else {
+          const message = document.createElement('div');
+          message.textContent = 'Nenhuma pasta encontrada nesta biblioteca.';
+          gridContainer.appendChild(message);
+        }
+      } else if (node.type === 'folder') {
+        // Mostrar documentos
+        const documents = node.children || [];
+        if (documents.length > 0) {
+          renderGrid(documents, 'document');
+        } else {
+          const message = document.createElement('div');
+          message.textContent = 'Nenhum documento encontrado nesta pasta.';
+          gridContainer.appendChild(message);
+        }
+      } else if (node.type === 'document') {
+        // Mostrar detalhes do documento
+        const docDiv = document.createElement('div');
+        docDiv.textContent = `Detalhes do Documento: ${node.name}`;
+        gridContainer.appendChild(docDiv);
+      }
+
+      saveState(); // Salvar estado após atualizar o conteúdo
+    }
+
+    // Função para renderizar grid na main-section
+    function renderGrid(items, type) {
+      items.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('item-grid');
+        div.textContent = item.name;
+        div.setAttribute('data-id', item.id);
+        div.setAttribute('data-type', item.type);
+
+        // Evento de clique/tap para abrir o item
+        div.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevenir propagação para elementos pais
+          resetInactivityTimer(); // Resetar o timer de inatividade
+
+          // Remover seleção de outros itens
+          document.querySelectorAll('.item-grid').forEach(el => el.classList.remove('selected'));
+          div.classList.add('selected');
+
+          // Atualizar o caminho atual
+          const path = findPath(data, item.id);
+          if (path) {
+            currentPath = path;
+            renderBreadcrumbs();
+            displayContent(item);
+            saveState(); // Salvar estado após seleção
+          }
+        });
+
+        gridContainer.appendChild(div);
+      });
+    }
+
+    // Função para renderizar Breadcrumbs
+    function renderBreadcrumbs() {
+      breadcrumbContainer.innerHTML = '';
+
+      // Criar e adicionar o elemento "raiz"
+      const raizSpan = document.createElement('span');
+      raizSpan.textContent = 'raiz';
+      raizSpan.classList.add('raiz'); // Mantém a classe para possíveis estilos
+      raizSpan.style.color = '#007bff';
+      raizSpan.style.cursor = 'pointer';
+      raizSpan.addEventListener('click', () => {
+        // Resetar o caminho atual para a raiz
+        currentPath = [];
+        renderBreadcrumbs();
+        // Remover seleção de itens na árvore
+        document.querySelectorAll('.tree-item').forEach(item => item.classList.remove('selected'));
+        // Mostrar todas as bibliotecas
+        gridContainer.innerHTML = '';
+        renderGrid(data, 'library');
+        saveState(); // Salvar estado após resetar para raiz
+        resetInactivityTimer(); // Resetar o timer de inatividade
+      });
+      breadcrumbContainer.appendChild(raizSpan);
+
+      if (currentPath.length > 0) {
+        const separator = document.createElement('span');
+        separator.textContent = ' > ';
+        breadcrumbContainer.appendChild(separator);
+      }
+
+      currentPath.forEach((node, index) => {
+        const span = document.createElement('span');
+        span.textContent = node.name;
+        span.style.color = '#007bff'; // Definindo a cor
+        span.style.cursor = 'pointer';
+        span.addEventListener('click', () => {
+          // Atualizar o caminho atual até este ponto
+          currentPath = currentPath.slice(0, index + 1);
+          renderBreadcrumbs();
+          displayContent(node);
+          saveState(); // Salvar estado após seleção via breadcrumb
+          resetInactivityTimer(); // Resetar o timer de inatividade
+
+          // Selecionar o item correspondente na árvore
+          const treeItem = document.querySelector(`.tree-item[data-id='${node.id}']`);
+          if (treeItem) {
+            document.querySelectorAll('.tree-item').forEach(item => item.classList.remove('selected'));
+            treeItem.classList.add('selected');
+
+            // Expandir todos os pais
+            currentPath.forEach(parentNode => {
+              const parentLi = document.querySelector(`.tree-item[data-id='${parentNode.id}']`);
+              if (parentLi && !parentLi.classList.contains('expanded') && parentNode.type !== 'document') {
+                parentLi.classList.add('expanded');
+              }
+            });
+
+            saveState(); // Salvar estado após expandir os pais
+          }
+        });
+        breadcrumbContainer.appendChild(span);
+
+        if (index < currentPath.length - 1) {
+          const separator = document.createElement('span');
+          separator.textContent = ' > ';
+          breadcrumbContainer.appendChild(separator);
+        }
+      });
+    }
+
+    // Função para limpar o estado no LocalStorage e resetar a interface
+    function clearState() {
+      localStorage.removeItem('fileExplorerState');
+      currentPath = [];
+      renderBreadcrumbs();
+      // Remover todas as expansões
+      document.querySelectorAll('.tree-item.expanded').forEach(item => item.classList.remove('expanded'));
+      // Remover todas as seleções
+      document.querySelectorAll('.tree-item.selected').forEach(item => item.classList.remove('selected'));
+      // Limpar e mostrar todas as bibliotecas
+      gridContainer.innerHTML = '';
+      renderGrid(data, 'library');
+    }
+
+    // Função para iniciar/reiniciar o timer de inatividade
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(() => {
+        clearState();
+      }, INACTIVITY_TIMEOUT);
+    }
+
+    // Inicializar a navegação em árvore e carregar o estado
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.main-sidenav .lista-vertical-fil');
+      if (container) {
+        container.innerHTML = ''; // Garantir que está vazio
+        renderTree(container, data);
+      }
+
+      // Inicialmente, mostrar todas as bibliotecas na main-section
+      renderGrid(data, 'library');
+
+      // Carregar os Breadcrumbs com o estado salvo ou "raiz"
+      loadState();
+
+      // Iniciar o timer de inatividade
+      resetInactivityTimer();
+    });
+
+    // Função para alternar filtro (exemplo de funcionalidade)
+    function toggleOcultarExibirFiltro() {
+      const filtro = document.querySelector('.container-filtros-template-content');
+      if (filtro.style.display === 'none') {
+        filtro.style.display = 'block';
+      } else {
+        filtro.style.display = 'none';
+      }
+    }
+  </script>
+
+  <!-- Modal Botão Flutuante -->
+  <button class="floatingButton">+</button>
+  <div class="modal-btn-floating-Overlay esconderModal">
+    <div class="modal-btn-floating-content">
+      <div class="modal-btn-floating-header">
+        <h1>Criar</h1>
+      </div>
+      <ul class="modal-btn-floating-body">
+        <li><a href="biblioteca_incluir.html">Biblioteca</a></li>
+        <li><a href="pasta_incluir.html">Pasta</a></li>
+        <li><a href="arquivo_incluir.html">Arquivo</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal Menu -->
+  <div class="modal" id="modalMenu">
+    <div class="modal-content-template">
+      <div class="modal-content-template-card-user">
+        <div class="modal-content-template-card-user-img">
+          <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" id="modalUserPhoto">
+        </div>
+        <p class="modal-content-template-card-user-candidato" id="candidato">Nome do candidato</p>
+        <p class="modal-content-template-card-user-cargo-owner" id="cargoOwner">Cargo do candidato</p>
+        <p class="modal-content-template-card-user-partido" id="partido">Partido do candidato</p>
+        <div class="modal-content-template-card-user-secao">
+          <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
+          <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
+        </div>
+        <a class="modal-content-template-card-user-gc" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
+      </div>
+      <div class="modal-content-template-list-op">
+        <ul class="modalMenu-list">
+          <li class="alterar-tema">
+            <button id="toggleTheme">
+              <img id="themeIcon" src="./static/imagens/icones/sun.svg" alt="Ícone de Sol" />
+              Alterar tema
+            </button>
+          </li>
+          <li>
+            <a href="calendario.html">
+              <img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
+              <span>Calendário</span>
+            </a>
+          </li>
+          <li>
+            <a href="tarefas.html">
+              <img src="./static/imagens/icones/tarefas.svg" alt="tarefas Icon">
+              <span>Tarefas</span>
+            </a>
+          </li>
+          <li>
+            <a href="contatos.html">
+              <img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+              <span>Contatos</span>
+            </a>
+          </li>
+          <li>
+            <a href="pleitos.html">
+              <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+              <span>Pleitos</span>
+            </a>
+          </li>
+          <li>
+            <a href="despesas.html">
+              <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
+              <span>Despesas</span>
+            </a>
+          </li>
+          <li class="logout" onclick="logout()">
+            <a id="btnLogout">
+              <img src="./static/imagens/icones/sair.svg" alt="Sair icon">
+              <span>Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Notificações -->
+  <div class="modal-notificacoes" id="notificationModal">
+    <div class="modal-content-notificacoes" id="modalContent">
+      <span class="modal-notificacoes-btn-close" id="closeButton">&times;</span>
+      <button id="markAllReadButton">Marcar todas como lidas</button>
+      <ul id="notificationsContent" class="notifications-list">
+        <!-- Notifications will be dynamically inserted here -->
+      </ul>
+      <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
+    </div>
+  </div>
+
+  <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
+
+  <!-- Modal para exibir mais aplicativos -->
+  <div id="modalMaisApps" class="modal-mais-apps">
+    <div class="modal-mais-apps-content">
+
+      <div class="modal-mais-apps-close"></div>
+      <ul class="modal-mais-apps-icones">
+        <li>
+          <a href="pleitos.html">
+            <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon" class="icone-app">
+            <p>Pleitos</p>
+          </a>
+        </li>
+        <li>
+          <a href="despesas.html">
+            <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon" class="icone-app">
+            <p>Despesas</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <script src="./static/js/AlterarEsquemaDeCores.js"></script>
+  <script src="./static/js/AtualizarAlturaPagina.js"></script>
+  <script src="./static/js/ScrollAjustarItensContainerHeader.js"></script>
+  <script src="./static/js/ModalBTNFloating.js"></script>
+  <script src="./static/js/ModalMaisApps.js"></script>
+  <script src="./static/js/ModalMenu.js"></script>
+  <script src="./static/js/ModalNotificacoes.js"></script>
+  <script src="./static/js/ManipularHistorico.js"></script>
+  <script src="./static/js/OcultarExibirFiltro.js"></script>
+
+</body>
+
+</html>

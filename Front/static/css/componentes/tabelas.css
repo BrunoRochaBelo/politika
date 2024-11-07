@@ -1,8 +1,8 @@
 /* Estilo para o ícone de exclusão e de adição */
 .icone-excluir-container {
   display: flex;
-  align-items: center; /* Alinhamento vertical ao centro */
-  justify-content: center; /* Alinhamento horizontal ao centro no modo padrão */
+  align-items: center;
+  justify-content: center;
 }
 
 .icone-excluir,
@@ -17,12 +17,12 @@
 .icone-excluir:hover,
 .icone-adicionar:hover {
   transform: scale(1.2);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+  border-radius: 25%;
 }
 
 .icone-excluir:active,
 .icone-adicionar:active {
-  opacity: 0.6; /* Feedback visual ao clicar no ícone */
+  opacity: 0.6;
 }
 
 /* Estilo da tabela */
@@ -84,7 +84,7 @@
   100% {
     opacity: 0;
     transform: scale(0.5);
-    height: 0; /* A linha encolhe até desaparecer */
+    height: 0;
   }
 }
 
@@ -94,8 +94,8 @@
 
 /* Efeito de destaque ao adicionar um contato */
 .table-row-highlight {
-  background-color: #e0f7fa; /* Fundo azul claro */
-  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2); /* Sombra suave */
+  background-color: #e0f7fa;
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2);
   transition: background-color 1s ease-in-out;
 }
 
@@ -111,7 +111,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2); /* Leve aumento de tamanho */
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -125,7 +125,7 @@
 
 /* Estilo para feedback visual ao adicionar um item */
 .btn-principal-alt.btn-feedback {
-  box-shadow: 0px 0px 8px 2px rgba(0, 123, 255, 0.5);
+  box-shadow: var(--sombra-card-aberto);
 }
 
 /* Estilo da tabela de histórico */
@@ -133,22 +133,21 @@
   background: none;
   border-radius: 25px;
   padding: 0px 10px;
-  max-height: 300px; /* Limita a altura da tabela */
-  overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .tabela-historico table {
   width: 100%;
-  border-collapse: separate; /* Permite aplicar border-radius */
-  border-spacing: 0 5px; /* Espaçamento entre as linhas */
+  border-collapse: separate;
+  border-spacing: 0 5px;
 }
 
-/* Mantém o cabeçalho da tabela fixo durante o scroll */
-.tabela-historico table thead th {
+.tabela-historico thead th {
   position: sticky;
   top: 0;
-  background-color: var(--card-aberto-bg); /* Fundo fixo para o cabeçalho */
-  z-index: 1; /* Garante que o cabeçalho fique acima das linhas */
+  background-color: var(--card-aberto-bg);
+  z-index: 2;
 }
 
 .tabela-historico th,
@@ -159,16 +158,24 @@
   border-bottom: none;
 }
 
-/* Arredondamento nas primeiras e últimas células de cada linha */
-.tabela-historico tr td:first-child,
-.tabela-historico th:first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+/* Arredondamento nas células de canto */
+.tabela-historico tr,
+.tabela-historico tr td:nth-child(2) {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.tabela-historico tr,
+.tabela-historico tr td:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
-.tabela-historico tr td:last-child,
+.tabela-historico th:nth-child(2) {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 5px;
+}
 .tabela-historico th:last-child {
-  border-top-right-radius: 5px;
+  border-top-right-radius: 12px;
   border-bottom-right-radius: 5px;
 }
 
@@ -180,31 +187,29 @@
 .tabela-historico tr {
   margin-bottom: 10px;
   overflow: hidden;
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-moderada);
 }
 
 .tabela-historico tr:last-child {
   margin-bottom: 0;
 }
 
-.tabela-historico table tr:nth-child(odd) {
+.tabela-historico tbody tr:nth-child(odd) {
   background-color: var(--barra-pesquisa-bg);
 }
 
-.tabela-historico table tr:nth-child(even) {
+.tabela-historico tbody tr:nth-child(even) {
   background-color: var(--container-bg);
 }
 
 .hidden-column {
   display: none;
-  width: 0;
-  height: 0;
 }
 
 /* Estilos responsivos */
 @media only screen and (max-width: 56.25rem) {
   .tabela-historico {
-    padding: 0px 10px;
+    padding: 5px;
   }
 
   /* Ajustes para o modo responsivo */
@@ -217,19 +222,38 @@
     display: block;
   }
 
-  .tabela-historico th,
+  .tabela-historico tr {
+    margin-bottom: 5px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    box-shadow: var(--sombra-moderada);
+  }
+
+  /* Aplicamos o border-radius de 25px ao primeiro filho */
+  .tabela-historico tr:first-child {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  /* Aplicamos o border-radius de 25px ao último filho */
+  .tabela-historico tr:last-child {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+
   .tabela-historico td {
-    border-top: 1px solid var(--card-borda);
+    border: none;
+    padding: 10px;
+    position: relative;
     text-align: left;
-    padding: 8px;
   }
 
   .tabela-historico td:before {
     content: attr(data-label);
-    float: left;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin-right: 10px;
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
     color: var(--txt-conteudo-card);
   }
 
@@ -237,7 +261,12 @@
     display: none;
   }
 
+  .hidden-column {
+    display: none;
+  }
+
   .icone-excluir-container {
-    justify-content: flex-end; /* Alinhamento ao final no modo responsivo */
+    justify-content: flex-end;
+    padding: 10px 20px;
   }
 }

@@ -1,0 +1,177 @@
+/* --- CSS Atualizado com Indicação Visual e Animações --- */
+
+/* Container de árvore */
+.tree-container {
+  display: grid;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Itens da árvore */
+.tree-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  position: relative;
+  display: block; /* Garante exibição vertical */
+  user-select: none;
+  padding-left: 8px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  border-left: 1px solid transparent;
+}
+
+/* Hover nos itens */
+.tree-item:hover {
+  background-color: #a0d2ff5d;
+}
+
+/* Itens selecionados */
+.tree-item.selected {
+  background-color: #a0d3ff36;
+  border-left: 1px solid #007bff;
+}
+
+.tree-item.library {
+  margin-top: 10px;
+}
+
+/* Ícones de tipos */
+.tree-item.library::before {
+  content: "\1F4DA"; /* 📚 */
+  margin-right: 8px;
+}
+
+.tree-item.folder::before {
+  content: "\1F4C1"; /* 📁 */
+  margin-right: 8px;
+}
+
+.tree-item.document::before {
+  content: "\1F4C4"; /* 📄 */
+  margin-right: 8px;
+}
+
+/* Ícone de toggle (expandir/contrair) */
+.toggle-icon {
+  position: absolute;
+  right: 16px;
+  transition: transform 0.3s ease; /* Transição suave */
+}
+
+/* Atualização no ::before para a rotação suave */
+.toggle-icon::before {
+  content: "\25B6"; /* ▶ */
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  font-size: 0.8em;
+  color: var(--cor-primaria-3);
+}
+
+/* Rotação ao expandir */
+.expanded > .toggle-icon::before {
+  transform: rotate(90deg);
+}
+
+/* Sub-lista (filhas) */
+.tree-children {
+  list-style-type: none;
+  padding-left: 16px; /* Reduzindo a indentação para subitens */
+  max-height: 0; /* Oculto por padrão */
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
+}
+
+/* Exibe subitens quando expandido */
+.expanded > .tree-children {
+  max-height: 1000px; /* Valor suficientemente grande para permitir expansão */
+  opacity: 1;
+}
+
+/* Grid de itens na main-section */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 10px 15px;
+}
+
+.item-grid {
+  background-color: var(--card-aberto-bg);
+  border: 1px solid var(--card-aberto-bg);
+  border-radius: 4px;
+  padding: 20px;
+  flex: 1 1 calc(25% - 40px);
+  box-shadow: var(--sombra-moderada);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s ease;
+  touch-action: manipulation; /* Melhorar interações touch */
+  min-height: 40px;
+}
+
+.item-grid:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-intensa);
+}
+
+.item-grid.selected {
+  border-color: #007bff;
+  background-color: #e9f5ff;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 1em;
+}
+
+.breadcrumbs span {
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs span:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .item-grid {
+    flex: 1 1 calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .item-grid {
+    flex: 1 1 100%;
+  }
+}
+
+/* Melhorar áreas clicáveis em dispositivos touch */
+.tree-item,
+.item-grid {
+  touch-action: manipulation;
+}
+
+/* Estilo para "raiz" no Breadcrumbs */
+.breadcrumbs .raiz::before {
+  content: "\1F3E0"; /* 🏠 */
+  margin-right: 8px;
+}
+
+/* Indicador visual para itens expandidos */
+.tree-item.expanded {
+  background-color: transparent;
+}
+
+.tree-item.expanded::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--card-aberto-detalhe);
+}

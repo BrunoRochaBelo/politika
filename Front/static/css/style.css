@@ -76,6 +76,9 @@
 @import "./despesas/dashboard-centro-custo.css";
 @import "./despesas/despesas-style.css";
 
+/* arquivos */
+@import "./arquivos/arquivos-style.css";
+
 /* gerenciar-conta */
 @import "./gerenciar-conta/body-gc-template.css";
 @import "./gerenciar-conta/card-gc-template.css";
