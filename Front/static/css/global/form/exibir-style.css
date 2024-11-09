@@ -35,13 +35,13 @@
 .main-exibir
   .container-template-content
   .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 17.5rem) !important;
+  height: calc(var(--vh, 1vh) * 100 - 2rem) !important;
   transition: height 0.5s ease-in-out;
 }
-.main-exibir
+/*.main-exibir
   .container-abas-template-content
   .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 9rem) !important;
+  height: calc(var(--vh, 1vh) * 100 - 1.8rem) !important;
   transition: height 0.5s ease-in-out;
 }
 .main-exibir
@@ -50,7 +50,7 @@
   .area-interna-containerContent-template {
   height: calc(var(--vh, 1vh) * 100 - 10.2rem) !important;
   transition: height 0.5s ease-in-out;
-}
+}*/
 
 .main-exibir .container-template,
 .main-exibir .container-abas-template {
@@ -104,6 +104,10 @@
 
 .main-exibir .nav {
   margin: 5px 0;
+  justify-self: center;
+}
+.main-exibir .tabela-historico {
+  max-height: calc(var(--vh, 1vh) * 100) !important;
 }
 
 .card-info {
@@ -324,7 +328,7 @@
   .main-exibir
     .container-template-content
     .area-interna-containerContent-template {
-    height: calc(var(--vh, 1vh) * 100 - 15.5rem) !important;
+    height: calc(var(--vh, 1vh) * 100 - 1.5rem) !important;
   }
   .main-exibir
     .container-abas-template-content
@@ -351,7 +355,7 @@
   }
 
   .main-exibir .area-interna-containerContent-template-content {
-    padding: 10px 3px;
+    padding: 0px 1px;
   }
 
   .fieldset-exibir {

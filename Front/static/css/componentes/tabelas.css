@@ -259,14 +259,20 @@
 
   .tabela-historico th {
     display: none;
+    background: none;
   }
 
-  .hidden-column {
+  tr .hidden-column {
     display: none;
   }
 
   .icone-excluir-container {
     justify-content: flex-end;
     padding: 10px 20px;
+  }
+
+  .tabela-historico tbody tr:first-child {
+    background-color: transparent;
+    margin-bottom: 0px;
   }
 }

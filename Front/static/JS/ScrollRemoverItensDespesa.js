@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const swipeContainer = document.querySelector(
     ".area-interna-containerContent-template-header"
   );
@@ -21,61 +21,65 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   const costCenterSelect = document.querySelector("#cost-center-select");
 
+  if (!dashboardContent) return;
+
   let startY = 0;
   let currentY = 0;
   let isDragging = false;
-  let isAnimating = false; // Bloqueio de estado
-  let maxHeight = 300; // Altura máxima padrão para telas maiores
-  let minHeight = 0; // Altura mínima padrão
-  let initialHeight = maxHeight; // Assume que a dashboard começa aberta
-  const moveThreshold = 10; // Limite para considerar como arrasto
-  const snapThreshold = 0.3; // Ponto de snap como porcentagem da altura máxima
-  const animationDuration = 300; // Duração da animação em milissegundos
+  let isAnimating = false;
+  let maxHeight = 300;
+  const minHeight = 0;
+  let initialHeight = maxHeight;
+  const moveThreshold = 10;
+  const snapThreshold = 0.3;
+  const animationDuration = 300;
 
-  function adjustLayout() {
+  const adjustLayout = () => {
     if (window.innerWidth <= 900) {
-      maxHeight = 345; // Altura no modo responsivo
-      dashboardContent.style.flexDirection = "column";
-      dashboardContent.style.alignItems = "flex-start";
-      dashboardContent.style.padding = "7px";
+      maxHeight = 345;
+      Object.assign(dashboardContent.style, {
+        flexDirection: "column",
+        alignItems: "flex-start",
+        padding: "7px",
+      });
     } else {
-      maxHeight = 300; // Altura padrão
-      dashboardContent.style.flexDirection = "row";
-      dashboardContent.style.alignItems = "center";
-      dashboardContent.style.padding = "20px";
+      maxHeight = 300;
+      Object.assign(dashboardContent.style, {
+        flexDirection: "row",
+        alignItems: "center",
+        padding: "20px",
+      });
     }
-  }
+  };
 
-  function saveCostCenterSelection() {
+  const saveCostCenterSelection = () => {
     const selectedOption = costCenterSelect.value;
     localStorage.setItem("selectedCostCenter", selectedOption);
-  }
+  };
 
-  function restoreCostCenterSelection() {
+  const restoreCostCenterSelection = () => {
     const savedOption = localStorage.getItem("selectedCostCenter");
     if (savedOption) {
       costCenterSelect.value = savedOption;
     }
-  }
+  };
 
   restoreCostCenterSelection();
   costCenterSelect.addEventListener("change", saveCostCenterSelection);
 
   adjustLayout();
-  window.addEventListener("resize", debounce(adjustLayout, 50));
+  window.addEventListener("resize", adjustLayout);
 
-  function handleScroll() {
+  const handleScroll = () => {
     if (isDragging || isAnimating) return;
 
-    requestAnimationFrame(() => {
-      const scrollTop = scrollContainer.scrollTop;
-      if (scrollTop > 0) {
-        hideDashboard(true);
-      }
-    });
-  }
+    const scrollTop = scrollContainer.scrollTop;
+    if (scrollTop > 0) {
+      hideDashboard(true);
+    }
+  };
 
-  function handleStart(event) {
+  const handleStart = (event) => {
     if (isAnimating) return;
 
     const touchEvent = event.touches ? event.touches[0] : event;
@@ -92,9 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
       window.addEventListener("touchmove", handleMove);
       window.addEventListener("touchend", handleEnd);
     }
-  }
+  };
 
-  const handleMove = debounce(function (event) {
+  const handleMove = (event) => {
     if (!isDragging) return;
 
     const touchEvent = event.touches ? event.touches[0] : event;
@@ -107,34 +111,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let newHeight = initialHeight - delta;
 
-    if (newHeight < minHeight) newHeight = minHeight;
-    if (newHeight > maxHeight) newHeight = maxHeight;
+    newHeight = Math.max(minHeight, Math.min(newHeight, maxHeight));
 
-    requestAnimationFrame(() => {
-      dashboardContent.style.height = `${newHeight}px`;
-      dashboardContent.style.opacity = newHeight / maxHeight;
+    dashboardContent.style.height = `${newHeight}px`;
+    dashboardContent.style.opacity = newHeight / maxHeight;
 
-      if (newHeight <= minHeight) {
-        dashboardContent.style.padding = "7px";
-      } else {
-        adjustLayout();
-      }
+    if (newHeight <= minHeight) {
+      dashboardContent.style.padding = "7px";
+    } else {
+      adjustLayout();
+    }
 
-      if (newHeight < maxHeight * 0.5) {
-        availableValue.classList.remove("dashboard-hidden");
-        availableValue.classList.add("dashboard-fade-in-up");
-        chartWrapper.classList.add("dashboard-fade-out-up");
-        chartCenterText.classList.add("dashboard-fade-out-up");
-      } else {
-        availableValue.classList.add("dashboard-hidden");
-        availableValue.classList.remove("dashboard-fade-in-up");
-        chartWrapper.classList.remove("dashboard-fade-out-up");
-        chartCenterText.classList.remove("dashboard-fade-out-up");
-      }
-    });
-  }, 16);
+    if (newHeight < maxHeight * 0.5) {
+      availableValue.classList.remove("dashboard-hidden");
+      availableValue.classList.add("dashboard-fade-in-up");
+      chartWrapper.classList.add("dashboard-fade-out-up");
+      chartCenterText.classList.add("dashboard-fade-out-up");
+    } else {
+      availableValue.classList.add("dashboard-hidden");
+      availableValue.classList.remove("dashboard-fade-in-up");
+      chartWrapper.classList.remove("dashboard-fade-out-up");
+      chartCenterText.classList.remove("dashboard-fade-out-up");
+    }
+  };
 
-  function handleEnd(event) {
+  const handleEnd = (event) => {
     if (!isDragging) return;
 
     const finalHeight = dashboardContent.offsetHeight;
@@ -143,126 +144,113 @@ document.addEventListener("DOMContentLoaded", function () {
     isDragging = false;
     isAnimating = true;
 
-    requestAnimationFrame(() => {
-      if (finalHeight > snapPoint) {
-        if (finalHeight > initialHeight) {
-          showDashboard();
-        } else {
-          hideDashboard();
-        }
+    if (finalHeight > snapPoint) {
+      if (finalHeight > initialHeight) {
+        showDashboard();
       } else {
-        if (initialHeight > minHeight) {
-          showDashboard();
-        } else {
-          hideDashboard();
+        hideDashboard();
+      }
+    } else {
+      if (initialHeight > minHeight) {
+        showDashboard();
+      } else {
+        hideDashboard();
+      }
+    }
+
+    barDraggingContainer.classList.remove("dragging");
+
+    // Remover eventos adicionados
+    window.removeEventListener("mousemove", handleMove);
+    window.removeEventListener("mouseup", handleEnd);
+    window.removeEventListener("touchmove", handleMove);
+    window.removeEventListener("touchend", handleEnd);
+  };
+
+  const hideDashboard = (fromScroll = false) => {
+    dashboardContent.style.transition = `height ${animationDuration}ms ease-in-out, opacity ${animationDuration}ms ease-in-out`;
+    dashboardContent.style.height = `${minHeight}px`;
+    dashboardContent.style.padding = "7px";
+    dashboardContent.style.opacity = 0;
+    availableValue.classList.remove("dashboard-hidden");
+    availableValue.classList.add("dashboard-fade-in-up");
+
+    chartWrapper.classList.add("dashboard-fade-out-up");
+    chartCenterText.classList.add("dashboard-fade-out-up");
+    accountsList.classList.add("horizontal-list");
+
+    const onTransitionEnd = () => {
+      if (dashboardContent.style.height === `${minHeight}px`) {
+        chartWrapper.classList.add("dashboard-hidden");
+        const h2Element = accountsListContainer.querySelector("h2");
+        if (h2Element) {
+          h2Element.classList.add("dashboard-hidden");
+        }
+        progressBars.forEach((bar) => bar.classList.add("dashboard-hidden"));
+        accountsListContainer.style.width = "100%";
+      }
+      isAnimating = false;
+      reinitializeChartAfterAnimation();
+      dashboardContent.removeEventListener("transitionend", onTransitionEnd);
+    };
+
+    dashboardContent.addEventListener("transitionend", onTransitionEnd);
+  };
+
+  const showDashboard = () => {
+    dashboardContent.style.transition = `height ${animationDuration}ms ease-in-out, opacity ${animationDuration}ms ease-in-out`;
+    dashboardContent.style.height = `${maxHeight}px`;
+    adjustLayout();
+    dashboardContent.style.opacity = 1;
+    availableValue.classList.add("dashboard-hidden");
+    availableValue.classList.remove("dashboard-fade-in-up");
+
+    chartWrapper.classList.remove("dashboard-hidden");
+    chartWrapper.classList.remove("dashboard-fade-out-up");
+    chartCenterText.classList.remove("dashboard-fade-out-up");
+    accountsList.classList.remove("horizontal-list");
+    progressBars.forEach((bar) => bar.classList.remove("dashboard-hidden"));
+    const h2Element = accountsListContainer.querySelector("h2");
+    if (h2Element) {
+      h2Element.classList.remove("dashboard-hidden");
+    }
+    accountsListContainer.style.width = "";
+
+    const onTransitionEnd = () => {
+      if (dashboardContent.style.height === `${maxHeight}px`) {
+        chartWrapper.classList.remove("dashboard-hidden");
+        progressBars.forEach((bar) => bar.classList.remove("dashboard-hidden"));
+        if (h2Element) {
+          h2Element.classList.remove("dashboard-hidden");
         }
       }
+      isAnimating = false;
+      reinitializeChartAfterAnimation();
+      dashboardContent.removeEventListener("transitionend", onTransitionEnd);
+    };
 
-      barDraggingContainer.classList.remove("dragging");
-    });
-  }
+    dashboardContent.addEventListener("transitionend", onTransitionEnd);
+  };
 
-  function hideDashboard(fromScroll = false) {
-    requestAnimationFrame(() => {
-      dashboardContent.style.transition = `height ${animationDuration}ms ease-in-out, opacity ${animationDuration}ms ease-in-out`;
-      dashboardContent.style.height = `${minHeight}px`;
-      dashboardContent.style.padding = "7px";
-      dashboardContent.style.opacity = 0;
-      availableValue.classList.remove("dashboard-hidden");
-      availableValue.classList.add("dashboard-fade-in-up");
-
-      chartWrapper.classList.add("dashboard-fade-out-up");
-      chartCenterText.classList.add("dashboard-fade-out-up");
-      accountsList.classList.add("horizontal-list");
-
-      dashboardContent.addEventListener(
-        "transitionend",
-        function () {
-          if (dashboardContent.style.height === `${minHeight}px`) {
-            chartWrapper.classList.add("dashboard-hidden");
-            if (accountsListContainer.querySelector("h2")) {
-              accountsListContainer
-                .querySelector("h2")
-                .classList.add("dashboard-hidden");
-            }
-            progressBars.forEach((bar) =>
-              bar.classList.add("dashboard-hidden")
-            );
-            accountsListContainer.style.width = "100%";
-          }
-          isAnimating = false;
-          reinitializeChartAfterAnimation();
-        },
-        { once: true }
-      );
-    });
-  }
-
-  function showDashboard() {
-    requestAnimationFrame(() => {
-      dashboardContent.style.transition = `height ${animationDuration}ms ease-in-out, opacity ${animationDuration}ms ease-in-out`;
-      dashboardContent.style.height = `${maxHeight}px`;
-      adjustLayout();
-      dashboardContent.style.opacity = 1;
-      availableValue.classList.add("dashboard-hidden");
-      availableValue.classList.remove("dashboard-fade-in-up");
-
-      chartWrapper.classList.remove("dashboard-hidden");
-      chartWrapper.classList.remove("dashboard-fade-out-up");
-      chartCenterText.classList.remove("dashboard-fade-out-up");
-      accountsList.classList.remove("horizontal-list");
-      progressBars.forEach((bar) => bar.classList.remove("dashboard-hidden"));
-      if (accountsListContainer.querySelector("h2")) {
-        accountsListContainer
-          .querySelector("h2")
-          .classList.remove("dashboard-hidden");
-      }
-      accountsListContainer.style.width = "";
-
-      dashboardContent.addEventListener(
-        "transitionend",
-        function () {
-          if (dashboardContent.style.height === `${maxHeight}px`) {
-            chartWrapper.classList.remove("dashboard-hidden");
-            progressBars.forEach((bar) =>
-              bar.classList.remove("dashboard-hidden")
-            );
-            if (accountsListContainer.querySelector("h2")) {
-              accountsListContainer
-                .querySelector("h2")
-                .classList.remove("dashboard-hidden");
-            }
-          }
-          isAnimating = false;
-          reinitializeChartAfterAnimation();
-        },
-        { once: true }
-      );
-    });
-  }
-
-  function reinitializeChartAfterAnimation() {
+  const reinitializeChartAfterAnimation = () => {
     if (!chartWrapper.classList.contains("dashboard-hidden")) {
       initializeDashboard();
     }
-  }
+  };
 
-  function addEventListeners(element, events, handler) {
+  const addEventListeners = (element, events, handler) => {
     events.forEach((event) => {
       element.addEventListener(event, handler);
     });
-  }
+  };
 
-  scrollContainer.addEventListener("scroll", handleScroll);
+  scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
 
   const draggableElements = [swipeContainer, barDraggingContainer];
 
   draggableElements.forEach((element) => {
     addEventListeners(element, ["touchstart", "mousedown"], handleStart);
-  });
-
-  draggableElements.forEach((element) => {
-    addEventListeners(element, ["touchmove"], handleMove);
-    addEventListeners(element, ["touchend"], handleEnd);
+    addEventListeners(element, ["touchmove", "mousemove"], handleMove);
+    addEventListeners(element, ["touchend", "mouseup"], handleEnd);
   });
 });

@@ -41,10 +41,11 @@
 @import "./componentes/cards/template-cards-quantitativos.css";
 @import "./componentes/cards/template-cards-tarefa.css";
 /* Componentes/ areas */
-@import "./componentes/areas/areas-e-containers-gerais.css";
+@import "./componentes/areas/areas-e-secaoInterna.css";
 @import "./componentes/areas/card-session.css";
 @import "./componentes/areas/container-abas-template.css";
 @import "./componentes/areas/container-template.css";
+@import "./componentes/areas/containerFiltros-e-compromissoHoje.css";
 /* Componentes/ botoes */
 @import "./componentes/botoes/botoes.css";
 @import "./componentes/botoes/recuar-expandir.css";

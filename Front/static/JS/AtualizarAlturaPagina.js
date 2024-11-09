@@ -1,35 +1,30 @@
-// Função para atualizar a variável CSS --vh
-function setVhVariable() {
-  if (window.innerHeight && document.documentElement.style.setProperty) {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }
-}
-
-// Debounce para otimizar o evento de redimensionamento
-function debounce(fn, delay) {
-  let timer;
+// Função debounce para limitar a taxa de execução de uma função
+function debounce(func, wait) {
+  let timeout;
   return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn.apply(this, args), delay);
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
   };
 }
 
-// Verificar se addEventListener está disponível
-if (window.addEventListener && document.addEventListener) {
-  // Atualizar a variável --vh na inicialização e quando a janela é redimensionada
-  const setVhVariableDebounced = debounce(setVhVariable, 100);
-  window.addEventListener("resize", setVhVariableDebounced);
-  document.addEventListener("DOMContentLoaded", setVhVariable);
-} else if (window.attachEvent) {
-  // Fallback para navegadores mais antigos que usam attachEvent
-  window.attachEvent("onresize", setVhVariable);
-  document.attachEvent("onreadystatechange", function () {
-    if (document.readyState === "complete") {
-      setVhVariable();
-    }
-  });
+// Função para atualizar a variável CSS --vh
+function setVhVariable() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
-// Chamar a função imediatamente na inicialização
+// Verifica se a API VisualViewport está disponível
+if (window.visualViewport) {
+  const setVhVariableDebounced = debounce(setVhVariable, 50);
+  window.visualViewport.addEventListener("resize", setVhVariableDebounced);
+  window.visualViewport.addEventListener("scroll", setVhVariableDebounced);
+} else {
+  // Fallback para o evento de redimensionamento da janela
+  const setVhVariableDebounced = debounce(setVhVariable, 50);
+  window.addEventListener("resize", setVhVariableDebounced);
+}
+
+// Atualiza a variável na inicialização
+document.addEventListener("DOMContentLoaded", setVhVariable);
 setVhVariable();

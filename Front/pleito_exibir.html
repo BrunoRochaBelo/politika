@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="color-scheme" content="light dark">
-
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
@@ -17,118 +16,154 @@
   <div class="body-exibir-template">
     <main class="main-exibir">
       <section>
-        <div class="container-abas-template">
-          <div class="container-abas-template-header">
-            <div class="card-info">
-              <div>
-                <a href="pleitos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
-              </div>
-              <div class="campo-exibir">
-                <p>{{ numero_pleito }}</p>
-              </div>
-              <div class="acoes">
-                <div class="campo-exibir acao-item">
-                  <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+        <div class="container-template">
+          <div class="container-template-header"></div>
+          <div class="container-template-content">
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-header">
+                <div class="card-info">
+                  <div>
+                    <a href="pleitos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
+                  </div>
+                  <div class="campo-exibir">
+                    <p>{{ numero_pleito }}</p>
+                  </div>
+                  <div class="acoes">
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+                      <p>EDITAR</p>
+                    </div>
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/send.svg" alt="Despachar Icon"></a>
+                      <p>Despachar</p>
+                    </div>
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/check.svg" alt="Concluir Icon"></a>
+                      <p>Concluir</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="campo-exibir acao-item">
-                  <a href=""><img src="./static/imagens/icones/send.svg" alt="Despachar Icon"></a>
-                </div>
-                <div class="campo-exibir acao-item">
-                  <a href=""><img src="./static/imagens/icones/check.svg" alt="Concluir Icon"></a>
-                </div>
+                <ul id="navAba" class="nav nav-duas-abas">
+                  <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Dados</a></li>
+                  <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Histórico</a></li>
+                </ul>
               </div>
-            </div>
-            <ul id="navAba" class="nav nav-duas-abas">
-              <li id="nav1"><a class="indicador-2" href="#" onclick="mostrarAba('aba1')">Dados</a></li>
-              <li id="nav2"><a href="#" onclick="mostrarAba('aba2')">Histórico</a></li>
-            </ul>
-          </div>
-
-          <div class="container-abas-template-content">
-            <div id="aba1" class="card-session secao-interna-template aba-template active">
-              <form id="form" class="secao-interna-template-content form">
-                <fieldset class="fieldset-exibir">
-                  <legend class="titulo-xl"></legend>
-                  <div class="campo campo-exibir">
-                    <h3>Nome do solicitante:</h3>
-                    <p>{{ nome }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Tipo solicitação:</h3>
-                    <p>{{ tipo }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Descrição:</h3>
-                    <p>{{ descricao }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Beneficiário:</h3>
-                    <p>{{ beneficiario }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>CEP:</h3>
-                    <p>{{ cep }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>UF:</h3>
-                    <p>{{ uf }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Rua:</h3>
-                    <p>{{ rua }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Número:</h3>
-                    <p>{{ numero }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Complemento:</h3>
-                    <p>{{ complemento }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Bairro:</h3>
-                    <p>{{ bairro }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Cidade:</h3>
-                    <p>{{ cidade }}</p>
-                  </div>
-                  <div class="campo campo-exibir">
-                    <h3>Data da solicitação:</h3>
-                    <p>{{ data }}</p>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-
-            <div id="aba2" class="card-session secao-interna-template aba-template ">
-              <div class="secao-interna-template-content tabela-historico">
-                <table>
-                  <tr>
-                    <th>Data</th>
-                    <th>Por</th>
-                    <th>Ação</th>
-                    <th>Descrição</th>
-                  </tr>
-                  <tr>
-                    <td>16-03-2024</td>
-                    <td>[Nome]</td>
-                    <td>TAREFA AGENDADA</td>
-                    <td>Tarefa atribuída para [Nome].</td>
-                  </tr>
-                  <tr>
-                    <td>19-03-2024</td>
-                    <td>[Nome]</td>
-                    <td>TAREFA CONCLUÍDA</td>
-                    <td>Tarefa concluída por [Nome].</td>
-                  </tr>
-                  <tr>
-                    <td>19-03-2024</td>
-                    <td>[Nome]</td>
-                    <td>PLEITO CONCLUÍDO</td>
-                    <td>Atendido.</td>
-                  </tr>
-                </table>
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <div id="aba1" class="aba-template active">
+                  <ul class="lista-vertical-alt">
+                    <li class="card-session active secao-interna-template">
+                      <div class="secao-interna-template-content">
+                        <fieldset class="fieldset-exibir">
+                          <legend class="titulo-xl"></legend>
+                          <div class="campo-exibir">
+                            <h3>Nome do solicitante:</h3>
+                            <p>{{ nome }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Tipo solicitação:</h3>
+                            <p>{{ tipo }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Descrição:</h3>
+                            <p>{{ descricao }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Beneficiário:</h3>
+                            <p>{{ beneficiario }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>CEP:</h3>
+                            <p>{{ cep }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>UF:</h3>
+                            <p>{{ uf }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Rua:</h3>
+                            <p>{{ rua }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Número:</h3>
+                            <p>{{ numero }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Complemento:</h3>
+                            <p>{{ complemento }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Bairro:</h3>
+                            <p>{{ bairro }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Cidade:</h3>
+                            <p>{{ cidade }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Data da solicitação:</h3>
+                            <p>{{ data }}</p>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </div>
+                <div id="aba2" class="aba-template">
+                  <ul class="lista-vertical-alt">
+                    <li class="card-session active secao-interna-template">
+                      <div class="secao-interna-template-content">
+                        <div class="tabela-historico">
+                          <table>
+                            <tr>
+                              <th class="hidden-column">ID</th>
+                              <th>Data</th>
+                              <th>Por</th>
+                              <th>Ação</th>
+                              <th>Descrição</th>
+                            </tr>
+                            <tr>
+                              <td class="hidden-column">ID</td>
+                              <td>16-03-2024</td>
+                              <td>[Nome]</td>
+                              <td>TAREFA AGENDADA</td>
+                              <td>Tarefa atribuída para [Nome].</td>
+                            </tr>
+                            <tr>
+                              <td class="hidden-column">ID</td>
+                              <td>19-03-2024</td>
+                              <td>[Nome]</td>
+                              <td>TAREFA CONCLUÍDA</td>
+                              <td>Tarefa concluída por [Nome].</td>
+                            </tr>
+                            <tr>
+                              <td class="hidden-column">ID</td>
+                              <td>16-03-2024</td>
+                              <td>[Nome]</td>
+                              <td>TAREFA AGENDADA</td>
+                              <td>Tarefa atribuída para [Nome].</td>
+                            </tr>
+                            <tr>
+                              <td class="hidden-column">ID</td>
+                              <td>19-03-2024</td>
+                              <td>[Nome]</td>
+                              <td>TAREFA CONCLUÍDA</td>
+                              <td>Tarefa concluída por [Nome].</td>
+                            </tr>
+                            <tr>
+                              <td class="hidden-column">ID</td>
+                              <td>19-03-2024</td>
+                              <td>[Nome]</td>
+                              <td>PLEITO CONCLUÍDO</td>
+                              <td>Atendido.</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -136,11 +171,11 @@
       </section>
     </main>
   </div>
-</body>
 
-
-
-<script src="./static/js/NavAbasInternas.js"></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js"></script>
+  <script src="./static/js/AtualizarAlturaPagina.js"></script>
+  <script src="./static/js/NavAbasInternas.js"></script>
+  <script src="./static/js/ScrollAjustarItensContainerHeaderExibir.js"></script>
 
 </body>
 

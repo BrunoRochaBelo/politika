@@ -14,101 +14,99 @@
 <body class="body-exibir">
   <div class="body-exibir-template">
     <main class="main-exibir">
-      <section class="container-template">
-        <div class="container-template-header">
-          <div class="card-info">
-            <div>
-              <a href="contatos.html#aba2" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
-            </div>
-            <div class="campo-exibir">
-              <p>{{ nome_grupo }}</p>
-            </div>
-            <div class="acoes">
-              <div class="campo-exibir acao-item">
-                <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
-                <p>EDITAR</p>
+      <section>
+        <div class="container-template">
+          <div class="container-template-header"> </div>
+          <div class="container-template-content">
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-header">
+                <div class="card-info">
+                  <div>
+                    <a href="contatos.html#aba2" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
+                  </div>
+                  <div class="campo-exibir">
+                    <p>{{ nome_grupo }}</p>
+                  </div>
+                  <div class="acoes">
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+                      <p>EDITAR</p>
+                    </div>
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/incluir-contato.svg" alt="incluir-contato Icon"></a>
+                      <p>Adicionar</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="campo-exibir acao-item">
-                <a href=""><img src="./static/imagens/icones/incluir-contato.svg" alt="incluir-contato Icon"></a>
-                <p>Adicionar</p>
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <ul class="lista-vertical-alt">
+                  <li class="card-session secao-interna-template">
+                    <h2 class="secao-interna-template-header" onclick="changeSession(1)"><a href="#">ℹ️ Dados do grupo <span class="arrow down"></span></a></h2>
+                    <div class="secao-interna-template-content">
+                      <div class="session" id="secao1">
+                        <fieldset class="fieldset-exibir">
+                          <legend class="titulo-xl"></legend>
+
+                          <div class="campo-exibir">
+                            <h3>Usado para</h3>
+                            <p>{{ usado_para }}</p> <!-- Exibirá a opção selecionada: 'Mensagens', 'Equipe' ou 'Geral' -->
+                          </div>
+
+                          <div class="campo-exibir">
+                            <h3>Situação</h3>
+                            <p>{{ situacao_grupo }}</p> <!-- Exibirá 'Habilitado' ou 'Desabilitado' -->
+                          </div>
+
+                          <div class="campo-exibir">
+                            <h3>Descrição</h3>
+                            <p>{{ descricao_grupo }}</p>
+                          </div>
+
+                        </fieldset>
+
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-session secao-interna-template">
+                    <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">👥 Membros <span class="arrow down"></span></a></h2>
+                    <div class="secao-interna-template-content">
+                      <div class="session" id="secao2">
+                        <fieldset class="fieldset-exibir">
+                          <p id="contadorParticipantes" class="titulo-area-tabela">Total de participantes: 0</p>
+                          <div class="tabela-historico">
+                            <table id="tabelaParticipantesGrupo">
+                              <thead>
+                                <tr>
+                                  <th>Nome</th>
+                                  <th>Tipo</th>
+                                  <th>Ação</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <!-- Participantes do grupo serão listados aqui dinamicamente -->
+                              </tbody>
+                            </table>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-last-child"><br></li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-        <div class="container-template-content">
-          <form id="form" class="form" enctype="multipart/form-data">
-            <ul class="lista-vertical-alt">
-              <li class="card-session secao-interna-template">
-                <h2 class="secao-interna-template-header" onclick="changeSession(1)"><a href="#">ℹ️ Dados do grupo <span class="arrow down"></span></a></h2>
-                <div class="secao-interna-template-content">
-                  <div class="session" id="secao1">
-                    <fieldset class="fieldset-exibir">
-                      <legend class="titulo-xl"></legend>
-
-                      <div class="campo-exibir">
-                        <h3>Usado para</h3>
-                        <p>{{ usado_para }}</p> <!-- Exibirá a opção selecionada: 'Mensagens', 'Equipe' ou 'Geral' -->
-                      </div>
-
-                      <div class="campo-exibir">
-                        <h3>Situação</h3>
-                        <p>{{ situacao_grupo }}</p> <!-- Exibirá 'Habilitado' ou 'Desabilitado' -->
-                      </div>
-
-                      <div class="campo-exibir">
-                        <h3>Descrição</h3>
-                        <p>{{ descricao_grupo }}</p>
-                      </div>
-
-                    </fieldset>
-
-                  </div>
-                </div>
-              </li>
-              <li class="card-session secao-interna-template">
-                <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">👥 Membros <span class="arrow down"></span></a></h2>
-                <div class="secao-interna-template-content">
-                  <div class="session" id="secao2">
-                    <fieldset class="fieldset-exibir">
-                      <p id="contadorParticipantes" class="titulo-area-tabela">Total de participantes: 0</p>
-                      <div class="tabela-historico">
-                        <table id="tabelaParticipantesGrupo">
-                          <thead>
-                            <tr>
-                              <th>Nome</th>
-                              <th>Tipo</th>
-                              <th>Ação</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <!-- Participantes do grupo serão listados aqui dinamicamente -->
-                          </tbody>
-                        </table>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </form>
         </div>
       </section>
     </main>
   </div>
 
 
-  <script>
-    const containerContent = document.querySelector('.container-template-content');
-    const containerHeader = document.querySelector('.container-template-header');
-
-    containerContent.addEventListener('scroll', () => {
-      const isScrolled = containerContent.scrollTop > 0;
-      containerHeader.classList.toggle('compact', isScrolled);
-    });
-  </script>
-
+  <script src="./static/js/AlterarEsquemaDeCores.js"></script>
   <script src="./static/js/AtualizarAlturaPagina.js"></script>
   <script src="./static/js/NavSecoes.js"></script>
+  <script src="./static/js/ScrollAjustarItensContainerHeaderExibir.js"></script>
 
 </body>
 

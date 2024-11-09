@@ -16,304 +16,239 @@
     <main class="main-exibir">
       <section>
         <div class="container-template">
-          <div class="container-template-header">
-            <div class="card-info">
-              <div>
-                <a href="contatos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
-              </div>
-              <div class="campo-exibir">
-                <p>{{ nome_contato }}</p>
-              </div>
-              <div class="campo-exibir">
-                <p>{{ Telefone Principal }}</p>
-              </div>
-              <div class="acoes">
-                <div class="campo-exibir acao-item">
-                  <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
-                  <p>EDITAR</p>
+          <div class="container-template-header"></div>
+          <div class="container-template-content">
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-header">
+                <div class="card-info">
+                  <div>
+                    <a href="contatos.html" class="voltar"><img src="./static/imagens/icones/voltar.svg" alt="Voltar Icon"></a>
+                  </div>
+                  <div class="campo-exibir">
+                    <p>{{ nome_contato }}</p>
+                  </div>
+                  <div class="campo-exibir">
+                    <p>{{ Telefone Principal }}</p>
+                  </div>
+                  <div class="acoes">
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/editar.svg" alt="Editar Icon"></a>
+                      <p>EDITAR</p>
+                    </div>
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/historico.svg" alt="Historico Icon"></a>
+                      <p>HISTÓRICO</p>
+                    </div>
+                    <div class="campo-exibir acao-item">
+                      <a href=""><img src="./static/imagens/icones/call.svg" alt="call Icon"></a>
+                      <p>LIGAR</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="campo-exibir acao-item">
-                  <a href=""><img src="./static/imagens/icones/historico.svg" alt="Historico Icon"></a>
-                  <p>HISTÓRICO</p>
-                </div>
-                <div class="campo-exibir acao-item">
-                  <a href=""><img src="./static/imagens/icones/call.svg" alt="call Icon"></a>
-                  <p>LIGAR</p>
-                </div>
+              </div>
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <ul class="lista-vertical-alt">
+                  <li class="card-session secao-interna-template">
+                    <h2 class="secao-interna-template-header" onclick="changeSession(1)"><a href="#">👤 Identificação<span class="arrow down"></span></a></h2>
+                    <div class="secao-interna-template-content">
+                      <div class="session" id="secao1">
+                        <fieldset class="fieldset-exibir">
+                          <legend class="titulo-xl"></legend>
+
+                          <div class="campo-exibir">
+                            <h3>Tipo de Pessoa</h3>
+                            <p>{{ tipo_pessoa }}</p>
+                          </div>
+
+                          <div class="campo-exibir">
+                            <h3>Este número é WhatsApp?</h3>
+                            <p>{{ whatsapp_switch }}</p>
+                          </div>
+                          <div class="campo-exibir" id="campoWhatsapp">
+                            <h3>WhatsApp</h3>
+                            <p>{{ whatsapp }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>E-mail</h3>
+                            <p>{{ email }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Telefone Adicional</h3>
+                            <p>{{ Telefone Adicional }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Perfil de Influência</h3>
+                            <p>{{ perfil_influencia }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Tipo(s) do contato</h3>
+                            <p>{{ tipo_contato }}</p>
+                          </div>
+
+
+                          <legend class="titulo-xl"></legend>
+                          <div class="campo-exibir">
+                            <h3>Data Nascimento</h3>
+                            <p>{{ data_nascimento }}</p>
+                          </div>
+                          <div class="form-2-colum">
+                            <div class="campo-exibir">
+                              <h3>Sexo</h3>
+                              <p>{{ sexo }}</p>
+                            </div>
+                            <div class="campo-exibir">
+                              <h3>Cor da pele</h3>
+                              <p>{{ cor_pele }}</p>
+                            </div>
+                          </div>
+
+                          <legend class="titulo-xl"></legend>
+                          <div class="campo-exibir">
+                            <h3>Título Eleitor</h3>
+                            <p>{{ titulo_eleitor }}</p>
+                          </div>
+                          <div class="form-2-colum">
+                            <div class="campo-exibir">
+                              <h3>Zona Eleitoral</h3>
+                              <p>{{ zona_eleitoral }}</p>
+                            </div>
+                            <div class="campo-exibir">
+                              <h3>Seção Eleitoral</h3>
+                              <p>{{ secao_eleitoral }}</p>
+                            </div>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Local Votação</h3>
+                            <p>{{ local_votacao }}</p>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-session secao-interna-template">
+                    <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">📍 Endereço<span class="arrow down"></span></a></h2>
+                    <div class="secao-interna-template-content">
+                      <div class="session" id="secao2">
+                        <fieldset class="fieldset-exibir">
+                          <legend class="titulo-xl"></legend>
+                          <div class="campo-exibir">
+                            <h3>CEP</h3>
+                            <p>{{ cep }}</p>
+                          </div>
+                          <div class="form-2-colum">
+                            <div class="campo-exibir">
+                              <h3>UF</h3>
+                              <p>{{ uf }}</p>
+                            </div>
+                            <div class="campo-exibir">
+                              <h3>Cidade</h3>
+                              <p>{{ cidade }}</p>
+                            </div>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Bairro</h3>
+                            <p>{{ bairro }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Rua</h3>
+                            <p>{{ rua }}</p>
+                          </div>
+                          <div class="form-2-colum">
+                            <div class="campo-exibir">
+                              <h3>Número</h3>
+                              <p>{{ numero }}</p>
+                            </div>
+                            <div class="campo-exibir">
+                              <h3>Complemento</h3>
+                              <p>{{ complemento }}</p>
+                            </div>
+                          </div>
+
+                          <div class="campo-exibir">
+                            <h3>Latitude</h3>
+                            <p>{{ latitude }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Longitude</h3>
+                            <p>{{ longitude }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Quantidade de Eleitores residentes</h3>
+                            <p>{{ eleitores_residentes }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Residência de apoio</h3>
+                            <p>{{ residencia_apoio }}</p>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-session secao-interna-template">
+                    <h2 class="secao-interna-template-header" onclick="changeSession(3)"><a href="#">ℹ️ Informações complementares<span class="arrow down"></span></a></h2>
+                    <div class="secao-interna-template-content">
+                      <div class="session" id="secao3">
+                        <fieldset class="fieldset-exibir">
+                          <legend class="titulo-xl"></legend>
+                          <div class="campo-exibir">
+                            <h3>Indicação</h3>
+                            <p>{{ indicacao }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Nome da indicação</h3>
+                            <p>{{ nome_indicacao }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Estado Civil</h3>
+                            <p>{{ estado_civil }}</p>
+                          </div>
+                          <div class="campo-exibir" id="camposConjuge">
+                            <h3>Nome do Cônjuge</h3>
+                            <p>{{ nome_conjuge }}</p>
+                          </div>
+                          <div class="campo-exibir" id="camposConjuge">
+                            <h3>Data de Nascimento do Cônjuge</h3>
+                            <p>{{ data_nascimento_conjuge }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Filhos</h3>
+                            <p>{{ resposta }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Religião</h3>
+                            <p>{{ religiao }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Profissão</h3>
+                            <p>{{ profissao }}</p>
+                          </div>
+                          <div class="campo-exibir">
+                            <h3>Cargo Comissionado</h3>
+                            <p>{{ cargo_comissionado }}</p>
+                          </div>
+                          <div class="campo-exibir" id="camposCargoComissionado">
+                            <h3>Órgão de Lotação</h3>
+                            <p>{{ orgao_lotacao }}</p>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-last-child"><br></li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div class="container-template-content">
-            <form id="form" class="form" enctype="multipart/form-data">
-              <div class="area-interna-containerContent-template">
-                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                  <ul class="lista-vertical-alt">
-                    <li class="card-session secao-interna-template">
-                      <h2 class="secao-interna-template-header" onclick="changeSession(1)"><a href="#">👤 Identificação<span class="arrow down"></span></a></h2>
-                      <div class="secao-interna-template-content">
-                        <div class="session" id="secao1">
-                          <fieldset class="fieldset-exibir">
-                            <legend class="titulo-xl"></legend>
-
-                            <div class="campo-exibir">
-                              <h3>Tipo de Pessoa</h3>
-                              <p>{{ tipo_pessoa }}</p>
-                            </div>
-
-                            <div class="campo-exibir">
-                              <h3>Este número é WhatsApp?</h3>
-                              <p>{{ whatsapp_switch }}</p>
-                            </div>
-                            <div class="campo-exibir" id="campoWhatsapp">
-                              <h3>WhatsApp</h3>
-                              <p>{{ whatsapp }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>E-mail</h3>
-                              <p>{{ email }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Telefone Adicional</h3>
-                              <p>{{ Telefone Adicional }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Perfil de Influência</h3>
-                              <p>{{ perfil_influencia }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Tipo(s) do contato</h3>
-                              <p>{{ tipo_contato }}</p>
-                            </div>
-
-
-                            <legend class="titulo-xl"></legend>
-                            <div class="campo-exibir">
-                              <h3>Data Nascimento</h3>
-                              <p>{{ data_nascimento }}</p>
-                            </div>
-                            <div class="form-2-colum">
-                              <div class="campo-exibir">
-                                <h3>Sexo</h3>
-                                <p>{{ sexo }}</p>
-                              </div>
-                              <div class="campo-exibir">
-                                <h3>Cor da pele</h3>
-                                <p>{{ cor_pele }}</p>
-                              </div>
-                            </div>
-
-                            <legend class="titulo-xl"></legend>
-                            <div class="campo-exibir">
-                              <h3>Título Eleitor</h3>
-                              <p>{{ titulo_eleitor }}</p>
-                            </div>
-                            <div class="form-2-colum">
-                              <div class="campo-exibir">
-                                <h3>Zona Eleitoral</h3>
-                                <p>{{ zona_eleitoral }}</p>
-                              </div>
-                              <div class="campo-exibir">
-                                <h3>Seção Eleitoral</h3>
-                                <p>{{ secao_eleitoral }}</p>
-                              </div>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Local Votação</h3>
-                              <p>{{ local_votacao }}</p>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="card-session secao-interna-template">
-                      <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">📍 Endereço<span class="arrow down"></span></a></h2>
-                      <div class="secao-interna-template-content">
-                        <div class="session" id="secao2">
-                          <fieldset class="fieldset-exibir">
-                            <legend class="titulo-xl"></legend>
-                            <div class="campo-exibir">
-                              <h3>CEP</h3>
-                              <p>{{ cep }}</p>
-                            </div>
-                            <div class="form-2-colum">
-                              <div class="campo-exibir">
-                                <h3>UF</h3>
-                                <p>{{ uf }}</p>
-                              </div>
-                              <div class="campo-exibir">
-                                <h3>Cidade</h3>
-                                <p>{{ cidade }}</p>
-                              </div>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Bairro</h3>
-                              <p>{{ bairro }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Rua</h3>
-                              <p>{{ rua }}</p>
-                            </div>
-                            <div class="form-2-colum">
-                              <div class="campo-exibir">
-                                <h3>Número</h3>
-                                <p>{{ numero }}</p>
-                              </div>
-                              <div class="campo-exibir">
-                                <h3>Complemento</h3>
-                                <p>{{ complemento }}</p>
-                              </div>
-                            </div>
-
-                            <div class="campo-exibir">
-                              <h3>Latitude</h3>
-                              <p>{{ latitude }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Longitude</h3>
-                              <p>{{ longitude }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Quantidade de Eleitores residentes</h3>
-                              <p>{{ eleitores_residentes }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Residência de apoio</h3>
-                              <p>{{ residencia_apoio }}</p>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="card-session secao-interna-template">
-                      <h2 class="secao-interna-template-header" onclick="changeSession(3)"><a href="#">ℹ️ Informações complementares<span class="arrow down"></span></a></h2>
-                      <div class="secao-interna-template-content">
-                        <div class="session" id="secao3">
-                          <fieldset class="fieldset-exibir">
-                            <legend class="titulo-xl"></legend>
-                            <div class="campo-exibir">
-                              <h3>Indicação</h3>
-                              <p>{{ indicacao }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Nome da indicação</h3>
-                              <p>{{ nome_indicacao }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Estado Civil</h3>
-                              <p>{{ estado_civil }}</p>
-                            </div>
-                            <div class="campo-exibir" id="camposConjuge">
-                              <h3>Nome do Cônjuge</h3>
-                              <p>{{ nome_conjuge }}</p>
-                            </div>
-                            <div class="campo-exibir" id="camposConjuge">
-                              <h3>Data de Nascimento do Cônjuge</h3>
-                              <p>{{ data_nascimento_conjuge }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Filhos</h3>
-                              <p>{{ resposta }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Religião</h3>
-                              <p>{{ religiao }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Profissão</h3>
-                              <p>{{ profissao }}</p>
-                            </div>
-                            <div class="campo-exibir">
-                              <h3>Cargo Comissionado</h3>
-                              <p>{{ cargo_comissionado }}</p>
-                            </div>
-                            <div class="campo-exibir" id="camposCargoComissionado">
-                              <h3>Órgão de Lotação</h3>
-                              <p>{{ orgao_lotacao }}</p>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
       </section>
     </main>
   </div>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const containerContent = document.querySelector('.area-interna-containerContent-template-content');
-      const containerHeader = document.querySelector('.container-template-header');
-      const mainContainer = document.querySelector('.main-exibir .container-template-content .area-interna-containerContent-template');
-
-      let ticking = false; // Flag para evitar múltiplos repaints
-      let isMobile = window.innerWidth <= 768; // Determina se é mobile no início
-      const updateHeightOffset = () => (isMobile ? '10.3rem' : '11.7rem'); // Função para obter o offset
-
-      // Função para atualizar o layout com base na rolagem
-      const updateLayout = () => {
-        const isScrolled = containerContent.scrollTop > 0;
-        const heightOffset = updateHeightOffset(); // Obtém o valor de offset para mobile/desktop
-
-        if (isScrolled) {
-          containerHeader.classList.add('compact');
-          mainContainer.style.cssText = `height: calc(var(--vh, 1vh) * 100 - ${heightOffset}) !important; transition: height 0.5s ease-in-out;`;
-        } else {
-          containerHeader.classList.remove('compact');
-          mainContainer.style.cssText = ''; // Reseta para o valor original do CSS
-        }
-
-        ticking = false; // Libera o ticking para a próxima atualização
-      };
-
-      // Event listener para o scroll, utilizando requestAnimationFrame para otimização
-      const onScroll = () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updateLayout();
-          });
-          ticking = true; // Evita múltiplos updates até que a animação seja concluída
-        }
-      };
-
-      containerContent.addEventListener('scroll', onScroll);
-
-      // Função para atualizar o layout ao redimensionar a janela
-      const onResize = () => {
-        const newIsMobile = window.innerWidth <= 768;
-
-        // Apenas atualiza o layout se a mudança de estado de mobile for detectada
-        if (newIsMobile !== isMobile) {
-          isMobile = newIsMobile; // Atualiza o estado de mobile
-          updateLayout(); // Recalcula o layout quando a tela for redimensionada
-        }
-      };
-
-      window.addEventListener('resize', onResize);
-
-      // Atualiza o layout ao carregar a página
-      updateLayout();
-
-      // Cleanup para event listeners ao desfazer o script
-      window.addEventListener('unload', () => {
-        containerContent.removeEventListener('scroll', onScroll);
-        window.removeEventListener('resize', onResize);
-      });
-    });
-  </script>
-
-
-
   <script src="./static/js/AlterarEsquemaDeCores.js"></script>
   <script src="./static/js/AtualizarAlturaPagina.js"></script>
   <script src="./static/js/NavSecoes.js"></script>
+  <script src="./static/js/ScrollAjustarItensContainerHeaderExibir.js"></script>
 
 </body>
-
 
 </html>

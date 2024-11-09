@@ -74,99 +74,12 @@
   padding: 20px 0px 0px 0px;
 }
 
-/* Area Template para areas internas dos content das areas-container */
-.area-interna-containerContent-template {
-  display: grid;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  align-content: start;
-  height: calc(var(--vh, 1vh) * 100 - 8.4rem);
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "area-interna-containerContent-template-header"
-    "area-interna-containerContent-template-content";
-  background: transparent;
-  scroll-behavior: smooth;
-  transition: height 0.8s;
-}
-.area-interna-containerContent-template-header {
-  grid-area: area-interna-containerContent-template-header;
-  display: grid;
-  align-items: center;
-  color: var(--txt-conteudo-card);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding: 0px;
-  background: transparent;
-  scroll-behavior: smooth;
-}
-.area-interna-containerContent-template-content {
-  grid-area: area-interna-containerContent-template-content;
-  overflow-x: auto;
-  overflow-y: auto;
-  background: transparent;
-  border-radius: 25px;
-  border-top-right-radius: 0px;
-  border-top-left-radius: 0px;
-  border-top: 1px solid var(--bg-principal);
-  padding: 20px 0px 0px 0px;
-  scroll-behavior: smooth;
-}
-
-.area-interna-containerContent-template-not-header {
-  border-top: none;
-}
-
-/* Area Template Sessão Interna */
-.secao-interna-template {
-  display: grid;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 23px;
-  box-shadow: none;
-  grid:
-    "secao-interna-template-header" auto
-    "secao-interna-template-content" auto
-    / 1fr;
-}
-.secao-interna-template-header {
-  grid-area: secao-interna-template-header;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: stretch;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 10px 20px;
-  text-align: left;
-  color: var(--txt-subtitulo);
-  border-radius: 0px;
-  border-top-right-radius: 23px;
-  border-top-left-radius: 23px;
-}
-.secao-interna-template-header h2 {
-  font-size: 14px;
-  font-weight: 300;
-}
-.secao-interna-template-content {
-  grid-area: secao-interna-template-content;
-  overflow-x: auto;
-  border-radius: 23px;
-  padding: 0px;
-}
-
 /* Estilos */
-.area-template::-webkit-scrollbar,
-.secao-interna-template::-webkit-scrollbar,
 .container-filtros-template::-webkit-scrollbar,
 .container-filtros-template-content::-webkit-scrollbar,
 .container-compromisso-hoje-template::-webkit-scrollbar,
-.area-interna-containerContent-template::-webkit-scrollbar,
 .container-template-content::-webkit-scrollbar,
-.secao-interna-template-content::-webkit-scrollbar,
-.container-compromisso-hoje-template-content::-webkit-scrollbar,
-.area-interna-containerContent-template-content::-webkit-scrollbar {
+.container-compromisso-hoje-template-content::-webkit-scrollbar {
   display: none; /* Oculta a barra de rolagem para navegadores WebKit (Chrome, Safari) */
 }
 
@@ -261,50 +174,6 @@
     padding: 10px 0px;
   }
 
-  /* Area Template para areas internas dos content das areas-container */
-  .area-interna-containerContent-template {
-    height: calc(var(--vh, 1vh) * 100 - 5.5rem);
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      "area-interna-containerContent-template-header"
-      "area-interna-containerContent-template-content";
-  }
-  .area-interna-containerContent-template-header {
-    grid-area: area-interna-containerContent-template-header;
-    background: transparent;
-    padding: 0px;
-    border-radius: 0px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    font-size: 14px;
-    font-weight: 300;
-  }
-  .area-interna-containerContent-template-content {
-    grid-area: area-interna-containerContent-template-content;
-    overflow-x: auto;
-    overflow-y: auto;
-    padding: 15px 0px 0px 0px;
-    border-radius: 0px;
-    border-top: 1px solid var(--bg-principal);
-  }
-
-  .area-interna-containerContent-template-not-header {
-    border-top: none;
-  }
-
-  /* Area Template Sessão Interna */
-  .secao-interna-template-header {
-    font-size: 14px;
-    font-weight: 300;
-    padding: 10px 20px;
-  }
-  .secao-interna-template-header h2 {
-    font-size: 13px;
-    font-weight: 300;
-  }
-
-  .area-template::-webkit-scrollbar,
   .container-filtros-template::-webkit-scrollbar,
   .container-filtros-template-content::-webkit-scrollbar,
   .container-template-content::-webkit-scrollbar,

@@ -245,6 +245,10 @@
   box-shadow: var(--sombra-leve);
 }
 
+.lista-vertical-alt .botoes {
+  margin-top: 10px;
+}
+
 /* Responsivo */
 @media only screen and (max-width: 56.25rem) {
   .botoes {

@@ -1255,21 +1255,7 @@
     // Preencher o campo de data com a data completa
     document.getElementById('mesAno').value = data_formatada;
   </script>
-  <!-- Script para preencher as datas de tarefa -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var data_corrente = new Date();
-      var dia = String(data_corrente.getDate()).padStart(2, '0');
-      var mes = String(data_corrente.getMonth() + 1).padStart(2, '0'); // Os meses são indexados a partir de 0
-      var ano = data_corrente.getFullYear();
-      var data_formatada = ano + '-' + mes + '-' + dia;
 
-
-      // Atualizar os elementos adicionais
-      document.getElementById('tarefa_hoje').textContent = dia;
-      document.getElementById('tarefa_mesAno').value = data_formatada;
-    });
-  </script>
 
 
   <!-- Script paraadicionar animação aos icones da agenda -->

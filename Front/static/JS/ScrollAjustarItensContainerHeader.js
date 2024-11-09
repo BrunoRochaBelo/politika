@@ -1,179 +1,228 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var elementsToScale = document.querySelectorAll(
+document.addEventListener("DOMContentLoaded", () => {
+  const elementsToScale = document.querySelectorAll(
     ".nav, .header-menu, .header-notification, .header-search"
   );
-  var headerContainers1 = document.querySelectorAll(
+  const headerContainers1 = document.querySelectorAll(
     ".container-abas-template-header"
   );
-  var headerContainers2 = document.querySelectorAll(
+  const headerContainers2 = document.querySelectorAll(
     ".container-template-header"
   );
-  var sidenavElement = document.querySelector(".main-sidenav");
-  var navElement = document.querySelector(".nav");
-  var bodyTemplate = document.querySelector(".body-template");
-
-  var originalStyles = {};
-
-  function saveOriginalStyles() {
-    for (var i = 0; i < elementsToScale.length; i++) {
-      var element = elementsToScale[i];
-      originalStyles["elementsToScale_" + i] = {
-        transform: element.style.transform || "",
-      };
-    }
-
-    for (var i = 0; i < headerContainers1.length; i++) {
-      var container = headerContainers1[i];
-      originalStyles["headerContainers1_" + i] = {
-        padding: container.style.padding || "",
-      };
-    }
-
-    for (var i = 0; i < headerContainers2.length; i++) {
-      var container = headerContainers2[i];
-      originalStyles["headerContainers2_" + i] = {
-        padding: container.style.padding || "",
-      };
-    }
-
-    if (sidenavElement) {
-      originalStyles.sidenavElement = {
-        top: sidenavElement.style.top || "",
-      };
-    }
-
-    if (navElement) {
-      originalStyles.navElement = {
-        width: navElement.style.width || "",
-      };
-    }
-
-    originalStyles.bodyTemplate = {
-      gridTemplateRows: bodyTemplate.style.gridTemplateRows || "",
-    };
-  }
-
-  function restoreOriginalStyles() {
-    for (var i = 0; i < elementsToScale.length; i++) {
-      var element = elementsToScale[i];
-      element.style.transform =
-        originalStyles["elementsToScale_" + i].transform;
-    }
-
-    for (var i = 0; i < headerContainers1.length; i++) {
-      var container = headerContainers1[i];
-      container.style.padding =
-        originalStyles["headerContainers1_" + i].padding;
-    }
-
-    for (var i = 0; i < headerContainers2.length; i++) {
-      var container = headerContainers2[i];
-      container.style.padding =
-        originalStyles["headerContainers2_" + i].padding;
-    }
-
-    if (sidenavElement) {
-      sidenavElement.style.top = originalStyles.sidenavElement.top;
-    }
-
-    if (navElement) {
-      navElement.style.width = originalStyles.navElement.width;
-    }
-
-    bodyTemplate.style.gridTemplateRows =
-      originalStyles.bodyTemplate.gridTemplateRows;
-  }
-
-  function adjustScalePaddingTopAndNav() {
-    var scrollTop = this.scrollTop;
-
-    if (scrollTop > 0) {
-      for (var i = 0; i < elementsToScale.length; i++) {
-        var element = elementsToScale[i];
-        element.style.transform = "scale(0.95, 0.9)";
-      }
-
-      for (var i = 0; i < headerContainers1.length; i++) {
-        var container = headerContainers1[i];
-        container.style.padding = "0";
-      }
-
-      for (var i = 0; i < headerContainers2.length; i++) {
-        var container = headerContainers2[i];
-        container.style.padding = "0";
-      }
-
-      if (sidenavElement) {
-        sidenavElement.style.top = "2.23rem";
-      }
-
-      if (navElement) {
-        navElement.style.width = "320px";
-        navElement.style.transform = "scale(0.95, 0.9)";
-      }
-
-      bodyTemplate.style.gridTemplateRows = "2.5rem 1fr";
-    } else {
-      restoreOriginalStyles();
-    }
-  }
-
-  // Função de debounce
-  function debounce(fn, delay) {
-    var timer;
-    return function () {
-      var context = this,
-        args = arguments;
-      clearTimeout(timer);
-      timer = setTimeout(function () {
-        fn.apply(context, args);
-      }, delay);
-    };
-  }
-
-  // Versão com debounce da função adjustScalePaddingTopAndNav
-  var adjustScalePaddingTopAndNavDebounced = debounce(
-    adjustScalePaddingTopAndNav,
-    10
+  const sidenavElement = document.querySelector(".main-sidenav");
+  const navElement = document.querySelector(".nav");
+  const bodyTemplate = document.querySelector(".body-template");
+  const mainElements = document.querySelectorAll(
+    ".area-interna-containerContent-template-content"
   );
+  const originalStyles = new Map();
 
-  function handleScroll(event) {
-    adjustScalePaddingTopAndNavDebounced.call(event.target);
-  }
+  const saveOriginalStyles = () => {
+    elementsToScale.forEach((element) => {
+      originalStyles.set(element, {
+        transform: element.style.transform || "",
+      });
+    });
 
-  function handleResponsiveChange(e) {
-    var mainElements = document.querySelectorAll(
-      ".area-interna-containerContent-template-content"
-    );
+    headerContainers1.forEach((container) => {
+      originalStyles.set(container, {
+        padding: container.style.padding || "",
+      });
+    });
 
-    if (e.matches) {
-      for (var i = 0; i < mainElements.length; i++) {
-        var mainElement = mainElements[i];
-        if (mainElement.addEventListener) {
-          mainElement.addEventListener("scroll", handleScroll);
-        } else if (mainElement.attachEvent) {
-          mainElement.attachEvent("onscroll", handleScroll);
-        }
-      }
-    } else {
-      for (var i = 0; i < mainElements.length; i++) {
-        var mainElement = mainElements[i];
-        if (mainElement.removeEventListener) {
-          mainElement.removeEventListener("scroll", handleScroll);
-        } else if (mainElement.detachEvent) {
-          mainElement.detachEvent("onscroll", handleScroll);
-        }
-      }
-      restoreOriginalStyles();
+    headerContainers2.forEach((container) => {
+      originalStyles.set(container, {
+        padding: container.style.padding || "",
+      });
+    });
+
+    if (sidenavElement) {
+      originalStyles.set(sidenavElement, {
+        top: sidenavElement.style.top || "",
+      });
     }
-  }
 
-  var mediaQuery = window.matchMedia("(max-width: 56.25rem)");
-  if (mediaQuery.addEventListener) {
-    mediaQuery.addEventListener("change", handleResponsiveChange);
-  } else if (mediaQuery.addListener) {
-    mediaQuery.addListener(handleResponsiveChange);
-  }
+    if (navElement) {
+      originalStyles.set(navElement, {
+        width: navElement.style.width || "",
+        transform: navElement.style.transform || "",
+      });
+    }
+
+    if (bodyTemplate) {
+      originalStyles.set(bodyTemplate, {
+        gridTemplateRows: bodyTemplate.style.gridTemplateRows || "",
+      });
+    }
+  };
+
+  const restoreOriginalStyles = () => {
+    originalStyles.forEach((styles, element) => {
+      Object.assign(element.style, styles);
+    });
+  };
+
+  const applyReducedStyles = () => {
+    elementsToScale.forEach((element) => {
+      element.style.transform = "scale(0.95, 0.9)";
+    });
+
+    headerContainers1.forEach((container) => {
+      container.style.padding = "0";
+    });
+
+    headerContainers2.forEach((container) => {
+      container.style.padding = "0";
+    });
+
+    if (sidenavElement) {
+      sidenavElement.style.top = "2.23rem";
+    }
+
+    if (navElement) {
+      navElement.style.width = "320px";
+      navElement.style.transform = "scale(0.95, 0.9)";
+    }
+
+    if (bodyTemplate) {
+      bodyTemplate.style.gridTemplateRows = "2.5rem 1fr";
+    }
+  };
+
+  let isReduced = false;
+
+  const adjustScalePaddingTopAndNav = (scrollTop) => {
+    if (scrollTop > 0 && !isReduced) {
+      applyReducedStyles();
+      isReduced = true;
+    }
+  };
+
+  const throttle = (callback) => {
+    let ticking = false;
+    return (...args) => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          callback(...args);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+  };
+
+  const handleScroll = throttle((event) => {
+    const scrollTop = event.target.scrollTop;
+    adjustScalePaddingTopAndNav(scrollTop);
+  });
+
+  // Variáveis para interações de toque
+  let isTouching = false;
+  let touchStartY = 0;
+  const pullThreshold = 60;
+
+  const onTouchStart = (e) => {
+    isTouching = true;
+    touchStartY = e.touches[0].clientY;
+  };
+
+  const onTouchMove = (e) => {
+    if (!isTouching) return;
+
+    const currentY = e.touches[0].clientY;
+    const deltaY = currentY - touchStartY;
+
+    if (deltaY > 0 && isReduced && e.target.scrollTop === 0) {
+      // Usuário está puxando para baixo no topo
+      restoreOriginalStyles();
+      isReduced = false;
+      e.preventDefault(); // Previne o pull-to-refresh
+    }
+  };
+
+  const onTouchEnd = () => {
+    isTouching = false;
+  };
+
+  // Variáveis para interações de mouse
+  let isMouseDown = false;
+  let mouseStartY = 0;
+
+  const onMouseDown = (e) => {
+    isMouseDown = true;
+    mouseStartY = e.clientY;
+  };
+
+  const onMouseMove = (e) => {
+    if (!isMouseDown) return;
+
+    const currentY = e.clientY;
+    const deltaY = currentY - mouseStartY;
+
+    if (deltaY > pullThreshold && isReduced && e.target.scrollTop === 0) {
+      // Usuário está puxando para baixo no topo
+      restoreOriginalStyles();
+      isReduced = false;
+    }
+  };
+
+  const onMouseUp = () => {
+    isMouseDown = false;
+  };
+
+  // Evento 'wheel' para detectar tentativas de rolagem para cima no topo
+  const onWheel = (e) => {
+    const scrollTop = e.target.scrollTop;
+
+    if (scrollTop === 0 && e.deltaY < 0 && isReduced) {
+      // Usuário está tentando rolar para cima no topo
+      restoreOriginalStyles();
+      isReduced = false;
+    }
+  };
+
+  const handleResponsiveChange = (e) => {
+    if (e.matches) {
+      mainElements.forEach((mainElement) => {
+        // Prevenir o pull-to-refresh em dispositivos móveis
+        mainElement.style.overscrollBehavior = "contain";
+
+        mainElement.addEventListener("scroll", handleScroll, { passive: true });
+        mainElement.addEventListener("touchstart", onTouchStart, {
+          passive: false,
+        });
+        mainElement.addEventListener("touchmove", onTouchMove, {
+          passive: false,
+        });
+        mainElement.addEventListener("touchend", onTouchEnd);
+
+        mainElement.addEventListener("mousedown", onMouseDown);
+        mainElement.addEventListener("mousemove", onMouseMove);
+        mainElement.addEventListener("mouseup", onMouseUp);
+
+        mainElement.addEventListener("wheel", onWheel, { passive: true });
+      });
+    } else {
+      mainElements.forEach((mainElement) => {
+        mainElement.style.overscrollBehavior = "";
+
+        mainElement.removeEventListener("scroll", handleScroll);
+        mainElement.removeEventListener("touchstart", onTouchStart);
+        mainElement.removeEventListener("touchmove", onTouchMove);
+        mainElement.removeEventListener("touchend", onTouchEnd);
+
+        mainElement.removeEventListener("mousedown", onMouseDown);
+        mainElement.removeEventListener("mousemove", onMouseMove);
+        mainElement.removeEventListener("mouseup", onMouseUp);
+
+        mainElement.removeEventListener("wheel", onWheel);
+      });
+      restoreOriginalStyles();
+      isReduced = false;
+    }
+  };
+
+  const mediaQuery = window.matchMedia("(max-width: 56.25rem)");
+  mediaQuery.addEventListener("change", handleResponsiveChange);
 
   saveOriginalStyles();
   handleResponsiveChange(mediaQuery);

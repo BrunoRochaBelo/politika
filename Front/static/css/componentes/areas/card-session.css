@@ -1,14 +1,15 @@
 /* Transições suaves e responsividade */
 .session {
-  height: 0;
+  max-height: 0; /* Define altura máxima inicial como zero */
   opacity: 0;
   overflow: hidden;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
 }
+
 .session.active {
-  height: auto;
+  max-height: 10000px;
   opacity: 1;
   transform: scaleY(1);
 }
@@ -27,9 +28,11 @@
     box-shadow 0.3s ease, margin 0.3s ease;
   margin: 0 10px;
 }
+
 .card-session:hover {
   filter: var(--hover);
 }
+
 .card-session.active {
   background: var(--cor-apoio-2);
   border: 1px solid var(--cor-apoio-1);
@@ -37,14 +40,17 @@
   padding: 7px 0px;
   margin: 0 7px;
 }
+
 .card-session.active:hover {
   filter: none !important;
 }
+
 .card-session:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
   transition: visibility 0.2s ease, opacity 0.2s ease;
 }
+
 .card-session.active .tooltip .tooltiptext {
   visibility: hidden;
   opacity: 0;
@@ -56,17 +62,20 @@
 .card-session > .secao-interna-template-header {
   padding: 15px;
 }
+
 .card-session.active .secao-interna-template {
   box-shadow: none;
   padding: 0px;
   border-radius: 0;
 }
+
 .secao-interna-template-header.active-header {
   font-size: 18px;
   font-weight: 600;
   color: var(--txt-destaque);
   padding: 15px 30px 25px 15px;
 }
+
 .secao-interna-template-header a {
   display: flex;
   align-items: center;
@@ -77,9 +86,11 @@
   color: var(--txt-destaque);
   text-align: start;
 }
+
 .secao-interna-template-header.active-header a {
   color: var(--txt-destaque);
 }
+
 .card-session.active > .secao-interna-template-content {
   box-shadow: none;
   padding: 0px;
