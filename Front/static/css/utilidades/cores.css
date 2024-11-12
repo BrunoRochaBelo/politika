@@ -70,21 +70,21 @@
   --input-icon: hsl(210, 15%, 82%);
   --btn-clear: hsl(210, 15%, 68%);
   --btn-clear-hover: hsl(210, 15%, 72%);
-  --input-focus-border: hsl(210, 85%, 68%);
+  --input-focus-border: hsl(218, 100%, 70%);
   --input-focus-bg: hsl(210, 15%, 40%);
-  --input-error-border: hsl(0, 60%, 45%);
-  --input-error-bg: hsl(0, 55%, 40%);
+  --input-error-border: hsl(0, 70%, 45%);
+  --input-error-bg: hsl(0, 60%, 40%);
   --input-success-border: hsl(140, 60%, 40%);
   --input-success-bg: hsl(140, 55%, 35%);
 
   /* Botões */
-  --btn-principal: hsl(218, 75%, 58%);
+  --btn-principal: hsl(218, 90%, 58%);
   --btn-principal-hover: linear-gradient(
     180deg,
-    hsl(218, 85%, 63%),
-    hsl(218, 75%, 58%)
+    hsl(218, 85%, 50%),
+    hsl(218, 95%, 45%)
   );
-  --btn-principal-destaque: hsl(218, 70%, 53%);
+  --btn-principal-destaque: hsl(218, 70%, 45%);
   --btn-principal-txt: hsl(218, 100%, 98%);
 
   --btn-principal-alt: hsl(218, 70%, 58%);
@@ -92,7 +92,7 @@
   --btn-principal-alt-destaque: hsl(218, 60%, 48%);
   --btn-principal-alt-txt: hsl(218, 100%, 98%);
 
-  --btn-secundario: hsl(29, 65%, 58%);
+  --btn-secundario: hsl(29, 75%, 58%);
   --btn-secundario-hover: linear-gradient(
     180deg,
     hsl(29, 70%, 58%),
@@ -104,7 +104,7 @@
   --btn-filtro: hsl(210, 25%, 28%);
   --btn-filtro-txt: hsl(218, 25%, 82%);
   --btn-filtro-hover: hsl(218, 25%, 36%);
-  --btn-filtro-selecionado: hsl(218, 75%, 58%);
+  --btn-filtro-selecionado: hsl(218, 85%, 58%);
   --btn-filtro-selecionado-txt: hsl(218, 100%, 98%);
 
   --btn-filtro-alt: linear-gradient(
@@ -117,7 +117,7 @@
   --btn-filtro-alt-txt: hsl(218, 100%, 98%);
 
   --btn-menu: hsl(210, 10%, 78%);
-  --btn-float: linear-gradient(300deg, hsl(218, 90%, 62%), hsl(218, 85%, 58%));
+  --btn-float: linear-gradient(300deg, hsl(218, 95%, 58%), hsl(218, 90%, 53%));
 
   /* Sombreamento e hover */
   --sombra-leve: 0 1px 3px hsla(0, 0%, 50%, 0.08),
@@ -133,8 +133,8 @@
   /* Links e Mensagens */
   --link: hsl(25, 80%, 63%);
   --link-hover: hsl(25, 80%, 68%);
-  --sucesso: hsl(140, 75%, 48%);
-  --erro: hsl(0, 75%, 53%);
+  --sucesso: hsl(140, 90%, 55%);
+  --erro: hsl(0, 90%, 55%);
   --aviso: hsl(30, 85%, 63%);
   --informacao: hsl(210, 85%, 68%);
   --msg-sucesso-txt: hsl(140, 95%, 93%);

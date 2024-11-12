@@ -309,25 +309,27 @@
                             <legend class="titulo-xl title-legend">Local de Votação</legend>
                             <div class="form-2-colum">
                               <div class="campo">
-                                <label for="estado">Estado:</label>
-                                <select class="card-select-m" id="estado" name="estado">
-                                  <option value="PE">Pernambuco</option>
-                                  <option value="SP">São Paulo</option>
-                                  <option value="RJ">Rio de Janeiro</option>
-                                  <option value="MG">Minas Gerais</option>
+                                <label for="ufLocalVotacao">Estado:</label>
+                                <select class="card-select-m" id="ufLocalVotacao" name="ufLocalVotacao" disabled>
+                                  <option value="PE" selected>Pernambuco</option>
                                 </select>
                               </div>
                               <div class="campo">
-                                <label for="cidade">Cidade:</label>
-                                <select class="card-select-m" id="cidade" name="cidade">
-                                  <option value="todas" selected>todas</option>
-                                  <!-- As opções de cidades serão adicionadas dinamicamente -->
+                                <label for="cidadeLocalVotacao">Cidade:</label>
+                                <select class="card-select-m" id="cidadeLocalVotacao" name="cidadeLocalVotacao">
+                                  <option value="todas" selected>Todas</option>
+                                  <!-- As opções de cidades são mockadas aqui -->
+                                  <option value="recife">Recife</option>
+                                  <option value="olinda">Olinda</option>
+                                  <option value="jaboatao">Jaboatão dos Guararapes</option>
                                 </select>
                               </div>
                             </div>
                             <div class="campo">
-                              <label for="bairro">Bairro ou local:</label>
-                              <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
+                              <label for="localVotacao">Local Votação:</label>
+                              <input class="card-select-m" type="text" id="localVotacao" name="localVotacao" placeholder="Digite um local da cidade selecionada">
+                              <div class="loading-indicator" id="loading-indicator-localVotacao">Carregando...</div>
+                              <div id="suggestions-localVotacao" class="suggestions"></div>
                             </div>
                           </fieldset>
                         </div>
@@ -403,7 +405,7 @@
                                 <label for="indicacao">Indicação</label>
                                 <input type="text" id="indicacao" name="indicacao" placeholder="Digite a indicação">
                                 <div class="loading-indicator" id="loading-indicator">Carregando...</div>
-                                <div id="suggestions"></div>
+                                <div id="suggestions-ref-poli" class="suggestions"></div>
                               </div>
                             </div>
                           </fieldset>
@@ -430,6 +432,7 @@
   <script src="./static/js/IncluirContato.js"></script>
   <script src="./static/js/NavSecoes.js"></script>
   <script src="./static/js/ContatoIncluirListaReferenciaPolitica.js"></script>
+  <script src="./static/js/ContatoIncluirListaLocalVotacao.js"></script>
 
 </body>
 

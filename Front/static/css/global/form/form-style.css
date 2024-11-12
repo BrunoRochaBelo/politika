@@ -113,8 +113,8 @@ fieldset {
 .campo input[required]:hover,
 .campo textarea[required]:hover,
 .campo select[required]:hover {
-  box-shadow: var(--sombra-leve);
-  border: 1px solid var(--btn-principal-destaque);
+  box-shadow: var(--sombra-intensa);
+  border: 1px solid var(--input-focus-border);
 }
 
 .campo ::placeholder {
@@ -129,8 +129,8 @@ fieldset {
 .campo select[required]:focus {
   outline: none;
   background: var(--input-filled-bg);
-  box-shadow: var(--sombra-leve);
-  border: 1px solid var(--btn-principal-destaque);
+  box-shadow: var(--sombra-card-aberto);
+  border: 1px solid var(--input-focus-border);
 }
 
 .campo input:focus::placeholder,
@@ -265,10 +265,10 @@ form span.success {
   display: flex;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator,
+/*input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
-}
+}*/
 
 /* Estilos para radio buttons */
 .radio-button-group {

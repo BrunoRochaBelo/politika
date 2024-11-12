@@ -45,6 +45,9 @@ const CampoUtils = (() => {
       campo.parentNode.insertBefore(mensagemErro, campo.nextSibling);
     }
     mensagemErro.innerText = mensagem;
+    mensagemErro.style.color = "var(--erro)";
+    mensagemErro.style.marginTop = "8px";
+    mensagemErro.style.marginLeft = "15px";
     adicionarClasse(campo, "error");
     alterarCorAsterisco(campo.id, "var(--erro)");
   }

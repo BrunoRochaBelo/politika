@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const inputField = document.getElementById("indicacao");
-  const suggestionsDiv = document.getElementById("suggestions");
-  const loadingIndicator = document.getElementById("loading-indicator");
+  const inputFieldRefPoli = document.getElementById("indicacao");
+  const suggestionsDivRefPoli = document.getElementById("suggestions-ref-poli");
+  const loadingIndicatorRefPoli = document.getElementById("loading-indicator");
 
-  const debounce = (func, delay) => {
+  let selectedIndexRefPoli = -1;
+  let currentSuggestionsRefPoli = [];
+  let isSelectingSuggestionRefPoli = false;
+  let selectedSuggestionNameRefPoli = null;
+
+  const debounceRefPoli = (func, delay) => {
     let timeout;
     return (...args) => {
       clearTimeout(timeout);
@@ -11,79 +16,56 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   };
 
-  let selectedIndex = -1;
-  let currentSuggestions = [];
-  let isSelectingSuggestion = false;
-  let selectedSuggestionName = null;
+  const showLoadingRefPoli = () => {
+    loadingIndicatorRefPoli.style.display = "block";
+  };
 
-  const showError = (message) => {
-    let errorDiv = document.querySelector(".message-error");
-    if (!errorDiv) {
-      errorDiv = document.createElement("div");
-      errorDiv.classList.add("message-error");
-      document.body.appendChild(errorDiv);
+  const hideLoadingRefPoli = () => {
+    loadingIndicatorRefPoli.style.display = "none";
+  };
+
+  const showErrorRefPoli = (message) => {
+    let errorDivRefPoli = document.querySelector(".message-error-refpoli");
+    if (!errorDivRefPoli) {
+      errorDivRefPoli = document.createElement("div");
+      errorDivRefPoli.classList.add("message-error", "message-error-refpoli");
+      document.body.appendChild(errorDivRefPoli);
     }
-    errorDiv.textContent = message;
-    errorDiv.classList.add("show");
+    errorDivRefPoli.textContent = message;
+    errorDivRefPoli.classList.add("show");
 
     setTimeout(() => {
-      errorDiv.classList.remove("show");
+      errorDivRefPoli.classList.remove("show");
     }, 3000);
   };
 
-  const showLoading = () => {
-    loadingIndicator.style.display = "block";
-  };
-
-  const hideLoading = () => {
-    loadingIndicator.style.display = "none";
-  };
-
-  const fetchSuggestions = async (query) => {
+  const fetchSuggestionsRefPoli = async (query) => {
+    const url = `http://dev.inforvia.com.br/api/contato/searchall/${encodeURIComponent(
+      query
+    )}`;
     try {
-      const response = await fetch(
-        `http://dev.inforvia.com.br/api/contato/searchall/${encodeURIComponent(
-          query
-        )}`
-      );
-      if (!response.ok) {
-        throw new Error("Erro ao buscar os dados da API");
-      }
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Erro ao buscar os dados da API");
       const data = await response.json();
       return data.DADOS || [];
     } catch (error) {
-      showError("Erro ao buscar dados. Tente novamente.");
+      console.error("Erro ao buscar dados:", error);
+      showErrorRefPoli("Erro ao buscar dados. Tente novamente.");
       return [];
     } finally {
-      hideLoading();
+      hideLoadingRefPoli();
     }
   };
 
-  const validateInput = () => {
-    const inputValue = inputField.value.trim();
-    if (inputValue === "") {
-      inputField.classList.remove("input-valid");
-      return false;
-    }
-
-    if (inputValue === selectedSuggestionName) {
-      inputField.classList.add("input-valid");
-      return true;
-    } else {
-      inputField.classList.remove("input-valid");
-      return false;
-    }
-  };
-
-  const displaySuggestions = (suggestions) => {
-    currentSuggestions = suggestions;
-    suggestionsDiv.innerHTML = "";
+  const displaySuggestionsRefPoli = (suggestions) => {
+    currentSuggestionsRefPoli = suggestions;
+    suggestionsDivRefPoli.innerHTML = "";
 
     if (suggestions.length === 0) {
       const noResultsMessage = document.createElement("p");
       noResultsMessage.textContent = "Nenhum resultado encontrado";
-      suggestionsDiv.appendChild(noResultsMessage);
-      suggestionsDiv.classList.add("visible");
+      suggestionsDivRefPoli.appendChild(noResultsMessage);
+      suggestionsDivRefPoli.classList.add("visible");
       return;
     }
 
@@ -93,26 +75,26 @@ document.addEventListener("DOMContentLoaded", () => {
       li.textContent = suggestion.name;
 
       li.addEventListener("mousedown", () => {
-        isSelectingSuggestion = true;
+        isSelectingSuggestionRefPoli = true;
       });
 
       li.addEventListener("click", () => {
-        inputField.value = suggestion.name;
-        selectedSuggestionName = suggestion.name;
-        suggestionsDiv.innerHTML = "";
-        suggestionsDiv.classList.remove("visible");
-        isSelectingSuggestion = false;
-        validateInput();
+        inputFieldRefPoli.value = suggestion.name;
+        selectedSuggestionNameRefPoli = suggestion.name;
+        suggestionsDivRefPoli.innerHTML = "";
+        suggestionsDivRefPoli.classList.remove("visible");
+        isSelectingSuggestionRefPoli = false;
+        validateInputRefPoli();
       });
       ul.appendChild(li);
     });
-    suggestionsDiv.appendChild(ul);
-    suggestionsDiv.classList.add("visible");
+    suggestionsDivRefPoli.appendChild(ul);
+    suggestionsDivRefPoli.classList.add("visible");
   };
 
-  const updateSelection = (list) => {
+  const updateSelectionRefPoli = (list) => {
     list.forEach((item, index) => {
-      if (index === selectedIndex) {
+      if (index === selectedIndexRefPoli) {
         item.classList.add("selected");
         item.scrollIntoView({ block: "nearest" });
       } else {
@@ -121,81 +103,100 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  const handleInput = debounce(async () => {
-    const query = inputField.value.trim();
-    selectedIndex = -1;
-    selectedSuggestionName = null;
-    if (query.length > 0) {
-      showLoading();
-      const suggestions = await fetchSuggestions(query);
-      displaySuggestions(suggestions);
-    } else {
-      currentSuggestions = [];
-      suggestionsDiv.innerHTML = "";
-      suggestionsDiv.classList.remove("visible");
-      hideLoading();
+  const validateInputRefPoli = () => {
+    const inputValue = inputFieldRefPoli.value.trim();
+    if (inputValue === "") {
+      inputFieldRefPoli.classList.remove("input-valid");
+      return false;
     }
-    validateInput();
+
+    if (inputValue === selectedSuggestionNameRefPoli) {
+      inputFieldRefPoli.classList.add("input-valid");
+      return true;
+    } else {
+      inputFieldRefPoli.classList.remove("input-valid");
+      return false;
+    }
+  };
+
+  const handleInputRefPoli = debounceRefPoli(async () => {
+    const query = inputFieldRefPoli.value.trim();
+    selectedIndexRefPoli = -1;
+    selectedSuggestionNameRefPoli = null;
+    if (query.length > 0) {
+      showLoadingRefPoli();
+      const suggestions = await fetchSuggestionsRefPoli(query);
+      displaySuggestionsRefPoli(suggestions);
+    } else {
+      currentSuggestionsRefPoli = [];
+      suggestionsDivRefPoli.innerHTML = "";
+      suggestionsDivRefPoli.classList.remove("visible");
+      hideLoadingRefPoli();
+    }
+    validateInputRefPoli();
   }, 300);
 
-  inputField.addEventListener("input", () => {
-    handleInput();
-  });
+  inputFieldRefPoli.addEventListener("input", () => handleInputRefPoli());
 
-  inputField.addEventListener("keydown", (event) => {
-    const suggestionsList = suggestionsDiv.querySelectorAll("li");
+  inputFieldRefPoli.addEventListener("keydown", (event) => {
+    const suggestionsList = suggestionsDivRefPoli.querySelectorAll("li");
     if (suggestionsList.length > 0) {
       if (event.key === "ArrowDown") {
         event.preventDefault();
-        selectedIndex = (selectedIndex + 1) % suggestionsList.length;
-        updateSelection(suggestionsList);
+        selectedIndexRefPoli =
+          (selectedIndexRefPoli + 1) % suggestionsList.length;
+        updateSelectionRefPoli(suggestionsList);
       } else if (event.key === "ArrowUp") {
         event.preventDefault();
-        selectedIndex =
-          (selectedIndex - 1 + suggestionsList.length) % suggestionsList.length;
-        updateSelection(suggestionsList);
+        selectedIndexRefPoli =
+          (selectedIndexRefPoli - 1 + suggestionsList.length) %
+          suggestionsList.length;
+        updateSelectionRefPoli(suggestionsList);
       } else if (event.key === "Enter") {
         event.preventDefault();
-        if (selectedIndex > -1) {
-          isSelectingSuggestion = true;
-          suggestionsList[selectedIndex].click();
-          isSelectingSuggestion = false;
+        if (selectedIndexRefPoli > -1) {
+          isSelectingSuggestionRefPoli = true;
+          suggestionsList[selectedIndexRefPoli].click();
+          isSelectingSuggestionRefPoli = false;
         }
       } else if (event.key === "Escape") {
-        suggestionsDiv.innerHTML = "";
-        suggestionsDiv.classList.remove("visible");
+        suggestionsDivRefPoli.innerHTML = "";
+        suggestionsDivRefPoli.classList.remove("visible");
       }
     } else if (event.key === "Escape") {
-      suggestionsDiv.innerHTML = "";
-      suggestionsDiv.classList.remove("visible");
+      suggestionsDivRefPoli.innerHTML = "";
+      suggestionsDivRefPoli.classList.remove("visible");
     }
   });
 
   document.addEventListener("click", (event) => {
-    if (!suggestionsDiv.contains(event.target) && event.target !== inputField) {
-      suggestionsDiv.innerHTML = "";
-      suggestionsDiv.classList.remove("visible");
+    if (
+      !suggestionsDivRefPoli.contains(event.target) &&
+      event.target !== inputFieldRefPoli
+    ) {
+      suggestionsDivRefPoli.innerHTML = "";
+      suggestionsDivRefPoli.classList.remove("visible");
     }
   });
 
-  inputField.addEventListener("blur", () => {
+  inputFieldRefPoli.addEventListener("blur", () => {
     setTimeout(() => {
-      if (isSelectingSuggestion) {
-        isSelectingSuggestion = false;
+      if (isSelectingSuggestionRefPoli) {
+        isSelectingSuggestionRefPoli = false;
         return;
       }
 
-      const isValid = validateInput();
+      const isValid = validateInputRefPoli();
+      const inputValue = inputFieldRefPoli.value.trim();
 
-      const inputValue = inputField.value.trim();
       if (inputValue === "") {
-        inputField.classList.remove("input-valid");
+        inputFieldRefPoli.classList.remove("input-valid");
         return;
       }
 
       if (!isValid) {
-        inputField.value = "";
-        showError("Por favor, selecione uma opção válida da lista.");
+        inputFieldRefPoli.value = "";
+        showErrorRefPoli("Por favor, selecione uma opção válida da lista.");
       }
     }, 100);
   });

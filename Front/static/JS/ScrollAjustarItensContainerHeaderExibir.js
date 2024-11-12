@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Variáveis para rastrear interações de toque
   let isTouching = false;
   let touchStartY = 0;
-  const pullThreshold = 120;
+  const pullThreshold = 160;
 
   // Função para lidar com touchstart
   const onTouchStart = (e) => {

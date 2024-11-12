@@ -88,6 +88,26 @@
   transform: translateX(-50%) translateY(0);
 }
 
+/* Mensagens de Informação */
+.message-info {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #d1ecf1;
+  color: #0c5460;
+  padding: 10px 20px;
+  border: 1px solid #bee5eb;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1001;
+  pointer-events: none;
+}
+.message-info.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 @media only screen and (max-width: 56.25rem) {
   .message-error {
     top: unset;

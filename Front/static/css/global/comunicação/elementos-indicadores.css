@@ -122,7 +122,7 @@
 }*/
 
 /* Estilos atualizados para a lista de sugestões */
-#suggestions {
+.suggestions {
   margin: 5px 0px;
   background-color: var(--input-empty-bg);
   border: 1px solid var(--input-border);
@@ -134,17 +134,17 @@
   display: none; /* Oculta o elemento por padrão */
 }
 
-#suggestions.visible {
+.suggestions.visible {
   display: block; /* Mostra o elemento quando tiver a classe 'visible' */
 }
 
-#suggestions ul {
+.suggestions ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-#suggestions li {
+.suggestions li {
   padding: 12px 16px;
   cursor: pointer;
   font-size: 16px;
@@ -152,23 +152,23 @@
   transition: background-color 0.2s ease-in-out, color 0.2s;
 }
 
-#suggestions li:not(:last-child) {
+.suggestions li:not(:last-child) {
   border-bottom: 1px solid var(--input-border);
 }
 
-#suggestions li:hover {
+.suggestions li:hover {
   background-color: var(--card-aberto-bg);
 }
 
-#suggestions li.selected {
+.suggestions li.selected {
   background-color: #e6f7ff;
   color: #1890ff;
 }
 
-#suggestions p {
+.suggestions p {
   padding: 12px 16px;
   margin: 0;
-  color: var(--input-error-bg);
+  color: var(--erro);
   font-style: italic; /* Opcional */
   text-align: center; /* Centraliza o texto */
 }

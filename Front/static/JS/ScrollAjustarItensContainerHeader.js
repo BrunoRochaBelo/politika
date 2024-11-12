@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Variáveis para interações de toque
   let isTouching = false;
   let touchStartY = 0;
-  const pullThreshold = 60;
+  const pullThreshold = 160;
 
   const onTouchStart = (e) => {
     isTouching = true;

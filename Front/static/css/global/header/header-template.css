@@ -57,6 +57,7 @@
 .search-input-container {
   position: relative;
   display: flex;
+  border-radius: 25px;
 }
 .search-input-container form {
   display: flex;
@@ -111,6 +112,10 @@
   background: var(--card-hover);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.search-input-container:focus-within {
+  box-shadow: var(--sombra-card-aberto);
 }
 
 .search-input:focus + .search-button {
