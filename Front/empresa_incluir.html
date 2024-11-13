@@ -214,16 +214,18 @@
                                 <option value="marketing">Marketing</option>
                                 <option value="redes_sociais">Redes Sociais</option>
                               </select>
-                              <button type="button" id="buttonAdicionarBensServices" class="btn-principal-alt adicionar-servico" onclick="adicionarServico()" disabled>Adicionar</button>
+                              <button type="button" id="buttonAdicionarBensServices" class="btn-principal-alt adicionar-servico" onclick="adicionarServico()" disabled>
+                                Adicionar
+                              </button>
                             </div>
                             <!-- Exibir contador de itens -->
-                            <div id="contadorItens">Total de itens adicionados: 0</div>
+                            <div id="contadorItens" class="titulo-area-tabela">Total de itens adicionados: 0</div>
                             <!-- Tabela para listar os itens adicionados -->
                             <div class="tabela-historico">
                               <table id="tabelaBemServico">
                                 <thead>
                                   <tr>
-                                    <th>ID</th>
+                                    <th class="hidden-column">ID</th>
                                     <th>Produto / Serviço</th>
                                     <th>Ações</th>
                                   </tr>
@@ -234,6 +236,7 @@
                               </table>
                             </div>
                           </fieldset>
+
                         </div>
                       </div>
                     </li>
@@ -255,8 +258,8 @@
 
   <script src="./static/js/AtualizarAlturaPagina.js"></script>
   <script src="./static/js/BuscaEndereco.js"></script>
-  <script src="./static/js/IncluirEmpresa.js"></script>
   <script src="./static/js/NavSecoes.js"></script>
+  <script src="./static/js/IncluirEmpresa.js"></script>
   <script src="./static/js/EmpresaIncluirListaArquivos.js"></script>
 
 </body>

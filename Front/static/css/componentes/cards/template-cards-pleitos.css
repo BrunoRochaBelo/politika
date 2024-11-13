@@ -167,7 +167,7 @@
   opacity: 1 !important;
 }
 .pleitos-medium-card-expanded {
-  border-radius: 7px;
+  border-radius: 12px;
   background: var(--card-aberto-bg) !important;
   border: 1px solid var(--card-aberto-bg) !important;
   color: var(--txt-card-aberto);

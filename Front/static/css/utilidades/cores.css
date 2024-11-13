@@ -131,8 +131,8 @@
     0 0 8px hsl(210, 85%, 60%), 0 0 10px hsl(210, 85%, 60%);
 
   /* Links e Mensagens */
-  --link: hsl(25, 80%, 63%);
-  --link-hover: hsl(25, 80%, 68%);
+  --link: hsl(25, 90%, 58%);
+  --link-hover: hsl(25, 90%, 64%);
   --sucesso: hsl(140, 90%, 55%);
   --erro: hsl(0, 90%, 55%);
   --aviso: hsl(30, 85%, 63%);
