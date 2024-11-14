@@ -1,190 +1,93 @@
-const STATIC_CACHE_NAME = "static-cache-v1";
-const DYNAMIC_CACHE_NAME = "dynamic-cache-v1";
-const API_CACHE_NAME = "api-cache-v1";
-const FONT_CACHE_NAME = "font-cache-v1";
-const IMAGE_CACHE_NAME = "image-cache-v1";
-const EXTERNAL_CACHE_NAME = "external-cache-v1";
-const MAX_CACHE_ITEMS = 100;
+// /Front/service-worker.js
 
-// URLs para o cache estático
-const staticUrlsToCache = [
-  "/",
-  "/index.html",
-  "/login.html",
-  "/calendario.html",
-  "/contatos.html",
-  "/despesas.html",
-  "/pleitos.html",
-  "/offline.html",
-  "/styles.css",
-  "/tarefas.html",
-];
+// Importa o config.js usando caminho absoluto
+importScripts("/Front/static/js/config.js");
 
-// URLs de imagens e ícones para o cache de imagens
-const imageUrlsToCache = [
-  "/static/imagens/logo/logo.png",
-  "/static/imagens/icones/1-estrela.svg",
-  "/static/imagens/icones/2-estrela.svg",
-  "/static/imagens/icones/3-estrela.svg",
-  "/static/imagens/icones/4-estrela.svg",
-  "/static/imagens/icones/5-estrela.svg",
-  "/static/imagens/icones/agora.svg",
-  "/static/imagens/icones/apps.svg",
-  "/static/imagens/icones/apps-select.svg",
-  "/static/imagens/icones/anterior.svg",
-  "/static/imagens/icones/avançar.svg",
-  "/static/imagens/icones/calendario.svg",
-  "/static/imagens/icones/calendario-select.svg",
-  "/static/imagens/icones/call.svg",
-  "/static/imagens/icones/check.svg",
-  "/static/imagens/icones/contas-corrente.svg",
-  "/static/imagens/icones/contas-corrente-corrente-select.svg",
-  "/static/imagens/icones/contatos.svg",
-  "/static/imagens/icones/contatos-select.svg",
-  "/static/imagens/icones/dashboard.svg",
-  "/static/imagens/icones/dashboard-select.svg",
-  "/static/imagens/icones/despesas.svg",
-  "/static/imagens/icones/despesas-select.svg",
-  "/static/imagens/icones/editar.svg",
-  "/static/imagens/icones/endereço.svg",
-  "/static/imagens/icones/equipe.svg",
-  "/static/imagens/icones/equipe-select.svg",
-  "/static/imagens/icones/eventos.svg",
-  "/static/imagens/icones/futuro.svg",
-  "/static/imagens/icones/gerenciar-conta.svg",
-  "/static/imagens/icones/historico.svg",
-  "/static/imagens/icones/home.svg",
-  "/static/imagens/icones/home-select.svg",
-  "/static/imagens/icones/identificação.svg",
-  "/static/imagens/icones/info_complementar.svg",
-  "/static/imagens/icones/menu.svg",
-  "/static/imagens/icones/moon.svg",
-  "/static/imagens/icones/notificação.svg",
-  "/static/imagens/icones/notificação-select.svg",
-  "/static/imagens/icones/passado.svg",
-  "/static/imagens/icones/perfil.svg",
-  "/static/imagens/icones/perfil-select.svg",
-  "/static/imagens/icones/pessoa-fisica.svg",
-  "/static/imagens/icones/pessoa-juridica.svg",
-  "/static/imagens/icones/phone.svg",
-  "/static/imagens/icones/pleitos.svg",
-  "/static/imagens/icones/pleitos-select.svg",
-  "/static/imagens/icones/referencia_poli.svg",
-  "/static/imagens/icones/sair.svg",
-  "/static/imagens/icones/send.svg",
-  "/static/imagens/icones/sun.svg",
-  "/static/imagens/icones/tarefas.svg",
-  "/static/imagens/icones/tarefas-select.svg",
-  "/static/imagens/icones/voltar.svg",
-  "/static/imagens/icones/whatsapp-icon.svg",
-];
+// Desestruturação das configurações para facilitar o acesso
+const {
+  CACHE_NAMES,
+  STATIC_URLS_TO_CACHE,
+  IMAGE_URLS_TO_CACHE,
+  FONT_URLS_TO_CACHE,
+  SCRIPT_URLS_TO_CACHE,
+  API_URLS,
+  EXTERNAL_RESOURCES,
+  MAX_CACHE_ITEMS,
+} = self.Config;
 
-// URLs de fontes para o cache de fontes
-const fontUrlsToCache = [
-  "/static/fonts/font1.woff2",
-  "/static/fonts/font2.woff2",
-];
+// Eventos do Service Worker
 
-// URLs de scripts para o cache dinâmico
-const scriptUrlsToCache = [
-  "/static/scripts/AlterarEsquemaDeCores.js",
-  "/static/scripts/AtualizarListaDeArquivos.js",
-  "/static/scripts/BarraPesquisaContato.js",
-  "/static/scripts/BuscaEndereco.js",
-  "/static/scripts/DashboardCentroCustoDespesas.js",
-  "/static/scripts/DespesaSearchAll.js",
-  "/static/scripts/ExibirAniversAriantes.js",
-  "/static/scripts/ExibirDetalhesAniversariante.js",
-  "/static/scripts/ExibirDetalhesContato.js",
-  "/static/scripts/ExibirDetalhesDespesa.js",
-  "/static/scripts/ExibirDetalhesEvento.js",
-  "/static/scripts/ExibirDetalhesPleito.js",
-  "/static/scripts/ExibirDetalhesTarefa.js",
-  "/static/scripts/FiltroBtnPerfilInfluencia.js",
-  "/static/scripts/FormContatoFormatarCampos.js",
-  "/static/scripts/GcContaCorrente.js",
-  "/static/scripts/GcPerfil.js",
-  "/static/scripts/HistoricoDeLigacoes.js",
-  "/static/scripts/IncluirContato.js",
-  "/static/scripts/IncluirEmpresa.js",
-  "/static/scripts/ManipularHistorico.js",
-  "/static/scripts/ModalBTNFloating.js",
-  "/static/scripts/ModalConcluirPleito.js",
-  "/static/scripts/ModalDespacharPleito.js",
-  "/static/scripts/ModalDestino.js",
-  "/static/scripts/ModalMaisApps.js",
-  "/static/scripts/ModalMenu.js",
-  "/static/scripts/ModalNotificacoes.js",
-  "/static/scripts/NavAbasInternas.js",
-  "/static/scripts/NavDia.js",
-  "/static/scripts/NavFiltroTarefa.js",
-  "/static/scripts/NavSecoes.js",
-  "/static/scripts/OcultarExibirAgenda.js",
-  "/static/scripts/OcultarExibirFiltro.js",
-  "/static/scripts/RecuarExpandirHorizontal.js",
-  "/static/scripts/RegisterSW.js",
-  "/static/scripts/ScrollRemoverItensCalendario.js",
-  "/static/scripts/ScrollRemoverItensDespesa.js",
-  "/static/scripts/SombraHeaderScroll.js",
-];
-
-// URLs de APIs que podem ser cacheadas dinamicamente
-const API_URLS = [
-  "/api/endpoint1",
-  "/api/endpoint2",
-  // Adicione outras URLs de API se necessário
-];
-
-// URLs externas que precisam ser cacheadas
-const EXTERNAL_RESOURCES = [
-  "https://fonts.googleapis.com",
-  "https://cdn.jsdelivr.net",
-];
-
+// Evento de instalação: adiciona recursos ao cache
 self.addEventListener("install", (event) => {
+  console.log(
+    "[Service Worker] Instalando Service Worker e cacheando recursos estáticos."
+  );
   event.waitUntil(
     Promise.all([
-      caches
-        .open(STATIC_CACHE_NAME)
-        .then((cache) => cache.addAll(staticUrlsToCache)),
-      caches
-        .open(IMAGE_CACHE_NAME)
-        .then((cache) => cache.addAll(imageUrlsToCache)),
-      caches
-        .open(FONT_CACHE_NAME)
-        .then((cache) => cache.addAll(fontUrlsToCache)),
-      caches
-        .open(DYNAMIC_CACHE_NAME)
-        .then((cache) => cache.addAll(scriptUrlsToCache)),
+      caches.open(CACHE_NAMES.STATIC).then((cache) => {
+        console.log(
+          `[Service Worker] Cacheando URLs estáticas: ${STATIC_URLS_TO_CACHE}`
+        );
+        return cache.addAll(STATIC_URLS_TO_CACHE);
+      }),
+      caches.open(CACHE_NAMES.IMAGE).then((cache) => {
+        console.log(
+          `[Service Worker] Cacheando URLs de imagens: ${IMAGE_URLS_TO_CACHE}`
+        );
+        return cache.addAll(IMAGE_URLS_TO_CACHE);
+      }),
+      caches.open(CACHE_NAMES.FONT).then((cache) => {
+        console.log(
+          `[Service Worker] Cacheando URLs de fontes: ${FONT_URLS_TO_CACHE}`
+        );
+        return cache.addAll(FONT_URLS_TO_CACHE);
+      }),
+      caches.open(CACHE_NAMES.DYNAMIC).then((cache) => {
+        console.log(
+          `[Service Worker] Cacheando URLs de scripts: ${SCRIPT_URLS_TO_CACHE}`
+        );
+        return cache.addAll(SCRIPT_URLS_TO_CACHE);
+      }),
     ]).catch((error) => {
-      console.error("Falha ao adicionar recursos ao cache:", error);
+      console.error(
+        "Falha ao adicionar recursos ao cache durante a instalação:",
+        error
+      );
     })
   );
   self.skipWaiting();
 });
 
+// Evento de ativação: limpa caches antigos
 self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((cacheName) => {
-            return ![
-              STATIC_CACHE_NAME,
-              DYNAMIC_CACHE_NAME,
-              API_CACHE_NAME,
-              FONT_CACHE_NAME,
-              IMAGE_CACHE_NAME,
-              EXTERNAL_CACHE_NAME,
-            ].includes(cacheName);
-          })
-          .map((cacheName) => caches.delete(cacheName))
-      );
-    })
+  console.log(
+    "[Service Worker] Ativando Service Worker e limpando caches antigos."
   );
-  self.clients.claim();
+  event.waitUntil(
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames
+            .filter((cacheName) => {
+              // Filtra caches que não estão definidos no config.js
+              return !Object.values(CACHE_NAMES).includes(cacheName);
+            })
+            .map((cacheName) => {
+              console.log(
+                `[Service Worker] Deletando cache antigo: ${cacheName}`
+              );
+              return caches.delete(cacheName);
+            })
+        );
+      })
+      .then(() => {
+        return self.clients.claim();
+      })
+  );
 });
 
+// Evento de fetch: intercepta requisições e responde com estratégias de cache
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const requestURL = new URL(request.url);
@@ -197,68 +100,104 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Verifica se a requisição é para o mesmo domínio
   if (requestURL.origin === location.origin) {
-    if (staticUrlsToCache.includes(requestURL.pathname)) {
-      event.respondWith(cacheFirst(request, STATIC_CACHE_NAME));
+    if (STATIC_URLS_TO_CACHE.includes(requestURL.pathname)) {
+      // Estratégia: Cache First para URLs estáticas
+      event.respondWith(cacheFirst(request, CACHE_NAMES.STATIC));
     } else if (API_URLS.includes(requestURL.pathname)) {
-      event.respondWith(networkFirst(request));
+      // Estratégia: Network First para APIs
+      event.respondWith(networkFirst(request, CACHE_NAMES.API));
     } else if (
-      fontUrlsToCache.some((url) => requestURL.pathname.includes(url))
+      FONT_URLS_TO_CACHE.some((url) => requestURL.pathname.includes(url))
     ) {
-      event.respondWith(cacheFirst(request, FONT_CACHE_NAME));
+      // Estratégia: Cache First para fontes
+      event.respondWith(cacheFirst(request, CACHE_NAMES.FONT));
     } else if (
-      imageUrlsToCache.some((url) => requestURL.pathname.includes(url))
+      IMAGE_URLS_TO_CACHE.some((url) => requestURL.pathname.includes(url))
     ) {
-      event.respondWith(cacheFirst(request, IMAGE_CACHE_NAME));
-    } else if (scriptUrlsToCache.includes(requestURL.pathname)) {
-      event.respondWith(networkFirst(request));
+      // Estratégia: Cache First para imagens
+      event.respondWith(cacheFirst(request, CACHE_NAMES.IMAGE));
+    } else if (SCRIPT_URLS_TO_CACHE.includes(requestURL.pathname)) {
+      // Estratégia: Network First para scripts dinâmicos
+      event.respondWith(networkFirst(request, CACHE_NAMES.DYNAMIC));
     } else {
-      event.respondWith(networkFirst(request));
+      // Estratégia padrão: Network First para demais requisições
+      event.respondWith(networkFirst(request, CACHE_NAMES.DYNAMIC));
     }
-  } else if (
+  }
+  // Requisições para recursos externos
+  else if (
     EXTERNAL_RESOURCES.some((resource) => requestURL.href.startsWith(resource))
   ) {
+    // Estratégia: Cache First para recursos externos
     event.respondWith(externalCache(request));
-  } else {
-    event.respondWith(networkFirst(request));
+  }
+  // Outras requisições não categorizadas
+  else {
+    // Estratégia padrão: Network First para demais requisições
+    event.respondWith(networkFirst(request, CACHE_NAMES.DYNAMIC));
   }
 });
 
+// Função de estratégia Cache First
 function cacheFirst(request, cacheName) {
   return caches.match(request).then((cachedResponse) => {
-    if (cachedResponse) return cachedResponse;
+    if (cachedResponse) {
+      console.log(
+        `[Service Worker] Retornando recurso do cache: ${request.url}`
+      );
+      return cachedResponse;
+    }
 
+    console.log(`[Service Worker] Buscando recurso na rede: ${request.url}`);
     return fetch(request)
       .then((networkResponse) => {
         if (networkResponse && networkResponse.ok) {
           return caches.open(cacheName).then((cache) => {
+            console.log(
+              `[Service Worker] Adicionando recurso ao cache: ${request.url}`
+            );
             cache.put(request, networkResponse.clone());
             limitCacheSize(cacheName, MAX_CACHE_ITEMS);
             return networkResponse;
           });
         } else {
           // Retorna uma resposta de fallback se a resposta da rede não for OK
+          console.warn(
+            `[Service Worker] Rede retornou status não OK para: ${request.url}. Retornando fallback.`
+          );
           return caches.match("/offline.html");
         }
       })
       .catch(() => {
         // Retorna uma resposta de fallback em caso de erro de rede
+        console.error(
+          `[Service Worker] Erro ao buscar recurso: ${request.url}. Retornando fallback.`
+        );
         return caches.match("/offline.html");
       });
   });
 }
 
-function networkFirst(request) {
+// Função de estratégia Network First
+function networkFirst(request, cacheName) {
   return fetch(request)
     .then((networkResponse) => {
       if (networkResponse && networkResponse.ok) {
-        return caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+        return caches.open(cacheName).then((cache) => {
+          console.log(
+            `[Service Worker] Atualizando cache com recurso da rede: ${request.url}`
+          );
           cache.put(request, networkResponse.clone());
-          limitCacheSize(DYNAMIC_CACHE_NAME, MAX_CACHE_ITEMS);
+          limitCacheSize(cacheName, MAX_CACHE_ITEMS);
           return networkResponse;
         });
       } else {
         // Tenta retornar a resposta do cache se a resposta da rede não for OK
+        console.warn(
+          `[Service Worker] Rede retornou status não OK para: ${request.url}. Tentando cache.`
+        );
         return caches.match(request).then((cachedResponse) => {
           return cachedResponse || caches.match("/offline.html");
         });
@@ -266,31 +205,52 @@ function networkFirst(request) {
     })
     .catch(() => {
       // Retorna a resposta do cache ou uma página de fallback em caso de erro
+      console.error(
+        `[Service Worker] Falha ao buscar recurso na rede: ${request.url}. Tentando cache.`
+      );
       return caches.match(request).then((cachedResponse) => {
         return cachedResponse || caches.match("/offline.html");
       });
     });
 }
 
+// Função de estratégia para recursos externos
 function externalCache(request) {
   return caches.match(request).then((cachedResponse) => {
-    if (cachedResponse) return cachedResponse;
+    if (cachedResponse) {
+      console.log(
+        `[Service Worker] Retornando recurso externo do cache: ${request.url}`
+      );
+      return cachedResponse;
+    }
 
+    console.log(
+      `[Service Worker] Buscando recurso externo na rede: ${request.url}`
+    );
     return fetch(request)
       .then((networkResponse) => {
         if (networkResponse && networkResponse.ok) {
-          return caches.open(EXTERNAL_CACHE_NAME).then((cache) => {
+          return caches.open(CACHE_NAMES.EXTERNAL).then((cache) => {
+            console.log(
+              `[Service Worker] Adicionando recurso externo ao cache: ${request.url}`
+            );
             cache.put(request, networkResponse.clone());
-            limitCacheSize(EXTERNAL_CACHE_NAME, MAX_CACHE_ITEMS);
+            limitCacheSize(CACHE_NAMES.EXTERNAL, MAX_CACHE_ITEMS);
             return networkResponse;
           });
         } else {
           // Retorna a resposta da rede mesmo se não for OK
+          console.warn(
+            `[Service Worker] Rede retornou status não OK para recurso externo: ${request.url}`
+          );
           return networkResponse;
         }
       })
       .catch(() => {
         // Retorna uma nova resposta de erro em caso de falha de rede
+        console.error(
+          `[Service Worker] Erro ao buscar recurso externo: ${request.url}. Retornando erro personalizado.`
+        );
         return new Response("Erro na rede", {
           status: 408,
           statusText: "Request Timeout",
@@ -299,19 +259,27 @@ function externalCache(request) {
   });
 }
 
+// Função para limitar o tamanho do cache
 function limitCacheSize(name, size) {
   caches.open(name).then((cache) => {
     cache.keys().then((keys) => {
       if (keys.length > size) {
-        cache.delete(keys[0]).then(() => limitCacheSize(name, size));
+        const deleteKey = keys[0];
+        console.log(
+          `[Service Worker] Excedeu o limite de cache (${size}). Deletando: ${deleteKey.url}`
+        );
+        cache.delete(deleteKey).then(() => {
+          limitCacheSize(name, size);
+        });
       }
     });
   });
 }
 
-// Adicionar o manipulador de eventos 'message'
+// Evento para lidar com mensagens (por exemplo, skipWaiting)
 self.addEventListener("message", (event) => {
   if (event.data && event.data.action === "skipWaiting") {
+    console.log("[Service Worker] Recebida mensagem para skipWaiting.");
     self.skipWaiting();
   }
 });

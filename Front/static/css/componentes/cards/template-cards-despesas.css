@@ -11,8 +11,7 @@
     "despesas-medium-card-valorDespesa despesas-medium-card-dataDespesa"
     "despesas-medium-card-referencia despesas-medium-card-referencia"
     "despesas-medium-card-desc despesas-medium-card-desc";
-  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
-    height 0.25s ease-out;
+  transition: all 0.25s ease;
   max-height: 240px;
 }
 
@@ -123,8 +122,7 @@
     "despesas-medium-card-desc despesas-medium-card-desc"
     "despesas-medium-card-editar despesas-medium-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
-    height 0.25s ease-in;
+  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   max-height: 300px;
   height: auto;
 }

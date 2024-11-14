@@ -1,152 +1,387 @@
-// Função para lidar com o clique nos cards SMALL
-function exibirDetalhesEvento(event) {
-  event.preventDefault();
-
-  const cardEventoSmall = event.currentTarget;
-  const camposOcultos = cardEventoSmall.querySelectorAll(
-    ".calendario-small-card-local, .calendario-small-card-partcipantes, .calendario-small-card-duracao, .calendario-small-card-editar"
-  );
-
-  const algumCampoVisivel = Array.from(camposOcultos).some((campo) =>
-    campo.classList.contains("exibirDetalheEvento")
-  );
-
-  if (algumCampoVisivel) {
-    camposOcultos.forEach((campo) => {
-      campo.classList.remove("exibirDetalheEvento");
-    });
-    cardEventoSmall.classList.remove("calendario-small-card-expanded");
-  } else {
-    fecharTodosOsCardsEvento();
-
-    camposOcultos.forEach((campo) => {
-      campo.classList.add("exibirDetalheEvento");
-    });
-    cardEventoSmall.classList.add("calendario-small-card-expanded");
-
-    // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
-    ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall);
-  }
-}
-
-function ajustarScrollParaCentralizarCardEventoSmall(cardEventoSmall) {
-  const areaTemplateContent = document.querySelector(
+document.addEventListener("DOMContentLoaded", () => {
+  // Cache de seletores
+  const areaTemplateContentSmall = document.querySelector(
     ".container-compromisso-hoje-template-content"
   );
-  if (!areaTemplateContent) return;
-
-  const cardOffsetTop = cardEventoSmall.offsetTop;
-  const cardHeight = cardEventoSmall.offsetHeight;
-  const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
-  const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
-
-  const cardTopVisible = cardOffsetTop >= areaTemplateContentScrollTop;
-  const cardBottomVisible =
-    cardOffsetTop + cardHeight <=
-    areaTemplateContentScrollTop + areaTemplateContentHeight;
-
-  if (!cardTopVisible) {
-    areaTemplateContent.scrollTo({
-      top: cardOffsetTop,
-      behavior: "smooth",
-    });
-  } else if (!cardBottomVisible) {
-    areaTemplateContent.scrollTo({
-      top: cardOffsetTop + cardHeight - areaTemplateContentHeight,
-      behavior: "smooth",
-    });
-  }
-}
-
-// Função para fechar todos os cartões de evento SMALL e LARGE
-function fecharTodosOsCardsEvento() {
-  const expandedSmallCards = document.querySelectorAll(
-    ".calendario-small-card-expanded"
+  const areaTemplateContentLarge = document.querySelector(
+    ".container-abas-template-content"
   );
-  expandedSmallCards.forEach((card) => {
+
+  const listaDeCardsEventoSmallContainer = document.querySelector(
+    ".lista-de-cards-evento-small-container"
+  );
+  const listaDeCardsEventoLargeContainer = document.querySelector(
+    ".lista-de-cards-evento-large-container"
+  );
+
+  /**
+   * Função para ajustar o scroll para centralizar o cartão
+   * @param {HTMLElement} card - O cartão que deve ser centralizado
+   */
+  const ajustarScrollParaCentralizarCard = (card, areaTemplateContent) => {
+    if (!areaTemplateContent) return;
+
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
+  /**
+   * Função para fechar todos os cartões de evento expandidos
+   */
+  const fecharTodosOsCardsEvento = () => {
+    // Fechar cartões pequenos
+    const expandedSmallCards = listaDeCardsEventoSmallContainer
+      ? listaDeCardsEventoSmallContainer.querySelectorAll(
+          ".calendario-small-card-expanded"
+        )
+      : document.querySelectorAll(".calendario-small-card-expanded");
+
+    expandedSmallCards.forEach((card) => {
+      card.classList.remove("calendario-small-card-expanded");
+      const camposOcultos = card.querySelectorAll(
+        ".calendario-small-card-local, .calendario-small-card-partcipantes, .calendario-small-card-duracao, .calendario-small-card-editar"
+      );
+      camposOcultos.forEach((campo) => {
+        campo.classList.remove("exibirDetalheEvento");
+      });
+    });
+
+    // Fechar cartões grandes
+    const expandedLargeCards = listaDeCardsEventoLargeContainer
+      ? listaDeCardsEventoLargeContainer.querySelectorAll(
+          ".calendario-large-card-expanded"
+        )
+      : document.querySelectorAll(".calendario-large-card-expanded");
+
+    expandedLargeCards.forEach((card) => {
+      card.classList.remove("calendario-large-card-expanded");
+      const editar = card.querySelector(".calendario-large-card-editar");
+      if (editar) {
+        editar.classList.remove("exibirDetalheEvento");
+      }
+    });
+  };
+
+  /**
+   * Função para lidar com o clique nos cartões de evento pequeno usando delegação de eventos
+   * @param {Event} event
+   */
+  const exibirDetalhesEventoSmall = (event) => {
+    const card = event.target.closest(".calendario-small-card");
+    if (!card) return;
+
+    // Se o clique for no botão de edição, abrir o modal de edição
+    if (event.target.closest(".btn-editar-evento-small")) {
+      abrirModalEdicaoEventoSmall(card);
+      event.stopPropagation(); // Impede a execução de exibirDetalhesEventoSmall
+      return;
+    }
+
+    // Se o clique for no botão visualizar, redirecionar
+    if (event.target.closest("#btnVisualizar")) {
+      lidarComBtnVisualizar(event, "evento_small");
+      return;
+    }
+
+    // Previne a ação padrão
+    event.preventDefault();
+
     const camposOcultos = card.querySelectorAll(
       ".calendario-small-card-local, .calendario-small-card-partcipantes, .calendario-small-card-duracao, .calendario-small-card-editar"
     );
-    camposOcultos.forEach((campo) => {
-      campo.classList.remove("exibirDetalheEvento");
-    });
-    card.classList.remove("calendario-small-card-expanded");
-  });
 
-  const expandedLargeCards = document.querySelectorAll(
-    ".calendario-large-card-expanded"
-  );
-  expandedLargeCards.forEach((card) => {
+    const isExpanded = card.classList.contains(
+      "calendario-small-card-expanded"
+    );
+
+    if (isExpanded) {
+      // Fecha o cartão clicado
+      card.classList.remove("calendario-small-card-expanded");
+      camposOcultos.forEach((campo) => {
+        campo.classList.remove("exibirDetalheEvento");
+      });
+    } else {
+      // Fecha quaisquer cartões expandidos
+      fecharTodosOsCardsEvento();
+
+      // Expande o cartão clicado
+      card.classList.add("calendario-small-card-expanded");
+      camposOcultos.forEach((campo) => {
+        campo.classList.add("exibirDetalheEvento");
+      });
+
+      // Ajusta o scroll para centralizar o cartão
+      ajustarScrollParaCentralizarCard(card, areaTemplateContentSmall);
+    }
+  };
+
+  /**
+   * Função para lidar com o clique nos cartões de evento grande usando delegação de eventos
+   * @param {Event} event
+   */
+  const exibirEditarEventoLarge = (event) => {
+    const card = event.target.closest(".calendario-large-card");
+    if (!card) return;
+
+    // Se o clique for no botão de edição, abrir o modal de edição
+    if (event.target.closest(".btn-editar-evento-large")) {
+      abrirModalEdicaoEventoLarge(card);
+      event.stopPropagation(); // Impede a execução de exibirEditarEventoLarge
+      return;
+    }
+
+    // Se o clique for no botão visualizar, redirecionar
+    if (event.target.closest("#btnVisualizar")) {
+      lidarComBtnVisualizar(event, "evento_large");
+      return;
+    }
+
+    // Previne a ação padrão
+    event.preventDefault();
+
     const editar = card.querySelector(".calendario-large-card-editar");
-    editar.classList.remove("exibirDetalheEvento");
-    card.classList.remove("calendario-large-card-expanded");
-  });
-}
 
-// Adiciona um ouvinte de evento de clique para a lista de cards SMALL
-const listaDeCardsEventoSmall = document.querySelectorAll(
-  ".calendario-small-card"
-);
-listaDeCardsEventoSmall.forEach((cardEventoSmall) => {
-  cardEventoSmall.addEventListener("click", exibirDetalhesEvento);
-});
+    if (!editar) return;
 
-// Função para lidar com o clique nos cards LARGE
-function exibirEditar(event) {
-  event.preventDefault();
+    const isExpanded = card.classList.contains(
+      "calendario-large-card-expanded"
+    );
 
-  const cardEventoLarge = event.currentTarget;
-  const editar = cardEventoLarge.querySelector(".calendario-large-card-editar");
+    if (isExpanded) {
+      // Fecha o cartão clicado
+      card.classList.remove("calendario-large-card-expanded");
+      editar.classList.remove("exibirDetalheEvento");
+    } else {
+      // Fecha quaisquer cartões expandidos
+      fecharTodosOsCardsEvento();
 
-  const algumCampoVisivel = editar.classList.contains("exibirDetalheEvento");
+      // Expande o cartão clicado
+      card.classList.add("calendario-large-card-expanded");
+      editar.classList.add("exibirDetalheEvento");
 
-  if (algumCampoVisivel) {
-    editar.classList.remove("exibirDetalheEvento");
-    cardEventoLarge.classList.remove("calendario-large-card-expanded");
-  } else {
-    fecharTodosOsCardsEvento();
+      // Ajusta o scroll para centralizar o cartão
+      ajustarScrollParaCentralizarCard(card, areaTemplateContentLarge);
+    }
+  };
 
-    editar.classList.add("exibirDetalheEvento");
-    cardEventoLarge.classList.add("calendario-large-card-expanded");
+  /**
+   * Função para abrir o modal de edição de evento pequeno
+   * @param {HTMLElement} card
+   */
+  const abrirModalEdicaoEventoSmall = (card) => {
+    const modalEdicao = document.getElementById("modalEdicaoEventoSmall");
+    if (!modalEdicao) {
+      console.warn("Modal de edição de evento pequeno não encontrado.");
+      return;
+    }
 
-    // Verificar se o card está fora da área visível e ajustar o scroll conforme necessário
-    ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge);
-  }
-}
+    // Preencher o modal com os dados do evento pequeno
+    const local =
+      card.querySelector(".calendario-small-card-local")?.textContent.trim() ||
+      "";
+    const participantes =
+      card
+        .querySelector(".calendario-small-card-partcipantes")
+        ?.textContent.trim() || "";
+    const duracao =
+      card
+        .querySelector(".calendario-small-card-duracao")
+        ?.textContent.trim() || "";
 
-function ajustarScrollParaCentralizarCardEventoLarge(cardEventoLarge) {
-  const areaTemplateContent = document.querySelector(
-    ".container-abas-template-content"
-  );
-  if (!areaTemplateContent) return;
+    modalEdicao.querySelector("#inputLocalEventoSmall").value = local;
+    modalEdicao.querySelector("#inputParticipantesEventoSmall").value =
+      participantes;
+    modalEdicao.querySelector("#inputDuracaoEventoSmall").value = duracao;
 
-  const cardOffsetTop = cardEventoLarge.offsetTop;
-  const cardHeight = cardEventoLarge.offsetHeight;
-  const areaTemplateContentHeight = areaTemplateContent.offsetHeight;
-  const areaTemplateContentScrollTop = areaTemplateContent.scrollTop;
+    // Exibir o modal
+    modalEdicao.style.display = "flex";
+    setTimeout(() => {
+      modalEdicao.classList.add("show");
+    }, 10);
 
-  const cardTopVisible = cardOffsetTop >= areaTemplateContentScrollTop;
-  const cardBottomVisible =
-    cardOffsetTop + cardHeight <=
-    areaTemplateContentScrollTop + areaTemplateContentHeight;
+    // Adicionar ouvintes de eventos para fechar o modal
+    const btnFecharModal = modalEdicao.querySelector(
+      ".modal-edicao-evento-small-close"
+    );
+    if (btnFecharModal) {
+      btnFecharModal.onclick = () => fecharModalEdicaoEventoSmall(modalEdicao);
+      btnFecharModal.addEventListener("touchstart", () =>
+        fecharModalEdicaoEventoSmall(modalEdicao)
+      );
+    }
 
-  if (!cardTopVisible) {
-    areaTemplateContent.scrollTo({
-      top: cardOffsetTop,
-      behavior: "smooth",
-    });
-  } else if (!cardBottomVisible) {
-    areaTemplateContent.scrollTo({
-      top: cardOffsetTop + cardHeight - areaTemplateContentHeight,
-      behavior: "smooth",
-    });
-  }
-}
+    // Fechar o modal ao clicar fora dele
+    const fecharAoClicarFora = (event) => {
+      if (event.target === modalEdicao) {
+        fecharModalEdicaoEventoSmall(modalEdicao);
+      }
+    };
 
-// Adiciona um ouvinte de evento de clique para a lista de cards LARGE
-document.addEventListener("DOMContentLoaded", function () {
-  const listaDeCards = document.querySelectorAll(".calendario-large-card");
-  listaDeCards.forEach((cardEventoLarge) => {
-    cardEventoLarge.addEventListener("click", exibirEditar);
-  });
+    window.addEventListener("click", fecharAoClicarFora);
+    window.addEventListener("touchstart", fecharAoClicarFora);
+
+    // Remover os ouvintes após fechar para evitar múltiplas chamadas
+    const removerOuvintesFechamento = () => {
+      window.removeEventListener("click", fecharAoClicarFora);
+      window.removeEventListener("touchstart", fecharAoClicarFora);
+    };
+
+    // Modificar a função de fechamento para remover os ouvintes
+    const fecharModalEdicaoEventoSmallComRemocao = (modal) => {
+      fecharModalEdicaoEventoSmall(modal);
+      removerOuvintesFechamento();
+    };
+
+    // Atualizar os ouvintes para usar a nova função
+    if (btnFecharModal) {
+      btnFecharModal.onclick = () =>
+        fecharModalEdicaoEventoSmallComRemocao(modalEdicao);
+      btnFecharModal.addEventListener("touchstart", () =>
+        fecharModalEdicaoEventoSmallComRemocao(modalEdicao)
+      );
+    }
+  };
+
+  /**
+   * Função para fechar o modal de edição de evento pequeno
+   * @param {HTMLElement} modal
+   */
+  const fecharModalEdicaoEventoSmall = (modal) => {
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 500); // Tempo igual ao de transição
+  };
+
+  /**
+   * Função para abrir o modal de edição de evento grande
+   * @param {HTMLElement} card
+   */
+  const abrirModalEdicaoEventoLarge = (card) => {
+    const modalEdicao = document.getElementById("modalEdicaoEventoLarge");
+    if (!modalEdicao) {
+      console.warn("Modal de edição de evento grande não encontrado.");
+      return;
+    }
+
+    // Preencher o modal com os dados do evento grande
+    // Adicione aqui os campos específicos do evento grande conforme necessário
+
+    // Exibir o modal
+    modalEdicao.style.display = "flex";
+    setTimeout(() => {
+      modalEdicao.classList.add("show");
+    }, 10);
+
+    // Adicionar ouvintes de eventos para fechar o modal
+    const btnFecharModal = modalEdicao.querySelector(
+      ".modal-edicao-evento-large-close"
+    );
+    if (btnFecharModal) {
+      btnFecharModal.onclick = () => fecharModalEdicaoEventoLarge(modalEdicao);
+      btnFecharModal.addEventListener("touchstart", () =>
+        fecharModalEdicaoEventoLarge(modalEdicao)
+      );
+    }
+
+    // Fechar o modal ao clicar fora dele
+    const fecharAoClicarFora = (event) => {
+      if (event.target === modalEdicao) {
+        fecharModalEdicaoEventoLarge(modalEdicao);
+      }
+    };
+
+    window.addEventListener("click", fecharAoClicarFora);
+    window.addEventListener("touchstart", fecharAoClicarFora);
+
+    // Remover os ouvintes após fechar para evitar múltiplas chamadas
+    const removerOuvintesFechamento = () => {
+      window.removeEventListener("click", fecharAoClicarFora);
+      window.removeEventListener("touchstart", fecharAoClicarFora);
+    };
+
+    // Modificar a função de fechamento para remover os ouvintes
+    const fecharModalEdicaoEventoLargeComRemocao = (modal) => {
+      fecharModalEdicaoEventoLarge(modal);
+      removerOuvintesFechamento();
+    };
+
+    // Atualizar os ouvintes para usar a nova função
+    if (btnFecharModal) {
+      btnFecharModal.onclick = () =>
+        fecharModalEdicaoEventoLargeComRemocao(modalEdicao);
+      btnFecharModal.addEventListener("touchstart", () =>
+        fecharModalEdicaoEventoLargeComRemocao(modalEdicao)
+      );
+    }
+  };
+
+  /**
+   * Função para fechar o modal de edição de evento grande
+   * @param {HTMLElement} modal
+   */
+  const fecharModalEdicaoEventoLarge = (modal) => {
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 500); // Tempo igual ao de transição
+  };
+
+  /**
+   * Função para lidar com o clique no botão "Visualizar"
+   * @param {Event} event
+   * @param {string} tipo - Tipo de evento ("evento_small" ou "evento_large")
+   */
+  const lidarComBtnVisualizar = (event, tipo) => {
+    event.stopPropagation(); // Impede a propagação do evento de clique
+    if (tipo === "evento_small") {
+      window.location.href = "exibir-evento-small.html"; // Redireciona para a página de visualização de evento pequeno
+    } else if (tipo === "evento_large") {
+      window.location.href = "exibir-evento-large.html"; // Redireciona para a página de visualização de evento grande
+    }
+  };
+
+  /**
+   * Função para adicionar ouvintes de eventos aos cartões de evento pequeno
+   */
+  const adicionarOuvintesEventoSmall = () => {
+    if (listaDeCardsEventoSmallContainer) {
+      // Delegação de eventos a partir do contêiner específico
+      listaDeCardsEventoSmallContainer.addEventListener(
+        "click",
+        exibirDetalhesEventoSmall
+      );
+    } else {
+      // Se não houver um contêiner específico, delegue a partir do documento
+      document.addEventListener("click", exibirDetalhesEventoSmall);
+      console.warn(
+        "Contêiner '.lista-de-cards-evento-small-container' não encontrado. Delegando eventos a partir do documento."
+      );
+    }
+  };
+
+  /**
+   * Função para adicionar ouvintes de eventos aos cartões de evento grande
+   */
+  const adicionarOuvintesEventoLarge = () => {
+    if (listaDeCardsEventoLargeContainer) {
+      // Delegação de eventos a partir do contêiner específico
+      listaDeCardsEventoLargeContainer.addEventListener(
+        "click",
+        exibirEditarEventoLarge
+      );
+    } else {
+      // Se não houver um contêiner específico, delegue a partir do documento
+      document.addEventListener("click", exibirEditarEventoLarge);
+      console.warn(
+        "Contêiner '.lista-de-cards-evento-large-container' não encontrado. Delegando eventos a partir do documento."
+      );
+    }
+  };
+
+  // Inicialização das funcionalidades
+  adicionarOuvintesEventoSmall();
+  adicionarOuvintesEventoLarge();
 });

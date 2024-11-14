@@ -14,38 +14,59 @@ document.addEventListener("DOMContentLoaded", () => {
     return; // Encerra o script se os elementos não existirem
   }
 
-  let ticking = false;
   let isMobile = window.innerWidth <= 768;
 
-  // Função para obter o offset de altura baseado no estado mobile
-  const getHeightOffset = () => (isMobile ? "1.5rem" : "2rem");
+  // Função para determinar o heightOffset com base no tamanho da tela
+  const updateHeightOffset = () => {
+    document.documentElement.style.setProperty(
+      "--height-offset",
+      isMobile ? "1.5rem" : "2rem"
+    );
+  };
 
-  // Função para atualizar o layout com base na rolagem
-  const updateLayout = () => {
-    const isScrolled = containerContent.scrollTop > 0;
-    const heightOffset = getHeightOffset();
+  // Inicializa o heightOffset
+  updateHeightOffset();
 
-    if (isScrolled) {
-      if (!containerHeader.classList.contains("compact")) {
-        containerHeader.classList.add("compact");
-        mainContainer.style.height = `calc(var(--vh, 1vh) * 100 - ${heightOffset})`;
-        mainContainer.style.transition = "height 0.5s ease-in-out";
+  // Função para adicionar ou remover o estado compacto
+  const setCompact = (compact) => {
+    if (compact) {
+      containerHeader.classList.add("compact");
+      mainContainer.classList.add("compact");
+    } else {
+      containerHeader.classList.remove("compact");
+      mainContainer.classList.remove("compact");
+    }
+  };
+
+  // Função para verificar se o contêiner está scrollado
+  const isScrolled = () => containerContent.scrollTop > 0;
+
+  // Função para atualizar o layout com throttle
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return function (...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
       }
-    }
-
-    ticking = false;
+    };
   };
 
-  // Função de callback para o evento de scroll utilizando requestAnimationFrame
-  const onScroll = () => {
-    if (!ticking) {
-      requestAnimationFrame(updateLayout);
-      ticking = true;
+  const updateLayout = () => {
+    if (isScrolled()) {
+      setCompact(true);
+    } else {
+      setCompact(false);
     }
   };
 
-  // Adiciona o listener de scroll com opção passive
-  containerContent.addEventListener("scroll", onScroll, { passive: true });
+  const throttledUpdateLayout = throttle(updateLayout, 100);
+
+  // Adiciona o listener de scroll com throttle
+  containerContent.addEventListener("scroll", throttledUpdateLayout, {
+    passive: true,
+  });
 
   // Variáveis para rastrear interações de toque
   let isTouching = false;
@@ -65,16 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentY = e.touches[0].clientY;
     const deltaY = currentY - touchStartY;
 
-    if (deltaY > 0 && containerContent.scrollTop === 0) {
+    if (deltaY > pullThreshold && containerContent.scrollTop === 0) {
       // Usuário está puxando para baixo no topo
-      if (deltaY > pullThreshold) {
-        // Remover classe 'compact' e redefinir o tamanho
-        containerHeader.classList.remove("compact");
-        mainContainer.style.height = "";
-        mainContainer.style.transition = "";
-      }
-      // Prevenir pull-to-refresh
-      e.preventDefault();
+      setCompact(false);
+      isTouching = false;
+      e.preventDefault(); // Previne o pull-to-refresh
     }
   };
 
@@ -109,25 +125,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentY = e.clientY;
     const deltaY = currentY - mouseStartY;
 
-    if (deltaY < 0) {
+    if (deltaY < -pullThreshold) {
       // Usuário está puxando para cima
-      if (deltaY < -pullThreshold) {
-        // Adicionar classe 'compact' e ajustar o tamanho
-        if (!containerHeader.classList.contains("compact")) {
-          containerHeader.classList.add("compact");
-          const heightOffset = getHeightOffset();
-          mainContainer.style.height = `calc(var(--vh, 1vh) * 100 - ${heightOffset})`;
-          mainContainer.style.transition = "height 0.5s ease-in-out";
-        }
-      }
-    } else if (deltaY > 0 && containerContent.scrollTop === 0) {
+      setCompact(true);
+      isMouseDown = false;
+    } else if (deltaY > pullThreshold && containerContent.scrollTop === 0) {
       // Usuário está puxando para baixo no topo
-      if (deltaY > pullThreshold) {
-        // Remover classe 'compact' e redefinir o tamanho
-        containerHeader.classList.remove("compact");
-        mainContainer.style.height = "";
-        mainContainer.style.transition = "";
-      }
+      setCompact(false);
+      isMouseDown = false;
     }
   };
 
@@ -145,58 +150,47 @@ document.addEventListener("DOMContentLoaded", () => {
   let accumulatedDeltaY = 0;
   const wheelThreshold = 120; // Threshold para scroll
 
-  // Adiciona listener para o evento 'wheel' para detectar tentativas de rolagem
+  // Função para lidar com o evento 'wheel'
   const onWheel = (e) => {
     if (e.deltaY < 0 && containerContent.scrollTop === 0) {
       // Usuário está rolando para cima no topo (puxando para baixo o conteúdo)
       accumulatedDeltaY += e.deltaY; // deltaY é negativo quando rolando para cima
 
       if (accumulatedDeltaY <= -wheelThreshold) {
-        // Remover classe 'compact' e redefinir o tamanho
-        containerHeader.classList.remove("compact");
-        mainContainer.style.height = "";
-        mainContainer.style.transition = "";
-
-        // Resetar accumulatedDeltaY
+        // Remover classe 'compact'
+        setCompact(false);
         accumulatedDeltaY = 0;
       }
-      // Não prevenir o comportamento padrão aqui
     } else if (e.deltaY > 0) {
       // Usuário está rolando para baixo (puxando para cima o conteúdo)
       accumulatedDeltaY += e.deltaY; // deltaY é positivo quando rolando para baixo
 
       if (accumulatedDeltaY >= wheelThreshold) {
-        // Adicionar classe 'compact' e ajustar o tamanho
-        if (!containerHeader.classList.contains("compact")) {
-          containerHeader.classList.add("compact");
-          const heightOffset = getHeightOffset();
-          mainContainer.style.height = `calc(var(--vh, 1vh) * 100 - ${heightOffset})`;
-          mainContainer.style.transition = "height 0.5s ease-in-out";
-        }
-
-        // Resetar accumulatedDeltaY
+        // Adicionar classe 'compact'
+        setCompact(true);
         accumulatedDeltaY = 0;
       }
-      // Não prevenir o comportamento padrão aqui
     } else {
       // Resetar accumulatedDeltaY se o usuário não estiver rolando
       accumulatedDeltaY = 0;
     }
-    // Permitir o comportamento padrão de scroll
   };
 
   containerContent.addEventListener("wheel", onWheel, { passive: true });
 
-  // Usa ResizeObserver para detectar mudanças no tamanho da janela
-  const resizeObserver = new ResizeObserver(() => {
+  // Função para atualizar o estado mobile e recalcular heightOffset
+  const handleResize = throttle(() => {
     const newIsMobile = window.innerWidth <= 768;
     if (newIsMobile !== isMobile) {
       isMobile = newIsMobile;
+      updateHeightOffset();
+      // Opcional: Atualizar o layout caso necessário
       updateLayout();
     }
-  });
+  }, 200);
 
-  resizeObserver.observe(document.body);
+  // Adiciona listener para resize com throttle
+  window.addEventListener("resize", handleResize);
 
   // Inicializa o layout ao carregar a página
   updateLayout();

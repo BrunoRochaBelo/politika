@@ -1,8 +1,9 @@
 /* Global */
 @import "./global/global.css";
 @import "./global/body-template.css";
-@import "./global/main-template.css";
 @import "./global/login.css";
+@import "./global/main-template.css";
+@import "./global/scroll-ajustar-itens.css";
 /* Global/ Comunicação */
 @import "./global/comunicação/elementos-indicadores.css";
 @import "./global/comunicação/mensagens.css";

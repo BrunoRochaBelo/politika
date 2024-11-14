@@ -11,20 +11,33 @@ function debounce(func, wait) {
 // Função para atualizar a variável CSS --vh
 function setVhVariable() {
   const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  const currentVh = getComputedStyle(document.documentElement).getPropertyValue(
+    "--vh"
+  );
+
+  if (currentVh !== `${vh}px`) {
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
 }
+
+// Função debounced
+const setVhVariableDebounced = debounce(setVhVariable, 100);
 
 // Verifica se a API VisualViewport está disponível
 if (window.visualViewport) {
-  const setVhVariableDebounced = debounce(setVhVariable, 50);
   window.visualViewport.addEventListener("resize", setVhVariableDebounced);
-  window.visualViewport.addEventListener("scroll", setVhVariableDebounced);
+  // Remover o listener de 'scroll' se não for necessário
+  // window.visualViewport.addEventListener("scroll", setVhVariableDebounced);
 } else {
   // Fallback para o evento de redimensionamento da janela
-  const setVhVariableDebounced = debounce(setVhVariable, 50);
   window.addEventListener("resize", setVhVariableDebounced);
 }
 
-// Atualiza a variável na inicialização
+// Usa ResizeObserver se disponível
+if ("ResizeObserver" in window) {
+  const resizeObserver = new ResizeObserver(setVhVariableDebounced);
+  resizeObserver.observe(document.documentElement);
+}
+
+// Atualiza a variável na inicialização após o carregamento do DOM
 document.addEventListener("DOMContentLoaded", setVhVariable);
-setVhVariable();

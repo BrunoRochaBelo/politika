@@ -50,11 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
       // Mostra o indicador de carregamento
       loadingIndicator.style.display = "block";
 
-      const response = await fetch(
-        `http://dev.inforvia.com.br/api/contato/searchall/${encodeURIComponent(
-          query
-        )}`
-      );
+      // Obtém a URL base do config.js com base no ambiente atual
+      const baseURL = Config.BASE_URL[Config.ENVIRONMENT];
+
+      // Obtém o endpoint para buscar contatos
+      const endpoint = Config.API_ENDPOINTS.CONTACT_SEARCH_ALL;
+
+      // Verifica se baseURL e endpoint estão definidos
+      if (!baseURL || !endpoint) {
+        console.error("Configuração de URL base ou endpoint não encontrada.");
+        showError("Erro de configuração. Tente novamente mais tarde.");
+        return [];
+      }
+
+      // Monta a URL completa utilizando as variáveis do config.js
+      const url = `${baseURL}${endpoint}/${encodeURIComponent(query)}`;
+
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Erro ao buscar os dados da API");
       }

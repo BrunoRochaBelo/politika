@@ -9,8 +9,7 @@
   grid:
     "calendario-small-card-type calendario-small-card-tag"
     "calendario-small-card-title  calendario-small-card-duracao";
-  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
-    height 0.25s ease-out;
+  transition: all 0.25s ease;
   max-height: 100px;
 }
 
@@ -129,8 +128,7 @@
     "calendario-small-card-partcipantes calendario-small-card-partcipantes"
     "calendario-small-card-editar calendario-small-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
-    height 0.25s ease-in;
+  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   max-height: 300px;
 }
 
@@ -181,8 +179,7 @@
     "calendario-large-card-local calendario-large-card-local"
     "calendario-large-card-partcipantes calendario-large-card-partcipantes"
     "calendario-large-card-duracao calendario-large-card-duracao";
-  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
-    height 0.25s ease-out;
+  transition: all 0.25s ease;
   max-height: 250px;
 }
 .calendario-large-card-type {
@@ -281,8 +278,7 @@
     "calendario-large-card-duracao calendario-large-card-duracao"
     "calendario-large-card-editar calendario-large-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
-    height 0.25s ease-in;
+  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   max-height: 350px;
 }
 .calendario-large-card-editar.exibirDetalheEvento {

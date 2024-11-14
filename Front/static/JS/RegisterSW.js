@@ -1,7 +1,9 @@
+// /Front/static/js/RegisterSW.js
+
 window.addEventListener("load", () => {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
-      .register("./service-worker.js")
+      .register(Config.SERVICE_WORKER_PATH)
       .then((registration) => {
         console.log(
           "ServiceWorker registrado com sucesso: ",
@@ -9,7 +11,7 @@ window.addEventListener("load", () => {
         );
 
         if (registration.waiting) {
-          notifyUserOfUpdate(registration.waiting);
+          showUpdateNotification(registration.waiting);
         }
 
         registration.onupdatefound = () => {
@@ -17,7 +19,7 @@ window.addEventListener("load", () => {
           newWorker.onstatechange = () => {
             if (newWorker.state === "installed") {
               if (navigator.serviceWorker.controller) {
-                notifyUserOfUpdate(newWorker);
+                showUpdateNotification(newWorker);
               } else {
                 console.log("Conteúdo está disponível offline.");
               }
@@ -29,6 +31,7 @@ window.addEventListener("load", () => {
         console.log("Falha ao registrar o ServiceWorker: ", err);
       });
 
+    // Eventos de conexão
     window.addEventListener("online", () => {
       document.body.classList.remove("offline");
       console.log("Você está online");
@@ -39,21 +42,30 @@ window.addEventListener("load", () => {
       console.log("Você está offline");
     });
 
+    // Estado inicial da conexão
     if (!navigator.onLine) {
       document.body.classList.add("offline");
     }
   }
 });
 
-function notifyUserOfUpdate(worker) {
-  const updateNotification = confirm(
-    "Nova versão disponível. Deseja atualizar?"
-  );
-  if (updateNotification) {
-    worker.postMessage({ action: "skipWaiting" });
+// Função para mostrar a notificação de atualização
+function showUpdateNotification(worker) {
+  const notification = document.getElementById("update-notification");
+  if (notification) {
+    notification.classList.remove("hidden");
+
+    const updateButton = document.getElementById("update-button");
+    if (updateButton) {
+      updateButton.addEventListener("click", () => {
+        worker.postMessage({ action: "skipWaiting" });
+        notification.classList.add("hidden");
+      });
+    }
   }
 }
 
+// Listener para mudanças de controlador do Service Worker
 navigator.serviceWorker.addEventListener("controllerchange", () => {
   window.location.reload();
 });

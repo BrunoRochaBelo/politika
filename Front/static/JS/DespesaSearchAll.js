@@ -1,19 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const apiBaseUrl = "http://192.168.1.19:5000/api/contato/searchall";
+  const inputFieldRefPoli = document.getElementById("indicacao");
+  const suggestionsDivRefPoli = document.getElementById("suggestions-ref-poli");
+  const loadingIndicatorRefPoli = document.getElementById("loading-indicator");
 
-  // Função para buscar sugestões da API
-  async function fetchSuggestions(query, fieldSearch, target) {
+  let selectedIndexRefPoli = -1;
+  let currentSuggestionsRefPoli = [];
+  let isSelectingSuggestionRefPoli = false;
+  let selectedSuggestionNameRefPoli = null;
+
+  const debounceRefPoli = (func, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const showLoadingRefPoli = () => {
+    loadingIndicatorRefPoli.style.display = "inline-block";
+  };
+
+  const hideLoadingRefPoli = () => {
+    loadingIndicatorRefPoli.style.display = "none";
+  };
+
+  const showErrorRefPoli = (message) => {
+    let errorDivRefPoli = document.querySelector(".message-error-refpoli");
+    if (!errorDivRefPoli) {
+      errorDivRefPoli = document.createElement("div");
+      errorDivRefPoli.classList.add("message-error", "message-error-refpoli");
+      document.body.appendChild(errorDivRefPoli);
+    }
+    errorDivRefPoli.textContent = message;
+    errorDivRefPoli.classList.add("show");
+
+    setTimeout(() => {
+      errorDivRefPoli.classList.remove("show");
+    }, 3000);
+  };
+
+  const fetchSuggestionsRefPoli = async (query) => {
+    // Obtém a URL base do config.js com base no ambiente atual
+    const baseURL = Config.BASE_URL[Config.ENVIRONMENT];
+
+    // Obtém o endpoint para buscar contatos
+    const endpoint = Config.API_ENDPOINTS.CONTACT_SEARCH_ALL;
+
+    // Verifica se baseURL e endpoint estão definidos
+    if (!baseURL || !endpoint) {
+      console.error("Configuração de URL base ou endpoint não encontrada.");
+      showErrorRefPoli("Erro de configuração. Tente novamente mais tarde.");
+      return {
+        error: true,
+        message: "Configuração de URL base ou endpoint não encontrada.",
+      };
+    }
+
     // Define o parâmetro `tp` como 2 fixo
     const tp = 2;
 
-    // Constrói a URL com os parâmetros de consulta
-    const url = `${apiBaseUrl}/${query}?tp=${tp}&fs=${fieldSearch || ""}`;
+    // Monta a URL completa utilizando as variáveis do config.js
+    const url = `${baseURL}${endpoint}/${encodeURIComponent(
+      query
+    )}?tp=${tp}&fs=${fieldSearch || ""}`;
 
     // Exibe o indicador de carregamento
-    const loadingIndicator = document.getElementById(
-      `loading-indicator-${target}`
-    );
-    loadingIndicator.style.display = "inline-block";
+    showLoadingRefPoli();
 
     try {
       const response = await fetch(url);
@@ -23,15 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const results = await response.json();
-      return results.DADOS; // Retorna a lista de dados
+      return results.DADOS || [];
     } catch (error) {
       console.error("Erro na busca:", error.message);
+      showErrorRefPoli("Erro ao buscar dados. Tente novamente.");
       return { error: true, message: error.message };
     } finally {
       // Esconde o indicador de carregamento
-      loadingIndicator.style.display = "none";
+      hideLoadingRefPoli();
     }
-  }
+  };
 
   // Função para exibir as sugestões
   function showSuggestions(suggestions, target) {
@@ -84,8 +137,11 @@ document.addEventListener("DOMContentLoaded", function () {
     debounce(async function () {
       const query = this.value;
       if (query.length >= 3) {
-        const suggestions = await fetchSuggestions(query, 2, "cnpj");
+        const suggestions = await fetchSuggestionsRefPoli(query, 2, "cnpj");
         showSuggestions(suggestions, "cnpj");
+      } else {
+        document.getElementById("suggestions-cnpj").innerHTML = "";
+        document.getElementById("suggestions-cnpj").classList.remove("visible");
       }
     }, 300)
   );
@@ -96,8 +152,11 @@ document.addEventListener("DOMContentLoaded", function () {
     debounce(async function () {
       const query = this.value;
       if (query.length >= 3) {
-        const suggestions = await fetchSuggestions(query, 1, "nome");
+        const suggestions = await fetchSuggestionsRefPoli(query, 1, "nome");
         showSuggestions(suggestions, "nome");
+      } else {
+        document.getElementById("suggestions-nome").innerHTML = "";
+        document.getElementById("suggestions-nome").classList.remove("visible");
       }
     }, 300)
   );

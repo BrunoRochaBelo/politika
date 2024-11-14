@@ -51,7 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchLocalSuggestions = async (query) => {
     const uf = ufFieldVotacao.value;
     const city = cityFieldVotacao.value;
-    const url = `http://192.168.1.7:8000/api/localvotacao/searchall/${uf}/${city}/${encodeURIComponent(
+
+    // Obtém a URL base do config.js com base no ambiente atual
+    const baseURL = Config.BASE_URL[Config.ENVIRONMENT];
+
+    // Obtém o endpoint para buscar locais de votação
+    const endpoint = Config.API_ENDPOINTS.VOTATION_LOCATION_SEARCH_ALL;
+
+    // Monta a URL completa utilizando as variáveis do config.js
+    const url = `${baseURL}${endpoint}/${uf}/${city}/${encodeURIComponent(
       query
     )}`;
 

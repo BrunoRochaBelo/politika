@@ -12,8 +12,7 @@
     "contatos-small-card-title contatos-small-card-title . contatos-small-card-call"
     "contatos-small-card-tipocontato contatos-small-card-tipocontato contatos-small-card-perfilInfluencia contatos-small-card-call"
     /0.5fr 0.5fr 1fr 32px;
-  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
-    height 0.25s ease-out;
+  transition: all 0.25s ease;
   max-height: 100px;
 }
 .contatos-small-card-id {
@@ -104,8 +103,7 @@
     "contatos-small-card-tipopessoa . . contatos-small-card-call"
     "contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar contatos-small-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
-    height 0.25s ease-in;
+  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   max-height: 300px;
   height: auto;
 }

@@ -5,9 +5,9 @@
   "lang": "pt-BR",
   "theme_color": "#3f1c80",
   "background_color": "#000000",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/",
-  "start_url": "/index.html",
+  "start_url": "/index.html?homescreen=1",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -41,6 +41,11 @@
       "type": "image/svg+xml"
     },
     {
+      "src": "/static/imagens/icones/add.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml"
+    },
+    {
       "src": "/static/imagens/icones/agora.svg",
       "sizes": "72x72",
       "type": "image/svg+xml"
@@ -52,6 +57,16 @@
     },
     {
       "src": "/static/imagens/icones/apps-select.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/static/imagens/icones/arquivos.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/static/imagens/icones/arquivos-select.svg",
       "sizes": "72x72",
       "type": "image/svg+xml"
     },
@@ -147,6 +162,11 @@
     },
     {
       "src": "/static/imagens/icones/eventos.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/static/imagens/icones/excluir.svg",
       "sizes": "72x72",
       "type": "image/svg+xml"
     },
@@ -286,5 +306,7 @@
       "type": "image/svg+xml"
     }
   ],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "id": "/",
+  "categories": ["business", "productivity"]
 }

@@ -1,0 +1,48 @@
+/* Scroll AjustarItens Container Header */
+
+.body-template.reduced .nav {
+  transform: scale(0.95, 0.9);
+  width: 320px;
+}
+
+.body-template.reduced .container-abas-template-header,
+.body-template.reduced .container-template-header {
+  padding: 0;
+}
+
+.body-template.reduced .main-sidenav {
+  top: 2.55rem;
+}
+
+.body-template.reduced .body-template {
+  grid-template-rows: 2.5rem 1fr;
+}
+
+/* Scroll AjustarItens ContainerHeader Exibir */
+
+/* Estado compacto do cabeçalho */
+.container-header.compact {
+  /* Adicione aqui os estilos que devem ser aplicados quando o cabeçalho está compacto */
+  /* Exemplo: */
+  padding: 0.5rem 1rem;
+  transition: padding 0.5s ease-in-out;
+}
+
+/* Estado expansível do contêiner principal */
+.main-container.compact {
+  height: calc(var(--vh, 1vh) * 100 - var(--height-offset));
+  transition: height 0.5s ease-in-out;
+}
+
+/* Definição das variáveis CSS para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+  :root {
+    --height-offset: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  :root {
+    --height-offset: 2rem;
+  }
+}

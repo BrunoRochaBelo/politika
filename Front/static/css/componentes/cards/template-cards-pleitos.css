@@ -10,8 +10,7 @@
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"
     "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc";
-  transition: max-height 0.25s ease-out, transform 0.25s ease-out,
-    height 0.25s ease-out;
+  transition: all 0.25s ease;
   max-height: 140px; /* Ajuste conforme necessário */
 }
 
@@ -183,8 +182,7 @@
     "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc"
     "pleitos-medium-card-editar pleitos-medium-card-editar pleitos-medium-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease-in, transform 0.25s ease-in,
-    height 0.25s ease-in;
+  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   max-height: 300px;
   height: auto;
 }
