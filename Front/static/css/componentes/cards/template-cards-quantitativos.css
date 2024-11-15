@@ -7,6 +7,7 @@
     "quant-small-card-desc" auto
     "quant-small-card-result" auto
     / 1fr;
+  transition: all 0.5s ease;
 }
 .quant-small-card-title {
   grid-area: quant-small-card-title;

@@ -65,13 +65,13 @@
   overflow-x: auto;
   scrollbar-width: thick;
   padding: 10px;
-  transition: grid-auto-flow 0.5s ease, grid-template-columns 0.5s ease,
-    height 0.5s ease;
+  transition: all 0.5s ease;
 }
 .lista-horizontal.expandir {
   grid-auto-flow: row;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
+  transition: all 0.5s ease;
 }
 
 .lista-select {
@@ -131,6 +131,7 @@
 .lista-horizontal:not(.expandir) .card-tmf-m {
   width: auto;
   transform: translateY(0);
+  transition: all 0.5s ease;
   opacity: 1;
 }
 
@@ -199,6 +200,7 @@ li > .lista-vertical-alt > li:first-child {
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
     grid-template-rows: auto;
+    transition: all 0.5s ease;
   }
 
   .lista-vertical::-webkit-scrollbar,

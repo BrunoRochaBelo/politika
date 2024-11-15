@@ -6,36 +6,45 @@
   border-radius: 6px;
   border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
-  background: var(--btn-secundario);
+  background-color: var(--btn-secundario);
   color: var(--btn-secundario-txt);
   box-shadow: var(--sombra-moderada);
+  transition: background-color 0.25s, filter 0.25s;
 }
 .aniversario-small-card-editar .btn-outline-principal:hover {
   filter: var(--hover);
-  background: var(--btn-secundario-hover);
+  background-color: var(--btn-secundario-hover);
 }
+
 /* Área de aniversariantes */
 .aniversariantes {
   display: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
 }
+
 .aniversariantes.visible {
-  display: block;
   opacity: 1;
   max-height: 80vh;
 }
 
+.aniversariantes.closing {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
 .secao-interna-template.area-aniversariantes {
-  background: var(--card-bg);
-  margin: 0px 10px;
+  background-color: var(--card-bg);
+  margin: 0 10px;
   padding: 10px 15px;
   border-radius: 20px;
   border: 1px solid var(--card-borda);
   cursor: pointer;
   box-shadow: var(--sombra-moderada);
+  transition: background-color 0.25s, border 0.25s;
 }
 
 /* Hover efeito padrão */
@@ -43,12 +52,12 @@
   filter: var(--hover);
 }
 
-/* Estilos do cabeçalho */
 .secao-interna-template.area-aniversariantes .secao-interna-template-header {
   color: var(--txt-titulo-card);
   justify-content: start;
   position: relative;
   padding: 12px;
+  transition: color 0.25s, padding 0.25s;
 }
 
 .secao-interna-template.area-aniversariantes
@@ -58,10 +67,9 @@
   right: 10px;
 }
 
-/* Estilos quando visível */
 .secao-interna-template.area-aniversariantes.visible {
   filter: none;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 .secao-interna-template.area-aniversariantes.visible:hover {
@@ -80,40 +88,14 @@
   border-color: transparent;
 }
 
-.fade-in {
-  animation: fadeIn 0.3s ease-in;
-}
-.fade-out {
-  animation: fadeOut 0.3s ease-out;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    max-height: 0;
-  }
-  to {
-    opacity: 1;
-    max-height: 80vh;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    max-height: 80vh;
-  }
-  to {
-    opacity: 0;
-    max-height: 0;
-  }
-}
-
 .aniversario-icon {
   margin-right: 10px;
 }
+
 .swing-animation {
   animation: swing 0.5s ease-in-out;
 }
+
 @keyframes swing {
   0% {
     transform: rotate(0deg);
@@ -137,7 +119,7 @@
     filter: none !important;
   }
   .secao-interna-template-content.aniversariantes .card-xs:hover {
-    background: var(--card-bg);
+    background-color: var(--card-bg);
     border: none;
   }
 }
