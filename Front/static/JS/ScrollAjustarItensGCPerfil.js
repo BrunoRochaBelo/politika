@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Variáveis para interações de toque
   let isTouching = false;
   let touchStartY = 0;
-  const pullThreshold = 160;
+  const pullThreshold = 200; // Aumentado de 160 para 200 para reduzir a sensibilidade
 
   const onTouchStart = (e) => {
     isTouching = true;
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const deltaY = currentY - touchStartY;
 
     if (
-      deltaY > pullThreshold &&
+      deltaY > pullThreshold && // Requer um arrasto maior
       isAdjusted &&
       cardSessionContent.scrollTop === 0
     ) {
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const deltaY = currentY - mouseStartY;
 
     if (
-      deltaY > pullThreshold &&
+      deltaY > pullThreshold && // Requer um arrasto maior
       isAdjusted &&
       cardSessionContent.scrollTop === 0
     ) {
