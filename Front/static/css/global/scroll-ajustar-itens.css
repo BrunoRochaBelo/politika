@@ -11,7 +11,7 @@
 }
 
 .body-template.reduced .main-sidenav {
-  top: 2.55rem;
+  top: 2.5rem;
 }
 
 .body-template.reduced .body-template {
@@ -37,12 +37,12 @@
 /* Definição das variáveis CSS para diferentes tamanhos de tela */
 @media (max-width: 768px) {
   :root {
-    --height-offset: 1.5rem;
+    --height-offset: 1.15rem;
   }
 }
 
 @media (min-width: 769px) {
   :root {
-    --height-offset: 2rem;
+    --height-offset: 1.7rem;
   }
 }

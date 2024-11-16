@@ -4,7 +4,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   align-content: start;
-  height: calc(var(--vh, 1vh) * 100 - 8.4rem);
+  height: calc(var(--vh, 1vh) * 100 - 7.7rem);
   grid-template-rows: auto auto;
   grid-template-areas:
     "area-interna-containerContent-template-header"

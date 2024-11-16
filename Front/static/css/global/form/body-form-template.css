@@ -10,7 +10,7 @@
   grid:
     "header-form"
     "main-form"
-    / minmax(350px, 1100px);
+    / minmax(21.875rem, 58rem);
   background: none;
   box-shadow: var(--sombra-moderada);
   border-radius: 25px;

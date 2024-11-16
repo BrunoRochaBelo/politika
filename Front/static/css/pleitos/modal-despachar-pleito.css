@@ -1,7 +1,7 @@
 .modal-despachar-pleito {
   display: none;
   position: fixed;
-  z-index: 2003;
+  z-index: 2004;
   left: 0;
   top: 0;
   width: 100%;
@@ -26,7 +26,7 @@
   height: auto;
   max-height: 95%;
   overflow-y: auto;
-  z-index: 2004;
+  z-index: 2005;
 }
 
 .modal-despachar-pleito-template {
@@ -282,6 +282,10 @@
   border: 1px solid var(--btn-principal-hover);
   background: var(--btn-principal-hover);
   color: var(--btn-principal-destaque);
+}
+
+.modal-despachar-pleito-content::-webkit-scrollbar {
+  display: none;
 }
 
 /* Responsivo */
