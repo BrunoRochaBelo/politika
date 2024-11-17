@@ -120,6 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = event.target.closest(".contatos-small-card");
     if (!card) return;
 
+    // **Nova Verificação: Se o clique está dentro de '.contatos-small-card-editar', não faz nada**
+    if (event.target.closest(".contatos-small-card-editar")) {
+      // Não executa a lógica de expansão/recolhimento
+      return;
+    }
+
     // Se o clique for no botão de telefone
     if (event.target.classList.contains("contatos-small-card-call")) {
       const numElement = card.querySelector(".contatos-small-card-num");
@@ -186,6 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btnVisualizar) {
           lidarComBtnVisualizar(event);
         }
+
+        // **Nova Verificação: Se o clique está dentro de '.contatos-small-card-editar', não faz nada adicional**
+        if (event.target.closest(".contatos-small-card-editar")) {
+          // Evita qualquer ação adicional
+          return;
+        }
       });
     } else {
       // Se não houver um contêiner específico, delegue a partir do documento
@@ -199,6 +211,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const btnVisualizar = event.target.closest("#btnVisualizar");
         if (btnVisualizar) {
           lidarComBtnVisualizar(event);
+        }
+
+        // **Nova Verificação: Se o clique está dentro de '.contatos-small-card-editar', não faz nada adicional**
+        if (event.target.closest(".contatos-small-card-editar")) {
+          // Evita qualquer ação adicional
+          return;
         }
       });
       console.warn(

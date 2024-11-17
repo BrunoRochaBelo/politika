@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ".lista-de-cards-grupo-container"
   ); // Substitua pelo seletor correto do contêiner dos cartões de grupo
 
-  // Função para ajustar o scroll para centralizar o cartão
+  /**
+   * Função para ajustar o scroll para centralizar o cartão
+   * @param {HTMLElement} card - O cartão que deve ser centralizado
+   */
   const ajustarScrollParaCentralizarCard = (card) => {
     if (!areaTemplateContent) return;
 
@@ -17,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Função para fechar todos os cartões de grupo expandidos
+  /**
+   * Função para fechar todos os cartões de grupo expandidos
+   */
   const fecharTodosOsCardsGrupo = () => {
     const cardsExpandidos = listaDeCardsGrupoContainer
       ? listaDeCardsGrupoContainer.querySelectorAll(
@@ -36,17 +41,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Função para lidar com o clique nos cartões de grupo usando delegação de eventos
+  /**
+   * Função para lidar com o clique nos cartões de grupo usando delegação de eventos
+   * @param {Event} event
+   */
   const exibirDetalhesGrupo = (event) => {
     const card = event.target.closest(".grupo-small-card");
     if (!card) return;
 
-    // Se o clique for no botão de edição, adicione a lógica correspondente aqui
+    // **Nova Verificação: Se o clique está dentro de '.grupo-small-card-editar', não faz nada**
     if (event.target.closest(".grupo-small-card-editar")) {
-      // Adicione aqui a lógica para editar o grupo
-      // Por exemplo, abrir um modal de edição
+      // Não executa a lógica de expansão/recolhimento
+      return;
+    }
+
+    // Se o clique for no botão de edição, abrir o modal de edição
+    if (event.target.closest(".btn-editar-grupo")) {
       abrirModalEdicaoGrupo(card);
       event.stopPropagation(); // Impede a execução de exibirDetalhesGrupo
+      return;
+    }
+
+    // Se o clique for no botão visualizar, redirecionar
+    if (event.target.closest("#btnVisualizar")) {
+      lidarComBtnVisualizar(event, "grupo");
       return;
     }
 
@@ -80,10 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Função para abrir o modal de edição do grupo (Exemplo)
+  /**
+   * Função para abrir o modal de edição do grupo
+   * @param {HTMLElement} card
+   */
   const abrirModalEdicaoGrupo = (card) => {
-    // Implementar a lógica para abrir o modal de edição
-    // Por exemplo:
     const modalEdicao = document.getElementById("modalEdicaoGrupo");
     if (!modalEdicao) {
       console.warn("Modal de edição do grupo não encontrado.");
@@ -117,26 +136,40 @@ document.addEventListener("DOMContentLoaded", () => {
       ".modal-edicao-grupo-close"
     );
     if (btnFecharModal) {
-      btnFecharModal.onclick = () => fecharModalEdicaoGrupo(modalEdicao);
+      btnFecharModal.onclick = () =>
+        fecharModalEdicaoGrupoComRemocao(modalEdicao);
       btnFecharModal.addEventListener("touchstart", () =>
-        fecharModalEdicaoGrupo(modalEdicao)
+        fecharModalEdicaoGrupoComRemocao(modalEdicao)
       );
     }
 
     // Fechar o modal ao clicar fora dele
-    window.onclick = function (event) {
+    const fecharAoClicarFora = (event) => {
       if (event.target === modalEdicao) {
-        fecharModalEdicaoGrupo(modalEdicao);
+        fecharModalEdicaoGrupoComRemocao(modalEdicao);
       }
     };
-    window.addEventListener("touchstart", function (event) {
-      if (event.target === modalEdicao) {
-        fecharModalEdicaoGrupo(modalEdicao);
-      }
-    });
+
+    window.addEventListener("click", fecharAoClicarFora);
+    window.addEventListener("touchstart", fecharAoClicarFora);
+
+    // Remover os ouvintes após fechar para evitar múltiplas chamadas
+    const removerOuvintesFechamento = () => {
+      window.removeEventListener("click", fecharAoClicarFora);
+      window.removeEventListener("touchstart", fecharAoClicarFora);
+    };
+
+    // Modificar a função de fechamento para remover os ouvintes
+    const fecharModalEdicaoGrupoComRemocao = (modal) => {
+      fecharModalEdicaoGrupo(modal);
+      removerOuvintesFechamento();
+    };
   };
 
-  // Função para fechar o modal de edição do grupo (Exemplo)
+  /**
+   * Função para fechar o modal de edição do grupo
+   * @param {HTMLElement} modal
+   */
   const fecharModalEdicaoGrupo = (modal) => {
     modal.classList.remove("show");
     setTimeout(() => {
@@ -144,7 +177,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500); // Tempo igual ao de transição
   };
 
-  // Função para adicionar ouvintes de eventos aos cartões de grupo
+  /**
+   * Função para lidar com o clique no botão "Visualizar"
+   * @param {Event} event
+   * @param {string} tipo - Tipo de grupo ("grupo")
+   */
+  const lidarComBtnVisualizar = (event, tipo) => {
+    event.stopPropagation(); // Impede a propagação do evento de clique
+    if (tipo === "grupo") {
+      window.location.href = "exibir-grupo.html"; // Redireciona para a página de visualização de grupo
+    }
+    // Adicione mais condições se houver outros tipos de grupos
+  };
+
+  /**
+   * Função para adicionar ouvintes de eventos aos cartões de grupo
+   */
   const adicionarOuvintesGrupo = () => {
     if (listaDeCardsGrupoContainer) {
       // Delegação de eventos a partir do contêiner específico

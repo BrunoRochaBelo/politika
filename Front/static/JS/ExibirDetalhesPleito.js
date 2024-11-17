@@ -41,6 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = event.target.closest(".pleitos-medium-card");
     if (!card) return;
 
+    // **Nova Verificação: Se o clique está dentro de '.pleitos-medium-card-editar', não faz nada**
+    if (event.target.closest(".pleitos-medium-card-editar")) {
+      // Não executa a lógica de expansão/recolhimento
+      return;
+    }
+
     // Se o clique for no botão de edição, adicione a lógica correspondente aqui
     if (event.target.closest(".btn-editar-pleito")) {
       // Adicione aqui a lógica para editar o pleito

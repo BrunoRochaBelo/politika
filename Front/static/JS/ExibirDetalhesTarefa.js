@@ -75,6 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = event.target.closest(".tarefa-small-card");
     if (!card) return;
 
+    // **Nova Verificação: Se o clique está dentro de '.tarefa-small-card-editar', não faz nada**
+    if (event.target.closest(".tarefa-small-card-editar")) {
+      // Não executa a lógica de expansão/recolhimento
+      return;
+    }
+
     // Se o clique for no botão de edição, abrir o modal de edição
     if (event.target.closest(".btn-editar-tarefa-pequena")) {
       abrirModalEdicaoTarefaPequena(card);
@@ -125,6 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const exibirDetalhesTarefaMedium = (event) => {
     const card = event.target.closest(".tarefa-medium-card");
     if (!card) return;
+
+    // **Nova Verificação: Se o clique está dentro de '.tarefa-medium-card-editar', não faz nada**
+    if (event.target.closest(".tarefa-medium-card-editar")) {
+      // Não executa a lógica de expansão/recolhimento
+      return;
+    }
 
     // Se o clique for no botão de edição, abrir o modal de edição
     if (event.target.closest(".btn-editar-tarefa-medium")) {
@@ -201,9 +213,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     if (btnFecharModal) {
       btnFecharModal.onclick = () =>
-        fecharModalEdicaoTarefaPequena(modalEdicao);
+        fecharModalEdicaoTarefaPequenaComRemocao(modalEdicao);
       btnFecharModal.addEventListener("touchstart", () =>
-        fecharModalEdicaoTarefaPequena(modalEdicao)
+        fecharModalEdicaoTarefaPequenaComRemocao(modalEdicao)
       );
     }
 
@@ -228,15 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fecharModalEdicaoTarefaPequena(modal);
       removerOuvintesFechamento();
     };
-
-    // Atualizar os ouvintes para usar a nova função
-    if (btnFecharModal) {
-      btnFecharModal.onclick = () =>
-        fecharModalEdicaoTarefaPequenaComRemocao(modalEdicao);
-      btnFecharModal.addEventListener("touchstart", () =>
-        fecharModalEdicaoTarefaPequenaComRemocao(modalEdicao)
-      );
-    }
   };
 
   /**
@@ -278,9 +281,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ".modal-edicao-tarefa-medium-close"
     );
     if (btnFecharModal) {
-      btnFecharModal.onclick = () => fecharModalEdicaoTarefaMedium(modalEdicao);
+      btnFecharModal.onclick = () =>
+        fecharModalEdicaoTarefaMediumComRemocao(modalEdicao);
       btnFecharModal.addEventListener("touchstart", () =>
-        fecharModalEdicaoTarefaMedium(modalEdicao)
+        fecharModalEdicaoTarefaMediumComRemocao(modalEdicao)
       );
     }
 
@@ -305,15 +309,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fecharModalEdicaoTarefaMedium(modal);
       removerOuvintesFechamento();
     };
-
-    // Atualizar os ouvintes para usar a nova função
-    if (btnFecharModal) {
-      btnFecharModal.onclick = () =>
-        fecharModalEdicaoTarefaMediumComRemocao(modalEdicao);
-      btnFecharModal.addEventListener("touchstart", () =>
-        fecharModalEdicaoTarefaMediumComRemocao(modalEdicao)
-      );
-    }
   };
 
   /**

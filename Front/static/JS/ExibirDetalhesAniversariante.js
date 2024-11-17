@@ -67,6 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = event.target.closest(".aniversario-small-card");
     if (!card) return;
 
+    // Verifica se o clique está dentro de '.aniversario-small-card-editar'
+    if (event.target.closest(".aniversario-small-card-editar")) {
+      // Não faz nada, impede o fechamento do cartão
+      return;
+    }
+
     // Se o clique for no botão de chamada, inicie a chamada
     if (event.target.classList.contains("aniversario-small-card-call")) {
       iniciarChamadaTelefonicaNiver(card);
