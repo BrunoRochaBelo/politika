@@ -1,0 +1,160 @@
+/* Estilos para o card Organograma Médio */
+.organograma-medium-card {
+  display: grid;
+  color: var(--txt-conteudo-card);
+  gap: 5px;
+  justify-content: stretch;
+  overflow: hidden;
+  grid-template-areas:
+    "organograma-medium-card-nome_unidade organograma-medium-card-sigla_unidade"
+    "organograma-medium-card-designacao organograma-medium-card-nivel-salarial"
+    "organograma-medium-card-nome_titular organograma-medium-card-nome_titular";
+  transition: all 0.25s ease;
+  max-height: 200px;
+}
+
+.organograma-medium-card-nome_unidade {
+  grid-area: organograma-medium-card-nome_unidade;
+  border-left: 4px solid var(--cor-primaria-2);
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  justify-self: start;
+  align-self: center;
+  margin: 3px 0 0 0px;
+  text-align: start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--txt-titulo-card);
+}
+
+.organograma-medium-card-sigla_unidade {
+  grid-area: organograma-medium-card-sigla_unidade;
+  justify-self: end;
+}
+
+.organograma-medium-card-designacao {
+  grid-area: organograma-medium-card-designacao;
+  justify-self: start;
+  align-self: center;
+  margin: 3px 0 0 15px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.organograma-medium-card-nivel-salarial {
+  grid-area: organograma-medium-card-nivel-salarial;
+  font-size: 12px;
+  font-weight: 400;
+  justify-self: end;
+  margin: 3px 0 0 10px;
+}
+
+.organograma-medium-card-nome_titular {
+  grid-area: organograma-medium-card-nome_titular;
+  justify-self: start;
+  align-self: center;
+  margin: 3px 0 0 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.organograma-medium-card-info-pub {
+  grid-area: organograma-medium-card-info-pub;
+  font-size: 12px;
+  font-weight: 300;
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: none;
+  background: var(--card-aberto-detalhe);
+  color: var(--txt-conteudo-card);
+  border-radius: 5px;
+  justify-content: start;
+  align-items: center;
+  margin: 3px 0 0 10px;
+}
+
+.organograma-medium-card-nivel-nivel-hierarquia {
+  grid-area: organograma-medium-card-nivel-nivel-hierarquia;
+  display: none;
+  font-size: 12px;
+  font-weight: 300;
+  justify-self: end;
+  padding: 10px 14px;
+  background: var(--card-aberto-detalhe);
+  color: var(--txt-conteudo-card);
+  border-radius: 5px;
+  align-items: center;
+  gap: 10px;
+  margin: 3px 0 0 10px;
+}
+
+.organograma-medium-card-editar {
+  grid-area: organograma-medium-card-editar;
+  display: none;
+  opacity: 0;
+  border-top: 1px solid var(--card-aberto-detalhe);
+  transition: opacity 0.25s ease-in-out;
+}
+
+.organograma-medium-card-id {
+  display: none;
+}
+
+.exibirDetalheOrganograma {
+  display: block;
+  opacity: 1 !important;
+}
+
+/* Estado Expandido */
+.organograma-medium-card-expanded {
+  border-radius: 12px;
+  background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
+  color: var(--txt-card-aberto);
+  box-shadow: var(--sombra-card-aberto);
+  grid-template-areas:
+    "organograma-medium-card-nome_unidade organograma-medium-card-sigla_unidade"
+    "organograma-medium-card-nivel-nivel-hierarquia organograma-medium-card-nivel-nivel-hierarquia"
+    "organograma-medium-card-designacao organograma-medium-card-nivel-salarial"
+    "organograma-medium-card-nome_titular organograma-medium-card-nome_titular"
+    "organograma-medium-card-info-pub organograma-medium-card-info-pub"
+    "organograma-medium-card-editar organograma-medium-card-editar";
+  transform: scale(1);
+  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  max-height: 500px;
+}
+
+.organograma-medium-card-editar.exibirDetalheOrganograma {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px 0px 0px;
+  margin: 15px 0 0 0;
+  opacity: 1;
+  gap: 30px;
+}
+
+.organograma-medium-card-expanded .organograma-medium-card-nome_unidade {
+  border-left: 4px solid var(--card-aberto-detalhe);
+  color: var(--txt-card-aberto);
+}
+
+.organograma-medium-card-expanded .organograma-medium-card-desc {
+  background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
+}
+
+.organograma-medium-card-expanded:hover {
+  filter: brightness(1);
+}
+
+/* Estilos para o Nível Hierarquia */
+.nivel-hierarquia {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+}

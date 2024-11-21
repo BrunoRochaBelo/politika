@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="manifest" href="./manifest.json">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./static/imagens/icones/oraganograma-select.svg" type="image/png">
+  <title>Organograma</title>
+  <meta name="description" content="Lista de Organograma">
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body class="body-template">
+
+  <header class="header header-template">
+    <div class="header-menu" onclick="toggleMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="header-notification" id="notification">
+      <img src="./static/imagens/icones/notificação.svg" alt="Notification Icon">
+      <span id="notificationCounter" class="notification-counter">0</span>
+    </div>
+    <nav class="header-nav">
+      <ul class="header-nav-template">
+        <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
+            <p>home</p>
+          </a></li>
+        <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
+            <p>calendario</p>
+          </a></li>
+        <li class="tarefas indicador"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas-select.svg" alt="tarefas Icon">
+            <p>Tarefas</p>
+          </a></li>
+        <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+            <p>Contatos</p>
+          </a></li>
+        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+            <p>Pleitos</p>
+          </a></li>
+        <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
+            <p>Despesas</p>
+          </a></li>
+        <li class="apps">
+          <a href="#">
+            <img src="./static/imagens/icones/apps.svg" alt="Ícone Apps">
+            <p>Apps</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-search">
+      <div>
+        <form action="/tarefa/listcard" method="post" class="search-input-container">
+          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar tarefa...">
+          <button type="submit" class="search-button">
+            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main main-template-sem-sidenav">
+    <section class="main-section">
+      <div class="container-template">
+        <h2 class="container-template-header">Organograma</h2>
+        <div class="container-template-content container-template-content-com-header-fx-int">
+          <div class="area-interna-containerContent-template">
+            <div class="area-interna-containerContent-template-header">
+              <div>
+                <span id="tituloOrganograma">Título da Unidade</span> - <span id="siglaOrganograma">SIGLA</span> | Versão: <span id="versaoOrganograma">1.0</span>
+              </div>
+            </div>
+            <div class="area-interna-containerContent-template-content">
+              <ul class="lista-vertical">
+                <li class="area-filtro inactiveFil" id="filtro">
+                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                      <a href="/organograma_list" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
+                </li>
+                <li class="secao-interna-template area-tarefas">
+                  <div class="secao-interna-template-content">
+                    <ul class="lista-vertical-cards" id="listaOrganogramas">
+                      <li>
+                        <a class="card-m organograma-medium-card" href="#">
+                          <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">Nome da Unidade Organizacional</p>
+                          <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                            <div class="marcador-item cor-marc3">
+                              <p><strong>SIG</strong></p>
+                            </div>
+                          </div>
+                          <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de Projetos</p>
+                          <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 10.000,00</p>
+                          <p class="organograma-medium-card-nome_titular" data-field="nome_titular">Maria Silva</p>
+                          <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                            <p>Veículo de Publicação: Diário Oficial</p>
+                            <p>Número: 12345 - Publicação: 01/01/2024</p>
+                            <p><strong>Data da Posse: 01/01/2024</strong></p>
+                          </div>
+                          <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">
+                            <p>Nível Hierárquico: <span class="nivel-hierarquia" style="background-color: #4CAF50; border-radius: 50%; padding: 5px 10px; color: white;">1</span></p>
+                          </div>
+                          <div class="organograma-medium-card-editar">
+                            <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/1'">Alterar</button>
+                          </div>
+                          <div class="organograma-medium-card-id" data-field="id">1</div>
+                        </a>
+                      </li>
+                      <!-- Fim do card de organograma -->
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Modal Botão Flutuante -->
+  <button class="floatingButton">+</button>
+  <div class="modal-btn-floating-Overlay esconderModal">
+    <div class="modal-btn-floating-content">
+      <div class="modal-btn-floating-header">
+        <h1>NOVA</h1>
+      </div>
+      <ul class="modal-btn-floating-body">
+        <li><a href="/organograma_incluir?orgao_id=ORGAO_ID_PLACEHOLDER">Item</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal Menu -->
+  <div class="modal" id="modalMenu">
+    <div class="modal-content-template">
+      <div class="modal-content-template-card-user">
+        <div class="modal-content-template-card-user-img">
+          <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" id="modalUserPhoto">
+        </div>
+        <p class="modal-content-template-card-user-candidato" id="candidato">Nome do candidato</p>
+        <p class="modal-content-template-card-user-cargo-owner" id="cargoOwner">Cargo do candidato</p>
+        <p class="modal-content-template-card-user-partido" id="partido">Partido do candidato</p>
+        <div class="modal-content-template-card-user-secao">
+          <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
+          <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
+        </div>
+        <a class="modal-content-template-card-user-gc" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
+      </div>
+      <div class="modal-content-template-list-op">
+        <ul class="modalMenu-list">
+          <li class="alterar-tema">
+            <button id="toggleTheme">
+              <img id="themeIcon" src="./static/imagens/icones/sun.svg" alt="Ícone de Sol" />
+              Alterar tema
+            </button>
+          </li>
+          <li>
+            <a href="calendario.html">
+              <img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
+              <span>Calendário</span>
+            </a>
+          </li>
+          <li>
+            <a href="tarefas.html">
+              <img src="./static/imagens/icones/tarefas.svg" alt="tarefas Icon">
+              <span>Tarefas</span>
+            </a>
+          </li>
+          <li>
+            <a href="contatos.html">
+              <img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+              <span>Contatos</span>
+            </a>
+          </li>
+          <li>
+            <a href="pleitos.html">
+              <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+              <span>Pleitos</span>
+            </a>
+          </li>
+          <li>
+            <a href="despesas.html">
+              <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
+              <span>Despesas</span>
+            </a>
+          </li>
+          <li class="logout" onclick="logout()">
+            <a id="btnLogout">
+              <img src="./static/imagens/icones/sair.svg" alt="Sair icon">
+              <span>Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Notificações -->
+  <div class="modal-notificacoes" id="notificationModal">
+    <div class="modal-content-notificacoes" id="modalContent">
+      <span class="modal-notificacoes-btn-close" id="closeButton">&times;</span>
+      <button id="markAllReadButton">Marcar todas como lidas</button>
+      <ul id="notificationsContent" class="notifications-list">
+        <!-- Notifications will be dynamically inserted here -->
+      </ul>
+      <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
+    </div>
+  </div>
+
+  <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
+
+  <!-- Modal para exibir mais aplicativos -->
+  <div id="modalMaisApps" class="modal-mais-apps">
+    <div class="modal-mais-apps-content">
+
+      <div class="modal-mais-apps-close"></div>
+      <ul class="modal-mais-apps-icones">
+        <li>
+          <a href="pleitos.html">
+            <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon" class="icone-app">
+            <p>Pleitos</p>
+          </a>
+        </li>
+        <li>
+          <a href="despesas.html">
+            <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon" class="icone-app">
+            <p>Despesas</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script src="./static/js/config.js" async></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" async></script>
+  <script src="./static/js/ScrollAjustarItensContainerHeader.js" defer></script>
+  <script src="./static/js/ModalBTNFloating.js" defer></script>
+  <script src="./static/js/ModalMaisApps.js" defer></script>
+  <script src="./static/js/ModalMenu.js" defer></script>
+  <script src="./static/js/ModalNotificacoes.js" defer></script>
+  <script src="./static/js/ManipularHistorico.js" defer></script>
+  <script src="./static/js/ExibirDetalhesOrganograma.js" defer></script>
+
+</body>
+
+</html>

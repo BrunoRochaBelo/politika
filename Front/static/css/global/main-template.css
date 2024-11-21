@@ -26,6 +26,15 @@
   padding: 3px;
 }
 
+.main-template-sem-sidenav {
+  display: grid;
+  gap: 0rem;
+  grid-template-columns: 0.9fr;
+  grid-template-rows: auto;
+  grid-template-areas: "main-section";
+  justify-content: center;
+}
+
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .main-template {
@@ -55,5 +64,12 @@
   .main-sidenav h1 {
     display: none;
     margin-left: 20px;
+  }
+
+  .main-template-sem-sidenav {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "main-section";
+    overflow: hidden;
   }
 }
