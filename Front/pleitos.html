@@ -71,127 +71,234 @@
   </header>
 
   <main class="main main-template">
-    <section class="main-section ">
-      <div class="container-abas-template">
-        <nav class="container-abas-template-header">
-          <ul id="navAba" class="nav">
-            <li id="nav1">
-              <a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Novos</a>
-            </li>
-            <li id="nav2">
-              <a href="#aba2" onclick="mostrarAba('aba2')">Andadmento</a>
-            </li>
-            <li id="nav3">
-              <a href="#aba3" onclick="mostrarAba('aba3')">Concluídos</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="container-abas-template-content">
-          <div id="aba1" class="aba-template active">
-            <div class="area-interna-containerContent-template">
-              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                <ul class="lista-vertical-alt">
-                  <li class="area-filtro activeFil" id="filtro1">
-                    <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
-                    <div class="btn-filtro-pesq">
-                      <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
-                        <a href="pleitos.html" class="remover-filtro">&times;</a>
-                      </p>
-                    </div>
-                  </li>
-                  <li class="secao-interna-template">
-                    <div class="secao-interna-template-content">
-                      <ul class="lista-vertical-cards">
-                        <li>
-                          <a class="card-m pleitos-medium-card" href="#">
-                            <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
-                            <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
-                            <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
-                            <div class="pleitos-medium-card-desc" data-filter="descPleito">
-                              <p><strong>Descrição</strong></p>
-                            </div>
-                            <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
-                            <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
-                            <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
-                            <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
-                            <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
-                            <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
-                            <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
-                            <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
-                            <div class="pleitos-medium-card-editar">
-                              <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='pleito_exibir.html'">Visualizar</button>
-                              <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
-                              <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
-                            </div>
-                            <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="list-last-child"><br></li>
-                </ul>
-              </div>
+    <section class="main-section">
+      <div class="container-template">
+        <h2 class="container-template-header">Pleitos</h2>
+        <div class="container-template-content container-template-content-com-header-fx-int">
+          <div class="area-interna-containerContent-template ">
+            <div class="area-interna-containerContent-template-content">
+              <ul class="lista-vertical">
+                <li class="area-filtro inactiveFil" id="filtro">
+                  <span id="totalResults2">{{total}}</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                      <a href="calendario.html" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
+                </li>
+                <li class="secao-interna-template">
+                  <div class="secao-interna-template-content">
+                    <ul class="lista-vertical-cards">
+                      <!-- lógica do loop lista de tarefas -->
+                      <!-- inicio do card tarefa -->
+                      <li>
+                        <a class="card-m pleitos-medium-card" href="#">
+                          <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
+                          <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
+                          <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
+                          <div class="pleitos-medium-card-desc" data-filter="descPleito">
+                            <p><strong>Descrição</strong></p>
+                          </div>
+                          <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
+                          <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
+                          <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
+                          <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
+                          <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
+                          <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
+                          <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
+                          <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
+                          <div class="pleitos-medium-card-editar">
+                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='pleito_exibir.html'">Visualizar</button>
+                            <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
+                            <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
+                          </div>
+                          <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
+                        </a>
+                      </li>
+                      <!-- fim do card tarefa -->
+                    </ul>
+                  </div>
+                </li>
+                <li class="list-last-child"><br></li>
+              </ul>
             </div>
           </div>
-
-          <div id="aba2" class="aba-template">
-            Pleitos em andamento
-          </div>
-
-          <div id="aba3" class="aba-template">
-            Pleitos em concluidos
-          </div>
-
         </div>
       </div>
     </section>
 
     <section class="main-sidenav">
-      <div class="container-filtros-template">
+      <div class="container-filtros-template filtros-tarefas">
         <h2 class="container-filtros-template-header">Filtros
           <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()">Filtros</button>
         </h2>
-        <div class="container-filtros-template-content lista-vertical-fil">
-          <button class="btn-principal-alt" type="button" data-filter="todos">
-            <strong>Todos</strong>
-          </button>
-          <select class="card-select-m" id="tipoPleito" name="tipoPleito">
-            <option value="" selected disabled>Tipo de Pleito</option>
-            <option value="apoio juridico">APOIO JURÍDICO</option>
-            <option value="apoio politico">APOIO POLÍTICO</option>
-            <option value="educacao e capacitacao">EDUCAÇÃO E CAPACITAÇÃO</option>
-            <option value="emprego">EMPREGO</option>
-            <option value="infraestrutura">INFRAESTRUTURA</option>
-            <option value="outros">OUTROS</option>
-            <option value="recurso para construcao civil">RECURSO PARA CONSTRUÇÃO CIVIL</option>
-            <option value="saude">SAÚDE</option>
-            <option value="seguranca">SEGURANÇA</option>
-            <option value="servico publico estadual">SERVIÇO PÚBLICO ESTADUAL</option>
-            <option value="servico publico federal">SERVIÇO PÚBLICO FEDERAL</option>
-            <option value="servico publico municipal">SERVIÇO PÚBLICO MUNICIPAL</option>
-            <option value="transferencia de orgao">TRANSFERÊNCIA DE ÓRGÃO</option>
-            <option value="transporte publico">TRANSPORTE PÚBLICO</option>
-          </select>
-          <ul class=" lista-select">
-            <li class="item1"><select class="card-select-m" id="estado" onchange="carregarCidades()">
-                <option value="" selected disabled>Selecione um estado</option>
-                <option value="PE">Pernambuco</option>
-                <option value="SP">São Paulo</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="MG">Minas Gerais</option>
-              </select></li>
-            <li class="item2"><select class="card-select-m" id="cidade">
-                <option value="" selected disabled>Selecione um estado primeiro</option>
-              </select></li>
-            <li class="item3"><select class="card-select-m" id="bairro">
-                <option value="" selected disabled>Selecione uma cidade e defina o bairro</option>
-              </select></li>
-          </ul>
+        <div class="container-filtros-template-content">
+          <div id="abaFiltros1" class="aba-filtro active">
+            <ul class="lista-vertical-fil">
 
+              <!-- Filtro de Marcadores -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_marcadores">Marcadores <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_marcadores" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="todos_marcadores" value="todos" checked>
+                    <label for="todos_marcadores" class="marcador-s cor-marc0">Todos</label>
+
+                    <ul class="lista-vertical-2-column">
+                      <li>
+                        <input type="checkbox" id="marcador1" value="marcador1">
+                        <label for="marcador1" class="marcador-s cor-marc1">Marcador 1</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador2" value="marcador2">
+                        <label for="marcador2" class="marcador-s cor-marc2">Marcador 2</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador3" value="marcador3">
+                        <label for="marcador3" class="marcador-s cor-marc3">Marcador 3</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador4" value="marcador4">
+                        <label for="marcador4" class="marcador-s cor-marc4">Marcador 4</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador5" value="marcador5">
+                        <label for="marcador5" class="marcador-s cor-marc5">Marcador 5</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador6" value="marcador6">
+                        <label for="marcador6" class="marcador-s cor-marc6">Marcador 6</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador7" value="marcador7">
+                        <label for="marcador7" class="marcador-s cor-marc7">Marcador 7</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador8" value="marcador8">
+                        <label for="marcador8" class="marcador-s cor-marc8">Marcador 8</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador9" value="marcador9">
+                        <label for="marcador9" class="marcador-s cor-marc9">Marcador 9</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador10" value="marcador10">
+                        <label for="marcador10" class="marcador-s cor-marc10">Marcador 10</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+
+              <!-- Filtro de Status -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_status">Status <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_status" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="todos_status" value="todos" checked>
+                    <label for="todos_status">Todos</label>
+
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="novas" value="novas">
+                      <label for="novas">Novas</label>
+
+                      <input type="checkbox" id="andamento" value="andamento">
+                      <label for="andamento">Andamento</label>
+
+                      <input type="checkbox" id="atrasadas" value="atrasadas">
+                      <label for="atrasadas">Atrasadas</label>
+
+                      <input type="checkbox" id="concluidas" value="concluidas">
+                      <label for="concluidas">Concluídas</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Responsável -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_responsavel">Responsável <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_responsavel" class="radio-button-group ">
+                    <input type="radio" id="minhas" name="filtro_responsavel" value="minhas">
+                    <label for="minhas">Minhas</label>
+
+                    <input type="radio" id="todas" name="filtro_responsavel" value="todas">
+                    <label for="todas">Todas</label>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Período -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_tempo">Período <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_tempo" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="tempo_todos" value="todos" checked>
+                    <label for="tempo_todos">Todos</label>
+
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="hoje" value="hoje">
+                      <label for="hoje">Hoje</label>
+
+                      <input type="checkbox" id="esta_semana" value="esta_semana">
+                      <label for="esta_semana">Esta semana</label>
+
+                      <input type="checkbox" id="este_mes" value="este_mes">
+                      <label for="este_mes">Este mês</label>
+
+                      <input type="checkbox" id="este_ano" value="este_ano">
+                      <label for="este_ano">Este ano</label>
+                    </div>
+
+                    <div class="lista-vertical-alt">
+                      <!--  <div class="checkbox-button-group lista-vertical-2-column">
+                        <label for="data_especifica_input">Data específica</label>
+                        <input type="date" id="data_especifica_input" name="data_especifica">
+                      </div> -->
+
+                      <div>
+                        <h4>Período específico</h4>
+                        <div class="checkbox-button-group lista-vertical-alt">
+                          <div class="lista-vertical-2-column">
+                            <label for="data_inicio">Início:</label>
+                            <input type="date" id="data_inicio" name="data_inicio">
+                          </div>
+                          <div class="lista-vertical-2-column">
+                            <label for="data_fim">Fim:</label>
+                            <input type="date" id="data_fim" name="data_fim">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="botoes">
+              <button class="btn-outline-principal" type="button" data-filter="Limpar">
+                Limpar
+              </button>
+
+              <button class="btn-principal" type="button" data-filter="Aplicar">
+                Aplicar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
 
   </main>
 
@@ -445,10 +552,11 @@
   <script src="./static/js/ModalNotificacoes.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/OcultarExibirFiltro.js" defer></script>
-  <script src="./static/js/NavAbasInternas.js" defer></script>
   <script src="./static/js/ExibirDetalhesPleito.js" defer></script>
   <script src="./static/js/ModalConcluirPleito.js" defer></script>
   <script src="./static/js/ModalDespacharPleito.js" defer></script>
+  <script src="./static/js/FiltrosMultiSelect.js" defer></script>
+  <script src="./static/js/FiltrosTarefas.js" defer></script>
 
 </body>
 

@@ -31,7 +31,7 @@
 }
 .pleitos-medium-card-dataSolici {
   grid-area: pleitos-medium-card-dataSolici;
-  justify-self: start;
+  justify-self: end;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
@@ -80,7 +80,7 @@
   grid-area: pleitos-medium-card-uf;
   display: none;
   opacity: 0;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
@@ -92,7 +92,7 @@
   grid-area: pleitos-medium-card-cidade;
   display: none;
   opacity: 0;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
@@ -104,7 +104,7 @@
   grid-area: pleitos-medium-card-bairro;
   display: none;
   opacity: 0;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
@@ -116,7 +116,7 @@
   grid-area: pleitos-medium-card-rua;
   display: none;
   opacity: 0;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
@@ -132,26 +132,35 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 10px;
+  font-weight: 400;
+  filter: brightness(0.7);
   transition: opacity 0.25s ease-in-out;
 }
 .pleitos-medium-card-dataCriacao {
   grid-area: pleitos-medium-card-dataCriacao;
   display: none;
   opacity: 0;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 10px;
+  font-weight: 400;
+  filter: brightness(0.7);
   transition: opacity 0.25s ease-in-out;
 }
 .pleitos-medium-card-status {
   grid-area: pleitos-medium-card-status;
   display: none;
   opacity: 0;
+  justify-self: end;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: 13px;
+  font-weight: 300;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .pleitos-medium-card-editar {
@@ -177,13 +186,13 @@
     "pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario"
     "pleitos-medium-card-uf pleitos-medium-card-cidade pleitos-medium-card-bairro"
     "pleitos-medium-card-rua pleitos-medium-card-rua pleitos-medium-card-rua"
-    "pleitos-medium-card-autor pleitos-medium-card-autor pleitos-medium-card-dataCriacao"
     "pleitos-medium-card-status pleitos-medium-card-status pleitos-medium-card-status"
     "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc"
+    "pleitos-medium-card-autor pleitos-medium-card-autor pleitos-medium-card-dataCriacao"
     "pleitos-medium-card-editar pleitos-medium-card-editar pleitos-medium-card-editar";
   transform: scale(1);
   transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  max-height: 300px;
+  max-height: 500px;
   height: auto;
 }
 
@@ -192,6 +201,7 @@
 .pleitos-medium-card-cidade.exibirDetalhePleito,
 .pleitos-medium-card-bairro.exibirDetalhePleito,
 .pleitos-medium-card-rua.exibirDetalhePleito,
+.pleitos-medium-card-status.exibirDetalhePleito,
 .pleitos-medium-card-autor.exibirDetalhePleito,
 .pleitos-medium-card-dataCriacao.exibirDetalhePleito {
   display: inline-block;

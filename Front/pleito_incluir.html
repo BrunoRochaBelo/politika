@@ -33,12 +33,25 @@
                       <legend class="titulo-xl"></legend>
 
                       <div class="campo">
-                        <label for="nome">Nome do solicitante:</label>
-                        <input type="text" id="nome" name="nome" placeholder="Digite o nome do solicitante" required><br>
+                        <label for="beneficiario">Assunto:<span>*</span></label>
+                        <input type="text" id="beneficiario" name="beneficiario" required placeholder="Informe o assunto">
                       </div>
 
                       <div class="campo">
-                        <label for="tipo">Tipo solicitação:</label>
+                        <label for="indicacao">Nome do solicitante:<span>*</span></label>
+                        <input type="text" id="indicacao" name="solicitante" required placeholder="Digite o nome do solicitante">
+                        <div class="loading-indicator" id="loading-indicator">Carregando...</div>
+                        <div id="suggestions-ref-poli" class="suggestions"></div>
+                      </div>
+
+
+                      <div class="campo">
+                        <label for="data">Data da solicitação:</label>
+                        <input type="date" id="data" name="data">
+                      </div>
+
+                      <div class="campo">
+                        <label for="tipo">Tipo de Pleito:<span>*</span></label>
                         <select id="tipo" name="tipo" required>
                           <option value="" selected disabled>Selecione o tipo de solicitação</option>
                           <option value="apoio juridico">APOIO JURÍDICO</option>
@@ -50,67 +63,126 @@
                           <option value="recurso para construcao civil">RECURSO PARA CONSTRUÇÃO CIVIL</option>
                           <option value="saude">SAÚDE</option>
                           <option value="seguranca">SEGURANÇA</option>
-                          <option value="servico publico estadual">SERVIÇO PÚBLICO ESTADUAL</option>
-                          <option value="servico publico federal">SERVIÇO PÚBLICO FEDERAL</option>
-                          <option value="servico publico municipal">SERVIÇO PÚBLICO MUNICIPAL</option>
                           <option value="transferencia de orgao">TRANSFERÊNCIA DE ÓRGÃO</option>
                           <option value="transporte publico">TRANSPORTE PÚBLICO</option>
                         </select>
                       </div>
 
+
+                      <div class="campo">
+                        <label for="categoria">Categoria do Pleito:<span>*</span></label>
+                        <select id="categoria" name="categoria" required>
+                          <option value="" selected disabled>Selecione a categoria do pleito</option>
+                          <option value="ASSOCIAÇÃO">ASSOCIAÇÃO</option>
+                          <option value="CATEGORIA PROFISSIONAL">CATEGORIA PROFISSIONAL</option>
+                          <option value="CLUBE">CLUBE</option>
+                          <option value="COMUNIDADE">COMUNIDADE</option>
+                          <option value="EMPRESA">EMPRESA</option>
+                          <option value="PESSOA">PESSOA</option>
+                          <option value="ONG">ONG</option>
+                          <option value="SETOR EDUCAÇÃO">SETOR EDUCAÇÃO</option>
+                          <option value="SETOR DA SAÚDE">SETOR DA SAÚDE</option>
+                          <option value="SETOR DA SEGURANÇA">SETOR DA SEGURANÇA</option>
+                          <option value="SETOR PRODUTIVO">SETOR PRODUTIVO</option>
+                          <option value="SINDICATO">SINDICATO</option>
+                          <option value="OUTRAS">OUTRAS</option>
+                        </select>
+                      </div>
+
+
                       <div class="campo">
                         <label for="descricao">Descrição:</label>
-                        <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Descreva a solicitação em detalhes" required></textarea><br>
+                        <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Descreva a solicitação em detalhes"></textarea>
                       </div>
+
 
                       <div class="campo">
                         <label for="beneficiario">Beneficiário:</label>
-                        <input type="text" id="beneficiario" name="beneficiario" placeholder="Informe o nome do beneficiário" required><br>
+                        <input type="text" id="beneficiario" name="beneficiario" placeholder="Informe o nome do beneficiário">
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class="titulo-xl title-legend">Endereço do Beneficiário</legend>
+
+                      <div class="campo">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" oninput="buscarEndereco(this.value)">
+                      </div>
+
+                      <div class="form-2-colum">
+                        <div class="campo">
+                          <label for="uf">UF</label>
+                          <select id="uf" name="uf">
+                            <option value="">Selecione</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                          </select>
+                        </div>
+                        <div class="campo">
+                          <label for="cidade">Cidade</label>
+                          <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade">
+                        </div>
                       </div>
 
                       <div class="campo">
-                        <label for="cep">CEP:</label>
-                        <input type="text" id="cep" name="cep" placeholder="Digite o CEP" required><br>
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
                       </div>
 
                       <div class="campo">
-                        <label for="uf">UF:</label>
-                        <input type="text" id="uf" name="uf" placeholder="Digite o estado (UF)" required><br>
+                        <label for="rua">Rua</label>
+                        <input type="text" id="rua" name="rua" placeholder="Digite a rua">
                       </div>
 
-                      <div class="campo">
-                        <label for="rua">Rua:</label>
-                        <input type="text" id="rua" name="rua" placeholder="Digite o nome da rua" required><br>
+                      <div class="form-2-colum">
+                        <div class="campo">
+                          <label for="numero">Número</label>
+                          <input type="number" id="numero" name="numero" placeholder="Digite o número">
+                        </div>
+                        <div class="campo">
+                          <label for="complemento">Complemento</label>
+                          <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+                        </div>
                       </div>
 
-                      <div class="campo">
-                        <label for="numero">Número:</label>
-                        <input type="number" id="numero" name="numero" placeholder="Digite o número" required><br>
+                      <div class="campo ocultar">
+                        <label for="latitude">Latitude</label>
+                        <input type="number" id="latitude" name="latitude" step="0.000001" placeholder="Digite a latitude">
                       </div>
-
-                      <div class="campo">
-                        <label for="complemento">Complemento:</label>
-                        <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento (se houver)"><br>
-                      </div>
-
-                      <div class="campo">
-                        <label for="bairro">Bairro:</label>
-                        <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro" required><br>
-                      </div>
-
-                      <div class="campo">
-                        <label for="cidade">Cidade:</label>
-                        <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required><br>
-                      </div>
-
-                      <div class="campo">
-                        <label for="data">Data da solicitação:</label>
-                        <input type="date" id="data" name="data" required><br>
+                      <div class="campo ocultar">
+                        <label for="longitude">Longitude</label>
+                        <input type="number" id="longitude" name="longitude" step="0.000001" placeholder="Digite a longitude">
                       </div>
                     </fieldset>
                   </div>
                   <div class="botoes">
-                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                    <button type="submit" class="btn-principal">Criar</button>
                   </div>
                 </div>
               </div>
@@ -125,6 +197,9 @@
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" async></script>
+  <script src="./static/js/BuscaEndereco.js" defer></script>
+  <script src="./static/js/IncluirPleito.js" defer></script>
+  <script src="./static/js/ContatoIncluirListaReferenciaPolitica.js" defer></script>
 
 </body>
 

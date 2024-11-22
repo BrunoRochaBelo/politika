@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsExpandidos.forEach((card) => {
       card.classList.remove("pleitos-medium-card-expanded");
       const camposOcultos = card.querySelectorAll(
-        ".pleitos-medium-card-beneficiario, .pleitos-medium-card-uf, .pleitos-medium-card-cidade, .pleitos-medium-card-bairro, .pleitos-medium-card-rua, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
+        ".pleitos-medium-card-beneficiario, .pleitos-medium-card-uf, .pleitos-medium-card-cidade, .pleitos-medium-card-bairro, .pleitos-medium-card-rua, .pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
       );
       camposOcultos.forEach((campo) => {
         campo.classList.remove("exibirDetalhePleito");
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const camposOcultos = card.querySelectorAll(
-      ".pleitos-medium-card-beneficiario, .pleitos-medium-card-uf, .pleitos-medium-card-cidade, .pleitos-medium-card-bairro, .pleitos-medium-card-rua, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
+      ".pleitos-medium-card-beneficiario, .pleitos-medium-card-uf, .pleitos-medium-card-cidade, .pleitos-medium-card-bairro, .pleitos-medium-card-rua,.pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
     );
 
     const isExpanded = card.classList.contains("pleitos-medium-card-expanded");
