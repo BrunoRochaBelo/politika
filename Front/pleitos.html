@@ -47,12 +47,12 @@
         <li class="pleitos indicador"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos-select.svg" alt="Pleitos Icon">
             <p>Pleitos</p>
           </a></li>
-        <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
-            <p>Despesas</p>
+        <li class="arquivos"><a href="arquivos.html"><img src="./static/imagens/icones/arquivos.svg" alt="Arquivos Icon">
+            <p>Arquivos</p>
           </a></li>
-        <li class="apps">
+        <li class="apps indicador">
           <a href="#">
-            <img src="./static/imagens/icones/apps.svg" alt="Ícone Apps">
+            <img src="./static/imagens/icones/apps-select.svg" alt="Ícone Apps">
             <p>Apps</p>
           </a>
         </li>
@@ -94,25 +94,25 @@
                       <li>
                         <a class="card-m pleitos-medium-card" href="#">
                           <p class="pleitos-medium-card-tiposolici" data-filter="tipoSolici">Tipo Solicitação</p>
-                          <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">xx/xx/xxxx</p>
-                          <p class="pleitos-medium-card-solicitante" data-filter="solicitante">Solicitante</p>
+                          <p class="pleitos-medium-card-dataSolici" data-filter="dataSoliciPleito">12/04/2024</p>
+                          <p class="pleitos-medium-card-solicitante" data-filter="solicitante">João Silva</p>
                           <div class="pleitos-medium-card-desc" data-filter="descPleito">
-                            <p><strong>Descrição</strong></p>
+                            <p><strong>Descrição:</strong> Solicitação de melhoria na infraestrutura.</p>
                           </div>
-                          <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">beneficiario</p>
-                          <p class="pleitos-medium-card-uf" data-filter="ufPleito">UF</p>
-                          <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">Cidade</p>
-                          <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Bairro</p>
-                          <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua</p>
-                          <p class="pleitos-medium-card-autor" data-filter="autorPleito">Autor</p>
-                          <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">dataCriacao</p>
-                          <p class="pleitos-medium-card-status" data-filter="statusPleito">Status</p>
+                          <p class="pleitos-medium-card-beneficiario" data-filter="beneficiario">Empresa XYZ</p>
+                          <p class="pleitos-medium-card-uf" data-filter="ufPleito">SP</p>
+                          <p class="pleitos-medium-card-cidade" data-filter="cidadePleito">São Paulo</p>
+                          <p class="pleitos-medium-card-bairro" data-filter="bairroPleito">Centro</p>
+                          <p class="pleitos-medium-card-rua" data-filter="ruaPleito">Rua A</p>
+                          <p class="pleitos-medium-card-autor" data-filter="autorPleito">Maria Oliveira</p>
+                          <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">10/04/2024</p>
+                          <p class="pleitos-medium-card-status" data-filter="statusPleito">Em Análise</p>
                           <div class="pleitos-medium-card-editar">
-                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='pleito_exibir.html'">Visualizar</button>
-                            <button class="btn-outline-principal" id="btnDespachar" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Despachar</button>
-                            <button class="btn-outline-principal" id="btnConcluir" onclick="preencherModal(document.querySelector('.pleitos-medium-card'))">Concluir</button>
+                            <button class="btn-outline-principal btn-visualizar">Visualizar</button>
+                            <button class="btn-outline-principal btn-despachar">Despachar</button>
+                            <button class="btn-outline-principal btn-concluir">Concluir</button>
                           </div>
-                          <p class="pleitos-medium-card-id" data-filter="pleitoID">{{pleitoID}}</p>
+                          <p class="pleitos-medium-card-id" data-filter="pleitoID">12345</p>
                         </a>
                       </li>
                       <!-- fim do card tarefa -->
@@ -407,9 +407,9 @@
           </a>
         </li>
         <li>
-          <a href="despesas.html">
-            <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon" class="icone-app">
-            <p>Despesas</p>
+          <a href="arquivos.html">
+            <img src="./static/imagens/icones/arquivos.svg" alt="arquivos Icon" class="icone-app">
+            <p>Arquivos</p>
           </a>
         </li>
       </ul>
@@ -418,133 +418,151 @@
 
 
   <!-- Modal Concluir Pleito -->
-  <div id="modal-concluir-pleito" class="modal-concluir-pleito">
-    <div class="modal-concluir-pleito-content card-m">
+  <div id="modal-overlay" class="modal-card-acao-overlay"></div>
 
-      <span class="close">&times;</span>
-      <div class="modal-concluir-pleito-template">
-        <p class="modal-concluir-pleito-tiposolici" data-filter="tipoSolici"></p>
-        <p class="modal-concluir-pleito-dataSolici" data-filter="dataSoliciPleito"></p>
-        <p class="modal-concluir-pleito-solicitante" data-filter="solicitante"></p>
-        <div class="modal-concluir-pleito-desc" data-filter="descPleito">
-          <p><strong>Descrição</strong></p>
-        </div>
-        <p class="modal-concluir-pleito-beneficiario" data-filter="beneficiario"></p>
-        <p class="modal-concluir-pleito-uf" data-filter="ufPleito"></p>
-        <p class="modal-concluir-pleito-cidade" data-filter="cidadePleito"></p>
-        <p class="modal-concluir-pleito-bairro" data-filter="bairroPleito"></p>
-        <p class="modal-concluir-pleito-rua" data-filter="ruaPleito"></p>
-        <p class="modal-concluir-pleito-autor" data-filter="autorPleito"></p>
-        <p class="modal-concluir-pleito-dataCriacao" data-filter="dataCriacaoPleito"></p>
-        <p class="modal-concluir-pleito-status" data-filter="statusPleito"></p>
-        <p class="modal-concluir-pleito-desc" data-filter="descPleito"></p>
+  <div id="modal-concluir-pleito" class="modal-card-acao-template">
+    <div class="modal-card-acao-template-header">
+      <span class="closeModalCardAcao">&times;</span>
+    </div>
+    <div class="modal-card-acao-template-content">
+      <ul class="lista-vertical-modal">
+        <li>
+          <div class="modal-concluir-pleito-template">
+            <p class="modal-concluir-pleito-tiposolici" data-filter="tipoSolici"></p>
+            <p class="modal-concluir-pleito-dataSolici" data-filter="dataSoliciPleito"></p>
+            <p class="modal-concluir-pleito-solicitante" data-filter="solicitante"></p>
+            <div class="modal-concluir-pleito-desc" data-filter="descPleito">
+              <p><strong>Descrição:</strong></p>
+            </div>
+            <p class="modal-concluir-pleito-beneficiario" data-filter="beneficiario"></p>
+            <p class="modal-concluir-pleito-uf" data-filter="ufPleito"></p>
+            <p class="modal-concluir-pleito-cidade" data-filter="cidadePleito"></p>
+            <p class="modal-concluir-pleito-bairro" data-filter="bairroPleito"></p>
+            <p class="modal-concluir-pleito-rua" data-filter="ruaPleito"></p>
+            <p class="modal-concluir-pleito-autor" data-filter="autorPleito"></p>
+            <p class="modal-concluir-pleito-dataCriacao" data-filter="dataCriacaoPleito"></p>
+            <p class="modal-concluir-pleito-status" data-filter="statusPleito"></p>
+            <p class="modal-concluir-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
+          </div>
+        </li>
+        <li>
+          <div class="modal-concluir-pleito-concluir">
+            <h2 class="modal-concluir-pleito-concluir-title">Concluir</h2>
 
-        <div class="modal-concluir-pleito-concluir">
-          <h2 class="modal-concluir-pleito-concluir-title">Concluir</h2>
-          <div class="modal-concluir-pleito-situacao">
-            <label for="ConclusaoPleito">Situação:</label>
-            <div class="radio-button-group" id="ConclusaoPleito" name="ConclusaoPleito">
-              <input type="radio" id="atendido" name="ConclusaoPleito" value="atendido">
-              <label for="atendido">Atendido</label>
-              <input type="radio" id="atendidoParcialmente" name="ConclusaoPleito" value="atendidoParcialmente">
-              <label for="atendidoParcialmente">Atendido Parcialmente</label>
-              <input type="radio" id="negado" name="ConclusaoPleito" value="negado">
-              <label for="negado">Negado</label>
-              <input type="radio" id="cancelado" name="ConclusaoPleito" value="cancelado">
-              <label for="cancelado">Cancelado</label>
+            <div class="modal-concluir-pleito-situacao">
+              <label for="ConclusaoPleito">Situação:</label>
+              <div id="ConclusaoPleito" name="ConclusaoPleito" class="radio-button-group">
+                <input type="radio" id="atendido" name="ConclusaoPleito" value="atendido">
+                <label for="atendido">Atendido</label>
+
+                <input type="radio" id="atendidoParcialmente" name="ConclusaoPleito" value="atendidoParcialmente">
+                <label for="atendidoParcialmente">Atendido Parcialmente</label>
+
+                <input type="radio" id="negado" name="ConclusaoPleito" value="negado">
+                <label for="negado">Negado</label>
+
+                <input type="radio" id="cancelado" name="ConclusaoPleito" value="cancelado">
+                <label for="cancelado">Cancelado</label>
+              </div>
+            </div>
+            <div class="modal-concluir-pleito-descConclusao">
+              <label for="descConclusaoPleito">Descrição da Conclusão:</label>
+              <textarea id="descConclusaoPleito" name="descConclusaoPleito"></textarea>
+            </div>
+            <div class="modal-concluir-pleito-salvar">
+              <button type="submit" class="btn-principal" onclick="submitForm()">Concluir</button>
             </div>
           </div>
-          <div class="modal-concluir-pleito-descConclusao">
-            <label for="descConclusaoPleito">Descrição da Conclusão:</label>
-            <textarea id="descConclusaoPleito" name="descConclusaoPleito"></textarea>
-          </div>
-          <div class="modal-concluir-pleito-salvar">
-            <div class="btn-outline-principal"><a href="pleitos.html">Cancelar</a></div>
-            <button type="submit" class="btn-principal" onclick="submitForm()">Concluir</button>
-          </div>
-          <p class="modal-concluir-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 
-  <!-- Modal despachar Pleito -->
-  <div id="modal-despachar-pleito" class="modal-despachar-pleito">
-    <div class="modal-despachar-pleito-content card-m">
-      <span class="closeModalDespachar">&times;</span>
-      <div class="modal-despachar-pleito-template">
-        <p class="modal-despachar-pleito-tiposolici" data-filter="tipoSolici"></p>
-        <p class="modal-despachar-pleito-dataSolici" data-filter="dataSoliciPleito"></p>
-        <p class="modal-despachar-pleito-solicitante" data-filter="solicitante"></p>
-        <div class="modal-despachar-pleito-desc" data-filter="descPleito">
-          <p><strong>Descrição</strong></p>
-        </div>
-        <p class="modal-despachar-pleito-beneficiario" data-filter="beneficiario"></p>
-        <p class="modal-despachar-pleito-uf" data-filter="ufPleito"></p>
-        <p class="modal-despachar-pleito-cidade" data-filter="cidadePleito"></p>
-        <p class="modal-despachar-pleito-bairro" data-filter="bairroPleito"></p>
-        <p class="modal-despachar-pleito-rua" data-filter="ruaPleito"></p>
-        <p class="modal-despachar-pleito-autor" data-filter="autorPleito"></p>
-        <p class="modal-despachar-pleito-dataCriacao" data-filter="dataCriacaoPleito"></p>
-        <p class="modal-despachar-pleito-status" data-filter="statusPleito"></p>
-        <p class="modal-despachar-pleito-desc" data-filter="descPleito"></p>
-        <div class="modal-despachar-pleito-despachar">
-          <h2 class="modal-despachar-pleito-despachar-title">Atribuir Tarefa</h2>
-          <div class="modal-despachar-pleito-situacao">
-            <label for="DespachoPleito">Situação:</label>
-            <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
-              <input type="radio" id="sobAnalise" name="DespachoPleito" value="sobAnalise">
-              <label for="sobAnalise">Sob Análise</label>
-              <input type="radio" id="processando" name="DespachoPleito" value="processando">
-              <label for="processando">Processando</label>
-              <input type="radio" id="parado" name="DespachoPleito" value="parado">
-              <label for="parado">Parado</label>
+  <!-- Modal Despachar Pleito -->
+  <div id="modal-despachar-pleito" class="modal-card-acao-template">
+    <div class="modal-card-acao-template-header">
+      <span class="closeModalCardAcao">&times;</span>
+    </div>
+    <div class="modal-card-acao-template-content">
+      <ul class="lista-vertical-modal">
+        <li>
+          <div class="modal-despachar-pleito-template">
+            <p class="modal-despachar-pleito-tiposolici" data-filter="tipoSolici"></p>
+            <p class="modal-despachar-pleito-dataSolici" data-filter="dataSoliciPleito"></p>
+            <p class="modal-despachar-pleito-solicitante" data-filter="solicitante"></p>
+            <div class="modal-despachar-pleito-desc" data-filter="descPleito">
+              <p><strong>Descrição:</strong></p>
+            </div>
+            <p class="modal-despachar-pleito-beneficiario" data-filter="beneficiario"></p>
+            <p class="modal-despachar-pleito-uf" data-filter="ufPleito"></p>
+            <p class="modal-despachar-pleito-cidade" data-filter="cidadePleito"></p>
+            <p class="modal-despachar-pleito-bairro" data-filter="bairroPleito"></p>
+            <p class="modal-despachar-pleito-rua" data-filter="ruaPleito"></p>
+            <p class="modal-despachar-pleito-autor" data-filter="autorPleito"></p>
+            <p class="modal-despachar-pleito-dataCriacao" data-filter="dataCriacaoPleito"></p>
+            <p class="modal-despachar-pleito-status" data-filter="statusPleito"></p>
+            <p class="modal-despachar-pleito-id" data-filter="modalPleitoID"></p>
+          </div>
+        </li>
+        <li>
+          <div class="modal-despachar-pleito-despachar">
+            <h2 class="modal-despachar-pleito-despachar-title">Atribuir Tarefa</h2>
+            <div class="modal-despachar-pleito-situacao">
+              <label for="DespachoPleito">Situação:</label>
+              <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
+                <input type="radio" id="sobAnalise" name="DespachoPleito" value="sobAnalise">
+                <label for="sobAnalise">Sob Análise</label>
+                <input type="radio" id="processando" name="DespachoPleito" value="processando">
+                <label for="processando">Processando</label>
+                <input type="radio" id="parado" name="DespachoPleito" value="parado">
+                <label for="parado">Parado</label>
+              </div>
+            </div>
+            <div class="modal-despachar-pleito-responsavel">
+              <label for="responsavel">Responsável</label>
+              <select id="responsavel" name="responsavel">
+                <option value="" disabled selected>Selecione o responsável</option>
+                <!-- Adicione opções aqui -->
+              </select>
+            </div>
+            <div class="modal-despachar-pleito-dataInicio">
+              <label for="dataInicio">Data Início</label>
+              <input type="date" id="dataInicio" name="dataInicio">
+            </div>
+            <div class="modal-despachar-pleito-prazoFinal">
+              <label for="prazoFinal">Prazo Final</label>
+              <input type="date" id="prazoFinal" name="prazoFinal">
+            </div>
+            <div class="modal-despachar-pleito-prioridade">
+              <label for="prioridade">Prioridade</label>
+              <div id="prioridade" name="prioridade" class="radio-button-group">
+                <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa">
+                <label for="prioridadeBaixa">Baixa</label>
+                <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
+                <label for="prioridadeMedia">Média</label>
+                <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
+                <label for="prioridadeAlta">Alta</label>
+              </div>
+            </div>
+            <div class="modal-despachar-pleito-descDespacho">
+              <label for="descDespachoPleito">Descrição da Conclusão:</label>
+              <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
+            </div>
+            <div class="modal-despachar-pleito-salvar">
+              <button type="button" class="btn-principal despachar-button">Despachar</button>
             </div>
           </div>
-          <div class="modal-despachar-pleito-responsavel">
-            <label for='responsavel'>Responsável</label>
-            <select id='responsavel' name='responsavel'>
-              <!-- Opções podem ser adicionadas aqui -->
-              <option value='' disabled selected>Selecione o responsável</option>
-            </select>
-          </div>
-          <div class="modal-despachar-pleito-dataInicio">
-            <label for="dataInicio">Data Início</label>
-            <input type='date' id='dataInicio' name='dataInicio'>
-          </div>
-          <div class="modal-despachar-pleito-prazoFinal">
-            <label for='prazoFinal'>Prazo Final</label>
-            <input type='date' id='prazoFinal' name='prazoFinal'>
-          </div>
-          <div class="modal-despachar-pleito-prioridade">
-            <label for='prioridade'>Prioridade</label>
-            <div id='prioridade' name='prioridade' class="radio-button-group">
-              <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa">
-              <label for="prioridadeBaixa">Baixa</label>
-              <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
-              <label for="prioridadeMedia">Média</label>
-              <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
-              <label for="prioridadeAlta">Alta</label>
-            </div>
-          </div>
-          <div class="modal-despachar-pleito-descDespacho">
-            <label for="descDespachoPleito">Descrição da Conclusão:</label>
-            <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
-          </div>
-          <div class="modal-despachar-pleito-salvar">
-            <div class="btn-outline-principal"><a href="pleitos.html">Cancelar</a></div>
-            <button type="submit" class="btn-principal" onclick="submitForm()">Despachar</button>
-          </div>
-          <p class="modal-despachar-pleito-id" data-filter="modalPleitoID">{{pleitoID}}</p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
+
+
 
   <script src="./static/js/config.js" async></script>
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
-  <script src="./static/js/AtualizarAlturaPagina.js" async></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
   <script src="./static/js/ScrollAjustarItensContainerHeader.js" defer></script>
   <script src="./static/js/ModalBTNFloating.js" defer></script>
   <script src="./static/js/ModalMaisApps.js" defer></script>

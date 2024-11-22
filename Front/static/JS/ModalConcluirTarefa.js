@@ -1,7 +1,8 @@
-// Função para preencher o modal com os dados do card de tarefa clicado
+// Função para preencher o Modal Concluir com os dados do card clicado
 function preencherModalConcluirTarefa(card) {
-  // Seleciona o modal
+  // Seleciona o modal e o overlay
   var modalConcluir = document.getElementById("modal-concluir-tarefa");
+  var modalOverlay = document.getElementById("modal-overlay");
 
   // Preenche os campos do modal com os dados do card
   modalConcluir.querySelector(".modal-concluir-tarefa-title").textContent =
@@ -13,38 +14,89 @@ function preencherModalConcluirTarefa(card) {
   modalConcluir.querySelector(
     ".modal-concluir-tarefa-responsavel"
   ).textContent = card.querySelector(".tarefa-medium-card-resp").textContent;
-  modalConcluir.querySelector(".modal-concluir-tarefa-desc").textContent =
-    card.querySelector(".tarefa-medium-card-desc").textContent;
+
+  // Para a descrição, preserva o HTML
+  modalConcluir.querySelector(".modal-concluir-tarefa-desc").innerHTML =
+    card.querySelector(".tarefa-medium-card-desc").innerHTML;
+
   modalConcluir.querySelector(".modal-concluir-tarefa-id").textContent =
     card.querySelector(".tarefa-medium-card-id").textContent;
 
-  // Abre o modal
-  modalConcluir.style.display = "grid"; // Exibe o modal
+  // Exibe o overlay e o modal
+  modalOverlay.classList.add("active");
+  modalConcluir.classList.add("active");
 }
 
-// Função para fechar o modal quando o usuário clicar no botão de fechar
-document.querySelector(".close").addEventListener("click", function () {
+// Função para fechar o Modal Concluir
+function fecharModalConcluirTarefa() {
   var modalConcluir = document.getElementById("modal-concluir-tarefa");
-  modalConcluir.style.display = "none";
+  var modalOverlay = document.getElementById("modal-overlay");
+
+  modalConcluir.classList.remove("active");
+  modalOverlay.classList.remove("active");
+}
+
+// Função para lidar com o envio do formulário de conclusão da tarefa
+function submitFormConcluirTarefa(event) {
+  event.preventDefault(); // Previne o comportamento padrão do formulário
+
+  // Aqui você pode adicionar a lógica para processar os dados do formulário
+  // Por exemplo, validar campos e enviar para o servidor via AJAX
+
+  // Após o processamento, feche o modal
+  fecharModalConcluirTarefa();
+
+  // Exemplo de feedback para o usuário
+  alert("Tarefa concluída com sucesso!");
+}
+
+// Event Listener para fechar o modal ao clicar no "X"
+document.querySelectorAll(".closeModalCardAcao").forEach((closeBtn) => {
+  closeBtn.addEventListener("click", function () {
+    // Verifica qual modal está ativo e fecha adequadamente
+    var activeModal = document.querySelector(
+      ".modal-card-acao-template.active"
+    );
+    if (activeModal) {
+      activeModal.classList.remove("active");
+      document.getElementById("modal-overlay").classList.remove("active");
+    }
+  });
 });
 
-// Função para preencher o modal com os dados do card quando o botão "Concluir" for clicado
-document.getElementById("btnConcluir").addEventListener("click", function () {
-  // Seleciona o card clicado
-  var card = document.querySelector(".tarefa-medium-card");
-
-  // Chama a função para preencher o modal com os dados do card
-  preencherModalConcluirTarefa(card);
+// Event Listener para fechar o modal ao clicar no overlay
+document.getElementById("modal-overlay").addEventListener("click", function () {
+  var activeModal = document.querySelector(".modal-card-acao-template.active");
+  if (activeModal) {
+    activeModal.classList.remove("active");
+    this.classList.remove("active");
+  }
 });
 
-// Adiciona um ouvinte de eventos de clique ao fundo do modal
-document.addEventListener("DOMContentLoaded", function () {
-  const modalBackground = document.querySelector(".modal-concluir-tarefa");
-  const modalContent = document.querySelector(".modal-concluir-tarefa-content");
+// Event Listener para todos os botões "Concluir" nas tarefas
+document.querySelectorAll(".btn-concluir").forEach((button) => {
+  button.addEventListener("click", function (event) {
+    event.preventDefault();
+    // Seleciona o card pai
+    var card = button.closest(".tarefa-medium-card");
+    if (card) {
+      preencherModalConcluirTarefa(card);
+    }
+  });
+});
 
-  modalBackground.addEventListener("click", function (event) {
-    if (event.target === modalBackground) {
-      modalBackground.style.display = "none";
+// Event Listener para o botão "Concluir" dentro do modal de tarefa
+document
+  .querySelector("#modal-concluir-tarefa .btn-principal")
+  .addEventListener("click", submitFormConcluirTarefa);
+
+// Opcional: Limpar campos do formulário ao fechar o modal
+document.querySelectorAll(".closeModalCardAcao").forEach((closeBtn) => {
+  closeBtn.addEventListener("click", function () {
+    var modalConcluir = document.getElementById("modal-concluir-tarefa");
+    var form = modalConcluir.querySelector("form");
+    if (form) {
+      form.reset();
     }
   });
 });

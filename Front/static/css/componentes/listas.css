@@ -38,6 +38,18 @@
   scrollbar-width: thick;
 }
 
+.lista-vertical-modal {
+  display: grid;
+  grid-auto-flow: row;
+  background: transparent;
+  gap: 12px;
+  padding: 10px 5px;
+  border-radius: 25px;
+  scrollbar-width: thick;
+  overflow: auto;
+  height: auto;
+}
+
 .lista-vertical-2-column {
   display: grid;
   gap: 4px;
@@ -174,6 +186,18 @@ li > .lista-vertical-alt > li:first-child {
 @media only screen and (max-width: 56.25rem) {
   .lista-vertical-fil {
     gap: 3px 0px;
+  }
+
+  .lista-vertical-modal {
+    display: grid;
+    grid-auto-flow: row;
+    background: transparent;
+    gap: 12px;
+    padding: 10px 0px;
+    border-radius: 25px;
+    scrollbar-width: thick;
+    overflow: auto;
+    height: auto;
   }
 
   .lista-vertical-2-column {

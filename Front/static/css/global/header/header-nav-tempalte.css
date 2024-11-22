@@ -1,7 +1,7 @@
 /* Nav */
 .header-nav-template {
   display: grid;
-  grid-template-areas: "home calendario tarefas contatos pleitos despesas";
+  grid-template-areas: "home calendario tarefas contatos pleitos arquivos";
   grid-template-columns: repeat(6, 1fr);
 }
 
@@ -20,8 +20,8 @@
 .pleitos {
   grid-area: pleitos;
 }
-.despesas {
-  grid-area: despesas;
+.arquivos {
+  grid-area: arquivos;
 }
 
 .apps {
@@ -125,7 +125,7 @@
 
   .header-nav-template p,
   .pleitos,
-  .despesas {
+  .arquivos {
     display: none;
   }
 
