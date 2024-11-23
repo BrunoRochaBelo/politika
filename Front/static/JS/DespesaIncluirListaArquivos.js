@@ -30,7 +30,7 @@ function atualizarListaArquivos(inputFile, tabelaId, selectId) {
       <td data-label="Nome">${arquivo.name}</td>
       <td data-label="Espécie Documento">${especieDocumento}</td>
       <td>
-        <div class="icone-excluir-container">
+        <div class="icone-container">
           <img src="./static/imagens/icones/excluir.svg" alt="Excluir" class="icone-excluir" onclick="excluirArquivo(${idArquivo}, '${tabelaId}')">
         </div>
       </td>

@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Coluna Ação
       const tdAcao = document.createElement("td");
       const divAcao = document.createElement("div");
-      divAcao.classList.add("icone-excluir-container");
+      divAcao.classList.add("icone-container");
       const imgAdd = document.createElement("img");
       imgAdd.src = "./static/imagens/icones/add.svg";
       imgAdd.alt = "Adicionar";
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Coluna Ação
       const tdAcao = document.createElement("td");
       const divAcao = document.createElement("div");
-      divAcao.classList.add("icone-excluir-container");
+      divAcao.classList.add("icone-container");
       const imgExcluir = document.createElement("img");
       imgExcluir.src = "./static/imagens/icones/excluir.svg";
       imgExcluir.alt = "Remover";

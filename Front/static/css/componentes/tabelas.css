@@ -1,11 +1,12 @@
 /* Estilo para o ícone de exclusão e de adição */
-.icone-excluir-container {
+.icone-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .icone-excluir,
+.icone-editar,
 .icone-adicionar {
   width: 20px;
   height: 20px;
@@ -15,12 +16,14 @@
 
 /* Efeito de hover nos ícones de exclusão e adição */
 .icone-excluir:hover,
+.icone-editar:hover,
 .icone-adicionar:hover {
   transform: scale(1.2);
   border-radius: 25%;
 }
 
 .icone-excluir:active,
+.icone-editar:active,
 .icone-adicionar:active {
   opacity: 0.6;
 }
@@ -130,6 +133,7 @@
 
 /* Estilo da tabela de histórico */
 .tabela-historico {
+  width: 100%;
   background: none;
   border-radius: 25px;
   padding: 0px 10px;
@@ -266,7 +270,7 @@
     display: none;
   }
 
-  .icone-excluir-container {
+  .icone-container {
     justify-content: flex-end;
     padding: 10px 20px;
   }
