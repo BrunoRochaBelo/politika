@@ -43,7 +43,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
     if (areaContent.style.maxHeight) {
       areaContent.style.maxHeight = null;
       button.innerHTML = "Agenda para hoje";
-      area.style.boxShadow = "none";
+      mainSidenav.style.boxShadow = "none"; // Remove a sombra quando a área não está exibida
       mainSidenav.style.height = "";
       area.style.background = "none";
       overlay.style.display = "none";
@@ -61,6 +61,7 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       button.innerHTML = "X";
       button.style.color = "var(--btn-filtro-alt-txt)";
       mainSidenav.style.height = "80vh";
+      mainSidenav.style.boxShadow = "var(--sombra-intensa)"; // Aplica a sombra ao .main-sidenav
       area.style.background = "var(--modal-bg)";
       overlay.style.display = "block";
 

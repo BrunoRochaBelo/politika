@@ -38,8 +38,9 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
   if (window.innerWidth <= 900) {
     if (areaContent.style.maxHeight) {
       areaContent.style.maxHeight = null;
-      button.innerHTML = "Filtros";
-      area.style.boxShadow = "none";
+      // Restaura o texto original do botão
+      button.innerHTML = button.dataset.originalText || button.innerHTML;
+      mainSidenav.style.boxShadow = "none"; // Remove a sombra quando a área não está exibida
       mainSidenav.style.height = "";
       area.style.background = "none";
       overlay.style.display = "none";
@@ -59,11 +60,16 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Remove o z-index quando a área não está exibida
       area.style.zIndex = null;
     } else {
+      // Armazena o texto original do botão se ainda não estiver armazenado
+      if (!button.dataset.originalText) {
+        button.dataset.originalText = button.innerHTML;
+      }
       // Define max-height responsivo
       areaContent.style.maxHeight = `calc(var(--vh, 1vh) * 100 - 8.5rem)`;
       button.innerHTML = "X";
       button.style.color = "var(--btn-filtro-alt-txt)";
       mainSidenav.style.height = "auto";
+      mainSidenav.style.boxShadow = "var(--sombra-intensa)"; // Aplica a sombra ao .main-sidenav
       area.style.background = "var(--modal-bg)";
       overlay.style.display = "block";
 

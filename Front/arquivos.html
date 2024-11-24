@@ -73,33 +73,43 @@
   <main class="main main-template">
     <section class="main-section">
       <div class="container-template">
-        <h2 class="container-template-header">Arquivos</h2>
-        <div class="container-template-content">
-          <div class="area-interna-containerContent-template">
-            <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+        <h2 class="container-template-header header-header-fx-int">Arquivos</h2>
+        <div class="container-template-content container-template-content-com-header-fx-int">
+          <div class="area-interna-containerContent-template arquivos">
+            <div class="area-interna-containerContent-template-header">
+              <nav aria-label="Breadcrumb">
+                <div class="breadcrumbs">
+                  <span class="raiz">raiz</span>
+                  <!-- Breadcrumbs dinâmicos serão inseridos aqui pelo JavaScript -->
+                </div>
+              </nav>
+            </div>
+            <div class="area-interna-containerContent-template-content">
               <ul class="lista-vertical-alt">
                 <li class="area-filtro">
-                  <nav aria-label="Breadcrumb">
-                    <div class="breadcrumbs">
-                      <span class="raiz">raiz</span>
-                      <!-- Breadcrumbs dinâmicos serão inseridos aqui pelo JavaScript -->
-                    </div>
-                  </nav>
+                  <span id="totalResults">0</span>&nbsp;-&nbsp;
+                  <div class="btn-filtro-pesq">
+                    <p class="btn-filtro-pesq-title" id="filtroselect">Nenhum filtro selecionado
+                      <a href="#" class="remover-filtro">&times;</a>
+                    </p>
+                  </div>
                 </li>
-                <li>
-                  <div class="conteudo-dinamico">
-                    <div class="grid-container">
-                      <!-- Itens do grid ou tabela serão inseridos aqui -->
+                <li class="secao-interna-template">
+                  <div class="secao-interna-template-content">
+                    <div class=" conteudo-dinamico">
+                      <div class="grid-container">
+                        <!-- Itens do grid ou tabela serão inseridos aqui -->
+                      </div>
                     </div>
                   </div>
                 </li>
+                <li class="list-last-child"><br></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-
 
     <section class="main-sidenav">
       <div class="container-filtros-template filtros-tarefas">
@@ -120,7 +130,6 @@
       </div>
     </section>
   </main>
-
 
 
   <!-- Modal Botão Flutuante -->
@@ -252,7 +261,7 @@
   <script src="./static/js/ModalNotificacoes.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/OcultarExibirFiltro.js" defer></script>
-  <script src="./static/js/ArquivosNavegacao.js" defer></script>
+  <script type="module" src="./static/js/ArquivosNavegacao.js" defer></script>
 
 </body>
 
