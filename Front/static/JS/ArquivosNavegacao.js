@@ -81,7 +81,7 @@ class FileNavigator {
    * Handler para eventos de clique no documento (event delegation)
    */
   handleDocumentClick(event) {
-    // Implement event delegation if needed
+    // Implementar delegação de eventos se necessário
   }
 
   /**
@@ -254,6 +254,7 @@ class FileNavigator {
                   `Erro ao carregar filhos do nó ${nodeId}:`,
                   error
                 );
+                childrenUl.innerHTML = "<li>Erro ao carregar dados.</li>";
               }
             }
           }
@@ -517,10 +518,10 @@ class FileNavigator {
 
       const count = document.createElement("p");
       if (item.type === "library") {
-        const numFolders = item.children ? item.children.length : 0;
+        const numFolders = item.numFolders || 0; // Utilizando numFolders
         count.textContent = `Pastas: ${numFolders}`;
       } else {
-        const numDocuments = item.children ? item.children.length : 0;
+        const numDocuments = item.numDocuments || 0; // Utilizando numDocuments
         count.textContent = `Documentos: ${numDocuments}`;
       }
       count.classList.add("item-count");
@@ -892,10 +893,10 @@ class FileNavigator {
       total = this.state.libraries.length;
       label = "biblioteca(s)";
     } else if (node.type === "library") {
-      total = node.children ? node.children.length : 0;
+      total = node.numFolders || 0; // Utilizando numFolders
       label = "pasta(s)";
     } else if (node.type === "folder") {
-      total = node.children ? node.children.length : 0;
+      total = node.numDocuments || 0; // Utilizando numDocuments
       label = "arquivo(s)";
     } else if (node.type === "document") {
       total = 1;
@@ -1000,7 +1001,7 @@ class FileNavigator {
   }
 
   /**
-   * Função para inicializar a navegação em árvore e carregar o estado
+   * Função para iniciar a navegação em árvore e carregar o estado
    */
   async start() {
     await this.init();
