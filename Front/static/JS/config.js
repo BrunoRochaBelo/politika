@@ -6,7 +6,7 @@ const Config = {
 
   // 2. URLs Base para Diferentes Ambientes
   BASE_URL: {
-    development: "http://192.168.1.7:8000",
+    development: "http://192.168.1.16:8000",
     production: "http://dev.inforvia.com.br",
   },
 
@@ -172,7 +172,9 @@ const Config = {
   API_ENDPOINTS: {
     CONTACT_SEARCH_ALL: "/api/contato/searchall",
     VOTATION_LOCATION_SEARCH_ALL: "/api/localvotacao/searchall",
-    // Adicione outros endpoints conforme necessário
+    GET_ALL_LIBS: "/api/docfile/get/all_libs",
+    GET_ALL_FOLDERS: "/api/docfile/get/all_folders",
+    GET_ALL_FOLDER_DOCS: "/api/docfile/get/all_folders_docs",
   },
 
   // 13. Feature Flags

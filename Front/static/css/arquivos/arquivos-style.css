@@ -96,6 +96,13 @@
   color: var(--cor-apoio-1);
 }
 
+/* Mensagem de Árvore Vazia */
+.tree-item.empty {
+  padding-left: 20px;
+  color: var(--txt-conteudo-card);
+  font-style: italic;
+}
+
 /* Ícone de toggle (expandir/contrair) */
 .toggle-icon {
   position: absolute;
@@ -213,6 +220,20 @@
   border-radius: 25px 25px 12px 12px;
 }
 
+/* Cards de Documento - Lista Vertical */
+.item-grid.document {
+  flex: 1 1 100%; /* Ocupa toda a largura disponível */
+  border: none; /* Remove bordas específicas se necessário */
+  background-color: var(--card-bg);
+  box-shadow: none; /* Remove sombra para documentos */
+  padding: 15px 20px; /* Ajuste o padding conforme necessário */
+  border-bottom: 1px solid var(--card-borda); /* Linha separadora entre documentos */
+}
+
+.item-grid.document:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
 /* Títulos e textos dos cards */
 .item-grid .item-title {
   margin-top: 0;
@@ -259,13 +280,13 @@
   justify-content: center;
 }
 
-.action-buttons .icone-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.action-buttons .edit-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.action-buttons button img {
+.action-buttons .delete-button img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -275,27 +296,42 @@
   opacity: 0.8;
 }
 
-/* --- Estilos para a Tabela de Documentos --- */
+/* --- Estilos para Feedbacks Visuais no Grid --- */
 
-#tabelaArquivos .hidden-column {
-  display: none;
+/* Mensagem de Carregamento no Grid */
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  color: var(--txt-titulo);
 }
 
-#tabelaArquivos tr:hover {
-  background-color: var(--cor-primaria-3);
+.loading-message .spinner {
+  margin-bottom: 10px;
 }
 
-#tabelaArquivos .action-buttons {
-  justify-content: flex-start; /* Ajuste conforme necessário */
+/* Mensagem de Erro no Grid */
+.error-message {
+  padding: 20px;
+  background-color: var(--cor-erro-bg);
+  color: var(--cor-erro-texto);
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px;
+  font-size: 1rem;
 }
 
-#tabelaArquivos .action-buttons button {
-  width: 20px;
-  height: 20px;
-}
-
-#tabelaArquivos .action-buttons button:hover {
-  opacity: 0.8;
+/* Mensagem Informativa no Grid */
+.info-message {
+  padding: 20px;
+  background-color: var(--cor-apoio-2);
+  color: var(--txt-titulo);
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px;
+  font-size: 1rem;
 }
 
 /* --- Estilos Responsivos --- */
@@ -304,16 +340,28 @@
   .item-grid {
     flex: 1 1 calc(33.333% - 40px);
   }
+
+  .item-grid.document {
+    flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 992px) {
   .item-grid {
     flex: 1 1 calc(50% - 40px);
   }
+
+  .item-grid.document {
+    flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 600px) {
   .item-grid {
+    flex: 1 1 100%;
+  }
+
+  .item-grid.document {
     flex: 1 1 100%;
   }
 }
@@ -350,4 +398,33 @@
 .item-grid .item-count,
 .item-grid .item-creation-date {
   text-align: start;
+}
+
+/* Spinner para o Grid */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: var(--cor-primaria-1);
+  animation: spin 1s ease infinite;
+  margin: 0 auto 10px;
+}
+
+/* Spinner para a Árvore */
+.spinner-tree {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border-left-color: var(--cor-primaria-1);
+  animation: spin 1s ease infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -89,7 +89,7 @@
 }
 
 /* Mensagens de Informação */
-.message-info {
+.info-message {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -103,7 +103,7 @@
   z-index: 1001;
   pointer-events: none;
 }
-.message-info.show {
+.info-message.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
@@ -159,6 +159,16 @@
   padding: 10px 0;
   z-index: 1000;
   font-weight: bold;
+}
+
+/* Mensagem de Carregamento */
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  color: var(--txt-titulo);
 }
 
 @media only screen and (max-width: 56.25rem) {
