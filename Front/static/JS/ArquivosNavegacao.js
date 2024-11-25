@@ -22,13 +22,15 @@ class FileNavigator {
     this.gridContainer = document.querySelector(".grid-container");
     this.treeContainer = document.querySelector(".lista-vertical-fil");
 
-    // Selecionar o elemento "raiz" do breadcrumbs
-    this.raizSpan = this.breadcrumbContainer.querySelector(".raiz");
-    if (this.raizSpan) {
-      this.raizSpan.addEventListener("click", () => this.resetToRoot());
+    // Verificar se os elementos existem antes de adicionar event listeners
+    if (this.breadcrumbContainer) {
+      // Selecionar o elemento "raiz" do breadcrumbs
+      this.raizSpan = this.breadcrumbContainer.querySelector(".raiz");
+      if (this.raizSpan) {
+        this.raizSpan.addEventListener("click", () => this.resetToRoot());
+      }
     }
 
-    // Selecionar o elemento "raiz" da árvore de navegação
     const raizTree = document.querySelector(".raiz-tree");
     if (raizTree) {
       raizTree.addEventListener("click", () => this.resetToRoot());
@@ -49,6 +51,7 @@ class FileNavigator {
   async init() {
     // Carregar bibliotecas e renderizar a árvore
     try {
+      this.displayTreeLoading(this.treeContainer, "Carregando bibliotecas...");
       this.state.libraries = await dataService.fetchLibraries();
       await this.renderTree(this.treeContainer, this.state.libraries);
     } catch (error) {
@@ -135,7 +138,7 @@ class FileNavigator {
   /**
    * Função para encontrar o caminho até um nó específico
    * @param {Array} nodes - Lista de nós.
-   * @param {number} targetId - ID do nó alvo.
+   * @param {number|string} targetId - ID do nó alvo.
    * @param {Array} path - Caminho atual.
    * @returns {Array|null} - Retorna o caminho ou null se não encontrado.
    */
@@ -158,7 +161,7 @@ class FileNavigator {
   /**
    * Função auxiliar para encontrar um nó pelo ID
    * @param {Array} nodes - Lista de nós.
-   * @param {number} id - ID do nó a ser encontrado.
+   * @param {number|string} id - ID do nó a ser encontrado.
    * @returns {Object|null} - Retorna o nó ou null se não encontrado.
    */
   findNodeById(nodes, id) {
@@ -180,109 +183,116 @@ class FileNavigator {
    * Função para salvar o estado no LocalStorage
    */
   saveState() {
-    const expandedElements = Array.from(
-      this.treeContainer.querySelectorAll(".tree-item.expanded")
-    ).map((el) => el.dataset.id);
-    const stateToSave = {
-      currentPath: this.state.currentPath.map((node) => node.id),
-      expandedItems: expandedElements,
-    };
-    localStorage.setItem("fileExplorerState", JSON.stringify(stateToSave));
-    console.log("Estado salvo:", stateToSave);
+    try {
+      const expandedElements = Array.from(
+        this.treeContainer.querySelectorAll(".tree-item.expanded")
+      ).map((el) => el.dataset.id);
+      const stateToSave = {
+        currentPath: this.state.currentPath.map((node) => node.id),
+        expandedItems: expandedElements,
+      };
+      localStorage.setItem("fileExplorerState", JSON.stringify(stateToSave));
+      console.log("Estado salvo:", stateToSave);
+    } catch (error) {
+      console.error("Erro ao salvar o estado no LocalStorage:", error);
+    }
   }
 
   /**
    * Função para carregar o estado do LocalStorage
    */
   async loadState() {
-    const savedState = JSON.parse(localStorage.getItem("fileExplorerState"));
-    console.log("Estado carregado:", savedState);
-    if (savedState) {
-      // Restaurar currentPath
-      if (savedState.currentPath && savedState.currentPath.length > 0) {
-        const pathNodes = [];
-        for (const id of savedState.currentPath) {
-          const node = this.findNodeById(this.state.libraries, id);
-          if (node) {
-            pathNodes.push(node);
-            // Garantir que os filhos estejam carregados
-            if (node.type === "library" && !this.state.folders[node.id]) {
-              try {
-                const folders = await dataService.fetchFolders(node.id);
-                node.children = folders;
-                this.state.folders[node.id] = folders;
-              } catch (error) {
-                console.error(
-                  `Erro ao carregar pastas da biblioteca ${node.id}:`,
-                  error
-                );
-                this.displayError(
-                  "Erro ao carregar pastas. Por favor, tente novamente mais tarde."
-                );
-                return;
+    try {
+      const savedState = JSON.parse(localStorage.getItem("fileExplorerState"));
+      console.log("Estado carregado:", savedState);
+      if (savedState) {
+        // Restaurar currentPath
+        if (savedState.currentPath && savedState.currentPath.length > 0) {
+          const pathNodes = [];
+          for (const id of savedState.currentPath) {
+            const parsedId = isNaN(id) ? id : parseInt(id, 10);
+            const node = this.findNodeById(this.state.libraries, parsedId);
+            if (node) {
+              pathNodes.push(node);
+              // Garantir que os filhos estejam carregados
+              if (node.type === "library" && !this.state.folders[node.id]) {
+                try {
+                  const folders = await dataService.fetchFolders(node.id);
+                  node.children = folders;
+                  this.state.folders[node.id] = folders;
+                } catch (error) {
+                  console.error(
+                    `Erro ao carregar pastas da biblioteca ${node.id}:`,
+                    error
+                  );
+                  this.displayError(
+                    "Erro ao carregar pastas. Por favor, tente novamente mais tarde."
+                  );
+                  return;
+                }
+              }
+              if (node.type === "folder" && !this.state.documents[node.id]) {
+                try {
+                  const documents = await dataService.fetchDocuments(node.id);
+                  node.children = documents;
+                  this.state.documents[node.id] = documents;
+                } catch (error) {
+                  console.error(
+                    `Erro ao carregar documentos da pasta ${node.id}:`,
+                    error
+                  );
+                  this.displayError(
+                    "Erro ao carregar documentos. Por favor, tente novamente mais tarde."
+                  );
+                  return;
+                }
               }
             }
-            if (node.type === "folder" && !this.state.documents[node.id]) {
-              try {
-                const documents = await dataService.fetchDocuments(node.id);
-                node.children = documents;
-                this.state.documents[node.id] = documents;
-              } catch (error) {
-                console.error(
-                  `Erro ao carregar documentos da pasta ${node.id}:`,
-                  error
-                );
-                this.displayError(
-                  "Erro ao carregar documentos. Por favor, tente novamente mais tarde."
-                );
-                return;
-              }
+          }
+
+          this.state.currentPath = pathNodes;
+          this.renderBreadcrumbs();
+
+          const lastNode = pathNodes[pathNodes.length - 1];
+          await this.displayContent(lastNode);
+
+          // Selecionar o último item no path na árvore
+          const selectedId = lastNode.id.toString(); // Garantir string para querySelector
+          const selectedItem = this.treeContainer.querySelector(
+            `.tree-item[data-id='${selectedId}']`
+          );
+          if (selectedItem) {
+            this.deselectAllTreeItems();
+            selectedItem.classList.add("selected");
+          }
+
+          // Expandir os nós no caminho
+          for (const node of pathNodes.slice(0, -1)) {
+            const treeItem = this.treeContainer.querySelector(
+              `.tree-item[data-id='${node.id}']`
+            );
+            if (treeItem && !treeItem.classList.contains("expanded")) {
+              await this.toggleExpandCollapse(treeItem, node);
             }
           }
         }
 
-        this.state.currentPath = pathNodes;
-        this.renderBreadcrumbs();
-
-        const lastNode = pathNodes[pathNodes.length - 1];
-        await this.displayContent(lastNode);
-
-        // Selecionar o último item no path na árvore
-        const selectedId = lastNode.id;
-        const selectedItem = this.treeContainer.querySelector(
-          `.tree-item[data-id='${selectedId}']`
-        );
-        if (selectedItem) {
-          this.deselectAllTreeItems();
-          selectedItem.classList.add("selected");
-        }
-
-        // Expandir os nós no caminho
-        for (const node of pathNodes.slice(0, -1)) {
-          const treeItem = this.treeContainer.querySelector(
-            `.tree-item[data-id='${node.id}']`
-          );
-          if (treeItem && !treeItem.classList.contains("expanded")) {
-            await this.toggleExpandCollapse(treeItem, node);
+        // Restaurar itens expandidos
+        if (savedState.expandedItems && savedState.expandedItems.length > 0) {
+          for (const id of savedState.expandedItems) {
+            const parsedId = isNaN(id) ? id : parseInt(id, 10);
+            const treeItem = this.treeContainer.querySelector(
+              `.tree-item[data-id='${parsedId}']`
+            );
+            const node = this.findNodeById(this.state.libraries, parsedId);
+            if (treeItem && node && !treeItem.classList.contains("expanded")) {
+              await this.toggleExpandCollapse(treeItem, node);
+            }
           }
         }
       }
-
-      // Restaurar itens expandidos
-      if (savedState.expandedItems && savedState.expandedItems.length > 0) {
-        for (const id of savedState.expandedItems) {
-          const treeItem = this.treeContainer.querySelector(
-            `.tree-item[data-id='${id}']`
-          );
-          const node = this.findNodeById(
-            this.state.libraries,
-            parseInt(id, 10)
-          );
-          if (treeItem && node && !treeItem.classList.contains("expanded")) {
-            await this.toggleExpandCollapse(treeItem, node);
-          }
-        }
-      }
+    } catch (error) {
+      console.error("Erro ao carregar o estado do LocalStorage:", error);
     }
   }
 
@@ -290,13 +300,17 @@ class FileNavigator {
    * Função para limpar o estado no LocalStorage e resetar a interface
    */
   clearState() {
-    localStorage.removeItem("fileExplorerState");
-    this.state.currentPath = [];
-    this.renderBreadcrumbs();
-    this.deselectAllTreeItems();
-    this.deselectAllGridItems();
-    this.displayContent({ type: "root" });
-    this.resetInactivityTimer();
+    try {
+      localStorage.removeItem("fileExplorerState");
+      this.state.currentPath = [];
+      this.renderBreadcrumbs();
+      this.deselectAllTreeItems();
+      this.deselectAllGridItems();
+      this.displayContent({ type: "root" });
+      this.resetInactivityTimer();
+    } catch (error) {
+      console.error("Erro ao limpar o estado:", error);
+    }
   }
 
   /**
@@ -304,6 +318,7 @@ class FileNavigator {
    * @param {string} message - Mensagem de erro a ser exibida.
    */
   displayError(message) {
+    if (!this.gridContainer) return;
     this.gridContainer.innerHTML = ""; // Limpar conteúdo existente
     const errorDiv = document.createElement("div");
     errorDiv.classList.add("error-message");
@@ -316,13 +331,14 @@ class FileNavigator {
    * @param {Object} document - Documento a ser exibido.
    */
   displayDocumentDetails(document) {
+    if (!this.gridContainer) return;
     this.gridContainer.innerHTML = ""; // Limpar conteúdo existente
     const docDiv = document.createElement("div");
     docDiv.classList.add("document-details");
     docDiv.innerHTML = `
-      <h2>${document.name}</h2>
-      <p>${document.description}</p>
-      <p>Data de Criação: ${document.creationDate}</p>
+      <h2>${this.escapeHtml(document.name)}</h2>
+      <p>${this.escapeHtml(document.description || "Sem descrição")}</p>
+      <p>Data de Criação: ${this.escapeHtml(document.creationDate || "N/A")}</p>
       <!-- Adicione mais detalhes conforme necessário -->
     `;
     this.gridContainer.appendChild(docDiv);
@@ -333,6 +349,7 @@ class FileNavigator {
    * @param {string} message - Mensagem a ser exibida.
    */
   displayMessage(message) {
+    if (!this.gridContainer) return;
     this.gridContainer.innerHTML = ""; // Limpar conteúdo existente
     const messageDiv = document.createElement("div");
     messageDiv.textContent = message;
@@ -345,12 +362,13 @@ class FileNavigator {
    * @param {string} message - Mensagem de carregamento a ser exibida.
    */
   displayLoading(message = "Carregando...") {
+    if (!this.gridContainer) return;
     this.gridContainer.innerHTML = ""; // Limpar conteúdo existente
     const loadingDiv = document.createElement("div");
     loadingDiv.classList.add("loading-message");
     loadingDiv.innerHTML = `
       <div class="spinner"></div>
-      <span>${message}</span>
+      <span>${this.escapeHtml(message)}</span>
     `;
     this.gridContainer.appendChild(loadingDiv);
   }
@@ -361,12 +379,13 @@ class FileNavigator {
    * @param {string} message - Mensagem de carregamento a ser exibida.
    */
   displayTreeLoading(container, message = "Carregando...") {
+    if (!container) return;
     container.innerHTML = ""; // Limpar conteúdo existente
     const loadingLi = document.createElement("li");
     loadingLi.classList.add("tree-item", "loading");
     loadingLi.innerHTML = `
       <div class="spinner-tree"></div>
-      <span>${message}</span>
+      <span>${this.escapeHtml(message)}</span>
     `;
     container.appendChild(loadingLi);
   }
@@ -377,7 +396,7 @@ class FileNavigator {
    * @param {Array} nodes - Lista de nós a serem renderizados.
    */
   async renderTree(container, nodes) {
-    if (!container) return;
+    if (!container || !Array.isArray(nodes)) return;
 
     // Limpar o container antes de renderizar
     container.innerHTML = "";
@@ -452,6 +471,8 @@ class FileNavigator {
    * @param {Object} node - Nó associado.
    */
   async toggleExpandCollapse(li, node) {
+    if (!li || !node) return;
+
     if (li.classList.contains("expanded")) {
       li.classList.remove("expanded");
       const childrenUl = li.querySelector(".tree-children");
@@ -481,6 +502,9 @@ class FileNavigator {
             this.displayError(
               "Erro ao carregar pastas. Por favor, tente novamente mais tarde."
             );
+            // Retirar a classe 'expanded' para refletir o erro
+            li.classList.remove("expanded");
+            childrenUl.style.display = "none";
             return;
           }
         } else {
@@ -505,6 +529,9 @@ class FileNavigator {
             this.displayError(
               "Erro ao carregar documentos. Por favor, tente novamente mais tarde."
             );
+            // Retirar a classe 'expanded' para refletir o erro
+            li.classList.remove("expanded");
+            childrenUl.style.display = "none";
             return;
           }
         } else {
@@ -523,6 +550,8 @@ class FileNavigator {
    * @param {Array} children - Lista de nós filhos.
    */
   renderChildNodes(container, children) {
+    if (!container || !Array.isArray(children)) return;
+
     container.innerHTML = ""; // Limpar antes de renderizar
 
     if (children.length === 0) {
@@ -598,6 +627,8 @@ class FileNavigator {
    * @param {Object} node - Nó associado.
    */
   async handleTreeSelection(li, node) {
+    if (!li || !node) return;
+
     // Atualizar seleção visual
     this.deselectAllTreeItems();
     li.classList.add("selected");
@@ -618,6 +649,8 @@ class FileNavigator {
    * @param {Object} node - Nó atual a ser exibido.
    */
   async displayContent(node) {
+    if (!node || !this.gridContainer) return;
+
     // Limpar conteúdo atual
     this.gridContainer.innerHTML = "";
 
@@ -676,6 +709,8 @@ class FileNavigator {
    * @param {string} type - Tipo de item (library, folder, document).
    */
   renderGrid(items, type) {
+    if (!Array.isArray(items) || !this.gridContainer) return;
+
     this.gridContainer.innerHTML = ""; // Limpar conteúdo existente
 
     if (items.length === 0) {
@@ -779,76 +814,29 @@ class FileNavigator {
         div.classList.add("selected");
         this.state.selectedGridItemId = item.id;
 
-        // Atualizar o caminho atual
-        const path = this.findPath(this.state.libraries, item.id);
-        if (path) {
-          this.state.currentPath = path;
-          this.renderBreadcrumbs();
-          await this.displayContent(item);
-          this.saveState();
-
-          // Selecionar o item correspondente na árvore
-          const treeItem = this.treeContainer.querySelector(
-            `.tree-item[data-id='${item.id}']`
-          );
-          if (treeItem) {
-            this.deselectAllTreeItems();
-            treeItem.classList.add("selected");
-
-            // Expandir os nós pais na árvore
-            for (const parentNode of path.slice(0, -1)) {
-              const parentTreeItem = this.treeContainer.querySelector(
-                `.tree-item[data-id='${parentNode.id}']`
-              );
-              if (
-                parentTreeItem &&
-                !parentTreeItem.classList.contains("expanded")
-              ) {
-                await this.toggleExpandCollapse(parentTreeItem, parentNode);
-              }
-            }
-          }
+        // Atualizar o caminho atual de forma incremental
+        // Assumindo que os itens no grid são filhos do último item no currentPath
+        // Se currentPath está vazio, os itens são bibliotecas
+        let newPath = [];
+        if (this.state.currentPath.length === 0) {
+          // Navegando a partir da raiz
+          newPath = [item];
+        } else {
+          // Navegando a partir de um nível existente
+          newPath = [...this.state.currentPath, item];
         }
-      });
 
-      fragment.appendChild(div);
-    });
+        console.log("Novo caminho ao clicar no grid:", newPath);
 
-    this.gridContainer.appendChild(fragment);
-  }
-
-  /**
-   * Função para renderizar Breadcrumbs
-   */
-  renderBreadcrumbs() {
-    // Limpar breadcrumbs existentes (exceto a raiz)
-    this.breadcrumbContainer
-      .querySelectorAll("span:not(.raiz)")
-      .forEach((span) => span.remove());
-
-    // Adicionar breadcrumbs com base no currentPath
-    this.state.currentPath.forEach((node, index) => {
-      const separator = document.createElement("span");
-      separator.textContent = " > ";
-      this.breadcrumbContainer.appendChild(separator);
-
-      const span = document.createElement("span");
-      span.textContent = node.name;
-      span.style.color = "var(--cor-primaria-1)";
-      span.style.cursor = "pointer";
-      span.addEventListener("click", async () => {
-        // Atualizar o caminho atual até este ponto
-        this.state.currentPath = this.state.currentPath.slice(0, index + 1);
+        this.state.currentPath = newPath;
         this.renderBreadcrumbs();
-        const selectedNode =
-          this.state.currentPath[this.state.currentPath.length - 1];
-        await this.displayContent(selectedNode);
+        await this.displayContent(item);
         this.saveState();
-        this.resetInactivityTimer();
 
         // Selecionar o item correspondente na árvore
+        const selectedId = item.id.toString(); // Garantir string para querySelector
         const treeItem = this.treeContainer.querySelector(
-          `.tree-item[data-id='${selectedNode.id}']`
+          `.tree-item[data-id='${selectedId}']`
         );
         if (treeItem) {
           this.deselectAllTreeItems();
@@ -868,6 +856,76 @@ class FileNavigator {
           }
         }
       });
+
+      fragment.appendChild(div);
+    });
+
+    this.gridContainer.appendChild(fragment);
+  }
+
+  /**
+   * Função para renderizar Breadcrumbs
+   */
+  renderBreadcrumbs() {
+    if (!this.breadcrumbContainer) return;
+
+    // Limpar breadcrumbs existentes (exceto a raiz)
+    this.breadcrumbContainer
+      .querySelectorAll("span:not(.raiz)")
+      .forEach((span) => span.remove());
+
+    // Adicionar breadcrumbs com base no currentPath
+    this.state.currentPath.forEach((node, index) => {
+      const separator = document.createElement("span");
+      separator.textContent = " > ";
+      this.breadcrumbContainer.appendChild(separator);
+
+      const span = document.createElement("span");
+      span.textContent = node.name;
+      span.style.color = "var(--cor-primaria-1)";
+      span.style.cursor = "pointer";
+      span.tabIndex = 0;
+      span.addEventListener("click", async () => {
+        // Atualizar o caminho atual até este ponto
+        this.state.currentPath = this.state.currentPath.slice(0, index + 1);
+        this.renderBreadcrumbs();
+        const selectedNode =
+          this.state.currentPath[this.state.currentPath.length - 1];
+        await this.displayContent(selectedNode);
+        this.saveState();
+        this.resetInactivityTimer();
+
+        // Selecionar o item correspondente na árvore
+        const selectedId = selectedNode.id.toString();
+        const treeItem = this.treeContainer.querySelector(
+          `.tree-item[data-id='${selectedId}']`
+        );
+        if (treeItem) {
+          this.deselectAllTreeItems();
+          treeItem.classList.add("selected");
+
+          // Expandir os nós pais na árvore
+          for (const parentNode of this.state.currentPath.slice(0, -1)) {
+            const parentTreeItem = this.treeContainer.querySelector(
+              `.tree-item[data-id='${parentNode.id}']`
+            );
+            if (
+              parentTreeItem &&
+              !parentTreeItem.classList.contains("expanded")
+            ) {
+              await this.toggleExpandCollapse(parentTreeItem, parentNode);
+            }
+          }
+        }
+      });
+
+      // Acessibilidade: teclado
+      span.addEventListener("keydown", async (e) => {
+        if (e.key === "Enter") {
+          span.click();
+        }
+      });
+
       this.breadcrumbContainer.appendChild(span);
     });
   }
@@ -923,6 +981,13 @@ class FileNavigator {
         e.preventDefault();
         await this.navigateBackOneLevel();
       });
+
+      // Acessibilidade: teclado
+      removerFiltroLink.addEventListener("keydown", async (e) => {
+        if (e.key === "Enter") {
+          removerFiltroLink.click();
+        }
+      });
     }
   }
 
@@ -954,7 +1019,7 @@ class FileNavigator {
 
       // Atualiza a seleção na árvore de navegação
       if (newNode.type !== "root") {
-        const selectedId = newNode.id;
+        const selectedId = newNode.id.toString();
         const selectedItem = this.treeContainer.querySelector(
           `.tree-item[data-id='${selectedId}']`
         );
@@ -986,6 +1051,7 @@ class FileNavigator {
    * Função para limpar seleções na árvore
    */
   deselectAllTreeItems() {
+    if (!this.treeContainer) return;
     this.treeContainer
       .querySelectorAll(".tree-item.selected")
       .forEach((item) => item.classList.remove("selected"));
@@ -995,22 +1061,10 @@ class FileNavigator {
    * Função para limpar seleções no grid
    */
   deselectAllGridItems() {
+    if (!this.gridContainer) return;
     this.gridContainer
       .querySelectorAll(".item-grid.selected")
       .forEach((item) => item.classList.remove("selected"));
-  }
-
-  /**
-   * Função para limpar o estado e re-renderizar as bibliotecas
-   */
-  clearState() {
-    localStorage.removeItem("fileExplorerState");
-    this.state.currentPath = [];
-    this.renderBreadcrumbs();
-    this.deselectAllTreeItems();
-    this.deselectAllGridItems();
-    this.displayContent({ type: "root" });
-    this.resetInactivityTimer();
   }
 
   /**
@@ -1030,7 +1084,38 @@ class FileNavigator {
     await this.init();
     // Nenhuma lógica relacionada ao toggleFiltroButton
   }
+
+  /**
+   * Função para escapar caracteres HTML para evitar XSS
+   * @param {string} unsafe - Texto que pode conter caracteres HTML.
+   * @returns {string} - Texto seguro.
+   */
+  escapeHtml(unsafe) {
+    if (typeof unsafe !== "string") return "";
+    return unsafe
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 }
+
+/**
+ * Função para renderizar os nós filhos na árvore
+ * @param {HTMLElement} container - <ul> onde os nós filhos serão adicionados.
+ * @param {Array} children - Lista de nós filhos.
+ */
+FileNavigator.prototype.renderChildNodes =
+  FileNavigator.prototype.renderChildNodes;
+
+/**
+ * Função para tratar a seleção de um nó na árvore
+ * @param {HTMLElement} li - Elemento <li> da árvore.
+ * @param {Object} node - Nó associado.
+ */
+FileNavigator.prototype.handleTreeSelection =
+  FileNavigator.prototype.handleTreeSelection;
 
 // Instanciar e iniciar o FileNavigator
 document.addEventListener("DOMContentLoaded", () => {

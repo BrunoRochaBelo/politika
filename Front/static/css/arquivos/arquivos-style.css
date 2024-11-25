@@ -428,3 +428,29 @@
     transform: rotate(360deg);
   }
 }
+/* Estilo para o elemento "raiz" na árvore de navegação */
+.raiz {
+  /* Alterado de .raiz-tree para .raiz */
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: var(--txt-titulo);
+  font-weight: bold;
+  background-color: var(--card-bg);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.raiz:hover {
+  /* Alterado de .raiz-tree:hover para .raiz:hover */
+  background-color: var(--cor-primaria-1);
+}
+
+.raiz .raiz-icon {
+  /* Alterado de .raiz-tree .raiz-icon para .raiz .raiz-icon */
+  margin-right: 10px;
+  font-size: 1.2em;
+}

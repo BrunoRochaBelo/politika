@@ -90,7 +90,7 @@
                   <span id="totalResults">0</span>&nbsp;-&nbsp;
                   <div class="btn-filtro-pesq">
                     <p class="btn-filtro-pesq-title" id="filtroselect">Nenhuma biblioteca encontrada
-                      <a href="#" class="remover-filtro">&times;</a>
+                      <a href="#" class="remover-filtro" aria-label="Remover filtro">&times;</a>
                     </p>
                   </div>
                 </li>
@@ -114,22 +114,26 @@
     <section class="main-sidenav">
       <div class="container-filtros-template filtros-tarefas">
         <h2 class="container-filtros-template-header">Navegar
-          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()">Navegar</button>
+          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()" aria-label="Alternar navegação">Navegar</button>
         </h2>
         <div class="container-filtros-template-content">
           <div id="abaFiltros1" class="aba-filtro active">
             <!-- Elemento "raiz" fixo -->
             <div class="raiz-tree">
-              <span class="raiz-icon">🏠</span> raiz
+              <span class="raiz-icon" aria-hidden="true">🏠</span> raiz
             </div>
-            <ul class="lista-vertical-fil">
+            <ul class="lista-vertical-fil" role="tree">
               <!-- Navegação em árvore será inserida aqui -->
             </ul>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Contêiner para mensagens globais -->
+    <div id="globalMessages" aria-live="polite" class="global-messages"></div>
   </main>
+
 
 
   <!-- Modal Botão Flutuante -->
