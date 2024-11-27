@@ -76,10 +76,6 @@
 @import "./pleitos/modal-concluir-pleito.css";
 @import "./pleitos/modal-despachar-pleito.css";
 
-/* despesas */
-@import "./despesas/dashboard-centro-custo.css";
-@import "./despesas/despesas-style.css";
-
 /* arquivos */
 @import "./arquivos/arquivos-style.css";
 
@@ -93,7 +89,19 @@
 @import "./gerenciar-conta/header-gc-template.css";
 /* gerenciar-conta/ home-admin */
 @import "./gerenciar-conta/home-admin/home-admin-style.css";
-/* gerenciar-conta/ Conta Corrente */
-@import "./gerenciar-conta/conta-corrente/conta-corrente-style.css";
 /* gerenciar-conta/ Perfil */
 @import "./gerenciar-conta/perfil/perfil-style.css";
+
+/* financeiro */
+@import "./financeiro/body-financeiro-template.css";
+@import "./financeiro/card-financeiro-template.css";
+@import "./financeiro/main-financeiro-template.css";
+@import "./financeiro/header-financeiro-template.css";
+/* financeiro/ home-admin */
+@import "./financeiro/home-admin/home-admin-style.css";
+/* financeiro/ Conta Corrente */
+@import "./financeiro/conta-corrente/conta-corrente-style.css";
+/* financeiro/ Despesas */
+/* despesas */
+@import "./financeiro/despesas/dashboard-centro-custo.css";
+@import "./financeiro/despesas/despesas-style.css";

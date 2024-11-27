@@ -19,172 +19,122 @@
 </head>
 
 
-<body class="body-template">
+<body class="body-financeiro-template">
 
-  <header class="header header-template">
-    <div class="header-menu" onclick="toggleMenu(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-    <div class="header-notification" id="notification">
-      <img src="./static/imagens/icones/notificação.svg" alt="Notification Icon">
-      <span id="notificationCounter" class="notification-counter">0</span>
-    </div>
-    <nav class="header-nav">
-      <ul class="header-nav-template">
-        <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
-            <p>home</p>
-          </a></li>
-        <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
-            <p>calendario</p>
-          </a></li>
-        <li class="tarefas"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas Icon">
-            <p>Tarefas</p>
-          </a></li>
-        <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
-            <p>Contatos</p>
-          </a></li>
-        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
-            <p>Pleitos</p>
-          </a></li>
-        <li class="despesas indicador"><a href="despesas.html"><img src="./static/imagens/icones/despesas-select.svg" alt="Despesas Icon">
-            <p>Despesas</p>
-          </a></li>
-        <li class="apps">
-          <a href="#">
-            <img src="./static/imagens/icones/apps.svg" alt="Ícone Apps">
-            <p>Apps</p>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="header-search">
-      <div>
-        <form action="/despesa/listcard" method="post" class="search-input-container">
-          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar despesa...">
-          <button type="submit" class="search-button">
-            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
-          </button>
-        </form>
-      </div>
-    </div>
+  <header class="header-financeiro">
+    <ul class="header-financeiro-template">
+      <li class="header-financeiro-back">
+        <a href="index.html" class="header-financeiro-back">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+        </a>
+      </li>
+      <li class="header-financeiro-nav">
+        <nav class="header-financeiro-nav">
+          <ul class="header-financeiro-nav-template">
+            <li class="dashboard"><a href="home-financeiro.html"><img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
+                <p>Dashboard</p>
+              </a></li>
+            <li class="contas"><a href="conta-corrente.html"><img src="./static/imagens/icones/contas-corrente.svg" alt="contas Icon">
+                <p>Contas</p>
+              </a></li>
+            <li class="despesas indicador"><a href="despesas.html"><img src="./static/imagens/icones/despesas-select.svg" alt="Despesas Icon">
+                <p>Despesas</p>
+              </a></li>
+          </ul>
+        </nav>
+      </li>
+      <li class="header-financeiro-logout">
+        <button id="btnLogout" class="btn-principal" onclick="logout()">Desconectar</button>
+      </li>
+    </ul>
   </header>
 
-  <main class="main main-template">
-    <section class="main-section">
-      <div class="container-template">
-        <h2 class="container-template-header">Despesas</h2>
-        <div class="container-template-content container-template-content-com-header-fx-int">
-          <div class="area-interna-containerContent-template">
-            <div class="area-interna-containerContent-template-header">
-              <div class="dashboard-container">
-                <div class="dashboard-header">
-                  <select id="cost-center-select" class="cost-center-select">
-                    <option value="campanha">Centro de Custo Campanha</option>
-                    <option value="gabinete">Centro de Custo Gabinete</option>
-                    <option value="marketing">Centro de Custo Marketing</option>
-                  </select>
-                  <div id="available-value" class="available-value dashboard-hidden">R$ 0,00</div>
-                  <div id="loading-indicator-header" class="loading-indicator dashboard-hidden">Carregando...</div>
-                </div>
-                <div class="dashboard-content">
-                  <div id="loading-indicator-content" class="loading-indicator dashboard-hidden">Carregando...</div>
-                  <div id="error-message" class="error-message dashboard-hidden"></div>
-                  <div class="chart-wrapper">
-                    <canvas id="expense-chart"></canvas>
-                    <div class="chart-center-text">
-                      <div id="center-text" class="chart-available-value">R$ 0,00</div>
-                      <div id="center-label">Disponível</div>
-                    </div>
+  <main class="main-financeiro main-financeiro-template">
+    <section class="main-financeiro-section container-template">
+      <h1 class="container-template-header header-header-fx-int"> Despesas </h1>
+      <div class="container-template-content container-template-content-com-header-fx-int">
+        <div class="area-interna-containerContent-template despesas">
+          <div class="area-interna-containerContent-template-header">
+            <div class="dashboard-container">
+              <div class="dashboard-header">
+                <select id="cost-center-select" class="cost-center-select">
+                  <option value="campanha">Centro de Custo Campanha</option>
+                  <option value="gabinete">Centro de Custo Gabinete</option>
+                  <option value="marketing">Centro de Custo Marketing</option>
+                </select>
+                <div id="available-value" class="available-value dashboard-hidden">R$ 0,00</div>
+                <div id="loading-indicator-header" class="loading-indicator dashboard-hidden">Carregando...</div>
+              </div>
+              <div class="dashboard-content">
+                <div id="loading-indicator-content" class="loading-indicator dashboard-hidden">Carregando...</div>
+                <div id="error-message" class="error-message dashboard-hidden"></div>
+                <div class="chart-wrapper">
+                  <canvas id="expense-chart"></canvas>
+                  <div class="chart-center-text">
+                    <div id="center-text" class="chart-available-value">R$ 0,00</div>
+                    <div id="center-label">Disponível</div>
                   </div>
+                </div>
 
-                  <div class="accounts-list-container">
-                    <h2>Meta por conta</h2>
-                    <div class="accounts-list" id="accounts-list">
-                      <!-- Os itens da conta serão adicionados dinamicamente aqui -->
-                    </div>
+                <div class="accounts-list-container">
+                  <h2>Meta por conta</h2>
+                  <div class="accounts-list" id="accounts-list">
+                    <!-- Os itens da conta serão adicionados dinamicamente aqui -->
                   </div>
                 </div>
               </div>
-              <div class="bar-dragging-dashboard-container tooltip">
-                <!-- Este é o contêiner que você quer que mostre o tooltip -->
-                <span class="tooltiptext">Arraste ou clique para exibir e ocultar o gráfico</span>
-              </div>
             </div>
-            <div class="area-interna-containerContent-template-content">
-              <ul class="lista-vertical-alt">
-                <li class="area-filtro">
-                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
-                  <div class="btn-filtro-pesq">
-                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                      <a href="contatos.html" class="remover-filtro">&times;</a>
-                    </p>
-                  </div>
-                </li>
-                <li class="secao-interna-template">
-                  <div class="secao-interna-template-content">
-                    <ul class="lista-vertical-cards">
-                      <li>
-                        <a class="card-m despesas-medium-card" href="#">
-                          <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
-                          <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
-                          <p class="despesas-medium-card-valorDespesa" data-filter="valorDespesa">R$ xxxx,xx</p>
-                          <p class="despesas-medium-card-dataDespesa" data-filter="dataPleito">xx/xx/xxxx</p>
-                          <div class="despesas-medium-card-desc" data-filter="descPleito">
-                            <p><strong>Descrição</strong></p>
-                          </div>
-                          <p class="despesas-medium-card-cnpj_cpf_for" data-filter="cnpjCpfFornecedor">CNPJ/CPF Fornecedor</p>
-                          <p class="despesas-medium-card-nome_fornecedor" data-filter="nomeFornecedor">Nome Fornecedor</p>
-                          <p class="despesas-medium-card-ordenador_despesa" data-filter="ordenadorDespesa">Ordenador de Despesa</p>
-                          <p class="despesas-medium-card-autor" data-filter="autorDespesa">Autor</p>
-                          <p class="despesas-medium-card-data_criacao" data-filter="dataCriacaoDespesa">Data de Criação</p>
-                          <div class="despesas-medium-card-editar">
-                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='despesa_exibir.html'">Visualizar despesa</button>
-                          </div>
-                          <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="list-last-child"><br></li>
-              </ul>
+            <div class="bar-dragging-dashboard-container tooltip">
+              <!-- Este é o contêiner que você quer que mostre o tooltip -->
+              <span class="tooltiptext">Arraste ou clique para exibir e ocultar o gráfico</span>
             </div>
+          </div>
+          <div class="area-interna-containerContent-template-content">
+            <ul class="lista-vertical-alt">
+              <li class="area-filtro">
+                <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+                <div class="btn-filtro-pesq">
+                  <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                    <a href="contatos.html" class="remover-filtro">&times;</a>
+                  </p>
+                </div>
+              </li>
+              <li class="secao-interna-template">
+                <div class="secao-interna-template-content">
+                  <ul class="lista-vertical-cards">
+                    <li>
+                      <a class="card-m despesas-medium-card" href="#">
+                        <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
+                        <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
+                        <p class="despesas-medium-card-valorDespesa" data-filter="valorDespesa">R$ xxxx,xx</p>
+                        <p class="despesas-medium-card-dataDespesa" data-filter="dataPleito">xx/xx/xxxx</p>
+                        <div class="despesas-medium-card-desc" data-filter="descPleito">
+                          <p><strong>Descrição</strong></p>
+                        </div>
+                        <p class="despesas-medium-card-cnpj_cpf_for" data-filter="cnpjCpfFornecedor">CNPJ/CPF Fornecedor</p>
+                        <p class="despesas-medium-card-nome_fornecedor" data-filter="nomeFornecedor">Nome Fornecedor</p>
+                        <p class="despesas-medium-card-ordenador_despesa" data-filter="ordenadorDespesa">Ordenador de Despesa</p>
+                        <p class="despesas-medium-card-autor" data-filter="autorDespesa">Autor</p>
+                        <p class="despesas-medium-card-data_criacao" data-filter="dataCriacaoDespesa">Data de Criação</p>
+                        <div class="despesas-medium-card-editar">
+                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='despesa_exibir.html'">Visualizar despesa</button>
+                        </div>
+                        <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="list-last-child"><br></li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="main-sidenav">
-      <div class="container-filtros-template">
-        <h2 class="container-filtros-template-header">Filtros
-          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()">Filtros</button>
-        </h2>
-        <div class="container-filtros-template-content lista-vertical-fil">
-          <button class="btn-principal-alt" type="button" data-filter="todos">
-            <strong>Todos</strong>
-          </button>
-          <ul class=" lista-select">
-            <li class="item1"><select class="card-select-m" id="estado" onchange="carregarCidades()">
-                <option value="" selected disabled>Natureza</option>
-                <option value="PE">Pernambuco</option>
-                <option value="SP">São Paulo</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="MG">Minas Gerais</option>
-              </select></li>
-            <li class="item2"><select class="card-select-m" id="cidade">
-                <option value="" selected disabled>Centro de custo </option>
-              </select></li>
-            <li class="item3"><select class="card-select-m" id="bairro">
-                <option value="" selected disabled>Ano/mês</option>
-              </select></li>
-          </ul>
-        </div>
-      </div>
     </section>
-
   </main>
+
+
 
   <!-- Modal Botão Flutuante -->
   <button class="floatingButton">+</button>
@@ -199,116 +149,14 @@
     </div>
   </div>
 
-  <!-- Modal Menu -->
-  <div class="modal" id="modalMenu">
-    <div class="modal-content-template">
-      <div class="modal-content-template-card-user">
-        <div class="modal-content-template-card-user-img">
-          <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" id="modalUserPhoto">
-        </div>
-        <p class="modal-content-template-card-user-candidato" id="candidato">Nome do candidato</p>
-        <p class="modal-content-template-card-user-cargo-owner" id="cargoOwner">Cargo do candidato</p>
-        <p class="modal-content-template-card-user-partido" id="partido">Partido do candidato</p>
-        <div class="modal-content-template-card-user-secao">
-          <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
-          <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
-        </div>
-        <a class="modal-content-template-card-user-gc" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
-      </div>
-      <div class="modal-content-template-list-op">
-        <ul class="modalMenu-list">
-          <li class="alterar-tema">
-            <button id="toggleTheme">
-              <img id="themeIcon" src="./static/imagens/icones/sun.svg" alt="Ícone de Sol" />
-              Alterar tema
-            </button>
-          </li>
-          <li>
-            <a href="calendario.html">
-              <img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
-              <span>Calendário</span>
-            </a>
-          </li>
-          <li>
-            <a href="tarefas.html">
-              <img src="./static/imagens/icones/tarefas.svg" alt="tarefas Icon">
-              <span>Tarefas</span>
-            </a>
-          </li>
-          <li>
-            <a href="contatos.html">
-              <img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
-              <span>Contatos</span>
-            </a>
-          </li>
-          <li>
-            <a href="pleitos.html">
-              <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
-              <span>Pleitos</span>
-            </a>
-          </li>
-          <li>
-            <a href="despesas.html">
-              <img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
-              <span>Despesas</span>
-            </a>
-          </li>
-          <li class="logout" onclick="logout()">
-            <a id="btnLogout">
-              <img src="./static/imagens/icones/sair.svg" alt="Sair icon">
-              <span>Sair</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Notificações -->
-  <div class="modal-notificacoes" id="notificationModal">
-    <div class="modal-content-notificacoes" id="modalContent">
-      <span class="modal-notificacoes-btn-close" id="closeButton">&times;</span>
-      <button id="markAllReadButton">Marcar todas como lidas</button>
-      <ul id="notificationsContent" class="notifications-list">
-        <!-- Notifications will be dynamically inserted here -->
-      </ul>
-      <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
-    </div>
-  </div>
-
-  <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
-
-  <!-- Modal para exibir mais aplicativos -->
-  <div id="modalMaisApps" class="modal-mais-apps">
-    <div class="modal-mais-apps-content">
-      <div class="modal-mais-apps-close"></div>
-      <ul class="modal-mais-apps-icones">
-        <li>
-          <a href="pleitos.html">
-            <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon" class="icone-app">
-            <p>Pleitos</p>
-          </a>
-        </li>
-        <li>
-          <a href="despesas.html">
-            <img src="./static/imagens/icones/despesas-select.svg" alt="Despesas Icon" class="icone-app">
-            <p style="color: var(--txt-nav-selecionado);">Despesas</p>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
 
 
-  <script src="./static/js/config.js" async></script>
+  <script src="./static/js/config.js" defer></script>
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
   <script src="./static/js/ScrollAjustarItensContainerHeader.js" defer></script>
   <script src="./static/js/ModalBTNFloating.js" defer></script>
-  <script src="./static/js/ModalMaisApps.js" defer></script>
-  <script src="./static/js/ModalMenu.js" defer></script>
-  <script src="./static/js/ModalNotificacoes.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/OcultarExibirFiltro.js" defer></script>
   <script src="./static/js/ExibirDetalhesDespesa.js" defer></script>

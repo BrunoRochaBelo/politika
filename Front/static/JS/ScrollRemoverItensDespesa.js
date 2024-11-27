@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentY = 0;
   let isDragging = false;
   let isAnimating = false;
-  let maxHeight = 300;
+  let maxHeight = 345;
   const minHeight = 0;
   let initialHeight = maxHeight;
   const moveThreshold = 10;
@@ -36,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const adjustLayout = () => {
     if (window.innerWidth <= 900) {
-      maxHeight = 345;
+      maxHeight = 355;
       Object.assign(dashboardContent.style, {
         flexDirection: "column",
         alignItems: "flex-start",
         padding: "7px",
       });
     } else {
-      maxHeight = 300;
+      maxHeight = 345;
       Object.assign(dashboardContent.style, {
         flexDirection: "row",
         alignItems: "center",

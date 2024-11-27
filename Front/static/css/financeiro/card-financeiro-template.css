@@ -1,0 +1,28 @@
+.main-financeiro .card-m,
+.main-financeiro .card-l {
+  border-radius: 10px;
+}
+
+.card-financeiro-template {
+  display: grid;
+  color: var(--txt-conteudo-card);
+  gap: 15px;
+  align-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "card-financeiro-template-title"
+    "card-financeiro-template-list";
+}
+
+.card-financeiro-template-title {
+  grid-area: card-financeiro-template-title;
+  color: var(--txt-conteudo-card);
+}
+.card-financeiro-template-list {
+  grid-area: card-financeiro-template-list;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--cor-primaria-1);
+}

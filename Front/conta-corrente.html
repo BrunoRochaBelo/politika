@@ -18,41 +18,38 @@
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body class="body-gc-template">
+<body class="body-financeiro-template">
 
-  <header class="header-gc">
-    <ul class="header-gc-template">
-      <li class="header-gc-back">
-        <a href="index.html" class="header-gc-back">
+  <header class="header-financeiro">
+    <ul class="header-financeiro-template">
+      <li class="header-financeiro-back">
+        <a href="index.html" class="header-financeiro-back">
           <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
         </a>
       </li>
-      <li class="header-gc-nav">
-        <nav class="header-gc-nav">
-          <ul class="header-gc-nav-template">
-            <li class="dashboard"><a href="home-admin.html"><img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
+      <li class="header-financeiro-nav">
+        <nav class="header-financeiro-nav">
+          <ul class="header-financeiro-nav-template">
+            <li class="dashboard"><a href="home-financeiro.html"><img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
                 <p>Dashboard</p>
-              </a></li>
-            <li class="perfil"><a href="perfil.html"><img src="./static/imagens/icones/perfil.svg" alt="perfil Icon">
-                <p>Perfil</p>
-              </a></li>
-            <li class="equipe"><a href="equipe.html"><img src="./static/imagens/icones/equipe.svg" alt="equipe Icon">
-                <p>Equipe</p>
               </a></li>
             <li class="contas indicador"><a href="conta-corrente.html"><img src="./static/imagens/icones/contas-corrente-select.svg" alt="contas Icon">
                 <p>Contas</p>
               </a></li>
+            <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
+                <p>Despesas</p>
+              </a></li>
           </ul>
         </nav>
       </li>
-      <li class="header-gc-logout">
+      <li class="header-financeiro-logout">
         <button id="btnLogout" class="btn-principal" onclick="logout()">Desconectar</button>
       </li>
     </ul>
   </header>
 
-  <main class="main-gc main-gc-template">
-    <section class="main-gc-section container-template">
+  <main class="main-financeiro main-financeiro-template">
+    <section class="main-financeiro-section container-template">
       <h1 class="container-template-header header-header-fx-int"> Contas Correntes </h1>
       <div class="container-template-content container-template-content-com-header-fx-int">
         <div class="area-interna-containerContent-template">
@@ -139,7 +136,7 @@
   <div class="notification" id="notification"></div>
 
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
-  <script src="./static/js/GcContaCorrente.js" defer></script>
+  <script src="./static/js/financeiroContaCorrente.js" defer></script>
 
 </body>
 
