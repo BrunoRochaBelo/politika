@@ -108,7 +108,7 @@
                           <p class="pleitos-medium-card-dataCriacao" data-filter="dataCriacaoPleito">10/04/2024</p>
                           <p class="pleitos-medium-card-status" data-filter="statusPleito">Em Análise</p>
                           <div class="pleitos-medium-card-editar">
-                            <button class="btn-outline-principal btn-visualizar">Visualizar</button>
+                            <button class="btn-outline-principal" onclick="window.location.href='pleito_exibir.html'">Visualizar</button>
                             <button class="btn-outline-principal btn-despachar">Despachar</button>
                             <button class="btn-outline-principal btn-concluir">Concluir</button>
                           </div>
@@ -136,62 +136,50 @@
           <div id="abaFiltros1" class="aba-filtro active">
             <ul class="lista-vertical-fil">
 
-              <!-- Filtro de Marcadores -->
+              <!-- Filtro de Tipo do Pleito -->
               <li class="filtro-multi-select-card">
                 <div class="filtro-multi-select-card-header">
-                  <label for="filtro_marcadores">Marcadores <span class="arrow down"></span></label>
+                  <label for="filtro_tipo_pleito">Tipo do Pleito <span class="arrow down"></span></label>
                 </div>
                 <div class="filtro-multi-select-card-content">
-                  <div id="filtro_marcadores" class="checkbox-button-group lista-vertical-alt">
-                    <input type="checkbox" id="todos_marcadores" value="todos" checked>
-                    <label for="todos_marcadores" class="marcador-s cor-marc0">Todos</label>
+                  <div id="filtro_tipo_pleito" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="tipo_pleito_todos" value="todos" checked>
+                    <label for="tipo_pleito_todos">Todos</label>
 
-                    <ul class="lista-vertical-2-column">
-                      <li>
-                        <input type="checkbox" id="marcador1" value="marcador1">
-                        <label for="marcador1" class="marcador-s cor-marc1">Marcador 1</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador2" value="marcador2">
-                        <label for="marcador2" class="marcador-s cor-marc2">Marcador 2</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador3" value="marcador3">
-                        <label for="marcador3" class="marcador-s cor-marc3">Marcador 3</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador4" value="marcador4">
-                        <label for="marcador4" class="marcador-s cor-marc4">Marcador 4</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador5" value="marcador5">
-                        <label for="marcador5" class="marcador-s cor-marc5">Marcador 5</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador6" value="marcador6">
-                        <label for="marcador6" class="marcador-s cor-marc6">Marcador 6</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador7" value="marcador7">
-                        <label for="marcador7" class="marcador-s cor-marc7">Marcador 7</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador8" value="marcador8">
-                        <label for="marcador8" class="marcador-s cor-marc8">Marcador 8</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador9" value="marcador9">
-                        <label for="marcador9" class="marcador-s cor-marc9">Marcador 9</label>
-                      </li>
-                      <li>
-                        <input type="checkbox" id="marcador10" value="marcador10">
-                        <label for="marcador10" class="marcador-s cor-marc10">Marcador 10</label>
-                      </li>
-                    </ul>
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="tipo_pleito_emprego" value="emprego">
+                      <label for="tipo_pleito_emprego">Emprego</label>
+
+                      <input type="checkbox" id="tipo_pleito_educacao_capacitacao" value="educacao_capacitacao">
+                      <label for="tipo_pleito_educacao_capacitacao">Educação e Capacitação</label>
+
+                      <input type="checkbox" id="tipo_pleito_infraestrutura" value="infraestrutura">
+                      <label for="tipo_pleito_infraestrutura">Infraestrutura</label>
+
+                      <input type="checkbox" id="tipo_pleito_juridico" value="juridico">
+                      <label for="tipo_pleito_juridico">Jurídico</label>
+
+                      <input type="checkbox" id="tipo_pleito_mobilidade" value="mobilidade">
+                      <label for="tipo_pleito_mobilidade">Mobilidade</label>
+
+                      <input type="checkbox" id="tipo_pleito_outros" value="outros">
+                      <label for="tipo_pleito_outros">Outros</label>
+
+                      <input type="checkbox" id="tipo_pleito_politico" value="politico">
+                      <label for="tipo_pleito_politico">Político</label>
+
+                      <input type="checkbox" id="tipo_pleito_recursos_financeiros" value="recursos_financeiros">
+                      <label for="tipo_pleito_recursos_financeiros">Recursos Financeiros</label>
+
+                      <input type="checkbox" id="tipo_pleito_saude" value="saude">
+                      <label for="tipo_pleito_saude">Saúde</label>
+
+                      <input type="checkbox" id="tipo_pleito_seguranca" value="seguranca">
+                      <label for="tipo_pleito_seguranca">Segurança</label>
+                    </div>
                   </div>
                 </div>
               </li>
-
 
               <!-- Filtro de Status -->
               <li class="filtro-multi-select-card">
@@ -200,38 +188,142 @@
                 </div>
                 <div class="filtro-multi-select-card-content">
                   <div id="filtro_status" class="checkbox-button-group lista-vertical-alt">
-                    <input type="checkbox" id="todos_status" value="todos" checked>
-                    <label for="todos_status">Todos</label>
+                    <input type="checkbox" id="status_todos" value="todos" checked>
+                    <label for="status_todos">Todos</label>
 
                     <div class="checkbox-button-group">
-                      <input type="checkbox" id="novas" value="novas">
-                      <label for="novas">Novas</label>
+                      <input type="checkbox" id="status_atendido_parcialmente" value="atendido_parcialmente">
+                      <label for="status_atendido_parcialmente">Atendido Parcialmente</label>
 
-                      <input type="checkbox" id="andamento" value="andamento">
-                      <label for="andamento">Andamento</label>
+                      <input type="checkbox" id="status_atendidos" value="atendidos">
+                      <label for="status_atendidos">Atendidos</label>
 
-                      <input type="checkbox" id="atrasadas" value="atrasadas">
-                      <label for="atrasadas">Atrasadas</label>
+                      <input type="checkbox" id="status_cancelado" value="cancelado">
+                      <label for="status_cancelado">Cancelado</label>
 
-                      <input type="checkbox" id="concluidas" value="concluidas">
-                      <label for="concluidas">Concluídas</label>
+                      <input type="checkbox" id="status_encaminhado" value="encaminhado">
+                      <label for="status_encaminhado">Encaminhado</label>
+
+                      <input type="checkbox" id="status_negado" value="negado">
+                      <label for="status_negado">Negado</label>
+
+                      <input type="checkbox" id="status_novos" value="novos">
+                      <label for="status_novos">Novos</label>
+
+                      <input type="checkbox" id="status_stand_by" value="stand_by">
+                      <label for="status_stand_by">Stand-by</label>
                     </div>
                   </div>
                 </div>
               </li>
 
-              <!-- Filtro de Responsável -->
+              <!-- Filtro de Esfera -->
               <li class="filtro-multi-select-card">
                 <div class="filtro-multi-select-card-header">
-                  <label for="filtro_responsavel">Responsável <span class="arrow down"></span></label>
+                  <label for="filtro_esfera">Esfera <span class="arrow down"></span></label>
                 </div>
                 <div class="filtro-multi-select-card-content">
-                  <div id="filtro_responsavel" class="radio-button-group ">
-                    <input type="radio" id="minhas" name="filtro_responsavel" value="minhas">
-                    <label for="minhas">Minhas</label>
+                  <div id="filtro_esfera" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="esfera_todas" value="todas" checked>
+                    <label for="esfera_todas">Todas</label>
 
-                    <input type="radio" id="todas" name="filtro_responsavel" value="todas">
-                    <label for="todas">Todas</label>
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="esfera_federal" value="federal">
+                      <label for="esfera_federal">Federal</label>
+
+                      <input type="checkbox" id="esfera_estadual" value="estadual">
+                      <label for="esfera_estadual">Estadual</label>
+
+                      <input type="checkbox" id="esfera_municipal" value="municipal">
+                      <label for="esfera_municipal">Municipal</label>
+
+                      <input type="checkbox" id="esfera_privado" value="privado">
+                      <label for="esfera_privado">Privado</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Solicitante -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_solicitante">Solicitante <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_solicitante" class="radio-button-group">
+                    <input type="radio" id="solicitante_todos" name="filtro_solicitante" value="todos" checked>
+                    <label for="solicitante_todos">Todos</label>
+                  </div>
+                  <div class="campo" style="width: 100%;">
+                    <input type="text" id="solicitante_nome" name="solicitante" placeholder="Digite o nome do solicitante">
+                  </div>
+                </div>
+              </li>
+              <!-- <li class="card-xs filtro-small-card ">
+                <div class="campo-filtro" style="justify-content: stretch;">
+                  <div class="campo">
+                    <label>Solicitante</label>
+                    <input type="text" id="indicacao" name="solicitante" placeholder="Digite o nome do solicitante">
+                  </div>
+                </div>
+              </li>-->
+
+              <!-- Filtro de Endereço -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_endereco">Endereço <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_endereco" class="lista-vertical-alt">
+
+                    <div class="campo">
+                      <label for="endereco_uf">UF</label>
+                      <select id="endereco_uf" name="uf" required>
+                        <option value="">Selecione</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                      </select>
+                    </div>
+
+                    <div class="campo">
+                      <label for="endereco_cidade">Cidade</label>
+                      <input type="text" id="endereco_cidade" name="cidade" required placeholder="Digite a cidade">
+                    </div>
+
+                    <div class="campo">
+                      <label for="endereco_bairro">Bairro</label>
+                      <input type="text" id="endereco_bairro" name="bairro" required placeholder="Digite o bairro">
+                    </div>
+                    <div class="campo">
+                      <label for="endereco_rua">Rua</label>
+                      <input type="text" id="endereco_rua" name="rua" placeholder="Digite a rua">
+                    </div>
+
                   </div>
                 </div>
               </li>
@@ -239,25 +331,25 @@
               <!-- Filtro de Período -->
               <li class="filtro-multi-select-card">
                 <div class="filtro-multi-select-card-header">
-                  <label for="filtro_tempo">Período <span class="arrow down"></span></label>
+                  <label for="filtro_periodo">Período <span class="arrow down"></span></label>
                 </div>
                 <div class="filtro-multi-select-card-content">
-                  <div id="filtro_tempo" class="checkbox-button-group lista-vertical-alt">
-                    <input type="checkbox" id="tempo_todos" value="todos" checked>
-                    <label for="tempo_todos">Todos</label>
+                  <div id="filtro_periodo" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="periodo_todos" value="todos" checked>
+                    <label for="periodo_todos">Todos</label>
 
                     <div class="checkbox-button-group">
-                      <input type="checkbox" id="hoje" value="hoje">
-                      <label for="hoje">Hoje</label>
+                      <input type="checkbox" id="periodo_hoje" value="hoje">
+                      <label for="periodo_hoje">Hoje</label>
 
-                      <input type="checkbox" id="esta_semana" value="esta_semana">
-                      <label for="esta_semana">Esta semana</label>
+                      <input type="checkbox" id="periodo_esta_semana" value="esta_semana">
+                      <label for="periodo_esta_semana">Esta semana</label>
 
-                      <input type="checkbox" id="este_mes" value="este_mes">
-                      <label for="este_mes">Este mês</label>
+                      <input type="checkbox" id="periodo_este_mes" value="este_mes">
+                      <label for="periodo_este_mes">Este mês</label>
 
-                      <input type="checkbox" id="este_ano" value="este_ano">
-                      <label for="este_ano">Este ano</label>
+                      <input type="checkbox" id="periodo_este_ano" value="este_ano">
+                      <label for="periodo_este_ano">Este ano</label>
                     </div>
 
                     <div class="lista-vertical-alt">
@@ -270,16 +362,30 @@
                         <h4>Período específico</h4>
                         <div class="checkbox-button-group lista-vertical-alt">
                           <div class="lista-vertical-2-column">
-                            <label for="data_inicio">Início:</label>
-                            <input type="date" id="data_inicio" name="data_inicio">
+                            <label for="periodo_data_inicio">Início:</label>
+                            <input type="date" id="periodo_data_inicio" name="data_inicio">
                           </div>
                           <div class="lista-vertical-2-column">
-                            <label for="data_fim">Fim:</label>
-                            <input type="date" id="data_fim" name="data_fim">
+                            <label for="periodo_data_fim">Fim:</label>
+                            <input type="date" id="periodo_data_fim" name="data_fim">
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Tarefas -->
+              <li class="card-xs filtro-small-card">
+                <div class="campo-filtro">
+                  <label for="tarefas_com">Com tarefas</label>
+                  <div class="switch-container">
+                    <input type="checkbox" id="tarefas_com" class="form-checkbox">
+                    <label for="tarefas_com" class="switch-label">
+                      <span class="switch-inner"></span>
+                      <span class="switch-switch"></span>
+                    </label>
                   </div>
                 </div>
               </li>
@@ -550,7 +656,7 @@
   <script src="./static/js/ModalConcluirPleito.js" defer></script>
   <script src="./static/js/ModalDespacharPleito.js" defer></script>
   <script src="./static/js/FiltrosMultiSelect.js" defer></script>
-  <script src="./static/js/FiltrosTarefas.js" defer></script>
+  <script src="./static/js/FiltrosPleitos.js" defer></script>
 
 </body>
 

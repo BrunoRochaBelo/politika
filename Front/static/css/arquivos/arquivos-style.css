@@ -296,44 +296,6 @@
   opacity: 0.8;
 }
 
-/* --- Estilos para Feedbacks Visuais no Grid --- */
-
-/* Mensagem de Carregamento no Grid */
-.loading-message {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px;
-  color: var(--txt-titulo);
-}
-
-.loading-message .spinner {
-  margin-bottom: 10px;
-}
-
-/* Mensagem de Erro no Grid */
-.error-message {
-  padding: 20px;
-  background-color: var(--cor-erro-bg);
-  color: var(--cor-erro-texto);
-  border-radius: 4px;
-  text-align: center;
-  margin: 20px;
-  font-size: 1rem;
-}
-
-/* Mensagem Informativa no Grid */
-.info-message {
-  padding: 20px;
-  background-color: var(--cor-apoio-2);
-  color: var(--txt-titulo);
-  border-radius: 4px;
-  text-align: center;
-  margin: 20px;
-  font-size: 1rem;
-}
-
 /* --- Estilos Responsivos --- */
 
 @media (max-width: 1200px) {
