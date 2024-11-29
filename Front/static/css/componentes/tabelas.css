@@ -133,7 +133,7 @@
 
 /* Estilo da tabela de histórico */
 .tabela-historico {
-  width: 100%;
+  width: auto;
   background: none;
   border-radius: 25px;
   padding: 0px 10px;
@@ -192,10 +192,18 @@
   margin-bottom: 10px;
   overflow: hidden;
   box-shadow: var(--sombra-moderada);
+  cursor: pointer;
 }
 
 .tabela-historico tr:last-child {
   margin-bottom: 0;
+}
+
+/* Cor de fundo no hover */
+.tabela-historico tr:hover {
+  background-color: var(--card-hover) !important;
+  transform: translateY(-1px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .tabela-historico tbody tr:nth-child(odd) {

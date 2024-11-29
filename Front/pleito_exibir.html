@@ -47,7 +47,7 @@
                 <ul id="navAba" class="nav">
                   <li id="nav1"><a class="indicador-2" href="#aba1" onclick="mostrarAba('aba1')">Dados</a></li>
                   <li id="nav2"><a href="#aba2" onclick="mostrarAba('aba2')">Tarefas</a></li>
-                  <li id="nav3"><a href="#aba3" onclick="mostrarAba('aba3')">Histórico</a></li>
+                  <li id="nav3"><a href="#aba3" onclick="mostrarAba('aba3')">Arquivos</a></li>
                 </ul>
               </div>
               <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
@@ -74,13 +74,13 @@
                           </div>
 
                           <div class="campo-exibir">
-                            <h3>Tipo de solicitação:</h3>
+                            <h3>Tipo de Pleito:</h3>
                             <p>{{ tipo }}</p>
                           </div>
 
                           <div class="campo-exibir">
-                            <h3>Categoria do pleito:</h3>
-                            <p>{{ categoria }}</p>
+                            <h3>Esfera de Solução:</h3>
+                            <p>{{ Esfera }}</p>
                           </div>
 
                           <div class="campo-exibir">
@@ -93,6 +93,7 @@
                             <p>{{ beneficiario }}</p>
                           </div>
                         </fieldset>
+
                         <fieldset class="fieldset-exibir">
                           <legend class="titulo-xl title-legend">Endereço do Beneficiário</legend>
                           <div class="campo-exibir">
@@ -144,8 +145,8 @@
                             <p>{{ longitude }}</p>
                           </div>
                         </fieldset>
-
                       </div>
+
                     </li>
                     <li class="list-last-child"><br></li>
                   </ul>
