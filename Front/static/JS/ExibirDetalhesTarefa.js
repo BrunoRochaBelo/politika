@@ -75,8 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = event.target.closest(".tarefa-small-card");
     if (!card) return;
 
-    // **Nova Verificação: Se o clique está dentro de '.tarefa-small-card-editar', não faz nada**
-    if (event.target.closest(".tarefa-small-card-editar")) {
+    // **Nova Verificação: Se o clique está dentro de '.tarefa-small-card-editar' ou '.tarefa-medium-card-desc-pleito-link', não faz nada**
+    if (
+      event.target.closest(".tarefa-small-card-editar") ||
+      event.target.closest(".tarefa-medium-card-desc-pleito-link")
+    ) {
       // Não executa a lógica de expansão/recolhimento
       return;
     }
@@ -132,8 +135,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = event.target.closest(".tarefa-medium-card");
     if (!card) return;
 
-    // **Nova Verificação: Se o clique está dentro de '.tarefa-medium-card-editar', não faz nada**
-    if (event.target.closest(".tarefa-medium-card-editar")) {
+    // **Nova Verificação: Se o clique está dentro de '.tarefa-medium-card-editar' ou '.tarefa-medium-card-desc-pleito-link', não faz nada**
+    if (
+      event.target.closest(".tarefa-medium-card-editar") ||
+      event.target.closest(".tarefa-medium-card-desc-pleito-link")
+    ) {
       // Não executa a lógica de expansão/recolhimento
       return;
     }

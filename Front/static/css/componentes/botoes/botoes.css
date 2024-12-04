@@ -5,7 +5,7 @@
   color: var(--btn-principal-txt);
   border: 1px solid var(--btn-principal);
   box-shadow: var(--sombra-leve);
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 300;
@@ -24,7 +24,7 @@
   background: var(--btn-principal-destaque);
   color: var(--btn-principal-txt);
   border: 1px solid var(--btn-principal-destaque);
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 300;
@@ -40,7 +40,7 @@
   color: var(--btn-principal-alt-text);
   border: 1px solid var(--btn-principal-alt);
   box-shadow: var(--sombra-leve);
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 300;
@@ -59,7 +59,7 @@
   background: var(--btn-principal-alt-destaque);
   color: var(--btn-principal-alt-text);
   border: 1px solid var(--btn-principal-alt-destaque);
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 300;
@@ -82,7 +82,7 @@
   color: var(--btn-principal);
   border: 1px solid var(--btn-principal);
   box-shadow: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 300;
@@ -96,7 +96,7 @@
   background: var(--btn-principal-hover);
   color: var(--btn-principal-txt);
   box-shadow: var(--sombra-leve);
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 300;
@@ -197,7 +197,7 @@
 .close:focus {
   background: #c61818;
   cursor: pointer;
-  color: var(--txt-titulo-card);
+  color: rgb(227, 227, 227);
 }
 .close:active {
   transform: scale(0.95);
@@ -262,5 +262,9 @@
     width: auto;
     margin: 0px 10px 10px 10px;
     box-shadow: var(--sombra-leve);
+  }
+
+  .btn-outline-principal {
+    padding: 12px 20px;
   }
 }

@@ -92,8 +92,10 @@
                       <!-- lógica do loop lista de tarefas -->
                       <!-- inicio do card tarefa -->
                       <li>
-                        <a class="card-m tarefa-medium-card" href="#">
-                          <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                        <div class="card-m tarefa-medium-card">
+                          <a href="#" class="tarefa-medium-card-title-link">
+                            <p class="tarefa-medium-card-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                          </a>
                           <div class="tarefa-medium-card-tag" data-filter="tagTarefa">
                             <div class="marcador-item cor-marc3">
                               <p><strong>Marcador 1</strong></p>
@@ -103,15 +105,23 @@
                           <p class="tarefa-medium-card-status" data-filter="statusTarefa">Status da Tarefa</p>
                           <p class="tarefa-medium-card-resp" data-filter="responsavelTarefa">Responsável</p>
                           <div class="tarefa-medium-card-desc" data-filter="descricaoTarefa">
-                            <p>Descrição da Tarefa</p>
+                            <a href="" class="tarefa-medium-card-desc-pleito-link">
+                              <div class="tarefa-medium-card-desc-pleito-container">
+                                <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon" class="tarefa-medium-card-desc-pleito-icon">
+                                <b class="tarefa-medium-card-desc-pleito-title">TAREFA DO PLEITO:</b>
+                                <span class="tarefa-medium-card-desc-pleito-nome">Nome do Pleito</span>
+                              </div>
+                            </a>
+                            <p class="tarefa-medium-card-desc-text">Descrição da Tarefa</p>
                           </div>
                           <div class="tarefa-medium-card-editar">
-                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar Tarefa</button>
+                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='tarefa_exibir.html'">Visualizar Tarefa</button>
                             <button class="btn-outline-principal btn-concluir">Concluir</button>
                           </div>
                           <div class="tarefa-medium-card-id" data-filter="tarefa-medium-card-id">{{tarefa-medium-card-id}}</div>
-                        </a>
+                        </div>
                       </li>
+
                       <!-- fim do card tarefa -->
                     </ul>
                   </div>
@@ -141,7 +151,7 @@
                 <div class="filtro-multi-select-card-content">
                   <div id="filtro_marcadores" class="checkbox-button-group lista-vertical-alt">
                     <input type="checkbox" id="todos_marcadores" value="todos" checked>
-                    <label for="todos_marcadores" class="marcador-s cor-marc0">Todos</label>
+                    <label for="todos_marcadores" class=" cor-marc0">Todos</label>
 
                     <ul class="lista-vertical-2-column">
                       <li>
