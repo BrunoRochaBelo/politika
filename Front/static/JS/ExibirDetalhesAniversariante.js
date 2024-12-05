@@ -5,27 +5,91 @@ document.addEventListener("DOMContentLoaded", () => {
     ".area-interna-containerContent-template-content"
   );
 
-  // Se existir um contêiner específico para os cartões, selecione-o.
-  // Substitua '.lista-de-cards-container' pelo seletor correto do seu HTML.
   const listaDeCardsContainer = document.querySelector(
     ".lista-de-cards-container"
   );
 
-  // Função para iniciar uma chamada telefônica
-  const iniciarChamadaTelefonicaNiver = (card) => {
-    const callElement = card.querySelector(".aniversario-small-card-num");
-    if (callElement) {
-      const callNumber = callElement.textContent.trim();
-      if (callNumber) {
-        window.location.href = `tel:${callNumber}`;
-      } else {
-        console.warn("Número de telefone não encontrado.");
+  // Seletores do modal
+  const modal = document.getElementById("modalEscolhaChamada");
+  const btnChamadaNativa = document.getElementById("btnChamadaNativa");
+  const btnChamadaWhatsApp = document.getElementById("btnChamadaWhatsApp");
+  const closeModalElement = document.querySelector(
+    ".modal-escolha-chamada-close"
+  );
+
+  let currentContato = {
+    numero: "",
+    nome: "",
+  };
+
+  // Função para iniciar a chamada telefônica nativa
+  const iniciarChamadaTelefonica = (numero, nomeContato) => {
+    const dataHora = new Date().toISOString();
+    window.location.href = `tel:${numero}`;
+    // registrarLigacao(nomeContato, numero, dataHora); // Descomente se necessário
+  };
+
+  // Função para iniciar uma chamada via WhatsApp
+  const iniciarChamadaWhatsApp = (numero, nomeContato) => {
+    const dataHora = new Date().toISOString();
+    const numeroWhatsApp = numero.replace(/[^\d]/g, "");
+    window.location.href = `https://wa.me/${numeroWhatsApp}`;
+    // registrarLigacao(nomeContato, numero, dataHora); // Descomente se necessário
+  };
+
+  // Função para exibir o modal de escolha de chamada
+  const exibirModalEscolhaChamada = (numero, nomeContato) => {
+    currentContato.numero = numero;
+    currentContato.nome = nomeContato;
+
+    modal.style.display = "flex";
+    setTimeout(() => {
+      modal.classList.add("show");
+    }, 10);
+  };
+
+  // Função para fechar o modal
+  const fecharModal = () => {
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+      currentContato = { numero: "", nome: "" }; // Resetar contato atual
+    }, 500); // Tempo igual ao de transição
+  };
+
+  // Configuração inicial dos ouvintes de eventos do modal
+  const configurarOuvintesModal = () => {
+    // Ouvintes para os botões de chamada no modal
+    btnChamadaNativa.addEventListener("click", () => {
+      if (currentContato.numero && currentContato.nome) {
+        iniciarChamadaTelefonica(currentContato.numero, currentContato.nome);
+        fecharModal();
       }
-    } else {
-      console.warn(
-        "Elemento com a classe '.aniversario-small-card-num' não encontrado."
-      );
-    }
+    });
+
+    btnChamadaWhatsApp.addEventListener("click", () => {
+      if (currentContato.numero && currentContato.nome) {
+        iniciarChamadaWhatsApp(currentContato.numero, currentContato.nome);
+        fecharModal();
+      }
+    });
+
+    // Ouvintes para fechar o modal
+    closeModalElement.addEventListener("click", fecharModal);
+    closeModalElement.addEventListener("touchstart", fecharModal);
+
+    // Fechar o modal ao clicar ou tocar fora dele
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        fecharModal();
+      }
+    });
+
+    window.addEventListener("touchstart", (event) => {
+      if (event.target === modal) {
+        fecharModal();
+      }
+    });
   };
 
   // Função para fechar todos os cartões de aniversário expandidos
@@ -48,18 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const ajustarScrollParaCentralizarCard = (card) => {
     if (!areaTemplateContent) return;
 
-    const cardRect = card.getBoundingClientRect();
-    const containerRect = areaTemplateContent.getBoundingClientRect();
-
-    if (
-      cardRect.top < containerRect.top ||
-      cardRect.bottom > containerRect.bottom
-    ) {
-      card.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
   };
 
   // Função para lidar com o clique nos cartões usando delegação de eventos
@@ -73,10 +129,20 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Se o clique for no botão de chamada, inicie a chamada
+    // Se o clique for no botão de chamada, exibe o modal
     if (event.target.classList.contains("aniversario-small-card-call")) {
-      iniciarChamadaTelefonicaNiver(card);
-      return;
+      const numElement = card.querySelector(".aniversario-small-card-num");
+      const nomeElement = card.querySelector(".aniversario-small-card-title");
+
+      const num = numElement ? numElement.textContent.trim() : "";
+      const nomeContato = nomeElement ? nomeElement.textContent.trim() : "";
+
+      if (num && nomeContato) {
+        exibirModalEscolhaChamada(num, nomeContato);
+      } else {
+        console.warn("Número ou nome do contato não encontrado.");
+      }
+      return; // Evita a execução do restante da função
     }
 
     event.preventDefault();
@@ -129,4 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Adiciona os ouvintes de eventos
   adicionarOuvintes();
+
+  // Configura os ouvintes de eventos do modal
+  configurarOuvintesModal();
 });

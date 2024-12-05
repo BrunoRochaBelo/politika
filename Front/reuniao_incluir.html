@@ -9,14 +9,14 @@
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
-  <title>Novo Evento</title>
-  <meta name="description" content="Novo Evento">
+  <title>Nova Reunião</title>
+  <meta name="description" content="Nova Reunião">
 </head>
 
 <body class="body-form">
   <div class="body-form-template">
-    <header class="header-form">
-      <h1>Novo Evento</h1>
+    <header class="header-form ">
+      <h1>Nova Reunião</h1>
       <h1><a href="calendario.html" class="close">&times;</a></h1>
     </header>
 
@@ -24,7 +24,7 @@
       <section>
         <div class="container-template">
           <div class="container-template-content">
-            <form id="formEvento" class="form" enctype="multipart/form-data">
+            <form id="formReuniao" class="form" enctype="multipart/form-data">
               <div class="area-interna-containerContent-template">
                 <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
                   <div class="card-session active">
@@ -34,7 +34,7 @@
                       <div class="campo form-tipo">
                         <label for="tipo">Tipo:</label>
                         <select id="tipo" name="tipo">
-                          <option value="evento">Evento</option>
+                          <option value="lembrete">Evento</option>
                           <!-- Adicione outras opções aqui -->
                         </select>
                       </div>
@@ -52,6 +52,11 @@
                         </select>
                       </div>
 
+                      <div class="campo">
+                        <label for="responsavel">Responsável <span>*</span></label>
+                        <input type="text" id="responsavel" name="responsavel" required placeholder="Nome do responsável">
+                      </div>
+
                       <div class="form-dataHora">
                         <div class="campo">
                           <label for="dataInicio">Data início <span>*</span></label>
@@ -65,12 +70,12 @@
 
                       <div class="form-dataHora">
                         <div class="campo">
-                          <label for="dataFim">Data fim <span>*</span></label>
-                          <input type="date" id="dataFim" name="dataFim" required placeholder="dd/mm/aaaa">
+                          <label for="dataFim">Data fim:</label>
+                          <input type="date" id="dataFim" name="dataFim" placeholder="dd/mm/aaaa">
                         </div>
                         <div class="campo">
-                          <label for="horaFim">Hora fim <span>*</span></label>
-                          <input type="time" id="horaFim" name="horaFim" required placeholder="--:--">
+                          <label for="horaFim">Hora fim:</label>
+                          <input type="time" id="horaFim" name="horaFim" placeholder="--:--">
                         </div>
                       </div>
 
@@ -115,7 +120,7 @@
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
-  <script src="./static/js/IncluirEvento.js" defer></script>
+  <script src="./static/js/IncluirReuniao.js" defer></script>
 
 </body>
 
