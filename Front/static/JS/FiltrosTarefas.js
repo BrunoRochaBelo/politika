@@ -157,3 +157,36 @@ function isAnyDateFilled() {
 function isAnyOtherChecked(checkboxes) {
   return Array.from(checkboxes).some((checkbox) => checkbox.checked);
 }
+
+// Seleção dos botões "Limpar" e "Aplicar"
+const btnLimpar = document.querySelector('button[data-filter="Limpar"]');
+const btnAplicar = document.querySelector('button[data-filter="Aplicar"]');
+
+// Função para resetar todos os filtros
+function resetarFiltros() {
+  // Resetar Marcadores
+  checkboxTodosMarcadores.checked = true;
+  checkboxesMarcadores.forEach((checkbox) => (checkbox.checked = false));
+
+  // Resetar Status
+  checkboxTodosStatus.checked = true;
+  checkboxesStatus.forEach((checkbox) => (checkbox.checked = false));
+
+  // Resetar Período de Tempo
+  checkboxTodosTempo.checked = true;
+  checkboxesTempo.forEach((checkbox) => (checkbox.checked = false));
+  clearDateInputs();
+
+  // Resetar Responsável
+  const responsavelSelect = document.getElementById("responsavel_nome");
+  responsavelSelect.value = "minhas";
+
+  // Opcional: Desmarcar opções de período específico
+  dataInicioInput.value = "";
+  dataFimInput.value = "";
+
+  // Se houver outros filtros, adicione-os aqui
+}
+
+// Adiciona o evento de clique ao botão "Limpar"
+btnLimpar.addEventListener("click", resetarFiltros);

@@ -14,3 +14,10 @@
   filter: var(--hover);
   background: var(--btn-secundario-hover);
 }
+
+.contatos-small-card-title.aniversariante::before {
+  content: "\1F382"; /* 🎂 */
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: var(--cor-primaria-1);
+}

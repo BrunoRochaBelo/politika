@@ -75,16 +75,6 @@
                       </div>
 
                       <div class="campo">
-                        <label for="endereco">Endereço <span>*</span></label>
-                        <input type="text" id="endereco" name="endereco" required placeholder="Endereço local da reunião...">
-                      </div>
-
-                      <div class="campo">
-                        <label for="sala">Sala:</label>
-                        <input type="text" id="sala" name="sala" placeholder="Sala, auditório, etc...">
-                      </div>
-
-                      <div class="campo">
                         <label for="publicoAlvo">Público alvo:</label>
                         <input type="text" id="publicoAlvo" name="publicoAlvo" placeholder="Digite o público alvo aqui">
                       </div>
@@ -94,11 +84,99 @@
                         <textarea class="form-textarea" id="anotacoes" name="anotacoes" placeholder="Digite suas anotações aqui"></textarea>
                       </div>
 
+                    </fieldset>
+
+                    <fieldset>
+                      <legend class="titulo-xl title-legend">Endereço do Evento</legend>
+
+                      <div class="campo">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" oninput="buscarEndereco(this.value)">
+                      </div>
+
+                      <div class="form-2-colum">
+                        <div class="campo">
+                          <label for="uf">UF</label>
+                          <select id="uf" name="uf">
+                            <option value="">Selecione</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                          </select>
+                        </div>
+                        <div class="campo">
+                          <label for="cidade">Cidade</label>
+                          <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade">
+                        </div>
+                      </div>
+
+                      <div class="campo">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+                      </div>
+
+                      <div class="campo">
+                        <label for="rua">Rua</label>
+                        <input type="text" id="rua" name="rua" placeholder="Digite a rua">
+                      </div>
+
+                      <div class="form-2-colum">
+                        <div class="campo">
+                          <label for="numero">Número</label>
+                          <input type="number" id="numero" name="numero" placeholder="Digite o número">
+                        </div>
+                        <div class="campo">
+                          <label for="complemento">Complemento</label>
+                          <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+                        </div>
+                      </div>
+
+                      <div class="campo ocultar">
+                        <label for="latitude">Latitude</label>
+                        <input type="number" id="latitude" name="latitude" step="0.000001" placeholder="Digite a latitude">
+                      </div>
+                      <div class="campo ocultar">
+                        <label for="longitude">Longitude</label>
+                        <input type="number" id="longitude" name="longitude" step="0.000001" placeholder="Digite a longitude">
+                      </div>
+
+
+                      <div class="campo">
+                        <label for="sala">Sala:</label>
+                        <input type="text" id="sala" name="sala" placeholder="Sala, auditório, etc...">
+                      </div>
+
+
                       <div class="campo">
                         <label for="acessoPrivado">Acesso privado</label>
                         <input class="form-checkbox" type="checkbox" id="acessoPrivado" name="acessoPrivado">
                       </div>
                     </fieldset>
+
                   </div>
                   <div class="botoes">
                     <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
@@ -115,6 +193,7 @@
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/BuscaEndereco.js" defer></script>
   <script src="./static/js/IncluirEvento.js" defer></script>
 
 </body>

@@ -233,12 +233,15 @@
                   <label for="filtro_responsavel">Responsável <span class="arrow down"></span></label>
                 </div>
                 <div class="filtro-multi-select-card-content">
-                  <div id="filtro_responsavel" class="radio-button-group ">
-                    <input type="radio" id="minhas" name="filtro_responsavel" value="minhas">
-                    <label for="minhas">Minhas</label>
-
-                    <input type="radio" id="todas" name="filtro_responsavel" value="todas">
-                    <label for="todas">Todas</label>
+                  <div id="filtro_responsavel">
+                    <div class="campo" style="width: 100%;">
+                      <select id="responsavel_nome" name="responsavel" required>
+                        <option value="minhas" selected>Minhas</option>
+                        <option value="responsavel2">Responsável 2</option>
+                        <option value="responsavel3">Responsável 3</option>
+                        <option value="todos">Todos</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </li>

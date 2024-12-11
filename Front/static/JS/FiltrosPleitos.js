@@ -179,7 +179,7 @@ function checkIfNoneSelectedPeriodo() {
 
 // ==================== Lógica para Filtro de Solicitante ====================
 const radioSolicitanteTodos = document.getElementById("solicitante_todos");
-const campoSolicitanteNome = document.getElementById("solicitante_nome");
+const campoSolicitanteNome = document.getElementById("indicacao");
 
 // Função para verificar o campo de Solicitante e ajustar o rádio "Todos"
 function verificarSolicitante() {

@@ -255,7 +255,9 @@
                     <label for="solicitante_todos">Todos</label>
                   </div>
                   <div class="campo" style="width: 100%;">
-                    <input type="text" id="solicitante_nome" name="solicitante" placeholder="Digite o nome do solicitante">
+                    <input type="text" id="indicacao" name="solicitante" placeholder="Digite o nome do solicitante">
+                    <div class="loading-indicator" id="loading-indicator">Carregando...</div>
+                    <div id="suggestions-ref-poli" class="suggestions"></div>
                   </div>
                 </div>
               </li>
@@ -657,6 +659,7 @@
   <script src="./static/js/ModalDespacharPleito.js" defer></script>
   <script src="./static/js/FiltrosMultiSelect.js" defer></script>
   <script src="./static/js/FiltrosPleitos.js" defer></script>
+  <script src="./static/js/ContatoIncluirListaReferenciaPolitica.js" defer></script>
 
 </body>
 
