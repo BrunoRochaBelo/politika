@@ -200,9 +200,13 @@
                     <div class="card-session active">
                       <fieldset>
                         <div class="campo">
-                          <p id="contadorContatosEncontrados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
+                          <div class="campo btn-file">
+                            <label for="anexar_documento" class="file-label">Anexar documento</label>
+                            <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" multiple onchange="atualizarListaArquivos()">
+                          </div>
+                          <p id="contadorArquivosAnexados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
                           <div class="tabela-historico">
-                            <table id="tabelaContatosEncontrados">
+                            <table id="tabelaArquivosAnexados">
                               <thead>
                                 <tr>
                                   <th class="hidden-column">ID</th>
@@ -212,13 +216,18 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <!-- Contatos encontrados serão listados aqui dinamicamente -->
+                                <!-- Arquivos anexados serão listados aqui -->
                               </tbody>
                             </table>
                             <div class="loading-indicator" id="loading-indicator">Carregando...</div>
                           </div>
                         </div>
                       </fieldset>
+
+                      <!-- Contêineres para mensagens -->
+                      <div id="mensagemErro" class="message-error"></div>
+                      <div id="mensagemSucesso" class="message-success"></div>
+
                     </div>
                   </div>
                 </div>
@@ -230,6 +239,7 @@
     </main>
   </div>
 
+
   <script src="./static/js/config.js" defer></script>
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
@@ -238,6 +248,7 @@
   <script src="./static/js/BuscaEndereco.js" defer></script>
   <script src="./static/js/ContatoIncluirListaReferenciaPolitica.js" defer></script>
   <script src="./static/js/IncluirPleito.js" defer></script>
+  <script src="./static/js/PleitoIncluirListaArquivos.js" defer></script>
 
 </body>
 
