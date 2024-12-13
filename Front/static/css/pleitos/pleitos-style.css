@@ -13,3 +13,48 @@
   filter: var(--hover);
   background: var(--btn-secundario-hover);
 }
+
+.file-view-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--bg-overlay);
+}
+
+.file-view-modal-content {
+  background-color: var(--card-bg);
+  top: 4%;
+  margin: 0% auto;
+  padding: 10px;
+  border-radius: 8px;
+  width: auto;
+  min-width: 100px;
+  max-width: 1000px;
+  box-shadow: var(--sombra-intensa);
+  position: relative;
+}
+
+#fileViewContainer {
+  max-height: 80vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#fileViewContainer img,
+#fileViewContainer iframe,
+#fileViewContainer embed {
+  max-width: 100%;
+  max-height: 80vh;
+  border: none;
+}
+
+.campo.tabelaArquivosAnexados .tabela-historico {
+  max-height: calc(var(--vh, 1vh) * 100 - 20rem) !important;
+}

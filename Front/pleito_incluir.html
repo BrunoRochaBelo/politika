@@ -199,7 +199,7 @@
                   <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
                     <div class="card-session active">
                       <fieldset>
-                        <div class="campo">
+                        <div class="campo tabelaArquivosAnexados">
                           <div class="campo btn-file">
                             <label for="anexar_documento" class="file-label">Anexar documento</label>
                             <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" multiple onchange="atualizarListaArquivos()">
@@ -237,6 +237,14 @@
         </div>
       </section>
     </main>
+  </div>
+
+  <!-- Modal para visualização de arquivos -->
+  <div id="fileViewModal" class="file-view-modal">
+    <div class="file-view-modal-content">
+      <span class="close" onclick="fecharModalVisualizacao()">&times;</span>
+      <div id="fileViewContainer"></div>
+    </div>
   </div>
 
 

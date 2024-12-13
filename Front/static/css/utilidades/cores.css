@@ -133,11 +133,11 @@
   /* Links e Mensagens */
   --link: hsl(25, 90%, 58%);
   --link-hover: hsl(25, 90%, 64%);
-  --sucesso: hsl(140, 90%, 55%);
-  --erro: hsl(0, 90%, 55%);
+  --sucesso: hsl(140, 70%, 50%);
+  --erro: hsl(0, 75%, 55%);
   --aviso: hsl(30, 85%, 63%);
   --informacao: hsl(215, 85%, 68%);
-  --msg-sucesso-txt: hsl(140, 95%, 93%);
+  --msg-sucesso-txt: hsl(140, 95%, 100%);
   --msg-erro-txt: hsl(0, 95%, 93%);
 
   /* Labels e Tooltips */
