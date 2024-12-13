@@ -224,12 +224,14 @@
   display: none;
   opacity: 0;
   visibility: hidden;
+  cursor: pointer;
 }
 
 .compact .acao-item p {
   display: inline-block;
   opacity: 1;
   visibility: visible;
+  cursor: pointer;
 }
 
 .fieldset-exibir {
