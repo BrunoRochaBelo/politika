@@ -1,6 +1,7 @@
 /* Estilos para o botão do card aberto */
 .organograma-medium-card-editar .btn-outline-principal {
   width: auto;
+  overflow: auto;
   font-weight: 400;
   font-size: 11px;
   border-radius: 6px;
@@ -13,4 +14,299 @@
 .organograma-medium-card-editar .btn-outline-principal:hover {
   filter: var(--hover);
   background: var(--btn-secundario-hover);
+}
+
+:root {
+  --cor-principal: #007bff;
+  --cor-secundaria: #6c757d;
+  --cor-fundo-no: #e9f7fe;
+  --cor-fundo-no-hover: #d1ecf1;
+  --cor-fundo-no-drag: #f8d7da;
+  --cor-borda-no: #0056b3;
+  --cor-borda-over: #28a745;
+  --cor-texto: #212529;
+  --cor-texto-botao: #ffffff;
+  --cor-background: #f8f9fa;
+}
+
+/* Estilos do Organograma */
+.organograma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.organograma-nivel {
+  list-style: none;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.organograma-nivel.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+}
+
+.organograma-nivel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid var(--cor-principal);
+  height: 20px;
+}
+
+.organograma-no {
+  position: relative;
+  padding: 15px 25px;
+  border: 2px solid var(--cor-borda-no);
+  border-radius: 8px;
+  margin: 0 15px;
+  background-color: var(--cor-fundo-no);
+  cursor: pointer;
+  min-width: 140px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.organograma-no:hover {
+  background-color: var(--cor-fundo-no-hover);
+  transform: translateY(-5px);
+  border-color: var(--cor-principal);
+}
+
+.organograma-no:focus {
+  outline: 3px solid var(--cor-principal);
+}
+
+.no-titulo {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.no-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.toggle-btn {
+  background-color: var(--cor-principal);
+  border: none;
+  color: var(--cor-texto-botao);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-btn::before {
+  content: "+";
+  font-size: 16px;
+}
+
+.organograma-no[aria-expanded="true"] .toggle-btn::before {
+  content: "-";
+}
+
+.toggle-btn:hover {
+  background-color: var(--cor-borda-no);
+  transform: scale(1.1);
+}
+
+/* Conexões entre nós */
+.organograma-no::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-top: 2px solid var(--cor-principal);
+  width: 0;
+  height: 20px;
+}
+
+.organograma-nivel.nivel-1-1,
+.organograma-nivel.nivel-2-1 {
+  margin-top: 20px;
+}
+
+/* Controles Adicionais */
+.controle-organograma {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.controle-organograma button {
+  padding: 12px 24px;
+  border: none;
+  background-color: var(--cor-principal);
+  color: var(--cor-texto-botao);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.controle-organograma button#remover-no {
+  background-color: #dc3545; /* Vermelho para ação destrutiva */
+}
+
+.controle-organograma button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.controle-organograma button#remover-no:hover {
+  background-color: #c82333;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .organograma-no {
+    min-width: 120px;
+    padding: 12px 20px;
+  }
+
+  .toggle-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+  }
+
+  .controle-organograma button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .organograma-nivel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .organograma-nivel::before {
+    left: 0;
+    border-left: none;
+    border-top: 2px solid var(--cor-principal);
+    width: 20px;
+    height: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .organograma-no {
+    margin: 10px 0;
+  }
+
+  .toggle-btn {
+    top: -10px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .controle-organograma {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .controle-organograma button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .organograma-no {
+    min-width: 100px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .toggle-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .controle-organograma button {
+    font-size: 14px;
+  }
+}
+
+/* Acessibilidade: Visibilidade ao Focar */
+.organograma-no:focus .no-conteudo {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Tooltip para Botões de Toggle */
+.toggle-btn {
+  position: relative;
+}
+
+.toggle-btn::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-botao);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-btn:hover::after {
+  opacity: 1;
+}
+
+/* Estilos para Drag and Drop */
+.organograma-no.dragging {
+  opacity: 0.6;
+  transform: scale(1.05);
+  z-index: 1000;
+}
+
+.organograma-no.over {
+  border-color: var(--cor-borda-over);
+  background-color: #d4edda; /* Verde claro para indicar destino válido */
+}
+
+/* Indicador de Inserção */
+.organograma-no.drop-after::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--cor-borda-over);
 }
