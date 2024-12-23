@@ -45,6 +45,7 @@
   background-color: #1e90ff !important;
   border: 1px solid #1e90ff !important;
   color: #ffffff !important;
+  height: auto !important;
   font-weight: 600;
   border-radius: 12px 12px 0 0;
 }
@@ -72,12 +73,12 @@
   border-color: transparent !important;
 }
 .orgchart .lines .rightLine.topLine {
-  border-radius: 0 6px 0 0 !important;
+  /*border-radius: 0 6px 0 0 !important;*/
   border-color: #1e90ff !important;
 }
 
 .orgchart .lines .leftLine.topLine {
-  border-radius: 6px 0 0 0 !important;
+  /* border-radius: 6px 0 0 0 !important;*/
   border-color: #1e90ff !important;
 }
 
