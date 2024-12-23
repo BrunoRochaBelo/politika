@@ -129,3 +129,134 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inicialização das funcionalidades
   adicionarOuvintesOrganogramaMedium();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleciona o contêiner dos cards largos
+  const listaDeCardsOrganogramaLargeContainer = document.querySelector(
+    "#listaOrganogramasLarge"
+  );
+
+  /**
+   * Função para ajustar o scroll e centralizar o card largo expandido
+   * @param {HTMLElement} card - O card que deve ser centralizado
+   */
+  const ajustarScrollParaCentralizarCardLarge = (card) => {
+    const areaTemplateContent = document.querySelector(
+      ".container-template-content"
+    );
+    if (!areaTemplateContent) return;
+
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
+  /**
+   * Função para fechar todos os cards largos que estão expandidos
+   */
+  const fecharTodosOsCardsOrganogramaLarge = () => {
+    const cardsExpandidos = listaDeCardsOrganogramaLargeContainer
+      ? listaDeCardsOrganogramaLargeContainer.querySelectorAll(
+          ".organograma-large-card-expanded"
+        )
+      : document.querySelectorAll(".organograma-large-card-expanded");
+
+    cardsExpandidos.forEach((card) => {
+      card.classList.remove("organograma-large-card-expanded");
+      const camposOcultos = card.querySelectorAll(
+        ".organograma-large-card-editar"
+      );
+      camposOcultos.forEach((campo) => {
+        campo.classList.remove("exibirDetalheOrganogramaCardLarge");
+      });
+    });
+  };
+
+  /**
+   * Função para lidar com o clique nos cards largos de organograma
+   * @param {Event} event
+   */
+  const exibirDetalhesOrganogramaLarge = (event) => {
+    const card = event.target.closest(".organograma-large-card");
+    if (!card) return;
+
+    // Verifica se o clique está dentro de '.organograma-large-card-editar'; se sim, não faz nada
+    if (event.target.closest(".organograma-large-card-editar")) {
+      // Não executa a lógica de expansão/recolhimento
+      return;
+    }
+
+    // Se o clique for no botão "Alterar", redireciona
+    if (event.target.closest(".btn-outline-principal")) {
+      // Ação já está definida no onclick do botão
+      return;
+    }
+
+    // Previne a ação padrão do link
+    event.preventDefault();
+
+    const camposOcultos = card.querySelectorAll(
+      ".organograma-large-card-editar"
+    );
+
+    const isExpanded = card.classList.contains(
+      "organograma-large-card-expanded"
+    );
+
+    if (isExpanded) {
+      // Fecha o card clicado
+      card.classList.remove("organograma-large-card-expanded");
+      camposOcultos.forEach((campo) => {
+        campo.classList.remove("exibirDetalheOrganogramaCardLarge");
+      });
+    } else {
+      // Fecha quaisquer cards expandidos
+      fecharTodosOsCardsOrganogramaLarge();
+
+      // Expande o card clicado
+      card.classList.add("organograma-large-card-expanded");
+      camposOcultos.forEach((campo) => {
+        campo.classList.add("exibirDetalheOrganogramaCardLarge");
+      });
+
+      // Ajusta o scroll para centralizar o card
+      ajustarScrollParaCentralizarCardLarge(card);
+    }
+  };
+
+  /**
+   * Função para lidar com o clique no botão "Visualizar" para cards largos
+   * @param {Event} event
+   * @param {string} tipo - Tipo de organograma ("organograma_large")
+   */
+  const lidarComBtnVisualizarLarge = (event, tipo) => {
+    event.stopPropagation(); // Impede a propagação do evento de clique
+    if (tipo === "organograma_large") {
+      window.location.href = "exibir-organograma-large.html"; // Redireciona para a página de visualização de organograma largo
+    }
+    // Adicione outros tipos se necessário
+  };
+
+  /**
+   * Função para adicionar ouvintes de eventos aos cards largos de organograma
+   */
+  const adicionarOuvintesOrganogramaLarge = () => {
+    if (listaDeCardsOrganogramaLargeContainer) {
+      // Delegação de eventos a partir do contêiner específico
+      listaDeCardsOrganogramaLargeContainer.addEventListener(
+        "click",
+        exibirDetalhesOrganogramaLarge
+      );
+    } else {
+      // Se não houver um contêiner específico, delegue a partir do documento
+      document.addEventListener("click", exibirDetalhesOrganogramaLarge);
+      console.warn(
+        "Contêiner '#listaOrganogramasLarge' não encontrado. Delegando eventos a partir do documento."
+      );
+    }
+  };
+
+  // Inicialização das funcionalidades para os cards largos
+  adicionarOuvintesOrganogramaLarge();
+});

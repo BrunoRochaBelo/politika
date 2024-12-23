@@ -34,7 +34,7 @@
 }
 /* Grande altura 150px*/
 .card-l {
-  min-height: 150px;
+  min-height: 120px;
   background: var(--card-bg);
   transition: all 0.3s ease;
   box-shadow: var(--sombra-moderada);

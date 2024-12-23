@@ -1,0 +1,178 @@
+/* Remover a imagem de fundo do OrgChart */
+.orgchart {
+  background-image: none !important;
+  background-color: var(--card-bg);
+  width: 100% !important;
+  min-height: 100vh !important;
+  border: none !important;
+}
+
+/* Toolbar do OrgChart */
+.orgchart-toolbar {
+  display: flex;
+  gap: 10px;
+}
+.btn-orgchart {
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.btn-orgchart:hover:not(:disabled) {
+  background-color: #309cff;
+}
+.btn-orgchart:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Container do OrgChart */
+#orgchart-container {
+  width: 100%;
+  height: 80vh;
+  border-radius: 23px;
+  position: relative;
+  overflow: auto;
+  background-color: var(--card-bg);
+}
+
+/* Nó do OrgChart */
+.orgchart .node .title {
+  background-color: #1e90ff !important;
+  border: 1px solid #1e90ff !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 12px 12px 0 0;
+}
+.orgchart .node .content {
+  background-color: #fff !important;
+  color: #333;
+  border: 1px solid #1e90ff !important;
+  border-top: none !important;
+  padding: 8px !important;
+  height: auto !important;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-size: 14px;
+  word-break: break-word;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Linhas em azul */
+.orgchart .lines .downLine {
+  background-color: #1e90ff !important;
+}
+
+.orgchart .lines .rightLine,
+.orgchart .lines .leftLine {
+  border-color: transparent !important;
+}
+.orgchart .lines .rightLine.topLine {
+  border-radius: 0 6px 0 0 !important;
+  border-color: #1e90ff !important;
+}
+
+.orgchart .lines .leftLine.topLine {
+  border-radius: 6px 0 0 0 !important;
+  border-color: #1e90ff !important;
+}
+
+/* Destacar nó selecionado */
+.selected-node .content {
+  background-color: #add8e6 !important; /* Azul claro para destaque */
+  border-color: #1e90ff !important; /* Azul para a borda */
+}
+
+/* Modais */
+.modal-organograma {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--bg-overlay);
+}
+.modal-organograma-content {
+  background-color: var(--modal-bg);
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 23px;
+  border: 1px solid var(--modal-borda);
+  position: relative;
+  animation: showModal 0.4s;
+  box-shadow: var(--sombra-intensa);
+}
+@keyframes showModal {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-organograma-content h2 {
+  margin-top: 0;
+  color: var(--modal-titulo);
+}
+
+.btn-modal-organograma {
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-modal-organograma:hover {
+  background-color: #309cff;
+}
+.btn-modal-organograma.btn-cancel {
+  background-color: #ccc;
+  color: #333;
+}
+.btn-modal-organograma.btn-cancel:hover {
+  background-color: #bbb;
+}
+
+/* Ajustes adicionais para garantir que os textos caibam nos nós */
+.orgchart .node .title,
+.orgchart .node .content {
+  white-space: normal; /* Permitir quebra de linha */
+}
+
+/* Opcional: Reduzir o tamanho da fonte para textos muito longos */
+.orgchart .node .content p {
+  font-size: 13px;
+}
+
+.node {
+  border-radius: 5px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.node.selected-node {
+  box-shadow: var(--sombra-card-aberto);
+  border-radius: 12px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.edge.horizontalEdge.rightEdge.fa,
+.edge.horizontalEdge.leftEdge.fa {
+  border-color: transparent !important;
+}

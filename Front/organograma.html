@@ -18,62 +18,41 @@
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body class="body-template">
+<body class="body-gc-template">
 
-  <header class="header header-template">
-    <div class="header-menu" onclick="toggleMenu(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-    <div class="header-notification" id="notification">
-      <img src="./static/imagens/icones/notificação.svg" alt="Notification Icon">
-      <span id="notificationCounter" class="notification-counter">0</span>
-    </div>
-    <nav class="header-nav">
-      <ul class="header-nav-template">
-        <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
-            <p>home</p>
-          </a></li>
-        <li class="calendario"><a href="calendario.html"><img src="./static/imagens/icones/calendario.svg" alt="calendario Icon">
-            <p>calendario</p>
-          </a></li>
-        <li class="tarefas indicador"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas-select.svg" alt="tarefas Icon">
-            <p>Tarefas</p>
-          </a></li>
-        <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
-            <p>Contatos</p>
-          </a></li>
-        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
-            <p>Pleitos</p>
-          </a></li>
-        <li class="arquivos"><a href="arquivos.html"><img src="./static/imagens/icones/arquivos.svg" alt="Arquivos Icon">
-            <p>Arquivos</p>
-          </a></li>
-        <li class="apps">
-          <a href="#">
-            <img src="./static/imagens/icones/apps.svg" alt="Ícone Apps">
-            <p>Apps</p>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="header-search">
-      <div>
-        <form action="/tarefa/listcard" method="post" class="search-input-container">
-          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar tarefa...">
-          <button type="submit" class="search-button">
-            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
-          </button>
-        </form>
-      </div>
-    </div>
+  <header class="header-gc">
+    <ul class="header-gc-template">
+      <li class="header-gc-back">
+        <a href="home-organograma.html" class="header-gc-back">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+        </a>
+      </li>
+      <li class="header-gc-nav">
+        <nav class="header-gc-nav">
+          <ul class="header-gc-nav-template">
+            <li class="organograma indicador">
+              <a href="home-admin.html">
+                <img src="./static/imagens/icones/list-select.svg" alt="Organograma List Icon">
+                <p>Lista</p>
+              </a>
+            </li>
+            <li class="perfil">
+              <a href="organograma_diagram.html">
+                <img src="./static/imagens/icones/organograma.svg" alt="Organograma Icon">
+                <p>Diagrama</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </li>
+
+    </ul>
   </header>
 
-  <main class="main main-template-sem-sidenav">
-    <section class="main-section">
+  <main class="main-gc main-gc-template">
+    <section class="main-gc-section organograma">
       <div class="container-template">
-        <h2 class="container-template-header">Organograma</h2>
+
         <div class="container-template-content container-template-content-com-header-fx-int">
           <div class="area-interna-containerContent-template">
             <div class="area-interna-containerContent-template-header">
@@ -93,35 +72,202 @@
                 </li>
                 <li class="secao-interna-template">
                   <div class="secao-interna-template-content">
-                    <ul class="lista-vertical-cards" id="listaOrganogramas">
-                      <li>
-                        <a class="card-m organograma-medium-card" href="#">
-                          <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">Nome da Unidade Organizacional</p>
-                          <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
-                            <div class="marcador-item cor-marc3">
-                              <p><strong>SIG</strong></p>
+                    <ul class="org-list" role="tree">
+                      <!-- Nível 1 -->
+                      <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
+                        <div class="org-card">
+                          <span class="toggle-btn" aria-label="Expandir/Colapsar Diretor Geral" aria-expanded="true" aria-controls="sublist-1" tabindex="0">
+                            <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                              <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                            </svg>
+                          </span>
+                          <div class="org-indicator">1</div>
+                          <span class="org-name" tabindex="0">Diretor Geral</span>
+                        </div>
+                        <ul class="org-sublist" id="sublist-1" role="group">
+                          <!-- Nível 2 -->
+                          <li class="org-item" data-level="2" role="treeitem" aria-expanded="true">
+                            <div class="org-card">
+                              <span class="toggle-btn" aria-label="Expandir/Colapsar Gerente de Marketing" aria-expanded="true" aria-controls="sublist-2" tabindex="0">
+                                <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                  <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                </svg>
+                              </span>
+                              <div class="org-indicator">2</div>
+                              <span class="org-name" tabindex="0">Gerente de Marketing</span>
                             </div>
-                          </div>
-                          <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de Projetos</p>
-                          <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 10.000,00</p>
-                          <p class="organograma-medium-card-nome_titular" data-field="nome_titular">Maria Silva</p>
-                          <div class="organograma-medium-card-info-pub" data-field="info-pub">
-                            <p>Veículo de Publicação: Diário Oficial</p>
-                            <p>Número: 12345 - Publicação: 01/01/2024</p>
-                            <p><strong>Data da Posse: 01/01/2024</strong></p>
-                          </div>
-                          <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">
-                            <p>Nível Hierárquico: <span class="nivel-hierarquia" style="background-color: #4CAF50; border-radius: 50%; padding: 5px 10px; color: white;">1</span></p>
-                          </div>
-                          <div class="organograma-medium-card-editar">
-                            <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/1'">Alterar</button>
-                          </div>
-                          <div class="organograma-medium-card-id" data-field="id">1</div>
-                        </a>
-                      </li>
-                      <!-- Fim do card de organograma -->
-                    </ul>
+                            <ul class="org-sublist" id="sublist-2" role="group">
+                              <!-- Nível 3 -->
+                              <li class="org-item" data-level="3" role="treeitem" aria-expanded="true">
+                                <div class="org-card">
+                                  <span class="toggle-btn" aria-label="Expandir/Colapsar Coordenador de Mídias Sociais" aria-expanded="true" aria-controls="sublist-3" tabindex="0">
+                                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                    </svg>
+                                  </span>
+                                  <div class="org-indicator">3</div>
+                                  <span class="org-name" tabindex="0">Coordenador de Mídias Sociais</span>
+                                </div>
+                                <ul class="org-sublist" id="sublist-3" role="group">
+                                  <!-- Nível 4 -->
+                                  <li class="org-item" data-level="4" role="treeitem" aria-expanded="true">
+                                    <div class="org-card">
+                                      <span class="toggle-btn" aria-label="Expandir/Colapsar Especialista em Conteúdo" aria-expanded="true" aria-controls="sublist-4" tabindex="0">
+                                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                        </svg>
+                                      </span>
+                                      <div class="org-indicator">4</div>
+                                      <span class="org-name" tabindex="0">Especialista em Conteúdo</span>
+                                    </div>
+                                    <ul class="org-sublist" id="sublist-4" role="group">
+                                      <!-- Nível 5 -->
+                                      <li class="org-item" data-level="5" role="treeitem">
+                                        <div class="org-card">
+                                          <div class="org-indicator">5</div>
+                                          <span class="org-name" tabindex="0">Assistente de Conteúdo</span>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <!-- Nível 4 - Outro ramo -->
+                                  <li class="org-item" data-level="4" role="treeitem" aria-expanded="true">
+                                    <div class="org-card">
+                                      <span class="toggle-btn" aria-label="Expandir/Colapsar Especialista em Anúncios" aria-expanded="true" aria-controls="sublist-5" tabindex="0">
+                                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                        </svg>
+                                      </span>
+                                      <div class="org-indicator">4</div>
+                                      <span class="org-name" tabindex="0">Especialista em Anúncios</span>
+                                    </div>
+                                    <ul class="org-sublist" id="sublist-5" role="group">
+                                      <li class="org-item" data-level="5" role="treeitem">
+                                        <div class="org-card">
+                                          <div class="org-indicator">5</div>
+                                          <span class="org-name" tabindex="0">Assistente de Anúncios</span>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                              <!-- Outros ramos no Nível 3 -->
+                              <li class="org-item" data-level="3" role="treeitem" aria-expanded="true">
+                                <div class="org-card">
+                                  <span class="toggle-btn" aria-label="Expandir/Colapsar Analista de SEO" aria-expanded="true" aria-controls="sublist-6" tabindex="0">
+                                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                    </svg>
+                                  </span>
+                                  <div class="org-indicator">3</div>
+                                  <span class="org-name" tabindex="0">Analista de SEO</span>
+                                </div>
+                                <ul class="org-sublist" id="sublist-6" role="group">
+                                  <li class="org-item" data-level="4" role="treeitem" aria-expanded="true">
+                                    <div class="org-card">
+                                      <span class="toggle-btn" aria-label="Expandir/Colapsar Junior SEO" aria-expanded="true" aria-controls="sublist-7" tabindex="0">
+                                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                        </svg>
+                                      </span>
+                                      <div class="org-indicator">4</div>
+                                      <span class="org-name" tabindex="0">Junior SEO</span>
+                                    </div>
+                                    <ul class="org-sublist" id="sublist-7" role="group">
+                                      <li class="org-item" data-level="5" role="treeitem">
+                                        <div class="org-card">
+                                          <div class="org-indicator">5</div>
+                                          <span class="org-name" tabindex="0">Estagiário SEO</span>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <!-- Outro ramo no Nível 2 -->
+                          <li class="org-item" data-level="2" role="treeitem" aria-expanded="true">
+                            <div class="org-card">
+                              <span class="toggle-btn" aria-label="Expandir/Colapsar Gerente de Vendas" aria-expanded="true" aria-controls="sublist-8" tabindex="0">
+                                <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                  <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                </svg>
+                              </span>
+                              <div class="org-indicator">2</div>
+                              <span class="org-name" tabindex="0">Gerente de Vendas</span>
+                            </div>
+                            <ul class="org-sublist" id="sublist-8" role="group">
+                              <!-- Nível 3 -->
+                              <li class="org-item" data-level="3" role="treeitem" aria-expanded="true">
+                                <div class="org-card">
+                                  <span class="toggle-btn" aria-label="Expandir/Colapsar Supervisor de Vendas" aria-expanded="true" aria-controls="sublist-9" tabindex="0">
+                                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                    </svg>
+                                  </span>
+                                  <div class="org-indicator">3</div>
+                                  <span class="org-name" tabindex="0">Supervisor de Vendas</span>
+                                </div>
+                                <ul class="org-sublist" id="sublist-9" role="group">
+                                  <li class="org-item" data-level="4" role="treeitem" aria-expanded="true">
+                                    <div class="org-card">
+                                      <span class="toggle-btn" aria-label="Expandir/Colapsar Coordenador de Território" aria-expanded="true" aria-controls="sublist-10" tabindex="0">
+                                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                        </svg>
+                                      </span>
+                                      <div class="org-indicator">4</div>
+                                      <span class="org-name" tabindex="0">Coordenador de Território</span>
+                                    </div>
+                                    <ul class="org-sublist" id="sublist-10" role="group">
+                                      <li class="org-item" data-level="5" role="treeitem">
+                                        <div class="org-card">
+                                          <div class="org-indicator">5</div>
+                                          <span class="org-name" tabindex="0">Representante de Vendas</span>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="org-item" data-level="3" role="treeitem" aria-expanded="true">
+                                <div class="org-card">
+                                  <span class="toggle-btn" aria-label="Expandir/Colapsar Representante de Vendas" aria-expanded="true" aria-controls="sublist-11" tabindex="0">
+                                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                    </svg>
+                                  </span>
+                                  <div class="org-indicator">3</div>
+                                  <span class="org-name" tabindex="0">Representante de Vendas</span>
+                                </div>
+                                <ul class="org-sublist" id="sublist-11" role="group">
+                                  <li class="org-item" data-level="4" role="treeitem" aria-expanded="true">
+                                    <div class="org-card">
+                                      <span class="toggle-btn" aria-label="Expandir/Colapsar Junior Representante" aria-expanded="true" aria-controls="sublist-12" tabindex="0">
+                                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                        </svg>
+                                      </span>
+                                      <div class="org-indicator">4</div>
+                                      <span class="org-name" tabindex="0">Junior Representante</span>
+                                    </div>
+                                    <ul class="org-sublist" id="sublist-12" role="group">
+                                      <li class="org-item" data-level="5" role="treeitem">
+                                        <div class="org-card">
+                                          <div class="org-indicator">5</div>
+                                          <span class="org-name" tabindex="0">Estagiário de Vendas</span>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                        </ul>
                   </div>
+
                 </li>
                 <li class="list-last-child"><br></li>
               </ul>
@@ -235,6 +381,96 @@
   <script src="./static/js/ModalNotificacoes.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/ExibirDetalhesOrganograma.js" defer></script>
+
+  <script>
+    /* script.js */
+
+    // Aguarda o carregamento completo do DOM
+    document.addEventListener('DOMContentLoaded', function () {
+      // Seleciona todos os elementos de toggle (setas)
+      const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+      toggleButtons.forEach(function (button) {
+        // Função para alternar o estado expandido/colapsado
+        function toggleSublist() {
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          const controlledSublistId = button.getAttribute('aria-controls');
+          const controlledSublist = document.getElementById(controlledSublistId);
+          const parentItem = button.closest('.org-item');
+
+          if (controlledSublist) {
+            if (isExpanded) {
+              controlledSublist.classList.add('collapsed');
+              button.setAttribute('aria-expanded', 'false');
+              button.classList.add('collapsed');
+              parentItem.setAttribute('aria-expanded', 'false');
+            } else {
+              controlledSublist.classList.remove('collapsed');
+              button.setAttribute('aria-expanded', 'true');
+              button.classList.remove('collapsed');
+              parentItem.setAttribute('aria-expanded', 'true');
+            }
+          }
+        }
+
+        // Adiciona um listener de clique a cada botão
+        button.addEventListener('click', toggleSublist);
+
+        // Melhorar a acessibilidade com teclado (Enter e Espaço)
+        button.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleSublist();
+          }
+        });
+      });
+
+      // Função para permitir navegação via teclado no organograma
+      const orgList = document.querySelector('.org-list');
+
+      orgList.addEventListener('keydown', function (e) {
+        const focusableElements = orgList.querySelectorAll('.toggle-btn, .org-name');
+        const focusArray = Array.prototype.slice.call(focusableElements);
+        const currentIndex = focusArray.indexOf(document.activeElement);
+
+        switch (e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            if (currentIndex < focusArray.length - 1) {
+              focusArray[currentIndex + 1].focus();
+            }
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            if (currentIndex > 0) {
+              focusArray[currentIndex - 1].focus();
+            }
+            break;
+          case 'ArrowRight':
+            e.preventDefault();
+            if (document.activeElement.classList.contains('toggle-btn')) {
+              const isExpanded = document.activeElement.getAttribute('aria-expanded') === 'true';
+              if (!isExpanded) {
+                document.activeElement.click();
+              }
+            }
+            break;
+          case 'ArrowLeft':
+            e.preventDefault();
+            if (document.activeElement.classList.contains('toggle-btn')) {
+              const isExpanded = document.activeElement.getAttribute('aria-expanded') === 'true';
+              if (isExpanded) {
+                document.activeElement.click();
+              }
+            }
+            break;
+          default:
+            break;
+        }
+      });
+    });
+
+  </script>
 
 </body>
 

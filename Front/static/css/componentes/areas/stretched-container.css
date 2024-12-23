@@ -1,0 +1,43 @@
+.body-for-stretched-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+.stretched-container {
+  width: calc(100% - 30px);
+  /* Largura total menos 30px (15px de espaçamento em cada lado) */
+  height: calc(100vh - 30px);
+  /* Altura total menos 30px (15px de espaçamento em cada lado) */
+  max-width: 1100px;
+  /* Largura máxima */
+  min-width: 350px;
+  /* Largura mínima */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 30px;
+  /* Espaçamento em todas as direções */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centraliza o conteúdo verticalmente */
+  text-align: center;
+}
+
+/*
+
+Exemplo de implementação:
+
+<body class="body-for-stretched-container">
+  <div class="stretched-container">
+    
+  ----- Conteudo da página ----
+
+  </div>
+</body>
+
+*/

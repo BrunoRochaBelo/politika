@@ -158,3 +158,109 @@
   color: white;
   text-align: center;
 }
+
+/* Estilos para o card Organograma Largo */
+.organograma-large-card {
+  display: grid;
+  color: var(--txt-conteudo-card);
+  gap: 5px;
+  justify-content: stretch;
+  overflow: hidden;
+  grid-template-areas:
+    "organograma-large-card-title organograma-large-card-siglaUnidade"
+    "organograma-large-card-versao ."
+    "organograma-large-card-quantUnidade organograma-large-card-quantUnidade";
+  transition: all 0.25s ease;
+  max-height: 500px;
+}
+
+.organograma-large-card-title {
+  grid-area: organograma-large-card-title;
+  border-left: 4px solid var(--cor-primaria-2);
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  justify-self: start;
+  align-self: center;
+  margin: 3px 0 0 0px;
+  text-align: start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--txt-titulo-card);
+}
+
+.organograma-large-card-siglaUnidade {
+  grid-area: organograma-large-card-siglaUnidade;
+  justify-self: end;
+}
+
+.organograma-large-card-versao {
+  grid-area: organograma-large-card-versao;
+  justify-self: start;
+  align-self: center;
+  margin: 3px 0 0 8px;
+  font-size: 14px;
+}
+
+.organograma-large-card-quantUnidade {
+  grid-area: organograma-large-card-quantUnidade;
+  justify-self: start;
+  align-self: center;
+  margin: 3px 0 0 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.organograma-large-card-editar {
+  grid-area: organograma-large-card-editar;
+  display: none;
+  opacity: 0;
+  border-top: 1px solid var(--card-aberto-detalhe);
+  transition: opacity 0.25s ease-in-out;
+}
+
+.organograma-large-card-id {
+  display: none;
+}
+
+.exibirDetalheOrganogramaCardLarge {
+  display: block;
+  opacity: 1 !important;
+}
+
+/* Estado Expandido */
+.organograma-large-card-expanded {
+  border-radius: 12px;
+  background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
+  color: var(--txt-card-aberto);
+  box-shadow: var(--sombra-card-aberto);
+  grid-template-areas:
+    "organograma-large-card-title organograma-large-card-siglaUnidade"
+    "organograma-large-card-versao ."
+    "organograma-large-card-quantUnidade organograma-large-card-quantUnidade"
+    "organograma-large-card-editar organograma-large-card-editar";
+  transform: scale(1);
+  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  max-height: 700px;
+}
+
+.organograma-large-card-editar.exibirDetalheOrganogramaCardLarge {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px 0px 0px;
+  margin: 15px 0 0 0;
+  opacity: 1;
+  gap: 30px;
+}
+
+.organograma-large-card-expanded .organograma-large-card-title {
+  border-left: 4px solid var(--card-aberto-detalhe);
+  color: var(--txt-card-aberto);
+}
+
+.organograma-large-card-expanded:hover {
+  filter: brightness(1);
+}

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="manifest" href="./manifest.json">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./static/imagens/icones/organograma-select.svg" type="image/png">
+  <title>Organograma</title>
+  <meta name="description" content="Lista de Organograma">
+
+  <!-- CSS da biblioteca OrgChart -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.2/css/jquery.orgchart.min.css" />
+
+  <!-- SEU ARQUIVO DE ESTILO -->
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body class="body-gc-template">
+
+  <header class="header-gc">
+    <ul class="header-gc-template">
+      <li class="header-gc-back">
+        <a href="index.html" class="header-gc-back">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+        </a>
+      </li>
+      <li class="header-gc-nav">
+        <nav class="header-gc-nav">
+          <ul class="header-gc-nav-template">
+            <li class="organograma">
+              <a href="organograma.html">
+                <img src="./static/imagens/icones/list.svg" alt="Organograma List Icon">
+                <p>Lista</p>
+              </a>
+            </li>
+            <li class="perfil indicador">
+              <a href="organograma_diagram.html">
+                <img src="./static/imagens/icones/organograma-select.svg" alt="Organograma Icon">
+                <p>Diagrama</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </li>
+    </ul>
+  </header>
+
+  <main class="main-gc main-gc-template">
+    <section class="main-gc-section organograma">
+      <div class="area-interna-containerContent-template">
+        <div class="area-interna-containerContent-template-header">
+          <!-- Toolbar de Ações (CRUD) -->
+          <div class="orgchart-toolbar">
+            <button class="btn-orgchart" id="btnAddNode" disabled>Adicionar Nó</button>
+            <button class="btn-orgchart" id="btnRenameNode" disabled>Renomear Nó</button>
+            <button class="btn-orgchart" id="btnDeleteNode" disabled>Excluir Nó</button>
+          </div>
+        </div>
+        <div class="area-interna-containerContent-template-content">
+          <!-- Container onde o OrgChart será desenhado -->
+          <div id="orgchart-container"></div>
+        </div>
+
+        <!-- Modais para CRUD -->
+
+        <!-- Modal Adicionar Nó -->
+        <div class="modal-organograma" id="addModal">
+          <div class="modal-organograma-content">
+            <span class="close" id="addClose">&times;</span>
+            <h2>Adicionar Nó</h2>
+            <div class="campo">
+              <input type="text" id="addNameInput" placeholder="Nome do Novo Nó">
+            </div>
+            <div class="campo">
+              <input type="text" id="addTitleInput" placeholder="Título (opcional)">
+            </div>
+            <button class="btn-modal-organograma" id="saveAdd">Adicionar</button>
+            <button class="btn-modal-organograma btn-cancel" id="cancelAdd">Cancelar</button>
+          </div>
+        </div>
+
+        <!-- Modal Renomear Nó -->
+        <div class="modal-organograma" id="renameModal">
+          <div class="modal-organograma-content">
+            <span class="close" id="renameClose">&times;</span>
+            <h2>Renomear Nó</h2>
+            <div class="campo">
+              <input type="text" id="renameNameInput" placeholder="Novo Nome">
+            </div>
+            <div class="campo">
+              <input type="text" id="renameTitleInput" placeholder="Novo Título">
+            </div>
+            <button class="btn-modal-organograma" id="saveRename">Salvar</button>
+            <button class="btn-modal-organograma btn-cancel" id="cancelRename">Cancelar</button>
+          </div>
+        </div>
+
+        <!-- Modal Excluir Nó -->
+        <div class="modal-organograma" id="deleteModal">
+          <div class="modal-organograma-content">
+            <span class="close" id="deleteClose">&times;</span>
+            <h2>Excluir Nó</h2>
+            <p id="deleteText"></p>
+            <button class="btn-modal-organograma" id="confirmDelete">Sim, Excluir</button>
+            <button class="btn-modal-organograma btn-cancel" id="cancelDelete">Cancelar</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.2/js/jquery.orgchart.min.js"></script>
+  <script>
+    /************************************************************************
+     * 1) Definição de dados iniciais e contador de ID
+     ************************************************************************/
+    let orgData = {
+      id: 1,
+      name: "Diretor(a) Geral",
+      title: "CEO",
+      children: [
+        {
+          id: 2,
+          name: "Gerente de TI",
+          title: "Ger. Tecnologia",
+          children: [
+            { id: 3, name: "Desenvolvedor 1", title: "Dev" },
+            { id: 4, name: "Desenvolvedor 2", title: "Dev" }
+          ]
+        },
+        {
+          id: 5,
+          name: "Gerente de Vendas",
+          title: "Ger. Comercial",
+          children: [
+            { id: 6, name: "Vendedor 1", title: "Pleno" },
+            { id: 7, name: "Vendedor 2", title: "Júnior" }
+          ]
+        }
+      ]
+    };
+    let nextId = 8;
+
+    /************************************************************************
+     * 2) Variáveis globais
+     ************************************************************************/
+    let chartInstance = null;   // Instância do OrgChart
+    let selectedNode = null;  // Dados do nó selecionado
+
+    /************************************************************************
+     * 3) Ao carregar a página, inicializar e vincular eventos
+     ************************************************************************/
+    $(function () {
+      initOrgChart();
+
+      // Eventos de toolbar
+      $("#btnAddNode").on("click", openAddModal);
+      $("#btnRenameNode").on("click", openRenameModal);
+      $("#btnDeleteNode").on("click", openDeleteModal);
+
+      // Eventos de fechamento de modal-organograma
+      $("#addClose, #renameClose, #deleteClose").on("click", closeAllModals);
+      $(window).on("click", function (event) {
+        if ($(event.target).is("#addModal")) closeAllModals();
+        if ($(event.target).is("#renameModal")) closeAllModals();
+        if ($(event.target).is("#deleteModal")) closeAllModals();
+      });
+
+      // Botões dos modais
+      $("#saveAdd").on("click", addNodeAction);
+      $("#cancelAdd").on("click", closeAllModals);
+
+      $("#saveRename").on("click", renameNodeAction);
+      $("#cancelRename").on("click", closeAllModals);
+
+      $("#confirmDelete").on("click", deleteNodeAction);
+      $("#cancelDelete").on("click", closeAllModals);
+
+      // Limpar seleção em cliques fora dos nós
+      $("#orgchart-container").on("click", function (event) {
+        if (!$(event.target).closest(".node").length) {
+          clearSelection();
+        }
+      });
+      $(document).on("click", function (event) {
+        if (!$(event.target).closest("#orgchart-container").length &&
+          !$(event.target).closest(".orgchart-toolbar").length &&
+          !$(event.target).closest(".modal-organograma").length) {
+          clearSelection();
+        }
+      });
+    });
+
+    /************************************************************************
+     * 4) Inicializa (ou redesenha) o OrgChart na div #orgchart-container
+     ************************************************************************/
+    function initOrgChart() {
+      // Se já houver instância criada, apenas reinicializa sem perder zoom
+      if (chartInstance && chartInstance.$chart) {
+        // Capturar transform atual para re-aplicar após init
+        let currentTransform = chartInstance.$chart.css("transform");
+
+        // Reinicializa com dados atualizados
+        chartInstance.init({
+          data: orgData,
+          nodeId: "id",
+          nodeContent: "title",
+          pan: true,
+          zoom: true,
+          toggleSiblingsResp: false,
+          createNode: onCreateNode
+        });
+
+        // Reaplicar transform (zoom/pan) após redesenhar
+        if (currentTransform && currentTransform !== "none") {
+          chartInstance.$chart.css("transform", currentTransform);
+        }
+
+        // Se existia nó selecionado, tentar selecioná-lo novamente
+        restoreSelection();
+        return;
+      }
+
+      // Se não existir instância, criar do zero
+      chartInstance = $("#orgchart-container").orgchart({
+        data: orgData,
+        nodeId: "id",
+        nodeContent: "title",
+        pan: true,
+        zoom: true,
+        toggleSiblingsResp: false,
+        createNode: onCreateNode
+      });
+    }
+
+    /************************************************************************
+     * 5) Função callback para criação de cada nó (createNode)
+     *    - Responsável por atribuir evento de clique em cada nó
+     ************************************************************************/
+    function onCreateNode($node, data) {
+      // Remover qualquer manipulador anterior
+      $node.off("click");
+
+      // Adiciona evento de clique personalizado
+      $node.on("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+
+        selectedNode = data || null;
+
+        // Atualizar botões
+        if (selectedNode) {
+          $("#btnAddNode").prop("disabled", false);
+          $("#btnRenameNode").prop("disabled", false);
+          $("#btnDeleteNode").prop("disabled", selectedNode.id === 1);
+        }
+
+        // Destaque visual
+        $(".orgchart .node").removeClass("selected-node");
+        $node.addClass("selected-node");
+      });
+    }
+
+    /************************************************************************
+     * 6) CRUD: Ações de adicionar, renomear e excluir nós
+     ************************************************************************/
+    // 6a) Adicionar
+    function addNodeAction() {
+      if (!selectedNode) {
+        alert("Selecione um nó antes de adicionar!");
+        return;
+      }
+      const nameVal = $("#addNameInput").val().trim();
+      const titleVal = $("#addTitleInput").val().trim();
+      if (!nameVal) {
+        alert("Informe o nome do nó!");
+        return;
+      }
+      const newNode = {
+        id: nextId++,
+        name: nameVal,
+        title: titleVal
+      };
+
+      // Se não existir children no selectedNode, criar
+      if (!selectedNode.children) {
+        selectedNode.children = [];
+      }
+      selectedNode.children.push(newNode);
+
+      closeAllModals();
+      initOrgChart(); // redesenha sem perder zoom/pan
+    }
+
+    // 6b) Renomear
+    function renameNodeAction() {
+      if (!selectedNode) {
+        alert("Selecione um nó antes de renomear!");
+        return;
+      }
+      const newName = $("#renameNameInput").val().trim();
+      const newTitle = $("#renameTitleInput").val().trim();
+      if (!newName) {
+        alert("Informe o novo nome!");
+        return;
+      }
+
+      // Atualiza no orgData
+      selectedNode.name = newName;
+      selectedNode.title = newTitle;
+
+      closeAllModals();
+      initOrgChart(); // redesenha
+    }
+
+    // 6c) Excluir
+    function deleteNodeAction() {
+      if (!selectedNode) return;
+      if (selectedNode.id === 1) {
+        alert("Não é possível excluir o nó raiz.");
+        return;
+      }
+
+      removeNode(orgData, selectedNode.id);
+      closeAllModals();
+      initOrgChart();
+    }
+
+    /************************************************************************
+     * 7) Modais
+     ************************************************************************/
+    function openAddModal() {
+      if (!selectedNode) {
+        alert("Selecione um nó antes de adicionar!");
+        return;
+      }
+      $("#addNameInput").val("");
+      $("#addTitleInput").val("");
+      $("#addModal").show();
+    }
+
+    function openRenameModal() {
+      if (!selectedNode) {
+        alert("Selecione um nó antes de renomear!");
+        return;
+      }
+      $("#renameNameInput").val(selectedNode.name);
+      $("#renameTitleInput").val(selectedNode.title || "");
+      $("#renameModal").show();
+    }
+
+    function openDeleteModal() {
+      if (!selectedNode) {
+        alert("Selecione um nó antes de excluir!");
+        return;
+      }
+      $("#deleteText").text(`Deseja realmente excluir o nó "${selectedNode.name}"?`);
+      $("#deleteModal").show();
+    }
+
+    function closeAllModals() {
+      $(".modal-organograma").hide();
+    }
+
+    /************************************************************************
+     * 8) Funções auxiliares
+     ************************************************************************/
+    // Remove nó (recursivo)
+    function removeNode(obj, nodeId) {
+      if (obj.children && Array.isArray(obj.children)) {
+        obj.children = obj.children.filter(child => child.id !== nodeId);
+        obj.children.forEach(child => removeNode(child, nodeId));
+      }
+    }
+
+    // Localiza nó por ID no orgData
+    function findNodeById(node, id) {
+      if (node.id === id) return node;
+      if (node.children && Array.isArray(node.children)) {
+        for (let child of node.children) {
+          const result = findNodeById(child, id);
+          if (result) return result;
+        }
+      }
+      return null;
+    }
+
+    // Restaura seleção visual caso o nó ainda exista
+    function restoreSelection() {
+      if (!selectedNode) return;
+
+      // Encontrar de novo no orgData (pode ter mudado)
+      const stillExists = findNodeById(orgData, selectedNode.id);
+      if (!stillExists) {
+        clearSelection();
+        return;
+      }
+
+      // Atualiza selectedNode p/ a referência correta
+      selectedNode = stillExists;
+
+      // Destaca nó na tela
+      const $newSelectedNode = $(".orgchart .node[data-id='" + selectedNode.id + "']");
+      if ($newSelectedNode.length) {
+        $newSelectedNode.addClass("selected-node");
+        $("#btnAddNode").prop("disabled", false);
+        $("#btnRenameNode").prop("disabled", false);
+        $("#btnDeleteNode").prop("disabled", selectedNode.id === 1);
+      }
+    }
+
+    // Limpar seleção de nós
+    function clearSelection() {
+      selectedNode = null;
+      $(".orgchart .node").removeClass("selected-node");
+      $("#btnAddNode").prop("disabled", true);
+      $("#btnRenameNode").prop("disabled", true);
+      $("#btnDeleteNode").prop("disabled", true);
+    }
+
+    // Função de logout (opcional)
+    function logout() {
+      alert("Logout efetuado!");
+      // Implementar lógica de logout conforme necessário
+    }
+  </script>
+
+</body>
+
+</html>

@@ -49,6 +49,7 @@
 @import "./componentes/areas/container-abas-template.css";
 @import "./componentes/areas/container-template.css";
 @import "./componentes/areas/containerFiltros-e-compromissoHoje.css";
+@import "./componentes/areas/stretched-container.css";
 /* Componentes/ botoes */
 @import "./componentes/botoes/botoes.css";
 @import "./componentes/botoes/recuar-expandir.css";
@@ -80,6 +81,8 @@
 @import "./arquivos/arquivos-style.css";
 
 /* organograma */
+@import "./organograma/organograma-diagram-style.css";
+@import "./organograma/organograma-list-style.css";
 @import "./organograma/organograma-style.css";
 
 /* gerenciar-conta */

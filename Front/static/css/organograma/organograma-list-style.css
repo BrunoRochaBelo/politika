@@ -1,0 +1,193 @@
+/* Estilo geral da lista do organograma */
+.org-list {
+  list-style: none;
+  margin: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Estilo dos itens da lista */
+.org-item {
+  position: relative;
+  margin: 20px 0;
+}
+
+/* Conexão vertical */
+.org-sublist {
+  padding-left: 40px;
+  position: relative;
+  max-height: 100000px; /* Valor grande para permitir a expansão */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  overflow: hidden;
+  opacity: 1;
+}
+
+/* Estado colapsado */
+.org-sublist.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Linha vertical que conecta os subitens */
+.org-sublist::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 12px;
+  transform: translateY(-50%); /* Ajusta para o centro */
+  width: 1px; /* Linha mais fina */
+  height: 100%;
+  background-color: var(--borda); /* Utiliza a variável de cor */
+}
+
+/* Cartão do organograma */
+.org-card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-left: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botão de toggle */
+.toggle-btn {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  position: absolute;
+  left: -40px; /* Ajuste para alinhar melhor a seta */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Centraliza verticalmente */
+  color: var(--borda); /* Define a cor da seta */
+}
+
+/* Rotação da seta quando colapsada */
+.toggle-btn.collapsed .arrow-org {
+  transform: rotate(0deg); /* Aponta para a direita quando colapsado */
+}
+
+/* Rotação padrão da seta (aponta para baixo) */
+.arrow-org {
+  transition: transform 0.3s ease;
+  width: 24px; /* Aumenta o tamanho da seta */
+  height: 24px;
+  transform: rotate(90deg); /* Aponta para baixo por padrão */
+  fill: var(--borda); /* Utiliza a variável de cor */
+}
+
+/* Indicador de nível */
+.org-indicator {
+  width: 28px;
+  height: 28px;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+  flex-shrink: 0;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.org-indicator:hover {
+  background-color: #1976d2;
+}
+
+/* Nome da posição */
+.org-name {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Cores alternadas para melhor visualização */
+.org-item:nth-child(odd) .org-card {
+  background-color: #f9f9f9;
+}
+
+.org-item:nth-child(even) .org-card {
+  background-color: #eef9f1;
+}
+
+/* Hover e Focus Effects */
+.org-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.org-card:focus-within {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade: Ajuste para telas menores */
+@media (max-width: 768px) {
+  .org-list {
+    margin: 15px;
+  }
+
+  .org-sublist {
+    padding-left: 30px;
+  }
+
+  .org-sublist::before {
+    left: 10px;
+  }
+
+  .org-item::before {
+    left: 0;
+    width: 10px;
+    height: 1px;
+  }
+
+  .org-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    margin-left: 25px;
+  }
+
+  .toggle-btn {
+    width: 24px; /* Ajuste de tamanho para telas menores */
+    height: 24px;
+    margin-right: 8px;
+    left: -38px;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    color: var(--borda);
+  }
+
+  .arrow-org {
+    width: 24px;
+    height: 24px;
+    transform: rotate(90deg); /* Aponta para baixo por padrão */
+  }
+
+  .org-indicator {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .org-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .org-list {
+    margin: 10px;
+  }
+}
