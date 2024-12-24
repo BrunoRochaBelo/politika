@@ -2,8 +2,9 @@
 /* Muito Pequeno altura 35px*/
 .card-xs {
   min-height: 30px;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -13,8 +14,9 @@
 /* Pequeno altura 35px*/
 .card-s {
   min-height: 35px;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -24,8 +26,9 @@
 /* Médio altura 50px*/
 .card-m {
   min-height: 50px;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -35,8 +38,9 @@
 /* Grande altura 150px*/
 .card-l {
   min-height: 120px;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 15px 15px;
@@ -50,8 +54,9 @@
 .card-tmf-s {
   width: 135px;
   height: auto;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
   order: none;
@@ -63,7 +68,7 @@
   min-width: 155px;
   max-width: 100%;
   height: 100%;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
   box-sizing: border-box;
@@ -76,8 +81,9 @@
 .card-tmf-l {
   width: 184px;
   height: auto;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
   border: 1px solid var(--card-borda);
@@ -91,8 +97,9 @@
   border-radius: 6px;
   width: 100%;
   padding: 0.3rem;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: 200;
@@ -102,8 +109,9 @@
 .card-select-s {
   border-radius: 6px;
   width: 100%;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   font-weight: 300;
@@ -112,8 +120,9 @@
 }
 .card-select-m {
   width: 100%;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   padding: 15px 15px;
   border-radius: 6px;
@@ -132,8 +141,9 @@
   white-space: nowrap;
   gap: 10px;
   min-height: 50px;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   transition: all 0.3s ease;
+  transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
   padding: 20px 15px 10px 15px;
@@ -144,12 +154,12 @@
 }
 .card-empty-card-title {
   grid-area: card-empty-card-title;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 .card-empty-card-add {
   grid-area: card-empty-card-add;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   padding: 10px 20px;
   color: var(--link);
@@ -170,7 +180,7 @@
 .container-filtros-template-content .card-select-xs,
 .container-filtros-template-content .card-select-s,
 .container-filtros-template-content .card-select-m {
-  background: var(--btn-filtro) !important;
+  background-color: var(--btn-filtro) !important;
   color: var(--txt-subtitulo) !important;
   box-shadow: var(--sombra-moderada);
   border: 1px solid var(--card-borda);
@@ -192,18 +202,61 @@
 .card-select-m:hover {
   filter: var(--hover);
 }
+
 /*  active  */
-.card-xs:active,
+
+.card-xs:active:not(.card-xs.filtro-small-card),
 .card-s:active,
 .card-m:active,
-.card-l:active,
-.card-tmf-s:active,
-.card-tmf-m:active,
-.card-tmf-l:active,
-.card-select-xs:active,
-.card-select-s:active,
-.card-select-m:active {
-  background: var(--card-detalhe);
+.card-l:active {
+  animation: expand-color 1.6s ease-out forwards;
+  transform: scale(0.99);
+  box-shadow: var(--sombra-leve);
+}
+
+@keyframes expand-color {
+  0% {
+    background: radial-gradient(
+      circle,
+      var(--card-aberto-bg) 0%,
+      var(--card-bg) 100%
+    );
+  }
+  20% {
+    background: radial-gradient(
+      circle,
+      var(--card-aberto-bg) 10%,
+      var(--card-bg) 100%
+    );
+  }
+  40% {
+    background: radial-gradient(
+      circle,
+      var(--card-aberto-bg) 30%,
+      var(--card-bg) 100%
+    );
+  }
+  60% {
+    background: radial-gradient(
+      circle,
+      var(--card-aberto-bg) 50%,
+      var(--card-bg) 100%
+    );
+  }
+  80% {
+    background: radial-gradient(
+      circle,
+      var(--card-aberto-bg) 75%,
+      var(--card-bg) 100%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      circle,
+      var(--card-aberto-bg) 100%,
+      var(--card-aberto-bg) 100%
+    );
+  }
 }
 
 /* Responsivo */

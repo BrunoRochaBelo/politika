@@ -70,7 +70,7 @@
 }
 
 .secao-interna-template-header.active-header {
-  font-size: 18px;
+  font-size: var(--font-lg);
   font-weight: 600;
   color: var(--txt-destaque);
   padding: 15px 30px 25px 15px;

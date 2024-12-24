@@ -3,6 +3,8 @@
   display: grid;
   grid-template-areas: "home calendario tarefas contatos pleitos arquivos";
   grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  align-items: center;
 }
 
 .home {
@@ -45,7 +47,7 @@
   justify-content: center;
   transition: 0.15s;
   border: 1px solid transparent;
-  font-size: 15px;
+  font-size: var(--font-md);
   font-weight: 500;
   position: relative;
   text-decoration: none;

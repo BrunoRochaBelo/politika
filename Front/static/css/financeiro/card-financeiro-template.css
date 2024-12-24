@@ -22,7 +22,7 @@
 }
 .card-financeiro-template-list {
   grid-area: card-financeiro-template-list;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   color: var(--cor-primaria-1);
 }

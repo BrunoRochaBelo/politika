@@ -72,7 +72,7 @@
   background: var(--card-aberto-bg);
   color: var(--btn-principal-txt);
   box-shadow: var(--sombra-intensa);
-  font-size: 14px;
+  font-size: var(--font-sm);
   cursor: pointer;
   border-radius: 6px;
   flex: 1;

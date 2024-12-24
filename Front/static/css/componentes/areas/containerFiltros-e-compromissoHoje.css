@@ -121,7 +121,7 @@
     grid-auto-flow: column;
     justify-content: space-between;
     align-content: space-between;
-    font-size: 12px;
+    font-size: var(--font-xs);
     font-weight: 400;
     text-align: left;
     color: var(--txt-conteudo-card);
@@ -154,7 +154,7 @@
     grid-auto-flow: column;
     justify-content: space-between;
     align-content: space-between;
-    font-size: 12px;
+    font-size: var(--font-xs);
     font-weight: 400;
     text-align: left;
     color: var(--txt-conteudo-card);

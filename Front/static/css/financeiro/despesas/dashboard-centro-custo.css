@@ -68,7 +68,7 @@
 
 .cost-center-select {
   padding: 10px;
-  font-size: 16px;
+  font-size: var(--font-md);
   background: var(--container-bg);
   border: none;
   border-radius: 5px;
@@ -86,7 +86,7 @@
 
 .available-value {
   margin-right: 10px;
-  font-size: 16px;
+  font-size: var(--font-md);
   font-weight: 400;
   opacity: 1;
   transform: translateY(0);
@@ -149,12 +149,12 @@
 }
 
 .chart-center-text div {
-  font-size: 24px;
+  font-size: var(--font-xl);
   font-weight: 400;
 }
 
 #center-label {
-  font-size: 16px;
+  font-size: var(--font-md);
   font-weight: 300;
   color: var(--txt-nav);
 }
@@ -173,7 +173,7 @@
 
 .accounts-list-container h2 {
   text-align: start;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   color: var(--txt-subtitulo);
   margin-bottom: 10px;
@@ -218,7 +218,7 @@
   width: 35%;
 }
 .account-label-column span {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.08rem;
@@ -233,7 +233,7 @@
   color: var(--label-text);
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: var(--font-xs);
   white-space: nowrap;
   margin-bottom: 5px;
   text-align: center;
@@ -377,7 +377,7 @@
   }
 
   .accounts-list-container h2 {
-    font-size: 12px;
+    font-size: var(--font-xs);
     margin-bottom: 7px;
   }
 

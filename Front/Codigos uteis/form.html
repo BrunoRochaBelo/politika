@@ -37,7 +37,7 @@
           {{ form.csrf_token }}
           <div id="aba1" class="aba-template active">
             <fieldset>
-              <legend class="titulo-xl">Campos obrigatórios</legend>
+              <legend class="titulo-lg">Campos obrigatórios</legend>
               <div class="campo">
                 <label>Nome do contato <span>*</span></label>
                 {% if form.name.errors %}
@@ -116,7 +116,7 @@
               </div>
             </fieldset>
             <fieldset>
-              <legend class="titulo-xl">Informações pessoais</legend>
+              <legend class="titulo-lg">Informações pessoais</legend>
               <div class="campo">
                 <label for="data_nascimento">Data Nascimento</label>
                 {{ form.data_nascimento(class = "form-control form-control-md", type="date", id="data_nascimento") }}
@@ -131,7 +131,7 @@
               </div>
             </fieldset>
             <fieldset>
-              <legend class="titulo-xl">Informações eleitorais</legend>
+              <legend class="titulo-lg">Informações eleitorais</legend>
               <div class="campo">
                 <label for="titulo_eleitor">Título Eleitor</label>
                 {{ form.titulo_eleitor(class="form-control form-control-md", type="number", id="titulo_eleitor") }}
@@ -157,7 +157,7 @@
           </div>
           <div id="aba2" class="aba-template">
             <fieldset>
-              <legend class="titulo-xl">Campos obrigatórios</legend>
+              <legend class="titulo-lg">Campos obrigatórios</legend>
               <div class="campo">
                 <label for="cep">CEP <span>*</span></label>
                 {{ form.cep(class="form-control form-control-md", type="text", id="cep", placeholder="99999999", oninput="buscarEndereco(this.value)") }}
@@ -217,7 +217,7 @@
           </div>
           <div id="aba3" class="aba-template">
             <fieldset>
-              <legend class="titulo-xl">Campos obrigatórios</legend>
+              <legend class="titulo-lg">Campos obrigatórios</legend>
             </fieldset>
             <div class="campo">
               <label for="indicacao">Indicação</label>

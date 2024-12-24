@@ -38,7 +38,7 @@
   background-color: #f2f2f2;
 }
 #buttonAdicionarBensServices {
-  font-size: 12px;
+  font-size: var(--font-xs);
   padding: 8px 20px;
   margin: 10px 0px 0px 10px;
 }

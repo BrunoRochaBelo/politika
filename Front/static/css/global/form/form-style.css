@@ -51,7 +51,7 @@ fieldset {
 
 .campo label {
   display: block;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 600;
   margin-bottom: 10px;
   margin-left: 5px;
@@ -456,7 +456,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .error-messages p,
 .success-message p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--font-sm);
 }
 
 .input-valid {

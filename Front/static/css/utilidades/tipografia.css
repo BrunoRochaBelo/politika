@@ -1,105 +1,52 @@
+/* Variáveis globais para tipografia */
 :root {
-  --vh: 1vh;
+  --vh: 1vh; /* Ajuste dinâmico da altura da viewport */
 
-  /* Tamanhos em rem para a fonte Open Sans */
-  --font-padrao: 1rem;
-  --font-light: 0.75rem;
-  --font-medium-light: 0.8125rem;
-  --font-medium-regular: 0.8125rem;
-  --font-medium-bolder: 0.8125rem;
-  --titulo-xs: 0.8125rem;
-  --titulo-s: 0.9375rem;
-  --titulo-m: 0.9375rem;
-  --font-l: 1rem;
-  --titulo-xl: 1.125rem;
-  --letter-spacing: 0.06em;
-}
+  /* Tamanhos dinâmicos de fontes */
+  --font-xs: calc(0.75rem + 0.01vw); /* Escala de 12px + dinâmica */
+  --font-sm: calc(0.875rem + 0.01vw); /* Escala de 14px + dinâmica */
+  --font-md: calc(1rem + 0.01vw); /* Escala de 16px + dinâmica */
+  --font-lg: calc(1.25rem + 0.01vw); /* Escala de 20px + dinâmica */
+  --font-xl: calc(1.5rem + 0.01vw); /* Escala de 24px + dinâmica */
+  --font-xxl: calc(2rem + 0.01vw); /* Escala de 32px + dinâmica */
 
-/* Aplicando as variáveis nas classes */
-/* 16px - Regular (peso 300) */
-.font-padrao {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-padrao);
-  font-weight: 300; /* Regular */
-  letter-spacing: var(--letter-spacing);
-}
+  /* Propriedades de espaçamento relacionadas à tipografia */
+  --line-height: 1.6; /* Altura padrão da linha */
+  --letter-spacing: 0.05em; /* Espaçamento entre caracteres */
+  --font-family: "Open Sans", "Roboto", system-ui, -apple-system,
+    "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+    "sans-serif"; /* Fonte padrão */
 
-/* 12px - Extra-Light (peso 200) */
-.font-light {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-light);
-  font-weight: 200; /* Extra-Light */
-  letter-spacing: var(--letter-spacing);
-}
-
-/* 13px - Extra-Light (peso 200) */
-.font-medium-light {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-medium-light);
-  font-weight: 200; /* Extra-Light */
-  letter-spacing: var(--letter-spacing);
-}
-
-/* 13px - Regular (peso 300) */
-.font-medium-regular {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-medium-regular);
-  font-weight: 300; /* Regular */
-  letter-spacing: var(--letter-spacing);
-}
-
-/* 13px - Normal (peso 400) */
-.font-medium-bolder {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-medium-bolder);
-  font-weight: 400; /* Normal */
-  letter-spacing: var(--letter-spacing);
-}
-
-/* 13px - Regular (peso 300) */
-.titulo-xs {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--titulo-xs);
-  font-weight: 300; /* Regular */
-  letter-spacing: var(--letter-spacing);
-}
-
-/* 15px - Extra-Light (peso 200) */
-.titulo-s {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--titulo-s);
-  font-weight: 200; /* Extra-Light */
-  letter-spacing: var(--letter-spacing);
-}
-
-/* 15px - Normal (peso 400) */
-.titulo-m {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--titulo-m);
-  font-weight: 400; /* Normal */
-  letter-spacing: var(--letter-spacing);
-}
-
-/* 16px - Normal (peso 400) */
-.titulo-l {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--font-l);
-  font-weight: 400; /* Normal */
-  letter-spacing: var(--letter-spacing);
+  /* Ajustes de tamanho de fonte dinâmica com base na largura da tela */
+  --font-dynamic: calc(1rem + 1vw); /* Escala adaptativa */
 }
 
 /* 18px - Medium (peso 500) */
-.titulo-xl {
-  font-family: "Open Sans", sans-serif;
-  font-size: var(--titulo-xl);
-  font-weight: 500; /* Medium */
+.titulo-lg {
+  font-family: var(--font-family);
+  font-size: var(--font-lg);
+  font-weight: 500;
   letter-spacing: var(--letter-spacing);
 }
 
 .titulo-area {
   font-family: "Open Sans", sans-serif;
-  font-size: var(--titulo-xl);
+  font-size: var(--titulo-lg);
   text-align: left;
   margin: 0.625rem;
   letter-spacing: var(--letter-spacing);
+}
+
+/* Responsividade */
+@media only screen and (max-width: 56.25rem) {
+  /* Para telas menores que 900px */
+  :root {
+    /* Redefine os tamanhos de fonte para dispositivos menores */
+    --font-xs: calc(0.7rem + 0.2vw);
+    --font-sm: calc(0.8rem + 0.2vw);
+    --font-md: calc(0.95rem + 0.2vw);
+    --font-lg: calc(1.1rem + 0.2vw);
+    --font-xl: calc(1.4rem + 0.2vw);
+    --font-xxl: calc(1.8rem + 0.2vw);
+  }
 }

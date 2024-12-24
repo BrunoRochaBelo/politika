@@ -23,7 +23,7 @@
   align-content: center;
   padding: 15px 20px;
   text-align: left;
-  font-size: 12px;
+  font-size: var(--font-xs);
   color: var(--txt-titulo);
   background: var(--form-container-bg);
   border-top-left-radius: 25px;

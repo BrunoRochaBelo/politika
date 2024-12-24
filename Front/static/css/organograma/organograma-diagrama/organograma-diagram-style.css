@@ -32,8 +32,9 @@
 
 /* Container do OrgChart */
 #orgchart-container {
-  width: 100%;
-  height: 80vh;
+  width: auto;
+  height: 83vh;
+  margin: 0 10px;
   border-radius: 23px;
   position: relative;
   overflow: auto;
@@ -58,7 +59,7 @@
   height: auto !important;
   overflow-wrap: break-word;
   text-align: center;
-  font-size: 14px;
+  font-size: var(--font-sm);
   word-break: break-word;
   border-radius: 0 0 12px 12px;
 }
@@ -157,7 +158,7 @@
 
 /* Opcional: Reduzir o tamanho da fonte para textos muito longos */
 .orgchart .node .content p {
-  font-size: 13px;
+  font-size: var(--font-sm);
 }
 
 .node {

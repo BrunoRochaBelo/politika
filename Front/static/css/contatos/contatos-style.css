@@ -2,7 +2,7 @@
 .contatos-small-card-editar .btn-outline-principal {
   width: auto;
   font-weight: 400;
-  font-size: 11px;
+  font-size: var(--font-xs);
   border-radius: 6px;
   border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;

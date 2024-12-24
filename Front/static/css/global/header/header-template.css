@@ -2,12 +2,12 @@
 .header-template {
   display: grid;
   align-items: center;
-  justify-content: stretch;
   gap: 25px;
   text-transform: uppercase;
   grid:
     "header-menu header-notification header-nav header-search"
     / auto auto 1fr auto;
+  width: 100%;
 }
 
 .header-menu {
@@ -35,6 +35,8 @@
 .header-nav {
   grid-area: header-nav;
   justify-self: center;
+  padding: 0;
+  margin: 0;
 }
 .header-search {
   grid-area: header-search;
@@ -72,7 +74,7 @@
   background: transparent;
   color: var(--txt-titulo-card);
   border: 1px solid transparent;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   caret-color: var(--cor-secundaria-2);
 }

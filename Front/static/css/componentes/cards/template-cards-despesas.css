@@ -24,7 +24,7 @@
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   align-self: center;
@@ -44,7 +44,7 @@
   align-items: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
 }
 
@@ -54,7 +54,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 
@@ -64,7 +64,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 
@@ -74,7 +74,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 
@@ -89,7 +89,7 @@
   opacity: 0;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }

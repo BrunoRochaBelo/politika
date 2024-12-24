@@ -16,7 +16,7 @@
   grid-area: grupo-small-card-title;
   justify-self: start;
   align-self: center;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   color: var(--txt-titulo-card);
 }
@@ -26,7 +26,7 @@
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   text-align: start;
@@ -38,13 +38,13 @@
 .grupo-small-card-situacao {
   grid-area: grupo-small-card-situacao;
   text-align: end;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 
 .grupo-small-card-desc {
   grid-area: grupo-small-card-desc;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: stretch;
   padding: 10px 14px;

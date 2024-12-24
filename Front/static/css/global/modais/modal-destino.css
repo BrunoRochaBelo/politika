@@ -72,7 +72,7 @@
 /* Estilização para o título do modal */
 .modal-header h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: var(--font-xl);
 }
 
 /* Estilos existentes */
@@ -111,7 +111,7 @@
 }
 .search-input-dest {
   padding: 15px 20px;
-  font-size: 15px;
+  font-size: var(--font-md);
   font-weight: 400;
   background: var(--btn-filtro);
   border: 1px solid var(--card-aberto-bg);
@@ -167,7 +167,7 @@
 .form-group label {
   display: block;
   margin: 0px 0px 5px 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   color: var(--modal-conteudo);
 }
 
@@ -196,7 +196,7 @@
 }
 
 .card-select-m {
-  font-size: 16px;
+  font-size: var(--font-md);
   font-weight: 300;
   color: var(--txt-destaque);
 }
@@ -206,7 +206,7 @@
   width: 80%;
   margin: 0 auto;
   padding: 10px;
-  font-size: 16px;
+  font-size: var(--font-md);
   border-radius: 5px;
   background: var(--btn-principal-alt);
   color: var(--btn-principal-alt-txt);
@@ -248,7 +248,7 @@
 
   .search-input-dest {
     padding: 14px 20px;
-    font-size: 15px;
+    font-size: var(--font-md);
     font-weight: 300;
     background: var(--btn-filtro);
     border: 1px solid var(--card-borda);

@@ -4,7 +4,7 @@
   width: auto;
   overflow: auto;
   font-weight: 400;
-  font-size: 11px;
+  font-size: var(--font-xs);
   border-radius: 6px;
   border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
@@ -16,17 +16,4 @@
 .organograma-large-card-editar .btn-outline-principal:hover {
   filter: var(--hover);
   background: var(--btn-secundario-hover);
-}
-
-.main-gc-section.organograma .container-template-content {
-  border-top: none;
-  border-radius: 23px;
-}
-.main-gc-section.organograma .area-interna-containerContent-template {
-  max-height: calc(var(--vh, 1vh) * 100 - 4rem) !important;
-}
-.main-gc-section.organograma .area-interna-containerContent-template-header {
-  padding: 10px;
-  align-content: center;
-  align-items: center;
 }

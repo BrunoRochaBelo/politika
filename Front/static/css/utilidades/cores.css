@@ -95,8 +95,8 @@
   --btn-secundario: hsl(29, 75%, 58%);
   --btn-secundario-hover: linear-gradient(
     180deg,
-    hsl(29, 70%, 58%),
-    hsl(29, 65%, 53%)
+    hsl(29, 80%, 63%),
+    hsl(29, 75%, 60%)
   );
   --btn-secundario-destaque: hsl(29, 60%, 42%);
   --btn-secundario-txt: hsl(218, 100%, 98%);

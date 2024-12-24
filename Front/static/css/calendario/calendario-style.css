@@ -2,7 +2,7 @@
 .calendario-small-card-editar .btn-outline-principal {
   width: auto;
   font-weight: 400;
-  font-size: 11px;
+  font-size: var(--font-xs);
   border-radius: 6px;
   border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
@@ -128,7 +128,7 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.5s ease;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   border-radius: 50%;
   width: 40px;
@@ -287,13 +287,13 @@
 
   .dia-semana {
     padding: 3px;
-    font-size: 11px;
+    font-size: var(--font-xs);
     font-weight: 300;
     width: 30px;
     height: 30px;
   }
   .dia-semana h3 {
-    font-size: 11px;
+    font-size: var(--font-xs);
     font-weight: 400;
   }
 

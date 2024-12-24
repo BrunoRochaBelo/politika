@@ -15,7 +15,7 @@
 
 .calendario-small-card-type {
   grid-area: calendario-small-card-type;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   color: var(--txt-titulo-card);
@@ -31,7 +31,7 @@
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   justify-self: start;
   align-self: center;
@@ -44,7 +44,7 @@
 
 .calendario-small-card-duracao {
   grid-area: calendario-small-card-duracao;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: end;
   align-self: end;
@@ -62,18 +62,18 @@
 }
 
 .calendario-small-card-inicio {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
 .calendario-small-card-fim {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
 .calendario-small-card-local {
   grid-area: calendario-small-card-local;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   justify-self: start;
   padding-left: 14px;
@@ -89,7 +89,7 @@
 
 .calendario-small-card-partcipantes {
   grid-area: calendario-small-card-partcipantes;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   justify-self: start;
   padding-left: 14px;
@@ -184,7 +184,7 @@
 }
 .calendario-large-card-type {
   grid-area: calendario-large-card-type;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   color: var(--txt-titulo-card);
@@ -198,7 +198,7 @@
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   text-align: start;
@@ -208,14 +208,14 @@
 }
 .calendario-large-card-local {
   grid-area: calendario-large-card-local;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: start;
   padding-left: 14px;
 }
 .calendario-large-card-partcipantes {
   grid-area: calendario-large-card-partcipantes;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: start;
   padding-left: 14px;
@@ -226,7 +226,7 @@
 }
 .calendario-large-card-duracao {
   grid-area: calendario-large-card-duracao;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: stretch;
   padding: 10px 14px;
@@ -244,12 +244,12 @@
 }
 
 .calendario-large-card-inicio {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: start;
 }
 .calendario-large-card-fim {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: start;
 }

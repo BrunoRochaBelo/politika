@@ -23,7 +23,7 @@
   grid-area: aniversario-small-card-title;
   justify-self: start;
   align-self: center;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   color: var(--txt-titulo-card);
 }
@@ -34,7 +34,7 @@
   justify-self: start;
   align-self: center;
   margin: 3px 0 0 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }
@@ -60,7 +60,7 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }
@@ -72,7 +72,7 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }
@@ -84,7 +84,7 @@
   align-self: center;
   opacity: 0;
   margin: 3px 0 0 10px;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }

@@ -11,46 +11,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="icon" href="./static/imagens/icones/organograma-select.svg" type="image/png">
+  <link rel="icon" href="./static/imagens/icones/organogramas.svg" type="image/png">
   <title>Organograma</title>
   <meta name="description" content="Lista de Organograma">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body class="body-gc-template">
+<body class="body-organograma-template">
 
-  <header class="header-gc">
-    <ul class="header-gc-template">
-      <li class="header-gc-back">
-        <a href="home-organograma.html" class="header-gc-back">
+  <header class="header-organograma">
+    <ul class="header-organograma-template">
+      <li class="header-organograma-back">
+        <a href="home-organograma.html" class="header-organograma-back">
           <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
         </a>
       </li>
-      <li class="header-gc-nav">
-        <nav class="header-gc-nav">
-          <ul class="header-gc-nav-template">
-            <li class="organograma indicador">
-              <a href="home-admin.html">
-                <img src="./static/imagens/icones/list-select.svg" alt="Organograma List Icon">
-                <p>Lista</p>
-              </a>
-            </li>
-            <li class="perfil">
-              <a href="organograma_diagram.html">
-                <img src="./static/imagens/icones/organograma.svg" alt="Organograma Icon">
-                <p>Diagrama</p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <li class="header-organograma-title">
+        <h2>Organograma Prefeitura</h2>
       </li>
-
+      <li class="header-organograma-logout">
+        <a href="organograma_diagram.html">
+          <img src="./static/imagens/icones/organograma-select.svg" alt="Organograma Icon">
+        </a>
+      </li>
     </ul>
   </header>
 
-  <main class="main-gc main-gc-template">
-    <section class="main-gc-section organograma">
+  <main class="main-organograma main-organograma-template">
+    <section class="main-organograma-section organograma">
       <div class="container-template">
 
         <div class="container-template-content container-template-content-com-header-fx-int">
@@ -75,63 +64,151 @@
                     <ul class="org-list" role="tree">
                       <!-- Nível 0: Gabinete da Prefeitura -->
                       <li class="org-item" data-level="0" role="treeitem" aria-expanded="true">
-                        <div class="org-card">
+                        <div class="container-org-item">
                           <span class="toggle-btn" aria-label="Expandir/Colapsar Gabinete da Prefeitura" aria-expanded="true" aria-controls="sublist-1" tabindex="0">
                             <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                               <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                             </svg>
                           </span>
-                          <div class="org-indicator">0</div>
-                          <span class="org-name" tabindex="0">GABINETE DA PREFEITURA - ANDRÉ CASTRO</span>
+                          <div class="card-m organograma-medium-card">
+                            <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">0</div>
+                            <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">GABINETE DA PREFEITURA</p>
+                            <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                              <div class="marcador-item cor-marc3">
+                                <p><strong>GP</strong></p>
+                              </div>
+                            </div>
+                            <p class="organograma-medium-card-designacao" data-field="designacao">Secretário</p>
+                            <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 15.000,00</p>
+                            <p class="organograma-medium-card-nome_titular" data-field="nome_titular">ANDRÉ CASTRO</p>
+                            <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                              <p>Veículo de Publicação: Diário Oficial</p>
+                              <p>Número: 12345 - Publicação: 01/01/2024</p>
+                              <p><strong>Data da Posse: 01/01/2024</strong></p>
+                            </div>
+                            <div class="organograma-medium-card-editar">
+                              <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/1'">Alterar</button>
+                            </div>
+                            <div class="organograma-medium-card-id" data-field="id">1</div>
+                          </div>
                         </div>
                         <ul class="org-sublist" id="sublist-1" role="group">
                           <!-- Nível 1: Secretaria Geral -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Geral" aria-expanded="false" aria-controls="sublist-18" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA GERAL - NOME_TITULAR</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA GERAL</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SG</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretor</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 12.000,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/18'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">18</div>
+                              </div>
                             </div>
                           </li>
 
                           <!-- Nível 1: Secretaria Municipal de Administração -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Municipal de Administração" aria-expanded="true" aria-controls="sublist-3" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO - CLARICE NASCIMENTO</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SMA</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretora</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 13.000,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">CLARICE NASCIMENTO</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/3'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">3</div>
+                              </div>
                             </div>
                             <ul class="org-sublist" id="sublist-3" role="group">
                               <!-- Nível 2: Secretaria Executiva de Recursos Humanos -->
                               <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
-                                <div class="org-card">
+                                <div class="container-org-item">
                                   <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Executiva de Recursos Humanos" aria-expanded="false" aria-controls="sublist-7" tabindex="0">
                                     <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                       <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                     </svg>
                                   </span>
-                                  <div class="org-indicator">2</div>
-                                  <span class="org-name" tabindex="0">SECRETARIA EXECUTIVA DE RECURSOS HUMANOS - MAITÊ NASCIMENTO</span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">2</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA EXECUTIVA DE RECURSOS HUMANOS</p>
+                                    <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>SERH</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de RH</p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 8.000,00</p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">MAITÊ NASCIMENTO</p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <!-- Informação pública pode ser adicionada aqui -->
+                                    </div>
+                                    <div class="organograma-medium-card-editar">
+                                      <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/7'">Alterar</button>
+                                    </div>
+                                    <div class="organograma-medium-card-id" data-field="id">7</div>
+                                  </div>
                                 </div>
                               </li>
+
                               <!-- Nível 2: Secretaria Executiva de Patrimônio -->
                               <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
-                                <div class="org-card">
+                                <div class="container-org-item">
                                   <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Executiva de Patrimônio" aria-expanded="false" aria-controls="sublist-8" tabindex="0">
                                     <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                       <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                     </svg>
                                   </span>
-                                  <div class="org-indicator">2</div>
-                                  <span class="org-name" tabindex="0">SECRETARIA EXECUTIVA DE PATRIMÔNIO - NOME_TITULAR</span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">2</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA EXECUTIVA DE PATRIMÔNIO</p>
+                                    <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>SEP</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de Patrimônio</p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 8.500,00</p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <!-- Informação pública pode ser adicionada aqui -->
+                                    </div>
+                                    <div class="organograma-medium-card-editar">
+                                      <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/8'">Alterar</button>
+                                    </div>
+                                    <div class="organograma-medium-card-id" data-field="id">8</div>
+                                  </div>
                                 </div>
                               </li>
                             </ul>
@@ -139,26 +216,60 @@
 
                           <!-- Nível 1: Secretaria de Agricultura -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Agricultura" aria-expanded="true" aria-controls="sublist-4" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA DE AGRICULTURA - NOME_TITULAR</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA DE AGRICULTURA</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SA</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretora de Agricultura</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 14.000,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/4'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">4</div>
+                              </div>
                             </div>
                             <ul class="org-sublist" id="sublist-4" role="group">
                               <!-- Nível 2: Secretaria Executiva de Produção Agrícola -->
                               <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
-                                <div class="org-card">
+                                <div class="container-org-item">
                                   <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Executiva de Produção Agrícola" aria-expanded="false" aria-controls="sublist-15" tabindex="0">
                                     <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                       <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                     </svg>
                                   </span>
-                                  <div class="org-indicator">2</div>
-                                  <span class="org-name" tabindex="0">SECRETARIA EXECUTIVA DE PRODUÇÃO AGRÍCOLA - NOME_TITULAR</span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">2</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA EXECUTIVA DE PRODUÇÃO AGRÍCOLA</p>
+                                    <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>SEP</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de Produção</p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 9.000,00</p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <!-- Informação pública pode ser adicionada aqui -->
+                                    </div>
+                                    <div class="organograma-medium-card-editar">
+                                      <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/15'">Alterar</button>
+                                    </div>
+                                    <div class="organograma-medium-card-id" data-field="id">15</div>
+                                  </div>
                                 </div>
                               </li>
                             </ul>
@@ -166,64 +277,150 @@
 
                           <!-- Nível 1: Secretaria de Articulação Política -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Articulação Política" aria-expanded="false" aria-controls="sublist-5" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA DE ARTICULAÇÃO POLÍTICA - ANDRÉ CASTRO</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA DE ARTICULAÇÃO POLÍTICA</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SAP</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretor de Articulação</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 11.000,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">ANDRÉ CASTRO</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/5'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">5</div>
+                              </div>
                             </div>
                           </li>
 
                           <!-- Nível 1: Secretaria de Assistência Social -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Assistência Social" aria-expanded="false" aria-controls="sublist-6" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA DE ASSISTÊNCIA SOCIAL - NOME_TITULAR</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA DE ASSISTÊNCIA SOCIAL</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SAS</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretora de Assistência</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 10.500,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/6'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">6</div>
+                              </div>
                             </div>
                           </li>
 
                           <!-- Nível 1: Secretaria Municipal de Defesa Social -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Municipal de Defesa Social" aria-expanded="true" aria-controls="sublist-10" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA MUNICIPAL DE DEFESA SOCIAL - NOME_TITULAR</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA MUNICIPAL DE DEFESA SOCIAL</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SMDS</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretor de Defesa Social</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 14.500,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/10'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">10</div>
+                              </div>
                             </div>
                             <ul class="org-sublist" id="sublist-10" role="group">
                               <!-- Nível 2: Secretaria Executiva de Operações Especiais -->
                               <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
-                                <div class="org-card">
+                                <div class="container-org-item">
                                   <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Executiva de Operações Especiais" aria-expanded="false" aria-controls="sublist-17" tabindex="0">
                                     <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                       <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                     </svg>
                                   </span>
-                                  <div class="org-indicator">2</div>
-                                  <span class="org-name" tabindex="0">SECRETARIA EXECUTIVA DE OPERAÇÕES ESPECIAIS - NOME_TITULAR</span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">2</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA EXECUTIVA DE OPERAÇÕES ESPECIAIS</p>
+                                    <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>SEOE</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de Operações</p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 9.500,00</p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <!-- Informação pública pode ser adicionada aqui -->
+                                    </div>
+                                    <div class="organograma-medium-card-editar">
+                                      <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/17'">Alterar</button>
+                                    </div>
+                                    <div class="organograma-medium-card-id" data-field="id">17</div>
+                                  </div>
                                 </div>
                               </li>
+
                               <!-- Nível 2: Secretaria Executiva de Planejamento da Defesa Social -->
                               <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
-                                <div class="org-card">
+                                <div class="container-org-item">
                                   <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Executiva de Planejamento da Defesa Social" aria-expanded="false" aria-controls="sublist-16" tabindex="0">
                                     <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                       <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                     </svg>
                                   </span>
-                                  <div class="org-indicator">2</div>
-                                  <span class="org-name" tabindex="0">SECRETARIA EXECUTIVA DE PLANEJAMENTO DA DEFESA SOCIAL - NOME_TITULAR</span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">2</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA EXECUTIVA DE PLANEJAMENTO DA DEFESA SOCIAL</p>
+                                    <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>SEPD</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de Planejamento</p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 10.000,00</p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <!-- Informação pública pode ser adicionada aqui -->
+                                    </div>
+                                    <div class="organograma-medium-card-editar">
+                                      <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/16'">Alterar</button>
+                                    </div>
+                                    <div class="organograma-medium-card-id" data-field="id">16</div>
+                                  </div>
                                 </div>
                               </li>
                             </ul>
@@ -231,61 +428,293 @@
 
                           <!-- Nível 1: Secretaria de Desenvolvimento Econômico -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Desenvolvimento Econômico" aria-expanded="false" aria-controls="sublist-11" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA DE DESENVOLVIMENTO ECONÔMICO - NOME_TITULAR</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA DE DESENVOLVIMENTO ECONÔMICO</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SDE</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretor de Desenvolvimento</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 13.500,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/11'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">11</div>
+                              </div>
                             </div>
                           </li>
 
                           <!-- Nível 1: Secretaria Municipal de Educação -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Municipal de Educação" aria-expanded="false" aria-controls="sublist-12" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA MUNICIPAL DE EDUCAÇÃO - NOME_TITULAR</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA MUNICIPAL DE EDUCAÇÃO</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SME</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretora de Educação</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 12.500,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/12'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">12</div>
+                              </div>
                             </div>
                           </li>
 
                           <!-- Nível 1: Secretaria de Finanças -->
                           <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
-                            <div class="org-card">
+                            <div class="container-org-item">
                               <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Finanças" aria-expanded="true" aria-controls="sublist-13" tabindex="0">
                                 <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                   <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                 </svg>
                               </span>
-                              <div class="org-indicator">1</div>
-                              <span class="org-name" tabindex="0">SECRETARIA DE FINANÇAS - NOME_TITULAR</span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA DE FINANÇAS</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SF</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretor de Finanças</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 14.000,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <!-- Informação pública pode ser adicionada aqui -->
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/13'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">13</div>
+                              </div>
                             </div>
                             <ul class="org-sublist" id="sublist-13" role="group">
                               <!-- Nível 2: Secretaria Executiva de Fiscalização -->
                               <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
-                                <div class="org-card">
+                                <div class="container-org-item">
                                   <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Executiva de Fiscalização" aria-expanded="false" aria-controls="sublist-14" tabindex="0">
                                     <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
                                       <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
                                     </svg>
                                   </span>
-                                  <div class="org-indicator">2</div>
-                                  <span class="org-name" tabindex="0">SECRETARIA EXECUTIVA DE FISCALIZAÇÃO - NOME_TITULAR</span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">2</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA EXECUTIVA DE FISCALIZAÇÃO</p>
+                                    <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>SEF</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">Gerente de Fiscalização</p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 9.500,00</p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">NOME_TITULAR</p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <!-- Informação pública pode ser adicionada aqui -->
+                                    </div>
+                                    <div class="organograma-medium-card-editar">
+                                      <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/14'">Alterar</button>
+                                    </div>
+                                    <div class="organograma-medium-card-id" data-field="id">14</div>
+                                  </div>
                                 </div>
                               </li>
                             </ul>
                           </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
 
+                          <!-- Nível 1: Secretaria de Saúde (Nova Secretaria com 5 Níveis) -->
+                          <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
+                            <div class="container-org-item">
+                              <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Saúde" aria-expanded="true" aria-controls="sublist-19" tabindex="0">
+                                <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                  <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                </svg>
+                              </span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">1</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA DE SAÚDE</p>
+                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                  <div class="marcador-item cor-marc3">
+                                    <p><strong>SS</strong></p>
+                                  </div>
+                                </div>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">Diretor de Saúde</p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 16.000,00</p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">DR. CARLOS SILVA</p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <p>Veículo de Publicação: Diário Oficial</p>
+                                  <p>Número: 67890 - Publicação: 15/02/2024</p>
+                                  <p><strong>Data da Posse: 15/02/2024</strong></p>
+                                </div>
+                                <div class="organograma-medium-card-editar">
+                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/19'">Alterar</button>
+                                </div>
+                                <div class="organograma-medium-card-id" data-field="id">19</div>
+                              </div>
+                            </div>
+                            <ul class="org-sublist" id="sublist-19" role="group">
+                              <!-- Nível 2: Secretaria Executiva de Atenção Primária -->
+                              <li class="org-item" data-level="2" role="treeitem" aria-expanded="true">
+                                <div class="container-org-item">
+                                  <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Executiva de Atenção Primária" aria-expanded="true" aria-controls="sublist-20" tabindex="0">
+                                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                    </svg>
+                                  </span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">2</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">SECRETARIA EXECUTIVA DE ATENÇÃO PRIMÁRIA</p>
+                                    <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                      <div class="marcador-item cor-marc3">
+                                        <p><strong>SEAP</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">Diretora Executiva</p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 14.000,00</p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">DRA. MARIA OLIVEIRA</p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <p>Veículo de Publicação: Diário Oficial</p>
+                                      <p>Número: 67891 - Publicação: 16/02/2024</p>
+                                      <p><strong>Data da Posse: 16/02/2024</strong></p>
+                                    </div>
+                                    <div class="organograma-medium-card-editar">
+                                      <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/20'">Alterar</button>
+                                    </div>
+                                    <div class="organograma-medium-card-id" data-field="id">20</div>
+                                  </div>
+                                </div>
+                                <ul class="org-sublist" id="sublist-20" role="group">
+                                  <!-- Nível 3: Coordenadoria de Unidades Básicas de Saúde -->
+                                  <li class="org-item" data-level="3" role="treeitem" aria-expanded="true">
+                                    <div class="container-org-item">
+                                      <span class="toggle-btn" aria-label="Expandir/Colapsar Coordenadoria de Unidades Básicas de Saúde" aria-expanded="true" aria-controls="sublist-21" tabindex="0">
+                                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                        </svg>
+                                      </span>
+                                      <div class="card-m organograma-medium-card">
+                                        <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">3</div>
+                                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">COORDENADORIA DE UNIDADES BÁSICAS DE SAÚDE</p>
+                                        <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                          <div class="marcador-item cor-marc3">
+                                            <p><strong>CUBS</strong></p>
+                                          </div>
+                                        </div>
+                                        <p class="organograma-medium-card-designacao" data-field="designacao">Coordenador</p>
+                                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 10.000,00</p>
+                                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">JOSÉ SOUZA</p>
+                                        <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                          <p>Veículo de Publicação: Diário Oficial</p>
+                                          <p>Número: 67892 - Publicação: 17/02/2024</p>
+                                          <p><strong>Data da Posse: 17/02/2024</strong></p>
+                                        </div>
+                                        <div class="organograma-medium-card-editar">
+                                          <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/21'">Alterar</button>
+                                        </div>
+                                        <div class="organograma-medium-card-id" data-field="id">21</div>
+                                      </div>
+                                    </div>
+                                    <ul class="org-sublist" id="sublist-21" role="group">
+                                      <!-- Nível 4: Coordenação de Saúde da Família -->
+                                      <li class="org-item" data-level="4" role="treeitem" aria-expanded="true">
+                                        <div class="container-org-item">
+                                          <span class="toggle-btn" aria-label="Expandir/Colapsar Coordenação de Saúde da Família" aria-expanded="true" aria-controls="sublist-22" tabindex="0">
+                                            <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                              <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                            </svg>
+                                          </span>
+                                          <div class="card-m organograma-medium-card">
+                                            <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">4</div>
+                                            <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">COORDENAÇÃO DE SAÚDE DA FAMÍLIA</p>
+                                            <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                              <div class="marcador-item cor-marc3">
+                                                <p><strong>CSF</strong></p>
+                                              </div>
+                                            </div>
+                                            <p class="organograma-medium-card-designacao" data-field="designacao">Coordenadora</p>
+                                            <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 8.500,00</p>
+                                            <p class="organograma-medium-card-nome_titular" data-field="nome_titular">ANA PAULA</p>
+                                            <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                              <p>Veículo de Publicação: Diário Oficial</p>
+                                              <p>Número: 67893 - Publicação: 18/02/2024</p>
+                                              <p><strong>Data da Posse: 18/02/2024</strong></p>
+                                            </div>
+                                            <div class="organograma-medium-card-editar">
+                                              <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/22'">Alterar</button>
+                                            </div>
+                                            <div class="organograma-medium-card-id" data-field="id">22</div>
+                                          </div>
+                                        </div>
+                                        <ul class="org-sublist" id="sublist-22" role="group">
+                                          <!-- Nível 5: Unidade de Saúde da Família Centro -->
+                                          <li class="org-item" data-level="5" role="treeitem" aria-expanded="false">
+                                            <div class="container-org-item">
+                                              <span class="toggle-btn" aria-label="Expandir/Colapsar Unidade de Saúde da Família Centro" aria-expanded="false" aria-controls="sublist-23" tabindex="0">
+                                                <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                                  <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                                </svg>
+                                              </span>
+                                              <div class="card-m organograma-medium-card">
+                                                <div class="organograma-medium-card-nivel-nivel-hierarquia" data-field="nivel-nivel-hierarquia">5</div>
+                                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">UNIDADE DE SAÚDE DA FAMÍLIA CENTRO</p>
+                                                <div class="organograma-medium-card-sigla_unidade" data-field="sigla_unidade">
+                                                  <div class="marcador-item cor-marc3">
+                                                    <p><strong>USFC</strong></p>
+                                                  </div>
+                                                </div>
+                                                <p class="organograma-medium-card-designacao" data-field="designacao">Gestor de Unidade</p>
+                                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">Nível Salarial: R$ 6.000,00</p>
+                                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">PAULO MENDES</p>
+                                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                                  <p>Veículo de Publicação: Diário Oficial</p>
+                                                  <p>Número: 67894 - Publicação: 19/02/2024</p>
+                                                  <p><strong>Data da Posse: 19/02/2024</strong></p>
+                                                </div>
+                                                <div class="organograma-medium-card-editar">
+                                                  <button class="btn-outline-principal" onclick="window.location.href='/organograma/unidade_put/23'">Alterar</button>
+                                                </div>
+                                                <div class="organograma-medium-card-id" data-field="id">23</div>
+                                              </div>
+                                            </div>
+                                            <!-- Nível 5 não possui sublistas -->
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+
+                              <!-- Nível 1: Secretaria de Saúde (Nova Secretaria com 5 Níveis) -->
+                              <!-- Já adicionado acima -->
+
+                            </ul>
+                  </div>
                 </li>
                 <li class="list-last-child"><br></li>
               </ul>
@@ -324,7 +753,7 @@
           <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
           <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
         </div>
-        <a class="modal-content-template-card-user-gc" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
+        <a class="modal-content-template-card-user-organograma" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
       </div>
       <div class="modal-content-template-list-op">
         <ul class="modalMenu-list">

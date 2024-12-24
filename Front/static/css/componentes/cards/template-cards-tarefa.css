@@ -17,7 +17,7 @@
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   align-self: center;
@@ -36,7 +36,7 @@
 
 .tarefa-small-card-data {
   grid-area: tarefa-small-card-data;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: end;
   margin: 3px 0 0 10px;
@@ -44,7 +44,7 @@
 
 .tarefa-small-card-status {
   grid-area: tarefa-small-card-status;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   justify-self: start;
 }
@@ -61,19 +61,19 @@
 }
 
 .tarefa-small-card-inicio {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
 .tarefa-small-card-fim {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
 .tarefa-small-card-resp {
   grid-area: tarefa-small-card-resp;
   display: none;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   justify-self: start;
   transition: opacity 0.25s ease-in-out;
@@ -120,7 +120,7 @@
   align-items: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   opacity: 1;
 }
@@ -178,7 +178,7 @@
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   align-self: center;
@@ -197,7 +197,7 @@
 
 .tarefa-medium-card-data {
   grid-area: tarefa-medium-card-data;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   justify-self: end;
   margin: 3px 0 0 10px;
@@ -205,7 +205,7 @@
 
 .tarefa-medium-card-status {
   grid-area: tarefa-medium-card-status;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   justify-self: start;
 }
@@ -225,7 +225,7 @@
   align-items: start;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
 }
 
@@ -234,19 +234,19 @@
 }
 
 .tarefa-medium-card-inicio {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
 .tarefa-medium-card-fim {
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
 .tarefa-medium-card-resp {
   grid-area: tarefa-medium-card-resp;
   display: none;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
   justify-self: start;
   transition: opacity 0.25s ease-in-out;
@@ -348,7 +348,7 @@
 
 /* Nome do Pleito */
 .tarefa-medium-card-desc-pleito-nome {
-  font-size: 14px;
+  font-size: var(--font-sm);
   line-height: 1.5;
 }
 

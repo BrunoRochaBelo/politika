@@ -22,7 +22,7 @@
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   justify-self: start;
   align-self: center;
@@ -33,7 +33,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 .modal-concluir-pleito-solicitante {
@@ -42,7 +42,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-desc {
@@ -56,7 +56,7 @@
   justify-content: start;
   align-items: center;
   margin: 3px 10px 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-beneficiario {
@@ -65,7 +65,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-uf {
@@ -74,7 +74,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-cidade {
@@ -83,7 +83,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-bairro {
@@ -92,7 +92,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-rua {
@@ -101,7 +101,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-autor {
@@ -110,7 +110,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-dataCriacao {
@@ -119,7 +119,7 @@
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-status {
@@ -135,7 +135,7 @@
   padding: 10px;
   align-self: center;
   border: 1px solid var(--container-bg);
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
   white-space: wrap;
   word-break: break-all;
@@ -158,7 +158,7 @@
   justify-items: stretch;
   display: flex;
   flex-direction: column;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .modal-concluir-pleito-salvar {
@@ -166,7 +166,7 @@
   display: flex;
   justify-content: space-around;
   gap: 10px;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 300;
   margin-top: 25px;
 }

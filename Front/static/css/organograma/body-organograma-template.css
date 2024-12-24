@@ -1,0 +1,53 @@
+.body-organograma-template {
+  background: var(--container-bg);
+  display: grid;
+  margin: 0;
+  padding: 10px;
+  gap: 1px;
+  align-content: start;
+  justify-content: center;
+  grid:
+    "header-organograma" 45px
+    "main-organograma" auto
+    / minmax(350px, 1100px);
+}
+/* container-areas */
+.header-organograma {
+  grid-area: header-organograma;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: stretch;
+  align-content: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 10px;
+  color: var(--txt-conteudo-card);
+  border-bottom: none;
+  position: relative;
+  background: var(--bg-principal);
+}
+.main-organograma {
+  grid-area: main-organograma;
+  justify-content: space-between;
+  align-content: start;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: var(--sombra-moderada);
+  color: var(--txt-conteudo-card);
+  border-top: none;
+  background: var(--bg-principal);
+}
+
+/* RESPONSIVO */
+@media only screen and (max-width: 56.25rem) {
+  .body-organograma-template {
+    margin: 0;
+    padding: 4px;
+  }
+  .main-organograma {
+    padding: 0px;
+  }
+  .main-organograma::-webkit-scrollbar {
+    display: none;
+  }
+}

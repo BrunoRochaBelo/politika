@@ -9,7 +9,7 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 160px;
-  font-size: 12px;
+  font-size: var(--font-xs);
   background-color: var(--tooltip-bg);
   color: var(--tooltip-txt);
   text-align: center;
@@ -171,7 +171,7 @@
 .suggestions li {
   padding: 12px 16px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: var(--font-md);
   color: var(--txt-titulo);
   transition: background-color 0.2s ease-in-out, color 0.2s;
 }

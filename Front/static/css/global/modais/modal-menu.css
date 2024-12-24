@@ -122,7 +122,7 @@
   grid-area: modal-content-template-card-user-candidato;
   justify-self: start;
   align-self: end;
-  font-size: 15px;
+  font-size: var(--font-md);
   font-weight: 400;
 }
 
@@ -130,7 +130,7 @@
   grid-area: modal-content-template-card-user-cargo-owner;
   justify-self: start;
   align-self: start;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
@@ -138,7 +138,7 @@
   grid-area: modal-content-template-card-user-partido;
   justify-self: start;
   align-self: start;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
 }
 
@@ -157,21 +157,21 @@
 .modal-content-template-card-user-username {
   grid-area: modal-content-template-card-user-username;
   justify-self: center;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 
 .modal-content-template-card-user-cargo {
   grid-area: modal-content-template-card-user-cargo;
   justify-self: center;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 300;
 }
 
 .modal-content-template-card-user-gc {
   grid-area: modal-content-template-card-user-gc;
   justify-self: end;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   margin-top: 5px;
   border: 1px solid transparent;
@@ -189,7 +189,7 @@
 
 .modal-content-template-list-op .btn-principal {
   padding: 5px 10px;
-  font-size: 14px;
+  font-size: var(--font-sm);
 }
 
 #btnGerenciarConta.btn-principal {
@@ -240,7 +240,7 @@
 }
 
 .modalMenu-list li span {
-  font-size: 14px;
+  font-size: var(--font-sm);
 }
 
 .logout {

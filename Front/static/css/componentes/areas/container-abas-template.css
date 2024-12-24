@@ -44,7 +44,7 @@
 }
 
 .container-abas-template-header h2 {
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 400;
   color: var(--txt-conteudo-card);
 }
@@ -82,7 +82,7 @@
 #nav1 a,
 #nav2 a,
 #nav3 a {
-  font-size: 16px;
+  font-size: var(--font-md);
   font-weight: 400;
   padding: 6px 5px;
   color: var(--txt-nav);
@@ -106,7 +106,7 @@
 #nav1 a.indicador-2,
 #nav2 a.indicador-2,
 #nav3 a.indicador-2 {
-  font-size: 16px;
+  font-size: var(--font-md);
   font-weight: 500;
   color: var(--txt-titulo);
   background-color: var(--container-bg);
@@ -175,7 +175,7 @@
   #nav3 a {
     color: var(--txt-nav);
     padding: 5px 10px;
-    font-size: 15px;
+    font-size: var(--font-md);
     font-weight: 400;
   }
 
@@ -184,7 +184,7 @@
   #nav3 a:hover {
     color: var(--txt-nav);
     padding: 5px 10px;
-    font-size: 15px;
+    font-size: var(--font-md);
     font-weight: 400;
     background-color: none;
     transform: none;
@@ -193,7 +193,7 @@
   #nav1 a.indicador-2,
   #nav2 a.indicador-2,
   #nav3 a.indicador-2 {
-    font-size: 15px;
+    font-size: var(--font-md);
     font-weight: 400;
     color: var(--txt-titulo);
     background-color: var(--bg-principal);

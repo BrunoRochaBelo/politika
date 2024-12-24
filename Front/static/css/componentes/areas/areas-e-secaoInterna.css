@@ -60,7 +60,7 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
   padding: 10px 20px;
   text-align: left;
@@ -70,7 +70,7 @@
   border-top-left-radius: 23px;
 }
 .secao-interna-template-header h2 {
-  font-size: 14px;
+  font-size: var(--font-sm);
   font-weight: 300;
 }
 .secao-interna-template-content {
@@ -107,7 +107,7 @@
     border-radius: 0px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    font-size: 14px;
+    font-size: var(--font-sm);
     font-weight: 300;
   }
   .area-interna-containerContent-template-content {
@@ -125,12 +125,12 @@
 
   /* Area Template Sessão Interna */
   .secao-interna-template-header {
-    font-size: 14px;
+    font-size: var(--font-sm);
     font-weight: 300;
     padding: 10px 20px;
   }
   .secao-interna-template-header h2 {
-    font-size: 13px;
+    font-size: var(--font-sm);
     font-weight: 300;
   }
 

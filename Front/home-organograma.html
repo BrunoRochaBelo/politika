@@ -11,33 +11,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="icon" href="./static/imagens/icones/organograma-select.svg" type="image/png">
+  <link rel="icon" href="./static/imagens/icones/organogramas.svg" type="image/png">
   <title>Organograma</title>
   <meta name="description" content="Lista de Organograma">
   <link rel="preload" href="./static/css/style.css" as="style">
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body class="body-gc-template">
+<body class="body-organograma-template">
 
-  <header class="header-gc">
-    <ul class="header-gc-template">
-      <li class="header-gc-back">
-        <a href="index.html" class="header-gc-back">
+  <header class="header-organograma">
+    <ul class="header-organograma-template">
+      <li class="header-organograma-back">
+        <a href="index.html" class="header-organograma-back">
           <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
         </a>
       </li>
-      <li class="header-gc-nav" style="justify-items: center;">
+      <li class="header-organograma-title">
         <h2>Organogramas</h2>
       </li>
-      <li class="header-gc-logout">
+      <li class="header-organograma-logout">
         <button id="btnLogout" class="btn-principal" onclick="logout()">Desconectar</button>
       </li>
     </ul>
   </header>
 
-  <main class="main-gc main-gc-template">
-    <section class="main-gc-section organograma">
+  <main class="main-organograma main-organograma-template">
+    <section class="main-organograma-section organograma">
       <div class="container-template">
         <div class="container-template-content container-template-content-com-header-fx-int">
           <div class="area-interna-containerContent-template">
@@ -55,20 +55,20 @@
                   <div class="secao-interna-template-content">
                     <ul class="lista-vertical-cards" id="listaOrganogramasLarge">
                       <li>
-                        <a class="card-m organograma-large-card" href="#">
-                          <p class="organograma-large-card-title" data-field="title">Titulo</p>
+                        <div class="card-m organograma-large-card" href="#">
+                          <p class="organograma-large-card-title" data-field="title">Organograma Prefeitura</p>
                           <div class="organograma-large-card-siglaUnidade" data-field="sigla_unidade">
                             <div class="marcador-item cor-marc3">
                               <p><strong>SIG</strong></p>
                             </div>
                           </div>
                           <p class="organograma-large-card-versao" data-field="versao">versao: 1</p>
-                          <p class="organograma-large-card-quantUnidade" data-field="quant_unidade">Quantidade: 50</p>
+                          <p class="organograma-large-card-quantUnidade" data-field="quant_unidade">Quantidade: 14</p>
                           <div class="organograma-large-card-editar">
                             <button class="btn-outline-principal" onclick="window.location.href='./organograma.html'">Visualizar</button>
                           </div>
                           <div class="organograma-large-card-id" data-field="id">2</div>
-                        </a>
+                        </div>
                       </li>
                     </ul>
                   </div>
@@ -110,7 +110,7 @@
           <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
           <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
         </div>
-        <a class="modal-content-template-card-user-gc" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
+        <a class="modal-content-template-card-user-organograma" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
       </div>
       <div class="modal-content-template-list-op">
         <ul class="modalMenu-list">

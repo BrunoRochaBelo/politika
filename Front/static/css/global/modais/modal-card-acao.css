@@ -55,7 +55,7 @@
   padding: 0 10px;
   color: var(--txt-conteudo-card);
   border-radius: 50px;
-  font-size: 28px;
+  font-size: var(--font-xl);
 }
 .closeModalCardAcao:hover,
 .closeModalCardAcao:focus {

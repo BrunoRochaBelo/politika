@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="./static/imagens/icones/organograma-select.svg" type="image/png">
+  <link rel="icon" href="./static/imagens/icones/organogramas.svg" type="image/png">
   <title>Organograma</title>
   <meta name="description" content="Lista de Organograma">
 
@@ -21,38 +21,29 @@
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body class="body-gc-template">
+<body class="body-organograma-template">
 
-  <header class="header-gc">
-    <ul class="header-gc-template">
-      <li class="header-gc-back">
-        <a href="index.html" class="header-gc-back">
+  <header class="header-organograma">
+    <ul class="header-organograma-template">
+      <li class="header-organograma-back">
+        <a href="index.html" class="header-organograma-back">
           <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
         </a>
       </li>
-      <li class="header-gc-nav">
-        <nav class="header-gc-nav">
-          <ul class="header-gc-nav-template">
-            <li class="organograma">
-              <a href="organograma.html">
-                <img src="./static/imagens/icones/list.svg" alt="Organograma List Icon">
-                <p>Lista</p>
-              </a>
-            </li>
-            <li class="perfil indicador">
-              <a href="organograma_diagram.html">
-                <img src="./static/imagens/icones/organograma-select.svg" alt="Organograma Icon">
-                <p>Diagrama</p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+      </li>
+      <li class="header-organograma-title">
+        <h2>Organograma Prefeitura</h2>
+      </li>
+      <li class="header-organograma-logout">
+        <a href="organograma.html">
+          <img src="./static/imagens/icones/list-select.svg" alt="Organograma List Icon">
+        </a>
       </li>
     </ul>
   </header>
 
-  <main class="main-gc main-gc-template">
-    <section class="main-gc-section organograma">
+  <main class="main-organograma main-organograma-template">
+    <section class="main-organograma-section organograma">
       <div class="area-interna-containerContent-template">
         <div class="area-interna-containerContent-template-header">
           <!-- Toolbar de Ações (CRUD) -->

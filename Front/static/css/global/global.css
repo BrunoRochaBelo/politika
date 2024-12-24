@@ -1,9 +1,8 @@
 body {
-  font-family: "Open Sans", "Roboto", system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 0.03em;
+  font-family: var(--font-family);
+  font-size: var(--font-md); /* Padrão 16px */
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
   color: var(--txt-titulo-card);
   margin: 0;
   padding: 0;
@@ -117,6 +116,17 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+a:active {
+  outline: none; /* Remove bordas de foco */
+  box-shadow: none; /* Remove sombras padrão */
+  background: none; /* Remove alterações de fundo */
+  color: inherit; /* Mantém a cor original */
+}
+a:hover {
+  color: inherit; /* Mantém a cor original */
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -144,6 +154,7 @@ img {
   body {
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
+    /*font-size: var(--font-dynamic);*/
     overflow: auto;
     position: relative;
     box-sizing: border-box;
