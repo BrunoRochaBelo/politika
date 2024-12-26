@@ -189,7 +189,7 @@
   right: 5px;
   color: var(--txt-destaque);
   border-radius: 45px;
-  font-size: var(--font-xl);
+  font-size: 26px;
   font-weight: 400;
   cursor: pointer;
 }
@@ -212,7 +212,7 @@
   left: 5px;
   color: var(--txt-conteudo-card);
   border-radius: 50px;
-  font-size: var(--font-xl);
+  font-size: 26px;
 }
 .voltar:hover,
 .voltar:focus {

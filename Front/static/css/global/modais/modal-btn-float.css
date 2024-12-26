@@ -72,9 +72,11 @@
   position: fixed;
   bottom: 75px;
   right: 30px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50px;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  padding: 10px;
+  box-sizing: border-box;
   border: none;
   cursor: pointer;
   background: var(--btn-float);
@@ -85,12 +87,16 @@
   justify-content: center;
   font-size: var(--font-xl);
   z-index: 2002;
+  touch-action: manipulation;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .floatingButton:hover {
   filter: var(--hover);
 }
 .floatingButton:active {
-  filter: brightness(0.9);
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-moderada);
+  border: 1px solid var(--cor-primaria-3);
 }
 
 /* RESPONSIVO */
@@ -107,9 +113,11 @@
   .floatingButton {
     bottom: 71px;
     right: 15px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    padding: 10px;
+    box-sizing: border-box;
     border: none;
     cursor: pointer;
     background: var(--btn-float);
@@ -122,9 +130,6 @@
     z-index: 2002;
   }
   .floatingButton:hover {
-    filter: none;
-  }
-  .floatingButton:active {
     filter: none;
   }
 }

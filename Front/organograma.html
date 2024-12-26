@@ -710,10 +710,12 @@
                                 </ul>
                               </li>
 
-                              <!-- Nível 1: Secretaria de Saúde (Nova Secretaria com 5 Níveis) -->
-                              <!-- Já adicionado acima -->
 
                             </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
                   </div>
                 </li>
                 <li class="list-last-child"><br></li>
@@ -726,106 +728,11 @@
   </main>
 
 
-  <!-- Modal Botão Flutuante -->
-  <button class="floatingButton">+</button>
-  <div class="modal-btn-floating-Overlay esconderModal">
-    <div class="modal-btn-floating-content">
-      <div class="modal-btn-floating-header">
-        <h1>NOVA</h1>
-      </div>
-      <ul class="modal-btn-floating-body">
-        <li><a href="/organograma_incluir?orgao_id=ORGAO_ID_PLACEHOLDER">Item</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Modal Menu -->
-  <div class="modal" id="modalMenu">
-    <div class="modal-content-template">
-      <div class="modal-content-template-card-user">
-        <div class="modal-content-template-card-user-img">
-          <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" id="modalUserPhoto">
-        </div>
-        <p class="modal-content-template-card-user-candidato" id="candidato">Nome do candidato</p>
-        <p class="modal-content-template-card-user-cargo-owner" id="cargoOwner">Cargo do candidato</p>
-        <p class="modal-content-template-card-user-partido" id="partido">Partido do candidato</p>
-        <div class="modal-content-template-card-user-secao">
-          <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
-          <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
-        </div>
-        <a class="modal-content-template-card-user-organograma" id="btnGerenciarConta" href="home-admin.html"> Gerenciar conta</a>
-      </div>
-      <div class="modal-content-template-list-op">
-        <ul class="modalMenu-list">
-          <li class="alterar-tema">
-            <button id="toggleTheme">
-              <img id="themeIcon" src="./static/imagens/icones/sun.svg" alt="Ícone de Sol" />
-              Alterar tema
-            </button>
-          </li>
-          <li>
-            <a href="home-financeiro.html">
-              <img src="./static/imagens/icones/financeiro.svg" alt="financeiro Icon">
-              <span>Financeiro</span>
-            </a>
-          </li>
-          <li class="logout" onclick="logout()">
-            <a id="btnLogout">
-              <img src="./static/imagens/icones/sair.svg" alt="Sair icon">
-              <span>Sair</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Notificações -->
-  <div class="modal-notificacoes" id="notificationModal">
-    <div class="modal-content-notificacoes" id="modalContent">
-      <span class="modal-notificacoes-btn-close" id="closeButton">&times;</span>
-      <button id="markAllReadButton">Marcar todas como lidas</button>
-      <ul id="notificationsContent" class="notifications-list">
-        <!-- Notifications will be dynamically inserted here -->
-      </ul>
-      <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
-    </div>
-  </div>
-
-  <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
-
-  <!-- Modal para exibir mais aplicativos -->
-  <div id="modalMaisApps" class="modal-mais-apps">
-    <div class="modal-mais-apps-content">
-
-      <div class="modal-mais-apps-close"></div>
-      <ul class="modal-mais-apps-icones">
-        <li>
-          <a href="pleitos.html">
-            <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon" class="icone-app">
-            <p>Pleitos</p>
-          </a>
-        </li>
-        <li>
-          <a href="arquivos.html">
-            <img src="./static/imagens/icones/arquivos.svg" alt="arquivos Icon" class="icone-app">
-            <p>Arquivos</p>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
 
   <script src="./static/js/config.js" defer></script>
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
-  <script src="./static/js/ScrollAjustarItensContainerHeader.js" defer></script>
-  <script src="./static/js/ModalBTNFloating.js" defer></script>
-  <script src="./static/js/ModalMaisApps.js" defer></script>
-  <script src="./static/js/ModalMenu.js" defer></script>
-  <script src="./static/js/ModalNotificacoes.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/ExibirDetalhesOrganograma.js" defer></script>
 

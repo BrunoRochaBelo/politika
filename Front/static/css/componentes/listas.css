@@ -116,15 +116,15 @@
 /* Estilos para cards dentro da lista */
 .lista-vertical-cards > li:first-child a,
 .lista-vertical-grup > li:first-child a,
-.lista-vertical-cards > li:first-child div,
-.lista-vertical-grup > li:first-child div {
+.lista-vertical-cards > li:first-child > div:first-child,
+.lista-vertical-grup > li:first-child > div:first-child {
   border-top-left-radius: 23px;
   border-top-right-radius: 23px;
 }
 .lista-vertical-cards > li:last-child a,
 .lista-vertical-grup > li:last-child a,
-.lista-vertical-cards > li:last-child div,
-.lista-vertical-grup > li:last-child div {
+.lista-vertical-cards > li:last-child > div:first-child,
+.lista-vertical-grup > li:last-child > div:first-child {
   border-bottom-left-radius: 23px;
   border-bottom-right-radius: 23px;
 }

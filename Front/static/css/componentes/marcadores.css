@@ -65,7 +65,7 @@
   border-radius: 25px 10px 10px 25px;
   box-shadow: var(--sombra-leve);
   padding: 5px 12px;
-  width: 115px;
+  max-width: 135px;
   font-size: var(--font-xs);
   font-weight: 400;
   white-space: nowrap;

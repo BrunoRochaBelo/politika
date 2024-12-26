@@ -108,13 +108,17 @@
     "modal-content-template-card-user-img modal-content-template-card-user-candidato modal-content-template-card-user-candidato"
     "modal-content-template-card-user-img modal-content-template-card-user-cargo-owner modal-content-template-card-user-partido"
     "modal-content-template-card-user-secao modal-content-template-card-user-secao modal-content-template-card-user-secao"
-    "modal-content-template-card-user-gc modal-content-template-card-user-gc modal-content-template-card-user-gc";
+    "modal-content-template-card-user-gc modal-content-template-card-user-gc modal-content-template-card-user-gc"
+    / auto 1fr auto;
 }
 
 .modal-content-template-card-user-img {
   grid-area: modal-content-template-card-user-img;
-  width: 55px;
-  height: 55px;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+}
+.modal-content-template-card-user-img img {
   border-radius: 50%;
 }
 

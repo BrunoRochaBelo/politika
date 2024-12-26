@@ -203,52 +203,34 @@
   filter: var(--hover);
 }
 
-/*  active  */
+/* Active */
 
 .card-xs:active:not(.card-xs.filtro-small-card),
 .card-s:active,
 .card-m:active,
 .card-l:active {
-  animation: expand-color 1.6s ease-out forwards;
-  transform: scale(0.99);
-  box-shadow: var(--sombra-leve);
+  animation: expand-color-from-center 0.6s cubic-bezier(0.25, 1, 0.5, 1)
+    forwards;
+  transform: scale(0.98);
+  box-shadow: var(--sombra-intensa);
 }
 
-@keyframes expand-color {
+@keyframes expand-color-from-center {
   0% {
     background: radial-gradient(
       circle,
       var(--card-aberto-bg) 0%,
-      var(--card-bg) 100%
+      var(--card-aberto-bg) 0%
     );
+    filter: brightness(1);
   }
-  20% {
-    background: radial-gradient(
-      circle,
-      var(--card-aberto-bg) 10%,
-      var(--card-bg) 100%
-    );
-  }
-  40% {
-    background: radial-gradient(
-      circle,
-      var(--card-aberto-bg) 30%,
-      var(--card-bg) 100%
-    );
-  }
-  60% {
+  50% {
     background: radial-gradient(
       circle,
       var(--card-aberto-bg) 50%,
       var(--card-bg) 100%
     );
-  }
-  80% {
-    background: radial-gradient(
-      circle,
-      var(--card-aberto-bg) 75%,
-      var(--card-bg) 100%
-    );
+    filter: brightness(1.2);
   }
   100% {
     background: radial-gradient(
@@ -256,6 +238,7 @@
       var(--card-aberto-bg) 100%,
       var(--card-aberto-bg) 100%
     );
+    filter: brightness(1);
   }
 }
 

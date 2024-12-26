@@ -38,6 +38,7 @@
   grid-area: contatos-small-card-call;
   justify-self: end;
   align-self: center;
+  cursor: pointer;
 }
 .contatos-small-card-perfilInfluencia {
   grid-area: contatos-small-card-perfilInfluencia;

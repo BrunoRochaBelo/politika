@@ -2,9 +2,9 @@
 .organograma-medium-card {
   display: grid;
   color: var(--txt-conteudo-card);
-  gap: 10px;
+  gap: 5px;
   justify-content: stretch;
-  min-width: 300px;
+  width: calc(450px + 1vw);
   grid-template-areas:
     "organograma-medium-card-nivel-nivel-hierarquia organograma-medium-card-nome_unidade organograma-medium-card-sigla_unidade"
     "organograma-medium-card-designacao organograma-medium-card-designacao organograma-medium-card-nivel-salarial"
@@ -203,6 +203,7 @@
       "organograma-medium-card-editar organograma-medium-card-editar";
     grid-template-columns: auto auto;
     max-height: none; /* Remover limitação de altura */
+    width: calc(350px + 1vw);
   }
 
   .organograma-medium-card-nome_unidade {
@@ -242,6 +243,7 @@
       "organograma-medium-card-editar organograma-medium-card-editar";
     grid-template-columns: 1fr;
     padding: 10px;
+    width: calc(250px + 1vw);
   }
 
   .organograma-medium-card-nome_unidade {

@@ -61,11 +61,11 @@
   cursor: pointer;
   border: 2px solid transparent;
 }
+.btn-recuar-expandir:active,
 .btn-recuar-expandir-aniver:active {
-  background-color: darken(var(--container-bg), 10%);
-  color: var(--cor-primaria-3);
-  border-color: var(--cor-primaria-3);
+  transform: scale(0.98);
   box-shadow: var(--sombra-leve);
+  border: 1px solid var(--cor-primaria-3);
 }
 
 /* RESPONSIVO */

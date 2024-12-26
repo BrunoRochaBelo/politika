@@ -51,7 +51,6 @@
   width: 22px;
   height: 22px;
 }
-
 .header-organograma-logout a:hover {
   background: var(--btn-secundario-hover);
   box-shadow: var(--sombra-intensa);
@@ -75,6 +74,13 @@
   transition: font-size 0.2s ease-in-out;
 }
 
+.header-organograma-back:hover {
+  transform: translateY(-2px);
+}
+.header-organograma-back:active {
+  transform: translateY(2px);
+}
+
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
   .header-organograma-template {
@@ -87,15 +93,15 @@
 
   /* Reduz o tamanho do botão em telas menores */
   .header-organograma-logout a {
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
     border-radius: 30%;
   }
 
   /* Reduz o tamanho do ícone dentro do botão */
   .header-organograma-logout a img {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   /* Ajusta o padding do botão principal para manter proporção */
