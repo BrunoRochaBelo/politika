@@ -3,8 +3,7 @@
   display: none;
 }
 .btn-recuar-expandir,
-.btn-recuar-expandir:hover,
-.btn-recuar-expandir:active {
+.btn-recuar-expandir:hover {
   font-size: var(--font-sm);
   font-weight: 300;
   color: var(--btn-filtro-alt-txt);
@@ -63,9 +62,10 @@
 }
 .btn-recuar-expandir:active,
 .btn-recuar-expandir-aniver:active {
-  transform: scale(0.98);
+  transform: translateY(1px) scale(0.98);
   box-shadow: var(--sombra-leve);
-  border: 1px solid var(--cor-primaria-3);
+  border: 1px solid var(--borda);
+  filter: var(--active);
 }
 
 /* RESPONSIVO */

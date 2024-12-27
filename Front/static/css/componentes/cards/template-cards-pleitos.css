@@ -6,6 +6,7 @@
   display: grid;
   color: var(--txt-conteudo-card);
   gap: 5px;
+  cursor: pointer;
   grid:
     "pleitos-medium-card-tiposolici pleitos-medium-card-tiposolici pleitos-medium-card-dataSolici"
     "pleitos-medium-card-solicitante pleitos-medium-card-solicitante pleitos-medium-card-solicitante"

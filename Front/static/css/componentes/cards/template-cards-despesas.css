@@ -4,6 +4,7 @@
   display: grid;
   color: var(--txt-conteudo-card);
   gap: 5px;
+  cursor: pointer;
   align-content: center;
   text-overflow: ellipsis;
   grid:
@@ -12,7 +13,7 @@
     "despesas-medium-card-referencia despesas-medium-card-referencia"
     "despesas-medium-card-desc despesas-medium-card-desc";
   transition: all 0.25s ease;
-  max-height: 240px;
+  max-height: 350px;
 }
 
 .despesas-medium-card-id {
@@ -123,7 +124,7 @@
     "despesas-medium-card-editar despesas-medium-card-editar";
   transform: scale(1);
   transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  max-height: 300px;
+  max-height: 500px;
   height: auto;
 }
 

@@ -3,6 +3,7 @@
   display: grid;
   color: var(--txt-conteudo-card);
   gap: 5px;
+  cursor: pointer;
   justify-content: stretch;
   width: calc(450px + 1vw);
   grid-template-areas:
@@ -272,6 +273,7 @@
   display: grid;
   color: var(--txt-conteudo-card);
   gap: 5px;
+  cursor: pointer;
   justify-content: stretch;
   overflow: hidden;
   grid-template-areas:

@@ -147,7 +147,6 @@
 .lista-horizontal:not(.expandir) .card-tmf-m {
   width: auto;
   transform: translateY(0);
-  transition: all 0.5s ease;
   opacity: 1;
 }
 

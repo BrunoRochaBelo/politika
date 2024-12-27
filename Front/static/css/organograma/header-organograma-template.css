@@ -75,10 +75,12 @@
 }
 
 .header-organograma-back:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  filter: var(--hover);
 }
 .header-organograma-back:active {
   transform: translateY(2px);
+  filter: var(--active);
 }
 
 /* RESPONSIVO */

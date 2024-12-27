@@ -189,6 +189,13 @@
   margin-top: 4px;
 }
 
+.campo-exibir.acao-item:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--borda);
+  filter: var(--active);
+}
+
 /* Estilos para scroll maior que zero */
 .compact .main-exibir .container-template,
 .compact .main-exibir .container-abas-template {

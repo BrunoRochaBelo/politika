@@ -160,10 +160,10 @@
 .remover-filtro {
   position: absolute;
   top: 50%;
-  right: 2px;
+  right: 4px;
   transform: translateY(-50%);
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,12 +173,21 @@
   border: none;
 }
 .remover-filtro:hover {
-  color: #c61818; /* Cor do texto ao passar o mouse */
+  color: #c61818;
+  border-radius: 50%;
+  border: 1px solid #c61818;
 }
 .remover-filtro:hover + .btn-filtro-pesq {
   border: 1px solid var(--txt-subtitulo);
   box-shadow: 0 0 1px var(--cor-primaria-2), 0 0 2px var(--cor-primaria-2),
     0 0 3px var(--cor-primaria-2), 0 0 4px var(--cor-primaria-2);
+}
+
+.remover-filtro:active {
+  transform: rotate(45deg) translate(-35%, -35%);
+  color: #c61818;
+  border-radius: 50%;
+  border: 1px solid #c61818;
 }
 
 /* Estilo para o botão "X" fechar"*/
@@ -200,8 +209,10 @@
   color: rgb(227, 227, 227);
 }
 .close:active {
-  transform: scale(0.95);
-  opacity: 0.5;
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--borda);
+  filter: var(--active);
 }
 
 /* Estilo para o botão Voltar */
@@ -224,8 +235,10 @@
   transition: transform 1s ease;
 }
 .voltar:active {
-  transform: scale(0.95);
-  opacity: 0.5;
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--borda);
+  filter: var(--active);
 }
 
 /* Estilo para area de botões */
@@ -243,6 +256,13 @@
 .botoes .btn-principal {
   width: 30%;
   box-shadow: var(--sombra-leve);
+}
+.botoes .btn-outline-principal:active,
+.botoes .btn-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--borda);
+  filter: var(--active);
 }
 
 .lista-vertical-alt .botoes {
@@ -262,9 +282,5 @@
     width: auto;
     margin: 0px 10px 10px 10px;
     box-shadow: var(--sombra-leve);
-  }
-
-  .btn-outline-principal {
-    padding: 12px 20px;
   }
 }

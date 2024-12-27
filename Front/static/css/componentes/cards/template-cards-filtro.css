@@ -19,8 +19,7 @@
 .filtro-multi-select-card {
   display: block;
   color: var(--txt-titulo-card);
-  transition: max-height 0.4s ease-out, transform 0.4s ease-out,
-    height 0.4s ease-out, border-radius 0.4s ease-out;
+  transition: all 0.3s ease-in-out;
   max-height: 100px;
   border-radius: 6px;
   background: none;
@@ -30,17 +29,12 @@
 .filtro-multi-select-card-header {
   position: relative;
   background: var(--card-bg);
-  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
-    border-radius 0.4s ease-in-out;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out,
+    border-radius 0.1s ease-in-out;
   cursor: pointer;
   border-radius: 6px;
   padding: 15px 15px;
   text-align: start;
-}
-
-/* Transição suave para o arredondamento */
-.filtro-multi-select-card-header {
-  transition: border-radius 0.3s ease-in-out;
 }
 
 .filtro-multi-select-card-content {
@@ -50,19 +44,27 @@
   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out,
     padding 0.3s ease-in-out, border-radius 0.3s ease-in-out;
   background: var(--container-bg);
-  padding: 0 15px; /* Adiciona padding lateral */
+  padding: 0 15px;
+}
+
+.filtro-multi-select-card:hover {
+  filter: var(--hover);
 }
 
 .filtro-multi-select-card-content.exibirMultiSelect {
   max-height: 800px;
   opacity: 1;
   padding: 15px;
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 .filtro-multi-select-card-expanded {
   max-height: 800px;
   height: auto;
   background: none;
+}
+.filtro-multi-select-card-expanded:hover {
+  filter: none;
 }
 
 .filtro-multi-select-card-header.exibirMultiSelect {
@@ -80,14 +82,12 @@
   .filtro-multi-select-card-header {
   border-top-left-radius: 23px;
   border-top-right-radius: 23px;
-  transition: border-radius 0.3s ease-in-out;
 }
 
 /* Remove as bordas inferiores arredondadas do header quando o conteúdo estiver visível */
 .filtro-multi-select-card-header.exibirMultiSelect {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  transition: border-radius 0.3s ease-in-out;
 }
 
 /* Arredonda o header do último item quando o conteúdo não está exibido */
@@ -97,7 +97,6 @@
   .filtro-multi-select-card-header {
   border-bottom-left-radius: 23px;
   border-bottom-right-radius: 23px;
-  transition: border-radius 0.3s ease-in-out;
 }
 
 /* Remove o arredondamento inferior do header quando o conteúdo está exibido, mesmo que seja o último item */
@@ -107,7 +106,6 @@
   .filtro-multi-select-card-header.exibirMultiSelect {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  transition: border-radius 0.3s ease-in-out;
 }
 
 .filtro-multi-select-card-content.exibirMultiSelect {
@@ -182,36 +180,14 @@
   background: var(--cor-secundaria-1);
 }
 
-/* Estilos para os botões dos filtros */
-.aba-filtro .botoes {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 20px;
-  width: 100%;
-  font-weight: 400;
-  font-size: var(--font-xs);
-  padding: 20px 0;
-}
-
-.aba-filtro .botoes .btn-outline-principal,
-.aba-filtro .botoes .btn-principal {
-  width: 30%;
-  box-shadow: var(--sombra-intensa);
-}
-
-.filtro-multi-select-card-content .marcador-s {
-  border-radius: 25px 10px 10px 25px;
-  border: 2px solid transparent;
-  box-sizing: border-box;
-  font-size: var(--font-xs);
-  font-weight: 400;
-}
-
 /* Responsivo */
 @media only screen and (max-width: 56.25rem) {
   .aba-filtro .botoes {
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: stretch;
+    justify-items: center;
+    width: 100%;
     gap: 10px;
     margin-top: 20px;
     padding: 10px 0;
@@ -221,6 +197,5 @@
     width: 70%;
     margin: 0px 10px 10px 10px;
     box-shadow: var(--sombra-intensa);
-    transform: translate(20%);
   }
 }

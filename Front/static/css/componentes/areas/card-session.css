@@ -108,6 +108,7 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .arrow.down {
@@ -116,6 +117,12 @@
 
 .arrow.up {
   transform: translateY(-50%) rotate(-135deg);
+}
+.arrow.down:active {
+  transform: rotate(-80deg);
+}
+.arrow.up:active {
+  transform: rotate(-20deg);
 }
 
 /* Responsividade */

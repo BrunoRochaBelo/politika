@@ -3,6 +3,7 @@
   display: grid;
   color: var(--txt-conteudo-card);
   gap: 5px;
+  cursor: pointer;
   justify-content: stretch;
   overflow: hidden;
   grid:
@@ -162,6 +163,7 @@
   display: grid;
   color: var(--txt-conteudo-card);
   gap: 5px;
+  cursor: pointer;
   justify-content: stretch;
   overflow: hidden;
   grid:

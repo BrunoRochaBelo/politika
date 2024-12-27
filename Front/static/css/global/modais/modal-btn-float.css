@@ -95,8 +95,9 @@
 }
 .floatingButton:active {
   transform: translateY(1px) scale(0.98);
-  box-shadow: var(--sombra-moderada);
-  border: 1px solid var(--cor-primaria-3);
+  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--borda);
+  filter: var(--active);
 }
 
 /* RESPONSIVO */
