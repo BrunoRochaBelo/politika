@@ -19,10 +19,6 @@
     width: 98%;
   }
 
-  .home-sidenav .card-xs .marcador-item {
-    color: var(--container-bg);
-  }
-
   #moldura,
   #logo {
     width: 32px;

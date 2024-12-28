@@ -80,3 +80,11 @@
 .marcador-l:hover {
   filter: var(--hover);
 }
+
+.filtro-multi-select-card-content .marcador-s {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 25px 10px 10px 25px;
+}

@@ -161,6 +161,8 @@
   border-radius: 18px;
   background: var(--card-aberto-bg) !important;
   border: 1px solid var(--card-aberto-bg) !important;
+  position: relative;
+  z-index: 2;
   color: var(--txt-card-aberto);
   box-shadow: var(--sombra-card-aberto);
   grid-template-areas:
@@ -345,6 +347,8 @@
   border-radius: 12px;
   background: var(--card-aberto-bg) !important;
   border: 1px solid var(--card-aberto-bg) !important;
+  position: relative;
+  z-index: 2;
   color: var(--txt-card-aberto);
   box-shadow: var(--sombra-card-aberto);
   grid-template-areas:

@@ -70,7 +70,7 @@
   padding: 10px 20px;
   border: none;
   background: var(--card-aberto-bg);
-  color: var(--btn-principal-txt);
+  color: var(--txt-subtitulo);
   box-shadow: var(--sombra-intensa);
   font-size: var(--font-sm);
   cursor: pointer;

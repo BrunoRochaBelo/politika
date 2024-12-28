@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
   );
   const modalMenuList = document.querySelectorAll(".modalMenu-list");
 
+  // Novas seleções adicionadas
+  const headerGcElements = document.querySelectorAll(".header-gc");
+  const headerOrganogramaElements = document.querySelectorAll(
+    ".header-organograma"
+  );
+  const tarefaMediumCardDescElements = document.querySelectorAll(
+    ".tarefa-medium-card-desc"
+  );
+
   // Função para carregar o tema do localStorage ou do servidor
   function loadTheme() {
     const localTheme = localStorage.getItem("theme");
@@ -54,6 +63,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
       modalMenuList.forEach((element) => {
         element.classList.add("invert-filter");
       });
+
+      // Adiciona 'invert-filter' aos novos elementos
+      headerGcElements.forEach((element) => {
+        element.classList.add("invert-filter");
+      });
+      headerOrganogramaElements.forEach((element) => {
+        element.classList.add("invert-filter");
+      });
+      tarefaMediumCardDescElements.forEach((element) => {
+        element.classList.add("invert-filter");
+      });
     } else {
       document.documentElement.classList.remove("light-mode");
       headerElement && headerElement.classList.remove("invert-filter");
@@ -69,6 +89,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         element.classList.remove("invert-filter");
       });
       modalMenuList.forEach((element) => {
+        element.classList.remove("invert-filter");
+      });
+
+      // Remove 'invert-filter' dos novos elementos
+      headerGcElements.forEach((element) => {
+        element.classList.remove("invert-filter");
+      });
+      headerOrganogramaElements.forEach((element) => {
+        element.classList.remove("invert-filter");
+      });
+      tarefaMediumCardDescElements.forEach((element) => {
         element.classList.remove("invert-filter");
       });
     }

@@ -171,6 +171,7 @@
   color: var(--txt-subtitulo);
   font-size: 21px;
   border: none;
+  border: 1px solid transparent;
 }
 .remover-filtro:hover {
   color: #c61818;
@@ -235,7 +236,7 @@
   transition: transform 1s ease;
 }
 .voltar:active {
-  transform: translateY(1px) scale(0.98);
+  transform: translateY(2px) scale(0.98);
   box-shadow: var(--sombra-leve);
   border: 1px solid var(--borda);
   filter: var(--active);

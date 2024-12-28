@@ -113,7 +113,7 @@
   align-items: center;
   justify-items: center;
   box-shadow: var(--sombra-intensa);
-  border: 1px solid var(--card-bg);
+  border: 1px solid var(--borda);
   transition: background-color 0.5s ease, box-shadow 0.5s ease,
     transform 0.5s ease;
   transform: scale(1);
@@ -198,7 +198,7 @@
     color: var(--txt-titulo);
     background-color: var(--bg-principal);
     box-shadow: var(--sombra-moderada);
-    border: 1px solid var(--card-bg);
+    border: 1px solid var(--borda);
     transition: background-color 0.5s ease, box-shadow 0.5s ease,
       transform 0.5s ease;
     transform: none;
