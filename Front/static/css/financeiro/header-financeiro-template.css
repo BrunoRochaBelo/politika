@@ -2,7 +2,7 @@
 .header-financeiro-template {
   display: grid;
   align-items: center;
-  text-transform: uppercase;
+  text-transform: lowercase;
   grid: "header-financeiro-back header-financeiro-nav header-financeiro-logout" 45px;
 }
 
@@ -67,7 +67,7 @@
   position: absolute;
   bottom: -2px;
   left: 0;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
 }
 .header-financeiro-nav-template a:hover {
   filter: var(--hover);

@@ -95,7 +95,8 @@
   margin-bottom: 10px;
   object-fit: cover;
   justify-self: center;
-  transition: width 0.3s ease, height 0.3s ease, margin-bottom 0.3s ease;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    margin-bottom 0.3s ease-in-out;
 }
 
 .area-interna-containerContent-template-content {

@@ -1,0 +1,22 @@
+/* Toolbar */
+.area-toolbar {
+  display: flex;
+  gap: 10px;
+}
+.btn-toolbar {
+  background-color: var(--btn-principal);
+  color: var(--btn-principal-txt);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-toolbar:hover:not(:disabled) {
+  background-color: var(--btn-principal-destaque);
+}
+.btn-toolbar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

@@ -11,7 +11,7 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
   z-index: 2004;
   box-shadow: var(--sombra-intensa);
 }
@@ -88,7 +88,7 @@
   font-size: var(--font-xl);
   z-index: 2002;
   touch-action: manipulation;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .floatingButton:hover {
   filter: var(--hover);

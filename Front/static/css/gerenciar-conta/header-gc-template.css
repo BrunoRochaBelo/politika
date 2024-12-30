@@ -2,7 +2,7 @@
 .header-gc-template {
   display: grid;
   align-items: center;
-  text-transform: uppercase;
+  text-transform: lowercase;
   grid: "header-gc-back header-gc-nav header-gc-logout" 45px;
 }
 
@@ -73,7 +73,7 @@
   position: absolute;
   bottom: -2px;
   left: 0;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
 }
 .header-gc-nav-template a:hover {
   filter: var(--hover);

@@ -23,8 +23,8 @@
 .main-financeiro .area-interna-containerContent-template {
   background: none;
   box-shadow: none;
-  max-height: calc(var(--vh, 1vh) * 100 - 16.6rem) !important;
-  transition: max-height 0.3s ease;
+  max-height: calc(var(--vh, 1vh) * 100 - 18rem) !important;
+  transition: max-height 0.3s ease-in-out;
 }
 
 /* RESPONSIVO */
@@ -43,7 +43,7 @@
   .main-financeiro .area-interna-containerContent-template {
     background: none;
     box-shadow: none;
-    max-height: calc(var(--vh, 1vh) * 100 - 15.5rem) !important;
+    max-height: calc(var(--vh, 1vh) * 100 - 16rem) !important;
   }
   .main-financeiro .container-abas-template-header {
     justify-content: center;

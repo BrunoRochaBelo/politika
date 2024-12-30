@@ -8,7 +8,7 @@
     "grupo-small-card-title grupo-small-card-title"
     "grupo-small-card-func grupo-small-card-situacao"
     "grupo-small-card-desc grupo-small-card-desc";
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
   max-height: 300px;
 }
 
@@ -88,7 +88,8 @@
     "grupo-small-card-desc grupo-small-card-desc"
     "grupo-small-card-editar grupo-small-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
   max-height: 500px;
 }
 

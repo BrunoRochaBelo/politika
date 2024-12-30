@@ -154,7 +154,8 @@
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s ease;
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.5s ease-in-out;
   box-sizing: border-box;
 }
 
@@ -172,7 +173,7 @@
 
 .acao-item a,
 .acao-item p {
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .acao-item a {
@@ -210,7 +211,7 @@
 
 .compact .card-info .campo-exibir {
   padding: 4px 10px;
-  transition: background-color 0.3s ease, padding 0.3s ease;
+  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
 .compact .card-info .campo-exibir p {

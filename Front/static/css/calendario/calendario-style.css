@@ -23,7 +23,7 @@
   border: none;
   border-radius: 12px;
   color: var(--txt-titulo-card);
-  transition: padding 0.5s ease, gap 0.5s ease;
+  transition: padding 0.5s ease-in-out, gap 0.5s ease-in-out;
 }
 
 .nav-calendar .item1 {
@@ -35,7 +35,8 @@
   background: var(--btn-filtro);
   border: none;
   box-shadow: var(--sombra-leve);
-  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
   max-height: 100px;
   overflow: hidden;
   opacity: 1;
@@ -48,7 +49,8 @@
   padding: 5px 7px;
   margin-right: 3px;
   box-shadow: var(--sombra-leve);
-  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
   max-height: 100px;
   overflow: hidden;
   opacity: 1;
@@ -118,7 +120,8 @@
   display: grid;
   grid-auto-flow: column;
   gap: 5px;
-  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
 }
 .dia-semana {
   text-align: center;
@@ -127,7 +130,7 @@
   background: var(--btn-filtro);
   border: none;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease-in-out;
   font-size: var(--font-xs);
   font-weight: 300;
   border-radius: 50%;
@@ -203,12 +206,13 @@
 }
 
 .lista-select.nav-calendar {
-  transition: padding 0.3s ease, gap 0.3s ease;
+  transition: padding 0.3s ease-in-out, gap 0.3s ease-in-out;
 }
 
 .lista-select.nav-calendar .item1,
 .lista-select.nav-calendar .item2 {
-  transition: opacity 0.3s ease, transform 0.3s ease, padding 0.3s ease;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
 }
 
 /* Estilos da Agenda - Agora, Passado e Futuro */

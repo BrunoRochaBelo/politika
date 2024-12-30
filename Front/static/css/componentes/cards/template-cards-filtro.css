@@ -5,7 +5,7 @@
   align-content: center;
   text-align: start;
   text-overflow: ellipsis;
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
   max-height: 500px;
 }
 

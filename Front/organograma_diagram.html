@@ -46,10 +46,10 @@
     <section class="main-organograma-section organograma">
       <div class="area-interna-containerContent-template">
         <div class="area-interna-containerContent-template-header">
-          <div class="orgchart-toolbar">
-            <button class="btn-orgchart" id="btnAddNode" disabled>Adicionar Nó</button>
-            <button class="btn-orgchart" id="btnRenameNode" disabled>Renomear Nó</button>
-            <button class="btn-orgchart" id="btnDeleteNode" disabled>Excluir Nó</button>
+          <div class="area-toolbar">
+            <button class="btn-toolbar" id="btnAddNode" disabled>Adicionar Nó</button>
+            <button class="btn-toolbar" id="btnRenameNode" disabled>Renomear Nó</button>
+            <button class="btn-toolbar" id="btnDeleteNode" disabled>Excluir Nó</button>
           </div>
         </div>
         <div class="area-interna-containerContent-template-content">
@@ -263,7 +263,7 @@
       });
       $(document).on("click", function (event) {
         if (!$(event.target).closest("#orgchart-container").length &&
-          !$(event.target).closest(".orgchart-toolbar").length &&
+          !$(event.target).closest(".area-toolbar").length &&
           !$(event.target).closest(".modal-organograma").length) {
           clearSelection();
         }

@@ -25,7 +25,7 @@
   background: none;
   box-shadow: none;
   max-height: calc(var(--vh, 1vh) * 100 - 16.6rem) !important;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease-in-out;
 }
 
 /* RESPONSIVO */

@@ -9,7 +9,7 @@
   grid:
     "tarefa-small-card-title tarefa-small-card-tag"
     "tarefa-small-card-status tarefa-small-card-data";
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
   max-height: 100px;
 }
 
@@ -107,7 +107,8 @@
     "tarefa-small-card-resp tarefa-small-card-resp"
     "tarefa-small-card-editar tarefa-small-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
   max-height: 300px;
 }
 
@@ -172,7 +173,7 @@
     "tarefa-medium-card-title tarefa-medium-card-tag"
     "tarefa-medium-card-status tarefa-medium-card-data"
     "tarefa-medium-card-desc  tarefa-medium-card-desc";
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
   max-height: 240px;
   height: auto;
 }
@@ -283,7 +284,8 @@
     "tarefa-medium-card-resp tarefa-medium-card-resp"
     "tarefa-medium-card-editar tarefa-medium-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
   max-height: 400px;
 }
 

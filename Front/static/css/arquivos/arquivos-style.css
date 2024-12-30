@@ -19,7 +19,7 @@
   background-color: var(--card-bg);
   border-radius: 4px;
   margin-bottom: 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .raiz-tree:hover {
@@ -40,7 +40,7 @@
   user-select: none;
   text-align: left;
   border-left: 3px solid transparent;
-  transition: background-color 0.3s ease, border-left 0.3s ease;
+  transition: background-color 0.3s ease-in-out, border-left 0.3s ease-in-out;
   border-radius: 4px;
   margin-bottom: 5px;
   color: var(--txt-nav);
@@ -107,7 +107,7 @@
 .toggle-icon {
   position: absolute;
   right: 20px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .toggle-icon::before {
@@ -116,7 +116,7 @@
   font-size: 0.9em;
   color: var(--cor-primaria-1);
   transform-origin: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .expanded > .toggle-icon::before {
@@ -130,7 +130,7 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .expanded > .tree-children {
@@ -155,7 +155,7 @@
 .breadcrumbs span {
   cursor: pointer;
   color: var(--cor-primaria-1);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .breadcrumbs span:hover {
@@ -177,7 +177,7 @@
 
 .grid-container.no-padding {
   padding: 0;
-  transition: padding 0.3s ease;
+  transition: padding 0.3s ease-in-out;
 }
 
 /* Cards de Biblioteca e Pasta */
@@ -193,7 +193,7 @@
   box-shadow: var(--sombra-moderada);
   cursor: pointer;
   touch-action: manipulation;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease-in-out;
   color: var(--txt-conteudo-card);
 }
 
@@ -274,7 +274,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -369,7 +369,7 @@
   height: 36px;
   border-radius: 50%;
   border-left-color: var(--cor-primaria-1);
-  animation: spin 1s ease infinite;
+  animation: spin 1s ease-in-out infinite;
   margin: 0 auto 10px;
 }
 
@@ -380,7 +380,7 @@
   height: 24px;
   border-radius: 50%;
   border-left-color: var(--cor-primaria-1);
-  animation: spin 1s ease infinite;
+  animation: spin 1s ease-in-out infinite;
   display: inline-block;
   margin-right: 8px;
 }
@@ -403,7 +403,7 @@
   background-color: var(--card-bg);
   border-radius: 4px;
   margin-bottom: 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .raiz:hover {

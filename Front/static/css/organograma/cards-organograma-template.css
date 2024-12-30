@@ -11,7 +11,7 @@
     "organograma-medium-card-designacao organograma-medium-card-designacao organograma-medium-card-nivel-salarial"
     "organograma-medium-card-nome_titular organograma-medium-card-nome_titular organograma-medium-card-nome_titular";
   grid-template-columns: auto 1fr auto;
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
   max-height: 200px;
   border-radius: 18px;
   flex: 1; /* Ocupa todo o espaço restante */
@@ -172,7 +172,8 @@
     "organograma-medium-card-info-pub  organograma-medium-card-info-pub organograma-medium-card-info-pub"
     "organograma-medium-card-editar organograma-medium-card-editar organograma-medium-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
   max-height: 700px;
 }
 
@@ -282,7 +283,7 @@
     "organograma-large-card-title organograma-large-card-siglaUnidade"
     "organograma-large-card-versao ."
     "organograma-large-card-quantUnidade organograma-large-card-quantUnidade";
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
   max-height: 500px;
 }
 
@@ -357,7 +358,8 @@
     "organograma-large-card-quantUnidade organograma-large-card-quantUnidade"
     "organograma-large-card-editar organograma-large-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
   max-height: 700px;
 }
 

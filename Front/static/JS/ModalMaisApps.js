@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (deltaY > 100) {
         closeModalFunction();
       } else {
-        modalContent.style.transition = "transform 0.5s ease";
+        modalContent.style.transition = "transform 0.5s ease-in-out";
         modalContent.style.transform = "translateY(0)";
       }
       isDragging = false;
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (deltaY > 100) {
         closeModalFunction();
       } else {
-        modalContent.style.transition = "transform 0.5s ease";
+        modalContent.style.transition = "transform 0.5s ease-in-out";
         modalContent.style.transform = "translateY(0)";
       }
       isDragging = false;

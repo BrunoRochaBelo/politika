@@ -27,7 +27,7 @@
   overflow: hidden; /* Para ocultar o overflow geral */
   z-index: 2005;
   box-shadow: var(--sombra-intensa);
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 /* container-areas */

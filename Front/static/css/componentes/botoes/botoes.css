@@ -122,75 +122,6 @@
   filter: var(--hover);
 }
 
-/* Estilo para o BOTÃO FILTRO*/
-.area-filtro {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 10px;
-  text-align: center;
-  align-items: center;
-  justify-content: start;
-  color: var(--txt-conteudo-card);
-  padding: 5px 15px;
-  font-size: var(--font-md);
-  font-weight: 300;
-  border-radius: 25px;
-}
-.btn-filtro-pesq {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  padding: 5px 15px;
-  border-radius: 25px;
-  border: 1px solid var(--card-borda);
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  align-content: start;
-  font-size: var(--font-md);
-  font-weight: 300;
-  box-shadow: var(--sombra-leve);
-}
-.btn-filtro-pesq-title {
-  font-size: var(--font-md);
-  color: var(--txt-conteudo-card);
-  margin-right: 15px;
-}
-/* Estilo para o "x" do BOTÃO FILTRO */
-.remover-filtro {
-  position: absolute;
-  top: 50%;
-  right: 4px;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: var(--txt-subtitulo);
-  font-size: 21px;
-  border: none;
-  border: 1px solid transparent;
-}
-.remover-filtro:hover {
-  color: #c61818;
-  border-radius: 50%;
-  border: 1px solid #c61818;
-}
-.remover-filtro:hover + .btn-filtro-pesq {
-  border: 1px solid var(--txt-subtitulo);
-  box-shadow: 0 0 1px var(--cor-primaria-2), 0 0 2px var(--cor-primaria-2),
-    0 0 3px var(--cor-primaria-2), 0 0 4px var(--cor-primaria-2);
-}
-
-.remover-filtro:active {
-  transform: rotate(45deg) translate(-35%, -35%);
-  color: #c61818;
-  border-radius: 50%;
-  border: 1px solid #c61818;
-}
-
 /* Estilo para o botão "X" fechar"*/
 .close {
   position: absolute;
@@ -233,7 +164,7 @@
   color: var(--txt-titulo-card);
 }
 .voltar {
-  transition: transform 1s ease;
+  transition: transform 1s ease-in-out;
 }
 .voltar:active {
   transform: translateY(2px) scale(0.98);

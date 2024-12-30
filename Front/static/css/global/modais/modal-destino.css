@@ -46,7 +46,7 @@
   position: relative;
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   box-shadow: var(--sombra-intensa);
 }
 
@@ -82,7 +82,7 @@
   padding: 5px;
   color: var(--txt-subtitulo);
   text-decoration: none;
-  transition: gap 0.5s ease;
+  transition: gap 0.5s ease-in-out;
 }
 .modal-destino.hidden-gap {
   gap: 0;
@@ -116,7 +116,7 @@
   background: var(--btn-filtro);
   border: 1px solid var(--borda);
   box-shadow: var(--sombra-moderada);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 .search-input-dest::placeholder {
   color: var(--txt-destaque);
@@ -137,7 +137,8 @@
 .breadcrumb {
   display: block;
   font-size: 0.75rem;
-  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
   max-height: 100px;
   overflow: hidden;
   opacity: 1;

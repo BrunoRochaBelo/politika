@@ -91,7 +91,8 @@
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
-  transition: color 0.3s ease, background-color 0.5s ease, transform 0.5s ease;
+  transition: color 0.3s ease-in-out, background-color 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
 }
 
 #nav1 a:hover,
@@ -114,8 +115,8 @@
   justify-items: center;
   box-shadow: var(--sombra-intensa);
   border: 1px solid var(--borda);
-  transition: background-color 0.5s ease, box-shadow 0.5s ease,
-    transform 0.5s ease;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
   transform: scale(1);
 }
 
@@ -199,8 +200,8 @@
     background-color: var(--bg-principal);
     box-shadow: var(--sombra-moderada);
     border: 1px solid var(--borda);
-    transition: background-color 0.5s ease, box-shadow 0.5s ease,
-      transform 0.5s ease;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
+      transform 0.5s ease-in-out;
     transform: none;
   }
 }

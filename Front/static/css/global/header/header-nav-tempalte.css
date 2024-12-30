@@ -63,7 +63,7 @@
   position: absolute;
   bottom: -2px;
   left: 0;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
 }
 
 .header-nav-template a:hover {

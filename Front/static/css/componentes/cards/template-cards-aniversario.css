@@ -12,7 +12,7 @@
   grid:
     "aniversario-small-card-title aniversario-small-card-title . aniversario-small-card-call"
     /0.5fr 0.5fr 1fr 32px;
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
   max-height: 100px;
 }
 
@@ -118,7 +118,8 @@
     "aniversario-small-card-tipopessoa .  .  aniversario-small-card-call"
     "aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar aniversario-small-card-editar";
   transform: scale(1);
-  transition: max-height 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
   max-height: 300px;
 }
 

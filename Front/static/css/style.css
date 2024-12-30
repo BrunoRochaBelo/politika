@@ -28,9 +28,11 @@
 @import "./utilidades/cores.css";
 
 /* Componentes */
+@import "./componentes/area-info-filtro.css";
 @import "./componentes/listas.css";
 @import "./componentes/marcadores.css";
 @import "./componentes/tabelas.css";
+@import "./componentes/toolbar.css";
 /* Componentes/ cards */
 @import "./componentes/cards/cards.css";
 @import "./componentes/cards/template-cards-aniversario.css";

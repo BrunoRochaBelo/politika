@@ -2,7 +2,7 @@
 .header-organograma-template {
   display: grid;
   align-items: center;
-  text-transform: uppercase;
+  text-transform: lowercase;
   grid-template-areas: "header-organograma-back header-organograma-title header-organograma-logout";
   grid-template-rows: 45px;
   grid-template-columns: auto 1fr auto;

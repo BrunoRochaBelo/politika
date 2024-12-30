@@ -3,7 +3,7 @@
 .card-xs {
   min-height: 30px;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -15,7 +15,7 @@
 .card-s {
   min-height: 35px;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -27,7 +27,7 @@
 .card-m {
   min-height: 50px;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -39,7 +39,7 @@
 .card-l {
   min-height: 120px;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -55,7 +55,7 @@
   width: 135px;
   height: auto;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
@@ -73,7 +73,7 @@
   border-radius: 15px;
   box-sizing: border-box;
   padding: 15px 20px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   opacity: 1;
   transform: translateY(0);
 }
@@ -82,7 +82,7 @@
   width: 184px;
   height: auto;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 15px;
@@ -98,7 +98,7 @@
   width: 100%;
   padding: 0.3rem;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -110,7 +110,7 @@
   border-radius: 6px;
   width: 100%;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;
@@ -121,7 +121,7 @@
 .card-select-m {
   width: 100%;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   padding: 15px 15px;
@@ -142,7 +142,7 @@
   gap: 10px;
   min-height: 50px;
   background-color: var(--card-bg);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
   box-shadow: var(--sombra-moderada);
   border-radius: 6px;

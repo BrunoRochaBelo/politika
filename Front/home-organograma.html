@@ -43,12 +43,19 @@
           <div class="area-interna-containerContent-template">
             <div class="area-interna-containerContent-template-content">
               <ul class="lista-vertical">
-                <li class="area-filtro inactiveFil" id="filtro">
-                  <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
-                  <div class="btn-filtro-pesq">
-                    <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                      <a href="/organograma_list" class="remover-filtro">&times;</a>
-                    </p>
+                <li class="area-filtro" id="filtro">
+                  <div class="filtro">
+                    <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
+                    <div class="btn-filtro-pesq">
+                      <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
+                        <a href="/organograma_list" class="remover-filtro">&times;</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="area-toolbar">
+                    <button class="btn-toolbar" id="btnAddNode" disabled>Adicionar</button>
+                    <button class="btn-toolbar" id="btnRenameNode" disabled>Renomear</button>
+                    <button class="btn-toolbar" id="btnDeleteNode" disabled>Excluir</button>
                   </div>
                 </li>
                 <li class="secao-interna-template">

@@ -16,7 +16,7 @@
   justify-content: center;
   margin-right: 10px;
   color: var(--borda);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .toggle-btn.collapsed .arrow-org {
@@ -24,7 +24,7 @@
 }
 
 .arrow-org {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
   width: 24px;
   height: 24px;
   transform: rotate(90deg); /* Aponta para baixo por padrão */
@@ -54,7 +54,7 @@
   padding-left: 40px;
   position: relative;
   max-height: 100000px; /* Valor grande para permitir a expansão */
-  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  transition: max-height 0.5s ease-in-out-out, opacity 0.5s ease-in-out-out;
   width: 100%;
   opacity: 1;
 }

@@ -11,7 +11,7 @@
   align-items: flex-end;
   background: var(--bg-overlay);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .modal-mais-apps.show {
@@ -36,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   transform: translateY(100%);
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
   margin-bottom: 60px;
   position: relative;
   z-index: 1999; /* Começa com z-index abaixo da header-nav */
@@ -86,7 +86,7 @@
 .home-header-nav.modal-open {
   background-color: var(--modal-bg);
   border: none;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .modal-mais-apps-content::before {
@@ -106,12 +106,12 @@
 
 /* Transição para quando o conteúdo do modal retorna à posição inicial */
 .modal-mais-apps-content.reset-transform {
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
   transform: translateY(0);
 }
 
 /* Estilos adicionais para o estado 'hide' */
 .modal-mais-apps.hide {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease-in-out;
 }

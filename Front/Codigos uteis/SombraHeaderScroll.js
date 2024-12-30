@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Adiciona a classe de sombra ao elemento
       headerElement.classList.add(shadowClass);
       // Altera a transição e a cor do elemento de pesquisa
-      headerSearchElement.style.transition = "color 0.3s ease";
+      headerSearchElement.style.transition = "color 0.3s ease-in-out";
       headerSearchElement.style.color = textColorVar;
       // Adiciona o z-index ao elemento
       headerElement.style.zIndex = "1005";
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Remove a classe de sombra do elemento
       headerElement.classList.remove(shadowClass);
       // Altera a transição e a cor do elemento de pesquisa
-      headerSearchElement.style.transition = "color 0.3s ease";
+      headerSearchElement.style.transition = "color 0.3s ease-in-out";
       headerSearchElement.style.color = textColorVar;
       // Remove o z-index do elemento
       headerElement.style.zIndex = "";
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Adiciona a classe de sombra ao elemento
       homeHeaderTemplate.classList.add("box-shadow-active");
       // Altera a transição e a cor do título
-      homeHeaderTitle.style.transition = "color 0.3s ease";
+      homeHeaderTitle.style.transition = "color 0.3s ease-in-out";
       homeHeaderTitle.style.color = "var(--cor-secundaria-1)";
       // Adiciona o z-index ao elemento
       homeHeaderTemplate.style.zIndex = "1005";
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Remove a classe de sombra do elemento
       homeHeaderTemplate.classList.remove("box-shadow-active");
       // Altera a transição e a cor do título
-      homeHeaderTitle.style.transition = "color 0.3s ease";
+      homeHeaderTitle.style.transition = "color 0.3s ease-in-out";
       homeHeaderTitle.style.color = "var(--cor-secundaria-1)";
       // Remove o z-index do elemento
       homeHeaderTemplate.style.zIndex = "";

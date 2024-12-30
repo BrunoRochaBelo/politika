@@ -180,6 +180,7 @@
   margin-top: 5px;
   border: 1px solid transparent;
   color: var(--link);
+  text-transform: lowercase;
 }
 
 .modal-content-template-list-op {
@@ -216,13 +217,14 @@
   margin: 0;
   justify-content: stretch;
   min-width: 285px;
+  text-transform: lowercase;
 }
 
 .modalMenu-list li {
   display: flex;
   align-items: center;
   padding: 15px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
   border-radius: 6px;
 }
 

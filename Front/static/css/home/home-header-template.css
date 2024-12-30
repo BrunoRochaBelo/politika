@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: stretch;
   gap: 25px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   grid:
     "header-menu header-notification home-header-nav"
     / auto auto 1fr;

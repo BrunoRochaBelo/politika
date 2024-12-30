@@ -7,29 +7,6 @@
   border: none !important;
 }
 
-/* Toolbar do OrgChart */
-.orgchart-toolbar {
-  display: flex;
-  gap: 10px;
-}
-.btn-orgchart {
-  background-color: #1e90ff;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-.btn-orgchart:hover:not(:disabled) {
-  background-color: #309cff;
-}
-.btn-orgchart:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
 /* Container do OrgChart */
 #orgchart-container {
   width: auto;

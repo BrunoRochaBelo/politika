@@ -21,8 +21,8 @@
 }
 
 .main-organograma-section.organograma .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 4.5rem) !important;
-  transition: max-height 0.3s ease;
+  height: calc(var(--vh, 1vh) * 100 - 4.3rem) !important;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .main-organograma .container-template,
@@ -34,6 +34,19 @@
   padding: 0;
   box-shadow: none;
 }
+
+.main-organograma-section.organograma .container-template-content {
+  border-top: none;
+  border-radius: 23px;
+}
+
+.main-organograma-section.organograma
+  .area-interna-containerContent-template-header {
+  padding: 10px;
+  align-content: center;
+  align-items: center;
+}
+
 .main-organograma .lista-vertical {
   gap: 15px;
 }
@@ -66,18 +79,9 @@
     border-bottom-left-radius: 23px;
     border-bottom-right-radius: 23px;
   }
-}
 
-.main-organograma-section.organograma .container-template-content {
-  border-top: none;
-  border-radius: 23px;
-}
-.main-organograma-section.organograma .area-interna-containerContent-template {
-  max-height: calc(var(--vh, 1vh) * 100 - 4rem) !important;
-}
-.main-organograma-section.organograma
-  .area-interna-containerContent-template-header {
-  padding: 10px;
-  align-content: center;
-  align-items: center;
+  .main-organograma-section.organograma
+    .area-interna-containerContent-template {
+    height: calc(var(--vh, 1vh) * 100 - 4rem) !important;
+  }
 }

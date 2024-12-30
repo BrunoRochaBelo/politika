@@ -5,7 +5,8 @@
   overflow: hidden;
   transform: scaleY(0);
   transform-origin: top;
-  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+    transform 0.4s ease-in-out;
 }
 
 .session.active {
@@ -24,8 +25,8 @@
   border: 1px solid var(--card-borda);
   box-shadow: var(--sombra-moderada);
   box-sizing: border-box;
-  transition: background-color 0.3s ease, padding 0.3s ease,
-    box-shadow 0.3s ease, margin 0.3s ease;
+  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out, margin 0.3s ease-in-out;
   margin: 0 10px;
 }
 
@@ -48,14 +49,14 @@
 .card-session:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-  transition: visibility 0.2s ease, opacity 0.2s ease;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .card-session.active .tooltip .tooltiptext {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: visibility 0.2s ease, opacity 0.2s ease;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 /* Estilos complementares */
@@ -103,7 +104,7 @@
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 5px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
   position: absolute;
   right: 12px;
   top: 50%;

@@ -39,7 +39,7 @@
   border-top: 5px solid var(--cor-primaria-3);
   margin-left: 5px;
   border-radius: 25%;
-  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+  transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
 }
 
 .secao-interna-template-header .btn-recuar-expandir.up::after {

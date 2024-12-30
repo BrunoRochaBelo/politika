@@ -94,7 +94,7 @@ a::after {
   position: absolute;
   bottom: -2px;
   left: 0;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
 }
 a:hover::after {
   width: 100%;
@@ -106,7 +106,7 @@ a:hover {
   display: inline-block;
   color: var(--destaque-1);
   font: 500 1.5rem/1.5 "Poppins", sans-serif;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .link::after {
   content: "";
@@ -131,7 +131,7 @@ span {
   z-index: 1001;
   background: transparent;
   backdrop-filter: blur(4px);
-  transition: top 0.3s ease, background 0.3s ease;
+  transition: top 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 .nav-menu.scrolled {
   background: #080e1922;
@@ -626,7 +626,7 @@ button {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 .btn-principal {
   background-color: #007bff;
@@ -836,7 +836,7 @@ button:hover {
     z-index: 1001;
     background: transparent;
     backdrop-filter: blur(4px);
-    transition: top 0.3s ease;
+    transition: top 0.3s ease-in-out;
   }
   .content {
     margin-top: 45px;
