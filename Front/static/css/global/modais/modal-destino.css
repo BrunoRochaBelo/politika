@@ -114,8 +114,9 @@
   font-size: var(--font-md);
   font-weight: 400;
   background: var(--btn-filtro);
-  border: 1px solid var(--card-aberto-bg);
-  box-shadow: var(--sombra-leve);
+  border: 1px solid var(--borda);
+  box-shadow: var(--sombra-moderada);
+  transition: all 0.3s ease;
 }
 .search-input-dest::placeholder {
   color: var(--txt-destaque);

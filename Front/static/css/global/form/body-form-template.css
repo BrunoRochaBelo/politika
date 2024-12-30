@@ -91,6 +91,10 @@
   padding: 0;
 }
 
+.main-form .nav {
+  background: var(--form-card-bg);
+}
+
 .main-form #nav1 a.indicador-2,
 .main-form #nav2 a.indicador-2,
 .main-form #nav3 a.indicador-2 {
@@ -99,14 +103,14 @@
 
 .main-form .card-session {
   background: var(--form-card-bg);
-  border: 1px solid var(--card-borda);
+  border: 1px solid var(--form-card-bg);
   box-shadow: var(--sombra-leve);
 }
 .main-form .card-session.active {
   padding: 7px 0px;
   margin: 1px;
   background: var(--form-card-aberto-bg);
-  border: 1px solid var(--card-borda);
+  border: 1px solid var(--form-card-bg);
   box-shadow: var(--sombra-moderada);
 }
 .main-form .card-session .arrow,
@@ -204,5 +208,9 @@
     width: 70%;
     margin: 0px 10px 10px 10px;
     box-shadow: var(--sombra-intensa);
+  }
+
+  .main-form .nav {
+    background: var(--card-bg);
   }
 }

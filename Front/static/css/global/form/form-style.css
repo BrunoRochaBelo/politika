@@ -71,6 +71,7 @@ fieldset {
   background: var(--input-empty-bg);
   border: 1px solid var(--input-border);
   border-radius: 45px;
+  box-shadow: var(--sombra-leve);
   transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 .campo textarea[required],
@@ -285,7 +286,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  border: 2px solid var(--input-filled-bg);
+  border: 2px solid var(--input-btn);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -323,7 +324,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 .checkbox-button-group label {
   padding: 10px 20px;
-  border: 2px solid var(--input-filled-bg);
+  border: 2px solid var(--input-btn);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -428,35 +429,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .campo input[required].success,
 .campo textarea[required].success,
 .campo select[required].success {
-  border: 1px solid transparent;
+  border: 1px solid var(--input-success-border);
   background: var(--input-filled-bg) !important;
   color: var(--input-txt) !important;
 }
 .card.error {
   border: 1px solid var(--card-error-border);
   background-color: var(--card-error-background);
-}
-
-.error-messages {
-  border: 1px solid #e74c3c;
-  background-color: #fbeee6;
-  color: #e74c3c;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-}
-.success-message {
-  border: 1px solid #2ecc71;
-  background-color: #eafaf1;
-  color: #2ecc71;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-}
-.error-messages p,
-.success-message p {
-  margin: 0;
-  font-size: var(--font-sm);
 }
 
 .input-valid {

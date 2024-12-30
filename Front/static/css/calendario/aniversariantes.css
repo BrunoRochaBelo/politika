@@ -9,11 +9,10 @@
   background-color: var(--btn-secundario);
   color: var(--btn-secundario-txt);
   box-shadow: var(--sombra-moderada);
-  transition: background-color 0.25s, filter 0.25s;
 }
 .aniversario-small-card-editar .btn-outline-principal:hover {
   filter: var(--hover);
-  background-color: var(--btn-secundario-hover);
+  background: var(--btn-secundario-hover);
 }
 
 /* Área de aniversariantes */

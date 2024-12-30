@@ -47,7 +47,7 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   border: 1px solid transparent;
-  box-shadow: var(--sombra-leve);
+  box-shadow: var(--sombra-moderada);
   margin-right: 1.25rem;
 }
 
@@ -71,12 +71,13 @@
   padding: 0.625rem;
   cursor: pointer;
   width: 100%;
-  background: transparent;
+  background: var(--cor-apoio-2);
   color: var(--txt-titulo-card);
-  border: 1px solid transparent;
+  border: 1px solid var(--barra-pesquisa-bg);
   font-size: var(--font-sm);
   font-weight: 400;
   caret-color: var(--cor-secundaria-2);
+  transform: all 0.3s ease-in-out;
 }
 .search-button {
   background: transparent;
@@ -102,9 +103,9 @@
   color: var(--txt-nav);
 }
 .header-search:hover {
-  background: var(--card-hover);
   box-shadow: 0 0 1px var(--shadow-destaque), 0 0 2px var(--shadow-destaque);
   border: 1px solid var(--btn-principal-destaque);
+  transform: all 0.3s ease-in-out;
 }
 .header-search:hover .search-input::placeholder {
   color: var(--shadow-destaque);
@@ -114,6 +115,8 @@
   background: var(--card-hover);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border: 1px solid transparent;
+  transform: all 0.3s ease-in-out;
 }
 
 .search-input-container:focus-within {
