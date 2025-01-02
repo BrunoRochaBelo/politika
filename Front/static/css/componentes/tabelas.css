@@ -132,6 +132,10 @@
 }
 
 /* Estilo da tabela de histórico */
+.tabela-historico img {
+  pointer-events: all !important;
+}
+
 .tabela-historico {
   width: auto;
   background: none;

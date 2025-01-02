@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (navElement) navElement.style.transform = "scale(0.85)";
       if (mainContainer)
         mainContainer.style.maxHeight =
-          "calc(var(--vh, 1vh) * 100 - 11.285rem) !important";
+          "calc(var(--vh, 1vh) * 100 - 11.71rem) !important";
       if (headerContainer) headerContainer.style.padding = "3px";
     } else {
       // Para telas maiores
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (navElement) navElement.style.transform = "scale(0.9)";
       if (mainContainer)
         mainContainer.style.maxHeight =
-          "calc(var(--vh, 1vh) * 100 - 12.85rem) !important";
+          "calc(var(--vh, 1vh) * 100 - 13.54rem) !important";
     }
   };
 

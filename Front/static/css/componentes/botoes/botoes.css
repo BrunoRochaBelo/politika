@@ -134,8 +134,7 @@
   font-weight: 400;
   cursor: pointer;
 }
-.close:hover,
-.close:focus {
+.close:hover {
   background: #c61818;
   cursor: pointer;
   color: rgb(227, 227, 227);
@@ -157,8 +156,7 @@
   border-radius: 50px;
   font-size: 26px;
 }
-.voltar:hover,
-.voltar:focus {
+.voltar:hover {
   background: #c61818;
   cursor: pointer;
   color: var(--txt-titulo-card);

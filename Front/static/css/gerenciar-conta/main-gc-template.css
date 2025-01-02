@@ -24,8 +24,18 @@
 .main-gc .area-interna-containerContent-template {
   background: none;
   box-shadow: none;
-  max-height: calc(var(--vh, 1vh) * 100 - 16.6rem) !important;
+  max-height: calc(var(--vh, 1vh) * 100 - 17.3rem) !important;
   transition: max-height 0.3s ease-in-out;
+}
+.container-abas-template {
+  box-shadow: none;
+  border-radius: 23px;
+}
+.main-gc .container-template-content,
+.main-gc .container-abas-template-content {
+  border-radius: 0px;
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 
 /* RESPONSIVO */
@@ -44,18 +54,12 @@
   .main-gc .area-interna-containerContent-template {
     background: none;
     box-shadow: none;
-    max-height: calc(var(--vh, 1vh) * 100 - 15.5rem) !important;
+    max-height: calc(var(--vh, 1vh) * 100 - 16rem) !important;
   }
   .main-gc .container-abas-template-header {
     justify-content: center;
     background: var(--container-bg);
     border-top-left-radius: 23px;
     border-top-right-radius: 23px;
-  }
-  .main-gc .container-template-content,
-  .main-gc .container-abas-template-content {
-    border-radius: 0px;
-    border-bottom-left-radius: 23px;
-    border-bottom-right-radius: 23px;
   }
 }

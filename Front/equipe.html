@@ -26,20 +26,30 @@
     <ul class="header-gc-template">
       <li class="header-gc-back">
         <a href="index.html" class="header-gc-back">
-          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Voltar para a página anterior">
         </a>
       </li>
       <li class="header-gc-nav">
         <nav class="header-gc-nav">
           <ul class="header-gc-nav-template">
-            <li class="dashboard"><a href="home-admin.html"><img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
+            <li class="dashboard">
+              <a href="home-admin.html">
+                <img src="./static/imagens/icones/dashboard.svg" alt="Dashboard Icon">
                 <p>Dashboard</p>
-            <li class="perfil"><a href="perfil.html"><img src="./static/imagens/icones/perfil.svg" alt="perfil Icon">
+              </a>
+            </li>
+            <li class="perfil">
+              <a href="perfil.html">
+                <img src="./static/imagens/icones/perfil.svg" alt="Perfil Icon">
                 <p>Perfil</p>
-              </a></li>
-            <li class="equipe indicador"><a href="equipe.html"><img src="./static/imagens/icones/equipe-select.svg" alt="equipe Icon">
+              </a>
+            </li>
+            <li class="equipe indicador">
+              <a href="equipe.html">
+                <img src="./static/imagens/icones/equipe-select.svg" alt="Equipe Icon">
                 <p>Equipe</p>
-              </a></li>
+              </a>
+            </li>
           </ul>
         </nav>
       </li>
@@ -49,16 +59,289 @@
     </ul>
   </header>
 
+  <!-- Conteúdo principal -->
   <main class="main-gc main-gc-template">
-    <section class="main-gc-section">
-      <ul class="lista-vertical-alt">
+    <section class="main-gc-section lista-vertical-alt">
+      <div class="gc-team-management-container">
+        <h2>Gerenciar Equipe</h2>
 
-      </ul>
+        <!-- Descrição dos perfis de acesso -->
+        <div class="gc-team-role-info">
+          <h3>Perfis de Acesso</h3>
+          <ul>
+            <li><strong>Cadastrador:</strong> Apenas para incluir novos contatos.</li>
+            <li><strong>Staf:</strong> Pode criar novos contatos, ver todos os contatos, adicionar e ver agenda.</li>
+            <li><strong>Administrador:</strong> Faz o CRUD completo em contatos, agenda e pleitos.</li>
+          </ul>
+        </div>
+
+        <!-- Formulário para adicionar membro -->
+        <section class="gc-team-form-section">
+          <h3>Adicionar Novo Integrante</h3>
+          <form id="gcTeamForm" class="gc-team-form">
+            <div>
+              <label for="inputNome">Nome do Integrante <span style="color: #d93025;">*</span></label>
+              <input type="text" id="inputNome" name="inputNome" placeholder="Insira o nome" required />
+              <p class="gc-error-message" id="nomeErrorMsg" style="display: none;">Por favor, insira um nome válido.</p>
+            </div>
+
+            <div>
+              <label for="inputEmail">E-mail <span style="color: #d93025;">*</span></label>
+              <input type="email" id="inputEmail" name="inputEmail" placeholder="exemplo@dominio.com" required />
+              <p class="gc-error-message" id="emailErrorMsg" style="display: none;">Insira um e-mail válido.</p>
+            </div>
+
+            <div>
+              <label for="selectPerfil">Perfil de Acesso <span style="color: #d93025;">*</span></label>
+              <select id="selectPerfil" name="selectPerfil" required>
+                <option value="" disabled selected>Selecione o Perfil</option>
+                <option value="Cadastrador">Cadastrador</option>
+                <option value="Staf">Staf</option>
+                <option value="Administrador">Administrador</option>
+              </select>
+              <p class="gc-error-message" id="perfilErrorMsg" style="display: none;">Escolha um perfil.</p>
+            </div>
+
+            <button type="submit">Adicionar Membro</button>
+          </form>
+        </section>
+
+        <!-- Lista de membros -->
+        <div class="gc-team-list">
+          <h3>Membros da Equipe</h3>
+          <table id="gcTeamTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Perfil</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Linhas inseridas dinamicamente via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- Modal para editar perfil -->
+  <div class="gc-team-edit-modal-overlay" id="editModalOverlay">
+    <div class="gc-team-edit-modal">
+      <span class="gc-team-edit-modal-close" id="editModalClose">&times;</span>
+      <h4>Editar Perfil de Acesso</h4>
+      <input type="hidden" id="editIndex">
+      <div>
+        <label for="editPerfil">Novo Perfil</label>
+        <select id="editPerfil">
+          <option value="Cadastrador">Cadastrador</option>
+          <option value="Staf">Staf</option>
+          <option value="Administrador">Administrador</option>
+        </select>
+      </div>
+      <div class="gc-team-edit-modal-actions">
+        <button id="btnSaveEdit" class="btn-edit">Salvar</button>
+        <button id="btnCancelEdit" class="btn-remove">Cancelar</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Elemento para mostrar feedback (toast) -->
+  <div id="gcToast" class="gc-toast">Ação realizada com sucesso!</div>
+
+  <!-- Scripts -->
+  <script>
+    let teamMembers = [];
+
+    // Elementos do DOM
+    const gcTeamForm = document.getElementById('gcTeamForm');
+    const gcTeamTableBody = document.querySelector('#gcTeamTable tbody');
+    const editModalOverlay = document.getElementById('editModalOverlay');
+    const editModalClose = document.getElementById('editModalClose');
+    const editPerfil = document.getElementById('editPerfil');
+    const editIndex = document.getElementById('editIndex');
+    const gcToast = document.getElementById('gcToast');
+
+    // Erros
+    const nomeErrorMsg = document.getElementById('nomeErrorMsg');
+    const emailErrorMsg = document.getElementById('emailErrorMsg');
+    const perfilErrorMsg = document.getElementById('perfilErrorMsg');
+
+    // ======================
+    // Funções de Validação
+    // ======================
+    function isValidName(name) {
+      // Por simplicidade, validar se possui ao menos 3 caracteres
+      return name && name.length >= 3;
+    }
+
+    function isValidEmail(email) {
+      // Regex simples para validação de e-mail
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // ======================
+    // Funções Modal Edição
+    // ======================
+    function openEditModal(index) {
+      editModalOverlay.style.display = 'flex';
+      editIndex.value = index;
+      editPerfil.value = teamMembers[index].perfil;
+    }
+
+    function closeEditModal() {
+      editModalOverlay.style.display = 'none';
+    }
+
+    editModalClose.addEventListener('click', closeEditModal);
+    document.getElementById('btnCancelEdit').addEventListener('click', closeEditModal);
+
+    // ======================
+    // Função para renderizar tabela
+    // ======================
+    function renderTeamTable() {
+      gcTeamTableBody.innerHTML = '';
+
+      teamMembers.forEach((member, index) => {
+        const row = document.createElement('tr');
+
+        const tdNome = document.createElement('td');
+        const tdEmail = document.createElement('td');
+        const tdPerfil = document.createElement('td');
+        const tdAcoes = document.createElement('td');
+
+        tdNome.textContent = member.nome;
+        tdEmail.textContent = member.email;
+        tdPerfil.textContent = member.perfil;
+
+        const btnEdit = document.createElement('button');
+        btnEdit.classList.add('btn-edit');
+        btnEdit.textContent = 'Editar';
+        btnEdit.addEventListener('click', () => openEditModal(index));
+
+        const btnRemove = document.createElement('button');
+        btnRemove.classList.add('btn-remove');
+        btnRemove.textContent = 'Remover';
+        btnRemove.addEventListener('click', () => removeMember(index));
+
+        tdAcoes.appendChild(btnEdit);
+        tdAcoes.appendChild(btnRemove);
+
+        row.appendChild(tdNome);
+        row.appendChild(tdEmail);
+        row.appendChild(tdPerfil);
+        row.appendChild(tdAcoes);
+
+        gcTeamTableBody.appendChild(row);
+      });
+    }
+
+    // ======================
+    // Funções CRUD
+    // ======================
+    function addMember(nome, email, perfil) {
+      teamMembers.push({ nome, email, perfil });
+      renderTeamTable();
+      showToast('Membro adicionado com sucesso!');
+    }
+
+    function removeMember(index) {
+      teamMembers.splice(index, 1);
+      renderTeamTable();
+      showToast('Membro removido.');
+    }
+
+    function editMember(index, newPerfil) {
+      teamMembers[index].perfil = newPerfil;
+      renderTeamTable();
+      showToast('Perfil atualizado.');
+    }
+
+    // ======================
+    // Formulário: Adicionar Membro
+    // ======================
+    gcTeamForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // Lê valores
+      const nome = document.getElementById('inputNome').value.trim();
+      const email = document.getElementById('inputEmail').value.trim();
+      const perfil = document.getElementById('selectPerfil').value;
+
+      // Reseta mensagens de erro
+      nomeErrorMsg.style.display = 'none';
+      emailErrorMsg.style.display = 'none';
+      perfilErrorMsg.style.display = 'none';
+
+      // Validações
+      if (!isValidName(nome)) {
+        nomeErrorMsg.style.display = 'block';
+        document.getElementById('inputNome').focus();
+        return;
+      }
+      if (!isValidEmail(email)) {
+        emailErrorMsg.style.display = 'block';
+        document.getElementById('inputEmail').focus();
+        return;
+      }
+      if (!perfil) {
+        perfilErrorMsg.style.display = 'block';
+        document.getElementById('selectPerfil').focus();
+        return;
+      }
+
+      addMember(nome, email, perfil);
+      gcTeamForm.reset();
+    });
+
+    // ======================
+    // Botão Salvar no Modal
+    // ======================
+    document.getElementById('btnSaveEdit').addEventListener('click', () => {
+      const index = parseInt(editIndex.value, 10);
+      const newPerfil = editPerfil.value;
+
+      if (!isNaN(index)) {
+        editMember(index, newPerfil);
+        closeEditModal();
+      }
+    });
+
+    // ======================
+    // Toast: Mensagem de Feedback
+    // ======================
+    let toastTimeout;
+    function showToast(message) {
+      gcToast.textContent = message;
+      gcToast.classList.add('show');
+
+      // Limpa timeout anterior
+      if (toastTimeout) {
+        clearTimeout(toastTimeout);
+      }
+      toastTimeout = setTimeout(() => {
+        gcToast.classList.remove('show');
+      }, 3000); // 3 segundos
+    }
+
+    // ======================
+    // Logout Simulado
+    // ======================
+    function logout() {
+      alert('Logout simulado. Encerrar sessão...');
+      // Implementar lógica real de logout conforme necessário
+    }
+  </script>
+
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/ManipularHistorico.js" defer></script>
 
 </body>
 

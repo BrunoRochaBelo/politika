@@ -105,8 +105,7 @@ button.delete {
   font-weight: 400;
 }
 
-.conta-corrente-close-button:hover,
-.conta-corrente-close-button:focus {
+.conta-corrente-close-button:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;

@@ -100,6 +100,8 @@
 @import "./gerenciar-conta/header-gc-template.css";
 /* gerenciar-conta/ home-admin */
 @import "./gerenciar-conta/home-admin/home-admin-style.css";
+/* gerenciar-conta/ equipe */
+@import "./gerenciar-conta/equipe/equipe-style.css";
 /* gerenciar-conta/ Perfil */
 @import "./gerenciar-conta/perfil/perfil-style.css";
 
