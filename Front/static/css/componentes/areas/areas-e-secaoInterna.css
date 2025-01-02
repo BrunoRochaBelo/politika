@@ -33,7 +33,6 @@
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
   border-top: 1px solid var(--bg-principal);
-  padding: 20px 0px 0px 0px;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
 }

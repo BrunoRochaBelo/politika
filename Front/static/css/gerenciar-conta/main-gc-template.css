@@ -24,18 +24,22 @@
 .main-gc .area-interna-containerContent-template {
   background: none;
   box-shadow: none;
-  max-height: calc(var(--vh, 1vh) * 100 - 17.3rem) !important;
+  max-height: calc(var(--vh, 1vh) * 100 - 8.5rem) !important;
   transition: max-height 0.3s ease-in-out;
 }
 .container-abas-template {
   box-shadow: none;
   border-radius: 23px;
 }
+.main-gc .container-template {
+  box-shadow: none;
+}
 .main-gc .container-template-content,
 .main-gc .container-abas-template-content {
   border-radius: 0px;
   border-bottom-left-radius: 23px;
   border-bottom-right-radius: 23px;
+  box-shadow: none;
 }
 
 /* RESPONSIVO */
