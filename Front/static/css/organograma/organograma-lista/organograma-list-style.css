@@ -1,11 +1,52 @@
-/* cards.css */
+/* ========================= */
+/* ====== ORG-LIST CSS ====== */
+/* ========================= */
+
+/* Classe para ocultar completamente sublistas */
+.org-sublist.hidden {
+  display: none;
+}
+
+/* Classe para iniciar a transição de colapso */
+.org-sublist.collapsing {
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Classe para iniciar a transição de expansão */
+.org-sublist.expanding {
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  max-height: 10000px; /* Valor suficientemente grande para permitir expansão */
+  opacity: 1;
+}
+
+/* Sublistas (filhos) começam visíveis por padrão, a menos que tenham a classe 'hidden' */
+.org-sublist {
+  padding-left: 30px;
+  position: relative;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  max-height: 10000px; /* Valor suficientemente grande para permitir expansão */
+  opacity: 1;
+}
+
+/* Linha vertical à esquerda conectando os subitens */
+.org-sublist::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 1px;
+  height: 100%;
+  background-color: var(--borda);
+  z-index: 0;
+}
 
 /* Estilos para o container que engloba o card e o toggle */
 .container-org-item {
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 10px; /* Espaçamento entre os itens */
 }
 
 /* Estilos para o botão de toggle */
@@ -19,10 +60,12 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.toggle-btn.collapsed .arrow-org {
-  transform: rotate(0deg); /* Aponta para a direita quando colapsado */
+/* Rotação da seta quando colapsada */
+.toggle-btn.rotated .arrow-org {
+  transform: rotate(0deg); /* Seta apontando para a direita */
 }
 
+/* Estilos para a seta */
 .arrow-org {
   transition: transform 0.3s ease-in-out;
   width: 24px;
@@ -31,134 +74,101 @@
   fill: var(--borda);
 }
 
-/* list.css */
+/* ========================= */
+/* ====== LIST.CSS ====== */
+/* ========================= */
 
-/* Estilo geral da lista do organograma */
+/* Container para a org-list e sombra */
+.org-list-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilos para a org-list */
 .org-list {
   list-style: none;
-  margin: 20px;
-  color: #333;
+  margin: 0 20px;
   position: relative;
   z-index: 1;
   overflow: auto;
+  cursor: grab;
+  padding-bottom: 10px;
 }
 
-/* Estilo dos itens da lista */
+/* Pseudo-elemento para a sombra do lado esquerdo */
+.org-list-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30px; /* Ajuste a largura conforme necessário */
+  pointer-events: none; /* Permite interações com o conteúdo abaixo */
+  z-index: 2;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease;
+}
+
+/* Classe para mostrar a sombra do lado esquerdo */
+.org-list-container.shadow-left::before {
+  opacity: 1;
+}
+
+/* Cursor durante o arrasto */
+.org-list.active {
+  cursor: grabbing;
+  user-select: none; /* Previne a seleção de texto durante o arrasto */
+}
+
+/* Estilos para os itens da org-list */
 .org-item {
   position: relative;
   margin: 20px 0;
 }
 
-/* Conexão vertical */
-.org-sublist {
-  padding-left: 40px;
-  position: relative;
-  max-height: 100000px; /* Valor grande para permitir a expansão */
-  transition: max-height 0.5s ease-in-out-out, opacity 0.5s ease-in-out-out;
-  width: 100%;
-  opacity: 1;
+.org-list > .org-item:first-child {
+  margin-top: 10px;
 }
 
-.org-sublist.collapsed {
-  max-height: 0;
-  opacity: 0;
-}
-
-/* Linha vertical que conecta os subitens */
-.org-sublist::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 12px;
-  width: 1px; /* Linha mais fina */
-  height: 100%;
-  background-color: var(--borda); /* Utiliza a variável de cor */
-  z-index: 0; /* Garante que a linha esteja abaixo da seta */
-}
-
-/* Hover e Focus Effects */
+/* Hover e Focus Effects (opcional) */
 .organograma-medium-card:hover {
   transform: translateY(-4px);
 }
 
-/* Cores alternadas para melhor visualização */
-/*
-.org-item:nth-child(odd) .organograma-medium-card {
-  background-color: #f9f9f9;
-}
-
-.org-item:nth-child(even) .organograma-medium-card {
-  background-color: #eef9f1;
-}
-
-.organograma-medium-card:focus-within {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-*/
-
-/* Responsividade: Ajuste para telas menores */
+/* Responsividade (exemplo) */
 @media (max-width: 768px) {
   .org-list {
-    margin: 15px;
+    margin: 0 15px;
+    margin-left: 5px;
   }
-
   .org-sublist {
-    padding-left: 30px;
+    padding-left: 20px;
   }
-
   .org-sublist::before {
     left: 10px;
   }
-
-  .organograma-medium-card {
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .organograma-medium-card-nome_unidade {
-    font-size: var(--font-md);
-  }
-
-  .organograma-medium-card-nivel-nivel-hierarquia {
-    width: 24px;
-    height: 24px;
-    font-size: var(--font-sm);
-    margin-right: 8px;
-  }
-
   .arrow-org {
     width: 24px;
     height: 24px;
-    transform: rotate(90deg); /* Aponta para baixo por padrão */
+  }
+  .org-list-container::before {
+    width: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .org-list {
-    margin: 10px;
+    margin: 0 10px;
   }
-
-  .organograma-medium-card {
-    padding: 6px 10px;
-  }
-
-  .organograma-medium-card-nome_unidade {
-    font-size: var(--font-sm);
-  }
-
-  .organograma-medium-card-nivel-nivel-hierarquia {
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
-    margin-right: 6px;
-  }
-
   .toggle-btn {
     margin-right: 5px;
   }
-
   .arrow-org {
     width: 20px;
     height: 20px;
+  }
+  .org-list-container::before {
+    width: 15px;
   }
 }

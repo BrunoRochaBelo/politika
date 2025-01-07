@@ -5,9 +5,12 @@
   width: 100% !important;
   min-height: 100vh !important;
   border: none !important;
+
+  /* Garante que possamos manipular pan/zoom via transform sem deslocar origem */
+  transform-origin: 0 0 !important;
 }
 
-/* Container do OrgChart */
+/* Container do OrgChart (onde faremos pinch manual e rolagem) */
 #orgchart-container {
   width: auto;
   height: 83vh;
@@ -16,6 +19,14 @@
   position: relative;
   overflow: auto;
   background-color: var(--card-bg);
+
+  /* Necessário para capturar pinch e scroll sem o navegador interceptar.
+     - "none" permite que nós controlemos o zoom/pan manual
+     - Se desejar permitir rolagem vertical, pode experimentar 'pan-y' etc.
+  */
+  touch-action: none;
+  /* Para iOS Safari, às vezes é preciso isso também: */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Nó do OrgChart */
@@ -45,18 +56,14 @@
 .orgchart .lines .downLine {
   background-color: #1e90ff !important;
 }
-
 .orgchart .lines .rightLine,
 .orgchart .lines .leftLine {
   border-color: transparent !important;
 }
 .orgchart .lines .rightLine.topLine {
-  /*border-radius: 0 6px 0 0 !important;*/
   border-color: #1e90ff !important;
 }
-
 .orgchart .lines .leftLine.topLine {
-  /* border-radius: 6px 0 0 0 !important;*/
   border-color: #1e90ff !important;
 }
 
@@ -100,12 +107,10 @@
     transform: scale(1);
   }
 }
-
 .modal-organograma-content h2 {
   margin-top: 0;
   color: var(--modal-titulo);
 }
-
 .btn-modal-organograma {
   background-color: #1e90ff;
   color: #fff;
@@ -138,12 +143,14 @@
   font-size: var(--font-sm);
 }
 
+/* Personalizações do nó em si */
 .node {
   border-radius: 5px;
   margin: 0 !important;
   padding: 0 !important;
 }
 
+/* Efeito de sombra quando o nó está selecionado */
 .node.selected-node {
   box-shadow: var(--sombra-card-aberto);
   border-radius: 12px;
@@ -151,7 +158,23 @@
   padding: 0 !important;
 }
 
+/* Remover bordas padrão em setas horizontais */
 .edge.horizontalEdge.rightEdge.fa,
 .edge.horizontalEdge.leftEdge.fa {
   border-color: transparent !important;
+}
+
+/* Estilos responsivos */
+@media only screen and (max-width: 56.25rem) {
+  #orgchart-container {
+    width: auto;
+    height: 83vh;
+    margin: 0 5px;
+    border-radius: 23px;
+    position: relative;
+    overflow: auto;
+    background-color: var(--card-bg);
+    touch-action: none;
+    -webkit-overflow-scrolling: touch;
+  }
 }

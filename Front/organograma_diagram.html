@@ -30,7 +30,6 @@
           <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
         </a>
       </li>
-      </li>
       <li class="header-organograma-title">
         <h2>Organograma Prefeitura</h2>
       </li>
@@ -50,6 +49,7 @@
             <button class="btn-toolbar" id="btnAddNode" disabled>Adicionar Nó</button>
             <button class="btn-toolbar" id="btnRenameNode" disabled>Renomear Nó</button>
             <button class="btn-toolbar" id="btnDeleteNode" disabled>Excluir Nó</button>
+            <button class="btn-toolbar" id="btnRecenter">Centralizar</button>
           </div>
         </div>
         <div class="area-interna-containerContent-template-content">
@@ -57,9 +57,17 @@
           <div id="orgchart-container"></div>
         </div>
 
-        <!-- Modais para CRUD -->
+        <!-- MODAL DE DETALHES (EXIBIR INFORMAÇÕES EXTRAS AO CLICAR) -->
+        <div class="modal-organograma" id="detailModal">
+          <div class="modal-organograma-content">
+            <span class="close" onclick="document.getElementById('detailModal').style.display='none'">&times;</span>
+            <h2 class="modal-title"></h2>
+            <div class="modal-body"></div>
+            <button class="btn-modal-organograma btn-cancel" onclick="document.getElementById('detailModal').style.display='none'">Fechar</button>
+          </div>
+        </div>
 
-        <!-- Modal Adicionar Nó -->
+        <!-- Modais para CRUD (já existentes no seu projeto) -->
         <div class="modal-organograma" id="addModal">
           <div class="modal-organograma-content">
             <span class="close" id="addClose">&times;</span>
@@ -75,7 +83,6 @@
           </div>
         </div>
 
-        <!-- Modal Renomear Nó -->
         <div class="modal-organograma" id="renameModal">
           <div class="modal-organograma-content">
             <span class="close" id="renameClose">&times;</span>
@@ -91,7 +98,6 @@
           </div>
         </div>
 
-        <!-- Modal Excluir Nó -->
         <div class="modal-organograma" id="deleteModal">
           <div class="modal-organograma-content">
             <span class="close" id="deleteClose">&times;</span>
@@ -101,143 +107,680 @@
             <button class="btn-modal-organograma btn-cancel" id="cancelDelete">Cancelar</button>
           </div>
         </div>
-
       </div>
     </section>
   </main>
 
-  <script src="./static/js/config.js" defer></script>
-  <script src="./static/js/RegisterSW.js" defer></script>
-  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
-  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <div class="secao-interna-template">
+    <div class="secao-interna-template-content">
+      <div class="org-list-container">
+        <ul class="org-list" role="tree">
+          <!-- Nível 0: Gabinete da Prefeitura -->
+          <li class="org-item" data-level="0" role="treeitem" aria-expanded="true">
+            <div class="container-org-item">
+              <span class="toggle-btn" aria-label="Expandir/Colapsar Gabinete da Prefeitura" aria-expanded="true" aria-controls="sublist-1" tabindex="0">
+                <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                </svg>
+              </span>
+              <div class="card-m organograma-medium-card">
+                <div class="organograma-medium-card-id" data-field="id">1</div>
+                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                  GABINETE DA PREFEITURA
+                </p>
+                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                  ANDRÉ CASTRO
+                </p>
+                <p class="organograma-medium-card-designacao" data-field="designacao">Secretário</p>
+                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                  R$ 15.000,00
+                </p>
+                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                  <p>Veículo de Publicação: Diário Oficial</p>
+                  <p>Número: 12345 - Publicação: 01/01/2024</p>
+                  <p><strong>Data da Posse: 01/01/2024</strong></p>
+                </div>
+                <div class="organograma-medium-card-id" data-field="id">1</div>
+              </div>
+            </div>
+            <ul class="org-sublist" id="sublist-1" role="group">
+              <!-- Nível 1: Secretaria Geral -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria Geral" aria-expanded="false" aria-controls="sublist-18" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="transparent" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">18</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA GERAL
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      NOME_TITULAR
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">Diretor</p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 12.000,00
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Nível 1: SMA -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar SMA" aria-expanded="true" aria-controls="sublist-3" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">3</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      CLARICE NASCIMENTO
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">Diretora</p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 13.000,00
+                    </p>
+                  </div>
+                </div>
+                <ul class="org-sublist" id="sublist-3" role="group">
+                  <!-- Nível 2: SERH -->
+                  <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
+                    <div class="container-org-item">
+                      <span class="toggle-btn" aria-label="Expandir/Colapsar SERH" aria-expanded="false" aria-controls="sublist-7" tabindex="0">
+                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <div class="card-m organograma-medium-card">
+                        <div class="organograma-medium-card-id" data-field="id">7</div>
+                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                          SECRETARIA EXECUTIVA DE RECURSOS HUMANOS
+                        </p>
+                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                          MAITÊ NASCIMENTO
+                        </p>
+                        <p class="organograma-medium-card-designacao" data-field="designacao">
+                          Gerente de RH
+                        </p>
+                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                          R$ 8.000,00
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Nível 2: SEP -->
+                  <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
+                    <div class="container-org-item">
+                      <span class="toggle-btn" aria-label="Expandir/Colapsar SEP" aria-expanded="false" aria-controls="sublist-8" tabindex="0">
+                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <div class="card-m organograma-medium-card">
+                        <div class="organograma-medium-card-id" data-field="id">8</div>
+                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                          SECRETARIA EXECUTIVA DE PATRIMÔNIO
+                        </p>
+                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                          NOME_TITULAR
+                        </p>
+                        <p class="organograma-medium-card-designacao" data-field="designacao">
+                          Gerente de Patrimônio
+                        </p>
+                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                          R$ 8.500,00
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Nível 1: Secretaria de Agricultura -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Agricultura" aria-expanded="true" aria-controls="sublist-4" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">4</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA DE AGRICULTURA
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      NOME_TITULAR
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretora de Agricultura
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 14.000,00
+                    </p>
+                  </div>
+                </div>
+                <ul class="org-sublist" id="sublist-4" role="group">
+                  <!-- Nível 2: Secretaria Executiva de Produção Agrícola -->
+                  <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
+                    <div class="container-org-item">
+                      <span class="toggle-btn" aria-label="Expandir/Colapsar Produção Agrícola" aria-expanded="false" aria-controls="sublist-15" tabindex="0">
+                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <div class="card-m organograma-medium-card">
+                        <div class="organograma-medium-card-id" data-field="id">15</div>
+                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                          SECRETARIA EXECUTIVA DE PRODUÇÃO AGRÍCOLA
+                        </p>
+                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                          NOME_TITULAR
+                        </p>
+                        <p class="organograma-medium-card-designacao" data-field="designacao">
+                          Gerente de Produção
+                        </p>
+                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                          R$ 9.000,00
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Nível 1: Secretaria de Articulação Política -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Articulação Política" aria-expanded="false" aria-controls="sublist-5" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">5</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA DE ARTICULAÇÃO POLÍTICA
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      ANDRÉ CASTRO
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretor de Articulação
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 11.000,00
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Nível 1: Secretaria de Assistência Social -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Assistência Social" aria-expanded="false" aria-controls="sublist-6" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">6</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA DE ASSISTÊNCIA SOCIAL
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      NOME_TITULAR
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretora de Assistência
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 10.500,00
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Nível 1: Secretaria Municipal de Defesa Social -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar SMDS" aria-expanded="true" aria-controls="sublist-10" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">10</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA MUNICIPAL DE DEFESA SOCIAL
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      NOME_TITULAR
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretor de Defesa Social
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 14.500,00
+                    </p>
+                  </div>
+                </div>
+                <ul class="org-sublist" id="sublist-10" role="group">
+                  <!-- Nível 2: SEOE -->
+                  <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
+                    <div class="container-org-item">
+                      <span class="toggle-btn" aria-label="Expandir/Colapsar SEOE" aria-expanded="false" aria-controls="sublist-17" tabindex="0">
+                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <div class="card-m organograma-medium-card">
+                        <div class="organograma-medium-card-id" data-field="id">17</div>
+                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                          SECRETARIA EXECUTIVA DE OPERAÇÕES ESPECIAIS
+                        </p>
+                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                          NOME_TITULAR
+                        </p>
+                        <p class="organograma-medium-card-designacao" data-field="designacao">
+                          Gerente de Operações
+                        </p>
+                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                          R$ 9.500,00
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Nível 2: SEPD -->
+                  <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
+                    <div class="container-org-item">
+                      <span class="toggle-btn" aria-label="Expandir/Colapsar SEPD" aria-expanded="false" aria-controls="sublist-16" tabindex="0">
+                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <div class="card-m organograma-medium-card">
+                        <div class="organograma-medium-card-id" data-field="id">16</div>
+                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                          SECRETARIA EXECUTIVA DE PLANEJAMENTO DA DEFESA SOCIAL
+                        </p>
+                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                          NOME_TITULAR
+                        </p>
+                        <p class="organograma-medium-card-designacao" data-field="designacao">
+                          Gerente de Planejamento
+                        </p>
+                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                          R$ 10.000,00
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Nível 1: Secretaria de Desenvolvimento Econômico -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar SDE" aria-expanded="false" aria-controls="sublist-11" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">11</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA DE DESENVOLVIMENTO ECONÔMICO
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      NOME_TITULAR
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretor de Desenvolvimento
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 13.500,00
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Nível 1: Secretaria Municipal de Educação -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="false">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar SME" aria-expanded="false" aria-controls="sublist-12" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">12</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA MUNICIPAL DE EDUCAÇÃO
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      NOME_TITULAR
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretora de Educação
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 12.500,00
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Nível 1: Secretaria de Finanças -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar SF" aria-expanded="true" aria-controls="sublist-13" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">13</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA DE FINANÇAS
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      NOME_TITULAR
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretor de Finanças
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 14.000,00
+                    </p>
+                  </div>
+                </div>
+                <ul class="org-sublist" id="sublist-13" role="group">
+                  <!-- Nível 2: SEF -->
+                  <li class="org-item" data-level="2" role="treeitem" aria-expanded="false">
+                    <div class="container-org-item">
+                      <span class="toggle-btn" aria-label="Expandir/Colapsar SEF" aria-expanded="false" aria-controls="sublist-14" tabindex="0">
+                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <div class="card-m organograma-medium-card">
+                        <div class="organograma-medium-card-id" data-field="id">14</div>
+                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                          SECRETARIA EXECUTIVA DE FISCALIZAÇÃO
+                        </p>
+                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                          NOME_TITULAR
+                        </p>
+                        <p class="organograma-medium-card-designacao" data-field="designacao">
+                          Gerente de Fiscalização
+                        </p>
+                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                          R$ 9.500,00
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Nível 1: Secretaria de Saúde (Nova Secretaria com 5 Níveis) -->
+              <li class="org-item" data-level="1" role="treeitem" aria-expanded="true">
+                <div class="container-org-item">
+                  <span class="toggle-btn" aria-label="Expandir/Colapsar Secretaria de Saúde" aria-expanded="true" aria-controls="sublist-19" tabindex="0">
+                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div class="card-m organograma-medium-card">
+                    <div class="organograma-medium-card-id" data-field="id">19</div>
+                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                      SECRETARIA DE SAÚDE
+                    </p>
+                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                      DR. CARLOS SILVA
+                    </p>
+                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                      Diretor de Saúde
+                    </p>
+                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                      R$ 16.000,00
+                    </p>
+                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                      <p>Veículo de Publicação: Diário Oficial</p>
+                      <p>Número: 67890 - Publicação: 15/02/2024</p>
+                      <p><strong>Data da Posse: 15/02/2024</strong></p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="org-sublist" id="sublist-19" role="group">
+                  <!-- Nível 2: SEAP -->
+                  <li class="org-item" data-level="2" role="treeitem" aria-expanded="true">
+                    <div class="container-org-item">
+                      <span class="toggle-btn" aria-label="Expandir/Colapsar SEAP" aria-expanded="true" aria-controls="sublist-20" tabindex="0">
+                        <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      <div class="card-m organograma-medium-card">
+                        <div class="organograma-medium-card-id" data-field="id">20</div>
+                        <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                          SECRETARIA EXECUTIVA DE ATENÇÃO PRIMÁRIA
+                        </p>
+                        <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                          DRA. MARIA OLIVEIRA
+                        </p>
+                        <p class="organograma-medium-card-designacao" data-field="designacao">
+                          Diretora Executiva
+                        </p>
+                        <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                          R$ 14.000,00
+                        </p>
+                        <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                          <p>Veículo de Publicação: Diário Oficial</p>
+                          <p>Número: 67891 - Publicação: 16/02/2024</p>
+                          <p><strong>Data da Posse: 16/02/2024</strong></p>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="org-sublist" id="sublist-20" role="group">
+                      <!-- Nível 3: Coordenadoria de UBS -->
+                      <li class="org-item" data-level="3" role="treeitem" aria-expanded="true">
+                        <div class="container-org-item">
+                          <span class="toggle-btn" aria-label="Expandir/Colapsar CUBS" aria-expanded="true" aria-controls="sublist-21" tabindex="0">
+                            <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                              <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                            </svg>
+                          </span>
+                          <div class="card-m organograma-medium-card">
+                            <div class="organograma-medium-card-id" data-field="id">21</div>
+                            <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                              COORDENADORIA DE UNIDADES BÁSICAS DE SAÚDE
+                            </p>
+                            <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                              JOSÉ SOUZA
+                            </p>
+                            <p class="organograma-medium-card-designacao" data-field="designacao">
+                              Coordenador
+                            </p>
+                            <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                              R$ 10.000,00
+                            </p>
+                            <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                              <p>Veículo de Publicação: Diário Oficial</p>
+                              <p>Número: 67892 - Publicação: 17/02/2024</p>
+                              <p><strong>Data da Posse: 17/02/2024</strong></p>
+                            </div>
+                          </div>
+                        </div>
+                        <ul class="org-sublist" id="sublist-21" role="group">
+                          <!-- Nível 4: Coordenação de Saúde da Família -->
+                          <li class="org-item" data-level="4" role="treeitem" aria-expanded="true">
+                            <div class="container-org-item">
+                              <span class="toggle-btn" aria-label="Expandir/Colapsar CSF" aria-expanded="true" aria-controls="sublist-22" tabindex="0">
+                                <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                  <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                </svg>
+                              </span>
+                              <div class="card-m organograma-medium-card">
+                                <div class="organograma-medium-card-id" data-field="id">22</div>
+                                <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                                  COORDENAÇÃO DE SAÚDE DA FAMÍLIA
+                                </p>
+                                <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                                  ANA PAULA
+                                </p>
+                                <p class="organograma-medium-card-designacao" data-field="designacao">
+                                  Coordenadora
+                                </p>
+                                <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                                  R$ 8.500,00
+                                </p>
+                                <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                  <p>Veículo de Publicação: Diário Oficial</p>
+                                  <p>Número: 67893 - Publicação: 18/02/2024</p>
+                                  <p><strong>Data da Posse: 18/02/2024</strong></p>
+                                </div>
+                              </div>
+                            </div>
+                            <ul class="org-sublist" id="sublist-22" role="group">
+                              <!-- Nível 5: USF Centro -->
+                              <li class="org-item" data-level="5" role="treeitem" aria-expanded="false">
+                                <div class="container-org-item">
+                                  <span class="toggle-btn" aria-label="Expandir/Colapsar USFC" aria-expanded="false" aria-controls="sublist-23" tabindex="0">
+                                    <svg class="arrow-org" width="24" height="24" viewBox="0 0 24 24">
+                                      <path d="M8.59 16.34L13.17 12 8.59 7.66 10 6.25l6 6-6 6z" fill="currentColor" />
+                                    </svg>
+                                  </span>
+                                  <div class="card-m organograma-medium-card">
+                                    <div class="organograma-medium-card-id" data-field="id">23</div>
+                                    <p class="organograma-medium-card-nome_unidade" data-field="nome_unidade">
+                                      UNIDADE DE SAÚDE DA FAMÍLIA CENTRO
+                                    </p>
+                                    <p class="organograma-medium-card-nome_titular" data-field="nome_titular">
+                                      PAULO MENDES
+                                    </p>
+                                    <p class="organograma-medium-card-designacao" data-field="designacao">
+                                      Gestor de Unidade
+                                    </p>
+                                    <p class="organograma-medium-card-nivel-salarial" data-field="nivel-salarial">
+                                      R$ 6.000,00
+                                    </p>
+                                    <div class="organograma-medium-card-info-pub" data-field="info-pub">
+                                      <p>Veículo de Publicação: Diário Oficial</p>
+                                      <p>Número: 67894 - Publicação: 19/02/2024</p>
+                                      <p><strong>Data da Posse: 19/02/2024</strong></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- Nível 5 não possui sublistas -->
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.2/js/jquery.orgchart.min.js"></script>
   <script>
     /************************************************************************
-     * 1) Definição de dados iniciais e contador de ID
-     ************************************************************************/
-    let orgData = {
-      "id": 1,
-      "name": "GABINETE DA PREFEITURA",
-      "title": "ANDRÉ CASTRO",
-      "children": [
-        {
-          "id": 18,
-          "name": "SECRETARIA GERAL",
-          "title": "NOME_TITULAR",
-          "children": []
-        },
-        {
-          "id": 3,
-          "name": "SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO",
-          "title": "CLARICE NASCIMENTO",
-          "children": [
-            {
-              "id": 7,
-              "name": "SECRETARIA EXECUTIVA DE RECURSOS HUMANOS",
-              "title": "MAITÊ NASCIMENTO",
-              "children": []
-            },
-            {
-              "id": 8,
-              "name": "SECRETARIA EXECUTIVA DE PATRIMÔNIO",
-              "title": "NOME_TITULAR",
-              "children": []
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "name": "SECRETARIA DE AGRICULTURA",
-          "title": "NOME_TITULAR",
-          "children": [
-            {
-              "id": 15,
-              "name": "SECRETARIA EXECUTIVA DE PRODUÇÃO AGRÍCOLA",
-              "title": "NOME_TITULAR",
-              "children": []
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "name": "SECRETARIA DE ARTICULAÇÃO POLÍTICA",
-          "title": "ANDRÉ CASTRO",
-          "children": []
-        },
-        {
-          "id": 6,
-          "name": "SECRETARIA DE ASSISTÊNCIA SOCIAL",
-          "title": "NOME_TITULAR",
-          "children": []
-        },
-        {
-          "id": 10,
-          "name": "SECRETARIA MUNICIPAL DE DEFESA SOCIAL",
-          "title": "NOME_TITULAR",
-          "children": [
-            {
-              "id": 17,
-              "name": "SECRETARIA EXECUTIVA DE OPERAÇÕES ESPECIAIS",
-              "title": "NOME_TITULAR",
-              "children": []
-            },
-            {
-              "id": 16,
-              "name": "SECRETARIA EXECUTIVA DE PLANEJAMENTO DA DEFESA SOCIAL",
-              "title": "NOME_TITULAR",
-              "children": []
-            }
-          ]
-        },
-        {
-          "id": 11,
-          "name": "SECRETARIA DE DESENVOLVIMENTO ECONÔMICO",
-          "title": "NOME_TITULAR",
-          "children": []
-        },
-        {
-          "id": 12,
-          "name": "SECRETARIA MUNICIPAL DE EDUCAÇÃO",
-          "title": "NOME_TITULAR",
-          "children": []
-        },
-        {
-          "id": 13,
-          "name": "SECRETARIA DE FINANÇAS",
-          "title": "NOME_TITULAR",
-          "children": [
-            {
-              "id": 14,
-              "name": "SECRETARIA EXECUTIVA DE FISCALIZAÇÃO",
-              "title": "NOME_TITULAR",
-              "children": []
-            }
-          ]
+  * 1) Converter HTML <li> em orgData (JSON) dinamicamente
+  ************************************************************************/
+    function parseHtmlToOrgData($li) {
+      // Captura dados principais do <li> atual
+      const id = Number($li.find("[data-field='id']").first().text().trim());
+      const name = $li.find("[data-field='nome_unidade']").first().text().trim();
+      const titular = $li.find("[data-field='nome_titular']").first().text().trim();
+      const designacao = $li.find("[data-field='designacao']").first().text().trim();
+      const nivelSalarial = $li.find("[data-field='nivel-salarial']").first().text().trim();
+
+      // infoPub pode ter <p> internos; usamos .html() para manter formatação
+      const infoPub = $li.find("[data-field='info-pub']").first().html() || "";
+
+      // Monta objeto para este nó
+      const nodeData = {
+        id: id,
+        name: name,
+        title: titular,
+        designacao: designacao,
+        nivelSalarial: nivelSalarial,
+        infoPub: infoPub
+      };
+
+      // Verifica se há sublistas (filhos)
+      const $sublist = $li.children("ul.org-sublist");
+      if ($sublist.length > 0) {
+        const children = [];
+        $sublist.children("li.org-item").each(function () {
+          children.push(parseHtmlToOrgData($(this)));
+        });
+        if (children.length > 0) {
+          nodeData.children = children;
         }
-      ]
+      }
+
+      return nodeData;
     }
-      ;
-    let nextId = 8;
 
     /************************************************************************
-     * 2) Variáveis globais
+     * 2) Variáveis globais e configurações
      ************************************************************************/
-    let chartInstance = null;   // Instância do OrgChart
-    let selectedNode = null;  // Dados do nó selecionado
+    let chartInstance = null;        // Instância do OrgChart
+    let selectedNode = null;         // Nó atualmente selecionado
+    let nextId = 999;                // ID inicial para novos nós
+    const HOLD_TIMEOUT = 700;        // Tempo (ms) para reconhecer toque e segurar
+    let holdTimer = null;            // Timer para toque e segurar
+
+    // Controle de zoom manual (scroll/pinch)
+    let currentScale = 1;
+    const minScale = 0.5;    // Zoom mínimo para manter legibilidade
+    const maxScale = 2.5;    // Zoom máximo (ajuste a gosto)
 
     /************************************************************************
-     * 3) Ao carregar a página, inicializar e vincular eventos
+     * 3) Ao carregar a página, converter HTML -> orgData e inicializar OrgChart
      ************************************************************************/
     $(function () {
-      initOrgChart();
+      // a) Localiza o <li> de nível 0
+      const $rootLi = $("li.org-item[data-level='0']").first();
 
-      // Eventos de toolbar
+      // b) Converte toda a hierarquia <li>/<ul> em orgData
+      const orgData = parseHtmlToOrgData($rootLi);
+
+      // c) Inicializa (desenha) o organograma
+      initOrgChart(orgData);
+
+      // d) Vincula eventos da toolbar (Adicionar, Renomear, Excluir, Centralizar)
       $("#btnAddNode").on("click", openAddModal);
       $("#btnRenameNode").on("click", openRenameModal);
       $("#btnDeleteNode").on("click", openDeleteModal);
 
-      // Eventos de fechamento de modal-organograma
+      // Botão para centralizar/“zoom to fit” (caso exista no HTML)
+      $("#btnRecenter").on("click", function () {
+        reCenterAndZoomFit();
+      });
+
+      // e) Eventos de fechamento de modais
       $("#addClose, #renameClose, #deleteClose").on("click", closeAllModals);
       $(window).on("click", function (event) {
         if ($(event.target).is("#addModal")) closeAllModals();
@@ -245,7 +788,6 @@
         if ($(event.target).is("#deleteModal")) closeAllModals();
       });
 
-      // Botões dos modais
       $("#saveAdd").on("click", addNodeAction);
       $("#cancelAdd").on("click", closeAllModals);
 
@@ -255,31 +797,34 @@
       $("#confirmDelete").on("click", deleteNodeAction);
       $("#cancelDelete").on("click", closeAllModals);
 
-      // Limpar seleção em cliques fora dos nós
+      // f) Fechar seleção ao clicar fora do organograma (ou fora da toolbar e modais)
       $("#orgchart-container").on("click", function (event) {
         if (!$(event.target).closest(".node").length) {
           clearSelection();
         }
       });
       $(document).on("click", function (event) {
-        if (!$(event.target).closest("#orgchart-container").length &&
+        if (
+          !$(event.target).closest("#orgchart-container").length &&
           !$(event.target).closest(".area-toolbar").length &&
-          !$(event.target).closest(".modal-organograma").length) {
+          !$(event.target).closest(".modal-organograma").length
+        ) {
           clearSelection();
         }
       });
+
+      // g) Habilitar zoom via scroll e pinch
+      enableManualZoom();
     });
 
     /************************************************************************
-     * 4) Inicializa (ou redesenha) o OrgChart na div #orgchart-container
+     * 4) Inicializa (ou redesenha) o OrgChart
      ************************************************************************/
-    function initOrgChart() {
-      // Se já houver instância criada, apenas reinicializa sem perder zoom
+    function initOrgChart(orgData) {
+      // Se a instância já existir, reinicializa sem perder o zoom/pan atual
       if (chartInstance && chartInstance.$chart) {
-        // Capturar transform atual para re-aplicar após init
-        let currentTransform = chartInstance.$chart.css("transform");
+        const currentTransform = chartInstance.$chart.css("transform");
 
-        // Reinicializa com dados atualizados
         chartInstance.init({
           data: orgData,
           nodeId: "id",
@@ -290,17 +835,14 @@
           createNode: onCreateNode
         });
 
-        // Reaplicar transform (zoom/pan) após redesenhar
         if (currentTransform && currentTransform !== "none") {
           chartInstance.$chart.css("transform", currentTransform);
         }
-
-        // Se existia nó selecionado, tentar selecioná-lo novamente
         restoreSelection();
         return;
       }
 
-      // Se não existir instância, criar do zero
+      // Se não existir, cria do zero
       chartInstance = $("#orgchart-container").orgchart({
         data: orgData,
         nodeId: "id",
@@ -310,41 +852,105 @@
         toggleSiblingsResp: false,
         createNode: onCreateNode
       });
+
+      // Depois de criar pela primeira vez, ajusta zoom p/ caber no container
+      // e centraliza o nó raiz na horizontal
+      reCenterAndZoomFit();
     }
 
     /************************************************************************
-     * 5) Função callback para criação de cada nó (createNode)
-     *    - Responsável por atribuir evento de clique em cada nó
+     * 5) createNode: configura interações (clique, duplo clique, toque e segurar)
      ************************************************************************/
     function onCreateNode($node, data) {
-      // Remover qualquer manipulador anterior
-      $node.off("click");
+      // Remove qualquer manipulador anterior para evitar duplicidades
+      $node.off("click dblclick touchstart touchmove touchend touchcancel");
 
-      // Adiciona evento de clique personalizado
-      $node.on("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
+      // 5.1) Clique simples => selecionar (highlight)
+      $node.on("click", function (evt) {
+        evt.stopPropagation();
+        evt.stopImmediatePropagation();
+        handleSingleClick($node, data);
+      });
 
-        selectedNode = data || null;
+      // 5.2) Duplo clique => abrir detalhes
+      $node.on("dblclick", function (evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        evt.stopImmediatePropagation();
+        openNodeDetailModal(data);
+      });
 
-        // Atualizar botões
-        if (selectedNode) {
-          $("#btnAddNode").prop("disabled", false);
-          $("#btnRenameNode").prop("disabled", false);
-          $("#btnDeleteNode").prop("disabled", selectedNode.id === 1);
+      // 5.3) Toque (mobile/tablet) e segurar => abrir detalhes
+      $node.on("touchstart", function () {
+        holdTimer = setTimeout(function () {
+          openNodeDetailModal(data);
+        }, HOLD_TIMEOUT);
+      });
+      // Cancela o timer se houver movimento ou fim de toque
+      $node.on("touchmove touchend touchcancel", function () {
+        if (holdTimer) {
+          clearTimeout(holdTimer);
+          holdTimer = null;
         }
-
-        // Destaque visual
-        $(".orgchart .node").removeClass("selected-node");
-        $node.addClass("selected-node");
       });
     }
 
     /************************************************************************
-     * 6) CRUD: Ações de adicionar, renomear e excluir nós
+     * 6) Ações de seleção e exibição de detalhes
      ************************************************************************/
-    // 6a) Adicionar
+
+    // Clique simples => Seleciona nó (apenas highlight e habilitar CRUD)
+    function handleSingleClick($node, data) {
+      selectedNode = data;
+
+      // Atualiza botões da toolbar
+      if (selectedNode) {
+        $("#btnAddNode").prop("disabled", false);
+        $("#btnRenameNode").prop("disabled", false);
+        $("#btnDeleteNode").prop("disabled", selectedNode.id === 1);
+      }
+
+      // Destaque visual
+      $(".orgchart .node").removeClass("selected-node");
+      $node.addClass("selected-node");
+    }
+
+    // Exibe modal com detalhes ao dar duplo clique ou toque e segurar
+    function openNodeDetailModal(nodeData) {
+      // Título do modal
+      $("#detailModal .modal-title").text(nodeData.name || "");
+
+      // Corpo do modal com campos extras
+      let html = `
+    <p><strong>Titular:</strong> ${nodeData.title || "—"}</p>
+    <p><strong>Designação:</strong> ${nodeData.designacao || "—"}</p>
+    <p><strong>Nível Salarial:</strong> ${nodeData.nivelSalarial || "—"}</p>
+  `;
+      if (nodeData.infoPub) {
+        html += `<p><strong>Publicação/Posse:</strong><br>${nodeData.infoPub}</p>`;
+      }
+      $("#detailModal .modal-body").html(html);
+
+      // Exibe o modal
+      $("#detailModal").show();
+    }
+
+    /************************************************************************
+     * 7) CRUD: Adicionar, Renomear e Excluir nós
+     ************************************************************************/
+
+    // A) Abrir modal de adicionar
+    function openAddModal() {
+      if (!selectedNode) {
+        alert("Selecione um nó antes de adicionar!");
+        return;
+      }
+      $("#addNameInput").val("");
+      $("#addTitleInput").val("");
+      $("#addModal").show();
+    }
+
+    // B) Ação de adicionar nó
     function addNodeAction() {
       if (!selectedNode) {
         alert("Selecione um nó antes de adicionar!");
@@ -361,64 +967,16 @@
         name: nameVal,
         title: titleVal
       };
-
-      // Se não existir children no selectedNode, criar
       if (!selectedNode.children) {
         selectedNode.children = [];
       }
       selectedNode.children.push(newNode);
 
       closeAllModals();
-      initOrgChart(); // redesenha sem perder zoom/pan
+      initOrgChart(chartInstance.options.data);
     }
 
-    // 6b) Renomear
-    function renameNodeAction() {
-      if (!selectedNode) {
-        alert("Selecione um nó antes de renomear!");
-        return;
-      }
-      const newName = $("#renameNameInput").val().trim();
-      const newTitle = $("#renameTitleInput").val().trim();
-      if (!newName) {
-        alert("Informe o novo nome!");
-        return;
-      }
-
-      // Atualiza no orgData
-      selectedNode.name = newName;
-      selectedNode.title = newTitle;
-
-      closeAllModals();
-      initOrgChart(); // redesenha
-    }
-
-    // 6c) Excluir
-    function deleteNodeAction() {
-      if (!selectedNode) return;
-      if (selectedNode.id === 1) {
-        alert("Não é possível excluir o nó raiz.");
-        return;
-      }
-
-      removeNode(orgData, selectedNode.id);
-      closeAllModals();
-      initOrgChart();
-    }
-
-    /************************************************************************
-     * 7) Modais
-     ************************************************************************/
-    function openAddModal() {
-      if (!selectedNode) {
-        alert("Selecione um nó antes de adicionar!");
-        return;
-      }
-      $("#addNameInput").val("");
-      $("#addTitleInput").val("");
-      $("#addModal").show();
-    }
-
+    // C) Abrir modal de renomear
     function openRenameModal() {
       if (!selectedNode) {
         alert("Selecione um nó antes de renomear!");
@@ -429,6 +987,25 @@
       $("#renameModal").show();
     }
 
+    // D) Renomear nó
+    function renameNodeAction() {
+      if (!selectedNode) return;
+
+      const newName = $("#renameNameInput").val().trim();
+      const newTitle = $("#renameTitleInput").val().trim();
+      if (!newName) {
+        alert("Informe o novo nome!");
+        return;
+      }
+
+      selectedNode.name = newName;
+      selectedNode.title = newTitle;
+
+      closeAllModals();
+      initOrgChart(chartInstance.options.data);
+    }
+
+    // E) Abrir modal de excluir
     function openDeleteModal() {
       if (!selectedNode) {
         alert("Selecione um nó antes de excluir!");
@@ -438,14 +1015,202 @@
       $("#deleteModal").show();
     }
 
+    // F) Excluir nó
+    function deleteNodeAction() {
+      if (!selectedNode) return;
+
+      if (selectedNode.id === 1) {
+        alert("Não é possível excluir o nó raiz.");
+        return;
+      }
+
+      removeNode(chartInstance.options.data, selectedNode.id);
+      closeAllModals();
+      initOrgChart(chartInstance.options.data);
+    }
+
+    /************************************************************************
+     * 8) Zoom automático (zoom to fit) e posicionamento do nó raiz
+     ************************************************************************/
+
+    /**
+     * Faz zoom para caber no container, respeitando um zoom mínimo (minScale),
+     * e então alinha o nó raiz (id=1) no topo e centraliza horizontalmente.
+     */
+    function reCenterAndZoomFit() {
+      if (!chartInstance || !chartInstance.$chart) return;
+
+      const $chart = chartInstance.$chart;
+      const $container = $("#orgchart-container");
+
+      // Dimensões reais do organograma (scrollWidth/scrollHeight costumam ser mais confiáveis)
+      const chartW = $chart[0].scrollWidth;
+      const chartH = $chart[0].scrollHeight;
+
+      // Dimensões do container
+      const contW = $container.width();
+      const contH = $container.height();
+
+      // Calcula a escala para caber no container (mas não menos que minScale)
+      let scaleX = contW / chartW;
+      let scaleY = contH / chartH;
+      let scale = Math.min(scaleX, scaleY);
+      if (scale > 1) {
+        scale = 1;
+      }
+      if (scale < minScale) {
+        scale = minScale;
+      }
+      currentScale = scale; // salva na variável global
+
+      // Temporariamente aplicar a escala ao organograma, para podermos medir posições
+      $chart.css({
+        transform: `translate(0px, 0px) scale(${scale})`,
+        "transform-origin": "0 0"
+      });
+
+      // Vamos localizar o elemento do nó raiz (id=1) para centralizar
+      const $rootNode = $chart.find(".node[data-id='1']");
+      if (!$rootNode.length) return;
+
+      // Pegar posição do nó raiz em relação ao chart
+      const rootRect = $rootNode[0].getBoundingClientRect();
+      const chartRect = $chart[0].getBoundingClientRect();
+
+      // Posição do centro do nó raiz dentro do chart (coordenadas "chart-space")
+      const rootCenterX = (rootRect.left + rootRect.right) / 2 - chartRect.left;
+
+      // Queremos que esse centro fique no meio do container
+      const containerCenterX = contW / 2;
+
+      // offsetX
+      const offsetX = containerCenterX - rootCenterX * 1 /* scale já aplicado */;
+      // offsetY = 0 p/ manter nó raiz no topo
+      const offsetY = 0;
+
+      // Ajustar transform final
+      $chart.css({
+        transform: `translate(${offsetX}px, ${offsetY}px) scale(${scale})`,
+        "transform-origin": "0 0"
+      });
+    }
+
+    /************************************************************************
+     * 9) Zoom manual (scroll/pinch) - exemplo básico
+     ************************************************************************/
+    function enableManualZoom() {
+      const $container = $("#orgchart-container");
+      const $chart = () => chartInstance ? chartInstance.$chart : null;
+
+      // Zoom via scroll com Ctrl (ex.: Ctrl + rodar mouse)
+      $container.on("wheel", function (e) {
+        // Se usuário não estiver pressionando Ctrl, não mexe no zoom
+        if (!e.ctrlKey) {
+          return;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+
+        // deltaY < 0 => zoom in; deltaY > 0 => zoom out
+        const delta = e.originalEvent.deltaY;
+        let newScale = currentScale - delta * 0.001; // ajusta sensibilidade
+        if (newScale < minScale) newScale = minScale;
+        if (newScale > maxScale) newScale = maxScale;
+
+        // Pegar posição do cursor dentro do container para centralizar zoom
+        const rect = $container[0].getBoundingClientRect();
+        const mouseX = e.originalEvent.clientX - rect.left;
+        const mouseY = e.originalEvent.clientY - rect.top;
+
+        applyScaleToChart(newScale, mouseX, mouseY);
+      });
+
+      // Pinch para mobile/touch (exemplo simplificado):
+      // Precisaria de um listener multitouch real, ou usar uma biblioteca de gestos.
+      // Abaixo é apenas um esboço simplificado.
+      let pinchDistance = 0;
+      $container.on("touchmove", function (e) {
+        if (e.originalEvent.touches.length === 2) {
+          e.preventDefault();
+          const touch1 = e.originalEvent.touches[0];
+          const touch2 = e.originalEvent.touches[1];
+          const dist = distanceBetweenPoints(touch1.clientX, touch1.clientY, touch2.clientX, touch2.clientY);
+
+          if (!pinchDistance) {
+            pinchDistance = dist;
+          } else {
+            const diff = dist - pinchDistance;
+            let newScale = currentScale + diff * 0.001;
+            if (newScale < minScale) newScale = minScale;
+            if (newScale > maxScale) newScale = maxScale;
+            // Usa centro entre os 2 toques como pivot
+            const rect = $container[0].getBoundingClientRect();
+            const centerX = (touch1.clientX + touch2.clientX) / 2 - rect.left;
+            const centerY = (touch1.clientY + touch2.clientY) / 2 - rect.top;
+
+            applyScaleToChart(newScale, centerX, centerY);
+          }
+        }
+      });
+      $container.on("touchend touchcancel", function () {
+        pinchDistance = 0;
+      });
+    }
+
+    function distanceBetweenPoints(x1, y1, x2, y2) {
+      const dx = x2 - x1;
+      const dy = y2 - y1;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    /************************************************************************
+     * 10) Aplicar escala no organograma em torno de um ponto pivot (x, y)
+     ************************************************************************/
+    function applyScaleToChart(newScale, pivotX, pivotY) {
+      const $chart = chartInstance ? chartInstance.$chart : null;
+      if (!$chart) return;
+      // Pegar transform atual
+      const transformStyle = $chart.css("transform"); // algo como "matrix(a,b,c,d, tx, ty)"
+
+      let tx = 0, ty = 0;
+      if (transformStyle && transformStyle.startsWith("matrix(")) {
+        const values = transformStyle.replace("matrix(", "").replace(")", "").split(",");
+        // matrix(a, b, c, d, tx, ty)
+        // a = scaleX, d = scaleY, tx = e, ty = f
+        tx = parseFloat(values[4]);
+        ty = parseFloat(values[5]);
+      }
+
+      // Ajusta a relação de escala
+      const scaleRatio = newScale / currentScale;
+      currentScale = newScale;
+
+      // Precisamos mover o organograma de modo que o pivot (pivotX, pivotY)
+      // fique no mesmo lugar aparente.
+      // Ajuste no translate
+      tx = pivotX - scaleRatio * (pivotX - tx);
+      ty = pivotY - scaleRatio * (pivotY - ty);
+
+      // Aplica no CSS
+      $chart.css({
+        transform: `translate(${tx}px, ${ty}px) scale(${newScale})`,
+        "transform-origin": "0 0"
+      });
+    }
+
     function closeAllModals() {
       $(".modal-organograma").hide();
     }
 
-    /************************************************************************
-     * 8) Funções auxiliares
-     ************************************************************************/
-    // Remove nó (recursivo)
+    function clearSelection() {
+      selectedNode = null;
+      $(".orgchart .node").removeClass("selected-node");
+      $("#btnAddNode").prop("disabled", true);
+      $("#btnRenameNode").prop("disabled", true);
+      $("#btnDeleteNode").prop("disabled", true);
+    }
+
+    // Remove nó recursivamente
     function removeNode(obj, nodeId) {
       if (obj.children && Array.isArray(obj.children)) {
         obj.children = obj.children.filter(child => child.id !== nodeId);
@@ -453,7 +1218,7 @@
       }
     }
 
-    // Localiza nó por ID no orgData
+    // Localiza nó por ID
     function findNodeById(node, id) {
       if (node.id === id) return node;
       if (node.children && Array.isArray(node.children)) {
@@ -465,21 +1230,17 @@
       return null;
     }
 
-    // Restaura seleção visual caso o nó ainda exista
+    // Restaura seleção visual se o nó ainda existir
     function restoreSelection() {
       if (!selectedNode) return;
 
-      // Encontrar de novo no orgData (pode ter mudado)
-      const stillExists = findNodeById(orgData, selectedNode.id);
+      const stillExists = findNodeById(chartInstance.options.data, selectedNode.id);
       if (!stillExists) {
         clearSelection();
         return;
       }
-
-      // Atualiza selectedNode p/ a referência correta
       selectedNode = stillExists;
 
-      // Destaca nó na tela
       const $newSelectedNode = $(".orgchart .node[data-id='" + selectedNode.id + "']");
       if ($newSelectedNode.length) {
         $newSelectedNode.addClass("selected-node");
@@ -489,20 +1250,6 @@
       }
     }
 
-    // Limpar seleção de nós
-    function clearSelection() {
-      selectedNode = null;
-      $(".orgchart .node").removeClass("selected-node");
-      $("#btnAddNode").prop("disabled", true);
-      $("#btnRenameNode").prop("disabled", true);
-      $("#btnDeleteNode").prop("disabled", true);
-    }
-
-    // Função de logout (opcional)
-    function logout() {
-      alert("Logout efetuado!");
-      // Implementar lógica de logout conforme necessário
-    }
   </script>
 
 </body>

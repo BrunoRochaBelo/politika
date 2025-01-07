@@ -5,7 +5,7 @@
   gap: 5px;
   cursor: pointer;
   justify-content: stretch;
-  width: calc(450px + 1vw);
+  min-width: calc(450px + 1vw);
   grid-template-areas:
     "organograma-medium-card-nivel-nivel-hierarquia organograma-medium-card-nome_unidade organograma-medium-card-sigla_unidade"
     "organograma-medium-card-designacao organograma-medium-card-designacao organograma-medium-card-nivel-salarial"
@@ -105,9 +105,6 @@
   justify-content: start;
   align-items: center;
   margin: 3px 0 0 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* Indicador de nível */
@@ -134,6 +131,7 @@
 /* Editar */
 .organograma-medium-card-editar {
   grid-area: organograma-medium-card-editar;
+  justify-self: stretch;
   display: none;
   opacity: 0;
   border-top: 1px solid var(--card-aberto-detalhe);
@@ -175,6 +173,8 @@
   transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out;
   max-height: 700px;
+  min-width: calc(450px + 1vw);
+  flex: 1;
 }
 
 .organograma-medium-card-editar.exibirDetalheOrganograma {
@@ -207,7 +207,7 @@
       "organograma-medium-card-editar organograma-medium-card-editar";
     grid-template-columns: auto auto;
     max-height: none; /* Remover limitação de altura */
-    width: calc(350px + 1vw);
+    min-width: calc(350px + 1vw);
   }
 
   .organograma-medium-card-nome_unidade {
@@ -229,9 +229,8 @@
     justify-self: start;
     margin-left: 0;
   }
-
-  .organograma-medium-card-editar {
-    justify-self: center;
+  .organograma-medium-card-info-pub {
+    padding: 10px;
   }
 }
 
@@ -246,8 +245,9 @@
       "organograma-medium-card-info-pub organograma-medium-card-info-pub"
       "organograma-medium-card-editar organograma-medium-card-editar";
     grid-template-columns: 1fr;
-    padding: 10px;
-    width: calc(250px + 1vw);
+    padding: 6px 10px;
+    min-width: calc(270px + 1vw);
+    flex: 1; /* Ocupa todo o espaço restante */
   }
 
   .organograma-medium-card-nome_unidade {
@@ -263,7 +263,9 @@
   .organograma-medium-card-nivel-salarial {
     font-size: var(--font-xs);
   }
-
+  .organograma-medium-card-info-pub {
+    padding: 5px 10px;
+  }
   .organograma-medium-card-editar {
     gap: 15px;
   }
