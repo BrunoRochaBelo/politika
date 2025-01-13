@@ -2,11 +2,11 @@
 
 const Config = {
   // 1. Ambiente Atual
-  ENVIRONMENT: "production", // 'production' ou 'development'
+  ENVIRONMENT: "development", // 'production' ou 'development'
 
   // 2. URLs Base para Diferentes Ambientes
   BASE_URL: {
-    development: "http://192.168.1.16:8000",
+    development: "http://192.168.1.12:8000",
     production: "http://dev.inforvia.com.br",
   },
 
@@ -156,6 +156,7 @@ const Config = {
   // 10. URLs de APIs que Podem Ser Cacheadas Dinamicamente
   API_URLS: [
     "/api/contato/searchall",
+    "/api/destino/searchall",
     "/api/localvotacao/searchall",
     "/api/endpoint1",
     "/api/endpoint2",
@@ -171,6 +172,7 @@ const Config = {
   // 12. Endpoints de API
   API_ENDPOINTS: {
     CONTACT_SEARCH_ALL: "/api/contato/searchall",
+    DESTINATION_SEARCH_ALL: "/api/destino/searchall",
     VOTATION_LOCATION_SEARCH_ALL: "/api/localvotacao/searchall",
     GET_ALL_LIBS: "/api/docfile/get/all_libs",
     GET_ALL_FOLDERS: "/api/docfile/get/all_folders",

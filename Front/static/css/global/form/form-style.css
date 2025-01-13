@@ -23,7 +23,7 @@ fieldset {
   font-weight: 400;
   color: var(--txt-nav-selecionado);
   position: relative;
-  padding-left: 6px;
+  padding-left: 10px;
 }
 .title-legend:before {
   content: "";

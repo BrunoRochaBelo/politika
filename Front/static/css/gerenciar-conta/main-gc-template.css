@@ -27,7 +27,7 @@
   max-height: calc(var(--vh, 1vh) * 100 - 8.5rem) !important;
   transition: max-height 0.3s ease-in-out;
 }
-.container-abas-template {
+.main-gc .container-abas-template {
   box-shadow: none;
   border-radius: 23px;
 }

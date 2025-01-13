@@ -175,7 +175,7 @@
 .botoes {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   font-weight: 400;
   font-size: var(--font-xs);

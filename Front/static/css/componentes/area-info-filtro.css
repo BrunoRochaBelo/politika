@@ -8,7 +8,7 @@
   justify-content: start;
   color: var(--txt-conteudo-card);
   padding: 5px 15px;
-  font-size: var(--font-md);
+  font-size: var(--font-sm);
   font-weight: 300;
   border-radius: 25px;
   overflow: auto;
@@ -23,7 +23,7 @@
   justify-content: start;
   color: var(--txt-conteudo-card);
   padding: 5px 15px;
-  font-size: var(--font-md);
+  font-size: var(--font-sm);
   font-weight: 300;
   border-radius: 25px;
 }
@@ -38,12 +38,12 @@
   cursor: pointer;
   position: relative;
   align-content: start;
-  font-size: var(--font-md);
+  font-size: var(--font-sm);
   font-weight: 300;
   box-shadow: var(--sombra-leve);
 }
 .btn-filtro-pesq-title {
-  font-size: var(--font-md);
+  font-size: var(--font-sm);
   color: var(--txt-conteudo-card);
   margin-right: 15px;
 }

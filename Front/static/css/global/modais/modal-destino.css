@@ -38,11 +38,13 @@
 /* Aplicação das animações no conteúdo do modal */
 .modal-destino-content {
   background: var(--modal-bg);
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid var(--modal-borda);
   border-radius: 25px;
   width: 50%;
+  max-height: 80%;
+
   position: relative;
   opacity: 0;
   transform: translateY(-20px);
@@ -240,8 +242,9 @@
 
 @media only screen and (max-width: 56.25rem) {
   .modal-destino-content {
-    margin: 15% auto;
+    margin: 12% auto;
     width: 85%;
+    max-height: 82%;
   }
 
   .search-wrapper-dest {

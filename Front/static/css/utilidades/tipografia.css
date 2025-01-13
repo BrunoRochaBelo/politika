@@ -42,11 +42,11 @@
   /* Para telas menores que 900px */
   :root {
     /* Redefine os tamanhos de fonte para dispositivos menores */
-    --font-xs: calc(0.7rem + 0.2vw);
-    --font-sm: calc(0.8rem + 0.2vw);
-    --font-md: calc(0.95rem + 0.2vw);
-    --font-lg: calc(1.1rem + 0.2vw);
-    --font-xl: calc(1.4rem + 0.2vw);
-    --font-xxl: calc(1.8rem + 0.2vw);
+    --font-xs: calc(0.7rem + 0.1vw);
+    --font-sm: calc(0.8rem + 0.1vw);
+    --font-md: calc(0.95rem + 0.1vw);
+    --font-lg: calc(1.1rem + 0.1vw);
+    --font-xl: calc(1.4rem + 0.1vw);
+    --font-xxl: calc(1.8rem + 0.1vw);
   }
 }

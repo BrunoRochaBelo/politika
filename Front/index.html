@@ -616,29 +616,29 @@
         <h2>Defina um destino</h2>
         <span class="close">&times;</span>
       </div>
-      <form id="filterForm" method="post" action="">
-        <div class="lista-select">
-          <div class="form-group item1">
-            <label for="estado">Estado:</label>
-            <select class="card-select-m" id="estado" name="estado">
-              <option value="PE">Pernambuco</option>
-              <option value="SP">São Paulo</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="MG">Minas Gerais</option>
-            </select>
-            <div id="loadingEstado" class="loading-indicator">Carregando...</div>
-          </div>
-          <div class="form-group item2">
-            <label for="cidade">Cidade:</label>
-            <select class="card-select-m" id="cidade" name="cidade">
-              <option value="todas" selected>todas</option>
-              <!-- As opções de cidades serão adicionadas dinamicamente -->
+      <form id="filterForm" method="post" enctype="multipart/form-data">
+        <div class="form-2-colum">
+          <div class="campo">
+            <label for="ufDestino">Estado:</label>
+            <select class="card-select-m" id="ufDestino" name="ufDestino" disabled>
+              <option value="PE" selected>Pernambuco</option>
             </select>
           </div>
-          <div class="form-group item3">
-            <label for="bairro">Bairro ou local:</label>
-            <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
+          <div class="campo">
+            <label for="cidadeDestino">Cidade:</label>
+            <select class="card-select-m" id="cidadeDestino" name="cidadeDestino">
+              <option value="todas" selected>Todas</option>
+              <option value="recife">Recife</option>
+              <option value="olinda">Olinda</option>
+              <option value="jaboatao">Jaboatão dos Guararapes</option>
+            </select>
           </div>
+        </div>
+        <div class="campo">
+          <label for="destino">Bairro ou Local:</label>
+          <input class="card-select-m" type="text" id="destino" name="destino" placeholder="Digite um local da cidade selecionada">
+          <div class="loading-indicator" id="loading-indicator-destino">Carregando...</div>
+          <div id="suggestions-Destino" class="suggestions"></div>
         </div>
         <div class="botoes">
           <button type="submit" class="btn-principal">Aplicar Filtros</button>
@@ -711,6 +711,7 @@
   <script src="./static/js/ModalMenu.js" defer></script>
   <script src="./static/js/ModalNotificacoes.js" defer></script>
   <script src="./static/js/ModalDestino.js" defer></script>
+  <script src="./static/js/DestinoLista.js" defer></script>
 
 
 </body>
