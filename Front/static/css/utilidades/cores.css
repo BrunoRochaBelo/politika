@@ -25,9 +25,9 @@
   --bg-principal: hsl(215, 25%, 14%);
   --container-bg: hsl(215, 30%, 19%);
   --barra-pesquisa-bg: hsl(215, 35%, 23%);
-  --borda: hsl(215, 40%, 28%);
+  --borda: hsl(215, 30%, 32%);
   --divisor: hsl(215, 38%, 26%);
-  --bg-overlay: hsla(215, 50%, 10%, 0.5);
+  --bg-overlay: hsla(215, 50%, 8%, 0.5);
 
   /* Texto */
   --txt-titulo: hsl(215, 20%, 96%);
@@ -38,16 +38,16 @@
   --txt-placeholder: hsl(215, 18%, 65%);
 
   /* Cartões */
-  --card-bg: hsl(215, 28%, 25%);
-  --card-borda: hsl(215, 28%, 25%);
-  --card-detalhe: hsl(215, 25%, 32%);
-  --card-hover: hsl(215, 32%, 30%);
+  --card-bg: hsl(214, 28%, 25%);
+  --card-borda: hsl(214, 28%, 25%);
+  --card-detalhe: hsl(214, 25%, 30%);
+  --card-hover: hsl(214, 32%, 30%);
 
   --card-aberto-bg: hsl(215, 38%, 32%);
   --card-aberto-detalhe: hsl(215, 38%, 28%);
 
-  --txt-titulo-card: hsl(215, 15%, 92%);
-  --txt-conteudo-card: hsl(215, 12%, 82%);
+  --txt-titulo-card: hsl(215, 15%, 93%);
+  --txt-conteudo-card: hsl(215, 12%, 83%);
   --txt-card-aberto: hsl(215, 90%, 95%);
 
   /* Modais */
@@ -100,7 +100,7 @@
   --btn-secundario-destaque: hsl(30, 60%, 42%);
   --btn-secundario-txt: hsl(218, 100%, 98%);
 
-  --btn-filtro: hsl(215, 28%, 25%);
+  --btn-filtro: hsl(212, 28%, 25%);
   --btn-filtro-txt: hsl(218, 25%, 78%);
   --btn-filtro-hover: hsl(218, 28%, 30%);
   --btn-filtro-selecionado: hsl(218, 80%, 58%);

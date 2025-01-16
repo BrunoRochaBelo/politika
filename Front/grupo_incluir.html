@@ -36,14 +36,14 @@
                       <fieldset>
                         <legend class="titulo-lg"></legend>
                         <div class="campo">
-                          <label for="nome_grupo">Nome do Grupo</label>
+                          <label for="nome_grupo">Nome do Grupo <span>*</span></label>
                           <input type="text" id="nome_grupo" name="nome_grupo" placeholder="Insira o nome do grupo">
                         </div>
 
                         <div class="campo">
-                          <label for="usado_para">Usado para</label>
+                          <label for="usado_para">Usado para <span>*</span></label>
                           <div id="usado_para" class="radio-button-group">
-                            <input type="radio" id="mensagens" name="usado_para" value="mensagens">
+                            <input type="radio" id="mensagens" name="usado_para" value="mensagens" required>
                             <label for="mensagens">Mensagens</label>
 
                             <input type="radio" id="equipe" name="usado_para" value="equipe">
@@ -55,9 +55,9 @@
                         </div>
 
                         <div class="campo">
-                          <label for="situacao_grupo">Situação</label>
+                          <label for="situacao_grupo">Situação <span>*</span></label>
                           <div id="situacao_grupo" class="radio-button-group">
-                            <input type="radio" id="habilitado" name="situacao_grupo" value="habilitado">
+                            <input type="radio" id="habilitado" name="situacao_grupo" value="habilitado" required>
                             <label for="habilitado">Habilitado</label>
 
                             <input type="radio" id="desabilitado" name="situacao_grupo" value="desabilitado">

@@ -363,8 +363,10 @@
 /* Hover do link no container */
 .tarefa-medium-card-desc-pleito-link:hover
   .tarefa-medium-card-desc-pleito-container {
-  background-color: var(--cor-apoio-1);
-  border-color: var(--cor-secundaria-3);
+  background-color: var(--cor-primaria-3);
+  border-color: var(--cor-primaria-3);
+  box-shadow: var(--sombra-moderada);
+  color: var(--cor-apoio-2);
 }
 
 /* Estilo da descrição */
