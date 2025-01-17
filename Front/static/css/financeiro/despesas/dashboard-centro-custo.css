@@ -200,7 +200,7 @@
   color: var(--label-text);
   padding: 10px;
   border-radius: 15px;
-  border: 1px solid var(--card-borda);
+  border: 1px solid var(--label-bg);
   box-shadow: var(--sombra-leve);
   transition: background-color 0.3s ease-in-out;
   flex: 0 0 auto;
