@@ -1,0 +1,199 @@
+/* header-dashboard TEMPLATE */
+.header-dashboard-template {
+  display: grid;
+  align-items: center;
+  text-transform: lowercase;
+  grid: "header-dashboard-back header-dashboard-nav header-dashboard-logout" 45px;
+}
+
+/* Áreas de grid */
+.header-dashboard-back {
+  grid-area: header-dashboard-back;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+}
+.header-dashboard-nav {
+  grid-area: header-dashboard-nav;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.header-dashboard-logout {
+  grid-area: header-dashboard-logout;
+  justify-self: end;
+}
+
+.header-dashboard-back:active {
+  transform: translateY(2px);
+}
+
+/* Ajustando o botão circular */
+.header-dashboard-back a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+/* Ícone dentro do botão */
+.header-dashboard-back a img {
+  width: 18px;
+  height: 18px;
+}
+.header-dashboard-back:hover {
+  background: #c61818;
+  cursor: pointer;
+}
+.header-dashboard-back:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+/*---------------------------------------------*/
+
+/* header-dashboard-nav TEMPLATE */
+/* Nav */
+.header-dashboard-nav-template {
+  display: grid;
+  grid-template-areas: "dashboard-home dashboard-eventos dashboard-tarefas dashboard-contatos dashboard-pleitos";
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  align-items: center;
+}
+
+.dashboard-home {
+  grid-area: dashboard-home;
+}
+.dashboard-eventos {
+  grid-area: dashboard-eventos;
+}
+.dashboard-tarefas {
+  grid-area: dashboard-tarefas;
+}
+.dashboard-contatos {
+  grid-area: dashboard-contatos;
+}
+.dashboard-pleitos {
+  grid-area: dashboard-pleitos;
+}
+.dashboard-arquivos {
+  grid-area: dashboard-arquivos;
+}
+
+/* Estilos para a lista de navegação */
+.header-dashboard-nav-template li {
+  align-self: center;
+  justify-self: center;
+  color: var(--txt-nav);
+}
+
+.header-dashboard-nav-template a {
+  padding: 0.625rem;
+  border-radius: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+  border: 1px solid transparent;
+  font-size: var(--font-md);
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-dashboard-nav-template a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--txt-nav);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.header-dashboard-nav-template a:hover {
+  filter: var(--hover);
+}
+
+.header-dashboard-nav-template a:hover::after {
+  width: 100%;
+}
+
+.header-dashboard-nav-template .apps a:hover {
+  filter: var(--hover);
+}
+
+.header-dashboard-nav-template .apps a:hover::after {
+  width: 0;
+}
+
+.header-dashboard-nav-template img {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+.header-dashboard-logout .btn-principal {
+  padding: 5px 15px;
+}
+
+/* Indicador */
+.header-dashboard-template .indicador a {
+  color: var(--txt-nav-selecionado);
+}
+.header-dashboard-template .indicador a::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--txt-nav-selecionado);
+}
+.header-dashboard-template .indicador p {
+  color: var(--txt-nav-selecionado);
+}
+
+/* RESPONSIVO */
+@media only screen and (max-width: 56.25rem) {
+  .header-dashboard-template {
+    justify-content: stretch;
+  }
+
+  .header-dashboard-nav-template p {
+    display: none;
+  }
+  .header-dashboard-nav-template img {
+    width: 32px;
+    height: 27px;
+    margin: 0 auto;
+  }
+  .header-dashboard-template .indicador {
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  .header-dashboard-nav-template a {
+    border-radius: 50%;
+  }
+  .header-dashboard-nav-template a:hover {
+    padding: auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    background: none;
+    filter: none;
+  }
+  .header-dashboard-nav-template a:hover img {
+    background: transparent;
+  }
+  .header-dashboard-logout .btn-principal {
+    padding: 5px 7px;
+  }
+}

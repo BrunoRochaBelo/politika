@@ -61,6 +61,7 @@
 .closeModalCardAcao:focus {
   background: #c61818;
   cursor: pointer;
+  filter: none;
 }
 
 .modal-card-acao-template::-webkit-scrollbar,

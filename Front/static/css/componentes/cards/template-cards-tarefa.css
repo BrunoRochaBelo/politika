@@ -319,31 +319,27 @@
   filter: brightness(1);
 }
 
-/* Estilo do link */
-.tarefa-medium-card-desc-pleito-link {
-  text-decoration: none; /* Remove o sublinhado geral do link */
-  color: inherit;
-  display: block; /* Permite que toda a linha seja clicável */
-  width: 100%;
-}
-
 /* Sublinhado apenas no <b> */
 .tarefa-medium-card-desc-pleito-title {
-  text-decoration-color: inherit; /* Mantém a cor atual */
-  color: inherit; /* Garante que o texto tenha a mesma cor do link */
+  text-decoration-color: inherit;
+  color: inherit;
 }
 
 /* Container que alinha os elementos */
 .tarefa-medium-card-desc-pleito-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
   gap: 8px;
-  padding: 8px;
+  padding: 4px;
+  padding-left: 10px;
+  box-sizing: border-box;
   border: 1px solid transparent;
-  border-radius: 8px;
-  background: var(--cor-primaria-2);
+  border-radius: 45px;
+  background-color: var(--txt-nav-selecionado);
+  color: var(--cor-apoio-2);
   box-shadow: var(--sombra-leve);
-  justify-content: stretch;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -351,27 +347,48 @@
 .tarefa-medium-card-desc-pleito-icon {
   width: 18px;
   height: 18px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Garante que o ícone não encolha */
+  filter: brightness(0.35) saturate(4);
 }
 
-/* Nome do Pleito */
+/* Título e Nome do Pleito */
+.tarefa-medium-card-desc-pleito-title,
+.tarefa-medium-card-desc-pleito-nome {
+  margin: 0;
+}
+
 .tarefa-medium-card-desc-pleito-nome {
   font-size: var(--font-sm);
   line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Link (Botão) */
+.tarefa-medium-card-desc-pleito-container .tarefa-medium-card-desc-pleito-link {
+  margin-left: auto;
+  padding: 5px 16px;
+  background: var(--btn-principal);
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  font-size: var(--font-sm);
+  flex-shrink: 0;
+  color: var(--btn-principal-txt);
 }
 
 /* Hover do link no container */
-.tarefa-medium-card-desc-pleito-link:hover
-  .tarefa-medium-card-desc-pleito-container {
-  background-color: var(--cor-primaria-3);
-  border-color: var(--cor-primaria-3);
+.tarefa-medium-card-desc-pleito-container
+  .tarefa-medium-card-desc-pleito-link:hover {
+  background: var(--btn-principal-hover);
+  border-color: var(--btn-principal-hover);
   box-shadow: var(--sombra-moderada);
-  color: var(--cor-apoio-2);
 }
 
 /* Estilo da descrição */
 .tarefa-medium-card-desc-text {
-  line-height: 1.6; /* Espaçamento entre as linhas */
-  margin: 0; /* Remove margens adicionais */
+  line-height: 1.6;
+  margin: 0;
   align-self: center;
 }

@@ -1,0 +1,28 @@
+.main-dashboard .card-m,
+.main-dashboard .card-l {
+  border-radius: 10px;
+}
+
+.card-dashboard-template {
+  display: grid;
+  color: var(--txt-conteudo-card);
+  gap: 15px;
+  align-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "card-dashboard-template-title"
+    "card-dashboard-template-list";
+}
+
+.card-dashboard-template-title {
+  grid-area: card-dashboard-template-title;
+  color: var(--txt-conteudo-card);
+}
+.card-dashboard-template-list {
+  grid-area: card-dashboard-template-list;
+  font-size: var(--font-sm);
+  font-weight: 300;
+  color: var(--cor-primaria-1);
+}

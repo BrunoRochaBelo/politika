@@ -138,6 +138,7 @@
   background: #c61818;
   cursor: pointer;
   color: rgb(227, 227, 227);
+  filter: none;
 }
 .close:active {
   transform: translateY(1px) scale(0.98);
@@ -160,6 +161,7 @@
   background: #c61818;
   cursor: pointer;
   color: var(--txt-titulo-card);
+  filter: none;
 }
 .voltar {
   transition: transform 1s ease-in-out;
@@ -169,6 +171,7 @@
   box-shadow: var(--sombra-leve);
   border: 1px solid var(--borda);
   filter: var(--active);
+  filter: none;
 }
 
 /* Estilo para area de botões */

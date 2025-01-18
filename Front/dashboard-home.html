@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="manifest" href="./manifest.json">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+
+  <title>Dashboard Home</title>
+  <meta name="description" content="Dashboard Home">
+
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body class="body-dashboard-template">
+
+
+  <header class="header-dashboard">
+    <ul class="header-dashboard-template">
+      <li class="header-dashboard-back">
+        <a href="index.html" class="header-dashboard-back">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+        </a>
+      </li>
+      <li class="header-dashboard-nav">
+        <nav class="header-dashboard-nav">
+          <ul class="header-dashboard-nav-template">
+            <li class="dashboard-home indicador"><a href="dashboard-home.html"><img src="./static/imagens/icones/dashboard-select.svg" alt="dashboard Icon">
+                <p>Home</p>
+              </a></li>
+            <li class="dashboard-eventos"><a href="dashboard-eventos.html"><img src="./static/imagens/icones/calendario.svg" alt="eventos Icon">
+                <p>Eventos</p>
+              </a></li>
+            <li class="dashboard-tarefas"><a href="dashboard-tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas Icon">
+                <p>Tarefas</p>
+              </a></li>
+            <li class="dashboard-contatos"><a href="dashboard-contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+                <p>Contatos</p>
+              </a></li>
+            <li class="dashboard-pleitos"><a href="dashboard-pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+                <p>Pleitos</p>
+              </a></li>
+          </ul>
+
+        </nav>
+      </li>
+      <li class="header-dashboard-logout">
+        <button id="btnLogout" class="btn-principal" onclick="logout()">Desconectar</button>
+      </li>
+    </ul>
+  </header>
+
+  <main class="main-dashboard main-dashboard-template">
+    <section class="main-dashboard-section">
+      <ul class="lista-vertical-alt">
+        <li class="card-m">
+          <a href="dashboard-eventos.html">
+            <div class="card-dashboard-template">
+              <h3 class="card-dashboard-template-title">Eventos</h3>
+              <div class="card-dashboard-template-list lista-vertical-alt">
+                <p>item</p>
+                <p>item</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="card-m">
+          <a href="dashboard-tarefas.html">
+            <div class="card-dashboard-template">
+              <h3 class="card-dashboard-template-title">Tarefas</h3>
+              <div class="card-dashboard-template-list lista-vertical-alt">
+                <p>item</p>
+                <p>item</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="lista-vertical-horizontal">
+          <div class="card-l">
+            <a href="dashboard-contatos.html">
+              <div class="card-dashboard-template">
+                <h3 class="card-dashboard-template-title">Contatos</h3>
+                <div class="card-dashboard-template-list lista-vertical-alt">
+                  <p>item</p>
+                  <p>item</p>
+                  <p>item</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card-l">
+            <a href="dashboard-pleitos.html">
+              <div class="card-dashboard-template">
+                <h3 class="card-dashboard-template-title">Pleitos</h3>
+                <div class="card-dashboard-template-list lista-vertical-alt">
+                  <p>item</p>
+                  <p>item</p>
+                  <p>item</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </li>
+
+
+      </ul>
+    </section>
+  </main>
+
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/ManipularHistorico.js" defer></script>
+
+</body>
+
+</html>

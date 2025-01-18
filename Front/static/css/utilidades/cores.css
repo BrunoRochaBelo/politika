@@ -175,9 +175,11 @@
 .secao-interna-template-header.invert-filter img,
 .area-interna-containerContent-template-header.invert-filter img,
 .header-gc.invert-filter img,
-.header-organograma.invert-filter img,
-.tarefa-medium-card-desc.invert-filter img {
+.header-organograma.invert-filter img {
   filter: brightness(0.35) saturate(4);
+}
+.tarefa-medium-card-desc.invert-filter img {
+  filter: none;
 }
 
 .light-mode {

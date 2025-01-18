@@ -9,12 +9,12 @@
   position: fixed;
   top: 50px;
   left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  transform: translateX(-50%);
+  text-align: center;
   color: var(--message-error-txt, #fff);
   background-color: var(--erro, #f44336);
-  padding: 15px 20px;
-  border-radius: 8px;
-  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-size: var(--font-md);
   font-weight: 500;
@@ -72,12 +72,12 @@
   position: fixed;
   top: 50px;
   left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  transform: translateX(-50%);
+  text-align: center;
   color: var(--msg-sucesso-txt, #fff);
   background-color: var(--sucesso, #4caf50);
-  padding: 15px 20px;
-  border-radius: 8px;
-  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-size: var(--font-md);
   font-weight: 500;
@@ -155,14 +155,16 @@
 .offline::before {
   content: "Você está offline";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
   background-color: #f44336;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  z-index: 4000;
+  border-radius: 12px;
+  z-index: 4005;
   font-weight: bold;
 }
 
@@ -202,15 +204,15 @@
 
 @media only screen and (max-width: 56.25rem) {
   .message-error {
-    top: unset;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 30px;
+    width: 80%;
+    text-align: center;
   }
 
   .message-success {
-    top: unset;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 30px;
+    width: 80%;
+    text-align: center;
   }
 }
 
