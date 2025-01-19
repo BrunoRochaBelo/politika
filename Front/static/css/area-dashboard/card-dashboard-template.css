@@ -26,3 +26,33 @@
   font-weight: 300;
   color: var(--cor-primaria-1);
 }
+.lista-dashboard-cards {
+  display: grid;
+  gap: 5px;
+}
+.lista-dashboard-cards .lista-vertical-horizontal {
+  gap: 5px;
+}
+
+/* Estilos para os gráficos */
+.chart-dashboard-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* RESPONSIVO */
+@media screen and (min-width: 768px) {
+  .chart-dashboard-container {
+    max-width: 500px;
+  }
+}
+
+.chart-dashboard-container canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}

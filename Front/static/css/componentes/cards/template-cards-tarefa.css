@@ -339,7 +339,6 @@
   border-radius: 45px;
   background-color: var(--txt-nav-selecionado);
   color: var(--cor-apoio-2);
-  box-shadow: var(--sombra-leve);
   transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -370,10 +369,12 @@
   margin-left: auto;
   padding: 5px 16px;
   background: var(--btn-principal);
+  box-shadow: var(--sombra-moderada);
   border: none;
   border-radius: 45px;
   cursor: pointer;
   font-size: var(--font-sm);
+  font-weight: bolder;
   flex-shrink: 0;
   color: var(--btn-principal-txt);
 }
@@ -383,7 +384,7 @@
   .tarefa-medium-card-desc-pleito-link:hover {
   background: var(--btn-principal-hover);
   border-color: var(--btn-principal-hover);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-leve);
 }
 
 /* Estilo da descrição */

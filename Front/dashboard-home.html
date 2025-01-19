@@ -59,61 +59,351 @@
   </header>
 
   <main class="main-dashboard main-dashboard-template">
-    <section class="main-dashboard-section">
-      <ul class="lista-vertical-alt">
-        <li class="card-m">
-          <a href="dashboard-eventos.html">
-            <div class="card-dashboard-template">
-              <h3 class="card-dashboard-template-title">Eventos</h3>
-              <div class="card-dashboard-template-list lista-vertical-alt">
-                <p>item</p>
-                <p>item</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="card-m">
-          <a href="dashboard-tarefas.html">
-            <div class="card-dashboard-template">
-              <h3 class="card-dashboard-template-title">Tarefas</h3>
-              <div class="card-dashboard-template-list lista-vertical-alt">
-                <p>item</p>
-                <p>item</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="lista-vertical-horizontal">
-          <div class="card-l">
-            <a href="dashboard-contatos.html">
-              <div class="card-dashboard-template">
-                <h3 class="card-dashboard-template-title">Contatos</h3>
-                <div class="card-dashboard-template-list lista-vertical-alt">
-                  <p>item</p>
-                  <p>item</p>
-                  <p>item</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="card-l">
-            <a href="dashboard-pleitos.html">
-              <div class="card-dashboard-template">
-                <h3 class="card-dashboard-template-title">Pleitos</h3>
-                <div class="card-dashboard-template-list lista-vertical-alt">
-                  <p>item</p>
-                  <p>item</p>
-                  <p>item</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </li>
+    <section class="main-dashboard-section container-template">
+      <div class="container-template-content">
+        <div class="area-interna-containerContent-template dashboard-home">
+          <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+            <ul class="lista-vertical-alt">
+              <li class="secao-interna-template">
+                <ul class="lista-dashboard-cards">
+                  <!-- Card: Eventos -->
+                  <li class="card-m">
+                    <a href="dashboard-eventos.html">
+                      <div class="card-dashboard-template">
+                        <h3 class="card-dashboard-template-title">Eventos</h3>
+                        <div class="card-dashboard-template-list lista-vertical-alt">
 
+                          <!-- Gráfico de Eventos -->
+                          <div class="chart-dashboard-container">
+                            <canvas id="chartEventos"></canvas>
+                          </div>
 
-      </ul>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <!-- Card: Tarefas -->
+                  <li class="card-m">
+                    <a href="dashboard-tarefas.html">
+                      <div class="card-dashboard-template">
+                        <h3 class="card-dashboard-template-title">Tarefas</h3>
+                        <div class="card-dashboard-template-list lista-vertical-alt">
+
+                          <!-- Gráfico de Tarefas -->
+                          <div class="chart-dashboard-container">
+                            <canvas id="chartTarefas"></canvas>
+                          </div>
+
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <!-- Contatos e Pleitos lado a lado -->
+                  <li class="lista-vertical-horizontal">
+                    <div class="card-l">
+                      <a href="dashboard-contatos.html">
+                        <div class="card-dashboard-template">
+                          <h3 class="card-dashboard-template-title">Contatos</h3>
+                          <div class="card-dashboard-template-list lista-vertical-alt">
+
+                            <!-- Gráfico de Contatos -->
+                            <div class="chart-dashboard-container">
+                              <canvas id="chartContatos"></canvas>
+                            </div>
+
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="card-l">
+                      <a href="dashboard-pleitos.html">
+                        <div class="card-dashboard-template">
+                          <h3 class="card-dashboard-template-title">Pleitos</h3>
+                          <div class="card-dashboard-template-list lista-vertical-alt">
+
+                            <!-- Gráfico de Pleitos -->
+                            <div class="chart-dashboard-container">
+                              <canvas id="chartPleitos"></canvas>
+                            </div>
+
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+
+                </ul>
+              </li>
+              <li class="list-last-child"><br></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+
+  <!-- Script da biblioteca Chart.js -->
+  <script src="./static/js/chart.umd.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* ======================================================== */
+      /* FUNÇÕES DE GRADIENTE (OPCIONAIS)                         */
+      /* ======================================================== */
+      function createVerticalGradient(ctx, colorStart, colorEnd) {
+        const chartArea = ctx.chartArea;
+        if (!chartArea) return null;
+        const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+        gradient.addColorStop(0, colorStart);
+        gradient.addColorStop(1, colorEnd);
+        return gradient;
+      }
+
+      /* ======================================================== */
+      /* 1) GRÁFICO DE EVENTOS - DOUGHNUT                         */
+      /*    - Categorias: Pendentes, Realizados                   */
+      /* ======================================================== */
+      const ctxEventos = document.getElementById('chartEventos').getContext('2d');
+      new Chart(ctxEventos, {
+        type: 'doughnut',
+        data: {
+          labels: ['Pendentes', 'Realizados'],
+          datasets: [{
+            data: [12, 8], // Exemplo
+            backgroundColor: ['#f87171', '#34d399'],
+            hoverOffset: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '60%',
+          layout: {
+            padding: 10
+          },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 15,
+                boxHeight: 15
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              bodyColor: '#fff',
+              cornerRadius: 4,
+              padding: 8
+            }
+          },
+          animation: {
+            animateScale: true,
+            animateRotate: true,
+            duration: 1200,
+            easing: 'easeInOutQuart'
+          }
+        }
+      });
+
+      /* ======================================================== */
+      /* 2) GRÁFICO DE TAREFAS - BAR                             */
+      /*    - Categorias: Novas, Andamento, Atrasadas, Concluídas */
+      /* ======================================================== */
+      const ctxTarefas = document.getElementById('chartTarefas').getContext('2d');
+      new Chart(ctxTarefas, {
+        type: 'bar',
+        data: {
+          labels: ['Novas', 'Andamento', 'Atrasadas', 'Concluídas'],
+          datasets: [{
+            label: 'Tarefas',
+            data: [10, 15, 5, 20], // Exemplo
+            backgroundColor: function (context) {
+              const index = context.dataIndex;
+              const chart = context.chart;
+              const chartArea = chart.chartArea;
+              if (!chartArea) return '#cccccc';
+
+              // Cria gradiente diferente para cada barra (opcional)
+              const ctx = chart.ctx;
+              const gradient = ctx.createLinearGradient(
+                0, chartArea.top,
+                0, chartArea.bottom
+              );
+
+              switch (index) {
+                case 0: // Novas
+                  gradient.addColorStop(0, '#93c5fd');
+                  gradient.addColorStop(1, '#3b82f6');
+                  break;
+                case 1: // Andamento
+                  gradient.addColorStop(0, '#fef08a');
+                  gradient.addColorStop(1, '#facc15');
+                  break;
+                case 2: // Atrasadas
+                  gradient.addColorStop(0, '#fca5a5');
+                  gradient.addColorStop(1, '#ef4444');
+                  break;
+                case 3: // Concluídas
+                default:
+                  gradient.addColorStop(0, '#86efac');
+                  gradient.addColorStop(1, '#22c55e');
+                  break;
+              }
+              return gradient;
+            },
+            borderRadius: 6 // Arredonda canto superior das barras
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true
+            },
+            x: {
+              grid: {
+                display: false
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              bodyColor: '#fff',
+              cornerRadius: 4
+            }
+          },
+          animation: {
+            duration: 1000,
+            easing: 'easeOutBounce'
+          }
+        }
+      });
+
+      /* ======================================================== */
+      /* 3) GRÁFICO DE CONTATOS - LINE                           */
+      /*    - Exibe evolução de Contatos ao longo do tempo        */
+      /* ======================================================== */
+      const ctxContatos = document.getElementById('chartContatos').getContext('2d');
+      let gradientContatos;
+      new Chart(ctxContatos, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'], // Exemplo
+          datasets: [{
+            label: 'Total de Contatos',
+            data: [100, 120, 150, 130, 180, 200],
+            fill: true,
+            borderColor: '#3b82f6',
+            backgroundColor: (context) => gradientContatos || '#3b82f6',
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: false,
+              grid: {
+                color: '#f0f0f0'
+              }
+            },
+            x: {
+              grid: {
+                display: false
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom'
+            },
+            tooltip: {
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              cornerRadius: 4,
+              bodyColor: '#fff'
+            }
+          },
+          animation: {
+            duration: 1500,
+            easing: 'easeInOutCubic'
+          }
+        },
+        plugins: [{
+          // Plugin para criar gradiente vertical antes de desenhar o dataset
+          id: 'customGradientFiller',
+          beforeDatasetsDraw(chart) {
+            const { ctx, chartArea } = chart;
+            if (!chartArea) return;
+            if (!gradientContatos) {
+              gradientContatos = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+              gradientContatos.addColorStop(0, 'rgba(59,130,246,0.5)');
+              gradientContatos.addColorStop(1, 'rgba(59,130,246,0.0)');
+            }
+            chart.data.datasets[0].backgroundColor = gradientContatos;
+          }
+        }]
+      });
+
+      /* ======================================================== */
+      /* 4) GRÁFICO DE PLEITOS - DOUGHNUT                        */
+      /*    - Categorias: Atendidos, Parcial, Negado, Cancelado   */
+      /* ======================================================== */
+      const ctxPleitos = document.getElementById('chartPleitos').getContext('2d');
+      new Chart(ctxPleitos, {
+        type: 'doughnut',
+        data: {
+          labels: ['Atendidos', 'Atendidos Parcialmente', 'Negado', 'Cancelado'],
+          datasets: [{
+            // Exemplo de distribuição
+            data: [8, 3, 2, 1],
+            backgroundColor: [
+              '#34d399', // Verde
+              '#fbbf24', // Amarelo
+              '#f87171', // Vermelho claro
+              '#cbd5e1'  // Cinza
+            ],
+            hoverOffset: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '50%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 15,
+                boxHeight: 15
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              cornerRadius: 4,
+              bodyColor: '#fff'
+            }
+          },
+          animation: {
+            animateScale: true,
+            animateRotate: true,
+            duration: 1200,
+            easing: 'easeInOutCubic'
+          }
+        }
+      });
+    });
+  </script>
 
 
   <script src="./static/js/config.js" defer></script>
