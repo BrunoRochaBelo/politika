@@ -1,20 +1,22 @@
-.modal-concluir-tarefa-template {
+.info-concluir-tarefa-template {
   display: grid;
+  box-sizing: border-box;
   color: var(--txt-conteudo-card);
   gap: 3px;
+  padding: 10px;
   grid:
-    "modal-concluir-tarefa-title modal-concluir-tarefa-title modal-concluir-tarefa-data"
-    "modal-concluir-tarefa-responsavel modal-concluir-tarefa-responsavel modal-concluir-tarefa-responsavel"
-    "modal-concluir-tarefa-desc modal-concluir-tarefa-desc modal-concluir-tarefa-desc"
-    "modal-concluir-tarefa-concluir modal-concluir-tarefa-concluir modal-concluir-tarefa-concluir";
+    "info-concluir-tarefa-title info-concluir-tarefa-title info-concluir-tarefa-data"
+    "info-concluir-tarefa-responsavel info-concluir-tarefa-responsavel info-concluir-tarefa-status"
+    "info-concluir-tarefa-desc info-concluir-tarefa-desc info-concluir-tarefa-desc"
+    "info-concluir-tarefa-concluir info-concluir-tarefa-concluir info-concluir-tarefa-concluir";
 }
-.modal-concluir-tarefa-id {
+.info-concluir-tarefa-id {
   display: none;
   opacity: 0;
 }
 
-.modal-concluir-tarefa-title {
-  grid-area: modal-concluir-tarefa-title;
+.info-concluir-tarefa-title {
+  grid-area: info-concluir-tarefa-title;
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
@@ -24,18 +26,18 @@
   align-self: center;
 }
 
-.modal-concluir-tarefa-data {
-  grid-area: modal-concluir-tarefa-data;
-  justify-self: start;
+.info-concluir-tarefa-data {
+  grid-area: info-concluir-tarefa-data;
+  justify-self: end;
   align-self: center;
-  padding-left: 14px;
+  padding-right: 14px;
   margin: 3px 0 0 10px;
   font-size: var(--font-sm);
   font-weight: 400;
 }
 
-.modal-concluir-tarefa-responsavel {
-  grid-area: modal-concluir-tarefa-responsavel;
+.info-concluir-tarefa-responsavel {
+  grid-area: info-concluir-tarefa-responsavel;
   justify-self: start;
   align-self: center;
   padding-left: 14px;
@@ -44,8 +46,18 @@
   font-weight: 300;
 }
 
-.modal-concluir-tarefa-desc {
-  grid-area: modal-concluir-tarefa-desc;
+.info-concluir-tarefa-status {
+  grid-area: info-concluir-tarefa-status;
+  justify-self: center;
+  align-self: center;
+  padding-right: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+  font-weight: 300;
+}
+
+.info-concluir-tarefa-desc {
+  grid-area: info-concluir-tarefa-desc;
   align-self: center;
   justify-self: stretch;
   padding: 10px 14px;
@@ -59,35 +71,33 @@
   font-weight: 300;
 }
 
-.modal-concluir-tarefa-concluir {
-  grid-area: modal-concluir-tarefa-concluir;
+.form-concluir-tarefa {
+  grid-area: form-concluir-tarefa;
   display: grid;
+  box-sizing: border-box;
   justify-items: stretch;
   gap: 20px 5px;
   padding: 10px;
-  margin: 15px 0 0 0;
+  margin: 10px;
   align-self: center;
-  border: 1px solid var(--container-bg);
+  border: 1px solid var(--cor-apoio-2);
   font-size: var(--font-sm);
   font-weight: 300;
-  background: var(--container-bg);
+  box-shadow: var(--sombra-moderada);
   border-radius: 25px;
   grid:
-    "modal-concluir-tarefa-concluir-title"
-    "modal-concluir-tarefa-situacao"
-    "modal-concluir-tarefa-descConclusao"
-    "modal-concluir-tarefa-salvar";
+    "form-concluir-tarefa-title"
+    "form-concluir-tarefa-situacao"
+    "form-concluir-tarefa-descConclusao"
+    "form-concluir-tarefa-salvar";
+}
+.form-concluir-tarefa-title {
+  grid-area: form-concluir-tarefa-title;
+  font-size: var(--font-md);
 }
 
-.modal-concluir-tarefa-descConclusao {
-  grid-area: modal-concluir-tarefa-descConclusao;
-  justify-items: stretch;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-concluir-tarefa-situacao {
-  grid-area: modal-concluir-tarefa-situacao;
+.form-concluir-tarefa-situacao {
+  grid-area: form-concluir-tarefa-situacao;
   justify-items: stretch;
   display: flex;
   flex-direction: column;
@@ -95,8 +105,15 @@
   font-weight: 300;
 }
 
-.modal-concluir-tarefa-salvar {
-  grid-area: modal-concluir-tarefa-salvar;
+.form-concluir-tarefa-descConclusao {
+  grid-area: form-concluir-tarefa-descConclusao;
+  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-concluir-tarefa-salvar {
+  grid-area: form-concluir-tarefa-salvar;
   display: flex;
   justify-content: space-around;
   gap: 10px;
@@ -105,14 +122,14 @@
   margin-top: 25px;
 }
 
-.modal-concluir-tarefa-concluir label {
+.form-concluir-tarefa label {
   color: var(--txt-subtitulo);
   margin-bottom: 7px;
 }
 
-.modal-concluir-tarefa-concluir textarea,
-.modal-concluir-tarefa-concluir select,
-.modal-concluir-tarefa-concluir input {
+.form-concluir-tarefa textarea,
+.form-concluir-tarefa select,
+.form-concluir-tarefa input {
   width: 100%;
   box-sizing: border-box;
   padding: 0.9375rem;
@@ -125,12 +142,20 @@
 
 /* Responsivo */
 @media only screen and (max-width: 56.25rem) {
-  .modal-concluir-tarefa-concluir-salvar {
+  .info-concluir-tarefa-template {
+    padding: 5px;
+  }
+
+  .form-concluir-tarefa {
+    padding: 10px;
+    margin: 5px;
+  }
+  .form-concluir-tarefa-salvar {
     flex-direction: column;
     gap: 0.625rem;
   }
 
-  .modal-concluir-tarefa-concluir-content::-webkit-scrollbar {
+  .form-concluir-tarefa-content::-webkit-scrollbar {
     display: none;
   }
 }

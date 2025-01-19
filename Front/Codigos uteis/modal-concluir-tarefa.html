@@ -1,0 +1,48 @@
+<!-- Modal Concluir Tarefa -->
+<div id="modal-overlay" class="modal-card-acao-overlay"></div>
+
+<div id="modal-concluir-tarefa" class="modal-card-acao-template">
+  <div class="modal-card-acao-template-header">
+    <span class="closeModalCardAcao">&times;</span>
+  </div>
+  <div class="modal-card-acao-template-content">
+    <ul class="lista-vertical-modal">
+      <li>
+        <div class="modal-concluir-tarefa-template">
+          <p class="modal-concluir-tarefa-title" data-filter="tituloTarefa">Título da Tarefa</p>
+          <p class="modal-concluir-tarefa-data" data-filter="dataTarefa">Data da Tarefa</p>
+          <p class="modal-concluir-tarefa-status" data-filter="statusTarefa">Status da Tarefa</p>
+          <p class="modal-concluir-tarefa-responsavel" data-filter="responsavelTarefa">Responsável</p>
+          <div class="modal-concluir-tarefa-desc" data-filter="descricaoTarefa">
+            <p><strong>Descrição:</strong> Descrição da Tarefa</p>
+          </div>
+          <p class="modal-concluir-tarefa-id" data-filter="modalTarefaID">ID da Tarefa</p>
+        </div>
+      </li>
+      <li>
+        <div class="modal-concluir-tarefa-concluir">
+          <h2 class="modal-concluir-tarefa-concluir-title">Concluir Tarefa</h2>
+          <div class="modal-concluir-tarefa-situacao">
+            <label for="ConclusaoTarefa">Situação:</label>
+            <div class="radio-button-group">
+              <input type="radio" id="atrasada" name="ConclusaoTarefa" value="atrasada">
+              <label for="atrasada">Atrasada</label>
+              <input type="radio" id="cancelada" name="ConclusaoTarefa" value="cancelada">
+              <label for="cancelada">Cancelada</label>
+              <input type="radio" id="concluída" name="ConclusaoTarefa" value="concluída">
+              <label for="concluída">Concluída</label>
+
+            </div>
+          </div>
+          <div class="modal-concluir-tarefa-descConclusao">
+            <label for="descConclusaoTarefa">Descrição da Conclusão:</label>
+            <textarea id="descConclusaoTarefa" name="descConclusaoTarefa"></textarea>
+          </div>
+          <div class="modal-concluir-tarefa-salvar">
+            <button type="submit" class="btn-principal" onclick="submitTarefaForm()">Concluir</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
