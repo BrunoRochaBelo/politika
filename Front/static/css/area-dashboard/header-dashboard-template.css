@@ -177,9 +177,7 @@
     border-radius: 50%;
     background-color: transparent;
   }
-  .header-dashboard-nav-template a {
-    border-radius: 50%;
-  }
+
   .header-dashboard-nav-template a:hover {
     padding: auto;
     -webkit-background-clip: text;

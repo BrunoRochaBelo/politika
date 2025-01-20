@@ -168,8 +168,12 @@
 
 /* Estilos para os primeiros cards de cada lista */
 /* Adiciona margin-top: 15px ao primeiro <li> de lista-vertical e lista-vertical-alt */
-.lista-vertical > li:first-child,
-.lista-vertical-alt > li:first-child {
+.area-interna-containerContent-template-content
+  .lista-vertical
+  > li:first-child,
+.area-interna-containerContent-template-content
+  .lista-vertical-alt
+  > li:first-child {
   margin-top: 15px;
 }
 
@@ -187,8 +191,21 @@ li > .lista-vertical-alt > li:first-child {
 
 /* RESPONSIVO */
 @media only screen and (max-width: 56.25rem) {
+  .area-interna-containerContent-template-content
+    .lista-vertical
+    > li:first-child,
+  .area-interna-containerContent-template-content
+    .lista-vertical-alt
+    > li:first-child {
+    margin-top: 5px;
+  }
+
   .lista-vertical-fil {
     gap: 3px 0px;
+  }
+
+  .lista-vertical-cards {
+    padding: 5px;
   }
 
   .lista-vertical-modal {
@@ -223,6 +240,9 @@ li > .lista-vertical-alt > li:first-child {
     scrollbar-width: thick;
   }
 
+  .lista-horizontal {
+    padding: 10px 5px;
+  }
   .lista-horizontal.expandir {
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));

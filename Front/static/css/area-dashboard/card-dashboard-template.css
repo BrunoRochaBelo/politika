@@ -2,18 +2,40 @@
 .main-dashboard .card-l {
   border-radius: 10px;
 }
+/*  hover  */
+.card-xs:hover,
+.card-s:hover,
+.card-m:hover,
+.card-l:hover,
+.card-tmf-s:hover,
+.card-tmf-m:hover,
+.card-tmf-l:hover,
+.card-select-xs:hover,
+.card-select-s:hover,
+.card-select-m:hover {
+  filter: none;
+}
+/* Active */
+.main-dashboard .card-xs:active:not(.card-xs.filtro-small-card),
+.main-dashboard .card-s:active,
+.main-dashboard .card-m:active,
+.main-dashboard .card-l:active {
+  animation: none;
+  transform: none;
+  box-shadow: none;
+}
 
 .card-dashboard-template {
   display: grid;
   color: var(--txt-conteudo-card);
-  gap: 15px;
-  align-content: center;
+  gap: 0px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
     "card-dashboard-template-title"
-    "card-dashboard-template-list";
+    "card-dashboard-template-list"
+    "card-dashboard-template-link";
 }
 
 .card-dashboard-template-title {
@@ -26,6 +48,30 @@
   font-weight: 300;
   color: var(--cor-primaria-1);
 }
+.card-dashboard-template-link {
+  grid-area: card-dashboard-template-link;
+  justify-self: end;
+  padding: 10px;
+  color: var(--cor-primaria-1);
+  font-size: var(--font-sm);
+  font-weight: bold;
+  text-decoration: none;
+  position: relative; /* Para ajustar o posicionamento da seta, se necessário */
+}
+
+.card-dashboard-template-link::after {
+  content: "➔"; /* Seta mais grossa */
+  display: inline-block;
+  margin-left: 8px;
+  font-size: var(--font-sm);
+  color: var(--cor-primaria-1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-dashboard-template-link:hover::after {
+  transform: translateX(3px);
+}
+
 .lista-dashboard-cards {
   display: grid;
   gap: 5px;
@@ -34,25 +80,46 @@
   gap: 5px;
 }
 
-/* Estilos para os gráficos */
+/* ------------------------------------------- */
+/* Contêiner geral dos gráficos               */
+/* ------------------------------------------- */
 .chart-dashboard-container {
   width: 100%;
-  max-width: 450px;
-  margin: 0 auto;
-  padding: 1rem 0;
-  box-sizing: border-box;
+  overflow-x: auto;
   position: relative;
+  -webkit-overflow-scrolling: touch;
+  cursor: default; /* não usar "grab" por padrão */
 }
 
-/* RESPONSIVO */
-@media screen and (min-width: 768px) {
+/* Em telas < 768px (celulares) maior altura para evitar achatamento */
+@media (max-width: 767px) {
   .chart-dashboard-container {
-    max-width: 500px;
+    height: 400px;
   }
 }
 
-.chart-dashboard-container canvas {
-  display: block;
-  width: 100%;
-  height: auto;
+/* Entre 768px e 991px (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .chart-dashboard-container {
+    height: 330px;
+  }
+}
+
+/* Acima de 992px (desktops) */
+@media (min-width: 992px) {
+  .chart-dashboard-container {
+    height: 300px;
+  }
+}
+
+/* ------------------------------------------- */
+/* Gráfico de Contatos: min-width moderada     */
+/* ------------------------------------------- */
+.line-chart-container canvas#chartContatos {
+  min-width: 700px;
+}
+
+/* Cursor "grabbing" apenas durante o drag */
+.chart-dashboard-container.active {
+  cursor: grabbing;
 }

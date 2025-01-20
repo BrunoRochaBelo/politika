@@ -114,6 +114,10 @@
 }
 
 @media only screen and (max-width: 56.25rem) {
+  .secao-interna-template.area-aniversariantes {
+    margin: 0 5px;
+  }
+
   .secao-interna-template.area-aniversariantes:hover {
     filter: none !important;
   }

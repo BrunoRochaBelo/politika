@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <link rel="manifest" href="./manifest.json">
@@ -13,8 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
 
-  <title>Dashboard Home</title>
-  <meta name="description" content="Dashboard Home">
+  <title>Dashboard Contatos</title>
+  <meta name="description" content="Dashboard Contatos">
+
 
   <!-- Chart.js e plugins -->
   <script src="./static/js/chart.umd.js" defer></script>
@@ -38,7 +39,7 @@
       <li class="header-dashboard-nav">
         <nav class="header-dashboard-nav">
           <ul class="header-dashboard-nav-template">
-            <li class="dashboard-home indicador"><a href="dashboard-home.html"><img src="./static/imagens/icones/dashboard-select.svg" alt="dashboard Icon">
+            <li class="dashboard-home"><a href="dashboard-home.html"><img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
                 <p>Home</p>
               </a></li>
             <li class="dashboard-eventos"><a href="dashboard-eventos.html"><img src="./static/imagens/icones/calendario.svg" alt="eventos Icon">
@@ -47,7 +48,7 @@
             <li class="dashboard-tarefas"><a href="dashboard-tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas Icon">
                 <p>Tarefas</p>
               </a></li>
-            <li class="dashboard-contatos"><a href="dashboard-contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+            <li class="dashboard-contatos indicador"><a href="dashboard-contatos.html"><img src="./static/imagens/icones/contatos-select.svg" alt="Contatos Icon">
                 <p>Contatos</p>
               </a></li>
             <li class="dashboard-pleitos"><a href="dashboard-pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
@@ -63,6 +64,8 @@
     </ul>
   </header>
 
+
+  <!-- Main -->
   <main class="main-dashboard main-dashboard-template">
     <section class="main-dashboard-section container-template">
       <div class="container-template-content">
@@ -70,63 +73,65 @@
           <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
             <ul class="lista-vertical-alt">
               <li class="secao-interna-template">
+
+                <!-- Aqui listamos os novos cartões de gráficos -->
                 <ul class="lista-dashboard-cards">
 
-                  <!-- Card: Eventos -->
+                  <!-- Card: Tipos de Contatos (Bar) -->
                   <li class="card-m">
                     <div class="card-dashboard-template">
-                      <h3 class="card-dashboard-template-title">Eventos</h3>
+                      <h3 class="card-dashboard-template-title">Tipos de Contatos</h3>
                       <div class="card-dashboard-template-list lista-vertical-alt">
                         <div class="chart-dashboard-container">
-                          <canvas id="chartEventos"></canvas>
+                          <canvas id="chartTiposContatos"></canvas>
                         </div>
-                      </div>
-                      <a class="card-dashboard-template-link" href="dashboard-eventos.html">ir para eventos</a>
-                    </div>
-                  </li>
-
-                  <!-- Tarefas e Pleitos lado a lado -->
-                  <li class="lista-vertical-horizontal">
-                    <div class="card-l">
-                      <div class="card-dashboard-template">
-                        <h3 class="card-dashboard-template-title">Tarefas</h3>
-                        <div class="card-dashboard-template-list lista-vertical-alt">
-                          <div class="chart-dashboard-container">
-                            <canvas id="chartTarefas"></canvas>
-                          </div>
-                        </div>
-                        <a class="card-dashboard-template-link" href="dashboard-tarefas.html">ir para tarefas</a>
-                      </div>
-                    </div>
-                    <div class="card-l">
-                      <div class="card-dashboard-template">
-                        <h3 class="card-dashboard-template-title">Pleitos</h3>
-                        <div class="card-dashboard-template-list lista-vertical-alt">
-                          <div class="chart-dashboard-container">
-                            <canvas id="chartPleitos"></canvas>
-                          </div>
-                        </div>
-                        <a class="card-dashboard-template-link" href="dashboard-pleitos.html">ir para pleitos</a>
                       </div>
                     </div>
                   </li>
 
-                  <!-- Card: Contatos -->
+                  <!-- Card: Perfil de Influência (PolarArea) -->
                   <li class="card-m">
                     <div class="card-dashboard-template">
-                      <h3 class="card-dashboard-template-title">Novos Contatos</h3>
+                      <h3 class="card-dashboard-template-title">Perfil de Influência</h3>
                       <div class="card-dashboard-template-list lista-vertical-alt">
-                        <div class="chart-dashboard-container line-chart-container">
-                          <canvas id="chartContatos"></canvas>
+                        <div class="chart-dashboard-container">
+                          <canvas id="chartPerfilInfluencia"></canvas>
                         </div>
                       </div>
-                      <a class="card-dashboard-template-link" href="dashboard-contatos.html">ir para contatos</a>
                     </div>
+                  </li>
+
+                  <!-- Residências e Localidade lado a lado -->
+                  <li class="lista-vertical-horizontal">
+
+                    <!-- Card: Residências de Apoio (Line) -->
+                    <div class="card-l">
+                      <div class="card-dashboard-template">
+                        <h3 class="card-dashboard-template-title">Residências de Apoio</h3>
+                        <div class="card-dashboard-template-list lista-vertical-alt">
+                          <div class="chart-dashboard-container line-chart-container">
+                            <canvas id="chartResidencias"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Card: Localidade (Pie) -->
+                    <div class="card-l">
+                      <div class="card-dashboard-template">
+                        <h3 class="card-dashboard-template-title">Localidade (Bairro)</h3>
+                        <div class="card-dashboard-template-list lista-vertical-alt">
+                          <div class="chart-dashboard-container">
+                            <canvas id="chartLocalidade"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </li>
 
                 </ul>
               </li>
-              <li class="list-last-child"><br></li>
             </ul>
           </div>
         </div>
@@ -134,8 +139,8 @@
     </section>
   </main>
 
-  <!-- Script principal de configuração de gráficos -->
-  <script src="./static/js/dashboard-home-charts.js" defer></script>
+  <!-- Script específico para esta página -->
+  <script src="./static/js/dashboard-contatos-charts.js" defer></script>
 
   <script src="./static/js/config.js" defer></script>
   <script src="./static/js/RegisterSW.js" defer></script>

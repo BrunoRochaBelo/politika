@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <link rel="manifest" href="./manifest.json">
@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
 
-  <title>Dashboard Home</title>
-  <meta name="description" content="Dashboard Home">
+  <title>Dashboard Tarefas</title>
+  <meta name="description" content="Dashboard Tarefas">
 
   <!-- Chart.js e plugins -->
   <script src="./static/js/chart.umd.js" defer></script>
@@ -38,23 +38,37 @@
       <li class="header-dashboard-nav">
         <nav class="header-dashboard-nav">
           <ul class="header-dashboard-nav-template">
-            <li class="dashboard-home indicador"><a href="dashboard-home.html"><img src="./static/imagens/icones/dashboard-select.svg" alt="dashboard Icon">
+            <li class="dashboard-home">
+              <a href="dashboard-home.html">
+                <img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
                 <p>Home</p>
-              </a></li>
-            <li class="dashboard-eventos"><a href="dashboard-eventos.html"><img src="./static/imagens/icones/calendario.svg" alt="eventos Icon">
+              </a>
+            </li>
+            <li class="dashboard-eventos">
+              <a href="dashboard-eventos.html">
+                <img src="./static/imagens/icones/calendario.svg" alt="eventos Icon">
                 <p>Eventos</p>
-              </a></li>
-            <li class="dashboard-tarefas"><a href="dashboard-tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas Icon">
+              </a>
+            </li>
+            <li class="dashboard-tarefas indicador">
+              <a href="dashboard-tarefas.html">
+                <img src="./static/imagens/icones/tarefas-select.svg" alt="Tarefas Icon">
                 <p>Tarefas</p>
-              </a></li>
-            <li class="dashboard-contatos"><a href="dashboard-contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+              </a>
+            </li>
+            <li class="dashboard-contatos">
+              <a href="dashboard-contatos.html">
+                <img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
                 <p>Contatos</p>
-              </a></li>
-            <li class="dashboard-pleitos"><a href="dashboard-pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+              </a>
+            </li>
+            <li class="dashboard-pleitos">
+              <a href="dashboard-pleitos.html">
+                <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
                 <p>Pleitos</p>
-              </a></li>
+              </a>
+            </li>
           </ul>
-
         </nav>
       </li>
       <li class="header-dashboard-logout">
@@ -72,61 +86,44 @@
               <li class="secao-interna-template">
                 <ul class="lista-dashboard-cards">
 
-                  <!-- Card: Eventos -->
+                  <!-- Card 1: Tarefas por Responsável -->
                   <li class="card-m">
                     <div class="card-dashboard-template">
-                      <h3 class="card-dashboard-template-title">Eventos</h3>
-                      <div class="card-dashboard-template-list lista-vertical-alt">
-                        <div class="chart-dashboard-container">
-                          <canvas id="chartEventos"></canvas>
-                        </div>
-                      </div>
-                      <a class="card-dashboard-template-link" href="dashboard-eventos.html">ir para eventos</a>
-                    </div>
-                  </li>
-
-                  <!-- Tarefas e Pleitos lado a lado -->
-                  <li class="lista-vertical-horizontal">
-                    <div class="card-l">
-                      <div class="card-dashboard-template">
-                        <h3 class="card-dashboard-template-title">Tarefas</h3>
-                        <div class="card-dashboard-template-list lista-vertical-alt">
-                          <div class="chart-dashboard-container">
-                            <canvas id="chartTarefas"></canvas>
-                          </div>
-                        </div>
-                        <a class="card-dashboard-template-link" href="dashboard-tarefas.html">ir para tarefas</a>
-                      </div>
-                    </div>
-                    <div class="card-l">
-                      <div class="card-dashboard-template">
-                        <h3 class="card-dashboard-template-title">Pleitos</h3>
-                        <div class="card-dashboard-template-list lista-vertical-alt">
-                          <div class="chart-dashboard-container">
-                            <canvas id="chartPleitos"></canvas>
-                          </div>
-                        </div>
-                        <a class="card-dashboard-template-link" href="dashboard-pleitos.html">ir para pleitos</a>
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- Card: Contatos -->
-                  <li class="card-m">
-                    <div class="card-dashboard-template">
-                      <h3 class="card-dashboard-template-title">Novos Contatos</h3>
+                      <h3 class="card-dashboard-template-title">Tarefas por Responsável</h3>
                       <div class="card-dashboard-template-list lista-vertical-alt">
                         <div class="chart-dashboard-container line-chart-container">
-                          <canvas id="chartContatos"></canvas>
+                          <canvas id="chartTarefasResponsaveis"></canvas>
                         </div>
                       </div>
-                      <a class="card-dashboard-template-link" href="dashboard-contatos.html">ir para contatos</a>
+                    </div>
+                  </li>
+
+                  <!-- Card 2: Tarefas por Status -->
+                  <li class="card-m">
+                    <div class="card-dashboard-template">
+                      <h3 class="card-dashboard-template-title">Tarefas por Status</h3>
+                      <div class="card-dashboard-template-list lista-vertical-alt">
+                        <div class="chart-dashboard-container">
+                          <canvas id="chartTarefasStatus"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Card 3: Tarefas por Marcadores -->
+                  <li class="card-m">
+                    <div class="card-dashboard-template">
+                      <h3 class="card-dashboard-template-title">Tarefas por Marcadores</h3>
+                      <div class="card-dashboard-template-list lista-vertical-alt">
+                        <div class="chart-dashboard-container">
+                          <canvas id="chartTarefasMarcadores"></canvas>
+                        </div>
+                      </div>
                     </div>
                   </li>
 
                 </ul>
               </li>
-              <li class="list-last-child"><br></li>
             </ul>
           </div>
         </div>
@@ -134,8 +131,8 @@
     </section>
   </main>
 
-  <!-- Script principal de configuração de gráficos -->
-  <script src="./static/js/dashboard-home-charts.js" defer></script>
+  <!-- Script específico para esta página -->
+  <script src="./static/js/dashboard-tarefas-charts.js" defer></script>
 
   <script src="./static/js/config.js" defer></script>
   <script src="./static/js/RegisterSW.js" defer></script>

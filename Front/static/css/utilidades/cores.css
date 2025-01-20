@@ -175,6 +175,9 @@
 .secao-interna-template-header.invert-filter img,
 .area-interna-containerContent-template-header.invert-filter img,
 .header-gc.invert-filter img,
+.header-dashboard.invert-filter img,
+.header-mapas.invert-filter img,
+.header-financeiro.invert-filter img,
 .header-organograma.invert-filter img {
   filter: brightness(0.35) saturate(4);
 }
