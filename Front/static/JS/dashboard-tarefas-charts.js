@@ -1,39 +1,65 @@
 // dashboard-tarefas-charts.js
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Verifica se o ChartBase está disponível
   if (!window.ChartBase) {
-    console.error(
-      "charts-base.js não foi carregado antes de dashboard-tarefas-charts.js!"
-    );
+    const errorContainer = document.createElement("div");
+    errorContainer.classList.add("message-error", "show");
+    errorContainer.textContent =
+      "charts-base.js não foi carregado antes de dashboard-tarefas-charts.js!";
+    document.body.appendChild(errorContainer);
     return;
   }
 
-  // Extraímos as funções fábricas necessárias
   const {
     createBarChart,
-    createHorizontalBarChart,
+    createLineChart,
     createDoughnutChart,
-    // ... se quiser outras
+    // createHorizontalBarChart, ...
   } = window.ChartBase;
 
-  // ========================================================
-  // Função para obter variáveis CSS definidas no :root
-  // ========================================================
-  function getCSSVariable(varName) {
+  function cssVar(name) {
     return getComputedStyle(document.documentElement)
-      .getPropertyValue(varName)
+      .getPropertyValue(name)
       .trim();
   }
 
-  // ========================================================
-  // 1) Tarefas por Responsável (Horizontal Bar)
-  // ========================================================
+  // --------------------------------------------------------
+  // 1) Tarefas por Status (Bar Vertical)
+  // --------------------------------------------------------
+  const ctxStatus = document
+    .getElementById("chartTarefasStatus")
+    ?.getContext("2d");
+  if (ctxStatus) {
+    const labels = ["Novas", "Andamento", "Atrasadas", "Concluídas"];
+    const dataValues = [15, 25, 10, 30];
+
+    const backgroundColors = [
+      cssVar("--cor-primaria-1"),
+      cssVar("--cor-apoio-1"),
+      cssVar("--cor-secundaria-1"),
+      cssVar("--cor-apoio-2"),
+    ];
+
+    createBarChart(ctxStatus, {
+      labels,
+      datasets: [
+        {
+          label: "Tarefas por Status",
+          data: dataValues,
+          backgroundColor: backgroundColors,
+          borderRadius: 6,
+        },
+      ],
+    });
+  }
+
+  // --------------------------------------------------------
+  // 2) Tarefas por Responsável (Line Chart)
+  // --------------------------------------------------------
   const ctxResp = document
     .getElementById("chartTarefasResponsaveis")
     ?.getContext("2d");
   if (ctxResp) {
-    // Supondo 10 responsáveis, nomes fictícios
     const labels = [
       "Ana",
       "Bruno",
@@ -46,113 +72,29 @@ document.addEventListener("DOMContentLoaded", function () {
       "Iara",
       "Jonas",
     ];
-    const dataValues = [10, 5, 7, 12, 4, 6, 9, 3, 8, 11]; // Exemplo
+    const dataValues = [10, 5, 7, 12, 4, 6, 9, 3, 8, 11];
 
-    // Função para criar gradiente por barra horizontal
-    function respGradientFn(context, COLORS) {
-      const index = context.dataIndex;
-      const chartArea = context.chart.chartArea;
-      if (!chartArea) return COLORS.corPrimaria1;
-
-      const ctxGrad = context.chart.ctx;
-      // De cima para baixo (vertical) em horizontal bar
-      const gradient = ctxGrad.createLinearGradient(
-        chartArea.left,
-        chartArea.top,
-        chartArea.left,
-        chartArea.bottom
-      );
-
-      switch (index) {
-        case 0:
-          gradient.addColorStop(0, COLORS.corPrimaria1);
-          gradient.addColorStop(1, COLORS.corPrimaria2);
-          break;
-        case 1:
-          gradient.addColorStop(0, COLORS.corSecundaria1);
-          gradient.addColorStop(1, COLORS.corSecundaria2);
-          break;
-        case 2:
-          gradient.addColorStop(0, COLORS.corSecundaria3);
-          gradient.addColorStop(1, COLORS.corSecundaria2);
-          break;
-        // ... e assim por diante para outros índices
-        default:
-          gradient.addColorStop(0, COLORS.corPrimaria1);
-          gradient.addColorStop(1, COLORS.corPrimaria2);
-          break;
-      }
-      return gradient;
-    }
-
-    // Chamamos a função horizontal
-    createHorizontalBarChart(ctxResp, labels, dataValues, respGradientFn);
+    createLineChart(ctxResp, {
+      labels,
+      datasets: [
+        {
+          label: "Tarefas por Responsável",
+          data: dataValues,
+          backgroundColor: "gradient",
+          borderColor: cssVar("--cor-primaria-2"),
+          hoverOffset: 10, // Opcional
+        },
+      ],
+    });
   }
 
-  // ========================================================
-  // 2) Tarefas por Status (Bar Vertical)
-  // ========================================================
-  const ctxStatus = document
-    .getElementById("chartTarefasStatus")
-    ?.getContext("2d");
-  if (ctxStatus) {
-    // Status: Todas, Novas, Andamento, Atrasadas, Concluídas
-    const labels = ["Novas", "Andamento", "Atrasadas", "Concluídas"];
-    // Exemplo: total de 80, sendo 15 novas, 25 andamento...
-    const dataValues = [15, 25, 10, 30];
-
-    function statusGradientFn(context, COLORS) {
-      const index = context.dataIndex;
-      const chartArea = context.chart.chartArea;
-      if (!chartArea) return COLORS.corPrimaria1;
-
-      const ctxGrad = context.chart.ctx;
-      const gradient = ctxGrad.createLinearGradient(
-        0,
-        chartArea.top,
-        0,
-        chartArea.bottom
-      );
-
-      switch (index) {
-        case 0:
-          gradient.addColorStop(0, COLORS.corPrimaria1);
-          gradient.addColorStop(1, COLORS.corApoio1);
-          break;
-        case 1:
-          gradient.addColorStop(0, COLORS.corSecundaria1);
-          gradient.addColorStop(1, COLORS.corSecundaria2);
-          break;
-        case 2:
-          gradient.addColorStop(0, COLORS.corSecundaria3);
-          gradient.addColorStop(1, COLORS.corSecundaria2);
-          break;
-        case 3:
-          gradient.addColorStop(0, COLORS.corApoio1);
-          gradient.addColorStop(1, COLORS.corApoio2);
-          break;
-        case 4:
-          gradient.addColorStop(0, COLORS.corPrimaria2);
-          gradient.addColorStop(1, COLORS.corApoio1);
-          break;
-        default:
-          gradient.addColorStop(0, COLORS.corPrimaria1);
-          gradient.addColorStop(1, COLORS.corPrimaria2);
-      }
-      return gradient;
-    }
-
-    createBarChart(ctxStatus, labels, dataValues, statusGradientFn);
-  }
-
-  // ========================================================
-  // 3) Tarefas por Marcadores (Bar) - 12 marcadores
-  // ========================================================
+  // --------------------------------------------------------
+  // 3) Tarefas por Marcadores (Bar Vertical)
+  // --------------------------------------------------------
   const ctxMarcadores = document
     .getElementById("chartTarefasMarcadores")
     ?.getContext("2d");
   if (ctxMarcadores) {
-    // Marcadores: 12 diferentes (marcador-0 até marcador-11)
     const labels = [
       "M0",
       "M1",
@@ -167,34 +109,33 @@ document.addEventListener("DOMContentLoaded", function () {
       "M10",
       "M11",
     ];
-    // Exemplo de valores
     const dataValues = [5, 8, 3, 10, 4, 2, 6, 12, 9, 1, 7, 11];
 
-    // Definindo as cores via var(--cor-marcador-X) resolvidas
     const backgroundColors = [
-      getCSSVariable("--cor-marcador-0"),
-      getCSSVariable("--cor-marcador-1"),
-      getCSSVariable("--cor-marcador-2"),
-      getCSSVariable("--cor-marcador-3"),
-      getCSSVariable("--cor-marcador-4"),
-      getCSSVariable("--cor-marcador-5"),
-      getCSSVariable("--cor-marcador-6"),
-      getCSSVariable("--cor-marcador-7"),
-      getCSSVariable("--cor-marcador-8"),
-      getCSSVariable("--cor-marcador-9"),
-      getCSSVariable("--cor-marcador-10"),
-      getCSSVariable("--cor-marcador-11"),
+      cssVar("--cor-marcador-0"),
+      cssVar("--cor-marcador-1"),
+      cssVar("--cor-marcador-2"),
+      cssVar("--cor-marcador-3"),
+      cssVar("--cor-marcador-4"),
+      cssVar("--cor-marcador-5"),
+      cssVar("--cor-marcador-6"),
+      cssVar("--cor-marcador-7"),
+      cssVar("--cor-marcador-8"),
+      cssVar("--cor-marcador-9"),
+      cssVar("--cor-marcador-10"),
+      cssVar("--cor-marcador-11"),
     ];
 
-    // Verificar as cores resolvidas
-    console.log("Cores dos Marcadores:", backgroundColors);
-
-    // Em vez de gradiente, retornamos a cor pura do array (1 cor por marcador)
-    function marcadoresColorFn(context, COLORS) {
-      // Cada barra pega a cor do array respectivo
-      return backgroundColors[context.dataIndex] || COLORS.corPrimaria1;
-    }
-
-    createBarChart(ctxMarcadores, labels, dataValues, marcadoresColorFn);
+    createBarChart(ctxMarcadores, {
+      labels,
+      datasets: [
+        {
+          label: "Tarefas por Marcador",
+          data: dataValues,
+          backgroundColor: backgroundColors,
+          borderRadius: 6,
+        },
+      ],
+    });
   }
 });

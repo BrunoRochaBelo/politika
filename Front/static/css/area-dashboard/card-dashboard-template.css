@@ -85,6 +85,7 @@
 /* ------------------------------------------- */
 .chart-dashboard-container {
   width: 100%;
+  box-sizing: border-box;
   overflow-x: auto;
   position: relative;
   -webkit-overflow-scrolling: touch;

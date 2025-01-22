@@ -28,7 +28,7 @@
   margin-top: 0px !important;
 }
 
-.main-dashboard .area-interna-containerContent-template.dashboard-home {
+.main-dashboard .area-interna-containerContent-template.area-dashboard {
   background: none;
   box-shadow: none;
   min-height: calc(var(--vh, 1vh) * 100 - 6rem) !important;
@@ -69,7 +69,7 @@
     grid-area: main-dashboard-section;
   }
 
-  .main-dashboard .area-interna-containerContent-template.dashboard-home {
+  .main-dashboard .area-interna-containerContent-template.area-dashboard {
     background: none;
     box-shadow: none;
     min-height: calc(var(--vh, 1vh) * 100 - 5.5rem) !important;
