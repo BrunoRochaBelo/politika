@@ -1,3 +1,5 @@
+// AlterarEsquemaDeCores.js
+
 document.addEventListener("DOMContentLoaded", (event) => {
   const themeToggleButton = document.getElementById("toggleTheme");
   const themeIcon = document.getElementById("themeIcon");
@@ -132,6 +134,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         element.classList.remove("invert-filter");
       });
     }
+
+    // Disparar o evento 'themeChanged' para atualizar os gráficos
+    const themeChangeEvent = new Event("themeChanged");
+    document.dispatchEvent(themeChangeEvent);
+
     updateButtonContent(theme);
   }
 

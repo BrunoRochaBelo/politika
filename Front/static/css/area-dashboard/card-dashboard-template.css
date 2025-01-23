@@ -3,16 +3,16 @@
   border-radius: 10px;
 }
 /*  hover  */
-.card-xs:hover,
-.card-s:hover,
-.card-m:hover,
-.card-l:hover,
-.card-tmf-s:hover,
-.card-tmf-m:hover,
-.card-tmf-l:hover,
-.card-select-xs:hover,
-.card-select-s:hover,
-.card-select-m:hover {
+.main-dashboard .card-xs:hover,
+.main-dashboard .card-s:hover,
+.main-dashboard .card-m:hover,
+.main-dashboard .card-l:hover,
+.main-dashboard .card-tmf-s:hover,
+.main-dashboard .card-tmf-m:hover,
+.main-dashboard .card-tmf-l:hover,
+.main-dashboard .card-select-xs:hover,
+.main-dashboard .card-select-s:hover,
+.main-dashboard .card-select-m:hover {
   filter: none;
 }
 /* Active */
@@ -86,10 +86,9 @@
 .chart-dashboard-container {
   width: 100%;
   box-sizing: border-box;
-  overflow-x: auto;
+  overflow: hidden; /* Evitar barras de rolagem internas */
   position: relative;
-  -webkit-overflow-scrolling: touch;
-  cursor: default; /* não usar "grab" por padrão */
+  cursor: default; /* Cursor padrão */
 }
 
 /* Em telas < 768px (celulares) maior altura para evitar achatamento */
@@ -114,13 +113,10 @@
 }
 
 /* ------------------------------------------- */
-/* Gráfico de Contatos: min-width moderada     */
+/* Gráfico de Contatos: Responsividade         */
 /* ------------------------------------------- */
 .line-chart-container canvas#chartContatos {
-  min-width: 700px;
-}
-
-/* Cursor "grabbing" apenas durante o drag */
-.chart-dashboard-container.active {
-  cursor: grabbing;
+  width: 100% !important;
+  height: 100% !important;
+  /* Removido min-width: 700px para responsividade */
 }

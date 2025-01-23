@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
     createBarChart,
     createLineChart,
     createDoughnutChart,
-    // createHorizontalBarChart, ...
+    getCurrentColorPalette, // Acessando a paleta atual
   } = window.ChartBase;
 
+  // --------------------------------------------------------
+  // Função para obter cores via CSS apenas para chartTarefasMarcadores
+  // --------------------------------------------------------
   function cssVar(name) {
     return getComputedStyle(document.documentElement)
       .getPropertyValue(name)
@@ -24,20 +27,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // --------------------------------------------------------
-  // 1) Tarefas por Status (Bar Vertical)
+  // 1) Tarefas por Status (Bar Vertical) - Utilizar Cores Sólidas
   // --------------------------------------------------------
   const ctxStatus = document
     .getElementById("chartTarefasStatus")
     ?.getContext("2d");
   if (ctxStatus) {
+    const palette = getCurrentColorPalette();
     const labels = ["Novas", "Andamento", "Atrasadas", "Concluídas"];
     const dataValues = [15, 25, 10, 30];
 
     const backgroundColors = [
-      cssVar("--cor-primaria-1"),
-      cssVar("--cor-apoio-1"),
-      cssVar("--cor-secundaria-1"),
-      cssVar("--cor-apoio-2"),
+      palette.colors[0], // Azul
+      palette.colors[3], // Verde-água
+      palette.colors[2], // Vermelho
+      palette.colors[4], // Verde
     ];
 
     createBarChart(ctxStatus, {
@@ -48,18 +52,23 @@ document.addEventListener("DOMContentLoaded", function () {
           data: dataValues,
           backgroundColor: backgroundColors,
           borderRadius: 6,
+          borderColor: palette.borderColor, // Utilizar borderColor da paleta
         },
       ],
+      plugins: {
+        legend: { display: false }, // Remover legenda para BarChart
+      },
     });
   }
 
   // --------------------------------------------------------
-  // 2) Tarefas por Responsável (Line Chart)
+  // 2) Tarefas por Responsável (Line Chart) - Utilizar Cor Sólida
   // --------------------------------------------------------
   const ctxResp = document
     .getElementById("chartTarefasResponsaveis")
     ?.getContext("2d");
   if (ctxResp) {
+    const palette = getCurrentColorPalette();
     const labels = [
       "Ana",
       "Bruno",
@@ -80,21 +89,39 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           label: "Tarefas por Responsável",
           data: dataValues,
-          backgroundColor: "gradient",
-          borderColor: cssVar("--cor-primaria-2"),
+          backgroundColor: palette.colors[0], // Azul Sólido ou gradiente se configurado
+          borderColor: palette.colors[0], // Linha na cor do ponto
+          pointBackgroundColor: palette.colors[0], // Pontos na cor do ponto
           hoverOffset: 10, // Opcional
         },
       ],
+      plugins: {
+        legend: { display: false }, // Remover legenda para LineChart
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: palette.axisLabelColor, // Cor dinâmica para rótulos do eixo X
+          },
+        },
+        y: {
+          ticks: {
+            color: palette.axisLabelColor, // Cor dinâmica para rótulos do eixo Y
+          },
+        },
+      },
+      // Se desejar, pode ajustar a orientação: gradientOrientation: 'horizontal'
     });
   }
 
   // --------------------------------------------------------
-  // 3) Tarefas por Marcadores (Bar Vertical)
+  // 3) Tarefas por Marcadores (Bar Vertical) - Utilizar Variáveis CSS
   // --------------------------------------------------------
   const ctxMarcadores = document
     .getElementById("chartTarefasMarcadores")
     ?.getContext("2d");
   if (ctxMarcadores) {
+    const palette = getCurrentColorPalette(); // Obter a paleta atual, se necessário
     const labels = [
       "M0",
       "M1",
@@ -132,8 +159,10 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           label: "Tarefas por Marcador",
           data: dataValues,
-          backgroundColor: backgroundColors,
+          backgroundColor: backgroundColors, // Utiliza Variáveis CSS
           borderRadius: 6,
+          borderColor: palette.borderColor, // Preservar borderColor para este dataset
+          preserveBorderColor: true, // Indica para o listener não alterar borderColor
         },
       ],
     });

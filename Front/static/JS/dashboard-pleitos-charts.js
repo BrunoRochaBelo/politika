@@ -10,21 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  const { createBarChart, createDoughnutChart } = window.ChartBase;
-
-  function cssVar(name) {
-    return getComputedStyle(document.documentElement)
-      .getPropertyValue(name)
-      .trim();
-  }
+  const { createBarChart, createDoughnutChart, getCurrentColorPalette } =
+    window.ChartBase;
 
   // --------------------------------------------------------
-  // 1) Tipo de Pleito (Bar Chart)
+  // 1) Tipo de Pleito (Bar Chart) - Cores Sólidas
   // --------------------------------------------------------
   const ctxTipoPleito = document
     .getElementById("chartTipoPleito")
     ?.getContext("2d");
   if (ctxTipoPleito) {
+    const palette = getCurrentColorPalette();
     const labels = [
       "Emprego",
       "Educação e Capacitação",
@@ -40,16 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const dataValues = [50, 30, 20, 15, 25, 10, 5, 40, 35, 20];
 
     const backgroundColors = [
-      cssVar("--cor-primaria-1"),
-      cssVar("--cor-secundaria-1"),
-      cssVar("--cor-secundaria-2"),
-      cssVar("--cor-apoio-1"),
-      cssVar("--cor-secundaria-3"),
-      cssVar("--cor-apoio-2"),
-      cssVar("--cor-primaria-2"),
-      cssVar("--cor-secundaria-1"),
-      cssVar("--cor-secundaria-2"),
-      cssVar("--cor-apoio-1"),
+      palette.colors[0], // Emprego - Azul
+      palette.colors[3], // Educação e Capacitação - Verde-água
+      palette.colors[2], // Infraestrutura - Vermelho
+      palette.colors[4], // Jurídico - Verde
+      palette.colors[5], // Mobilidade - Amarelo
+      palette.colors[1], // Outros - Laranja
+      palette.colors[6], // Político - Roxo
+      palette.colors[7], // Recursos Financeiros - Rosa
+      palette.colors[8], // Saúde - Marrom
+      palette.colors[9], // Segurança - Cinza
     ];
 
     createBarChart(ctxTipoPleito, {
@@ -60,26 +56,32 @@ document.addEventListener("DOMContentLoaded", function () {
           data: dataValues,
           backgroundColor: backgroundColors,
           borderRadius: 6,
+          borderColor: palette.borderColor, // Utilizar borderColor da paleta
         },
       ],
+      plugins: {
+        legend: { display: false }, // Remover legenda para BarChart
+      },
     });
   }
 
   // --------------------------------------------------------
-  // 2) Status do Pleito (Doughnut)
+  // 2) Status do Pleito (Doughnut) - Cores Sólidas em Azul
   // --------------------------------------------------------
   const ctxStatusPleito = document
     .getElementById("chartStatusPleito")
     ?.getContext("2d");
   if (ctxStatusPleito) {
+    const palette = getCurrentColorPalette();
     const labels = ["Atendidos", "Parcialmente", "Negado", "Cancelado"];
     const dataValues = [8, 3, 2, 1];
 
+    // Definindo cores sólidas em tons de azul para cada status usando colorPalette
     const backgroundColors = [
-      cssVar("--cor-primaria-1"),
-      cssVar("--cor-secundaria-1"),
-      cssVar("--cor-secundaria-2"),
-      cssVar("--cor-secundaria-3"),
+      palette.colors[0], // Atendidos - Azul Escuro
+      palette.colors[1], // Parcialmente - Laranja Claro
+      palette.colors[2], // Negado - Vermelho
+      palette.colors[1], // Cancelado - Laranja Claro
     ];
 
     createDoughnutChart(ctxStatusPleito, {
@@ -88,11 +90,14 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           data: dataValues,
           backgroundColor: backgroundColors,
-          borderColor: cssVar("--borda"),
+          borderColor: palette.borderColor, // Utilizar borderColor da paleta
           borderWidth: 1,
           hoverOffset: 10, // Opcional
         },
       ],
+      plugins: {
+        legend: { display: false }, // Remover legenda para DoughnutChart
+      },
     });
   }
 });

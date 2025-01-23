@@ -204,7 +204,8 @@ li > .lista-vertical-alt > li:first-child {
     gap: 3px 0px;
   }
 
-  .lista-vertical-cards {
+  .lista-vertical-cards,
+  .lista-vertical-grup {
     padding: 5px;
   }
 

@@ -1,9 +1,8 @@
 // charts-base.js
 (function () {
   /**
-   * Exibe erro amigável ao usuário, usando as classes CSS padrão do sistema.
-   * Ex.: .message-error, .message-error.show
-   * @param {string} msg Mensagem de erro a ser exibida
+   * Exibe um erro amigável ao usuário.
+   * @param {string} msg - Mensagem de erro a ser exibida.
    */
   function showErrorMessage(msg) {
     const errorContainer = document.createElement("div");
@@ -13,7 +12,7 @@
   }
 
   // --------------------------------------------------------------------------
-  // 1) Verifica se o Chart.js está disponível
+  // 1) Verificação da Disponibilidade do Chart.js
   // --------------------------------------------------------------------------
   if (typeof Chart === "undefined") {
     showErrorMessage("Chart.js não foi carregado antes de charts-base.js!");
@@ -21,51 +20,71 @@
   }
 
   // --------------------------------------------------------------------------
-  // 2) Registro de plugins (DataLabels, Zoom, etc.)
+  // 2) Registro de Plugins (DataLabels, etc.)
   // --------------------------------------------------------------------------
   if (typeof ChartDataLabels !== "undefined") {
     Chart.register(ChartDataLabels);
   } else {
     console.warn("chartjs-plugin-datalabels não foi encontrado.");
   }
-  // if (typeof Zoom !== 'undefined') { Chart.register(Zoom); }
 
   // --------------------------------------------------------------------------
-  // 3) Variáveis CSS e refresh dinâmico
+  // 3) Definição das Paletas de Cores para Claro e Escuro com Novas Propriedades
   // --------------------------------------------------------------------------
-  let BASE_VARS = {};
+  const colorPaletteLight = {
+    colors: [
+      "#4e79a7", // Azul
+      "#f28e2b", // Laranja
+      "#e15759", // Vermelho
+      "#76b7b2", // Verde-água
+      "#59a14f", // Verde
+      "#edc948", // Amarelo
+      "#b07aa1", // Roxo
+      "#ff9da7", // Rosa
+      "#9c755f", // Marrom
+      "#bab0ab", // Cinza
+    ],
+    textColor: "#333333", // Textos e números no modo claro
+    borderColor: "#ffffff", // Bordas no modo claro
+    axisLabelColor: "#555555", // Rótulos dos eixos no modo claro
+    tooltipBackgroundColor: "rgba(255, 255, 255, 0.9)", // Tooltip no modo claro (fundo claro)
+    tooltipBodyColor: "#333333", // Texto da tooltip no modo claro (texto escuro)
+    tooltipTitleColor: "#333333", // Título da tooltip no modo claro (texto escuro)
+  };
+
+  const colorPaletteDark = {
+    colors: [
+      "#7aa6d1", // Azul Claro
+      "#f8b500", // Laranja Claro
+      "#d9506f", // Vermelho Claro
+      "#8bd8d6", // Verde-água Claro
+      "#75c475", // Verde Claro
+      "#f3d250", // Amarelo Claro
+      "#c494d4", // Roxo Claro
+      "#ffb1c1", // Rosa Claro
+      "#b28b73", // Marrom Claro
+      "#d3d0c9", // Cinza Claro
+    ],
+    textColor: "#ffffff", // Textos e números no modo escuro
+    borderColor: "#ffffff", // Bordas no modo escuro
+    axisLabelColor: "#cccccc", // Rótulos dos eixos no modo escuro
+    tooltipBackgroundColor: "rgba(0, 0, 0, 0.9)", // Tooltip no modo escuro (fundo escuro)
+    tooltipBodyColor: "#ffffff", // Texto da tooltip no modo escuro (texto claro)
+    tooltipTitleColor: "#ffffff", // Título da tooltip no modo escuro (texto claro)
+  };
 
   /**
-   * Releitura das variáveis CSS para permitir troca de temas dinâmicos.
-   * Esta função pode ser chamada novamente caso o tema seja alterado.
+   * Retorna a paleta de cores atual com base no tema.
+   * @returns {object} - Objeto da paleta de cores atual.
    */
-  function updateBaseVars() {
-    function getCSSVariable(varName) {
-      return getComputedStyle(document.documentElement)
-        .getPropertyValue(varName)
-        .trim();
-    }
-    BASE_VARS = {
-      corPrimaria1: getCSSVariable("--cor-primaria-1"),
-      corPrimaria2: getCSSVariable("--cor-primaria-2"),
-      corSecundaria1: getCSSVariable("--cor-secundaria-1"),
-      corSecundaria2: getCSSVariable("--cor-secundaria-2"),
-      corSecundaria3: getCSSVariable("--cor-secundaria-3"),
-      corApoio1: getCSSVariable("--cor-apoio-1"),
-      corApoio2: getCSSVariable("--cor-apoio-2"),
-      txtSubtitulo: getCSSVariable("--txt-subtitulo"),
-      txtTitulo: getCSSVariable("--txt-titulo"),
-      txtDestaque: getCSSVariable("--txt-destaque"),
-      borda: getCSSVariable("--borda"),
-      divisor: getCSSVariable("--divisor"),
-    };
+  function getCurrentColorPalette() {
+    return document.documentElement.classList.contains("light-mode")
+      ? colorPaletteLight
+      : colorPaletteDark;
   }
 
-  // Faz a leitura inicial das variáveis CSS
-  updateBaseVars();
-
   // --------------------------------------------------------------------------
-  // 4) Função auxiliar para calcular o percentual
+  // 4) Função Auxiliar para Calcular Percentual
   // --------------------------------------------------------------------------
   function getPercentage(value, total) {
     if (!total || total === 0) return "0.00";
@@ -73,80 +92,57 @@
   }
 
   // --------------------------------------------------------------------------
-  // 5) Configuração base (tooltips e datalabels)
+  // 5) Configuração Base dos Gráficos
   // --------------------------------------------------------------------------
   function getBaseChartOptions() {
+    const palette = getCurrentColorPalette();
     return {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        /**
-         * Tooltip:
-         *  - Título (primeira linha) => label do item (geralmente o label do eixo X ou o label da fatia)
-         *  - Segunda linha => "valor real - percentual"
-         */
         tooltip: {
           enabled: true,
-          backgroundColor: "rgba(0,0,0,0.8)",
+          backgroundColor: palette.tooltipBackgroundColor, // Cor dinâmica do tooltip
           borderRadius: 4,
-          bodyColor: "#fff",
+          bodyColor: palette.tooltipBodyColor, // Cor do texto do tooltip
+          titleColor: palette.tooltipTitleColor, // Cor do título do tooltip
           displayColors: false,
           callbacks: {
-            // Título => label do ponto/fatia
             title: (tooltipItems) => {
               if (tooltipItems.length > 0) {
                 return tooltipItems[0].label || "";
               }
               return "";
             },
-            // Segunda linha => "valor real - percentual%"
             label: (context) => {
               const ds = context.dataset;
               const index = context.dataIndex;
-
-              // Valor real que está no array de dados
               const value = ds.data[index] ?? 0;
-
-              // Soma total do dataset para gerar %
-              let total = 0;
-              if (Array.isArray(ds.data)) {
-                total = ds.data.reduce((acc, v) => acc + (v || 0), 0);
-              }
-
+              const total = Array.isArray(ds.data)
+                ? ds.data.reduce((acc, v) => acc + (v || 0), 0)
+                : 0;
               const percentage = getPercentage(value, total);
-              return `${value} - ${percentage}%`;
+              return [`Qnt: ${value}`, `Percent: ${percentage}%`]; // Retorna array para múltiplas linhas
             },
           },
         },
-
-        /**
-         * DataLabels:
-         *   - Exibe apenas o percentual
-         *   - Para Pie/Doughnut, sobrescrevemos anchor/align localmente
-         */
         datalabels: {
-          color: BASE_VARS.txtDestaque,
+          color: palette.textColor, // Atualizar cor dos datalabels
           font: { weight: "bold", size: 12 },
           anchor: "end",
           align: "end",
           clip: false,
           formatter: (value, context) => {
-            // "context.dataIndex" => índice do item
-            // "context.dataset.data" => array de valores
             const ds = context.dataset;
             const index = context.dataIndex;
             const val = ds.data[index] ?? 0;
-
-            let total = 0;
-            if (Array.isArray(ds.data)) {
-              total = ds.data.reduce((acc, v) => acc + (v || 0), 0);
-            }
-
+            const total = Array.isArray(ds.data)
+              ? ds.data.reduce((acc, v) => acc + (v || 0), 0)
+              : 0;
             const p = getPercentage(val, total);
             return p + "%";
           },
         },
-
         legend: {
           position: "bottom",
           labels: {
@@ -155,7 +151,7 @@
             boxWidth: 10,
             boxHeight: 10,
             padding: 20,
-            color: BASE_VARS.txtSubtitulo,
+            color: palette.textColor, // Atualizar cor das legendas
           },
         },
       },
@@ -170,25 +166,26 @@
   }
 
   // --------------------------------------------------------------------------
-  // 6) Helpers para mesclar opções e criar gradiente
+  // 6) Função Auxiliar para Mesclar Opções
   // --------------------------------------------------------------------------
   function mergeOptions(base, custom) {
     return Chart.helpers.merge(base, custom);
   }
 
+  // --------------------------------------------------------------------------
+  // 7) Função Auxiliar para Criar Gradiente
+  // --------------------------------------------------------------------------
   /**
-   * Cria um gradiente de acordo com a orientação solicitada. Se nada for informado,
-   * assume 'vertical'. Caso queira 'horizontal', basta passar 'horizontal'.
-   *
-   * @param {CanvasRenderingContext2D} ctx Contexto do canvas
-   * @param {object} chartArea Objeto com dimensões do chart
-   * @param {string} orientation 'vertical' | 'horizontal' (default: 'vertical')
-   * @param {string} colorStart Cor inicial
-   * @param {string} colorEnd   Cor final
-   * @returns Gradiente para usar em backgroundColor / fillStyle
+   * Cria um gradiente linear.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} chartArea - Objeto com dimensões do chart.
+   * @param {string} orientation - 'vertical' ou 'horizontal'.
+   * @param {string} colorStart - Cor inicial do gradiente.
+   * @param {string} colorEnd - Cor final do gradiente.
+   * @returns {CanvasGradient|string} - Gradiente criado ou cor fixa.
    */
   function createGradient(ctx, chartArea, orientation, colorStart, colorEnd) {
-    if (!chartArea) return colorStart || "#ccc"; // fallback
+    if (!chartArea) return colorStart || "#ccc"; // Fallback
 
     let gradient;
     if (orientation === "horizontal") {
@@ -199,7 +196,7 @@
         0
       );
     } else {
-      // default: vertical
+      // Default: vertical
       gradient = ctx.createLinearGradient(
         0,
         chartArea.top,
@@ -213,8 +210,14 @@
   }
 
   // --------------------------------------------------------------------------
-  // 7) Função genérica createChart
+  // 8) Função Genérica para Criar Gráficos
   // --------------------------------------------------------------------------
+  /**
+   * Cria um gráfico genérico.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações do gráfico.
+   * @returns {Chart|null} - Instância do Chart.js ou null em caso de erro.
+   */
   function createChart(ctx, { type, labels, datasets, options }) {
     if (!ctx) {
       showErrorMessage("Não foi possível criar o gráfico: Canvas inválido.");
@@ -228,7 +231,7 @@
     }
     const baseOptions = getBaseChartOptions();
     const finalOptions = mergeOptions(baseOptions, options || {});
-    return new Chart(ctx, {
+    const chartInstance = new Chart(ctx, {
       type,
       data: {
         labels: labels || [],
@@ -236,16 +239,19 @@
       },
       options: finalOptions,
     });
+    window.ChartBase.charts.push(chartInstance); // Armazenar referência
+    return chartInstance;
   }
 
   // --------------------------------------------------------------------------
-  // 8) Funções especializadas
+  // 9) Funções Especializadas para Cada Tipo de Gráfico
   // --------------------------------------------------------------------------
 
   /**
-   * Pie Chart
-   *  - dataLabels dentro da fatia => anchor: 'center', align: 'center'
-   *  - Hover offset reativado
+   * Cria um Pie Chart.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações específicas do Pie Chart.
+   * @returns {Chart|null} - Instância do Pie Chart ou null em caso de erro.
    */
   function createPieChart(ctx, { labels, datasets, options }) {
     const pieCustom = {
@@ -255,7 +261,11 @@
           anchor: "center",
           align: "center",
         },
+        legend: {
+          display: true, // Manter legendas para PieChart
+        },
       },
+      scales: {}, // Remover escalas para PieChart
     };
     const finalOptions = mergeOptions(pieCustom, options || {});
 
@@ -274,9 +284,10 @@
   }
 
   /**
-   * Doughnut Chart
-   *  - dataLabels dentro da fatia => anchor: 'center', align: 'center'
-   *  - Hover offset reativado
+   * Cria um Doughnut Chart.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações específicas do Doughnut Chart.
+   * @returns {Chart|null} - Instância do Doughnut Chart ou null em caso de erro.
    */
   function createDoughnutChart(ctx, { labels, datasets, options }) {
     const doughnutCustom = {
@@ -291,7 +302,11 @@
           anchor: "center",
           align: "center",
         },
+        legend: {
+          display: true, // Manter legendas para DoughnutChart
+        },
       },
+      scales: {}, // Remover escalas para DoughnutChart
     };
     const finalOptions = mergeOptions(doughnutCustom, options || {});
 
@@ -310,23 +325,27 @@
   }
 
   /**
-   * Bar Chart (vertical)
+   * Cria um Bar Chart (vertical).
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações específicas do Bar Chart.
+   * @returns {Chart|null} - Instância do Bar Chart ou null em caso de erro.
    */
   function createBarChart(ctx, { labels, datasets, options }) {
+    const palette = getCurrentColorPalette();
     const defaultBar = {
       scales: {
         x: {
-          grid: { color: BASE_VARS.divisor, borderColor: BASE_VARS.borda },
-          ticks: { color: BASE_VARS.txtSubtitulo },
+          grid: { display: false },
+          ticks: { color: palette.axisLabelColor }, // Cor dinâmica para rótulos do eixo X
         },
         y: {
           beginAtZero: true,
-          grid: { color: BASE_VARS.divisor, borderColor: BASE_VARS.borda },
-          ticks: { color: BASE_VARS.txtSubtitulo },
+          grid: { display: false },
+          ticks: { color: palette.axisLabelColor }, // Cor dinâmica para rótulos do eixo Y
         },
       },
       plugins: {
-        legend: { display: true },
+        legend: { display: false }, // Remover legenda para BarChart
       },
       animation: {
         duration: 1000,
@@ -349,7 +368,10 @@
   }
 
   /**
-   * Line Chart
+   * Cria um Line Chart.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações específicas do Line Chart.
+   * @returns {Chart|null} - Instância do Line Chart ou null em caso de erro.
    */
   function createLineChart(
     ctx,
@@ -358,10 +380,12 @@
     // Se backgroundColor === 'gradient', criaremos o gradiente dinâmico
     const augmentedDatasets = datasets.map((ds) => {
       const origBg = ds.backgroundColor;
-      const origBorder = ds.borderColor || BASE_VARS.corPrimaria2;
+      // Usar palette.colors[0] para a linha e os pontos
+      const lineColor = getCurrentColorPalette().colors[0];
       return {
         ...ds,
-        borderColor: origBorder,
+        borderColor: lineColor, // Linha na cor do ponto
+        pointBackgroundColor: lineColor, // Pontos na cor do ponto
         fill: ds.fill !== undefined ? ds.fill : false,
         tension: ds.tension !== undefined ? ds.tension : 0.3,
         pointRadius: ds.pointRadius !== undefined ? ds.pointRadius : 4,
@@ -372,12 +396,13 @@
         backgroundColor: function (context) {
           if (origBg === "gradient") {
             const chartArea = context.chart.chartArea;
+            const palette = getCurrentColorPalette();
             return createGradient(
               context.chart.ctx,
               chartArea,
               gradientOrientation,
-              BASE_VARS.corPrimaria1,
-              BASE_VARS.corPrimaria2
+              palette.colors[0], // Azul ou equivalente no tema atual
+              palette.colors[1] // Verde-água ou equivalente no tema atual
             );
           }
           return origBg;
@@ -385,6 +410,7 @@
       };
     });
 
+    const palette = getCurrentColorPalette();
     const defaultLine = {
       interaction: {
         mode: "nearest",
@@ -393,25 +419,39 @@
       scales: {
         x: {
           offset: true,
-          grid: {
-            display: false,
-            borderColor: BASE_VARS.borda,
-          },
-          ticks: {
-            color: BASE_VARS.txtSubtitulo,
-          },
+          grid: { display: false },
+          ticks: { color: palette.axisLabelColor }, // Cor dinâmica para rótulos do eixo X
         },
         y: {
           beginAtZero: false,
-          grid: {
-            color: BASE_VARS.divisor,
-            borderColor: BASE_VARS.borda,
-          },
-          ticks: {
-            color: BASE_VARS.txtSubtitulo,
-          },
+          grid: { display: false },
+          ticks: { color: palette.axisLabelColor }, // Cor dinâmica para rótulos do eixo Y
           grace: "10%",
         },
+      },
+      plugins: {
+        legend: { display: false }, // Remover legenda para LineChart
+        /* Configurações de Zoom:
+        zoom: { // Configurações de Zoom
+          pan: {
+            enabled: true,
+            mode: 'xy', // Permitir pan nas direções x e y
+            threshold: 10, // Número mínimo de pixels para iniciar o pan
+          },
+          zoom: {
+            wheel: {
+              enabled: true, // Habilitar zoom com a roda do mouse
+              modifierKey: 'ctrl', // Exigir tecla Ctrl para zoom com a roda
+              speed: 0.1, // Velocidade do zoom
+            },
+            pinch: {
+              enabled: true // Habilitar zoom com gestos de pinça em dispositivos touch
+            },
+            mode: 'xy', // Permitir zoom nas direções x e y
+            speed: 0.1, // Velocidade do zoom
+          }
+        }
+        */
       },
       layout: {
         padding: {
@@ -434,27 +474,33 @@
   }
 
   /**
-   * Polar Area Chart
+   * Cria um Polar Area Chart.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações específicas do Polar Area Chart.
+   * @returns {Chart|null} - Instância do Polar Area Chart ou null em caso de erro.
    */
   function createPolarAreaChart(ctx, { labels, datasets, options }) {
+    const palette = getCurrentColorPalette();
     const defaultPolar = {
       animation: {
         animateRotate: true,
         animateScale: true,
         duration: 1200,
       },
+      plugins: {
+        legend: {
+          display: true, // Manter legendas para PolarAreaChart
+          labels: {
+            color: palette.textColor, // Cor dinâmica para legendas
+          },
+        },
+      },
       scales: {
         r: {
-          grid: { color: BASE_VARS.divisor },
-          angleLines: { color: BASE_VARS.borda },
-          ticks: {
-            backdropColor: "transparent",
-            color: BASE_VARS.txtSubtitulo,
-          },
-          pointLabels: {
-            color: BASE_VARS.txtSubtitulo,
-            font: { size: 12 },
-          },
+          grid: { display: false },
+          angleLines: { display: false },
+          ticks: { display: false },
+          pointLabels: { display: false },
         },
       },
     };
@@ -468,40 +514,37 @@
   }
 
   /**
-   * Radar Chart
+   * Cria um Radar Chart.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações específicas do Radar Chart.
+   * @returns {Chart|null} - Instância do Radar Chart ou null em caso de erro.
    */
   function createRadarChart(ctx, { labels, datasets, options }) {
+    const palette = getCurrentColorPalette();
     const augmentedDatasets = datasets.map((ds) => ({
       ...ds,
       borderWidth: ds.borderWidth !== undefined ? ds.borderWidth : 2,
       backgroundColor: function (context) {
         const chartArea = context.chart.chartArea;
-        if (!chartArea) return BASE_VARS.corPrimaria1;
+        if (!chartArea) return palette.colors[0]; // Cor fixa
         const gradient = context.chart.ctx.createLinearGradient(
           chartArea.left,
           chartArea.top,
           chartArea.right,
           chartArea.bottom
         );
-        gradient.addColorStop(0, BASE_VARS.corPrimaria1);
-        gradient.addColorStop(1, BASE_VARS.corPrimaria2);
+        gradient.addColorStop(0, palette.colors[0]); // Azul ou equivalente no tema atual
+        gradient.addColorStop(1, palette.colors[1]); // Verde-água ou equivalente no tema atual
         return gradient;
       },
     }));
 
     const defaultRadar = {
-      scales: {
-        r: {
-          angleLines: { color: BASE_VARS.borda },
-          grid: { color: BASE_VARS.divisor },
-          suggestedMin: 0,
-          ticks: {
-            backdropColor: "transparent",
-            color: BASE_VARS.txtSubtitulo,
-          },
-          pointLabels: {
-            color: BASE_VARS.txtSubtitulo,
-            font: { size: 14 },
+      plugins: {
+        legend: {
+          display: true, // Manter legenda para RadarChart
+          labels: {
+            color: palette.textColor, // Cor dinâmica para legendas
           },
         },
       },
@@ -509,6 +552,7 @@
         duration: 1200,
         easing: "easeInOutCubic",
       },
+      scales: {}, // Remover escalas para RadarChart
     };
     const finalOptions = mergeOptions(defaultRadar, options || {});
     return createChart(ctx, {
@@ -520,24 +564,28 @@
   }
 
   /**
-   * Bar Chart (horizontal)
+   * Cria um Bar Chart (horizontal).
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações específicas do Horizontal Bar Chart.
+   * @returns {Chart|null} - Instância do Horizontal Bar Chart ou null em caso de erro.
    */
   function createHorizontalBarChart(ctx, { labels, datasets, options }) {
+    const palette = getCurrentColorPalette();
     const defaultHorizontalBar = {
       indexAxis: "y",
       scales: {
         y: {
-          grid: { color: BASE_VARS.divisor, borderColor: BASE_VARS.borda },
-          ticks: { color: BASE_VARS.txtSubtitulo },
+          grid: { display: false },
+          ticks: { color: palette.axisLabelColor }, // Cor dinâmica para rótulos do eixo Y
         },
         x: {
           beginAtZero: true,
-          grid: { color: BASE_VARS.divisor, borderColor: BASE_VARS.borda },
-          ticks: { color: BASE_VARS.txtSubtitulo },
+          grid: { display: false },
+          ticks: { color: palette.axisLabelColor }, // Cor dinâmica para rótulos do eixo X
         },
       },
       plugins: {
-        legend: { display: true },
+        legend: { display: false }, // Remover legenda para HorizontalBarChart
       },
       animation: {
         duration: 1000,
@@ -560,10 +608,10 @@
   }
 
   // --------------------------------------------------------------------------
-  // Expondo funções globalmente
+  // 10) Exportação das Funções Reutilizáveis
   // --------------------------------------------------------------------------
   window.ChartBase = {
-    updateBaseVars, // Para atualizar variáveis CSS dinamicamente
+    charts: [],
     createPieChart,
     createDoughnutChart,
     createBarChart,
@@ -571,5 +619,76 @@
     createPolarAreaChart,
     createRadarChart,
     createHorizontalBarChart,
+    getCurrentColorPalette, // Função para acessar a paleta atual
   };
+
+  // --------------------------------------------------------------------------
+  // 11) Listener para Mudanças de Tema
+  // --------------------------------------------------------------------------
+  document.addEventListener("themeChanged", () => {
+    const palette = getCurrentColorPalette();
+    window.ChartBase.charts.forEach((chart) => {
+      // Atualizar cores de legendas
+      if (
+        chart.options.plugins &&
+        chart.options.plugins.legend &&
+        chart.options.plugins.legend.labels
+      ) {
+        chart.options.plugins.legend.labels.color = palette.textColor;
+      }
+
+      // Atualizar cores dos datalabels
+      if (chart.options.plugins && chart.options.plugins.datalabels) {
+        chart.options.plugins.datalabels.color = palette.textColor;
+      }
+
+      // Atualizar tooltips
+      if (chart.options.plugins && chart.options.plugins.tooltip) {
+        chart.options.plugins.tooltip.bodyColor = palette.tooltipBodyColor; // Cor do texto do tooltip
+        chart.options.plugins.tooltip.titleColor = palette.tooltipTitleColor; // Cor do título do tooltip
+        chart.options.plugins.tooltip.backgroundColor =
+          palette.tooltipBackgroundColor; // Cor do background do tooltip
+      }
+
+      // Atualizar cores dos eixos
+      if (chart.options.scales) {
+        if (chart.options.scales.x && chart.options.scales.x.ticks) {
+          chart.options.scales.x.ticks.color = palette.axisLabelColor;
+        }
+        if (chart.options.scales.y && chart.options.scales.y.ticks) {
+          chart.options.scales.y.ticks.color = palette.axisLabelColor;
+        }
+        // Adicione outros eixos se necessário
+      }
+
+      // Atualizar cores dos datasets (se não usarem funções para gradientes)
+      chart.data.datasets.forEach((dataset, index) => {
+        if (dataset.preserveBorderColor) {
+          // Não alterar borderColor
+          return;
+        }
+
+        if (Array.isArray(dataset.backgroundColor)) {
+          // Atualizar cada cor no array usando a paleta atual
+          dataset.backgroundColor = dataset.backgroundColor.map(
+            (color, i) => palette.colors[i % palette.colors.length]
+          );
+        } else if (typeof dataset.backgroundColor === "function") {
+          // Se usar função para gradiente, o gradiente será recriado automaticamente no próximo update
+          // Nenhuma ação necessária aqui
+        } else {
+          // Atualizar cor sólida
+          dataset.backgroundColor = palette.colors[0];
+          dataset.borderColor = palette.borderColor;
+        }
+
+        // Atualizar borderColor se for uma cor sólida
+        if (typeof dataset.borderColor === "string") {
+          dataset.borderColor = palette.borderColor;
+        }
+      });
+
+      chart.update();
+    });
+  });
 })();
