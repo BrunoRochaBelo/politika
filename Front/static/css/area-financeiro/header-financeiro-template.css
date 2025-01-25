@@ -10,6 +10,10 @@
 .header-financeiro-back {
   grid-area: header-financeiro-back;
   justify-self: start;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
 }
 .header-financeiro-nav {
   grid-area: header-financeiro-nav;
@@ -20,6 +24,34 @@
 .header-financeiro-logout {
   grid-area: header-financeiro-logout;
   justify-self: end;
+}
+
+/* Ajustando o botão circular */
+.header-financeiro-back a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+/* Ícone dentro do botão */
+.header-financeiro-back a img {
+  width: 18px;
+  height: 18px;
+}
+
+.header-financeiro-back:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+.header-financeiro-back .voltar {
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 /*---------------------------------------------*/

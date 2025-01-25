@@ -33,44 +33,44 @@
   // --------------------------------------------------------------------------
   const colorPaletteLight = {
     colors: [
-      "#4e79a7", // Azul
-      "#f28e2b", // Laranja
-      "#e15759", // Vermelho
-      "#76b7b2", // Verde-água
-      "#59a14f", // Verde
-      "#edc948", // Amarelo
-      "#b07aa1", // Roxo
-      "#ff9da7", // Rosa
-      "#9c755f", // Marrom
-      "#bab0ab", // Cinza
+      "hsl(215, 65%, 45%)", // Primária 1
+      "hsl(30, 80%, 55%)", // Secundária 1
+      "hsl(215, 60%, 65%)", // Primária 2
+      "hsl(30, 80%, 50%)", // Secundária 2
+      "hsl(215, 70%, 60%)", // Primária 3
+      "hsl(30, 65%, 35%)", // Secundária 3
+      "hsl(215, 20%, 80%)", // Apoio 1
+      "hsl(215, 20%, 85%)", // Apoio 2
+      "hsl(218, 100%, 22%)", // Destaque Texto
+      "hsl(0, 70%, 50%)", // Erro
     ],
     textColor: "#333333", // Textos e números no modo claro
-    borderColor: "#ffffff", // Bordas no modo claro
-    axisLabelColor: "#555555", // Rótulos dos eixos no modo claro
-    tooltipBackgroundColor: "rgba(255, 255, 255, 0.9)", // Tooltip no modo claro (fundo claro)
-    tooltipBodyColor: "#333333", // Texto da tooltip no modo claro (texto escuro)
-    tooltipTitleColor: "#333333", // Título da tooltip no modo claro (texto escuro)
+    borderColor: "hsl(215, 25%, 70%)", // Bordas no modo claro
+    axisLabelColor: "hsl(215, 10%, 46%)", // Rótulos dos eixos no modo claro
+    tooltipBackgroundColor: "rgba(255, 255, 255, 0.9)", // Tooltip no modo claro
+    tooltipBodyColor: "#333333", // Texto da tooltip no modo claro
+    tooltipTitleColor: "#333333", // Título da tooltip no modo claro
   };
 
   const colorPaletteDark = {
     colors: [
-      "#7aa6d1", // Azul Claro
-      "#f8b500", // Laranja Claro
-      "#d9506f", // Vermelho Claro
-      "#8bd8d6", // Verde-água Claro
-      "#75c475", // Verde Claro
-      "#f3d250", // Amarelo Claro
-      "#c494d4", // Roxo Claro
-      "#ffb1c1", // Rosa Claro
-      "#b28b73", // Marrom Claro
-      "#d3d0c9", // Cinza Claro
+      "hsl(218, 85%, 68%)", // Primária 1
+      "hsl(30, 75%, 58%)", // Secundária 1
+      "hsl(218, 60%, 58%)", // Primária 2
+      "hsl(30, 70%, 50%)", // Secundária 2
+      "hsl(218, 80%, 72%)", // Primária 3
+      "hsl(30, 65%, 40%)", // Secundária 3
+      "hsl(215, 25%, 20%)", // Apoio 1
+      "hsl(215, 20%, 16%)", // Apoio 2
+      "hsl(218, 100%, 90%)", // Destaque Texto
+      "hsl(0, 60%, 45%)", // Erro
     ],
     textColor: "#ffffff", // Textos e números no modo escuro
-    borderColor: "#ffffff", // Bordas no modo escuro
-    axisLabelColor: "#cccccc", // Rótulos dos eixos no modo escuro
-    tooltipBackgroundColor: "rgba(0, 0, 0, 0.9)", // Tooltip no modo escuro (fundo escuro)
-    tooltipBodyColor: "#ffffff", // Texto da tooltip no modo escuro (texto claro)
-    tooltipTitleColor: "#ffffff", // Título da tooltip no modo escuro (texto claro)
+    borderColor: "hsl(215, 30%, 32%)", // Bordas no modo escuro
+    axisLabelColor: "hsl(215, 18%, 78%)", // Rótulos dos eixos no modo escuro
+    tooltipBackgroundColor: "hsla(215, 50%, 8%, 0.8)", // Tooltip no modo escuro
+    tooltipBodyColor: "#ffffff", // Texto da tooltip no modo escuro
+    tooltipTitleColor: "#ffffff", // Título da tooltip no modo escuro
   };
 
   /**
@@ -273,6 +273,7 @@
     const augmentedDatasets = datasets.map((ds) => ({
       ...ds,
       hoverOffset: ds.hoverOffset !== undefined ? ds.hoverOffset : 10, // Valor padrão
+      backgroundColor: ds.backgroundColor || colorPaletteLight.colors, // Utiliza a nova paleta
     }));
 
     return createChart(ctx, {
@@ -314,6 +315,7 @@
     const augmentedDatasets = datasets.map((ds) => ({
       ...ds,
       hoverOffset: ds.hoverOffset !== undefined ? ds.hoverOffset : 10, // Valor padrão
+      backgroundColor: ds.backgroundColor || colorPaletteDark.colors, // Utiliza a nova paleta
     }));
 
     return createChart(ctx, {
@@ -356,6 +358,10 @@
           top: 20,
           bottom: 20,
         },
+      },
+      datasets: {
+        backgroundColor: palette.colors, // Utiliza a nova paleta
+        borderColor: palette.borderColor,
       },
     };
     const finalOptions = mergeOptions(defaultBar, options || {});
@@ -505,10 +511,14 @@
       },
     };
     const finalOptions = mergeOptions(defaultPolar, options || {});
+    const augmentedDatasets = datasets.map((ds) => ({
+      ...ds,
+      backgroundColor: ds.backgroundColor || palette.colors, // Utiliza a nova paleta
+    }));
     return createChart(ctx, {
       type: "polarArea",
       labels,
-      datasets,
+      datasets: augmentedDatasets,
       options: finalOptions,
     });
   }
@@ -533,10 +543,11 @@
           chartArea.right,
           chartArea.bottom
         );
-        gradient.addColorStop(0, palette.colors[0]); // Azul ou equivalente no tema atual
-        gradient.addColorStop(1, palette.colors[1]); // Verde-água ou equivalente no tema atual
+        gradient.addColorStop(0, palette.colors[0]); // Primária 1
+        gradient.addColorStop(1, palette.colors[1]); // Secundária 1
         return gradient;
       },
+      borderColor: palette.colors[0],
     }));
 
     const defaultRadar = {
@@ -596,6 +607,10 @@
           top: 20,
           bottom: 20,
         },
+      },
+      datasets: {
+        backgroundColor: palette.colors, // Utiliza a nova paleta
+        borderColor: palette.borderColor,
       },
     };
     const finalOptions = mergeOptions(defaultHorizontalBar, options || {});

@@ -42,15 +42,17 @@
   width: 18px;
   height: 18px;
 }
-.header-gc-back:hover {
-  background: #c61818;
-  cursor: pointer;
+
+.header-gc-back .voltar {
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
 }
-.header-gc-back:active {
-  transform: translateY(2px) scale(0.98);
-  box-shadow: var(--sombra-leve);
-  filter: var(--active);
-}
+
 /*---------------------------------------------*/
 
 /* header-gc-nav TEMPLATE */

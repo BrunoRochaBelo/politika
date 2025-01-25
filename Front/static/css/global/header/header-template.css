@@ -171,7 +171,6 @@
     justify-self: stretch;
     display: grid;
     align-self: center;
-    background: var(--bg-principal);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     border: 1px solid var(--card-borda);

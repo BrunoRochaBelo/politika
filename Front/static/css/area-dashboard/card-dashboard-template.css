@@ -1,6 +1,7 @@
 .main-dashboard .card-m,
 .main-dashboard .card-l {
   border-radius: 10px;
+  box-shadow: var(--sombra-leve);
 }
 /*  hover  */
 .main-dashboard .card-xs:hover,
@@ -41,6 +42,7 @@
 .card-dashboard-template-title {
   grid-area: card-dashboard-template-title;
   color: var(--txt-conteudo-card);
+  margin-bottom: 8px;
 }
 .card-dashboard-template-list {
   grid-area: card-dashboard-template-list;
@@ -77,7 +79,16 @@
   gap: 5px;
 }
 .lista-dashboard-cards .lista-vertical-horizontal {
-  gap: 5px;
+  gap: 8px;
+}
+
+.lista-dashboard-cards > li:first-child {
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
+.lista-dashboard-cards > li:last-child {
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 
 /* ------------------------------------------- */

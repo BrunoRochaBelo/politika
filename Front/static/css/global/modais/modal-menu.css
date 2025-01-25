@@ -223,7 +223,6 @@
 .modalMenu-list li {
   display: flex;
   align-items: center;
-  padding: 15px;
   transition: background-color 0.3s ease-in-out;
   border-radius: 6px;
 }
@@ -234,6 +233,7 @@
 
 .modalMenu-list li a {
   display: flex;
+  padding: 15px;
   align-items: center;
   text-decoration: none;
   color: inherit;

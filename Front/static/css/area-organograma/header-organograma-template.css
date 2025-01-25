@@ -90,14 +90,18 @@
   transition: font-size 0.2s ease-in-out;
 }
 
-.header-organograma-back:hover {
-  background: #c61818;
-  cursor: pointer;
-}
 .header-organograma-back:active {
   transform: translateY(2px) scale(0.98);
-  box-shadow: var(--sombra-leve);
-  filter: var(--active);
+}
+
+.header-organograma-back .voltar {
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 /* RESPONSIVO */

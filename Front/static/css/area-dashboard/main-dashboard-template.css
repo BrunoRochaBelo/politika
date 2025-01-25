@@ -24,7 +24,7 @@
   margin: 0;
 }
 .main-dashboard .lista-vertical > li:first-child,
-.lista-vertical-alt > li:first-child {
+.main-dashboard .lista-vertical-alt > li:first-child {
   margin-top: 0px !important;
 }
 
@@ -43,7 +43,7 @@
 }
 .main-dashboard .container-abas-template {
   box-shadow: none;
-  border-radius: 23px;
+  border-radius: 12px;
 }
 .main-dashboard .container-template {
   box-shadow: none;
@@ -51,8 +51,8 @@
 .main-dashboard .container-template-content,
 .main-dashboard .container-abas-template-content {
   border-radius: 0px;
-  border-bottom-left-radius: 23px;
-  border-bottom-right-radius: 23px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   box-shadow: none;
 }
 
@@ -85,8 +85,8 @@
   .main-dashboard .container-abas-template-header {
     justify-content: center;
     background: var(--container-bg);
-    border-top-left-radius: 23px;
-    border-top-right-radius: 23px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
   .main-dashboard .container-template-content {
     background: transparent;
@@ -99,5 +99,129 @@
   .main-dashboard .lista-vertical > li:first-child,
   .lista-vertical-alt > li:first-child {
     margin-top: 0px;
+  }
+}
+
+/* Área de Filtro */
+.area-filtro.filtro-dashboard {
+  padding: 5px 3px;
+  justify-content: stretch;
+}
+.area-filtro.filtro-dashboard .filtro-multi-select-card {
+  border-radius: 12px;
+  box-shadow: var(--sombra-leve);
+}
+.area-filtro.filtro-dashboard .filtro-multi-select-card-header {
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: var(--barra-nav-indicator);
+}
+.area-filtro.filtro-dashboard .filtro-multi-select-card-header p {
+  color: var(--txt-titulo);
+  font-weight: 600;
+}
+.area-filtro.filtro-dashboard .filtro-multi-select-card .arrow {
+  right: 15px;
+}
+.area-filtro.filtro-dashboard
+  .filtro-multi-select-card-header.exibirMultiSelect {
+  background: var(--card-bg);
+  border: 1px solid var(--card-bg);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: var(--sombra-moderada);
+}
+.area-filtro.filtro-dashboard
+  .filtro-multi-select-card-content.exibirMultiSelect {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* Formulário de Filtro */
+.form-filtro-dashboard {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.lista-opcoes-form-filtro-dashboard {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Cartão de Filtro */
+.card-filtro-dashboard.card-s {
+  padding: 10px;
+  border: 1px solid var(--card-borda);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  box-sizing: border-box;
+}
+
+/* Rótulos dos Filtros */
+.label-filtro-dashboard {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--txt-titulo);
+}
+
+/* Container de Período */
+.dashboard-periodo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Separador entre Datas */
+.dashboard-separador-filtro {
+  margin: 0 5px;
+  color: var(--txt-subtitulo);
+  font-weight: bold;
+}
+
+/* Inputs de Filtro */
+.input-filtro-dashboard,
+.select-filtro-dashboard {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  font-size: 14px;
+  background: none;
+  color: var(--input-txt);
+  appearance: none;
+  margin-top: 8px;
+}
+
+/* Estilos para Select */
+.select-filtro-dashboard {
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .area-filtro.filtro-dashboard .filtro-multi-select-card:hover {
+    filter: none;
+  }
+  .form-filtro-dashboard {
+    display: grid;
+    grid-auto-flow: row;
+  }
+
+  .lista-opcoes-form-filtro-dashboard {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+  .card-filtro-dashboard.card-s {
+    flex: 1 1 100%; /* Em telas menores, os cartões ocupam a largura total */
+    max-width: 100%; /* Garante que os cartões não excedam a largura do contêiner */
   }
 }

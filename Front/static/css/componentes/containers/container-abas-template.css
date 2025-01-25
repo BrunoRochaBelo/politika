@@ -67,7 +67,7 @@
   text-align: center;
   align-content: center;
   padding: 0px;
-  background-color: var(--card-bg);
+  background-color: var(--barra-nav-bg);
   border-radius: 25px;
   width: 31.25rem;
   overflow: hidden;
@@ -110,7 +110,7 @@
   font-size: var(--font-md);
   font-weight: 500;
   color: var(--txt-titulo);
-  background-color: var(--container-bg);
+  background-color: var(--barra-nav-indicator);
   align-items: center;
   justify-items: center;
   box-shadow: var(--sombra-intensa);
@@ -197,7 +197,6 @@
     font-size: var(--font-md);
     font-weight: 400;
     color: var(--txt-titulo);
-    background-color: var(--bg-principal);
     box-shadow: var(--sombra-moderada);
     border: 1px solid var(--borda);
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,

@@ -20,7 +20,7 @@
   display: block;
   color: var(--txt-titulo-card);
   transition: all 0.3s ease-in-out;
-  max-height: 100px;
+  max-height: 150px;
   border-radius: 6px;
   background: none;
   box-shadow: var(--sombra-moderada);
@@ -52,14 +52,14 @@
 }
 
 .filtro-multi-select-card-content.exibirMultiSelect {
-  max-height: 800px;
+  max-height: 1000px;
   opacity: 1;
   padding: 15px;
   transition: box-shadow 0.1s ease-in-out;
 }
 
 .filtro-multi-select-card-expanded {
-  max-height: 800px;
+  max-height: 10000px;
   height: auto;
   background: none;
 }
@@ -149,7 +149,7 @@
   width: 49px;
   height: 26px;
   border-radius: 45px;
-  background: var(--bg-principal);
+  background: var(--barra-nav-bg);
   border: 1px solid var(--card-borda);
   box-sizing: border-box;
   transition: background-color 0.2s;

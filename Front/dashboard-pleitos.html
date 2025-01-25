@@ -83,11 +83,76 @@
         <div class="area-interna-containerContent-template area-dashboard">
           <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
             <ul class="lista-vertical-alt">
+              <li class="area-filtro filtro-dashboard">
+                <div class="filtro-multi-select-card">
+                  <div class="filtro-multi-select-card-header">
+                    <label for="filtro_dashboardContatos">
+                      <p>{{Periodo de finalização}} > {{Responsável}} > {{Status}} > {{Residência de apoio}} > {{Local}}</p> <span class="arrow down"></span>
+                    </label>
+                  </div>
+                  <div class="filtro-multi-select-card-content">
+                    <form class="form-filtro-dashboard">
+                      <ul class="lista-opcoes-form-filtro-dashboard">
+                        <!-- Filtro de Periodo de finalização -->
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="periodoDe" class="label-filtro-dashboard">Periodo de finalização:</label>
+                          <div class="dashboard-periodo-container">
+                            <input type="date" id="periodoDe" name="periodoDe" class="input-filtro-dashboard">
+                            <span class="dashboard-separador-filtro">a</span>
+                            <input type="date" id="periodoA" name="periodoA" class="input-filtro-dashboard">
+                          </div>
+                        </li>
+
+                        <!-- Filtro de Responsável -->
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="responsavel" class="label-filtro-dashboard">Responsável:</label>
+                          <select id="responsavel" name="responsavel" class="select-filtro-dashboard">
+                            <option value="minhas" selected>Minhas</option>
+                            <option value="responsavel2">Responsável 2</option>
+                            <option value="responsavel3">Responsável 3</option>
+                            <option value="todos">Todos</option>
+                          </select>
+                        </li>
+
+                        <!-- Filtro de Status -->
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="perfilInfluencia" class="label-filtro-dashboard">Status:</label>
+                          <select id="perfilInfluencia" name="perfilInfluencia" class="select-filtro-dashboard">
+                            <option value="todas">Todas</option>
+                            <option value="novas">Novas</option>
+                            <option value="andamento">Andamento</option>
+                            <option value="atrasdas">Atrasdas</option>
+                            <option value="concluidas">Concluídas</option>
+                          </select>
+                        </li>
+
+                        <!-- Filtro de Marcadores -->
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="marcadores" class="label-filtro-dashboard">Marcadores:</label>
+                          <select id="marcadores" name="marcadores" class="select-filtro-dashboard">
+                            <option value="todas">Todas</option>
+                            <option value="novas">Novas</option>
+                            <option value="andamento">Andamento</option>
+                            <option value="atrasdas">Atrasdas</option>
+                            <option value="concluidas">Concluídas</option>
+                          </select>
+                        </li>
+                      </ul>
+
+                      <!-- Botão de Aplicar Filtros -->
+                      <div class="botoes">
+                        <button type="submit" class="btn-principal">Aplicar</button>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </li>
               <li class="secao-interna-template">
                 <ul class="lista-dashboard-cards">
 
                   <!-- Card 1: Tipo de Pleito -->
-                  <li class="card-m">
+                  <li class="card-l">
                     <div class="card-dashboard-template">
                       <h3 class="card-dashboard-template-title">Tipo de Pleito</h3>
                       <div class="card-dashboard-template-list lista-vertical-alt">
@@ -99,7 +164,7 @@
                   </li>
 
                   <!-- Card 2: Status do Pleito -->
-                  <li class="card-m">
+                  <li class="card-l">
                     <div class="card-dashboard-template">
                       <h3 class="card-dashboard-template-title">Status do Pleito</h3>
                       <div class="card-dashboard-template-list lista-vertical-alt">
@@ -112,6 +177,7 @@
 
                 </ul>
               </li>
+              <li class="list-last-child"><br></li>
             </ul>
           </div>
         </div>
@@ -125,6 +191,7 @@
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/dashboard-pleitos-charts.js" defer></script>
+  <script src="./static/js/FiltrosMultiSelect.js" defer></script>
 
 </body>
 
