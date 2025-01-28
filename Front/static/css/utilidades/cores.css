@@ -17,14 +17,14 @@
   --cor-apoio-2: hsl(215, 20%, 20%);
 
   /* Backgrounds e Containers */
-  --bg-principal: hsl(218, 25%, 12%);
-  --container-bg: hsl(218, 28%, 16%);
-  --barra-pesquisa-bg: hsl(218, 45%, 25%);
+  --bg-principal: hsl(218, 25%, 14%);
+  --container-bg: hsl(218, 28%, 18%);
+  --barra-pesquisa-bg: hsl(218, 40%, 30%);
   --borda: hsl(215, 30%, 32%);
   --divisor: hsl(215, 38%, 26%);
   --bg-overlay: hsla(215, 50%, 8%, 0.5);
-  --barra-nav-bg: hsl(218, 25%, 20%);
-  --barra-nav-indicator: hsl(215, 25%, 30%);
+  --barra-nav-bg: hsl(218, 30%, 10%);
+  --barra-nav-indicator: hsl(215, 30%, 30%);
 
   /* Texto */
   --txt-titulo: hsl(215, 15%, 95%);
@@ -113,7 +113,7 @@
   --btn-filtro-alt-destaque: hsl(218, 40%, 80%);
   --btn-filtro-alt-txt: hsl(218, 100%, 98%);
 
-  --btn-menu: hsl(215, 14%, 75%);
+  --btn-menu: var(--txt-nav);
   --btn-float: linear-gradient(300deg, hsl(218, 90%, 60%), hsl(218, 85%, 55%));
 
   /* Sombreamento e Hover */
@@ -178,7 +178,7 @@
 .header-mapas.invert-filter img,
 .header-financeiro.invert-filter img,
 .header-organograma.invert-filter img {
-  filter: brightness(0.35) saturate(4);
+  filter: brightness(0.35) saturate(5);
 }
 /* .tarefa-medium-card-desc.invert-filter img {
   filter: none;
@@ -205,7 +205,7 @@
   /* Backgrounds e Containers */
   --bg-principal: hsl(215, 25%, 90%);
   --container-bg: hsl(215, 28%, 95%);
-  --barra-pesquisa-bg: hsl(215, 65%, 80%);
+  --barra-pesquisa-bg: hsl(215, 60%, 80%);
   --borda: hsl(215, 30%, 75%);
   --divisor: hsl(215, 38%, 80%);
   --bg-overlay: hsla(215, 50%, 95%, 0.5);
@@ -287,7 +287,7 @@
   --btn-filtro-alt-destaque: hsl(215, 55%, 88%);
   --btn-filtro-alt-txt: hsl(215, 100%, 98%);
 
-  --btn-menu: hsl(215, 20%, 25%);
+  --btn-menu: var(--txt-nav);
   --btn-float: linear-gradient(300deg, hsl(218, 90%, 60%), hsl(218, 85%, 55%));
 
   /* Sombreamento e hover */

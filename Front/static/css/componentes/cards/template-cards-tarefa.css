@@ -340,6 +340,8 @@
   background-color: var(--btn-filtro-alt-destaque);
   color: hsl(210, 25%, 12%);
   transition: background-color 0.3s, border-color 0.3s;
+  letter-spacing: -0.5px;
+  word-spacing: 1px;
 }
 
 /* Ícone */
@@ -358,7 +360,7 @@
 
 .tarefa-medium-card-desc-pleito-nome {
   font-size: var(--font-sm);
-  line-height: 1.5;
+  line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
