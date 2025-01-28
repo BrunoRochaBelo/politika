@@ -126,14 +126,14 @@
   background-color: var(--input-filled-bg);
   border: 1px solid transparent;
   padding: 12px;
-  transition: padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s ease;
 }
 
 .card-info .campo-exibir p {
   color: var(--txt-destaque);
   border: 1px solid transparent;
   font-size: var(--font-md);
-  transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s ease;
 }
 
 .acoes {
@@ -151,11 +151,8 @@
   border: 1px solid transparent;
   box-shadow: var(--sombra-leve);
   padding: 0;
-  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.5s ease-in-out;
+  transition: width 0.5s ease, height 0.5s ease, padding 0.5s ease,
+    transform 0.5s ease, background-color 0.5s ease-in-out;
   box-sizing: border-box;
 }
 
@@ -211,12 +208,13 @@
 
 .compact .card-info .campo-exibir {
   padding: 4px 10px;
-  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .compact .card-info .campo-exibir p {
   font-size: var(--font-sm);
   padding: 3px;
+  transition: all 0.5s ease;
 }
 
 .compact .acao-item {

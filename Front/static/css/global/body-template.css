@@ -6,15 +6,18 @@
   grid-template-areas:
     "header header header"
     ". main.";
+  box-sizing: border-box;
 }
 /* container-areas */
 .header {
   grid-area: header;
   width: 100%;
   background: none;
+  box-sizing: border-box;
 }
 .main {
   grid-area: main;
+  box-sizing: border-box;
 }
 
 /* RESPONSIVO */

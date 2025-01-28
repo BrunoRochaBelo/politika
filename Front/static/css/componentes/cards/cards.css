@@ -203,11 +203,19 @@
   filter: var(--hover);
 }
 
-/* Active */
-.card-xs:active:not(.card-xs.filtro-small-card),
-.card-s:active,
-.card-m:active,
-.card-l:active {
+/* Aplica o estilo :active apenas se nenhum elemento .btn-outline-principal, .contatos-small-card-call ou .aniversario-small-card-call estiver ativo */
+.card-xs:active:not(:has(.btn-outline-principal:active)):not(
+    :has(.contatos-small-card-call:active)
+  ):not(:has(.aniversario-small-card-call:active)),
+.card-s:active:not(:has(.btn-outline-principal:active)):not(
+    :has(.contatos-small-card-call:active)
+  ):not(:has(.aniversario-small-card-call:active)),
+.card-m:active:not(:has(.btn-outline-principal:active)):not(
+    :has(.contatos-small-card-call:active)
+  ):not(:has(.aniversario-small-card-call:active)),
+.card-l:active:not(:has(.btn-outline-principal:active)):not(
+    :has(.contatos-small-card-call:active)
+  ):not(:has(.aniversario-small-card-call:active)) {
   animation: expand-color-from-center 0.6s cubic-bezier(0.25, 1, 0.5, 1)
     forwards;
   transform: scale(0.98);

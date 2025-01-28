@@ -8,6 +8,7 @@
     "header-menu header-notification header-nav header-search"
     / auto auto 1fr auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .header-menu {

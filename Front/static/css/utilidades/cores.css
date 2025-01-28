@@ -35,10 +35,10 @@
   --txt-placeholder: hsl(215, 18%, 65%);
 
   /* Cartões */
-  --card-bg: hsl(218, 32%, 24%);
-  --card-borda: hsl(218, 32%, 22%);
-  --card-detalhe: hsl(218, 32%, 30%);
-  --card-hover: hsl(218, 40%, 28%);
+  --card-bg: hsl(218, 31%, 24%);
+  --card-borda: hsl(218, 31%, 22%);
+  --card-detalhe: hsl(218, 30%, 30%);
+  --card-hover: hsl(218, 22%, 30%);
 
   --card-aberto-bg: hsl(218, 38%, 22%);
   --card-aberto-detalhe: hsl(218, 38%, 18%);

@@ -43,7 +43,7 @@
   box-sizing: border-box;
 }
 .contatos-small-card-call:active {
-  transform: scale(0.75) rotate(45deg);
+  transform: scale(0.75) rotate(15deg);
 }
 
 .contatos-small-card-perfilInfluencia {

@@ -45,7 +45,9 @@
   justify-self: end;
   align-self: center;
 }
-
+.aniversario-small-card-call:active {
+  transform: scale(0.75) rotate(15deg);
+}
 .aniversario-small-card-perfilInfluencia {
   grid-area: aniversario-small-card-perfilInfluencia;
   display: none;
