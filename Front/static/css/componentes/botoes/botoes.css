@@ -79,7 +79,7 @@
 /* Botões sem Cor de Fundo (Outline) */
 .btn-outline-principal {
   background: transparent;
-  color: var(--btn-principal);
+  color: var(--txt-destaque);
   border: 1px solid var(--btn-principal);
   box-shadow: none;
   padding: 12px 20px;

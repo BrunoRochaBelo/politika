@@ -15,6 +15,12 @@
   background: var(--btn-secundario-hover);
 }
 
+.despesas-medium-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+
 .main-financeiro .area-interna-containerContent-template.despesas {
   background: none;
   box-shadow: none;

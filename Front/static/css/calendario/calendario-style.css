@@ -15,6 +15,14 @@
   filter: var(--hover);
   background: var(--btn-secundario-hover);
 }
+
+.calendario-large-card-editar .btn-outline-principal:active,
+.calendario-small-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+
 .nav-calendar {
   overflow-x: auto;
   gap: 12px;

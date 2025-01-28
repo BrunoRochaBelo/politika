@@ -15,6 +15,14 @@
   filter: var(--hover);
   background: var(--btn-secundario-hover);
 }
+
+.tarefa-small-card-editar .btn-outline-principal:active,
+.tarefa-medium-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+
 .filtros-tarefas h4 {
   margin-bottom: 10px;
   font-weight: 300;

@@ -15,6 +15,12 @@
   background: var(--btn-secundario-hover);
 }
 
+.contatos-small-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+
 .contatos-small-card-title.aniversariante::before {
   content: "\1F382"; /* 🎂 */
   margin-right: 10px;

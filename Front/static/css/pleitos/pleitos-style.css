@@ -14,6 +14,18 @@
   background: var(--btn-secundario-hover);
 }
 
+.pleitos-medium-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+
+.pleitos-medium-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+
 .file-view-modal {
   display: none;
   position: fixed;

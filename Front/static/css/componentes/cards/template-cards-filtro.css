@@ -24,6 +24,8 @@
   border-radius: 6px;
   background: none;
   box-shadow: var(--sombra-moderada);
+  border: 1px solid var(--card-borda);
+  box-sizing: border-box;
 }
 
 .filtro-multi-select-card-header {
@@ -69,7 +71,7 @@
 
 .filtro-multi-select-card-header.exibirMultiSelect {
   background: var(--card-bg);
-  border: 1px solid var(--card-bg);
+
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   box-shadow: var(--sombra-moderada);

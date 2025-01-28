@@ -212,8 +212,8 @@
   padding: 10px;
   font-size: var(--font-md);
   border-radius: 5px;
-  background: var(--btn-principal-alt);
-  color: var(--btn-principal-alt-txt);
+  background: var(--btn-principal);
+  color: var(--btn-principal-txt);
   border: none;
   cursor: pointer;
   box-shadow: var(--sombra-leve);

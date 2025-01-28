@@ -337,8 +337,8 @@
   box-sizing: border-box;
   border: 1px solid transparent;
   border-radius: 45px;
-  background-color: var(--txt-nav-selecionado);
-  color: var(--cor-apoio-2);
+  background-color: var(--btn-filtro-alt-destaque);
+  color: hsl(210, 25%, 12%);
   transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -368,7 +368,7 @@
 .tarefa-medium-card-desc-pleito-container .tarefa-medium-card-desc-pleito-link {
   margin-left: auto;
   padding: 5px 16px;
-  background: var(--btn-principal);
+  background: var(--btn-principal-alt);
   box-shadow: var(--sombra-moderada);
   border: none;
   border-radius: 45px;
@@ -376,15 +376,20 @@
   font-size: var(--font-sm);
   font-weight: bolder;
   flex-shrink: 0;
-  color: var(--btn-principal-txt);
+  color: var(--btn-principal-alt-txt);
 }
 
 /* Hover do link no container */
 .tarefa-medium-card-desc-pleito-container
   .tarefa-medium-card-desc-pleito-link:hover {
-  background: var(--btn-principal-hover);
-  border-color: var(--btn-principal-hover);
+  background: var(--btn-principal-alt-hover);
+  border-color: var(--btn-principal-alt-hover);
   box-shadow: var(--sombra-leve);
+}
+
+.tarefa-medium-card-desc-pleito-container
+  .tarefa-medium-card-desc-pleito-link:active {
+  transform: translateY(1px) scale(0.98);
 }
 
 /* Estilo da descrição */

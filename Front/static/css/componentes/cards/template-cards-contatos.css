@@ -40,7 +40,12 @@
   justify-self: end;
   align-self: center;
   cursor: pointer;
+  box-sizing: border-box;
 }
+.contatos-small-card-call:active {
+  transform: scale(0.75) rotate(45deg);
+}
+
 .contatos-small-card-perfilInfluencia {
   grid-area: contatos-small-card-perfilInfluencia;
   justify-self: start;
