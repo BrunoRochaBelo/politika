@@ -1,0 +1,227 @@
+/* Grid */
+.main-arquivos-template {
+  display: grid;
+  padding: 5px;
+  grid:
+    "main-arquivos-section"
+    /1fr;
+}
+/* Áreas de grid */
+.main-arquivos-section {
+  grid-area: main-arquivos-section;
+  text-align: center;
+  display: grid;
+  grid-auto-flow: row;
+  align-content: start;
+  overflow: auto;
+}
+
+.main-arquivos .container-template {
+  background: transparent;
+}
+.main-arquivos .lista-vertical-alt {
+  gap: 0;
+  margin: 0;
+}
+.main-arquivos .lista-vertical > li:first-child,
+.main-arquivos .lista-vertical-alt > li:first-child {
+  margin-top: 0px !important;
+}
+
+.main-arquivos .area-interna-containerContent-template.area-arquivos {
+  background: none;
+  box-shadow: none;
+  min-height: calc(var(--vh, 1vh) * 100 - 6rem) !important;
+  max-height: calc(var(--vh, 1vh) * 100 - 6rem) !important;
+  transition: max-height 0.3s ease-in-out;
+}
+.main-arquivos .area-interna-containerContent-template {
+  background: none;
+  box-shadow: none;
+  max-height: calc(var(--vh, 1vh) * 100 - 8.5rem) !important;
+  transition: max-height 0.3s ease-in-out;
+}
+.main-arquivos .container-abas-template {
+  box-shadow: none;
+  border-radius: 12px;
+}
+.main-arquivos .container-template {
+  box-shadow: none;
+}
+.main-arquivos .container-template-content,
+.main-arquivos .container-abas-template-content {
+  border-radius: 0px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: none;
+}
+
+/* RESPONSIVO */
+@media only screen and (max-width: 56.25rem) {
+  .main-arquivos-template {
+    display: grid;
+    padding: 5px 0px;
+    grid:
+      "main-arquivos-section"
+      / 1fr;
+  }
+  .main-arquivos-section {
+    grid-area: main-arquivos-section;
+  }
+
+  .main-arquivos .area-interna-containerContent-template.area-arquivos {
+    background: none;
+    box-shadow: none;
+    min-height: calc(var(--vh, 1vh) * 100 - 5.5rem) !important;
+    max-height: calc(var(--vh, 1vh) * 100 - 5.5rem) !important;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .main-arquivos .area-interna-containerContent-template {
+    background: none;
+    box-shadow: none;
+    max-height: calc(var(--vh, 1vh) * 100 - 16rem) !important;
+  }
+
+  .main-arquivos .container-abas-template-header {
+    justify-content: center;
+    background: var(--container-bg);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .main-arquivos .container-template-content {
+    background: transparent;
+    border: none;
+  }
+  .main-arquivos .area-interna-containerContent-template-content,
+  .main-arquivos .card-m {
+    padding: 0;
+  }
+  .main-arquivos .lista-vertical > li:first-child,
+  .lista-vertical-alt > li:first-child {
+    margin-top: 0px;
+  }
+}
+
+/* Área de Filtro */
+.area-filtro.filtro-arquivos {
+  padding: 5px 3px;
+  justify-content: stretch;
+}
+.area-filtro.filtro-arquivos .filtro-multi-select-card {
+  border-radius: 12px;
+  box-shadow: var(--sombra-leve);
+}
+.area-filtro.filtro-arquivos .filtro-multi-select-card-header {
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: var(--barra-nav-indicator);
+}
+.area-filtro.filtro-arquivos .filtro-multi-select-card-header p {
+  color: var(--txt-titulo);
+  font-weight: 600;
+}
+.area-filtro.filtro-arquivos .filtro-multi-select-card .arrow {
+  right: 15px;
+}
+.area-filtro.filtro-arquivos
+  .filtro-multi-select-card-header.exibirMultiSelect {
+  background: var(--card-bg);
+  border: 1px solid var(--card-bg);
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: var(--sombra-moderada);
+}
+.area-filtro.filtro-arquivos
+  .filtro-multi-select-card-content.exibirMultiSelect {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* Formulário de Filtro */
+.form-filtro-arquivos {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.lista-opcoes-form-filtro-arquivos {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Cartão de Filtro */
+.card-filtro-arquivos.card-s {
+  padding: 10px;
+  border: 1px solid var(--card-borda);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  box-sizing: border-box;
+}
+
+/* Rótulos dos Filtros */
+.label-filtro-arquivos {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--txt-titulo);
+}
+
+/* Container de Período */
+.arquivos-periodo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Separador entre Datas */
+.arquivos-separador-filtro {
+  margin: 0 5px;
+  color: var(--txt-subtitulo);
+  font-weight: bold;
+}
+
+/* Inputs de Filtro */
+.input-filtro-arquivos,
+.select-filtro-arquivos {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  font-size: 14px;
+  background: none;
+  color: var(--input-txt);
+  appearance: none;
+  margin-top: 8px;
+}
+
+/* Estilos para Select */
+.select-filtro-arquivos {
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .area-filtro.filtro-arquivos .filtro-multi-select-card:hover {
+    filter: none;
+  }
+  .form-filtro-arquivos {
+    display: grid;
+    grid-auto-flow: row;
+  }
+
+  .lista-opcoes-form-filtro-arquivos {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+  .card-filtro-arquivos.card-s {
+    flex: 1 1 100%; /* Em telas menores, os cartões ocupam a largura total */
+    max-width: 100%; /* Garante que os cartões não excedam a largura do contêiner */
+  }
+}

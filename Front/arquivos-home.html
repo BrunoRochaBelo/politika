@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="manifest" href="./manifest.json">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+
+  <title>Arquivos Home</title>
+  <meta name="description" content="Arquivos Home">
+
+  <link rel="preload" href="./static/css/style.css" as="style">
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body class="body-arquivos-template">
+
+  <header class="header-arquivos">
+    <ul class="header-arquivos-template">
+      <li class="header-arquivos-back">
+        <a href="index.html" class="voltar">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+        </a>
+      </li>
+      <li class="header-arquivos-nav">
+        <nav class="header-arquivos-nav">
+          <ul class="header-arquivos-nav-template">
+            <li class="arquivos-home indicador"><a href="arquivos-home.html"><img src="./static/imagens/icones/arquivos-select.svg" alt="arquivos Icon">
+                <p>Home</p>
+              </a></li>
+            <li class="arquivos-arquivo"><a href="arquivos-arquivo.html"><img src="./static/imagens/icones/calendario.svg" alt="Arquivo Icon">
+                <p>Arquivo</p>
+              </a></li>
+            <li class="arquivos-caixa-de-entrada"><a href="arquivos-caixa-de-entrada.html"><img src="./static/imagens/icones/tarefas.svg" alt="Caixa de Entrada Icon">
+                <p>Caixa de Entrada</p>
+              </a></li>
+          </ul>
+
+        </nav>
+      </li>
+      <li class="header-arquivos-search">
+        <div>
+          <form action="" method="post" class="search-input-container">
+            <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar contato...">
+            <button type="submit" class="search-button">
+              <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+            </button>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </header>
+
+  <main class="main-arquivos main-arquivos-template">
+    <section class="main-arquivos-section container-template">
+      <div class="container-template-content">
+        <div class="area-interna-containerContent-template area-arquivos">
+          <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+            <ul class="lista-vertical-alt">
+              <li class="secao-interna-template">
+                <ul class="lista-arquivos-cards">
+
+                  <!-- Card: Eventos -->
+                  <li class="card-l">
+                    <div class="card-arquivos-template">
+                      <h3 class="card-arquivos-template-title">Eventos</h3>
+                      <div class="card-arquivos-template-list lista-vertical-alt">
+                        <div class="chart-arquivos-container">
+                          <canvas id="chartEventos"></canvas>
+                        </div>
+                      </div>
+                      <a class="card-arquivos-template-link" href="arquivos-eventos.html">ir para eventos</a>
+                    </div>
+                  </li>
+
+                  <!-- Tarefas e Pleitos lado a lado -->
+                  <li class="lista-vertical-horizontal">
+                    <div class="card-l">
+                      <div class="card-arquivos-template">
+                        <h3 class="card-arquivos-template-title">Tarefas</h3>
+                        <div class="card-arquivos-template-list lista-vertical-alt">
+                          <div class="chart-arquivos-container">
+                            <canvas id="chartTarefas"></canvas>
+                          </div>
+                        </div>
+                        <a class="card-arquivos-template-link" href="arquivos-tarefas.html">ir para tarefas</a>
+                      </div>
+                    </div>
+                    <div class="card-l">
+                      <div class="card-arquivos-template">
+                        <h3 class="card-arquivos-template-title">Pleitos</h3>
+                        <div class="card-arquivos-template-list lista-vertical-alt">
+                          <div class="chart-arquivos-container">
+                            <canvas id="chartPleitos"></canvas>
+                          </div>
+                        </div>
+                        <a class="card-arquivos-template-link" href="arquivos-pleitos.html">ir para pleitos</a>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Card: Contatos -->
+                  <li class="card-l">
+                    <div class="card-arquivos-template">
+                      <h3 class="card-arquivos-template-title">Novos Contatos</h3>
+                      <div class="card-arquivos-template-list lista-vertical-alt">
+                        <div class="chart-arquivos-container line-chart-container">
+                          <canvas id="chartContatos"></canvas>
+                        </div>
+                      </div>
+                      <a class="card-arquivos-template-link" href="arquivos-contatos.html">ir para contatos</a>
+                    </div>
+                  </li>
+
+                </ul>
+              </li>
+              <li class="list-last-child"><br></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/ManipularHistorico.js" defer></script>
+
+</body>
+
+</html>

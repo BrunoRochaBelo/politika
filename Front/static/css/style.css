@@ -81,6 +81,14 @@
 /* arquivos */
 @import "./arquivos/arquivos-style.css";
 
+/* area dashboard */
+@import "./area-arquivos/body-arquivos-template.css";
+@import "./area-arquivos/card-arquivos-template.css";
+@import "./area-arquivos/main-arquivos-template.css";
+@import "./area-arquivos/header-arquivos-template.css";
+/* financeiro/ Conta Corrente */
+@import "./area-arquivos/arquivos-contatos/arquivos-contatos-style.css";
+
 /* area organograma */
 @import "./area-organograma/body-organograma-template.css";
 @import "./area-organograma/cards-organograma-template.css";

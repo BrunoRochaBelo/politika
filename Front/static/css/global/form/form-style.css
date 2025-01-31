@@ -465,4 +465,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .switch-label:before {
     background: var(--input-empty-bg);
   }
+
+  .form-dataHora {
+    display: flex;
+    flex-direction: column;
+  }
 }
