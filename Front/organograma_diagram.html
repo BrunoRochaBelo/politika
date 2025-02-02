@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -14,10 +15,9 @@
   <title>Organograma</title>
   <meta name="description" content="Lista de Organograma">
 
-  <!-- CSS da biblioteca OrgChart -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.2/css/jquery.orgchart.min.css" />
-
-  <!-- SEU ARQUIVO DE ESTILO -->
+  <!-- CSS da biblioteca treant-js -->
+  <link rel="stylesheet" href="./static/css/Treant.css">
+  <!-- ARQUIVO DE ESTILO -->
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
@@ -46,65 +46,21 @@
       <div class="area-interna-containerContent-template">
         <div class="area-interna-containerContent-template-header">
           <div class="area-toolbar">
-            <button class="btn-toolbar" id="btnAddNode" disabled>Adicionar Nó</button>
-            <button class="btn-toolbar" id="btnRenameNode" disabled>Renomear Nó</button>
-            <button class="btn-toolbar" id="btnDeleteNode" disabled>Excluir Nó</button>
             <button class="btn-toolbar" id="btnRecenter">Centralizar</button>
           </div>
         </div>
         <div class="area-interna-containerContent-template-content">
-          <!-- Container onde o OrgChart será desenhado -->
-          <div id="orgchart-container"></div>
+          <div id="orgchart-container">
+            <div id="orgchart-wrapper"></div>
+          </div>
         </div>
-
-        <!-- MODAL DE DETALHES (EXIBIR INFORMAÇÕES EXTRAS AO CLICAR) -->
+        <!-- Modal -->
         <div class="modal-organograma" id="detailModal">
           <div class="modal-organograma-content">
             <span class="close" onclick="document.getElementById('detailModal').style.display='none'">&times;</span>
             <h2 class="modal-title"></h2>
             <div class="modal-body"></div>
             <button class="btn-modal-organograma btn-cancel" onclick="document.getElementById('detailModal').style.display='none'">Fechar</button>
-          </div>
-        </div>
-
-        <!-- Modais para CRUD (já existentes no seu projeto) -->
-        <div class="modal-organograma" id="addModal">
-          <div class="modal-organograma-content">
-            <span class="close" id="addClose">&times;</span>
-            <h2>Adicionar Nó</h2>
-            <div class="campo">
-              <input type="text" id="addNameInput" placeholder="Nome do Novo Nó">
-            </div>
-            <div class="campo">
-              <input type="text" id="addTitleInput" placeholder="Título (opcional)">
-            </div>
-            <button class="btn-modal-organograma" id="saveAdd">Adicionar</button>
-            <button class="btn-modal-organograma btn-cancel" id="cancelAdd">Cancelar</button>
-          </div>
-        </div>
-
-        <div class="modal-organograma" id="renameModal">
-          <div class="modal-organograma-content">
-            <span class="close" id="renameClose">&times;</span>
-            <h2>Renomear Nó</h2>
-            <div class="campo">
-              <input type="text" id="renameNameInput" placeholder="Novo Nome">
-            </div>
-            <div class="campo">
-              <input type="text" id="renameTitleInput" placeholder="Novo Título">
-            </div>
-            <button class="btn-modal-organograma" id="saveRename">Salvar</button>
-            <button class="btn-modal-organograma btn-cancel" id="cancelRename">Cancelar</button>
-          </div>
-        </div>
-
-        <div class="modal-organograma" id="deleteModal">
-          <div class="modal-organograma-content">
-            <span class="close" id="deleteClose">&times;</span>
-            <h2>Excluir Nó</h2>
-            <p id="deleteText"></p>
-            <button class="btn-modal-organograma" id="confirmDelete">Sim, Excluir</button>
-            <button class="btn-modal-organograma btn-cancel" id="cancelDelete">Cancelar</button>
           </div>
         </div>
       </div>
@@ -705,555 +661,308 @@
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.2/js/jquery.orgchart.min.js"></script>
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/Raphael.js"></script>
+  <script src="./static/js/Treant.js"></script>
+  <script src="./static/js/panzoom.min.js"></script>
   <script>
-    /************************************************************************
-  * 1) Converter HTML <li> em orgData (JSON) dinamicamente
-  ************************************************************************/
-    function parseHtmlToOrgData($li) {
-      // Captura dados principais do <li> atual
-      const id = Number($li.find("[data-field='id']").first().text().trim());
-      const name = $li.find("[data-field='nome_unidade']").first().text().trim();
-      const titular = $li.find("[data-field='nome_titular']").first().text().trim();
-      const designacao = $li.find("[data-field='designacao']").first().text().trim();
-      const nivelSalarial = $li.find("[data-field='nivel-salarial']").first().text().trim();
+    /**********************************************************************
+     * Integração do Treant.js com Panzoom – Versão Final Estável
+     * - Centraliza usando o primeiro nó como referência.
+     * - Discrimina toque/click real de arrasto.
+     * - Exibe modal em duplo toque/duplo clique.
+     **********************************************************************/
 
-      // infoPub pode ter <p> internos; usamos .html() para manter formatação
-      const infoPub = $li.find("[data-field='info-pub']").first().html() || "";
+    window.nodeDataMap = {};
+    window.finalStructure = [];
+    let myTreantInstance = null;
+    let panzoomInstance = null;
+    const doubleClickThreshold = 300; // ms para distinguir clique único de duplo clique
 
-      // Monta objeto para este nó
-      const nodeData = {
-        id: id,
-        name: name,
-        title: titular,
-        designacao: designacao,
-        nivelSalarial: nivelSalarial,
-        infoPub: infoPub
-      };
+    // Retorna as coordenadas do evento (suporta touch e pointer)
+    function getEventCoordinates(e) {
+      if (e.changedTouches && e.changedTouches.length) {
+        return { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+      } else {
+        return { x: e.clientX, y: e.clientY };
+      }
+    }
 
-      // Verifica se há sublistas (filhos)
-      const $sublist = $li.children("ul.org-sublist");
-      if ($sublist.length > 0) {
-        const children = [];
-        $sublist.children("li.org-item").each(function () {
-          children.push(parseHtmlToOrgData($(this)));
-        });
-        if (children.length > 0) {
-          nodeData.children = children;
+    // Percorre a estrutura HTML e monta os nós para o Treant
+    function parseOrgItems(ul) {
+      const children = [];
+      $(ul).children("li.org-item").each(function () {
+        const $li = $(this);
+        const $card = $li.find(".organograma-medium-card").first();
+
+        const id = $card.find("[data-field='id']").eq(0).text().trim();
+        const nomeUnidade = $card.find("[data-field='nome_unidade']").text().trim();
+        const nomeTitular = $card.find("[data-field='nome_titular']").text().trim();
+        const designacao = $card.find("[data-field='designacao']").text().trim();
+        const nivelSalarial = $card.find("[data-field='nivel-salarial']").text().trim();
+        let infoPublicacao = "";
+        const $infoPubDiv = $card.find("[data-field='info-pub']");
+        if ($infoPubDiv.length) {
+          infoPublicacao = $infoPubDiv.html();
         }
-      }
 
-      return nodeData;
-    }
+        const nodeData = {
+          HTMLid: `org-node-${id}`,
+          text: {
+            name: nomeUnidade,
+            title: designacao,
+            contact: nomeTitular
+          },
+          detailData: {
+            id,
+            nome_unidade: nomeUnidade,
+            nome_titular: nomeTitular,
+            designacao,
+            nivel_salarial: nivelSalarial,
+            info_pub: infoPublicacao
+          },
+          collapsed: false
+        };
 
-    /************************************************************************
-     * 2) Variáveis globais e configurações
-     ************************************************************************/
-    let chartInstance = null;        // Instância do OrgChart
-    let selectedNode = null;         // Nó atualmente selecionado
-    let nextId = 999;                // ID inicial para novos nós
-    const HOLD_TIMEOUT = 700;        // Tempo (ms) para reconhecer toque e segurar
-    let holdTimer = null;            // Timer para toque e segurar
-
-    // Controle de zoom manual (scroll/pinch)
-    let currentScale = 1;
-    const minScale = 0.5;    // Zoom mínimo para manter legibilidade
-    const maxScale = 2.5;    // Zoom máximo (ajuste a gosto)
-
-    /************************************************************************
-     * 3) Ao carregar a página, converter HTML -> orgData e inicializar OrgChart
-     ************************************************************************/
-    $(function () {
-      // a) Localiza o <li> de nível 0
-      const $rootLi = $("li.org-item[data-level='0']").first();
-
-      // b) Converte toda a hierarquia <li>/<ul> em orgData
-      const orgData = parseHtmlToOrgData($rootLi);
-
-      // c) Inicializa (desenha) o organograma
-      initOrgChart(orgData);
-
-      // d) Vincula eventos da toolbar (Adicionar, Renomear, Excluir, Centralizar)
-      $("#btnAddNode").on("click", openAddModal);
-      $("#btnRenameNode").on("click", openRenameModal);
-      $("#btnDeleteNode").on("click", openDeleteModal);
-
-      // Botão para centralizar/“zoom to fit” (caso exista no HTML)
-      $("#btnRecenter").on("click", function () {
-        reCenterAndZoomFit();
-      });
-
-      // e) Eventos de fechamento de modais
-      $("#addClose, #renameClose, #deleteClose").on("click", closeAllModals);
-      $(window).on("click", function (event) {
-        if ($(event.target).is("#addModal")) closeAllModals();
-        if ($(event.target).is("#renameModal")) closeAllModals();
-        if ($(event.target).is("#deleteModal")) closeAllModals();
-      });
-
-      $("#saveAdd").on("click", addNodeAction);
-      $("#cancelAdd").on("click", closeAllModals);
-
-      $("#saveRename").on("click", renameNodeAction);
-      $("#cancelRename").on("click", closeAllModals);
-
-      $("#confirmDelete").on("click", deleteNodeAction);
-      $("#cancelDelete").on("click", closeAllModals);
-
-      // f) Fechar seleção ao clicar fora do organograma (ou fora da toolbar e modais)
-      $("#orgchart-container").on("click", function (event) {
-        if (!$(event.target).closest(".node").length) {
-          clearSelection();
-        }
-      });
-      $(document).on("click", function (event) {
-        if (
-          !$(event.target).closest("#orgchart-container").length &&
-          !$(event.target).closest(".area-toolbar").length &&
-          !$(event.target).closest(".modal-organograma").length
-        ) {
-          clearSelection();
-        }
-      });
-
-      // g) Habilitar zoom via scroll e pinch
-      enableManualZoom();
-    });
-
-    /************************************************************************
-     * 4) Inicializa (ou redesenha) o OrgChart
-     ************************************************************************/
-    function initOrgChart(orgData) {
-      // Se a instância já existir, reinicializa sem perder o zoom/pan atual
-      if (chartInstance && chartInstance.$chart) {
-        const currentTransform = chartInstance.$chart.css("transform");
-
-        chartInstance.init({
-          data: orgData,
-          nodeId: "id",
-          nodeContent: "title",
-          pan: true,
-          zoom: true,
-          toggleSiblingsResp: false,
-          createNode: onCreateNode
-        });
-
-        if (currentTransform && currentTransform !== "none") {
-          chartInstance.$chart.css("transform", currentTransform);
-        }
-        restoreSelection();
-        return;
-      }
-
-      // Se não existir, cria do zero
-      chartInstance = $("#orgchart-container").orgchart({
-        data: orgData,
-        nodeId: "id",
-        nodeContent: "title",
-        pan: true,
-        zoom: true,
-        toggleSiblingsResp: false,
-        createNode: onCreateNode
-      });
-
-      // Depois de criar pela primeira vez, ajusta zoom p/ caber no container
-      // e centraliza o nó raiz na horizontal
-      reCenterAndZoomFit();
-    }
-
-    /************************************************************************
-     * 5) createNode: configura interações (clique, duplo clique, toque e segurar)
-     ************************************************************************/
-    function onCreateNode($node, data) {
-      // Remove qualquer manipulador anterior para evitar duplicidades
-      $node.off("click dblclick touchstart touchmove touchend touchcancel");
-
-      // 5.1) Clique simples => selecionar (highlight)
-      $node.on("click", function (evt) {
-        evt.stopPropagation();
-        evt.stopImmediatePropagation();
-        handleSingleClick($node, data);
-      });
-
-      // 5.2) Duplo clique => abrir detalhes
-      $node.on("dblclick", function (evt) {
-        evt.preventDefault();
-        evt.stopPropagation();
-        evt.stopImmediatePropagation();
-        openNodeDetailModal(data);
-      });
-
-      // 5.3) Toque (mobile/tablet) e segurar => abrir detalhes
-      $node.on("touchstart", function () {
-        holdTimer = setTimeout(function () {
-          openNodeDetailModal(data);
-        }, HOLD_TIMEOUT);
-      });
-      // Cancela o timer se houver movimento ou fim de toque
-      $node.on("touchmove touchend touchcancel", function () {
-        if (holdTimer) {
-          clearTimeout(holdTimer);
-          holdTimer = null;
-        }
-      });
-    }
-
-    /************************************************************************
-     * 6) Ações de seleção e exibição de detalhes
-     ************************************************************************/
-
-    // Clique simples => Seleciona nó (apenas highlight e habilitar CRUD)
-    function handleSingleClick($node, data) {
-      selectedNode = data;
-
-      // Atualiza botões da toolbar
-      if (selectedNode) {
-        $("#btnAddNode").prop("disabled", false);
-        $("#btnRenameNode").prop("disabled", false);
-        $("#btnDeleteNode").prop("disabled", selectedNode.id === 1);
-      }
-
-      // Destaque visual
-      $(".orgchart .node").removeClass("selected-node");
-      $node.addClass("selected-node");
-    }
-
-    // Exibe modal com detalhes ao dar duplo clique ou toque e segurar
-    function openNodeDetailModal(nodeData) {
-      // Título do modal
-      $("#detailModal .modal-title").text(nodeData.name || "");
-
-      // Corpo do modal com campos extras
-      let html = `
-    <p><strong>Titular:</strong> ${nodeData.title || "—"}</p>
-    <p><strong>Designação:</strong> ${nodeData.designacao || "—"}</p>
-    <p><strong>Nível Salarial:</strong> ${nodeData.nivelSalarial || "—"}</p>
-  `;
-      if (nodeData.infoPub) {
-        html += `<p><strong>Publicação/Posse:</strong><br>${nodeData.infoPub}</p>`;
-      }
-      $("#detailModal .modal-body").html(html);
-
-      // Exibe o modal
-      $("#detailModal").show();
-    }
-
-    /************************************************************************
-     * 7) CRUD: Adicionar, Renomear e Excluir nós
-     ************************************************************************/
-
-    // A) Abrir modal de adicionar
-    function openAddModal() {
-      if (!selectedNode) {
-        alert("Selecione um nó antes de adicionar!");
-        return;
-      }
-      $("#addNameInput").val("");
-      $("#addTitleInput").val("");
-      $("#addModal").show();
-    }
-
-    // B) Ação de adicionar nó
-    function addNodeAction() {
-      if (!selectedNode) {
-        alert("Selecione um nó antes de adicionar!");
-        return;
-      }
-      const nameVal = $("#addNameInput").val().trim();
-      const titleVal = $("#addTitleInput").val().trim();
-      if (!nameVal) {
-        alert("Informe o nome do nó!");
-        return;
-      }
-      const newNode = {
-        id: nextId++,
-        name: nameVal,
-        title: titleVal
-      };
-      if (!selectedNode.children) {
-        selectedNode.children = [];
-      }
-      selectedNode.children.push(newNode);
-
-      closeAllModals();
-      initOrgChart(chartInstance.options.data);
-    }
-
-    // C) Abrir modal de renomear
-    function openRenameModal() {
-      if (!selectedNode) {
-        alert("Selecione um nó antes de renomear!");
-        return;
-      }
-      $("#renameNameInput").val(selectedNode.name);
-      $("#renameTitleInput").val(selectedNode.title || "");
-      $("#renameModal").show();
-    }
-
-    // D) Renomear nó
-    function renameNodeAction() {
-      if (!selectedNode) return;
-
-      const newName = $("#renameNameInput").val().trim();
-      const newTitle = $("#renameTitleInput").val().trim();
-      if (!newName) {
-        alert("Informe o novo nome!");
-        return;
-      }
-
-      selectedNode.name = newName;
-      selectedNode.title = newTitle;
-
-      closeAllModals();
-      initOrgChart(chartInstance.options.data);
-    }
-
-    // E) Abrir modal de excluir
-    function openDeleteModal() {
-      if (!selectedNode) {
-        alert("Selecione um nó antes de excluir!");
-        return;
-      }
-      $("#deleteText").text(`Deseja realmente excluir o nó "${selectedNode.name}"?`);
-      $("#deleteModal").show();
-    }
-
-    // F) Excluir nó
-    function deleteNodeAction() {
-      if (!selectedNode) return;
-
-      if (selectedNode.id === 1) {
-        alert("Não é possível excluir o nó raiz.");
-        return;
-      }
-
-      removeNode(chartInstance.options.data, selectedNode.id);
-      closeAllModals();
-      initOrgChart(chartInstance.options.data);
-    }
-
-    /************************************************************************
-     * 8) Zoom automático (zoom to fit) e posicionamento do nó raiz
-     ************************************************************************/
-
-    /**
-     * Faz zoom para caber no container, respeitando um zoom mínimo (minScale),
-     * e então alinha o nó raiz (id=1) no topo e centraliza horizontalmente.
-     */
-    function reCenterAndZoomFit() {
-      if (!chartInstance || !chartInstance.$chart) return;
-
-      const $chart = chartInstance.$chart;
-      const $container = $("#orgchart-container");
-
-      // Dimensões reais do organograma (scrollWidth/scrollHeight costumam ser mais confiáveis)
-      const chartW = $chart[0].scrollWidth;
-      const chartH = $chart[0].scrollHeight;
-
-      // Dimensões do container
-      const contW = $container.width();
-      const contH = $container.height();
-
-      // Calcula a escala para caber no container (mas não menos que minScale)
-      let scaleX = contW / chartW;
-      let scaleY = contH / chartH;
-      let scale = Math.min(scaleX, scaleY);
-      if (scale > 1) {
-        scale = 1;
-      }
-      if (scale < minScale) {
-        scale = minScale;
-      }
-      currentScale = scale; // salva na variável global
-
-      // Temporariamente aplicar a escala ao organograma, para podermos medir posições
-      $chart.css({
-        transform: `translate(0px, 0px) scale(${scale})`,
-        "transform-origin": "0 0"
-      });
-
-      // Vamos localizar o elemento do nó raiz (id=1) para centralizar
-      const $rootNode = $chart.find(".node[data-id='1']");
-      if (!$rootNode.length) return;
-
-      // Pegar posição do nó raiz em relação ao chart
-      const rootRect = $rootNode[0].getBoundingClientRect();
-      const chartRect = $chart[0].getBoundingClientRect();
-
-      // Posição do centro do nó raiz dentro do chart (coordenadas "chart-space")
-      const rootCenterX = (rootRect.left + rootRect.right) / 2 - chartRect.left;
-
-      // Queremos que esse centro fique no meio do container
-      const containerCenterX = contW / 2;
-
-      // offsetX
-      const offsetX = containerCenterX - rootCenterX * 1 /* scale já aplicado */;
-      // offsetY = 0 p/ manter nó raiz no topo
-      const offsetY = 0;
-
-      // Ajustar transform final
-      $chart.css({
-        transform: `translate(${offsetX}px, ${offsetY}px) scale(${scale})`,
-        "transform-origin": "0 0"
-      });
-    }
-
-    /************************************************************************
-     * 9) Zoom manual (scroll/pinch) - exemplo básico
-     ************************************************************************/
-    function enableManualZoom() {
-      const $container = $("#orgchart-container");
-      const $chart = () => chartInstance ? chartInstance.$chart : null;
-
-      // Zoom via scroll com Ctrl (ex.: Ctrl + rodar mouse)
-      $container.on("wheel", function (e) {
-        // Se usuário não estiver pressionando Ctrl, não mexe no zoom
-        if (!e.ctrlKey) {
-          return;
-        }
-        e.preventDefault();
-        e.stopPropagation();
-
-        // deltaY < 0 => zoom in; deltaY > 0 => zoom out
-        const delta = e.originalEvent.deltaY;
-        let newScale = currentScale - delta * 0.001; // ajusta sensibilidade
-        if (newScale < minScale) newScale = minScale;
-        if (newScale > maxScale) newScale = maxScale;
-
-        // Pegar posição do cursor dentro do container para centralizar zoom
-        const rect = $container[0].getBoundingClientRect();
-        const mouseX = e.originalEvent.clientX - rect.left;
-        const mouseY = e.originalEvent.clientY - rect.top;
-
-        applyScaleToChart(newScale, mouseX, mouseY);
-      });
-
-      // Pinch para mobile/touch (exemplo simplificado):
-      // Precisaria de um listener multitouch real, ou usar uma biblioteca de gestos.
-      // Abaixo é apenas um esboço simplificado.
-      let pinchDistance = 0;
-      $container.on("touchmove", function (e) {
-        if (e.originalEvent.touches.length === 2) {
-          e.preventDefault();
-          const touch1 = e.originalEvent.touches[0];
-          const touch2 = e.originalEvent.touches[1];
-          const dist = distanceBetweenPoints(touch1.clientX, touch1.clientY, touch2.clientX, touch2.clientY);
-
-          if (!pinchDistance) {
-            pinchDistance = dist;
+        const $childUl = $li.children("ul.org-sublist");
+        if ($childUl.length) {
+          const nodeChildren = parseOrgItems($childUl);
+          if (nodeChildren.length) {
+            nodeData.children = nodeChildren;
+            nodeData.collapsable = true;
           } else {
-            const diff = dist - pinchDistance;
-            let newScale = currentScale + diff * 0.001;
-            if (newScale < minScale) newScale = minScale;
-            if (newScale > maxScale) newScale = maxScale;
-            // Usa centro entre os 2 toques como pivot
-            const rect = $container[0].getBoundingClientRect();
-            const centerX = (touch1.clientX + touch2.clientX) / 2 - rect.left;
-            const centerY = (touch1.clientY + touch2.clientY) / 2 - rect.top;
-
-            applyScaleToChart(newScale, centerX, centerY);
+            nodeData.collapsable = false;
           }
+        } else {
+          nodeData.collapsable = false;
         }
+
+        window.nodeDataMap[nodeData.HTMLid] = nodeData;
+        children.push(nodeData);
       });
-      $container.on("touchend touchcancel", function () {
-        pinchDistance = 0;
-      });
+      return children;
     }
 
-    function distanceBetweenPoints(x1, y1, x2, y2) {
-      const dx = x2 - x1;
-      const dy = y2 - y1;
-      return Math.sqrt(dx * dx + dy * dy);
-    }
-
-    /************************************************************************
-     * 10) Aplicar escala no organograma em torno de um ponto pivot (x, y)
-     ************************************************************************/
-    function applyScaleToChart(newScale, pivotX, pivotY) {
-      const $chart = chartInstance ? chartInstance.$chart : null;
-      if (!$chart) return;
-      // Pegar transform atual
-      const transformStyle = $chart.css("transform"); // algo como "matrix(a,b,c,d, tx, ty)"
-
-      let tx = 0, ty = 0;
-      if (transformStyle && transformStyle.startsWith("matrix(")) {
-        const values = transformStyle.replace("matrix(", "").replace(")", "").split(",");
-        // matrix(a, b, c, d, tx, ty)
-        // a = scaleX, d = scaleY, tx = e, ty = f
-        tx = parseFloat(values[4]);
-        ty = parseFloat(values[5]);
-      }
-
-      // Ajusta a relação de escala
-      const scaleRatio = newScale / currentScale;
-      currentScale = newScale;
-
-      // Precisamos mover o organograma de modo que o pivot (pivotX, pivotY)
-      // fique no mesmo lugar aparente.
-      // Ajuste no translate
-      tx = pivotX - scaleRatio * (pivotX - tx);
-      ty = pivotY - scaleRatio * (pivotY - ty);
-
-      // Aplica no CSS
-      $chart.css({
-        transform: `translate(${tx}px, ${ty}px) scale(${newScale})`,
-        "transform-origin": "0 0"
-      });
-    }
-
-    function closeAllModals() {
-      $(".modal-organograma").hide();
-    }
-
-    function clearSelection() {
-      selectedNode = null;
-      $(".orgchart .node").removeClass("selected-node");
-      $("#btnAddNode").prop("disabled", true);
-      $("#btnRenameNode").prop("disabled", true);
-      $("#btnDeleteNode").prop("disabled", true);
-    }
-
-    // Remove nó recursivamente
-    function removeNode(obj, nodeId) {
-      if (obj.children && Array.isArray(obj.children)) {
-        obj.children = obj.children.filter(child => child.id !== nodeId);
-        obj.children.forEach(child => removeNode(child, nodeId));
-      }
-    }
-
-    // Localiza nó por ID
-    function findNodeById(node, id) {
-      if (node.id === id) return node;
-      if (node.children && Array.isArray(node.children)) {
-        for (let child of node.children) {
-          const result = findNodeById(child, id);
-          if (result) return result;
-        }
-      }
-      return null;
-    }
-
-    // Restaura seleção visual se o nó ainda existir
-    function restoreSelection() {
-      if (!selectedNode) return;
-
-      const stillExists = findNodeById(chartInstance.options.data, selectedNode.id);
-      if (!stillExists) {
-        clearSelection();
+    // Inicializa o organograma com Treant.js
+    function initTreantOrganograma() {
+      const topUL = document.querySelector(".secao-interna-template .org-list");
+      if (!topUL) {
+        console.warn("Lista .org-list não encontrada.");
         return;
       }
-      selectedNode = stillExists;
+      const parsedStructure = parseOrgItems(topUL);
+      if (!parsedStructure.length) {
+        console.warn("Nenhum nó encontrado para o organograma.");
+        return;
+      }
 
-      const $newSelectedNode = $(".orgchart .node[data-id='" + selectedNode.id + "']");
-      if ($newSelectedNode.length) {
-        $newSelectedNode.addClass("selected-node");
-        $("#btnAddNode").prop("disabled", false);
-        $("#btnRenameNode").prop("disabled", false);
-        $("#btnDeleteNode").prop("disabled", selectedNode.id === 1);
+      const chartConfig = {
+        container: "#orgchart-wrapper",
+        rootOrientation: "NORTH",
+        nodeAlign: "CENTER",
+        node: { collapsable: true },
+        animation: {
+          nodeAnimation: "easeOutBounce",
+          nodeSpeed: 700,
+          connectorsAnimation: "bounce",
+          connectorsSpeed: 700
+        },
+        connectors: { type: "step" }
+      };
+
+      window.finalStructure = [chartConfig, ...parsedStructure];
+      myTreantInstance = new Treant(window.finalStructure);
+      setTimeout(() => {
+        attachNodeListeners();
+        recenterPanzoom();
+      }, 150);
+    }
+
+    // Recria o gráfico (quando um nó é expandido/colapsado) e reinicializa o Panzoom
+    function rebuildTree() {
+      const wrapper = document.getElementById("orgchart-wrapper");
+      if (wrapper) { wrapper.innerHTML = ""; }
+      myTreantInstance = new Treant(window.finalStructure);
+      setTimeout(() => {
+        attachNodeListeners();
+        if (panzoomInstance) { panzoomInstance.destroy(); }
+        initPanZoom();
+        recenterPanzoom();
+      }, 150);
+    }
+
+    // Anexa os eventos de clique e toque aos nós
+    function attachNodeListeners() {
+      const nodes = document.querySelectorAll("#orgchart-wrapper .node");
+      nodes.forEach((nodeEl) => {
+        // Registra as coordenadas iniciais
+        nodeEl.addEventListener("pointerdown", function (e) {
+          const coords = getEventCoordinates(e);
+          this._startX = coords.x;
+          this._startY = coords.y;
+        });
+        nodeEl.addEventListener("touchstart", function (e) {
+          const coords = getEventCoordinates(e);
+          this._startX = coords.x;
+          this._startY = coords.y;
+        });
+        // Remove eventos duplicados e adiciona os eventos de clique/touchend
+        nodeEl.removeEventListener("click", nodeClickHandler);
+        nodeEl.removeEventListener("dblclick", nodeDblClickHandler);
+        nodeEl.removeEventListener("touchend", nodeClickHandler);
+        nodeEl.addEventListener("click", nodeClickHandler);
+        nodeEl.addEventListener("dblclick", nodeDblClickHandler);
+        nodeEl.addEventListener("touchend", nodeClickHandler);
+      });
+    }
+
+    // Função de clique/touch: verifica se houve movimento e distingue entre clique único e duplo toque
+    function nodeClickHandler(e) {
+      e.stopPropagation();
+      const el = this;
+      const threshold = 10; // pixels
+      const coords = getEventCoordinates(e);
+      if (el._startX === undefined || el._startY === undefined) return;
+      const deltaX = Math.abs(coords.x - el._startX);
+      const deltaY = Math.abs(coords.y - el._startY);
+      if (deltaX > threshold || deltaY > threshold) {
+        // Movimento significativo – ignora clique
+        return;
+      }
+      // Se já existe um timer, é duplo toque/click
+      if (el.clickTimer) {
+        clearTimeout(el.clickTimer);
+        el.clickTimer = null;
+        const nodeId = el.getAttribute("id");
+        if (!nodeId) return;
+        const nodeData = window.nodeDataMap[nodeId];
+        if (!nodeData) return;
+        showDetailModal(nodeData.detailData);
+        return;
+      }
+      // Define timer para clique único
+      el.clickTimer = setTimeout(() => {
+        el.clickTimer = null;
+        const nodeId = el.getAttribute("id");
+        if (!nodeId) return;
+        const nodeData = window.nodeDataMap[nodeId];
+        if (!nodeData) return;
+        if (nodeData.collapsable) {
+          nodeData.collapsed = !nodeData.collapsed;
+          rebuildTree();
+        }
+      }, doubleClickThreshold);
+    }
+
+    // Handler de duplo clique para mouse (apenas para redundância)
+    function nodeDblClickHandler(e) {
+      e.stopPropagation();
+      const el = this;
+      if (el.clickTimer) {
+        clearTimeout(el.clickTimer);
+        el.clickTimer = null;
+      }
+      const nodeId = el.getAttribute("id");
+      if (!nodeId) return;
+      const nodeData = window.nodeDataMap[nodeId];
+      if (!nodeData) return;
+      showDetailModal(nodeData.detailData);
+    }
+
+    function showDetailModal(detailData) {
+      const modal = document.getElementById("detailModal");
+      const modalTitle = modal.querySelector(".modal-title");
+      const modalBody = modal.querySelector(".modal-body");
+      modalTitle.textContent = detailData.nome_unidade || "Detalhes";
+      modalBody.innerHTML = `
+        <p><strong>ID:</strong> ${detailData.id}</p>
+        <p><strong>Nome da Unidade:</strong> ${detailData.nome_unidade}</p>
+        <p><strong>Nome do Titular:</strong> ${detailData.nome_titular}</p>
+        <p><strong>Designação:</strong> ${detailData.designacao}</p>
+        <p><strong>Nível Salarial:</strong> ${detailData.nivel_salarial}</p>
+        <hr>
+        ${detailData.info_pub ? detailData.info_pub : ""}
+      `;
+      modal.style.display = 'flex';
+    }
+
+    function closeDetailModal() {
+      const modal = document.getElementById("detailModal");
+      modal.style.display = 'none';
+    }
+
+    // Inicializa o Panzoom no wrapper
+    function initPanZoom() {
+      const wrapper = document.getElementById("orgchart-wrapper");
+      if (!wrapper) return;
+      panzoomInstance = panzoom(wrapper, {
+        maxZoom: 2,
+        minZoom: 0.5,
+        smoothScroll: true,
+        contain: 'outside',
+        exclude: ".node"
+      });
+    }
+
+    // Centraliza o conteúdo usando o primeiro nó como referência
+    function recenterPanzoom() {
+      const container = document.getElementById("orgchart-container");
+      const wrapper = document.getElementById("orgchart-wrapper");
+      if (!container || !wrapper || !panzoomInstance) return;
+
+      // Obtenha o primeiro nó renderizado
+      const firstNode = document.querySelector("#orgchart-wrapper .node");
+      if (firstNode) {
+        // Calcule o centro do primeiro nó em relação ao wrapper
+        const nodeX = firstNode.offsetLeft + (firstNode.offsetWidth / 2);
+        const nodeY = firstNode.offsetTop + (firstNode.offsetHeight / 2);
+        // Centro do container
+        const containerCenterX = container.clientWidth / 2;
+        const containerCenterY = container.clientHeight / 2;
+        // O panning necessário para que o centro do primeiro nó fique no centro do container
+        const panX = containerCenterX - nodeX;
+        const panY = containerCenterY - nodeY;
+        panzoomInstance.pan(panX, panY, { relative: false });
+      } else {
+        // Fallback: centralize o wrapper
+        const containerCenterX = container.clientWidth / 2;
+        const containerCenterY = container.clientHeight / 2;
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const wrapperCenterX = wrapperRect.width / 2;
+        const wrapperCenterY = wrapperRect.height / 2;
+        const panX = containerCenterX - wrapperCenterX;
+        const panY = containerCenterY - wrapperCenterY;
+        panzoomInstance.pan(panX, panY, { relative: false });
       }
     }
 
+    // Inicialização Geral
+    document.addEventListener("DOMContentLoaded", function () {
+      closeDetailModal();
+      const container = document.getElementById("orgchart-container");
+      if (container && !document.getElementById("orgchart-wrapper")) {
+        const wrapper = document.createElement("div");
+        wrapper.id = "orgchart-wrapper";
+        wrapper.style.position = "absolute";
+        wrapper.style.top = "0";
+        wrapper.style.left = "0";
+        container.appendChild(wrapper);
+      }
+      initTreantOrganograma();
+      setTimeout(() => {
+        initPanZoom();
+        recenterPanzoom();
+      }, 300);
+      const btnRecenter = document.getElementById("btnRecenter");
+      if (btnRecenter) {
+        btnRecenter.addEventListener("click", function () {
+          if (panzoomInstance) {
+            panzoomInstance.reset();
+            recenterPanzoom();
+          }
+        });
+      }
+    });
   </script>
 
 </body>

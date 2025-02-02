@@ -1,102 +1,206 @@
-/* Remover a imagem de fundo do OrgChart */
+/* Reset de Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Container do OrgChart */
 .orgchart {
-  background-image: none !important;
-  background-color: var(--card-bg);
+  background: var(--card-bg, #f7f7f7);
   width: 100% !important;
   min-height: 100vh !important;
   border: none !important;
-
-  /* Garante que possamos manipular pan/zoom via transform sem deslocar origem */
   transform-origin: 0 0 !important;
+  font-family: "Open Sans", sans-serif;
 }
 
-/* Container do OrgChart (onde faremos pinch manual e rolagem) */
+/* Container Interativo (Zoom/Pan) */
 #orgchart-container {
-  width: auto;
+  width: 100%;
   height: 83vh;
-  margin: 0 10px;
+  margin: 0 auto;
   border-radius: 23px;
   position: relative;
-  overflow: auto;
-  background-color: var(--card-bg);
-
-  /* Necessário para capturar pinch e scroll sem o navegador interceptar.
-     - "none" permite que nós controlemos o zoom/pan manual
-     - Se desejar permitir rolagem vertical, pode experimentar 'pan-y' etc.
-  */
+  overflow: hidden;
+  background: var(--card-bg, #f7f7f7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   touch-action: none;
-  /* Para iOS Safari, às vezes é preciso isso também: */
   -webkit-overflow-scrolling: touch;
 }
 
-/* Nó do OrgChart */
-.orgchart .node .title {
-  background-color: #1e90ff !important;
-  border: 1px solid #1e90ff !important;
-  color: #ffffff !important;
-  height: auto !important;
+/* Wrapper do OrgChart – usa max-content para se ajustar ao conteúdo */
+#orgchart-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  height: max-content;
+}
+
+/* Permite que os nós recebam toques sem que o Panzoom os intercepte */
+.Treant .node {
+  touch-action: manipulation;
+}
+
+/* =========================
+     Estilos Modernos para os Nós
+  ============================ */
+
+.Treant .node {
+  background: var(--node-bg, #ffffff);
+  border: 2px solid var(--node-border, #e0e0e0);
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  width: 220px;
+}
+
+.Treant .node:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Treant .node .node-name {
+  background: var(--node-name-bg, #1e90ff);
+  color: var(--node-name-color, #fff);
+  font-size: 18px;
   font-weight: 600;
-  border-radius: 12px 12px 0 0;
-}
-.orgchart .node .content {
-  background-color: #fff !important;
-  color: #333;
-  border: 1px solid #1e90ff !important;
-  border-top: none !important;
-  padding: 8px !important;
-  height: auto !important;
-  overflow-wrap: break-word;
+  padding: 12px 16px;
   text-align: center;
-  font-size: var(--font-sm);
-  word-break: break-word;
-  border-radius: 0 0 12px 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 4.5em;
+  line-height: 1.5em;
+  overflow: hidden;
 }
 
-/* Linhas em azul */
-.orgchart .lines .downLine {
-  background-color: #1e90ff !important;
-}
-.orgchart .lines .rightLine,
-.orgchart .lines .leftLine {
-  border-color: transparent !important;
-}
-.orgchart .lines .rightLine.topLine {
-  border-color: #1e90ff !important;
-}
-.orgchart .lines .leftLine.topLine {
-  border-color: #1e90ff !important;
+.Treant .node .node-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 1.5em;
+  margin: 4px 0;
 }
 
-/* Destacar nó selecionado */
-.selected-node .content {
-  background-color: #add8e6 !important; /* Azul claro para destaque */
-  border-color: #1e90ff !important; /* Azul para a borda */
+.Treant .node .node-contact {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 1.5em;
+  margin: 4px 0;
 }
 
-/* Modais */
+.Treant .node .node-content,
+.Treant .node .content {
+  background: var(--node-content-bg, #f9f9f9);
+  color: var(--node-content-color, #333);
+  font-size: 14px;
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  .Treant .node {
+    width: 180px;
+    padding: 8px;
+  }
+  .Treant .node .node-name {
+    font-size: 16px;
+    padding: 10px 14px;
+    height: 4.5em;
+  }
+  .Treant .node .node-title,
+  .Treant .node .node-contact {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  .Treant .node .node-content,
+  .Treant .node .content {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+}
+
+/* =========================
+     Estilos para Linhas Conectivas
+  ============================ */
+
+.Treant .connector {
+  stroke: var(--connector-color, #1e90ff);
+  stroke-width: 2px;
+  fill: none;
+}
+
+.Treant .line {
+  background: var(--connector-color, #1e90ff);
+  height: 2px;
+}
+
+.Treant .pseudo {
+  border: none;
+}
+
+/* =========================
+     Estilos para o Collapse Switch
+  ============================ */
+
+.Treant .collapse-switch {
+  background: var(--collapse-switch-bg, #04213e);
+  border: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.Treant .collapse-switch:hover {
+  transform: scale(1.1);
+}
+.Treant .collapsed .collapse-switch {
+  background: var(--collapse-switch-collapsed-bg, #ff4500);
+}
+
+/* =========================
+     Estilos para os Modais
+  ============================ */
+
 .modal-organograma {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: var(--bg-overlay);
+  background: var(--bg-overlay, rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .modal-organograma-content {
-  background-color: var(--modal-bg);
-  margin: 10% auto;
+  background: var(--modal-bg, #fff);
   padding: 20px;
   width: 90%;
   max-width: 400px;
-  border-radius: 23px;
-  border: 1px solid var(--modal-borda);
+  border-radius: 16px;
+  border: 1px solid var(--modal-borda, #ccc);
   position: relative;
-  animation: showModal 0.4s;
-  box-shadow: var(--sombra-intensa);
+  animation: showModal 0.4s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
 @keyframes showModal {
   from {
     opacity: 0;
@@ -107,74 +211,44 @@
     transform: scale(1);
   }
 }
+
 .modal-organograma-content h2 {
   margin-top: 0;
-  color: var(--modal-titulo);
+  color: var(--modal-titulo, #333);
 }
+
 .btn-modal-organograma {
-  background-color: #1e90ff;
+  background: var(--primary-color, #1e90ff);
   color: #fff;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
-  margin-top: 10px;
+  margin-top: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  display: inline-block;
 }
+
 .btn-modal-organograma:hover {
-  background-color: #309cff;
+  background: #309cff;
 }
+
 .btn-modal-organograma.btn-cancel {
-  background-color: #ccc;
+  background: #ccc;
   color: #333;
 }
+
 .btn-modal-organograma.btn-cancel:hover {
-  background-color: #bbb;
+  background: #bbb;
 }
 
-/* Ajustes adicionais para garantir que os textos caibam nos nós */
-.orgchart .node .title,
-.orgchart .node .content {
-  white-space: normal; /* Permitir quebra de linha */
-}
+/* =========================
+     Estilos Responsivos Gerais
+  ============================ */
 
-/* Opcional: Reduzir o tamanho da fonte para textos muito longos */
-.orgchart .node .content p {
-  font-size: var(--font-sm);
-}
-
-/* Personalizações do nó em si */
-.node {
-  border-radius: 5px;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Efeito de sombra quando o nó está selecionado */
-.node.selected-node {
-  box-shadow: var(--sombra-card-aberto);
-  border-radius: 12px;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Remover bordas padrão em setas horizontais */
-.edge.horizontalEdge.rightEdge.fa,
-.edge.horizontalEdge.leftEdge.fa {
-  border-color: transparent !important;
-}
-
-/* Estilos responsivos */
-@media only screen and (max-width: 56.25rem) {
+@media only screen and (max-width: 900px) {
   #orgchart-container {
-    width: auto;
-    height: 83vh;
     margin: 0 5px;
-    border-radius: 23px;
-    position: relative;
-    overflow: auto;
-    background-color: var(--card-bg);
-    touch-action: none;
-    -webkit-overflow-scrolling: touch;
+    height: 75vh;
   }
 }
