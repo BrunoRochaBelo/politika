@@ -1,25 +1,14 @@
 /* Reset de Box Sizing */
-*,
-*::before,
-*::after {
+#orgchart-container *,
+#orgchart-container *::before,
+#orgchart-container *::after {
   box-sizing: border-box;
 }
 
-/* Container do OrgChart */
-.orgchart {
-  background: var(--card-bg, #f7f7f7);
-  width: 100% !important;
-  min-height: 100vh !important;
-  border: none !important;
-  transform-origin: 0 0 !important;
-  font-family: "Open Sans", sans-serif;
-}
-
-/* Container Interativo (Zoom/Pan) */
+/* Container do OrgChart (zoom/pan) */
 #orgchart-container {
-  width: 100%;
   height: 83vh;
-  margin: 0 auto;
+  margin: 0 10px;
   border-radius: 23px;
   position: relative;
   overflow: hidden;
@@ -27,9 +16,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   touch-action: none;
   -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+/* Quando o usuário estiver arrastando */
+#orgchart-container:active {
+  cursor: grabbing;
 }
 
-/* Wrapper do OrgChart – usa max-content para se ajustar ao conteúdo */
+/* Wrapper onde o Treant é renderizado */
 #orgchart-wrapper {
   position: absolute;
   top: 0;
@@ -37,143 +31,98 @@
   width: max-content;
   height: max-content;
 }
-
-/* Permite que os nós recebam toques sem que o Panzoom os intercepte */
-.Treant .node {
-  touch-action: manipulation;
+/* Classe para transições suaves */
+#orgchart-wrapper.animate {
+  transition: transform 0.5s ease-out;
 }
 
-/* =========================
-     Estilos Modernos para os Nós
-  ============================ */
-
+/* Estilo geral do nó (agora menor) */
 .Treant .node {
+  width: 180px; /* menor do que antes (220px) */
   background: var(--node-bg, #ffffff);
   border: 2px solid var(--node-border, #e0e0e0);
   border-radius: 10px;
   padding: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
-  width: 220px;
+  touch-action: manipulation; /* permite toque no nó */
+  cursor: pointer;
 }
-
 .Treant .node:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Node name (cabeçalho) - altura fixa para 3 linhas */
 .Treant .node .node-name {
   background: var(--node-name-bg, #1e90ff);
-  color: var(--node-name-color, #fff);
-  font-size: 18px;
+  color: #fff;
+  font-size: 16px; /* levemente menor */
   font-weight: 600;
-  padding: 12px 16px;
+  padding: 10px 14px;
   text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 4.5em;
+  height: 4.5em; /* 3 linhas x line-height 1.5 */
   line-height: 1.5em;
   overflow: hidden;
 }
 
+/* Títulos e contatos também menores */
 .Treant .node .node-title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5em;
   margin: 4px 0;
 }
-
 .Treant .node .node-contact {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5em;
   margin: 4px 0;
 }
 
+/* Conteúdo do nó */
 .Treant .node .node-content,
 .Treant .node .content {
   background: var(--node-content-bg, #f9f9f9);
   color: var(--node-content-color, #333);
-  font-size: 14px;
-  padding: 12px 16px;
+  font-size: 13px;
+  padding: 10px 14px;
   text-align: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-@media only screen and (max-width: 900px) {
-  .Treant .node {
-    width: 180px;
-    padding: 8px;
-  }
-  .Treant .node .node-name {
-    font-size: 16px;
-    padding: 10px 14px;
-    height: 4.5em;
-  }
-  .Treant .node .node-title,
-  .Treant .node .node-contact {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-  .Treant .node .node-content,
-  .Treant .node .content {
-    font-size: 13px;
-    padding: 10px 14px;
-  }
-}
-
-/* =========================
-     Estilos para Linhas Conectivas
-  ============================ */
-
+/* Animações e conectores */
 .Treant .connector {
   stroke: var(--connector-color, #1e90ff);
-  stroke-width: 2px;
+  stroke-width: 2;
   fill: none;
 }
-
-.Treant .line {
-  background: var(--connector-color, #1e90ff);
-  height: 2px;
-}
-
-.Treant .pseudo {
-  border: none;
-}
-
-/* =========================
-     Estilos para o Collapse Switch
-  ============================ */
-
 .Treant .collapse-switch {
-  background: var(--collapse-switch-bg, #04213e);
-  border: none;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   position: absolute;
   top: 5px;
   right: 5px;
+  background: var(--collapse-switch-bg, #1e90ff);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .Treant .collapse-switch:hover {
   transform: scale(1.1);
 }
-.Treant .collapsed .collapse-switch {
-  background: var(--collapse-switch-collapsed-bg, #ff4500);
-}
 
 /* =========================
-     Estilos para os Modais
-  ============================ */
-
+         Estilos para os Modais
+      ============================ */
 .modal-organograma {
   display: none;
   position: fixed;
@@ -243,9 +192,8 @@
 }
 
 /* =========================
-     Estilos Responsivos Gerais
-  ============================ */
-
+         Estilos Responsivos Gerais
+      ============================ */
 @media only screen and (max-width: 900px) {
   #orgchart-container {
     margin: 0 5px;

@@ -46,6 +46,7 @@
       <div class="area-interna-containerContent-template">
         <div class="area-interna-containerContent-template-header">
           <div class="area-toolbar">
+            <!-- Botão para centralizar -->
             <button class="btn-toolbar" id="btnRecenter">Centralizar</button>
           </div>
         </div>
@@ -54,13 +55,13 @@
             <div id="orgchart-wrapper"></div>
           </div>
         </div>
-        <!-- Modal -->
+        <!-- Modal para exibir detalhes -->
         <div class="modal-organograma" id="detailModal">
           <div class="modal-organograma-content">
-            <span class="close" onclick="document.getElementById('detailModal').style.display='none'">&times;</span>
+            <span class="close" onclick="closeDetailModal()">&times;</span>
             <h2 class="modal-title"></h2>
             <div class="modal-body"></div>
-            <button class="btn-modal-organograma btn-cancel" onclick="document.getElementById('detailModal').style.display='none'">Fechar</button>
+            <button class="btn-modal-organograma btn-cancel" onclick="closeDetailModal()">Fechar</button>
           </div>
         </div>
       </div>
@@ -666,46 +667,49 @@
   <script src="./static/js/Treant.js"></script>
   <script src="./static/js/panzoom.min.js"></script>
   <script>
-    /**********************************************************************
-     * Integração do Treant.js com Panzoom – Versão Final Estável
-     * - Centraliza usando o primeiro nó como referência.
-     * - Discrimina toque/click real de arrasto.
-     * - Exibe modal em duplo toque/duplo clique.
-     **********************************************************************/
+    // ==================================================
+    // Variáveis Globais e Configurações Iniciais
+    // ==================================================
+    window.nodeDataMap = {};      // Armazena dados de cada nó (chave = HTMLid)
+    window.finalStructure = [];   // Configuração final usada pelo Treant
+    let myTreantInstance = null;   // Instância do Treant
+    let panzoomInstance = null;    // Instância do Panzoom
 
-    window.nodeDataMap = {};
-    window.finalStructure = [];
-    let myTreantInstance = null;
-    let panzoomInstance = null;
-    const doubleClickThreshold = 300; // ms para distinguir clique único de duplo clique
+    // Definições de limiares
+    const doubleClickThreshold = 300;  // ms para considerar duplo clique
+    const dragThreshold = 10;            // px para descartar clique se arrastar mais
 
-    // Retorna as coordenadas do evento (suporta touch e pointer)
+    // ==================================================
+    // 1) Funções de Utilidade
+    // ==================================================
     function getEventCoordinates(e) {
+      // Retorna {x, y} para eventos de mouse ou toque.
       if (e.changedTouches && e.changedTouches.length) {
         return { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
-      } else {
-        return { x: e.clientX, y: e.clientY };
       }
+      return { x: e.clientX, y: e.clientY };
     }
 
-    // Percorre a estrutura HTML e monta os nós para o Treant
     function parseOrgItems(ul) {
+      // Percorre o <ul> e gera um array de objetos compatível com a configuração do Treant.
       const children = [];
       $(ul).children("li.org-item").each(function () {
         const $li = $(this);
         const $card = $li.find(".organograma-medium-card").first();
 
+        // Extração dos dados do card
         const id = $card.find("[data-field='id']").eq(0).text().trim();
         const nomeUnidade = $card.find("[data-field='nome_unidade']").text().trim();
         const nomeTitular = $card.find("[data-field='nome_titular']").text().trim();
         const designacao = $card.find("[data-field='designacao']").text().trim();
-        const nivelSalarial = $card.find("[data-field='nivel-salarial']").text().trim();
+        const nivelSalarial = $card.find("[data-field='nivel_salarial']").text().trim();
         let infoPublicacao = "";
         const $infoPubDiv = $card.find("[data-field='info-pub']");
         if ($infoPubDiv.length) {
           infoPublicacao = $infoPubDiv.html();
         }
 
+        // Monta objeto para o Treant
         const nodeData = {
           HTMLid: `org-node-${id}`,
           text: {
@@ -724,112 +728,190 @@
           collapsed: false
         };
 
+        // Verifica se há nó(s) filho(s) e faz parse recursivo
         const $childUl = $li.children("ul.org-sublist");
         if ($childUl.length) {
           const nodeChildren = parseOrgItems($childUl);
-          if (nodeChildren.length) {
-            nodeData.children = nodeChildren;
-            nodeData.collapsable = true;
-          } else {
-            nodeData.collapsable = false;
-          }
+          nodeData.children = nodeChildren;
+          nodeData.collapsable = nodeChildren.length > 0;
         } else {
           nodeData.collapsable = false;
         }
 
+        // Armazena os dados para acesso rápido
         window.nodeDataMap[nodeData.HTMLid] = nodeData;
         children.push(nodeData);
       });
       return children;
     }
 
-    // Inicializa o organograma com Treant.js
+    // ==================================================
+    // 2) Função de Transição Suave para Movimentações
+    // ==================================================
+    function smoothMoveTo(newX, newY, duration = 500) {
+      const wrapperEl = document.getElementById("orgchart-wrapper");
+      if (!wrapperEl || !panzoomInstance) return;
+      // Adiciona classe para transição suave
+      wrapperEl.classList.add("animate");
+      panzoomInstance.moveTo(newX, newY);
+      setTimeout(() => {
+        wrapperEl.classList.remove("animate");
+      }, duration);
+    }
+
+    // ==================================================
+    // 3) Função de Centralização do Nó Raiz
+    // ==================================================
+    function centerRootNodeHorizontallyButKeepZoomAtTop() {
+      if (!panzoomInstance) return;
+      const TOP_MARGIN = 20; // px
+      const rootEl = document.getElementById("org-node-1");
+      if (!rootEl) return;
+      const containerEl = document.getElementById("orgchart-container");
+      const containerWidth = containerEl.clientWidth;
+
+      const nodeCenterXInWrapper = rootEl.offsetLeft + (rootEl.offsetWidth / 2);
+      const nodeTopInWrapper = rootEl.offsetTop;
+      const { scale } = panzoomInstance.getTransform();
+
+      const newX = (containerWidth / 2) - (scale * nodeCenterXInWrapper);
+      const newY = TOP_MARGIN - (scale * nodeTopInWrapper);
+      smoothMoveTo(newX, newY);
+    }
+
+    // ==================================================
+    // 4) Função para Garantir que um Nó Esteja Visível no Container
+    // ==================================================
+    function ensureNodeVisibility(nodeId) {
+      if (!panzoomInstance) return;
+      const nodeEl = document.getElementById(nodeId);
+      if (!nodeEl) return;
+      const containerEl = document.getElementById("orgchart-container");
+      if (!containerEl) return;
+
+      const nodeRect = nodeEl.getBoundingClientRect();
+      const containerRect = containerEl.getBoundingClientRect();
+
+      let deltaX = 0, deltaY = 0;
+
+      // Verifica se o nó está fora da área visível horizontalmente
+      if (nodeRect.left < containerRect.left) {
+        deltaX = containerRect.left - nodeRect.left;
+      } else if (nodeRect.right > containerRect.right) {
+        deltaX = containerRect.right - nodeRect.right;
+      }
+
+      // Verifica se o nó está fora da área visível verticalmente
+      if (nodeRect.top < containerRect.top) {
+        deltaY = containerRect.top - nodeRect.top;
+      } else if (nodeRect.bottom > containerRect.bottom) {
+        deltaY = containerRect.bottom - nodeRect.bottom;
+      }
+
+      if (deltaX !== 0 || deltaY !== 0) {
+        const transform = panzoomInstance.getTransform();
+        const newX = transform.x + deltaX;
+        const newY = transform.y + deltaY;
+        smoothMoveTo(newX, newY);
+      }
+    }
+
+    // ==================================================
+    // 5) Inicialização do Treant e Renderização do Diagrama
+    // ==================================================
     function initTreantOrganograma() {
       const topUL = document.querySelector(".secao-interna-template .org-list");
       if (!topUL) {
-        console.warn("Lista .org-list não encontrada.");
+        console.warn("Não foi encontrada a lista .org-list");
         return;
       }
       const parsedStructure = parseOrgItems(topUL);
       if (!parsedStructure.length) {
-        console.warn("Nenhum nó encontrado para o organograma.");
+        console.warn("Nenhum nó encontrado no organograma.");
         return;
       }
-
       const chartConfig = {
         container: "#orgchart-wrapper",
         rootOrientation: "NORTH",
         nodeAlign: "CENTER",
         node: { collapsable: true },
         animation: {
-          nodeAnimation: "easeOutBounce",
-          nodeSpeed: 700,
-          connectorsAnimation: "bounce",
-          connectorsSpeed: 700
+          nodeAnimation: "easeOutQuart",
+          nodeSpeed: 600,
+          connectorsAnimation: "linear",
+          connectorsSpeed: 500
         },
         connectors: { type: "step" }
       };
-
       window.finalStructure = [chartConfig, ...parsedStructure];
       myTreantInstance = new Treant(window.finalStructure);
-      setTimeout(() => {
-        attachNodeListeners();
-        recenterPanzoom();
-      }, 150);
-    }
 
-    // Recria o gráfico (quando um nó é expandido/colapsado) e reinicializa o Panzoom
-    function rebuildTree() {
-      const wrapper = document.getElementById("orgchart-wrapper");
-      if (wrapper) { wrapper.innerHTML = ""; }
-      myTreantInstance = new Treant(window.finalStructure);
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         attachNodeListeners();
-        if (panzoomInstance) { panzoomInstance.destroy(); }
         initPanZoom();
-        recenterPanzoom();
-      }, 150);
-    }
-
-    // Anexa os eventos de clique e toque aos nós
-    function attachNodeListeners() {
-      const nodes = document.querySelectorAll("#orgchart-wrapper .node");
-      nodes.forEach((nodeEl) => {
-        // Registra as coordenadas iniciais
-        nodeEl.addEventListener("pointerdown", function (e) {
-          const coords = getEventCoordinates(e);
-          this._startX = coords.x;
-          this._startY = coords.y;
-        });
-        nodeEl.addEventListener("touchstart", function (e) {
-          const coords = getEventCoordinates(e);
-          this._startX = coords.x;
-          this._startY = coords.y;
-        });
-        // Remove eventos duplicados e adiciona os eventos de clique/touchend
-        nodeEl.removeEventListener("click", nodeClickHandler);
-        nodeEl.removeEventListener("dblclick", nodeDblClickHandler);
-        nodeEl.removeEventListener("touchend", nodeClickHandler);
-        nodeEl.addEventListener("click", nodeClickHandler);
-        nodeEl.addEventListener("dblclick", nodeDblClickHandler);
-        nodeEl.addEventListener("touchend", nodeClickHandler);
+        // Aguarda um breve instante para garantir a renderização
+        setTimeout(centerRootNodeHorizontallyButKeepZoomAtTop, 60);
       });
     }
 
-    // Função de clique/touch: verifica se houve movimento e distingue entre clique único e duplo toque
-    function nodeClickHandler(e) {
+    // ==================================================
+    // 6) Rebuild do Diagrama (para expandir/colapsar)
+    // ==================================================
+    function rebuildTree() {
+      const wrapper = document.getElementById("orgchart-wrapper");
+      if (wrapper) {
+        wrapper.innerHTML = "";
+      }
+      // Preserva a última transformação de pan/zoom
+      let currentTransform = { x: 0, y: 0, scale: 1 };
+      if (panzoomInstance && typeof panzoomInstance.getTransform === "function") {
+        currentTransform = panzoomInstance.getTransform();
+      }
+      myTreantInstance = new Treant(window.finalStructure);
+      requestAnimationFrame(() => {
+        attachNodeListeners();
+        if (panzoomInstance) panzoomInstance.destroy();
+        initPanZoom();
+        // Utiliza moveTo sem transição imediata para preservar o estado
+        panzoomInstance.moveTo(currentTransform.x, currentTransform.y);
+      });
+    }
+
+    // ==================================================
+    // 7) Eventos dos Nós (Clique Simples / Duplo)
+    // ==================================================
+    function attachNodeListeners() {
+      const nodes = document.querySelectorAll("#orgchart-wrapper .node");
+      nodes.forEach((nodeEl) => {
+        nodeEl.removeEventListener("pointerdown", onPointerDown);
+        nodeEl.removeEventListener("touchstart", onPointerDown);
+        nodeEl.removeEventListener("click", onNodeClick);
+        nodeEl.removeEventListener("touchend", onNodeClick);
+        nodeEl.removeEventListener("dblclick", onNodeDblClick);
+
+        nodeEl.addEventListener("pointerdown", onPointerDown);
+        nodeEl.addEventListener("touchstart", onPointerDown);
+        nodeEl.addEventListener("click", onNodeClick);
+        nodeEl.addEventListener("touchend", onNodeClick);
+        nodeEl.addEventListener("dblclick", onNodeDblClick);
+      });
+    }
+
+    function onPointerDown(e) {
+      const coords = getEventCoordinates(e);
+      this._startX = coords.x;
+      this._startY = coords.y;
+    }
+
+    function onNodeClick(e) {
       e.stopPropagation();
       const el = this;
-      const threshold = 10; // pixels
+      if (typeof el._startX === "undefined") return;
       const coords = getEventCoordinates(e);
-      if (el._startX === undefined || el._startY === undefined) return;
-      const deltaX = Math.abs(coords.x - el._startX);
-      const deltaY = Math.abs(coords.y - el._startY);
-      if (deltaX > threshold || deltaY > threshold) {
-        // Movimento significativo – ignora clique
-        return;
-      }
-      // Se já existe um timer, é duplo toque/click
+      const dx = Math.abs(coords.x - el._startX);
+      const dy = Math.abs(coords.y - el._startY);
+      if (dx > dragThreshold || dy > dragThreshold) return;
+
       if (el.clickTimer) {
         clearTimeout(el.clickTimer);
         el.clickTimer = null;
@@ -838,24 +920,32 @@
         const nodeData = window.nodeDataMap[nodeId];
         if (!nodeData) return;
         showDetailModal(nodeData.detailData);
-        return;
+      } else {
+        el.clickTimer = setTimeout(() => {
+          el.clickTimer = null;
+          const nodeId = el.getAttribute("id");
+          if (!nodeId) return;
+          const nodeData = window.nodeDataMap[nodeId];
+          if (!nodeData) return;
+          if (nodeData.collapsable) {
+            nodeData.collapsed = !nodeData.collapsed;
+            rebuildTree();
+            // Após reconstruir o diagrama, reposiciona a visualização:
+            setTimeout(() => {
+              if (nodeId === "org-node-1") {
+                // Nó raiz: centraliza automaticamente
+                centerRootNodeHorizontallyButKeepZoomAtTop();
+              } else {
+                // Qualquer outro nó: garante que o nó clicado esteja visível
+                ensureNodeVisibility(nodeId);
+              }
+            }, 100);
+          }
+        }, doubleClickThreshold);
       }
-      // Define timer para clique único
-      el.clickTimer = setTimeout(() => {
-        el.clickTimer = null;
-        const nodeId = el.getAttribute("id");
-        if (!nodeId) return;
-        const nodeData = window.nodeDataMap[nodeId];
-        if (!nodeData) return;
-        if (nodeData.collapsable) {
-          nodeData.collapsed = !nodeData.collapsed;
-          rebuildTree();
-        }
-      }, doubleClickThreshold);
     }
 
-    // Handler de duplo clique para mouse (apenas para redundância)
-    function nodeDblClickHandler(e) {
+    function onNodeDblClick(e) {
       e.stopPropagation();
       const el = this;
       if (el.clickTimer) {
@@ -869,6 +959,9 @@
       showDetailModal(nodeData.detailData);
     }
 
+    // ==================================================
+    // 8) Modal de Detalhes
+    // ==================================================
     function showDetailModal(detailData) {
       const modal = document.getElementById("detailModal");
       const modalTitle = modal.querySelector(".modal-title");
@@ -891,77 +984,104 @@
       modal.style.display = 'none';
     }
 
-    // Inicializa o Panzoom no wrapper
+    // ==================================================
+    // 9) Inicialização do Panzoom com Zona de Amortecimento
+    // ==================================================
     function initPanZoom() {
-      const wrapper = document.getElementById("orgchart-wrapper");
-      if (!wrapper) return;
-      panzoomInstance = panzoom(wrapper, {
+      const wrapperEl = document.getElementById("orgchart-wrapper");
+      if (!wrapperEl) return;
+      // Cria instância do Panzoom sem a opção "contain" para controle manual
+      panzoomInstance = panzoom(wrapperEl, {
         maxZoom: 2,
         minZoom: 0.5,
         smoothScroll: true,
-        contain: 'outside',
         exclude: ".node"
       });
+
+      // Evento de zoom centrado no ponteiro com transição suave
+      wrapperEl.addEventListener('wheel', function (e) {
+        e.preventDefault();
+        const scaleFactor = e.deltaY < 0 ? 1.1 : 0.9;
+        const rect = wrapperEl.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
+        panzoomInstance.zoomTo(offsetX, offsetY, scaleFactor, { animate: true, duration: 300 });
+      });
+
+      // A cada transformação, força os limites com zona de amortecimento.
+      panzoomInstance.on('transform', enforcePanBounds);
     }
 
-    // Centraliza o conteúdo usando o primeiro nó como referência
-    function recenterPanzoom() {
-      const container = document.getElementById("orgchart-container");
-      const wrapper = document.getElementById("orgchart-wrapper");
-      if (!container || !wrapper || !panzoomInstance) return;
+    // ==================================================
+    // 10) Função para Forçar os Limites com Amortecimento (Damping)
+    // ==================================================
+    function enforcePanBounds() {
+      const containerEl = document.getElementById("orgchart-container");
+      const wrapperEl = document.getElementById("orgchart-wrapper");
+      if (!containerEl || !wrapperEl || !panzoomInstance) return;
 
-      // Obtenha o primeiro nó renderizado
-      const firstNode = document.querySelector("#orgchart-wrapper .node");
-      if (firstNode) {
-        // Calcule o centro do primeiro nó em relação ao wrapper
-        const nodeX = firstNode.offsetLeft + (firstNode.offsetWidth / 2);
-        const nodeY = firstNode.offsetTop + (firstNode.offsetHeight / 2);
-        // Centro do container
-        const containerCenterX = container.clientWidth / 2;
-        const containerCenterY = container.clientHeight / 2;
-        // O panning necessário para que o centro do primeiro nó fique no centro do container
-        const panX = containerCenterX - nodeX;
-        const panY = containerCenterY - nodeY;
-        panzoomInstance.pan(panX, panY, { relative: false });
+      const transform = panzoomInstance.getTransform();
+      const scale = transform.scale;
+      const currentX = transform.x;
+      const currentY = transform.y;
+
+      const containerWidth = containerEl.clientWidth;
+      const containerHeight = containerEl.clientHeight;
+      const diagramWidth = wrapperEl.offsetWidth * scale;
+      const diagramHeight = wrapperEl.offsetHeight * scale;
+
+      // Definir zona de amortecimento (damping factor)
+      const damping = 0.3;
+      let allowedMinX, allowedMaxX, allowedMinY, allowedMaxY;
+
+      if (diagramWidth >= containerWidth) {
+        allowedMinX = containerWidth - diagramWidth;
+        allowedMaxX = 0;
       } else {
-        // Fallback: centralize o wrapper
-        const containerCenterX = container.clientWidth / 2;
-        const containerCenterY = container.clientHeight / 2;
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const wrapperCenterX = wrapperRect.width / 2;
-        const wrapperCenterY = wrapperRect.height / 2;
-        const panX = containerCenterX - wrapperCenterX;
-        const panY = containerCenterY - wrapperCenterY;
-        panzoomInstance.pan(panX, panY, { relative: false });
+        allowedMinX = 0;
+        allowedMaxX = containerWidth - diagramWidth;
+      }
+      if (diagramHeight >= containerHeight) {
+        allowedMinY = containerHeight - diagramHeight;
+        allowedMaxY = 0;
+      } else {
+        allowedMinY = 0;
+        allowedMaxY = containerHeight - diagramHeight;
+      }
+
+      let newX = currentX;
+      let newY = currentY;
+
+      if (currentX < allowedMinX) {
+        newX = allowedMinX + (currentX - allowedMinX) * damping;
+      } else if (currentX > allowedMaxX) {
+        newX = allowedMaxX + (currentX - allowedMaxX) * damping;
+      }
+      if (currentY < allowedMinY) {
+        newY = allowedMinY + (currentY - allowedMinY) * damping;
+      } else if (currentY > allowedMaxY) {
+        newY = allowedMaxY + (currentY - allowedMaxY) * damping;
+      }
+
+      if (newX !== currentX || newY !== currentY) {
+        panzoomInstance.moveTo(newX, newY);
       }
     }
 
-    // Inicialização Geral
+    // ==================================================
+    // 11) Inicialização Geral e Listeners de Redimensionamento
+    // ==================================================
     document.addEventListener("DOMContentLoaded", function () {
-      closeDetailModal();
-      const container = document.getElementById("orgchart-container");
-      if (container && !document.getElementById("orgchart-wrapper")) {
-        const wrapper = document.createElement("div");
-        wrapper.id = "orgchart-wrapper";
-        wrapper.style.position = "absolute";
-        wrapper.style.top = "0";
-        wrapper.style.left = "0";
-        container.appendChild(wrapper);
-      }
-      initTreantOrganograma();
-      setTimeout(() => {
-        initPanZoom();
-        recenterPanzoom();
-      }, 300);
+      closeDetailModal();      // Garante que o modal esteja fechado ao iniciar
+      initTreantOrganograma(); // Monta o organograma
+
       const btnRecenter = document.getElementById("btnRecenter");
       if (btnRecenter) {
-        btnRecenter.addEventListener("click", function () {
-          if (panzoomInstance) {
-            panzoomInstance.reset();
-            recenterPanzoom();
-          }
-        });
+        btnRecenter.addEventListener("click", centerRootNodeHorizontallyButKeepZoomAtTop);
       }
+
+      // Recentraliza o diagrama ao redimensionar a janela
+      window.addEventListener('resize', centerRootNodeHorizontallyButKeepZoomAtTop);
     });
   </script>
 
