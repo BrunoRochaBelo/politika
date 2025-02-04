@@ -1,29 +1,34 @@
-/* Reset de Box Sizing */
+/* ================================
+   Reset de Box Sizing
+================================ */
 #orgchart-container *,
 #orgchart-container *::before,
 #orgchart-container *::after {
   box-sizing: border-box;
 }
 
-/* Container do OrgChart (zoom/pan) */
+/* ================================
+   Container do OrgChart (zoom/pan)
+================================ */
 #orgchart-container {
   height: 83vh;
   margin: 0 10px;
   border-radius: 23px;
   position: relative;
   overflow: hidden;
-  background: var(--card-bg, #f7f7f7);
+  background: var(--card-bg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   touch-action: none;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
 }
-/* Quando o usuário estiver arrastando */
 #orgchart-container:active {
   cursor: grabbing;
 }
 
-/* Wrapper onde o Treant é renderizado */
+/* ================================
+   Wrapper onde o Treant é renderizado
+================================ */
 #orgchart-wrapper {
   position: absolute;
   top: 0;
@@ -31,80 +36,137 @@
   width: max-content;
   height: max-content;
 }
-/* Classe para transições suaves */
 #orgchart-wrapper.animate {
   transition: transform 0.5s ease-out;
 }
 
-/* Estilo geral do nó (agora menor) */
+/* ================================
+   Estilo geral dos nós
+================================ */
 .Treant .node {
-  width: 180px; /* menor do que antes (220px) */
-  background: var(--node-bg, #ffffff);
-  border: 2px solid var(--node-border, #e0e0e0);
+  width: 180px;
+  background: var(--node-bg);
+  border: 2px solid var(--node-border);
+  color: var(--node-content-color);
   border-radius: 10px;
   padding: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
   overflow: hidden;
-  touch-action: manipulation; /* permite toque no nó */
+  touch-action: manipulation;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 .Treant .node:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Node name (cabeçalho) - altura fixa para 3 linhas */
+/* ================================
+   Cabeçalho do nó (.node-name)
+================================ */
 .Treant .node .node-name {
-  background: var(--node-name-bg, #1e90ff);
+  background: var(--node-name-bg);
   color: #fff;
-  font-size: 16px; /* levemente menor */
+  font-size: 16px;
   font-weight: 600;
   padding: 10px 14px;
   text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 4.5em; /* 3 linhas x line-height 1.5 */
-  line-height: 1.5em;
+  height: 6em; /* 4 linhas x 1.5 */
+  line-height: 1.3em;
+  display: grid;
+  place-items: center;
   overflow: hidden;
+  position: relative;
+  /* Transição para feedback em mudança de background ou hover */
+  transition: background-color 0.3s ease;
+}
+/* O span encapsula o texto e aplica o truncamento multilinha */
+.Treant .node .node-name p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  overflow: hidden;
+  max-height: 6em;
+  width: 100%;
+  position: relative;
+  margin: 0;
 }
 
-/* Títulos e contatos também menores */
-.Treant .node .node-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  line-height: 1.5em;
-  margin: 4px 0;
+/* Pseudo-elemento para simular as reticências e dar feedback visual */
+.Treant .node .node-name p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 1.2em; /* altura aproximada de uma linha */
+  background: linear-gradient(transparent, var(--node-name-bg));
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
+/* Ao passar o mouse, se desejar enfatizar o conteúdo, pode aumentar o fade-out */
+.Treant .node .node-name:hover p::after {
+  opacity: 0.6;
+}
+
+/* ================================
+   Títulos e Contatos
+================================ */
+.Treant .node .node-title,
 .Treant .node .node-contact {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 13px;
-  line-height: 1.5em;
+  font-size: 14px;
+  line-height: 1.3em;
+  transition: color 0.3s ease;
+  box-sizing: border-box;
+  margin: 0;
+}
+.Treant .node .node-title {
+  margin-top: 4px;
+}
+.Treant .node .node-contact {
   margin: 4px 0;
 }
 
-/* Conteúdo do nó */
+/* ================================
+   Conteúdo do nó
+================================ */
 .Treant .node .node-content,
 .Treant .node .content {
-  background: var(--node-content-bg, #f9f9f9);
-  color: var(--node-content-color, #333);
+  background: var(--node-content-bg);
+  color: var(--node-content-color);
   font-size: 13px;
-  padding: 10px 14px;
+  padding: 12px 16px; /* espaçamento aumentado para melhor legibilidade */
   text-align: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 3; /* Limite de linhas; ajuste conforme necessário */
+  overflow: hidden;
+  transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
-/* Animações e conectores */
+/* ================================
+   Conectores entre nós
+================================ */
 .Treant .connector {
-  stroke: var(--connector-color, #1e90ff);
+  stroke: var(--connector-color);
   stroke-width: 2;
   fill: none;
+  transition: stroke 0.3s ease;
 }
+
+/* ================================
+   Botão de Collapse do Nó
+================================ */
 .Treant .collapse-switch {
   width: 12px;
   height: 12px;
@@ -112,7 +174,7 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  background: var(--collapse-switch-bg, #1e90ff);
+  background: var(--collapse-switch-bg);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -120,9 +182,13 @@
   transform: scale(1.1);
 }
 
-/* =========================
-         Estilos para os Modais
-      ============================ */
+.Treant .collapsed .collapse-switch {
+  background: var(--cor-secundaria-1);
+}
+
+/* ================================
+   Estilos para os Modais
+================================ */
 .modal-organograma {
   display: none;
   position: fixed;
@@ -131,25 +197,23 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg-overlay, rgba(0, 0, 0, 0.6));
+  background: var(--bg-overlay);
   backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .modal-organograma-content {
-  background: var(--modal-bg, #fff);
+  background: var(--modal-bg);
   padding: 20px;
   width: 90%;
   max-width: 400px;
   border-radius: 16px;
-  border: 1px solid var(--modal-borda, #ccc);
+  border: 1px solid var(--modal-borda);
   position: relative;
   animation: showModal 0.4s ease;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 @keyframes showModal {
   from {
     opacity: 0;
@@ -160,14 +224,12 @@
     transform: scale(1);
   }
 }
-
 .modal-organograma-content h2 {
   margin-top: 0;
-  color: var(--modal-titulo, #333);
+  color: var(--modal-titulo);
 }
-
 .btn-modal-organograma {
-  background: var(--primary-color, #1e90ff);
+  background: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -177,26 +239,50 @@
   transition: background-color 0.3s ease;
   display: inline-block;
 }
-
 .btn-modal-organograma:hover {
   background: #309cff;
 }
-
 .btn-modal-organograma.btn-cancel {
   background: #ccc;
   color: #333;
 }
-
 .btn-modal-organograma.btn-cancel:hover {
   background: #bbb;
 }
 
-/* =========================
-         Estilos Responsivos Gerais
-      ============================ */
+/* ================================
+   Ajustes Responsivos
+================================ */
 @media only screen and (max-width: 900px) {
+  /* Container e wrapper */
   #orgchart-container {
     margin: 0 5px;
     height: 75vh;
+  }
+
+  /* Ajuste de largura do nó para dispositivos menores */
+  .Treant .node {
+    width: 160px;
+  }
+
+  /* Redução dos tamanhos de fonte para melhor encaixe */
+  .Treant .node .node-name {
+    font-size: 14px;
+  }
+  .Treant .node .node-title {
+    font-size: 12px;
+  }
+  .Treant .node .node-contact {
+    font-size: 11px;
+  }
+  .Treant .node .node-content,
+  .Treant .node .content {
+    font-size: 11px;
+  }
+
+  /* Ajustes para o modal */
+  .modal-organograma-content {
+    padding: 15px;
+    max-width: 90%;
   }
 }

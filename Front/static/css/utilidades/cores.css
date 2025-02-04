@@ -74,6 +74,16 @@
   --input-success-border: hsl(140, 60%, 45%);
   --input-success-bg: hsl(140, 50%, 35%);
 
+  /* Nós do organograma */
+  --node-bg: hsl(218, 8%, 88%);
+  --node-border: var(--card-borda);
+  --node-name-bg: var(--cor-primaria-1);
+  --node-content-bg: var(--container-bg);
+  --node-content-color: hsl(218, 22%, 32%);
+  --connector-color: var(--divisor);
+  --collapse-switch-bg: var(--card-hover);
+  --primary-color: var(--btn-principal);
+
   /* Botões */
   --btn-principal: hsl(218, 85%, 60%);
   --btn-principal-hover: linear-gradient(
@@ -259,6 +269,16 @@
   --input-error-bg: hsl(0, 50%, 90%);
   --input-success-border: hsl(140, 80%, 50%);
   --input-success-bg: hsl(140, 50%, 90%);
+
+  /* Nós do organograma */
+  --node-bg: hsl(218, 12%, 80%);
+  --node-border: var(--card-borda);
+  --node-name-bg: var(--cor-primaria-1);
+  --node-content-bg: var(--container-bg);
+  --node-content-color: hsl(218, 32%, 22%);
+  --connector-color: var(--divisor);
+  --collapse-switch-bg: var(--card-hover);
+  --primary-color: var(--btn-principal);
 
   /* Botões */
   --btn-principal: hsl(218, 85%, 60%);
