@@ -1,4 +1,5 @@
-/* Estilos para o card Organograma Médio */
+/* CSS existente para os cards */
+
 .organograma-medium-card {
   display: grid;
   color: var(--txt-conteudo-card);
@@ -125,7 +126,7 @@
 }
 
 .organograma-medium-card-nivel-nivel-hierarquia:hover {
-  background-color: #115293; /* Cor de hover mais escura */
+  background-color: #115293;
 }
 
 /* Editar */
@@ -206,7 +207,7 @@
       "organograma-medium-card-info-pub organograma-medium-card-info-pub"
       "organograma-medium-card-editar organograma-medium-card-editar";
     grid-template-columns: auto auto;
-    max-height: none; /* Remover limitação de altura */
+    max-height: none;
     min-width: calc(350px + 1vw);
   }
 
@@ -247,7 +248,7 @@
     grid-template-columns: 1fr;
     padding: 6px 10px;
     min-width: calc(270px + 1vw);
-    flex: 1; /* Ocupa todo o espaço restante */
+    flex: 1;
   }
 
   .organograma-medium-card-nome_unidade {
@@ -269,6 +270,13 @@
   .organograma-medium-card-editar {
     gap: 15px;
   }
+}
+
+/* Classe para ocultar a linha com transição (pode ajustar a animação conforme desejado) */
+.hidden-row {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
 }
 
 /*------------------------------------ CARD LARGO ------------------------------------------------*/

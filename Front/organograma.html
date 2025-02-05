@@ -737,18 +737,16 @@
   <script src="./static/js/panzoom.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+
+      /* ================== CÓDIGO EXISTENTE DE INTERAÇÃO ================== */
       const toggleButtons = document.querySelectorAll('.toggle-btn');
       const orgListContainers = document.querySelectorAll('.org-list-container');
 
       orgListContainers.forEach(container => {
         const orgList = container.querySelector('.org-list');
-
-        // Variáveis para controle do arrasto
         let isDragging = false;
-        let startX;
-        let scrollLeft;
+        let startX, scrollLeft;
 
-        // Funções de Arrastar para Scroll
         orgList.addEventListener('mousedown', (e) => {
           isDragging = true;
           container.classList.add('active');
@@ -770,12 +768,11 @@
           if (!isDragging) return;
           e.preventDefault();
           const x = e.pageX - orgList.offsetLeft;
-          const walk = (x - startX) * 1; // Ajuste a sensibilidade aqui
+          const walk = (x - startX) * 1;
           orgList.scrollLeft = scrollLeft - walk;
           updateShadows();
         });
 
-        // Atualiza as sombras com base na posição de rolagem
         function updateShadows() {
           if (orgList.scrollLeft > 0) {
             container.classList.add('shadow-left');
@@ -783,15 +780,10 @@
             container.classList.remove('shadow-left');
           }
         }
-
-        // Atualiza as sombras ao rolar manualmente
         orgList.addEventListener('scroll', updateShadows);
-
-        // Inicializa as sombras no carregamento
         updateShadows();
       });
 
-      // Função para alternar sublistas (já fornecida)
       toggleButtons.forEach(function (button) {
         function toggleSublist() {
           const isExpanded = button.getAttribute('aria-expanded') === 'true';
@@ -808,24 +800,16 @@
               button.setAttribute('aria-expanded', 'false');
               parentItem.setAttribute('aria-expanded', 'false');
 
-              // Após a transição, adiciona 'hidden' e remove 'collapsing'
               const onTransitionEnd = function () {
                 controlledSublist.classList.add('hidden');
                 controlledSublist.classList.remove('collapsing');
                 controlledSublist.removeEventListener('transitionend', onTransitionEnd);
-                // Atualiza as sombras após a mudança de layout
-                const container = controlledSublist.closest('.org-list-container');
-                if (container) {
-                  const orgList = container.querySelector('.org-list');
-                  const event = new Event('scroll');
-                  orgList.dispatchEvent(event);
-                }
+                updateCards();
               };
               controlledSublist.addEventListener('transitionend', onTransitionEnd);
             } else {
               // Inicia a expansão
               controlledSublist.classList.remove('hidden');
-              // Força o reflow para garantir que a transição ocorra
               void controlledSublist.offsetWidth;
               controlledSublist.classList.remove('collapsing');
               controlledSublist.classList.add('expanding');
@@ -833,27 +817,16 @@
               button.setAttribute('aria-expanded', 'true');
               parentItem.setAttribute('aria-expanded', 'true');
 
-              // Após a transição, remove 'expanding'
               const onTransitionEnd = function () {
                 controlledSublist.classList.remove('expanding');
                 controlledSublist.removeEventListener('transitionend', onTransitionEnd);
-                // Atualiza as sombras após a mudança de layout
-                const container = controlledSublist.closest('.org-list-container');
-                if (container) {
-                  const orgList = container.querySelector('.org-list');
-                  const event = new Event('scroll');
-                  orgList.dispatchEvent(event);
-                }
+                updateCards();
               };
               controlledSublist.addEventListener('transitionend', onTransitionEnd);
             }
           }
         }
-
-        // Evento de clique
         button.addEventListener('click', toggleSublist);
-
-        // Acessibilidade: Enter e Espaço
         button.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -862,13 +835,11 @@
         });
       });
 
-      // Navegação via teclado (já fornecida)
       const orgListContainersAll = document.querySelectorAll('.org-list-container');
       orgListContainersAll.forEach(container => {
         const orgList = container.querySelector('.org-list');
 
         orgList.addEventListener('keydown', function (e) {
-          // Elementos focáveis
           const focusableElements = orgList.querySelectorAll('.toggle-btn, .org-name');
           const focusArray = Array.prototype.slice.call(focusableElements);
           const currentIndex = focusArray.indexOf(document.activeElement);
@@ -889,8 +860,7 @@
             case 'ArrowRight':
               e.preventDefault();
               if (document.activeElement.classList.contains('toggle-btn')) {
-                const isExpanded = document.activeElement.getAttribute('aria-expanded') === 'true';
-                if (!isExpanded) {
+                if (document.activeElement.getAttribute('aria-expanded') !== 'true') {
                   document.activeElement.click();
                 }
               }
@@ -898,20 +868,17 @@
             case 'ArrowLeft':
               e.preventDefault();
               if (document.activeElement.classList.contains('toggle-btn')) {
-                const isExpanded = document.activeElement.getAttribute('aria-expanded') === 'true';
-                if (isExpanded) {
+                if (document.activeElement.getAttribute('aria-expanded') === 'true') {
                   document.activeElement.click();
                 }
               }
               break;
             default:
-              // Sem ação
               break;
           }
         });
       });
 
-      // Para "ocultar" as setas dos itens que não têm sublist
       document.querySelectorAll('.org-item').forEach(function (item) {
         const svgPath = item.querySelector('.arrow-org path');
         const sublist = item.querySelector('.org-sublist');
@@ -922,23 +889,160 @@
         }
       });
 
-      // Opcional: Inicializar sublistas com a classe 'hidden' se desejado
-      /*
-      document.querySelectorAll('.org-sublist').forEach(function (sublist) {
-        sublist.classList.add('hidden');
-        // Atualizar os atributos aria-expanded para refletir o estado inicial
-        const toggleButton = document.querySelector(`.toggle-btn[aria-controls="${sublist.id}"]`);
-        if (toggleButton) {
-          toggleButton.setAttribute('aria-expanded', 'false');
-          const parentItem = toggleButton.closest('.org-item');
-          if (parentItem) {
-            parentItem.setAttribute('aria-expanded', 'false');
+      /* ================== FIM DO CÓDIGO EXISTENTE ================== */
+
+
+      /* ================== NOVA ABORDAGEM PARA GRID DINÂMICO ================== */
+
+      // Configurações do grid para cada layout
+      const desktopGridRows = [
+        "organograma-medium-card-nivel-nivel-hierarquia organograma-medium-card-nome_unidade organograma-medium-card-sigla_unidade",
+        "organograma-medium-card-designacao organograma-medium-card-designacao organograma-medium-card-nivel-salarial",
+        "organograma-medium-card-nome_titular organograma-medium-card-nome_titular organograma-medium-card-nome_titular"
+      ];
+      // Removíveis no desktop: índices 1 e 2 (sempre pulando a primeira linha)
+      const desktopRemovable = [
+        { rowIndex: 1, selectors: [".organograma-medium-card-designacao", ".organograma-medium-card-nivel-salarial"] },
+        { rowIndex: 2, selectors: [".organograma-medium-card-nome_titular"] }
+      ];
+
+      const responsiveGridRows = [
+        "organograma-medium-card-nivel-nivel-hierarquia organograma-medium-card-sigla_unidade",
+        "organograma-medium-card-nome_unidade organograma-medium-card-nome_unidade",
+        "organograma-medium-card-designacao organograma-medium-card-designacao",
+        "organograma-medium-card-nivel-salarial organograma-medium-card-nivel-salarial",
+        "organograma-medium-card-nome_titular organograma-medium-card-nome_titular",
+        "organograma-medium-card-info-pub organograma-medium-card-info-pub",
+        "organograma-medium-card-editar organograma-medium-card-editar"
+      ];
+      // Removíveis no responsivo: índices 2 a 6
+      const responsiveRemovable = [
+        { rowIndex: 2, selectors: [".organograma-medium-card-designacao"] },
+        { rowIndex: 3, selectors: [".organograma-medium-card-nivel-salarial"] },
+        { rowIndex: 4, selectors: [".organograma-medium-card-nome_titular"] },
+        { rowIndex: 5, selectors: [".organograma-medium-card-info-pub"] },
+        { rowIndex: 6, selectors: [".organograma-medium-card-editar"] }
+      ];
+
+      // Contador global de linhas removidas
+      let removedLines = 0;
+
+      // Retorna o grid original e o array de linhas removíveis conforme o layout atual
+      function getGridConfig() {
+        if (window.innerWidth <= 768) {
+          return { gridRows: responsiveGridRows, removable: responsiveRemovable };
+        } else {
+          return { gridRows: desktopGridRows, removable: desktopRemovable };
+        }
+      }
+
+      // Atualiza todos os cards (expandido ou não)
+      function updateCards() {
+        const { gridRows, removable } = getGridConfig();
+        const maxRemovals = removable.length;
+        if (removedLines > maxRemovals) removedLines = maxRemovals;
+        if (removedLines < 0) removedLines = 0;
+
+        const cards = document.querySelectorAll('.organograma-medium-card');
+        cards.forEach(card => {
+          if (card.classList.contains('organograma-medium-card-expanded')) {
+            // Se estiver expandido, zeramos as modificações dinâmicas
+            card.style.removeProperty('grid-template-areas');
+            card.querySelectorAll('.hidden-row').forEach(el => el.classList.remove('hidden-row'));
+          } else {
+            // Aplica a configuração dinâmica para os cards não expandidos
+            card.querySelectorAll('.hidden-row').forEach(el => el.classList.remove('hidden-row'));
+            // Calcula as linhas a serem omitidas com base no contador global
+            const removalsToApply = removable.slice(0, removedLines).map(item => item.rowIndex);
+            const newGridRows = gridRows.filter((row, index) => !removalsToApply.includes(index));
+            card.style.gridTemplateAreas = newGridRows.map(row => `"${row}"`).join(" ");
+            // Para cada grupo removível, adiciona ou remove a classe .hidden-row
+            removable.forEach((group, idx) => {
+              group.selectors.forEach(selector => {
+                const elements = card.querySelectorAll(selector);
+                if (idx < removedLines) {
+                  elements.forEach(el => el.classList.add('hidden-row'));
+                } else {
+                  elements.forEach(el => el.classList.remove('hidden-row'));
+                }
+              });
+            });
+          }
+        });
+      }
+
+      // Observador para detectar mudança de classe (expandido/collapsed) em cada card
+      const observer = new MutationObserver((mutationsList) => {
+        for (let mutation of mutationsList) {
+          if (mutation.attributeName === 'class') {
+            updateCards();
           }
         }
       });
-      */
-    });
+      document.querySelectorAll('.organograma-medium-card').forEach(card => {
+        observer.observe(card, { attributes: true, attributeFilter: ['class'] });
+      });
 
+      // Processa o scroll com Ctrl para ajustar removedLines
+      function handleWheelEvent(e) {
+        if (e.ctrlKey) {
+          e.preventDefault();
+          if (e.deltaY > 0) {
+            removedLines++;
+          } else if (e.deltaY < 0) {
+            removedLines--;
+          }
+          updateCards();
+        }
+      }
+      document.addEventListener('wheel', handleWheelEvent, { passive: false });
+
+      // Implementação simples de pinch em dispositivos touch
+      let initialPinchDistance = null;
+      function getDistance(touches) {
+        const [touch1, touch2] = touches;
+        const dx = touch2.pageX - touch1.pageX;
+        const dy = touch2.pageY - touch1.pageY;
+        return Math.sqrt(dx * dx + dy * dy);
+      }
+      function handleTouchStart(e) {
+        if (e.touches.length === 2) {
+          initialPinchDistance = getDistance(e.touches);
+        }
+      }
+      function handleTouchMove(e) {
+        if (e.touches.length === 2 && initialPinchDistance !== null) {
+          const currentDistance = getDistance(e.touches);
+          const diff = currentDistance - initialPinchDistance;
+          const threshold = 10;
+          if (diff < -threshold) {
+            removedLines++;
+            updateCards();
+            initialPinchDistance = currentDistance;
+          } else if (diff > threshold) {
+            removedLines--;
+            updateCards();
+            initialPinchDistance = currentDistance;
+          }
+        }
+      }
+      function handleTouchEnd(e) {
+        if (e.touches.length < 2) {
+          initialPinchDistance = null;
+        }
+      }
+      document.addEventListener('touchstart', handleTouchStart, { passive: true });
+      document.addEventListener('touchmove', handleTouchMove, { passive: true });
+      document.addEventListener('touchend', handleTouchEnd, { passive: true });
+      document.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+
+      // Atualiza os cards ao redimensionar a janela
+      window.addEventListener('resize', updateCards);
+
+      // Inicializa os cards
+      updateCards();
+
+    });
   </script>
 
 </body>
