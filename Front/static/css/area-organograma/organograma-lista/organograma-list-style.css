@@ -17,7 +17,7 @@
 /* Classe para iniciar a transição de expansão */
 .org-sublist.expanding {
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  max-height: 10000px; /* Valor suficientemente grande para permitir expansão */
+  max-height: 1000000px; /* Valor suficientemente grande para permitir expansão */
   opacity: 1;
 }
 
@@ -26,7 +26,7 @@
   padding-left: 30px;
   position: relative;
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  max-height: 10000px; /* Valor suficientemente grande para permitir expansão */
+  max-height: 1000000px; /* Valor suficientemente grande para permitir expansão */
   opacity: 1;
 }
 
@@ -124,7 +124,7 @@
 /* Estilos para os itens da org-list */
 .org-item {
   position: relative;
-  margin: 20px 0;
+  margin: 20px 5px;
 }
 
 .org-list > .org-item:first-child {
