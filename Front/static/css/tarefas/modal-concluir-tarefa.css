@@ -80,7 +80,7 @@
   padding: 10px;
   margin: 10px;
   align-self: center;
-  border: 1px solid var(--cor-apoio-2);
+  border: 1px solid var(--borda);
   font-size: var(--font-sm);
   font-weight: 300;
   box-shadow: var(--sombra-moderada);

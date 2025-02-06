@@ -28,7 +28,7 @@
   background: var(--form-container-bg);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  border: 1px solid var(--cor-apoio-2);
+  border: 1px solid var(--bg-principal);
   border-bottom: none;
 }
 .main-form {
@@ -42,7 +42,7 @@
   background: var(--form-container-bg);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 1px solid var(--cor-apoio-2);
+  border: 1px solid var(--bg-principal);
   border-top: 1px solid var(--bg-principal);
 }
 .main-form::-webkit-scrollbar {

@@ -17,6 +17,7 @@
 @media only screen and (max-width: 56.25rem) {
   .home-sidenav {
     width: 98%;
+    transition: all 0.3s ease-in-out;
   }
 
   #moldura,

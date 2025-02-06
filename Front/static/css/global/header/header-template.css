@@ -73,7 +73,7 @@
   padding: 0.625rem;
   cursor: pointer;
   width: 100%;
-  background: var(--cor-apoio-2);
+  background: var(--barra-pesquisa-content);
   color: var(--txt-titulo-card);
   border: 1px solid var(--barra-pesquisa-bg);
   font-size: var(--font-sm);
