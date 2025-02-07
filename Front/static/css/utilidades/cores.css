@@ -13,19 +13,19 @@
   --cor-secundaria-3: hsl(15, 50%, 22%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(15, 10%, 12%);
-  --cor-apoio-2: hsl(15, 10%, 15%);
+  --cor-apoio-1: hsl(15, 8%, 12%);
+  --cor-apoio-2: hsl(15, 8%, 15%);
 
   /* Backgrounds e Containers */
   --bg-principal: hsl(220, 28%, 12%);
   --container-bg: hsl(220, 32%, 17%);
-  --barra-pesquisa-bg: hsl(220, 32%, 28%);
+  --barra-pesquisa-bg: hsl(220, 35%, 28%);
   --barra-pesquisa-content: hsl(220, 32%, 15%);
   --borda: hsl(220, 35%, 32%);
   --divisor: hsl(220, 38%, 26%);
   --bg-overlay: hsla(222, 40%, 8%, 0.5);
   --barra-nav-bg: hsl(220, 28%, 8%);
-  --barra-nav-indicator: hsl(220, 32%, 30%);
+  --barra-nav-indicator: hsl(220, 40%, 30%);
 
   /* Texto */
   --txt-titulo: hsl(220, 18%, 96%);
@@ -211,67 +211,63 @@
   --cor-secundaria-3: hsl(15, 65%, 40%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(215, 20%, 80%);
-  --cor-apoio-2: hsl(215, 20%, 88%);
+  --cor-apoio-1: hsl(15, 18%, 80%);
+  --cor-apoio-2: hsl(15, 18%, 88%);
 
   /* Backgrounds e Containers */
-  --bg-principal: hsl(215, 25%, 86%);
-  --container-bg: hsl(215, 28%, 92%);
-  --barra-pesquisa-bg: hsl(215, 38%, 84%);
-  --barra-pesquisa-content: hsl(215, 20%, 94%);
-  --borda: hsl(215, 30%, 85%);
-  --divisor: hsl(215, 38%, 80%);
+  --bg-principal: hsl(220, 22%, 85%);
+  --container-bg: hsl(220, 28%, 92%);
+  --barra-pesquisa-bg: hsl(220, 25%, 90%);
+  --barra-pesquisa-content: hsl(220, 50%, 98%);
+  --borda: hsl(220, 30%, 85%);
+  --divisor: hsl(220, 38%, 80%);
   --bg-overlay: hsla(215, 50%, 90%, 0.5);
-  --barra-nav-bg: hsl(215, 15%, 78%);
-  --barra-nav-indicator: hsl(215, 20%, 92%);
+  --barra-nav-bg: hsl(220, 20%, 77%);
+  --barra-nav-indicator: hsl(220, 40%, 95%);
 
   /* Texto */
-  --txt-titulo: hsl(215, 20%, 15%);
-  --txt-subtitulo: hsl(215, 20%, 30%);
-  --txt-destaque: hsl(215, 100%, 25%);
-  --txt-nav: hsl(215, 18%, 25%);
-  --txt-nav-selecionado: hsl(215, 80%, 30%);
-  --txt-placeholder: hsl(215, 18%, 45%);
+  --txt-titulo: hsl(220, 20%, 15%);
+  --txt-subtitulo: hsl(220, 20%, 30%);
+  --txt-destaque: hsl(220, 100%, 25%);
+  --txt-nav: hsl(220, 18%, 25%);
+  --txt-nav-selecionado: hsl(220, 80%, 30%);
+  --txt-placeholder: hsl(220, 18%, 45%);
 
   /* Cartões */
-  --card-bg: hsl(0, 0%, 100%); /* Fundo branco para o cartão */
-  --card-borda: hsl(215, 20%, 95%); /* Delicado toque azul */
-  --card-detalhe: hsl(215, 15%, 93%);
-  /* Estado de hover: o cartão ganha leve luminosidade (quase branco) */
-  --card-hover: hsl(215, 15%, 98%);
-  /* Estado do Card Aberto: sutil diferença em relação ao cartão normal
-     (no modo escuro o cartão aberto é mais escuro; aqui, para preservar a sensação de “clicado”, o fundo sai do branco puro) */
-  --card-aberto-bg: hsl(215, 15%, 96%);
-  --card-aberto-detalhe: hsl(215, 15%, 92%);
+  --card-bg: hsl(0, 0%, 100%);
+  --card-borda: hsl(220, 20%, 95%);
+  --card-detalhe: hsl(220, 15%, 93%);
+  --card-hover: hsl(220, 45%, 97%);
 
-  --txt-titulo-card: hsl(215, 30%, 20%);
-  --txt-conteudo-card: hsl(215, 25%, 35%);
-  --txt-card-aberto: hsl(215, 100%, 18%);
+  --card-aberto-bg: hsl(220, 40%, 96%);
+  --card-aberto-detalhe: hsl(220, 40%, 92%);
+
+  --txt-titulo-card: hsl(220, 30%, 20%);
+  --txt-conteudo-card: hsl(220, 25%, 35%);
+  --txt-card-aberto: hsl(220, 100%, 18%);
 
   /* Modais */
-  --modal-bg: hsl(215, 25%, 88%);
-  --modal-borda: hsl(215, 30%, 70%);
-  --modal-divisor: hsl(215, 30%, 70%);
+  --modal-bg: hsl(220, 30%, 92%);
+  --modal-borda: hsl(220, 30%, 70%);
+  --modal-divisor: hsl(220, 30%, 70%);
   --modal-titulo: hsl(218, 85%, 60%);
   --modal-conteudo: hsl(218, 65%, 40%);
 
   /* Formulários e Inputs */
-  --form-container-bg: hsl(215, 25%, 95%);
-  --form-card-bg: hsl(215, 30%, 90%);
-  /* Para os formulários, inspirando-se na versão escura (onde o estado aberto tem leve diferença),
-     propomos um formulário "aberto" um pouco mais claro: */
-  --form-card-aberto-bg: hsl(215, 30%, 92%);
+  --form-container-bg: hsl(220, 25%, 95%);
+  --form-card-bg: hsl(220, 30%, 90%);
+  --form-card-aberto-bg: hsl(220, 30%, 92%);
   /* Inputs */
-  --input-empty-bg: hsl(215, 50%, 98%);
-  --input-border: hsl(215, 35%, 60%);
-  --input-filled-bg: hsl(215, 35%, 87%);
-  --input-label: hsl(215, 70%, 20%);
-  --input-placeholder: hsl(215, 30%, 55%);
-  --input-txt: hsl(215, 25%, 15%);
-  --input-icon: hsl(215, 15%, 40%);
-  --input-btn: hsl(215, 15%, 55%);
+  --input-empty-bg: hsl(220, 50%, 98%);
+  --input-border: hsl(220, 35%, 60%);
+  --input-filled-bg: hsl(220, 35%, 87%);
+  --input-label: hsl(220, 70%, 20%);
+  --input-placeholder: hsl(220, 30%, 55%);
+  --input-txt: hsl(220, 25%, 15%);
+  --input-icon: hsl(220, 15%, 40%);
+  --input-btn: hsl(220, 15%, 55%);
   --input-focus-border: hsl(15, 85%, 40%);
-  --input-focus-bg: hsl(215, 25%, 87%);
+  --input-focus-bg: hsl(220, 25%, 87%);
   --input-error-border: hsl(0, 70%, 50%);
   --input-error-bg: hsl(0, 50%, 85%);
   --input-success-border: hsl(140, 80%, 50%);
@@ -301,18 +297,18 @@
   --btn-secundario: hsl(15, 75%, 55%);
   --btn-secundario-hover: hsl(15, 80%, 60%);
   --btn-secundario-destaque: hsl(15, 60%, 42%);
-  --btn-secundario-txt: hsl(215, 100%, 98%);
+  --btn-secundario-txt: hsl(220, 100%, 98%);
 
   --btn-filtro: hsl(0, 0%, 100%);
-  --btn-filtro-txt: hsl(215, 25%, 25%);
-  --btn-filtro-hover: hsl(215, 15%, 80%);
-  --btn-filtro-selecionado: hsl(215, 80%, 55%);
-  --btn-filtro-selecionado-txt: hsl(215, 100%, 98%);
+  --btn-filtro-txt: hsl(220, 25%, 25%);
+  --btn-filtro-hover: hsl(220, 15%, 80%);
+  --btn-filtro-selecionado: hsl(220, 80%, 55%);
+  --btn-filtro-selecionado-txt: hsl(220, 100%, 98%);
 
-  --btn-filtro-alt: hsl(215, 75%, 50%);
-  --btn-filtro-alt-hover: hsl(215, 65%, 42%);
-  --btn-filtro-alt-destaque: hsl(215, 55%, 75%);
-  --btn-filtro-alt-txt: hsl(215, 100%, 98%);
+  --btn-filtro-alt: hsl(220, 75%, 50%);
+  --btn-filtro-alt-hover: hsl(220, 65%, 42%);
+  --btn-filtro-alt-destaque: hsl(220, 55%, 75%);
+  --btn-filtro-alt-txt: hsl(220, 100%, 98%);
 
   --btn-menu: var(--txt-nav);
   --btn-float: linear-gradient(300deg, hsl(218, 90%, 60%), hsl(218, 85%, 55%));
@@ -323,35 +319,35 @@
   --sombra-intensa: 0 8px 12px rgba(0, 0, 0, 0.4);
   --hover: brightness(0.95);
   --active: brightness(0.9);
-  --sombra-card-aberto: 0 0 2px hsl(15, 85%, 80%), 0 0 4px hsl(15, 80%, 85%),
-    0 0 6px hsl(15, 75%, 78%), 0 0 8px hsl(15, 70%, 75%);
+  --sombra-card-aberto: 0 0 2px hsl(15, 80%, 58%), 0 0 4px hsl(15, 75%, 53%),
+    0 0 6px hsl(15, 70%, 48%), 0 0 8px hsl(15, 65%, 43%);
 
   /* Links e Mensagens */
   --link: hsl(25, 80%, 55%);
-  --link-hover: hsl(215, 85%, 60%);
+  --link-hover: hsl(220, 85%, 60%);
   --sucesso: hsl(140, 65%, 45%);
   --erro: hsl(0, 70%, 50%);
   --aviso: hsl(15, 70%, 60%);
-  --informacao: hsl(215, 80%, 65%);
+  --informacao: hsl(220, 80%, 65%);
   --msg-sucesso-txt: hsl(140, 90%, 95%);
   --msg-erro-txt: hsl(0, 90%, 90%);
 
   /* Labels e Tooltips */
-  --label-bg: hsl(215, 15%, 85%);
-  --label-text: hsl(215, 25%, 20%);
-  --tooltip-bg: hsl(215, 80%, 50%);
-  --tooltip-txt: hsl(215, 95%, 98%);
-  --input-tooltip-bg: hsl(215, 70%, 45%);
-  --input-tooltip-txt: hsl(215, 95%, 98%);
+  --label-bg: hsl(220, 15%, 85%);
+  --label-text: hsl(220, 25%, 20%);
+  --tooltip-bg: hsl(220, 80%, 50%);
+  --tooltip-txt: hsl(220, 95%, 98%);
+  --input-tooltip-bg: hsl(220, 70%, 45%);
+  --input-tooltip-txt: hsl(220, 95%, 98%);
 
   /* Scrollbar */
-  --scrollbar-bg: hsl(215, 15%, 85%);
-  --scrollbar-thumb: hsl(215, 25%, 65%);
-  --scrollbar-thumb-hover: hsl(215, 25%, 55%);
+  --scrollbar-bg: hsl(220, 15%, 85%);
+  --scrollbar-thumb: hsl(220, 25%, 65%);
+  --scrollbar-thumb-hover: hsl(220, 25%, 55%);
 
   /* Marcadores */
   --cor-marcador-0: hsla(215, 29%, 90%, 0.1);
-  --cor-marcador-1: hsl(215, 70%, 60%);
+  --cor-marcador-1: hsl(220, 70%, 60%);
   --cor-marcador-2: hsl(0, 70%, 60%);
   --cor-marcador-3: hsl(40, 70%, 60%);
   --cor-marcador-4: hsl(100, 70%, 60%);

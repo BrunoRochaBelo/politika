@@ -158,7 +158,7 @@
 
 .acao-item:hover {
   transform: scale(1.05);
-  background: var(--btn-principal-hover);
+  background: var(--cor-secundaria-2);
 }
 
 .acao-item img {

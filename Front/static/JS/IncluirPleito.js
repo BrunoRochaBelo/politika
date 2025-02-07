@@ -5,7 +5,6 @@ window.EstiloUtils = (() => {
       elemento.style.borderColor = cor;
     }
   }
-
   return {
     alterarCorBorda,
   };
@@ -125,19 +124,43 @@ window.FormularioUtils = (() => {
     return formValido;
   }
 
+  // Função de envio atualizada para realizar o POST via fetch
   function enviarFormulario(event) {
     event.preventDefault();
-    if (feedbackDiv) feedbackDiv.remove();
-
     if (!validarFormulario()) return;
 
-    mostrarFeedbackSucesso();
-    document.getElementById("form").reset();
-    removerClassesDeSucesso();
+    const form = document.getElementById("form");
+    const formData = new FormData(form);
+
+    // Envia o formulário para a rota definida no atributo "action" do form.
+    fetch(form.getAttribute("action"), {
+      method: form.getAttribute("method") || "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            "Erro ao enviar o formulário. Código: " + response.status
+          );
+        }
+        // Se o back retornar JSON; caso contrário, use response.text()
+        return response.json();
+      })
+      .then((data) => {
+        mostrarFeedbackSucesso();
+        form.reset();
+        removerClassesDeSucesso();
+      })
+      .catch((error) => {
+        mostrarFeedback(
+          "error",
+          "Erro ao enviar o formulário: " + error.message
+        );
+      });
   }
 
   function mostrarFeedbackSucesso() {
-    mostrarFeedback("success", "Formulário validado com sucesso!");
+    mostrarFeedback("success", "Formulário enviado com sucesso!");
   }
 
   function mostrarFeedbackErro(camposNaoPreenchidos) {

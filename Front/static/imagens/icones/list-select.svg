@@ -1,8 +1,8 @@
 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="list-select">
-<path id="Vector" d="M7 1H15V4H7V1ZM7 8.5H17V11.5H7V8.5ZM7 16H20V19H7V16Z" fill="#251301" stroke="#251301" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_2" d="M2 3.5C2.55228 3.5 3 3.05228 3 2.5C3 1.94772 2.55228 1.5 2 1.5C1.44772 1.5 1 1.94772 1 2.5C1 3.05228 1.44772 3.5 2 3.5Z" fill="#251301" stroke="#251301" stroke-width="2"/>
-<path id="Vector_3" d="M2 11C2.55228 11 3 10.5523 3 10C3 9.44772 2.55228 9 2 9C1.44772 9 1 9.44772 1 10C1 10.5523 1.44772 11 2 11Z" fill="#251301" stroke="#251301" stroke-width="2"/>
-<path id="Vector_4" d="M2 18.5C2.55228 18.5 3 18.0523 3 17.5C3 16.9477 2.55228 16.5 2 16.5C1.44772 16.5 1 16.9477 1 17.5C1 18.0523 1.44772 18.5 2 18.5Z" fill="#251301" stroke="#251301" stroke-width="2"/>
+<path id="Vector" d="M7 1H15V4H7V1ZM7 8.5H17V11.5H7V8.5ZM7 16H20V19H7V16Z" fill="hsl(220, 85%, 88%)" stroke="hsl(220, 85%, 88%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M2 3.5C2.55228 3.5 3 3.05228 3 2.5C3 1.94772 2.55228 1.5 2 1.5C1.44772 1.5 1 1.94772 1 2.5C1 3.05228 1.44772 3.5 2 3.5Z" fill="hsl(220, 85%, 88%)" stroke="hsl(220, 85%, 88%)" stroke-width="2"/>
+<path id="Vector_3" d="M2 11C2.55228 11 3 10.5523 3 10C3 9.44772 2.55228 9 2 9C1.44772 9 1 9.44772 1 10C1 10.5523 1.44772 11 2 11Z" fill="hsl(220, 85%, 88%)" stroke="hsl(220, 85%, 88%)" stroke-width="2"/>
+<path id="Vector_4" d="M2 18.5C2.55228 18.5 3 18.0523 3 17.5C3 16.9477 2.55228 16.5 2 16.5C1.44772 16.5 1 16.9477 1 17.5C1 18.0523 1.44772 18.5 2 18.5Z" fill="hsl(220, 85%, 88%)" stroke="hsl(220, 85%, 88%)" stroke-width="2"/>
 </g>
 </svg>
