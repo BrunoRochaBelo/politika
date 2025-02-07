@@ -215,7 +215,7 @@
   --cor-apoio-2: hsl(215, 20%, 88%);
 
   /* Backgrounds e Containers */
-  --bg-principal: hsl(215, 25%, 88%);
+  --bg-principal: hsl(215, 25%, 86%);
   --container-bg: hsl(215, 28%, 92%);
   --barra-pesquisa-bg: hsl(215, 38%, 84%);
   --barra-pesquisa-content: hsl(215, 20%, 94%);
@@ -234,13 +234,15 @@
   --txt-placeholder: hsl(215, 18%, 45%);
 
   /* Cartões */
-  --card-bg: hsl(0, 0%, 100%);
-  --card-borda: hsl(215, 20%, 95%);
+  --card-bg: hsl(0, 0%, 100%); /* Fundo branco para o cartão */
+  --card-borda: hsl(215, 20%, 95%); /* Delicado toque azul */
   --card-detalhe: hsl(215, 15%, 93%);
-  --card-hover: hsl(215, 15%, 80%);
-
-  --card-aberto-bg: hsl(215, 35%, 85%);
-  --card-aberto-detalhe: hsl(215, 35%, 80%);
+  /* Estado de hover: o cartão ganha leve luminosidade (quase branco) */
+  --card-hover: hsl(215, 15%, 98%);
+  /* Estado do Card Aberto: sutil diferença em relação ao cartão normal
+     (no modo escuro o cartão aberto é mais escuro; aqui, para preservar a sensação de “clicado”, o fundo sai do branco puro) */
+  --card-aberto-bg: hsl(215, 15%, 96%);
+  --card-aberto-detalhe: hsl(215, 15%, 92%);
 
   --txt-titulo-card: hsl(215, 30%, 20%);
   --txt-conteudo-card: hsl(215, 25%, 35%);
@@ -256,7 +258,9 @@
   /* Formulários e Inputs */
   --form-container-bg: hsl(215, 25%, 95%);
   --form-card-bg: hsl(215, 30%, 90%);
-  --form-card-aberto-bg: hsl(215, 35%, 87%);
+  /* Para os formulários, inspirando-se na versão escura (onde o estado aberto tem leve diferença),
+     propomos um formulário "aberto" um pouco mais claro: */
+  --form-card-aberto-bg: hsl(215, 30%, 92%);
   /* Inputs */
   --input-empty-bg: hsl(215, 50%, 98%);
   --input-border: hsl(215, 35%, 60%);
