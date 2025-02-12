@@ -7,11 +7,10 @@
  * Comportamentos:
  * - Ao carregar a página (sem estado salvo), exibe todas as bibliotecas no grid e renderiza a árvore.
  * - Clicar em “raiz” (no breadcrumb ou no elemento com classe “raiz-tree”) reseta a navegação para exibir todas as bibliotecas.
- * - Ao selecionar um item (pela árvore ou grid), o currentPath é recalculado usando a hierarquia original,
- *   garantindo que os breadcrumbs reflitam exatamente o que está sendo exibido.
- * - Se uma pasta ou biblioteca estiver aberta (seus itens filhos exibidos no grid), o nó correspondente na árvore será expandido e marcado como “selected”.
- * - Ao clicar num documento na árvore, o grid exibe o conteúdo da pasta que o contém e, em seguida, o documento é aberto externamente.
- * - O estado de navegação é salvo e restaurado, inclusive em redimensionamentos.
+ * - Ao selecionar um item (biblioteca, pasta ou documento) via árvore ou grid, o currentPath é recalculado para refletir exatamente o conteúdo exibido no grid.
+ * - Se uma biblioteca ou pasta estiver aberta (com seus filhos exibidos no grid), o nó correspondente na árvore será expandido e marcado como "selected".
+ * - Ao clicar num documento na árvore, o grid exibe a pasta que o contém e, em seguida, o documento é aberto externamente.
+ * - O estado é salvo e restaurado, inclusive em redimensionamentos.
  */
 
 (function () {
@@ -25,7 +24,7 @@
   function FileNavigator() {
     this.state = {
       libraries: [],
-      currentPath: [], // Array de nós representando o caminho atual
+      currentPath: [], // Array de nós representando o caminho atual (a partir da biblioteca selecionada)
     };
     this.breadcrumbContainer = document.querySelector(".breadcrumbs");
     this.gridContainer = document.querySelector(".grid-container");
@@ -34,13 +33,13 @@
     this.inactivityTimer = null;
   }
 
-  // Inicializa a navegação
+  // Inicializa: carrega bibliotecas, renderiza a árvore e restaura o estado salvo.
   FileNavigator.prototype.init = async function () {
     try {
       this.showTreeLoading("Carregando bibliotecas...");
       this.state.libraries = await dataService.fetchLibraries();
       this.renderTree();
-      // Configura clique no "raiz-tree" para resetar a navegação
+      // Configura clique no "raiz-tree" para resetar
       var raizTree = document.querySelector(".raiz-tree");
       if (raizTree) {
         raizTree.addEventListener("click", this.resetToRoot.bind(this));
@@ -204,13 +203,13 @@
     this.saveState();
   };
 
-  // Seleciona um nó na árvore e recalcula o currentPath usando a hierarquia original
+  // Seleciona um nó na árvore e recalcula o currentPath com base na hierarquia original
   FileNavigator.prototype.selectNode = async function (li, node) {
     if (node.type === "document") {
+      // Se for documento, mostra no grid a pasta que o contém e abre o documento externamente.
       var fullPath = this.findPath(this.state.libraries, node.id);
       if (fullPath && fullPath.length >= 2) {
         var parentFolder = fullPath[fullPath.length - 2];
-        // Define o currentPath como o caminho completo até a pasta que contém o documento
         this.state.currentPath = this.findPath(
           this.state.libraries,
           parentFolder.id
@@ -225,8 +224,20 @@
       }
       return;
     }
-    // Se o nó for biblioteca ou pasta, recalcula o currentPath a partir da hierarquia
-    this.state.currentPath = this.findPath(this.state.libraries, node.id);
+    // Se for biblioteca, definimos currentPath explicitamente
+    if (node.type === "library") {
+      this.state.currentPath = [node];
+    } else if (node.type === "folder") {
+      // Para pasta, garantimos que o primeiro nível seja a biblioteca
+      let library = this.state.libraries.find(
+        (lib) => this.findPath([lib], node.id).length > 0
+      );
+      if (library) {
+        this.state.currentPath = [library, node];
+      } else {
+        this.state.currentPath = this.findPath(this.state.libraries, node.id);
+      }
+    }
     this.clearTreeSelection();
     li.classList.add("selected");
     this.renderBreadcrumbs();
@@ -240,7 +251,7 @@
     selected.forEach((item) => item.classList.remove("selected"));
   };
 
-  // Sincroniza a árvore com o currentPath e garante que o último nó esteja expandido e selecionado.
+  // Sincroniza a árvore com o currentPath, garantindo que o último nó esteja expandido e selecionado.
   FileNavigator.prototype.syncTreeSelection = async function () {
     var currentPath = this.state.currentPath;
     if (!currentPath || currentPath.length === 0) return;
@@ -253,7 +264,7 @@
         if (i < currentPath.length - 1 && !li.classList.contains("expanded")) {
           await this.toggleNode(li, node);
         }
-        // Se o último nó for uma pasta ou biblioteca, garante que esteja expandido
+        // Se o último nó for biblioteca ou pasta, garante que esteja expandido.
         if (
           i === currentPath.length - 1 &&
           (node.type === "folder" || node.type === "library") &&
@@ -270,7 +281,6 @@
     this.scrollSelectedIntoView();
   };
 
-  // Rola o nó selecionado para a vista na árvore.
   FileNavigator.prototype.scrollSelectedIntoView = function () {
     var selected = this.treeContainer.querySelector(".tree-item.selected");
     if (selected) {
@@ -278,9 +288,10 @@
     }
   };
 
-  // Renderiza os breadcrumbs de acordo com o currentPath
+  // Renderiza os breadcrumbs de acordo com o currentPath.
   FileNavigator.prototype.renderBreadcrumbs = function () {
     this.breadcrumbContainer.innerHTML = "";
+    // Se o currentPath estiver vazio, exibe apenas "raiz"
     if (this.state.currentPath.length === 0) {
       var rootSpan = document.createElement("span");
       rootSpan.className = "raiz";
@@ -292,6 +303,7 @@
       this.breadcrumbContainer.appendChild(rootSpan);
       return;
     }
+    // Exibe "raiz > ..." conforme o currentPath
     var rootSpan = document.createElement("span");
     rootSpan.className = "raiz";
     rootSpan.textContent = "raiz";
@@ -308,6 +320,7 @@
       span.textContent = node.name;
       span.style.cursor = "pointer";
       span.addEventListener("click", async () => {
+        // Recalcula o caminho completo para o nó selecionado
         this.state.currentPath = this.findPath(this.state.libraries, node.id);
         this.renderBreadcrumbs();
         await this.displayContent(node);
@@ -317,7 +330,7 @@
     });
   };
 
-  // Encontra o caminho (array de nós) até um nó com o id especificado.
+  // Encontra o caminho (array de nós) até um nó com o id especificado
   FileNavigator.prototype.findPath = function (nodes, targetId, path) {
     path = path || [];
     for (var i = 0; i < nodes.length; i++) {
@@ -332,7 +345,7 @@
     return [];
   };
 
-  // Exibe o conteúdo no grid conforme o nó selecionado.
+  // Exibe o conteúdo no grid conforme o nó selecionado
   FileNavigator.prototype.displayContent = async function (node) {
     this.gridContainer.innerHTML = "";
     if (node.type === "root") {
@@ -370,7 +383,7 @@
     this.updateCounters(node);
   };
 
-  // Renderiza os itens no grid.
+  // Renderiza os itens no grid
   FileNavigator.prototype.renderGrid = function (items, type) {
     this.gridContainer.innerHTML = "";
     if (!items || items.length === 0) {
@@ -416,16 +429,15 @@
           }
           return;
         }
-        // Se o item for biblioteca, define currentPath como apenas esse item.
         if (item.type === "library") {
           this.state.currentPath = [item];
         } else if (item.type === "folder") {
-          // Se for pasta, assegura que o primeiro nível seja a biblioteca
-          if (
-            this.state.currentPath.length > 0 &&
-            this.state.currentPath[0].type === "library"
-          ) {
-            this.state.currentPath = [this.state.currentPath[0], item];
+          // Garante que o currentPath comece com a biblioteca correspondente
+          let lib = this.state.libraries.find(
+            (lib) => this.findPath([lib], item.id).length > 0
+          );
+          if (lib) {
+            this.state.currentPath = [lib, item];
           } else {
             this.state.currentPath = this.findPath(
               this.state.libraries,
