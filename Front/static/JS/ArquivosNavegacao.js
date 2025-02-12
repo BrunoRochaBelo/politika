@@ -132,7 +132,6 @@
     } else {
       var placeholder = document.createElement("span");
       placeholder.className = "toggle-icon-placeholder";
-      placeholder.style.width = "16px";
       li.appendChild(placeholder);
     }
 
@@ -149,22 +148,19 @@
     if (node.type !== "document") {
       var childUl = document.createElement("ul");
       childUl.className = "tree-children";
-      childUl.style.display = "none";
       li.appendChild(childUl);
     }
     return li;
   };
 
-  // Expande ou contrai um nó na árvore
+  // Expande ou contrai um nó na árvore (confia no CSS para as transições)
   FileNavigator.prototype.toggleNode = async function (li, node) {
     var childUl = li.querySelector(".tree-children");
     if (!childUl) return;
     if (li.classList.contains("expanded")) {
       li.classList.remove("expanded");
-      childUl.style.display = "none";
     } else {
       li.classList.add("expanded");
-      childUl.style.display = "block";
       if (node.type === "library") {
         if (!node.children || node.children.length === 0) {
           try {
@@ -175,7 +171,6 @@
               "Erro ao carregar pastas da biblioteca " + node.id
             );
             li.classList.remove("expanded");
-            childUl.style.display = "none";
             return;
           }
         }
@@ -189,11 +184,11 @@
               "Erro ao carregar documentos da pasta " + node.id
             );
             li.classList.remove("expanded");
-            childUl.style.display = "none";
             return;
           }
         }
       }
+      var childUl = li.querySelector(".tree-children");
       childUl.innerHTML = "";
       node.children.forEach((child) => {
         var childLi = this.createTreeNode(child);
@@ -228,7 +223,6 @@
     if (node.type === "library") {
       this.state.currentPath = [node];
     } else if (node.type === "folder") {
-      // Para pasta, garantimos que o primeiro nível seja a biblioteca
       let library = this.state.libraries.find(
         (lib) => this.findPath([lib], node.id).length > 0
       );
@@ -264,7 +258,6 @@
         if (i < currentPath.length - 1 && !li.classList.contains("expanded")) {
           await this.toggleNode(li, node);
         }
-        // Se o último nó for biblioteca ou pasta, garante que esteja expandido.
         if (
           i === currentPath.length - 1 &&
           (node.type === "folder" || node.type === "library") &&
@@ -318,9 +311,9 @@
       this.breadcrumbContainer.appendChild(sep);
       var span = document.createElement("span");
       span.textContent = node.name;
-      span.style.cursor = "pointer";
+      // Remove o estilo inline e utiliza a classe para itens clicáveis
+      span.className = "clickable";
       span.addEventListener("click", async () => {
-        // Recalcula o caminho completo para o nó selecionado
         this.state.currentPath = this.findPath(this.state.libraries, node.id);
         this.renderBreadcrumbs();
         await this.displayContent(node);
@@ -432,7 +425,6 @@
         if (item.type === "library") {
           this.state.currentPath = [item];
         } else if (item.type === "folder") {
-          // Garante que o currentPath comece com a biblioteca correspondente
           let lib = this.state.libraries.find(
             (lib) => this.findPath([lib], item.id).length > 0
           );
@@ -535,6 +527,7 @@
     }
   };
 
+  // Redefinindo findPath para evitar duplicidade
   FileNavigator.prototype.findPath = function (nodes, targetId, path) {
     path = path || [];
     for (var i = 0; i < nodes.length; i++) {

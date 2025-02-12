@@ -40,10 +40,13 @@ var overlay = createOverlay();
 // Função para alternar a visibilidade do conteúdo
 function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
   if (window.innerWidth <= 900) {
+    // Se a área já está exibida, fecha-a
     if (areaContent.style.maxHeight) {
       areaContent.style.maxHeight = null;
+      areaContent.style.display = "none"; // Define display none ao fechar
+      // Restaura o texto original do botão
       button.innerHTML = "Agenda para hoje";
-      mainSidenav.style.boxShadow = "none"; // Remove a sombra quando a área não está exibida
+      mainSidenav.style.boxShadow = "none";
       mainSidenav.style.height = "";
       area.style.background = "none";
       overlay.style.display = "none";
@@ -57,17 +60,19 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       button.classList.add("show-after");
       button.classList.remove("hide-after");
     } else {
-      areaContent.style.maxHeight = areaContent.scrollHeight + "px";
+      // Se a área não está exibida, abre-a
+      areaContent.style.maxHeight = `calc(var(--vh, 1vh) * 100 - 8.5rem)`;
+      areaContent.style.display = "block"; // Define display block ao expandir
       button.innerHTML = "X";
       button.style.color = "var(--btn-filtro-alt-txt)";
-      mainSidenav.style.height = "80vh";
-      mainSidenav.style.boxShadow = "var(--sombra-intensa)"; // Aplica a sombra ao .main-sidenav
+      mainSidenav.style.height = "auto";
+      mainSidenav.style.boxShadow = "var(--sombra-intensa)";
       area.style.background = "var(--modal-bg)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--txt-titulo)";
-      areaHeader.style.fontSize = "22px";
+      areaHeader.style.fontSize = "var(--font-xl)";
       areaHeader.style.padding = "10px 10px 10px 20px";
 
       // Adiciona a classe para ocultar o pseudo-elemento ::after
@@ -85,6 +90,7 @@ window.addEventListener("resize", function () {
   }
 });
 
+// Função para alternar a exibição da agenda
 function OcultarExibirAgenda() {
   var areaContent = selectElement(
     ".container-compromisso-hoje-template-content"

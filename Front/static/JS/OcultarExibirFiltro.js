@@ -37,10 +37,12 @@ var overlay = createOverlay();
 function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
   if (window.innerWidth <= 900) {
     if (areaContent.style.maxHeight) {
+      // Se a área está aberta, fecha-a
       areaContent.style.maxHeight = null;
+      areaContent.style.display = "none"; // Define display none ao fechar
       // Restaura o texto original do botão
       button.innerHTML = button.dataset.originalText || button.innerHTML;
-      mainSidenav.style.boxShadow = "none"; // Remove a sombra quando a área não está exibida
+      mainSidenav.style.boxShadow = "none";
       mainSidenav.style.height = "";
       area.style.background = "none";
       overlay.style.display = "none";
@@ -60,22 +62,22 @@ function toggleVisibility(areaContent, button, area, mainSidenav, areaHeader) {
       // Remove o z-index quando a área não está exibida
       area.style.zIndex = null;
     } else {
-      // Armazena o texto original do botão se ainda não estiver armazenado
+      // Se a área está fechada, abre-a
       if (!button.dataset.originalText) {
         button.dataset.originalText = button.innerHTML;
       }
-      // Define max-height responsivo
       areaContent.style.maxHeight = `calc(var(--vh, 1vh) * 100 - 8.5rem)`;
+      areaContent.style.display = "block"; // Define display block ao expandir
       button.innerHTML = "X";
       button.style.color = "var(--btn-filtro-alt-txt)";
       mainSidenav.style.height = "auto";
-      mainSidenav.style.boxShadow = "var(--sombra-intensa)"; // Aplica a sombra ao .main-sidenav
+      mainSidenav.style.boxShadow = "var(--sombra-intensa)";
       area.style.background = "var(--modal-bg)";
       overlay.style.display = "block";
 
       // Define as propriedades para quando a área está exibida
       areaHeader.style.color = "var(--txt-titulo)";
-      areaHeader.style.fontSize = "22px";
+      areaHeader.style.fontSize = "var(--font-xl)";
       areaHeader.style.padding = "10px 10px 10px 20px";
 
       // Altera a largura da .main-sidenav para 88%

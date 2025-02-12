@@ -29,13 +29,9 @@
 .raiz-tree .raiz-icon {
   margin-right: 10px;
   font-size: var(--font-md);
-}
-
-.raiz-tree .raiz-icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: 10px;
   background-color: var(--cor-primaria-1);
   mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>')
     no-repeat center;
@@ -71,6 +67,10 @@
   color: var(--txt-nav-selecionado);
 }
 
+.tree-item.library {
+  margin-top: 15px;
+}
+
 .tree-item.expanded {
   background-color: transparent;
 }
@@ -91,7 +91,7 @@
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  background-color: var(--cor-primaria-1); /* Cor de fundo opcional */
+  background-color: var(--cor-primaria-1);
   mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M4 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4zm0 4h10v2H4z"/></svg>')
     no-repeat center;
   -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M4 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4zm0 4h10v2H4z"/></svg>')
@@ -158,7 +158,7 @@
     no-repeat center;
   -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M8 5v14l11-7z"/></svg>')
     no-repeat center;
-  mask-size: 100% 100%; /* Preenche todo o espaço disponível */
+  mask-size: 100% 100%;
   -webkit-mask-size: 100% 100%;
   transform-origin: center;
   transition: transform 0.3s ease-in-out;
@@ -181,6 +181,12 @@
 .expanded > .tree-children {
   max-height: 10000px;
   opacity: 1;
+}
+
+/* Placeholder para ícone de toggle ausente */
+.toggle-icon-placeholder {
+  display: inline-block;
+  width: 16px;
 }
 
 /* --- Estilos para os Breadcrumbs --- */
@@ -212,9 +218,9 @@
   transition: color 0.3s ease-in-out;
 }
 
-.breadcrumbs span:hover {
-  color: var(--cor-primaria-2);
-  text-decoration: underline;
+/* Para itens clicáveis sem interferir no separador */
+.breadcrumbs .clickable {
+  cursor: pointer;
 }
 
 /* --- Estilos para o Grid e Cards --- */
@@ -234,7 +240,7 @@
   transition: padding 0.3s ease-in-out;
 }
 
-/* Cards de Biblioteca e Pasta */
+/* Cards de Biblioteca, Pasta e Documento */
 .item-grid {
   display: flex;
   flex-direction: column;
@@ -242,64 +248,52 @@
   background-color: var(--card-bg);
   border: 1px solid var(--card-borda);
   border-radius: 8px;
-  padding: 25px;
+  padding: 20px;
   flex: 1 1 calc(25% - 40px);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   touch-action: manipulation;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
   color: var(--txt-conteudo-card);
 }
 
 .item-grid:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--sombra-intensa);
-  background-color: var(--card-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-moderada);
 }
 
-.item-grid.selected {
-  border-color: var(--cor-primaria-1);
-  background-color: var(--card-aberto-bg);
-  box-shadow: var(--sombra-card-aberto);
-  color: var(--txt-card-aberto);
-}
-
-/* Diferenciação entre Biblioteca e Pasta */
+/* Estilos específicos para cada tipo */
 .item-grid.library {
   border-left: 5px solid var(--cor-primaria-1);
+  background: color-mix(in srgb, var(--cor-primaria-1) 30%, transparent);
 }
 
 .item-grid.folder {
   border-top: 5px solid var(--cor-secundaria-1);
-  border-radius: 25px 25px 12px 12px;
+  background: color-mix(in srgb, var(--cor-secundaria-1) 30%, transparent);
+  border-radius: 10px 10px 4px 4px;
 }
 
-/* Cards de Documento - Lista Vertical */
 .item-grid.document {
-  flex: 1 1 100%; /* Ocupa toda a largura disponível */
-  border: none; /* Remove bordas específicas se necessário */
+  flex: 1 1 100%;
+  border: none;
   background-color: var(--card-bg);
-  box-shadow: none; /* Remove sombra para documentos */
-  padding: 15px 20px; /* Ajuste o padding conforme necessário */
-  border-bottom: 1px solid var(--card-borda); /* Linha separadora entre documentos */
-}
-
-.item-grid.document:last-child {
-  border-bottom: none; /* Remove a borda do último item */
+  box-shadow: none;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--card-borda);
 }
 
 /* Títulos e textos dos cards */
 .item-grid .item-title {
   margin-top: 0;
   font-size: var(--font-md);
-  font-weight: 400;
   color: var(--txt-titulo-card);
 }
 
 .item-grid .item-description {
   flex-grow: 1;
   font-size: var(--font-sm);
-  font-weight: 300;
   color: var(--txt-conteudo-card);
   margin: 10px 0;
 }
@@ -317,8 +311,8 @@
 .action-buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 10px; /* Ajuste o gap conforme necessário */
-  margin-top: 10px; /* Espaçamento opcional */
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .action-buttons button {
@@ -334,12 +328,7 @@
   justify-content: center;
 }
 
-.action-buttons .edit-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
+.action-buttons .edit-button img,
 .action-buttons .delete-button img {
   width: 100%;
   height: 100%;
@@ -356,7 +345,6 @@
   .item-grid {
     flex: 1 1 calc(33.333% - 40px);
   }
-
   .item-grid.document {
     flex: 1 1 100%;
   }
@@ -366,7 +354,6 @@
   .item-grid {
     flex: 1 1 calc(50% - 40px);
   }
-
   .item-grid.document {
     flex: 1 1 100%;
   }
@@ -376,7 +363,6 @@
   .item-grid {
     flex: 1 1 100%;
   }
-
   .item-grid.document {
     flex: 1 1 100%;
   }
@@ -384,13 +370,11 @@
 
 /* --- Estilos Diversos --- */
 
-/* Melhorar áreas clicáveis em dispositivos touch */
 .tree-item,
 .item-grid {
   touch-action: manipulation;
 }
 
-/* Ajuste opcional de margens */
 .aba-filtro.active .lista-vertical-fil {
   margin-top: 0;
 }
@@ -444,9 +428,9 @@
     transform: rotate(360deg);
   }
 }
-/* Estilo para o elemento "raiz" na árvore de navegação */
+
+/* Estilo para o elemento "raiz" nos breadcrumbs */
 .raiz {
-  /* Alterado de .raiz-tree para .raiz */
   display: inline-block;
   align-items: center;
   cursor: pointer;
@@ -459,13 +443,11 @@
 }
 
 .raiz:hover {
-  /* Alterado de .raiz-tree:hover para .raiz:hover */
   color: var(--cor-primaria-2);
   text-decoration: underline;
 }
 
 .raiz .raiz-icon {
-  /* Alterado de .raiz-tree .raiz-icon para .raiz .raiz-icon */
   margin-right: 10px;
   font-size: var(--font-md);
 }

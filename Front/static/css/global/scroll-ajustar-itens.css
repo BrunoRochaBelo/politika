@@ -11,7 +11,7 @@
 }
 
 .body-template.reduced .main-sidenav {
-  top: 2.5rem;
+  top: 2.75rem;
 }
 
 .body-template.reduced .body-template {
@@ -22,8 +22,6 @@
 
 /* Estado compacto do cabeçalho */
 .container-header.compact {
-  /* Adicione aqui os estilos que devem ser aplicados quando o cabeçalho está compacto */
-  /* Exemplo: */
   padding: 0.5rem 1rem;
   transition: padding 0.5s ease-in-out;
 }
