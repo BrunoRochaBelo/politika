@@ -9,7 +9,7 @@
 
 /* Estilo para o elemento "raiz" na árvore de navegação */
 .raiz-tree {
-  padding: 12px 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -18,7 +18,7 @@
   font-weight: bold;
   background-color: var(--card-bg);
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -28,14 +28,28 @@
 
 .raiz-tree .raiz-icon {
   margin-right: 10px;
-  font-size: 1.2em;
+  font-size: var(--font-md);
+}
+
+.raiz-tree .raiz-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: var(--cor-primaria-1);
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>')
+    no-repeat center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>')
+    no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
 /* Itens da árvore */
 .tree-item {
   position: relative;
   display: block;
-  padding: 10px 20px;
+  padding: 10px;
   cursor: pointer;
   user-select: none;
   text-align: left;
@@ -44,6 +58,7 @@
   border-radius: 4px;
   margin-bottom: 5px;
   color: var(--txt-nav);
+  font-size: var(--font-sm);
 }
 
 .tree-item:hover {
@@ -54,10 +69,6 @@
   background-color: var(--cor-primaria-3);
   border-left: 3px solid var(--cor-primaria-1);
   color: var(--txt-nav-selecionado);
-}
-
-.tree-item.library {
-  margin-top: 15px;
 }
 
 .tree-item.expanded {
@@ -74,26 +85,49 @@
   background-color: var(--cor-primaria-1);
 }
 
-/* Ícones de tipos */
 .tree-item.library::before {
-  content: "\1F4DA"; /* 📚 */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
-  font-size: 1.2em;
-  color: var(--cor-primaria-1);
+  background-color: var(--cor-primaria-1); /* Cor de fundo opcional */
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M4 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4zm0 4h10v2H4z"/></svg>')
+    no-repeat center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M4 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4zm0 4h10v2H4z"/></svg>')
+    no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
 .tree-item.folder::before {
-  content: "\1F4C1"; /* 📁 */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
-  font-size: 1.2em;
-  color: var(--cor-secundaria-1);
+  background-color: var(--cor-secundaria-1);
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>')
+    no-repeat center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>')
+    no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
 .tree-item.document::before {
-  content: "\1F4C4"; /* 📄 */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
-  font-size: 1.2em;
-  color: var(--cor-apoio-1);
+  background-color: var(--txt-nav);
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM13 9V3.5L18.5 9H13z"/></svg>')
+    no-repeat center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM13 9V3.5L18.5 9H13z"/></svg>')
+    no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
 /* Mensagem de Árvore Vazia */
@@ -103,18 +137,29 @@
   font-style: italic;
 }
 
+.node-name {
+  display: inline-block;
+}
+
 /* Ícone de toggle (expandir/contrair) */
 .toggle-icon {
   position: absolute;
-  right: 20px;
+  right: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
 .toggle-icon::before {
-  content: "\25B6"; /* ▶ */
+  content: "";
   display: inline-block;
-  font-size: 0.9em;
-  color: var(--cor-primaria-1);
+  width: 16px;
+  height: 16px;
+  background-color: var(--cor-primaria-1);
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M8 5v14l11-7z"/></svg>')
+    no-repeat center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M8 5v14l11-7z"/></svg>')
+    no-repeat center;
+  mask-size: 100% 100%; /* Preenche todo o espaço disponível */
+  -webkit-mask-size: 100% 100%;
   transform-origin: center;
   transition: transform 0.3s ease-in-out;
 }
@@ -126,7 +171,7 @@
 /* Sub-lista (filhas) */
 .tree-children {
   list-style-type: none;
-  padding-left: 20px;
+  padding-left: 10px;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -134,22 +179,31 @@
 }
 
 .expanded > .tree-children {
-  max-height: 1000px;
+  max-height: 10000px;
   opacity: 1;
 }
 
 /* --- Estilos para os Breadcrumbs --- */
 
 .breadcrumbs {
-  font-size: 1em;
-  padding: 10px;
+  font-size: var(--font-sm);
+  padding: 5px 10px;
   color: var(--txt-titulo);
 }
 
 .breadcrumbs .raiz::before {
-  content: "\1F3E0"; /* 🏠 */
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
   margin-right: 8px;
-  font-size: 1.2em;
+  background-color: var(--cor-primaria-1);
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>')
+    no-repeat center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>')
+    no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
 .breadcrumbs span {
@@ -237,14 +291,14 @@
 /* Títulos e textos dos cards */
 .item-grid .item-title {
   margin-top: 0;
-  font-size: 1.1rem;
+  font-size: var(--font-md);
   font-weight: 400;
   color: var(--txt-titulo-card);
 }
 
 .item-grid .item-description {
   flex-grow: 1;
-  font-size: 0.9rem;
+  font-size: var(--font-sm);
   font-weight: 300;
   color: var(--txt-conteudo-card);
   margin: 10px 0;
@@ -252,7 +306,7 @@
 
 .item-grid .item-count,
 .item-grid .item-creation-date {
-  font-size: 0.9rem;
+  font-size: var(--font-sm);
   font-weight: 300;
   color: var(--txt-subtitulo);
   margin: 4px 0;
@@ -393,26 +447,25 @@
 /* Estilo para o elemento "raiz" na árvore de navegação */
 .raiz {
   /* Alterado de .raiz-tree para .raiz */
-  padding: 12px 20px;
-  display: flex;
+  display: inline-block;
   align-items: center;
   cursor: pointer;
   user-select: none;
   color: var(--txt-titulo);
   font-weight: bold;
-  background-color: var(--card-bg);
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   transition: background-color 0.3s ease-in-out;
 }
 
 .raiz:hover {
   /* Alterado de .raiz-tree:hover para .raiz:hover */
-  background-color: var(--cor-primaria-1);
+  color: var(--cor-primaria-2);
+  text-decoration: underline;
 }
 
 .raiz .raiz-icon {
   /* Alterado de .raiz-tree .raiz-icon para .raiz .raiz-icon */
   margin-right: 10px;
-  font-size: 1.2em;
+  font-size: var(--font-md);
 }

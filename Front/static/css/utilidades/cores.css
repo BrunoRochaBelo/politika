@@ -237,19 +237,19 @@
   --card-bg: hsl(0, 0%, 100%);
   --card-borda: hsl(220, 20%, 98%);
   --card-detalhe: hsl(220, 15%, 95%);
-  --card-hover: hsl(220, 45%, 97%);
+  --card-hover: hsl(220, 60%, 98%);
 
-  --card-aberto-bg: hsl(220, 35%, 95%);
-  --card-aberto-detalhe: hsl(220, 30%, 90%);
+  --card-aberto-bg: hsl(220, 60%, 95%);
+  --card-aberto-detalhe: hsl(220, 40%, 90%);
 
   --txt-titulo-card: hsl(220, 30%, 20%);
   --txt-conteudo-card: hsl(220, 25%, 35%);
   --txt-card-aberto: hsl(220, 100%, 18%);
 
   /* Modais */
-  --modal-bg: hsl(220, 30%, 92%);
-  --modal-borda: hsl(220, 30%, 70%);
-  --modal-divisor: hsl(220, 30%, 70%);
+  --modal-bg: hsl(220, 45%, 92%);
+  --modal-borda: hsl(220, 45%, 80%);
+  --modal-divisor: hsl(220, 45%, 75%);
   --modal-titulo: hsl(218, 80%, 58%);
   --modal-conteudo: hsl(218, 65%, 40%);
 

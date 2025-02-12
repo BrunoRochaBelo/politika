@@ -161,7 +161,7 @@ fieldset {
   border-right: none;
 }
 .campo .search-input:hover + .search-button {
-  border: 1px solid var(--btn-principal-destaque);
+  border: 1px solid var(--input-focus-border);
   border-left: none;
 }
 .campo .search-button:focus {
@@ -175,6 +175,7 @@ fieldset {
   background: var(--card-hover);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  transition: none;
 }
 
 .form-2-colum {
