@@ -241,8 +241,8 @@
 
 .modalMenu-list li img {
   margin-right: 15px;
-  width: 21px;
-  height: 21px;
+  width: 16px;
+  height: 16px;
 }
 
 .modalMenu-list li span {
@@ -280,4 +280,12 @@ li.alterar-tema {
   li.alterar-tema:hover {
     filter: var(--hover);
   }
+}
+
+.aplicativos-title {
+  justify-content: start;
+  color: var(--txt-titulo-card);
+  font-size: var(--font-md);
+  margin-left: 10px;
+  padding: 10px 7px 5px 7px;
 }
