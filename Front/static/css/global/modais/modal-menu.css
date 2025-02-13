@@ -281,11 +281,3 @@ li.alterar-tema {
     filter: var(--hover);
   }
 }
-
-.aplicativos-title {
-  justify-content: start;
-  color: var(--txt-titulo-card);
-  font-size: var(--font-md);
-  margin-left: 10px;
-  padding: 10px 7px 5px 7px;
-}
