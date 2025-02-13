@@ -99,24 +99,11 @@
   font-weight: 300;
   transition: opacity 0.25s ease-in-out;
 }
-.pleitos-medium-card-autor {
-  grid-area: pleitos-medium-card-autor;
+.pleitos-medium-card-infoCriacaoPleito {
+  grid-area: pleitos-medium-card-infoCriacaoPleito;
   display: none;
   opacity: 0;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: 10px;
-  font-weight: 400;
-  filter: brightness(0.7);
-  transition: opacity 0.25s ease-in-out;
-}
-.pleitos-medium-card-dataCriacao {
-  grid-area: pleitos-medium-card-dataCriacao;
-  display: none;
-  opacity: 0;
-  justify-self: center;
+  justify-self: end;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
@@ -151,7 +138,7 @@
     "pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario pleitos-medium-card-beneficiario"
     "pleitos-medium-card-endereco pleitos-medium-card-endereco pleitos-medium-card-endereco"
     "pleitos-medium-card-desc pleitos-medium-card-desc pleitos-medium-card-desc"
-    "pleitos-medium-card-autor pleitos-medium-card-autor pleitos-medium-card-dataCriacao"
+    "pleitos-medium-card-infoCriacaoPleito pleitos-medium-card-infoCriacaoPleito pleitos-medium-card-infoCriacaoPleito"
     "pleitos-medium-card-editar pleitos-medium-card-editar pleitos-medium-card-editar";
   transform: scale(1);
   transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
@@ -164,8 +151,7 @@
 .pleitos-medium-card-endereco.exibirDetalhePleito,
 .pleitos-medium-card-rua.exibirDetalhePleito,
 .pleitos-medium-card-status.exibirDetalhePleito,
-.pleitos-medium-card-autor.exibirDetalhePleito,
-.pleitos-medium-card-dataCriacao.exibirDetalhePleito {
+.pleitos-medium-card-infoCriacaoPleito.exibirDetalhePleito {
   display: inline-block;
   margin: 3px 0 0 10px;
   opacity: 1;

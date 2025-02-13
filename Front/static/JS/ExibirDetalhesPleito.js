@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsExpandidos.forEach((card) => {
       card.classList.remove("pleitos-medium-card-expanded");
       const camposOcultos = card.querySelectorAll(
-        ".pleitos-medium-card-beneficiario, .pleitos-medium-card-endereco,  .pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
+        ".pleitos-medium-card-beneficiario, .pleitos-medium-card-endereco,  .pleitos-medium-card-status, .pleitos-medium-card-infoCriacaoPleito,  .pleitos-medium-card-editar"
       );
       camposOcultos.forEach((campo) => {
         campo.classList.remove("exibirDetalhePleito");
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const camposOcultos = card.querySelectorAll(
-      ".pleitos-medium-card-beneficiario, .pleitos-medium-card-endereco, .pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
+      ".pleitos-medium-card-beneficiario, .pleitos-medium-card-endereco, .pleitos-medium-card-status, .pleitos-medium-card-infoCriacaoPleito, .pleitos-medium-card-editar"
     );
 
     const isExpanded = card.classList.contains("pleitos-medium-card-expanded");
@@ -104,18 +104,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const endereco =
       card.querySelector(".pleitos-medium-card-endereco")?.textContent.trim() ||
       "";
-    const autor =
-      card.querySelector(".pleitos-medium-card-autor")?.textContent.trim() ||
-      "";
-    const dataCriacao =
+    const infoCriacaoPleito =
       card
-        .querySelector(".pleitos-medium-card-dataCriacao")
+        .querySelector(".pleitos-medium-card-infoCriacaoPleito")
         ?.textContent.trim() || "";
 
     modalEdicao.querySelector("#inputBeneficiarioPleito").value = beneficiario;
     modalEdicao.querySelector("#inputenderecoPleito").value = endereco;
-    modalEdicao.querySelector("#inputAutorPleito").value = autor;
-    modalEdicao.querySelector("#inputDataCriacaoPleito").value = dataCriacao;
+    modalEdicao.querySelector("#inputinfoCriacaoPleitoPleito").value =
+      infoCriacaoPleito;
 
     // Exibir o modal
     modalEdicao.style.display = "flex";
