@@ -1,6 +1,5 @@
+/* Container principal da página */
 .body-login {
-  /* background: var(--cor-marca);*/
-
   background: hsl(230, 22%, 7%);
   display: grid;
   justify-content: center;
@@ -10,78 +9,115 @@
   overflow: hidden;
 }
 
+/* Logotipo centralizado */
 .logo-image {
   width: 7em;
   height: auto;
   margin: auto;
   z-index: 1;
+  margin-bottom: 0.5em;
 }
+
+/* Formulário com design de "card" */
 .form-login {
-  margin: auto;
   background: linear-gradient(135deg, hsl(240, 40%, 10%), hsl(230, 30%, 8%));
   width: 350px;
-  height: auto;
   border-radius: 0.9375rem;
   box-shadow: var(--sombra-intensa);
   padding: 1em;
+  margin: auto;
 }
 
-.form-login input,
-.form-login label {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.form-login label {
-  margin-bottom: 0.25em;
-  color: rgb(255, 255, 255);
-}
-
-.form-login input {
-  padding: 0.75em;
-  border-radius: 7px;
-  margin-bottom: 1.5em;
-  font-size: 1em;
-  background: var(--input-empty-bg);
-  border: 1px solid var(--input-border);
-}
-.form-login input:focus {
-  outline: 2px solid lightblue;
-}
-
+/* Estrutura semântica do formulário */
 .form-login fieldset {
-  padding: 0.625rem;
-  background: none;
   border: none;
+  padding: 1rem;
+  margin: 0;
 }
 
 .form-login legend {
-  display: inline;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
   text-align: center;
-  box-sizing: border-box;
-  font-size: 1.2em;
-  font-weight: 400;
-  color: rgb(255, 255, 255);
+  font-weight: 600;
+  color: var(--txt-titulo);
 }
 
-.btn-form-submit {
-  background: var(--btn-secundario) !important;
-  color: rgb(255, 255, 255);
-  border: 1px solid transparent;
-  cursor: pointer;
+/* Agrupamento dos campos do formulário */
+.form-login-group {
+  margin-bottom: 0.85rem;
 }
-.btn-form-submit:hover {
+
+.form-login-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--txt-subtitulo);
+  font-size: 0.95rem;
+}
+
+.form-login-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: var(--input-empty-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text-color);
+  -webkit-text-fill-color: var(--input-text-color);
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+/* Foco nos inputs */
+.form-login-group input:focus {
+  outline: 2px solid lightblue;
+}
+
+/* Correção para autofill no iOS/Safari */
+.form-login-group input:-webkit-autofill,
+.form-login-group input:-webkit-autofill:hover,
+.form-login-group input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--input-text-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Agrupamento das ações do formulário */
+.form-login-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botão de envio */
+.btn-form-login-submit {
+  width: 100%;
+  background: var(--btn-secundario);
+  color: #fff;
+  margin: 0.75rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-form-login-submit:hover {
+  background: var(--btn-secundario-hover);
   filter: var(--hover);
 }
+
+/* Botão para recuperação de senha */
 .forgot-password {
   font-size: var(--font-sm);
   font-weight: 300;
   color: var(--cor-primaria-1);
   background: none;
-  padding: 0.625rem;
+  padding: 0.5rem;
   cursor: pointer;
-  margin: auto;
   border: none;
   display: block;
+  margin: 0 auto;
+  text-align: center;
 }

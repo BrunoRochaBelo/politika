@@ -20,16 +20,22 @@
     <form class="form-login" action="#" method="get" onsubmit="return redirectToIndex()">
       <img src="./static/imagens/logo/logo.png" alt="Logo" class="logo-image">
       <fieldset>
-        <legend>Seja bem vindo!</legend>
+        <legend>Seja bem-vindo!</legend>
 
-        <label for="user">Usuário</label>
-        <input type="text" id="user" required autofocus>
+        <div class="form-login-group">
+          <label for="user">Usuário</label>
+          <input type="text" id="user" name="user" required autofocus>
+        </div>
 
-        <label for="pass">Senha</label>
-        <input type="password" id="pass" required>
+        <div class="form-login-group">
+          <label for="pass">Senha</label>
+          <input type="password" id="pass" name="pass" required>
+        </div>
 
-        <input class="btn-form-submit" type="submit" value="Entrar">
-        <button class="forgot-password" type="button" onclick="recoverPassword()">Esqueceu sua senha?</button>
+        <div class="form-login-actions">
+          <input class="btn-form-login-submit" type="submit" value="Entrar">
+          <button class="forgot-password" type="button" onclick="recoverPassword()">Esqueceu sua senha?</button>
+        </div>
       </fieldset>
     </form>
   </section>
@@ -50,5 +56,9 @@
     }
   </script>
 </body>
+
+<script src="./static/js/config.js" defer></script>
+<script src="./static/js/RegisterSW.js" defer></script>
+<script src="./static/js/AtualizarAlturaPagina.js" defer></script>
 
 </html>
