@@ -31,34 +31,47 @@
       <section>
         <div class="container-template">
           <div class="container-template-content">
-            <form id="form" class="form" enctype="multipart/form-data">
-              <div class="area-interna-containerContent-template">
-                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                  <div class="card-session active">
-
-                    <div class="info-concluir-tarefa-template">
-                      <p class="info-concluir-tarefa-title" data-filter="tituloTarefa">Título da Tarefa</p>
-                      <p class="info-concluir-tarefa-data" data-filter="dataTarefa">Data da Tarefa</p>
-                      <p class="info-concluir-tarefa-status" data-filter="statusTarefa">Status da Tarefa</p>
-                      <p class="info-concluir-tarefa-responsavel" data-filter="responsavelTarefa">Responsável</p>
-                      <div class="info-concluir-tarefa-desc" data-filter="descricaoTarefa">
-                        <p><strong>Descrição:</strong> Descrição da Tarefa</p>
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <ul class="lista-vertical-alt">
+                  <li class="card-session secao-interna-template">
+                    <h2 class="card-info secao-interna-template-header" onclick="changeSession(1)">
+                      <a href="#">
+                        <p class="info-concluir-tarefa-title" data-filter="tituloTarefa">Título da Tarefa</p>
+                        <span class="arrow down"></span>
+                      </a>
+                    </h2>
+                    <div class="secao-interna-template-content">
+                      <div class="session " id="secao1">
+                        <div class="info-concluir-tarefa-template">
+                          <p class="info-concluir-tarefa-data" data-filter="dataTarefa">Data da Tarefa</p>
+                          <p class="info-concluir-tarefa-status" data-filter="statusTarefa">Status da Tarefa</p>
+                          <p class="info-concluir-tarefa-responsavel" data-filter="responsavelTarefa">Responsável</p>
+                          <div class="info-concluir-tarefa-tag" data-filter="tagTarefa">
+                            <div class="marcador-item cor-marc3">
+                              <p><strong>Marcador 1</strong></p>
+                            </div>
+                          </div>
+                          <div class="info-concluir-tarefa-desc" data-filter="descricaoTarefa">
+                            <p><strong>Descrição:</strong> Descrição da Tarefa</p>
+                          </div>
+                          <p class="info-concluir-tarefa-id" data-filter="infoTarefaID">ID da Tarefa</p>
+                        </div>
                       </div>
-                      <p class="info-concluir-tarefa-id" data-filter="infoTarefaID">ID da Tarefa</p>
                     </div>
-                    <form action="">
+                  </li>
+                  <li class="card-session active secao-interna-template">
+                    <form id="form" method="post" enctype="multipart/form-data">
                       <div class="form-concluir-tarefa">
-                        <h2 class="form-concluir-tarefa-title">Atualize para concluir</h2>
+                        <h2 class="form-concluir-tarefa-title">Status</h2>
                         <div class="form-concluir-tarefa-situacao">
-                          <label for="ConclusaoTarefa">Situação:</label>
                           <div class="radio-button-group">
                             <input type="radio" id="atrasada" name="ConclusaoTarefa" value="atrasada">
                             <label for="atrasada">Atrasada</label>
                             <input type="radio" id="cancelada" name="ConclusaoTarefa" value="cancelada">
                             <label for="cancelada">Cancelada</label>
-                            <input type="radio" id="concluída" name="ConclusaoTarefa" value="concluída">
-                            <label for="concluída">Concluída</label>
-
+                            <input type="radio" id="concluida" name="ConclusaoTarefa" value="concluida">
+                            <label for="concluida">Concluída</label>
                           </div>
                         </div>
                         <div class="form-concluir-tarefa-descConclusao">
@@ -70,11 +83,11 @@
                         </div>
                       </div>
                     </form>
-                  </div>
-                </div>
-            </form>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
       </section>
     </main>
   </div>
@@ -83,6 +96,7 @@
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/NavSecoes.js" defer></script>
 
 </body>
 

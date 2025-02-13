@@ -1,12 +1,15 @@
+/* CARD INFO */
+
 .info-concluir-tarefa-template {
   display: grid;
   box-sizing: border-box;
   color: var(--txt-conteudo-card);
   gap: 3px;
   padding: 10px;
+  padding-top: 0;
   grid:
-    "info-concluir-tarefa-title info-concluir-tarefa-title info-concluir-tarefa-data"
-    "info-concluir-tarefa-responsavel info-concluir-tarefa-responsavel info-concluir-tarefa-status"
+    "info-concluir-tarefa-responsavel info-concluir-tarefa-responsavel info-concluir-tarefa-tag"
+    "info-concluir-tarefa-status info-concluir-tarefa-status info-concluir-tarefa-data"
     "info-concluir-tarefa-desc info-concluir-tarefa-desc info-concluir-tarefa-desc"
     "info-concluir-tarefa-concluir info-concluir-tarefa-concluir info-concluir-tarefa-concluir";
 }
@@ -21,9 +24,18 @@
   border-radius: 3px;
   padding-left: 10px;
   font-size: var(--font-sm);
-  font-weight: 400;
   justify-self: start;
   align-self: center;
+}
+
+.info-concluir-tarefa-tag {
+  grid-area: info-concluir-tarefa-tag;
+  justify-self: end;
+  align-self: center;
+  padding-right: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+  font-weight: 400;
 }
 
 .info-concluir-tarefa-data {
@@ -48,9 +60,9 @@
 
 .info-concluir-tarefa-status {
   grid-area: info-concluir-tarefa-status;
-  justify-self: center;
+  justify-self: start;
   align-self: center;
-  padding-right: 14px;
+  padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: var(--font-sm);
   font-weight: 300;
@@ -71,19 +83,17 @@
   font-weight: 300;
 }
 
+/* FORMULARIO */
+
 .form-concluir-tarefa {
   grid-area: form-concluir-tarefa;
   display: grid;
   box-sizing: border-box;
   justify-items: stretch;
   gap: 20px 5px;
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;
   align-self: center;
-  border: 1px solid var(--borda);
   font-size: var(--font-sm);
-  font-weight: 300;
-  box-shadow: var(--sombra-moderada);
   border-radius: 25px;
   grid:
     "form-concluir-tarefa-title"
@@ -144,6 +154,7 @@
 @media only screen and (max-width: 56.25rem) {
   .info-concluir-tarefa-template {
     padding: 5px;
+    padding-top: 10px;
   }
 
   .form-concluir-tarefa {

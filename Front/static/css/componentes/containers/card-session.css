@@ -126,6 +126,10 @@
   transform: rotate(-20deg);
 }
 
+.card-info.secao-interna-template-header.active-header {
+  padding-bottom: 0;
+}
+
 /* Responsividade */
 @media only screen and (max-width: 56.25rem) {
   .card-session:hover {

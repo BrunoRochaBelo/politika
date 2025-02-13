@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsExpandidos.forEach((card) => {
       card.classList.remove("pleitos-medium-card-expanded");
       const camposOcultos = card.querySelectorAll(
-        ".pleitos-medium-card-beneficiario, .pleitos-medium-card-uf, .pleitos-medium-card-cidade, .pleitos-medium-card-bairro, .pleitos-medium-card-rua, .pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
+        ".pleitos-medium-card-beneficiario, .pleitos-medium-card-endereco,  .pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
       );
       camposOcultos.forEach((campo) => {
         campo.classList.remove("exibirDetalhePleito");
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const camposOcultos = card.querySelectorAll(
-      ".pleitos-medium-card-beneficiario, .pleitos-medium-card-uf, .pleitos-medium-card-cidade, .pleitos-medium-card-bairro, .pleitos-medium-card-rua,.pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
+      ".pleitos-medium-card-beneficiario, .pleitos-medium-card-endereco, .pleitos-medium-card-status, .pleitos-medium-card-autor, .pleitos-medium-card-dataCriacao, .pleitos-medium-card-editar"
     );
 
     const isExpanded = card.classList.contains("pleitos-medium-card-expanded");
@@ -101,16 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
       card
         .querySelector(".pleitos-medium-card-beneficiario")
         ?.textContent.trim() || "";
-    const uf =
-      card.querySelector(".pleitos-medium-card-uf")?.textContent.trim() || "";
-    const cidade =
-      card.querySelector(".pleitos-medium-card-cidade")?.textContent.trim() ||
+    const endereco =
+      card.querySelector(".pleitos-medium-card-endereco")?.textContent.trim() ||
       "";
-    const bairro =
-      card.querySelector(".pleitos-medium-card-bairro")?.textContent.trim() ||
-      "";
-    const rua =
-      card.querySelector(".pleitos-medium-card-rua")?.textContent.trim() || "";
     const autor =
       card.querySelector(".pleitos-medium-card-autor")?.textContent.trim() ||
       "";
@@ -120,10 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ?.textContent.trim() || "";
 
     modalEdicao.querySelector("#inputBeneficiarioPleito").value = beneficiario;
-    modalEdicao.querySelector("#inputUFPleito").value = uf;
-    modalEdicao.querySelector("#inputCidadePleito").value = cidade;
-    modalEdicao.querySelector("#inputBairroPleito").value = bairro;
-    modalEdicao.querySelector("#inputRuaPleito").value = rua;
+    modalEdicao.querySelector("#inputenderecoPleito").value = endereco;
     modalEdicao.querySelector("#inputAutorPleito").value = autor;
     modalEdicao.querySelector("#inputDataCriacaoPleito").value = dataCriacao;
 

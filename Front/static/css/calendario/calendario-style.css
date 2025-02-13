@@ -200,6 +200,11 @@
   height: 16px;
 }
 
+.change-semana.ant a img,
+.change-semana.prox a img {
+  pointer-events: auto;
+}
+
 .dia-semana:hover,
 .change-semana:hover {
   filter: var(--hover);

@@ -34,104 +34,100 @@
             </ul>
           </nav>
           <div class="container-abas-template-content">
-            <form id="form" class="form" enctype="multipart/form-data">
-              <div id="aba1" class="aba-template ">
-                <div class="area-interna-containerContent-template">
-                  <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                    <ul class="lista-vertical-alt">
-                      <li class="card-session secao-interna-template ">
-                        <h2 class="secao-interna-template-header " onclick="changeSession(1)">
-                          <a href="#">
-                            <div class="agenda-icon agora">
-                              <img src="./static/imagens/icones/identificação.svg" alt="Identificação Icon">
-                            </div> Identificação<span class="arrow down"></span>
-                          </a>
-                        </h2>
-                        <div class="secao-interna-template-content">
-                          <div class="session " id="secao1">
-                            <fieldset>
-                              <div class="modal-despachar-pleito-template">
-                                <p class="modal-despachar-pleito-tiposolici" data-filter="tipoSolici"> Solicitação de Recursos </p>
-                                <p class="modal-despachar-pleito-dataSolici" data-filter="dataSoliciPleito"> 2024-12-01 </p>
-                                <p class="modal-despachar-pleito-solicitante" data-filter="solicitante"> João Silva </p>
-                                <div class="modal-despachar-pleito-desc" data-filter="descPleito">
-                                  <p><strong>Descrição:</strong> Solicitação para aquisição de equipamentos médicos para o hospital regional. </p>
-                                </div>
-                                <p class="modal-despachar-pleito-beneficiario" data-filter="beneficiario"> Hospital Regional de Exemplo </p>
-                                <p class="modal-despachar-pleito-uf" data-filter="ufPleito"> SP </p>
-                                <p class="modal-despachar-pleito-cidade" data-filter="cidadePleito"> São Paulo </p>
-                                <p class="modal-despachar-pleito-bairro" data-filter="bairroPleito"> Centro </p>
-                                <p class="modal-despachar-pleito-rua" data-filter="ruaPleito"> Rua das Flores, 123 </p>
-                                <p class="modal-despachar-pleito-autor" data-filter="autorPleito"> Maria Oliveira </p>
-                                <p class="modal-despachar-pleito-dataCriacao" data-filter="dataCriacaoPleito"> 2024-11-30 </p>
-                                <p class="modal-despachar-pleito-status" data-filter="statusPleito"> Em análise </p>
-                                <p class="modal-despachar-pleito-id" data-filter="modalPleitoID"> PLT-12345 </p>
+            <div id="aba1" class="aba-template ">
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <ul class="lista-vertical-alt">
+                    <li class="card-session secao-interna-template ">
+                      <h2 class="secao-interna-template-header " onclick="changeSession(1)">
+                        <a href="#">
+                          <div class="agenda-icon agora">
+                            <img src="./static/imagens/icones/identificação.svg" alt="Identificação Icon">
+                          </div> Identificação<span class="arrow down"></span>
+                        </a>
+                      </h2>
+                      <div class="secao-interna-template-content">
+                        <div class="session " id="secao1">
+                          <fieldset>
+                            <div class="modal-despachar-pleito-template">
+                              <p class="modal-despachar-pleito-tiposolici" data-filter="tipoSolici"> Solicitação de Recursos </p>
+                              <p class="modal-despachar-pleito-dataSolici" data-filter="dataSoliciPleito"> 2024-12-01 </p>
+                              <p class="modal-despachar-pleito-solicitante" data-filter="solicitante"> João Silva </p>
+                              <div class="modal-despachar-pleito-desc" data-filter="descPleito">
+                                <p><strong>Descrição:</strong> Solicitação para aquisição de equipamentos médicos para o hospital regional. </p>
                               </div>
-                            </fieldset>
-                          </div>
+                              <p class="modal-despachar-pleito-beneficiario" data-filter="beneficiario"> Hospital Regional de Exemplo </p>
+                              <p class="modal-despachar-pleito-uf" data-filter="ufPleito"> SP </p>
+                              <p class="modal-despachar-pleito-cidade" data-filter="cidadePleito"> São Paulo </p>
+                              <p class="modal-despachar-pleito-bairro" data-filter="bairroPleito"> Centro </p>
+                              <p class="modal-despachar-pleito-rua" data-filter="ruaPleito"> Rua das Flores, 123 </p>
+                              <p class="modal-despachar-pleito-autor" data-filter="autorPleito"> Maria Oliveira </p>
+                              <p class="modal-despachar-pleito-dataCriacao" data-filter="dataCriacaoPleito"> 2024-11-30 </p>
+                              <p class="modal-despachar-pleito-status" data-filter="statusPleito"> Em análise </p>
+                              <p class="modal-despachar-pleito-id" data-filter="modalPleitoID"> PLT-12345 </p>
+                            </div>
+                          </fieldset>
                         </div>
-                      </li>
-
-
-                      <li>
-
-                        <div class="modal-despachar-pleito-situacao">
-                          <label for="DespachoPleito">Situação:</label>
-                          <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
-                            <input type="radio" id="encaminhar" name="DespachoPleito" value="encaminhar">
-                            <label for="encaminhar">Encaminhar</label>
-                            <input type="radio" id="concluir" name="DespachoPleito" value="concluir">
-                            <label for="concluir">Concluir</label>
-                            <input type="radio" id="cancelar" name="DespachoPleito" value="cancelar">
-                            <label for="cancelar">Cancelar</label>
-                          </div>
-                        </div>
-
-                        <div class="modal-despachar-pleito-descDespacho">
-                          <label for="descDespachoPleito">Descrição da Conclusão:</label>
-                          <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
-                        </div>
-                      </li>
-
-                      <!-- Botões de Ação -->
-                      <div class="botoes">
-                        <button type="submit" class="btn-principal">Criar</button>
                       </div>
-                  </div>
-                </div>
-              </div>
-
-              <div id="aba2" class="aba-template">
-                <div class="area-interna-containerContent-template">
-                  <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                    <div class="card-session active">
-                      <fieldset>
-                        <div class="campo">
-                          <p id="contadorContatosEncontrados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
-                          <div class="tabela-historico">
-                            <table id="tabelaContatosEncontrados">
-                              <thead>
-                                <tr>
-                                  <th class="hidden-column">ID</th>
-                                  <th>Nome</th>
-                                  <th>Tipo</th>
-                                  <th>Ações</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <!-- Contatos encontrados serão listados aqui dinamicamente -->
-                              </tbody>
-                            </table>
-                            <div class="loading-indicator" id="loading-indicator">Carregando...</div>
-                          </div>
+                    </li>
+                    <li class="card-session active secao-interna-template">
+                      <div class="modal-despachar-pleito-situacao">
+                        <label for="DespachoPleito">Situação:</label>
+                        <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
+                          <input type="radio" id="encaminhar" name="DespachoPleito" value="encaminhar">
+                          <label for="encaminhar">Encaminhar</label>
+                          <input type="radio" id="concluir" name="DespachoPleito" value="concluir">
+                          <label for="concluir">Concluir</label>
+                          <input type="radio" id="cancelar" name="DespachoPleito" value="cancelar">
+                          <label for="cancelar">Cancelar</label>
                         </div>
-                      </fieldset>
-                    </div>
+                      </div>
+
+                      <div class="modal-despachar-pleito-descDespacho">
+                        <label for="descDespachoPleito">Descrição da Conclusão:</label>
+                        <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- Botões de Ação -->
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal">Criar</button>
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div id="aba2" class="aba-template">
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <div class="card-session active">
+                    <fieldset>
+                      <div class="campo">
+                        <p id="contadorContatosEncontrados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
+                        <div class="tabela-historico">
+                          <table id="tabelaContatosEncontrados">
+                            <thead>
+                              <tr>
+                                <th class="hidden-column">ID</th>
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- Contatos encontrados serão listados aqui dinamicamente -->
+                            </tbody>
+                          </table>
+                          <div class="loading-indicator" id="loading-indicator">Carregando...</div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          </form>
+
         </div>
 
       </section>
