@@ -1,3 +1,5 @@
+/* CARD INFO */
+
 .info-concluir-pleito-template {
   display: grid;
   box-sizing: border-box;
@@ -6,26 +8,15 @@
   padding: 10px;
   padding-top: 0;
   grid:
-    "info-concluir-pleito-solicitante info-concluir-pleito-solicitante info-concluir-pleito-dataSolici"
-    "info-concluir-pleito-beneficiario info-concluir-pleito-beneficiario info-concluir-pleito-beneficiario"
-    "info-concluir-pleito-uf info-concluir-pleito-cidade info-concluir-pleito-bairro"
-    "info-concluir-pleito-rua info-concluir-pleito-rua info-concluir-pleito-rua"
-    "info-concluir-pleito-autor info-concluir-pleito-autor info-concluir-pleito-dataCriacao"
-    "info-concluir-pleito-status info-concluir-pleito-status info-concluir-pleito-status"
-    "info-concluir-pleito-desc info-concluir-pleito-desc info-concluir-pleito-desc";
+    "info-concluir-pleito-solicitante info-concluir-pleito-solicitante info-concluir-pleito-status"
+    "info-concluir-pleito-beneficiario info-concluir-pleito-beneficiario info-concluir-pleito-dataSolici"
+    "info-concluir-pleito-endereco info-concluir-pleito-endereco info-concluir-pleito-endereco"
+    "info-concluir-pleito-desc info-concluir-pleito-desc info-concluir-pleito-desc"
+    "info-concluir-pleito-infoCriacaoPleito info-concluir-pleito-infoCriacaoPleito info-concluir-pleito-infoCriacaoPleito";
 }
 .info-concluir-pleito-id {
   display: none;
   opacity: 0;
-}
-.info-concluir-pleito-dataSolici {
-  grid-area: info-concluir-pleito-dataSolici;
-  border-left: 4px solid var(--cor-primaria-2);
-  border-radius: 3px;
-  padding-left: 10px;
-  font-size: var(--font-sm);
-  justify-self: start;
-  align-self: center;
 }
 
 .info-concluir-pleito-tiposolici {
@@ -34,19 +25,10 @@
   border-radius: 3px;
   padding-left: 10px;
   font-size: var(--font-sm);
-  font-weight: 400;
   justify-self: start;
   align-self: center;
 }
-.info-concluir-pleito-dataSolici {
-  grid-area: info-concluir-pleito-dataSolici;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 400;
-}
+
 .info-concluir-pleito-solicitante {
   grid-area: info-concluir-pleito-solicitante;
   justify-self: start;
@@ -54,21 +36,15 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: var(--font-sm);
-  font-weight: 300;
 }
-.info-concluir-pleito-desc {
-  grid-area: info-concluir-pleito-desc;
+.info-concluir-pleito-status {
+  grid-area: info-concluir-pleito-status;
+  justify-self: end;
   align-self: center;
-  justify-self: stretch;
-  padding: 10px 14px;
-  display: flex;
-  background: var(--card-aberto-detalhe);
-  border-radius: 5px;
-  justify-content: start;
-  align-items: center;
-  margin: 3px 10px 0 10px;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
   font-size: var(--font-sm);
-  font-weight: 300;
+  transition: opacity 0.25s ease-in-out;
 }
 .info-concluir-pleito-beneficiario {
   grid-area: info-concluir-pleito-beneficiario;
@@ -77,74 +53,108 @@
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: var(--font-sm);
-  font-weight: 300;
 }
-.info-concluir-pleito-uf {
-  grid-area: info-concluir-pleito-uf;
+.info-concluir-pleito-dataSolici {
+  grid-area: info-concluir-pleito-dataSolici;
+  justify-self: end;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+}
+.info-concluir-pleito-endereco {
+  grid-area: info-concluir-pleito-endereco;
   justify-self: start;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: var(--font-sm);
+}
+.info-concluir-pleito-desc {
+  grid-area: info-concluir-pleito-desc;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  display: flex;
+  background: var(--card-detalhe);
+  color: var(--txt-conteudo-card);
+  border-radius: 5px;
+  justify-content: start;
+  align-items: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-xs);
   font-weight: 300;
 }
-.info-concluir-pleito-cidade {
-  grid-area: info-concluir-pleito-cidade;
-  justify-self: start;
+.info-concluir-pleito-infoCriacaoPleito {
+  grid-area: info-concluir-pleito-infoCriacaoPleito;
+  justify-self: end;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.info-concluir-pleito-bairro {
-  grid-area: info-concluir-pleito-bairro;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.info-concluir-pleito-rua {
-  grid-area: info-concluir-pleito-rua;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.info-concluir-pleito-autor {
-  grid-area: info-concluir-pleito-autor;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.info-concluir-pleito-dataCriacao {
-  grid-area: info-concluir-pleito-dataCriacao;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.info-concluir-pleito-status {
-  display: none;
-  opacity: 0;
+  font-size: 10px;
+  font-weight: 400;
+  filter: brightness(0.7);
+  transition: opacity 0.25s ease-in-out;
 }
 
-.info-concluir-pleito-concluir label {
+/* FORMULARIO */
+
+.form-concluir-pleito {
+  grid-area: form-concluir-pleito;
+  display: grid;
+  box-sizing: border-box;
+  justify-items: stretch;
+  gap: 20px 5px;
+  padding: 20px;
+  align-self: center;
+  font-size: var(--font-sm);
+  border-radius: 25px;
+  grid:
+    "form-concluir-pleito-title"
+    "form-concluir-pleito-situacao"
+    "form-concluir-pleito-descConclusao"
+    "form-concluir-pleito-salvar";
+}
+.form-concluir-pleito-title {
+  grid-area: form-concluir-pleito-title;
+  font-size: var(--font-md);
+}
+
+.form-concluir-pleito-situacao {
+  grid-area: form-concluir-pleito-situacao;
+  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-sm);
+  font-weight: 300;
+}
+
+.form-concluir-pleito-descConclusao {
+  grid-area: form-concluir-pleito-descConclusao;
+  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-concluir-pleito-salvar {
+  grid-area: form-concluir-pleito-salvar;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  font-size: var(--font-sm);
+  font-weight: 300;
+  margin-top: 25px;
+}
+
+.form-concluir-pleito label {
   color: var(--txt-subtitulo);
   margin-bottom: 7px;
 }
-.info-concluir-pleito-concluir textarea,
-.info-concluir-pleito-concluir select,
-.info-concluir-pleito-concluir input {
+
+.form-concluir-pleito textarea,
+.form-concluir-pleito select,
+.form-concluir-pleito input {
   width: 100%;
   box-sizing: border-box;
   padding: 0.9375rem;
@@ -157,12 +167,21 @@
 
 /* Responsivo */
 @media only screen and (max-width: 56.25rem) {
-  .info-concluir-pleito-salvar {
+  .info-concluir-pleito-template {
+    padding: 5px;
+    padding-top: 10px;
+  }
+
+  .form-concluir-pleito {
+    padding: 10px;
+    margin: 5px;
+  }
+  .form-concluir-pleito-salvar {
     flex-direction: column;
     gap: 0.625rem;
   }
 
-  .info-concluir-pleito-content::-webkit-scrollbar {
+  .form-concluir-pleito-content::-webkit-scrollbar {
     display: none;
   }
 }

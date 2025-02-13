@@ -37,26 +37,28 @@
                   <li class="card-session secao-interna-template">
                     <h2 class="card-info secao-interna-template-header" onclick="changeSession(1)">
                       <a href="#">
-                        <p class="info-concluir-pleito-dataSolici" data-filter="titulopleito">Tipo solicitação</p>
+                        <p class="info-concluir-pleito-tiposolici" data-filter="titulopleito">Tipo solicitação</p>
                         <span class="arrow down"></span>
                       </a>
                     </h2>
                     <div class="secao-interna-template-content">
                       <div class="session " id="secao1">
                         <div class="info-concluir-pleito-template">
-                          <p class="info-concluir-pleito-data" data-filter="datapleito">Data da pleito</p>
+                          <p class="info-concluir-pleito-solicitante" data-filter="solicitantepleito">Solicitante</p>
                           <p class="info-concluir-pleito-status" data-filter="statuspleito">Status da pleito</p>
-                          <p class="info-concluir-pleito-responsavel" data-filter="responsavelpleito">Responsável</p>
+                          <p class="info-concluir-pleito-beneficiario" data-filter="beneficiariopleito">Beneficiário</p>
+                          <p class="info-concluir-pleito-dataSolici" data-filter="datasolicitacaopleito">Data da Solicitação</p>
+                          <p class="info-concluir-pleito-endereco" data-filter="enderecopleito">Endereço</p>
                           <div class="info-concluir-pleito-desc" data-filter="descricaopleito">
                             <p><strong>Descrição:</strong> Descrição da pleito</p>
                           </div>
-                          <p class="info-concluir-pleito-id" data-filter="infopleitoID">ID da pleito</p>
+                          <p class="info-concluir-pleito-infoCriacaoPleito" data-filter="infopleitoID">{{Maria Oliveira}} - {{10/04/2024}}</p>
                         </div>
                       </div>
                     </div>
                   </li>
                   <li class="card-session active secao-interna-template">
-                    <form id="form" class="form" enctype="multipart/form-data">
+                    <form id="form" method="post" enctype="multipart/form-data">
                       <div class="form-concluir-pleito">
                         <h2 class="form-concluir-pleito-title">Status</h2>
                         <div class="form-concluir-pleito-situacao">
