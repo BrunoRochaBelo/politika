@@ -11,8 +11,8 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: var(--message-error-txt, #fff);
-  background-color: var(--erro, #f44336);
+  color: var(--msg-erro-txt);
+  background-color: var(--erro);
   padding: 10px 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -252,4 +252,79 @@
   text-align: center;
   margin: 20px;
   font-size: 1rem;
+}
+
+/* ==============================================
+   Estilos dos Alertas (similares ao Bootstrap)
+============================================== */
+.alert-container {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 4000;
+  width: auto;
+}
+
+.alert {
+  display: inline-block;
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: opacity 0.15s linear;
+  max-width: 100%;
+  /* Para efeito fade in/out */
+}
+
+.alert-dismissible {
+  padding-right: 3rem;
+}
+
+.alert .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Alertas com cores utilizando as variáveis */
+.alert-sucesso {
+  background-color: var(--sucesso);
+  border-color: var(--sucesso-border);
+  color: var(--msg-sucesso-txt);
+}
+
+.alert-erro {
+  background-color: var(--erro);
+  border-color: var(--erro-border);
+  color: var(--msg-erro-txt);
+}
+
+.alert-aviso {
+  background-color: var(--aviso);
+  border-color: var(--aviso-border);
+  color: var(--msg-aviso-txt);
+}
+
+.alert-informacao {
+  background-color: var(--informacao);
+  border-color: var(--informacao-border);
+  color: var(--msg-informacao-txt);
+}
+
+/* Efeito fade (similar ao Bootstrap) */
+.fade {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
 }

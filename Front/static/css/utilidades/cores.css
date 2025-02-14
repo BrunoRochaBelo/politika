@@ -137,15 +137,28 @@
   --sombra-card-aberto: 0 0 2px hsl(15, 40%, 55%), 0 0 4px hsl(15, 35%, 50%),
     0 0 6px hsl(15, 20%, 48%), 0 0 8px hsl(15, 15%, 45%);
 
-  /* Links e Mensagens */
+  /* Links */
   --link: hsl(15, 78%, 55%);
-  --link-hover: hsl(220, 90%, 60%);
-  --sucesso: hsl(140, 70%, 45%);
-  --erro: hsl(0, 75%, 50%);
-  --aviso: hsl(15, 75%, 60%);
-  --informacao: hsl(220, 80%, 65%);
-  --msg-sucesso-txt: hsl(140, 90%, 95%);
-  --msg-erro-txt: hsl(0, 90%, 90%);
+  --link-hover: hsl(15, 90%, 60%);
+
+  /* Mensagens/Alertas */
+  --sucesso: hsl(141, 53%, 75%);
+  --sucesso-border: hsl(141, 53%, 65%);
+  --msg-sucesso-txt: hsl(120, 35%, 20%);
+  --erro: hsl(0, 70%, 80%);
+  --erro-border: hsl(0, 70%, 70%);
+  --msg-erro-txt: hsl(0, 70%, 20%);
+  --aviso: hsl(48, 100%, 85%);
+  --aviso-border: hsl(48, 100%, 75%);
+  --msg-aviso-txt: hsl(40, 90%, 20%);
+  --informacao: hsl(210, 60%, 90%);
+  --informacao-border: hsl(210, 60%, 80%);
+  --msg-informacao-txt: hsl(210, 60%, 20%);
+
+  /* Notificação */
+  --notificacao: hsl(3, 80%, 67%);
+  --notificacao-border: hsl(3, 80%, 70%);
+  --msg-notificacao-txt: hsl(3, 80%, 14%);
 
   /* Labels e Tooltips */
   --label-bg: hsl(220, 38%, 26%);
@@ -322,15 +335,28 @@
   --sombra-card-aberto: 0 0 2px hsl(15, 80%, 60%), 0 0 4px hsl(15, 75%, 55%),
     0 0 6px hsl(15, 70%, 50%), 0 0 8px hsl(15, 65%, 45%);
 
-  /* Links e Mensagens */
+  /* Links  */
   --link: hsl(25, 80%, 55%);
   --link-hover: hsl(220, 85%, 60%);
-  --sucesso: hsl(140, 65%, 45%);
-  --erro: hsl(0, 70%, 50%);
-  --aviso: hsl(15, 70%, 60%);
-  --informacao: hsl(220, 80%, 65%);
-  --msg-sucesso-txt: hsl(140, 90%, 95%);
-  --msg-erro-txt: hsl(0, 90%, 90%);
+
+  /* Mensagens/Alertas */
+  --sucesso: hsl(141, 53%, 75%);
+  --sucesso-border: hsl(141, 53%, 65%);
+  --msg-sucesso-txt: hsl(120, 35%, 20%);
+  --erro: hsl(0, 70%, 80%);
+  --erro-border: hsl(0, 70%, 70%);
+  --msg-erro-txt: hsl(0, 70%, 20%);
+  --aviso: hsl(48, 100%, 85%);
+  --aviso-border: hsl(48, 100%, 75%);
+  --msg-aviso-txt: hsl(40, 90%, 20%);
+  --informacao: hsl(210, 60%, 90%);
+  --informacao-border: hsl(210, 60%, 80%);
+  --msg-informacao-txt: hsl(210, 60%, 20%);
+
+  /* Notificação */
+  --notificacao: hsl(3, 80%, 60%);
+  --notificacao-border: hsl(3, 80%, 70%);
+  --msg-notificacao-txt: hsl(3, 80%, 95%);
 
   /* Labels e Tooltips */
   --label-bg: hsl(220, 15%, 85%);

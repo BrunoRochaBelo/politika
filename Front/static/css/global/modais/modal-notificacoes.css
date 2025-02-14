@@ -199,8 +199,8 @@
   position: absolute;
   top: -5px;
   right: -9px;
-  background-color: var(--erro);
-  color: #fff;
+  background-color: var(--notificacao);
+  color: var(--msg-notificacao-txt);
   border-radius: 50%;
   padding: 1px 5px;
   font-size: 0.75rem;
