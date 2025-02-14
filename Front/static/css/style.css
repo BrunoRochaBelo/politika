@@ -65,8 +65,8 @@
 @import "./calendario/calendario-style.css";
 
 /* tarefas */
-@import "./tarefas/modal-concluir-tarefa.css";
 @import "./tarefas/tarefas-style.css";
+@import "./tarefas/tarefa-concluir.css";
 
 /* contatos */
 @import "./contatos/contatos-style.css";
@@ -75,8 +75,8 @@
 
 /* pleitos */
 @import "./pleitos/pleitos-style.css";
-@import "./pleitos/modal-concluir-pleito.css";
-@import "./pleitos/modal-despachar-pleito.css";
+@import "./pleitos/pleito-concluir.css";
+@import "./pleitos/pleito-despachar.css";
 
 /* arquivos */
 @import "./arquivos/arquivos-style.css";

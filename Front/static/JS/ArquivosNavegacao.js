@@ -311,7 +311,6 @@
       this.breadcrumbContainer.appendChild(sep);
       var span = document.createElement("span");
       span.textContent = node.name;
-      // Remove o estilo inline e utiliza a classe para itens clicáveis
       span.className = "clickable";
       span.addEventListener("click", async () => {
         this.state.currentPath = this.findPath(this.state.libraries, node.id);
@@ -374,6 +373,8 @@
       return;
     }
     this.updateCounters(node);
+    // Atualiza a opção do modal flutuante conforme o currentPath
+    this.updateFloatingModalOption();
   };
 
   // Renderiza os itens no grid
@@ -560,6 +561,37 @@
     this.clearTreeSelection();
     await this.displayContent({ type: "root" });
     this.saveState();
+  };
+
+  // Método para atualizar a opção exibida no modal flutuante
+  // Utiliza classes para mostrar ou esconder os itens.
+  FileNavigator.prototype.updateFloatingModalOption = function () {
+    var liBiblioteca = document.querySelector(
+      ".modal-btn-floating-body li.biblioteca"
+    );
+    var liPasta = document.querySelector(".modal-btn-floating-body li.pasta");
+    var liArquivo = document.querySelector(
+      ".modal-btn-floating-body li.arquivo"
+    );
+
+    if (!liBiblioteca || !liPasta || !liArquivo) return;
+
+    // Esconde todos os itens inicialmente
+    liBiblioteca.classList.add("hidden");
+    liPasta.classList.add("hidden");
+    liArquivo.classList.add("hidden");
+
+    // Se não houver caminho atual, o usuário está na raiz
+    if (this.state.currentPath.length === 0) {
+      liBiblioteca.classList.remove("hidden");
+    } else {
+      var lastNode = this.state.currentPath[this.state.currentPath.length - 1];
+      if (lastNode.type === "library") {
+        liPasta.classList.remove("hidden");
+      } else if (lastNode.type === "folder") {
+        liArquivo.classList.remove("hidden");
+      }
+    }
   };
 
   document.addEventListener("DOMContentLoaded", function () {
