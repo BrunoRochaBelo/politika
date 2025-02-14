@@ -284,6 +284,12 @@
   border-bottom: 1px solid var(--card-borda);
 }
 
+.biblioteca.hidden,
+.pasta.hidden,
+.arquivo.hidden {
+  display: none;
+}
+
 /* Títulos e textos dos cards */
 .item-grid .item-title {
   margin-top: 0;
