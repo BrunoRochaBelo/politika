@@ -51,46 +51,46 @@
 
                         <div class="campo">
                           <label for="indicacao">Nome do solicitante:<span>*</span></label>
-                          <input type="text" id="indicacao" name="solicitante" required placeholder="Digite o nome do solicitante">
+                          <input type="text" id="indicacao" name="nome_solicitante" required placeholder="Digite o nome do solicitante">
                           <div class="loading-indicator" id="loading-indicator">Carregando...</div>
                           <div id="suggestions-ref-poli" class="suggestions"></div>
                         </div>
 
                         <div class="campo">
                           <label for="data">Data da solicitação:</label>
-                          <input type="date" id="data" name="data">
+                          <input type="date" id="data" name="data_solicitacao">
                         </div>
 
                         <div class="campo">
                           <label for="tipo">Tipo de Pleito:<span>*</span></label>
-                          <select id="tipo" name="tipo" required>
+                          <select id="tipo" name="tipo_pleito" required>
                             <option value="" selected disabled>Selecione o tipo de solicitação</option>
                             <option value="emprego">EMPREGO</option>
                             <option value="educacao e capacitacao">EDUCAÇÃO E CAPACITAÇÃO</option>
                             <option value="infraestrutura">INFRAESTRUTURA</option>
-                            <option value="jurídico">JURÍDICO</option>
+                            <option value="juridico">JURÍDICO</option>
                             <option value="mobilidade">MOBILIDADE</option>
                             <option value="outros">OUTROS</option>
-                            <option value="político">POLÍTICO</option>
+                            <option value="politico">POLÍTICO</option>
                             <option value="recursos financeiros">RECURSOS FINANCEIROS</option>
-                            <option value="saúde">SAÚDE</option>
-                            <option value="segurança">SEGURANÇA</option>
+                            <option value="saude">SAÚDE</option>
+                            <option value="seguranca">SEGURANÇA</option>
                           </select>
                         </div>
 
                         <div class="campo">
-                          <label for="esfera_solução">Esfera de Solução:</label>
-                          <div id="esfera_solução" class="checkbox-button-group">
-                            <input type="checkbox" id="esfera_municipal" name="esfera_solução[]" value="Municipal">
+                          <label>Competência de Solução:</label>
+                          <div id="esfera_solucao" class="checkbox-button-group">
+                            <input type="checkbox" id="esfera_municipal" name="e_municipal" value="True">
                             <label for="esfera_municipal">Municipal</label>
 
-                            <input type="checkbox" id="esfera_estadual" name="esfera_solução[]" value="Estadual">
+                            <input type="checkbox" id="esfera_estadual" name="e_estadual" value="True">
                             <label for="esfera_estadual">Estadual</label>
 
-                            <input type="checkbox" id="esfera_federal" name="esfera_solução[]" value="Federal">
+                            <input type="checkbox" id="esfera_federal" name="e_federal" value="True">
                             <label for="esfera_federal">Federal</label>
 
-                            <input type="checkbox" id="esfera_privado" name="esfera_solução[]" value="Privado">
+                            <input type="checkbox" id="esfera_privado" name="e_privado" value="True">
                             <label for="esfera_privado">Privado</label>
                           </div>
                         </div>
@@ -104,20 +104,25 @@
                           <label for="beneficiario">Beneficiário:</label>
                           <input type="text" id="beneficiario" name="beneficiario" placeholder="Informe o nome do beneficiário">
                         </div>
+
+                        <div class="campo">
+                          <label for="categoria">Categoria do Beneficiário:</label>
+                          <input type="text" id="categoria" name="categoria_pleito" class="form-control form-control-md" placeholder="Digite a categoria do beneficiário">
+                        </div>
                       </fieldset>
 
                       <fieldset>
                         <legend class="titulo-lg title-legend">Endereço do Beneficiário</legend>
 
                         <div class="campo">
-                          <label for="cep">CEP</label>
-                          <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" oninput="buscarEndereco(this.value)">
+                          <label for="cep">CEP<span>*</span></label>
+                          <input type="text" id="cep" name="cep" class="form-control form-control-md" placeholder="99999999" oninput="buscarEndereco(this.value)">
                         </div>
 
                         <div class="form-2-colum">
                           <div class="campo">
                             <label for="uf">UF</label>
-                            <select id="uf" name="uf">
+                            <select id="uf" name="uf_sigla">
                               <option value="">Selecione</option>
                               <option value="AC">AC</option>
                               <option value="AL">AL</option>
@@ -150,18 +155,18 @@
                           </div>
                           <div class="campo">
                             <label for="cidade">Cidade</label>
-                            <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade">
+                            <input type="text" id="cidade" name="cidade" class="form-control form-control-md" required placeholder="Digite a cidade">
                           </div>
                         </div>
 
                         <div class="campo">
                           <label for="bairro">Bairro</label>
-                          <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+                          <input type="text" id="bairro" name="bairro" class="form-control form-control-md" required placeholder="Digite o bairro">
                         </div>
 
                         <div class="campo">
                           <label for="rua">Rua</label>
-                          <input type="text" id="rua" name="rua" placeholder="Digite a rua">
+                          <input type="text" id="rua" name="rua" class="form-control form-control-md" placeholder="Digite a rua">
                         </div>
 
                         <div class="form-2-colum">
@@ -192,6 +197,7 @@
                   </div>
                 </div>
               </div>
+
 
               <div id="aba2" class="aba-template">
                 <div class="area-interna-containerContent-template">

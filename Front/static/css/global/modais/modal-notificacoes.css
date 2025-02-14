@@ -47,7 +47,7 @@
   width: 85%;
   max-width: 500px;
   color: var(--txt-conteudo-card);
-  background: var(--card-bg);
+  background: var(--bg-principal);
   border: 1px solid var(--modal-borda);
   padding: 40px 5px 5px 5px;
   gap: 5px;
@@ -185,7 +185,7 @@
 /* Feedback visual para sem notificações */
 .no-notifications {
   display: none;
-  background: var(--modal-bg);
+  background: var(--card-bg);
   padding: 10px;
   border-radius: 12px;
   text-align: center;
@@ -198,12 +198,14 @@
 .notification-counter {
   position: absolute;
   top: -5px;
-  right: -9px;
+  right: -10px;
   background-color: var(--notificacao);
   color: var(--msg-notificacao-txt);
   border-radius: 50%;
-  padding: 1px 5px;
-  font-size: 0.75rem;
+  padding: 0px 5px;
+  border: 2px solid var(--bg-principal);
+  box-sizing: border-box;
+  font-size: 0.7rem;
 }
 
 /* Animação para destacar novas notificações */

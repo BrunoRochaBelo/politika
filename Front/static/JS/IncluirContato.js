@@ -280,7 +280,15 @@ function validarCampoIndicacao() {
   const campoIndicacao = document.getElementById("indicacao");
   const valorCampo = campoIndicacao.value.trim();
 
-  if (valorCampo === "" || valorCampo !== selectedSuggestionName) {
+  // Se o campo estiver vazio, retorna válido, pois não é obrigatório
+  if (valorCampo === "") {
+    return true;
+  }
+
+  // Verifica se o valor preenchido é igual à sugestão selecionada
+  // Atenção: certifique-se de que a variável "selectedSuggestionNameRefPoli"
+  // esteja disponível no escopo global ou seja acessível aqui.
+  if (valorCampo !== selectedSuggestionNameRefPoli) {
     CampoUtils.exibirMensagemErroCampo(
       campoIndicacao,
       "Por favor, selecione uma indicação válida."

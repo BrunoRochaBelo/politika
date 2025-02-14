@@ -46,7 +46,7 @@ fieldset {
 }
 
 .campo-invalido {
-  border: 1px solid var(--erro);
+  border: 1px solid var(--input-error-border);
 }
 
 .campo label {
@@ -244,11 +244,11 @@ label + .form-checkbox:checked:after {
 }
 
 form span {
-  color: var(--erro);
+  color: var(--input-error-border);
   margin: 0.3125rem 0.625rem 0.3125rem 0;
 }
 form span.success {
-  color: var(--sucesso);
+  color: var(--input-success-border);
   margin: 0.3125rem 0.625rem 0.3125rem 0;
 }
 

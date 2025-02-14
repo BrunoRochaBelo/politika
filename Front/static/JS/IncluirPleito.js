@@ -94,98 +94,36 @@ window.CampoUtils = (() => {
   };
 })();
 
-// Módulo de Manipulação do Formulário
+// Módulo de Manipulação do Formulário (sem envio via fetch)
 window.FormularioUtils = (() => {
-  let feedbackDiv = null;
-
   function validarFormulario() {
     let formValido = true;
-    const camposNaoPreenchidos = [];
-
+    // Seleciona todos os campos que possuem o atributo required
     const camposRequeridos = document.querySelectorAll(
       "input[required], select[required], textarea[required]"
     );
 
     camposRequeridos.forEach((campo) => {
+      // Se a validação individual do campo (via CampoUtils) retornar false, marca o formulário como inválido
       if (!CampoUtils.validarCampo(campo)) {
         formValido = false;
-        const label = document.querySelector(`label[for="${campo.id}"]`);
-        const campoNome = label
-          ? label.innerText.replace("*", "").trim()
-          : campo.id;
-        camposNaoPreenchidos.push(campoNome);
       }
     });
-
-    if (!formValido) {
-      mostrarFeedbackErro(camposNaoPreenchidos);
-    }
 
     return formValido;
   }
 
-  // Função de envio atualizada para realizar o POST via fetch
   function enviarFormulario(event) {
     event.preventDefault();
-    if (!validarFormulario()) return;
 
-    const form = document.getElementById("form");
-    const formData = new FormData(form);
+    if (!validarFormulario()) {
+      console.log("Por favor, preencha os campos obrigatórios corretamente.");
+      return;
+    }
 
-    // Envia o formulário para a rota definida no atributo "action" do form.
-    fetch(form.getAttribute("action"), {
-      method: form.getAttribute("method") || "POST",
-      body: formData,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(
-            "Erro ao enviar o formulário. Código: " + response.status
-          );
-        }
-        // Se o back retornar JSON; caso contrário, use response.text()
-        return response.json();
-      })
-      .then((data) => {
-        mostrarFeedbackSucesso();
-        form.reset();
-        removerClassesDeSucesso();
-      })
-      .catch((error) => {
-        mostrarFeedback(
-          "error",
-          "Erro ao enviar o formulário: " + error.message
-        );
-      });
-  }
-
-  function mostrarFeedbackSucesso() {
-    mostrarFeedback("success", "Formulário enviado com sucesso!");
-  }
-
-  function mostrarFeedbackErro(camposNaoPreenchidos) {
-    const mensagem = `Preencha os campos obrigatórios: ${camposNaoPreenchidos.join(
-      ", "
-    )}`;
-    mostrarFeedback("error", mensagem);
-  }
-
-  function mostrarFeedback(tipo, mensagem) {
-    if (feedbackDiv) feedbackDiv.remove();
-
-    feedbackDiv = document.createElement("div");
-    feedbackDiv.classList.add(`message-${tipo}`, "show");
-    feedbackDiv.innerText = mensagem;
-    document.body.appendChild(feedbackDiv);
-
-    setTimeout(() => feedbackDiv.classList.add("fade-out"), 5000);
-    feedbackDiv.addEventListener("transitionend", () => feedbackDiv.remove());
-  }
-
-  function removerClassesDeSucesso() {
-    document
-      .querySelectorAll(".success")
-      .forEach((campo) => campo.classList.remove("success"));
+    console.log("Formulário validado com sucesso!");
+    // Envia o formulário após a validação
+    event.target.submit();
   }
 
   return {
@@ -198,7 +136,7 @@ document
   .getElementById("form")
   .addEventListener("submit", FormularioUtils.enviarFormulario);
 
-// Adicionar ouvintes de eventos para outros campos
+// Adicionar ouvintes de eventos para validação em campo
 document.querySelectorAll("input, select, textarea").forEach((campo) => {
   campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
   campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
