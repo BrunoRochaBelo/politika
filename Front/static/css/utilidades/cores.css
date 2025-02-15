@@ -156,7 +156,7 @@
   --msg-informacao-txt: hsl(210, 60%, 20%);
 
   /* Notificação */
-  --notificacao: hsl(3, 82%, 62%);
+  --notificacao: hsl(3, 82%, 60%);
   --notificacao-border: hsl(3, 80%, 70%);
   --msg-notificacao-txt: hsl(3, 100%, 100%);
 
