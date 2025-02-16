@@ -32,15 +32,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const headerFinanceiroElements =
     document.querySelectorAll(".header-financeiro");
 
-  // Função para carregar o tema do localStorage
+  // Função para carregar o tema do localStorage ou do servidor
   function loadTheme() {
     const localTheme = localStorage.getItem("theme");
     if (localTheme) {
       applyTheme(localTheme);
     } else {
-      // Se não houver tema definido, aplica o tema padrão (dark mode)
-      applyTheme("");
-      localStorage.setItem("theme", "");
+      fetch("/get_user_theme")
+        .then((response) => response.json())
+        .then((data) => {
+          const currentTheme = data.theme || "";
+          applyTheme(currentTheme);
+          localStorage.setItem("theme", currentTheme);
+        })
+        .catch(() => {
+          if (localTheme) {
+            applyTheme(localTheme);
+          }
+        });
     }
   }
 
@@ -50,6 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       document.documentElement.classList.add("light-mode");
       headerElement && headerElement.classList.add("invert-filter");
 
+      // Adiciona a classe 'invert-filter' aos elementos necessários
       secaoInternaHeaders.forEach((header) => {
         header.classList.add("invert-filter");
       });
@@ -63,6 +73,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         element.classList.add("invert-filter");
       });
 
+      // Adiciona 'invert-filter' aos novos elementos
       headerGcElements.forEach((element) => {
         element.classList.add("invert-filter");
       });
@@ -73,6 +84,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         element.classList.add("invert-filter");
       });
 
+      // Adiciona 'invert-filter' aos elementos recém-incluídos
       headerDashboardElements.forEach((element) => {
         element.classList.add("invert-filter");
       });
@@ -86,6 +98,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       document.documentElement.classList.remove("light-mode");
       headerElement && headerElement.classList.remove("invert-filter");
 
+      // Remove a classe 'invert-filter' dos elementos necessários
       secaoInternaHeaders.forEach((header) => {
         header.classList.remove("invert-filter");
       });
@@ -99,6 +112,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         element.classList.remove("invert-filter");
       });
 
+      // Remove 'invert-filter' dos novos elementos
       headerGcElements.forEach((element) => {
         element.classList.remove("invert-filter");
       });
@@ -109,6 +123,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         element.classList.remove("invert-filter");
       });
 
+      // Remove 'invert-filter' dos elementos recém-incluídos
       headerDashboardElements.forEach((element) => {
         element.classList.remove("invert-filter");
       });
@@ -150,6 +165,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const currentTheme = isLightMode ? "light-mode" : "";
     applyTheme(currentTheme);
     localStorage.setItem("theme", currentTheme);
+
+    // Envia a nova preferência do tema para o back-end
+    fetch("/update_theme", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ theme: currentTheme }),
+    }).catch(() => {
+      console.error("Falha ao salvar a preferência do tema no servidor.");
+    });
   }
 
   themeToggleButton.addEventListener("click", toggleTheme);
