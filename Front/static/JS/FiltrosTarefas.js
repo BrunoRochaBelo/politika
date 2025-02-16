@@ -73,7 +73,54 @@ const dataEspecificaInput = document.getElementById("data_especifica_input");
 const dataInicioInput = document.getElementById("data_inicio");
 const dataFimInput = document.getElementById("data_fim");
 
-// Função para desmarcar todos os outros períodos de tempo quando "Todos" for selecionado
+// Função para limpar os campos de data quando um período fixo é selecionado
+function clearDateInputs() {
+  if (dataEspecificaInput) dataEspecificaInput.value = "";
+  if (dataInicioInput) dataInicioInput.value = "";
+  if (dataFimInput) dataFimInput.value = "";
+}
+
+// Função para limpar "Data Específica"
+function clearDataEspecifica() {
+  if (dataEspecificaInput) dataEspecificaInput.value = "";
+}
+
+// Função para limpar "Data de Início" e "Data de Fim"
+function clearPeriodDates() {
+  if (dataInicioInput) dataInicioInput.value = "";
+  if (dataFimInput) dataFimInput.value = "";
+}
+
+// Função para desmarcar todos os checkboxes de períodos fixos
+function clearCheckboxesTempo() {
+  checkboxesTempo.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  checkboxTodosTempo.checked = false;
+}
+
+// Função para checar se nenhum período de tempo está selecionado e marcar "Todos" automaticamente
+function checkIfNoneSelectedTempo() {
+  if (!isAnyOtherChecked(checkboxesTempo) && !isAnyDateFilled()) {
+    checkboxTodosTempo.checked = true;
+  }
+}
+
+// Função para verificar se algum campo de data está preenchido
+function isAnyDateFilled() {
+  return (
+    (dataEspecificaInput && dataEspecificaInput.value) ||
+    (dataInicioInput && dataInicioInput.value) ||
+    (dataFimInput && dataFimInput.value)
+  );
+}
+
+// Função para verificar se algum outro checkbox está marcado
+function isAnyOtherChecked(checkboxes) {
+  return Array.from(checkboxes).some((checkbox) => checkbox.checked);
+}
+
+// Adiciona o evento para o checkbox "Todos" de períodos de tempo
 checkboxTodosTempo.addEventListener("change", function () {
   if (this.checked) {
     checkboxesTempo.forEach((checkbox) => {
@@ -97,65 +144,24 @@ checkboxesTempo.forEach((checkbox) => {
   });
 });
 
-// Limpa o campo "Data Específica" quando o usuário seleciona "Data de Início"
-dataInicioInput.addEventListener("input", function () {
-  if (this.value) {
-    clearDataEspecifica(); // Limpa o campo de data específica ao selecionar o início de um período
-    clearCheckboxesTempo(); // Desmarca todos os checkboxes de períodos
-  }
-});
-
-// Limpa "Data de Início" e "Data de Fim" quando o usuário seleciona "Data Específica"
-dataEspecificaInput.addEventListener("input", function () {
-  if (this.value) {
-    clearPeriodDates(); // Limpa o início e fim do período
-    clearCheckboxesTempo(); // Desmarca todos os checkboxes de períodos
-  }
-});
-
-// Função para limpar os campos de data quando um período fixo é selecionado
-function clearDateInputs() {
-  dataEspecificaInput.value = "";
-  dataInicioInput.value = "";
-  dataFimInput.value = "";
-}
-
-// Função para limpar "Data Específica"
-function clearDataEspecifica() {
-  dataEspecificaInput.value = "";
-}
-
-// Função para limpar "Data de Início" e "Data de Fim"
-function clearPeriodDates() {
-  dataInicioInput.value = "";
-  dataFimInput.value = "";
-}
-
-// Função para desmarcar todos os checkboxes de períodos fixos
-function clearCheckboxesTempo() {
-  checkboxesTempo.forEach((checkbox) => {
-    checkbox.checked = false;
+// Adiciona event listener ao campo "Data de Início", se existir
+if (dataInicioInput) {
+  dataInicioInput.addEventListener("input", function () {
+    if (this.value) {
+      clearDataEspecifica(); // Limpa o campo de data específica ao selecionar o início de um período
+      clearCheckboxesTempo(); // Desmarca todos os checkboxes de períodos
+    }
   });
-  checkboxTodosTempo.checked = false;
 }
 
-// Função para checar se nenhum período de tempo está selecionado e marcar "Todos" automaticamente
-function checkIfNoneSelectedTempo() {
-  if (!isAnyOtherChecked(checkboxesTempo) && !isAnyDateFilled()) {
-    checkboxTodosTempo.checked = true;
-  }
-}
-
-// Função para verificar se algum campo de data está preenchido
-function isAnyDateFilled() {
-  return (
-    dataEspecificaInput.value || dataInicioInput.value || dataFimInput.value
-  );
-}
-
-// Função para verificar se algum outro checkbox está marcado
-function isAnyOtherChecked(checkboxes) {
-  return Array.from(checkboxes).some((checkbox) => checkbox.checked);
+// Adiciona event listener ao campo "Data Específica", se existir
+if (dataEspecificaInput) {
+  dataEspecificaInput.addEventListener("input", function () {
+    if (this.value) {
+      clearPeriodDates(); // Limpa o início e fim do período
+      clearCheckboxesTempo(); // Desmarca todos os checkboxes de períodos
+    }
+  });
 }
 
 // Seleção dos botões "Limpar" e "Aplicar"
@@ -179,13 +185,13 @@ function resetarFiltros() {
 
   // Resetar Responsável
   const responsavelSelect = document.getElementById("responsavel_nome");
-  responsavelSelect.value = "minhas";
+  if (responsavelSelect) {
+    responsavelSelect.value = "minhas";
+  }
 
   // Opcional: Desmarcar opções de período específico
-  dataInicioInput.value = "";
-  dataFimInput.value = "";
-
-  // Se houver outros filtros, adicione-os aqui
+  if (dataInicioInput) dataInicioInput.value = "";
+  if (dataFimInput) dataFimInput.value = "";
 }
 
 // Adiciona o evento de clique ao botão "Limpar"

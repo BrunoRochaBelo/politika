@@ -598,7 +598,7 @@
     </div>
   </div>
 
-  <audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio> <!-- Notificação sonora -->
+  <!--<audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio>  Notificação sonora -->
 
   <!-- Modal para exibir mais aplicativos -->
   <div id="modalMaisApps" class="modal-mais-apps">
@@ -629,17 +629,17 @@
         <h2>Defina um destino</h2>
         <span class="close">&times;</span>
       </div>
-      <form id="filterForm" method="post" enctype="multipart/form-data">
+      <form id="searchFormDestino" method="post" enctype="multipart/form-data">
         <div class="form-2-colum">
           <div class="campo">
-            <label for="ufDestino">Estado:</label>
-            <select class="card-select-m" id="ufDestino" name="ufDestino" disabled>
+            <label for="estado">Estado:</label>
+            <select class="card-select-m" id="estado" name="estado" disabled>
               <option value="PE" selected>Pernambuco</option>
             </select>
           </div>
           <div class="campo">
-            <label for="cidadeDestino">Cidade:</label>
-            <select class="card-select-m" id="cidadeDestino" name="cidadeDestino">
+            <label for="cidade">Cidade:</label>
+            <select class="card-select-m" id="cidade" name="cidade">
               <option value="todas" selected>Todas</option>
               <option value="recife">Recife</option>
               <option value="olinda">Olinda</option>
@@ -648,9 +648,9 @@
           </div>
         </div>
         <div class="campo">
-          <label for="destino">Bairro ou Local:</label>
-          <input class="card-select-m" type="text" id="destino" name="destino" placeholder="Digite um local da cidade selecionada">
-          <div class="loading-indicator" id="loading-indicator-destino">Carregando...</div>
+          <label for="bairro">Bairro ou Local:</label>
+          <input class="card-select-m" type="text" id="bairro" name="bairro" placeholder="Digite um local da cidade selecionada">
+          <div class="loading-indicator" id="loadingEstado">Carregando...</div>
           <div id="suggestions-Destino" class="suggestions"></div>
         </div>
         <div class="botoes">

@@ -44,6 +44,7 @@
 .home-header-nav {
   grid-area: home-header-nav;
   justify-self: center;
+  width: 80%;
 }
 
 .header-menu:hover {

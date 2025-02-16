@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const ufFieldVotacao = document.getElementById("ufDestino");
-  const cityFieldVotacao = document.getElementById("cidadeDestino");
-  const destinoField = document.getElementById("destino");
-  const suggestionsDivVotacao = document.getElementById("suggestions-destino");
-  const loadingIndicatorVotacao = document.getElementById(
-    "loading-indicator-destino"
-  );
+  const ufFieldVotacao = document.getElementById("estado");
+  const cityFieldVotacao = document.getElementById("cidade");
+  const destinoField = document.getElementById("bairro");
+  const suggestionsDivVotacao = document.getElementById("suggestions-Destino");
+  const loadingIndicatorVotacao = document.getElementById("loadingEstado");
 
   let selectedIndexVotacao = -1;
   let currentSuggestionsVotacao = [];

@@ -144,7 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       plugins: {
         legend: { display: false }, // Remover legenda para LineChart
-        // As configurações de zoom e pan já estão na base
+        // As configurações de zoom e pan podem ser configuradas via opções do plugin,
+        // caso seu plugin de zoom suporte callbacks (onZoom, onPan, etc).
       },
       scales: {
         x: {
@@ -171,25 +172,33 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Feedback Visual durante Interações
-    chartContatos.on("pan", () => {
-      document.querySelector(".line-chart-container").classList.add("active");
-    });
+    // Se o método .on existir, adiciona os event listeners para pan e zoom.
+    if (typeof chartContatos.on === "function") {
+      chartContatos.on("pan", () => {
+        document.querySelector(".line-chart-container").classList.add("active");
+      });
 
-    chartContatos.on("zoom", () => {
-      document.querySelector(".line-chart-container").classList.add("active");
-    });
+      chartContatos.on("zoom", () => {
+        document.querySelector(".line-chart-container").classList.add("active");
+      });
 
-    chartContatos.on("pancomplete", () => {
-      document
-        .querySelector(".line-chart-container")
-        .classList.remove("active");
-    });
+      chartContatos.on("pancomplete", () => {
+        document
+          .querySelector(".line-chart-container")
+          .classList.remove("active");
+      });
 
-    chartContatos.on("zoomcomplete", () => {
-      document
-        .querySelector(".line-chart-container")
-        .classList.remove("active");
-    });
+      chartContatos.on("zoomcomplete", () => {
+        document
+          .querySelector(".line-chart-container")
+          .classList.remove("active");
+      });
+    } else {
+      console.warn(
+        "chartContatos.on is not a function. Os event listeners de pan/zoom não foram adicionados."
+      );
+      // Caso queira configurar callbacks de zoom/pan, verifique se o plugin de zoom permite
+      // defini-los diretamente nas opções do gráfico.
+    }
   }
 });
