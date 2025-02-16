@@ -1,0 +1,134 @@
+/* Global */
+@import "./global/global.css";
+@import "./global/body-template.css";
+@import "./global/login.css";
+@import "./global/main-template.css";
+@import "./global/scroll-ajustar-itens.css";
+/* Global/ Comunicação */
+@import "./global/comunicação/elementos-indicadores.css";
+@import "./global/comunicação/mensagens.css";
+/* Global/ Header */
+@import "./global/header/header-template.css";
+@import "./global/header/header-nav-tempalte.css";
+/* Global/ Modais */
+@import "./global/modais/modal-btn-float.css";
+@import "./global/modais/modal-card-acao.css";
+@import "./global/modais/modal-destino.css";
+@import "./global/modais/modal-escolha-chamada.css";
+@import "./global/modais/modal-mais-apps.css";
+@import "./global/modais/modal-menu.css";
+@import "./global/modais/modal-notificacoes.css";
+/* Global/ Form */
+@import "./global/form/body-form-template.css";
+@import "./global/form/form-style.css";
+@import "./global/form/exibir-style.css";
+
+/* Utilidades */
+@import "./utilidades/tipografia.css";
+@import "./utilidades/cores.css";
+
+/* Componentes */
+@import "./componentes/area-info-filtro.css";
+@import "./componentes/listas.css";
+@import "./componentes/marcadores.css";
+@import "./componentes/tabelas.css";
+@import "./componentes/toolbar.css";
+/* Componentes/ cards */
+@import "./componentes/cards/cards.css";
+@import "./componentes/cards/template-cards-aniversario.css";
+@import "./componentes/cards/template-cards-calendario.css";
+@import "./componentes/cards/template-cards-contatos.css";
+@import "./componentes/cards/template-cards-filtro.css";
+@import "./componentes/cards/template-cards-grupo.css";
+@import "./componentes/cards/template-cards-pleitos.css";
+@import "./componentes/cards/template-cards-despesas.css";
+@import "./componentes/cards/template-cards-quantitativos.css";
+@import "./componentes/cards/template-cards-tarefa.css";
+/* Componentes/ containers */
+@import "./componentes/containers/areas-e-secaoInterna.css";
+@import "./componentes/containers/card-session.css";
+@import "./componentes/containers/container-abas-template.css";
+@import "./componentes/containers/container-template.css";
+@import "./componentes/containers/containerFiltros-e-compromissoHoje.css";
+@import "./componentes/containers/stretched-container.css";
+/* Componentes/ botoes */
+@import "./componentes/botoes/botoes.css";
+@import "./componentes/botoes/recuar-expandir.css";
+@import "./componentes/botoes/toggle-theme.css";
+
+/* Home */
+@import "./home/home-style.css";
+@import "./home/home-header-template.css";
+
+/* calendario */
+@import "./calendario/aniversariantes.css";
+@import "./calendario/calendario-style.css";
+
+/* tarefas */
+@import "./tarefas/tarefas-style.css";
+@import "./tarefas/tarefa-concluir.css";
+
+/* contatos */
+@import "./contatos/contatos-style.css";
+@import "./contatos/form-contato.css";
+@import "./contatos/grupos-style.css";
+
+/* pleitos */
+@import "./pleitos/pleitos-style.css";
+@import "./pleitos/pleito-concluir.css";
+@import "./pleitos/pleito-despachar.css";
+
+/* arquivos */
+@import "./arquivos/arquivos-style.css";
+
+/* area arquivos */
+@import "./area-arquivos/body-arquivos-template.css";
+@import "./area-arquivos/card-arquivos-template.css";
+@import "./area-arquivos/main-arquivos-template.css";
+@import "./area-arquivos/header-arquivos-template.css";
+/* financeiro/ Conta Corrente
+@import "./area-arquivos/arquivos-contatos/arquivos-contatos-style.css"; */
+
+/* area organograma */
+@import "./area-organograma/body-organograma-template.css";
+@import "./area-organograma/cards-organograma-template.css";
+@import "./area-organograma/main-organograma-template.css";
+@import "./area-organograma/header-organograma-template.css";
+/* organograma/home-organograma/ */
+@import "./area-organograma/home-organograma/organograma-style.css";
+/* organograma/organograma-diagrama */
+@import "./area-organograma/organograma-diagrama/organograma-diagram-style.css";
+/* organograma/organograma-lista */
+@import "./area-organograma/organograma-lista/organograma-list-style.css";
+
+/* area gerenciar-conta */
+@import "./area-gerenciar-conta/body-gc-template.css";
+@import "./area-gerenciar-conta/card-gc-template.css";
+@import "./area-gerenciar-conta/main-gc-template.css";
+@import "./area-gerenciar-conta/header-gc-template.css";
+/* gerenciar-conta/ home-admin */
+@import "./area-gerenciar-conta/home-admin/home-admin-style.css";
+/* gerenciar-conta/ Perfil */
+@import "./area-gerenciar-conta/perfil/perfil-style.css";
+/* gerenciar-conta/ usuarios */
+@import "./area-gerenciar-conta/usuarios/usuarios-style.css";
+
+/* area financeiro */
+@import "./area-financeiro/body-financeiro-template.css";
+@import "./area-financeiro/card-financeiro-template.css";
+@import "./area-financeiro/main-financeiro-template.css";
+@import "./area-financeiro/header-financeiro-template.css";
+/* financeiro/ Conta Corrente */
+@import "./area-financeiro/conta-corrente/conta-corrente-style.css";
+/* financeiro/ Despesas */
+/* despesas */
+@import "./area-financeiro/despesas/dashboard-centro-custo.css";
+@import "./area-financeiro/despesas/despesas-style.css";
+
+/* area dashboard */
+@import "./area-dashboard/body-dashboard-template.css";
+@import "./area-dashboard/card-dashboard-template.css";
+@import "./area-dashboard/main-dashboard-template.css";
+@import "./area-dashboard/header-dashboard-template.css";
+/* financeiro/ Conta Corrente */
+@import "./area-dashboard/dashboard-contatos/dashboard-contatos-style.css";

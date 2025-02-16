@@ -24,6 +24,15 @@
 
   <!-- Pré-carrega o CSS principal de forma não bloqueante -->
   <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
 </head>
 
 <body class="body-template">

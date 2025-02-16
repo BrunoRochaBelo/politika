@@ -28,6 +28,15 @@
   <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
   <link rel="stylesheet" href="./static/css/style.css">
 
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+
   <!-- Estilos específicos para a página offline -->
   <style>
     body.offline {
