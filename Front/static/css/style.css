@@ -132,7 +132,6 @@ img {
     overflow: auto;
     position: relative;
     box-sizing: border-box;
-    background: var(--container-bg);
   }
   body::-webkit-scrollbar {
     display: none;
@@ -6325,8 +6324,8 @@ li > .lista-vertical-alt > li:first-child {
   background-color: var(--barra-nav-indicator);
   align-items: center;
   justify-items: center;
-  box-shadow: var(--sombra-intensa);
-  border: 1px solid var(--borda);
+  border: 3px solid var(--barra-nav-bg);
+  box-sizing: border-box;
   transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
     transform 0.5s ease-in-out;
   transform: scale(1);
@@ -6398,8 +6397,8 @@ li > .lista-vertical-alt > li:first-child {
     font-size: var(--font-md);
     font-weight: 400;
     color: var(--txt-titulo);
-    box-shadow: var(--sombra-moderada);
-    border: 1px solid var(--borda);
+    border: 3px solid var(--barra-nav-bg);
+    box-sizing: border-box;
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
       transform 0.5s ease-in-out;
     transform: none;

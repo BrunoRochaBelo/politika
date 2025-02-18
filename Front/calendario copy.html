@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Metadados críticos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Lista de calendario">
+  <title>calendario</title>
+
+  <!-- Manifesto -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Conexões antecipadas para fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Carregamento da fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Favicon (ajustado para SVG) -->
+  <link rel="icon" href="./static/imagens/icones/calendario-select.svg" type="image/svg+xml">
+
+  <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body class="body-template">
+
+  <header class="header header-template">
+    <div class="header-menu" onclick="toggleMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="header-notification" id="notification">
+      <img src="./static/imagens/icones/notificação.svg" alt="Notification Icon">
+      <span id="notificationCounter" class="notification-counter">0</span>
+    </div>
+    <nav class="header-nav">
+      <ul class="header-nav-template">
+        <li class="home"><a href="index.html"><img src="./static/imagens/icones/home.svg" alt="Home Icon">
+            <p>home</p>
+          </a></li>
+        <li class="calendario indicador"><a href="calendario.html"><img src="./static/imagens/icones/calendario-select.svg" alt="calendario Icon">
+            <p>calendario</p>
+          </a></li>
+        <li class="tarefas"><a href="tarefas.html"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas Icon">
+            <p>Tarefas</p>
+          </a></li>
+        <li class="contatos"><a href="contatos.html"><img src="./static/imagens/icones/contatos.svg" alt="Contatos Icon">
+            <p>Contatos</p>
+          </a></li>
+        <li class="pleitos"><a href="pleitos.html"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon">
+            <p>Pleitos</p>
+          </a></li>
+        <li class="arquivos"><a href="arquivos.html"><img src="./static/imagens/icones/arquivos.svg" alt="Arquivos Icon">
+            <p>Arquivos</p>
+          </a></li>
+        <li class="apps">
+          <a href="#">
+            <img src="./static/imagens/icones/apps.svg" alt="Ícone Apps">
+            <p>Apps</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-search">
+      <div>
+        <form action="/evento/listcard" method="post" class="search-input-container">
+          <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar evento...">
+          <button type="submit" class="search-button">
+            <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main main-template">
+    <section class="main-section">
+      <div class="container-template">
+        <h2 class="container-template-header">Agenda</h2>
+        <div class="container-template-content container-template-content-com-header-fx-int">
+          <div class="area-interna-containerContent-template">
+            <div class="area-interna-containerContent-template-header">
+              <div class="lista-select nav-calendar">
+                <input type="date" class="item1 btn-calendario" id="mesAno">
+                <div class="item2 hoje" id="hoje"></div>
+                <ul class="item3 lista-horizontal">
+                  <li class="change-semana ant">
+                    <img src="./static/imagens/icones/anterior.svg" class="anterior" alt="Anterior Icon">
+                  </li>
+                  <li>
+                    <ul class="nav-semana">
+                      <li class="dia-semana dia-visualize" data-dia="segunda" onclick="selecionarDia('segunda')">
+                        <h3 id="segunda">Seg</h3>
+                        <p>03</p>
+                      </li>
+                      <li class="dia-semana" data-dia="terca" onclick="selecionarDia('terca')">
+                        <h3 id="terca">Ter</h3>
+                        <p>04</p>
+                      </li>
+                      <li class="dia-semana" data-dia="quarta" onclick="selecionarDia('quarta')">
+                        <h3 id="quarta">Qua</h3>
+                        <p>05</p>
+                      </li>
+                      <li class="dia-semana" data-dia="quinta" onclick="selecionarDia('quinta')">
+                        <h3 id="quinta">Qui</h3>
+                        <p>06</p>
+                      </li>
+                      <li class="dia-semana" data-dia="sexta" onclick="selecionarDia('sexta')">
+                        <h3 id="sexta">Sex</h3>
+                        <p>07</p>
+                      </li>
+                      <li class="dia-semana" data-dia="sabado" onclick="selecionarDia('sabado')">
+                        <h3 id="sabado">Sab</h3>
+                        <p>08</p>
+                      </li>
+                      <li class="dia-semana" data-dia="domingo" onclick="selecionarDia('domingo')">
+                        <h3 id="domingo">Dom</h3>
+                        <p>09</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="change-semana prox">
+                    <img src="./static/imagens/icones/avançar.svg" class="avancar" alt="Avançar Icon">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="area-interna-containerContent-template-content">
+              <ul class="lista-vertical">
+                <li class="dia-visible" id="segunda-feira">
+                  <ul class="lista-vertical">
+                    <li class="area-filtro activeFil" id="filtro1">
+                      <span id="totalResults1">{{total}}</span>&nbsp;-&nbsp;
+                      <div class="btn-filtro-pesq">
+                        <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro}}
+                          <a href="calendario.html" class="remover-filtro">&times;</a>
+                        </p>
+                      </div>
+                    </li>
+                    <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                    <li class="secao-interna-template area-aniversariantes">
+                      <h2 class="secao-interna-template-header">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                      </h2>
+                      <div class="secao-interna-template-content  aniversariantes">
+                        <ul class="lista-vertical-cards ">
+                          <!--  lógica do loop lista aniversariantes  -->
+                          <!--  inicio do card  -->
+                          <li>
+                            <div class="card-xs aniversario-small-card contato" href="#">
+                              <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                              <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                              <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                              <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                              <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                              <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                              <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                              <div class="aniversario-small-card-editar">
+                                <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                              </div>
+                              <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                            </div>
+                          </li>
+                          <!--  fim do card  -->
+                        </ul>
+                      </div>
+                    </li>
+                    <!--  fim -->
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <li class="card-session secao-interna-template active">
+                          <h2 class="secao-interna-template-header active-header" onclick="changeSession(1)"><a href="#">
+                              <div class="agenda-icon agora">
+                                <img src="./static/imagens/icones/agora.svg" alt="Agora Icon">
+                              </div> agora - {{08h:00}} <!--  variavel da hora corrente  --> <span class="arrow up"></span>
+                            </a></h2>
+                          <div class="secao-interna-template-content">
+                            <div class="session active" id="secao1">
+                              <ul class="lista-vertical-cards">
+                                <!--  lógica do loop lista eventos agora  -->
+                                <!--  inicio do card  -->
+                                <li>
+                                  <div class="card-l calendario-large-card evento" href="#">
+                                    <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                    <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                      <div class="marcador-item cor-marc1">
+                                        <p><strong>marcador 1</strong></p>
+                                      </div>
+                                    </div>
+                                    <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                    <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                    <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                    <div class="calendario-large-card-duracao">
+                                      <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                      <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                    </div>
+                                    <div class="calendario-large-card-editar">
+                                      <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                    </div>
+                                    <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                    </a>
+                                </li>
+                                <!--  fim do card  -->
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="card-session secao-interna-template">
+                          <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">
+                              <div class="agenda-icon futuro">
+                                <img src="./static/imagens/icones/futuro.svg" alt="Futuro Icon">
+                              </div>Ainda hoje <span class="arrow down"></span>
+                            </a></h2>
+                          <div class="secao-interna-template-content">
+                            <div class="session" id="secao2">
+                              <ul class="lista-vertical">
+                                <!--  lógica do loop lista de eventos futuro  -->
+                                <!--  inicio da lista por hora  -->
+                                <li class="secao-interna-template">
+                                  <h2 class="secao-interna-template-header"><b>{{09h:00}}</b> <!--  variavel da hora  --> </h2>
+                                  <div class="secao-interna-template-content">
+                                    <ul class=" lista-vertical-cards">
+                                      <!--  lógica do loop lista eventos da hora referente  -->
+                                      <!--  inicio do card evento -->
+                                      <li>
+                                        <a class=" card-empty-card" href="#">
+                                          <p class="card-empty-card-title">Agenda livre</p>
+                                          <p class="card-empty-card-add"><b>+</b> adicionar evento</p>
+                                        </a>
+                                      </li>
+                                      <!--  fim do card  evento -->
+                                    </ul>
+                                  </div>
+                                </li>
+                                <!--  fim da lista por hora  -->
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="card-session secao-interna-template">
+                          <h2 class="secao-interna-template-header" onclick="changeSession(3)"><a href="#">
+                              <div class="agenda-icon passado">
+                                <img src="./static/imagens/icones/passado.svg" alt="Passado Icon">
+                              </div>Eventos anteriores <span class="arrow down"></span>
+                            </a>
+                          </h2>
+                          <div class="secao-interna-template-content">
+                            <div class="session" id="secao3">
+                              <ul class="lista-vertical-alt">
+                                <!--  lógica do loop lista de eventos passados  -->
+                                <!--  inicio da lista por hora  -->
+                                <li class="secao-interna-template">
+                                  <h2 class="secao-interna-template-header"><b>07h:00</b></h2>
+                                  <div class="secao-interna-template-content">
+                                    <ul class=" lista-vertical-cards">
+                                      <!--  lógica do loop lista eventos da hora referente  -->
+                                      <!--  inicio do card evento -->
+                                      <li>
+                                        <div class="card-xs calendario-small-card evento" href="#">
+                                          <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                          <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                            <div class="marcador-item cor-marc1">
+                                              <p><strong>marcador 1</strong></p>
+                                            </div>
+                                          </div>
+                                          <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 1</p>
+                                          <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 1</p>
+                                          <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                          <div class="calendario-small-card-duracao">
+                                            <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                            <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                          </div>
+                                          <div class="calendario-small-card-editar">
+                                            <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                          </div>
+                                          <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                          </a>
+                                      </li>
+                                      <!--  fim do card  evento -->
+                                    </ul>
+                                  </div>
+                                </li>
+                                <!--  fim da lista por hora  -->
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </li>
+
+                <li class="dia-hidden" id="terca-feira">
+                  <ul class="lista-vertical">
+                    <li class="area-filtro activeFil" id="filtro1">
+                      <span id="totalResults1">{{total 2}}</span>&nbsp;-&nbsp;
+                      <div class="btn-filtro-pesq">
+                        <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro 2}}
+                          <a href="calendario.html" class="remover-filtro">&times;</a>
+                        </p>
+                      </div>
+                    </li>
+                    <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                    <li class="secao-interna-template area-aniversariantes">
+                      <h2 class="secao-interna-template-header">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                      </h2>
+                      <div class="secao-interna-template-content  aniversariantes">
+                        <ul class="lista-vertical-cards ">
+                          <!--  lógica do loop lista aniversariantes  -->
+                          <!--  inicio do card  -->
+                          <li>
+                            <div class="card-xs aniversario-small-card contato" href="#">
+                              <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                              <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                              <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                              <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                              <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                              <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                              <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                              <div class="aniversario-small-card-editar">
+                                <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                              </div>
+                              <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                            </div>
+                          </li>
+                          <!--  fim do card  -->
+                        </ul>
+                      </div>
+                    </li>
+                    <!--  fim -->
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <!--  lógica do loop lista de eventos por hora  -->
+                        <!--  inicio da lista por hora  -->
+                        <li class="secao-interna-template">
+                          <h2 class="secao-interna-template-header"><b>{{08h:00}}</b> <!-- variavel da hora corrente --></h2>
+                          <div class="secao-interna-template-content">
+                            <ul class="lista-vertical-cards">
+                              <!-- lógica do loop lista eventos da hora referente -->
+                              <!-- inicio do card evento -->
+                              <li>
+                                <div class="card-l calendario-large-card evento" href="#">
+                                  <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                  <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                    <div class="marcador-item cor-marc1">
+                                      <p><strong>marcador 1</strong></p>
+                                    </div>
+                                  </div>
+                                  <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                  <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                  <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                  <div class="calendario-large-card-duracao">
+                                    <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                    <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                  </div>
+                                  <div class="calendario-large-card-editar">
+                                    <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                  </div>
+                                  <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                              </li>
+                              <!-- fim do card evento -->
+                            </ul>
+                          </div>
+                        </li>
+                        <!-- fim da lista por hora -->
+                      </ul>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </li>
+
+                <li class="dia-hidden" id="quarta-feira">
+                  <ul class="lista-vertical">
+                    <li class="area-filtro activeFil" id="filtro1">
+                      <span id="totalResults1">{{total 3}}</span>&nbsp;-&nbsp;
+                      <div class="btn-filtro-pesq">
+                        <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro 3}}
+                          <a href="calendario.html" class="remover-filtro">&times;</a>
+                        </p>
+                      </div>
+                    </li>
+                    <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                    <li class="secao-interna-template area-aniversariantes">
+                      <h2 class="secao-interna-template-header">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                      </h2>
+                      <div class="secao-interna-template-content  aniversariantes">
+                        <ul class="lista-vertical-cards ">
+                          <!--  lógica do loop lista aniversariantes  -->
+                          <!--  inicio do card  -->
+                          <li>
+                            <div class="card-xs aniversario-small-card contato" href="#">
+                              <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                              <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                              <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                              <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                              <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                              <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                              <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                              <div class="aniversario-small-card-editar">
+                                <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                              </div>
+                              <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                            </div>
+                          </li>
+                          <!--  fim do card  -->
+                        </ul>
+                      </div>
+                    </li>
+                    <!--  fim -->
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <!--  lógica do loop lista de eventos por hora  -->
+                        <!--  inicio da lista por hora  -->
+                        <li class="secao-interna-template">
+                          <h2 class="secao-interna-template-header"><b>{{08h:00}}</b> <!-- variavel da hora corrente --></h2>
+                          <div class="secao-interna-template-content">
+                            <ul class="lista-vertical-cards">
+                              <!-- lógica do loop lista eventos da hora referente -->
+                              <!-- inicio do card evento -->
+                              <li>
+                                <div class="card-l calendario-large-card evento" href="#">
+                                  <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                  <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                    <div class="marcador-item cor-marc1">
+                                      <p><strong>marcador 1</strong></p>
+                                    </div>
+                                  </div>
+                                  <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                  <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                  <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                  <div class="calendario-large-card-duracao">
+                                    <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                    <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                  </div>
+                                  <div class="calendario-large-card-editar">
+                                    <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                  </div>
+                                  <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                              </li>
+                              <!-- fim do card evento -->
+                            </ul>
+                          </div>
+                        </li>
+                        <!-- fim da lista por hora -->
+                      </ul>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </li>
+
+                <li class="dia-hidden" id="quinta-feira">
+                  <ul class="lista-vertical">
+                    <li class="area-filtro activeFil" id="filtro1">
+                      <span id="totalResults1">{{total 4}}</span>&nbsp;-&nbsp;
+                      <div class="btn-filtro-pesq">
+                        <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro 4}}
+                          <a href="calendario.html" class="remover-filtro">&times;</a>
+                        </p>
+                      </div>
+                    </li>
+                    <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                    <li class="secao-interna-template area-aniversariantes">
+                      <h2 class="secao-interna-template-header">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                      </h2>
+                      <div class="secao-interna-template-content  aniversariantes">
+                        <ul class="lista-vertical-cards ">
+                          <!--  lógica do loop lista aniversariantes  -->
+                          <!--  inicio do card  -->
+                          <li>
+                            <div class="card-xs aniversario-small-card contato" href="#">
+                              <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                              <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                              <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                              <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                              <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                              <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                              <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                              <div class="aniversario-small-card-editar">
+                                <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                              </div>
+                              <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                            </div>
+                          </li>
+                          <!--  fim do card  -->
+                        </ul>
+                      </div>
+                    </li>
+                    <!--  fim -->
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <!--  lógica do loop lista de eventos por hora  -->
+                        <!--  inicio da lista por hora  -->
+                        <li class="secao-interna-template">
+                          <h2 class="secao-interna-template-header"><b>{{08h:00}}</b> <!-- variavel da hora corrente --></h2>
+                          <div class="secao-interna-template-content">
+                            <ul class="lista-vertical-cards">
+                              <!-- lógica do loop lista eventos da hora referente -->
+                              <!-- inicio do card evento -->
+                              <li>
+                                <div class="card-l calendario-large-card evento" href="#">
+                                  <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                  <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                    <div class="marcador-item cor-marc1">
+                                      <p><strong>marcador 1</strong></p>
+                                    </div>
+                                  </div>
+                                  <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                  <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                  <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                  <div class="calendario-large-card-duracao">
+                                    <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                    <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                  </div>
+                                  <div class="calendario-large-card-editar">
+                                    <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                  </div>
+                                  <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                              </li>
+                              <!-- fim do card evento -->
+                            </ul>
+                          </div>
+                        </li>
+                        <!-- fim da lista por hora -->
+                      </ul>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </li>
+
+                <li class="dia-hidden" id="sexta-feira">
+                  <ul class="lista-vertical">
+                    <li class="area-filtro activeFil" id="filtro1">
+                      <span id="totalResults1">{{total 5}}</span>&nbsp;-&nbsp;
+                      <div class="btn-filtro-pesq">
+                        <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro 5}}
+                          <a href="calendario.html" class="remover-filtro">&times;</a>
+                        </p>
+                      </div>
+                    </li>
+                    <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                    <li class="secao-interna-template area-aniversariantes">
+                      <h2 class="secao-interna-template-header">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                      </h2>
+                      <div class="secao-interna-template-content  aniversariantes">
+                        <ul class="lista-vertical-cards ">
+                          <!--  lógica do loop lista aniversariantes  -->
+                          <!--  inicio do card  -->
+                          <li>
+                            <div class="card-xs aniversario-small-card contato" href="#">
+                              <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                              <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                              <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                              <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                              <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                              <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                              <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                              <div class="aniversario-small-card-editar">
+                                <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                              </div>
+                              <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                            </div>
+                          </li>
+                          <!--  fim do card  -->
+                        </ul>
+                      </div>
+                    </li>
+                    <!--  fim -->
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <!--  lógica do loop lista de eventos por hora  -->
+                        <!--  inicio da lista por hora  -->
+                        <li class="secao-interna-template">
+                          <h2 class="secao-interna-template-header"><b>{{08h:00}}</b> <!-- variavel da hora corrente --></h2>
+                          <div class="secao-interna-template-content">
+                            <ul class="lista-vertical-cards">
+                              <!-- lógica do loop lista eventos da hora referente -->
+                              <!-- inicio do card evento -->
+                              <li>
+                                <div class="card-l calendario-large-card evento" href="#">
+                                  <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                  <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                    <div class="marcador-item cor-marc1">
+                                      <p><strong>marcador 1</strong></p>
+                                    </div>
+                                  </div>
+                                  <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                  <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                  <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                  <div class="calendario-large-card-duracao">
+                                    <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                    <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                  </div>
+                                  <div class="calendario-large-card-editar">
+                                    <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                  </div>
+                                  <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                              </li>
+                              <!-- fim do card evento -->
+                            </ul>
+                          </div>
+                        </li>
+                        <!-- fim da lista por hora -->
+                      </ul>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </li>
+
+                <li class="dia-hidden" id="sabado-feira">
+                  <ul class="lista-vertical">
+                    <li class="area-filtro activeFil" id="filtro1">
+                      <span id="totalResults1">{{total 6}}</span>&nbsp;-&nbsp;
+                      <div class="btn-filtro-pesq">
+                        <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro 6}}
+                          <a href="calendario.html" class="remover-filtro">&times;</a>
+                        </p>
+                      </div>
+                    </li>
+                    <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                    <li class="secao-interna-template area-aniversariantes">
+                      <h2 class="secao-interna-template-header">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                      </h2>
+                      <div class="secao-interna-template-content  aniversariantes">
+                        <ul class="lista-vertical-cards ">
+                          <!--  lógica do loop lista aniversariantes  -->
+                          <!--  inicio do card  -->
+                          <li>
+                            <div class="card-xs aniversario-small-card contato" href="#">
+                              <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                              <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                              <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                              <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                              <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                              <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                              <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                              <div class="aniversario-small-card-editar">
+                                <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                              </div>
+                              <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                            </div>
+                          </li>
+                          <!--  fim do card  -->
+                        </ul>
+                      </div>
+                    </li>
+                    <!--  fim -->
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <!--  lógica do loop lista de eventos por hora  -->
+                        <!--  inicio da lista por hora  -->
+                        <li class="secao-interna-template">
+                          <h2 class="secao-interna-template-header"><b>{{08h:00}}</b> <!-- variavel da hora corrente --></h2>
+                          <div class="secao-interna-template-content">
+                            <ul class="lista-vertical-cards">
+                              <!-- lógica do loop lista eventos da hora referente -->
+                              <!-- inicio do card evento -->
+                              <li>
+                                <div class="card-l calendario-large-card evento" href="#">
+                                  <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                  <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                    <div class="marcador-item cor-marc1">
+                                      <p><strong>marcador 1</strong></p>
+                                    </div>
+                                  </div>
+                                  <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                  <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                  <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                  <div class="calendario-large-card-duracao">
+                                    <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                    <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                  </div>
+                                  <div class="calendario-large-card-editar">
+                                    <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                  </div>
+                                  <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                              </li>
+                              <!-- fim do card evento -->
+                            </ul>
+                          </div>
+                        </li>
+                        <!-- fim da lista por hora -->
+                      </ul>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </li>
+
+                <li class="dia-hidden" id="domingo-feira">
+                  <ul class="lista-vertical">
+                    <li class="area-filtro activeFil" id="filtro1">
+                      <span id="totalResults1">{{total 7}}</span>&nbsp;-&nbsp;
+                      <div class="btn-filtro-pesq">
+                        <p class="btn-filtro-pesq-title" id="filtroselect1">{{filtro 7}}
+                          <a href="calendario.html" class="remover-filtro">&times;</a>
+                        </p>
+                      </div>
+                    </li>
+                    <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                    <li class="secao-interna-template area-aniversariantes">
+                      <h2 class="secao-interna-template-header">
+                        <span class="aniversario-icon">🎂</span>
+                        <p>Aniversários do dia</p>
+                        <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                      </h2>
+                      <div class="secao-interna-template-content  aniversariantes">
+                        <ul class="lista-vertical-cards ">
+                          <!--  lógica do loop lista aniversariantes  -->
+                          <!--  inicio do card  -->
+                          <li>
+                            <div class="card-xs aniversario-small-card contato" href="#">
+                              <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                              <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                              <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                              <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                              <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                              <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                              <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                              <div class="aniversario-small-card-editar">
+                                <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                              </div>
+                              <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                            </div>
+                          </li>
+                          <!--  fim do card  -->
+                        </ul>
+                      </div>
+                    </li>
+                    <!--  fim -->
+                    <li class="area-agenda">
+                      <ul class="lista-vertical-alt">
+                        <!--  lógica do loop lista de eventos por hora  -->
+                        <!--  inicio da lista por hora  -->
+                        <li class="secao-interna-template">
+                          <h2 class="secao-interna-template-header"><b>{{08h:00}}</b> <!-- variavel da hora corrente --></h2>
+                          <div class="secao-interna-template-content">
+                            <ul class="lista-vertical-cards">
+                              <!-- lógica do loop lista eventos da hora referente -->
+                              <!-- inicio do card evento -->
+                              <li>
+                                <div class="card-l calendario-large-card evento" href="#">
+                                  <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                  <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                    <div class="marcador-item cor-marc1">
+                                      <p><strong>marcador 1</strong></p>
+                                    </div>
+                                  </div>
+                                  <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                  <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                  <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                  <div class="calendario-large-card-duracao">
+                                    <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                    <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                  </div>
+                                  <div class="calendario-large-card-editar">
+                                    <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                  </div>
+                                  <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                              </li>
+                              <!-- fim do card evento -->
+                            </ul>
+                          </div>
+                        </li>
+                        <!-- fim da lista por hora -->
+                      </ul>
+                    </li>
+                    <li class="list-last-child"><br></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-sidenav">
+      <div class="container-filtros-template filtros-tarefas">
+        <h2 class="container-filtros-template-header">Filtros
+          <button class="btn-recuar-expandir btn-pesquisa-rapida" onclick="toggleOcultarExibirFiltro()">Filtros</button>
+        </h2>
+        <div class="container-filtros-template-content">
+          <div id="abaFiltros1" class="aba-filtro active">
+            <ul class="lista-vertical-fil">
+
+              <!-- Filtro de Marcadores -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_marcadores">Marcadores <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_marcadores" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="todos_marcadores" value="todos" checked>
+                    <label for="todos_marcadores" class="marcador-s cor-marc0">Todos</label>
+
+                    <ul class="lista-vertical-2-column">
+                      <li>
+                        <input type="checkbox" id="marcador1" value="marcador1">
+                        <label for="marcador1" class="marcador-s cor-marc1">Marcador 1</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador2" value="marcador2">
+                        <label for="marcador2" class="marcador-s cor-marc2">Marcador 2</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador3" value="marcador3">
+                        <label for="marcador3" class="marcador-s cor-marc3">Marcador 3</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador4" value="marcador4">
+                        <label for="marcador4" class="marcador-s cor-marc4">Marcador 4</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador5" value="marcador5">
+                        <label for="marcador5" class="marcador-s cor-marc5">Marcador 5</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador6" value="marcador6">
+                        <label for="marcador6" class="marcador-s cor-marc6">Marcador 6</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador7" value="marcador7">
+                        <label for="marcador7" class="marcador-s cor-marc7">Marcador 7</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador8" value="marcador8">
+                        <label for="marcador8" class="marcador-s cor-marc8">Marcador 8</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador9" value="marcador9">
+                        <label for="marcador9" class="marcador-s cor-marc9">Marcador 9</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador10" value="marcador10">
+                        <label for="marcador10" class="marcador-s cor-marc10">Marcador 10</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+
+            <div class="botoes">
+              <button class="btn-outline-principal" type="button" data-filter="Limpar">
+                Limpar
+              </button>
+
+              <button class="btn-principal" type="button" data-filter="Aplicar">
+                Aplicar
+              </button>
+            </div>
+          </div>
+
+          <div id="abaFiltros2" class="aba-filtro">
+            <ul class="lista-vertical-fil">
+
+              <!-- Filtro de Marcadores -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_marcadores">Marcadores <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_marcadores" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="todos_marcadores" value="todos" checked>
+                    <label for="todos_marcadores" class="cor-marc0">Todos</label>
+
+                    <ul class="lista-vertical-2-column">
+                      <li>
+                        <input type="checkbox" id="marcador1" value="marcador1">
+                        <label for="marcador1" class="marcador-s cor-marc1">Marcador 1</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador2" value="marcador2">
+                        <label for="marcador2" class="marcador-s cor-marc2">Marcador 2</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador3" value="marcador3">
+                        <label for="marcador3" class="marcador-s cor-marc3">Marcador 3</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador4" value="marcador4">
+                        <label for="marcador4" class="marcador-s cor-marc4">Marcador 4</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador5" value="marcador5">
+                        <label for="marcador5" class="marcador-s cor-marc5">Marcador 5</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador6" value="marcador6">
+                        <label for="marcador6" class="marcador-s cor-marc6">Marcador 6</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador7" value="marcador7">
+                        <label for="marcador7" class="marcador-s cor-marc7">Marcador 7</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador8" value="marcador8">
+                        <label for="marcador8" class="marcador-s cor-marc8">Marcador 8</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador9" value="marcador9">
+                        <label for="marcador9" class="marcador-s cor-marc9">Marcador 9</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="marcador10" value="marcador10">
+                        <label for="marcador10" class="marcador-s cor-marc10">Marcador 10</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+
+              <!-- Filtro de Status -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_status">Status <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_status" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="todos_status" value="todos" checked>
+                    <label for="todos_status">Todos</label>
+
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="novas" value="novas">
+                      <label for="novas">Novas</label>
+
+                      <input type="checkbox" id="andamento" value="andamento">
+                      <label for="andamento">Andamento</label>
+
+                      <input type="checkbox" id="atrasadas" value="atrasadas">
+                      <label for="atrasadas">Atrasadas</label>
+
+                      <input type="checkbox" id="concluidas" value="concluidas">
+                      <label for="concluidas">Concluídas</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Responsável -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_responsavel">Responsável <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_responsavel" class="radio-button-group ">
+                    <input type="radio" id="minhas" name="filtro_responsavel" value="minhas">
+                    <label for="minhas">Minhas</label>
+
+                    <input type="radio" id="todas" name="filtro_responsavel" value="todas">
+                    <label for="todas">Todas</label>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Filtro de Período -->
+              <li class="filtro-multi-select-card">
+                <div class="filtro-multi-select-card-header">
+                  <label for="filtro_tempo">Período <span class="arrow down"></span></label>
+                </div>
+                <div class="filtro-multi-select-card-content">
+                  <div id="filtro_tempo" class="checkbox-button-group lista-vertical-alt">
+                    <input type="checkbox" id="tempo_todos" value="todos" checked>
+                    <label for="tempo_todos">Todos</label>
+
+                    <div class="checkbox-button-group">
+                      <input type="checkbox" id="hoje" value="hoje">
+                      <label for="hoje">Hoje</label>
+
+                      <input type="checkbox" id="esta_semana" value="esta_semana">
+                      <label for="esta_semana">Esta semana</label>
+
+                      <input type="checkbox" id="este_mes" value="este_mes">
+                      <label for="este_mes">Este mês</label>
+
+                      <input type="checkbox" id="este_ano" value="este_ano">
+                      <label for="este_ano">Este ano</label>
+                    </div>
+
+                    <div class="lista-vertical-alt">
+                      <!--  <div class="checkbox-button-group lista-vertical-2-column">
+                        <label for="data_especifica_input">Data específica</label>
+                        <input type="date" id="data_especifica_input" name="data_especifica">
+                      </div> -->
+
+                      <div>
+                        <h4>Período específico</h4>
+                        <div class="checkbox-button-group lista-vertical-alt">
+                          <div class="lista-vertical-2-column">
+                            <label for="data_inicio">Início:</label>
+                            <input type="date" id="data_inicio" name="data_inicio">
+                          </div>
+                          <div class="lista-vertical-2-column">
+                            <label for="data_fim">Fim:</label>
+                            <input type="date" id="data_fim" name="data_fim">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="botoes">
+              <button class="btn-outline-principal" type="button" data-filter="Limpar">
+                Limpar
+              </button>
+
+              <button class="btn-principal" type="button" data-filter="Aplicar">
+                Aplicar
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Botão Flutuante -->
+  <button class="floatingButton">+</button>
+  <div class="modal-btn-floating-Overlay esconderModal">
+    <div class="modal-btn-floating-content">
+      <div class="modal-btn-floating-header">
+        <h1>NOVO</h1>
+      </div>
+      <ul class="modal-btn-floating-body">
+        <li><a href="evento_incluir.html">Evento</a></li>
+        <li><a href="reuniao_incluir.html">Reunião</a></li>
+        <li><a href="tarefa_incluir.html">Tarefa</a></li>
+        <li><a href="lembrete_incluir.html">Lembrete</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal Menu -->
+  <div class="modal" id="modalMenu">
+    <div class="modal-content-template">
+      <div class="modal-content-template-card-user">
+        <div class="modal-content-template-card-user-img">
+          <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário" id="modalUserPhoto">
+        </div>
+        <p class="modal-content-template-card-user-candidato" id="candidato">Nome do candidato</p>
+        <p class="modal-content-template-card-user-cargo-owner" id="cargoOwner">Cargo do candidato</p>
+        <p class="modal-content-template-card-user-partido" id="partido">Partido do candidato</p>
+        <div class="modal-content-template-card-user-secao">
+          <div class="modal-content-template-card-user-username" id="username">Nome do Usuário</div>
+          <div class="modal-content-template-card-user-cargo" id="cargoUser">Cargo do Usuário</div>
+        </div>
+        <a class="modal-content-template-card-user-gc" id="btnGerenciarConta" href="perfil.html"> Gerenciar conta</a>
+      </div>
+      <div class="modal-content-template-list-op">
+        <ul class="modalMenu-list">
+          <li class="alterar-tema">
+            <button id="toggleTheme">
+              <img id="themeIcon" src="./static/imagens/icones/sun.svg" alt="Ícone de Sol" />
+              Alterar tema
+            </button>
+          </li>
+          <li>
+            <a href="home-organograma.html">
+              <img src="./static/imagens/icones/organograma.svg" alt="organograma Icon">
+              <span>Organograma</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-home.html">
+              <img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="home-financeiro.html">
+              <img src="./static/imagens/icones/financeiro.svg" alt="financeiro Icon">
+              <span>Financeiro</span>
+            </a>
+          </li>
+          <li class="logout" onclick="logout()">
+            <a id="btnLogout">
+              <img src="./static/imagens/icones/sair.svg" alt="Sair icon">
+              <span>Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Notificações -->
+  <div class="modal-notificacoes" id="notificationModal">
+    <div class="modal-content-notificacoes" id="modalContent">
+      <span class="modal-notificacoes-btn-close" id="closeButton">&times;</span>
+      <button id="markAllReadButton">Marcar todas como lidas</button>
+      <ul id="notificationsContent" class="notifications-list">
+        <!-- Notifications will be dynamically inserted here -->
+      </ul>
+      <div id="noNotifications" class="no-notifications">Não há novas notificações</div>
+    </div>
+  </div>
+
+  <!--<audio id="notificationSound" src="notification_sound.mp3" preload="auto"></audio>  Notificação sonora -->
+
+  <!-- Modal para exibir mais aplicativos -->
+  <div id="modalMaisApps" class="modal-mais-apps">
+    <div class="modal-mais-apps-content">
+
+      <div class="modal-mais-apps-close"></div>
+      <ul class="modal-mais-apps-icones">
+        <li>
+          <a href="pleitos.html">
+            <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos Icon" class="icone-app">
+            <p>Pleitos</p>
+          </a>
+        </li>
+        <li>
+          <a href="arquivos.html">
+            <img src="./static/imagens/icones/arquivos.svg" alt="arquivos Icon" class="icone-app">
+            <p>Arquivos</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal para escolher entre Chamada Nativa ou WhatsApp -->
+  <div id="modalEscolhaChamada" class="modal-escolha-chamada">
+    <div class="modal-escolha-chamada-content">
+      <span class="modal-escolha-chamada-close close">&times;</span>
+      <p class="modal-escolha-chamada-titulo">Chamar por:</p>
+      <div class="modal-escolha-chamada-buttons">
+        <button id="btnChamadaNativa" class="btn-escolha-chamada">
+          <img src="./static/imagens/icones/phone.svg" alt="Telefone" class="icone-btn">
+          <span>Telefone</span>
+        </button>
+        <button id="btnChamadaWhatsApp" class="btn-escolha-chamada">
+          <img src="./static/imagens/icones/whatsapp-icon.svg" alt="WhatsApp" class="icone-btn">
+          <span>WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para preencher as datas de agenda -->
+  <script>
+    var data_corrente = new Date();
+    var dia = String(data_corrente.getDate()).padStart(2, '0');
+    var mes = String(data_corrente.getMonth() + 1).padStart(2, '0'); // Os meses são indexados a partir de 0
+    var ano = data_corrente.getFullYear();
+    var data_formatada = ano + '-' + mes + '-' + dia;
+
+    // Exibir o dia de hoje no elemento com o ID 'hoje'
+    document.getElementById('hoje').textContent = dia;
+
+    // Preencher o campo de data com a data completa
+    document.getElementById('mesAno').value = data_formatada;
+  </script>
+
+
+
+  <!-- Script paraadicionar animação aos icones da agenda -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headers = document.querySelectorAll('.secao-interna-template-header');
+
+      function addAnimation(header) {
+        const img = header.querySelector('.agenda-icon img');
+        if (img) {
+          img.classList.add('animate');
+        }
+      }
+
+      function removeAnimation(header) {
+        const img = header.querySelector('.agenda-icon img');
+        if (img) {
+          img.classList.remove('animate');
+        }
+      }
+
+      headers.forEach(header => {
+        const observer = new MutationObserver(mutations => {
+          mutations.forEach(mutation => {
+            if (mutation.attributeName === 'class') {
+              if (header.classList.contains('active-header')) {
+                addAnimation(header);
+              } else {
+                removeAnimation(header);
+              }
+            }
+          });
+        });
+
+        observer.observe(header, { attributes: true });
+
+        if (header.classList.contains('active-header')) {
+          addAnimation(header);
+        }
+      });
+    });
+  </script>
+
+
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/ScrollAjustarItensContainerHeader.js" defer></script>
+  <script src="./static/js/ModalBTNFloating.js" defer></script>
+  <script src="./static/js/ModalMaisApps.js" defer></script>
+  <script src="./static/js/ModalMenu.js" defer></script>
+  <script src="./static/js/ModalNotificacoes.js" defer></script>
+  <script src="./static/js/ManipularHistorico.js" defer></script>
+  <script src="./static/js/OcultarExibirFiltro.js" defer></script>
+  <script src="./static/js/Exibiraniversariantes.js" defer></script>
+  <script src="./static/js/ExibirDetalhesAniversariante.js" defer></script>
+  <script src="./static/js/ExibirDetalhesEvento.js" defer></script>
+  <script src="./static/js/ExibirDetalhesTarefa.js" defer></script>
+  <script src="./static/js/NavDia.js" defer></script>
+  <script src="./static/js/NavSecoes.js" defer></script>
+  <script src="./static/js/ScrollRemoverItensCalendario.js" defer></script>
+  <script src="./static/js/FiltrosMultiSelect.js" defer></script>
+  <script src="./static/js/FiltrosTarefas.js" defer></script>
+
+
+
+</body>
+
+</html>

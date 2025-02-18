@@ -159,7 +159,6 @@ img {
     overflow: auto;
     position: relative;
     box-sizing: border-box;
-    background: var(--container-bg);
   }
   body::-webkit-scrollbar {
     display: none;
