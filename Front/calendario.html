@@ -144,7 +144,7 @@
       border-radius: 4px;
       color: var(--txt-titulo) !important;
       font-weight: 600;
-      padding: 8px 12px;
+      padding: 8px 12px !important;
       margin: 0 2px;
       transition: background-color 0.3s;
       font-size: var(--font-md) !important;
@@ -309,7 +309,7 @@
     }
 
     .modal-day-events-list li:hover {
-      background-color: var(--cor-primaria-2);
+      background-color: var(--card-hover);
       color: var(--txt-titulo);
     }
 
@@ -349,7 +349,7 @@
     .event-range {
       font-size: var(--font-xs);
       color: var(--txt-subtitulo);
-      margin-left: 62px;
+      margin-left: 15px;
     }
 
     /* Botão de Fechar (X) */
@@ -379,24 +379,88 @@
       filter: var(--active);
     }
 
-    /* Responsividade do Modal */
-    @media (max-width: 480px) {
-      .modal-day-events-content {
-        width: 90%;
-        margin-top: 30%;
+    /* Responsividade */
+    @media only screen and (max-width: 768px) {
+      #calendar {
+        border-width: 1px;
+      }
+
+      /* Reorganiza a toolbar em duas linhas:
+         - O segundo chunk (título) ficará sozinho na primeira linha.
+         - O primeiro (navegação) e o terceiro (views) ficarão juntos na segunda linha.
+      */
+      .fc-header-toolbar {
+        flex-wrap: wrap;
+      }
+
+      /* Força o título (supondo que seja o segundo chunk) a ocupar a primeira linha */
+      .fc-header-toolbar>*:nth-child(2) {
+        order: -1;
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: var(--font-xl);
+      }
+
+      /* Os demais elementos (primeiro e terceiro chunks) ficam na segunda linha */
+      .fc-header-toolbar>*:nth-child(1),
+      .fc-header-toolbar>*:nth-child(1),
+      .fc-header-toolbar>*:nth-child(3) {
+        order: 1;
+
+        display: flex;
+        align-items: center;
+      }
+
+      .fc-header-toolbar>*:nth-child(1) {
+        .fc-header-toolbar>*:nth-child(1) {
+          justify-content: flex-start;
+        }
+
+        .fc-header-toolbar>*:nth-child(3) {
+          justify-content: flex-end;
+        }
+
+        .fc-button {
+          padding: 6px 10px;
+          font-size: var(--font-md) !important;
+        }
       }
     }
 
-    /* ===== Estilo específico para o pseudo-evento "Agenda Livre" ===== */
-    .ephemeral-event {
-      background-color: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-      cursor: default !important;
-    }
+    /* Responsividade do Modal */
+    @media only screen and (max-width: 480px) {
 
-    .ephemeral-event:hover {
-      background-color: transparent !important;
+      #calendar {
+        height: calc(var(--vh, 1vh) * 100 - 7.5rem) !important;
+      }
+
+      .modal-day-events-content {
+        width: 80%;
+        margin-top: 30%;
+      }
+
+      .fc-toolbar-title {
+        font-size: var(--font-lg) !important;
+      }
+
+      .fc-button {
+        padding: 5px 8px !important;
+        font-size: var(--font-sm) !important;
+      }
+
+      /* ===== Estilo específico para o pseudo-evento "Agenda Livre" ===== */
+      .ephemeral-event {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        cursor: default !important;
+      }
+
+      .ephemeral-event:hover {
+        background-color: transparent !important;
+      }
+
     }
   </style>
 
@@ -688,34 +752,30 @@
 
         if (dayEvents.length > 0) {
           dayEvents.forEach(function (event) {
-            var li = document.createElement('li');
-
-            var startTime = event.allDay
-              ? 'Dia todo'
-              : FullCalendar.formatDate(event.start, { hour: '2-digit', minute: '2-digit', hour12: false });
-            var endTime = event.allDay || !event.end
-              ? ''
-              : ' - ' + FullCalendar.formatDate(event.end, { hour: '2-digit', minute: '2-digit', hour12: false });
-
             var markerClass = 'cor-marc' + (event.extendedProps.markerType || 0);
-
-            // Combina category e title, se houver category
             var category = event.extendedProps.category ? event.extendedProps.category + ' - ' : '';
             var displayTitle = category + event.title;
+            var li = document.createElement('li');
 
-            var rangeHtml = '';
-            if (!event.allDay) {
-              rangeHtml = `<div class="event-range">${startTime}${endTime}</div>`;
+            if (event.allDay) {
+              li.innerHTML = `
+                <div class="event-line">
+                  <div class="event-marker-vertical ${markerClass}"></div>
+                  <span class="event-title">${displayTitle}</span>
+                </div>
+                <div class="event-range">Dia Todo</div>
+              `;
+            } else {
+              var formattedStart = FullCalendar.formatDate(event.start, { hour: '2-digit', minute: '2-digit', hour12: false });
+              var formattedEnd = event.end ? ' - ' + FullCalendar.formatDate(event.end, { hour: '2-digit', minute: '2-digit', hour12: false }) : '';
+              li.innerHTML = `
+                <div class="event-line">
+                  <div class="event-marker-vertical ${markerClass}"></div>
+                  <span class="event-title">${displayTitle}</span>
+                </div>
+                <div class="event-range">${formattedStart}${formattedEnd}</div>
+              `;
             }
-
-            li.innerHTML = `
-              <div class="event-line">
-                <span class="event-hour">${startTime}</span>
-                <div class="event-marker-vertical ${markerClass}"></div>
-                <span class="event-title">${displayTitle}</span>
-              </div>
-              ${rangeHtml}
-            `;
 
             li.addEventListener('click', function (e) {
               e.stopPropagation();
@@ -896,6 +956,7 @@
       });
     });
   </script>
+
 
 </body>
 
