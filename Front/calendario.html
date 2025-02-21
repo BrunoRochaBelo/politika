@@ -4,7 +4,7 @@
 <head>
   <!-- Metadados críticos -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="Lista de calendário">
   <title>Calendário</title>
@@ -87,7 +87,7 @@
       border-radius: 25px;
       border: 1px solid var(--borda);
       box-sizing: border-box;
-      height: calc(var(--vh, 1vh) * 100 - 5rem) !important;
+      height: calc(var(--vh, 1vh) * 100 - 5.6rem) !important;
     }
 
     /* Removendo bordas extras na grade interna */
@@ -207,7 +207,7 @@
     /* Estilo dos Eventos */
     .fc-event {
       color: var(--txt-conteudo-card);
-      font-size: var(--font-sm);
+      font-size: var(--font-xs) !important;
       padding: 2px 4px;
       border-radius: 4px;
       line-height: var(--line-height);
@@ -225,6 +225,13 @@
       text-overflow: ellipsis;
     }
 
+    /* Apenas para as visualizações de semana e dia */
+    .fc-timegrid-event .fc-event-title {
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     /* Linhas Divisórias nas Visualizações de Semana e Dia */
     .fc-timegrid-slot,
     .fc-timegrid-slot-lane,
@@ -233,70 +240,11 @@
       border-color: var(--divisor) !important;
     }
 
-    /* Modal de Detalhes */
-    #eventDetailModal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: var(--bg-overlay);
-      transition: opacity 0.3s ease;
-    }
-
-    .modal-detail-content {
-      background-color: var(--modal-bg);
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 500px;
-      position: relative;
-      border: 2px solid var(--modal-borda);
-      color: var(--modal-conteudo);
-    }
-
-    .modal-detail-content h2 {
-      margin-top: 0;
-      font-size: var(--font-xl);
-      color: var(--modal-titulo);
-      line-height: var(--line-height);
-    }
-
-    .modal-detail-content p {
-      margin: 10px 0;
-      font-size: var(--font-md);
-      color: var(--modal-conteudo);
-      line-height: var(--line-height);
-    }
-
-    .modal-detail-content img {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-
-    /* Botão de Fechar o Modal */
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: var(--font-xl);
-      cursor: pointer;
-      color: var(--cor-primaria-2);
-    }
-
-    .close-modal:hover {
-      color: var(--cor-primaria-1);
-    }
-
-    /* Modal de Lista de Eventos do Dia */
+    /* ============ MODAL DE LISTA DE EVENTOS DO DIA ============ */
     #dayEventsModal {
       display: none;
       position: fixed;
-      z-index: 1000;
+      z-index: 4000;
       left: 0;
       top: 0;
       width: 100%;
@@ -309,113 +257,146 @@
     .modal-day-events-content {
       background-color: var(--modal-bg);
       margin: 10% auto;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 500px;
+      padding: 20px 30px;
+      border-radius: 12px;
+      max-width: 400px;
       position: relative;
       border: 2px solid var(--modal-borda);
       color: var(--modal-conteudo);
+      box-shadow: var(--sombra-moderada);
     }
 
-    .modal-day-events-content h2 {
-      margin-top: 0;
-      font-size: var(--font-xl);
-      color: var(--modal-titulo);
+    /* Cabeçalho: apenas o dia da semana + botão fechar */
+    .modal-day-events-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Ex.: "quinta-feira" */
+    .modal-day-events-header-date {
+      font-size: var(--font-md);
+      font-weight: 600;
       line-height: var(--line-height);
     }
 
-    .modal-day-events-content ul {
+    /* Ex.: "20 de fev." */
+    .modal-day-events-subdate {
+      font-size: var(--font-sm);
+      color: var(--txt-subtitulo);
+    }
+
+    /* Linha pontilhada */
+    .modal-day-events-dotted-separator {
+      border-top: 1px dotted var(--txt-subtitulo);
+      margin: 12px 0;
+    }
+
+    /* Lista de eventos */
+    .modal-day-events-list {
       list-style: none;
+      margin: 0;
       padding: 0;
     }
 
-    .modal-day-events-content ul li {
-      padding: 10px;
-      border-bottom: 1px solid var(--divisor);
+    .modal-day-events-list li {
+      padding: 10px 4px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
       cursor: pointer;
-      font-size: var(--font-sm);
-      line-height: var(--line-height);
     }
 
-    .modal-day-events-content ul li:hover {
+    .modal-day-events-list li:hover {
       background-color: var(--cor-primaria-2);
       color: var(--txt-titulo);
     }
 
+    /* Linha principal do evento (hora + "barra vertical" + título) */
+    .event-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    /* Hora (ex.: "09:00") */
+    .event-hour {
+      font-weight: 600;
+      font-size: var(--font-sm);
+      flex-shrink: 0;
+    }
+
+    /* Barra vertical no lugar do marcador circular */
+    .event-marker-vertical {
+      width: 4px;
+      height: 24px;
+      border-radius: 25px;
+      flex-shrink: 0;
+    }
+
+    /* Título do evento no modal */
+    .event-title {
+      font-size: var(--font-sm);
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Intervalo (ex.: "09:00 - 10:00") */
+    .event-range {
+      font-size: var(--font-xs);
+      color: var(--txt-subtitulo);
+      margin-left: 62px;
+    }
+
+    /* Botão de Fechar (X) */
     .close-modal-day {
       position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: var(--font-xl);
+      padding: 0 10px;
+      top: 5px;
+      right: 5px;
+      color: var(--txt-destaque);
+      border-radius: 45px;
+      font-size: 22px;
+      font-weight: 400;
       cursor: pointer;
-      color: var(--cor-primaria-2);
     }
 
     .close-modal-day:hover {
-      color: var(--cor-primaria-1);
+      background: #c61818;
+      cursor: pointer;
+      color: rgb(227, 227, 227);
+      filter: none;
     }
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-      #calendar {
-        border-width: 1px;
-      }
-
-      /* Reorganiza a toolbar em duas linhas:
-         - O segundo chunk (título) ficará sozinho na primeira linha.
-         - O primeiro (navegação) e o terceiro (views) ficarão juntos na segunda linha.
-      */
-      .fc-header-toolbar {
-        flex-wrap: wrap;
-      }
-
-      /* Força o título (supondo que seja o segundo chunk) a ocupar a primeira linha */
-      .fc-header-toolbar>*:nth-child(2) {
-        order: -1;
-        flex-basis: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-        font-size: var(--font-xl);
-      }
-
-      /* Os demais elementos (primeiro e terceiro chunks) ficam na segunda linha */
-      .fc-header-toolbar>*:nth-child(1),
-      .fc-header-toolbar>*:nth-child(3) {
-        order: 1;
-        flex-basis: 50%;
-        display: flex;
-        align-items: center;
-      }
-
-      .fc-header-toolbar>*:nth-child(1) {
-        justify-content: flex-start;
-      }
-
-      .fc-header-toolbar>*:nth-child(3) {
-        justify-content: flex-end;
-      }
-
-      .fc-button {
-        padding: 6px 10px;
-        font-size: var(--font-md) !important;
-      }
+    .close-modal-day:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: var(--sombra-leve);
+      border: 1px solid var(--borda);
+      filter: var(--active);
     }
 
+    /* Responsividade do Modal */
     @media (max-width: 480px) {
-      #calendar {
-        height: calc(var(--vh, 1vh) * 100 - 7.5rem) !important;
+      .modal-day-events-content {
+        width: 90%;
+        margin-top: 30%;
       }
+    }
 
-      .fc-toolbar-title {
-        font-size: var(--font-lg) !important;
-      }
+    /* ===== Estilo específico para o pseudo-evento "Agenda Livre" ===== */
+    .ephemeral-event {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      cursor: default !important;
+    }
 
-      .fc-button {
-        padding: 5px 8px !important;
-        font-size: var(--font-sm) !important;
-      }
-
-
+    .ephemeral-event:hover {
+      background-color: transparent !important;
     }
   </style>
 
@@ -424,7 +405,6 @@
 </head>
 
 <body class="body-template">
-
   <header class="header header-template">
     <div class="header-menu" onclick="toggleMenu(this)">
       <div class="bar1"></div>
@@ -486,26 +466,23 @@
     </section>
   </main>
 
-  <!-- Modal de Detalhes do Evento -->
-  <div id="eventDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalEventTitle">
-    <div class="modal-detail-content">
-      <span class="close-modal" tabindex="0">&times;</span>
-      <h2 id="modalEventTitle">Título do Evento</h2>
-      <p><strong>Tipo:</strong> <span id="modalEventMarker"></span></p>
-      <p><strong>Local:</strong> <span id="modalEventLocation"></span></p>
-      <p><strong>Participantes:</strong> <span id="modalEventParticipants"></span></p>
-      <p><strong>Duração:</strong> <span id="modalEventDuration"></span></p>
-      <div id="modalEventMap"></div>
-    </div>
-  </div>
-  <!-- Fim do Modal de Detalhes -->
-
   <!-- Modal de Lista de Eventos do Dia -->
-  <div id="dayEventsModal" role="dialog" aria-modal="true" aria-labelledby="dayEventsModalTitle">
+  <div id="dayEventsModal" role="dialog" aria-modal="true">
     <div class="modal-day-events-content">
-      <span class="close-modal-day" tabindex="0">&times;</span>
-      <h2 id="dayEventsModalTitle">Eventos do Dia</h2>
-      <ul id="dayEventsList"></ul>
+      <!-- Cabeçalho: dia da semana e botão de fechar -->
+      <div class="modal-day-events-header">
+        <span id="modalDayEventsHeaderDate" class="modal-day-events-header-date"></span>
+        <span class="close-modal-day" tabindex="0">&times;</span>
+      </div>
+
+      <!-- Subdata (ex.: "20 de fev.") -->
+      <div id="modalDayEventsSubDate" class="modal-day-events-subdate"></div>
+
+      <!-- Linha pontilhada -->
+      <div class="modal-day-events-dotted-separator"></div>
+
+      <!-- Lista de eventos -->
+      <ul id="dayEventsList" class="modal-day-events-list"></ul>
     </div>
   </div>
   <!-- Fim do Modal de Lista de Eventos do Dia -->
@@ -633,6 +610,129 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
+
+      // Pseudo-evento "Agenda Livre"
+      var ephemeralEvent = null;
+      var ephemeralTimeout = null;
+
+      function roundToNearest30(date) {
+        var newDate = new Date(date.getTime());
+        var minutes = newDate.getMinutes();
+        var remainder = minutes % 30;
+        if (remainder < 15) {
+          newDate.setMinutes(minutes - remainder);
+        } else {
+          newDate.setMinutes(minutes + (30 - remainder));
+        }
+        newDate.setSeconds(0);
+        newDate.setMilliseconds(0);
+        return newDate;
+      }
+
+      function removeEphemeralEvent() {
+        if (ephemeralEvent) {
+          ephemeralEvent.remove();
+          ephemeralEvent = null;
+        }
+        if (ephemeralTimeout) {
+          clearTimeout(ephemeralTimeout);
+          ephemeralTimeout = null;
+        }
+      }
+
+      function createEphemeralEvent(info) {
+        removeEphemeralEvent();
+        var startDate = roundToNearest30(info.date);
+        var endDate = new Date(startDate.getTime() + 30 * 60 * 1000);
+
+        ephemeralEvent = calendar.addEvent({
+          title: 'Livre',
+          start: startDate,
+          end: endDate,
+          allDay: false,
+          editable: false,
+          durationEditable: false,
+          startEditable: false,
+          classNames: ['ephemeral-event'],
+          extendedProps: {
+            ephemeral: true
+          }
+        });
+
+        ephemeralTimeout = setTimeout(function () {
+          removeEphemeralEvent();
+        }, 2000);
+      }
+
+      function openDayEventsModal(date) {
+        // Exibir apenas o dia da semana no cabeçalho
+        var weekdayLong = date.toLocaleDateString('pt-BR', { weekday: 'long' });
+        document.getElementById('modalDayEventsHeaderDate').textContent = weekdayLong;
+
+        // Exibir algo como "20 de fev." na subdata
+        var subDate = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short' });
+        subDate = subDate.replace('.', '');
+        document.getElementById('modalDayEventsSubDate').textContent = subDate;
+
+        // Filtra eventos do dia (ignorando pseudo-evento)
+        var dayStart = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        var dayEnd = new Date(dayStart.getTime() + 24 * 60 * 60 * 1000);
+
+        var dayEvents = calendar.getEvents().filter(function (event) {
+          if (event.extendedProps.ephemeral) return false;
+          return event.start < dayEnd && event.end > dayStart;
+        });
+
+        var eventsListEl = document.getElementById('dayEventsList');
+        eventsListEl.innerHTML = '';
+
+        if (dayEvents.length > 0) {
+          dayEvents.forEach(function (event) {
+            var li = document.createElement('li');
+
+            var startTime = event.allDay
+              ? 'Dia todo'
+              : FullCalendar.formatDate(event.start, { hour: '2-digit', minute: '2-digit', hour12: false });
+            var endTime = event.allDay || !event.end
+              ? ''
+              : ' - ' + FullCalendar.formatDate(event.end, { hour: '2-digit', minute: '2-digit', hour12: false });
+
+            var markerClass = 'cor-marc' + (event.extendedProps.markerType || 0);
+
+            // Combina category e title, se houver category
+            var category = event.extendedProps.category ? event.extendedProps.category + ' - ' : '';
+            var displayTitle = category + event.title;
+
+            var rangeHtml = '';
+            if (!event.allDay) {
+              rangeHtml = `<div class="event-range">${startTime}${endTime}</div>`;
+            }
+
+            li.innerHTML = `
+              <div class="event-line">
+                <span class="event-hour">${startTime}</span>
+                <div class="event-marker-vertical ${markerClass}"></div>
+                <span class="event-title">${displayTitle}</span>
+              </div>
+              ${rangeHtml}
+            `;
+
+            li.addEventListener('click', function (e) {
+              e.stopPropagation();
+              window.location.href = 'exibir-evento' + event.id + '.html';
+            });
+
+            eventsListEl.appendChild(li);
+          });
+        } else {
+          var li = document.createElement('li');
+          li.textContent = "Sem eventos";
+          eventsListEl.appendChild(li);
+        }
+
+        document.getElementById('dayEventsModal').style.display = "block";
+      }
+
       var calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'pt-br',
         initialView: 'dayGridMonth',
@@ -651,136 +751,113 @@
         scrollTime: new Date().getHours() + ':00:00',
         editable: true,
         selectable: true,
+
+        datesSet: function () {
+          removeEphemeralEvent();
+        },
+
+        eventTimeFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        },
+
         eventClassNames: function (arg) {
           if (arg.event.extendedProps.markerType !== undefined) {
             return ['cor-marc' + arg.event.extendedProps.markerType];
           }
           return [];
         },
+
+        eventDidMount: function (info) {
+          if (info.event.extendedProps.ephemeral) {
+            // Altera apenas o pseudo-evento "Agenda Livre"
+            info.el.innerHTML = '<div style="font-size: 10px; text-align: center; pointer-events: none;">Livre</div>';
+            info.el.style.pointerEvents = 'none';
+            info.el.style.backgroundColor = 'transparent';
+            info.el.style.border = 'none';
+            info.el.style.boxShadow = 'none';
+            info.el.style.cursor = 'default';
+          }
+          // Eventos não efêmeros permanecem com a renderização padrão do FullCalendar.
+        },
+
         events: [
-          // Evento com horário definido
           {
-            title: 'Caminhada',
+            id: 101,
+            title: 'Carreata no Bairro',
             start: '2025-02-20T08:00:00',
-            end: '2025-02-20T09:30:00',
+            end: '2025-02-20T10:00:00',
             extendedProps: {
-              marker: '📍',
-              markerType: 10,
-              location: 'Rua das Flores, 123',
-              duration: '1h30',
-              miniMap: 'https://via.placeholder.com/300x150?text=Mini+Mapa'
+              markerType: 1,
+              category: 'CARREATA',
+              duration: '2h'
             }
           },
-          // Evento com horário definido
           {
-            title: 'Entevista',
-            start: '2025-02-20T10:00:00',
-            end: '2025-02-20T11:30:00',
+            id: 202,
+            title: 'Entrevista de Rádio',
+            start: '2025-02-20T11:00:00',
+            end: '2025-02-20T12:00:00',
             extendedProps: {
-              marker: '📍',
-              markerType: 3,
-              location: 'Rua da Matriz, 33',
-              participants: 'Alice, Bob, Carlos',
-              duration: '1h30',
-              miniMap: 'https://via.placeholder.com/300x150?text=Mini+Mapa'
+              markerType: 2,
+              category: 'ENTREVISTA',
+              duration: '1h'
             }
           },
-          // Evento com horário definido
           {
-            title: 'Evento de Lançamento',
+            id: 303,
+            title: 'Planejamento Setorial',
             start: '2025-02-22T14:00:00',
             end: '2025-02-22T16:00:00',
             extendedProps: {
-              marker: '📌',
               markerType: 7,
-              location: 'Av. Central, 456',
-              participants: 'Diana, Eduardo, Fernanda',
-              duration: '2h',
-              miniMap: 'https://via.placeholder.com/300x150?text=Mini+Mapa'
+              category: 'SETORIAL',
+              duration: '2h'
             }
           },
-          // Eventos do dia todo (all-day)
           {
-            title: 'Evento Todo Dia - Reunião Geral',
+            id: 404,
+            title: 'Reunião de Administração',
             start: '2025-02-20',
+            end: '2025-02-21',
             allDay: true,
             extendedProps: {
-              marker: '📅',
               markerType: 5,
-              location: 'Auditório Principal',
-              duration: 'Todo o dia',
-              miniMap: 'https://via.placeholder.com/300x150?text=Mini+Mapa'
+              category: 'ADMINISTRAÇÃO',
+              duration: 'Dia todo'
             }
           },
           {
-            title: 'Evento Todo Dia - Plenária',
+            id: 505,
+            title: 'Comício na Praça Central',
             start: '2025-02-21',
+            end: '2025-02-22',
             allDay: true,
             extendedProps: {
-              marker: '📅',
               markerType: 6,
-              location: 'Sala de Conferência B',
-              duration: 'Todo o dia',
-              miniMap: 'https://via.placeholder.com/300x150?text=Mini+Mapa'
+              category: 'COMICIO',
+              duration: 'Dia todo'
             }
           }
         ],
+
         eventClick: function (info) {
           info.jsEvent.preventDefault();
-          var event = info.event;
-          document.getElementById("modalEventTitle").innerText = event.title;
-          document.getElementById("modalEventMarker").innerText = event.extendedProps.marker || "";
-          document.getElementById("modalEventLocation").innerText = event.extendedProps.location || "";
-          document.getElementById("modalEventParticipants").innerText = event.extendedProps.participants || "";
-          document.getElementById("modalEventDuration").innerText = event.extendedProps.duration || "";
-          if (event.extendedProps.miniMap) {
-            document.getElementById("modalEventMap").innerHTML = '<img src="' + event.extendedProps.miniMap + '" alt="Mini Mapa">';
-          } else {
-            document.getElementById("modalEventMap").innerHTML = "";
-          }
-          document.getElementById("eventDetailModal").style.display = "block";
+          openDayEventsModal(info.event.start);
         },
+
         dateClick: function (info) {
-          if (info.view.type === 'dayGridMonth') {
-            var dayEvents = calendar.getEvents().filter(function (event) {
-              return event.start.toDateString() === info.date.toDateString();
-            });
-            var eventsListEl = document.getElementById('dayEventsList');
-            eventsListEl.innerHTML = '';
-            if (dayEvents.length > 0) {
-              dayEvents.forEach(function (event) {
-                var li = document.createElement('li');
-                li.innerText = event.title;
-                li.addEventListener('click', function (e) {
-                  document.getElementById("modalEventTitle").innerText = event.title;
-                  document.getElementById("modalEventMarker").innerText = event.extendedProps.marker || "";
-                  document.getElementById("modalEventLocation").innerText = event.extendedProps.location || "";
-                  document.getElementById("modalEventParticipants").innerText = event.extendedProps.participants || "";
-                  document.getElementById("modalEventDuration").innerText = event.extendedProps.duration || "";
-                  if (event.extendedProps.miniMap) {
-                    document.getElementById("modalEventMap").innerHTML = '<img src="' + event.extendedProps.miniMap + '" alt="Mini Mapa">';
-                  } else {
-                    document.getElementById("modalEventMap").innerHTML = "";
-                  }
-                  document.getElementById("dayEventsModal").style.display = "none";
-                  document.getElementById("eventDetailModal").style.display = "block";
-                  e.stopPropagation();
-                });
-                eventsListEl.appendChild(li);
-              });
-            } else {
-              var li = document.createElement('li');
-              li.innerText = "Sem eventos";
-              eventsListEl.appendChild(li);
-            }
-            var modalTitle = "Eventos em " + info.date.toLocaleDateString('pt-BR', { weekday: 'short', day: 'numeric' });
-            document.querySelector('#dayEventsModal h2').innerText = modalTitle.replace(',', '.');
-            document.getElementById("dayEventsModal").style.display = "block";
+          var currentView = info.view.type;
+          if (currentView === 'dayGridMonth') {
+            openDayEventsModal(info.date);
+          } else {
+            createEphemeralEvent(info);
           }
         },
+
         views: {
           timeGridWeek: {
-            // Cabeçalho: dia abreviado (linha 1) e número (linha 2), ambos em pt-BR
             dayHeaderContent: function (arg) {
               let weekday = new Date(arg.date).toLocaleDateString('pt-BR', { weekday: 'short' });
               let day = new Date(arg.date).toLocaleDateString('pt-BR', { day: 'numeric' });
@@ -788,7 +865,6 @@
             }
           },
           timeGridDay: {
-            // Cabeçalho: nome completo do dia em pt-BR
             dayHeaderContent: function (arg) {
               let fullDay = new Date(arg.date).toLocaleDateString('pt-BR', { weekday: 'long' });
               return { html: fullDay };
@@ -796,35 +872,26 @@
           }
         }
       });
+
       calendar.render();
 
-      // Função para fechar os modais ao clicar fora ou pressionar ESC
-      function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-      }
-
-      // Fechar modal de detalhes do evento ao clicar no "X"
-      document.querySelector("#eventDetailModal .close-modal").addEventListener("click", function () {
-        closeModal("eventDetailModal");
-      });
-      // Fechar modal de lista de eventos do dia ao clicar no "X"
+      // Fechar modal ao clicar no X
       document.querySelector("#dayEventsModal .close-modal-day").addEventListener("click", function () {
-        closeModal("dayEventsModal");
+        document.getElementById("dayEventsModal").style.display = "none";
       });
-      // Fechar modais ao clicar fora do conteúdo
+
+      // Fechar modal ao clicar fora do conteúdo
       window.addEventListener("click", function (event) {
-        if (event.target === document.getElementById("eventDetailModal")) {
-          closeModal("eventDetailModal");
-        }
-        if (event.target === document.getElementById("dayEventsModal")) {
-          closeModal("dayEventsModal");
+        var dayEventsModal = document.getElementById("dayEventsModal");
+        if (event.target === dayEventsModal) {
+          dayEventsModal.style.display = "none";
         }
       });
-      // Fechar modais ao pressionar a tecla ESC
+
+      // Fechar modal ao pressionar ESC
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
-          closeModal("eventDetailModal");
-          closeModal("dayEventsModal");
+          document.getElementById("dayEventsModal").style.display = "none";
         }
       });
     });
