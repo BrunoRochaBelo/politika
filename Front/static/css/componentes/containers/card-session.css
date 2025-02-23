@@ -39,7 +39,7 @@
   border: 1px solid var(--cor-apoio-1);
   box-shadow: var(--sombra-moderada);
   padding: 7px 0px;
-  margin: 0 7px;
+  margin: 0;
 }
 
 .card-session.active:hover {

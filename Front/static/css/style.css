@@ -3352,7 +3352,7 @@ form span.success {
   --barra-nav-bg: hsl(220, 20%, 80%);
   --barra-nav-indicator: hsl(220, 40%, 97%);
   --txt-titulo: hsl(220, 20%, 15%);
-  --txt-subtitulo: hsl(220, 20%, 32%);
+  --txt-subtitulo: hsl(220, 20%, 28%);
   --txt-destaque: hsl(220, 100%, 25%);
   --txt-nav: hsl(220, 18%, 25%);
   --txt-nav-selecionado: hsl(220, 80%, 30%);
@@ -3360,15 +3360,15 @@ form span.success {
   --card-bg: hsl(0, 0%, 100%);
   --card-borda: hsl(220, 20%, 98%);
   --card-detalhe: hsl(220, 15%, 95%);
-  --card-hover: hsl(220, 60%, 98%);
-  --card-aberto-bg: hsl(220, 60%, 95%);
-  --card-aberto-detalhe: hsl(220, 40%, 90%);
+  --card-hover: hsl(220, 50%, 82%);
+  --card-aberto-bg: hsl(215, 90%, 94%);
+  --card-aberto-detalhe: hsl(215, 75%, 90%);
   --txt-titulo-card: hsl(220, 30%, 20%);
   --txt-conteudo-card: hsl(220, 25%, 35%);
   --txt-card-aberto: hsl(220, 100%, 18%);
-  --modal-bg: hsl(220, 45%, 92%);
-  --modal-borda: hsl(220, 45%, 80%);
-  --modal-divisor: hsl(220, 45%, 75%);
+  --modal-bg: hsl(220, 30%, 95%);
+  --modal-borda: hsl(220, 30%, 80%);
+  --modal-divisor: hsl(220, 30%, 75%);
   --modal-titulo: hsl(218, 80%, 58%);
   --modal-conteudo: hsl(218, 65%, 40%);
   --form-container-bg: hsl(220, 25%, 96%);
@@ -6139,7 +6139,7 @@ li > .lista-vertical-alt > li:first-child {
   border: 1px solid var(--cor-apoio-1);
   box-shadow: var(--sombra-moderada);
   padding: 7px 0;
-  margin: 0 7px;
+  margin: 0;
 }
 .card-session.active:hover {
   filter: none !important;

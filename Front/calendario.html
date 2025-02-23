@@ -36,6 +36,25 @@
 
   <!-- Estilos customizados para o calendário, modal e responsividade -->
   <style>
+    #calendar .area-interna-containerContent-template {
+      height: 100% !important;
+      cursor: pointer;
+    }
+
+    #calendar .area-interna-containerContent-template-content {
+      padding-bottom: 20px;
+      overflow: auto !important;
+    }
+
+    #calendar .area-interna-containerContent-template::-webkit-scrollbar {
+      display: none;
+    }
+
+    #calendar .area-interna-containerContent-template {
+      scrollbar-width: none;
+    }
+
+
     /* Container Geral */
     .container-solo-template {
       display: grid;
@@ -339,6 +358,7 @@
     /* Título do evento no modal */
     .event-title {
       font-size: var(--font-sm);
+      color: var(--txt-titulo);
       flex: 1;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -407,26 +427,25 @@
       .fc-header-toolbar>*:nth-child(1),
       .fc-header-toolbar>*:nth-child(3) {
         order: 1;
-
         display: flex;
         align-items: center;
       }
 
+
       .fc-header-toolbar>*:nth-child(1) {
-        .fc-header-toolbar>*:nth-child(1) {
-          justify-content: flex-start;
-        }
+        justify-content: flex-start;
+      }
 
-        .fc-header-toolbar>*:nth-child(3) {
-          justify-content: flex-end;
-        }
+      .fc-header-toolbar>*:nth-child(3) {
+        justify-content: flex-end;
+      }
 
-        .fc-button {
-          padding: 6px 10px;
-          font-size: var(--font-md) !important;
-        }
+      .fc-button {
+        padding: 6px 10px !important;
+        font-size: var(--font-md) !important;
       }
     }
+
 
     /* Responsividade do Modal */
     @media only screen and (max-width: 480px) {
@@ -447,6 +466,10 @@
       .fc-button {
         padding: 5px 8px !important;
         font-size: var(--font-sm) !important;
+      }
+
+      .fc .fc-button .fc-icon {
+        font-size: var(--font-md) !important;
       }
 
       /* ===== Estilo específico para o pseudo-evento "Agenda Livre" ===== */
@@ -524,8 +547,169 @@
       <div class="container-solo-template">
         <div class="container-solo-template-content">
           <!-- Calendário -->
-          <div id="calendar"></div>
+          <div id="calendar">
+            <div class="area-interna-containerContent-template" style="display: none;">
+              <div class="area-interna-containerContent-template-header"></div>
+              <div class="area-interna-containerContent-template-content">
+                <ul class="lista-vertical">
+                  <!--  possivél logica para verificar se tem aniversariantes no dia -->
+                  <li class="secao-interna-template area-aniversariantes">
+                    <h2 class="secao-interna-template-header">
+                      <span class="aniversario-icon">🎂</span>
+                      <p>Aniversários do dia</p>
+                      <button class="btn-recuar-expandir-aniver btn-pesquisa-rapida">Exibir</button>
+                    </h2>
+                    <div class="secao-interna-template-content  aniversariantes">
+                      <ul class="lista-vertical-cards ">
+                        <!--  lógica do loop lista aniversariantes  -->
+                        <!--  inicio do card  -->
+                        <li>
+                          <div class="card-xs aniversario-small-card contato" href="#">
+                            <p class="aniversario-small-card-title" data-filter="nomeContato">{{Nome Contato}}</p>
+                            <div class="aniversario-small-card-perfilInfluencia" data-filter="perfilInfluencia"><img src="./static/imagens/icones/5-estrela.svg" alt="Perfil influencia Icon"></div>
+                            <img class="aniversario-small-card-call" src="./static/imagens/icones/call.svg" alt="Ligar Icon">
+                            <div class="aniversario-small-card-tipocontato" data-filter="tipoContato">{{eleitor}}</div>
+                            <div class="aniversario-small-card-num" data-filter="numeroContato">{{(81) 99999-9999}}</div>
+                            <div class="aniversario-small-card-email" data-filter="emailContato">{{emailContato@mail.com}}</div>
+                            <div class="aniversario-small-card-tipopessoa" data-filter="tipoPessoa">{{fisica}}</div>
+                            <div class="aniversario-small-card-editar">
+                              <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='exibir-tarefa.html'">Visualizar contato</button>
+                            </div>
+                            <div class="aniversario-small-card-id" data-filter="idContato">{{idContato}}</div>
+                          </div>
+                        </li>
+                        <!--  fim do card  -->
+                      </ul>
+                    </div>
+                  </li>
+                  <!--  fim -->
+                  <li class="area-agenda">
+                    <ul class="lista-vertical-alt">
+                      <li class="card-session secao-interna-template active">
+                        <h2 class="secao-interna-template-header active-header" onclick="changeSession(1)"><a href="#">
+                            <div class="agenda-icon agora">
+                              <img src="./static/imagens/icones/agora.svg" alt="Agora Icon">
+                            </div> agora - {{08h:00}} <!--  variavel da hora corrente  --> <span class="arrow up"></span>
+                          </a></h2>
+                        <div class="secao-interna-template-content">
+                          <div class="session active" id="secao1">
+                            <ul class="lista-vertical-cards">
+                              <!--  lógica do loop lista eventos agora  -->
+                              <!--  inicio do card  -->
+                              <li>
+                                <div class="card-l calendario-large-card evento" href="#">
+                                  <p class="calendario-large-card-type" data-filter="tipoEvento">Tipo</p>
+                                  <div class="calendario-large-card-tag" data-filter="tagEvento">
+                                    <div class="marcador-item cor-marc1">
+                                      <p><strong>marcador 1</strong></p>
+                                    </div>
+                                  </div>
+                                  <p class="calendario-large-card-title" data-filter="tituloEvento">Evento 1</p>
+                                  <p class="calendario-large-card-local" data-filter="localEvento">Local evento 1</p>
+                                  <p class="calendario-large-card-partcipantes" data-filter="participantesEvento">Fulano, Beltrano</p>
+                                  <div class="calendario-large-card-duracao">
+                                    <p class="calendario-large-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                    <p class="calendario-large-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                  </div>
+                                  <div class="calendario-large-card-editar">
+                                    <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                  </div>
+                                  <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                  </a>
+                              </li>
+                              <!--  fim do card  -->
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="card-session secao-interna-template">
+                        <h2 class="secao-interna-template-header" onclick="changeSession(2)"><a href="#">
+                            <div class="agenda-icon futuro">
+                              <img src="./static/imagens/icones/futuro.svg" alt="Futuro Icon">
+                            </div>Ainda hoje <span class="arrow down"></span>
+                          </a></h2>
+                        <div class="secao-interna-template-content">
+                          <div class="session" id="secao2">
+                            <ul class="lista-vertical">
+                              <!--  lógica do loop lista de eventos futuro  -->
+                              <!--  inicio da lista por hora  -->
+                              <li class="secao-interna-template">
+                                <h2 class="secao-interna-template-header"><b>{{09h:00}}</b> <!--  variavel da hora  --> </h2>
+                                <div class="secao-interna-template-content">
+                                  <ul class=" lista-vertical-cards">
+                                    <!--  lógica do loop lista eventos da hora referente  -->
+                                    <!--  inicio do card evento -->
+                                    <li>
+                                      <a class=" card-empty-card" href="#">
+                                        <p class="card-empty-card-title">Agenda livre</p>
+                                        <p class="card-empty-card-add"><b>+</b> adicionar evento</p>
+                                      </a>
+                                    </li>
+                                    <!--  fim do card  evento -->
+                                  </ul>
+                                </div>
+                              </li>
+                              <!--  fim da lista por hora  -->
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="card-session secao-interna-template">
+                        <h2 class="secao-interna-template-header" onclick="changeSession(3)"><a href="#">
+                            <div class="agenda-icon passado">
+                              <img src="./static/imagens/icones/passado.svg" alt="Passado Icon">
+                            </div>Eventos anteriores <span class="arrow down"></span>
+                          </a>
+                        </h2>
+                        <div class="secao-interna-template-content">
+                          <div class="session" id="secao3">
+                            <ul class="lista-vertical-alt">
+                              <!--  lógica do loop lista de eventos passados  -->
+                              <!--  inicio da lista por hora  -->
+                              <li class="secao-interna-template">
+                                <h2 class="secao-interna-template-header"><b>07h:00</b></h2>
+                                <div class="secao-interna-template-content">
+                                  <ul class=" lista-vertical-cards">
+                                    <!--  lógica do loop lista eventos da hora referente  -->
+                                    <!--  inicio do card evento -->
+                                    <li>
+                                      <div class="card-xs calendario-small-card evento" href="#">
+                                        <p class="calendario-small-card-type" data-filter="tipoEvento">Tipo</p>
+                                        <div class="calendario-small-card-tag" data-filter="tagEvento">
+                                          <div class="marcador-item cor-marc1">
+                                            <p><strong>marcador 1</strong></p>
+                                          </div>
+                                        </div>
+                                        <p class="calendario-small-card-title" data-filter="tituloEvento">Evento 1</p>
+                                        <p class="calendario-small-card-local" data-filter="localEvento" data-filter-id="{{calendario-small-card-id}}">Local evento 1</p>
+                                        <p class="calendario-small-card-partcipantes" data-filter="participantesEvento" data-filter-id="{{calendario-small-card-id}}">Fulano, Beltrano</p>
+                                        <div class="calendario-small-card-duracao">
+                                          <p class="calendario-small-card-inicio" data-filter="inicioEvento">hora-inicio &nbsp;</p>
+                                          <p class="calendario-small-card-fim" data-filter="fimEvento">- hora-fim</p>
+                                        </div>
+                                        <div class="calendario-small-card-editar">
+                                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='evento_exibir.html'">Visualizar evento</button>
+                                        </div>
+                                        <div class="calendario-small-card-id" data-filter="calendario-small-card-id">{{calendario-small-card-id}}</div>
+                                        </a>
+                                    </li>
+                                    <!--  fim do card  evento -->
+                                  </ul>
+                                </div>
+                              </li>
+                              <!--  fim da lista por hora  -->
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
       </div>
     </section>
   </main>
@@ -663,7 +847,51 @@
   <script src="./static/js/ModalMenu.js" defer></script>
   <script src="./static/js/ModalNotificacoes.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
-  <script src="./static/js/OcultarExibirFiltro.js" defer></script>
+  <script src="./static/js/NavSecoes.js" defer></script>
+  <script src="./static/js/Exibiraniversariantes.js" defer></script>
+  <script src="./static/js/ExibirDetalhesAniversariante.js" defer></script>
+  <script src="./static/js/ExibirDetalhesEvento.js" defer></script>
+
+  <!-- Script para adicionar animação aos icones da agenda -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headers = document.querySelectorAll('.secao-interna-template-header');
+
+      function addAnimation(header) {
+        const img = header.querySelector('.agenda-icon img');
+        if (img) {
+          img.classList.add('animate');
+        }
+      }
+
+      function removeAnimation(header) {
+        const img = header.querySelector('.agenda-icon img');
+        if (img) {
+          img.classList.remove('animate');
+        }
+      }
+
+      headers.forEach(header => {
+        const observer = new MutationObserver(mutations => {
+          mutations.forEach(mutation => {
+            if (mutation.attributeName === 'class') {
+              if (header.classList.contains('active-header')) {
+                addAnimation(header);
+              } else {
+                removeAnimation(header);
+              }
+            }
+          });
+        });
+
+        observer.observe(header, { attributes: true });
+
+        if (header.classList.contains('active-header')) {
+          addAnimation(header);
+        }
+      });
+    });
+  </script>
 
   <!-- FullCalendar via CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css">
@@ -673,12 +901,118 @@
   <!-- Script de integração do FullCalendar e modais -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
+      // 1. Extrai e armazena o conteúdo customizado da Agenda
+      var customContainer = document.querySelector('#calendar .area-interna-containerContent-template');
+      var customViewHTML = "";
+      if (customContainer) {
+        customViewHTML = customContainer.innerHTML;
+        customContainer.remove();
+        console.log("Conteúdo customizado armazenado.");
+      } else {
+        console.error("Elemento .area-interna-containerContent-template não encontrado.");
+      }
 
-      // Pseudo-evento "Agenda Livre"
+      // Flag que indica se estamos no modo Agenda
+      var isAgendaActive = false;
+
+      // Funções para desabilitar/reabilitar os botões de navegação (Prev, Next, Today)
+      function disableNavButtons() {
+        document.querySelectorAll('.fc-prev-button, .fc-next-button, .fc-today-button').forEach(function (btn) {
+          btn.disabled = true;
+          btn.classList.add('disabled');
+        });
+      }
+      function enableNavButtons() {
+        document.querySelectorAll('.fc-prev-button, .fc-next-button, .fc-today-button').forEach(function (btn) {
+          btn.disabled = false;
+          btn.classList.remove('disabled');
+        });
+      }
+
+      // Função para atualizar o estado do botão "Hoje" (Today)
+      function updateTodayButtonState() {
+        var todayBtn = document.querySelector('.fc-today-button');
+        if (!todayBtn) return;
+        if (isAgendaActive) {
+          todayBtn.disabled = true;
+          return;
+        }
+        var view = calendar.view;
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var viewStart = new Date(view.currentStart);
+        viewStart.setHours(0, 0, 0, 0);
+        var viewEnd = new Date(view.currentEnd);
+        viewEnd.setHours(0, 0, 0, 0);
+        if (today >= viewStart && today < viewEnd) {
+          todayBtn.disabled = true;
+        } else {
+          todayBtn.disabled = false;
+        }
+      }
+
+      // Função que aplica a customização da Agenda
+      function applyAgendaCustomView() {
+        var viewHarness = document.querySelector('#calendar .fc-view-harness.fc-view-harness-active');
+        var titleEl = document.querySelector('.fc-toolbar-title');
+        if (viewHarness) {
+          // Limpa o contêiner pra evitar sobreposição
+          while (viewHarness.firstChild) {
+            viewHarness.removeChild(viewHarness.firstChild);
+          }
+          // Cria e insere o conteúdo customizado
+          var customDiv = document.createElement('div');
+          customDiv.className = 'custom-agenda-content';
+          customDiv.innerHTML = customViewHTML;
+          viewHarness.appendChild(customDiv);
+          viewHarness.classList.add('agenda-active');
+          console.log("Custom Agenda aplicada.");
+        } else {
+          console.error("Elemento .fc-view-harness.fc-view-harness-active não encontrado.");
+        }
+        if (titleEl) {
+          var now = new Date();
+          var day = now.getDate();
+          var month = now.getMonth() + 1;
+          var formattedDay = day < 10 ? '0' + day : day;
+          var formattedMonth = month < 10 ? '0' + month : month;
+          titleEl.innerHTML = 'seu dia - ' + formattedDay + '/' + formattedMonth;
+        }
+        disableNavButtons();
+      }
+
+      // Função para resetar a customização da Agenda e restaurar a view padrão
+      function resetAgendaView() {
+        isAgendaActive = false;
+        enableNavButtons();
+        var agendaBtn = document.querySelector('.fc-agenda-button');
+        if (agendaBtn) {
+          agendaBtn.classList.remove('fc-button-active');
+        }
+        var viewHarness = document.querySelector('#calendar .fc-view-harness.fc-view-harness-active');
+        if (viewHarness) {
+          // Remove o conteúdo customizado (mas o FullCalendar vai repopular a view)
+          while (viewHarness.firstChild) {
+            viewHarness.removeChild(viewHarness.firstChild);
+          }
+          viewHarness.classList.remove('agenda-active');
+        }
+        var titleEl = document.querySelector('.fc-toolbar-title');
+        if (titleEl) {
+          titleEl.innerHTML = calendar.view.title;
+        }
+        console.log("Agenda view reset.");
+        updateTodayButtonState();
+
+        // Força o re-render da view padrão pra exibir o conteúdo normalmente
+        setTimeout(function () {
+          calendar.changeView(calendar.view.type);
+        }, 10);
+      }
+
+      // Funções auxiliares para criar um pseudo-evento "Livre"
       var ephemeralEvent = null;
       var ephemeralTimeout = null;
-
       function roundToNearest30(date) {
         var newDate = new Date(date.getTime());
         var minutes = newDate.getMinutes();
@@ -692,7 +1026,6 @@
         newDate.setMilliseconds(0);
         return newDate;
       }
-
       function removeEphemeralEvent() {
         if (ephemeralEvent) {
           ephemeralEvent.remove();
@@ -703,12 +1036,10 @@
           ephemeralTimeout = null;
         }
       }
-
       function createEphemeralEvent(info) {
         removeEphemeralEvent();
         var startDate = roundToNearest30(info.date);
         var endDate = new Date(startDate.getTime() + 30 * 60 * 1000);
-
         ephemeralEvent = calendar.addEvent({
           title: 'Livre',
           start: startDate,
@@ -718,45 +1049,31 @@
           durationEditable: false,
           startEditable: false,
           classNames: ['ephemeral-event'],
-          extendedProps: {
-            ephemeral: true
-          }
+          extendedProps: { ephemeral: true }
         });
-
-        ephemeralTimeout = setTimeout(function () {
-          removeEphemeralEvent();
-        }, 2000);
+        ephemeralTimeout = setTimeout(removeEphemeralEvent, 2000);
       }
 
       function openDayEventsModal(date) {
-        // Exibir apenas o dia da semana no cabeçalho
+        // Exibe o modal com os eventos do dia
         var weekdayLong = date.toLocaleDateString('pt-BR', { weekday: 'long' });
         document.getElementById('modalDayEventsHeaderDate').textContent = weekdayLong;
-
-        // Exibir algo como "20 de fev." na subdata
-        var subDate = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short' });
-        subDate = subDate.replace('.', '');
+        var subDate = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short' }).replace('.', '');
         document.getElementById('modalDayEventsSubDate').textContent = subDate;
-
-        // Filtra eventos do dia (ignorando pseudo-evento)
         var dayStart = new Date(date.getFullYear(), date.getMonth(), date.getDate());
         var dayEnd = new Date(dayStart.getTime() + 24 * 60 * 60 * 1000);
-
         var dayEvents = calendar.getEvents().filter(function (event) {
           if (event.extendedProps.ephemeral) return false;
           return event.start < dayEnd && event.end > dayStart;
         });
-
         var eventsListEl = document.getElementById('dayEventsList');
         eventsListEl.innerHTML = '';
-
         if (dayEvents.length > 0) {
           dayEvents.forEach(function (event) {
             var markerClass = 'cor-marc' + (event.extendedProps.markerType || 0);
             var category = event.extendedProps.category ? event.extendedProps.category + ' - ' : '';
             var displayTitle = category + event.title;
             var li = document.createElement('li');
-
             if (event.allDay) {
               li.innerHTML = `
                 <div class="event-line">
@@ -776,12 +1093,10 @@
                 <div class="event-range">${formattedStart}${formattedEnd}</div>
               `;
             }
-
             li.addEventListener('click', function (e) {
               e.stopPropagation();
               window.location.href = 'exibir-evento' + event.id + '.html';
             });
-
             eventsListEl.appendChild(li);
           });
         } else {
@@ -789,17 +1104,36 @@
           li.textContent = "Sem eventos";
           eventsListEl.appendChild(li);
         }
-
         document.getElementById('dayEventsModal').style.display = "block";
       }
 
+      // 2. Inicialização do FullCalendar
+      var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'pt-br',
         initialView: 'dayGridMonth',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,agenda'
+        },
+        customButtons: {
+          agenda: {
+            text: 'Agenda',
+            click: function () {
+              console.log("Botão Agenda clicado. Aplicando customização.");
+              isAgendaActive = true;
+              var agendaBtn = document.querySelector('.fc-agenda-button');
+              if (agendaBtn) {
+                agendaBtn.classList.add('fc-button-active');
+                document.querySelectorAll('.fc-button').forEach(function (btn) {
+                  if (btn !== agendaBtn) btn.classList.remove('fc-button-active');
+                });
+              }
+              applyAgendaCustomView();
+              updateTodayButtonState();
+            }
+          }
         },
         buttonText: {
           today: 'Hoje',
@@ -811,27 +1145,61 @@
         scrollTime: new Date().getHours() + ':00:00',
         editable: true,
         selectable: true,
-
         datesSet: function () {
           removeEphemeralEvent();
+          var titleEl = document.querySelector('.fc-toolbar-title');
+          var viewHarness = document.querySelector('#calendar .fc-view-harness.fc-view-harness-active');
+          if (isAgendaActive) {
+            if (viewHarness) {
+              while (viewHarness.firstChild) {
+                viewHarness.removeChild(viewHarness.firstChild);
+              }
+              var customDiv = document.createElement('div');
+              customDiv.className = 'custom-agenda-content';
+              customDiv.innerHTML = customViewHTML;
+              viewHarness.appendChild(customDiv);
+              viewHarness.classList.add('agenda-active');
+            }
+            if (titleEl) {
+              var now = new Date();
+              var day = now.getDate();
+              var month = now.getMonth() + 1;
+              var formattedDay = day < 10 ? '0' + day : day;
+              var formattedMonth = month < 10 ? '0' + month : month;
+              titleEl.innerHTML = 'seu dia | ' + formattedDay + '/' + formattedMonth;
+            }
+            disableNavButtons();
+          } else {
+            if (viewHarness) {
+              viewHarness.classList.remove('agenda-active');
+            }
+            if (titleEl) {
+              titleEl.innerHTML = calendar.view.title;
+            }
+            enableNavButtons();
+          }
+          updateTodayButtonState();
         },
-
+        windowResize: function () {
+          calendar.updateSize();
+          if (isAgendaActive) {
+            applyAgendaCustomView();
+          }
+          updateTodayButtonState();
+        },
         eventTimeFormat: {
           hour: '2-digit',
           minute: '2-digit',
           hour12: false
         },
-
         eventClassNames: function (arg) {
           if (arg.event.extendedProps.markerType !== undefined) {
             return ['cor-marc' + arg.event.extendedProps.markerType];
           }
           return [];
         },
-
         eventDidMount: function (info) {
           if (info.event.extendedProps.ephemeral) {
-            // Altera apenas o pseudo-evento "Agenda Livre"
             info.el.innerHTML = '<div style="font-size: 10px; text-align: center; pointer-events: none;">Livre</div>';
             info.el.style.pointerEvents = 'none';
             info.el.style.backgroundColor = 'transparent';
@@ -839,83 +1207,25 @@
             info.el.style.boxShadow = 'none';
             info.el.style.cursor = 'default';
           }
-          // Eventos não efêmeros permanecem com a renderização padrão do FullCalendar.
         },
-
         events: [
-          {
-            id: 101,
-            title: 'Carreata no Bairro',
-            start: '2025-02-20T08:00:00',
-            end: '2025-02-20T10:00:00',
-            extendedProps: {
-              markerType: 1,
-              category: 'CARREATA',
-              duration: '2h'
-            }
-          },
-          {
-            id: 202,
-            title: 'Entrevista de Rádio',
-            start: '2025-02-20T11:00:00',
-            end: '2025-02-20T12:00:00',
-            extendedProps: {
-              markerType: 2,
-              category: 'ENTREVISTA',
-              duration: '1h'
-            }
-          },
-          {
-            id: 303,
-            title: 'Planejamento Setorial',
-            start: '2025-02-22T14:00:00',
-            end: '2025-02-22T16:00:00',
-            extendedProps: {
-              markerType: 7,
-              category: 'SETORIAL',
-              duration: '2h'
-            }
-          },
-          {
-            id: 404,
-            title: 'Reunião de Administração',
-            start: '2025-02-20',
-            end: '2025-02-21',
-            allDay: true,
-            extendedProps: {
-              markerType: 5,
-              category: 'ADMINISTRAÇÃO',
-              duration: 'Dia todo'
-            }
-          },
-          {
-            id: 505,
-            title: 'Comício na Praça Central',
-            start: '2025-02-21',
-            end: '2025-02-22',
-            allDay: true,
-            extendedProps: {
-              markerType: 6,
-              category: 'COMICIO',
-              duration: 'Dia todo'
-            }
-          }
+          { id: 101, title: 'Carreata no Bairro', start: '2025-02-20T08:00:00', end: '2025-02-20T10:00:00', extendedProps: { markerType: 1, category: 'CARREATA', duration: '2h' } },
+          { id: 202, title: 'Entrevista de Rádio', start: '2025-02-20T11:00:00', end: '2025-02-20T12:00:00', extendedProps: { markerType: 2, category: 'ENTREVISTA', duration: '1h' } },
+          { id: 303, title: 'Planejamento Setorial', start: '2025-02-22T14:00:00', end: '2025-02-22T16:00:00', extendedProps: { markerType: 7, category: 'SETORIAL', duration: '2h' } },
+          { id: 404, title: 'Reunião de Administração', start: '2025-02-20', end: '2025-02-21', allDay: true, extendedProps: { markerType: 5, category: 'ADMINISTRAÇÃO', duration: 'Dia todo' } },
+          { id: 505, title: 'Comício na Praça Central', start: '2025-02-21', end: '2025-02-22', allDay: true, extendedProps: { markerType: 6, category: 'COMICIO', duration: 'Dia todo' } }
         ],
-
         eventClick: function (info) {
           info.jsEvent.preventDefault();
           openDayEventsModal(info.event.start);
         },
-
         dateClick: function (info) {
-          var currentView = info.view.type;
-          if (currentView === 'dayGridMonth') {
+          if (info.view.type === 'dayGridMonth') {
             openDayEventsModal(info.date);
           } else {
             createEphemeralEvent(info);
           }
         },
-
         views: {
           timeGridWeek: {
             dayHeaderContent: function (arg) {
@@ -935,20 +1245,28 @@
 
       calendar.render();
 
-      // Fechar modal ao clicar no X
+      // Ao clicar em qualquer botão (exceto Agenda), se a Agenda estiver ativa, reseta seu estado
+      document.querySelectorAll('.fc-button:not(.fc-agenda-button)').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (isAgendaActive) {
+            setTimeout(function () {
+              resetAgendaView();
+            }, 10);
+            console.log("Modo Agenda desativado.");
+          }
+        });
+      });
+
+      // Fechamento do modal de eventos do dia
       document.querySelector("#dayEventsModal .close-modal-day").addEventListener("click", function () {
         document.getElementById("dayEventsModal").style.display = "none";
       });
-
-      // Fechar modal ao clicar fora do conteúdo
       window.addEventListener("click", function (event) {
         var dayEventsModal = document.getElementById("dayEventsModal");
         if (event.target === dayEventsModal) {
           dayEventsModal.style.display = "none";
         }
       });
-
-      // Fechar modal ao pressionar ESC
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
           document.getElementById("dayEventsModal").style.display = "none";
@@ -956,7 +1274,6 @@
       });
     });
   </script>
-
 
 </body>
 
