@@ -37,13 +37,13 @@ function changeSession(sessionNumber) {
       }
     });
 
-    // Definir o scroll do container interno para 0 com comportamento suave
+    // Scroll suave para o topo do conteúdo
     areaContent.scrollTo({
       top: 0,
       behavior: "smooth",
     });
 
-    // Após o scroll, ativar o conteúdo selecionado
+    // Ativar a sessão selecionada
     selectedSession.classList.add("active");
     selectedHeader.classList.add("active-header");
     selectedArrow.classList.remove("down");

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
-
   const listaDeCardsContainer = document.querySelector(
     ".lista-de-cards-container"
   );
@@ -42,51 +41,67 @@ document.addEventListener("DOMContentLoaded", () => {
     currentContato.numero = numero;
     currentContato.nome = nomeContato;
 
-    modal.style.display = "flex";
-    setTimeout(() => {
-      modal.classList.add("show");
-    }, 10);
+    if (modal) {
+      modal.style.display = "flex";
+      setTimeout(() => {
+        modal.classList.add("show");
+      }, 10);
+    } else {
+      console.warn("Modal não encontrado!");
+    }
   };
 
   // Função para fechar o modal
   const fecharModal = () => {
-    modal.classList.remove("show");
-    setTimeout(() => {
-      modal.style.display = "none";
-      currentContato = { numero: "", nome: "" }; // Resetar contato atual
-    }, 500); // Tempo igual ao de transição
+    if (modal) {
+      modal.classList.remove("show");
+      setTimeout(() => {
+        modal.style.display = "none";
+        currentContato = { numero: "", nome: "" }; // Resetar contato atual
+      }, 500); // Tempo igual ao de transição
+    }
   };
 
   // Configuração inicial dos ouvintes de eventos do modal
   const configurarOuvintesModal = () => {
-    // Ouvintes para os botões de chamada no modal
-    btnChamadaNativa.addEventListener("click", () => {
-      if (currentContato.numero && currentContato.nome) {
-        iniciarChamadaTelefonica(currentContato.numero, currentContato.nome);
-        fecharModal();
-      }
-    });
+    if (btnChamadaNativa) {
+      btnChamadaNativa.addEventListener("click", () => {
+        if (currentContato.numero && currentContato.nome) {
+          iniciarChamadaTelefonica(currentContato.numero, currentContato.nome);
+          fecharModal();
+        }
+      });
+    } else {
+      console.warn("btnChamadaNativa não encontrado!");
+    }
 
-    btnChamadaWhatsApp.addEventListener("click", () => {
-      if (currentContato.numero && currentContato.nome) {
-        iniciarChamadaWhatsApp(currentContato.numero, currentContato.nome);
-        fecharModal();
-      }
-    });
+    if (btnChamadaWhatsApp) {
+      btnChamadaWhatsApp.addEventListener("click", () => {
+        if (currentContato.numero && currentContato.nome) {
+          iniciarChamadaWhatsApp(currentContato.numero, currentContato.nome);
+          fecharModal();
+        }
+      });
+    } else {
+      console.warn("btnChamadaWhatsApp não encontrado!");
+    }
 
-    // Ouvintes para fechar o modal
-    closeModalElement.addEventListener("click", fecharModal);
-    closeModalElement.addEventListener("touchstart", fecharModal);
+    if (closeModalElement) {
+      closeModalElement.addEventListener("click", fecharModal);
+      closeModalElement.addEventListener("touchstart", fecharModal);
+    } else {
+      console.warn("Elemento de fechar modal não encontrado!");
+    }
 
     // Fechar o modal ao clicar ou tocar fora dele
     window.addEventListener("click", (event) => {
-      if (event.target === modal) {
+      if (modal && event.target === modal) {
         fecharModal();
       }
     });
 
     window.addEventListener("touchstart", (event) => {
-      if (event.target === modal) {
+      if (modal && event.target === modal) {
         fecharModal();
       }
     });
@@ -111,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para ajustar o scroll para centralizar o cartão
   const ajustarScrollParaCentralizarCard = (card) => {
     if (!areaTemplateContent) return;
-
     card.scrollIntoView({
       behavior: "smooth",
       block: "center",
@@ -148,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const hiddenFields = card.querySelectorAll(
-      ".aniversario-small-card-num, .aniversario-small-card-email, .aniversario-small-card-tipopessoa, .aniversario-small-card-editar"
+      ".aniversario-small-card-num, .aniversario-small-card-email, .aniversario-small-card-editar, .aniversario-small-card-tipopessoa"
     );
 
     const isExpanded = card.classList.contains(
@@ -185,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         exibirDetalhesAniversariante
       );
     } else {
-      // Se não houver um contêiner específico, delegue a partir do documento
+      // Se não houver um contêiner específico, delega a partir do documento
       document.addEventListener("click", exibirDetalhesAniversariante);
       console.warn(
         "Contêiner '.lista-de-cards-container' não encontrado. Delegando eventos a partir do documento."

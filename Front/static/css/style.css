@@ -4792,6 +4792,9 @@ li > .lista-vertical-alt > li:first-child {
   transition: all 0.25s ease-in-out;
   max-height: 250px;
 }
+.calendario-large-card-id {
+  display: none;
+}
 .calendario-large-card-type {
   grid-area: calendario-large-card-type;
   font-size: var(--font-sm);
