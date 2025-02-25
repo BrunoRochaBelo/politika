@@ -1,6 +1,6 @@
 body {
   font-family: var(--font-family);
-  font-size: var(--font-md); /* Padrão 16px */
+  font-size: var(--font-md);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
   color: var(--txt-titulo-card);

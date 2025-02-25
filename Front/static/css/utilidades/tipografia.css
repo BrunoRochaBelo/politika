@@ -1,4 +1,13 @@
 /* Variáveis globais para tipografia */
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("/static/utilidades/fonts/RobotoFlex-Regular.woff2") format("woff2"),
+    url("/static/utilidades/fonts/RobotoFlex-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --vh: 1vh; /* Ajuste dinâmico da altura da viewport */
 
@@ -13,9 +22,9 @@
   /* Propriedades de espaçamento relacionadas à tipografia */
   --line-height: 1.6; /* Altura padrão da linha */
   --letter-spacing: 0.05em; /* Espaçamento entre caracteres */
-  --font-family: "Open Sans", "Roboto", system-ui, -apple-system,
-    "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
-    "sans-serif"; /* Fonte padrão */
+
+  --font-family: "Roboto Flex", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* Ajustes de tamanho de fonte dinâmica com base na largura da tela */
   --font-dynamic: calc(1rem + 1vw); /* Escala adaptativa */
