@@ -177,6 +177,7 @@ const Config = {
     GET_ALL_LIBS: "/api/docfile/get/all_libs",
     GET_ALL_FOLDERS: "/api/docfile/get/all_folders",
     GET_ALL_FOLDER_DOCS: "/api/docfile/get/all_folders_docs",
+    GET_ALL_EVENTS: "/api/calendario/get/all_entries",
   },
 
   // 13. Feature Flags
