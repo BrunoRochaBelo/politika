@@ -95,7 +95,6 @@ class Abas {
     // Remove a classe 'indicador-2' de todos os links de navegação
     this.container.querySelectorAll("a").forEach((link) => {
       link.classList.remove("indicador-2");
-      link.setAttribute("aria-selected", "false");
       link.setAttribute("tabindex", "-1");
     });
   }
@@ -112,7 +111,6 @@ class Abas {
     const navLink = this.container.querySelector(`a[href="#${aba.id}"]`);
     if (navLink) {
       navLink.classList.add("indicador-2");
-      navLink.setAttribute("aria-selected", "true");
       navLink.setAttribute("tabindex", "0");
     }
   }

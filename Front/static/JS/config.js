@@ -2,7 +2,7 @@
 
 const Config = {
   // 1. Ambiente Atual
-  ENVIRONMENT: "production", // 'production' ou 'development'
+  ENVIRONMENT: "development", // 'production' ou 'development'
 
   // 2. URLs Base para Diferentes Ambientes
   BASE_URL: {

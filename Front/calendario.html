@@ -13,7 +13,7 @@
   <link rel="manifest" href="./manifest.json">
 
   <!-- Fonte -->
-  <link rel="preload" href="/static/utilidades/fonts/RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
   <!-- Favicon (ajustado para SVG) -->
   <link rel="icon" href="./static/imagens/icones/calendario-select.svg" type="image/svg+xml">
@@ -464,33 +464,6 @@
       </ul>
     </div>
   </div>
-
-  <script>// data.js - Dados e templates do calendário
-
-    // Array com os eventos do calendário
-    const calendarEvents = [
-      { id: 101, title: 'Carreata no Bairro', start: '2025-02-20T08:00:00', end: '2025-02-20T10:00:00', extendedProps: { markerType: 1, category: 'CARREATA', duration: '2h' } },
-      { id: 202, title: 'Entrevista de Rádio', start: '2025-02-20T11:00:00', end: '2025-02-20T12:00:00', extendedProps: { markerType: 2, category: 'ENTREVISTA', duration: '1h' } },
-      { id: 303, title: 'Planejamento Setorial', start: '2025-02-22T14:00:00', end: '2025-02-22T16:00:00', extendedProps: { markerType: 7, category: 'SETORIAL', duration: '2h' } },
-      { id: 404, title: 'Reunião de Administração', start: '2025-02-20', end: '2025-02-21', allDay: true, extendedProps: { markerType: 5, category: 'ADMINISTRAÇÃO', duration: 'Dia todo' } },
-      { id: 505, title: 'Comício na Praça Central', start: '2025-02-21', end: '2025-02-22', allDay: true, extendedProps: { markerType: 6, category: 'COMICIO', duration: 'Dia todo' } }
-    ];
-
-    // Variável que armazenará o template customizado da Agenda
-    let customAgendaTemplate = "";
-
-    // Ao carregar o DOM, captura e remove o conteúdo customizado já inserido no HTML
-    document.addEventListener('DOMContentLoaded', () => {
-      const customContainer = document.querySelector('#calendar .area-interna-containerContent-template');
-      if (customContainer) {
-        customAgendaTemplate = customContainer.innerHTML;
-        customContainer.remove();
-        console.log("Template customizado da Agenda armazenado.");
-      } else {
-        console.error("Elemento com o template customizado não foi encontrado.");
-      }
-    });
-  </script>
 
   <script src="./static/js/config.js" defer></script>
   <script src="./static/js/RegisterSW.js" defer></script>

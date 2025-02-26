@@ -34,10 +34,13 @@
   padding-bottom: 20px;
   overflow: auto !important;
 }
-
+#calendar .lista-vertical {
+  gap: 15px;
+}
 #calendar .lista-vertical-alt {
   padding-bottom: 100px;
 }
+
 #calendar .custom-agenda-content::-webkit-scrollbar,
 #calendar .area-interna-containerContent-template::-webkit-scrollbar {
   display: none;
@@ -350,6 +353,17 @@
 
 /* Responsividade */
 @media only screen and (max-width: 768px) {
+  #calendar
+    .area-interna-containerContent-template-content
+    .lista-vertical
+    > li:first-child,
+  #calendar
+    .area-interna-containerContent-template-content
+    .lista-vertical-alt
+    > li:first-child {
+    margin-top: 10px;
+  }
+
   #calendar {
     border-width: 1px;
   }

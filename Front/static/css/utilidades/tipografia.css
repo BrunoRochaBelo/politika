@@ -1,8 +1,7 @@
-/* Variáveis globais para tipografia */
 @font-face {
   font-family: "Roboto Flex";
-  src: url("/static/utilidades/fonts/RobotoFlex-Regular.woff2") format("woff2"),
-    url("/static/utilidades/fonts/RobotoFlex-Regular.woff") format("woff");
+  src: url("/Front/static/fonts/RobotoFlex-Regular.woff2") format("woff2"),
+    url("/Front/static/fonts/RobotoFlex-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

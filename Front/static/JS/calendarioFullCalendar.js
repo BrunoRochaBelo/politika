@@ -1,10 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // As variáveis "customAgendaTemplate" e "calendarEvents" devem estar definidas no arquivo data.js
-  // Exemplo em data.js:
-  //    const customAgendaTemplate = "<!-- Conteúdo customizado da Agenda -->";
-  //    const calendarEvents = [ ... ];
+  // --- Dados necessários para o funcionamento do calendário ---
+  // O Config já está disponível globalmente via config.js.
+  // Definindo o template customizado da Agenda:
+  let customAgendaTemplate = "";
+  const customContainer = document.querySelector(
+    "#calendar .area-interna-containerContent-template"
+  );
+  if (customContainer) {
+    customAgendaTemplate = customContainer.innerHTML;
+    customContainer.remove();
+    console.log("Template customizado da Agenda armazenado.");
+  } else {
+    // Caso o elemento não exista, usamos um template padrão.
+    customAgendaTemplate =
+      '<div class="custom-agenda-content">Conteúdo customizado da Agenda</div>';
+    console.warn(
+      "Elemento com o template customizado não foi encontrado. Usando template padrão."
+    );
+  }
 
+  // --- Configurações de API ---
+  // Seleciona a base URL conforme o ambiente (ajuste se necessário)
+  const baseURL = window.Config.BASE_URL[window.Config.ENVIRONMENT];
+  const getAllEventsEndpoint = window.Config.API_ENDPOINTS.GET_ALL_EVENTS;
+
+  // --- Variáveis de controle ---
   let isAgendaActive = false;
+  // Para evitar o flash na primeira carga, escondemos o calendário
+  const calendarEl = document.getElementById("calendar");
+  calendarEl.style.visibility = "hidden";
 
   // --- Helper Functions ---
   const disableNavButtons = () => {
@@ -95,6 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
       titleEl.innerHTML = `seu dia - ${formattedDay}/${formattedMonth}`;
     }
     disableNavButtons();
+    // Exibe o calendário após aplicar a customização da Agenda
+    calendarEl.style.visibility = "visible";
   };
 
   const resetAgendaView = (targetView) => {
@@ -117,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTodayButtonState();
     setTimeout(() => {
       calendar.changeView(targetView ? targetView : calendar.view.type);
-      // Aguarda um pouquinho para atualizar o botão ativo
       setTimeout(() => {
         updateActiveButton();
       }, 50);
@@ -171,7 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const openDayEventsModal = (date) => {
-    const weekdayLong = date.toLocaleDateString("pt-BR", { weekday: "long" });
+    const weekdayLong = date.toLocaleDateString("pt-BR", {
+      weekday: "long",
+    });
     document.getElementById("modalDayEventsHeaderDate").textContent =
       weekdayLong;
     const subDate = date
@@ -242,8 +269,26 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("dayEventsModal").style.display = "block";
   };
 
+  // --- API: Buscar eventos para as visões Mês, Semana e Dia ---
+  const fetchEventsFromAPI = (fetchInfo, successCallback, failureCallback) => {
+    // Se a visão Agenda estiver ativa, os dados já vêm renderizados.
+    if (isAgendaActive) {
+      successCallback([]);
+      return;
+    }
+    const url = `${baseURL}${getAllEventsEndpoint}?start=${fetchInfo.startStr}&end=${fetchInfo.endStr}`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        successCallback(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching events:", error);
+        failureCallback(error);
+      });
+  };
+
   // --- Inicialização do FullCalendar ---
-  const calendarEl = document.getElementById("calendar");
   const calendar = new FullCalendar.Calendar(calendarEl, {
     locale: "pt-br",
     initialView: "dayGridMonth",
@@ -280,6 +325,9 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTime: `${new Date().getHours()}:00:00`,
     editable: true,
     selectable: true,
+    // Carrega os eventos via API
+    events: (fetchInfo, successCallback, failureCallback) =>
+      fetchEventsFromAPI(fetchInfo, successCallback, failureCallback),
     datesSet: () => {
       removeEphemeralEvent();
       const titleEl = document.querySelector(".fc-toolbar-title");
@@ -346,7 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
         info.el.style.cursor = "default";
       }
     },
-    events: calendarEvents,
     eventClick: (info) => {
       info.jsEvent.preventDefault();
       openDayEventsModal(info.event.start);
@@ -383,10 +430,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   calendar.render();
 
-  // Simula clique no botão Agenda para ativar a customização ao carregar
+  // Simula clique no botão Agenda para que a visualização inicial seja a Agenda
   const agendaBtn = document.querySelector(".fc-agenda-button");
   if (agendaBtn) {
-    agendaBtn.click();
+    // Pequeno delay para garantir que o calendário já renderizou
+    setTimeout(() => {
+      agendaBtn.click();
+    }, 20);
   } else {
     console.error("Botão Agenda não encontrado.");
   }
