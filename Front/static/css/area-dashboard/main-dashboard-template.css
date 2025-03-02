@@ -54,6 +54,7 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   box-shadow: none;
+  border-top: none;
 }
 
 /* RESPONSIVO */

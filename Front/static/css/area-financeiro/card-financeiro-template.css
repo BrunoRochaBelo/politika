@@ -1,28 +1,133 @@
 .main-financeiro .card-m,
 .main-financeiro .card-l {
   border-radius: 10px;
+  box-shadow: var(--sombra-leve);
+}
+/*  hover  */
+.main-financeiro .card-xs:hover,
+.main-financeiro .card-s:hover,
+.main-financeiro .card-m:hover,
+.main-financeiro .card-l:hover,
+.main-financeiro .card-tmf-s:hover,
+.main-financeiro .card-tmf-m:hover,
+.main-financeiro .card-tmf-l:hover,
+.main-financeiro .card-select-xs:hover,
+.main-financeiro .card-select-s:hover,
+.main-financeiro .card-select-m:hover {
+  filter: none;
+}
+/* Active */
+.main-financeiro .card-xs:active:not(.card-xs.filtro-small-card),
+.main-financeiro .card-s:active,
+.main-financeiro .card-m:active,
+.main-financeiro .card-l:active {
+  animation: none;
+  transform: none;
+  box-shadow: none;
 }
 
 .card-financeiro-template {
   display: grid;
   color: var(--txt-conteudo-card);
-  gap: 15px;
-  align-content: center;
+  gap: 0px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   grid:
     "card-financeiro-template-title"
-    "card-financeiro-template-list";
+    "card-financeiro-template-list"
+    "card-financeiro-template-link";
 }
 
 .card-financeiro-template-title {
   grid-area: card-financeiro-template-title;
   color: var(--txt-conteudo-card);
+  margin-bottom: 8px;
 }
 .card-financeiro-template-list {
   grid-area: card-financeiro-template-list;
   font-size: var(--font-sm);
   font-weight: 300;
   color: var(--cor-primaria-1);
+}
+.card-financeiro-template-link {
+  grid-area: card-financeiro-template-link;
+  justify-self: end;
+  padding: 10px;
+  color: var(--cor-primaria-1);
+  font-size: var(--font-sm);
+  font-weight: bold;
+  text-decoration: none;
+  position: relative; /* Para ajustar o posicionamento da seta, se necessário */
+}
+
+.card-financeiro-template-link::after {
+  content: "➔"; /* Seta mais grossa */
+  display: inline-block;
+  margin-left: 8px;
+  font-size: var(--font-sm);
+  color: var(--cor-primaria-1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-financeiro-template-link:hover::after {
+  transform: translateX(3px);
+}
+
+.lista-dashboard-cards {
+  display: grid;
+  gap: 5px;
+}
+.lista-dashboard-cards .lista-vertical-horizontal {
+  gap: 8px;
+}
+
+.lista-dashboard-cards > li:first-child {
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
+.lista-dashboard-cards > li:last-child {
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
+}
+
+/* ------------------------------------------- */
+/* Contêiner geral dos gráficos               */
+/* ------------------------------------------- */
+.chart-dashboard-container {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* Evitar barras de rolagem internas */
+  position: relative;
+  cursor: default; /* Cursor padrão */
+}
+
+/* Em telas < 768px (celulares) maior altura para evitar achatamento */
+@media (max-width: 767px) {
+  .chart-dashboard-container {
+    height: 400px;
+  }
+}
+
+/* Entre 768px e 991px (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .chart-dashboard-container {
+    height: 330px;
+  }
+}
+
+/* Acima de 992px (desktops) */
+@media (min-width: 992px) {
+  .chart-dashboard-container {
+    height: 300px;
+  }
+}
+
+/* ------------------------------------------- */
+/* Gráfico de Contatos: Responsividade         */
+/* ------------------------------------------- */
+.line-chart-container canvas#chartContatos {
+  width: 100% !important;
+  height: 100% !important;
+  /* Removido min-width: 700px para responsividade */
 }

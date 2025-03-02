@@ -1,4 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
+// dashboard-expense-charts.js
+document.addEventListener("DOMContentLoaded", function () {
+  // Verifica se o arquivo base (charts-base.js) foi carregado
+  if (!window.ChartBase) {
+    const errorContainer = document.createElement("div");
+    errorContainer.classList.add("message-error", "show");
+    errorContainer.textContent =
+      "charts-base.js não foi carregado antes de dashboard-expense-charts.js!";
+    document.body.appendChild(errorContainer);
+    return;
+  }
+
+  // Extrai a função necessária do ChartBase
+  const { createDoughnutChart } = window.ChartBase;
+
+  // Seleciona os elementos do DOM
   const costCenterSelect = document.getElementById("cost-center-select");
   const centerText = document.getElementById("center-text");
   const availableValue = document.getElementById("available-value");
@@ -15,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".accounts-list-container"
   );
   const dashboardContent = document.querySelector(".dashboard-content");
+  const expenseChartCanvas = document.getElementById("expense-chart");
 
   if (
     !costCenterSelect ||
@@ -26,12 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     !errorMessage ||
     !chartWrapper ||
     !accountsListContainer ||
-    !dashboardContent
+    !dashboardContent ||
+    !expenseChartCanvas
   ) {
     console.error("Um ou mais elementos do DOM não foram encontrados.");
     return;
   }
 
+  // Dados de despesas
   const expenses = {
     campanha: {
       total: 20000,
@@ -59,76 +77,66 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  let chart;
+  let expenseChart; // Guarda a instância do gráfico
 
+  // Função para criar o gráfico utilizando a função do ChartBase
   const createChart = () => {
     console.log("Tentando criar o gráfico...");
-
-    const ctx = document.getElementById("expense-chart").getContext("2d");
+    const ctx = expenseChartCanvas.getContext("2d");
     if (!ctx) {
       console.error("Elemento canvas não encontrado.");
       return;
     }
 
-    if (typeof Chart === "undefined") {
-      console.error("Chart.js não carregado. Gráfico não será criado.");
-      return;
-    }
-
-    chart = new Chart(ctx, {
-      type: "doughnut",
-      data: {
-        datasets: [
-          {
-            data: [],
-            backgroundColor: [],
-            borderColor: "hsl(210, 14%, 15%)",
-            borderWidth: 1,
-          },
-        ],
+    expenseChart = createDoughnutChart(ctx, {
+      labels: [], // Os labels serão definidos na atualização
+      datasets: [
+        {
+          data: [],
+          backgroundColor: [],
+          borderColor: "hsl(210, 14%, 15%)", // Exemplo de borderColor fixo
+          borderWidth: 1,
+        },
+      ],
+      plugins: {
+        legend: { display: false },
       },
       options: {
         cutout: "70%",
         responsive: true,
         maintainAspectRatio: true,
-        plugins: {
-          legend: {
-            display: false,
-          },
-        },
-        layout: {
-          padding: 0,
-        },
+        layout: { padding: 0 },
       },
     });
 
     console.log("Gráfico criado com sucesso.");
   };
 
+  // Função para atualizar o gráfico com novos dados
   const updateChart = (data, backgroundColor) => {
-    if (!chart) {
+    if (!expenseChart) {
       console.error("Tentativa de atualizar um gráfico inexistente.");
       return;
     }
-
-    if (!chart.data) {
+    if (!expenseChart.data) {
       console.error("O gráfico existe, mas não tem dados. Algo deu errado.");
       return;
     }
-
     console.log("Atualizando gráfico com novos dados.");
-    chart.data.datasets[0].data = data;
-    chart.data.datasets[0].backgroundColor = backgroundColor;
-    chart.update();
+    expenseChart.data.datasets[0].data = data;
+    expenseChart.data.datasets[0].backgroundColor = backgroundColor;
+    expenseChart.update();
     console.log("Gráfico atualizado.");
   };
 
+  // Define a cor conforme a porcentagem
   const getColor = (percentage) => {
     if (percentage > 90) return "#dc3545";
     if (percentage > 70) return "#ffc107";
     return "#28a745";
   };
 
+  // Funções de exibição/ocultação dos indicadores de carregamento e erro
   const showLoading = () => {
     console.log("Exibindo indicador de carregamento.");
     loadingIndicatorContent.classList.remove("dashboard-hidden");
@@ -142,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
       loadingIndicatorHeader.classList.add("dashboard-visible");
       availableValue.classList.add("dashboard-hidden");
     }
-
     setOpacity(0);
   };
 
@@ -160,7 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       availableValue.classList.remove("dashboard-hidden");
     }
-
     setOpacity(1);
   };
 
@@ -180,6 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     accountsListContainer.style.opacity = value;
   };
 
+  // Atualiza os dados do dashboard com base no centro de custo selecionado
   const updateDashboard = (centerId) => {
     console.log(`Atualizando dashboard para o centro de custo: ${centerId}`);
     showLoading();
@@ -190,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
         hideLoading();
         return;
       }
-
       const { total, accounts } = centerData;
       const totalSpent = accounts.reduce((sum, { spent }) => sum + spent, 0);
       const remaining = total - totalSpent;
@@ -205,27 +211,28 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       updateChart(data, backgroundColor);
-
       availableValue.style.color = getColor(spentPercentage);
 
+      // Atualiza a lista de contas
       accountsList.innerHTML = "";
       accounts.forEach(({ name, limit, spent }) => {
         const percentage = (spent / limit) * 100;
         const accountItem = document.createElement("div");
         accountItem.className = "account-item";
-        accountItem.innerHTML = `<div class="account-label-column">
-                    <span>${name}</span>
-                </div>
-                <div class="account-progress-bar-column">
-                    <div class="account-label">${spent.toFixed(
-                      2
-                    )} de ${limit.toFixed(2)}</div>
-                    <div class="account-progress-bar-wrapper">
-                        <div class="account-progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
+        accountItem.innerHTML = `
+          <div class="account-label-column">
+            <span>${name}</span>
+          </div>
+          <div class="account-progress-bar-column">
+            <div class="account-label">${spent.toFixed(2)} de ${limit.toFixed(
+          2
+        )}</div>
+            <div class="account-progress-bar-wrapper">
+              <div class="account-progress-bar" data-progress="${percentage}" style="background-color: ${getColor(
           percentage
         )}"></div>
-                    </div>
-                </div>`;
+            </div>
+          </div>`;
         accountsList.appendChild(accountItem);
       });
 
@@ -239,24 +246,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   };
 
+  // Redimensiona o gráfico (útil no evento resize)
   const resizeChart = () => {
-    if (chart) {
+    if (expenseChart) {
       console.log("Redimensionando gráfico.");
-      chart.resize();
+      expenseChart.resize();
     } else {
       console.error("Tentativa de redimensionar um gráfico inexistente.");
     }
   };
 
+  // Inicializa (ou reinicializa) o dashboard
   const initializeDashboard = () => {
-    if (chart) {
+    if (expenseChart) {
       console.log("Destruindo gráfico existente antes de recriar.");
-      chart.destroy();
+      expenseChart.destroy();
     }
     createChart();
     updateDashboard(costCenterSelect.value);
   };
 
+  // Salva e restaura o estado (centro de custo selecionado)
   const saveState = () => {
     console.log("Salvando estado atual.");
     sessionStorage.setItem("selectedCostCenter", costCenterSelect.value);
@@ -274,16 +284,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("resize", initializeDashboard);
-
   window.addEventListener("pageshow", restoreState);
-
   window.addEventListener("beforeunload", saveState);
 
+  // Inicializa o dashboard e adiciona o listener para mudança de centro de custo
   initializeDashboard();
-
   costCenterSelect.addEventListener("change", (e) =>
     updateDashboard(e.target.value)
   );
-});
 
-window.initializeDashboard = initializeDashboard;
+  // Expõe a função caso seja necessário chamar externamente
+  window.initializeDashboard = initializeDashboard;
+});

@@ -1,5 +1,5 @@
 .body-organograma-template {
-  background: var(--container-bg);
+  background: var(--bg-principal);
   display: grid;
   margin: 0;
   padding: 10px;
@@ -24,7 +24,7 @@
   color: var(--txt-conteudo-card);
   border-bottom: none;
   position: relative;
-  background: var(--bg-principal);
+  background: var(--container-bg);
 }
 .main-organograma {
   grid-area: main-organograma;
@@ -35,7 +35,7 @@
   box-shadow: var(--sombra-moderada);
   color: var(--txt-conteudo-card);
   border-top: none;
-  background: var(--bg-principal);
+  background: var(--container-bg);
 }
 
 /* RESPONSIVO */

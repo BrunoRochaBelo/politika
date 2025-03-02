@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function applyTheme(theme) {
     if (theme === "light-mode") {
       document.documentElement.classList.add("light-mode");
-      headerElement && headerElement.classList.add("invert-filter");
+      if (headerElement) headerElement.classList.add("invert-filter");
 
       secaoInternaHeaders.forEach((header) => {
         header.classList.add("invert-filter");
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
     } else {
       document.documentElement.classList.remove("light-mode");
-      headerElement && headerElement.classList.remove("invert-filter");
+      if (headerElement) headerElement.classList.remove("invert-filter");
 
       secaoInternaHeaders.forEach((header) => {
         header.classList.remove("invert-filter");
@@ -129,6 +129,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   // Função para atualizar o conteúdo do botão
   function updateButtonContent(theme) {
+    if (!themeIcon) return; // Se themeIcon não existir, sai da função
+
     themeIcon.classList.add("rotating");
     setTimeout(() => {
       themeIcon.classList.remove("rotating");
@@ -152,11 +154,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
     localStorage.setItem("theme", currentTheme);
   }
 
-  themeToggleButton.addEventListener("click", toggleTheme);
-  themeIcon.addEventListener("click", toggleTheme);
-  alterarTema.addEventListener("click", (event) => {
-    if (event.target !== themeToggleButton && event.target !== themeIcon) {
-      toggleTheme();
-    }
-  });
+  // Adiciona os event listeners somente se os elementos existirem
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener("click", toggleTheme);
+  }
+  if (themeIcon) {
+    themeIcon.addEventListener("click", toggleTheme);
+  }
+  if (alterarTema) {
+    alterarTema.addEventListener("click", (event) => {
+      if (event.target !== themeToggleButton && event.target !== themeIcon) {
+        toggleTheme();
+      }
+    });
+  }
 });

@@ -1,5 +1,5 @@
 .body-dashboard-template {
-  background: var(--container-bg);
+  background: var(--bg-principal);
   display: grid;
   margin: 0;
   padding: 10px;
@@ -24,7 +24,7 @@
   color: var(--txt-conteudo-card);
   border-bottom: none;
   position: relative;
-  background: var(--bg-principal);
+  background: var(--container-bg);
 }
 .main-dashboard {
   grid-area: main-dashboard;
@@ -36,7 +36,7 @@
   border: 5px solid transparent;
   color: var(--txt-conteudo-card);
   border-top: none;
-  background: var(--bg-principal);
+  background: var(--container-bg);
 }
 
 /* RESPONSIVO */

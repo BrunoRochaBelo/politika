@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- Configurações de API ---
-  // Seleciona a base URL conforme o ambiente (ajuste se necessário)
   const baseURL = window.Config.BASE_URL[window.Config.ENVIRONMENT];
   const getAllEventsEndpoint = window.Config.API_ENDPOINTS.GET_ALL_EVENTS;
 
   // --- Variáveis de controle ---
-  let isAgendaActive = false;
-  // Para evitar o flash na primeira carga, escondemos o calendário
+  // Para que a interface inicial seja a Agenda, já iniciamos com a flag ativa.
+  let isAgendaActive = true;
+  // Esconde o calendário inicialmente para evitar flash da view Mês.
   const calendarEl = document.getElementById("calendar");
   calendarEl.style.visibility = "hidden";
 
@@ -66,20 +66,27 @@ document.addEventListener("DOMContentLoaded", () => {
     todayBtn.disabled = today >= viewStart && today < viewEnd;
   };
 
+  // Atualiza o botão ativo: se isAgendaActive for true, marca o botão Agenda;
+  // caso contrário, marca conforme a view (Mês, Semana ou Dia).
   const updateActiveButton = () => {
     document
       .querySelectorAll(".fc-button")
       .forEach((btn) => btn.classList.remove("fc-button-active"));
-    const viewType = calendar.view.type;
-    if (viewType === "dayGridMonth") {
-      const targetBtn = document.querySelector(".fc-dayGridMonth-button");
-      if (targetBtn) targetBtn.classList.add("fc-button-active");
-    } else if (viewType === "timeGridWeek") {
-      const targetBtn = document.querySelector(".fc-timeGridWeek-button");
-      if (targetBtn) targetBtn.classList.add("fc-button-active");
-    } else if (viewType === "timeGridDay") {
-      const targetBtn = document.querySelector(".fc-timeGridDay-button");
-      if (targetBtn) targetBtn.classList.add("fc-button-active");
+    if (isAgendaActive) {
+      const agendaBtn = document.querySelector(".fc-agenda-button");
+      if (agendaBtn) agendaBtn.classList.add("fc-button-active");
+    } else {
+      const viewType = calendar.view.type;
+      if (viewType === "dayGridMonth") {
+        const targetBtn = document.querySelector(".fc-dayGridMonth-button");
+        if (targetBtn) targetBtn.classList.add("fc-button-active");
+      } else if (viewType === "timeGridWeek") {
+        const targetBtn = document.querySelector(".fc-timeGridWeek-button");
+        if (targetBtn) targetBtn.classList.add("fc-button-active");
+      } else if (viewType === "timeGridDay") {
+        const targetBtn = document.querySelector(".fc-timeGridDay-button");
+        if (targetBtn) targetBtn.classList.add("fc-button-active");
+      }
     }
   };
 
@@ -119,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
       titleEl.innerHTML = `seu dia - ${formattedDay}/${formattedMonth}`;
     }
     disableNavButtons();
-    // Exibe o calendário após aplicar a customização da Agenda
+    updateActiveButton();
+    // Torna o calendário visível somente após a custom Agenda ser aplicada.
     calendarEl.style.visibility = "visible";
   };
 
@@ -142,7 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Agenda view reset.");
     updateTodayButtonState();
     setTimeout(() => {
+      // Muda para a view escolhida
       calendar.changeView(targetView ? targetView : calendar.view.type);
+      // Força a busca de eventos via API
+      calendar.refetchEvents();
       setTimeout(() => {
         updateActiveButton();
       }, 50);
@@ -271,7 +282,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- API: Buscar eventos para as visões Mês, Semana e Dia ---
   const fetchEventsFromAPI = (fetchInfo, successCallback, failureCallback) => {
-    // Se a visão Agenda estiver ativa, os dados já vêm renderizados.
     if (isAgendaActive) {
       successCallback([]);
       return;
@@ -325,7 +335,6 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTime: `${new Date().getHours()}:00:00`,
     editable: true,
     selectable: true,
-    // Carrega os eventos via API
     events: (fetchInfo, successCallback, failureCallback) =>
       fetchEventsFromAPI(fetchInfo, successCallback, failureCallback),
     datesSet: () => {
@@ -430,16 +439,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   calendar.render();
 
-  // Simula clique no botão Agenda para que a visualização inicial seja a Agenda
-  const agendaBtn = document.querySelector(".fc-agenda-button");
-  if (agendaBtn) {
-    // Pequeno delay para garantir que o calendário já renderizou
-    setTimeout(() => {
-      agendaBtn.click();
-    }, 20);
-  } else {
-    console.error("Botão Agenda não encontrado.");
-  }
+  // Como isAgendaActive já é true, já deve ficar ativa a Agenda
+  setTimeout(() => {
+    if (isAgendaActive) {
+      applyAgendaCustomView();
+    }
+  }, 20);
 
   // Ao clicar em qualquer botão (exceto Agenda), se a Agenda estiver ativa, reseta seu estado
   document

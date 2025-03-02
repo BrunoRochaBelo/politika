@@ -437,27 +437,6 @@
       },
       plugins: {
         legend: { display: false }, // Remover legenda para LineChart
-        /* Configurações de Zoom:
-        zoom: { // Configurações de Zoom
-          pan: {
-            enabled: true,
-            mode: 'xy', // Permitir pan nas direções x e y
-            threshold: 10, // Número mínimo de pixels para iniciar o pan
-          },
-          zoom: {
-            wheel: {
-              enabled: true, // Habilitar zoom com a roda do mouse
-              modifierKey: 'ctrl', // Exigir tecla Ctrl para zoom com a roda
-              speed: 0.1, // Velocidade do zoom
-            },
-            pinch: {
-              enabled: true // Habilitar zoom com gestos de pinça em dispositivos touch
-            },
-            mode: 'xy', // Permitir zoom nas direções x e y
-            speed: 0.1, // Velocidade do zoom
-          }
-        }
-        */
       },
       layout: {
         padding: {
@@ -623,7 +602,133 @@
   }
 
   // --------------------------------------------------------------------------
-  // 10) Exportação das Funções Reutilizáveis
+  // 10) NOVAS FUNÇÕES: Gráficos de Barra de Progresso (Vertical e Horizontal)
+  // --------------------------------------------------------------------------
+
+  /**
+   * Cria um gráfico de barra de progresso vertical.
+   * Ideal para exibir percentuais (0 a 100) sem a exibição de eixos e legendas.
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações do gráfico: { labels, datasets, options }.
+   * @returns {Chart|null} - Instância do gráfico ou null em caso de erro.
+   */
+  function createVerticalProgressBarChart(ctx, { labels, datasets, options }) {
+    const palette = getCurrentColorPalette();
+    const defaultVerticalProgress = {
+      indexAxis: "x", // Barras verticais
+      scales: {
+        x: {
+          display: false,
+          grid: { display: false },
+        },
+        y: {
+          display: false,
+          beginAtZero: true,
+          max: 100, // Valor máximo padrão (100%); pode ser sobrescrito via options
+          grid: { display: false },
+        },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: true,
+          color: palette.textColor,
+          font: { weight: "bold", size: 12 },
+          formatter: (value) => value + "%",
+        },
+      },
+      animation: {
+        duration: 1000,
+        easing: "easeOutCubic",
+      },
+      layout: {
+        padding: {
+          top: 5,
+          bottom: 5,
+        },
+      },
+    };
+    const finalOptions = mergeOptions(defaultVerticalProgress, options || {});
+    return createChart(ctx, {
+      type: "bar",
+      labels,
+      datasets,
+      options: finalOptions,
+    });
+  }
+
+  /**
+   * Cria um gráfico de barra de progresso horizontal com estilo adaptado.
+   * A ideia é aproximar o visual do gráfico ao dos elementos HTML (ex.: .account-progress-bar-wrapper e .account-progress-bar).
+   * @param {CanvasRenderingContext2D} ctx - Contexto do canvas.
+   * @param {object} config - Configurações do gráfico: { labels, datasets, options }.
+   * @returns {Chart|null} - Instância do gráfico ou null em caso de erro.
+   */
+  function createHorizontalProgressBarChart(
+    ctx,
+    { labels, datasets, options }
+  ) {
+    const palette = getCurrentColorPalette();
+    const defaultHorizontalProgress = {
+      indexAxis: "y", // Gráfico horizontal
+      scales: {
+        x: {
+          display: false,
+          beginAtZero: true,
+          max: 100, // Percentual máximo (100%)
+          grid: { display: false },
+        },
+        y: {
+          display: false,
+          grid: { display: false },
+        },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: true,
+          color: palette.textColor,
+          font: { weight: "bold", size: 12 },
+          formatter: (value) => value + "%",
+        },
+      },
+      animation: {
+        duration: 1000,
+        easing: "easeOutCubic",
+      },
+      layout: {
+        padding: {
+          top: 5,
+          bottom: 5,
+        },
+      },
+      // Configurações para aproximar o visual da barra ao estilo CSS desejado:
+      datasets: {
+        barThickness: 16, // Altura fixa similar à .account-progress-bar-wrapper
+        borderRadius: 10, // Arredondamento similar ao border-radius definido
+      },
+    };
+    const finalOptions = mergeOptions(defaultHorizontalProgress, options || {});
+
+    // Garante que cada dataset utilize as propriedades definidas caso não estejam definidas individualmente.
+    const augmentedDatasets = datasets.map((ds) => ({
+      ...ds,
+      borderRadius: ds.borderRadius !== undefined ? ds.borderRadius : 10,
+      barThickness: ds.barThickness !== undefined ? ds.barThickness : 16,
+    }));
+
+    return createChart(ctx, {
+      type: "bar",
+      labels,
+      datasets: augmentedDatasets,
+      options: finalOptions,
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 11) Exportação das Funções Reutilizáveis
   // --------------------------------------------------------------------------
   window.ChartBase = {
     charts: [],
@@ -634,11 +739,13 @@
     createPolarAreaChart,
     createRadarChart,
     createHorizontalBarChart,
+    createVerticalProgressBarChart, // Novo: Progress Bar Vertical
+    createHorizontalProgressBarChart, // Novo: Progress Bar Horizontal
     getCurrentColorPalette, // Função para acessar a paleta atual
   };
 
   // --------------------------------------------------------------------------
-  // 11) Listener para Mudanças de Tema
+  // 12) Listener para Mudanças de Tema
   // --------------------------------------------------------------------------
   document.addEventListener("themeChanged", () => {
     const palette = getCurrentColorPalette();

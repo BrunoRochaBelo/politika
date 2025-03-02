@@ -29,6 +29,12 @@
       }
     })();
   </script>
+
+  <!-- Chart.js e plugins (Carregamento assíncrono para melhor performance) -->
+  <script src="./static/js/chart.umd.js" defer></script>
+  <script src="./static/js/chartjs-plugin-datalabels.js" defer></script>
+  <script src="./static/js/chartjs-plugin-zoom.js" defer></script>
+  <script src="./static/js/charts-base.js" defer></script>
 </head>
 
 <body class="body-financeiro-template">
@@ -61,52 +67,92 @@
   </header>
 
   <main class="main-financeiro main-financeiro-template">
-    <section class="main-financeiro-section">
-      <ul class="lista-vertical-alt">
-        <li class="card-l">
-          <a href="perfil.html" class="card-info-user">
-            <img src="./static/imagens/foto-do-usuario.png" alt="Foto do Usuário">
-            <p>Nome do candidato</p>
-            <p>Cargo do candidato</p>
-            <p>Partido do candidato</p>
-          </a>
-        </li>
-        <li class="card-m">
-          <a href="perfil.html#aba2">
-            <div class="card-financeiro-template">
-              <h3 class="card-financeiro-template-title">Assinatura</h3>
-              <div class="card-financeiro-template-list lista-vertical-alt">
-                <p>item</p>
-                <p>item</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="lista-vertical-horizontal">
-          <div class="card-l">
-            <a href="equipe.html" class="card-financeiro-template">
-              <h3 class="card-financeiro-template-title">Equipe</h3>
-              <div class="card-financeiro-template-list lista-vertical-alt">
-                <p>item</p>
-                <p>item</p>
-                <p>item</p>
-              </div>
-            </a>
-          </div>
-          <div class="card-l">
-            <a href="conta-corrente.html" class="card-financeiro-template">
-              <h3 class="card-financeiro-template-title">Conta corrente</h3>
-              <div class="card-financeiro-template-list lista-vertical-alt">
-                <p>item</p>
-                <p>item</p>
-                <p>item</p>
-              </div>
-            </a>
-          </div>
-        </li>
+    <section class="main-financeiro-section container-template">
+      <div class="container-template-content">
+        <div class="area-interna-containerContent-template area-financeiro">
+          <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+            <ul class="lista-vertical-alt">
+              <li class="secao-interna-template">
+                <ul class="lista-dashboard-cards">
+
+                  <!-- Card: Despesas -->
+                  <li class="card-l">
+                    <div class="card-financeiro-template">
+                      <h3 class="card-financeiro-template-title">Despesas</h3>
+                      <div class="card-financeiro-template-list lista-vertical-alt">
+                        <div class="dashboard-container">
+                          <div class="dashboard-header">
+                            <select id="cost-center-select" class="cost-center-select">
+                              <option value="campanha">Centro de Custo Campanha</option>
+                              <option value="gabinete">Centro de Custo Gabinete</option>
+                              <option value="marketing">Centro de Custo Marketing</option>
+                            </select>
+                            <div id="available-value" class="available-value dashboard-hidden">R$ 0,00</div>
+                            <div id="loading-indicator-header" class="loading-indicator dashboard-hidden">Carregando...</div>
+                          </div>
+                          <div class="dashboard-content">
+                            <div id="loading-indicator-content" class="loading-indicator dashboard-hidden">Carregando...</div>
+                            <div id="error-message" class="error-message dashboard-hidden"></div>
+                            <div class="chart-wrapper">
+                              <canvas id="expense-chart"></canvas>
+                              <div class="chart-center-text">
+                                <div id="center-text" class="chart-available-value">R$ 0,00</div>
+                                <div id="center-label">Disponível</div>
+                              </div>
+                            </div>
+
+                            <div class="accounts-list-container">
+                              <h2>Meta por conta</h2>
+                              <div class="accounts-list" id="accounts-list">
+                                <!-- Os itens da conta serão adicionados dinamicamente aqui -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bar-dragging-dashboard-container tooltip">
+                          <!-- Este é o contêiner que você quer que mostre o tooltip -->
+                          <span class="tooltiptext">Arraste ou clique para exibir e ocultar o gráfico</span>
+                        </div>
+
+                      </div>
+                      <a class="card-financeiro-template-link" href="dashboard-despesas.html">ir para despesas</a>
+                    </div>
+                  </li>
+
+                  <!-- Card: Centro de Custo - Barra de Progresso -->
+                  <li class="card-l">
+                    <div class="card-financeiro-template">
+                      <h3 class="card-financeiro-template-title">Centro de Custo</h3>
+                      <div class="card-financeiro-template-list lista-vertical-alt">
+                        <div class="chart-dashboard-container">
+                          <canvas id="chartCentroCusto"></canvas>
+                        </div>
+                      </div>
+                      <a class="card-financeiro-template-link" href="dashboard-centro-custo.html">Ver detalhes</a>
+                    </div>
+                  </li>
 
 
-      </ul>
+                  <!-- Card: Contatos -->
+                  <li class="card-l">
+                    <div class="card-financeiro-template">
+                      <h3 class="card-financeiro-template-title">Novos Contatos</h3>
+                      <div class="card-financeiro-template-list lista-vertical-alt">
+                        <div class="chart-dashboard-container line-chart-container">
+                          <canvas id="chartContatos"></canvas>
+                        </div>
+                      </div>
+                      <a class="card-financeiro-template-link" href="dashboard-contatos.html">ir para contatos</a>
+                    </div>
+                  </li>
+
+                </ul>
+              </li>
+              <li class="list-last-child"><br></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -116,7 +162,8 @@
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
-
+  <script src="./static/js/dashboard-home-charts.js" defer></script>
+  <script src="./static/js/DashboardCentroCustoDespesas.js" defer></script>
 </body>
 
 </html>

@@ -21,12 +21,7 @@ body {
 
 body.offline {
   background-color: var(--bg-principal);
-  color: #666;
-}
-
-body.offline header,
-body.offline footer {
-  background-color: var(--bg-principal);
+  color: var(--txt-destaque);
 }
 
 ::-webkit-scrollbar {
