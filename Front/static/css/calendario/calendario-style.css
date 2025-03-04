@@ -56,7 +56,7 @@
   background: var(--container-bg);
   box-shadow: var(--sombra-leve);
   border-radius: 25px;
-  border: 1px solid var(--borda);
+  border: 1px solid var(--card-borda);
   box-sizing: border-box;
   height: calc(var(--vh, 1vh) * 100 - 5.6rem) !important;
 }

@@ -21,9 +21,9 @@
 .main-financeiro .card-s:active,
 .main-financeiro .card-m:active,
 .main-financeiro .card-l:active {
-  animation: none;
-  transform: none;
-  box-shadow: none;
+  animation: none !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .card-financeiro-template {
