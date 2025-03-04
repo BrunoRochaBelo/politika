@@ -6,7 +6,7 @@
   align-content: start;
   border-radius: 25px;
   max-height: calc(var(--vh, 1vh) * 100 - 5rem);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-intensa);
   grid:
     "container-filtros-template-header" auto
     "container-filtros-template-content" auto
@@ -45,7 +45,7 @@
   align-content: start;
   border-radius: 25px;
   max-height: calc(var(--vh, 1vh) * 100 - 5rem);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-intensa);
   grid:
     "container-compromisso-hoje-template-header" auto
     "container-compromisso-hoje-template-content" auto

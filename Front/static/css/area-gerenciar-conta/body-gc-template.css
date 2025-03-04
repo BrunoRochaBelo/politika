@@ -3,7 +3,6 @@
   display: grid;
   margin: 0;
   padding: 10px;
-  gap: 1px;
   align-content: start;
   justify-content: center;
   grid:
@@ -22,9 +21,11 @@
   border-top-right-radius: 12px;
   padding: 10px;
   color: var(--txt-conteudo-card);
-  border-bottom: none;
+  border-bottom: 1px solid var(--bg-principal);
   position: relative;
-  background: var(--bg-principal);
+  background: var(--container-bg);
+  box-shadow: var(--sombra-intensa);
+  overflow: hidden;
 }
 .main-gc {
   grid-area: main-gc;
@@ -32,7 +33,7 @@
   align-content: start;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-intensa);
   border: 5px solid transparent;
   color: var(--txt-conteudo-card);
   border-top: none;

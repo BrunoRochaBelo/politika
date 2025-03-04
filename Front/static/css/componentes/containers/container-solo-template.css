@@ -14,7 +14,7 @@
   box-sizing: border-box;
   overflow: hidden;
   background: var(--container-bg);
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-intensa);
   border-radius: 25px;
   grid-template-areas: "container-solo-template-content";
   scroll-behavior: smooth;

@@ -8,7 +8,11 @@
   transition: all 0.25s ease-in-out;
   max-height: 500px;
 }
-
+.card-xs.filtro-small-card:active {
+  animation: none !important;
+  transform: none !important;
+  box-shadow: var(--sombra-moderada) !important;
+}
 .campo-filtro {
   display: grid;
   grid-auto-flow: column;

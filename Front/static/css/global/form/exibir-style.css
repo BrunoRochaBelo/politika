@@ -12,7 +12,7 @@
     "main-exibir"
     / minmax(21.875rem, 58rem);
   background: none;
-  box-shadow: var(--sombra-moderada);
+  box-shadow: var(--sombra-intensa);
   border-radius: 25px;
 }
 .main-exibir {
