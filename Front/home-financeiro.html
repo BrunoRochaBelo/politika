@@ -37,7 +37,7 @@
   <script src="./static/js/charts-base.js" defer></script>
 </head>
 
-<body class="body-financeiro-template">
+<body class="body-financeiro-template  dashboard-financeiro">
   <header class="header-financeiro">
     <ul class="header-financeiro-template">
       <li class="header-financeiro-back">
@@ -72,6 +72,132 @@
         <div class="area-interna-containerContent-template area-financeiro">
           <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
             <ul class="lista-vertical-alt">
+              <li class="area-filtro filtro-dashboard">
+                <div class="filtro-multi-select-card">
+                  <div class="filtro-multi-select-card-header">
+                    <label for="filtro_dashboardContatos">
+                      <p>{{Periodo}} > {{Tipo de contato}} > {{Perfil de influência}} > {{Residência de apoio}} > {{Local}}</p> <span class="arrow down"></span>
+                    </label>
+                  </div>
+                  <div class="filtro-multi-select-card-content">
+                    <form class="form-filtro-dashboard">
+                      <ul class="lista-opcoes-form-filtro-dashboard">
+                        <!-- Filtro de Período -->
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="periodoDe" class="label-filtro-dashboard">Período:</label>
+                          <div class="dashboard-periodo-container">
+                            <input type="date" id="periodoDe" name="periodoDe" class="input-filtro-dashboard">
+                            <span class="dashboard-separador-filtro">a</span>
+                            <input type="date" id="periodoA" name="periodoA" class="input-filtro-dashboard">
+                          </div>
+                        </li>
+
+                        <!-- Filtro de Tipo de Contato -->
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="tipoContato" class="label-filtro-dashboard">Tipo de contato:</label>
+                          <select id="tipoContato" name="tipoContato" class="select-filtro-dashboard">
+                            <option value="eleitor">Eleitor</option>
+                            <option value="funcionario">Funcionário</option>
+                            <option value="fornecedor">Fornecedor</option>
+                            <option value="comissionado">Comissionado</option>
+                            <option value="lideranca">Liderança</option>
+                            <option value="politico">Político</option>
+                          </select>
+                        </li>
+
+                        <!-- Filtro de Perfil de Influência -->
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="perfilInfluencia" class="label-filtro-dashboard">Perfil de influência:</label>
+                          <select id="perfilInfluencia" name="perfilInfluencia" class="select-filtro-dashboard">
+                            <option value="1">1 Estrela</option>
+                            <option value="2">2 Estrelas</option>
+                            <option value="3">3 Estrelas</option>
+                            <option value="4">4 Estrelas</option>
+                            <option value="5">5 Estrelas</option>
+                          </select>
+                        </li>
+
+                        <!-- Filtro de Residência de Apoio -->
+                        <li class="card-filtro-dashboard card-s">
+                          <div class="campo-filtro">
+                            <label class="label-filtro-dashboard">Residência de apoio</label>
+                            <div class="switch-container">
+                              <input type="checkbox" id="ResidenciaApoio" class="form-checkbox">
+                              <label for="ResidenciaApoio" class="switch-label">
+                                <span class="switch-inner"></span>
+                                <span class="switch-switch"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+
+                      <div>
+                        <!-- Filtro Local -->
+                        <div class="card-filtro-dashboard card-s">
+                          <label class="label-filtro-dashboard">Local:</label>
+                          <ul class="lista-opcoes-form-filtro-dashboard">
+                            <li class="campo">
+                              <label for="endereco_uf">UF</label>
+                              <select id="endereco_uf" name="uf" required>
+                                <option value="">Selecione</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                              </select>
+                            </li>
+
+                            <li class="campo">
+                              <label for="endereco_cidade">Cidade</label>
+                              <input type="text" id="endereco_cidade" name="cidade" required placeholder="Digite a cidade">
+                            </li>
+
+                            <li class="campo">
+                              <label for="endereco_bairro">Bairro</label>
+                              <input type="text" id="endereco_bairro" name="bairro" required placeholder="Digite o bairro">
+                            </li>
+
+                            <li class="campo">
+                              <label for="endereco_rua">Rua</label>
+                              <input type="text" id="endereco_rua" name="rua" placeholder="Digite a rua">
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <!-- Botão de Aplicar Filtros -->
+                      <div class="botoes">
+                        <button type="submit" class="btn-principal">Aplicar</button>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </li>
               <li class="secao-interna-template">
                 <ul class="lista-dashboard-cards">
 
@@ -80,38 +206,11 @@
                     <div class="card-financeiro-template">
                       <h3 class="card-financeiro-template-title">Despesas</h3>
                       <div class="card-financeiro-template-list lista-vertical-alt">
-                        <div class="dashboard-container">
-                          <div class="dashboard-header">
-                            <select id="cost-center-select" class="cost-center-select">
-                              <option value="campanha">Centro de Custo Campanha</option>
-                              <option value="gabinete">Centro de Custo Gabinete</option>
-                              <option value="marketing">Centro de Custo Marketing</option>
-                            </select>
-                            <div id="available-value" class="available-value dashboard-hidden">R$ 0,00</div>
-                            <div id="loading-indicator-header" class="loading-indicator dashboard-hidden">Carregando...</div>
-                          </div>
-                          <div class="dashboard-content">
-                            <div id="loading-indicator-content" class="loading-indicator dashboard-hidden">Carregando...</div>
-                            <div id="error-message" class="error-message dashboard-hidden"></div>
-                            <div class="chart-wrapper">
-                              <canvas id="expense-chart"></canvas>
-                              <div class="chart-center-text">
-                                <div id="center-text" class="chart-available-value">R$ 0,00</div>
-                                <div id="center-label">Disponível</div>
-                              </div>
-                            </div>
-
-                            <div class="accounts-list-container">
-                              <h2>Meta por conta</h2>
-                              <div class="accounts-list" id="accounts-list">
-                                <!-- Os itens da conta serão adicionados dinamicamente aqui -->
-                              </div>
-                            </div>
-                          </div>
+                        <div class="chart-dashboard-container">
+                          <canvas id="chartDespesas"></canvas>
                         </div>
+                        <a class="card-financeiro-template-link" href="dashboard-despesas.html">ir para despesas</a>
                       </div>
-                      <a class="card-financeiro-template-link" href="dashboard-despesas.html">ir para despesas</a>
-                    </div>
                   </li>
 
                   <!-- Card: Centro de Custo - Barra de Progresso -->
@@ -120,7 +219,7 @@
                       <h3 class="card-financeiro-template-title">Centro de Custo</h3>
                       <div class="card-financeiro-template-list lista-vertical-alt">
                         <div class="chart-dashboard-container">
-                          <canvas id="chartCentroCusto"></canvas>
+                          <canvas id="chartContaCorrente"></canvas>
                         </div>
                       </div>
                       <a class="card-financeiro-template-link" href="dashboard-centro-custo.html">Ver detalhes</a>
@@ -128,16 +227,16 @@
                   </li>
 
 
-                  <!-- Card: Contatos -->
+                  <!-- Card: Receitas -->
                   <li class="card-l">
                     <div class="card-financeiro-template">
-                      <h3 class="card-financeiro-template-title">Novos Contatos</h3>
+                      <h3 class="card-financeiro-template-title">Receitas</h3>
                       <div class="card-financeiro-template-list lista-vertical-alt">
                         <div class="chart-dashboard-container line-chart-container">
-                          <canvas id="chartContatos"></canvas>
+                          <canvas id="chartReceitas"></canvas>
                         </div>
                       </div>
-                      <a class="card-financeiro-template-link" href="dashboard-contatos.html">ir para contatos</a>
+                      <a class="card-financeiro-template-link" href="dashboard-receitas.html">ir para receitas</a>
                     </div>
                   </li>
 
@@ -157,8 +256,8 @@
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
-  <script src="./static/js/dashboard-home-charts.js" defer></script>
-  <script src="./static/js/DashboardCentroCustoDespesas.js" defer></script>
+  <script src="./static/js/home-financeiro-charts.js" defer></script>
+  <script src="./static/js/FiltrosMultiSelect.js" defer></script>
 </body>
 
 </html>

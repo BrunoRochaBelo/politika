@@ -63,12 +63,8 @@
 
   <main class="main-financeiro main-financeiro-template">
     <section class="main-financeiro-section container-template">
-      <h1 class="container-template-header header-header-fx-int"> Contas Correntes </h1>
-      <div class="container-template-content container-template-content-com-header-fx-int">
-        <div class="area-interna-containerContent-template">
-          <div class="area-interna-containerContent-template-header">
-            <button class="conta-corrente-create-account"><b>+</b> Nova Conta Corrente</button>
-          </div>
+      <div class="container-template-content">
+        <div class="area-interna-containerContent-template area-financeiro">
           <div class="area-interna-containerContent-template-content">
             <ul class="conta-corrente-cards" id="cards">
               <!-- Exemplo de card inicial -->
@@ -95,6 +91,20 @@
 
     </section>
   </main>
+
+
+  <!-- Modal Botão Flutuante -->
+  <button class="floatingButton">+</button>
+  <div class="modal-btn-floating-Overlay esconderModal">
+    <div class="modal-btn-floating-content">
+      <div class="modal-btn-floating-header">
+        <h1>NOVA</h1>
+      </div>
+      <ul class="modal-btn-floating-body">
+        <li><a href="conta_incluir.html">Conta</a></li>
+      </ul>
+    </div>
+  </div>
 
   <!-- Modal de criação de conta -->
   <div class="conta-corrente-modal" id="modal">
@@ -148,7 +158,12 @@
   <!-- Notificação -->
   <div class="notification" id="notification"></div>
 
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/ModalBTNFloating.js" defer></script>
+  <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/financeiroContaCorrente.js" defer></script>
 
 </body>

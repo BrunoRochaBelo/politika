@@ -122,9 +122,10 @@
 /* financeiro/ Conta Corrente */
 @import "./area-financeiro/conta-corrente/conta-corrente-style.css";
 /* financeiro/ Despesas */
-/* despesas */
 @import "./area-financeiro/despesas/dashboard-centro-custo.css";
 @import "./area-financeiro/despesas/despesas-style.css";
+/* financeiro/ Conta Corrente */
+@import "./area-financeiro/home-financeiro/home-financeiro-style.css";
 
 /* area dashboard */
 @import "./area-dashboard/body-dashboard-template.css";

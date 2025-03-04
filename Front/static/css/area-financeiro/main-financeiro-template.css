@@ -19,14 +19,6 @@
 .main-financeiro .container-template {
   background: transparent;
 }
-.main-financeiro .lista-vertical-alt {
-  gap: 0;
-  margin: 0;
-}
-.main-financeiro .lista-vertical > li:first-child,
-.main-financeiro .lista-vertical-alt > li:first-child {
-  margin-top: 0px !important;
-}
 
 .main-financeiro .area-interna-containerContent-template.area-financeiro {
   background: none;
@@ -38,7 +30,7 @@
 .main-financeiro .area-interna-containerContent-template {
   background: none;
   box-shadow: none;
-  max-height: calc(var(--vh, 1vh) * 100 - 8.5rem) !important;
+  height: auto !important;
   transition: max-height 0.3s ease-in-out;
 }
 .main-financeiro .container-abas-template {
@@ -51,10 +43,11 @@
 .main-financeiro .container-template-content,
 .main-financeiro .container-abas-template-content {
   border-radius: 0px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
   box-shadow: none;
-  border-top: none;
+  border-top: none !important;
+}
+.main-financeiro .area-interna-containerContent-template-content {
+  border-top: none !important;
 }
 
 /* RESPONSIVO */
@@ -80,7 +73,7 @@
   .main-financeiro .area-interna-containerContent-template {
     background: none;
     box-shadow: none;
-    max-height: calc(var(--vh, 1vh) * 100 - 16rem) !important;
+    height: auto !important;
   }
 
   .main-financeiro .container-abas-template-header {
@@ -96,6 +89,9 @@
   .main-financeiro .area-interna-containerContent-template-content,
   .main-financeiro .card-m {
     padding: 0;
+  }
+  .main-financeiro .area-interna-containerContent-template-content {
+    border-top: none !important;
   }
   .main-financeiro .lista-vertical > li:first-child,
   .lista-vertical-alt > li:first-child {
