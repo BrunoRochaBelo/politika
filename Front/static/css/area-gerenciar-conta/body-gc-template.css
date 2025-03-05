@@ -21,11 +21,12 @@
   border-top-right-radius: 12px;
   padding: 10px;
   color: var(--txt-conteudo-card);
-  border-bottom: 1px solid var(--bg-principal);
+  border-bottom: 1px solid var(--container-bg);
   position: relative;
-  background: var(--container-bg);
+  background: var(--bg-principal);
   box-shadow: var(--sombra-intensa);
   overflow: hidden;
+  z-index: 1;
 }
 .main-gc {
   grid-area: main-gc;
@@ -38,6 +39,7 @@
   color: var(--txt-conteudo-card);
   border-top: none;
   background: var(--bg-principal);
+  z-index: 2;
 }
 
 /* RESPONSIVO */

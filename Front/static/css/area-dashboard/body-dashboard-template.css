@@ -26,6 +26,7 @@
   background: var(--container-bg);
   box-shadow: var(--sombra-intensa);
   overflow: hidden;
+  z-index: 1;
 }
 .main-dashboard {
   grid-area: main-dashboard;
@@ -38,6 +39,7 @@
   color: var(--txt-conteudo-card);
   border-top: none;
   background: var(--container-bg);
+  z-index: 2;
 }
 
 /* RESPONSIVO */
