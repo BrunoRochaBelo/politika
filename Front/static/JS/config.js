@@ -6,7 +6,7 @@ const Config = {
 
   // 2. URLs Base para Diferentes Ambientes
   BASE_URL: {
-    development: "http://192.168.1.14:8000",
+    development: "http://192.168.1.44:8000/",
     production: "http://dev.inforvia.com.br",
   },
 

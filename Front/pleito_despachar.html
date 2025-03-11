@@ -13,7 +13,7 @@
   <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
   <!-- Favicon -->
-  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+  <link rel="icon" href="./static/imagens/icones/pleitos-select.svg" type="image/svg+xml">
 
   <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
   <link rel="stylesheet" href="./static/css/style.css">
@@ -30,103 +30,156 @@
 
 <body class="body-form">
   <div class="body-form-template">
-    <header class="header-form">
+    <header class="header-form ">
       <h1>Despachar Pleito</h1>
       <h1><a href="pleitos.html" class="close">&times;</a></h1>
     </header>
 
     <main class="main-form">
       <section>
-        <div class="container-abas-template">
-          <nav class="container-abas-template-header">
-            <ul id="navAba" class="nav nav-duas-abas">
-              <li id="nav1">
-                <a class="indicador-2" href="#aba1">Dados</a>
-              </li>
-              <li id="nav2">
-                <a href="#aba2">Tarefas</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="container-abas-template-content">
-            <div id="aba1" class="aba-template ">
-              <div class="area-interna-containerContent-template">
-                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                  <ul class="lista-vertical-alt">
-                    <li class="card-session secao-interna-template ">
-                      <h2 class="secao-interna-template-header " onclick="changeSession(1)">
-                        <a href="#">
-                          <div class="agenda-icon agora">
-                            <img src="./static/imagens/icones/identificação.svg" alt="Identificação Icon">
-                          </div> Identificação<span class="arrow down"></span>
-                        </a>
-                      </h2>
-                      <div class="secao-interna-template-content">
-                        <div class="session " id="secao1">
-                          <fieldset>
-                            <div class="modal-despachar-pleito-template">
-                              <p class="modal-despachar-pleito-tiposolici" data-filter="tipoSolici"> Solicitação de Recursos </p>
-                              <p class="modal-despachar-pleito-dataSolici" data-filter="dataSoliciPleito"> 2024-12-01 </p>
-                              <p class="modal-despachar-pleito-solicitante" data-filter="solicitante"> João Silva </p>
-                              <div class="modal-despachar-pleito-desc" data-filter="descPleito">
-                                <p><strong>Descrição:</strong> Solicitação para aquisição de equipamentos médicos para o hospital regional. </p>
-                              </div>
-                              <p class="modal-despachar-pleito-beneficiario" data-filter="beneficiario"> Hospital Regional de Exemplo </p>
-                              <p class="modal-despachar-pleito-uf" data-filter="ufPleito"> SP </p>
-                              <p class="modal-despachar-pleito-cidade" data-filter="cidadePleito"> São Paulo </p>
-                              <p class="modal-despachar-pleito-bairro" data-filter="bairroPleito"> Centro </p>
-                              <p class="modal-despachar-pleito-rua" data-filter="ruaPleito"> Rua das Flores, 123 </p>
-                              <p class="modal-despachar-pleito-autor" data-filter="autorPleito"> Maria Oliveira </p>
-                              <p class="modal-despachar-pleito-dataCriacao" data-filter="dataCriacaoPleito"> 2024-11-30 </p>
-                              <p class="modal-despachar-pleito-status" data-filter="statusPleito"> Em análise </p>
-                              <p class="modal-despachar-pleito-id" data-filter="modalPleitoID"> PLT-12345 </p>
-                            </div>
-                          </fieldset>
+        <div class="container-template">
+          <div class="container-template-content">
+            <div class="area-interna-containerContent-template">
+              <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                <ul class="lista-vertical-alt">
+                  <li class="card-session secao-interna-template">
+                    <h2 class="card-info secao-interna-template-header" onclick="changeSession(1)">
+                      <a href="#">
+                        <p class="info-despachar-pleito-tiposolici" data-filter="titulopleito">Tipo solicitação</p>
+                        <span class="arrow down"></span>
+                      </a>
+                    </h2>
+                    <div class="secao-interna-template-content">
+                      <div class="session " id="secao1">
+                        <div class="info-despachar-pleito-template">
+                          <p class="info-despachar-pleito-solicitante" data-filter="solicitantepleito">Solicitante</p>
+                          <p class="info-despachar-pleito-status" data-filter="statuspleito">Status da pleito</p>
+                          <p class="info-despachar-pleito-beneficiario" data-filter="beneficiariopleito">Beneficiário</p>
+                          <p class="info-despachar-pleito-dataSolici" data-filter="datasolicitacaopleito">Data da Solicitação</p>
+                          <p class="info-despachar-pleito-endereco" data-filter="enderecopleito">Endereço</p>
+                          <div class="info-despachar-pleito-desc" data-filter="descricaopleito">
+                            <p><strong>Descrição:</strong> Descrição da pleito</p>
+                          </div>
+                          <p class="info-despachar-pleito-infoCriacaoPleito" data-filter="infopleitoID">{{Maria Oliveira}} - {{10/04/2024}}</p>
                         </div>
                       </div>
-                    </li>
-                    <li class="card-session active secao-interna-template">
-                      <div class="modal-despachar-pleito-situacao">
-                        <label for="DespachoPleito">Situação:</label>
-                        <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
-                          <input type="radio" id="encaminhar" name="DespachoPleito" value="encaminhar">
-                          <label for="encaminhar">Encaminhar</label>
-                          <input type="radio" id="concluir" name="DespachoPleito" value="concluir">
-                          <label for="concluir">Concluir</label>
-                          <input type="radio" id="cancelar" name="DespachoPleito" value="cancelar">
-                          <label for="cancelar">Cancelar</label>
+                    </div>
+                  </li>
+                  <li class="card-session active secao-interna-template">
+                    <div id="despachar">
+                      <div class="form-despachar-pleito">
+                        <h2 class="form-despachar-pleito-title">Concluir ou encaminhar?</h2>
+                        <div class="form-despachar-pleito-situacao">
+                          <div class="radio-button-group">
+                            <input type="radio" id="despacharConcluir" name="ConclusaoDespacho" value="despachoConcluir">
+                            <label for="despacharConcluir">Concluir</label>
+                            <input type="radio" id="despacharEncaminhar" name="ConclusaoDespacho" value="despachoencaminhar">
+                            <label for="despacharEncaminhar">Encaminhar</label>
+                          </div>
                         </div>
                       </div>
-
-                      <div class="modal-despachar-pleito-descDespacho">
-                        <label for="descDespachoPleito">Descrição da Conclusão:</label>
-                        <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
+                    </div>
+                  </li>
+                  <li class="card-session active secao-interna-template hidden">
+                    <form id="form" class="formConcluir" method="post" enctype="multipart/form-data">
+                      <div class="form-concluir-pleito">
+                        <h2 class="form-concluir-pleito-title">Status</h2>
+                        <div class="form-concluir-pleito-situacao">
+                          <div class="radio-button-group">
+                            <input type="radio" id="atrasada" name="Conclusaopleito" value="atrasada">
+                            <label for="atrasada">Atrasada</label>
+                            <input type="radio" id="cancelada" name="Conclusaopleito" value="cancelada">
+                            <label for="cancelada">Cancelada</label>
+                            <input type="radio" id="concluída" name="Conclusaopleito" value="concluída">
+                            <label for="concluída">Concluída</label>
+                          </div>
+                        </div>
+                        <div class="form-concluir-pleito-descConclusao">
+                          <label for="descConclusaopleito">Descrição da Conclusão:</label>
+                          <textarea id="descConclusaopleito" name="descConclusaopleito"></textarea>
+                        </div>
+                        <div class="form-concluir-pleito-salvar">
+                          <button type="submit" class="btn-principal">Concluir</button>
+                        </div>
                       </div>
-                    </li>
-                  </ul>
-                  <!-- Botões de Ação -->
-                  <div class="botoes">
-                    <button type="submit" class="btn-principal">Criar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+                    </form>
+                  </li>
+                  <li class="card-session active secao-interna-template hidden">
+                    <form id="form" class="formIncluirTarefa" enctype="multipart/form-data">
+                      <fieldset>
+                        <legend class="titulo-lg"></legend>
 
-            <div id="aba2" class="aba-template">
-              <div class="area-interna-containerContent-template">
-                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
-                  <div class="card-session active">
+                        <div class="campo">
+                          <label for="titulo">Título:<span>*</span></label>
+                          <input type="text" id="titulo" placeholder="Digite o título aqui" required>
+                        </div>
+
+                        <div class="campo">
+                          <label for="categoria">Categoria:<span>*</span></label>
+                          <select id="categoria" required>
+                            <option value="" disabled selected>Selecione uma categoria</option>
+                            <option value="administracao">Administração</option>
+                            <!-- Adicione outras opções aqui -->
+                          </select>
+                        </div>
+
+                        <div class="campo">
+                          <label for="description">Descrição:</label>
+                          <textarea class="form-textarea" id="description" placeholder="Digite aqui os detalhes"></textarea>
+                        </div>
+
+                        <div class="form-dataHora">
+                          <div class="campo">
+                            <label for="dataInicio">Data início:<span>*</span></label>
+                            <input type="date" id="dataInicio" required>
+                          </div>
+
+                          <div class="campo">
+                            <label for="dataFim">Data fim:</label>
+                            <input type="date" id="dataFim">
+                          </div>
+                        </div>
+
+                        <div class="campo">
+                          <label>Prioridade:<span>*</span></label>
+                          <div class="radio-button-group">
+                            <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa" required>
+                            <label for="prioridadeBaixa">Baixa</label>
+                            <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
+                            <label for="prioridadeMedia">Média</label>
+                            <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
+                            <label for="prioridadeAlta">Alta</label>
+                          </div>
+                        </div>
+
+                        <div class="campo">
+                          <label for="responsavel">Responsável:<span>*</span></label>
+                          <select id="responsavel" required>
+                            <option value="" disabled selected>Selecione um responsavel</option>
+                            <option value="João">João</option>
+                            <option value="José">José</option>
+                            <option value="Maria">Maria</option>
+                            <!-- Adicione outras opções aqui -->
+                          </select>
+                        </div>
+                      </fieldset>
+                      <div class="botoes">
+                        <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                      </div>
+                    </form>
+                  </li>
+                  <li class="card-session active">
                     <fieldset>
                       <div class="campo">
-                        <p id="contadorContatosEncontrados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
+                        <p id="contadorContatosEncontrados" class="titulo-area-tabela">Encaminhamentos: 0</p>
                         <div class="tabela-historico">
                           <table id="tabelaContatosEncontrados">
                             <thead>
                               <tr>
                                 <th class="hidden-column">ID</th>
-                                <th>Nome</th>
-                                <th>Tipo</th>
-                                <th>Ações</th>
+                                <th>Tarefa</th>
+                                <th>Responsável</th>
+                                <th>Status</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -137,109 +190,51 @@
                         </div>
                       </div>
                     </fieldset>
-                  </div>
-                </div>
+                  </li>
+                  <li class="list-last-child"><br></li>
+                </ul>
               </div>
             </div>
           </div>
-
-        </div>
-
       </section>
     </main>
-
-
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Seleciona os radio buttons e os elementos <li> que envolvem os formulários
+      const radios = document.querySelectorAll('input[name="ConclusaoDespacho"]');
+      const liConcluir = document.querySelector('.formConcluir').closest('li');
+      const liIncluirTarefa = document.querySelector('.formIncluirTarefa').closest('li');
+
+      // Esconde os formulários inicialmente usando uma classe CSS (defina .hidden no seu CSS com display: none)
+      liConcluir.classList.add('hidden');
+      liIncluirTarefa.classList.add('hidden');
+
+      // Função para tratar a mudança dos radio buttons
+      const handleToggle = (event) => {
+        const valor = event.target.value;
+        if (valor === 'despachoConcluir') {
+          liConcluir.classList.remove('hidden');
+          liIncluirTarefa.classList.add('hidden');
+        } else if (valor === 'despachoencaminhar') {
+          liConcluir.classList.add('hidden');
+          liIncluirTarefa.classList.remove('hidden');
+        }
+      };
+
+      // Adiciona o listener para cada radio button
+      radios.forEach(radio => radio.addEventListener('change', handleToggle));
+    });
+  </script>
   <script src="./static/js/config.js" defer></script>
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/NavSecoes.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
-  <script src="./static/js/NavAbasInternas.js" defer></script>
-  <script src="./static/js/BuscaEndereco.js" defer></script>
   <script src="./static/js/IncluirPleito.js" defer></script>
-  <script src="./static/js/ContatoIncluirListaReferenciaPolitica.js" defer></script>
+  <script src="./static/js/IncluirTarefa.js" defer></script>
 
 </body>
 
 </html>
-
-
-<!-- Modal Despachar Pleito -->
-<!--<div id="modal-despachar-pleito" class="modal-card-acao-template">
-    <div class="modal-card-acao-template-header">
-      <span class="closeModalCardAcao">&times;</span>
-    </div>
-    <div class="modal-card-acao-template-content">
-      <ul class="lista-vertical-modal">
-        <li>
-          <div class="modal-despachar-pleito-template">
-            <p class="modal-despachar-pleito-tiposolici" data-filter="tipoSolici"></p>
-            <p class="modal-despachar-pleito-dataSolici" data-filter="dataSoliciPleito"></p>
-            <p class="modal-despachar-pleito-solicitante" data-filter="solicitante"></p>
-            <div class="modal-despachar-pleito-desc" data-filter="descPleito">
-              <p><strong>Descrição:</strong></p>
-            </div>
-            <p class="modal-despachar-pleito-beneficiario" data-filter="beneficiario"></p>
-            <p class="modal-despachar-pleito-uf" data-filter="ufPleito"></p>
-            <p class="modal-despachar-pleito-cidade" data-filter="cidadePleito"></p>
-            <p class="modal-despachar-pleito-bairro" data-filter="bairroPleito"></p>
-            <p class="modal-despachar-pleito-rua" data-filter="ruaPleito"></p>
-            <p class="modal-despachar-pleito-autor" data-filter="autorPleito"></p>
-            <p class="modal-despachar-pleito-status" data-filter="statusPleito"></p>
-            <p class="modal-despachar-pleito-id" data-filter="modalPleitoID"></p>
-          </div>
-        </li>
-        <li>
-          <div class="modal-despachar-pleito-despachar">
-            <h2 class="modal-despachar-pleito-despachar-title">Atribuir Tarefa</h2>
-            <div class="modal-despachar-pleito-situacao">
-              <label for="DespachoPleito">Situação:</label>
-              <div id="DespachoPleito" name="DespachoPleito" class="radio-button-group">
-                <input type="radio" id="sobAnalise" name="DespachoPleito" value="sobAnalise">
-                <label for="sobAnalise">Sob Análise</label>
-                <input type="radio" id="processando" name="DespachoPleito" value="processando">
-                <label for="processando">Processando</label>
-                <input type="radio" id="parado" name="DespachoPleito" value="parado">
-                <label for="parado">Parado</label>
-              </div>
-            </div>
-            <div class="modal-despachar-pleito-responsavel">
-              <label for="responsavel">Responsável</label>
-              <select id="responsavel" name="responsavel">
-                <option value="" disabled selected>Selecione o responsável</option>
-              
-              </select>
-            </div>
-            <div class="modal-despachar-pleito-dataInicio">
-              <label for="dataInicio">Data Início</label>
-              <input type="date" id="dataInicio" name="dataInicio">
-            </div>
-            <div class="modal-despachar-pleito-prazoFinal">
-              <label for="prazoFinal">Prazo Final</label>
-              <input type="date" id="prazoFinal" name="prazoFinal">
-            </div>
-            <div class="modal-despachar-pleito-prioridade">
-              <label for="prioridade">Prioridade</label>
-              <div id="prioridade" name="prioridade" class="radio-button-group">
-                <input type="radio" id="prioridadeBaixa" name="prioridade" value="baixa">
-                <label for="prioridadeBaixa">Baixa</label>
-                <input type="radio" id="prioridadeMedia" name="prioridade" value="media">
-                <label for="prioridadeMedia">Média</label>
-                <input type="radio" id="prioridadeAlta" name="prioridade" value="alta">
-                <label for="prioridadeAlta">Alta</label>
-              </div>
-            </div>
-            <div class="modal-despachar-pleito-descDespacho">
-              <label for="descDespachoPleito">Descrição da Conclusão:</label>
-              <textarea id="descDespachoPleito" name="descDespachoPleito"></textarea>
-            </div>
-            <div class="modal-despachar-pleito-salvar">
-              <button type="button" class="btn-principal despachar-button">Despachar</button>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>-->

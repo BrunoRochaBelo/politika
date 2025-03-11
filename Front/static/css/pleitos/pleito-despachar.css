@@ -1,227 +1,144 @@
-.modal-despachar-pleito-template {
+/* CARD INFO */
+
+.info-despachar-pleito-template {
   display: grid;
+  box-sizing: border-box;
   color: var(--txt-conteudo-card);
   gap: 3px;
+  padding: 10px;
+  padding-top: 0;
   grid:
-    "modal-despachar-pleito-tiposolici modal-despachar-pleito-tiposolici modal-despachar-pleito-dataSolici"
-    "modal-despachar-pleito-solicitante modal-despachar-pleito-solicitante modal-despachar-pleito-solicitante"
-    "modal-despachar-pleito-beneficiario modal-despachar-pleito-beneficiario modal-despachar-pleito-beneficiario"
-    "modal-despachar-pleito-uf modal-despachar-pleito-cidade modal-despachar-pleito-bairro"
-    "modal-despachar-pleito-rua modal-despachar-pleito-rua modal-despachar-pleito-rua"
-    "modal-despachar-pleito-autor modal-despachar-pleito-autor modal-despachar-pleito-dataCriacao"
-    "modal-despachar-pleito-status modal-despachar-pleito-status modal-despachar-pleito-status"
-    "modal-despachar-pleito-desc modal-despachar-pleito-desc modal-despachar-pleito-desc"
-    "modal-despachar-pleito-despachar modal-despachar-pleito-despachar modal-despachar-pleito-despachar";
+    "info-despachar-pleito-solicitante info-despachar-pleito-solicitante info-despachar-pleito-status"
+    "info-despachar-pleito-beneficiario info-despachar-pleito-beneficiario info-despachar-pleito-dataSolici"
+    "info-despachar-pleito-endereco info-despachar-pleito-endereco info-despachar-pleito-endereco"
+    "info-despachar-pleito-desc info-despachar-pleito-desc info-despachar-pleito-desc"
+    "info-despachar-pleito-infoCriacaoPleito info-despachar-pleito-infoCriacaoPleito info-despachar-pleito-infoCriacaoPleito";
 }
-.modal-despachar-pleito-id {
+.info-despachar-pleito-id {
   display: none;
   opacity: 0;
 }
-.modal-despachar-pleito-tiposolici {
-  grid-area: modal-despachar-pleito-tiposolici;
+
+.info-despachar-pleito-tiposolici {
+  grid-area: info-despachar-pleito-tiposolici;
   border-left: 4px solid var(--cor-primaria-2);
   border-radius: 3px;
   padding-left: 10px;
   font-size: var(--font-sm);
-  font-weight: 400;
   justify-self: start;
   align-self: center;
 }
-.modal-despachar-pleito-dataSolici {
-  grid-area: modal-despachar-pleito-dataSolici;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 400;
-}
-.modal-despachar-pleito-solicitante {
-  grid-area: modal-despachar-pleito-solicitante;
+
+.info-despachar-pleito-solicitante {
+  grid-area: info-despachar-pleito-solicitante;
   justify-self: start;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: var(--font-sm);
-  font-weight: 300;
 }
-.modal-despachar-pleito-desc {
-  grid-area: modal-despachar-pleito-desc;
+.info-despachar-pleito-status {
+  grid-area: info-despachar-pleito-status;
+  justify-self: end;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+  transition: opacity 0.25s ease-in-out;
+}
+.info-despachar-pleito-beneficiario {
+  grid-area: info-despachar-pleito-beneficiario;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+}
+.info-despachar-pleito-dataSolici {
+  grid-area: info-despachar-pleito-dataSolici;
+  justify-self: end;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+}
+.info-despachar-pleito-endereco {
+  grid-area: info-despachar-pleito-endereco;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+}
+.info-despachar-pleito-desc {
+  grid-area: info-despachar-pleito-desc;
   align-self: center;
   justify-self: stretch;
   padding: 10px 14px;
   display: flex;
-  background: var(--card-aberto-detalhe);
+  background: var(--card-detalhe);
+  color: var(--txt-conteudo-card);
   border-radius: 5px;
   justify-content: start;
   align-items: center;
-  margin: 3px 10px 0 10px;
-  font-size: var(--font-sm);
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-xs);
   font-weight: 300;
 }
-.modal-despachar-pleito-beneficiario {
-  grid-area: modal-despachar-pleito-beneficiario;
-  justify-self: start;
+.info-despachar-pleito-infoCriacaoPleito {
+  grid-area: info-despachar-pleito-infoCriacaoPleito;
+  justify-self: end;
   align-self: center;
   padding-left: 14px;
   margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.modal-despachar-pleito-uf {
-  grid-area: modal-despachar-pleito-uf;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.modal-despachar-pleito-cidade {
-  grid-area: modal-despachar-pleito-cidade;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.modal-despachar-pleito-bairro {
-  grid-area: modal-despachar-pleito-bairro;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.modal-despachar-pleito-rua {
-  grid-area: modal-despachar-pleito-rua;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.modal-despachar-pleito-autor {
-  grid-area: modal-despachar-pleito-autor;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.modal-despachar-pleito-dataCriacao {
-  grid-area: modal-despachar-pleito-dataCriacao;
-  justify-self: start;
-  align-self: center;
-  padding-left: 14px;
-  margin: 3px 0 0 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-}
-.modal-despachar-pleito-status {
-  display: none;
-  opacity: 0;
+  font-size: 10px;
+  font-weight: 400;
+  filter: brightness(0.7);
+  transition: opacity 0.25s ease-in-out;
 }
 
-.modal-despachar-pleito-despachar {
-  grid-area: modal-despachar-pleito-despachar;
+/* FORMULARIO */
+
+.form-despachar-pleito {
+  grid-area: form-despachar-pleito;
   display: grid;
+  box-sizing: border-box;
   justify-items: stretch;
   gap: 20px 5px;
-  padding: 10px;
+  padding: 20px;
   align-self: center;
-  border: 1px solid var(--container-bg);
   font-size: var(--font-sm);
-  font-weight: 300;
-  white-space: wrap;
-  word-break: break-all;
-  background: var(--container-bg);
   border-radius: 25px;
   grid:
-    "modal-despachar-pleito-despachar-title modal-despachar-pleito-despachar-title"
-    "modal-despachar-pleito-situacao modal-despachar-pleito-situacao"
-    "modal-despachar-pleito-responsavel modal-despachar-pleito-responsavel"
-    "modal-despachar-pleito-dataInicio modal-despachar-pleito-prazoFinal"
-    "modal-despachar-pleito-prioridade modal-despachar-pleito-prioridade"
-    "modal-despachar-pleito-descDespacho modal-despachar-pleito-descDespacho"
-    "modal-despachar-pleito-salvar modal-despachar-pleito-salvar";
+    "form-despachar-pleito-title"
+    "form-despachar-pleito-situacao";
 }
-.modal-despachar-pleito-despachar-title {
-  grid-area: modal-despachar-pleito-despachar-title;
+.form-despachar-pleito-title {
+  grid-area: form-despachar-pleito-title;
+  font-size: var(--font-md);
 }
-.modal-despachar-pleito-descDespacho {
-  grid-area: modal-despachar-pleito-descDespacho;
-  justify-items: stretch;
-  display: flex;
-  flex-direction: column;
-}
-.modal-despachar-pleito-situacao {
-  grid-area: modal-despachar-pleito-situacao;
+
+.form-despachar-pleito-situacao {
+  grid-area: form-despachar-pleito-situacao;
   justify-items: stretch;
   display: flex;
   flex-direction: column;
   font-size: var(--font-sm);
   font-weight: 300;
 }
-.modal-despachar-pleito-dataInicio {
-  grid-area: modal-despachar-pleito-dataInicio;
-  /* Adicione aqui os estilos específicos para a data de início */
-}
-.modal-despachar-pleito-prazoFinal {
-  grid-area: modal-despachar-pleito-prazoFinal;
-  /* Adicione aqui os estilos específicos para o prazo final */
-}
-.modal-despachar-pleito-prioridade {
-  grid-area: modal-despachar-pleito-prioridade;
-  /* Adicione aqui os estilos específicos para a prioridade */
-}
-.modal-despachar-pleito-responsavel {
-  grid-area: modal-despachar-pleito-responsavel;
-  /* Adicione aqui os estilos específicos para o responsável */
-}
-.modal-despachar-pleito-salvar {
-  grid-area: modal-despachar-pleito-salvar;
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-  font-size: var(--font-sm);
-  font-weight: 300;
-  margin-top: 25px;
-}
-
-.modal-despachar-pleito-despachar label {
-  color: var(--txt-subtitulo);
-  margin-bottom: 7px;
-}
-.modal-despachar-pleito-despachar textarea,
-.modal-despachar-pleito-despachar select,
-.modal-despachar-pleito-despachar input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.9375rem;
-  color: var(--txt-titulo-card);
-  background: var(--card-bg);
-  border: 1px solid var(--card-bg-borda);
-  border-radius: 20px;
-  margin-top: 7px;
-}
-
-.modal-despachar-pleito-content::-webkit-scrollbar {
+.hidden {
   display: none;
 }
 
 /* Responsivo */
 @media only screen and (max-width: 56.25rem) {
-  .modal-despachar-pleito-salvar {
+  .info-despachar-pleito-salvar {
     flex-direction: column;
     gap: 0.625rem;
   }
 
-  .modal-despachar-pleito-content::-webkit-scrollbar {
+  .info-despachar-pleito-content::-webkit-scrollbar {
     display: none;
   }
 }
