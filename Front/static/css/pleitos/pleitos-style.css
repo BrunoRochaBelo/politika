@@ -2,6 +2,7 @@
   width: auto;
   font-weight: 400;
   font-size: var(--font-xs);
+  text-transform: lowercase;
   border-radius: 6px;
   border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
