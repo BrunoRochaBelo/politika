@@ -286,7 +286,12 @@ document.addEventListener("DOMContentLoaded", () => {
       successCallback([]);
       return;
     }
-    const url = `${baseURL}${getAllEventsEndpoint}?start=${fetchInfo.startStr}&end=${fetchInfo.endStr}`;
+
+    // Formata as datas para o padrão 'YYYY-MM-DD'
+    const startParam = fetchInfo.start.toLocaleDateString("en-CA");
+    const endParam = fetchInfo.end.toLocaleDateString("en-CA");
+
+    const url = `${baseURL}${getAllEventsEndpoint}?start=${startParam}&end=${endParam}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
