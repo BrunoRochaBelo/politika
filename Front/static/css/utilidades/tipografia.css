@@ -1,32 +1,26 @@
 @font-face {
   font-family: "Roboto Flex";
-  src: url("/Front/static/fonts/RobotoFlex-Regular.woff2") format("woff2"),
-    url("/Front/static/fonts/RobotoFlex-Regular.woff") format("woff");
-  font-weight: normal;
+  src: url("/static/fonts/RobotoFlex-Regular.woff2") format("woff2"),
+    url("/static/fonts/RobotoFlex-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --vh: 1vh; /* Ajuste dinâmico da altura da viewport */
+  --font-xs: clamp(0.7rem, 0.75rem + 0.5vw, 0.85rem);
+  --font-sm: clamp(0.8rem, 0.875rem + 0.5vw, 1rem);
+  --font-md: clamp(0.95rem, 1rem + 0.5vw, 1.125rem);
+  --font-lg: clamp(1.1rem, 1.25rem + 0.5vw, 1.4rem);
+  --font-xl: clamp(1.4rem, 1.5rem + 0.5vw, 1.75rem);
+  --font-xxl: clamp(1.8rem, 2rem + 0.5vw, 2.25rem);
 
-  /* Tamanhos dinâmicos de fontes */
-  --font-xs: calc(0.75rem + 0.01vw); /* Escala de 12px + dinâmica */
-  --font-sm: calc(0.875rem + 0.01vw); /* Escala de 14px + dinâmica */
-  --font-md: calc(1rem + 0.01vw); /* Escala de 16px + dinâmica */
-  --font-lg: calc(1.25rem + 0.01vw); /* Escala de 20px + dinâmica */
-  --font-xl: calc(1.5rem + 0.01vw); /* Escala de 24px + dinâmica */
-  --font-xxl: calc(2rem + 0.01vw); /* Escala de 32px + dinâmica */
+  --line-height: 1.6;
+  --letter-spacing: 0.05em;
 
-  /* Propriedades de espaçamento relacionadas à tipografia */
-  --line-height: 1.6; /* Altura padrão da linha */
-  --letter-spacing: 0.05em; /* Espaçamento entre caracteres */
-
+  /* Fonte padrão da aplicação */
   --font-family: "Roboto Flex", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
-  /* Ajustes de tamanho de fonte dinâmica com base na largura da tela */
-  --font-dynamic: calc(1rem + 1vw); /* Escala adaptativa */
 }
 
 /* 18px - Medium (peso 500) */
@@ -46,15 +40,26 @@
 }
 
 /* Responsividade */
-@media only screen and (max-width: 56.25rem) {
-  /* Para telas menores que 900px */
+/* Tablets: telas até 768px */
+@media (max-width: 768px) {
   :root {
-    /* Redefine os tamanhos de fonte para dispositivos menores */
-    --font-xs: calc(0.7rem + 0.1vw);
-    --font-sm: calc(0.8rem + 0.1vw);
-    --font-md: calc(0.95rem + 0.1vw);
-    --font-lg: calc(1.1rem + 0.1vw);
-    --font-xl: calc(1.4rem + 0.1vw);
-    --font-xxl: calc(1.8rem + 0.1vw);
+    --font-xs: clamp(0.65rem, 0.7rem + 0.5vw, 0.8rem);
+    --font-sm: clamp(0.75rem, 0.85rem + 0.5vw, 0.95rem);
+    --font-md: clamp(0.9rem, 1rem + 0.5vw, 1.05rem);
+    --font-lg: clamp(1rem, 1.15rem + 0.5vw, 1.25rem);
+    --font-xl: clamp(1.2rem, 1.35rem + 0.5vw, 1.5rem);
+    --font-xxl: clamp(1.5rem, 1.75rem + 0.5vw, 1.9rem);
+  }
+}
+
+/* Celulares: telas até 480px */
+@media (max-width: 480px) {
+  :root {
+    --font-xs: clamp(0.6rem, 0.65rem + 0.5vw, 0.75rem);
+    --font-sm: clamp(0.7rem, 0.8rem + 0.5vw, 0.9rem);
+    --font-md: clamp(0.85rem, 0.95rem + 0.5vw, 1rem);
+    --font-lg: clamp(0.95rem, 1.05rem + 0.5vw, 1.15rem);
+    --font-xl: clamp(1.1rem, 1.2rem + 0.5vw, 1.3rem);
+    --font-xxl: clamp(1.3rem, 1.45rem + 0.5vw, 1.6rem);
   }
 }
