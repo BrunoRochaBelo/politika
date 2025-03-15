@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
 </head>
 
-<body>
+<body class="body-mapas-template">
   <header class="header-mapas">
     <ul class="header-mapas-template">
       <li class="header-mapas-back">
@@ -46,184 +46,196 @@
       <li class="header-mapas-title">
         <h2>Mapa</h2>
       </li>
-      <li class="header-mapas-logout">
-        <button id="btnLogout" class="btn-principal" onclick="logout()">Desconectar</button>
+      <li class="header-mapas-search">
+        <div>
+          <form method="post" class="search-input-container">
+            <input type="search" name="search" id="searchInput" class="search-input" placeholder="Pesquisar local...">
+            <button type="submit" class="search-button">
+              <img class="search-icon" src="./static/imagens/icones/pesquisar.svg" alt="Ícone de Pesquisa">
+            </button>
+          </form>
+        </div>
       </li>
     </ul>
   </header>
 
   <main class="main-mapas main-mapas-template">
-    <section id="map"></section>
+    <section class="mapa-conatiner">
+      <div id="map"></div>
+    </section>
     <section class="mapa-sidebar">
-      <!-- Filtro Período -->
-      <div class="mapa-filter-group">
-        <label for="dataInicio">Período (Eventos):</label>
-        <input type="date" id="dataInicio"> até <input type="date" id="dataFim">
-      </div>
-      <!-- Filtro Regiões -->
-      <div class="mapa-filter-section" id="regioes-filter">
+      <h2 class="mapa-sidebar-header">Filtros</h2>
+      <div class="mapa-sidebar-content">
+        <!-- Filtro Período -->
         <div class="mapa-filter-group">
-          <strong>Regiões:</strong>
-          <label>
-            <input type="checkbox" class="regiao-filter" value="estado" checked>
-            Estados
-          </label>
-          <label>
-            <input type="checkbox" class="regiao-filter" value="municipio" checked>
-            Municípios
-          </label>
-          <label>
-            <input type="checkbox" class="regiao-filter" value="bairro" checked>
-            Bairros
-          </label>
+          <label for="dataInicio">Período (Eventos):</label>
+          <input type="date" id="dataInicio"> até <input type="date" id="dataFim">
         </div>
-      </div>
-      <!-- Filtros para Eventos -->
-      <div class="mapa-filter-section" id="eventos-filter">
-        <div class="mapa-toggle-container">
-          <h3>Eventos</h3>
-          <label class="mapa-toggle">
-            <input type="checkbox" id="toggleEventos" checked>
-            <span class="mapa-slider"></span>
-          </label>
+        <!-- Filtro Regiões -->
+        <div class="mapa-filter-section" id="regioes-filter">
+          <div class="mapa-filter-group">
+            <strong>Regiões:</strong>
+            <label>
+              <input type="checkbox" class="regiao-filter" value="estado" checked>
+              Estados
+            </label>
+            <label>
+              <input type="checkbox" class="regiao-filter" value="municipio" checked>
+              Municípios
+            </label>
+            <label>
+              <input type="checkbox" class="regiao-filter" value="bairro" checked>
+              Bairros
+            </label>
+          </div>
         </div>
-        <div class="mapa-filter-group">
-          <strong>Filtros de Eventos:</strong>
-          <label>
-            <input type="checkbox" class="evento-tag" value="ADMINISTRAÇÃO" checked>
-            ADMINISTRAÇÃO (<span class="mapa-count" data-event="ADMINISTRAÇÃO">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="CARREATA" checked>
-            CARREATA (<span class="mapa-count" data-event="CARREATA">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="COMICIO" checked>
-            COMICIO (<span class="mapa-count" data-event="COMICIO">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="DEBATE" checked>
-            DEBATE (<span class="mapa-count" data-event="DEBATE">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="DESPACHO" checked>
-            DESPACHO (<span class="mapa-count" data-event="DESPACHO">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="DIA D" checked>
-            DIA D (<span class="mapa-count" data-event="DIA D">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="ENTREVISTA" checked>
-            ENTREVISTA (<span class="mapa-count" data-event="ENTREVISTA">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="PASSEATA" checked>
-            PASSEATA (<span class="mapa-count" data-event="PASSEATA">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="PESSOAL" checked>
-            PESSOAL (<span class="mapa-count" data-event="PESSOAL">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="PLANEJAMENTO" checked>
-            PLANEJAMENTO (<span class="mapa-count" data-event="PLANEJAMENTO">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="SETORIAL" checked>
-            SETORIAL (<span class="mapa-count" data-event="SETORIAL">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="evento-tag" value="SOLENIDADE" checked>
-            SOLENIDADE (<span class="mapa-count" data-event="SOLENIDADE">0</span>)
-          </label>
+        <!-- Filtros para Eventos -->
+        <div class="mapa-filter-section" id="eventos-filter">
+          <div class="mapa-toggle-container">
+            <h3>Eventos</h3>
+            <label class="mapa-toggle">
+              <input type="checkbox" id="toggleEventos" checked>
+              <span class="mapa-slider"></span>
+            </label>
+          </div>
+          <div class="mapa-filter-group">
+            <strong>Filtros de Eventos:</strong>
+            <label>
+              <input type="checkbox" class="evento-tag" value="ADMINISTRAÇÃO" checked>
+              ADMINISTRAÇÃO (<span class="mapa-count" data-event="ADMINISTRAÇÃO">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="CARREATA" checked>
+              CARREATA (<span class="mapa-count" data-event="CARREATA">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="COMICIO" checked>
+              COMICIO (<span class="mapa-count" data-event="COMICIO">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="DEBATE" checked>
+              DEBATE (<span class="mapa-count" data-event="DEBATE">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="DESPACHO" checked>
+              DESPACHO (<span class="mapa-count" data-event="DESPACHO">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="DIA D" checked>
+              DIA D (<span class="mapa-count" data-event="DIA D">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="ENTREVISTA" checked>
+              ENTREVISTA (<span class="mapa-count" data-event="ENTREVISTA">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="PASSEATA" checked>
+              PASSEATA (<span class="mapa-count" data-event="PASSEATA">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="PESSOAL" checked>
+              PESSOAL (<span class="mapa-count" data-event="PESSOAL">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="PLANEJAMENTO" checked>
+              PLANEJAMENTO (<span class="mapa-count" data-event="PLANEJAMENTO">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="SETORIAL" checked>
+              SETORIAL (<span class="mapa-count" data-event="SETORIAL">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="evento-tag" value="SOLENIDADE" checked>
+              SOLENIDADE (<span class="mapa-count" data-event="SOLENIDADE">0</span>)
+            </label>
+          </div>
         </div>
-      </div>
-      <!-- Filtros para Contatos -->
-      <div class="mapa-filter-section" id="contatos-filter">
-        <div class="mapa-toggle-container">
-          <h3>Contatos</h3>
-          <label class="mapa-toggle">
-            <input type="checkbox" id="toggleContatos" checked>
-            <span class="mapa-slider"></span>
-          </label>
-        </div>
-        <div class="mapa-filter-group">
-          <strong>Tipos de Contato:</strong>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 1" checked>
-            Tipo 1 (<span class="mapa-count" data-contato-tipo="Tipo 1">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 2" checked>
-            Tipo 2 (<span class="mapa-count" data-contato-tipo="Tipo 2">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 3" checked>
-            Tipo 3 (<span class="mapa-count" data-contato-tipo="Tipo 3">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 4" checked>
-            Tipo 4 (<span class="mapa-count" data-contato-tipo="Tipo 4">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 5" checked>
-            Tipo 5 (<span class="mapa-count" data-contato-tipo="Tipo 5">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 6" checked>
-            Tipo 6 (<span class="mapa-count" data-contato-tipo="Tipo 6">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 7" checked>
-            Tipo 7 (<span class="mapa-count" data-contato-tipo="Tipo 7">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-tipo" value="Tipo 8" checked>
-            Tipo 8 (<span class="mapa-count" data-contato-tipo="Tipo 8">0</span>)
-          </label>
-        </div>
-        <div class="mapa-filter-group">
-          <strong>Perfil de Influência:</strong>
-          <label>
-            <input type="checkbox" class="contato-influencia" value="1" checked>
-            1 Estrela (<span class="mapa-count" data-contato-influencia="1">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-influencia" value="2" checked>
-            2 Estrelas (<span class="mapa-count" data-contato-influencia="2">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-influencia" value="3" checked>
-            3 Estrelas (<span class="mapa-count" data-contato-influencia="3">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-influencia" value="4" checked>
-            4 Estrelas (<span class="mapa-count" data-contato-influencia="4">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-influencia" value="5" checked>
-            5 Estrelas (<span class="mapa-count" data-contato-influencia="5">0</span>)
-          </label>
-        </div>
-        <div class="mapa-filter-group">
-          <strong>Tipo Pessoa:</strong>
-          <label>
-            <input type="checkbox" class="contato-pessoa" value="Física" checked>
-            Física (<span class="mapa-count" data-contato-pessoa="Física">0</span>)
-          </label>
-          <label>
-            <input type="checkbox" class="contato-pessoa" value="Jurídica" checked>
-            Jurídica (<span class="mapa-count" data-contato-pessoa="Jurídica">0</span>)
-          </label>
-        </div>
-        <div class="mapa-filter-group">
-          <strong>Residência de apoio:</strong>
-          <label class="mapa-toggle">
-            <input type="checkbox" id="residenciaAseco" checked>
-            <span class="mapa-slider"></span>
-            (<span class="mapa-count" data-contato-residencia="true">0</span>)
-          </label>
+        <!-- Filtros para Contatos -->
+        <div class="mapa-filter-section" id="contatos-filter">
+          <div class="mapa-toggle-container">
+            <h3>Contatos</h3>
+            <label class="mapa-toggle">
+              <input type="checkbox" id="toggleContatos" checked>
+              <span class="mapa-slider"></span>
+            </label>
+          </div>
+          <div class="mapa-filter-group">
+            <strong>Tipos de Contato:</strong>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 1" checked>
+              Tipo 1 (<span class="mapa-count" data-contato-tipo="Tipo 1">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 2" checked>
+              Tipo 2 (<span class="mapa-count" data-contato-tipo="Tipo 2">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 3" checked>
+              Tipo 3 (<span class="mapa-count" data-contato-tipo="Tipo 3">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 4" checked>
+              Tipo 4 (<span class="mapa-count" data-contato-tipo="Tipo 4">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 5" checked>
+              Tipo 5 (<span class="mapa-count" data-contato-tipo="Tipo 5">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 6" checked>
+              Tipo 6 (<span class="mapa-count" data-contato-tipo="Tipo 6">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 7" checked>
+              Tipo 7 (<span class="mapa-count" data-contato-tipo="Tipo 7">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-tipo" value="Tipo 8" checked>
+              Tipo 8 (<span class="mapa-count" data-contato-tipo="Tipo 8">0</span>)
+            </label>
+          </div>
+          <div class="mapa-filter-group">
+            <strong>Perfil de Influência:</strong>
+            <label>
+              <input type="checkbox" class="contato-influencia" value="1" checked>
+              1 Estrela (<span class="mapa-count" data-contato-influencia="1">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-influencia" value="2" checked>
+              2 Estrelas (<span class="mapa-count" data-contato-influencia="2">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-influencia" value="3" checked>
+              3 Estrelas (<span class="mapa-count" data-contato-influencia="3">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-influencia" value="4" checked>
+              4 Estrelas (<span class="mapa-count" data-contato-influencia="4">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-influencia" value="5" checked>
+              5 Estrelas (<span class="mapa-count" data-contato-influencia="5">0</span>)
+            </label>
+          </div>
+          <div class="mapa-filter-group">
+            <strong>Tipo Pessoa:</strong>
+            <label>
+              <input type="checkbox" class="contato-pessoa" value="Física" checked>
+              Física (<span class="mapa-count" data-contato-pessoa="Física">0</span>)
+            </label>
+            <label>
+              <input type="checkbox" class="contato-pessoa" value="Jurídica" checked>
+              Jurídica (<span class="mapa-count" data-contato-pessoa="Jurídica">0</span>)
+            </label>
+          </div>
+          <div class="mapa-filter-group">
+            <strong>Residência de apoio:</strong>
+            <label class="mapa-toggle">
+              <input type="checkbox" id="residenciaAseco" checked>
+              <span class="mapa-slider"></span>
+              (<span class="mapa-count" data-contato-residencia="true">0</span>)
+            </label>
+          </div>
         </div>
       </div>
     </section>
