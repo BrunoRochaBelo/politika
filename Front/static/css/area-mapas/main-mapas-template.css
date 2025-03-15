@@ -1,0 +1,325 @@
+/* Layout e Containers */
+.main-mapas {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  /* Altura ajustada para compensar o header (60px) */
+  height: calc(100% - 60px);
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  z-index: 2000;
+}
+.leaflet-container {
+  border-radius: 25px;
+}
+
+.mapa-sidebar {
+  width: 300px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Filtros e Textos */
+.mapa-filter-group {
+  margin-bottom: 10px;
+}
+
+.mapa-filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--txt-placeholder);
+}
+
+/* Seção de Filtros */
+.mapa-filter-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--txt-placeholder);
+  padding-bottom: 10px;
+}
+
+.mapa-filter-section h3 {
+  margin: 0 0 10px;
+  font-size: var(--font-lg);
+  color: var(--txt-nav);
+}
+
+/* Toggle Customizado para Controles */
+.mapa-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.mapa-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.mapa-toggle input {
+  display: none;
+}
+
+.mapa-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.mapa-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.mapa-toggle input:checked + .mapa-slider {
+  background-color: #66bb6a;
+}
+
+.mapa-toggle input:checked + .mapa-slider:before {
+  transform: translateX(26px);
+}
+
+/* Custom Checkbox para os Filtros */
+.mapa-filter-group input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--cor-primaria-2);
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+
+.mapa-filter-group input[type="checkbox"]:checked {
+  background-color: var(--cor-primaria-2);
+  border-color: var(--cor-primaria-2);
+}
+
+.mapa-filter-group input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Clusters */
+.mapa-custom-evento-cluster {
+  background: rgba(50, 150, 250, 0.7);
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: var(--font-md);
+  line-height: 40px;
+  border: 2px solid #fff;
+}
+
+.mapa-custom-contato-cluster {
+  background: rgba(250, 150, 50, 0.7);
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: var(--font-md);
+  line-height: 40px;
+  border: 2px solid #fff;
+}
+.mapa-contact-marker,
+.mapa-cluster-contato,
+.mapa-custom-contact-icon .mapa-contact-marker {
+  color: rgb(21, 27, 216);
+}
+
+/* Popups dos Marcadores */
+.leaflet-popup-content {
+  margin: 0;
+  line-height: 1.6;
+  font-family: var(--font-family);
+  font-size: var(--font-md);
+  color: var(--txt-destaque);
+  text-align: center;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: var(--modal-bg) !important;
+}
+.leaflet-popup-tip {
+  background: var(--modal-bg) !important;
+}
+/* Botão de Recentralização */
+.mapa-recenter-btn {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+/* Ícone de Evento Customizado em Forma de Pin */
+.mapa-event-pin {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: currentColor;
+  border: 2px solid var(--txt-nav-selecionado);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.mapa-event-pin:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  border: 2px solid var(--txt-nav-selecionado);
+  transform: translateX(-50%);
+  border-top: 10px solid currentColor;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+/* Estilos para os Labels dos Limites (apenas texto, sem caixa) */
+.mapa-boundary-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: var(--font-sm);
+  color: white !important;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Grupos colapsáveis */
+.collapsible-group h4 {
+  margin: 0 0 5px;
+  font-size: var(--font-md);
+  color: var(--txt-nav);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.collapsible-content {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.leaflet-control-layers-base label {
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente */
+  gap: 8px; /* Espaço entre o input e o texto */
+  cursor: pointer;
+}
+
+.leaflet-control-layers-base input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--cor-primaria-2);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.leaflet-control-layers-base input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--cor-primaria-1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+/* Garante que o texto fique alinhado corretamente */
+.leaflet-control-layers-base label span {
+  font-size: 16px; /* Ajuste conforme necessário */
+  line-height: 1; /* Garante que não haja espaçamento extra */
+}
+
+/* Ajusta a aparência do container do controle para manter a coerência visual */
+.leaflet-control-layers {
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  padding: 8px;
+  font-size: 14px;
+}
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+  background: var(--card-bg);
+  color: var(--txt-destaque);
+}
+.leaflet-touch .leaflet-bar a:first-child,
+.leaflet-touch .leaflet-bar a:last-child {
+  background: transparent;
+  color: var(--txt-destaque);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .main-mapas {
+    flex-direction: column;
+  }
+  .mapa-sidebar {
+    width: 100%;
+    height: 250px;
+    box-shadow: none;
+    border-bottom: 1px solid var(--txt-placeholder);
+  }
+  #map {
+    height: calc(100% - 250px);
+  }
+}
+
+@media (max-width: 480px) {
+  .mapa-sidebar {
+    height: 200px;
+  }
+  #map {
+    height: calc(100% - 200px);
+  }
+  .mapa-filter-section h3 {
+    font-size: var(--font-md);
+  }
+}

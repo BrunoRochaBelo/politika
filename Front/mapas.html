@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Metadados críticos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Mapas">
+  <title>Mapas</title>
+
+  <!-- Manifesto -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Fonte -->
+  <link rel="preload" href="./static/fonts/RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./static/imagens/icones/mapas.svg" type="image/svg+xml">
+
+  <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+  <!-- CSS do Leaflet e MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+</head>
+
+<body>
+  <header class="header-mapas">
+    <ul class="header-mapas-template">
+      <li class="header-mapas-back">
+        <a href="index.html" class="voltar">
+          <img class="back-icon" src="./static/imagens/icones/voltar.svg" alt="Back Icon">
+        </a>
+      </li>
+      <li class="header-mapas-title">
+        <h2>Mapa</h2>
+      </li>
+      <li class="header-mapas-logout">
+        <button id="btnLogout" class="btn-principal" onclick="logout()">Desconectar</button>
+      </li>
+    </ul>
+  </header>
+
+  <main class="main-mapas main-mapas-template">
+    <section id="map"></section>
+    <section class="mapa-sidebar">
+      <!-- Filtro Período -->
+      <div class="mapa-filter-group">
+        <label for="dataInicio">Período (Eventos):</label>
+        <input type="date" id="dataInicio"> até <input type="date" id="dataFim">
+      </div>
+      <!-- Filtro Regiões -->
+      <div class="mapa-filter-section" id="regioes-filter">
+        <div class="mapa-filter-group">
+          <strong>Regiões:</strong>
+          <label>
+            <input type="checkbox" class="regiao-filter" value="estado" checked>
+            Estados
+          </label>
+          <label>
+            <input type="checkbox" class="regiao-filter" value="municipio" checked>
+            Municípios
+          </label>
+          <label>
+            <input type="checkbox" class="regiao-filter" value="bairro" checked>
+            Bairros
+          </label>
+        </div>
+      </div>
+      <!-- Filtros para Eventos -->
+      <div class="mapa-filter-section" id="eventos-filter">
+        <div class="mapa-toggle-container">
+          <h3>Eventos</h3>
+          <label class="mapa-toggle">
+            <input type="checkbox" id="toggleEventos" checked>
+            <span class="mapa-slider"></span>
+          </label>
+        </div>
+        <div class="mapa-filter-group">
+          <strong>Filtros de Eventos:</strong>
+          <label>
+            <input type="checkbox" class="evento-tag" value="ADMINISTRAÇÃO" checked>
+            ADMINISTRAÇÃO (<span class="mapa-count" data-event="ADMINISTRAÇÃO">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="CARREATA" checked>
+            CARREATA (<span class="mapa-count" data-event="CARREATA">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="COMICIO" checked>
+            COMICIO (<span class="mapa-count" data-event="COMICIO">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="DEBATE" checked>
+            DEBATE (<span class="mapa-count" data-event="DEBATE">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="DESPACHO" checked>
+            DESPACHO (<span class="mapa-count" data-event="DESPACHO">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="DIA D" checked>
+            DIA D (<span class="mapa-count" data-event="DIA D">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="ENTREVISTA" checked>
+            ENTREVISTA (<span class="mapa-count" data-event="ENTREVISTA">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="PASSEATA" checked>
+            PASSEATA (<span class="mapa-count" data-event="PASSEATA">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="PESSOAL" checked>
+            PESSOAL (<span class="mapa-count" data-event="PESSOAL">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="PLANEJAMENTO" checked>
+            PLANEJAMENTO (<span class="mapa-count" data-event="PLANEJAMENTO">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="SETORIAL" checked>
+            SETORIAL (<span class="mapa-count" data-event="SETORIAL">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="evento-tag" value="SOLENIDADE" checked>
+            SOLENIDADE (<span class="mapa-count" data-event="SOLENIDADE">0</span>)
+          </label>
+        </div>
+      </div>
+      <!-- Filtros para Contatos -->
+      <div class="mapa-filter-section" id="contatos-filter">
+        <div class="mapa-toggle-container">
+          <h3>Contatos</h3>
+          <label class="mapa-toggle">
+            <input type="checkbox" id="toggleContatos" checked>
+            <span class="mapa-slider"></span>
+          </label>
+        </div>
+        <div class="mapa-filter-group">
+          <strong>Tipos de Contato:</strong>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 1" checked>
+            Tipo 1 (<span class="mapa-count" data-contato-tipo="Tipo 1">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 2" checked>
+            Tipo 2 (<span class="mapa-count" data-contato-tipo="Tipo 2">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 3" checked>
+            Tipo 3 (<span class="mapa-count" data-contato-tipo="Tipo 3">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 4" checked>
+            Tipo 4 (<span class="mapa-count" data-contato-tipo="Tipo 4">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 5" checked>
+            Tipo 5 (<span class="mapa-count" data-contato-tipo="Tipo 5">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 6" checked>
+            Tipo 6 (<span class="mapa-count" data-contato-tipo="Tipo 6">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 7" checked>
+            Tipo 7 (<span class="mapa-count" data-contato-tipo="Tipo 7">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-tipo" value="Tipo 8" checked>
+            Tipo 8 (<span class="mapa-count" data-contato-tipo="Tipo 8">0</span>)
+          </label>
+        </div>
+        <div class="mapa-filter-group">
+          <strong>Perfil de Influência:</strong>
+          <label>
+            <input type="checkbox" class="contato-influencia" value="1" checked>
+            1 Estrela (<span class="mapa-count" data-contato-influencia="1">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-influencia" value="2" checked>
+            2 Estrelas (<span class="mapa-count" data-contato-influencia="2">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-influencia" value="3" checked>
+            3 Estrelas (<span class="mapa-count" data-contato-influencia="3">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-influencia" value="4" checked>
+            4 Estrelas (<span class="mapa-count" data-contato-influencia="4">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-influencia" value="5" checked>
+            5 Estrelas (<span class="mapa-count" data-contato-influencia="5">0</span>)
+          </label>
+        </div>
+        <div class="mapa-filter-group">
+          <strong>Tipo Pessoa:</strong>
+          <label>
+            <input type="checkbox" class="contato-pessoa" value="Física" checked>
+            Física (<span class="mapa-count" data-contato-pessoa="Física">0</span>)
+          </label>
+          <label>
+            <input type="checkbox" class="contato-pessoa" value="Jurídica" checked>
+            Jurídica (<span class="mapa-count" data-contato-pessoa="Jurídica">0</span>)
+          </label>
+        </div>
+        <div class="mapa-filter-group">
+          <strong>Residência de apoio:</strong>
+          <label class="mapa-toggle">
+            <input type="checkbox" id="residenciaAseco" checked>
+            <span class="mapa-slider"></span>
+            (<span class="mapa-count" data-contato-residencia="true">0</span>)
+          </label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts de configuração e Service Worker -->
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <!-- Scripts do Leaflet e MarkerCluster -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+  <script>
+    // ==========================
+    // Inicialização do Mapa e Camadas Base
+    // ==========================
+    var map = L.map('map', { attributionControl: false }).setView([-8.0476, -34.8770], 10);
+
+    // Camada para visão Satélite (ArcGIS World Imagery)
+    var sateliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      errorTileUrl: './static/imagens/erro_tile.png'
+    });
+
+    // Camada para visão de Mapa de Rua (baseada no OpenStreetMap)
+    var ruaLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      errorTileUrl: './static/imagens/erro_tile.png'
+    });
+
+    // Define a camada base inicial (por exemplo, Satélite)
+    var currentBaseLayer = sateliteLayer;
+    map.addLayer(currentBaseLayer);
+
+    // Controle para que o usuário possa alternar manualmente entre as camadas base
+    var baseLayers = {
+      "Satélite": sateliteLayer,
+      "Mapa de Rua": ruaLayer
+    };
+    L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
+
+    // Atualiza tooltips dos limites conforme a camada base
+    function updateBoundaryTooltips() {
+      [estadoLayer, municipioLayer, bairroLayer].forEach(function (layerGroup) {
+        if (layerGroup) {
+          layerGroup.eachLayer(function (layer) {
+            if (layer.feature && layer.feature.properties && layer.feature.properties.name) {
+              if (currentBaseLayer === ruaLayer) {
+                // Se estiver em Mapa de Rua, remove o tooltip
+                layer.unbindTooltip();
+              } else {
+                // Se estiver em Satélite, adiciona o tooltip se ainda não estiver presente
+                if (!layer.getTooltip()) {
+                  layer.bindTooltip(layer.feature.properties.name, {
+                    permanent: true,
+                    direction: "center",
+                    opacity: 0.8,
+                    className: "mapa-boundary-label"
+                  });
+                }
+              }
+            }
+          });
+        }
+      });
+    }
+
+    // Listener para troca de camada base
+    map.on('baselayerchange', function (e) {
+      currentBaseLayer = e.layer;
+      updateBoundaryTooltips();
+    });
+
+    // Ajusta o tamanho do mapa ao redimensionar a janela
+    window.addEventListener('resize', function () {
+      map.invalidateSize();
+    });
+
+    // ==========================
+    // Botão de Recentralização
+    // ==========================
+    var recenterControl = L.Control.extend({
+      options: { position: 'topleft' },
+      onAdd: function (map) {
+        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom mapa-recenter-btn');
+        container.innerHTML = '&#x21ba;';
+        container.title = "Centralizar Mapa";
+        container.onclick = function () {
+          map.setView([-8.0476, -34.8770], 10);
+        };
+        return container;
+      }
+    });
+    map.addControl(new recenterControl());
+
+    // ==========================
+    // Clusters e Markers para Eventos e Contatos
+    // ==========================
+    var clusterOptions = {
+      maxClusterRadius: 50,
+      disableClusteringAtZoom: 12,
+      spiderfyDistanceMultiplier: 2
+    };
+
+    var contactIcon = L.divIcon({
+      html: '<div class="mapa-contact-marker"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2c-3.2 0-9.6 1.6-9.6 4.8V22h19.2v-3.2c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>',
+      className: 'mapa-custom-contact-icon',
+      iconSize: [30, 40],
+      iconAnchor: [15, 40],
+      popupAnchor: [0, -40]
+    });
+
+
+    function getEventPinIcon(evento) {
+      return L.divIcon({
+        html: '<div class="mapa-event-pin" style="color: var(--cor-marcador-' + evento.cor + ');"></div>',
+        className: '',
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        popupAnchor: [0, -35]
+      });
+    }
+
+    var eventosCluster = L.markerClusterGroup(Object.assign({}, clusterOptions, {
+      iconCreateFunction: function (cluster) {
+        var count = cluster.getChildCount();
+        return L.divIcon({
+          html: '<div class="mapa-cluster-evento">' + count + '</div>',
+          className: 'mapa-custom-evento-cluster',
+          iconSize: [40, 40]
+        });
+      }
+    }));
+
+    var contatosCluster = L.markerClusterGroup(Object.assign({}, clusterOptions, {
+      iconCreateFunction: function (cluster) {
+        var count = cluster.getChildCount();
+        return L.divIcon({
+          html:
+            '<div class="mapa-cluster-contato">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">' +
+            '<path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2c-3.2 0-9.6 1.6-9.6 4.8V22h19.2v-3.2c0-3.2-6.4-4.8-9.6-4.8z"/>' +
+            '</svg>' +
+            '<span>' + count + '</span>' +
+            '</div>',
+          className: 'mapa-custom-contato-cluster',
+          iconSize: [40, 40]
+        });
+      }
+    }));
+
+
+    // Dados simulados para eventos e contatos
+    var eventosData = [
+      { id: 1, lat: -8.056, lng: -34.876, data: '2025-04-10', categoria: 'COMICIO', titulo: 'Comício de Mobilização', cor: 2 },
+      { id: 2, lat: -8.060, lng: -34.880, data: '2025-04-12', categoria: 'DEBATE', titulo: 'Debate sobre Educação', cor: 3 },
+      { id: 3, lat: -8.048, lng: -34.890, data: '2025-04-15', categoria: 'ENTREVISTA', titulo: 'Entrevista na TV Regional', cor: 5 },
+      { id: 4, lat: -8.045, lng: -34.860, data: '2025-04-18', categoria: 'ADMINISTRAÇÃO', titulo: 'Reunião de Administração', cor: 1 },
+      { id: 5, lat: -8.050, lng: -34.870, data: '2025-04-20', categoria: 'PLANEJAMENTO', titulo: 'Sessão de Planejamento Estratégico', cor: 4 }
+    ];
+
+    var contatosData = [
+      { id: 101, lat: -8.062, lng: -34.875, data: '2025-04-10', nome: 'João da Silva', tipo: 'Tipo 1', influencia: '3', pessoa: 'Física', numero: '(81) 91234-5678', residenciaApoio: true },
+      { id: 102, lat: -8.064, lng: -34.878, data: '2025-04-11', nome: 'Maria Oliveira', tipo: 'Tipo 2', influencia: '5', pessoa: 'Jurídica', numero: '(81) 92345-6789', residenciaApoio: false },
+      { id: 103, lat: -8.058, lng: -34.882, data: '2025-04-12', nome: 'Carlos Souza', tipo: 'Tipo 3', influencia: '2', pessoa: 'Física', numero: '(81) 93456-7890', residenciaApoio: true },
+      { id: 104, lat: -8.055, lng: -34.865, data: '2025-04-13', nome: 'Ana Costa', tipo: 'Tipo 4', influencia: '4', pessoa: 'Física', numero: '(81) 94567-8901', residenciaApoio: false },
+      { id: 105, lat: -8.057, lng: -34.872, data: '2025-04-14', nome: 'Pedro Lima', tipo: 'Tipo 1', influencia: '3', pessoa: 'Jurídica', numero: '(81) 95678-9012', residenciaApoio: true }
+    ];
+
+    // Cache para os dados de limites para evitar múltiplos fetches
+    var boundaryCache = {};
+
+    // Função auxiliar para verificar se um ponto está dentro de um polígono
+    function pointInPolygon(point, vs) {
+      var x = point[0], y = point[1];
+      var inside = false;
+      for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
+        var xi = vs[i][0], yi = vs[i][1];
+        var xj = vs[j][0], yj = vs[j][1];
+        var intersect = ((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) inside = !inside;
+      }
+      return inside;
+    }
+
+    // Verifica se um ponto (usando [lng, lat]) está dentro do Feature (Polygon ou MultiPolygon)
+    function isPointInside(feature, lng, lat) {
+      if (!feature.geometry) return false;
+      var type = feature.geometry.type;
+      var coordinates = feature.geometry.coordinates;
+      if (type === "Polygon") {
+        return pointInPolygon([lng, lat], coordinates[0]);
+      } else if (type === "MultiPolygon") {
+        for (var i = 0; i < coordinates.length; i++) {
+          if (pointInPolygon([lng, lat], coordinates[i][0])) return true;
+        }
+        return false;
+      }
+      return false;
+    }
+
+    // Pop-up das regiões com dados de votação e contagem filtrada de contatos e eventos
+    function boundaryPopupContent(feature) {
+      var regionName = feature.properties.name || "Região";
+      // Dados de votação (fantasia)
+      var votacaoGeral = "12000";
+      var nossosVotos = "5600";
+      var ranking = "2";
+
+      var dataInicio = document.getElementById('dataInicio').value;
+      var dataFim = document.getElementById('dataFim').value;
+      var selectedEventCategories = Array.from(document.querySelectorAll('.evento-tag:checked')).map(function (el) { return el.value; });
+      var eventCount = eventosData.filter(function (e) {
+        if (dataInicio && e.data < dataInicio) return false;
+        if (dataFim && e.data > dataFim) return false;
+        if (!selectedEventCategories.includes(e.categoria)) return false;
+        return isPointInside(feature, e.lng, e.lat);
+      }).length;
+
+      var selectedContactTypes = Array.from(document.querySelectorAll('.contato-tipo:checked')).map(function (el) { return el.value; });
+      var selectedInfluences = Array.from(document.querySelectorAll('.contato-influencia:checked')).map(function (el) { return el.value; });
+      var selectedPersonTypes = Array.from(document.querySelectorAll('.contato-pessoa:checked')).map(function (el) { return el.value; });
+      var residencyChecked = document.getElementById('residenciaAseco').checked;
+      var contactCount = contatosData.filter(function (c) {
+        if (!selectedContactTypes.includes(c.tipo)) return false;
+        if (!selectedInfluences.includes(c.influencia)) return false;
+        if (!selectedPersonTypes.includes(c.pessoa)) return false;
+        if (residencyChecked && !c.residenciaApoio) return false;
+        return isPointInside(feature, c.lng, c.lat);
+      }).length;
+
+      return "<strong>" + regionName + "</strong><br>" +
+        "Votação geral: " + votacaoGeral + "<br>" +
+        "Nossos votos: " + nossosVotos + "<br>" +
+        "Ranking: " + ranking + "<br>" +
+        "Contatos: " + contactCount + "<br>" +
+        "Eventos: " + eventCount;
+    }
+
+    // Atualiza os pop-ups dos limites (se abertos) para refletir os filtros atuais
+    function updateBoundaryPopups() {
+      [estadoLayer, municipioLayer, bairroLayer].forEach(function (layerGroup) {
+        if (layerGroup) {
+          layerGroup.eachLayer(function (layer) {
+            if (layer.getPopup() && layer.isPopupOpen()) {
+              layer.setPopupContent(boundaryPopupContent(layer.feature));
+            }
+          });
+        }
+      });
+    }
+
+    // Cria camada de limites com cache e pop-up dinâmico (não vincula tooltips automaticamente)
+    function createBoundaryLayer(geojsonPath) {
+      var createLayer = function (data) {
+        return L.geoJSON(data, {
+          pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, { radius: 0, fillOpacity: 0 });
+          },
+          style: boundaryStyle,
+          onEachFeature: function (feature, layer) {
+            layer.on('click', function () {
+              layer.bindPopup(boundaryPopupContent(feature)).openPopup();
+            });
+            // NÃO vincula tooltips aqui; serão gerenciados dinamicamente via updateBoundaryTooltips()
+          }
+        });
+      };
+
+      if (boundaryCache[geojsonPath]) {
+        return Promise.resolve(createLayer(boundaryCache[geojsonPath]));
+      }
+      return fetch(geojsonPath)
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          boundaryCache[geojsonPath] = data;
+          return createLayer(data);
+        })
+        .catch(function (error) {
+          console.error("Erro ao carregar " + geojsonPath + ":", error);
+        });
+    }
+
+    function boundaryStyle(feature) {
+      return {
+        color: "orange",
+        weight: 2,
+        fillOpacity: 0
+      };
+    }
+
+    // ==========================
+    // Gerenciamento de Limites (Regiões)
+    // ==========================
+    var estadoLayer, municipioLayer, bairroLayer;
+
+    Promise.all([
+      createBoundaryLayer('./estado_pernambuco.geojson'),
+      createBoundaryLayer('./municipio_pernambuco.geojson'),
+      createBoundaryLayer('./bairros_recife.geojson')
+    ]).then(function (layers) {
+      estadoLayer = layers[0];
+      municipioLayer = layers[1];
+      bairroLayer = layers[2];
+      updateBoundaryLayers();
+      // Após carregar os limites, atualiza os tooltips conforme a camada base atual
+      updateBoundaryTooltips();
+    });
+
+    function updateBoundaryLayers() {
+      // Remove camadas já adicionadas
+      if (estadoLayer && map.hasLayer(estadoLayer)) map.removeLayer(estadoLayer);
+      if (municipioLayer && map.hasLayer(municipioLayer)) map.removeLayer(municipioLayer);
+      if (bairroLayer && map.hasLayer(bairroLayer)) map.removeLayer(bairroLayer);
+
+      var zoom = map.getZoom();
+
+      if (zoom <= 7) {
+        var estadoCheckbox = document.querySelector('.regiao-filter[value="estado"]');
+        if (estadoLayer && estadoCheckbox && estadoCheckbox.checked) {
+          map.addLayer(estadoLayer);
+        }
+      } else if (zoom > 7 && zoom <= 12) {
+        var municipioCheckbox = document.querySelector('.regiao-filter[value="municipio"]');
+        if (municipioLayer && municipioCheckbox && municipioCheckbox.checked) {
+          map.addLayer(municipioLayer);
+        }
+      } else {
+        var bairroCheckbox = document.querySelector('.regiao-filter[value="bairro"]');
+        if (bairroLayer && bairroCheckbox && bairroCheckbox.checked) {
+          map.addLayer(bairroLayer);
+        }
+      }
+    }
+
+    map.on('zoomstart', function () {
+      [estadoLayer, municipioLayer, bairroLayer].forEach(function (layer) {
+        if (layer) {
+          layer.eachLayer(function (featureLayer) {
+            if (featureLayer.closeTooltip) featureLayer.closeTooltip();
+          });
+        }
+      });
+    });
+
+    map.on('zoomend', updateBoundaryLayers);
+
+    // ==========================
+    // Atualização de Eventos, Contatos e Filtros
+    // ==========================
+    function updateFilterCounts() {
+      document.querySelectorAll('.evento-tag').forEach(function (input) {
+        var cat = input.value;
+        var count = eventosData.filter(function (e) {
+          var valid = true;
+          var dataInicio = document.getElementById('dataInicio').value;
+          var dataFim = document.getElementById('dataFim').value;
+          if (dataInicio && e.data < dataInicio) valid = false;
+          if (dataFim && e.data > dataFim) valid = false;
+          return valid && e.categoria === cat;
+        }).length;
+        var span = document.querySelector('.mapa-count[data-event="' + cat + '"]');
+        if (span) span.textContent = count;
+      });
+      document.querySelectorAll('.contato-tipo').forEach(function (input) {
+        var tipo = input.value;
+        var count = contatosData.filter(function (c) { return c.tipo === tipo; }).length;
+        var span = document.querySelector('.mapa-count[data-contato-tipo="' + tipo + '"]');
+        if (span) span.textContent = count;
+      });
+      document.querySelectorAll('.contato-influencia').forEach(function (input) {
+        var inf = input.value;
+        var count = contatosData.filter(function (c) { return c.influencia === inf; }).length;
+        var span = document.querySelector('.mapa-count[data-contato-influencia="' + inf + '"]');
+        if (span) span.textContent = count;
+      });
+      document.querySelectorAll('.contato-pessoa').forEach(function (input) {
+        var pessoa = input.value;
+        var count = contatosData.filter(function (c) { return c.pessoa === pessoa; }).length;
+        var span = document.querySelector('.mapa-count[data-contato-pessoa="' + pessoa + '"]');
+        if (span) span.textContent = count;
+      });
+      var countRes = contatosData.filter(function (c) { return c.residenciaApoio; }).length;
+      var spanRes = document.querySelector('.mapa-count[data-contato-residencia="true"]');
+      if (spanRes) spanRes.textContent = countRes;
+    }
+
+    function updateEventos() {
+      eventosCluster.clearLayers();
+      var dataInicio = document.getElementById('dataInicio').value;
+      var dataFim = document.getElementById('dataFim').value;
+      var tagsSelecionadas = Array.from(document.querySelectorAll('.evento-tag:checked')).map(function (el) {
+        return el.value;
+      });
+
+      eventosData.forEach(function (evento) {
+        if (dataInicio && evento.data < dataInicio) return;
+        if (dataFim && evento.data > dataFim) return;
+        if (tagsSelecionadas.indexOf(evento.categoria) === -1) return;
+
+        var marker = L.marker([evento.lat, evento.lng], { icon: getEventPinIcon(evento) });
+        marker.bindPopup(
+          '<strong>' + evento.titulo + '</strong><br>' +
+          '<em>Categoria:</em> ' + evento.categoria + '<br>' +
+          '<em>Data:</em> ' + evento.data + '<br>' +
+          '<a href="/evento_exibir' + evento.id + '">Ver detalhes</a>'
+        );
+        marker.setZIndexOffset(0);
+        eventosCluster.addLayer(marker);
+      });
+
+      if (document.getElementById('toggleEventos').checked) {
+        map.addLayer(eventosCluster);
+      } else {
+        map.removeLayer(eventosCluster);
+      }
+      updateFilterCounts();
+      updateBoundaryPopups();
+    }
+
+    function updateContatos() {
+      contatosCluster.clearLayers();
+      var tiposSelecionados = Array.from(document.querySelectorAll('.contato-tipo:checked')).map(function (el) {
+        return el.value;
+      });
+      var influenciasSelecionadas = Array.from(document.querySelectorAll('.contato-influencia:checked')).map(function (el) {
+        return el.value;
+      });
+      var pessoasSelecionadas = Array.from(document.querySelectorAll('.contato-pessoa:checked')).map(function (el) {
+        return el.value;
+      });
+      var residenciaAsecoElem = document.getElementById('residenciaAseco');
+      var residenciaAseco = residenciaAsecoElem ? residenciaAsecoElem.checked : false;
+
+      contatosData.forEach(function (contato) {
+        if (tiposSelecionados.indexOf(contato.tipo) === -1) return;
+        if (influenciasSelecionadas.indexOf(contato.influencia) === -1) return;
+        if (pessoasSelecionadas.indexOf(contato.pessoa) === -1) return;
+        if (residenciaAseco && !contato.residenciaApoio) return;
+
+        var marker = L.marker([contato.lat, contato.lng], { icon: contactIcon });
+        marker.bindPopup(
+          '<strong>' + contato.nome + '</strong><br>' +
+          '<em>Tipo:</em> ' + contato.tipo + '<br>' +
+          '<em>Influência:</em> ' + contato.influencia + ' estrelas<br>' +
+          '<em>Tipo Pessoa:</em> ' + contato.pessoa + '<br>' +
+          '<em>Número:</em> ' + contato.numero + '<br>' +
+          '<a href="/contato_exibir' + contato.id + '">Ver detalhes</a>'
+        );
+        marker.setZIndexOffset(1000);
+        contatosCluster.addLayer(marker);
+      });
+
+      if (document.getElementById('toggleContatos').checked) {
+        map.addLayer(contatosCluster);
+      } else {
+        map.removeLayer(contatosCluster);
+      }
+      updateFilterCounts();
+      updateBoundaryPopups();
+    }
+
+    // Inicializa os filtros e atualiza os layers
+    updateEventos();
+    updateContatos();
+
+    document.getElementById('dataInicio').addEventListener('change', updateEventos);
+    document.getElementById('dataFim').addEventListener('change', updateEventos);
+    document.querySelectorAll('.evento-tag').forEach(function (input) {
+      input.addEventListener('change', updateEventos);
+    });
+    document.getElementById('toggleEventos').addEventListener('change', updateEventos);
+
+    document.querySelectorAll('.contato-tipo, .contato-influencia, .contato-pessoa').forEach(function (input) {
+      input.addEventListener('change', updateContatos);
+    });
+    document.getElementById('toggleContatos').addEventListener('change', updateContatos);
+    document.getElementById('residenciaAseco').addEventListener('change', updateContatos);
+
+    // Listener para os checkboxes de Regiões
+    document.querySelectorAll('.regiao-filter').forEach(function (input) {
+      input.addEventListener('change', updateBoundaryLayers);
+    });
+
+    map.on('zoomend moveend', function () {
+      // Ações extras podem ser implementadas aqui
+    });
+  </script>
+
+</body>
+
+</html>

@@ -126,16 +126,21 @@ self.addEventListener("fetch", (event) => {
       event.respondWith(networkFirst(request, CACHE_NAMES.DYNAMIC));
     }
   }
+  // Verifica requisições para tiles dos mapas (ArcGIS e OSM)
+  else if (
+    requestURL.host.includes("server.arcgisonline.com") ||
+    requestURL.host.includes("tile.openstreetmap.org")
+  ) {
+    event.respondWith(cacheFirst(request, CACHE_NAMES.TILES || "tiles-cache"));
+  }
   // Requisições para recursos externos
   else if (
     EXTERNAL_RESOURCES.some((resource) => requestURL.href.startsWith(resource))
   ) {
-    // Estratégia: Cache First para recursos externos
     event.respondWith(externalCache(request));
   }
   // Outras requisições não categorizadas
   else {
-    // Estratégia padrão: Network First para demais requisições
     event.respondWith(networkFirst(request, CACHE_NAMES.DYNAMIC));
   }
 });
@@ -163,19 +168,33 @@ function cacheFirst(request, cacheName) {
             return networkResponse;
           });
         } else {
-          // Retorna uma resposta de fallback se a resposta da rede não for OK
+          // Se a resposta da rede não for OK, retorna fallback
           console.warn(
             `[Service Worker] Rede retornou status não OK para: ${request.url}. Retornando fallback.`
           );
-          return caches.match("/offline.html");
+          let fallbackURL = "/offline.html";
+          if (
+            request.url.includes("server.arcgisonline.com") ||
+            request.url.includes("tile.openstreetmap.org")
+          ) {
+            fallbackURL = "./static/imagens/erro_tile.png";
+          }
+          return caches.match(fallbackURL);
         }
       })
       .catch(() => {
-        // Retorna uma resposta de fallback em caso de erro de rede
+        // Em caso de erro de rede, retorna fallback
         console.error(
           `[Service Worker] Erro ao buscar recurso: ${request.url}. Retornando fallback.`
         );
-        return caches.match("/offline.html");
+        let fallbackURL = "/offline.html";
+        if (
+          request.url.includes("server.arcgisonline.com") ||
+          request.url.includes("tile.openstreetmap.org")
+        ) {
+          fallbackURL = "./static/imagens/erro_tile.png";
+        }
+        return caches.match(fallbackURL);
       });
   });
 }
@@ -194,7 +213,6 @@ function networkFirst(request, cacheName) {
           return networkResponse;
         });
       } else {
-        // Tenta retornar a resposta do cache se a resposta da rede não for OK
         console.warn(
           `[Service Worker] Rede retornou status não OK para: ${request.url}. Tentando cache.`
         );
@@ -204,7 +222,6 @@ function networkFirst(request, cacheName) {
       }
     })
     .catch(() => {
-      // Retorna a resposta do cache ou uma página de fallback em caso de erro
       console.error(
         `[Service Worker] Falha ao buscar recurso na rede: ${request.url}. Tentando cache.`
       );
@@ -239,7 +256,6 @@ function externalCache(request) {
             return networkResponse;
           });
         } else {
-          // Retorna a resposta da rede mesmo se não for OK
           console.warn(
             `[Service Worker] Rede retornou status não OK para recurso externo: ${request.url}`
           );
@@ -247,7 +263,6 @@ function externalCache(request) {
         }
       })
       .catch(() => {
-        // Retorna uma nova resposta de erro em caso de falha de rede
         console.error(
           `[Service Worker] Erro ao buscar recurso externo: ${request.url}. Retornando erro personalizado.`
         );

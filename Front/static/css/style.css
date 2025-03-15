@@ -134,3 +134,8 @@
 @import "./area-dashboard/header-dashboard-template.css";
 /* financeiro/ Conta Corrente */
 @import "./area-dashboard/dashboard-contatos/dashboard-contatos-style.css";
+
+/* area mapas */
+@import "./area-mapas/body-mapas-template.css";
+@import "./area-mapas/main-mapas-template.css";
+@import "./area-mapas/header-mapas-template.css";
