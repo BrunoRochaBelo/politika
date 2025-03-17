@@ -307,7 +307,7 @@
   appearance: none;
   width: 16px;
   height: 16px;
-  border: 2px solid var(--cor-primaria-2);
+  border: 2px solid var(--cor-primaria-1);
   border-radius: 50%;
   position: relative;
   cursor: pointer;

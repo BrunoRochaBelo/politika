@@ -12,23 +12,27 @@ window.EstiloUtils = (() => {
 
 // Módulo de Manipulação de Campos
 window.CampoUtils = (() => {
+  // Busca o span associado ao label do campo (caso exista)
   function obterSpanAssociado(campo) {
     const label = document.querySelector(`label[for="${campo.id}"]`);
     return label ? label.querySelector("span") : null;
   }
 
+  // Adiciona uma classe ao campo e ao span associado
   function adicionarClasse(campo, classe) {
     campo.classList.add(classe);
     const span = obterSpanAssociado(campo);
     if (span) span.classList.add(classe);
   }
 
+  // Remove as classes especificadas do campo e do span associado
   function removerClasses(campo, ...classes) {
     campo.classList.remove(...classes);
     const span = obterSpanAssociado(campo);
     if (span) span.classList.remove(...classes);
   }
 
+  // Exibe uma mensagem de erro logo abaixo do campo
   function exibirMensagemErroCampo(campo, mensagem) {
     let mensagemErro = campo.nextElementSibling;
     if (!mensagemErro || !mensagemErro.classList.contains("mensagem-erro")) {
@@ -44,6 +48,7 @@ window.CampoUtils = (() => {
     EstiloUtils.alterarCorBorda(campo, "var(--erro)");
   }
 
+  // Remove a mensagem de erro associada ao campo e reseta a borda
   function removerMensagemErroCampo(campo) {
     const mensagemErro = campo.nextElementSibling;
     if (mensagemErro && mensagemErro.classList.contains("mensagem-erro")) {
@@ -53,19 +58,34 @@ window.CampoUtils = (() => {
     EstiloUtils.alterarCorBorda(campo, "");
   }
 
+  // Valida o campo de acordo com seus atributos e formatos específicos
   function validarCampo(campo) {
-    // Remove mensagens de erro e classes de validação anteriores
+    // Remove mensagens e classes anteriores
     removerMensagemErroCampo(campo);
     removerClasses(campo, "error", "success");
 
     const valorCampo = campo.value.trim();
     let campoValido = true;
 
+    // Verifica obrigatoriedade
     if (campo.hasAttribute("required") && valorCampo === "") {
       exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
       campoValido = false;
-    } else if (campo.type === "date" && valorCampo !== "") {
-      // Verificar se a data é válida
+    }
+    // Validação específica para CEP
+    else if (campo.id === "cep" && valorCampo !== "") {
+      if (!/^\d{5}-\d{3}$/.test(valorCampo)) {
+        exibirMensagemErroCampo(
+          campo,
+          "Digite um CEP válido no formato 00000-000."
+        );
+        campoValido = false;
+      } else {
+        adicionarClasse(campo, "success");
+      }
+    }
+    // Validação para data
+    else if (campo.type === "date" && valorCampo !== "") {
       const data = new Date(valorCampo);
       if (isNaN(data.getTime())) {
         exibirMensagemErroCampo(campo, "Digite uma data válida.");
@@ -73,14 +93,18 @@ window.CampoUtils = (() => {
       } else {
         adicionarClasse(campo, "success");
       }
-    } else if (
+    }
+    // Validação para select obrigatório
+    else if (
       campo.tagName.toLowerCase() === "select" &&
       campo.hasAttribute("required") &&
       valorCampo === ""
     ) {
       exibirMensagemErroCampo(campo, "Selecione uma opção.");
       campoValido = false;
-    } else if (valorCampo !== "" || campo.hasAttribute("required")) {
+    }
+    // Para os demais campos, se não estiver vazio, marca como sucesso
+    else if (valorCampo !== "" || campo.hasAttribute("required")) {
       adicionarClasse(campo, "success");
     }
 
@@ -96,15 +120,14 @@ window.CampoUtils = (() => {
 
 // Módulo de Manipulação do Formulário (sem envio via fetch)
 window.FormularioUtils = (() => {
+  // Valida todos os campos obrigatórios do formulário
   function validarFormulario() {
     let formValido = true;
-    // Seleciona todos os campos que possuem o atributo required
     const camposRequeridos = document.querySelectorAll(
       "input[required], select[required], textarea[required]"
     );
 
     camposRequeridos.forEach((campo) => {
-      // Se a validação individual do campo (via CampoUtils) retornar false, marca o formulário como inválido
       if (!CampoUtils.validarCampo(campo)) {
         formValido = false;
       }
@@ -113,6 +136,7 @@ window.FormularioUtils = (() => {
     return formValido;
   }
 
+  // Função de envio do formulário: valida e envia se tudo estiver ok
   function enviarFormulario(event) {
     event.preventDefault();
 
@@ -122,7 +146,6 @@ window.FormularioUtils = (() => {
     }
 
     console.log("Formulário validado com sucesso!");
-    // Envia o formulário após a validação
     event.target.submit();
   }
 
@@ -131,13 +154,23 @@ window.FormularioUtils = (() => {
   };
 })();
 
-// Adicionar ouvintes de eventos
+// Adiciona os ouvintes de eventos para o envio do formulário
 document
   .getElementById("form")
   .addEventListener("submit", FormularioUtils.enviarFormulario);
 
-// Adicionar ouvintes de eventos para validação em campo
+// Adiciona ouvintes para validação imediata de cada campo (em eventos de blur e input)
 document.querySelectorAll("input, select, textarea").forEach((campo) => {
   campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
   campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
+});
+
+// Evento para máscara e formatação do CEP
+document.getElementById("cep")?.addEventListener("blur", function () {
+  let cep = this.value.replace(/\D/g, "");
+  if (cep.length === 8) {
+    this.value = `${cep.slice(0, 5)}-${cep.slice(5)}`;
+  }
+  // Valida o campo após a formatação
+  CampoUtils.validarCampo(this);
 });

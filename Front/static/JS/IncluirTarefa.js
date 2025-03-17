@@ -1,11 +1,11 @@
 // Módulo de Manipulação de Estilos
 window.EstiloUtils = (() => {
+  // Altera a cor da borda do elemento (caso exista)
   function alterarCorBorda(elemento, cor) {
     if (elemento) {
       elemento.style.borderColor = cor;
     }
   }
-
   return {
     alterarCorBorda,
   };
@@ -13,10 +13,10 @@ window.EstiloUtils = (() => {
 
 // Módulo de Manipulação de Campos
 window.CampoUtils = (() => {
+  // Retorna o label associado ao campo. Para rádios, busca no container.
   function obterLabelAssociado(campo) {
     let label;
     if (campo.type === "radio") {
-      // Para campos de rádio, encontramos o label dentro do mesmo .campo
       const campoDiv = campo.closest(".campo");
       label = campoDiv ? campoDiv.querySelector("label") : null;
     } else {
@@ -25,6 +25,7 @@ window.CampoUtils = (() => {
     return label;
   }
 
+  // Adiciona uma classe ao campo, seu label e, se houver, ao span contido no label.
   function adicionarClasse(campo, classe) {
     campo.classList.add(classe);
     const label = obterLabelAssociado(campo);
@@ -35,6 +36,7 @@ window.CampoUtils = (() => {
     }
   }
 
+  // Remove as classes especificadas do campo, label e span (se existir)
   function removerClasses(campo, ...classes) {
     campo.classList.remove(...classes);
     const label = obterLabelAssociado(campo);
@@ -45,6 +47,7 @@ window.CampoUtils = (() => {
     }
   }
 
+  // Exibe uma mensagem de erro logo após o campo e altera sua borda
   function exibirMensagemErroCampo(campo, mensagem) {
     let mensagemErro = campo.nextElementSibling;
     if (!mensagemErro || !mensagemErro.classList.contains("mensagem-erro")) {
@@ -60,6 +63,7 @@ window.CampoUtils = (() => {
     EstiloUtils.alterarCorBorda(campo, "var(--erro)");
   }
 
+  // Remove a mensagem de erro e reseta a borda do campo
   function removerMensagemErroCampo(campo) {
     const mensagemErro = campo.nextElementSibling;
     if (mensagemErro && mensagemErro.classList.contains("mensagem-erro")) {
@@ -69,12 +73,11 @@ window.CampoUtils = (() => {
     EstiloUtils.alterarCorBorda(campo, "");
   }
 
+  // Retorna o nome do campo extraído do label (sem o asterisco)
   function obterNomeCampo(campo) {
     const label = obterLabelAssociado(campo);
     if (label) {
-      // Clonar o label para não modificar o original
       const labelClone = label.cloneNode(true);
-      // Remover o span com o asterisco
       const span = labelClone.querySelector("span");
       if (span) span.remove();
       return labelClone.innerText.trim();
@@ -82,55 +85,37 @@ window.CampoUtils = (() => {
     return campo.name || campo.id;
   }
 
+  // Valida o campo com base em seu tipo e atributos
   function validarCampo(campo) {
-    // Remove mensagens de erro e classes de validação anteriores
+    // Remove mensagens e classes de validação anteriores
     removerMensagemErroCampo(campo);
     removerClasses(campo, "error", "success");
 
     let campoValido = true;
+    const valorCampo = campo.value.trim();
 
-    if (campo.type === "radio") {
-      // Para grupos de rádio, verifica se algum está selecionado
-      const radios = document.getElementsByName(campo.name);
-      const algumSelecionado = Array.from(radios).some(
-        (radio) => radio.checked
-      );
-      if (campo.hasAttribute("required") && !algumSelecionado) {
-        exibirMensagemErroCampo(
-          campo.closest(".campo"),
-          "Selecione uma opção."
-        );
+    if (campo.hasAttribute("required") && valorCampo === "") {
+      exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
+      campoValido = false;
+    } else if (campo.type === "date" && valorCampo !== "") {
+      // Validação de data
+      const data = new Date(valorCampo);
+      if (isNaN(data.getTime())) {
+        exibirMensagemErroCampo(campo, "Digite uma data válida.");
         campoValido = false;
       } else {
         adicionarClasse(campo, "success");
       }
-    } else {
-      const valorCampo = campo.value.trim();
-
-      if (campo.hasAttribute("required") && valorCampo === "") {
-        exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
-        campoValido = false;
-      } else if (campo.type === "date" && valorCampo !== "") {
-        // Verificar se a data é válida
-        const data = new Date(valorCampo);
-        if (isNaN(data.getTime())) {
-          exibirMensagemErroCampo(campo, "Digite uma data válida.");
-          campoValido = false;
-        } else {
-          adicionarClasse(campo, "success");
-        }
-      } else if (
-        campo.tagName.toLowerCase() === "select" &&
-        campo.hasAttribute("required") &&
-        (valorCampo === "" || valorCampo === null)
-      ) {
-        exibirMensagemErroCampo(campo, "Selecione uma opção.");
-        campoValido = false;
-      } else if (valorCampo !== "" || campo.hasAttribute("required")) {
-        adicionarClasse(campo, "success");
-      }
+    } else if (
+      campo.tagName.toLowerCase() === "select" &&
+      campo.hasAttribute("required") &&
+      (valorCampo === "" || valorCampo === null)
+    ) {
+      exibirMensagemErroCampo(campo, "Selecione uma opção.");
+      campoValido = false;
+    } else if (valorCampo !== "" || campo.hasAttribute("required")) {
+      adicionarClasse(campo, "success");
     }
-
     return campoValido;
   }
 
@@ -146,14 +131,13 @@ window.CampoUtils = (() => {
 window.FormularioUtils = (() => {
   let feedbackDiv = null;
 
+  // Valida todos os campos obrigatórios do formulário
   function validarFormulario() {
     let formValido = true;
     const camposNaoPreenchidos = [];
-
     const camposRequeridos = document.querySelectorAll(
       "input[required], select[required], textarea[required]"
     );
-
     const radioGroupsChecked = new Set();
 
     camposRequeridos.forEach((campo) => {
@@ -177,46 +161,38 @@ window.FormularioUtils = (() => {
     });
 
     if (!formValido) {
-      mostrarFeedbackErro(camposNaoPreenchidos);
+      mostrarFeedback(
+        "error",
+        `Preencha os campos obrigatórios: ${camposNaoPreenchidos.join(", ")}`
+      );
     }
-
     return formValido;
   }
 
+  // Função de envio: previne o envio se houver erros; caso contrário, submete o formulário.
   function enviarFormulario(event) {
     event.preventDefault();
     if (feedbackDiv) feedbackDiv.remove();
 
     if (!validarFormulario()) return;
 
-    mostrarFeedbackSucesso();
+    mostrarFeedback("success", "Formulário validado com sucesso!");
     document.getElementById("form").reset();
     removerClassesDeSucesso();
   }
 
-  function mostrarFeedbackSucesso() {
-    mostrarFeedback("success", "Formulário validado com sucesso!");
-  }
-
-  function mostrarFeedbackErro(camposNaoPreenchidos) {
-    const mensagem = `Preencha os campos obrigatórios: ${camposNaoPreenchidos.join(
-      ", "
-    )}`;
-    mostrarFeedback("error", mensagem);
-  }
-
+  // Exibe feedback (sucesso ou erro) em uma div temporária
   function mostrarFeedback(tipo, mensagem) {
     if (feedbackDiv) feedbackDiv.remove();
-
     feedbackDiv = document.createElement("div");
     feedbackDiv.classList.add(`message-${tipo}`, "show");
     feedbackDiv.innerText = mensagem;
     document.body.appendChild(feedbackDiv);
-
     setTimeout(() => feedbackDiv.classList.add("fade-out"), 5000);
     feedbackDiv.addEventListener("transitionend", () => feedbackDiv.remove());
   }
 
+  // Remove a classe "success" de todos os campos (para resetar o visual)
   function removerClassesDeSucesso() {
     document
       .querySelectorAll(".success")
@@ -228,12 +204,12 @@ window.FormularioUtils = (() => {
   };
 })();
 
-// Adicionar ouvintes de eventos
+// Adiciona ouvintes de eventos para o envio do formulário
 document
   .getElementById("form")
   .addEventListener("submit", FormularioUtils.enviarFormulario);
 
-// Adicionar ouvintes de eventos para outros campos
+// Adiciona ouvintes para validação em tempo real dos campos (nos eventos blur e input)
 document.querySelectorAll("input, select, textarea").forEach((campo) => {
   campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
   campo.addEventListener("input", () => CampoUtils.validarCampo(campo));

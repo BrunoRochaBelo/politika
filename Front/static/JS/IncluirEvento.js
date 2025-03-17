@@ -5,7 +5,6 @@ window.EstiloUtils = (() => {
       elemento.style.borderColor = cor;
     }
   }
-
   return {
     alterarCorBorda,
   };
@@ -13,10 +12,11 @@ window.EstiloUtils = (() => {
 
 // Módulo de Manipulação de Campos
 window.CampoUtils = (() => {
+  // Retorna o label associado ao campo.
   function obterLabelAssociado(campo) {
     let label;
     if (campo.type === "radio") {
-      // Para campos de rádio, encontramos o label dentro do mesmo .campo
+      // Para campos de rádio, busca o label dentro do mesmo container.
       const campoDiv = campo.closest(".campo");
       label = campoDiv ? campoDiv.querySelector("label") : null;
     } else {
@@ -25,6 +25,7 @@ window.CampoUtils = (() => {
     return label;
   }
 
+  // Adiciona uma classe ao campo, seu label e span (se existir).
   function adicionarClasse(campo, classe) {
     campo.classList.add(classe);
     const label = obterLabelAssociado(campo);
@@ -35,6 +36,7 @@ window.CampoUtils = (() => {
     }
   }
 
+  // Remove as classes especificadas do campo, seu label e span.
   function removerClasses(campo, ...classes) {
     campo.classList.remove(...classes);
     const label = obterLabelAssociado(campo);
@@ -45,6 +47,7 @@ window.CampoUtils = (() => {
     }
   }
 
+  // Exibe a mensagem de erro logo abaixo do campo e altera a cor da borda.
   function exibirMensagemErroCampo(campo, mensagem) {
     let mensagemErro = campo.nextElementSibling;
     if (!mensagemErro || !mensagemErro.classList.contains("mensagem-erro")) {
@@ -60,6 +63,7 @@ window.CampoUtils = (() => {
     EstiloUtils.alterarCorBorda(campo, "var(--erro)");
   }
 
+  // Remove a mensagem de erro e reseta a borda.
   function removerMensagemErroCampo(campo) {
     const mensagemErro = campo.nextElementSibling;
     if (mensagemErro && mensagemErro.classList.contains("mensagem-erro")) {
@@ -69,12 +73,11 @@ window.CampoUtils = (() => {
     EstiloUtils.alterarCorBorda(campo, "");
   }
 
+  // Retorna o nome do campo a partir do label associado (sem o asterisco).
   function obterNomeCampo(campo) {
     const label = obterLabelAssociado(campo);
     if (label) {
-      // Clonar o label para não modificar o original
       const labelClone = label.cloneNode(true);
-      // Remover o span com o asterisco
       const span = labelClone.querySelector("span");
       if (span) span.remove();
       return labelClone.innerText.trim();
@@ -82,15 +85,16 @@ window.CampoUtils = (() => {
     return campo.name || campo.id;
   }
 
+  // Valida o campo conforme seu tipo e atributos.
   function validarCampo(campo) {
-    // Remove mensagens de erro e classes de validação anteriores
+    // Remove mensagens e classes anteriores.
     removerMensagemErroCampo(campo);
     removerClasses(campo, "error", "success");
 
     let campoValido = true;
 
     if (campo.type === "radio") {
-      // Para grupos de rádio, verifica se algum está selecionado
+      // Para grupos de rádio, verifica se algum está selecionado.
       const radios = document.getElementsByName(campo.name);
       const algumSelecionado = Array.from(radios).some(
         (radio) => radio.checked
@@ -110,8 +114,21 @@ window.CampoUtils = (() => {
       if (campo.hasAttribute("required") && valorCampo === "") {
         exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
         campoValido = false;
-      } else if (campo.type === "date" && valorCampo !== "") {
-        // Verificar se a data é válida
+      }
+      // Validação específica para CEP
+      else if (campo.id === "cep" && valorCampo !== "") {
+        if (!/^\d{5}-\d{3}$/.test(valorCampo)) {
+          exibirMensagemErroCampo(
+            campo,
+            "Digite um CEP válido no formato 00000-000."
+          );
+          campoValido = false;
+        } else {
+          adicionarClasse(campo, "success");
+        }
+      }
+      // Validação para data
+      else if (campo.type === "date" && valorCampo !== "") {
         const data = new Date(valorCampo);
         if (isNaN(data.getTime())) {
           exibirMensagemErroCampo(campo, "Digite uma data válida.");
@@ -119,8 +136,9 @@ window.CampoUtils = (() => {
         } else {
           adicionarClasse(campo, "success");
         }
-      } else if (campo.type === "time" && valorCampo !== "") {
-        // Verificar se a hora é válida
+      }
+      // Validação para hora
+      else if (campo.type === "time" && valorCampo !== "") {
         const horaRegex = /^([0-1]\d|2[0-3]):([0-5]\d)$/;
         if (!horaRegex.test(valorCampo)) {
           exibirMensagemErroCampo(campo, "Digite uma hora válida (HH:MM).");
@@ -128,7 +146,9 @@ window.CampoUtils = (() => {
         } else {
           adicionarClasse(campo, "success");
         }
-      } else if (
+      }
+      // Validação para select obrigatório
+      else if (
         campo.tagName.toLowerCase() === "select" &&
         campo.hasAttribute("required") &&
         (valorCampo === "" || valorCampo === null)
@@ -155,14 +175,13 @@ window.CampoUtils = (() => {
 window.FormularioEventoUtils = (() => {
   let feedbackDiv = null;
 
+  // Valida todos os campos obrigatórios do formulário de Evento.
   function validarFormulario() {
     let formValido = true;
     const camposNaoPreenchidos = [];
-
     const camposRequeridos = document.querySelectorAll(
       "#formEvento input[required], #formEvento select[required], #formEvento textarea[required]"
     );
-
     const radioGroupsChecked = new Set();
 
     camposRequeridos.forEach((campo) => {
@@ -192,6 +211,7 @@ window.FormularioEventoUtils = (() => {
     return formValido;
   }
 
+  // Função de envio: valida o formulário e, se válido, envia; senão, exibe feedback.
   function enviarFormulario(event) {
     event.preventDefault();
     if (feedbackDiv) feedbackDiv.remove();
@@ -216,20 +236,18 @@ window.FormularioEventoUtils = (() => {
 
   function mostrarFeedback(tipo, mensagem) {
     if (feedbackDiv) feedbackDiv.remove();
-
     feedbackDiv = document.createElement("div");
     feedbackDiv.classList.add(`message-${tipo}`, "show");
     feedbackDiv.innerText = mensagem;
     document.body.appendChild(feedbackDiv);
-
     setTimeout(() => feedbackDiv.classList.add("fade-out"), 5000);
     feedbackDiv.addEventListener("transitionend", () => feedbackDiv.remove());
   }
 
   function removerClassesDeSucesso() {
-    document
-      .querySelectorAll("#formEvento .success")
-      .forEach((campo) => campo.classList.remove("success"));
+    document.querySelectorAll("#formEvento .success").forEach((campo) => {
+      campo.classList.remove("success");
+    });
   }
 
   return {
@@ -237,12 +255,12 @@ window.FormularioEventoUtils = (() => {
   };
 })();
 
-// Adicionar ouvintes de eventos para o formulário de Evento
+// Adiciona os ouvintes de eventos para o formulário de Evento.
 document
   .getElementById("formEvento")
   .addEventListener("submit", FormularioEventoUtils.enviarFormulario);
 
-// Adicionar ouvintes de eventos para os campos do formulário de Evento
+// Adiciona os ouvintes para validação em campo (blur e input) dos campos do formulário de Evento.
 document
   .querySelectorAll(
     "#formEvento input, #formEvento select, #formEvento textarea"
@@ -251,3 +269,13 @@ document
     campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
     campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
   });
+
+// Evento para máscara e formatação do CEP
+document.getElementById("cep")?.addEventListener("blur", function () {
+  let cep = this.value.replace(/\D/g, "");
+  if (cep.length === 8) {
+    this.value = `${cep.slice(0, 5)}-${cep.slice(5)}`;
+  }
+  // Após a formatação, valida o campo CEP.
+  CampoUtils.validarCampo(this);
+});

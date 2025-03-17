@@ -5,7 +5,6 @@ const EstiloUtils = (() => {
       elemento.style.borderColor = cor;
     }
   }
-
   return {
     alterarCorBorda,
   };
@@ -13,6 +12,7 @@ const EstiloUtils = (() => {
 
 // Módulo de Manipulação de Campos
 const CampoUtils = (() => {
+  // Altera a cor do asterisco presente no label associado ao campo
   function alterarCorAsterisco(campoId, cor) {
     const labelSpan = document.querySelector(`label[for="${campoId}"] span`);
     if (labelSpan) {
@@ -20,23 +20,27 @@ const CampoUtils = (() => {
     }
   }
 
+  // Busca o span associado ao label do campo
+  function obterSpanAssociado(campo) {
+    const label = document.querySelector(`label[for="${campo.id}"]`);
+    return label ? label.querySelector("span") : null;
+  }
+
+  // Adiciona uma classe tanto no campo quanto no seu span associado
   function adicionarClasse(campo, classe) {
     campo.classList.add(classe);
     const span = obterSpanAssociado(campo);
     if (span) span.classList.add(classe);
   }
 
+  // Remove as classes passadas do campo e do seu span associado
   function removerClasses(campo, ...classes) {
     campo.classList.remove(...classes);
     const span = obterSpanAssociado(campo);
     if (span) span.classList.remove(...classes);
   }
 
-  function obterSpanAssociado(campo) {
-    const label = document.querySelector(`label[for="${campo.id}"]`);
-    return label ? label.querySelector("span") : null;
-  }
-
+  // Exibe mensagem de erro logo abaixo do campo
   function exibirMensagemErroCampo(campo, mensagem) {
     let mensagemErro = campo.nextElementSibling;
     if (!mensagemErro || !mensagemErro.classList.contains("mensagem-erro")) {
@@ -52,6 +56,7 @@ const CampoUtils = (() => {
     alterarCorAsterisco(campo.id, "var(--erro)");
   }
 
+  // Remove a mensagem de erro associada ao campo
   function removerMensagemErroCampo(campo) {
     const mensagemErro = campo.nextElementSibling;
     if (mensagemErro && mensagemErro.classList.contains("mensagem-erro")) {
@@ -61,12 +66,14 @@ const CampoUtils = (() => {
     alterarCorAsterisco(campo.id, "");
   }
 
+  // Valida o campo com base em atributos e padrões (e-mail, telefone, CPF, CNPJ)
   function validarCampo(campo) {
     const valorCampo = campo.value.trim();
     let campoValido = true;
 
     removerMensagemErroCampo(campo);
 
+    // Verifica se o campo é obrigatório e está vazio
     if (campo.hasAttribute("required") && valorCampo === "") {
       exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
       campoValido = false;
@@ -74,7 +81,10 @@ const CampoUtils = (() => {
         campo.closest(".card-session"),
         "var(--erro)"
       );
-    } else if (
+    }
+
+    // Validação para e-mail
+    if (
       campo.type === "email" &&
       valorCampo !== "" &&
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valorCampo)
@@ -85,7 +95,10 @@ const CampoUtils = (() => {
         campo.closest(".card-session"),
         "var(--erro)"
       );
-    } else if (
+    }
+
+    // Validação para telefone
+    if (
       campo.type === "tel" &&
       valorCampo !== "" &&
       !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)
@@ -99,7 +112,43 @@ const CampoUtils = (() => {
         campo.closest(".card-session"),
         "var(--erro)"
       );
-    } else if (valorCampo !== "" || campo.hasAttribute("required")) {
+    }
+
+    // Validação para CPF (formato: 000.000.000-00)
+    if (
+      campo.id === "cpf" &&
+      valorCampo !== "" &&
+      !/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(valorCampo)
+    ) {
+      exibirMensagemErroCampo(
+        campo,
+        "Digite um CPF válido no formato 000.000.000-00."
+      );
+      campoValido = false;
+      EstiloUtils.alterarCorBorda(
+        campo.closest(".card-session"),
+        "var(--erro)"
+      );
+    }
+
+    // Validação para CNPJ (formato: 00.000.000/0000-00)
+    if (
+      campo.id === "cnpj" &&
+      valorCampo !== "" &&
+      !/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(valorCampo)
+    ) {
+      exibirMensagemErroCampo(
+        campo,
+        "Digite um CNPJ válido no formato 00.000.000/0000-00."
+      );
+      campoValido = false;
+      EstiloUtils.alterarCorBorda(
+        campo.closest(".card-session"),
+        "var(--erro)"
+      );
+    }
+
+    if (campoValido) {
       adicionarClasse(campo, "success");
       EstiloUtils.alterarCorBorda(campo.closest(".card-session"), "");
     }
@@ -107,12 +156,14 @@ const CampoUtils = (() => {
     return campoValido;
   }
 
+  // Aplica formatação ao valor do campo com base em uma regex e função de formatação
   function formatarCampo(input, regex, formato) {
     let value = input.value.replace(/\D/g, "");
     input.value = regex.test(value) ? formato(value) : value;
     validarCampo(input);
   }
 
+  // Valida os campos de nome (nome_contato e nome_fantasia) de forma condicional
   function validarNomesObrigatorios() {
     const campos = ["nome_contato", "nome_fantasia"].map((id) =>
       document.getElementById(id)
@@ -143,6 +194,7 @@ const CampoUtils = (() => {
 
 // Módulo de Manipulação de Sessões
 const SessaoUtils = (() => {
+  // Alterna a visibilidade de um elemento com base na condição
   function toggleElementVisibility(element, condition) {
     if (element) {
       element.classList.toggle("hiddenCc", !condition);
@@ -189,6 +241,7 @@ const SessaoUtils = (() => {
 const FormularioUtils = (() => {
   let feedbackDiv = null;
 
+  // Valida todos os campos obrigatórios e acumula os nomes dos que estão com erro
   function validarFormulario() {
     let formValido = true;
     const camposNaoPreenchidos = [];
@@ -226,6 +279,7 @@ const FormularioUtils = (() => {
     return formValido;
   }
 
+  // Envia o formulário se estiver válido, senão previne o envio
   function enviarFormulario(event) {
     if (feedbackDiv) {
       feedbackDiv.remove();
@@ -242,6 +296,7 @@ const FormularioUtils = (() => {
     }
   }
 
+  // Exibe uma mensagem de feedback (sucesso ou erro)
   function mostrarFeedback(tipo, mensagem) {
     if (feedbackDiv) {
       feedbackDiv.remove();
@@ -253,6 +308,7 @@ const FormularioUtils = (() => {
     removerFeedbackDivAposTempo(feedbackDiv);
   }
 
+  // Cria a div de feedback com a mensagem
   function criarFeedbackDiv(mensagem, classe) {
     const div = document.createElement("div");
     div.classList.add(classe);
@@ -260,6 +316,7 @@ const FormularioUtils = (() => {
     return div;
   }
 
+  // Remove a div de feedback após um tempo determinado (default 5000ms)
   function removerFeedbackDivAposTempo(div, tempo = 5000) {
     setTimeout(() => {
       div.classList.add("fade-out");
@@ -272,6 +329,7 @@ const FormularioUtils = (() => {
 
   return {
     enviarFormulario,
+    mostrarFeedback, // Exportado para uso na validação de indicação
   };
 })();
 
@@ -280,14 +338,12 @@ function validarCampoIndicacao() {
   const campoIndicacao = document.getElementById("indicacao");
   const valorCampo = campoIndicacao.value.trim();
 
-  // Se o campo estiver vazio, retorna válido, pois não é obrigatório
+  // Se estiver vazio, retorna válido, pois não é obrigatório
   if (valorCampo === "") {
     return true;
   }
 
-  // Verifica se o valor preenchido é igual à sugestão selecionada
-  // Atenção: certifique-se de que a variável "selectedSuggestionNameRefPoli"
-  // esteja disponível no escopo global ou seja acessível aqui.
+  // Verifica se o valor corresponde à indicação válida (variável global "selectedSuggestionNameRefPoli")
   if (valorCampo !== selectedSuggestionNameRefPoli) {
     CampoUtils.exibirMensagemErroCampo(
       campoIndicacao,
@@ -299,19 +355,18 @@ function validarCampoIndicacao() {
   return true;
 }
 
-// Modificação na função de envio do formulário para incluir validação da indicação
+// Função de envio do formulário com validação de indicação
 function enviarFormulario(event) {
   if (!validarCampoIndicacao()) {
     event.preventDefault();
     FormularioUtils.mostrarFeedback("error", "Selecione uma indicação válida.");
     return;
   }
-
   FormularioUtils.enviarFormulario(event);
 }
 
+// Adiciona os ouvintes de eventos
 document.getElementById("form").addEventListener("submit", enviarFormulario);
-
 document
   .getElementById("comissionado")
   .addEventListener("change", SessaoUtils.toggleComissionadoFields);
@@ -322,10 +377,12 @@ document
   .getElementById("nome_fantasia")
   .addEventListener("input", CampoUtils.validarNomesObrigatorios);
 
+// Função auxiliar para formatar telefone
 function formatarTelefone(input, regex, formato) {
   CampoUtils.formatarCampo(input, regex, formato);
 }
 
+// Máscara para telefone principal
 document
   .getElementById("telefonePrincipal")
   .addEventListener("blur", function () {
@@ -340,6 +397,7 @@ document
     );
   });
 
+// Máscara para telefone adicional
 document
   .getElementById("telefoneAdicional")
   .addEventListener("blur", function () {
@@ -350,11 +408,38 @@ document
     );
   });
 
+// Máscara para CEP (formata 8 dígitos para 00000-000)
 document.getElementById("cep").addEventListener("blur", function () {
   CampoUtils.formatarCampo(
     this,
     /^\d{8}$/,
     (value) => `${value.slice(0, 5)}-${value.slice(5)}`
+  );
+});
+
+// Máscara para CPF
+document.getElementById("cpf")?.addEventListener("blur", function () {
+  CampoUtils.formatarCampo(
+    this,
+    /^\d{11}$/,
+    (value) =>
+      `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(
+        6,
+        9
+      )}-${value.slice(9)}`
+  );
+});
+
+// Máscara para CNPJ
+document.getElementById("cnpj")?.addEventListener("blur", function () {
+  CampoUtils.formatarCampo(
+    this,
+    /^\d{14}$/,
+    (value) =>
+      `${value.slice(0, 2)}.${value.slice(2, 5)}.${value.slice(
+        5,
+        8
+      )}/${value.slice(8, 12)}-${value.slice(12)}`
   );
 });
 
@@ -365,6 +450,7 @@ document
   .getElementById("estado_civil")
   .addEventListener("change", SessaoUtils.mostrarCamposConjuge);
 
+// Adiciona ouvintes para validação em eventos de keydown, blur, input e change
 document.querySelectorAll("input, select, textarea").forEach((campo) => {
   campo.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
@@ -372,7 +458,6 @@ document.querySelectorAll("input, select, textarea").forEach((campo) => {
       CampoUtils.validarCampo(event.target);
     }
   });
-
   campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
   campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
   campo.addEventListener("change", () => CampoUtils.validarCampo(campo));
