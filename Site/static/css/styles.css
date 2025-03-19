@@ -3,7 +3,7 @@
  *************************************/
 :root {
   /* Fundo principal */
-  --color-bg: hsl(245, 50%, 12%);
+  --color-bg: #120f2e;
 
   /* Superfícies (cards, seções) */
   --color-surface: hsl(245, 58%, 16%);
@@ -12,12 +12,12 @@
   --color-text: hsl(0, 0%, 95%);
   --color-muted: hsl(0, 0%, 60%);
 
-  /* Azul roxeado */
+  /* Azul roxeado – mantém seriedade e modernidade */
   --color-primary: hsl(263, 72%, 56%);
   --color-primary-dark: hsl(263, 72%, 45%);
   --color-primary-light: hsl(263, 72%, 70%);
 
-  /* Accent neon (verde-água) */
+  /* Accent neon (verde-água) – usado com parcimônia */
   --color-accent: hsl(174, 100%, 29%);
 
   /* Gradiente do Hero */
@@ -41,16 +41,17 @@
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.15);
 
   /* Tipografia */
-  --font-family: "Inter", sans-serif;
+  --font-text: "Roboto", sans-serif;
+  --font-title: "Montserrat", sans-serif;
 
   /* Tamanhos de fonte */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.25rem; /* 20px */
-  --font-size-2xl: 1.5rem; /* 24px */
-  --font-size-3xl: 1.875rem; /* 30px */
-  --font-size-4xl: 2.25rem; /* 36px */
-  --font-size-5xl: 3rem; /* 48px */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
 
   /* Espaçamentos */
   --spacing-xs: 0.25rem;
@@ -61,10 +62,10 @@
   --spacing-2xl: 2.5rem;
   --spacing-3xl: 3rem;
 
-  /* Transições */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  /* Transições – tempos ajustados para microinterações mais sutis */
+  --transition-fast: 0.1s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
 
   /* Largura máxima do container */
   --container-max-width: 1280px;
@@ -91,7 +92,7 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-text);
   font-size: var(--font-size-base);
   background: var(--color-bg);
   color: var(--color-text);
@@ -114,6 +115,11 @@ a:hover {
   color: var(--color-primary-dark);
 }
 
+a:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
 ul,
 ol {
   list-style: none;
@@ -126,14 +132,20 @@ button {
   font-family: inherit;
 }
 
+button:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-title);
   font-weight: 700;
-  color: hsl(0, 0%, 100%);
+  color: #fff;
   line-height: 1.2;
   margin-bottom: var(--spacing-sm);
 }
@@ -211,7 +223,8 @@ h6 {
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
-  transform: scale(1.03);
+  transform: scale(1.02);
+  color: #fff;
 }
 
 .btn-secondary {
@@ -223,7 +236,7 @@ h6 {
 .btn-secondary:hover {
   background: var(--color-primary);
   color: #fff;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .btn-outline {
@@ -235,7 +248,7 @@ h6 {
 .btn-outline:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .btn-lg {
@@ -252,14 +265,13 @@ h6 {
  *************************************/
 .header {
   position: fixed;
-  height: 70px; /* Altura padrão */
-  transition: all 0.3s ease;
+  height: 70px;
   top: 0;
   width: 100%;
   z-index: var(--z-header);
   background: var(--color-surface);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-fast);
+  transition: box-shadow var(--transition-fast), height var(--transition-normal);
 }
 
 .header-container {
@@ -267,7 +279,12 @@ h6 {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  transition: all 0.3s ease;
+}
+
+.header-container .btn-primary,
+.header-container .btn-outline {
+  background: none;
+  border: none;
 }
 
 .logo {
@@ -279,13 +296,13 @@ h6 {
 
 .logo-img {
   height: 36px;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
   margin-right: var(--spacing-sm);
 }
 
-/* Quando rolar a página, adicionamos .scrolled via JS */
 .header.scrolled {
   height: 60px;
+  box-shadow: var(--shadow-md);
 }
 
 .header.scrolled .logo-img {
@@ -342,10 +359,6 @@ h6 {
   width: 100%;
   height: 2px;
   background: var(--color-text);
-}
-
-.header.scrolled {
-  box-shadow: var(--shadow-md);
 }
 
 /*************************************
@@ -419,9 +432,10 @@ h6 {
 }
 
 .animated-dashboard:hover {
-  transform: rotateY(-5deg) rotateX(2deg);
+  transform: rotateY(-8deg) rotateX(4deg);
 }
 
+/* Floating elements – suavizados para transmitir seriedade */
 .floating-element {
   position: absolute;
   background: var(--color-surface);
@@ -432,6 +446,7 @@ h6 {
   animation: float 4s ease-in-out infinite;
   font-weight: 500;
   font-size: var(--font-size-sm);
+  transition: transform var(--transition-normal);
 }
 
 .floating-1 {
@@ -440,7 +455,7 @@ h6 {
 }
 
 .floating-2 {
-  top: 40%;
+  top: 25%;
   right: -40px;
   animation-delay: 1s;
 }
@@ -451,50 +466,87 @@ h6 {
   animation-delay: 2s;
 }
 
+/* Novos floating elements */
+.floating-4 {
+  bottom: 25%;
+  right: -40px;
+  animation-delay: 1.5s;
+}
+
+.floating-5 {
+  top: 40%;
+  left: -50px;
+  animation-delay: 2.5s;
+}
+
 @keyframes float {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 
-/* Onda */
+/* Onda do Hero */
 .hero-wave {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100px;
-  background: url("data:image/svg+xml,%3Csvg fill='none' ... %3C/svg%3E")
-    no-repeat center / cover;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 1200,50 1200,100 0,100' fill='%23120f2e'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   z-index: -1;
 }
 
 /*************************************
- * PARALLAX SECTION
+ * PARALLAX SECTION 
  *************************************/
 .parallax-section {
   position: relative;
   min-height: 350px;
-  background: url("./static/imagens/parallax-bg.jpg") center / cover no-repeat
-    fixed;
+  background: url("/Site/static/imagens/parallax-bg.png") center / cover
+    no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    hsla(245, 50%, 12%, 0.2),
+    hsla(245, 50%, 12%, 0.4)
+  );
+  z-index: 0;
 }
 
 .parallax-content {
   position: relative;
   z-index: 1;
   max-width: 800px;
-  background: rgba(0, 0, 0, 0.4);
+  background: hsla(245, 58%, 16%, 0.95);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-2xl);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s ease;
+}
+
+.parallax-section:hover .parallax-content {
+  transform: translateY(-5px);
 }
 
 .parallax-content h2 {
@@ -513,8 +565,7 @@ h6 {
  *************************************/
 .neon-text {
   color: var(--color-accent);
-  text-shadow: 0 0 4px var(--color-accent), 0 0 10px var(--color-accent),
-    0 0 20px var(--color-accent), 0 0 40px var(--color-accent);
+  text-shadow: 0 0 3px var(--color-accent), 0 0 8px var(--color-accent);
 }
 
 /*************************************
@@ -544,7 +595,7 @@ h6 {
   background: var(--color-surface);
   padding: var(--spacing-lg);
   border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-lg);
   transition: transform var(--transition-fast),
     box-shadow var(--transition-fast);
 }
@@ -552,7 +603,7 @@ h6 {
 .overview-card:hover,
 .solution-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .card-icon {
@@ -606,7 +657,7 @@ h6 {
   flex: 1;
   background: var(--color-surface);
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-lg);
   padding: var(--spacing-lg);
   text-align: center;
   position: relative;
@@ -615,7 +666,7 @@ h6 {
 
 .cycle-step:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .cycle-icon {
@@ -672,7 +723,7 @@ h6 {
 .tab-btn:hover {
   background: var(--color-primary-dark);
   color: #fff;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .tab-btn.active {
@@ -739,6 +790,7 @@ h6 {
   align-items: center;
   justify-content: center;
 }
+
 .feature-icon img,
 .feature-icon svg {
   width: 30px;
@@ -806,7 +858,7 @@ h6 {
   border-radius: var(--border-radius-full);
   border: 1px solid var(--color-muted);
   cursor: pointer;
-  transition: background var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .toggle-switch label::after {
@@ -839,7 +891,7 @@ h6 {
   background: var(--color-surface);
   padding: var(--spacing-lg);
   border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-lg);
   transition: transform var(--transition-fast),
     box-shadow var(--transition-fast);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -847,7 +899,7 @@ h6 {
 
 .pricing-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .featured {
@@ -1073,9 +1125,9 @@ blockquote cite {
 .cta-card {
   max-width: 800px;
   margin: 0 auto;
-  background: var(--color-surface);
+  background: var(--color-bg);
   border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-lg);
   padding: var(--spacing-xl);
 }
 
@@ -1116,7 +1168,7 @@ blockquote cite {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  transition: background var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .contact-card:hover {
@@ -1229,11 +1281,12 @@ blockquote cite {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .social-link:hover {
   background: var(--color-primary-dark);
+  color: var(--color-primary-light);
 }
 
 .footer-content {
@@ -1370,6 +1423,11 @@ blockquote cite {
   color: var(--color-accent);
 }
 
+.modal-close:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
 .demo-form .form-group {
   margin-bottom: var(--spacing-md);
 }
@@ -1414,7 +1472,7 @@ blockquote cite {
 
 .floating-cta-button:hover {
   background: var(--color-primary-dark);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .floating-cta-button .icon {
@@ -1439,7 +1497,7 @@ blockquote cite {
   pointer-events: none;
   border-radius: 50%;
   z-index: 999;
-  display: none; /* Ou "none" e você ativa via JS */
+  display: none;
 }
 
 .cursor-fx {
@@ -1459,7 +1517,6 @@ blockquote cite {
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Nova classe "hover" para crescer o cursor */
 .cursor-fx.hover {
   transform: translate(-50%, -50%) scale(1.8);
 }
@@ -1486,6 +1543,31 @@ blockquote cite {
 }
 
 @media (max-width: 768px) {
+  /* Ajuste para imagens do hero e features */
+  .hero-image img,
+  .tab-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ajuste para o contact form ocupar toda a largura */
+  .contact-form-container {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .contact-form {
+    width: 100%;
+  }
+
+  /* Footer-nav lado a lado na responsividade */
+  .footer-nav {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-around;
+    overflow-x: auto;
+  }
+
+  /* Outras adaptações para telas pequenas */
   .nav-list {
     display: none;
     position: absolute;
@@ -1501,6 +1583,7 @@ blockquote cite {
   .nav-list.active {
     display: flex;
   }
+
   .mobile-menu-toggle {
     display: flex;
   }
@@ -1528,19 +1611,11 @@ blockquote cite {
     margin-left: 0;
   }
 
-  .footer-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .cta-buttons {
     flex-direction: column;
   }
 }
 
-/* Novas alterações para usabilidade em dispositivos touch e responsividade */
-
-/* Remover efeitos de hover para dispositivos touch */
 @media (hover: none) {
   .btn:hover::before {
     top: 100%;
@@ -1562,37 +1637,9 @@ blockquote cite {
   }
 }
 
-/* Ajuste dos botões em telas menores */
 @media (max-width: 768px) {
   .btn {
     padding: 0.65rem 1rem;
     font-size: var(--font-size-base);
-  }
-}
-
-/* Corrigir barra de navegação para não ultrapassar a tela */
-@media (max-width: 768px) {
-  .nav-list {
-    max-width: 100%;
-    overflow-x: auto;
-  }
-}
-
-/* Manter os itens do footer-nav lado a lado com scroll horizontal, se necessário */
-@media (max-width: 768px) {
-  .footer-nav {
-    flex-direction: row !important;
-    overflow-x: auto;
-    justify-content: flex-start;
-  }
-}
-
-/* Aumentar a largura do contactForm em telas menores */
-@media (max-width: 768px) {
-  .contact-form-container {
-    flex: 1 1 100%;
-  }
-  .contact-form {
-    width: 100%;
   }
 }

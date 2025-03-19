@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================
      1) HEADER FIXO AO ROLAR
   ========================================== */
-  /* HEADER FIXO AO ROLAR */
   const header = document.querySelector(".header");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 10) {
@@ -46,9 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tabButtons.forEach((b) => b.classList.remove("active"));
       tabPanels.forEach((panel) => panel.classList.remove("active"));
 
-      // Adiciona 'active' no botão clicado
+      // Adiciona 'active' no botão clicado e exibe o painel correspondente
       btn.classList.add("active");
-      // Mostra o painel correspondente
       const targetTab = btn.getAttribute("data-tab");
       const targetPanel = document.getElementById(targetTab);
       if (targetPanel) {
@@ -154,12 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
     floatingCtaButton.addEventListener("click", openModal);
   }
 
-  // Fecha modal ao clicar no X
+  // Fecha modal ao clicar no X ou fora do conteúdo
   if (modalClose) {
     modalClose.addEventListener("click", closeModal);
   }
-
-  // Fecha modal ao clicar fora do conteúdo
   if (demoModal) {
     demoModal.addEventListener("click", (e) => {
       if (e.target === demoModal) {
@@ -176,7 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (demoForm) {
     demoForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      // Aqui você poderia implementar um envio real via fetch/AJAX
       alert("Formulário de demonstração enviado com sucesso!");
       demoForm.reset();
       closeModal();
@@ -188,7 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      // Aqui você poderia implementar um envio real via fetch/AJAX
       alert("Mensagem de contato enviada!");
       contactForm.reset();
     });
@@ -197,11 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================
      8) CURSOR PERSONALIZADO (OPCIONAL)
   ========================================== */
-  // Cursor customizado (já existente):
   const cursorFx = document.querySelector(".cursor-fx");
   const cursorFxFollower = document.querySelector(".cursor-fx-follower");
 
-  // Verifica se o dispositivo suporta hover (não é touch) antes de exibir o cursor customizado
   if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     if (cursorFx && cursorFxFollower) {
       // Exibe o cursor customizado
@@ -243,8 +235,83 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   } else {
-    // Dispositivos que não suportam hover (touch) – esconde o cursor customizado
     if (cursorFx) cursorFx.style.display = "none";
     if (cursorFxFollower) cursorFxFollower.style.display = "none";
+  }
+
+  /* ==========================================
+   9) PARALLAX SCROLL FOR HIGHLIGHT SECTION - RESPONSIVO CALIBRADO
+========================================== */
+  const parallaxHighlight = document.getElementById("parallax-highlight");
+  if (parallaxHighlight) {
+    const updateParallax = () => {
+      let factor;
+      // Em telas muito pequenas, efeito quase imperceptível
+      if (window.innerWidth < 768) {
+        factor = 0.05;
+      }
+      // Em telas intermediárias, efeito sutil
+      else if (window.innerWidth < 1024) {
+        factor = 0.1;
+      }
+      // Em desktops, efeito padrão
+      else {
+        factor = 0.3;
+      }
+
+      const sectionTop = parallaxHighlight.offsetTop;
+      const scrollY = window.pageYOffset;
+      const relativeScroll = scrollY - sectionTop;
+
+      // Mantém a imagem centralizada e aplica o deslocamento calculado
+      parallaxHighlight.style.backgroundPosition = `center calc(50% + ${
+        -relativeScroll * factor
+      }px)`;
+    };
+
+    window.addEventListener("scroll", updateParallax);
+    window.addEventListener("resize", updateParallax);
+    updateParallax();
+  }
+
+  /* ==========================================
+     10) EFEITO 3D NO HERO (IMAGEM E ELEMENTOS FLUTUANTES)
+  ========================================== */
+  const container = document.querySelector(".hero-image-container");
+  if (container) {
+    const animatedDashboard = container.querySelector(".animated-dashboard");
+    const floatingElements = container.querySelectorAll(".floating-element");
+
+    container.addEventListener("mousemove", (e) => {
+      const rect = container.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+      const halfWidth = rect.width / 2;
+      const halfHeight = rect.height / 2;
+
+      // Calcula rotação leve (máx de 5 graus)
+      const rotateY = ((offsetX - halfWidth) / halfWidth) * 5;
+      const rotateX = -((offsetY - halfHeight) / halfHeight) * 5;
+
+      if (animatedDashboard) {
+        animatedDashboard.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+      }
+
+      // Aplica movimento parallax nos elementos flutuantes
+      floatingElements.forEach((el) => {
+        el.style.transform = `translate3d(${rotateY * 2}px, ${
+          rotateX * 2
+        }px, 0)`;
+      });
+    });
+
+    container.addEventListener("mouseleave", () => {
+      if (animatedDashboard) {
+        animatedDashboard.style.transform = "";
+      }
+      floatingElements.forEach((el) => {
+        el.style.transform = "";
+      });
+    });
   }
 });
