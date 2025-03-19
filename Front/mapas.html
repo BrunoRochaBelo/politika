@@ -68,8 +68,18 @@
       <div class="mapa-sidebar-content">
         <!-- Filtro Período -->
         <div class="mapa-filter-group">
-          <label for="dataInicio">Período (Eventos):</label>
-          <input type="date" id="dataInicio"> até <input type="date" id="dataFim">
+          <strong>Período:</strong>
+          <div class="form-dataHora">
+            <div class="campo">
+              <label for="dataInicio">Data início:</label>
+              <input type="date" id="dataInicio" required>
+            </div>
+
+            <div class="campo">
+              <label for="dataFim">Data fim:</label>
+              <input type="date" id="dataFim">
+            </div>
+          </div>
         </div>
         <!-- Filtro Regiões -->
         <div class="mapa-filter-section" id="regioes-filter">
