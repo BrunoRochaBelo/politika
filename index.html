@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DICA! - Gestão Inteligente para Gabinetes e Campanhas</title>
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+
+  <!-- CSS principal (onde estará seu styles.css) -->
+  <link rel="stylesheet" href="static/css/styles.css">
+
+  <!-- Biblioteca AOS para animações ao scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Fonte Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Corpo: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Títulos: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo" data-aos="fade-right">
+        <img src="./static/imagens/logo/logo.png" alt="DICA! Logo" class="logo-img">
+        <span class="logo-text">DICA!</span>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#solutions" class="nav-link">Soluções</a></li>
+          <li><a href="#features" class="nav-link">Recursos</a></li>
+          <li><a href="#pricing" class="nav-link">Planos</a></li>
+          <li><a href="#about" class="nav-link">Sobre nós</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta" data-aos="fade-left">
+        <a href="#demo" class="btn btn-outline">Demonstração</a>
+        <a href="#contact" class="btn btn-primary">Contato</a>
+      </div>
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title">
+          <span class="highlight">Mais estratégia,</span>
+          <span>menos esforço,</span>
+          <span class="highlight neon-text">melhores resultados</span>
+        </h1>
+        <p class="hero-subtitle">Gestão Inteligente para Gabinetes e Campanhas</p>
+        <div class="hero-cta">
+          <a href="#pricing" class="btn btn-primary btn-lg" data-aos="zoom-in-right">Ver planos</a>
+          <a href="#demo" class="btn btn-secondary btn-lg" data-aos="zoom-in-left">Demonstração gratuita</a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left">
+        <div class="hero-image-container">
+          <img src="./static/imagens/hero-image.png" alt="DICA! Dashboard" class="animated-dashboard">
+          <div class="floating-element floating-1">Planejamento</div>
+          <div class="floating-element floating-2">Comunicação</div>
+          <div class="floating-element floating-3">Administração</div>
+          <div class="floating-element floating-4">Estratégia</div>
+          <div class="floating-element floating-5">Monitoramento</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave"></div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="section overview" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Uma gestão profissional sem ampliar a equipe</h2>
+        <p class="section-subtitle">
+          Libere seu tempo para o que importa: estratégia política e conexão com as pessoas
+        </p>
+      </div>
+      <div class="overview-grid">
+
+        <!-- Demandas organizadas -->
+        <div class="overview-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="3" width="16" height="18" rx="2" stroke="var(--color-primary)" stroke-width="2" />
+              <path d="M8 7H16M8 12H12M8 17H10M14 17L15.5 18.5L18 16" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Demandas organizadas</h3>
+          <p>Processos automatizados com poucos cliques para otimizar sua rotina</p>
+        </div>
+
+        <!-- Tudo em um só lugar -->
+        <div class="overview-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="14" rx="2" stroke="var(--color-primary)" stroke-width="2" />
+              <path d="M7 20H17M9 16V20M15 16V20M5 10H19M5 14H19" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Tudo em um só lugar</h3>
+          <p>Da campanha ao mandato, sua gestão completa em uma única ferramenta</p>
+        </div>
+
+        <!-- Segurança digital (Ícone de Cadeado) -->
+        <div class="overview-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="11" width="14" height="10" rx="2" stroke="var(--color-primary)" stroke-width="2" />
+              <path d="M8 11V8A4 4 0 0 1 16 8V11" stroke="var(--color-primary)" stroke-width="2" />
+              <circle cx="12" cy="16" r="1.5" stroke="var(--color-primary)" stroke-width="2" />
+            </svg>
+          </div>
+          <h3>Segurança digital</h3>
+          <p>Criptografia embarcada e controle de acesso personalizado</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX HIGHLIGHT -->
+  <section id="parallax-highlight" class="parallax-section" data-aos="fade-in">
+    <div class="parallax-content">
+      <h2 class="neon-text" data-aos="zoom-in">Gerenciamento de Alto Impacto</h2>
+      <p data-aos="zoom-in" data-aos-delay="150">
+        Com a <strong class="neon-text">DICA!</strong>, a tecnologia vira aliada do seu mandato ou campanha.
+        Conquiste resultados expressivos com menos esforço.
+      </p>
+    </div>
+  </section>
+
+  <!-- SOLUÇÕES / CICLO POLÍTICO -->
+  <section id="solutions" class="section solutions-cycle" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">A Jornada é Contínua</h2>
+        <p class="section-subtitle">Soluções para cada fase</p>
+      </div>
+
+      <div class="cycle-steps">
+        <div class="cycle-step" data-aos="fade-up" data-aos-delay="100">
+          <div class="cycle-icon">1</div>
+          <h3>Campanha</h3>
+          <p>Gerencie eventos, voluntários e ações de rua de forma integrada e estratégica.</p>
+        </div>
+
+        <div class="cycle-step" data-aos="fade-up" data-aos-delay="200">
+          <div class="cycle-icon">2</div>
+          <h3>Mandato</h3>
+          <p>Organize agendas, votações e pleitos, mantendo o relacionamento próximo com sua base eleitoral.</p>
+        </div>
+
+        <div class="cycle-step" data-aos="fade-up" data-aos-delay="300">
+          <div class="cycle-icon">3</div>
+          <h3>Novo Ciclo</h3>
+          <p>Implemente novas políticas, controle finanças e inicie a próxima campanha com tudo pronto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="section features" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Veja o que a DICA! pode fazer por você</h2>
+        <p class="section-subtitle">Funcionalidades completas para cada aspecto da sua gestão política</p>
+      </div>
+      <div class="features-tabs">
+        <div class="tabs-navigation">
+          <button class="tab-btn active" data-tab="planejamento">Planejamento</button>
+          <button class="tab-btn" data-tab="comunicacao">Comunicação</button>
+          <button class="tab-btn" data-tab="administracao">Administração</button>
+          <button class="tab-btn" data-tab="estrategia">Estratégia</button>
+          <button class="tab-btn" data-tab="monitoramento">Monitoramento</button>
+        </div>
+        <div class="tabs-content">
+          <!-- PLANEJAMENTO -->
+          <div class="tab-panel active" id="planejamento">
+            <div class="tab-content">
+              <div class="tab-info" data-aos="fade-right">
+                <h3>Planejamento Inteligente</h3>
+                <p>Governe ou faça campanha sem perder tempo com ferramentas que otimizam seu dia a dia.</p>
+                <ul class="feature-list">
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/calendario.svg" alt="Agenda"></div>
+                    <div class="feature-info">
+                      <h4>Agenda organizada</h4>
+                      <p>Nenhum compromisso será esquecido com nosso sistema de lembretes e sincronização.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas"></div>
+                    <div class="feature-info">
+                      <h4>Tarefas bem distribuídas</h4>
+                      <p>Defina responsáveis e prazos para manter sua equipe sempre produtiva.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/mapas.svg" alt="Território"></div>
+                    <div class="feature-info">
+                      <h4>Dados do território</h4>
+                      <p>Decisões baseadas em dados reais sobre sua base eleitoral.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-image" data-aos="fade-left">
+                <img src="./static/imagens/features/planejamento.png" alt="Planejamento Inteligente">
+              </div>
+            </div>
+          </div>
+
+          <!-- COMUNICAÇÃO -->
+          <div class="tab-panel" id="comunicacao">
+            <div class="tab-content">
+              <div class="tab-info" data-aos="fade-right">
+                <h3>Comunicação e Relacionamento</h3>
+                <p>Chegue mais perto do eleitor e da base de apoio com ferramentas de comunicação integradas.</p>
+                <ul class="feature-list">
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/contatos.svg" alt="Banco de dados"></div>
+                    <div class="feature-info">
+                      <h4>Banco de dados</h4>
+                      <p>Registro de eleitores, apoiadores e lideranças em um só lugar.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/mensagens.svg" alt="Mensagens"></div>
+                    <div class="feature-info">
+                      <h4>Mensagens personalizadas</h4>
+                      <p>Comunicação por WhatsApp e e-mail de forma segmentada.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos"></div>
+                    <div class="feature-info">
+                      <h4>Registro de pleitos</h4>
+                      <p>Acompanhamento e atendimento eficiente das demandas.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-image" data-aos="fade-left">
+                <img src="./static/imagens/features/comunicacao.png" alt="Comunicação e Relacionamento">
+              </div>
+            </div>
+          </div>
+
+          <!-- ADMINISTRAÇÃO -->
+          <div class="tab-panel" id="administracao">
+            <div class="tab-content">
+              <div class="tab-info" data-aos="fade-right">
+                <h3>Administração Simplificada</h3>
+                <p>Tenha total controle das finanças, suprimentos e documentos de forma centralizada e segura.</p>
+                <ul class="feature-list">
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/almoxarifado.svg" alt="Suprimentos"></div>
+                    <div class="feature-info">
+                      <h4>Controle de Suprimentos</h4>
+                      <p>Evite desperdícios e falta de material com um controle inteligente de estoque e compras.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/arquivos.svg" alt="Arquivos"></div>
+                    <div class="feature-info">
+                      <h4>Arquivos Seguros</h4>
+                      <p>Armazene e compartilhe documentos importantes, mantendo tudo protegido e acessível.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/financeiro.svg" alt="Financeiro"></div>
+                    <div class="feature-info">
+                      <h4>Gestão Financeira</h4>
+                      <p>Controle receitas, despesas e prestação de contas com transparência e agilidade.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-image" data-aos="fade-left">
+                <img src="./static/imagens/features/administracao.png" alt="Administração Simplificada">
+              </div>
+            </div>
+          </div>
+
+          <!-- ESTRATÉGIA -->
+          <div class="tab-panel" id="estrategia">
+            <div class="tab-content">
+              <div class="tab-info" data-aos="fade-right">
+                <h3>Estratégia e Estrutura</h3>
+                <p>Decisões bem informadas para um mandato sólido, da campanha ao governo.</p>
+                <ul class="feature-list">
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/organograma.svg" alt="Organograma"></div>
+                    <div class="feature-info">
+                      <h4>Organograma Flexível</h4>
+                      <p>Monte sua estrutura de equipe e visualize responsabilidades de forma clara.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/action-plan.svg" alt="Plano de Ação"></div>
+                    <div class="feature-info">
+                      <h4>Plano de Ação</h4>
+                      <p>Defina metas e iniciativas estratégicas, monitorando o progresso em tempo real.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/eventos.svg" alt="Eventos Estratégicos"></div>
+                    <div class="feature-info">
+                      <h4>Eventos Estratégicos</h4>
+                      <p>Organize encontros, palestras e ações de campanha com máxima eficiência.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-image" data-aos="fade-left">
+                <img src="./static/imagens/features/estrategia.png" alt="Estratégia e Estrutura">
+              </div>
+            </div>
+          </div>
+
+          <!-- MONITORAMENTO -->
+          <div class="tab-panel" id="monitoramento">
+            <div class="tab-content">
+              <div class="tab-info" data-aos="fade-right">
+                <h3>Monitoramento e Dados Estratégicos</h3>
+                <p>Não tome decisões no escuro. Acompanhe indicadores e resultados para ajustes constantes.</p>
+                <ul class="feature-list">
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/dashboard.svg" alt="Painel de Indicadores"></div>
+                    <div class="feature-info">
+                      <h4>Painel de Indicadores</h4>
+                      <p>Visualize métricas-chave para acompanhar a evolução do seu mandato ou campanha.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/relatorios.svg" alt="Relatórios"></div>
+                    <div class="feature-info">
+                      <h4>Relatórios Personalizados</h4>
+                      <p>Filtre e analise dados em tempo real, gerando insights valiosos para a tomada de decisão.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="feature-icon"><img src="./static/imagens/icones/mapas.svg" alt="Análise de Votação"></div>
+                    <div class="feature-info">
+                      <h4>Análise de Votação</h4>
+                      <p>Entenda onde sua base é mais forte e planeje ações pontuais para expandir seu alcance.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-image" data-aos="fade-left">
+                <img src="./static/imagens/features/monitoramento.png" alt="Monitoramento e Dados Estratégicos">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section pricing" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Planos e Preços</h2>
+        <p class="section-subtitle">Escolha o plano ideal para sua necessidade política</p>
+      </div>
+      <div class="pricing-toggle">
+        <span class="pricing-period active" data-period="monthly">Mensal</span>
+        <div class="toggle-switch">
+          <input type="checkbox" id="pricing-toggle">
+          <label for="pricing-toggle"></label>
+        </div>
+        <span class="pricing-period" data-period="yearly">Anual</span>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-header">
+            <h3>Político360 Base</h3>
+            <p class="pricing-target">Gabinete</p>
+            <div class="pricing-amount">
+              <div class="pricing-value monthly active">
+                <span class="currency">R$</span>
+                <span class="amount">1.750</span>
+                <span class="period">/mês</span>
+              </div>
+              <div class="pricing-value yearly">
+                <span class="currency">R$</span>
+                <span class="amount">21.000</span>
+                <span class="period">/ano</span>
+              </div>
+            </div>
+            <p class="contract-duration">Contrato: 6 meses</p>
+          </div>
+          <div class="pricing-features">
+            <h4>Recursos incluídos:</h4>
+            <ul>
+              <li>Destino</li>
+              <li>Calendário</li>
+              <li>Contatos</li>
+              <li>Mensageria</li>
+            </ul>
+            <div class="pricing-users">
+              <span class="users-label">Usuários padrão:</span>
+              <span class="users-value">3</span>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn btn-primary btn-full">Entrar em contato</a>
+          </div>
+        </div>
+        <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-badge">Mais Popular</div>
+          <div class="pricing-header">
+            <h3>Add-on "Estratégia"</h3>
+            <p class="pricing-target">Gabinete</p>
+            <div class="pricing-amount">
+              <div class="pricing-value monthly active">
+                <span class="currency">R$</span>
+                <span class="amount">2.625</span>
+                <span class="period">/mês</span>
+              </div>
+              <div class="pricing-value yearly">
+                <span class="currency">R$</span>
+                <span class="amount">31.500</span>
+                <span class="period">/ano</span>
+              </div>
+            </div>
+            <p class="contract-duration">Contrato: 6 meses</p>
+            <p class="pricing-info">Multa por rescisão: 30%</p>
+          </div>
+          <div class="pricing-features">
+            <h4>Recursos incluídos:</h4>
+            <ul>
+              <li>Financeiro</li>
+              <li>Tarefas</li>
+              <li>Pleitos</li>
+              <li>Arquivos</li>
+              <li>+ Todos os recursos do plano Base</li>
+            </ul>
+            <div class="pricing-users">
+              <span class="users-label">Usuários padrão:</span>
+              <span class="users-value">6</span>
+            </div>
+            <div class="pricing-extra">
+              <span class="extra-label">Valor usuários extra:</span>
+              <span class="extra-value">R$ 100,00</span>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn btn-primary btn-full">Entrar em contato</a>
+          </div>
+        </div>
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-header">
+            <h3>Add-on "Gestão"</h3>
+            <p class="pricing-target">Campanha</p>
+            <div class="pricing-amount">
+              <div class="pricing-value monthly active">
+                <span class="currency">R$</span>
+                <span class="amount">3.937,50</span>
+                <span class="period">/mês</span>
+              </div>
+              <div class="pricing-value yearly">
+                <span class="currency">R$</span>
+                <span class="amount">47.250</span>
+                <span class="period">/ano</span>
+              </div>
+            </div>
+            <p class="contract-duration">Contrato: 6 meses</p>
+            <p class="pricing-info">Multa por rescisão: 30%</p>
+          </div>
+          <div class="pricing-features">
+            <h4>Recursos incluídos:</h4>
+            <ul>
+              <li>Almoxarifado</li>
+              <li>Organograma</li>
+              <li>Gerenciamento de Eventos</li>
+              <li>Atuação de Eventos</li>
+              <li>Mapa Votação</li>
+              <li>+ Todos os recursos dos planos anteriores</li>
+            </ul>
+            <div class="pricing-users">
+              <span class="users-label">Usuários padrão:</span>
+              <span class="users-value">8</span>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn btn-primary btn-full">Entrar em contato</a>
+          </div>
+        </div>
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="pricing-header">
+            <h3>Executivo</h3>
+            <p class="pricing-target">Executivo</p>
+            <div class="pricing-amount">
+              <div class="pricing-value monthly active">
+                <span class="currency">R$</span>
+                <span class="amount">5.118,75</span>
+                <span class="period">/mês</span>
+              </div>
+              <div class="pricing-value yearly">
+                <span class="currency">R$</span>
+                <span class="amount">61.425</span>
+                <span class="period">/ano</span>
+              </div>
+            </div>
+            <p class="contract-duration">Contrato: 12 meses</p>
+            <p class="pricing-info">Multa por rescisão: 30%</p>
+          </div>
+          <div class="pricing-features">
+            <h4>Recursos incluídos:</h4>
+            <ul>
+              <li>Plano de Ação</li>
+              <li>+ Todos os recursos dos planos anteriores</li>
+            </ul>
+            <div class="pricing-users">
+              <span class="users-label">Usuários padrão:</span>
+              <span class="users-value">Ilimitado</span>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn btn-primary btn-full">Entrar em contato</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section testimonials" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">O que nossos clientes dizem</h2>
+        <p class="section-subtitle">Descubra como a DICA! transforma a gestão política</p>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonials-track">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"A DICA! transformou completamente nossa gestão. Conseguimos reduzir o tempo de resposta às demandas em 70% e nossa organização interna melhorou significativamente."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="./static/imagens/testimonials/user-1.jpg" alt="Usuário 1">
+              <div class="author-info">
+                <h4>Carlos Silva</h4>
+                <p>Vereador - São Paulo/SP</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Na minha campanha para deputado estadual, a DICA! foi essencial para organizar eventos, gerenciar equipes e manter o contato com apoiadores. A ferramenta pagou-se nos primeiros meses de uso."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="./static/imagens/testimonials/user-2.jpg" alt="Usuário 2">
+              <div class="author-info">
+                <h4>Ana Rodrigues</h4>
+                <p>Deputada Estadual - MG</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"O diferencial da DICA! é a integração completa entre agenda, tarefas e comunicação. Minha equipe se adaptou rapidamente e agora não conseguimos imaginar o trabalho sem esta ferramenta."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="./static/imagens/testimonials/user-3.jpg" alt="Usuário 3">
+              <div class="author-info">
+                <h4>Fernando Costa</h4>
+                <p>Prefeito - Recife/PE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-nav">
+          <button class="nav-btn prev" aria-label="Anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div class="testimonials-dots"></div>
+          <button class="nav-btn next" aria-label="Próximo">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section id="quote" class="section quote" data-aos="fade-up">
+    <div class="container">
+      <div class="quote-container">
+        <div class="quote-image" data-aos="zoom-in-right">
+          <img src="./static/imagens/darwin.png" alt="Charles Darwin">
+        </div>
+        <div class="quote-content" data-aos="zoom-in-left">
+          <blockquote>
+            <p>"Não é o mais forte que sobrevive, nem o mais inteligente, mas o que melhor se adapta às mudanças."</p>
+            <cite>Charles Darwin</cite>
+          </blockquote>
+          <div class="quote-tagline">
+            <h3>Na política, prospera quem se adapta às mudanças</h3>
+            <p>Use a tecnologia da <span class="neon-text">DICA!</span> para manter-se à frente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="section cta" data-aos="fade-up">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h2>Pronto para transformar sua gestão política?</h2>
+          <p>Entre em contato e descubra como a DICA! pode ajudar você a alcançar melhores resultados com menos esforço.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="#demo" class="btn btn-secondary btn-lg">Agende uma demonstração</a>
+          <a href="#contact" class="btn btn-primary btn-lg">Fale com um especialista</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Entre em contato</h2>
+        <p class="section-subtitle">Estamos prontos para ajudar você a transformar sua gestão política</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-card" data-aos="flip-left" data-aos-delay="100">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3>Email</h3>
+            <p><a href="mailto:leonardo@mcb.adv.br">leonardo@mcb.adv.br</a></p>
+          </div>
+          <div class="contact-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <h3>Telefone</h3>
+            <p><a href="tel:+5581999713150">(55) 81 99971-3150</a></p>
+          </div>
+          <div class="contact-card" data-aos="flip-left" data-aos-delay="300">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </div>
+            <h3>Endereço</h3>
+            <p>Recife, Pernambuco - Brasil</p>
+          </div>
+        </div>
+        <div class="contact-form-container" data-aos="fade-left" data-aos-delay="200">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="subject">Assunto</label>
+              <select id="subject" name="subject">
+                <option value="demonstracao">Solicitar demonstração</option>
+                <option value="orcamento">Solicitar orçamento</option>
+                <option value="suporte">Suporte</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary btn-lg">Enviar mensagem</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="./static/imagens/logo/logo.png" alt="DICA! Logo" class="logo-img">
+          <span class="logo-text">DICA!</span>
+        </div>
+        <div class="footer-tagline">
+          <p>Gestão Inteligente para Gabinetes e Campanhas</p>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.2.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.9s0 3.6-.1 4.9c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.2-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-3.2 1.7-4.8 4.9-4.9 1.3-.1 1.6-.1 4.9-.1m0-2.2C8.7 0 8.3 0 7 .1 2.7.3.3 2.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c.2 4.3 2.6 6.7 6.9 6.9 1.3.1 1.7.1 5 .1s3.7 0 5-.1c4.3-.2 6.7-2.6 6.9-6.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.2-4.3-2.6-6.7-6.9-6.9C15.7 0 15.3 0 12 0zM12 6a6 6 0 100 12 6 6 0 000-12zm0 10a4 4 0 110-8 4 4 0 010 8zm6.4-10.8c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.7-1.4-1.4-1.4z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-nav">
+          <div class="footer-nav">
+            <div class="footer-nav-column">
+              <h4>Produto</h4>
+              <ul>
+                <li><a href="#features">Recursos</a></li>
+                <li><a href="#pricing">Planos</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#demo">Demonstração</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-column">
+              <h4>Empresa</h4>
+              <ul>
+                <li><a href="#about">Sobre nós</a></li>
+                <li><a href="#team">Equipe</a></li>
+                <li><a href="#careers">Carreiras</a></li>
+                <li><a href="#contact">Contato</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-column">
+              <h4>Recursos</h4>
+              <ul>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#guides">Guias</a></li>
+                <li><a href="#webinars">Webinars</a></li>
+                <li><a href="#support">Suporte</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-column">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#privacy">Privacidade</a></li>
+                <li><a href="#terms">Termos de uso</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#lgpd">LGPD</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Receba nossas novidades</h4>
+          <p>Inscreva-se para receber dicas e atualizações sobre gestão política</p>
+          <form class="newsletter-form">
+            <div class="form-input">
+              <input type="email" placeholder="Seu e-mail" required>
+              <button type="submit" class="btn btn-primary">Inscrever</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 DICA! - Powered by DIRETIVA. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-legal-links">
+          <a href="#privacy">Privacidade</a>
+          <a href="#terms">Termos</a>
+          <a href="#cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL - DEMO -->
+  <div id="demoModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Agende uma demonstração</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="demoForm" class="demo-form">
+          <div class="form-group">
+            <label for="demoName">Nome completo</label>
+            <input type="text" id="demoName" name="demoName" required>
+          </div>
+          <div class="form-group">
+            <label for="demoEmail">Email profissional</label>
+            <input type="email" id="demoEmail" name="demoEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="demoPhone">Telefone</label>
+            <input type="tel" id="demoPhone" name="demoPhone" required>
+          </div>
+          <div class="form-group">
+            <label for="demoOrg">Organização</label>
+            <input type="text" id="demoOrg" name="demoOrg" required>
+          </div>
+          <div class="form-group">
+            <label for="demoPosition">Cargo</label>
+            <input type="text" id="demoPosition" name="demoPosition" required>
+          </div>
+          <div class="form-group full-width">
+            <label for="demoInterest">Interesse principal</label>
+            <select id="demoInterest" name="demoInterest" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="gabinete">Gestão de Gabinete</option>
+              <option value="campanha">Gestão de Campanha</option>
+              <option value="executivo">Executivo</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-lg">Solicitar demonstração</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÃO FLUTUANTE -->
+  <div class="floating-cta">
+    <button class="floating-cta-button" aria-label="Demonstração">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      </span>
+      <span class="text">Agendar demonstração</span>
+    </button>
+  </div>
+
+  <!-- CURSOR PERSONALIZADO (opcional) -->
+  <div class="cursor-fx"></div>
+  <div class="cursor-fx-follower"></div>
+
+  <!-- SCRIPTS - AOS e script principal -->
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- SEU SCRIPT PRINCIPAL (onde iniciará o AOS e implementará as interações) -->
+  <script src="static/JS/script.js"></script>
+</body>
+
+</html>
