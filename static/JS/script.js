@@ -315,3 +315,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Galeria FEATURES
+document.addEventListener("DOMContentLoaded", () => {
+  // Para cada .tab-panel (Planejamento, Comunicação, etc.)
+  document.querySelectorAll(".tab-panel").forEach((tabPanel) => {
+    // Pega as imagens do mini-slider
+    const images = tabPanel.querySelectorAll(".slider-image");
+    // Pega cada <li> da feature-list (onde está o h4)
+    const featureItems = tabPanel.querySelectorAll(".feature-list li");
+
+    // Botões de navegação (pode ser null se não existirem)
+    const prevBtn = tabPanel.querySelector(".prev-btn");
+    const nextBtn = tabPanel.querySelector(".next-btn");
+
+    let currentIndex = 0; // Começamos na imagem 0
+
+    // Função que atualiza a imagem ativa e o destaque no h4
+    function updateSlide(index) {
+      // Atualiza imagens
+      images.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+      });
+      // Atualiza destaque no h4 correspondente
+      featureItems.forEach((item, i) => {
+        const h4 = item.querySelector("h4");
+        if (h4) {
+          h4.classList.toggle("highlighted", i === index);
+        }
+      });
+    }
+
+    // Clique no botão "Anterior"
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlide(currentIndex);
+      });
+    }
+
+    // Clique no botão "Próximo"
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide(currentIndex);
+      });
+    }
+
+    // Inicia exibindo a imagem e h4 correspondentes ao índice 0
+    updateSlide(currentIndex);
+  });
+});

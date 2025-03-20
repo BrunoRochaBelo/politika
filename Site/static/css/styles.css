@@ -3,7 +3,7 @@
  *************************************/
 :root {
   /* Fundo principal */
-  --color-bg: #120f2e;
+  --color-bg: hsl(247, 65%, 8%);
 
   /* Superfícies (cards, seções) */
   --color-surface: hsl(245, 58%, 16%);
@@ -15,13 +15,13 @@
   /* Azul roxeado – mantém seriedade e modernidade */
   --color-primary: hsl(263, 72%, 56%);
   --color-primary-dark: hsl(263, 72%, 45%);
-  --color-primary-light: hsl(263, 72%, 70%);
+  --color-primary-light: hsl(263, 73%, 70%);
 
   /* Accent neon (verde-água) – usado com parcimônia */
   --color-accent: hsl(174, 100%, 29%);
 
   /* Gradiente do Hero */
-  --hero-gradient-start: hsl(245, 72%, 8%);
+  --hero-gradient-start: hsl(244, 71%, 8%);
   --hero-gradient-end: hsl(245, 72%, 18%);
 
   /* Cor de preenchimento da onda */
@@ -60,7 +60,7 @@
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 2.5rem;
-  --spacing-3xl: 3rem;
+  --spacing-3xl: 3.5rem;
 
   /* Transições – tempos ajustados para microinterações mais sutis */
   --transition-fast: 0.1s ease;
@@ -499,7 +499,7 @@ h6 {
   width: 100%;
   height: 80px;
   z-index: -1;
-  background-color: #120f2e;
+  background: var(--color-bg);
   clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
 }
 
