@@ -269,8 +269,7 @@ h6 {
   top: 0;
   width: 100%;
   z-index: var(--z-header);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-sm);
+  background: transparent;
   transition: box-shadow var(--transition-fast), height var(--transition-normal);
 }
 
@@ -302,6 +301,7 @@ h6 {
 
 .header.scrolled {
   height: 60px;
+  background: var(--color-surface);
   box-shadow: var(--shadow-md);
 }
 
@@ -366,6 +366,7 @@ h6 {
  *************************************/
 .hero {
   position: relative;
+  padding-bottom: 80px;
   z-index: 1;
   padding: 140px 0 80px;
   background: linear-gradient(
@@ -429,13 +430,15 @@ h6 {
   box-shadow: var(--shadow-lg);
   transform: rotateY(-10deg) rotateX(5deg);
   transition: transform var(--transition-normal);
+  box-shadow: 0 0 2px var(--color-accent), 0 0 8px var(--color-accent),
+    0 0 16px var(--color-accent);
 }
 
 .animated-dashboard:hover {
   transform: rotateY(-8deg) rotateX(4deg);
 }
 
-/* Floating elements – suavizados para transmitir seriedade */
+/* Floating elements */
 .floating-element {
   position: absolute;
   background: var(--color-surface);
@@ -451,31 +454,30 @@ h6 {
 
 .floating-1 {
   top: 10%;
-  left: -40px;
+  left: 0px;
 }
 
 .floating-2 {
   top: 25%;
-  right: -40px;
+  right: -30px;
   animation-delay: 1s;
 }
 
 .floating-3 {
   bottom: 15%;
-  left: -40px;
+  left: -20px;
   animation-delay: 2s;
 }
 
-/* Novos floating elements */
 .floating-4 {
   bottom: 25%;
-  right: -40px;
+  right: 0px;
   animation-delay: 1.5s;
 }
 
 .floating-5 {
   top: 40%;
-  left: -50px;
+  left: -40px;
   animation-delay: 2.5s;
 }
 
@@ -495,13 +497,10 @@ h6 {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 1200,50 1200,100 0,100' fill='%23120f2e'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  height: 80px;
   z-index: -1;
+  background-color: #120f2e;
+  clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
 }
 
 /*************************************
@@ -510,6 +509,10 @@ h6 {
 .parallax-section {
   position: relative;
   min-height: 350px;
+  left: 5%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  width: 90%;
   background: url("/Site/static/imagens/parallax-bg.png") center / cover
     no-repeat;
   display: flex;
@@ -537,9 +540,9 @@ h6 {
 .parallax-content {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 90%;
   background: hsla(245, 58%, 16%, 0.95);
-  border-radius: var(--border-radius-md);
+  border-radius: 50px;
   padding: var(--spacing-2xl);
   box-shadow: var(--shadow-lg);
   transition: transform 0.3s ease;
@@ -563,9 +566,13 @@ h6 {
 /*************************************
  * NEON TEXT
  *************************************/
-.neon-text {
+.primary-neon-text {
+  text-shadow: 0 0 2px var(--color-primary), 0 0 4px var(--color-primary),
+    0 0 8px var(--color-primary);
+}
+.secondary-neon-text {
   color: var(--color-accent);
-  text-shadow: 0 0 3px var(--color-accent), 0 0 8px var(--color-accent);
+  text-shadow: 0 0 3px var(--color-accent), 0 0 7px var(--color-accent);
 }
 
 /*************************************
@@ -590,7 +597,38 @@ h6 {
   gap: var(--spacing-lg);
 }
 
-.overview-card,
+.overview-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  background: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  align-items: center;
+}
+
+.overview-card .card-icon {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.overview-card h3 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  align-self: center;
+}
+
+.overview-card p {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  margin-top: var(--spacing-sm);
+  color: var(--color-muted);
+}
+
 .solution-card {
   background: var(--color-surface);
   padding: var(--spacing-lg);
@@ -600,7 +638,6 @@ h6 {
     box-shadow var(--transition-fast);
 }
 
-.overview-card:hover,
 .solution-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-sm);
@@ -706,7 +743,7 @@ h6 {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 33px;
 }
 
 .tab-btn {
@@ -772,6 +809,10 @@ h6 {
   color: var(--color-muted);
 }
 
+.tab-info ul {
+  margin-top: 33px;
+}
+
 .feature-list {
   margin-top: var(--spacing-md);
 }
@@ -780,21 +821,22 @@ h6 {
   display: flex;
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
+  align-items: flex-start;
 }
 
 .feature-icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
   border-radius: var(--border-radius-md);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .feature-icon img,
 .feature-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
+  object-fit: contain; /* evita distorções */
 }
 
 .feature-info h4 {
@@ -809,9 +851,44 @@ h6 {
 }
 
 .tab-image img {
-  max-width: 400px;
+  width: 400px;
+  height: 100%;
   border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-md);
+}
+
+/* Container do slider */
+.image-slider {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+/* Todas as imagens começam invisíveis */
+.slider-image {
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: var(--border-radius-md);
+}
+
+/* A imagem ativa fica visível */
+.slider-image.active {
+  display: block;
+}
+
+/* Botões de navegação */
+.slider-controls {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+/* Classe de destaque no h4 */
+.highlighted {
+  text-shadow: 0 0 2px var(--color-primary-light),
+    0 0 8px var(--color-primary-light), 0 0 16px var(--color-primary-light);
 }
 
 /*************************************
@@ -1173,8 +1250,11 @@ blockquote cite {
 
 .contact-card:hover {
   background: var(--color-primary-dark);
+  color: #ffffff;
 }
-
+.contact-card:hover a {
+  color: var(--color-accent);
+}
 .contact-icon {
   width: 40px;
   height: 40px;
@@ -1190,7 +1270,9 @@ blockquote cite {
   height: 20px;
   stroke: var(--color-primary);
 }
-
+.contact-card:hover svg {
+  stroke: var(--color-primary-light);
+}
 .contact-form-container {
   flex: 2;
   min-width: 280px;

@@ -57,7 +57,7 @@
         <h1 class="hero-title">
           <span class="highlight">Mais estratégia,</span>
           <span>menos esforço,</span>
-          <span class="highlight neon-text">melhores resultados</span>
+          <span class="highlight primary-neon-text">melhores resultados</span>
         </h1>
         <p class="hero-subtitle">Gestão Inteligente para Gabinetes e Campanhas</p>
         <div class="hero-cta">
@@ -134,9 +134,9 @@
   <!-- PARALLAX HIGHLIGHT -->
   <section id="parallax-highlight" class="parallax-section" data-aos="fade-in">
     <div class="parallax-content">
-      <h2 class="neon-text" data-aos="zoom-in">Gerenciamento de Alto Impacto</h2>
+      <h2 class="secondary-neon-text" data-aos="zoom-in">Gerenciamento de Alto Impacto</h2>
       <p data-aos="zoom-in" data-aos-delay="150">
-        Com a <strong class="neon-text">DICA!</strong>, a tecnologia vira aliada do seu mandato ou campanha.
+        Com a <strong class="secondary-neon-text">DICA!</strong>, a tecnologia vira aliada do seu mandato ou campanha.
         Conquiste resultados expressivos com menos esforço.
       </p>
     </div>
@@ -179,6 +179,8 @@
         <h2 class="section-title">Veja o que a DICA! pode fazer por você</h2>
         <p class="section-subtitle">Funcionalidades completas para cada aspecto da sua gestão política</p>
       </div>
+
+      <!-- Navegação das Tabs -->
       <div class="features-tabs">
         <div class="tabs-navigation">
           <button class="tab-btn active" data-tab="planejamento">Planejamento</button>
@@ -187,8 +189,11 @@
           <button class="tab-btn" data-tab="estrategia">Estratégia</button>
           <button class="tab-btn" data-tab="monitoramento">Monitoramento</button>
         </div>
+
+        <!-- Conteúdo das Tabs -->
         <div class="tabs-content">
-          <!-- PLANEJAMENTO -->
+
+          <!-- TAB: PLANEJAMENTO -->
           <div class="tab-panel active" id="planejamento">
             <div class="tab-content">
               <div class="tab-info" data-aos="fade-right">
@@ -196,21 +201,27 @@
                 <p>Governe ou faça campanha sem perder tempo com ferramentas que otimizam seu dia a dia.</p>
                 <ul class="feature-list">
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/calendario.svg" alt="Agenda"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/calendario.svg" alt="Agenda">
+                    </div>
                     <div class="feature-info">
                       <h4>Agenda organizada</h4>
                       <p>Nenhum compromisso será esquecido com nosso sistema de lembretes e sincronização.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/tarefas.svg" alt="Tarefas"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/tarefas.svg" alt="Tarefas">
+                    </div>
                     <div class="feature-info">
                       <h4>Tarefas bem distribuídas</h4>
                       <p>Defina responsáveis e prazos para manter sua equipe sempre produtiva.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/mapas.svg" alt="Território"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/mapas.svg" alt="Território">
+                    </div>
                     <div class="feature-info">
                       <h4>Dados do território</h4>
                       <p>Decisões baseadas em dados reais sobre sua base eleitoral.</p>
@@ -218,13 +229,30 @@
                   </li>
                 </ul>
               </div>
+
+              <!-- Mini Slider com 3 imagens -->
               <div class="tab-image" data-aos="fade-left">
-                <img src="./static/imagens/features/planejamento.png" alt="Planejamento Inteligente">
+                <div class="image-slider">
+                  <img src="./static/imagens/features/calendario.png" alt="Planejamento 1" class="slider-image active" />
+                  <img src="./static/imagens/features/tarefas.png" alt="Planejamento 2" class="slider-image" />
+                  <img src="./static/imagens/features/mapas.png" alt="Planejamento 3" class="slider-image" />
+                </div>
+                <!-- Botões de navegação -->
+                <div class="slider-controls">
+                  <button class="nav-btn prev-btn" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg></button>
+                  <button class="nav-btn next-btn" aria-label="Próximo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></button>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- COMUNICAÇÃO -->
+          <!-- TAB: COMUNICAÇÃO -->
           <div class="tab-panel" id="comunicacao">
             <div class="tab-content">
               <div class="tab-info" data-aos="fade-right">
@@ -232,21 +260,27 @@
                 <p>Chegue mais perto do eleitor e da base de apoio com ferramentas de comunicação integradas.</p>
                 <ul class="feature-list">
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/contatos.svg" alt="Banco de dados"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/contatos.svg" alt="Banco de dados">
+                    </div>
                     <div class="feature-info">
                       <h4>Banco de dados</h4>
                       <p>Registro de eleitores, apoiadores e lideranças em um só lugar.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/mensagens.svg" alt="Mensagens"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/mensagens.svg" alt="Mensagens">
+                    </div>
                     <div class="feature-info">
                       <h4>Mensagens personalizadas</h4>
                       <p>Comunicação por WhatsApp e e-mail de forma segmentada.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/pleitos.svg" alt="Pleitos"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/pleitos.svg" alt="Pleitos">
+                    </div>
                     <div class="feature-info">
                       <h4>Registro de pleitos</h4>
                       <p>Acompanhamento e atendimento eficiente das demandas.</p>
@@ -254,13 +288,28 @@
                   </li>
                 </ul>
               </div>
+
               <div class="tab-image" data-aos="fade-left">
-                <img src="./static/imagens/features/comunicacao.png" alt="Comunicação e Relacionamento">
+                <div class="image-slider">
+                  <img src="./static/imagens/features/contatos.png" alt="Comunicação 1" class="slider-image active" />
+                  <img src="./static/imagens/features/mensagens.png" alt="Comunicação 2" class="slider-image" />
+                  <img src="./static/imagens/features/pleitos.png" alt="Comunicação 3" class="slider-image" />
+                </div>
+                <div class="slider-controls">
+                  <button class="nav-btn prev-btn" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg></button>
+                  <button class="nav-btn next-btn" aria-label="Próximo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></button>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- ADMINISTRAÇÃO -->
+          <!-- TAB: ADMINISTRAÇÃO -->
           <div class="tab-panel" id="administracao">
             <div class="tab-content">
               <div class="tab-info" data-aos="fade-right">
@@ -268,21 +317,27 @@
                 <p>Tenha total controle das finanças, suprimentos e documentos de forma centralizada e segura.</p>
                 <ul class="feature-list">
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/almoxarifado.svg" alt="Suprimentos"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/almoxarifado.svg" alt="Suprimentos">
+                    </div>
                     <div class="feature-info">
                       <h4>Controle de Suprimentos</h4>
                       <p>Evite desperdícios e falta de material com um controle inteligente de estoque e compras.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/arquivos.svg" alt="Arquivos"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/arquivos.svg" alt="Arquivos">
+                    </div>
                     <div class="feature-info">
                       <h4>Arquivos Seguros</h4>
                       <p>Armazene e compartilhe documentos importantes, mantendo tudo protegido e acessível.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/financeiro.svg" alt="Financeiro"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/financeiro.svg" alt="Financeiro">
+                    </div>
                     <div class="feature-info">
                       <h4>Gestão Financeira</h4>
                       <p>Controle receitas, despesas e prestação de contas com transparência e agilidade.</p>
@@ -290,13 +345,28 @@
                   </li>
                 </ul>
               </div>
+
               <div class="tab-image" data-aos="fade-left">
-                <img src="./static/imagens/features/administracao.png" alt="Administração Simplificada">
+                <div class="image-slider">
+                  <img src="./static/imagens/features/almoxarifado.png" alt="Administração 1" class="slider-image active" />
+                  <img src="./static/imagens/features/arquivos.png" alt="Administração 2" class="slider-image" />
+                  <img src="./static/imagens/features/financeiro.png" alt="Administração 3" class="slider-image" />
+                </div>
+                <div class="slider-controls">
+                  <button class="nav-btn prev-btn" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg></button>
+                  <button class="nav-btn next-btn" aria-label="Próximo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></button>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- ESTRATÉGIA -->
+          <!-- TAB: ESTRATÉGIA -->
           <div class="tab-panel" id="estrategia">
             <div class="tab-content">
               <div class="tab-info" data-aos="fade-right">
@@ -304,21 +374,27 @@
                 <p>Decisões bem informadas para um mandato sólido, da campanha ao governo.</p>
                 <ul class="feature-list">
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/organograma.svg" alt="Organograma"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/organograma.svg" alt="Organograma">
+                    </div>
                     <div class="feature-info">
                       <h4>Organograma Flexível</h4>
                       <p>Monte sua estrutura de equipe e visualize responsabilidades de forma clara.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/action-plan.svg" alt="Plano de Ação"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/action-plan.svg" alt="Plano de Ação">
+                    </div>
                     <div class="feature-info">
                       <h4>Plano de Ação</h4>
                       <p>Defina metas e iniciativas estratégicas, monitorando o progresso em tempo real.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/eventos.svg" alt="Eventos Estratégicos"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/eventos.svg" alt="Eventos Estratégicos">
+                    </div>
                     <div class="feature-info">
                       <h4>Eventos Estratégicos</h4>
                       <p>Organize encontros, palestras e ações de campanha com máxima eficiência.</p>
@@ -326,13 +402,28 @@
                   </li>
                 </ul>
               </div>
+
               <div class="tab-image" data-aos="fade-left">
-                <img src="./static/imagens/features/estrategia.png" alt="Estratégia e Estrutura">
+                <div class="image-slider">
+                  <img src="./static/imagens/features/organograma.png" alt="Estratégia 1" class="slider-image active" />
+                  <img src="./static/imagens/features/action-plan.png" alt="Estratégia 2" class="slider-image" />
+                  <img src="./static/imagens/features/eventos.png" alt="Estratégia 3" class="slider-image" />
+                </div>
+                <div class="slider-controls">
+                  <button class="nav-btn prev-btn" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg></button>
+                  <button class="nav-btn next-btn" aria-label="Próximo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></button>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- MONITORAMENTO -->
+          <!-- TAB: MONITORAMENTO -->
           <div class="tab-panel" id="monitoramento">
             <div class="tab-content">
               <div class="tab-info" data-aos="fade-right">
@@ -340,21 +431,27 @@
                 <p>Não tome decisões no escuro. Acompanhe indicadores e resultados para ajustes constantes.</p>
                 <ul class="feature-list">
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/dashboard.svg" alt="Painel de Indicadores"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/dashboard.svg" alt="Painel de Indicadores">
+                    </div>
                     <div class="feature-info">
                       <h4>Painel de Indicadores</h4>
                       <p>Visualize métricas-chave para acompanhar a evolução do seu mandato ou campanha.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/relatorios.svg" alt="Relatórios"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/relatorios.svg" alt="Relatórios">
+                    </div>
                     <div class="feature-info">
                       <h4>Relatórios Personalizados</h4>
                       <p>Filtre e analise dados em tempo real, gerando insights valiosos para a tomada de decisão.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="feature-icon"><img src="./static/imagens/icones/mapas.svg" alt="Análise de Votação"></div>
+                    <div class="feature-icon">
+                      <img src="./static/imagens/icones/mapas.svg" alt="Análise de Votação">
+                    </div>
                     <div class="feature-info">
                       <h4>Análise de Votação</h4>
                       <p>Entenda onde sua base é mais forte e planeje ações pontuais para expandir seu alcance.</p>
@@ -362,11 +459,27 @@
                   </li>
                 </ul>
               </div>
+
               <div class="tab-image" data-aos="fade-left">
-                <img src="./static/imagens/features/monitoramento.png" alt="Monitoramento e Dados Estratégicos">
+                <div class="image-slider">
+                  <img src="./static/imagens/features/dashboard.png" alt="Monitoramento 1" class="slider-image active" />
+                  <img src="./static/imagens/features/relatorios.png" alt="Monitoramento 2" class="slider-image" />
+                  <img src="./static/imagens/features/mapas.png" alt="Monitoramento 3" class="slider-image" />
+                </div>
+                <div class="slider-controls">
+                  <button class="nav-btn prev-btn" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg></button>
+                  <button class="nav-btn next-btn" aria-label="Próximo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></button>
+                </div>
               </div>
             </div>
           </div>
+          <!-- FIM das Tabs -->
         </div>
       </div>
     </div>
@@ -618,7 +731,7 @@
           </blockquote>
           <div class="quote-tagline">
             <h3>Na política, prospera quem se adapta às mudanças</h3>
-            <p>Use a tecnologia da <span class="neon-text">DICA!</span> para manter-se à frente</p>
+            <p>Use a tecnologia da <span class="secondary-neon-text">DICA!</span> para manter-se à frente</p>
           </div>
         </div>
       </div>
@@ -657,7 +770,7 @@
               </svg>
             </div>
             <h3>Email</h3>
-            <p><a href="mailto:leonardo@mcb.adv.br">leonardo@mcb.adv.br</a></p>
+            <p><a href="mailto:gabinete.dica@gmail.com">gabinete.dica@gmail.com</a></p>
           </div>
           <div class="contact-card" data-aos="flip-left" data-aos-delay="200">
             <div class="contact-icon">
