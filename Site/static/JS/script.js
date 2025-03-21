@@ -85,40 +85,96 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================
-     5) CARROSSEL DE DEPOIMENTOS
-  ========================================== */
-  const track = document.querySelector(".testimonials-track");
-  const prevBtn = document.querySelector(".nav-btn.prev");
-  const nextBtn = document.querySelector(".nav-btn.next");
-  const testimonials = document.querySelectorAll(".testimonial-card");
+   5) CARROSSEL DE DEPOIMENTOS
+========================================== */
+  (() => {
+    const track = document.querySelector(".testimonials-track");
+    const prevBtn = document.querySelector(".nav-btn.prev");
+    const nextBtn = document.querySelector(".nav-btn.next");
+    const testimonials = document.querySelectorAll(".testimonial-card");
 
-  if (track && prevBtn && nextBtn && testimonials.length) {
+    if (!track || !prevBtn || !nextBtn || testimonials.length === 0) return;
+
     let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    const gap = 32; // confere se esse valor bate com o definido no CSS
+    let cardWidth = testimonials[0].offsetWidth + gap; // usamos let pra atualizar conforme a tela muda
 
-    const updateSliderPosition = () => {
-      // Largura de um card + gap (aprox. 32px)
-      const cardWidth = testimonials[0].offsetWidth + 32;
+    // Atualiza a posição do slider, com ou sem animação
+    const updateSliderPosition = (animate = true) => {
+      track.style.transition = animate ? "transform 0.3s ease" : "none";
       track.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
     };
 
-    // Botão Anterior
+    // Recalcula o cardWidth sempre que a tela for redimensionada
+    window.addEventListener("resize", () => {
+      cardWidth = testimonials[0].offsetWidth + gap;
+      updateSliderPosition(false);
+    });
+
+    // Eventos dos botões de navegação
     prevBtn.addEventListener("click", () => {
-      currentIndex--;
-      if (currentIndex < 0) {
-        currentIndex = testimonials.length - 1; // Loop
-      }
+      currentIndex =
+        (currentIndex - 1 + testimonials.length) % testimonials.length;
+      updateSliderPosition();
+    });
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % testimonials.length;
       updateSliderPosition();
     });
 
-    // Botão Próximo
-    nextBtn.addEventListener("click", () => {
-      currentIndex++;
-      if (currentIndex >= testimonials.length) {
-        currentIndex = 0; // Loop
+    // Funções para arrastar
+    const onDragStart = (e) => {
+      isDragging = true;
+      startX = e.clientX || (e.touches && e.touches[0].clientX);
+      updateSliderPosition(false);
+    };
+
+    const onDragMove = (e) => {
+      if (!isDragging) return;
+      const currentX = e.clientX || (e.touches && e.touches[0].clientX);
+      const diff = currentX - startX;
+      track.style.transform = `translateX(${
+        -currentIndex * cardWidth + diff
+      }px)`;
+    };
+
+    const onDragEnd = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const endX =
+        e.clientX || (e.changedTouches && e.changedTouches[0].clientX);
+      const diff = endX - startX;
+      // Se o arrasto for maior que 50px, muda o índice
+      if (Math.abs(diff) > 50) {
+        currentIndex =
+          diff < 0
+            ? (currentIndex + 1) % testimonials.length
+            : (currentIndex - 1 + testimonials.length) % testimonials.length;
       }
       updateSliderPosition();
-    });
-  }
+    };
+
+    // Suporte para pointer events, touch e mouse
+    if (window.PointerEvent) {
+      track.addEventListener("pointerdown", onDragStart);
+      track.addEventListener("pointermove", onDragMove);
+      track.addEventListener("pointerup", onDragEnd);
+      track.addEventListener("pointercancel", onDragEnd);
+    } else {
+      track.addEventListener("mousedown", onDragStart);
+      track.addEventListener("mousemove", onDragMove);
+      track.addEventListener("mouseup", onDragEnd);
+      track.addEventListener("mouseleave", onDragEnd);
+      track.addEventListener("touchstart", onDragStart);
+      track.addEventListener("touchmove", onDragMove);
+      track.addEventListener("touchend", onDragEnd);
+    }
+
+    // Inicializa o slider
+    updateSliderPosition();
+  })();
 
   /* ==========================================
      6) MODAL (DEMONSTRAÇÃO)
@@ -316,45 +372,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Galeria FEATURES
+// Galeria FEATURES - Código revisado usando Pointer Events
 document.addEventListener("DOMContentLoaded", () => {
-  // Para cada .tab-panel (Planejamento, Comunicação, etc.)
   document.querySelectorAll(".tab-panel").forEach((tabPanel) => {
-    // Pega as imagens do mini-slider
     const images = tabPanel.querySelectorAll(".slider-image");
-    // Pega cada <li> da feature-list (onde está o h4)
     const featureItems = tabPanel.querySelectorAll(".feature-list li");
+    const indicatorItems = tabPanel.querySelectorAll(
+      ".slider-indicator .indicator-item"
+    );
 
-    // Botões de navegação (pode ser null se não existirem)
     const prevBtn = tabPanel.querySelector(".prev-btn");
     const nextBtn = tabPanel.querySelector(".next-btn");
 
-    let currentIndex = 0; // Começamos na imagem 0
+    let currentIndex = 0;
 
-    // Função que atualiza a imagem ativa e o destaque no h4
+    // Atualiza slide e destaca elementos correspondentes
     function updateSlide(index) {
-      // Atualiza imagens
       images.forEach((img, i) => {
         img.classList.toggle("active", i === index);
       });
-      // Atualiza destaque no h4 correspondente
       featureItems.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
         const h4 = item.querySelector("h4");
-        if (h4) {
-          h4.classList.toggle("highlighted", i === index);
-        }
+        if (h4) h4.classList.toggle("highlighted", i === index);
+      });
+      indicatorItems.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
       });
     }
 
-    // Clique no botão "Anterior"
     if (prevBtn) {
       prevBtn.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         updateSlide(currentIndex);
       });
     }
-
-    // Clique no botão "Próximo"
     if (nextBtn) {
       nextBtn.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % images.length;
@@ -362,7 +414,46 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Inicia exibindo a imagem e h4 correspondentes ao índice 0
+    // Código de drag/swipe com Pointer Events
+    const slider = tabPanel.querySelector(".image-slider");
+    if (slider) {
+      let isDragging = false;
+      let startX = 0;
+
+      slider.addEventListener("pointerdown", (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        slider.setPointerCapture(e.pointerId);
+      });
+
+      slider.addEventListener("pointerup", (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        let endX = e.clientX;
+        handleSwipe(startX, endX);
+        slider.releasePointerCapture(e.pointerId);
+      });
+
+      slider.addEventListener("pointercancel", (e) => {
+        isDragging = false;
+        slider.releasePointerCapture(e.pointerId);
+      });
+
+      function handleSwipe(start, end) {
+        const diff = start - end;
+        if (Math.abs(diff) > 50) {
+          // limiar para considerar swipe
+          if (diff > 0) {
+            currentIndex = (currentIndex + 1) % images.length;
+          } else {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+          }
+          updateSlide(currentIndex);
+        }
+      }
+    }
+
+    // Exibe o primeiro slide na inicialização
     updateSlide(currentIndex);
   });
 });
