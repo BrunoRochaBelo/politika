@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================
-     8) CURSOR PERSONALIZADO (OPCIONAL)
+     8) CURSOR PERSONALIZADO
   ========================================== */
   const cursorFx = document.querySelector(".cursor-fx");
   const cursorFxFollower = document.querySelector(".cursor-fx-follower");
@@ -296,42 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================
-   9) PARALLAX SCROLL FOR HIGHLIGHT SECTION - RESPONSIVO CALIBRADO
-========================================== */
-  const parallaxHighlight = document.getElementById("parallax-highlight");
-  if (parallaxHighlight) {
-    const updateParallax = () => {
-      let factor;
-      // Em telas muito pequenas, efeito quase imperceptível
-      if (window.innerWidth < 768) {
-        factor = 0.05;
-      }
-      // Em telas intermediárias, efeito sutil
-      else if (window.innerWidth < 1024) {
-        factor = 0.1;
-      }
-      // Em desktops, efeito padrão
-      else {
-        factor = 0.3;
-      }
-
-      const sectionTop = parallaxHighlight.offsetTop;
-      const scrollY = window.pageYOffset;
-      const relativeScroll = scrollY - sectionTop;
-
-      // Mantém a imagem centralizada e aplica o deslocamento calculado
-      parallaxHighlight.style.backgroundPosition = `center calc(50% + ${
-        -relativeScroll * factor
-      }px)`;
-    };
-
-    window.addEventListener("scroll", updateParallax);
-    window.addEventListener("resize", updateParallax);
-    updateParallax();
-  }
-
-  /* ==========================================
-     10) EFEITO 3D NO HERO (IMAGEM E ELEMENTOS FLUTUANTES)
+     9) EFEITO 3D NO HERO (IMAGEM E ELEMENTOS FLUTUANTES)
   ========================================== */
   const container = document.querySelector(".hero-image-container");
   if (container) {
@@ -372,7 +337,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Galeria FEATURES - Código revisado usando Pointer Events
+/* ==========================================
+     10) Galeria FEATURES
+  ========================================== */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".tab-panel").forEach((tabPanel) => {
     const images = tabPanel.querySelectorAll(".slider-image");
@@ -455,5 +422,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Exibe o primeiro slide na inicialização
     updateSlide(currentIndex);
+  });
+});
+
+/* ==========================================
+     11) Animação Botão Flutuante
+  ========================================== */
+document.addEventListener("DOMContentLoaded", function () {
+  const ctaButton = document.querySelector(".floating-cta-button");
+  const ctaText = document.querySelector(".floating-cta-button .text");
+
+  let lastTriggerScrollY = window.scrollY;
+  const scrollDeltaThreshold = 15; // sensibilidade do scroll
+  const mobileBreakpoint = 768; // efeito só para telas menores que 768px
+
+  // Função pra minimizar (ocultar) o texto e ajustar o botão
+  function minimize() {
+    if (!ctaButton.classList.contains("minimized")) {
+      ctaButton.classList.add("minimized");
+    }
+  }
+
+  // Função pra restaurar o botão ao estado completo
+  function restore() {
+    if (ctaButton.classList.contains("minimized")) {
+      ctaButton.classList.remove("minimized");
+      if (window.getComputedStyle(ctaText).display === "none") {
+        ctaText.style.display = "inline-block";
+        void ctaText.offsetWidth;
+      }
+    }
+  }
+
+  // Ao término da transição do texto, se minimizado, define display none
+  ctaText.addEventListener("transitionend", function (event) {
+    if (
+      event.propertyName === "transform" &&
+      ctaButton.classList.contains("minimized") &&
+      getComputedStyle(ctaText).opacity === "0"
+    ) {
+      ctaText.style.display = "none";
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    // Se estiver em telas maiores, sempre restaura o botão
+    if (window.innerWidth >= mobileBreakpoint) {
+      restore();
+      lastTriggerScrollY = window.scrollY;
+      return;
+    }
+
+    const currentScrollY = window.scrollY;
+
+    // Se o scroll estiver zerado (topo), restaura o botão
+    if (currentScrollY === 0) {
+      restore();
+      lastTriggerScrollY = currentScrollY;
+    }
+    // Se rolou pra baixo mais que o threshold, minimiza o botão
+    else if (currentScrollY - lastTriggerScrollY > scrollDeltaThreshold) {
+      minimize();
+      lastTriggerScrollY = currentScrollY;
+    }
+    // Se o usuário rolar para cima, mas sem chegar ao topo, mantém o estado minimizado
+    else {
+      lastTriggerScrollY = currentScrollY;
+    }
+  });
+
+  // Opcional: ao redimensionar a tela, força a restauração se sair do mobile
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= mobileBreakpoint) {
+      restore();
+    }
   });
 });

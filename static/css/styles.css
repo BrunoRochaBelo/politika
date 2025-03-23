@@ -101,7 +101,7 @@ body {
   );
   position: relative;
   min-height: 100vh;
-  transition: background 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 
 /* Efeito de grid tecnológico */
@@ -311,6 +311,19 @@ h6 {
 .section-subtitle {
   font-size: var(--font-size-lg);
   color: var(--color-muted);
+}
+
+/*************************************
+ * NEON TEXT
+ *************************************/
+.primary-neon-text {
+  text-shadow: 0 0 2px var(--color-primary), 0 0 4px var(--color-primary),
+    0 0 8px var(--color-primary);
+}
+
+.secondary-neon-text {
+  color: var(--color-accent);
+  text-shadow: 0 0 3px var(--color-accent), 0 0 7px var(--color-accent);
 }
 
 /*************************************
@@ -635,80 +648,209 @@ h6 {
 }
 
 /*************************************
- * PARALLAX SECTION 
+ * Gradient Highlight SECTION 
  *************************************/
-.parallax-section {
+/* Estilos base para a seção de destaque */
+.gradient-highlight {
   position: relative;
-  min-height: 350px;
-  width: 90%;
-  left: 5%;
-  transform: translateX(-50%);
-  border-radius: var(--border-radius-lg);
-  background: url("/politika/static/imagens/parallax-bg.png") center / cover
-    no-repeat;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+  margin: 80px 0;
 }
 
-.parallax-section::before {
+/* Removendo o efeito de gradiente do background geral */
+.gradient-background {
+  display: none; /* Removido, já que o efeito será aplicado no highlight-content */
+}
+
+/* Aplicando o efeito de gradiente no highlight-content */
+.highlight-content {
+  text-align: center;
+  color: var(--color-text);
+  padding: 60px 20px;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Adicionando o gradiente animado como pseudo-elemento no highlight-content */
+.highlight-content::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: linear-gradient(
+    45deg,
+    hsl(263, 72%, 56%, 0.7) 0%,
+    hsl(263, 73%, 70%, 0.8) 25%,
+    hsl(174, 100%, 29%, 0.7) 50%,
+    hsl(263, 72%, 45%, 0.8) 75%,
+    hsl(263, 72%, 56%, 0.7) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  transform: rotate(10deg);
+  z-index: -1;
+}
+
+/* Adicionando uma camada de fundo para melhorar a legibilidade */
+.highlight-content::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    hsla(245, 50%, 12%, 0.2),
-    hsla(245, 50%, 12%, 0.4)
-  );
-  z-index: 0;
+  background-color: var(--color-surface);
+  opacity: 0.7;
+  z-index: -1;
 }
 
-.parallax-content {
-  position: relative;
-  z-index: 1;
-  max-width: 90%;
-  background: hsla(245, 65%, 8%, 0.9);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-2xl);
-  box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-normal);
+/* Animação do fluxo de gradiente */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+    transform: rotate(10deg) scale(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: rotate(10deg) scale(1.05);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: rotate(10deg) scale(1);
+  }
 }
 
-.parallax-section:hover .parallax-content {
-  transform: translateY(-5px);
-}
-
-.parallax-content h2 {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-md);
-}
-
-.parallax-content p {
+.highlight-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px var(--color-overlay);
+  letter-spacing: 0.5px;
   color: var(--color-text);
-  font-size: var(--font-size-lg);
-  line-height: 1.4;
+  position: relative;
 }
 
+.highlight-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text);
+  position: relative;
+}
+
+.highlight-brand {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-light) 0%,
+    var(--color-primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Estilo para as estatísticas */
+.highlight-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-width: 150px;
+  background-color: var(--color-primary-dark);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--color-overlay);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    var(--color-primary-light) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .highlight-title {
+    font-size: 2rem;
+  }
+
+  .highlight-text {
+    font-size: 1rem;
+  }
+
+  .highlight-stats {
+    gap: 20px;
+  }
+
+  .stat-item {
+    min-width: 130px;
+    padding: 15px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlight-title {
+    font-size: 1.8rem;
+  }
+
+  .highlight-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+}
 /*************************************
- * NEON TEXT
- *************************************/
-.primary-neon-text {
-  text-shadow: 0 0 2px var(--color-primary), 0 0 4px var(--color-primary),
-    0 0 8px var(--color-primary);
-}
-
-.secondary-neon-text {
-  color: var(--color-accent);
-  text-shadow: 0 0 3px var(--color-accent), 0 0 7px var(--color-accent);
-}
-
-/*************************************
- * OVERVIEW, SOLUTIONS, ETC.
+ * OVERVIEW, ETC.
  *************************************/
 
 .overview {
@@ -719,8 +861,7 @@ h6 {
   );
 }
 
-.overview-grid,
-.solutions-grid {
+.overview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-lg);
@@ -795,6 +936,12 @@ h6 {
 /*************************************
  * SOLUÇÕES CICLO
  *************************************/
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
 .solutions-cycle {
   position: relative;
 }
@@ -1382,7 +1529,7 @@ blockquote cite {
 .cta-card {
   max-width: 800px;
   margin: 0 auto;
-  background: var(--color-bg);
+  background: var(--color-surface);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-xl);
   animation: neonPulse 3s ease-in-out infinite;
@@ -1735,6 +1882,7 @@ blockquote cite {
   z-index: var(--z-header);
 }
 
+/* Botão em estado normal */
 .floating-cta-button {
   display: flex;
   align-items: center;
@@ -1744,8 +1892,8 @@ blockquote cite {
   border-radius: var(--border-radius-full);
   padding: var(--spacing-sm) var(--spacing-md);
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-fast),
-    background-color var(--transition-fast);
+  transition: padding 0.3s ease, gap 0.3s ease; /* animação do botão */
+  overflow: hidden; /* garante que o texto que desliza seja cortado */
 }
 
 .floating-cta-button:hover {
@@ -1753,6 +1901,7 @@ blockquote cite {
   transform: scale(1.02);
 }
 
+/* Ícone */
 .floating-cta-button .icon {
   display: flex;
   align-items: center;
@@ -1762,6 +1911,26 @@ blockquote cite {
 .floating-cta-button svg {
   width: 20px;
   height: 20px;
+}
+
+/* Texto em estado normal */
+.floating-cta-button .text {
+  display: inline-block; /* necessário para aplicar transform */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Estado minimizado: botão encolhe e texto desliza */
+.floating-cta-button.minimized {
+  /* Ajusta o padding e o gap para reduzir o tamanho do botão */
+  padding: var(--spacing-sm);
+  gap: 0;
+}
+
+.floating-cta-button.minimized .text {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 /*************************************
