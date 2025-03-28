@@ -54,3 +54,50 @@
     float: right;
   }
 }
+
+.social-networks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+.social-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 200px;
+  padding: 5px;
+  border-radius: 6px;
+  color: var(--input-txt);
+  background: var(--input-empty-bg);
+  border: 1px solid var(--input-border);
+  box-shadow: var(--sombra-leve);
+  transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+.social-input svg {
+  width: 24px;
+  height: 24px;
+}
+.social-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+.social-input input,
+.social-input select,
+.social-input textarea,
+.social-input input[required],
+.social-input textarea[required],
+.social-input select[required] {
+  flex: 1;
+  outline: none;
+  box-sizing: border-box;
+  padding: 17px 18px;
+  color: var(--input-txt);
+  background: var(--form-card-aberto-bg) !important;
+  border: 1px solid transparent;
+  border-radius: 45px;
+  box-shadow: none;
+  transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
