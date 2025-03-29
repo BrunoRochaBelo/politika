@@ -66,22 +66,25 @@
       <div class="container-template-content">
         <div class="area-interna-containerContent-template area-financeiro">
           <div class="area-interna-containerContent-template-content">
-            <ul class="conta-corrente-cards" id="cards">
-              <!-- Exemplo de card inicial -->
-              <li class="conta-corrente-card" data-id="1">
-                <div class="conta-corrente-card-header">
+            <ul class="conta-corrente-cards">
+              <li class="card-l contaCorrente-card" data-id="1">
+                <div class="contaCorrente-card-header">
                   <h2>CAIXA ECONÔMICA FEDERAL</h2>
-                  <span>ID: 1</span>
                 </div>
-                <div class="conta-corrente-card-body">
+                <div class="contaCorrente-card-content">
                   <p><strong>Banco:</strong> 100</p>
                   <p><strong>Agência:</strong> 1002 BOA VISTA</p>
                   <p><strong>Conta:</strong> 33556610 FP</p>
                 </div>
-                <div class="conta-corrente-card-footer">
-                  <button class="edit">Editar</button>
-                  <button class="delete">Excluir</button>
+                <div class="contaCorrente-card-footer">
+                  <button class="edit" aria-label="Editar">
+                    <img src="./static/imagens/icones/editar.svg" alt="Editar">
+                  </button>
+                  <button class="delete" aria-label="Excluir">
+                    <img src="./static/imagens/icones/excluir.svg" alt="Excluir">
+                  </button>
                 </div>
+                <span class="contaCorrente-card-id">ID: 1</span>
               </li>
               <!-- Novos cards serão adicionados aqui -->
             </ul>

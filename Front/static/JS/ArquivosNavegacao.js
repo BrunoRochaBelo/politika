@@ -21,6 +21,51 @@
     return;
   }
 
+  // Função para criar os botões de ação (editar e excluir) usando apenas ícones.
+  // Se o item for do tipo "document" (file), exibirá somente o botão de excluir.
+  function criarActionButtons(item) {
+    const container = document.createElement("div");
+    container.className = "arquivos-action-buttons";
+
+    // Botão de editar: só para biblioteca e pasta
+    if (item.type !== "document") {
+      const btnEditar = document.createElement("button");
+      btnEditar.className = "edit-button";
+      btnEditar.innerHTML = `<img src="./static/imagens/icones/editar.svg" alt="Editar">`;
+      btnEditar.addEventListener("click", function (e) {
+        e.stopPropagation();
+        // Redireciona para a URL de edição levando o id do item
+        if (item.type === "library") {
+          window.location.href = `/biblioteca_editar${item.id}`;
+        } else if (item.type === "folder") {
+          window.location.href = `/pasta_editar${item.id}`;
+        }
+      });
+      container.appendChild(btnEditar);
+    }
+
+    // Botão de excluir: exibido para todos os tipos (inclusive documento/file)
+    const btnExcluir = document.createElement("button");
+    btnExcluir.className = "delete-button";
+    btnExcluir.innerHTML = `<img src="./static/imagens/icones/excluir.svg" alt="Excluir">`;
+    btnExcluir.addEventListener("click", function (e) {
+      e.stopPropagation();
+      // Função para tratar a exclusão do item – ajuste conforme sua lógica
+      excluirItem(item.id, item.type);
+    });
+    container.appendChild(btnExcluir);
+
+    return container;
+  }
+
+  // Função stub para exclusão – aqui você implementa a lógica necessária (chamada à API, modal de confirmação, etc.)
+  function excluirItem(id, type) {
+    if (confirm("Tem certeza que deseja excluir este item?")) {
+      console.log(`Excluindo ${type} com id ${id}`);
+      // Exemplo: dataService.deleteItem(id).then(() => { ... });
+    }
+  }
+
   function FileNavigator() {
     this.state = {
       libraries: [],
@@ -377,7 +422,7 @@
     this.updateFloatingModalOption();
   };
 
-  // Renderiza os itens no grid
+  // Renderiza os itens no grid, integrando os botões de ação
   FileNavigator.prototype.renderGrid = function (items, type) {
     this.gridContainer.innerHTML = "";
     if (!items || items.length === 0) {
@@ -391,14 +436,17 @@
       div.className = "item-grid " + type;
       div.dataset.id = item.id;
       div.dataset.type = item.type;
+
       var h3 = document.createElement("h3");
       h3.className = "item-title";
       h3.textContent = item.name;
       div.appendChild(h3);
+
       var pDesc = document.createElement("p");
       pDesc.className = "item-description";
       pDesc.textContent = item.description || "Sem descrição";
       div.appendChild(pDesc);
+
       var pCount = document.createElement("p");
       pCount.className = "item-count";
       if (type === "library") {
@@ -409,10 +457,15 @@
         pCount.textContent = "Documento";
       }
       div.appendChild(pCount);
+
       var pDate = document.createElement("p");
       pDate.className = "item-creation-date";
       pDate.textContent = "Criação: " + (item.creationDate || "N/A");
       div.appendChild(pDate);
+
+      // Adiciona os botões de ação (editar/excluir) conforme o tipo do item
+      const actionButtons = criarActionButtons(item);
+      div.appendChild(actionButtons);
 
       div.addEventListener("click", async () => {
         if (item.type === "document") {
@@ -564,7 +617,6 @@
   };
 
   // Método para atualizar a opção exibida no modal flutuante
-  // Utiliza classes para mostrar ou esconder os itens.
   FileNavigator.prototype.updateFloatingModalOption = function () {
     var liBiblioteca = document.querySelector(
       ".modal-btn-floating-body li.biblioteca"
@@ -576,12 +628,10 @@
 
     if (!liBiblioteca || !liPasta || !liArquivo) return;
 
-    // Esconde todos os itens inicialmente
     liBiblioteca.classList.add("hidden");
     liPasta.classList.add("hidden");
     liArquivo.classList.add("hidden");
 
-    // Se não houver caminho atual, o usuário está na raiz
     if (this.state.currentPath.length === 0) {
       liBiblioteca.classList.remove("hidden");
     } else {

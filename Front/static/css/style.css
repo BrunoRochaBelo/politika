@@ -43,6 +43,7 @@
 @import "./componentes/cards/template-cards-pleitos.css";
 @import "./componentes/cards/template-cards-despesas.css";
 @import "./componentes/cards/template-cards-quantitativos.css";
+@import "./componentes/cards/template-cards-simple.css";
 @import "./componentes/cards/template-cards-tarefa.css";
 /* Componentes/ containers */
 @import "./componentes/containers/areas-e-secaoInterna.css";
@@ -121,6 +122,7 @@
 @import "./area-financeiro/header-financeiro-template.css";
 /* financeiro/ Conta Corrente */
 @import "./area-financeiro/conta-corrente/conta-corrente-style.css";
+@import "./area-financeiro/conta-corrente/template-cards-contaCorrente.css";
 /* financeiro/ Despesas */
 @import "./area-financeiro/despesas/dashboard-centro-custo.css";
 @import "./area-financeiro/despesas/despesas-style.css";

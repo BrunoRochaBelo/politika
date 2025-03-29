@@ -47,6 +47,10 @@
   align-items: center;
 }
 
+.main-organograma .area-interna-containerContent-template-content {
+  border-top: none;
+}
+
 .main-organograma .lista-vertical {
   gap: 15px;
 }

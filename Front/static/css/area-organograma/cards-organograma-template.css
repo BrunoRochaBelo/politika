@@ -292,9 +292,10 @@
   grid-template-areas:
     "organograma-large-card-title organograma-large-card-siglaUnidade"
     "organograma-large-card-versao ."
-    "organograma-large-card-quantUnidade organograma-large-card-quantUnidade";
+    "organograma-large-card-quantUnidade organograma-large-card-quantUnidade"
+    "organograma-large-card-editar organograma-large-card-editar";
   transition: all 0.25s ease-in-out;
-  max-height: 500px;
+  max-height: 700px;
 }
 
 .organograma-large-card-title {
@@ -338,55 +339,16 @@
 
 .organograma-large-card-editar {
   grid-area: organograma-large-card-editar;
-  display: none;
-  opacity: 0;
-  border-top: 1px solid var(--card-aberto-detalhe);
-  transition: opacity 0.25s ease-in-out;
-}
-
-.organograma-large-card-id {
-  display: none;
-}
-
-.exibirDetalheOrganogramaCardLarge {
-  display: block;
-  opacity: 1 !important;
-}
-
-/* Estado Expandido Card largo */
-.organograma-large-card-expanded {
-  border-radius: 12px;
-  background: var(--card-aberto-bg) !important;
-  border: 1px solid var(--card-aberto-bg) !important;
-  position: relative;
-  z-index: 2;
-  color: var(--txt-card-aberto);
-  box-shadow: var(--sombra-card-aberto);
-  grid-template-areas:
-    "organograma-large-card-title organograma-large-card-siglaUnidade"
-    "organograma-large-card-versao ."
-    "organograma-large-card-quantUnidade organograma-large-card-quantUnidade"
-    "organograma-large-card-editar organograma-large-card-editar";
-  transform: scale(1);
-  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
-    box-shadow 0.25s ease-in-out;
-  max-height: 700px;
-}
-
-.organograma-large-card-editar.exibirDetalheOrganogramaCardLarge {
   display: flex;
   justify-content: center;
   padding: 10px 0px 0px 0px;
   margin: 15px 0 0 0;
   opacity: 1;
   gap: 30px;
+  border-top: 1px solid var(--card-aberto-detalhe);
+  transition: opacity 0.25s ease-in-out;
 }
 
-.organograma-large-card-expanded .organograma-large-card-title {
-  border-left: 4px solid var(--card-aberto-detalhe);
-  color: var(--txt-card-aberto);
-}
-
-.organograma-large-card-expanded:hover {
-  filter: brightness(1);
+.organograma-large-card-id {
+  display: none;
 }

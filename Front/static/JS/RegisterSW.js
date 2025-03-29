@@ -1,5 +1,3 @@
-// /Front/static/js/RegisterSW.js
-
 window.addEventListener("load", () => {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
@@ -46,6 +44,11 @@ window.addEventListener("load", () => {
     if (!navigator.onLine) {
       document.body.classList.add("offline");
     }
+
+    // Listener para mudanças de controlador do Service Worker
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      window.location.reload();
+    });
   }
 });
 
@@ -64,8 +67,3 @@ function showUpdateNotification(worker) {
     }
   }
 }
-
-// Listener para mudanças de controlador do Service Worker
-navigator.serviceWorker.addEventListener("controllerchange", () => {
-  window.location.reload();
-});

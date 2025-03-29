@@ -1,0 +1,40 @@
+/* CARDS simples sem expansão */
+
+.simple-card {
+  display: grid;
+  color: var(--txt-conteudo-card);
+  gap: 5px;
+  cursor: pointer;
+  align-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid:
+    "simple-card-header"
+    "simple-card-content"
+    "simple-card-footer";
+  transition: all 0.25s ease-in-out;
+  max-height: 100px;
+}
+
+.simple-card-id {
+  display: none;
+}
+
+.simple-card-header {
+  grid-area: simple-card-header;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  color: var(--txt-titulo-card);
+}
+
+.simple-card-content {
+  grid-area: simple-card-content;
+  font-size: var(--font-sm);
+  font-weight: 300;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.simple-card-footer {
+  grid-area: simple-card-footer;
+}
