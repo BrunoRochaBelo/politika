@@ -63,7 +63,19 @@ window.CampoUtils = (() => {
   }
 
   function validarCampo(campo) {
-    // Remove mensagens e classes de validação anteriores
+    // Validação customizada para o campo "bem_servico"
+    if (campo.id === "bem_servico") {
+      const tabela = document.querySelector("#tabelaBemServico tbody");
+      if (tabela && tabela.children.length > 0) {
+        // Remove eventuais mensagens de erro e adiciona classe de sucesso
+        removerMensagemErroCampo(campo);
+        removerClasses(campo, "error");
+        adicionarClasse(campo, "success");
+        return true;
+      }
+    }
+
+    // Validação padrão para os demais campos...
     removerMensagemErroCampo(campo);
     removerClasses(campo, "error", "success");
 
@@ -75,7 +87,7 @@ window.CampoUtils = (() => {
       exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
       campoValido = false;
     }
-    // Validação para e-mail
+    // Outras validações (email, telefone, CNPJ, etc)
     else if (
       campo.type === "email" &&
       valorCampo !== "" &&
@@ -83,9 +95,7 @@ window.CampoUtils = (() => {
     ) {
       exibirMensagemErroCampo(campo, "Digite um e-mail válido.");
       campoValido = false;
-    }
-    // Validação para telefone
-    else if (
+    } else if (
       campo.type === "tel" &&
       valorCampo !== "" &&
       !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)
@@ -95,9 +105,7 @@ window.CampoUtils = (() => {
         "Digite um telefone válido no formato (XX) XXXX-XXXX."
       );
       campoValido = false;
-    }
-    // Validação para CNPJ (formato: 00.000.000/0000-00)
-    else if (
+    } else if (
       campo.id === "cnpj" &&
       valorCampo !== "" &&
       !/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(valorCampo)
@@ -107,9 +115,7 @@ window.CampoUtils = (() => {
         "Digite um CNPJ válido no formato 00.000.000/0000-00."
       );
       campoValido = false;
-    }
-    // Se preenchido, marca como sucesso
-    else if (valorCampo !== "" || campo.hasAttribute("required")) {
+    } else if (valorCampo !== "" || campo.hasAttribute("required")) {
       adicionarClasse(campo, "success");
     }
 
@@ -320,11 +326,4 @@ document
       whatsappInput.value = "";
     }
     CampoUtils.validarCampo(whatsappInput);
-  });
-
-document
-  .getElementById("estado_civil")
-  ?.addEventListener("change", function () {
-    // Se houver alguma lógica para campos de estado civil (se aplicável)
-    // Pode ser adicionada aqui a exibição/ocultação de campos complementares
   });

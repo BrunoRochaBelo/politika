@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.classList.add("table-row-fade-in");
       tr.setAttribute("data-id", item.id);
 
-      // Coluna Oculta para ID
+      // Coluna oculta para ID
       const tdId = document.createElement("td");
       tdId.classList.add("hidden-column");
       tdId.textContent = item.id;
@@ -102,21 +102,21 @@ document.addEventListener("DOMContentLoaded", () => {
     optionElement.disabled = true;
     optionElement.classList.add("bens-servicos-option-disabled");
 
-    // Resetar o select
+    // Resetar o select e desabilitar o botão
     selectElement.value = "";
     buttonAdicionarBensServices.disabled = true;
 
     renderizarItens();
     atualizarContadorItens();
 
-    // Validar o campo 'bem_servico'
+    // Valida o campo 'bem_servico'
     CampoUtils.validarCampo(selectElement);
   };
 
   const removerItem = (index) => {
     const itemRemovido = itensAdicionados[index];
-
     const tr = tabelaBemServico.querySelectorAll("tr")[index];
+
     if (tr) {
       tr.classList.add("table-row-fade-out");
     }
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       itensAdicionados.splice(index, 1);
 
-      // Habilitar a opção no select
+      // Habilitar a opção no select novamente
       const optionElement = selectElement.querySelector(
         `option[value="${itemRemovido.valor}"]`
       );
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderizarItens();
       atualizarContadorItens();
 
-      // Validar o campo 'bem_servico'
+      // Revalida o campo 'bem_servico'
       CampoUtils.validarCampo(selectElement);
     }, 500);
   };
@@ -151,15 +151,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buttonAdicionarBensServices.addEventListener("click", adicionarItem);
 
-  // Atualizar campos ocultos antes do envio do formulário
-  const formulario = document.getElementById("form");
-  formulario.addEventListener("submit", (event) => {
-    // Verificar se há itens antes de enviar
-    if (itensAdicionados.length === 0) {
-      event.preventDefault();
-      showError(
-        "Adicione pelo menos um bem ou serviço antes de enviar o formulário."
-      );
-    }
-  });
+  // Removemos a verificação redundante no submit, pois a validação já ocorre em outro módulo.
 });

@@ -41,7 +41,7 @@
       "hsl(30, 65%, 35%)", // Secundária 3
       "hsl(215, 20%, 80%)", // Apoio 1
       "hsl(215, 20%, 85%)", // Apoio 2
-      "hsl(218, 100%, 22%)", // Destaque Texto
+      "hsl(220, 100%, 22%)", // Destaque Texto
       "hsl(0, 70%, 50%)", // Erro
     ],
     textColor: "#333333", // Textos e números no modo claro
@@ -54,15 +54,15 @@
 
   const colorPaletteDark = {
     colors: [
-      "hsl(218, 85%, 68%)", // Primária 1
+      "hsl(220, 85%, 68%)", // Primária 1
       "hsl(30, 75%, 58%)", // Secundária 1
-      "hsl(218, 60%, 58%)", // Primária 2
+      "hsl(220, 60%, 58%)", // Primária 2
       "hsl(30, 70%, 50%)", // Secundária 2
-      "hsl(218, 80%, 72%)", // Primária 3
+      "hsl(220, 80%, 72%)", // Primária 3
       "hsl(30, 65%, 40%)", // Secundária 3
       "hsl(215, 25%, 20%)", // Apoio 1
       "hsl(215, 20%, 16%)", // Apoio 2
-      "hsl(218, 100%, 90%)", // Destaque Texto
+      "hsl(220, 100%, 90%)", // Destaque Texto
       "hsl(0, 60%, 45%)", // Erro
     ],
     textColor: "#ffffff", // Textos e números no modo escuro

@@ -3,18 +3,18 @@
   filter: invert(0);
 
   /* Cores Primárias */
-  --cor-primaria-1: hsl(218, 88%, 68%);
-  --cor-primaria-2: hsl(218, 75%, 58%);
-  --cor-primaria-3: hsl(218, 88%, 72%);
+  --cor-primaria-1: hsl(220, 88%, 68%);
+  --cor-primaria-2: hsl(220, 75%, 58%);
+  --cor-primaria-3: hsl(220, 88%, 72%);
 
   /* Cores Secundárias */
-  --cor-secundaria-1: hsl(15, 78%, 58%);
-  --cor-secundaria-2: hsl(15, 73%, 50%);
-  --cor-secundaria-3: hsl(15, 50%, 22%);
+  --cor-secundaria-1: hsl(68, 78%, 58%);
+  --cor-secundaria-2: hsl(68, 73%, 50%);
+  --cor-secundaria-3: hsl(68, 50%, 22%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(15, 8%, 12%);
-  --cor-apoio-2: hsl(15, 8%, 15%);
+  --cor-apoio-1: hsl(68, 8%, 12%);
+  --cor-apoio-2: hsl(68, 8%, 15%);
 
   /* Backgrounds e Containers */
   --bg-principal: hsl(220, 28%, 12%);
@@ -69,7 +69,7 @@
   --input-txt: hsl(220, 25%, 96%);
   --input-icon: hsl(220, 25%, 75%);
   --input-btn: hsl(220, 25%, 38%);
-  --input-focus-border: hsl(15, 90%, 65%);
+  --input-focus-border: hsl(68, 90%, 65%);
   --input-focus-bg: hsl(220, 25%, 32%);
   --input-error-border: hsl(0, 70%, 45%);
   --input-error-bg: hsl(0, 60%, 35%);
@@ -101,14 +101,14 @@
   --btn-principal-alt-destaque: hsl(220, 70%, 45%);
   --btn-principal-alt-txt: hsl(220, 100%, 98%);
 
-  --btn-secundario: hsl(15, 78%, 55%);
+  --btn-secundario: hsl(68, 78%, 55%);
   --btn-secundario-hover: linear-gradient(
     180deg,
-    hsl(15, 78%, 60%),
-    hsl(15, 70%, 50%)
+    hsl(68, 78%, 60%),
+    hsl(68, 70%, 50%)
   );
-  --btn-secundario-destaque: hsl(15, 70%, 42%);
-  --btn-secundario-txt: hsl(220, 100%, 98%);
+  --btn-secundario-destaque: hsl(68, 70%, 42%);
+  --btn-secundario-txt: hsl(220, 100%, 12%);
 
   --btn-filtro: var(--card-bg);
   --btn-filtro-txt: hsl(220, 32%, 78%);
@@ -134,12 +134,12 @@
   --sombra-intensa: 0 8px 12px rgba(0, 0, 0, 0.5);
   --hover: brightness(1.1);
   --active: brightness(0.9);
-  --sombra-card-aberto: 0 0 2px hsl(15, 40%, 55%), 0 0 4px hsl(15, 35%, 50%),
-    0 0 6px hsl(15, 20%, 48%), 0 0 8px hsl(15, 15%, 45%);
+  --sombra-card-aberto: 0 0 2px hsl(68, 40%, 55%), 0 0 4px hsl(68, 35%, 50%),
+    0 0 6px hsl(68, 20%, 48%), 0 0 8px hsl(68, 15%, 45%);
 
   /* Links */
-  --link: hsl(15, 78%, 55%);
-  --link-hover: hsl(15, 90%, 60%);
+  --link: hsl(68, 78%, 55%);
+  --link-hover: hsl(68, 90%, 60%);
 
   /* Mensagens/Alertas */
   --sucesso: hsl(141, 53%, 75%);
@@ -218,13 +218,13 @@
   --cor-primaria-3: hsl(220, 88%, 60%);
 
   /* Cores Secundárias – mantidas */
-  --cor-secundaria-1: hsl(15, 78%, 58%);
-  --cor-secundaria-2: hsl(15, 73%, 50%);
-  --cor-secundaria-3: hsl(15, 50%, 22%);
+  --cor-secundaria-1: hsl(68, 78%, 58%);
+  --cor-secundaria-2: hsl(68, 73%, 50%);
+  --cor-secundaria-3: hsl(68, 50%, 22%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(15, 8%, 88%);
-  --cor-apoio-2: hsl(15, 8%, 85%);
+  --cor-apoio-1: hsl(68, 8%, 88%);
+  --cor-apoio-2: hsl(68, 8%, 85%);
 
   /* Backgrounds e Containers */
   --bg-principal: hsl(222, 20%, 83%);
@@ -266,19 +266,19 @@
   --modal-conteudo: hsl(220, 65%, 40%);
 
   /* Formulários e Inputs */
-  --form-container-bg: hsl(220, 32%, 83%);
-  --form-card-bg: hsl(220, 35%, 95%);
-  --form-card-aberto-bg: hsl(220, 35%, 92%);
+  --form-container-bg: hsl(220, 25%, 94%);
+  --form-card-bg: hsl(220, 25%, 75%);
+  --form-card-aberto-bg: hsl(220, 35%, 98%);
 
-  --input-empty-bg: hsl(220, 28%, 74%);
+  --input-empty-bg: hsl(220, 25%, 94%);
   --input-border: hsl(220, 32%, 66%);
-  --input-filled-bg: hsl(220, 25%, 68%);
+  --input-filled-bg: hsl(220, 25%, 90%);
   --input-label: hsl(220, 70%, 20%);
   --input-placeholder: hsl(220, 30%, 55%);
   --input-txt: hsl(220, 25%, 15%);
   --input-icon: hsl(220, 15%, 40%);
   --input-btn: hsl(220, 15%, 55%);
-  --input-focus-border: hsl(15, 85%, 40%);
+  --input-focus-border: hsl(220, 85%, 40%);
   --input-focus-bg: hsl(220, 25%, 87%);
   --input-error-border: hsl(0, 70%, 50%);
   --input-error-bg: hsl(0, 50%, 85%);
@@ -306,10 +306,10 @@
   --btn-principal-alt-destaque: hsl(220, 65%, 45%);
   --btn-principal-alt-txt: hsl(220, 100%, 98%);
 
-  --btn-secundario: hsl(15, 75%, 55%);
-  --btn-secundario-hover: hsl(15, 80%, 60%);
-  --btn-secundario-destaque: hsl(15, 60%, 42%);
-  --btn-secundario-txt: hsl(220, 100%, 98%);
+  --btn-secundario: hsl(222, 100%, 70%);
+  --btn-secundario-hover: hsl(222, 85%, 60%);
+  --btn-secundario-destaque: hsl(222, 60%, 42%);
+  --btn-secundario-txt: hsl(222, 100%, 18%);
 
   --btn-filtro: hsl(0, 0%, 100%);
   --btn-filtro-txt: hsl(220, 25%, 25%);
@@ -331,11 +331,11 @@
   --sombra-intensa: 0 8px 16px rgba(0, 0, 0, 0.2);
   --hover: brightness(0.95);
   --active: brightness(0.9);
-  --sombra-card-aberto: 0 0 4px hsl(15, 90%, 65%), 0 0 8px hsl(15, 85%, 60%),
-    0 0 12px hsl(15, 80%, 55%), 0 0 16px hsl(15, 75%, 50%);
+  --sombra-card-aberto: 0 0 4px hsl(222, 90%, 65%), 0 0 8px hsl(222, 85%, 60%),
+    0 0 12px hsl(222, 80%, 55%), 0 0 16px hsl(222, 75%, 50%);
 
   /* Links */
-  --link: hsl(25, 80%, 55%);
+  --link: hsl(68, 80%, 43%);
   --link-hover: hsl(220, 85%, 60%);
 
   /* Mensagens/Alertas */
@@ -378,7 +378,7 @@
   --cor-marcador-4: hsl(100, 50%, 45%);
   --cor-marcador-5: hsl(140, 50%, 45%);
   --cor-marcador-6: hsl(180, 60%, 50%);
-  --cor-marcador-7: hsl(218, 38%, 55%);
+  --cor-marcador-7: hsl(220, 38%, 55%);
   --cor-marcador-8: hsl(250, 50%, 55%);
   --cor-marcador-9: hsl(280, 50%, 55%);
   --cor-marcador-10: hsl(320, 60%, 55%);
@@ -386,7 +386,7 @@
   --cor-marcador-12: hsl(230, 50%, 60%);
 
   /* Texto dentro dos Marcadores */
-  --marcador-txt: hsl(218, 15%, 98%);
+  --marcador-txt: hsl(220, 15%, 98%);
 }
 
 /* General Classes */

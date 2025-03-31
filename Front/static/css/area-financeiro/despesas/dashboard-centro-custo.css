@@ -232,7 +232,7 @@
 
 .account-progress-bar-wrapper {
   height: 16px;
-  background-color: hsl(218, 22%, 8%);
+  background-color: hsl(220, 22%, 8%);
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -396,7 +396,7 @@
 
   .account-progress-bar-wrapper {
     height: 13px;
-    background-color: hsl(218, 20%, 10%);
+    background-color: hsl(220, 20%, 10%);
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;

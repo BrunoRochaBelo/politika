@@ -130,7 +130,7 @@
   border-radius: 0px 0px 12px 12px;
   max-height: 150px;
   overflow-y: auto;
-  background-color: hsl(218, 80%, 80%);
+  background-color: hsl(220, 80%, 80%);
   position: absolute;
   width: calc(100% - 20px);
   margin: 0 5px;
