@@ -1,0 +1,63 @@
+<!-- Especificação do Fornecimento -->
+<li class="card-session secao-interna-template">
+  <h2 class="secao-interna-template-header" onclick="changeSession(3)">
+    <a href="#">
+      <div class="agenda-icon agora">
+        <img src="./static/imagens/icones/info_complementar.svg" alt="Especificação do Fornecimento Icon">
+      </div> Especificação do Fornecimento<span class="arrow down"></span>
+    </a>
+  </h2>
+  <div class="secao-interna-template-content">
+    <div class="session" id="secao3">
+      <fieldset>
+        <legend class="titulo-lg"></legend>
+        <div class="campo">
+          <label for="bem_servico">Bens e Serviços<span>*</span></label>
+          <select id="bem_servico" name="bem_servico" required>
+            <option value="">Selecione</option>
+            <option value="mao_obra">Mão de Obra</option>
+            <option value="grafica">Gráfica</option>
+            <option value="impostos">Impostos</option>
+            <option value="logistica">Logística</option>
+            <option value="eletro_eletronico">Eletro-Eletrônico</option>
+            <option value="material_expediente">Material de Expediente</option>
+            <option value="alimentacao">Alimentação</option>
+            <option value="aluguel_espaco">Aluguel de Espaço</option>
+            <option value="aluguel_estruturas">Aluguel de Estruturas</option>
+            <option value="celpe">CELPE</option>
+            <option value="compesa">COMPESA</option>
+            <option value="juridico">Jurídico</option>
+            <option value="contabilidade">Contabilidade</option>
+            <option value="telefonia_internet">Telefonia e Internet</option>
+            <option value="hospedagem">Hospedagem</option>
+            <option value="locucao">Locução</option>
+            <option value="producao_video">Produção de Vídeo</option>
+            <option value="producao_conteudo">Produção de Conteúdo</option>
+            <option value="marketing">Marketing</option>
+            <option value="redes_sociais">Redes Sociais</option>
+          </select>
+          <button type="button" id="buttonAdicionarBensServices" class="btn-principal-alt adicionar-servico" onclick="adicionarServico()" disabled>
+            Adicionar
+          </button>
+        </div>
+        <!-- Exibir contador de itens -->
+        <div id="contadorItens" class="titulo-area-tabela">Total de itens adicionados: 0</div>
+        <!-- Tabela para listar os itens adicionados -->
+        <div class="tabela-historico">
+          <table id="tabelaBemServico">
+            <thead>
+              <tr>
+                <th class="hidden-column">ID</th>
+                <th>Produto / Serviço</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Linhas da tabela serão adicionadas dinamicamente -->
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</li>

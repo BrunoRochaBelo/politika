@@ -1,37 +1,37 @@
-// IncluirEmpresa.js
-
+// ===============================
 // Módulo de Manipulação de Estilos
+// ===============================
 window.EstiloUtils = (() => {
-  function alterarCorBorda(elemento, cor) {
+  const alterarCorBorda = (elemento, cor) => {
     if (elemento) {
       elemento.style.borderColor = cor;
     }
-  }
-  return {
-    alterarCorBorda,
   };
+  return { alterarCorBorda };
 })();
 
+// ===============================
 // Módulo de Manipulação de Campos
+// ===============================
 window.CampoUtils = (() => {
-  function obterSpanAssociado(campo) {
+  const obterSpanAssociado = (campo) => {
     const label = document.querySelector(`label[for="${campo.id}"]`);
     return label ? label.querySelector("span") : null;
-  }
+  };
 
-  function adicionarClasse(campo, classe) {
+  const adicionarClasse = (campo, classe) => {
     campo.classList.add(classe);
     const span = obterSpanAssociado(campo);
     if (span) span.classList.add(classe);
-  }
+  };
 
-  function removerClasses(campo, ...classes) {
+  const removerClasses = (campo, ...classes) => {
     campo.classList.remove(...classes);
     const span = obterSpanAssociado(campo);
     if (span) span.classList.remove(...classes);
-  }
+  };
 
-  function exibirMensagemErroCampo(campo, mensagem) {
+  const exibirMensagemErroCampo = (campo, mensagem) => {
     let mensagemErro = campo.nextElementSibling;
     if (!mensagemErro || !mensagemErro.classList.contains("mensagem-erro")) {
       mensagemErro = document.createElement("div");
@@ -44,50 +44,30 @@ window.CampoUtils = (() => {
     mensagemErro.style.marginLeft = "15px";
     adicionarClasse(campo, "error");
     EstiloUtils.alterarCorBorda(campo, "var(--erro)");
-  }
+  };
 
-  function removerMensagemErroCampo(campo) {
+  const removerMensagemErroCampo = (campo) => {
     const mensagemErro = campo.nextElementSibling;
     if (mensagemErro && mensagemErro.classList.contains("mensagem-erro")) {
       mensagemErro.remove();
     }
     removerClasses(campo, "error");
     EstiloUtils.alterarCorBorda(campo, "");
-  }
+  };
 
-  // Função para formatar o valor do campo conforme uma regex e uma função de formatação
-  function formatarCampo(input, regex, formato) {
-    let value = input.value.replace(/\D/g, "");
-    input.value = regex.test(value) ? formato(value) : value;
-    validarCampo(input);
-  }
-
-  function validarCampo(campo) {
-    // Validação customizada para o campo "bem_servico"
-    if (campo.id === "bem_servico") {
-      const tabela = document.querySelector("#tabelaBemServico tbody");
-      if (tabela && tabela.children.length > 0) {
-        // Remove eventuais mensagens de erro e adiciona classe de sucesso
-        removerMensagemErroCampo(campo);
-        removerClasses(campo, "error");
-        adicionarClasse(campo, "success");
-        return true;
-      }
-    }
-
-    // Validação padrão para os demais campos...
+  const validarCampo = (campo) => {
     removerMensagemErroCampo(campo);
     removerClasses(campo, "error", "success");
 
     const valorCampo = campo.value.trim();
     let campoValido = true;
 
-    // Validação padrão: obrigatório
+    // Validação padrão: campo obrigatório
     if (campo.hasAttribute("required") && valorCampo === "") {
       exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
       campoValido = false;
     }
-    // Outras validações (email, telefone, CNPJ, etc)
+    // Validação de e-mail
     else if (
       campo.type === "email" &&
       valorCampo !== "" &&
@@ -95,17 +75,21 @@ window.CampoUtils = (() => {
     ) {
       exibirMensagemErroCampo(campo, "Digite um e-mail válido.");
       campoValido = false;
-    } else if (
+    }
+    // Validação de telefone
+    else if (
       campo.type === "tel" &&
       valorCampo !== "" &&
       !/^\(\d{2}\) \d{4,5}-\d{4}$/.test(valorCampo)
     ) {
       exibirMensagemErroCampo(
         campo,
-        "Digite um telefone válido no formato (XX) XXXX-XXXX."
+        "Digite um telefone válido no formato (XX) XXXX-XXXX ou (XX) XXXXX-XXXX."
       );
       campoValido = false;
-    } else if (
+    }
+    // Validação de CNPJ
+    else if (
       campo.id === "cnpj" &&
       valorCampo !== "" &&
       !/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(valorCampo)
@@ -115,50 +99,52 @@ window.CampoUtils = (() => {
         "Digite um CNPJ válido no formato 00.000.000/0000-00."
       );
       campoValido = false;
-    } else if (valorCampo !== "" || campo.hasAttribute("required")) {
+    }
+    // Se válido, adiciona a classe de sucesso
+    else if (valorCampo !== "" || campo.hasAttribute("required")) {
       adicionarClasse(campo, "success");
     }
 
     return campoValido;
-  }
-
-  // Validação dos campos de nomes: Razão Social e Nome Fantasia
-  function validarNomesObrigatorios() {
-    const campos = ["razao_social", "nome_fantasia"].map((id) =>
-      document.getElementById(id)
-    );
-    const algumCampoPreenchido = campos.some(
-      (campo) => campo.value.trim() !== ""
-    );
-
-    // Se um dos campos for preenchido, ambos não serão mais obrigatórios
-    campos.forEach((campo) => {
-      campo.required = !algumCampoPreenchido;
-      validarCampo(campo);
-    });
-
-    if (algumCampoPreenchido) {
-      campos.forEach((campo) => adicionarClasse(campo, "success"));
-    }
-  }
+  };
 
   return {
     validarCampo,
-    formatarCampo,
-    validarNomesObrigatorios,
     exibirMensagemErroCampo,
     removerMensagemErroCampo,
+    adicionarClasse,
+    removerClasses,
   };
 })();
 
+// ==================================
 // Módulo de Manipulação do Formulário
+// ==================================
 window.FormularioUtils = (() => {
-  let feedbackDiv = null;
+  // Variável interna para controle de timeout dos alertas
+  let feedbackTimeout;
 
-  function validarFormulario() {
+  // Procura a primeira seção com campos obrigatórios não preenchidos
+  const encontrarPrimeiraSecaoIncompleta = () => {
+    const secoes = document.querySelectorAll(".secao-interna-template");
+    for (let i = 0; i < secoes.length; i++) {
+      const secao = secoes[i];
+      const camposObrigatorios = secao.querySelectorAll(
+        "input[required], select[required], textarea[required]"
+      );
+      for (const campo of camposObrigatorios) {
+        if (!campo.value.trim()) {
+          return i + 1;
+        }
+      }
+    }
+    return -1;
+  };
+
+  // Valida todos os campos do formulário
+  const validarFormulario = () => {
     let formValido = true;
     const camposNaoPreenchidos = [];
-
     const camposRequeridos = document.querySelectorAll(
       "input[required], select[required], textarea[required]"
     );
@@ -174,12 +160,6 @@ window.FormularioUtils = (() => {
       }
     });
 
-    // Valida o campo 'bem_servico' separadamente
-    if (!CampoUtils.validarCampo(document.getElementById("bem_servico"))) {
-      formValido = false;
-      camposNaoPreenchidos.push("Bens e Serviços");
-    }
-
     if (!formValido) {
       mostrarFeedback(
         "error",
@@ -188,127 +168,255 @@ window.FormularioUtils = (() => {
     }
 
     return formValido;
-  }
+  };
 
-  function enviarFormulario(event) {
+  // Função chamada no submit do formulário
+  const enviarFormulario = (event) => {
     event.preventDefault();
-    if (feedbackDiv) feedbackDiv.remove();
 
-    if (!validarFormulario()) return;
+    // Limpa os alertas anteriores, se houver
+    const alertContainer = document.querySelector(".alert-container");
+    if (alertContainer) alertContainer.innerHTML = "";
 
-    mostrarFeedback("success", "Formulário validado com sucesso!");
+    if (!validarFormulario()) {
+      const secaoIncompleta = encontrarPrimeiraSecaoIncompleta();
+      if (secaoIncompleta !== -1) {
+        changeSession(secaoIncompleta); // Certifique-se de que essa função esteja definida
+        const secao = document.querySelector(`#secao${secaoIncompleta}`);
+        const primeiroCampoIncompleto = secao.querySelector(
+          "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
+        );
+        if (primeiroCampoIncompleto) {
+          setTimeout(() => {
+            primeiroCampoIncompleto.focus();
+          }, 500);
+        }
+      }
+      return;
+    }
+
+    mostrarFeedback("success", "Formulário enviado com sucesso!");
     document.getElementById("form").reset();
     removerClassesDeSucesso();
-  }
+  };
 
-  function mostrarFeedback(tipo, mensagem) {
-    if (feedbackDiv) feedbackDiv.remove();
+  // Exibe mensagens de alerta no padrão Bootstrap-like
+  const mostrarFeedback = (tipo, mensagem) => {
+    let alertContainer = document.querySelector(".alert-container");
+    if (!alertContainer) {
+      alertContainer = document.createElement("div");
+      alertContainer.className = "alert-container";
+      document.body.appendChild(alertContainer);
+    }
 
-    feedbackDiv = document.createElement("div");
-    feedbackDiv.classList.add(`message-${tipo}`, "show");
-    feedbackDiv.innerText = mensagem;
-    document.body.appendChild(feedbackDiv);
+    const alertDiv = document.createElement("div");
+    alertDiv.classList.add("alert", "alert-dismissible", "fade");
 
-    setTimeout(() => feedbackDiv.classList.add("fade-out"), 5000);
-    feedbackDiv.addEventListener("transitionend", () => feedbackDiv.remove());
-  }
+    if (tipo === "success") {
+      alertDiv.classList.add("alert-sucesso");
+    } else if (tipo === "error") {
+      alertDiv.classList.add("alert-erro");
+    } else if (tipo === "info") {
+      alertDiv.classList.add("alert-informacao");
+    } else if (tipo === "warning") {
+      alertDiv.classList.add("alert-aviso");
+    }
 
-  function removerClassesDeSucesso() {
+    const messageSpan = document.createElement("span");
+    messageSpan.innerText = mensagem;
+    alertDiv.appendChild(messageSpan);
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "close-btn";
+    closeButton.innerHTML = "&times;";
+    closeButton.addEventListener("click", () => {
+      alertDiv.classList.remove("show");
+      alertDiv.classList.add("fade");
+      alertDiv.addEventListener("transitionend", () => alertDiv.remove());
+    });
+    alertDiv.appendChild(closeButton);
+
+    alertContainer.appendChild(alertDiv);
+
+    // Força reflow para disparar a transição
+    setTimeout(() => {
+      alertDiv.classList.add("show");
+    }, 10);
+
+    // Remove automaticamente após 3 segundos
+    clearTimeout(feedbackTimeout);
+    feedbackTimeout = setTimeout(() => {
+      if (alertDiv) {
+        alertDiv.classList.remove("show");
+        alertDiv.classList.add("fade");
+        alertDiv.addEventListener("transitionend", () => alertDiv.remove());
+      }
+    }, 3000);
+  };
+
+  const removerClassesDeSucesso = () => {
     document
       .querySelectorAll(".success")
       .forEach((campo) => campo.classList.remove("success"));
-  }
+  };
 
   return {
     enviarFormulario,
+    validarFormulario,
+    mostrarFeedback,
+    encontrarPrimeiraSecaoIncompleta,
   };
 })();
 
-// Adiciona os ouvintes de eventos no formulário
+// ==========================
+// Funções para Máscaras de Input
+// ==========================
+const aplicarMascaraCEP = (input) => {
+  let digits = input.value.replace(/\D/g, "");
+  if (digits.length > 5) {
+    input.value = digits.substring(0, 5) + "-" + digits.substring(5, 8);
+  } else {
+    input.value = digits;
+  }
+};
+
+const aplicarMascaraCNPJ = (input) => {
+  let digits = input.value.replace(/\D/g, "");
+  let formatted = "";
+  if (digits.length > 0) {
+    formatted = digits.substring(0, Math.min(2, digits.length));
+    if (digits.length > 2) {
+      formatted += "." + digits.substring(2, Math.min(5, digits.length));
+    }
+    if (digits.length > 5) {
+      formatted += "." + digits.substring(5, Math.min(8, digits.length));
+    }
+    if (digits.length > 8) {
+      formatted += "/" + digits.substring(8, Math.min(12, digits.length));
+    }
+    if (digits.length > 12) {
+      formatted += "-" + digits.substring(12, Math.min(14, digits.length));
+    }
+  }
+  input.value = formatted;
+};
+
+const aplicarMascaraTelefone = (input) => {
+  let digits = input.value.replace(/\D/g, "");
+  if (digits.length > 11) digits = digits.substring(0, 11);
+  let formatted = "";
+  if (digits.length < 2) {
+    formatted = digits;
+  } else {
+    const ddd = digits.substring(0, 2);
+    formatted = `(${ddd})`;
+    const rest = digits.substring(2);
+    if (rest.length > 0) {
+      formatted += " ";
+      if (rest.length <= 4) {
+        formatted += rest;
+      } else if (rest.length <= 8) {
+        formatted += rest.substring(0, 4) + "-" + rest.substring(4);
+      } else {
+        formatted += rest.substring(0, 5) + "-" + rest.substring(5, 9);
+      }
+    }
+  }
+  input.value = formatted;
+};
+
+const aplicarMascaraCPF = (input) => {
+  let digits = input.value.replace(/\D/g, "");
+  let formatted = "";
+  if (digits.length > 0) {
+    formatted = digits.substring(0, Math.min(3, digits.length));
+    if (digits.length > 3) {
+      formatted += "." + digits.substring(3, Math.min(6, digits.length));
+    }
+    if (digits.length > 6) {
+      formatted += "." + digits.substring(6, Math.min(9, digits.length));
+    }
+    if (digits.length > 9) {
+      formatted += "-" + digits.substring(9, Math.min(11, digits.length));
+    }
+  }
+  input.value = formatted;
+};
+
+// ===================================
+// Função para Envio do Formulário (caso seja chamada inline)
+// ===================================
+const submitForm = () => {
+  // Limpa os alertas anteriores
+  const alertContainer = document.querySelector(".alert-container");
+  if (alertContainer) alertContainer.innerHTML = "";
+
+  if (!window.FormularioUtils.validarFormulario()) {
+    const secaoIncompleta =
+      window.FormularioUtils.encontrarPrimeiraSecaoIncompleta();
+    if (secaoIncompleta !== -1) {
+      changeSession(secaoIncompleta);
+      const secao = document.querySelector(`#secao${secaoIncompleta}`);
+      const primeiroCampoIncompleto = secao.querySelector(
+        "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
+      );
+      if (primeiroCampoIncompleto) {
+        setTimeout(() => {
+          primeiroCampoIncompleto.focus();
+        }, 500);
+      }
+    }
+    return false;
+  }
+
+  window.FormularioUtils.mostrarFeedback(
+    "success",
+    "Formulário enviado com sucesso!"
+  );
+  document.getElementById("form").reset();
+  return true;
+};
+
+// ==========================
+// Ouvintes de Eventos
+// ==========================
 document
   .getElementById("form")
-  .addEventListener("submit", FormularioUtils.enviarFormulario);
+  .addEventListener("submit", window.FormularioUtils.enviarFormulario);
 
-// Ouvintes para validação dos campos (exceto 'bem_servico')
 document.querySelectorAll("input, select, textarea").forEach((campo) => {
-  if (campo.id !== "bem_servico") {
-    campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
-    campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
-  }
+  campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
+  campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
 });
 
-// Ouvintes para as máscaras:
-
-// Máscara para CEP (formata 8 dígitos para 00000-000)
-document.getElementById("cep").addEventListener("blur", function () {
-  CampoUtils.formatarCampo(
-    this,
-    /^\d{8}$/,
-    (value) => `${value.slice(0, 5)}-${value.slice(5)}`
-  );
+document.getElementById("cep").addEventListener("input", function () {
+  aplicarMascaraCEP(this);
 });
 
-// Máscara para CNPJ
-document.getElementById("cnpj")?.addEventListener("blur", function () {
-  CampoUtils.formatarCampo(
-    this,
-    /^\d{14}$/,
-    (value) =>
-      `${value.slice(0, 2)}.${value.slice(2, 5)}.${value.slice(
-        5,
-        8
-      )}/${value.slice(8, 12)}-${value.slice(12)}`
-  );
+document.getElementById("cnpj")?.addEventListener("input", function () {
+  aplicarMascaraCNPJ(this);
 });
 
-// Máscara para telefone principal
 document
   .getElementById("telefonePrincipal")
-  .addEventListener("blur", function () {
-    CampoUtils.formatarCampo(
-      this,
-      /^\d{11}$/,
-      (value) =>
-        `(${value.slice(0, 2)}) ${value.slice(2, 3)}${value.slice(
-          3,
-          7
-        )}-${value.slice(7)}`
-    );
+  .addEventListener("input", function () {
+    aplicarMascaraTelefone(this);
   });
 
-// Máscara para telefone adicional
 document
   .getElementById("telefoneAdicional")
-  .addEventListener("blur", function () {
-    CampoUtils.formatarCampo(
-      this,
-      /^\d{10}$/,
-      (value) => `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`
-    );
+  .addEventListener("input", function () {
+    aplicarMascaraTelefone(this);
   });
 
-// Adiciona ouvintes para os campos de nomes (Razão Social e Nome Fantasia)
-document
-  .getElementById("razao_social")
-  .addEventListener("input", CampoUtils.validarNomesObrigatorios);
-document
-  .getElementById("nome_fantasia")
-  .addEventListener("input", CampoUtils.validarNomesObrigatorios);
-
-// Ouvintes para máscara de CPF (caso seja utilizado)
-document.getElementById("cpf")?.addEventListener("blur", function () {
-  CampoUtils.formatarCampo(
-    this,
-    /^\d{11}$/,
-    (value) =>
-      `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(
-        6,
-        9
-      )}-${value.slice(9)}`
-  );
+document.getElementById("cpf")?.addEventListener("input", function () {
+  aplicarMascaraCPF(this);
 });
 
-// Eventos para WhatsApp e demais interações (se existirem)
+document.getElementById("whatsapp")?.addEventListener("input", function () {
+  aplicarMascaraTelefone(this);
+});
+
 document
   .getElementById("whatsapp_switch")
   .addEventListener("change", function () {
@@ -317,7 +425,6 @@ document
     const telefonePrincipalInput = document.getElementById("telefonePrincipal");
     const whatsappInput = document.getElementById("whatsapp");
 
-    // Exibe ou oculta o campo de WhatsApp conforme o switch
     if (checkbox.checked) {
       campoWhatsapp.classList.remove("hidden");
       whatsappInput.value = telefonePrincipalInput.value;

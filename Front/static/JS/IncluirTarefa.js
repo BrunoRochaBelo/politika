@@ -1,14 +1,12 @@
 // Módulo de Manipulação de Estilos
 window.EstiloUtils = (() => {
-  // Altera a cor da borda do elemento (caso exista)
+  // Altera a cor da borda do elemento, se existir
   function alterarCorBorda(elemento, cor) {
     if (elemento) {
       elemento.style.borderColor = cor;
     }
   }
-  return {
-    alterarCorBorda,
-  };
+  return { alterarCorBorda };
 })();
 
 // Módulo de Manipulação de Campos
@@ -55,7 +53,7 @@ window.CampoUtils = (() => {
       mensagemErro.classList.add("mensagem-erro");
       campo.parentNode.insertBefore(mensagemErro, campo.nextSibling);
     }
-    mensagemErro.innerText = mensagem;
+    mensagemErro.textContent = mensagem;
     mensagemErro.style.color = "var(--erro)";
     mensagemErro.style.marginTop = "8px";
     mensagemErro.style.marginLeft = "15px";
@@ -80,14 +78,14 @@ window.CampoUtils = (() => {
       const labelClone = label.cloneNode(true);
       const span = labelClone.querySelector("span");
       if (span) span.remove();
-      return labelClone.innerText.trim();
+      return labelClone.textContent.trim();
     }
     return campo.name || campo.id;
   }
 
   // Valida o campo com base em seu tipo e atributos
   function validarCampo(campo) {
-    // Remove mensagens e classes de validação anteriores
+    // Remove mensagens de erro e classes de validação anteriores
     removerMensagemErroCampo(campo);
     removerClasses(campo, "error", "success");
 
@@ -186,7 +184,7 @@ window.FormularioUtils = (() => {
     if (feedbackDiv) feedbackDiv.remove();
     feedbackDiv = document.createElement("div");
     feedbackDiv.classList.add(`message-${tipo}`, "show");
-    feedbackDiv.innerText = mensagem;
+    feedbackDiv.textContent = mensagem;
     document.body.appendChild(feedbackDiv);
     setTimeout(() => feedbackDiv.classList.add("fade-out"), 5000);
     feedbackDiv.addEventListener("transitionend", () => feedbackDiv.remove());
@@ -199,17 +197,15 @@ window.FormularioUtils = (() => {
       .forEach((campo) => campo.classList.remove("success"));
   }
 
-  return {
-    enviarFormulario,
-  };
+  return { enviarFormulario };
 })();
 
-// Adiciona ouvintes de eventos para o envio do formulário
+// Adiciona os ouvintes de eventos para o envio do formulário
 document
   .getElementById("form")
   .addEventListener("submit", FormularioUtils.enviarFormulario);
 
-// Adiciona ouvintes para validação em tempo real dos campos (nos eventos blur e input)
+// Adiciona os ouvintes para validação em tempo real dos campos (nos eventos blur e input)
 document.querySelectorAll("input, select, textarea").forEach((campo) => {
   campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
   campo.addEventListener("input", () => CampoUtils.validarCampo(campo));

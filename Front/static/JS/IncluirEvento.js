@@ -171,7 +171,7 @@ window.CampoUtils = (() => {
   };
 })();
 
-// Módulo de Manipulação do Formulário
+// Módulo de Manipulação do Formulário de Evento
 window.FormularioEventoUtils = (() => {
   let feedbackDiv = null;
 
@@ -218,13 +218,9 @@ window.FormularioEventoUtils = (() => {
 
     if (!validarFormulario()) return;
 
-    mostrarFeedbackSucesso();
+    mostrarFeedback("success", "Formulário validado com sucesso!");
     document.getElementById("formEvento").reset();
     removerClassesDeSucesso();
-  }
-
-  function mostrarFeedbackSucesso() {
-    mostrarFeedback("success", "Formulário validado com sucesso!");
   }
 
   function mostrarFeedbackErro(camposNaoPreenchidos) {
@@ -270,12 +266,19 @@ document
     campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
   });
 
-// Evento para máscara e formatação do CEP
-document.getElementById("cep")?.addEventListener("blur", function () {
-  let cep = this.value.replace(/\D/g, "");
-  if (cep.length === 8) {
-    this.value = `${cep.slice(0, 5)}-${cep.slice(5)}`;
+// FUNÇÃO PARA APLICAR MÁSCARA DE CEP DE FORMA DINÂMICA
+function aplicarMascaraCEP(input) {
+  let digits = input.value.replace(/\D/g, "");
+  if (digits.length > 5) {
+    input.value = digits.substring(0, 5) + "-" + digits.substring(5, 8);
+  } else {
+    input.value = digits;
   }
   // Após a formatação, valida o campo CEP.
-  CampoUtils.validarCampo(this);
+  CampoUtils.validarCampo(input);
+}
+
+// Evento para máscara e formatação do CEP em tempo real.
+document.getElementById("cep")?.addEventListener("input", function () {
+  aplicarMascaraCEP(this);
 });

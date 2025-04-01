@@ -5,9 +5,7 @@ window.EstiloUtils = (() => {
       elemento.style.borderColor = cor;
     }
   }
-  return {
-    alterarCorBorda,
-  };
+  return { alterarCorBorda };
 })();
 
 // Módulo de Manipulação de Campos
@@ -40,7 +38,7 @@ window.CampoUtils = (() => {
       mensagemErro.classList.add("mensagem-erro");
       campo.parentNode.insertBefore(mensagemErro, campo.nextSibling);
     }
-    mensagemErro.innerText = mensagem;
+    mensagemErro.textContent = mensagem;
     mensagemErro.style.color = "var(--erro)";
     mensagemErro.style.marginTop = "8px";
     mensagemErro.style.marginLeft = "15px";
@@ -149,9 +147,7 @@ window.FormularioUtils = (() => {
     event.target.submit();
   }
 
-  return {
-    enviarFormulario,
-  };
+  return { enviarFormulario };
 })();
 
 // Adiciona os ouvintes de eventos para o envio do formulário
@@ -165,12 +161,22 @@ document.querySelectorAll("input, select, textarea").forEach((campo) => {
   campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
 });
 
-// Evento para máscara e formatação do CEP
-document.getElementById("cep")?.addEventListener("blur", function () {
-  let cep = this.value.replace(/\D/g, "");
-  if (cep.length === 8) {
-    this.value = `${cep.slice(0, 5)}-${cep.slice(5)}`;
+// FUNÇÃO PARA APLICAR MÁSCARA DE CEP DE FORMA DINÂMICA
+function aplicarMascaraCEP(input) {
+  let digits = input.value.replace(/\D/g, "");
+  if (digits.length > 5) {
+    input.value = digits.substring(0, 5) + "-" + digits.substring(5, 8);
+  } else {
+    input.value = digits;
   }
-  // Valida o campo após a formatação
-  CampoUtils.validarCampo(this);
-});
+  // Valida o campo CEP após a formatação
+  CampoUtils.validarCampo(input);
+}
+
+// Evento para máscara e formatação do CEP utilizando o evento "input"
+const campoCEP = document.getElementById("cep");
+if (campoCEP) {
+  campoCEP.addEventListener("input", function () {
+    aplicarMascaraCEP(this);
+  });
+}

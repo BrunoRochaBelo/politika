@@ -208,50 +208,17 @@
                           <fieldset>
                             <legend class="titulo-lg"></legend>
                             <div class="campo">
-                              <label for="bem_servico">Bens e Serviços<span>*</span></label>
-                              <select id="bem_servico" name="bem_servico" required>
-                                <option value="">Selecione</option>
-                                <option value="mao_obra">Mão de Obra</option>
-                                <option value="grafica">Gráfica</option>
-                                <option value="impostos">Impostos</option>
-                                <option value="logistica">Logística</option>
-                                <option value="eletro_eletronico">Eletro-Eletrônico</option>
-                                <option value="material_expediente">Material de Expediente</option>
-                                <option value="alimentacao">Alimentação</option>
-                                <option value="aluguel_espaco">Aluguel de Espaço</option>
-                                <option value="aluguel_estruturas">Aluguel de Estruturas</option>
-                                <option value="celpe">CELPE</option>
-                                <option value="compesa">COMPESA</option>
-                                <option value="juridico">Jurídico</option>
-                                <option value="contabilidade">Contabilidade</option>
-                                <option value="telefonia_internet">Telefonia e Internet</option>
-                                <option value="hospedagem">Hospedagem</option>
-                                <option value="locucao">Locução</option>
-                                <option value="producao_video">Produção de Vídeo</option>
-                                <option value="producao_conteudo">Produção de Conteúdo</option>
-                                <option value="marketing">Marketing</option>
-                                <option value="redes_sociais">Redes Sociais</option>
+                              <label for="setor_produtivo">Setor de atuação<span>*</span></label>
+                              <select id="setor_produtivo" required>
+                                <option value="" disabled selected>Selecione um setor produtivo</option>
+                                <option value="Agticultura, pecuaria">Agticultura, pecuaria</option>
+                                <option value="Construção">Construção</option>
+                                <option value="Educação">Educação</option>
                               </select>
-                              <button type="button" id="buttonAdicionarBensServices" class="btn-principal-alt adicionar-servico" onclick="adicionarServico()" disabled>
-                                Adicionar
-                              </button>
                             </div>
-                            <!-- Exibir contador de itens -->
-                            <div id="contadorItens" class="titulo-area-tabela">Total de itens adicionados: 0</div>
-                            <!-- Tabela para listar os itens adicionados -->
-                            <div class="tabela-historico">
-                              <table id="tabelaBemServico">
-                                <thead>
-                                  <tr>
-                                    <th class="hidden-column">ID</th>
-                                    <th>Produto / Serviço</th>
-                                    <th>Ações</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <!-- Linhas da tabela serão adicionadas dinamicamente -->
-                                </tbody>
-                              </table>
+                            <div class="campo">
+                              <label for="anotacoes">Anotação da Atividade</label>
+                              <textarea class="form-textarea" id="anotacoes" placeholder="Digite aqui os detalhes da atividade"></textarea>
                             </div>
                           </fieldset>
                         </div>
@@ -269,8 +236,6 @@
         </div>
       </section>
     </main>
-
-
   </div>
 
   <script src="./static/js/config.js" defer></script>
@@ -280,7 +245,6 @@
   <script src="./static/js/BuscaEndereco.js" defer></script>
   <script src="./static/js/NavSecoes.js" defer></script>
   <script src="./static/js/IncluirEmpresa.js" defer></script>
-  <script src="./static/js/EmpresaIncluirListaArquivos.js" defer></script>
 
 </body>
 

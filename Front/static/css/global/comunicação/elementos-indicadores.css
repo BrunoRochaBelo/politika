@@ -2,8 +2,8 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  padding: 5px; /* Aumenta a área de hover */
-  outline: none; /* Remove a borda de foco padrão */
+  padding: 5px;
+  outline: none;
 }
 
 .tooltip .tooltiptext {
@@ -24,7 +24,7 @@
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
     scale 0.3s ease-in-out;
   pointer-events: none;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tooltip:hover .tooltiptext,

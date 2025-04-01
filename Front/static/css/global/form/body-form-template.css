@@ -50,18 +50,18 @@
 }
 
 .main-form .container-template-content .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 6.7rem) !important;
+  height: calc(var(--vh, 1vh) * 100 - 7rem) !important;
 }
 .main-form
   .container-abas-template-content
   .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 9.3rem) !important;
+  height: calc(var(--vh, 1vh) * 100 - 10rem) !important;
 }
 .main-form
   .container-abas-template-content
   .novaDespesa
   .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 10.2rem) !important;
+  height: calc(var(--vh, 1vh) * 100 - 12rem) !important;
 }
 
 .main-form .container-template,

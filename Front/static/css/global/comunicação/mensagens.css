@@ -178,30 +178,6 @@
   color: var(--txt-titulo);
 }
 
-.error-messages {
-  border: 1px solid #e74c3c;
-  background-color: #fbeee6;
-  color: #e74c3c;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  z-index: 4000;
-}
-.success-message {
-  border: 1px solid #2ecc71;
-  background-color: #eafaf1;
-  color: #2ecc71;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  z-index: 4000;
-}
-.error-messages p,
-.success-message p {
-  margin: 0;
-  font-size: var(--font-sm);
-}
-
 @media only screen and (max-width: 56.25rem) {
   .message-error {
     top: 30px;
