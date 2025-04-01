@@ -49,7 +49,7 @@
             </ul>
           </nav>
           <div class="container-abas-template-content">
-            <form id="form" class="form" enctype="multipart/form-data">
+            <form id="form" class="form" enctype="multipart/form-data" novalidate>
               <div id="aba1" class="aba-template active">
                 <div class="area-interna-containerContent-template">
                   <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
@@ -129,14 +129,14 @@
                         <legend class="titulo-lg title-legend">Endereço do Beneficiário</legend>
 
                         <div class="campo">
-                          <label for="cep">CEP<span>*</span></label>
-                          <input type="text" id="cep" name="cep" class="form-control form-control-md" placeholder="99999999" oninput="buscarEndereco(this.value)">
+                          <label for="cep">CEP <span>*</span></label>
+                          <input type="text" id="cep" name="cep" placeholder="Digite o CEP (somente números)" required oninput="buscarEndereco(this.value)">
                         </div>
 
                         <div class="form-2-colum">
                           <div class="campo">
-                            <label for="uf">UF</label>
-                            <select id="uf" name="uf_sigla">
+                            <label for="uf">UF <span>*</span></label>
+                            <select id="uf" name="uf" required>
                               <option value="">Selecione</option>
                               <option value="AC">AC</option>
                               <option value="AL">AL</option>
@@ -168,21 +168,18 @@
                             </select>
                           </div>
                           <div class="campo">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" id="cidade" name="cidade" class="form-control form-control-md" required placeholder="Digite a cidade">
+                            <label for="cidade">Cidade <span>*</span></label>
+                            <input type="text" id="cidade" name="cidade" required placeholder="Digite a cidade">
                           </div>
                         </div>
-
                         <div class="campo">
-                          <label for="bairro">Bairro</label>
-                          <input type="text" id="bairro" name="bairro" class="form-control form-control-md" required placeholder="Digite o bairro">
+                          <label for="bairro">Bairro <span>*</span></label>
+                          <input type="text" id="bairro" name="bairro" required placeholder="Digite o bairro">
                         </div>
-
                         <div class="campo">
                           <label for="rua">Rua</label>
-                          <input type="text" id="rua" name="rua" class="form-control form-control-md" placeholder="Digite a rua">
+                          <input type="text" id="rua" name="rua" placeholder="Digite a rua">
                         </div>
-
                         <div class="form-2-colum">
                           <div class="campo">
                             <label for="numero">Número</label>

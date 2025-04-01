@@ -42,8 +42,17 @@ window.CampoUtils = (() => {
     mensagemErro.style.color = "var(--erro)";
     mensagemErro.style.marginTop = "8px";
     mensagemErro.style.marginLeft = "15px";
+
     adicionarClasse(campo, "error");
+
+    // Altera a borda do próprio campo
     EstiloUtils.alterarCorBorda(campo, "var(--erro)");
+
+    // Altera a borda do container .card-session (se existir)
+    const cardSession = campo.closest(".card-session");
+    if (cardSession) {
+      EstiloUtils.alterarCorBorda(cardSession, "var(--erro)");
+    }
   };
 
   const removerMensagemErroCampo = (campo) => {
@@ -52,7 +61,15 @@ window.CampoUtils = (() => {
       mensagemErro.remove();
     }
     removerClasses(campo, "error");
+
+    // Restaura a borda do campo
     EstiloUtils.alterarCorBorda(campo, "");
+
+    // Restaura a borda do container .card-session (se existir)
+    const cardSession = campo.closest(".card-session");
+    if (cardSession) {
+      EstiloUtils.alterarCorBorda(cardSession, "");
+    }
   };
 
   const validarCampo = (campo) => {
@@ -61,6 +78,21 @@ window.CampoUtils = (() => {
 
     const valorCampo = campo.value.trim();
     let campoValido = true;
+
+    // Validação específica para CEP
+    if (campo.id === "cep") {
+      const digits = valorCampo.replace(/\D/g, "");
+      if (campo.hasAttribute("required") && digits === "") {
+        exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
+        campoValido = false;
+      } else if (digits.length > 0 && digits.length !== 8) {
+        exibirMensagemErroCampo(campo, "Digite um CEP válido com 8 dígitos.");
+        campoValido = false;
+      } else if (digits.length === 8) {
+        adicionarClasse(campo, "success");
+      }
+      return campoValido;
+    }
 
     // Validação padrão: campo obrigatório
     if (campo.hasAttribute("required") && valorCampo === "") {
@@ -100,7 +132,7 @@ window.CampoUtils = (() => {
       );
       campoValido = false;
     }
-    // Se válido, adiciona a classe de sucesso
+    // Se válido, adiciona a classe de sucesso para os demais campos
     else if (valorCampo !== "" || campo.hasAttribute("required")) {
       adicionarClasse(campo, "success");
     }
@@ -272,11 +304,25 @@ window.FormularioUtils = (() => {
 // Funções para Máscaras de Input
 // ==========================
 const aplicarMascaraCEP = (input) => {
+  // Remove tudo que não for dígito
   let digits = input.value.replace(/\D/g, "");
+
+  // Se tiver mais de 5 dígitos, insere o hífen (limitando o CEP a 8 dígitos)
   if (digits.length > 5) {
     input.value = digits.substring(0, 5) + "-" + digits.substring(5, 8);
   } else {
     input.value = digits;
+  }
+
+  // Só valida quando o CEP estiver completo (8 dígitos)
+  if (digits.length === 8) {
+    // CEP completo: remove eventuais mensagens de erro e marca como válido
+    CampoUtils.removerMensagemErroCampo(input);
+    CampoUtils.adicionarClasse(input, "success");
+  } else {
+    // Se não estiver completo, remove a classe de sucesso para não validar prematuramente
+    CampoUtils.removerClasses(input, "success");
+    // Opcional: se quiser, pode limpar mensagens de erro ou não exibi-las até o blur
   }
 };
 

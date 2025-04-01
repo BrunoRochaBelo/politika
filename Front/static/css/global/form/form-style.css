@@ -304,8 +304,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   max-height: 100%;
 }
 .radio-button-group input[type="radio"]:checked + label {
-  background-color: var(--cor-secundaria-2);
-  border: 2px solid var(--cor-secundaria-2);
+  background-color: var(--cor-primaria-1);
+  border: 2px solid var(--cor-primaria-1);
   color: var(--txt-titulo-card);
 }
 .radio-button-group label:hover {
@@ -332,8 +332,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   user-select: none;
 }
 .checkbox-button-group input[type="checkbox"]:checked + label {
-  background-color: var(--cor-secundaria-2);
-  border: 2px solid var(--cor-secundaria-2);
+  background-color: var(--cor-primaria-1);
+  border: 2px solid var(--cor-primaria-1);
   color: var(--txt-titulo-card);
 }
 .checkbox-button-group label:hover {

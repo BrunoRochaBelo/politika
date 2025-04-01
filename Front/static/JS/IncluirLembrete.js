@@ -1,30 +1,33 @@
+// ===============================
 // Módulo de Manipulação de Estilos
+// ===============================
 window.EstiloUtils = (() => {
-  function alterarCorBorda(elemento, cor) {
+  const alterarCorBorda = (elemento, cor) => {
     if (elemento) {
       elemento.style.borderColor = cor;
     }
-  }
+  };
   return { alterarCorBorda };
 })();
 
+// ===============================
 // Módulo de Manipulação de Campos
+// ===============================
 window.CampoUtils = (() => {
-  // Retorna o label associado ao campo.
-  function obterLabelAssociado(campo) {
+  // Retorna o label associado ao campo (procura dentro do mesmo .campo para checkboxes e rádios)
+  const obterLabelAssociado = (campo) => {
     let label;
-    if (campo.type === "radio") {
-      // Para campos de rádio, encontramos o label dentro do mesmo .campo
+    if (campo.type === "radio" || campo.type === "checkbox") {
       const campoDiv = campo.closest(".campo");
       label = campoDiv ? campoDiv.querySelector("label") : null;
     } else {
       label = document.querySelector(`label[for="${campo.id}"]`);
     }
     return label;
-  }
+  };
 
-  // Adiciona uma classe ao campo, seu label e span (se existir).
-  function adicionarClasse(campo, classe) {
+  // Adiciona uma classe ao campo, ao label associado e ao span contido (se houver)
+  const adicionarClasse = (campo, classe) => {
     campo.classList.add(classe);
     const label = obterLabelAssociado(campo);
     if (label) {
@@ -32,10 +35,10 @@ window.CampoUtils = (() => {
       const span = label.querySelector("span");
       if (span) span.classList.add(classe);
     }
-  }
+  };
 
-  // Remove as classes especificadas do campo, seu label e span.
-  function removerClasses(campo, ...classes) {
+  // Remove as classes especificadas do campo, label e span associado
+  const removerClasses = (campo, ...classes) => {
     campo.classList.remove(...classes);
     const label = obterLabelAssociado(campo);
     if (label) {
@@ -43,10 +46,10 @@ window.CampoUtils = (() => {
       const span = label.querySelector("span");
       if (span) span.classList.remove(...classes);
     }
-  }
+  };
 
-  // Exibe a mensagem de erro logo abaixo do campo e altera a cor da borda.
-  function exibirMensagemErroCampo(campo, mensagem) {
+  // Exibe a mensagem de erro logo após o campo e altera a borda pra cor de erro
+  const exibirMensagemErroCampo = (campo, mensagem) => {
     let mensagemErro = campo.nextElementSibling;
     if (!mensagemErro || !mensagemErro.classList.contains("mensagem-erro")) {
       mensagemErro = document.createElement("div");
@@ -59,204 +62,239 @@ window.CampoUtils = (() => {
     mensagemErro.style.marginLeft = "15px";
     adicionarClasse(campo, "error");
     EstiloUtils.alterarCorBorda(campo, "var(--erro)");
-  }
+  };
 
-  // Remove a mensagem de erro e reseta a borda.
-  function removerMensagemErroCampo(campo) {
+  // Remove a mensagem de erro e reseta a borda
+  const removerMensagemErroCampo = (campo) => {
     const mensagemErro = campo.nextElementSibling;
     if (mensagemErro && mensagemErro.classList.contains("mensagem-erro")) {
       mensagemErro.remove();
     }
     removerClasses(campo, "error");
     EstiloUtils.alterarCorBorda(campo, "");
-  }
+  };
 
-  // Retorna o nome do campo a partir do label associado (sem o asterisco).
-  function obterNomeCampo(campo) {
+  // Retorna o nome do campo a partir do label (sem o span do asterisco)
+  const obterNomeCampo = (campo) => {
     const label = obterLabelAssociado(campo);
     if (label) {
-      // Clona o label para não modificar o original
       const labelClone = label.cloneNode(true);
-      // Remove o span (geralmente o asterisco)
       const span = labelClone.querySelector("span");
       if (span) span.remove();
       return labelClone.textContent.trim();
     }
     return campo.name || campo.id;
-  }
+  };
 
-  // Valida o campo conforme seu tipo e atributos.
-  function validarCampo(campo) {
-    // Remove mensagens e classes anteriores.
+  // Valida o campo conforme o tipo e os atributos
+  const validarCampo = (campo) => {
     removerMensagemErroCampo(campo);
     removerClasses(campo, "error", "success");
 
     let campoValido = true;
-    if (campo.type === "radio") {
-      // Para grupos de rádio, verifica se algum está selecionado.
-      const radios = document.getElementsByName(campo.name);
-      const algumSelecionado = Array.from(radios).some(
-        (radio) => radio.checked
-      );
-      if (campo.hasAttribute("required") && !algumSelecionado) {
-        exibirMensagemErroCampo(
-          campo.closest(".campo"),
-          "Selecione uma opção."
-        );
+    const valorCampo = campo.value.trim();
+
+    if (campo.hasAttribute("required") && valorCampo === "") {
+      exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
+      campoValido = false;
+    } else if (campo.type === "email" && valorCampo !== "") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(valorCampo)) {
+        exibirMensagemErroCampo(campo, "Digite um e-mail válido.");
+        campoValido = false;
+      } else {
+        adicionarClasse(campo, "success");
+      }
+    } else if (campo.type === "date" && valorCampo !== "") {
+      const data = new Date(valorCampo);
+      if (isNaN(data.getTime())) {
+        exibirMensagemErroCampo(campo, "Digite uma data válida.");
+        campoValido = false;
+      } else {
+        adicionarClasse(campo, "success");
+      }
+    } else if (campo.type === "time" && valorCampo !== "") {
+      const timeRegex = /^([0-1]\d|2[0-3]):([0-5]\d)$/;
+      if (!timeRegex.test(valorCampo)) {
+        exibirMensagemErroCampo(campo, "Digite uma hora válida (HH:MM).");
         campoValido = false;
       } else {
         adicionarClasse(campo, "success");
       }
     } else {
-      const valorCampo = campo.value.trim();
-      if (campo.hasAttribute("required") && valorCampo === "") {
-        exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
-        campoValido = false;
-      } else if (campo.type === "date" && valorCampo !== "") {
-        // Verifica se a data é válida
-        const data = new Date(valorCampo);
-        if (isNaN(data.getTime())) {
-          exibirMensagemErroCampo(campo, "Digite uma data válida.");
-          campoValido = false;
-        } else {
-          adicionarClasse(campo, "success");
-        }
-      } else if (campo.type === "time" && valorCampo !== "") {
-        // Verifica se a hora é válida (HH:MM)
-        const horaRegex = /^([0-1]\d|2[0-3]):([0-5]\d)$/;
-        if (!horaRegex.test(valorCampo)) {
-          exibirMensagemErroCampo(campo, "Digite uma hora válida (HH:MM).");
-          campoValido = false;
-        } else {
-          adicionarClasse(campo, "success");
-        }
-      } else if (
-        campo.tagName.toLowerCase() === "select" &&
-        campo.hasAttribute("required") &&
-        (valorCampo === "" || valorCampo === null)
-      ) {
-        exibirMensagemErroCampo(campo, "Selecione uma opção.");
-        campoValido = false;
-      } else if (valorCampo !== "" || campo.hasAttribute("required")) {
+      if (valorCampo !== "" || !campo.hasAttribute("required")) {
         adicionarClasse(campo, "success");
       }
     }
     return campoValido;
-  }
+  };
 
   return {
     validarCampo,
     exibirMensagemErroCampo,
     removerMensagemErroCampo,
+    adicionarClasse,
+    removerClasses,
     obterNomeCampo,
   };
 })();
 
+// ======================================
 // Módulo de Manipulação do Formulário de Lembrete
+// ======================================
 window.FormularioLembreteUtils = (() => {
-  let feedbackDiv = null;
+  let feedbackTimeout;
 
-  // Valida todos os campos obrigatórios do formulário de Lembrete.
-  function validarFormulario() {
+  // Valida todos os campos obrigatórios do formulário de lembrete
+  const validarFormulario = () => {
     let formValido = true;
     const camposNaoPreenchidos = [];
     const camposRequeridos = document.querySelectorAll(
       "#formLembrete input[required], #formLembrete select[required], #formLembrete textarea[required]"
     );
-    const radioGroupsChecked = new Set();
 
     camposRequeridos.forEach((campo) => {
-      if (campo.type === "radio") {
-        if (radioGroupsChecked.has(campo.name)) return;
-        radioGroupsChecked.add(campo.name);
-        if (!CampoUtils.validarCampo(campo)) {
-          formValido = false;
-          const campoNome = CampoUtils.obterNomeCampo(campo);
-          if (!camposNaoPreenchidos.includes(campoNome)) {
-            camposNaoPreenchidos.push(campoNome);
-          }
-        }
-      } else {
-        if (!CampoUtils.validarCampo(campo)) {
-          formValido = false;
-          const campoNome = CampoUtils.obterNomeCampo(campo);
-          camposNaoPreenchidos.push(campoNome);
+      if (!CampoUtils.validarCampo(campo)) {
+        formValido = false;
+        const nomeCampo = CampoUtils.obterNomeCampo(campo);
+        if (!camposNaoPreenchidos.includes(nomeCampo)) {
+          camposNaoPreenchidos.push(nomeCampo);
         }
       }
     });
 
     if (!formValido) {
-      mostrarFeedbackErro(camposNaoPreenchidos);
+      mostrarFeedback(
+        "error",
+        `Preencha os campos obrigatórios: ${camposNaoPreenchidos.join(", ")}`
+      );
     }
     return formValido;
-  }
+  };
 
-  function enviarFormulario(event) {
+  // Função executada no submit do formulário
+  const enviarFormulario = (event) => {
     event.preventDefault();
-    if (feedbackDiv) feedbackDiv.remove();
-    if (!validarFormulario()) return;
-    mostrarFeedback("success", "Formulário validado com sucesso!");
+
+    // Limpa eventuais alertas anteriores
+    const alertContainer = document.querySelector(".alert-container");
+    if (alertContainer) alertContainer.innerHTML = "";
+
+    if (!validarFormulario()) {
+      const primeiroCampoInvalido = document.querySelector(
+        "#formLembrete .error"
+      );
+      if (primeiroCampoInvalido) {
+        setTimeout(() => primeiroCampoInvalido.focus(), 500);
+      }
+      return;
+    }
+
+    mostrarFeedback("success", "Formulário enviado com sucesso!");
     document.getElementById("formLembrete").reset();
     removerClassesDeSucesso();
-  }
+  };
 
-  function mostrarFeedbackErro(camposNaoPreenchidos) {
-    const mensagem = `Preencha os campos obrigatórios: ${camposNaoPreenchidos.join(
-      ", "
-    )}`;
-    mostrarFeedback("error", mensagem);
-  }
+  // Exibe mensagens de alerta num estilo tipo Bootstrap
+  const mostrarFeedback = (tipo, mensagem) => {
+    let alertContainer = document.querySelector(".alert-container");
+    if (!alertContainer) {
+      alertContainer = document.createElement("div");
+      alertContainer.className = "alert-container";
+      document.body.appendChild(alertContainer);
+    }
 
-  function mostrarFeedback(tipo, mensagem) {
-    if (feedbackDiv) feedbackDiv.remove();
-    feedbackDiv = document.createElement("div");
-    feedbackDiv.classList.add(`message-${tipo}`, "show");
-    feedbackDiv.textContent = mensagem;
-    document.body.appendChild(feedbackDiv);
-    setTimeout(() => feedbackDiv.classList.add("fade-out"), 5000);
-    feedbackDiv.addEventListener("transitionend", () => feedbackDiv.remove());
-  }
+    const alertDiv = document.createElement("div");
+    alertDiv.classList.add("alert", "alert-dismissible", "fade");
 
-  function removerClassesDeSucesso() {
+    if (tipo === "success") {
+      alertDiv.classList.add("alert-sucesso");
+    } else if (tipo === "error") {
+      alertDiv.classList.add("alert-erro");
+    } else if (tipo === "info") {
+      alertDiv.classList.add("alert-informacao");
+    } else if (tipo === "warning") {
+      alertDiv.classList.add("alert-aviso");
+    }
+
+    const messageSpan = document.createElement("span");
+    messageSpan.innerText = mensagem;
+    alertDiv.appendChild(messageSpan);
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "close-btn";
+    closeButton.innerHTML = "&times;";
+    closeButton.addEventListener("click", () => {
+      alertDiv.classList.remove("show");
+      alertDiv.classList.add("fade");
+      alertDiv.addEventListener("transitionend", () => alertDiv.remove());
+    });
+    alertDiv.appendChild(closeButton);
+
+    alertContainer.appendChild(alertDiv);
+
+    // Dispara a transição pra mostrar o alerta
+    setTimeout(() => alertDiv.classList.add("show"), 10);
+
+    clearTimeout(feedbackTimeout);
+    feedbackTimeout = setTimeout(() => {
+      if (alertDiv) {
+        alertDiv.classList.remove("show");
+        alertDiv.classList.add("fade");
+        alertDiv.addEventListener("transitionend", () => alertDiv.remove());
+      }
+    }, 3000);
+  };
+
+  // Remove a classe de sucesso de todos os campos do formulário
+  const removerClassesDeSucesso = () => {
     document.querySelectorAll("#formLembrete .success").forEach((campo) => {
       campo.classList.remove("success");
     });
-  }
+  };
 
-  return { enviarFormulario };
+  return {
+    enviarFormulario,
+    validarFormulario,
+    mostrarFeedback,
+  };
 })();
 
-// Adiciona os ouvintes de eventos para o formulário de Lembrete.
+// ======================================
+// Função para Envio do Formulário (chamada inline)
+// ======================================
+const submitForm = () => {
+  const alertContainer = document.querySelector(".alert-container");
+  if (alertContainer) alertContainer.innerHTML = "";
+  if (!window.FormularioLembreteUtils.validarFormulario()) {
+    const primeiroCampoInvalido = document.querySelector(
+      "#formLembrete .error"
+    );
+    if (primeiroCampoInvalido) {
+      setTimeout(() => primeiroCampoInvalido.focus(), 500);
+    }
+    return false;
+  }
+  window.FormularioLembreteUtils.mostrarFeedback(
+    "success",
+    "Formulário enviado com sucesso!"
+  );
+  document.getElementById("formLembrete").reset();
+  return true;
+};
+
+// ==========================
+// Ouvintes de Eventos
+// ==========================
 document
   .getElementById("formLembrete")
-  .addEventListener("submit", FormularioLembreteUtils.enviarFormulario);
+  .addEventListener("submit", window.FormularioLembreteUtils.enviarFormulario);
 
-// Adiciona os ouvintes para validação dinâmica (input e blur) dos campos do formulário.
 document
   .querySelectorAll(
     "#formLembrete input, #formLembrete select, #formLembrete textarea"
   )
   .forEach((campo) => {
-    campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
     campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
+    campo.addEventListener("input", () => CampoUtils.validarCampo(campo));
   });
-
-// FUNÇÃO PARA APLICAR MÁSCARA DE CEP DE FORMA DINÂMICA
-function aplicarMascaraCEP(input) {
-  let digits = input.value.replace(/\D/g, "");
-  if (digits.length > 5) {
-    input.value = digits.substring(0, 5) + "-" + digits.substring(5, 8);
-  } else {
-    input.value = digits;
-  }
-  // Valida o campo CEP após a formatação
-  CampoUtils.validarCampo(input);
-}
-
-// Se existir um campo "cep" no formulário de Lembrete, adiciona o listener de input para a máscara.
-const campoCEP = document.getElementById("cep");
-if (campoCEP) {
-  campoCEP.addEventListener("input", function () {
-    aplicarMascaraCEP(this);
-  });
-}

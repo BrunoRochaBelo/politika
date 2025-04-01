@@ -50,10 +50,17 @@ window.CampoUtils = (() => {
     mensagemErro.style.color = "var(--erro)";
     mensagemErro.style.marginTop = "8px";
     mensagemErro.style.marginLeft = "15px";
+
     adicionarClasse(campo, "error");
-    alterarCorAsterisco(campo.id, "var(--erro)");
+
+    // Altera a borda do próprio campo
     EstiloUtils.alterarCorBorda(campo, "var(--erro)");
-    EstiloUtils.alterarCorBorda(campo.closest(".card-session"), "var(--erro)");
+
+    // Altera a borda do container .card-session (se existir)
+    const cardSession = campo.closest(".card-session");
+    if (cardSession) {
+      EstiloUtils.alterarCorBorda(cardSession, "var(--erro)");
+    }
   };
 
   const removerMensagemErroCampo = (campo) => {
@@ -62,9 +69,15 @@ window.CampoUtils = (() => {
       mensagemErro.remove();
     }
     removerClasses(campo, "error");
-    alterarCorAsterisco(campo.id, "");
+
+    // Restaura a borda do campo
     EstiloUtils.alterarCorBorda(campo, "");
-    EstiloUtils.alterarCorBorda(campo.closest(".card-session"), "");
+
+    // Restaura a borda do container .card-session (se existir)
+    const cardSession = campo.closest(".card-session");
+    if (cardSession) {
+      EstiloUtils.alterarCorBorda(cardSession, "");
+    }
   };
 
   const validarCampo = (campo) => {
@@ -73,6 +86,21 @@ window.CampoUtils = (() => {
 
     const valorCampo = campo.value.trim();
     let campoValido = true;
+
+    // Validação específica para CEP
+    if (campo.id === "cep") {
+      const digits = valorCampo.replace(/\D/g, "");
+      if (campo.hasAttribute("required") && digits === "") {
+        exibirMensagemErroCampo(campo, "Este campo é obrigatório.");
+        campoValido = false;
+      } else if (digits.length > 0 && digits.length !== 8) {
+        exibirMensagemErroCampo(campo, "Digite um CEP válido com 8 dígitos.");
+        campoValido = false;
+      } else if (digits.length === 8) {
+        adicionarClasse(campo, "success");
+      }
+      return campoValido;
+    }
 
     // Validação padrão: campo obrigatório
     if (campo.hasAttribute("required") && valorCampo === "") {
@@ -124,7 +152,7 @@ window.CampoUtils = (() => {
       );
       campoValido = false;
     }
-    // Se válido, adiciona a classe de sucesso
+    // Se válido, adiciona a classe de sucesso para os demais campos
     else if (valorCampo !== "") {
       adicionarClasse(campo, "success");
     }
@@ -289,7 +317,7 @@ window.FormularioUtils = (() => {
     if (!validarFormulario()) {
       const secaoIncompleta = encontrarPrimeiraSecaoIncompleta();
       if (secaoIncompleta !== -1) {
-        changeSession(secaoIncompleta); // Certifique-se de que essa função esteja definida
+        changeSession(secaoIncompleta);
         const secao = document.querySelector(`#secao${secaoIncompleta}`);
         const primeiroCampoIncompleto = secao.querySelector(
           "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
@@ -409,11 +437,25 @@ const validarCampoIndicacao = () => {
 // Funções para Máscaras de Input
 // ==========================
 const aplicarMascaraCEP = (input) => {
+  // Remove tudo que não for dígito
   let digits = input.value.replace(/\D/g, "");
+
+  // Se tiver mais de 5 dígitos, insere o hífen (limitando o CEP a 8 dígitos)
   if (digits.length > 5) {
     input.value = digits.substring(0, 5) + "-" + digits.substring(5, 8);
   } else {
     input.value = digits;
+  }
+
+  // Só valida quando o CEP estiver completo (8 dígitos)
+  if (digits.length === 8) {
+    // CEP completo: remove eventuais mensagens de erro e marca como válido
+    CampoUtils.removerMensagemErroCampo(input);
+    CampoUtils.adicionarClasse(input, "success");
+  } else {
+    // Se não estiver completo, remove a classe de sucesso para não validar prematuramente
+    CampoUtils.removerClasses(input, "success");
+    // Opcional: se quiser, pode limpar mensagens de erro ou não exibi-las até o blur
   }
 };
 
