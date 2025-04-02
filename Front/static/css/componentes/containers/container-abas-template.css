@@ -101,7 +101,6 @@
   background-color: transparent;
   color: var(--txt-titulo);
   border: 1px solid transparent;
-  transform: scale(1.05);
 }
 
 #nav1 a.indicador-2,
@@ -188,7 +187,6 @@
     font-size: var(--font-md);
     font-weight: 400;
     background-color: none;
-    transform: none;
   }
 
   #nav1 a.indicador-2,
