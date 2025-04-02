@@ -1,26 +1,45 @@
 /* Estilos para o botão do card aberto */
-.organograma-medium-card-editar .btn-outline-principal,
-.organograma-large-card-editar .btn-outline-principal {
+.organograma-medium-card-editar .btn-outline-principal {
   width: auto;
   overflow: auto;
   font-weight: 400;
   font-size: var(--font-xs);
   border-radius: 6px;
   border: 1px solid var(--btn-secundario);
+  background: var(--btn-secundario);
   letter-spacing: 0.5px;
   color: var(--btn-secundario-txt);
   box-shadow: var(--sombra-moderada);
 }
-.organograma-medium-card-editar .btn-outline-principal:hover,
-.organograma-large-card-editar .btn-outline-principal:hover {
+.organograma-medium-card-editar .btn-outline-principal:hover {
   filter: var(--hover);
   background: var(--btn-secundario-hover);
 }
 
-.organograma-medium-card-editar .btn-outline-principal:active,
-.organograma-large-card-editar .btn-outline-principal:active {
+.organograma-medium-card-editar .btn-outline-principal:active {
   transform: translateY(1px) scale(0.98);
   box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+.organograma-large-card-editar .btn-outline-principal {
+  width: auto;
+  overflow: auto;
+  font-weight: 400;
+  font-size: var(--font-xs);
+  border-radius: 6px;
+  border: 1px solid transparent;
+  letter-spacing: 0.5px;
+  color: var(--btn-secundario-txt);
+  box-shadow: none;
+}
+.organograma-large-card-editar .btn-outline-principal:hover {
+  filter: var(--hover);
+  background: none;
+  color: var(--btn-secundario-hover);
+}
+.organograma-large-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
   filter: var(--active);
 }
 

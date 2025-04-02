@@ -345,7 +345,7 @@
   margin: 15px 0 0 0;
   opacity: 1;
   gap: 30px;
-  border-top: 1px solid var(--card-aberto-detalhe);
+  border-top: 1px solid var(--borda);
   transition: opacity 0.25s ease-in-out;
 }
 

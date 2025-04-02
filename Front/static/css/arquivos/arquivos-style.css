@@ -293,7 +293,7 @@
 
 /* Títulos e textos dos cards */
 .item-grid .item-title {
-  margin-top: 0;
+  margin: 0 0 10px 0;
   font-size: var(--font-md);
   color: var(--txt-titulo-card);
 }
@@ -302,7 +302,7 @@
   flex-grow: 1;
   font-size: var(--font-sm);
   color: var(--txt-conteudo-card);
-  margin: 10px 0;
+  margin: 0;
 }
 
 .item-grid .item-count,
@@ -319,7 +319,7 @@
   justify-content: flex-end;
   gap: 25px;
   margin-top: 10px;
-  padding-top: 10px;
+  padding-top: 15px;
   border-top: 1px solid var(--card-borda);
 }
 
