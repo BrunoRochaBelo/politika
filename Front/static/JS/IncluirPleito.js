@@ -191,6 +191,7 @@ window.FormularioPleitoUtils = (() => {
 
   // Função chamada no submit do formulário
   const enviarFormulario = (event) => {
+    // Temporariamente previna o envio do formulário para realizar validações
     event.preventDefault();
 
     // Limpa eventuais alertas anteriores
@@ -198,6 +199,7 @@ window.FormularioPleitoUtils = (() => {
     if (alertContainer) alertContainer.innerHTML = "";
 
     if (!validarFormulario()) {
+      // Se a validação falhar, não envia o formulário
       const primeiroCampoInvalido = document.querySelector("#form .error");
       if (primeiroCampoInvalido) {
         setTimeout(() => primeiroCampoInvalido.focus(), 500);
@@ -205,9 +207,13 @@ window.FormularioPleitoUtils = (() => {
       return;
     }
 
-    mostrarFeedback("success", "Formulário enviado com sucesso!");
-    document.getElementById("form").reset();
-    removerClassesDeSucesso();
+    // Se a validação for bem-sucedida, envia o formulário programaticamente
+    mostrarFeedback("success", "Enviando formulário...");
+
+    // Submete o formulário realmente após as validações terem sido concluídas com sucesso
+    setTimeout(() => {
+      event.target.submit();
+    }, 10);
   };
 
   // Exibe mensagens de alerta no padrão Bootstrap-like
@@ -290,7 +296,7 @@ const submitForm = () => {
     "success",
     "Formulário enviado com sucesso!"
   );
-  document.getElementById("form").reset();
+  // Retorna true para permitir o envio padrão do formulário quando chamado inline
   return true;
 };
 
