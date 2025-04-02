@@ -304,3 +304,14 @@
 .show {
   opacity: 1;
 }
+@media only screen and (max-width: 56.25rem) {
+  .alert-container {
+    position: fixed;
+    top: 50px;
+    left: 3%;
+    transform: translateX(0%);
+    text-align: center;
+    z-index: 4000;
+    width: 95%;
+  }
+}

@@ -173,17 +173,19 @@
   width: 20px;
   height: 20px;
   border-radius: 45px;
+  border: 1px solid gray;
   background: var(--txt-placeholder);
   transition: left 0.2s;
   box-shadow: var(--sombra-leve);
+  box-sizing: border-box;
 }
 
 .form-checkbox:checked ~ .switch-label:before {
-  background: var(--cor-secundaria-3);
+  background: var(--cor-primaria-1);
 }
 .form-checkbox:checked ~ .switch-label:after {
   left: 26px;
-  background: var(--cor-secundaria-1);
+  background: white;
 }
 
 /* Responsivo */

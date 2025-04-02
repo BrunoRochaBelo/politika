@@ -8,7 +8,6 @@
   border-radius: 6px;
   border: 1px solid var(--btn-secundario);
   letter-spacing: 0.5px;
-  background: var(--btn-secundario);
   color: var(--btn-secundario-txt);
   box-shadow: var(--sombra-moderada);
 }

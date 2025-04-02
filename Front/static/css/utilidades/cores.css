@@ -230,7 +230,7 @@
   --barra-pesquisa-content: hsl(220, 35%, 92%);
   --borda: hsl(220, 35%, 68%);
   --divisor: hsl(220, 38%, 74%);
-  --bg-overlay: hsla(222, 40%, 92%, 0.5);
+  --bg-overlay: hsla(222, 20%, 88%, 0.5);
   --barra-nav-bg: hsl(220, 28%, 70%);
   --barra-nav-indicator: hsl(220, 40%, 95%);
 
@@ -245,7 +245,7 @@
   /* Cartões */
   --card-bg: hsl(0, 0%, 98%);
   --card-borda: hsl(0, 0%, 98%);
-  --card-detalhe: hsl(220, 25%, 85%);
+  --card-detalhe: hsl(220, 12%, 90%);
   --card-hover: hsl(220, 32%, 80%);
 
   --card-aberto-bg: hsl(220, 60%, 94%);
