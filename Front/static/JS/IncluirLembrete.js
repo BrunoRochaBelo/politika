@@ -150,7 +150,7 @@ window.FormularioLembreteUtils = (() => {
     let formValido = true;
     const camposNaoPreenchidos = [];
     const camposRequeridos = document.querySelectorAll(
-      "#formLembrete input[required], #formLembrete select[required], #formLembrete textarea[required]"
+      "#form input[required], #form select[required], #form textarea[required]"
     );
 
     camposRequeridos.forEach((campo) => {
@@ -174,6 +174,7 @@ window.FormularioLembreteUtils = (() => {
 
   // Função executada no submit do formulário
   const enviarFormulario = (event) => {
+    // Temporariamente previna o envio do formulário para realizar validações
     event.preventDefault();
 
     // Limpa eventuais alertas anteriores
@@ -181,18 +182,21 @@ window.FormularioLembreteUtils = (() => {
     if (alertContainer) alertContainer.innerHTML = "";
 
     if (!validarFormulario()) {
-      const primeiroCampoInvalido = document.querySelector(
-        "#formLembrete .error"
-      );
+      // Se a validação falhar, não envia o formulário
+      const primeiroCampoInvalido = document.querySelector("#form .error");
       if (primeiroCampoInvalido) {
         setTimeout(() => primeiroCampoInvalido.focus(), 500);
       }
       return;
     }
 
-    mostrarFeedback("success", "Formulário enviado com sucesso!");
-    document.getElementById("formLembrete").reset();
-    removerClassesDeSucesso();
+    // Se a validação for bem-sucedida, envia o formulário programaticamente
+    mostrarFeedback("success", "Enviando formulário...");
+
+    // Submete o formulário realmente após as validações terem sido concluídas com sucesso
+    setTimeout(() => {
+      event.target.submit();
+    }, 10);
   };
 
   // Exibe mensagens de alerta num estilo tipo Bootstrap
@@ -248,7 +252,7 @@ window.FormularioLembreteUtils = (() => {
 
   // Remove a classe de sucesso de todos os campos do formulário
   const removerClassesDeSucesso = () => {
-    document.querySelectorAll("#formLembrete .success").forEach((campo) => {
+    document.querySelectorAll("#form .success").forEach((campo) => {
       campo.classList.remove("success");
     });
   };
@@ -266,20 +270,18 @@ window.FormularioLembreteUtils = (() => {
 const submitForm = () => {
   const alertContainer = document.querySelector(".alert-container");
   if (alertContainer) alertContainer.innerHTML = "";
-  if (!window.FormularioLembreteUtils.validarFormulario()) {
-    const primeiroCampoInvalido = document.querySelector(
-      "#formLembrete .error"
-    );
+  if (!window.FormularioPleitoUtils.validarFormulario()) {
+    const primeiroCampoInvalido = document.querySelector("#form .error");
     if (primeiroCampoInvalido) {
       setTimeout(() => primeiroCampoInvalido.focus(), 500);
     }
     return false;
   }
-  window.FormularioLembreteUtils.mostrarFeedback(
+  window.FormularioPleitoUtils.mostrarFeedback(
     "success",
     "Formulário enviado com sucesso!"
   );
-  document.getElementById("formLembrete").reset();
+  // Retorna true para permitir o envio padrão do formulário quando chamado inline
   return true;
 };
 
@@ -287,13 +289,11 @@ const submitForm = () => {
 // Ouvintes de Eventos
 // ==========================
 document
-  .getElementById("formLembrete")
+  .getElementById("form")
   .addEventListener("submit", window.FormularioLembreteUtils.enviarFormulario);
 
 document
-  .querySelectorAll(
-    "#formLembrete input, #formLembrete select, #formLembrete textarea"
-  )
+  .querySelectorAll("#form input, #form select, #form textarea")
   .forEach((campo) => {
     campo.addEventListener("blur", () => CampoUtils.validarCampo(campo));
     campo.addEventListener("input", () => CampoUtils.validarCampo(campo));

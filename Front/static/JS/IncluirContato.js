@@ -401,6 +401,7 @@ window.FormularioUtils = (() => {
 
   // Função chamada no submit do formulário
   const enviarFormulario = (event) => {
+    // Previne temporariamente o envio para validar
     event.preventDefault();
 
     // Limpa os alertas anteriores, se houver
@@ -445,12 +446,14 @@ window.FormularioUtils = (() => {
           }, 500);
         }
       }
-      return false;
+      return;
     }
 
-    mostrarFeedback("success", "Formulário enviado com sucesso!");
-    document.getElementById("form").reset();
-    removerClassesDeSucesso();
+    mostrarFeedback("success", "Enviando formulário...");
+    // Envia o formulário programaticamente após validação bem-sucedida
+    setTimeout(() => {
+      event.target.submit();
+    }, 10);
   };
 
   // Exibe mensagens de alerta no padrão Bootstrap-like
@@ -703,7 +706,7 @@ const submitForm = () => {
     "success",
     "Formulário enviado com sucesso!"
   );
-  document.getElementById("form").reset();
+  // Não reseta o formulário aqui, pois ele será submetido ao servidor
   return true;
 };
 

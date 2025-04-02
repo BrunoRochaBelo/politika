@@ -211,27 +211,29 @@ window.FormularioUtils = (() => {
 
   // Função chamada no submit do formulário
   const enviarFormulario = (event) => {
+    // Temporariamente previna o envio do formulário para realizar validações
     event.preventDefault();
 
-    // Limpa os alertas anteriores, se houver
+    // Limpa eventuais alertas anteriores
     const alertContainer = document.querySelector(".alert-container");
     if (alertContainer) alertContainer.innerHTML = "";
 
     if (!validarFormulario()) {
-      const primeiroCampoIncompleto = document.querySelector(
-        "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
-      );
-      if (primeiroCampoIncompleto) {
-        setTimeout(() => {
-          primeiroCampoIncompleto.focus();
-        }, 500);
+      // Se a validação falhar, não envia o formulário
+      const primeiroCampoInvalido = document.querySelector("#form .error");
+      if (primeiroCampoInvalido) {
+        setTimeout(() => primeiroCampoInvalido.focus(), 500);
       }
       return;
     }
 
-    mostrarFeedback("success", "Formulário enviado com sucesso!");
-    document.getElementById("form").reset();
-    removerClassesDeSucesso();
+    // Se a validação for bem-sucedida, envia o formulário programaticamente
+    mostrarFeedback("success", "Enviando formulário...");
+
+    // Submete o formulário realmente após as validações terem sido concluídas com sucesso
+    setTimeout(() => {
+      event.target.submit();
+    }, 10);
   };
 
   // Exibe mensagens de alerta no padrão Bootstrap-like
@@ -305,27 +307,20 @@ window.FormularioUtils = (() => {
 // Função para Envio do Formulário (caso seja chamada inline)
 // ===================================
 const submitForm = () => {
-  // Limpa os alertas anteriores
   const alertContainer = document.querySelector(".alert-container");
   if (alertContainer) alertContainer.innerHTML = "";
-
-  if (!window.FormularioUtils.validarFormulario()) {
-    const primeiroCampoIncompleto = document.querySelector(
-      "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
-    );
-    if (primeiroCampoIncompleto) {
-      setTimeout(() => {
-        primeiroCampoIncompleto.focus();
-      }, 500);
+  if (!window.FormularioPleitoUtils.validarFormulario()) {
+    const primeiroCampoInvalido = document.querySelector("#form .error");
+    if (primeiroCampoInvalido) {
+      setTimeout(() => primeiroCampoInvalido.focus(), 500);
     }
     return false;
   }
-
-  window.FormularioUtils.mostrarFeedback(
+  window.FormularioPleitoUtils.mostrarFeedback(
     "success",
     "Formulário enviado com sucesso!"
   );
-  document.getElementById("form").reset();
+  // Retorna true para permitir o envio padrão do formulário quando chamado inline
   return true;
 };
 
