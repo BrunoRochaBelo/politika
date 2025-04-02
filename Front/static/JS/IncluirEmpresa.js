@@ -213,8 +213,11 @@ window.FormularioUtils = (() => {
     if (!validarFormulario()) {
       const secaoIncompleta = encontrarPrimeiraSecaoIncompleta();
       if (secaoIncompleta !== -1) {
-        changeSession(secaoIncompleta); // Certifique-se de que essa função esteja definida
         const secao = document.querySelector(`#secao${secaoIncompleta}`);
+        // Só chama o changeSession se a seção ainda não estiver ativa
+        if (!secao.classList.contains("active")) {
+          changeSession(secaoIncompleta);
+        }
         const primeiroCampoIncompleto = secao.querySelector(
           "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
         );
@@ -283,7 +286,7 @@ window.FormularioUtils = (() => {
         alertDiv.classList.add("fade");
         alertDiv.addEventListener("transitionend", () => alertDiv.remove());
       }
-    }, 3000);
+    }, 5000);
   };
 
   const removerClassesDeSucesso = () => {

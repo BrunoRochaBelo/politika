@@ -285,7 +285,7 @@ window.FormularioUtils = (() => {
         alertDiv.classList.add("fade");
         alertDiv.addEventListener("transitionend", () => alertDiv.remove());
       }
-    }, 3000);
+    }, 5000);
   };
 
   const removerClassesDeSucesso = () => {

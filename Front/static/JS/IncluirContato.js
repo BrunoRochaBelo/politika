@@ -265,6 +265,99 @@ window.FormularioUtils = (() => {
     return -1;
   };
 
+  // Nova função para encontrar o primeiro card-session com campo obrigatório não preenchido
+  const encontrarPrimeiroCardSessionIncompleto = () => {
+    const cardSessions = document.querySelectorAll(".card-session");
+    for (const cardSession of cardSessions) {
+      const camposObrigatorios = cardSession.querySelectorAll(
+        "input[required], select[required], textarea[required]"
+      );
+      for (const campo of camposObrigatorios) {
+        if (!campo.value.trim()) {
+          return {
+            cardSession: cardSession,
+            primeiroCampo: campo,
+          };
+        }
+      }
+    }
+    return null;
+  };
+
+  // Aplicar estilo de erro ao card-session e campo
+  const aplicarEstiloErroAoCardSession = (cardSession, campo) => {
+    if (!cardSession || !campo) return;
+
+    // Aplica estilo de erro ao campo
+    CampoUtils.validarCampo(campo);
+
+    // Aplica estilo de erro explicitamente ao card-session
+    EstiloUtils.alterarCorBorda(cardSession, "var(--erro)");
+
+    // Marca o cardSession com uma classe para identificar que contém erro
+    cardSession.classList.add("has-error");
+  };
+
+  // Navegar para a seção incompleta sem fechar o card-session se já estiver aberto
+  const navegarParaSecaoIncompleta = (secaoIncompleta) => {
+    if (secaoIncompleta === -1) return;
+
+    const selectedSession = document.getElementById(`secao${secaoIncompleta}`);
+    if (!selectedSession) return;
+
+    const cards = document.querySelectorAll(".card-session");
+    const selectedCard = cards[secaoIncompleta - 1];
+
+    // Encontrar o primeiro card-session com erro
+    const resultado = encontrarPrimeiroCardSessionIncompleto();
+
+    // Se a seção já estiver ativa, não chamamos changeSession
+    if (selectedSession.classList.contains("active")) {
+      // Garante que o card-session que contém o primeiro campo incompleto esteja aberto
+      if (resultado) {
+        const { cardSession, primeiroCampo } = resultado;
+        if (!cardSession.classList.contains("active")) {
+          cardSession.classList.add("active");
+          const header = cardSession.querySelector(
+            ".secao-interna-template-header"
+          );
+          const arrow = header.querySelector(".arrow");
+          header.classList.add("active-header");
+          arrow.classList.remove("down");
+          arrow.classList.add("up");
+        }
+
+        // Aplica estilo de erro imediatamente
+        aplicarEstiloErroAoCardSession(cardSession, primeiroCampo);
+      }
+      return;
+    }
+
+    // Se a seção não estiver ativa, chamamos changeSession para ativá-la
+    changeSession(secaoIncompleta);
+
+    // Depois de mudar para a seção, garante que o card-session esteja aberto
+    setTimeout(() => {
+      const resultadoAtualizado = encontrarPrimeiroCardSessionIncompleto();
+      if (resultadoAtualizado) {
+        const { cardSession, primeiroCampo } = resultadoAtualizado;
+        if (!cardSession.classList.contains("active")) {
+          cardSession.classList.add("active");
+          const header = cardSession.querySelector(
+            ".secao-interna-template-header"
+          );
+          const arrow = header.querySelector(".arrow");
+          header.classList.add("active-header");
+          arrow.classList.remove("down");
+          arrow.classList.add("up");
+        }
+
+        // Aplica estilo de erro imediatamente
+        aplicarEstiloErroAoCardSession(cardSession, primeiroCampo);
+      }
+    }, 100);
+  };
+
   // Valida todos os campos do formulário
   const validarFormulario = () => {
     let formValido = true;
@@ -316,19 +409,43 @@ window.FormularioUtils = (() => {
 
     if (!validarFormulario()) {
       const secaoIncompleta = encontrarPrimeiraSecaoIncompleta();
+
+      // Usa a nova função para navegar para a seção com erro
+      navegarParaSecaoIncompleta(secaoIncompleta);
+
       if (secaoIncompleta !== -1) {
-        changeSession(secaoIncompleta);
         const secao = document.querySelector(`#secao${secaoIncompleta}`);
         const primeiroCampoIncompleto = secao.querySelector(
           "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
         );
         if (primeiroCampoIncompleto) {
+          // Garante que o card-session que contém o campo permaneça aberto
+          const cardSession = primeiroCampoIncompleto.closest(".card-session");
+          if (cardSession) {
+            if (!cardSession.classList.contains("active")) {
+              cardSession.classList.add("active");
+              const header = cardSession.querySelector(
+                ".secao-interna-template-header"
+              );
+              const arrow = header.querySelector(".arrow");
+              header.classList.add("active-header");
+              arrow.classList.remove("down");
+              arrow.classList.add("up");
+            }
+
+            // Aplica estilo de erro explicitamente
+            aplicarEstiloErroAoCardSession(
+              cardSession,
+              primeiroCampoIncompleto
+            );
+          }
+
           setTimeout(() => {
             primeiroCampoIncompleto.focus();
           }, 500);
         }
       }
-      return;
+      return false;
     }
 
     mostrarFeedback("success", "Formulário enviado com sucesso!");
@@ -387,7 +504,7 @@ window.FormularioUtils = (() => {
         alertDiv.classList.add("fade");
         alertDiv.addEventListener("transitionend", () => alertDiv.remove());
       }
-    }, 3000);
+    }, 5000);
   };
 
   const removerClassesDeSucesso = () => {
@@ -401,6 +518,9 @@ window.FormularioUtils = (() => {
     validarFormulario,
     mostrarFeedback,
     encontrarPrimeiraSecaoIncompleta,
+    navegarParaSecaoIncompleta,
+    encontrarPrimeiroCardSessionIncompleto,
+    aplicarEstiloErroAoCardSession,
   };
 })();
 
@@ -541,13 +661,36 @@ const submitForm = () => {
   if (!window.FormularioUtils.validarFormulario()) {
     const secaoIncompleta =
       window.FormularioUtils.encontrarPrimeiraSecaoIncompleta();
+
+    // Usa a nova função para navegar para a seção com erro
+    window.FormularioUtils.navegarParaSecaoIncompleta(secaoIncompleta);
+
     if (secaoIncompleta !== -1) {
-      changeSession(secaoIncompleta);
       const secao = document.querySelector(`#secao${secaoIncompleta}`);
       const primeiroCampoIncompleto = secao.querySelector(
         "input[required]:not(:valid), select[required]:not(:valid), textarea[required]:not(:valid)"
       );
       if (primeiroCampoIncompleto) {
+        const cardSession = primeiroCampoIncompleto.closest(".card-session");
+        if (cardSession) {
+          if (!cardSession.classList.contains("active")) {
+            cardSession.classList.add("active");
+            const header = cardSession.querySelector(
+              ".secao-interna-template-header"
+            );
+            const arrow = header.querySelector(".arrow");
+            header.classList.add("active-header");
+            arrow.classList.remove("down");
+            arrow.classList.add("up");
+          }
+
+          // Aplica estilo de erro explicitamente
+          window.FormularioUtils.aplicarEstiloErroAoCardSession(
+            cardSession,
+            primeiroCampoIncompleto
+          );
+        }
+
         setTimeout(() => {
           primeiroCampoIncompleto.focus();
         }, 500);

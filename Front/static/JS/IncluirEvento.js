@@ -265,7 +265,7 @@ window.FormularioEventoUtils = (() => {
         alertDiv.classList.add("fade");
         alertDiv.addEventListener("transitionend", () => alertDiv.remove());
       }
-    }, 3000);
+    }, 5000);
   };
 
   // Remove a classe de sucesso de todos os campos do formulário
