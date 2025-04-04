@@ -75,6 +75,9 @@
   justify-self: center;
   color: var(--txt-nav);
 }
+.header-gc-nav-template li:active {
+  transform: translateY(2px) scale(0.98);
+}
 .header-gc-nav-template a {
   padding: 0.625rem;
   border-radius: 25px;

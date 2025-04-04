@@ -89,7 +89,9 @@
   justify-self: center;
   color: var(--txt-nav);
 }
-
+.header-arquivos-nav-template li:active {
+  transform: translateY(2px) scale(0.98);
+}
 .header-arquivos-nav-template a {
   padding: 0.625rem;
   border-radius: 45px;
