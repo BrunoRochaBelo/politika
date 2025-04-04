@@ -221,7 +221,6 @@
   transform: scale(0.98);
   box-shadow: var(--sombra-intensa);
 }
-
 @keyframes expand-color-from-center {
   0% {
     background: radial-gradient(

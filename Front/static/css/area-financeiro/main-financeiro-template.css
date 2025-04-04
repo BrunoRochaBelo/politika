@@ -23,8 +23,8 @@
 .main-financeiro .area-interna-containerContent-template.area-financeiro {
   background: none;
   box-shadow: none;
-  min-height: calc(var(--vh, 1vh) * 100 - 6rem) !important;
-  max-height: calc(var(--vh, 1vh) * 100 - 6rem) !important;
+  min-height: calc(var(--vh, 1vh) * 100 - 5.2rem) !important;
+  max-height: calc(var(--vh, 1vh) * 100 - 5.2rem) !important;
   transition: max-height 0.3s ease-in-out;
 }
 .main-financeiro .area-interna-containerContent-template {
@@ -66,8 +66,8 @@
   .main-financeiro .area-interna-containerContent-template.area-financeiro {
     background: none;
     box-shadow: none;
-    min-height: calc(var(--vh, 1vh) * 100 - 5.5rem) !important;
-    max-height: calc(var(--vh, 1vh) * 100 - 5.5rem) !important;
+    min-height: calc(var(--vh, 1vh) * 100 - 4.8rem) !important;
+    max-height: calc(var(--vh, 1vh) * 100 - 4.8rem) !important;
     transition: max-height 0.3s ease-in-out;
   }
   .main-financeiro .area-interna-containerContent-template {
@@ -86,8 +86,7 @@
     background: transparent;
     border: none;
   }
-  .main-financeiro .area-interna-containerContent-template-content,
-  .main-financeiro .card-m {
+  .main-financeiro .area-interna-containerContent-template-content {
     padding: 0;
   }
   .main-financeiro .area-interna-containerContent-template-content {

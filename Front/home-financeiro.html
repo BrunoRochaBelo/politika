@@ -54,6 +54,9 @@
             <li class="contas"><a href="conta-corrente.html"><img src="./static/imagens/icones/contas-corrente.svg" alt="contas Icon">
                 <p>Contas</p>
               </a></li>
+            <li class="receitas"><a href="receitas.html"><img src="./static/imagens/icones/receitas.svg" alt="receitas Icon">
+                <p>Receitas</p>
+              </a></li>
             <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="despesas Icon">
                 <p>Despesas</p>
               </a></li>
@@ -201,31 +204,78 @@
               <li class="secao-interna-template">
                 <ul class="lista-dashboard-cards">
 
-                  <!-- Card: Despesas -->
-                  <li class="card-l">
-                    <div class="card-financeiro-template">
-                      <h3 class="card-financeiro-template-title">Despesas</h3>
-                      <div class="card-financeiro-template-list lista-vertical-alt">
-                        <div class="chart-dashboard-container">
-                          <canvas id="chartDespesas"></canvas>
+                  <li class="lista-vertical-horizontal">
+                    <ul class="lista-vertical-grup">
+                      <li class="card-l">
+                        <div class="card-financeiro-template">
+                          <h3 class="card-financeiro-template-title">Total Receitas</h3>
+                          <div class="card-financeiro-template-list lista-vertical-alt">
+                            <div>
+                              <!-- Início do conteúdo interno do KPI -->
+                              <div class="kpi-content-container">
+                                <div class="kpi-amount" id="revenueValue">R$ 0,00</div>
+                                <div class="kpi-details-row">
+                                  <div class="kpi-variation">
+                                    <span class="kpi-icon" id="revenueIcon"></span>
+                                    <span id="revenueVariation">0%</span>
+                                  </div>
+                                  <div class="kpi-period">em relação ao mês anterior</div>
+                                </div>
+                              </div>
+                              <!-- Fim do conteúdo interno do KPI -->
+                            </div>
+                          </div>
+                          <a class="card-financeiro-template-link" href="receitas.html">ir para receitas</a>
                         </div>
-                        <a class="card-financeiro-template-link" href="dashboard-despesas.html">ir para despesas</a>
-                      </div>
-                  </li>
+                      </li>
+                      <li class="card-l">
+                        <div class="card-financeiro-template">
+                          <h3 class="card-financeiro-template-title">Natureza das receitas</h3>
+                          <div class="card-financeiro-template-list">
+                            <div class="chart-dashboard-container">
+                              <canvas id="chartDespesas"></canvas>
+                            </div>
+                            <a class="card-financeiro-template-link" href="receitas.html">ir para receitas</a>
+                          </div>
+                      </li>
+                    </ul>
 
-                  <!-- Card: Centro de Custo - Barra de Progresso -->
-                  <li class="card-l">
-                    <div class="card-financeiro-template">
-                      <h3 class="card-financeiro-template-title">Centro de Custo</h3>
-                      <div class="card-financeiro-template-list lista-vertical-alt">
-                        <div class="chart-dashboard-container">
-                          <canvas id="chartContaCorrente"></canvas>
+                    <ul class="lista-vertical-grup">
+                      <li class="card-l">
+                        <div class="card-financeiro-template">
+                          <h3 class="card-financeiro-template-title">Total Despesas</h3>
+                          <div class="card-financeiro-template-list lista-vertical-alt">
+                            <div>
+                              <!-- Início do conteúdo interno do KPI -->
+                              <div class="kpi-content-container">
+                                <div class="kpi-amount expense" id="expenseValue">R$ 0,00</div>
+                                <div class="kpi-details-row">
+                                  <div class="kpi-variation">
+                                    <span class="kpi-icon" id="expenseIcon"></span>
+                                    <span id="expenseVariation">0%</span>
+                                  </div>
+                                  <div class="kpi-period">em relação ao mês anterior</div>
+                                </div>
+                              </div>
+                              <!-- Fim do conteúdo interno do KPI -->
+                            </div>
+                          </div>
+                          <a class="card-financeiro-template-link" href="dashboard-despesas.html">ir para despesas</a>
                         </div>
-                      </div>
-                      <a class="card-financeiro-template-link" href="dashboard-centro-custo.html">Ver detalhes</a>
-                    </div>
+                      </li>
+                      <li class="card-l">
+                        <div class="card-financeiro-template">
+                          <h3 class="card-financeiro-template-title">Natureza das despesas</h3>
+                          <div class="card-financeiro-template-list lista-vertical-alt">
+                            <div class="chart-dashboard-container">
+                              <canvas id="chartContaCorrente"></canvas>
+                            </div>
+                          </div>
+                          <a class="card-financeiro-template-link" href="despesas.html">Ver despesas</a>
+                        </div>
+                      </li>
+                    </ul>
                   </li>
-
 
                   <!-- Card: Receitas -->
                   <li class="card-l">

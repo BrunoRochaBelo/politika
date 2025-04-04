@@ -1,0 +1,38 @@
+/* Estilos gerais */
+.despesas-medium-card-editar .btn-outline-principal {
+  width: auto;
+  font-weight: 400;
+  font-size: var(--font-xs);
+  text-transform: lowercase;
+  border-radius: 6px;
+  border: 1px solid var(--btn-secundario);
+  letter-spacing: 0.5px;
+  background: var(--btn-secundario);
+  color: var(--btn-secundario-txt);
+  box-shadow: var(--sombra-moderada);
+}
+.despesas-medium-card-editar .btn-outline-principal:hover {
+  filter: var(--hover);
+  background: var(--btn-secundario-hover);
+}
+
+.despesas-medium-card-editar .btn-outline-principal:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-leve);
+  filter: var(--active);
+}
+
+.main-financeiro .area-interna-containerContent-template.despesas {
+  background: none;
+  box-shadow: none;
+  max-height: calc(var(--vh, 1vh) * 100 - 8.5rem) !important;
+  transition: max-height 0.3s ease-in-out;
+}
+/* RESPONSIVO */
+@media only screen and (max-width: 56.25rem) {
+  .main-financeiro .despesas .area-interna-containerContent-template {
+    background: none;
+    box-shadow: none;
+    max-height: calc(var(--vh, 1vh) * 100 - 2rem) !important;
+  }
+}

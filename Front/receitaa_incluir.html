@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Metadados críticos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Nova Receita">
+  <title>Nova Receita</title>
+
+  <!-- Manifesto -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Fonte -->
+  <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./static/imagens/icones/receitas-select.svg" type="image/svg+xml">
+
+  <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body class="body-form">
+  <div class="body-form-template">
+    <header class="header-form ">
+      <h1>Nova Receita</h1>
+      <h1><a href="receitas.html" class="close">&times;</a></h1>
+    </header>
+
+    <main class="main-form">
+      <section>
+        <div class="container-template">
+          <div class="container-template-content">
+            <form id="form" class="form" method="post" enctype="multipart/form-data" novalidate>
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <div class="card-session active">
+                    <fieldset>
+                      <legend class="titulo-lg"></legend>
+
+                      <!-- Conta Corrente -->
+                      <div class="campo">
+                        <label for="contaCorrente">Conta Corrente: <span>*</span></label>
+                        <select id="contaCorrente" required>
+                          <option value="" disabled selected>Selecione a conta</option>
+                          <option value="conta1">Conta 1</option>
+                          <option value="conta2">Conta 2</option>
+                          <!-- Adicione mais contas se necessário -->
+                        </select>
+                      </div>
+
+                      <!-- Ano Eleitoral -->
+                      <div class="campo">
+                        <label for="anoEleitoral">Ano Eleitoral: <span>*</span></label>
+                        <input type="text" id="anoEleitoral" placeholder="Ex: 2024" required>
+                      </div>
+
+                      <!-- Fonte Receita -->
+                      <div class="campo">
+                        <label for="fonteReceita">Fonte de Receita: <span>*</span></label>
+                        <select id="fonteReceita" required>
+                          <option value="" disabled selected>Selecione a fonte</option>
+                          <option value="recursosProprios">Recursos próprios do candidato</option>
+                          <option value="doacoesPessoasFisicas">Doações financeiras ou estimáveis em dinheiro de pessoas físicas</option>
+                          <option value="doacoesOutrosPartidos">Doações de outros partidos e de outros candidatos</option>
+                          <option value="comercializacaoBensServicos">
+                            Comercialização de bens e serviços ou promoção de eventos de arrecadação diretamente pelo candidato ou pela agremiação política
+                          </option>
+                          <option value="rendimentosAplicacao">Rendimentos gerados pela aplicação de suas disponibilidades</option>
+                          <option value="recursosRepassesPartidos">Recursos de repasses dos partidos políticos</option>
+                          <option value="recursosDoacoesEstrangeiras">Recursos de doações de origem estrangeira</option>
+                          <option value="fundoEspecialCampanha">Recursos do Fundo Especial de Financiamento de Campanha (FEFC)</option>
+                          <option value="fundoPartidario">Recursos de Fundo Partidário</option>
+                          <option value="contribuicaoFiliados">Contribuição dos filiados</option>
+                          <option value="comercializacaoBensServicosEventos">Comercialização de bens, serviços ou promoção de eventos</option>
+                          <option value="rendimentosLocacaoSiglas">
+                            Rendimentos decorrentes da locação de bens próprios das siglas
+                          </option>
+                        </select>
+                      </div>
+
+                      <!-- Valor Receita -->
+                      <div class="campo">
+                        <label for="valorReceita">Valor da Receita: <span>*</span></label>
+                        <input type="number" id="valorReceita" placeholder="Digite o valor em R$" step="0.01" required>
+                      </div>
+
+                      <!-- Data do crédito -->
+                      <div class="campo">
+                        <label for="dataCredito">Data do crédito: <span>*</span></label>
+                        <input type="date" id="dataCredito" required>
+                      </div>
+
+                      <!-- CNPJ/CPF Credor -->
+                      <div class="campo">
+                        <label for="cpfCnpjCredor">CNPJ/CPF do Credor: <span>*</span></label>
+                        <input type="text" id="cpfCnpjCredor" placeholder="Digite o CPF ou CNPJ" required>
+                      </div>
+
+                      <!-- Nome do credor -->
+                      <div class="campo">
+                        <label for="nomeCredor">Nome do Credor: <span>*</span></label>
+                        <input type="text" id="nomeCredor" placeholder="Digite o nome do credor" required>
+                      </div>
+
+                      <!-- Forma crédito -->
+                      <div class="campo">
+                        <label for="formaCredito">Forma de crédito: <span>*</span></label>
+                        <select id="formaCredito" required>
+                          <option value="" disabled selected>Selecione a forma de crédito</option>
+                          <option value="boleto">Boleto</option>
+                          <option value="cartaoDebito">Cartão de débito</option>
+                          <option value="cheque">Cheque</option>
+                          <option value="fundoCaixa">Fundo de caixa</option>
+                          <option value="pix">PIX</option>
+                          <option value="transferenciaBancaria">Transferência bancária</option>
+                        </select>
+                      </div>
+
+                      <!-- Referência -->
+                      <div class="campo">
+                        <label for="referencia">Referência:</label>
+                        <input type="text" id="referencia" placeholder="Ex: Pagamento de evento">
+                      </div>
+
+                    </fieldset>
+                  </div>
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/IncluirReceita.js" defer></script>
+
+</body>
+
+</html>

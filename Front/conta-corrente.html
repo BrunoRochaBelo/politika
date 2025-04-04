@@ -49,6 +49,9 @@
             <li class="contas indicador"><a href="conta-corrente.html"><img src="./static/imagens/icones/contas-corrente-select.svg" alt="contas Icon">
                 <p>Contas</p>
               </a></li>
+            <li class="receitas"><a href="receitas.html"><img src="./static/imagens/icones/receitas.svg" alt="receitas Icon">
+                <p>Receitas</p>
+              </a></li>
             <li class="despesas"><a href="despesas.html"><img src="./static/imagens/icones/despesas.svg" alt="Despesas Icon">
                 <p>Despesas</p>
               </a></li>
@@ -65,6 +68,15 @@
     <section class="main-financeiro-section container-template">
       <div class="container-template-content">
         <div class="area-interna-containerContent-template area-financeiro">
+          <div class="area-interna-containerContent-template-header">
+            <div class="cc-area-filter-header">
+              <select id="cc-centerCust-select" class="cc-centerCust-select">
+                <option value="campanha">Centro de Custo Campanha</option>
+                <option value="gabinete">Centro de Custo Gabinete</option>
+                <option value="marketing">Centro de Custo Marketing</option>
+              </select>
+            </div>
+          </div>
           <div class="area-interna-containerContent-template-content">
             <ul class="conta-corrente-cards">
               <li class="card-l contaCorrente-card" data-id="1">

@@ -60,13 +60,16 @@
 /* Nav */
 .header-financeiro-nav-template {
   display: grid;
-  grid: "dashboard contas-corrente despesas"/ 1fr 1fr 1fr;
+  grid: "dashboard contas-corrente receitas despesas"/ 1fr 1fr 1fr 1fr;
 }
 .dashboard {
   grid-area: dashboard;
 }
 .contas-corrente {
   grid-area: contas-corrente;
+}
+.receitas {
+  grid-area: receitas;
 }
 .despesas {
   grid-area: despesas;

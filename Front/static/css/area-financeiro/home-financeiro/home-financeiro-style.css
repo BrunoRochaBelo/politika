@@ -6,3 +6,74 @@
   gap: 0;
   margin: 0;
 }
+.dashboard-financeiro .main-financeiro .lista-vertical-grup {
+  margin: 0;
+  padding: 0%;
+  gap: 4px;
+}
+
+/* Estilos apenas para o conteúdo interno do KPI */
+.kpi-content-container {
+  padding: 10px 0;
+  width: auto;
+}
+
+.kpi-amount {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2ecc71; /* Verde para receitas */
+  display: block;
+  margin-bottom: 8px;
+}
+
+.kpi-amount.expense {
+  color: #e74c3c; /* Vermelho para despesas */
+}
+
+.kpi-details-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.kpi-variation {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.kpi-icon {
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+.kpi-up {
+  color: #2ecc71;
+}
+
+.kpi-down {
+  color: #e74c3c;
+}
+
+.kpi-period {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Adicionar um efeito de piscar ao atualizar */
+@keyframes valuePulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.kpi-updating {
+  animation: valuePulse 0.3s ease-in-out;
+}

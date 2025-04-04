@@ -2,15 +2,13 @@
 /* Definição do layout usando grid para o cabeçalho */
 .home-header-template {
   display: grid;
-  align-content: center;
-  justify-content: space-between;
   align-items: center;
-  justify-content: stretch;
   gap: 25px;
   text-transform: lowercase;
   grid:
-    "header-menu header-notification home-header-nav"
-    / auto auto 1fr;
+    "header-menu header-notification home-header-nav ."
+    / auto auto 1fr auto;
+  box-sizing: border-box;
 }
 
 /* Áreas de grid */

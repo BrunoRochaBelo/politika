@@ -118,3 +118,144 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Função para formatar valores monetários
+function formatCurrency(value) {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(value);
+}
+
+// --------------------------------------------------------
+// 1) KPIs
+// --------------------------------------------------------
+// Função para formatar valores monetários
+function formatCurrency(value) {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(value);
+}
+
+// Função para animar contagem de um valor para outro
+function animateCountUp(elementId, start, end, duration) {
+  const element = document.getElementById(elementId);
+  const startTime = performance.now();
+  const startValue = start;
+  const change = end - startValue;
+
+  // Adicionar classe para efeito visual
+  element.classList.add("kpi-updating");
+
+  function updateCounter(timestamp) {
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // Função de easing para tornar o movimento mais natural
+    const easedProgress =
+      progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+    const currentValue = startValue + change * easedProgress;
+    element.textContent = formatCurrency(currentValue);
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    } else {
+      // Quando terminar a animação, remover classe de efeito
+      element.classList.remove("kpi-updating");
+    }
+  }
+
+  requestAnimationFrame(updateCounter);
+}
+
+// Função para animar porcentagem de variação
+function animatePercentage(elementId, start, end, duration) {
+  const element = document.getElementById(elementId);
+  const startTime = performance.now();
+  const startValue = 0;
+  const change = end - startValue;
+
+  function updateCounter(timestamp) {
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // Função de easing
+    const easedProgress =
+      progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+    const currentValue = startValue + change * easedProgress;
+    element.textContent = currentValue.toFixed(1) + "%";
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    }
+  }
+
+  requestAnimationFrame(updateCounter);
+}
+
+// Função para atualizar os KPIs com animação
+function updateKPIs(
+  currentExpense,
+  previousExpense,
+  currentRevenue,
+  previousRevenue
+) {
+  // Animar valores monetários
+  animateCountUp("expenseValue", 0, currentExpense, 1200);
+  animateCountUp("revenueValue", 0, currentRevenue, 1200);
+
+  // Calcular variações
+  const expenseVariation =
+    previousExpense > 0
+      ? ((currentExpense - previousExpense) / previousExpense) * 100
+      : 0;
+  const revenueVariation =
+    previousRevenue > 0
+      ? ((currentRevenue - previousRevenue) / previousRevenue) * 100
+      : 0;
+
+  // Animar variações percentuais
+  animatePercentage("expenseVariation", 0, expenseVariation, 1200);
+  animatePercentage("revenueVariation", 0, revenueVariation, 1200);
+
+  // Atualizar ícones e classes
+  setTimeout(() => {
+    if (expenseVariation > 0) {
+      document.getElementById("expenseIcon").textContent = "▲";
+      document.getElementById("expenseVariation").className = "kpi-down";
+    } else if (expenseVariation < 0) {
+      document.getElementById("expenseIcon").textContent = "▼";
+      document.getElementById("expenseVariation").className = "kpi-up";
+    } else {
+      document.getElementById("expenseIcon").textContent = "•";
+      document.getElementById("expenseVariation").className = "";
+    }
+
+    if (revenueVariation > 0) {
+      document.getElementById("revenueIcon").textContent = "▲";
+      document.getElementById("revenueVariation").className = "kpi-up";
+    } else if (revenueVariation < 0) {
+      document.getElementById("revenueIcon").textContent = "▼";
+      document.getElementById("revenueVariation").className = "kpi-down";
+    } else {
+      document.getElementById("revenueIcon").textContent = "•";
+      document.getElementById("revenueVariation").className = "";
+    }
+  }, 600);
+}
+
+// Adicionar um pequeno atraso para permitir que a DOM seja carregada
+document.addEventListener("DOMContentLoaded", function () {
+  // Despesas: Atual R$25.430,50 / Anterior R$23.150,00 (aumento de 9.8%)
+  // Receitas: Atual R$42.750,20 / Anterior R$39.220,00 (aumento de 9.0%)
+  setTimeout(() => {
+    updateKPIs(25430.5, 23150.0, 42750.2, 39220.0);
+  }, 300);
+});
