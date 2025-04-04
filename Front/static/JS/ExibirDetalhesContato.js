@@ -9,20 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
-  const listaDeCardsContainer = document.querySelector(
-    ".lista-de-cards-container"
-  ); // Substitua pelo seletor correto do contêiner dos cartões
+  const listaDeCardsContainer = document.querySelector(".lista-vertical-cards");
 
   let currentContato = {
     numero: "",
     nome: "",
   };
-
-  // Variáveis para controle do pressionar e segurar (long press)
-  let longPressTimer;
-  const longPressDuration = 500;
-  let isLongPress = false;
-  let touchStartTarget = null;
 
   // Função para iniciar a chamada telefônica nativa e registrar a ligação
   const iniciarChamadaTelefonica = (numero, nomeContato) => {
@@ -57,48 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "none";
       currentContato = { numero: "", nome: "" }; // Resetar contato atual
     }, 500); // Tempo igual ao de transição
-  };
-
-  // Função para redirecionar para a página de exibição de contato
-  const redirecionarParaExibicaoContato = () => {
-    window.location.href = "contato_exibir.html";
-  };
-
-  // Função para iniciar o temporizador de pressionar e segurar
-  const iniciarLongPress = (event) => {
-    // Evitar long press em elementos específicos
-    if (
-      event.target.closest(".contatos-small-card-call") ||
-      event.target.closest(".contatos-small-card-editar") ||
-      event.target.closest("#btnVisualizar")
-    ) {
-      return;
-    }
-
-    touchStartTarget = event.target.closest(".contatos-small-card");
-    if (!touchStartTarget) return;
-
-    isLongPress = false;
-
-    longPressTimer = setTimeout(() => {
-      isLongPress = true;
-      // Fornece feedback visual (opcional)
-      touchStartTarget.classList.add("long-press-active");
-      setTimeout(() => {
-        touchStartTarget.classList.remove("long-press-active");
-        // Redireciona para a página de exibição do contato
-        redirecionarParaExibicaoContato();
-      }, 200);
-    }, longPressDuration);
-  };
-
-  // Função para cancelar o temporizador de pressionar e segurar
-  const cancelarLongPress = () => {
-    clearTimeout(longPressTimer);
-    if (touchStartTarget) {
-      touchStartTarget.classList.remove("long-press-active");
-    }
-    touchStartTarget = null;
   };
 
   // Configuração inicial dos ouvintes de eventos do modal
@@ -165,14 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Função para lidar com o clique nos cards usando delegação de eventos
   const exibirDetalhesContato = (event) => {
-    // Se foi um long press, não executa a lógica de expansão
-    if (isLongPress) return;
-
     const card = event.target.closest(".contatos-small-card");
     if (!card) return;
 
-    // Se o clique está dentro de '.contatos-small-card-editar', não faz nada
+    // **Nova Verificação: Se o clique está dentro de '.contatos-small-card-editar', não faz nada**
     if (event.target.closest(".contatos-small-card-editar")) {
+      // Não executa a lógica de expansão/recolhimento
       return;
     }
 
@@ -224,45 +172,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para lidar com o clique no botão "Visualizar"
   const lidarComBtnVisualizar = (event) => {
     event.stopPropagation(); // Impede a propagação do evento de clique
-    redirecionarParaExibicaoContato(); // Redireciona para a página de visualização
-  };
-
-  // Adiciona estilo CSS para feedback visual do long press
-  const adicionarEstiloLongPress = () => {
-    const style = document.createElement("style");
-    style.textContent = `
-      .long-press-active {
-        transform: scale(0.98);
-        opacity: 0.8;
-        transition: transform 0.2s, opacity 0.2s;
-      }
-    `;
-    document.head.appendChild(style);
+    window.location.href = "contato_exibir.html"; // Redireciona para a página de visualização
   };
 
   // Função para adicionar ouvintes de eventos aos cards
   const adicionarOuvintes = () => {
-    // Adiciona estilo para feedback visual
-    adicionarEstiloLongPress();
-
-    const container = listaDeCardsContainer || document;
-
-    // Adiciona eventos para pressionar e segurar
-    container.addEventListener("touchstart", iniciarLongPress, {
-      passive: true,
-    });
-    container.addEventListener("mousedown", iniciarLongPress);
-
-    // Cancela o pressionar e segurar se o usuário mover o dedo/cursor
-    container.addEventListener("touchmove", cancelarLongPress, {
-      passive: true,
-    });
-    container.addEventListener("mousemove", cancelarLongPress);
-
-    // Cancela o pressionar e segurar se o usuário soltar o dedo/cursor
-    container.addEventListener("touchend", cancelarLongPress);
-    container.addEventListener("mouseup", cancelarLongPress);
-
     if (listaDeCardsContainer) {
       // Delegação de eventos a partir do contêiner específico
       listaDeCardsContainer.addEventListener("click", (event) => {
@@ -277,8 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
           lidarComBtnVisualizar(event);
         }
 
-        // Se o clique está dentro de '.contatos-small-card-editar', não faz nada adicional
+        // **Nova Verificação: Se o clique está dentro de '.contatos-small-card-editar', não faz nada adicional**
         if (event.target.closest(".contatos-small-card-editar")) {
+          // Evita qualquer ação adicional
           return;
         }
       });
@@ -296,13 +211,14 @@ document.addEventListener("DOMContentLoaded", () => {
           lidarComBtnVisualizar(event);
         }
 
-        // Se o clique está dentro de '.contatos-small-card-editar', não faz nada adicional
+        // **Nova Verificação: Se o clique está dentro de '.contatos-small-card-editar', não faz nada adicional**
         if (event.target.closest(".contatos-small-card-editar")) {
+          // Evita qualquer ação adicional
           return;
         }
       });
       console.warn(
-        "Contêiner '.lista-de-cards-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner '.lista-vertical-cards' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };

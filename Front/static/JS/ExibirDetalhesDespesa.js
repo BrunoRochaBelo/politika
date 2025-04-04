@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
-  const listaDeCardsContainer = document.querySelector(
-    ".lista-de-cards-despesas-container"
-  ); // Substitua pelo seletor correto do contêiner dos cartões de despesas
+  const listaDeCardsContainer = document.querySelector("#lista-despesas");
 
   /**
    * Função para ajustar o scroll para centralizar o cartão
@@ -243,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
         exibirDetalhesDespesa(event);
       });
       console.warn(
-        "Contêiner '.lista-de-cards-despesas-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-despesas' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };

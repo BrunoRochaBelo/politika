@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   const listaDeCardsEventoSmallContainer = document.querySelector(
-    ".lista-de-cards-evento-small-container"
+    "#lista-evento-small"
   );
   const listaDeCardsEventoLargeContainer = document.querySelector(
-    ".lista-de-cards-evento-large-container"
+    "#lista-evento-large"
   );
 
   /**
@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       document.addEventListener("click", exibirDetalhesEventoSmall);
       console.warn(
-        "Contêiner '.lista-de-cards-evento-small-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-evento-small' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       document.addEventListener("click", exibirDetalhesEventoLarge);
       console.warn(
-        "Contêiner '.lista-de-cards-evento-large-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-evento-large' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };

@@ -88,25 +88,23 @@
                 <div class="secao-interna-template-content">
                   <ul class="lista-vertical-cards">
                     <li>
-                      <div class="card-m despesas-medium-card" href="#">
-                        <p class="despesas-medium-card-natureza" data-filter="tipoSolici">Natureza</p>
-                        <p class="despesas-medium-card-referencia" data-filter="referencia">Referência</p>
-                        <p class="despesas-medium-card-valorDespesa" data-filter="valorDespesa">R$ xxxx,xx</p>
-                        <p class="despesas-medium-card-dataDespesa" data-filter="dataPleito">xx/xx/xxxx</p>
-                        <div class="despesas-medium-card-desc" data-filter="descPleito">
-                          <p><strong>Descrição</strong></p>
+                      <div class="card-m receitas-medium-card">
+                        <p class="receitas-medium-card-nomeCredor" data-filter="nomeCredor">Nome do Credor</p>
+                        <p class="receitas-medium-card-docIdCredor" data-filter="docIdCredor">Documento do Credor</p>
+                        <p class="receitas-medium-card-anoEleitoral" data-filter="anoEleitoral">Ano Eleitoral</p>
+                        <p class="receitas-medium-card-fonte" data-filter="fonte">Fonte da Receita</p>
+                        <div class="receitas-medium-card-desc" data-filter="desc">
+                          <p><strong>Descrição Completa</strong></p>
                         </div>
-                        <p class="despesas-medium-card-cnpj_cpf_for" data-filter="cnpjCpfFornecedor">CNPJ/CPF Fornecedor</p>
-                        <p class="despesas-medium-card-nome_fornecedor" data-filter="nomeFornecedor">Nome Fornecedor</p>
-                        <p class="despesas-medium-card-ordenador_despesa" data-filter="ordenadorDespesa">Ordenador de Despesa</p>
-                        <p class="despesas-medium-card-autor" data-filter="autorDespesa">Autor</p>
-                        <p class="despesas-medium-card-data_criacao" data-filter="dataCriacaoDespesa">Data de Criação</p>
-                        <div class="despesas-medium-card-editar">
-                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='despesa_exibir.html'">visualizar despesa</button>
+                        <div class="receitas-medium-card-editar">
+                          <button class="btn-outline-principal" id="btnVisualizar" onclick="window.location.href='despesa_exibir.html'">
+                            Visualizar despesa
+                          </button>
                         </div>
-                        <div class="despesas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
+                        <div class="receitas-medium-card-id" data-filter="despesaID">{{despesaID}}</div>
                       </div>
                     </li>
+
                   </ul>
                 </div>
               </li>
@@ -140,7 +138,7 @@
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
   <script src="./static/js/ModalBTNFloating.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
-  <script src="./static/js/ExibirDetalhesDespesa.js" defer></script>
+  <script src="./static/js/ExibirDetalhesReceita.js" defer></script>
 
 </body>
 

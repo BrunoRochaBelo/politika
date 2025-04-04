@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
-  const listaDeCardsGrupoContainer = document.querySelector(
-    ".lista-de-cards-grupo-container"
-  ); // Substitua pelo seletor correto do contêiner dos cartões de grupo
+  const listaDeCardsGrupoContainer = document.querySelector("#lista-grup");
 
   /**
    * Função para ajustar o scroll para centralizar o cartão
@@ -201,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Se não houver um contêiner específico, delegue a partir do documento
       document.addEventListener("click", exibirDetalhesGrupo);
       console.warn(
-        "Contêiner '.lista-de-cards-grupo-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-grup' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };

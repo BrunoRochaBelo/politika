@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
-  const listaDeCardsPleitoContainer = document.querySelector(
-    ".lista-de-cards-pleito-container"
-  ); // Substitua pelo seletor correto do contêiner dos cartões de pleitos
+  const listaDeCardsPleitoContainer = document.querySelector("#lista-pleitos");
 
   // Função para ajustar o scroll para centralizar o cartão
   const ajustarScrollParaCentralizarCard = (card) => {
@@ -183,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Se não houver um contêiner específico, delegue a partir do documento
       document.addEventListener("click", exibirDetalhesPleito);
       console.warn(
-        "Contêiner '.lista-de-cards-pleito-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-pleitos' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };

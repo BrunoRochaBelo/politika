@@ -43,6 +43,7 @@
 @import "./componentes/cards/template-cards-pleitos.css";
 @import "./componentes/cards/template-cards-despesas.css";
 @import "./componentes/cards/template-cards-quantitativos.css";
+@import "./componentes/cards/template-cards-receitas.css";
 @import "./componentes/cards/template-cards-simple.css";
 @import "./componentes/cards/template-cards-tarefa.css";
 /* Componentes/ containers */

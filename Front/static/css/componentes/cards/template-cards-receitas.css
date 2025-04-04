@@ -1,0 +1,172 @@
+/* CARDS receitas */
+/* Médio */
+.receitas-medium-card {
+  display: grid;
+  color: var(--txt-conteudo-card);
+  gap: 5px;
+  cursor: pointer;
+  align-content: center;
+  text-overflow: ellipsis;
+  grid:
+    "receitas-medium-card-nomeCredor receitas-medium-card-docIdCredor"
+    "receitas-medium-card-fonte receitas-medium-card-anoEleitoral";
+  transition: all 0.25s ease-in-out;
+  max-height: 350px;
+}
+
+.receitas-medium-card-id {
+  display: none;
+}
+
+.receitas-medium-card-nomeCredor {
+  grid-area: receitas-medium-card-nomeCredor;
+  border-left: 4px solid var(--cor-primaria-2);
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  justify-self: start;
+  align-self: center;
+  color: var(--txt-titulo-card);
+}
+.receitas-medium-card-docIdCredor {
+  grid-area: receitas-medium-card-docIdCredor;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+  font-weight: 400;
+}
+.receitas-medium-card-anoEleitoral {
+  grid-area: receitas-medium-card-anoEleitoral;
+  justify-self: end;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+  font-weight: 400;
+}
+.receitas-medium-card-fonte {
+  grid-area: receitas-medium-card-fonte;
+  justify-self: start;
+  align-self: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-sm);
+  font-weight: 400;
+}
+.receitas-medium-card-desc {
+  grid-area: receitas-medium-card-desc;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.receitas-medium-card-editar {
+  grid-area: receitas-medium-card-editar;
+  display: none;
+  opacity: 0;
+  border-top: 1px solid var(--card-aberto-detalhe);
+  transition: opacity 0.25s ease-in-out;
+}
+
+.exibirDetalheDespesa {
+  opacity: 1 !important;
+}
+
+.receitas-medium-card-expanded {
+  border-radius: 12px;
+  background: var(--card-aberto-bg) !important;
+  border: 1px solid var(--card-aberto-bg) !important;
+  position: relative;
+  z-index: 2;
+  color: var(--txt-card-aberto);
+  box-shadow: var(--sombra-card-aberto) !important;
+  grid:
+    "receitas-medium-card-nomeCredor receitas-medium-card-docIdCredor"
+    "receitas-medium-card-fonte receitas-medium-card-anoEleitoral"
+    "receitas-medium-card-desc receitas-medium-card-desc"
+    "receitas-medium-card-editar receitas-medium-card-editar";
+  transform: scale(1);
+  transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
+  max-height: 500px;
+  height: auto;
+}
+
+.receitas-medium-card-editar.exibirDetalheDespesa {
+  display: grid;
+  justify-content: center;
+  padding: 10px 0px 0px 0px;
+  margin: 15px 0 0 0;
+  opacity: 1;
+  gap: 30px;
+}
+
+.receitas-medium-card-expanded .receitas-medium-card-nomeCredor {
+  display: inline-block;
+  opacity: 1;
+  border-left: 4px solid var(--card-aberto-detalhe);
+  color: var(--txt-card-aberto);
+}
+
+.receitas-medium-card-expanded .receitas-medium-card-desc {
+  display: flex;
+  opacity: 1;
+  align-self: center;
+  justify-self: stretch;
+  padding: 10px 14px;
+  background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
+  border-radius: 5px;
+  justify-content: start;
+  align-items: center;
+  padding-left: 14px;
+  margin: 3px 0 0 10px;
+  font-size: var(--font-xs);
+  font-weight: 300;
+}
+
+.receitas-medium-card-expanded:hover {
+  filter: brightness(1);
+}
+
+/* Responsivo */
+@media only screen and (max-width: 56.25rem) {
+  .receitas-medium-card {
+    display: grid;
+    color: var(--txt-conteudo-card);
+    gap: 5px;
+    cursor: pointer;
+    align-content: center;
+    text-overflow: ellipsis;
+    grid:
+      "receitas-medium-card-nomeCredor receitas-medium-card-nomeCredor"
+      "receitas-medium-card-docIdCredor receitas-medium-card-docIdCredor"
+      "receitas-medium-card-fonte receitas-medium-card-anoEleitoral";
+    transition: all 0.25s ease-in-out;
+    max-height: 350px;
+  }
+
+  .receitas-medium-card-expanded {
+    border-radius: 12px;
+    background: var(--card-aberto-bg) !important;
+    border: 1px solid var(--card-aberto-bg) !important;
+    position: relative;
+    z-index: 2;
+    color: var(--txt-card-aberto);
+    box-shadow: var(--sombra-card-aberto) !important;
+    grid:
+      "receitas-medium-card-nomeCredor receitas-medium-card-nomeCredor"
+      "receitas-medium-card-docIdCredor receitas-medium-card-docIdCredor"
+      "receitas-medium-card-fonte receitas-medium-card-anoEleitoral"
+      "receitas-medium-card-desc receitas-medium-card-desc"
+      "receitas-medium-card-editar receitas-medium-card-editar";
+    transform: scale(1);
+    transition: max-height 0.25s ease-in-out, transform 0.25s ease-in-out,
+      box-shadow 0.25s ease-in-out;
+    max-height: 500px;
+    height: auto;
+  }
+}

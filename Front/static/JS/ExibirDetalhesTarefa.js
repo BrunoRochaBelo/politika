@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Contêineres dos cartões de tarefa
   const listaDeCardsTarefaPequenaContainer = document.querySelector(
-    ".lista-de-cards-tarefa-pequena-container"
+    "#lista-tarefas-small"
   );
   const listaDeCardsTarefaMediumContainer = document.querySelector(
-    ".lista-de-cards-tarefa-medium-container"
+    "#lista-tarefas-large"
   );
 
   /**
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Se não houver um contêiner específico, delegue a partir do documento
       document.addEventListener("click", exibirDetalhesTarefaPequena);
       console.warn(
-        "Contêiner '.lista-de-cards-tarefa-pequena-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-tarefas-small' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };
@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Se não houver um contêiner específico, delegue a partir do documento
       document.addEventListener("click", exibirDetalhesTarefaMedium);
       console.warn(
-        "Contêiner '.lista-de-cards-tarefa-medium-container' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-tarefas-large' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };
