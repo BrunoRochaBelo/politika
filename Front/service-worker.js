@@ -126,12 +126,12 @@ self.addEventListener("fetch", (event) => {
       event.respondWith(networkFirst(request, CACHE_NAMES.DYNAMIC));
     }
   }
-  // Verifica requisições para tiles dos mapas (ArcGIS e OSM)
+  // Requisições para tiles dos mapas: busca direto na rede sem cache
   else if (
     requestURL.host.includes("server.arcgisonline.com") ||
     requestURL.host.includes("tile.openstreetmap.org")
   ) {
-    event.respondWith(cacheFirst(request, CACHE_NAMES.TILES || "tiles-cache"));
+    event.respondWith(fetch(request));
   }
   // Requisições para recursos externos
   else if (

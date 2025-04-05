@@ -21,6 +21,7 @@ const Config = {
     FONT: "font-cache-v1",
     IMAGE: "image-cache-v1",
     EXTERNAL: "external-cache-v1",
+    // OBS.: Não precisamos de um cache específico para tiles agora
   },
 
   // 5. Limite de Itens no Cache
@@ -160,13 +161,13 @@ const Config = {
     "/api/localvotacao/searchall",
     "/api/endpoint1",
     "/api/endpoint2",
-    // Adicione outras URLs de API se necessário
   ],
 
   // 11. URLs Externas que Precisam Ser Cacheadas
   EXTERNAL_RESOURCES: [
     "https://fonts.googleapis.com",
     "https://cdn.jsdelivr.net",
+    "https://unpkg.com",
   ],
 
   // 12. Endpoints de API
@@ -185,21 +186,18 @@ const Config = {
     ENABLE_DASHBOARD: true,
     ENABLE_NOTIFICATIONS: true,
     ENABLE_OFFLINE_MODE: true,
-    // Adicione mais flags conforme necessário
   },
 
   // 14. Configurações de Segurança
   SECURITY: {
     CONTENT_SECURITY_POLICY:
       "default-src 'self'; script-src 'self'; object-src 'none';",
-    // Adicione mais configurações conforme necessário
   },
 
   // 15. Configurações de Performance
   PERFORMANCE: {
-    CACHE_EXPIRATION_DAYS: 1, // Valor padrão para desenvolvimento
+    CACHE_EXPIRATION_DAYS: 1,
     MAX_CONCURRENT_REQUESTS: 5,
-    // Adicione mais configurações conforme necessário
   },
 
   // 16. URLs de Recursos Estáticos
