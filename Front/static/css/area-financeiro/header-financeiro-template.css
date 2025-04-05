@@ -81,7 +81,8 @@
   justify-self: center;
   color: var(--txt-nav);
 }
-.header-financeiro-nav-template li:active {
+.header-financeiro-nav-template li:active p,
+.header-financeiro-nav-template li:active img {
   transform: translateY(2px) scale(0.98);
 }
 .header-financeiro-nav-template a {

@@ -75,7 +75,8 @@
   justify-self: center;
   color: var(--txt-nav);
 }
-.header-gc-nav-template li:active {
+.header-gc-nav-template li:active p,
+.header-gc-nav-template li:active img {
   transform: translateY(2px) scale(0.98);
 }
 .header-gc-nav-template a {
