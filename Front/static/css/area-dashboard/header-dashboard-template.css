@@ -40,7 +40,7 @@
 }
 
 .header-dashboard-back:active {
-  transform: translateY(2px) scale(0.98);
+  transform: translateY(1px) scale(0.99);
 }
 
 .header-dashboard-back .voltar {
@@ -91,7 +91,7 @@
   color: var(--txt-nav);
 }
 .header-dashboard-nav-template li:active {
-  transform: translateY(2px) scale(0.98);
+  transform: translateY(1px) scale(0.99);
 }
 .header-dashboard-nav-template a {
   padding: 0.625rem;

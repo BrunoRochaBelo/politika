@@ -95,7 +95,7 @@
 }
 
 .header-mapas-back:active {
-  transform: translateY(2px) scale(0.98);
+  transform: translateY(1px) scale(0.99);
 }
 
 .header-mapas-back .voltar {
