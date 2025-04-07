@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const areaTemplateContent = document.querySelector(
     ".area-interna-containerContent-template-content"
   );
-  const listaDeCardsContainer = document.querySelector(".lista-vertical-cards");
+  const listaDeCardsContainer = document.querySelector("#lista-conatos");
 
   let currentContato = {
     numero: "",
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
       console.warn(
-        "Contêiner '.lista-vertical-cards' não encontrado. Delegando eventos a partir do documento."
+        "Contêiner 'lista-contatos' não encontrado. Delegando eventos a partir do documento."
       );
     }
   };
