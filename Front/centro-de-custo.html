@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Gerenciar contas">
-  <title>Gerenciar Contas</title>
+  <meta name="description" content="Gerenciar Centro de Custo">
+  <title>Gerenciar Centro de Custo</title>
 
   <!-- Manifesto -->
   <link rel="manifest" href="./manifest.json">
@@ -16,7 +16,7 @@
   <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
   <!-- Favicon -->
-  <link rel="icon" href="./static/imagens/icones/contas-corrente-select.svg" type="image/svg+xml">
+  <link rel="icon" href="./static/imagens/icones/centro-de-custo-select.svg" type="image/svg+xml">
 
   <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
   <link rel="stylesheet" href="./static/css/style.css">
@@ -46,10 +46,10 @@
             <li class="dashboard"><a href="home-financeiro.html"><img src="./static/imagens/icones/dashboard.svg" alt="dashboard Icon">
                 <p>Dashboard</p>
               </a></li>
-            <li class="centroDeCusto"><a href="centro-de-custo.html"><img src="./static/imagens/icones/centro-de-custo.svg" alt="centroDeCusto Icon">
+            <li class="centroDeCusto indicador"><a href="centro-de-custo.html"><img src="./static/imagens/icones/centro-de-custo-select.svg" alt="centroDeCusto Icon">
                 <p>Centro de Custo</p>
               </a></li>
-            <li class="contas indicador"><a href="conta-corrente.html"><img src="./static/imagens/icones/contas-corrente-select.svg" alt="contas Icon">
+            <li class="contas"><a href="conta-corrente.html"><img src="./static/imagens/icones/contas-corrente.svg" alt="contas Icon">
                 <p>Contas</p>
               </a></li>
             <li class="receitas"><a href="receitas.html"><img src="./static/imagens/icones/receitas.svg" alt="receitas Icon">
@@ -69,27 +69,17 @@
     <section class="main-financeiro-section container-template">
       <div class="container-template-content">
         <div class="area-interna-containerContent-template area-financeiro">
-          <div class="area-interna-containerContent-template-header">
-            <div class="cc-area-filter-header">
-              <select id="cc-centerCust-select" class="cc-centerCust-select">
-                <option value="campanha">Centro de Custo Campanha</option>
-                <option value="gabinete">Centro de Custo Gabinete</option>
-                <option value="marketing">Centro de Custo Marketing</option>
-              </select>
-            </div>
-          </div>
           <div class="area-interna-containerContent-template-content">
-            <ul class="conta-corrente-cards">
-              <li class="card-l contaCorrente-card" data-id="1">
-                <div class="contaCorrente-card-header">
-                  <h2>CAIXA ECONÔMICA FEDERAL</h2>
+            <ul class="centro-de-custo-cards">
+              <li class="card-l centroDeCusto-card" data-id="1">
+                <div class="centroDeCusto-card-header">
+                  <h2>NOME</h2>
                 </div>
-                <div class="contaCorrente-card-content">
-                  <p><strong>Agc:</strong> 2008-10 | SHOPPING RECIFE</p>
-                  <p><strong>Cta:</strong> 65002876-8</p>
-                  <p><strong>Uso:</strong> CAMPANHA | FEFC</p>
+                <div class="centroDeCusto-card-content">
+                  <p><strong>Uso:</strong> CAMPANHA</p>
+                  <p><strong>Status:</strong> FECHADO</p>
                 </div>
-                <div class="contaCorrente-card-footer">
+                <div class="centroDeCusto-card-footer">
                   <button class="edit" aria-label="Editar">
                     <img src="./static/imagens/icones/editar.svg" alt="Editar">
                   </button>
@@ -97,7 +87,7 @@
                     <img src="./static/imagens/icones/excluir.svg" alt="Excluir">
                   </button>
                 </div>
-                <span class="contaCorrente-card-id">ID: 1</span>
+                <span class="centroDeCusto-card-id">ID: 1</span>
               </li>
               <!-- Novos cards serão adicionados aqui -->
             </ul>
@@ -114,59 +104,11 @@
   <div class="modal-btn-floating-Overlay esconderModal">
     <div class="modal-btn-floating-content">
       <div class="modal-btn-floating-header">
-        <h1>NOVA</h1>
+        <h1>NOVO</h1>
       </div>
       <ul class="modal-btn-floating-body">
-        <li><a href="conta_incluir.html">Conta</a></li>
+        <li><a href="centro-de-custo_incluir.html">C. Custo</a></li>
       </ul>
-    </div>
-  </div>
-
-  <!-- Modal de criação de conta -->
-  <div class="conta-corrente-modal" id="modal">
-    <div class="conta-corrente-modal-content">
-      <span class="conta-corrente-close-button" id="close-button">&times;</span>
-      <h2 id="modal-title">Criar nova conta corrente</h2>
-      <form id="account-form">
-        <input type="hidden" id="editing-id">
-        <div class="form-group">
-          <label for="bank-code">Código Banco</label>
-          <input type="text" id="bank-code" name="bank-code" required>
-          <span class="error" id="error-bank-code"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="bank-name">Nome do Banco</label>
-          <input type="text" id="bank-name" name="bank-name" required>
-          <span class="error" id="error-bank-name"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="agency-number">Número da Agência</label>
-          <input type="text" id="agency-number" name="agency-number" required>
-          <span class="error" id="error-agency-number"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="agency-name">Nome da Agência</label>
-          <input type="text" id="agency-name" name="agency-name" required>
-          <span class="error" id="error-agency-name"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="account-number">Número da Conta</label>
-          <input type="text" id="account-number" name="account-number" required>
-          <span class="error" id="error-account-number"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="account-type">Tipo de Conta</label>
-          <input type="text" id="account-type" name="account-type" required>
-          <span class="error" id="error-account-type"></span>
-        </div>
-
-        <button type="submit">Salvar</button>
-      </form>
     </div>
   </div>
 

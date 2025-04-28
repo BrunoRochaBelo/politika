@@ -3,13 +3,12 @@
   display: grid;
   align-items: center;
   text-transform: lowercase;
-  grid: "header-financeiro-back header-financeiro-nav header-financeiro-logout" 45px;
+  grid: "header-financeiro-back header-financeiro-nav ." 45px;
 }
 
 /* Áreas de grid */
 .header-financeiro-back {
   grid-area: header-financeiro-back;
-  justify-self: start;
   justify-self: start;
   margin: 0;
   padding: 0;
@@ -60,13 +59,16 @@
 /* Nav */
 .header-financeiro-nav-template {
   display: grid;
-  grid: "dashboard contas-corrente receitas despesas"/ 1fr 1fr 1fr 1fr;
+  grid: "dashboard centroDeCusto contas receitas despesas"/ 1fr 1fr 1fr 1fr 1fr;
 }
 .dashboard {
   grid-area: dashboard;
 }
-.contas-corrente {
-  grid-area: contas-corrente;
+.contas-centroDeCusto {
+  grid-area: contas-centroDeCusto;
+}
+.contas {
+  grid-area: contas;
 }
 .receitas {
   grid-area: receitas;

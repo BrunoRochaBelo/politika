@@ -89,8 +89,6 @@
 @import "./area-arquivos/card-arquivos-template.css";
 @import "./area-arquivos/main-arquivos-template.css";
 @import "./area-arquivos/header-arquivos-template.css";
-/* financeiro/ Conta Corrente
-@import "./area-arquivos/arquivos-contatos/arquivos-contatos-style.css"; */
 
 /* area organograma */
 @import "./area-organograma/body-organograma-template.css";
@@ -121,6 +119,9 @@
 @import "./area-financeiro/card-financeiro-template.css";
 @import "./area-financeiro/main-financeiro-template.css";
 @import "./area-financeiro/header-financeiro-template.css";
+/* financeiro/ Centro de Custo */
+@import "./area-financeiro/centro-de-custo/centro-de-custo-style.css";
+@import "./area-financeiro/centro-de-custo/template-cards-centroDeCusto.css";
 /* financeiro/ Conta Corrente */
 @import "./area-financeiro/conta-corrente/conta-corrente-style.css";
 @import "./area-financeiro/conta-corrente/template-cards-contaCorrente.css";
