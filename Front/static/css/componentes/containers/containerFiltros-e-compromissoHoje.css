@@ -44,7 +44,7 @@
   overflow-x: hidden;
   align-content: start;
   border-radius: 25px;
-  max-height: calc(var(--vh, 1vh) * 100 - 5rem);
+  max-height: calc(var(--vh, 1vh) * 100 - 5.4rem);
   box-shadow: var(--sombra-intensa);
   grid:
     "container-compromisso-hoje-template-header" auto
