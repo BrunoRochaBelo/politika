@@ -8,13 +8,13 @@
   --cor-primaria-3: hsl(220, 88%, 72%);
 
   /* Cores Secundárias */
-  --cor-secundaria-1: hsl(45, 75%, 58%);
-  --cor-secundaria-2: hsl(45, 65%, 50%);
-  --cor-secundaria-3: hsl(45, 45%, 28%);
+  --cor-secundaria-1: hsl(30, 75%, 58%);
+  --cor-secundaria-2: hsl(30, 65%, 50%);
+  --cor-secundaria-3: hsl(30, 45%, 28%);
 
   /* Cores de Apoio */
-  --cor-apoio-1: hsl(48, 8%, 12%);
-  --cor-apoio-2: hsl(48, 8%, 15%);
+  --cor-apoio-1: hsl(48, 8%, 10%);
+  --cor-apoio-2: hsl(48, 8%, 12%);
 
   /* Backgrounds e Containers */
   --bg-principal: hsl(220, 28%, 12%);
@@ -135,8 +135,8 @@
     0 0 20px hsla(222, 55%, 55%, 0.25);
 
   /* Links */
-  --link: hsl(45, 75%, 58%);
-  --link-hover: hsl(45, 85%, 62%);
+  --link: hsl(30, 78%, 58%);
+  --link-hover: hsl(30, 85%, 62%);
 
   /* Mensagens/Alertas */
   --sucesso: hsl(140, 50%, 55%);
@@ -145,9 +145,9 @@
   --erro: hsl(0, 65%, 62%);
   --erro-border: hsl(0, 60%, 50%);
   --msg-erro-txt: hsl(0, 50%, 92%);
-  --aviso: hsl(45, 90%, 78%);
-  --aviso-border: hsl(45, 85%, 65%);
-  --msg-aviso-txt: hsl(45, 25%, 18%);
+  --aviso: hsl(30, 90%, 78%);
+  --aviso-border: hsl(30, 85%, 65%);
+  --msg-aviso-txt: hsl(30, 25%, 18%);
   --informacao: hsl(210, 55%, 65%);
   --informacao-border: hsl(210, 55%, 50%);
   --msg-informacao-txt: hsl(210, 20%, 90%);
@@ -215,9 +215,9 @@
   --cor-primaria-3: hsl(220, 88%, 60%);
 
   /* Cores Secundárias – mantidas */
-  --cor-secundaria-1: hsl(45, 75%, 58%);
-  --cor-secundaria-2: hsl(45, 65%, 50%);
-  --cor-secundaria-3: hsl(45, 45%, 28%);
+  --cor-secundaria-1: hsl(30, 75%, 58%);
+  --cor-secundaria-2: hsl(30, 65%, 50%);
+  --cor-secundaria-3: hsl(30, 45%, 28%);
 
   /* Cores de Apoio */
   --cor-apoio-1: hsl(48, 8%, 88%);
@@ -333,7 +333,7 @@
     0 0 20px hsla(222, 75%, 55%, 0.3);
 
   /* Links */
-  --link: hsl(45, 75%, 48%);
+  --link: hsl(30, 80%, 48%);
   --link-hover: hsl(220, 85%, 60%);
 
   /* Mensagens/Alertas */
@@ -343,9 +343,9 @@
   --erro: hsl(0, 65%, 55%);
   --erro-border: hsl(0, 60%, 45%);
   --msg-erro-txt: hsl(0, 15%, 98%);
-  --aviso: hsl(45, 90%, 78%);
-  --aviso-border: hsl(45, 85%, 65%);
-  --msg-aviso-txt: hsl(45, 25%, 20%);
+  --aviso: hsl(30, 90%, 78%);
+  --aviso-border: hsl(30, 85%, 65%);
+  --msg-aviso-txt: hsl(30, 25%, 20%);
   ---informacao: hsl(210, 55%, 65%);
   --informacao-border: hsl(210, 55%, 50%);
   --msg-informacao-txt: hsl(210, 20%, 25%);

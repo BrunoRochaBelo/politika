@@ -22,36 +22,36 @@
   }
 
   // Função para criar os botões de ação (editar e excluir) usando apenas ícones.
-  // Se o item for do tipo "document" (file), exibirá somente o botão de excluir.
   function criarActionButtons(item) {
     const container = document.createElement("div");
     container.className = "arquivos-action-buttons";
 
-    // botão de editar (biblioteca e pasta)
-    if (item.type !== "document") {
-      const btnEditar = document.createElement("button");
-      btnEditar.className = "edit-button";
-      btnEditar.innerHTML = `<img src="./static/imagens/icones/editar.svg" alt="Editar">`;
-      btnEditar.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (item.type === "library") {
-          window.location.href = `/biblioteca/put/${item.id}`;
-        } else if (item.type === "folder") {
-          window.location.href = `/docfile/pasta_put/${item.id}`;
-        }
-      });
-      container.appendChild(btnEditar);
-    }
+    // botão de editar (biblioteca, pasta e documento)
+    const btnEditar = document.createElement("button");
+    btnEditar.className = "edit-button";
+    btnEditar.title = "Editar";
+    btnEditar.innerHTML = `<img src="./static/imagens/icones/editar.svg" alt="Editar">`;
+    btnEditar.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (item.type === "library") {
+        window.location.href = `/biblioteca/put/${item.id}`;
+      } else if (item.type === "folder") {
+        window.location.href = `/docfile/pasta_put/${item.id}`;
+      } else if (item.type === "document") {
+        window.location.href = `/docfile/doc_put/${item.id}`;
+      }
+    });
+    container.appendChild(btnEditar);
 
     // botão de excluir (todos os tipos)
     const btnExcluir = document.createElement("button");
     btnExcluir.className = "delete-button";
+    btnExcluir.title = "Excluir";
     btnExcluir.innerHTML = `<img src="./static/imagens/icones/excluir.svg" alt="Excluir">`;
     btnExcluir.addEventListener("click", (e) => {
       e.stopPropagation();
       if (confirm("Tem certeza que deseja excluir este item?")) {
         if (item.type === "library") {
-          // quando a rotina existir, troca o endereço
           window.location.href = `/biblioteca/delete/${item.id}`;
         } else if (item.type === "folder") {
           window.location.href = `/docfile/pasta_del/${item.id}`;
@@ -625,34 +625,36 @@
 
   // Método para atualizar a opção exibida no modal flutuante
   FileNavigator.prototype.updateFloatingModalOption = function () {
-    const liBiblioteca = document.querySelector("li.biblioteca");
-    const liPasta = document.querySelector("li.pasta");
-    const liArquivo = document.querySelector("li.arquivo");
+    // restringe a busca ao UL do menu
+    const menu = document.getElementById("fabMenu"); // ou: document.querySelector(".modal-btn-floating-body");
+    if (!menu) return; // segurança
+
+    const liBiblioteca = menu.querySelector("li.biblioteca");
+    const liPasta = menu.querySelector("li.pasta");
+    const liArquivo = menu.querySelector("li.arquivo");
 
     // esconde tudo primeiro
-    liBiblioteca.classList.add("hidden");
-    liPasta.classList.add("hidden");
-    liArquivo.classList.add("hidden");
+    [liBiblioteca, liPasta, liArquivo].forEach((li) => {
+      li.classList.add("hidden");
+      const a = li.querySelector("a");
+      if (a) a.removeAttribute("href"); // remove href do que ficar oculto
+    });
 
-    // pega os <a> pra atualizar o href
-    const aBiblioteca = liBiblioteca.querySelector("a");
-    const aPasta = liPasta.querySelector("a");
-    const aArquivo = liArquivo.querySelector("a");
-
+    // decide o que mostrar
     if (this.state.currentPath.length === 0) {
-      // no root: só biblioteca
+      // raiz → só “Nova biblioteca”
       liBiblioteca.classList.remove("hidden");
-      aBiblioteca.href = "/bibliotecaadd";
+      liBiblioteca.querySelector("a").href = "/bibliotecaadd";
     } else {
-      const lastNode = this.state.currentPath.slice(-1)[0];
+      const lastNode = this.state.currentPath.at(-1);
       if (lastNode.type === "library") {
-        // dentro de biblioteca: mostra “Criar pasta”
+        // dentro de biblioteca → “Nova pasta”
         liPasta.classList.remove("hidden");
-        aPasta.href = `/docfile/pasta_add/${lastNode.id}`;
+        liPasta.querySelector("a").href = `/docfile/pasta_add/${lastNode.id}`;
       } else if (lastNode.type === "folder") {
-        // dentro de pasta: mostra “Criar arquivo”
+        // dentro de pasta → “Novo documento”
         liArquivo.classList.remove("hidden");
-        aArquivo.href = `/docfile/doc_add/${lastNode.id}`;
+        liArquivo.querySelector("a").href = `/docfile/doc_add/${lastNode.id}`;
       }
     }
   };

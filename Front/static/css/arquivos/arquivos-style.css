@@ -23,7 +23,12 @@
 }
 
 .raiz-tree:hover {
-  background-color: var(--cor-primaria-1);
+  background-color: var(--cor-primaria-2);
+  color: white;
+}
+.raiz-tree:hover .raiz-icon {
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .raiz-tree .raiz-icon {
@@ -39,6 +44,7 @@
     no-repeat center;
   mask-size: contain;
   -webkit-mask-size: contain;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* Itens da árvore */
@@ -193,7 +199,7 @@
 /* --- Estilos para os Breadcrumbs --- */
 
 .breadcrumbs {
-  font-size: var(--font-sm);
+  font-size: var(--font-md);
   padding: 5px 10px;
   color: var(--txt-titulo);
 }
@@ -254,13 +260,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   touch-action: manipulation;
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
-    background-color 0.3s ease;
+  transition: all 0.3s ease-in-out;
   color: var(--txt-conteudo-card);
 }
 
 .item-grid:hover {
-  transform: translateY(-3px);
+  scale: 1.025;
+  transition: scale 0.3s ease-in-out;
   box-shadow: var(--sombra-moderada);
 }
 
@@ -344,7 +350,8 @@
 }
 
 .arquivos-action-buttons button:hover {
-  opacity: 0.8;
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
 }
 
 /* --- Estilos Responsivos --- */
