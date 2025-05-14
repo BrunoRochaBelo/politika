@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Metadados críticos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Nova Pasta">
+  <title>Nova Pasta</title>
+
+  <!-- Manifesto -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Fonte -->
+  <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+
+  <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body class="body-form">
+  <div class="body-form-template">
+    <header class="header-form ">
+      <h1>Nova Pasta</h1>
+      <h1><a href="arquivos.html" class="close">&times;</a></h1>
+    </header>
+
+    <main class="main-form">
+      <section>
+        <div class="container-template">
+          <div class="container-template-content">
+            <form id="form" class="form" method="post" enctype="multipart/form-data" novalidate>
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <div class="card-session active">
+                    <fieldset>
+                      <legend class="titulo-lg"></legend>
+
+                      <div class="campo">
+                        <label for="numeroPasta">Número da Pasta:<span>*</span></label>
+                        <input type="text" id="numeroPasta" name="numeroPasta" placeholder="Digite o número da pasta" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="tituloPasta">Título:<span>*</span></label>
+                        <input type="text" id="tituloPasta" name="tituloPasta" placeholder="Digite o título" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="descricaoPasta">Descrição:<span>*</span></label>
+                        <textarea id="descricaoPasta" name="descricaoPasta" placeholder="Digite a descrição" required></textarea>
+                      </div>
+
+                      <div class="campo">
+                        <label for="validadePasta">Validade:</label>
+                        <input type="date" id="validadePasta" name="validadePasta" placeholder="dd/mm/aaaa">
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/IncluirPastaGenerica.js" defer></script>
+
+</body>
+
+</html>

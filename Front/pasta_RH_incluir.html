@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Metadados críticos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Nova Pasta">
+  <title>Nova Pasta</title>
+
+  <!-- Manifesto -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Fonte -->
+  <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+
+  <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body class="body-form">
+  <div class="body-form-template">
+    <header class="header-form ">
+      <h1>Nova Pasta</h1>
+      <h1><a href="arquivos.html" class="close">&times;</a></h1>
+    </header>
+
+    <main class="main-form">
+      <section>
+        <div class="container-template">
+          <div class="container-template-content">
+            <form id="form" class="form" method="post" enctype="multipart/form-data" novalidate>
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <div class="card-session active">
+                    <fieldset>
+                      <legend class="titulo-lg"></legend>
+
+                      <div class="campo">
+                        <label for="nomeColaborador">Nome do Colaborador:<span>*</span></label>
+                        <input type="text" id="nomeColaborador" name="nomeColaborador" placeholder="Digite o nome do colaborador" pattern="[A-Za-zÀ-ÿ ]+" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="cpfColaborador">CPF do Colaborador:<span>*</span></label>
+                        <input type="text" id="cpfColaborador" name="cpfColaborador" placeholder="000.000.000-00" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="vinculo">Vínculo (matrícula):<span>*</span></label>
+                        <input type="text" id="vinculo" name="vinculo" placeholder="Digite a matrícula" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="cargoFuncao">Cargo / Função:<span>*</span></label>
+                        <input type="text" id="cargoFuncao" name="cargoFuncao" placeholder="Digite o cargo ou função" rows="2" required>
+                      </div>
+
+                      <div class="form-2-colum">
+                        <div class="campo">
+                          <label for="admissao">Admissão:<span>*</span></label>
+                          <input type="date" id="admissao" name="admissao" required>
+                        </div>
+                        <div class="campo">
+                          <label for="demissao">Demissão:</label>
+                          <input type="date" id="demissao" name="demissao">
+                        </div>
+                      </div>
+
+                      <div class="campo">
+                        <label for="lotacao">Lotação:<span>*</span></label>
+                        <input type="text" id="lotacao" name="lotacao" placeholder="Digite a lotação" required>
+                      </div>
+
+                    </fieldset>
+                  </div>
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/IncluirPastaRH.js" defer></script>
+
+</body>
+
+</html>

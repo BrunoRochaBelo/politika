@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Metadados críticos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Novo Documento">
+  <title>Novo Documento</title>
+
+  <!-- Manifesto -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Fonte -->
+  <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+
+  <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body class="body-form">
+  <div class="body-form-template">
+    <header class="header-form ">
+      <h1>Novo Documento</h1>
+      <h1><a href="arquivos.html" class="close">&times;</a></h1>
+    </header>
+
+    <main class="main-form">
+      <section>
+        <div class="container-template">
+          <div class="container-template-content">
+            <form id="form" class="form" method="post" enctype="multipart/form-data" novalidate>
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <div class="card-session active">
+                    <fieldset>
+                      <legend class="titulo-lg"></legend>
+
+                      <div class="campo">
+                        <label for="tituloDoc">Título:<span>*</span></label>
+                        <input type="text" id="tituloDoc" name="tituloDoc" placeholder="Digite o título" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="grupoDoc">Grupo documento:</label>
+                        <input type="text" id="grupoDoc" name="grupoDoc" placeholder="Informe o grupo">
+                      </div>
+
+                      <div class="campo">
+                        <label for="especieDoc">Espécie documento:</label>
+                        <input type="text" id="especieDoc" name="especieDoc" placeholder="Ex.: Contrato, NF, etc.">
+                      </div>
+
+                      <div class="campo">
+                        <label for="numeroDoc">Número documento:</label>
+                        <input type="text" id="numeroDoc" name="numeroDoc" placeholder="Digite o número">
+                      </div>
+
+                      <div class="campo">
+                        <label for="descricaoDoc">Descrição:<span>*</span></label>
+                        <textarea id="descricaoDoc" name="descricaoDoc" placeholder="Digite a descrição" required></textarea>
+                      </div>
+
+                      <div class="campo">
+                        <label for="emissorDoc">Emissor do documento:<span>*</span></label>
+                        <input type="text" id="emissorDoc" name="emissorDoc" placeholder="Quem emitiu" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="emissaoDoc">Emissão:</label>
+                        <input type="date" id="emissaoDoc" name="emissaoDoc" placeholder="dd/mm/aaaa">
+                      </div>
+
+                      <div class="campo">
+                        <label for="validadeDoc">Validade:</label>
+                        <input type="date" id="validadeDoc" name="validadeDoc" placeholder="dd/mm/aaaa">
+                      </div>
+
+                      <!-- Seção de upload do Arquivo -->
+                      <div class="doc-upload-section">
+                        <h3 class="doc-upload-section-title">Arquivo</h3>
+
+                        <div class="doc-upload-option">
+                          <div class="doc-upload-area" id="uploadArea">
+                            <div class="doc-upload-icon">📁</div>
+                            <p class="doc-upload-text">Arraste o arquivo ou clique para selecionar</p>
+                            <input class="doc-upload-file-input" type="file" id="uploadDoc" name="uploadDoc">
+                          </div>
+
+                          <div class="doc-upload-file-info" id="fileInfo">
+                            <div class="doc-upload-file-name" id="fileName">documento.pdf</div>
+                            <div class="doc-upload-file-size" id="fileSize">1.2 MB</div>
+                            <button type="button" class="doc-upload-file-remove" id="removeFile" title="Remover arquivo">✕</button>
+                          </div>
+                        </div>
+
+                        <div class="doc-upload-option">
+                          <div class="doc-upload-or">ou</div>
+                          <div class="doc-upload-link-container">
+                            <span class="doc-upload-link-icon">🔗</span>
+                            <input class="doc-upload-link" type="text" id="linkDoc" name="linkDoc" placeholder="Insira o link do documento (https://)">
+                          </div>
+                        </div>
+
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/IncluirDocumento.js" defer></script>
+  <script>
+    // Função utilitária pra pegar valor de uma variável CSS
+    function getCSSVariable(varName) {
+      return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+    }
+
+    // Evento de mudança no input de arquivo
+    document.getElementById('uploadDoc').addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+
+        fileName.textContent = file.name;
+
+        let size;
+        if (file.size < 1024) {
+          size = file.size + ' bytes';
+        } else if (file.size < 1024 * 1024) {
+          size = (file.size / 1024).toFixed(2) + ' KB';
+        } else {
+          size = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+        }
+
+        fileSize.textContent = size;
+        fileInfo.style.display = 'block';
+      }
+    });
+
+    // Remover arquivo
+    document.getElementById('removeFile').addEventListener('click', function () {
+      document.getElementById('uploadDoc').value = '';
+      document.getElementById('fileInfo').style.display = 'none';
+
+      const uploadArea = document.getElementById('uploadArea');
+      uploadArea.style.borderColor = getCSSVariable('--input-border');
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.05)';
+    });
+
+    // Drag & Drop
+    const uploadArea = document.getElementById('uploadArea');
+
+    uploadArea.addEventListener('dragover', function (e) {
+      e.preventDefault();
+      uploadArea.style.borderColor = '#3498db';
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.1)';
+    });
+
+    uploadArea.addEventListener('dragleave', function (e) {
+      e.preventDefault();
+      uploadArea.style.borderColor = getCSSVariable('--input-border');
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.05)';
+    });
+
+    uploadArea.addEventListener('drop', function (e) {
+      e.preventDefault();
+      uploadArea.style.borderColor = getCSSVariable('--input-border');
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.05)';
+
+      const dt = e.dataTransfer;
+      const files = dt.files;
+
+      if (files.length) {
+        document.getElementById('uploadDoc').files = files;
+        const event = new Event('change');
+        document.getElementById('uploadDoc').dispatchEvent(event);
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>

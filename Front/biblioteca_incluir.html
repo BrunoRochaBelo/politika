@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Metadados críticos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Nova Biblioteca">
+  <title>Nova Biblioteca</title>
+
+  <!-- Manifesto -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Fonte -->
+  <link rel="preload" href=".\static\fonts\RobotoFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./static/imagens/logo/logo.png" type="image/png">
+
+  <!-- Pré-carregamento e carregamento não bloqueante do CSS -->
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "light-mode") {
+        document.documentElement.classList.add("light-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body class="body-form">
+  <div class="body-form-template">
+    <header class="header-form ">
+      <h1>Nova Biblioteca</h1>
+      <h1><a href="arquivos.html" class="close">&times;</a></h1>
+    </header>
+
+    <main class="main-form">
+      <section>
+        <div class="container-template">
+          <div class="container-template-content">
+            <form id="form" class="form" method="post" enctype="multipart/form-data" novalidate>
+              <div class="area-interna-containerContent-template">
+                <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
+                  <div class="card-session active">
+                    <fieldset>
+                      <legend class="titulo-lg"></legend>
+
+                      <div class="campo">
+                        <label for="nomeBiblioteca">Nome da Biblioteca:<span>*</span></label>
+                        <input type="text" id="nomeBiblioteca" name="nomeBiblioteca" placeholder="Digite o nome da biblioteca" required>
+                      </div>
+
+                      <div class="campo">
+                        <label for="descricaoBiblioteca">Descrição da Biblioteca:</label>
+                        <input type="text" id="descricaoBiblioteca" name="descricaoBiblioteca" placeholder="Descrição (opcional)">
+                      </div>
+
+                      <div class="campo">
+                        <label for="modelo_biblio">Modelo da biblioteca:<span>*</span></label>
+                        <select id="modelo_biblio" name="modelo_biblio" required>
+                          <option value="" disabled selected>Selecione um tipo</option>
+                          <option value="rh">RH</option>
+                          <option value="contratos">Contratos</option>
+                          <option value="geral">Geral</option>
+                        </select>
+                      </div>
+
+                      <div class="campo">
+                        <label for="tipo_arquivo">Tipo(s) de arquivo(s):<span>*</span></label>
+                        <div id="tipo_arquivo" class="checkbox-button-group" name="tipo_arquivo" required>
+                          <input type="checkbox" id="avchd" name="tipo_arquivo[]" value="avchd">
+                          <label for="avchd">avchd</label>
+                          <input type="checkbox" id="avi" name="tipo_arquivo[]" value="avi">
+                          <label for="avi">avi</label>
+                          <input type="checkbox" id="bmp" name="tipo_arquivo[]" value="bmp">
+                          <label for="bmp">bmp</label>
+                          <input type="checkbox" id="doc" name="tipo_arquivo[]" value="doc">
+                          <label for="doc">doc</label>
+                          <input type="checkbox" id="exe" name="tipo_arquivo[]" value="exe">
+                          <label for="exe">exe</label>
+                          <input type="checkbox" id="jpg" name="tipo_arquivo[]" value="jpg">
+                          <label for="jpg">jpg</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="botoes">
+                    <button type="submit" class="btn-principal" onclick="submitForm()">Criar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./static/js/config.js" defer></script>
+  <script src="./static/js/RegisterSW.js" defer></script>
+  <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
+  <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
+  <script src="./static/js/IncluirBiblioteca.js" defer></script>
+
+</body>
+
+</html>
