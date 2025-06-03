@@ -69,10 +69,18 @@
   border-radius: 5px;
   justify-content: start;
   align-items: center;
-  padding-left: 14px;
   margin: 3px 0 0 10px;
   font-size: var(--font-xs);
   font-weight: 300;
+  min-width: 0; /* ESSENCIAL pra flex funcionar! */
+}
+
+.pleitos-medium-card-desc > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; /* Pra garantir que o texto não force o flex */
+  margin: 0;
 }
 
 .pleitos-medium-card-beneficiario {
@@ -173,6 +181,11 @@
 .pleitos-medium-card-expanded .pleitos-medium-card-desc {
   background: var(--card-aberto-detalhe);
   color: var(--txt-subtitulo);
+}
+.pleitos-medium-card-expanded .pleitos-medium-card-desc > p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .pleitos-medium-card-expanded:hover {
