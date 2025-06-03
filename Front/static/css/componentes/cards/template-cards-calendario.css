@@ -56,6 +56,15 @@
   justify-content: start;
   align-items: end;
   margin: 3px 0 0 0px;
+  min-width: 0; /* ESSENCIAL pra flex funcionar! */
+}
+
+.calendario-large-card-duracao > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; /* Pra garantir que o texto não force o flex */
+  margin: 0;
 }
 
 .calendario-small-card-id {
@@ -161,6 +170,16 @@
   color: var(--txt-card-aberto);
 }
 
+.calendario-small-card-expanded .calendario-small-card-duracao {
+  background: var(--card-aberto-detalhe);
+  color: var(--txt-subtitulo);
+}
+.calendario-small-card-expanded .calendario-small-card-duracao > p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
 .calendario-small-card-expanded:hover {
   filter: brightness(1);
 }
@@ -246,7 +265,17 @@
   border-radius: 5px;
   justify-content: start;
   align-items: center;
+  min-width: 0; /* ESSENCIAL pra flex funcionar! */
 }
+
+.calendario-large-card-duracao > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; /* Pra garantir que o texto não force o flex */
+  margin: 0;
+}
+
 .calendario-small-card-id {
   font-size: 0px;
   color: transparent;
@@ -310,6 +339,11 @@
 .calendario-large-card-expanded .calendario-large-card-duracao {
   background: var(--card-aberto-detalhe);
   color: var(--txt-subtitulo);
+}
+.calendario-large-card-expanded .calendario-large-card-duracao > p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .calendario-large-card-expanded:hover {

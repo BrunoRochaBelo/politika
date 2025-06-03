@@ -127,6 +127,13 @@
   font-size: var(--font-xs);
   font-weight: 300;
   opacity: 1;
+  min-width: 0; /* ESSENCIAL pra flex funcionar! */
+}
+
+.tarefa-small-card-desc > p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .tarefa-small-card-local.exibirDetalheTarefa,
@@ -232,6 +239,15 @@
   margin: 3px 0 0 10px;
   font-size: var(--font-xs);
   font-weight: 300;
+  min-width: 0; /* ESSENCIAL pra flex funcionar! */
+}
+
+.tarefa-medium-card-desc > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; /* Pra garantir que o texto não force o flex */
+  margin: 0;
 }
 
 .tarefa-medium-card-id {
@@ -313,6 +329,11 @@
 .tarefa-medium-card-expanded .tarefa-medium-card-desc {
   background: var(--card-aberto-detalhe);
   color: var(--txt-subtitulo);
+}
+.tarefa-medium-card-expanded .tarefa-medium-card-desc > p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .tarefa-medium-card-expanded:hover {
