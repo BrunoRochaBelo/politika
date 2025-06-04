@@ -52,11 +52,15 @@
                       <div class="campo">
                         <label for="nomeColaborador">Nome do Colaborador:<span>*</span></label>
                         <input type="text" id="nomeColaborador" name="nomeColaborador" placeholder="Digite o nome do colaborador" pattern="[A-Za-zÀ-ÿ ]+" required>
+                        <div class="loading-indicator" id="loading-indicator-nome">Carregando...</div>
+                        <div id="suggestions-nomeColaborador" class="suggestions"></div>
                       </div>
 
                       <div class="campo">
                         <label for="cpfColaborador">CPF do Colaborador:<span>*</span></label>
                         <input type="text" id="cpfColaborador" name="cpfColaborador" placeholder="000.000.000-00" required>
+                        <div class="loading-indicator" id="loading-indicator-cpf">Carregando...</div>
+                        <div id="suggestions-cpfColaborador" class="suggestions"></div>
                       </div>
 
                       <div class="campo">

@@ -230,8 +230,109 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // máscara CPF
   const cpfField = document.getElementById("cpfColaborador");
-  cpfField.addEventListener("input", () => MaskUtils.cpf(cpfField));
   cpfField.addEventListener("blur", () => CampoUtils.validarCampo(cpfField));
+
+  const nomeField = document.getElementById("nomeColaborador");
+  const suggestionsNome = document.getElementById("suggestions-nomeColaborador");
+  const suggestionsCpf = document.getElementById("suggestions-cpfColaborador");
+  const loadingNome = document.getElementById("loading-indicator-nome");
+  const loadingCpf = document.getElementById("loading-indicator-cpf");
+
+  const showLoading = (el) => {
+    if (el) el.style.display = "block";
+  };
+
+  const hideLoading = (el) => {
+    if (el) el.style.display = "none";
+  };
+
+  const debounce = (func, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const fetchColaborador = async (query, fs) => {
+    const baseURL = Config.BASE_URL[Config.ENVIRONMENT];
+    const endpoint = Config.API_ENDPOINTS.CONTACT_SEARCH_ALL;
+    const url = `${baseURL}${endpoint}/${encodeURIComponent(query)}?fs=${fs}&qt=2`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Erro ao buscar dados");
+      const data = await response.json();
+      return data.DADOS || [];
+    } catch (err) {
+      console.error("Erro na busca:", err);
+      return [];
+    }
+  };
+
+  const displaySuggestions = (list, container) => {
+    container.innerHTML = "";
+    if (list.length === 0) {
+      const li = document.createElement("li");
+      li.textContent = "Nenhuma correspondência encontrada";
+      container.appendChild(li);
+    } else {
+      const ul = document.createElement("ul");
+      list.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - ${item.cnpj_cpf}`;
+        li.addEventListener("click", () => {
+          nomeField.value = item.name;
+          cpfField.value = item.cnpj_cpf;
+          container.innerHTML = "";
+          container.classList.remove("visible");
+        });
+        ul.appendChild(li);
+      });
+      container.appendChild(ul);
+    }
+    container.classList.add("visible");
+  };
+
+  const handleNomeInput = debounce(async () => {
+    const query = nomeField.value.trim();
+    if (query.length >= 3) {
+      showLoading(loadingNome);
+      const results = await fetchColaborador(query, 1);
+      displaySuggestions(results, suggestionsNome);
+      hideLoading(loadingNome);
+    } else {
+      suggestionsNome.innerHTML = "";
+      suggestionsNome.classList.remove("visible");
+    }
+  }, 300);
+
+  const handleCpfInput = debounce(async () => {
+    const query = cpfField.value.replace(/\D/g, "");
+    if (query.length >= 3) {
+      showLoading(loadingCpf);
+      const results = await fetchColaborador(query, 2);
+      displaySuggestions(results, suggestionsCpf);
+      hideLoading(loadingCpf);
+    } else {
+      suggestionsCpf.innerHTML = "";
+      suggestionsCpf.classList.remove("visible");
+    }
+  }, 300);
+
+  nomeField.addEventListener("input", handleNomeInput);
+  cpfField.addEventListener("input", () => {
+    MaskUtils.cpf(cpfField);
+    handleCpfInput();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!suggestionsNome.contains(e.target) && e.target !== nomeField) {
+      suggestionsNome.classList.remove("visible");
+    }
+    if (!suggestionsCpf.contains(e.target) && e.target !== cpfField) {
+      suggestionsCpf.classList.remove("visible");
+    }
+  });
 
   // máscara Vínculo
   const vincField = document.getElementById("vinculo");
