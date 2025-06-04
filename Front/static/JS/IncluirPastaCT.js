@@ -264,22 +264,208 @@ document.addEventListener("DOMContentLoaded", () => {
       c.addEventListener("input", () => CampoUtils.validarCampo(c));
     });
 
-  // máscaras
-  const fldCnpjCpf = document.getElementById("cnpjCpfFornecedor");
-  fldCnpjCpf.addEventListener("input", () => MaskUtils.cnpjCpf(fldCnpjCpf));
-  fldCnpjCpf.addEventListener("blur", () =>
-    CampoUtils.validarCampo(fldCnpjCpf)
+  // campos e containers
+  const nomeFornecedorField = document.getElementById("nomeFornecedor");
+  const cnpjCpfFornecedorField = document.getElementById("cnpjCpfFornecedor");
+  const nomeResponsavelField = document.getElementById("nomeResponsavel");
+  const cpfResponsavelField = document.getElementById("cpfResponsavel");
+
+  const suggestionsNomeFornecedor = document.getElementById(
+    "suggestions-nomeFornecedor"
+  );
+  const suggestionsCnpjCpfFornecedor = document.getElementById(
+    "suggestions-cnpjCpfFornecedor"
+  );
+  const suggestionsNomeResponsavel = document.getElementById(
+    "suggestions-nomeResponsavel"
+  );
+  const suggestionsCpfResponsavel = document.getElementById(
+    "suggestions-cpfResponsavel"
   );
 
-  const fldCpfResp = document.getElementById("cpfResponsavel");
-  fldCpfResp.addEventListener("input", () => MaskUtils.cpf(fldCpfResp));
-  fldCpfResp.addEventListener("blur", () =>
-    CampoUtils.validarCampo(fldCpfResp)
+  const loadingNomeFornecedor = document.getElementById(
+    "loading-indicator-nomeFornecedor"
+  );
+  const loadingCnpjCpfFornecedor = document.getElementById(
+    "loading-indicator-cnpjCpfFornecedor"
+  );
+  const loadingNomeResponsavel = document.getElementById(
+    "loading-indicator-nomeResponsavel"
+  );
+  const loadingCpfResponsavel = document.getElementById(
+    "loading-indicator-cpfResponsavel"
+  );
+
+  const showLoading = (el) => {
+    if (el) el.style.display = "block";
+  };
+
+  const hideLoading = (el) => {
+    if (el) el.style.display = "none";
+  };
+
+  const debounce = (func, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const fetchContato = async (query, params) => {
+    const baseURL = Config.BASE_URL[Config.ENVIRONMENT];
+    const endpoint = Config.API_ENDPOINTS.CONTACT_SEARCH_ALL;
+    const url = `${baseURL}${endpoint}/${encodeURIComponent(query)}${params}`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Erro ao buscar dados");
+      const data = await response.json();
+      return data.DADOS || [];
+    } catch (err) {
+      console.error("Erro na busca:", err);
+      return [];
+    }
+  };
+
+  const fetchFornecedor = (q, fs) => fetchContato(q, `?fs=${fs}&qt=3`);
+  const fetchResponsavel = (q, fs) => fetchContato(q, `?tp=1&fs=${fs}`);
+
+  const displaySuggestions = (list, container, fillFn) => {
+    container.innerHTML = "";
+    if (list.length === 0) {
+      const li = document.createElement("li");
+      li.textContent = "Nenhuma correspondência encontrada";
+      container.appendChild(li);
+    } else {
+      const ul = document.createElement("ul");
+      list.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - ${item.cnpj_cpf}`;
+        li.addEventListener("click", () => {
+          fillFn(item);
+          container.innerHTML = "";
+          container.classList.remove("visible");
+        });
+        ul.appendChild(li);
+      });
+      container.appendChild(ul);
+    }
+    container.classList.add("visible");
+  };
+
+  const handleNomeFornecedorInput = debounce(async () => {
+    const query = nomeFornecedorField.value.trim();
+    if (query.length >= 3) {
+      showLoading(loadingNomeFornecedor);
+      const results = await fetchFornecedor(query, 1);
+      displaySuggestions(results, suggestionsNomeFornecedor, (item) => {
+        nomeFornecedorField.value = item.name;
+        cnpjCpfFornecedorField.value = item.cnpj_cpf;
+      });
+      hideLoading(loadingNomeFornecedor);
+    } else {
+      suggestionsNomeFornecedor.innerHTML = "";
+      suggestionsNomeFornecedor.classList.remove("visible");
+    }
+  }, 300);
+
+  const handleCnpjCpfFornecedorInput = debounce(async () => {
+    const query = cnpjCpfFornecedorField.value.replace(/\D/g, "");
+    if (query.length >= 3) {
+      showLoading(loadingCnpjCpfFornecedor);
+      const results = await fetchFornecedor(query, 2);
+      displaySuggestions(results, suggestionsCnpjCpfFornecedor, (item) => {
+        nomeFornecedorField.value = item.name;
+        cnpjCpfFornecedorField.value = item.cnpj_cpf;
+      });
+      hideLoading(loadingCnpjCpfFornecedor);
+    } else {
+      suggestionsCnpjCpfFornecedor.innerHTML = "";
+      suggestionsCnpjCpfFornecedor.classList.remove("visible");
+    }
+  }, 300);
+
+  const handleNomeResponsavelInput = debounce(async () => {
+    const query = nomeResponsavelField.value.trim();
+    if (query.length >= 3) {
+      showLoading(loadingNomeResponsavel);
+      const results = await fetchResponsavel(query, 1);
+      displaySuggestions(results, suggestionsNomeResponsavel, (item) => {
+        nomeResponsavelField.value = item.name;
+        cpfResponsavelField.value = item.cnpj_cpf;
+      });
+      hideLoading(loadingNomeResponsavel);
+    } else {
+      suggestionsNomeResponsavel.innerHTML = "";
+      suggestionsNomeResponsavel.classList.remove("visible");
+    }
+  }, 300);
+
+  const handleCpfResponsavelInput = debounce(async () => {
+    const query = cpfResponsavelField.value.replace(/\D/g, "");
+    if (query.length >= 3) {
+      showLoading(loadingCpfResponsavel);
+      const results = await fetchResponsavel(query, 2);
+      displaySuggestions(results, suggestionsCpfResponsavel, (item) => {
+        nomeResponsavelField.value = item.name;
+        cpfResponsavelField.value = item.cnpj_cpf;
+      });
+      hideLoading(loadingCpfResponsavel);
+    } else {
+      suggestionsCpfResponsavel.innerHTML = "";
+      suggestionsCpfResponsavel.classList.remove("visible");
+    }
+  }, 300);
+
+  // máscaras
+  nomeFornecedorField.addEventListener("input", handleNomeFornecedorInput);
+  cnpjCpfFornecedorField.addEventListener("input", () => {
+    MaskUtils.cnpjCpf(cnpjCpfFornecedorField);
+    handleCnpjCpfFornecedorInput();
+  });
+  nomeResponsavelField.addEventListener("input", handleNomeResponsavelInput);
+  cpfResponsavelField.addEventListener("input", () => {
+    MaskUtils.cpf(cpfResponsavelField);
+    handleCpfResponsavelInput();
+  });
+
+  cnpjCpfFornecedorField.addEventListener("blur", () =>
+    CampoUtils.validarCampo(cnpjCpfFornecedorField)
+  );
+  cpfResponsavelField.addEventListener("blur", () =>
+    CampoUtils.validarCampo(cpfResponsavelField)
   );
 
   const fldValor = document.getElementById("valorTotal");
   fldValor.addEventListener("input", () => MaskUtils.moeda(fldValor));
   fldValor.addEventListener("blur", () => CampoUtils.validarCampo(fldValor));
+
+  document.addEventListener("click", (e) => {
+    if (
+      !suggestionsNomeFornecedor.contains(e.target) &&
+      e.target !== nomeFornecedorField
+    ) {
+      suggestionsNomeFornecedor.classList.remove("visible");
+    }
+    if (
+      !suggestionsCnpjCpfFornecedor.contains(e.target) &&
+      e.target !== cnpjCpfFornecedorField
+    ) {
+      suggestionsCnpjCpfFornecedor.classList.remove("visible");
+    }
+    if (
+      !suggestionsNomeResponsavel.contains(e.target) &&
+      e.target !== nomeResponsavelField
+    ) {
+      suggestionsNomeResponsavel.classList.remove("visible");
+    }
+    if (
+      !suggestionsCpfResponsavel.contains(e.target) &&
+      e.target !== cpfResponsavelField
+    ) {
+      suggestionsCpfResponsavel.classList.remove("visible");
+    }
+  });
 });
 
 // compat com onclick no botão
