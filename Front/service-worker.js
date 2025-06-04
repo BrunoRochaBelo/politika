@@ -1,7 +1,7 @@
 // /Front/service-worker.js
 
-// Importa o config.js usando caminho absoluto
-importScripts("/Front/static/js/config.js");
+// Importa o config.js usando caminho relativo
+importScripts("./static/js/config.js");
 
 // Desestruturação das configurações para facilitar o acesso
 const {
