@@ -52,11 +52,15 @@
                       <div class="campo">
                         <label for="nomeFornecedor">Nome do Fornecedor:<span>*</span></label>
                         <input type="text" id="nomeFornecedor" name="nomeFornecedor" placeholder="Digite o nome do fornecedor" pattern="[A-Za-zÀ-ÿ ]+" required>
+                        <div class="loading-indicator" id="loading-indicator-nomeFornecedor">Carregando...</div>
+                        <div id="suggestions-nomeFornecedor" class="suggestions"></div>
                       </div>
 
                       <div class="campo">
                         <label for="cnpjCpfFornecedor">CNPJ / CPF do Fornecedor:<span>*</span></label>
                         <input type="text" id="cnpjCpfFornecedor" name="cnpjCpfFornecedor" placeholder="00.000.000/0000-00 ou 000.000.000-00" required>
+                        <div class="loading-indicator" id="loading-indicator-cnpjCpfFornecedor">Carregando...</div>
+                        <div id="suggestions-cnpjCpfFornecedor" class="suggestions"></div>
                       </div>
 
                       <div class="campo">
@@ -88,11 +92,15 @@
                       <div class="campo">
                         <label for="nomeResponsavel">Nome do Responsável:<span>*</span></label>
                         <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Digite o nome do responsável" pattern="[A-Za-zÀ-ÿ ]+" required>
+                        <div class="loading-indicator" id="loading-indicator-nomeResponsavel">Carregando...</div>
+                        <div id="suggestions-nomeResponsavel" class="suggestions"></div>
                       </div>
 
                       <div class="campo">
                         <label for="cpfResponsavel">CPF do Responsável:<span>*</span></label>
                         <input type="text" id="cpfResponsavel" name="cpfResponsavel" placeholder="000.000.000-00" required>
+                        <div class="loading-indicator" id="loading-indicator-cpfResponsavel">Carregando...</div>
+                        <div id="suggestions-cpfResponsavel" class="suggestions"></div>
                       </div>
 
                     </fieldset>
@@ -113,7 +121,7 @@
   <script src="./static/js/RegisterSW.js" defer></script>
   <script src="./static/js/AlterarEsquemaDeCores.js" defer></script>
   <script src="./static/js/AtualizarAlturaPagina.js" defer></script>
-  <script src="./static/js/IncluirTarefa.js" defer></script>
+  <script src="./static/js/IncluirPastaCT.js" defer></script>
 
 </body>
 
