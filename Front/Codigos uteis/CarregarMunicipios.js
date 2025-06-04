@@ -8,7 +8,8 @@ window.carregarCidades = function (estado) {
     return;
   }
 
-  fetch(`http://192.168.1.4:5000/municipios/${estado}`)
+  const baseURL = window.Config ? Config.BASE_URL[Config.ENVIRONMENT] : "";
+  fetch(`${baseURL}municipios/${estado}`)
     .then((response) => response.json())
     .then((data) => {
       selectCidade.innerHTML =

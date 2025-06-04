@@ -14,7 +14,8 @@ function carregarCidades() {
   console.log("Estado selecionado:", estadoSelecionado);
 
   if (estadoSelecionado) {
-    fetch(`http://192.168.1.11:5000/municipios/${estadoSelecionado}`)
+    const baseURL = window.Config ? Config.BASE_URL[Config.ENVIRONMENT] : "";
+    fetch(`${baseURL}municipios/${estadoSelecionado}`)
       .then((response) => {
         if (!response.ok) {
           if (response.status === 404) {

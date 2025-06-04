@@ -21,7 +21,8 @@ function fillModal(card) {
 // Função para buscar os dados adicionais do contato a partir do backend
 function fetchContactData(contatoId) {
   // Faz uma requisição GET para a URL do backend
-  fetch(`http://192.168.1.21:5000/api/contato/get/${contatoId}`)
+  const baseURL = window.Config ? Config.BASE_URL[Config.ENVIRONMENT] : "";
+  fetch(`${baseURL}api/contato/get/${contatoId}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(
@@ -139,7 +140,7 @@ document
 //   }
 
 //   fetchContactData(contatoId) {
-//     fetch(`http://192.168.1.21:5000/api/contato/get/${contatoId}`)
+//     fetch(`${Config.BASE_URL[Config.ENVIRONMENT]}api/contato/get/${contatoId}`)
 //       .then((response) => {
 //         if (!response.ok) {
 //           throw new Error(

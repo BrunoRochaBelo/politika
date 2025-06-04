@@ -63,7 +63,7 @@ const Config = {
     "/static/imagens/icones/call.svg",
     "/static/imagens/icones/check.svg",
     "/static/imagens/icones/contas-corrente.svg",
-    "/static/imagens/icones/contas-corrente-corrente-select.svg",
+    "/static/imagens/icones/contas-corrente-select.svg",
     "/static/imagens/icones/contatos.svg",
     "/static/imagens/icones/contatos-select.svg",
     "/static/imagens/icones/dashboard.svg",
@@ -223,7 +223,7 @@ const Config = {
       CHECK: "/static/imagens/icones/check.svg",
       CONTAS_CORRENTE: "/static/imagens/icones/contas-corrente.svg",
       CONTAS_CORRENTE_SELECT:
-        "/static/imagens/icones/contas-corrente-corrente-select.svg",
+        "/static/imagens/icones/contas-corrente-select.svg",
       CONTATOS: "/static/imagens/icones/contatos.svg",
       CONTATOS_SELECT: "/static/imagens/icones/contatos-select.svg",
       DASHBOARD: "/static/imagens/icones/dashboard.svg",
