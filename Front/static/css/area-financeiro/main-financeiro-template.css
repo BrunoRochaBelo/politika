@@ -109,8 +109,8 @@
 }
 .area-filtro.filtro-financeiro .filtro-multi-select-card-header {
   border-radius: 12px;
-  border: 1px solid var(--input-border);
-  background: var(--barra-nav-indicator);
+  border: 1px solid var(--card-borda);
+  background: var(--card-bg);
 }
 .area-filtro.filtro-financeiro .filtro-multi-select-card-header p {
   color: var(--txt-titulo);
@@ -121,8 +121,8 @@
 }
 .area-filtro.filtro-financeiro
   .filtro-multi-select-card-header.exibirMultiSelect {
-  background: var(--card-bg);
-  border: 1px solid var(--card-bg);
+  background: var(--barra-nav-indicator);
+  border: 1px solid var(--barra-nav-indicator);
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   box-shadow: var(--sombra-moderada);
