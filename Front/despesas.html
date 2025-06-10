@@ -77,12 +77,51 @@
         <div class="area-interna-containerContent-template area-financeiro">
           <div class="area-interna-containerContent-template-content">
             <ul class="lista-vertical-alt">
-              <li class="area-filtro">
-                <span id="totalResults">{{total}}</span>&nbsp;-&nbsp;
-                <div class="btn-filtro-pesq">
-                  <p class="btn-filtro-pesq-title" id="filtroselect">{{filtro}}
-                    <a href="contatos.html" class="remover-filtro">&times;</a>
-                  </p>
+              <li class="area-filtro filtro-despesas">
+                <div class="filtro-multi-select-card">
+                  <div class="filtro-multi-select-card-header">
+                    <label for="filtro_despesas">
+                      <p>{{Período}} > {{Natureza}} > {{Ordenador}} > {{Fornecedor}} > {{Busca livre}}</p> <span class="arrow down"></span>
+                    </label>
+                  </div>
+                  <div class="filtro-multi-select-card-content">
+                    <form id="formFiltroDespesas" class="form-filtro-dashboard">
+                      <ul class="lista-opcoes-form-filtro-dashboard">
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="periodoDe" class="label-filtro-dashboard">Período:</label>
+                          <div class="dashboard-periodo-container">
+                            <input type="date" id="periodoDe" name="periodoDe" class="input-filtro-dashboard">
+                            <span class="dashboard-separador-filtro">a</span>
+                            <input type="date" id="periodoA" name="periodoA" class="input-filtro-dashboard">
+                          </div>
+                        </li>
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="naturezaDespesa" class="label-filtro-dashboard">Natureza:</label>
+                          <select id="naturezaDespesa" name="naturezaDespesa" class="select-filtro-dashboard">
+                            <option value="">Todas</option>
+                            <option value="fixa">Fixa</option>
+                            <option value="variavel">Variável</option>
+                          </select>
+                        </li>
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="ordenadorDespesa" class="label-filtro-dashboard">Ordenador:</label>
+                          <input type="text" id="ordenadorDespesa" name="ordenadorDespesa" class="input-filtro-dashboard" placeholder="Nome do ordenador">
+                        </li>
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="nomeFornecedor" class="label-filtro-dashboard">Fornecedor:</label>
+                          <input type="text" id="nomeFornecedor" name="nomeFornecedor" class="input-filtro-dashboard" placeholder="Razão social ou CPF">
+                        </li>
+                        <li class="card-filtro-dashboard card-s">
+                          <label for="textoPesquisa" class="label-filtro-dashboard">Busca livre:</label>
+                          <input type="search" id="textoPesquisa" name="textoPesquisa" class="input-filtro-dashboard" placeholder="Pesquisar...">
+                        </li>
+                      </ul>
+                      <div class="botoes">
+                        <button type="submit" class="btn-principal">Aplicar</button>
+                        <button type="reset" class="btn-secundario">Limpar</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </li>
               <li class="secao-interna-template">
@@ -142,6 +181,7 @@
   <script src="./static/js/ModalBTNFloating.js" defer></script>
   <script src="./static/js/ManipularHistorico.js" defer></script>
   <script src="./static/js/ExibirDetalhesDespesa.js" defer></script>
+  <script src="./static/js/FiltrosMultiSelect.js" defer></script>
 
 </body>
 
