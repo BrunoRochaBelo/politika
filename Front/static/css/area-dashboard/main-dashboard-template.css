@@ -145,8 +145,9 @@
 }
 
 .lista-opcoes-form-filtro-dashboard {
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
   padding-bottom: 10px;
   box-sizing: border-box;
@@ -177,6 +178,12 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  flex-wrap: wrap;
+}
+
+.dashboard-periodo-container .input-filtro-dashboard {
+  flex: 1 1 150px;
+  min-width: 120px;
 }
 
 /* Separador entre Datas */
@@ -216,8 +223,8 @@
   }
 
   .lista-opcoes-form-filtro-dashboard {
-    display: grid;
-    grid-auto-flow: row;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     padding-bottom: 10px;
   }
