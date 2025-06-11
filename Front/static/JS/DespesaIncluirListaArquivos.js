@@ -109,6 +109,7 @@ function configurarSelecaoArquivo(selectId, inputId, msgId) {
   const inputFile = document.getElementById(inputId);
   const msgElement = document.getElementById(msgId);
   if (!selectElement || !inputFile) return;
+
   inputFile.disabled = true;
   selectElement.addEventListener("change", () => {
     if (selectElement.value) {
@@ -177,52 +178,23 @@ function configurarDragAndDrop(areaId, inputId, selectId, msgId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  configurarSelecaoArquivo(
-    "especie_documento_aba2",
-    "anexar_documento_aba2",
-    "msgEspecieAba2"
-  );
-  configurarSelecaoArquivo(
-    "especie_documento_aba3",
-    "anexar_documento_aba3",
-    "msgEspecieAba3"
-  );
+  configurarSelecaoArquivo("especie_documento_aba2", "anexar_documento_aba2", "msgEspecieAba2");
+  configurarSelecaoArquivo("especie_documento_aba3", "anexar_documento_aba3", "msgEspecieAba3");
 
   const inputAba2 = document.getElementById("anexar_documento_aba2");
   const inputAba3 = document.getElementById("anexar_documento_aba3");
 
   if (inputAba2) {
     inputAba2.addEventListener("change", () =>
-      atualizarListaArquivos(
-        inputAba2,
-        "tabelaArquivosAba2",
-        "especie_documento_aba2",
-        "msgEspecieAba2"
-      )
+      atualizarListaArquivos(inputAba2, "tabelaArquivosAba2", "especie_documento_aba2", "msgEspecieAba2")
     );
-    configurarDragAndDrop(
-      "uploadAreaAba2",
-      "anexar_documento_aba2",
-      "especie_documento_aba2",
-      "msgEspecieAba2"
-    );
+    configurarDragAndDrop("uploadAreaAba2", "anexar_documento_aba2", "especie_documento_aba2", "msgEspecieAba2");
   }
 
   if (inputAba3) {
     inputAba3.addEventListener("change", () =>
-      atualizarListaArquivos(
-        inputAba3,
-        "tabelaArquivosAba3",
-        "especie_documento_aba3",
-        "msgEspecieAba3"
-      )
+      atualizarListaArquivos(inputAba3, "tabelaArquivosAba3", "especie_documento_aba3", "msgEspecieAba3")
     );
-    configurarDragAndDrop(
-      "uploadAreaAba3",
-      "anexar_documento_aba3",
-      "especie_documento_aba3",
-      "msgEspecieAba3"
-    );
+    configurarDragAndDrop("uploadAreaAba3", "anexar_documento_aba3", "especie_documento_aba3", "msgEspecieAba3");
   }
 });
-
