@@ -1,16 +1,28 @@
 let idArquivo = 1;
 const arquivosMap = new Map();
 
-function atualizarListaArquivos(inputFile, tabelaId, selectId) {
+function mostrarFeedback(selectElement, msgElement) {
+  if (selectElement) {
+    selectElement.classList.add("error");
+    setTimeout(() => selectElement.classList.remove("error"), 1500);
+  }
+  if (msgElement) {
+    msgElement.style.display = "block";
+    setTimeout(() => (msgElement.style.display = "none"), 1500);
+  }
+}
+
+function atualizarListaArquivos(inputFile, tabelaId, selectId, msgId) {
   const tabelaArquivos = document.getElementById(tabelaId);
   const tbody = tabelaArquivos.querySelector("tbody");
 
   const selectElement = document.getElementById(selectId);
+  const msgElement = document.getElementById(msgId);
   const especieDocumento = selectElement.options[selectElement.selectedIndex].text;
   const valorSelecionado = selectElement.value;
 
   if (!valorSelecionado) {
-    alert("Por favor, selecione uma espécie de documento.");
+    mostrarFeedback(selectElement, msgElement);
     return;
   }
 
@@ -62,6 +74,8 @@ function atualizarListaArquivos(inputFile, tabelaId, selectId) {
 
   atualizarContadorArquivos(tabelaId);
   inputFile.value = "";
+  selectElement.value = "";
+  inputFile.disabled = true;
 }
 
 function excluirArquivo(id, tabelaId) {
@@ -90,14 +104,17 @@ function atualizarContadorArquivos(tabelaId) {
   }, 300);
 }
 
-function configurarSelecaoArquivo(selectId, inputId) {
+function configurarSelecaoArquivo(selectId, inputId, msgId) {
   const selectElement = document.getElementById(selectId);
   const inputFile = document.getElementById(inputId);
+  const msgElement = document.getElementById(msgId);
   if (!selectElement || !inputFile) return;
+
   inputFile.disabled = true;
   selectElement.addEventListener("change", () => {
     if (selectElement.value) {
       inputFile.disabled = false;
+      if (msgElement) msgElement.style.display = "none";
     } else {
       inputFile.disabled = true;
       inputFile.value = "";
@@ -105,9 +122,11 @@ function configurarSelecaoArquivo(selectId, inputId) {
   });
 }
 
-function configurarDragAndDrop(areaId, inputId) {
+function configurarDragAndDrop(areaId, inputId, selectId, msgId) {
   const uploadArea = document.getElementById(areaId);
   const fileInput = document.getElementById(inputId);
+  const selectElement = document.getElementById(selectId);
+  const msgElement = document.getElementById(msgId);
   if (!uploadArea || !fileInput) return;
 
   function getCSSVariable(name) {
@@ -116,6 +135,10 @@ function configurarDragAndDrop(areaId, inputId) {
 
   uploadArea.addEventListener("dragover", function (e) {
     e.preventDefault();
+    if (fileInput.disabled) {
+      mostrarFeedback(selectElement, msgElement);
+      return;
+    }
     uploadArea.style.borderColor = "#3498db";
     uploadArea.style.backgroundColor = "rgba(52, 152, 219, 0.1)";
   });
@@ -134,29 +157,44 @@ function configurarDragAndDrop(areaId, inputId) {
     const dt = e.dataTransfer;
     const files = dt.files;
 
+    if (fileInput.disabled) {
+      mostrarFeedback(selectElement, msgElement);
+      return;
+    }
+
     if (files.length) {
       fileInput.files = files;
       const event = new Event("change");
       fileInput.dispatchEvent(event);
     }
   });
+
+  uploadArea.addEventListener("click", (e) => {
+    if (fileInput.disabled) {
+      e.preventDefault();
+      mostrarFeedback(selectElement, msgElement);
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  configurarSelecaoArquivo("especie_documento_aba2", "anexar_documento_aba2");
-  configurarSelecaoArquivo("especie_documento_aba3", "anexar_documento_aba3");
+  configurarSelecaoArquivo("especie_documento_aba2", "anexar_documento_aba2", "msgEspecieAba2");
+  configurarSelecaoArquivo("especie_documento_aba3", "anexar_documento_aba3", "msgEspecieAba3");
 
   const inputAba2 = document.getElementById("anexar_documento_aba2");
   const inputAba3 = document.getElementById("anexar_documento_aba3");
 
   if (inputAba2) {
-    inputAba2.addEventListener("change", () => atualizarListaArquivos(inputAba2, "tabelaArquivosAba2", "especie_documento_aba2"));
-    configurarDragAndDrop("uploadAreaAba2", "anexar_documento_aba2");
+    inputAba2.addEventListener("change", () =>
+      atualizarListaArquivos(inputAba2, "tabelaArquivosAba2", "especie_documento_aba2", "msgEspecieAba2")
+    );
+    configurarDragAndDrop("uploadAreaAba2", "anexar_documento_aba2", "especie_documento_aba2", "msgEspecieAba2");
   }
 
   if (inputAba3) {
-    inputAba3.addEventListener("change", () => atualizarListaArquivos(inputAba3, "tabelaArquivosAba3", "especie_documento_aba3"));
-    configurarDragAndDrop("uploadAreaAba3", "anexar_documento_aba3");
+    inputAba3.addEventListener("change", () =>
+      atualizarListaArquivos(inputAba3, "tabelaArquivosAba3", "especie_documento_aba3", "msgEspecieAba3")
+    );
+    configurarDragAndDrop("uploadAreaAba3", "anexar_documento_aba3", "especie_documento_aba3", "msgEspecieAba3");
   }
 });
-
