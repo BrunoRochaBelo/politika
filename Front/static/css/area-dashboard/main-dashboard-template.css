@@ -146,7 +146,6 @@
 
 .lista-opcoes-form-filtro-dashboard {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
   padding-bottom: 10px;
@@ -155,7 +154,8 @@
 
 /* Cartão de Filtro */
 .card-filtro-dashboard.card-s {
-  padding: 10px;
+  min-width: 180px;
+  padding: 10px 20px;
   border: 1px solid var(--card-borda);
   border-radius: 12px;
   box-shadow: var(--card-shadow);
@@ -163,6 +163,7 @@
   display: flex;
   flex-direction: column;
   justify-items: center;
+  justify-content: center;
   box-sizing: border-box;
 }
 
@@ -178,12 +179,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  flex-wrap: wrap;
-}
-
-.dashboard-periodo-container .input-filtro-dashboard {
-  flex: 1 1 150px;
-  min-width: 120px;
 }
 
 /* Separador entre Datas */
@@ -196,12 +191,12 @@
 /* Inputs de Filtro */
 .input-filtro-dashboard,
 .select-filtro-dashboard {
-  width: 100%;
+  width: auto;
   padding: 8px;
   border: 1px solid var(--input-border);
   border-radius: 4px;
   font-size: 14px;
-  background: none;
+  background-color: var(--card-bg);
   color: var(--input-txt);
   appearance: none;
   margin-top: 8px;
@@ -223,8 +218,8 @@
   }
 
   .lista-opcoes-form-filtro-dashboard {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-flow: row;
     gap: 10px;
     padding-bottom: 10px;
   }

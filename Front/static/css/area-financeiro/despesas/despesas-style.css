@@ -1,3 +1,7 @@
+.filtro-despesas .filtro-multi-select-card {
+  margin: 0 10px;
+}
+
 /* Estilos gerais */
 .despesas-medium-card-editar .btn-outline-principal {
   width: auto;
