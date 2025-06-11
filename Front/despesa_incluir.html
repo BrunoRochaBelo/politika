@@ -182,12 +182,27 @@
                             <option value="Outro">Outro</option>
                           </select>
                         </div>
-                        <div class="campo btn-file">
-                          <label for="anexar_documento" class="file-label">Anexar documento</label>
-                          <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" onchange="atualizarListaArquivos(this, 'tabelaArquivosAba2', 'especie_documento_aba2')">
+                        <div class="doc-upload-section">
+                          <h3 class="doc-upload-section-title">Arquivo</h3>
+
+                          <div class="doc-upload-option">
+                            <div class="doc-upload-area" id="uploadAreaAba2">
+                              <div class="doc-upload-icon">📁</div>
+                              <p class="doc-upload-text">Arraste o arquivo ou clique para selecionar</p>
+                              <input class="doc-upload-file-input" type="file" id="anexar_documento_aba2" name="anexar_documento_aba2" multiple disabled>
+                            </div>
+                          </div>
+
+                          <div class="doc-upload-option">
+                            <div class="doc-upload-or">ou</div>
+                            <div class="doc-upload-link-container">
+                              <span class="doc-upload-link-icon">🔗</span>
+                              <input class="doc-upload-link" type="text" id="linkDocAba2" name="linkDocAba2" placeholder="Insira o link do documento (https://)">
+                            </div>
+                          </div>
                         </div>
 
-                        <p id="contadorArquivos">Total de arquivos adicionados: 0</p>
+                        <p id="contadorArquivosAba2" class="titulo-area-tabela">Total de arquivos adicionados: 0</p>
                         <!-- Tabela para listar os arquivos anexados -->
                         <div class="tabela-historico">
                           <table id="tabelaArquivosAba2">
@@ -323,6 +338,41 @@
                           <label for="cc_multa_id">ID Conta Corrente multa</label>
                           <input type="text" id="cc_multa_id" name="cc_multa_id">
                         </div>
+
+                        <div class="campo">
+                          <label for="especie_documento_pagamento">Espécie documento</label>
+                          <select id="especie_documento_aba3" name="especie_documento_pagamento">
+                            <option value="">Selecione</option>
+                            <option value="cupomFiscal">Cupom Fiscal</option>
+                            <option value="duplicata">Duplicata</option>
+                            <option value="fatura">Fatura</option>
+                            <option value="notaFiscal">notaFiscal</option>
+                            <option value="recibo">Recibo</option>
+                            <option value="Outro">Outro</option>
+                          </select>
+                        </div>
+
+                        <div class="doc-upload-section">
+                          <h3 class="doc-upload-section-title">Arquivo</h3>
+
+                          <div class="doc-upload-option">
+                            <div class="doc-upload-area" id="uploadAreaAba3">
+                              <div class="doc-upload-icon">📁</div>
+                              <p class="doc-upload-text">Arraste o arquivo ou clique para selecionar</p>
+                              <input class="doc-upload-file-input" type="file" id="anexar_documento_aba3" name="anexar_documento_aba3" multiple disabled>
+                            </div>
+                          </div>
+
+                          <div class="doc-upload-option">
+                            <div class="doc-upload-or">ou</div>
+                            <div class="doc-upload-link-container">
+                              <span class="doc-upload-link-icon">🔗</span>
+                              <input class="doc-upload-link" type="text" id="linkDocAba3" name="linkDocAba3" placeholder="Insira o link do documento (https://)">
+                            </div>
+                          </div>
+                        </div>
+
+                        <p id="contadorArquivosAba3" class="titulo-area-tabela">Total de arquivos adicionados: 0</p>
                       </fieldset>
 
                       <!-- Tabela para listar os arquivos anexados -->
