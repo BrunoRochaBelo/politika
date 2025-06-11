@@ -224,12 +224,6 @@
                               <p class="doc-upload-text">Arraste o arquivo ou clique para selecionar</p>
                               <input class="doc-upload-file-input" type="file" id="anexar_documento" name="anexar_documento" multiple>
                             </div>
-
-                            <div class="doc-upload-file-info" id="fileInfo">
-                              <div class="doc-upload-file-name" id="fileName">arquivo.pdf</div>
-                              <div class="doc-upload-file-size" id="fileSize">0 KB</div>
-                              <button type="button" class="doc-upload-file-remove" id="removeFile" title="Remover arquivo">✕</button>
-                            </div>
                           </div>
 
                           <div class="doc-upload-option">
@@ -299,38 +293,8 @@
     }
 
     const fileInput = document.getElementById('anexar_documento');
-    fileInput.addEventListener('change', function (e) {
-      const file = e.target.files[0];
-      if (file) {
-        const fileInfo = document.getElementById('fileInfo');
-        const fileName = document.getElementById('fileName');
-        const fileSize = document.getElementById('fileSize');
-
-        fileName.textContent = file.name;
-
-        let size;
-        if (file.size < 1024) {
-          size = file.size + ' bytes';
-        } else if (file.size < 1024 * 1024) {
-          size = (file.size / 1024).toFixed(2) + ' KB';
-        } else {
-          size = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
-        }
-
-        fileSize.textContent = size;
-        fileInfo.style.display = 'block';
-      }
-
+    fileInput.addEventListener('change', function () {
       atualizarListaArquivos();
-    });
-
-    document.getElementById('removeFile').addEventListener('click', function () {
-      fileInput.value = '';
-      document.getElementById('fileInfo').style.display = 'none';
-
-      const uploadArea = document.getElementById('uploadArea');
-      uploadArea.style.borderColor = getCSSVariable('--input-border');
-      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.05)';
     });
 
     const uploadArea = document.getElementById('uploadArea');
