@@ -215,28 +215,48 @@
                   <div class="area-interna-containerContent-template-content area-interna-containerContent-template-not-header">
                     <div class="card-session active">
                       <fieldset>
-                        <div class="campo tabelaArquivosAnexados">
-                          <div class="campo btn-file">
-                            <label for="anexar_documento" class="file-label">Anexar documento</label>
-                            <input type="file" id="anexar_documento" name="anexar_documento" class="file-input" multiple onchange="atualizarListaArquivos()">
+                        <div class="doc-upload-section">
+                          <h3 class="doc-upload-section-title">Arquivos</h3>
+
+                          <div class="doc-upload-option">
+                            <div class="doc-upload-area" id="uploadArea">
+                              <div class="doc-upload-icon">📁</div>
+                              <p class="doc-upload-text">Arraste o arquivo ou clique para selecionar</p>
+                              <input class="doc-upload-file-input" type="file" id="anexar_documento" name="anexar_documento" multiple>
+                            </div>
+
+                            <div class="doc-upload-file-info" id="fileInfo">
+                              <div class="doc-upload-file-name" id="fileName">arquivo.pdf</div>
+                              <div class="doc-upload-file-size" id="fileSize">0 KB</div>
+                              <button type="button" class="doc-upload-file-remove" id="removeFile" title="Remover arquivo">✕</button>
+                            </div>
                           </div>
-                          <p id="contadorArquivosAnexados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
-                          <div class="tabela-historico">
-                            <table id="tabelaArquivosAnexados">
-                              <thead>
-                                <tr>
-                                  <th class="hidden-column">ID</th>
-                                  <th>Nome</th>
-                                  <th>Tipo</th>
-                                  <th>Ações</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <!-- Arquivos anexados serão listados aqui -->
-                              </tbody>
-                            </table>
-                            <div class="loading-indicator" id="loading-indicator">Carregando...</div>
+
+                          <div class="doc-upload-option">
+                            <div class="doc-upload-or">ou</div>
+                            <div class="doc-upload-link-container">
+                              <span class="doc-upload-link-icon">🔗</span>
+                              <input class="doc-upload-link" type="text" id="linkDoc" name="linkDoc" placeholder="Insira o link do documento (https://)">
+                            </div>
                           </div>
+                        </div>
+
+                        <p id="contadorArquivosAnexados" class="titulo-area-tabela">Total de contatos encontrados: 0</p>
+                        <div class="tabela-historico">
+                          <table id="tabelaArquivosAnexados">
+                            <thead>
+                              <tr>
+                                <th class="hidden-column">ID</th>
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- Arquivos anexados serão listados aqui -->
+                            </tbody>
+                          </table>
+                          <div class="loading-indicator" id="loading-indicator">Carregando...</div>
                         </div>
                       </fieldset>
 
@@ -272,6 +292,76 @@
   <script src="./static/js/ContatoIncluirListaReferenciaPolitica.js" defer></script>
   <script src="./static/js/IncluirPleito.js" defer></script>
   <script src="./static/js/PleitoIncluirListaArquivos.js" defer></script>
+
+  <script>
+    function getCSSVariable(varName) {
+      return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+    }
+
+    const fileInput = document.getElementById('anexar_documento');
+    fileInput.addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+
+        fileName.textContent = file.name;
+
+        let size;
+        if (file.size < 1024) {
+          size = file.size + ' bytes';
+        } else if (file.size < 1024 * 1024) {
+          size = (file.size / 1024).toFixed(2) + ' KB';
+        } else {
+          size = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+        }
+
+        fileSize.textContent = size;
+        fileInfo.style.display = 'block';
+      }
+
+      atualizarListaArquivos();
+    });
+
+    document.getElementById('removeFile').addEventListener('click', function () {
+      fileInput.value = '';
+      document.getElementById('fileInfo').style.display = 'none';
+
+      const uploadArea = document.getElementById('uploadArea');
+      uploadArea.style.borderColor = getCSSVariable('--input-border');
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.05)';
+    });
+
+    const uploadArea = document.getElementById('uploadArea');
+
+    uploadArea.addEventListener('dragover', function (e) {
+      e.preventDefault();
+      uploadArea.style.borderColor = '#3498db';
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.1)';
+    });
+
+    uploadArea.addEventListener('dragleave', function (e) {
+      e.preventDefault();
+      uploadArea.style.borderColor = getCSSVariable('--input-border');
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.05)';
+    });
+
+    uploadArea.addEventListener('drop', function (e) {
+      e.preventDefault();
+      uploadArea.style.borderColor = getCSSVariable('--input-border');
+      uploadArea.style.backgroundColor = 'rgba(52, 152, 219, 0.05)';
+
+      const dt = e.dataTransfer;
+      const files = dt.files;
+
+      if (files.length) {
+        fileInput.files = files;
+        const event = new Event('change');
+        fileInput.dispatchEvent(event);
+      }
+    });
+  </script>
 
 </body>
 
