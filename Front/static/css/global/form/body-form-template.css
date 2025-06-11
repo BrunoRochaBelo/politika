@@ -61,7 +61,7 @@
   .container-abas-template-content
   .novaDespesa
   .area-interna-containerContent-template {
-  height: calc(var(--vh, 1vh) * 100 - 12rem) !important;
+  height: calc(var(--vh, 1vh) * 100 - 11rem) !important;
 }
 
 .main-form .container-template,
@@ -165,7 +165,7 @@
     .container-abas-template-content
     .novaDespesa
     .area-interna-containerContent-template {
-    height: calc(var(--vh, 1vh) * 100 - 8.3rem) !important;
+    height: calc(var(--vh, 1vh) * 100 - 8.15rem) !important;
   }
 
   .main-form .container-template,

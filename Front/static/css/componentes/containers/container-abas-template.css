@@ -79,6 +79,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.nav-duas-linhas {
+  line-height: 1.22;
+}
+
 #nav1 a,
 #nav2 a,
 #nav3 a {
