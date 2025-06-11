@@ -104,20 +104,24 @@ function atualizarContadorArquivos(tabelaId) {
   }, 300);
 }
 
-function configurarSelecaoArquivo(selectId, inputId, msgId) {
+function configurarSelecaoArquivo(selectId, inputId, areaId, msgId) {
   const selectElement = document.getElementById(selectId);
   const inputFile = document.getElementById(inputId);
+  const uploadArea = document.getElementById(areaId);
   const msgElement = document.getElementById(msgId);
   if (!selectElement || !inputFile) return;
 
   inputFile.disabled = true;
+  if (uploadArea) uploadArea.classList.add("disabled");
   selectElement.addEventListener("change", () => {
     if (selectElement.value) {
       inputFile.disabled = false;
+      if (uploadArea) uploadArea.classList.remove("disabled");
       if (msgElement) msgElement.style.display = "none";
     } else {
       inputFile.disabled = true;
       inputFile.value = "";
+      if (uploadArea) uploadArea.classList.add("disabled");
     }
   });
 }
@@ -178,8 +182,8 @@ function configurarDragAndDrop(areaId, inputId, selectId, msgId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  configurarSelecaoArquivo("especie_documento_aba2", "anexar_documento_aba2", "msgEspecieAba2");
-  configurarSelecaoArquivo("especie_documento_aba3", "anexar_documento_aba3", "msgEspecieAba3");
+  configurarSelecaoArquivo("especie_documento_aba2", "anexar_documento_aba2", "uploadAreaAba2", "msgEspecieAba2");
+  configurarSelecaoArquivo("especie_documento_aba3", "anexar_documento_aba3", "uploadAreaAba3", "msgEspecieAba3");
 
   const inputAba2 = document.getElementById("anexar_documento_aba2");
   const inputAba3 = document.getElementById("anexar_documento_aba3");
