@@ -508,6 +508,11 @@
   margin-bottom: 1rem;
 }
 
+.doc-upload-area.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .doc-upload-area:hover {
   border-color: #3498db;
   background-color: rgba(52, 152, 219, 0.05);
