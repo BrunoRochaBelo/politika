@@ -12,12 +12,19 @@ function mostrarFeedback(selectElement, msgElement) {
   }
 }
 
-function atualizarListaArquivos(inputFile, tabelaId, selectId, msgId) {
+function atualizarListaArquivos(
+  inputFile,
+  tabelaId,
+  selectId,
+  msgId,
+  linkId
+) {
   const tabelaArquivos = document.getElementById(tabelaId);
   const tbody = tabelaArquivos.querySelector("tbody");
 
   const selectElement = document.getElementById(selectId);
   const msgElement = document.getElementById(msgId);
+  const linkInput = linkId ? document.getElementById(linkId) : null;
   const especieDocumento = selectElement.options[selectElement.selectedIndex].text;
   const valorSelecionado = selectElement.value;
 
@@ -75,7 +82,7 @@ function atualizarListaArquivos(inputFile, tabelaId, selectId, msgId) {
   atualizarContadorArquivos(tabelaId);
   inputFile.value = "";
   selectElement.value = "";
-  inputFile.disabled = true;
+  selectElement.dispatchEvent(new Event("change"));
 }
 
 function excluirArquivo(id, tabelaId) {
@@ -104,26 +111,45 @@ function atualizarContadorArquivos(tabelaId) {
   }, 300);
 }
 
-function configurarSelecaoArquivo(selectId, inputId, areaId, msgId) {
+function configurarSelecaoArquivo(selectId, inputId, areaId, msgId, linkId) {
   const selectElement = document.getElementById(selectId);
   const inputFile = document.getElementById(inputId);
   const uploadArea = document.getElementById(areaId);
   const msgElement = document.getElementById(msgId);
+  const linkInput = linkId ? document.getElementById(linkId) : null;
   if (!selectElement || !inputFile) return;
 
-  inputFile.disabled = true;
-  if (uploadArea) uploadArea.classList.add("disabled");
-  selectElement.addEventListener("change", () => {
-    if (selectElement.value) {
-      inputFile.disabled = false;
-      if (uploadArea) uploadArea.classList.remove("disabled");
-      if (msgElement) msgElement.style.display = "none";
-    } else {
-      inputFile.disabled = true;
+  function ajustarEstado() {
+    const habilitar = !!selectElement.value;
+    inputFile.disabled = !habilitar;
+    if (uploadArea) uploadArea.classList.toggle("disabled", !habilitar);
+    if (linkInput) linkInput.disabled = !habilitar;
+    if (!habilitar) {
       inputFile.value = "";
-      if (uploadArea) uploadArea.classList.add("disabled");
+      if (linkInput) linkInput.value = "";
+    } else if (msgElement) {
+      msgElement.style.display = "none";
     }
-  });
+  }
+
+  ajustarEstado();
+  selectElement.addEventListener("change", ajustarEstado);
+
+  if (linkInput) {
+    linkInput.addEventListener("focus", (e) => {
+      if (linkInput.disabled) {
+        mostrarFeedback(selectElement, msgElement);
+        e.preventDefault();
+        linkInput.blur();
+      }
+    });
+    linkInput.addEventListener("mousedown", (e) => {
+      if (linkInput.disabled) {
+        mostrarFeedback(selectElement, msgElement);
+        e.preventDefault();
+      }
+    });
+  }
 }
 
 function configurarDragAndDrop(areaId, inputId, selectId, msgId) {
@@ -182,22 +208,46 @@ function configurarDragAndDrop(areaId, inputId, selectId, msgId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  configurarSelecaoArquivo("especie_documento_aba2", "anexar_documento_aba2", "uploadAreaAba2", "msgEspecieAba2");
-  configurarSelecaoArquivo("especie_documento_aba3", "anexar_documento_aba3", "uploadAreaAba3", "msgEspecieAba3");
+  configurarSelecaoArquivo(
+    "especie_documento_aba2",
+    "anexar_documento_aba2",
+    "uploadAreaAba2",
+    "msgEspecieAba2",
+    "linkDocAba2"
+  );
+  configurarSelecaoArquivo(
+    "especie_documento_aba3",
+    "anexar_documento_aba3",
+    "uploadAreaAba3",
+    "msgEspecieAba3",
+    "linkDocAba3"
+  );
 
   const inputAba2 = document.getElementById("anexar_documento_aba2");
   const inputAba3 = document.getElementById("anexar_documento_aba3");
 
   if (inputAba2) {
     inputAba2.addEventListener("change", () =>
-      atualizarListaArquivos(inputAba2, "tabelaArquivosAba2", "especie_documento_aba2", "msgEspecieAba2")
+      atualizarListaArquivos(
+        inputAba2,
+        "tabelaArquivosAba2",
+        "especie_documento_aba2",
+        "msgEspecieAba2",
+        "linkDocAba2"
+      )
     );
     configurarDragAndDrop("uploadAreaAba2", "anexar_documento_aba2", "especie_documento_aba2", "msgEspecieAba2");
   }
 
   if (inputAba3) {
     inputAba3.addEventListener("change", () =>
-      atualizarListaArquivos(inputAba3, "tabelaArquivosAba3", "especie_documento_aba3", "msgEspecieAba3")
+      atualizarListaArquivos(
+        inputAba3,
+        "tabelaArquivosAba3",
+        "especie_documento_aba3",
+        "msgEspecieAba3",
+        "linkDocAba3"
+      )
     );
     configurarDragAndDrop("uploadAreaAba3", "anexar_documento_aba3", "especie_documento_aba3", "msgEspecieAba3");
   }
