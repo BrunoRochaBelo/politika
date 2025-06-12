@@ -35,7 +35,7 @@ function atualizarListaArquivos(inputFile, tabelaId, selectId, msgId) {
     let rowHtml = "";
     if (tabelaId === "tabelaArquivosAba3") {
       rowHtml = `
-        <td data-label="ID">${idArquivo}</td>
+        <td data-label="ID" class="hidden-column">${idArquivo}</td>
         <td data-label="Data">${new Date().toLocaleDateString()}</td>
         <td data-label="Espécie Documento">${especieDocumento}</td>
         <td data-label="Arquivo">${arquivo.name}</td>
@@ -46,7 +46,7 @@ function atualizarListaArquivos(inputFile, tabelaId, selectId, msgId) {
         </td>`;
     } else {
       rowHtml = `
-        <td data-label="ID">${idArquivo}</td>
+        <td data-label="ID" class="hidden-column">${idArquivo}</td>
         <td data-label="Data">${new Date().toLocaleDateString()}</td>
         <td data-label="Tipo">${arquivo.type}</td>
         <td data-label="Nome">${arquivo.name}</td>
