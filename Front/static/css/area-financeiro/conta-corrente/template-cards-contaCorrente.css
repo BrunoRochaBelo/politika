@@ -70,3 +70,8 @@
   height: 100%;
   object-fit: contain;
 }
+
+.contaCorrente-card-footer button:hover {
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
+}
